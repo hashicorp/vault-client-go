@@ -24,8 +24,6 @@ type SystemPluginsCatalogRequest struct {
 	Env []string `json:"env,omitempty"`
 	// The SHA256 sum of the executable used in the command field. This should be HEX encoded.
 	Sha256 *string `json:"sha256,omitempty"`
-	// The SHA256 sum of the executable used in the command field. This should be HEX encoded.
-	Sha256 *string `json:"sha_256,omitempty"`
 	// The type of the plugin, may be auth, secret, or database
 	Type *string `json:"type,omitempty"`
 }
@@ -141,38 +139,6 @@ func (o *SystemPluginsCatalogRequest) HasEnv() bool {
 // SetEnv gets a reference to the given []string and assigns it to the Env field.
 func (o *SystemPluginsCatalogRequest) SetEnv(v []string) {
 	o.Env = v
-}
-
-// GetSha256 returns the Sha256 field value if set, zero value otherwise.
-func (o *SystemPluginsCatalogRequest) GetSha256() string {
-	if o == nil || o.Sha256 == nil {
-		var ret string
-		return ret
-	}
-	return *o.Sha256
-}
-
-// GetSha256Ok returns a tuple with the Sha256 field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SystemPluginsCatalogRequest) GetSha256Ok() (*string, bool) {
-	if o == nil || o.Sha256 == nil {
-		return nil, false
-	}
-	return o.Sha256, true
-}
-
-// HasSha256 returns a boolean if a field has been set.
-func (o *SystemPluginsCatalogRequest) HasSha256() bool {
-	if o != nil && o.Sha256 != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetSha256 gets a reference to the given string and assigns it to the Sha256 field.
-func (o *SystemPluginsCatalogRequest) SetSha256(v string) {
-	o.Sha256 = &v
 }
 
 // GetSha256 returns the Sha256 field value if set, zero value otherwise.

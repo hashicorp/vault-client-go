@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Bytes** | Pointer to **int32** | The number of bytes to generate (POST body parameter). Defaults to 32 (256 bits). | [optional] [default to 32]
 **Format** | Pointer to **string** | Encoding format to use. Can be \&quot;hex\&quot; or \&quot;base64\&quot;. Defaults to \&quot;base64\&quot;. | [optional] [default to "base64"]
+**Source** | Pointer to **string** | Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;. | [optional] [default to "platform"]
 **Urlbytes** | Pointer to **string** | The number of bytes to generate (POST URL parameter) | [optional] 
 
 ## Methods
@@ -76,6 +77,31 @@ SetFormat sets Format field to given value.
 `func (o *SystemToolsRandomRequest) HasFormat() bool`
 
 HasFormat returns a boolean if a field has been set.
+
+### GetSource
+
+`func (o *SystemToolsRandomRequest) GetSource() string`
+
+GetSource returns the Source field if non-nil, zero value otherwise.
+
+### GetSourceOk
+
+`func (o *SystemToolsRandomRequest) GetSourceOk() (*string, bool)`
+
+GetSourceOk returns a tuple with the Source field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSource
+
+`func (o *SystemToolsRandomRequest) SetSource(v string)`
+
+SetSource sets Source field to given value.
+
+### HasSource
+
+`func (o *SystemToolsRandomRequest) HasSource() bool`
+
+HasSource returns a boolean if a field has been set.
 
 ### GetUrlbytes
 

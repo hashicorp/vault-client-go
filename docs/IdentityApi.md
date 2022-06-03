@@ -39,8 +39,10 @@ Method | HTTP request | Description
 [**GetIdentityGroupNameName**](IdentityApi.md#GetIdentityGroupNameName) | **Get** /identity/group/name/{name} | 
 [**GetIdentityMfaLoginEnforcement**](IdentityApi.md#GetIdentityMfaLoginEnforcement) | **Get** /identity/mfa/login-enforcement | List login enforcements
 [**GetIdentityMfaLoginEnforcementName**](IdentityApi.md#GetIdentityMfaLoginEnforcementName) | **Get** /identity/mfa/login-enforcement/{name} | Read the current login enforcement
+[**GetIdentityMfaMethod**](IdentityApi.md#GetIdentityMfaMethod) | **Get** /identity/mfa/method | List MFA method configurations for all MFA methods
 [**GetIdentityMfaMethodDuo**](IdentityApi.md#GetIdentityMfaMethodDuo) | **Get** /identity/mfa/method/duo | List MFA method configurations for the given MFA method
 [**GetIdentityMfaMethodDuoMethodId**](IdentityApi.md#GetIdentityMfaMethodDuoMethodId) | **Get** /identity/mfa/method/duo/{method_id} | Read the current configuration for the given MFA method
+[**GetIdentityMfaMethodMethodId**](IdentityApi.md#GetIdentityMfaMethodMethodId) | **Get** /identity/mfa/method/{method_id} | Read the current configuration for the given ID regardless of the MFA method type
 [**GetIdentityMfaMethodOkta**](IdentityApi.md#GetIdentityMfaMethodOkta) | **Get** /identity/mfa/method/okta | List MFA method configurations for the given MFA method
 [**GetIdentityMfaMethodOktaMethodId**](IdentityApi.md#GetIdentityMfaMethodOktaMethodId) | **Get** /identity/mfa/method/okta/{method_id} | Read the current configuration for the given MFA method
 [**GetIdentityMfaMethodPingid**](IdentityApi.md#GetIdentityMfaMethodPingid) | **Get** /identity/mfa/method/pingid | List MFA method configurations for the given MFA method
@@ -2388,6 +2390,68 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## GetIdentityMfaMethod
+
+> GetIdentityMfaMethod(ctx).List(list).Execute()
+
+List MFA method configurations for all MFA methods
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    list := "list_example" // string | Must be set to `true`
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IdentityApi.GetIdentityMfaMethod(context.Background()).List(list).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityMfaMethod``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetIdentityMfaMethodRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetIdentityMfaMethodDuo
 
 > GetIdentityMfaMethodDuo(ctx).List(list).Execute()
@@ -2492,6 +2556,72 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGetIdentityMfaMethodDuoMethodIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetIdentityMfaMethodMethodId
+
+> GetIdentityMfaMethodMethodId(ctx, methodId).Execute()
+
+Read the current configuration for the given ID regardless of the MFA method type
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    methodId := "methodId_example" // string | The unique identifier for this MFA method.
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.IdentityApi.GetIdentityMfaMethodMethodId(context.Background(), methodId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityMfaMethodMethodId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**methodId** | **string** | The unique identifier for this MFA method. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetIdentityMfaMethodMethodIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

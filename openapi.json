@@ -3,7 +3,7 @@
   "info": {
     "title": "HashiCorp Vault API",
     "description": "HTTP API that gives you full access to Vault. All API routes are prefixed with `/v1/`.",
-    "version": "1.11.0",
+    "version": "1.12.0",
     "license": {
       "name": "Mozilla Public License 2.0",
       "url": "https://www.mozilla.org/en-US/MPL/2.0"
@@ -3926,68 +3926,6 @@
         }
       }
     },
-    "/auth/github/duo/access": {
-      "description": "Configure the access keys and host for Duo API connections.",
-      "x-vault-sudo": true,
-      "post": {
-        "summary": "Configure the access keys and host for Duo API connections.",
-        "operationId": "postAuthGithubDuoAccess",
-        "tags": [
-          "auth"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GithubDuoAccessRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/auth/github/duo/config": {
-      "description": "Configure Duo second factor behavior.",
-      "x-vault-sudo": true,
-      "get": {
-        "summary": "Configure Duo second factor behavior.",
-        "operationId": "getAuthGithubDuoConfig",
-        "tags": [
-          "auth"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "summary": "Configure Duo second factor behavior.",
-        "operationId": "postAuthGithubDuoConfig",
-        "tags": [
-          "auth"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GithubDuoConfigRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/auth/github/login": {
       "x-vault-unauthenticated": true,
       "post": {
@@ -4177,43 +4115,6 @@
         "responses": {
           "204": {
             "description": "empty body"
-          }
-        }
-      }
-    },
-    "/auth/github/mfa_config": {
-      "description": "Configure multi factor backend.",
-      "x-vault-sudo": true,
-      "get": {
-        "summary": "Configure multi factor backend.",
-        "operationId": "getAuthGithubMfa_config",
-        "tags": [
-          "auth"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "summary": "Configure multi factor backend.",
-        "operationId": "postAuthGithubMfa_config",
-        "tags": [
-          "auth"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GithubMfaConfigRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
           }
         }
       }
@@ -4816,68 +4717,6 @@
         }
       }
     },
-    "/auth/ldap/duo/access": {
-      "description": "Configure the access keys and host for Duo API connections.",
-      "x-vault-sudo": true,
-      "post": {
-        "summary": "Configure the access keys and host for Duo API connections.",
-        "operationId": "postAuthLdapDuoAccess",
-        "tags": [
-          "auth"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/LdapDuoAccessRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/auth/ldap/duo/config": {
-      "description": "Configure Duo second factor behavior.",
-      "x-vault-sudo": true,
-      "get": {
-        "summary": "Configure Duo second factor behavior.",
-        "operationId": "getAuthLdapDuoConfig",
-        "tags": [
-          "auth"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "summary": "Configure Duo second factor behavior.",
-        "operationId": "postAuthLdapDuoConfig",
-        "tags": [
-          "auth"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/LdapDuoConfigRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/auth/ldap/groups": {
       "description": "Manage additional groups for users allowed to authenticate.",
       "x-vault-displayAttrs": {
@@ -4999,43 +4838,6 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/LdapLoginRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/auth/ldap/mfa_config": {
-      "description": "Configure multi factor backend.",
-      "x-vault-sudo": true,
-      "get": {
-        "summary": "Configure multi factor backend.",
-        "operationId": "getAuthLdapMfa_config",
-        "tags": [
-          "auth"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "summary": "Configure multi factor backend.",
-        "operationId": "postAuthLdapMfa_config",
-        "tags": [
-          "auth"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/LdapMfaConfigRequest"
               }
             }
           }
@@ -5570,68 +5372,6 @@
         }
       }
     },
-    "/auth/okta/duo/access": {
-      "description": "Configure the access keys and host for Duo API connections.",
-      "x-vault-sudo": true,
-      "post": {
-        "summary": "Configure the access keys and host for Duo API connections.",
-        "operationId": "postAuthOktaDuoAccess",
-        "tags": [
-          "auth"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/OktaDuoAccessRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/auth/okta/duo/config": {
-      "description": "Configure Duo second factor behavior.",
-      "x-vault-sudo": true,
-      "get": {
-        "summary": "Configure Duo second factor behavior.",
-        "operationId": "getAuthOktaDuoConfig",
-        "tags": [
-          "auth"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "summary": "Configure Duo second factor behavior.",
-        "operationId": "postAuthOktaDuoConfig",
-        "tags": [
-          "auth"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/OktaDuoConfigRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/auth/okta/groups": {
       "description": "Manage users allowed to authenticate.",
       "x-vault-displayAttrs": {
@@ -5764,43 +5504,6 @@
         }
       }
     },
-    "/auth/okta/mfa_config": {
-      "description": "Configure multi factor backend.",
-      "x-vault-sudo": true,
-      "get": {
-        "summary": "Configure multi factor backend.",
-        "operationId": "getAuthOktaMfa_config",
-        "tags": [
-          "auth"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "summary": "Configure multi factor backend.",
-        "operationId": "postAuthOktaMfa_config",
-        "tags": [
-          "auth"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/OktaMfaConfigRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/auth/okta/users": {
       "description": "Manage additional groups for users allowed to authenticate.",
       "x-vault-displayAttrs": {
@@ -5897,6 +5600,31 @@
         }
       }
     },
+    "/auth/okta/verify/{nonce}": {
+      "parameters": [
+        {
+          "name": "nonce",
+          "description": "Nonce provided during a login request to retrieve the number verification challenge for the matching request.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-unauthenticated": true,
+      "get": {
+        "operationId": "getAuthOktaVerifyNonce",
+        "tags": [
+          "auth"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/auth/radius/config": {
       "description": "Configure the RADIUS server to connect to, along with its options.",
       "x-vault-createSupported": true,
@@ -5926,68 +5654,6 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/RadiusConfigRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/auth/radius/duo/access": {
-      "description": "Configure the access keys and host for Duo API connections.",
-      "x-vault-sudo": true,
-      "post": {
-        "summary": "Configure the access keys and host for Duo API connections.",
-        "operationId": "postAuthRadiusDuoAccess",
-        "tags": [
-          "auth"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RadiusDuoAccessRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/auth/radius/duo/config": {
-      "description": "Configure Duo second factor behavior.",
-      "x-vault-sudo": true,
-      "get": {
-        "summary": "Configure Duo second factor behavior.",
-        "operationId": "getAuthRadiusDuoConfig",
-        "tags": [
-          "auth"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "summary": "Configure Duo second factor behavior.",
-        "operationId": "postAuthRadiusDuoConfig",
-        "tags": [
-          "auth"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RadiusDuoConfigRequest"
               }
             }
           }
@@ -6049,43 +5715,6 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/RadiusLoginRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/auth/radius/mfa_config": {
-      "description": "Configure multi factor backend.",
-      "x-vault-sudo": true,
-      "get": {
-        "summary": "Configure multi factor backend.",
-        "operationId": "getAuthRadiusMfa_config",
-        "tags": [
-          "auth"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "summary": "Configure multi factor backend.",
-        "operationId": "postAuthRadiusMfa_config",
-        "tags": [
-          "auth"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RadiusMfaConfigRequest"
               }
             }
           }
@@ -6635,68 +6264,6 @@
         }
       }
     },
-    "/auth/userpass/duo/access": {
-      "description": "Configure the access keys and host for Duo API connections.",
-      "x-vault-sudo": true,
-      "post": {
-        "summary": "Configure the access keys and host for Duo API connections.",
-        "operationId": "postAuthUserpassDuoAccess",
-        "tags": [
-          "auth"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UserpassDuoAccessRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/auth/userpass/duo/config": {
-      "description": "Configure Duo second factor behavior.",
-      "x-vault-sudo": true,
-      "get": {
-        "summary": "Configure Duo second factor behavior.",
-        "operationId": "getAuthUserpassDuoConfig",
-        "tags": [
-          "auth"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "summary": "Configure Duo second factor behavior.",
-        "operationId": "postAuthUserpassDuoConfig",
-        "tags": [
-          "auth"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UserpassDuoConfigRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/auth/userpass/login/{username}": {
       "description": "Log in with a username and password.",
       "parameters": [
@@ -6722,43 +6289,6 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/UserpassLoginRequest"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/auth/userpass/mfa_config": {
-      "description": "Configure multi factor backend.",
-      "x-vault-sudo": true,
-      "get": {
-        "summary": "Configure multi factor backend.",
-        "operationId": "getAuthUserpassMfa_config",
-        "tags": [
-          "auth"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "summary": "Configure multi factor backend.",
-        "operationId": "postAuthUserpassMfa_config",
-        "tags": [
-          "auth"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UserpassMfaConfigRequest"
               }
             }
           }
@@ -9548,6 +9078,34 @@
         }
       }
     },
+    "/identity/mfa/method": {
+      "get": {
+        "summary": "List MFA method configurations for all MFA methods",
+        "operationId": "getIdentityMfaMethod",
+        "tags": [
+          "identity"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/identity/mfa/method/duo": {
       "get": {
         "summary": "List MFA method configurations for the given MFA method",
@@ -9957,6 +9515,31 @@
         "responses": {
           "204": {
             "description": "empty body"
+          }
+        }
+      }
+    },
+    "/identity/mfa/method/{method_id}": {
+      "parameters": [
+        {
+          "name": "method_id",
+          "description": "The unique identifier for this MFA method.",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Read the current configuration for the given ID regardless of the MFA method type",
+        "operationId": "getIdentityMfaMethodMethod_id",
+        "tags": [
+          "identity"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -10909,6 +10492,171 @@
         }
       }
     },
+    "/kubernetes/config": {
+      "description": "Configure the Kubernetes secret engine plugin.",
+      "x-vault-createSupported": true,
+      "get": {
+        "operationId": "getKubernetesConfig",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "operationId": "postKubernetesConfig",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KubernetesConfigRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteKubernetesConfig",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "204": {
+            "description": "empty body"
+          }
+        }
+      }
+    },
+    "/kubernetes/creds/{name}": {
+      "description": "Request Kubernetes service account credentials for a given Vault role.",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "Name of the Vault role",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "postKubernetesCredsName",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KubernetesCredsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/kubernetes/roles": {
+      "description": "List the existing roles in this secrets engine.",
+      "get": {
+        "operationId": "getKubernetesRoles",
+        "tags": [
+          "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/kubernetes/roles/{name}": {
+      "description": "Manage the roles that can be created with this secrets engine.",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "Name of the role",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "x-vault-createSupported": true,
+      "get": {
+        "operationId": "getKubernetesRolesName",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "operationId": "postKubernetesRolesName",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KubernetesRolesRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteKubernetesRolesName",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "204": {
+            "description": "empty body"
+          }
+        }
+      }
+    },
     "/kv/{path}": {
       "description": "Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.",
       "parameters": [
@@ -11639,11 +11387,92 @@
         }
       }
     },
+    "/pki//der": {
+      "description": "Fetch an issuer's Certificate Revocation Log (CRL).",
+      "get": {
+        "operationId": "getPkiDer",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/pki//json": {
+      "description": "Fetch a single issuer certificate.",
+      "get": {
+        "operationId": "getPkiJson",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "operationId": "postPkiJson",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiJsonRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deletePkiJson",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "204": {
+            "description": "empty body"
+          }
+        }
+      }
+    },
+    "/pki/bundle": {
+      "description": "Import the specified issuing certificates.",
+      "post": {
+        "operationId": "postPkiBundle",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiBundleRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/pki/ca": {
       "description": "Fetch a CA, CRL, CA Chain, or non-revoked certificate.",
       "x-vault-unauthenticated": true,
       "get": {
-        "summary": "Fetch a CA, CRL, CA Chain, or non-revoked certificate.",
         "operationId": "getPkiCa",
         "tags": [
           "secrets"
@@ -11659,7 +11488,6 @@
       "description": "Fetch a CA, CRL, CA Chain, or non-revoked certificate.",
       "x-vault-unauthenticated": true,
       "get": {
-        "summary": "Fetch a CA, CRL, CA Chain, or non-revoked certificate.",
         "operationId": "getPkiCaPem",
         "tags": [
           "secrets"
@@ -11675,7 +11503,6 @@
       "description": "Fetch a CA, CRL, CA Chain, or non-revoked certificate.",
       "x-vault-unauthenticated": true,
       "get": {
-        "summary": "Fetch a CA, CRL, CA Chain, or non-revoked certificate.",
         "operationId": "getPkiCa_chain",
         "tags": [
           "secrets"
@@ -11687,11 +11514,33 @@
         }
       }
     },
+    "/pki/cert": {
+      "description": "Import the specified issuing certificates.",
+      "post": {
+        "operationId": "postPkiCert",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiCertRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/pki/cert/ca_chain": {
       "description": "Fetch a CA, CRL, CA Chain, or non-revoked certificate.",
       "x-vault-unauthenticated": true,
       "get": {
-        "summary": "Fetch a CA, CRL, CA Chain, or non-revoked certificate.",
         "operationId": "getPkiCertCa_chain",
         "tags": [
           "secrets"
@@ -11707,7 +11556,6 @@
       "description": "Fetch a CA, CRL, CA Chain, or non-revoked certificate.",
       "x-vault-unauthenticated": true,
       "get": {
-        "summary": "Fetch a CA, CRL, CA Chain, or non-revoked certificate.",
         "operationId": "getPkiCertCrl",
         "tags": [
           "secrets"
@@ -11734,7 +11582,6 @@
       ],
       "x-vault-unauthenticated": true,
       "get": {
-        "summary": "Fetch a CA, CRL, CA Chain, or non-revoked certificate.",
         "operationId": "getPkiCertSerial",
         "tags": [
           "secrets"
@@ -11761,7 +11608,6 @@
       ],
       "x-vault-unauthenticated": true,
       "get": {
-        "summary": "Fetch a CA, CRL, CA Chain, or non-revoked certificate.",
         "operationId": "getPkiCertSerialRaw",
         "tags": [
           "secrets"
@@ -11788,7 +11634,6 @@
       ],
       "x-vault-unauthenticated": true,
       "get": {
-        "summary": "Fetch a CA, CRL, CA Chain, or non-revoked certificate.",
         "operationId": "getPkiCertSerialRawPem",
         "tags": [
           "secrets"
@@ -11803,7 +11648,6 @@
     "/pki/certs": {
       "description": "Fetch a CA, CRL, CA Chain, or non-revoked certificate.",
       "get": {
-        "summary": "Fetch a CA, CRL, CA Chain, or non-revoked certificate.",
         "operationId": "getPkiCerts",
         "tags": [
           "secrets"
@@ -11832,7 +11676,6 @@
     "/pki/config/ca": {
       "description": "Set the CA certificate and private key used for generated credentials.",
       "post": {
-        "summary": "Set the CA certificate and private key used for generated credentials.",
         "operationId": "postPkiConfigCa",
         "tags": [
           "secrets"
@@ -11856,7 +11699,6 @@
     "/pki/config/crl": {
       "description": "Configure the CRL expiration.",
       "get": {
-        "summary": "Configure the CRL expiration.",
         "operationId": "getPkiConfigCrl",
         "tags": [
           "secrets"
@@ -11868,7 +11710,6 @@
         }
       },
       "post": {
-        "summary": "Configure the CRL expiration.",
         "operationId": "postPkiConfigCrl",
         "tags": [
           "secrets"
@@ -11889,10 +11730,77 @@
         }
       }
     },
+    "/pki/config/issuers": {
+      "description": "Read and set the default issuer certificate for signing.",
+      "get": {
+        "operationId": "getPkiConfigIssuers",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "operationId": "postPkiConfigIssuers",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiConfigIssuersRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/pki/config/keys": {
+      "description": "Read and set the default key used for signing",
+      "get": {
+        "operationId": "getPkiConfigKeys",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "operationId": "postPkiConfigKeys",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiConfigKeysRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/pki/config/urls": {
       "description": "Set the URLs for the issuing CA, CRL distribution points, and OCSP servers.",
       "get": {
-        "summary": "Set the URLs for the issuing CA, CRL distribution points, and OCSP servers.",
         "operationId": "getPkiConfigUrls",
         "tags": [
           "secrets"
@@ -11904,7 +11812,6 @@
         }
       },
       "post": {
-        "summary": "Set the URLs for the issuing CA, CRL distribution points, and OCSP servers.",
         "operationId": "postPkiConfigUrls",
         "tags": [
           "secrets"
@@ -11929,7 +11836,6 @@
       "description": "Fetch a CA, CRL, CA Chain, or non-revoked certificate.",
       "x-vault-unauthenticated": true,
       "get": {
-        "summary": "Fetch a CA, CRL, CA Chain, or non-revoked certificate.",
         "operationId": "getPkiCrl",
         "tags": [
           "secrets"
@@ -11945,7 +11851,6 @@
       "description": "Fetch a CA, CRL, CA Chain, or non-revoked certificate.",
       "x-vault-unauthenticated": true,
       "get": {
-        "summary": "Fetch a CA, CRL, CA Chain, or non-revoked certificate.",
         "operationId": "getPkiCrlPem",
         "tags": [
           "secrets"
@@ -11960,11 +11865,33 @@
     "/pki/crl/rotate": {
       "description": "Force a rebuild of the CRL.",
       "get": {
-        "summary": "Force a rebuild of the CRL.",
         "operationId": "getPkiCrlRotate",
         "tags": [
           "secrets"
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/pki/intermediate/cross-sign": {
+      "description": "Generate a new CSR and private key used for signing.",
+      "post": {
+        "operationId": "postPkiIntermediateCrossSign",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiIntermediateCrossSignRequest"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -12034,6 +11961,29 @@
         }
       }
     },
+    "/pki/internal|exported": {
+      "description": "Generate a new private key used for signing.",
+      "post": {
+        "operationId": "postPkiInternalExported",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiInternalExportedRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/pki/issue/{role}": {
       "description": "Request a certificate using a certain role with the provided details.",
       "parameters": [
@@ -12048,7 +11998,6 @@
         }
       ],
       "post": {
-        "summary": "Request a certificate using a certain role with the provided details.",
         "operationId": "postPkiIssueRole",
         "tags": [
           "secrets"
@@ -12069,10 +12018,484 @@
         }
       }
     },
+    "/pki/issuer/{issuer_ref}/issue/{role}": {
+      "description": "Request a certificate using a certain role with the provided details.",
+      "parameters": [
+        {
+          "name": "issuer_ref",
+          "description": "Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "default"
+          },
+          "required": true
+        },
+        {
+          "name": "role",
+          "description": "The desired role with configuration for this request",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "postPkiIssuerIssuer_refIssueRole",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiIssuerIssueRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/pki/issuer/{issuer_ref}/sign-intermediate": {
+      "description": "Issue an intermediate CA certificate based on the provided CSR.",
+      "parameters": [
+        {
+          "name": "issuer_ref",
+          "description": "Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "default"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "postPkiIssuerIssuer_refSignIntermediate",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiIssuerSignIntermediateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/pki/issuer/{issuer_ref}/sign-self-issued": {
+      "description": "Re-issue a self-signed certificate based on the provided certificate.",
+      "parameters": [
+        {
+          "name": "issuer_ref",
+          "description": "Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "default"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "postPkiIssuerIssuer_refSignSelfIssued",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiIssuerSignSelfIssuedRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/pki/issuer/{issuer_ref}/sign-verbatim": {
+      "description": "Issue a certificate directly based on the provided CSR.",
+      "parameters": [
+        {
+          "name": "issuer_ref",
+          "description": "Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "default"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "postPkiIssuerIssuer_refSignVerbatim",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiIssuerSignVerbatimRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/pki/issuer/{issuer_ref}/sign-verbatim/{role}": {
+      "description": "Issue a certificate directly based on the provided CSR.",
+      "parameters": [
+        {
+          "name": "issuer_ref",
+          "description": "Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "default"
+          },
+          "required": true
+        },
+        {
+          "name": "role",
+          "description": "The desired role with configuration for this request",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "postPkiIssuerIssuer_refSignVerbatimRole",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiIssuerSignVerbatimRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/pki/issuer/{issuer_ref}/sign/{role}": {
+      "description": "Request certificates using a certain role with the provided details.",
+      "parameters": [
+        {
+          "name": "issuer_ref",
+          "description": "Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "default"
+          },
+          "required": true
+        },
+        {
+          "name": "role",
+          "description": "The desired role with configuration for this request",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "postPkiIssuerIssuer_refSignRole",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiIssuerSignRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/pki/issuers": {
+      "description": "Fetch a list of CA certificates.",
+      "x-vault-unauthenticated": true,
+      "get": {
+        "operationId": "getPkiIssuers",
+        "tags": [
+          "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/pki/issuers/generate/intermediate/{exported}": {
+      "description": "Generate a new CSR and private key used for signing.",
+      "parameters": [
+        {
+          "name": "exported",
+          "description": "Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "enum": [
+              "internal",
+              "external",
+              "kms"
+            ]
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "postPkiIssuersGenerateIntermediateExported",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiIssuersGenerateIntermediateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/pki/issuers/generate/root/{exported}": {
+      "description": "Generate a new CA certificate and private key used for signing.",
+      "parameters": [
+        {
+          "name": "exported",
+          "description": "Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "enum": [
+              "internal",
+              "external",
+              "kms"
+            ]
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "postPkiIssuersGenerateRootExported",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiIssuersGenerateRootRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/pki/key/{key_ref}": {
+      "description": "Fetch a single issuer key",
+      "parameters": [
+        {
+          "name": "key_ref",
+          "description": "Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key.",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "default"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "getPkiKeyKey_ref",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "operationId": "postPkiKeyKey_ref",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deletePkiKeyKey_ref",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "204": {
+            "description": "empty body"
+          }
+        }
+      }
+    },
+    "/pki/keys": {
+      "description": "Fetch a list of all issuer keys",
+      "get": {
+        "operationId": "getPkiKeys",
+        "tags": [
+          "secrets"
+        ],
+        "parameters": [
+          {
+            "name": "list",
+            "description": "Must be set to `true`",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true"
+              ]
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/pki/keys/import": {
+      "description": "Import the specified key.",
+      "post": {
+        "operationId": "postPkiKeysImport",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiKeysImportRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/pki/kms": {
+      "description": "Generate a new private key used for signing.",
+      "post": {
+        "operationId": "postPkiKms",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiKmsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/pki/revoke": {
       "description": "Revoke a certificate by serial number.",
       "post": {
-        "summary": "Revoke a certificate by serial number.",
         "operationId": "postPkiRevoke",
         "tags": [
           "secrets"
@@ -12096,7 +12519,6 @@
     "/pki/roles": {
       "description": "List the existing roles in this backend",
       "get": {
-        "summary": "List the existing roles in this backend",
         "operationId": "getPkiRoles",
         "tags": [
           "secrets"
@@ -12136,7 +12558,6 @@
         }
       ],
       "get": {
-        "summary": "Manage the roles that can be created with this backend.",
         "operationId": "getPkiRolesName",
         "tags": [
           "secrets"
@@ -12148,7 +12569,6 @@
         }
       },
       "post": {
-        "summary": "Manage the roles that can be created with this backend.",
         "operationId": "postPkiRolesName",
         "tags": [
           "secrets"
@@ -12169,7 +12589,6 @@
         }
       },
       "delete": {
-        "summary": "Manage the roles that can be created with this backend.",
         "operationId": "deletePkiRolesName",
         "tags": [
           "secrets"
@@ -12235,6 +12654,68 @@
         }
       }
     },
+    "/pki/root/replace": {
+      "description": "Read and set the default issuer certificate for signing.",
+      "post": {
+        "operationId": "postPkiRootReplace",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiRootReplaceRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/pki/root/rotate/{exported}": {
+      "description": "Generate a new CA certificate and private key used for signing.",
+      "parameters": [
+        {
+          "name": "exported",
+          "description": "Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "enum": [
+              "internal",
+              "external",
+              "kms"
+            ]
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "operationId": "postPkiRootRotateExported",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiRootRotateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/pki/root/sign-intermediate": {
       "description": "Issue an intermediate CA certificate based on the provided CSR.",
       "post": {
@@ -12259,7 +12740,7 @@
       }
     },
     "/pki/root/sign-self-issued": {
-      "description": "Signs another CA's self-issued certificate.",
+      "description": "Re-issue a self-signed certificate based on the provided certificate.",
       "x-vault-sudo": true,
       "post": {
         "operationId": "postPkiRootSignSelfIssued",
@@ -12283,9 +12764,8 @@
       }
     },
     "/pki/sign-verbatim": {
-      "description": "Request certificates using a certain role with the provided details.",
+      "description": "Issue a certificate directly based on the provided CSR.",
       "post": {
-        "summary": "Request certificates using a certain role with the provided details.",
         "operationId": "postPkiSignVerbatim",
         "tags": [
           "secrets"
@@ -12307,7 +12787,7 @@
       }
     },
     "/pki/sign-verbatim/{role}": {
-      "description": "Request certificates using a certain role with the provided details.",
+      "description": "Issue a certificate directly based on the provided CSR.",
       "parameters": [
         {
           "name": "role",
@@ -12320,7 +12800,6 @@
         }
       ],
       "post": {
-        "summary": "Request certificates using a certain role with the provided details.",
         "operationId": "postPkiSignVerbatimRole",
         "tags": [
           "secrets"
@@ -12355,7 +12834,6 @@
         }
       ],
       "post": {
-        "summary": "Request certificates using a certain role with the provided details.",
         "operationId": "postPkiSignRole",
         "tags": [
           "secrets"
@@ -12409,6 +12887,89 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/pki/{issuer_ref}/crl/pem": {
+      "description": "Fetch an issuer's Certificate Revocation Log (CRL).",
+      "parameters": [
+        {
+          "name": "issuer_ref",
+          "description": "Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "default"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "getPkiIssuer_refCrlPem",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/pki/{issuer_ref}/der|/pem": {
+      "description": "Fetch a single issuer certificate.",
+      "parameters": [
+        {
+          "name": "issuer_ref",
+          "description": "Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "default"
+          },
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "getPkiIssuer_refDerPem",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "operationId": "postPkiIssuer_refDerPem",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PkiDerPemRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deletePkiIssuer_refDerPem",
+        "tags": [
+          "secrets"
+        ],
+        "responses": {
+          "204": {
+            "description": "empty body"
           }
         }
       }
@@ -14057,6 +14618,21 @@
         }
       }
     },
+    "/sys/internal/counters/activity/export": {
+      "description": "Export the historical activity of clients.",
+      "get": {
+        "summary": "Report the client count metrics, for this namespace and all child namespaces.",
+        "operationId": "getSysInternalCountersActivityExport",
+        "tags": [
+          "system"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/sys/internal/counters/activity/monthly": {
       "description": "Count of active clients so far this month.",
       "get": {
@@ -14662,6 +15238,15 @@
     },
     "/sys/monitor": {
       "parameters": [
+        {
+          "name": "log_format",
+          "description": "Output format of logs. Supported values are \"standard\" and \"json\". The default is \"standard\".",
+          "in": "query",
+          "schema": {
+            "type": "string",
+            "default": "standard"
+          }
+        },
         {
           "name": "log_level",
           "description": "Log level to view system logs at. Currently supported values are \"trace\", \"debug\", \"info\", \"warn\", \"error\".",
@@ -16315,6 +16900,87 @@
         }
       }
     },
+    "/sys/tools/random/{source}": {
+      "description": "Generate random bytes",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Which system to source random data from, ether \"platform\", \"seal\", or \"all\".",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "platform"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "summary": "Generate random bytes",
+        "operationId": "postSysToolsRandomSource",
+        "tags": [
+          "system"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SystemToolsRandomRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/sys/tools/random/{source}/{urlbytes}": {
+      "description": "Generate random bytes",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Which system to source random data from, ether \"platform\", \"seal\", or \"all\".",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "platform"
+          },
+          "required": true
+        },
+        {
+          "name": "urlbytes",
+          "description": "The number of bytes to generate (POST URL parameter)",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "summary": "Generate random bytes",
+        "operationId": "postSysToolsRandomSourceUrlbytes",
+        "tags": [
+          "system"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SystemToolsRandomRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/sys/tools/random/{urlbytes}": {
       "description": "Generate random bytes",
       "parameters": [
@@ -17351,6 +18017,76 @@
         }
       }
     },
+    "/transit/keys/{name}/import": {
+      "description": "Imports an externally-generated key into a new transit key",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "The name of the key",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "summary": "Imports an externally-generated key into a new transit key",
+        "operationId": "postTransitKeysNameImport",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransitKeysImportRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/transit/keys/{name}/import_version": {
+      "description": "Imports an externally-generated key into an existing imported key",
+      "parameters": [
+        {
+          "name": "name",
+          "description": "The name of the key",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "summary": "Imports an externally-generated key into an existing imported key",
+        "operationId": "postTransitKeysNameImport_version",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransitKeysImportVersionRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/transit/keys/{name}/rotate": {
       "description": "Rotate named encryption key",
       "parameters": [
@@ -17417,6 +18153,87 @@
       "post": {
         "summary": "Generate random bytes",
         "operationId": "postTransitRandom",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransitRandomRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/transit/random/{source}": {
+      "description": "Generate random bytes",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Which system to source random data from, ether \"platform\", \"seal\", or \"all\".",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "platform"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "summary": "Generate random bytes",
+        "operationId": "postTransitRandomSource",
+        "tags": [
+          "secrets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransitRandomRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/transit/random/{source}/{urlbytes}": {
+      "description": "Generate random bytes",
+      "parameters": [
+        {
+          "name": "source",
+          "description": "Which system to source random data from, ether \"platform\", \"seal\", or \"all\".",
+          "in": "path",
+          "schema": {
+            "type": "string",
+            "default": "platform"
+          },
+          "required": true
+        },
+        {
+          "name": "urlbytes",
+          "description": "The number of bytes to generate (POST URL parameter)",
+          "in": "path",
+          "schema": {
+            "type": "string"
+          },
+          "required": true
+        }
+      ],
+      "post": {
+        "summary": "Generate random bytes",
+        "operationId": "postTransitRandomSourceUrlbytes",
         "tags": [
           "secrets"
         ],
@@ -17716,6 +18533,21 @@
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/transit/wrapping_key": {
+      "description": "Returns the public key to use for wrapping imported keys",
+      "get": {
+        "summary": "Returns the public key to use for wrapping imported keys",
+        "operationId": "getTransitWrapping_key",
+        "tags": [
+          "secrets"
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -20063,10 +20895,10 @@
           }
         },
         "required": [
-          "role",
-          "cf_instance_cert",
           "signing_time",
-          "signature"
+          "signature",
+          "role",
+          "cf_instance_cert"
         ]
       },
       "CfRolesRequest": {
@@ -20281,6 +21113,13 @@
             "type": "string",
             "description": "Indicates which namespace that the token will be created within. Defaults to 'default'. Available in Consul 1.7 and above."
           },
+          "consul_policies": {
+            "type": "array",
+            "description": "List of policies to attach to the token. Either \"consul_policies\" or \"consul_roles\" are required for Consul 1.5 and above, or just \"consul_policies\" if using Consul 1.4.",
+            "items": {
+              "type": "string"
+            }
+          },
           "consul_roles": {
             "type": "array",
             "description": "List of Consul roles to attach to the token. Either \"policies\" or \"consul_roles\" are required for Consul 1.5 and above.",
@@ -20303,25 +21142,42 @@
             "description": "Max TTL for the Consul token created from the role.",
             "format": "seconds"
           },
+          "node_identities": {
+            "type": "array",
+            "description": "List of Node Identities to attach to the token. Available in Consul 1.8.1 or above.",
+            "items": {
+              "type": "string"
+            }
+          },
           "partition": {
             "type": "string",
             "description": "Indicates which admin partition that the token will be created within. Defaults to 'default'. Available in Consul 1.11 and above."
           },
           "policies": {
             "type": "array",
-            "description": "List of policies to attach to the token. Either \"policies\" or \"consul_roles\" are required for Consul 1.5 and above, or just \"policies\" if using Consul 1.4.",
+            "description": "Use \"consul_policies\" instead.",
+            "items": {
+              "type": "string"
+            },
+            "deprecated": true
+          },
+          "policy": {
+            "type": "string",
+            "description": "Policy document, base64 encoded. Required for 'client' tokens. Required for Consul pre-1.4.",
+            "deprecated": true
+          },
+          "service_identities": {
+            "type": "array",
+            "description": "List of Service Identities to attach to the token, separated by semicolons. Available in Consul 1.5 or above.",
             "items": {
               "type": "string"
             }
           },
-          "policy": {
-            "type": "string",
-            "description": "Policy document, base64 encoded. Required for 'client' tokens. Required for Consul pre-1.4."
-          },
           "token_type": {
             "type": "string",
             "description": "Which type of token to create: 'client' or 'management'. If a 'management' token, the \"policy\", \"policies\", and \"consul_roles\" parameters are not required. Defaults to 'client'.",
-            "default": "client"
+            "default": "client",
+            "deprecated": true
           },
           "ttl": {
             "type": "integer",
@@ -20339,6 +21195,11 @@
             "x-vault-displayAttrs": {
               "name": "Credentials"
             }
+          },
+          "custom_endpoint": {
+            "type": "object",
+            "description": "Specifies overrides for various Google API Service Endpoints used in requests.",
+            "format": "kvpairs"
           },
           "gce_alias": {
             "type": "string",
@@ -20926,8 +21787,9 @@
             "description": "The organization users must be part of"
           },
           "organization_id": {
+            "type": "integer",
             "description": "The ID of the organization users must be part of",
-            "format": "unknown"
+            "format": "int64"
           },
           "token_bound_cidrs": {
             "type": "array",
@@ -21023,51 +21885,9 @@
           "organization"
         ]
       },
-      "GithubDuoAccessRequest": {
-        "type": "object",
-        "properties": {
-          "host": {
-            "type": "string",
-            "description": "Duo api host"
-          },
-          "ikey": {
-            "type": "string",
-            "description": "Duo integration key"
-          },
-          "skey": {
-            "type": "string",
-            "description": "Duo secret key"
-          }
-        }
-      },
-      "GithubDuoConfigRequest": {
-        "type": "object",
-        "properties": {
-          "push_info": {
-            "type": "string",
-            "description": "A string of URL-encoded key/value pairs that provides additional context about the authentication attempt in the Duo Mobile app"
-          },
-          "user_agent": {
-            "type": "string",
-            "description": "User agent to connect to Duo (default \"\")"
-          },
-          "username_format": {
-            "type": "string",
-            "description": "Format string given auth method username as argument to create Duo username (default '%s')"
-          }
-        }
-      },
       "GithubLoginRequest": {
         "type": "object",
         "properties": {
-          "method": {
-            "type": "string",
-            "description": "Multi-factor auth method to use (optional)"
-          },
-          "passcode": {
-            "type": "string",
-            "description": "One time passcode (optional)"
-          },
           "token": {
             "type": "string",
             "description": "GitHub personal API token"
@@ -21089,15 +21909,6 @@
           "value": {
             "type": "string",
             "description": "Value for users mapping"
-          }
-        }
-      },
-      "GithubMfaConfigRequest": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Enables MFA with given backend (available: duo)"
           }
         }
       },
@@ -21593,7 +22404,7 @@
             "type": "boolean",
             "description": "If true, the user is reminded to use the passcode upon MFA validation. This option does not enforce using the passcode. Defaults to false."
           },
-          "username_template": {
+          "username_format": {
             "type": "string",
             "description": "A template string for mapping Identity names to MFA method names. Values to subtitute should be placed in {{}}. For example, \"{{alias.name}}@example.com\". Currently-supported mappings: alias.name: The name returned by the mount configured via the mount_accessor parameter If blank, the Alias's name field will be used as-is."
           }
@@ -21626,7 +22437,7 @@
             "type": "boolean",
             "description": "(DEPRECATED) Use base_url instead."
           },
-          "username_template": {
+          "username_format": {
             "type": "string",
             "description": "A template string for mapping Identity names to MFA method names. Values to substitute should be placed in {{}}. For example, \"{{entity.name}}@example.com\". If blank, the Entity's name field will be used as-is."
           }
@@ -21643,7 +22454,7 @@
             "type": "string",
             "description": "The settings file provided by Ping, Base64-encoded. This must be a settings file suitable for third-party clients, not the PingID SDK or PingFederate."
           },
-          "username_template": {
+          "username_format": {
             "type": "string",
             "description": "A template string for mapping Identity names to MFA method names. Values to subtitute should be placed in {{}}. For example, \"{{alias.name}}@example.com\". Currently-supported mappings: alias.name: The name returned by the mount configured via the mount_accessor parameter If blank, the Alias's name field will be used as-is."
           }
@@ -21662,8 +22473,8 @@
           }
         },
         "required": [
-          "entity_id",
-          "method_id"
+          "method_id",
+          "entity_id"
         ]
       },
       "IdentityMfaMethodTotpAdminGenerateRequest": {
@@ -21716,6 +22527,10 @@
             "type": "integer",
             "description": "Determines the size in bytes of the generated key.",
             "default": 20
+          },
+          "max_validation_attempts": {
+            "type": "integer",
+            "description": "Max number of allowed validation attempts."
           },
           "method_id": {
             "type": "string",
@@ -21902,11 +22717,11 @@
           }
         },
         "required": [
-          "client_id",
+          "redirect_uri",
           "response_type",
+          "client_id",
           "state",
-          "scope",
-          "redirect_uri"
+          "scope"
         ]
       },
       "IdentityOidcProviderRequest": {
@@ -21957,9 +22772,9 @@
           }
         },
         "required": [
+          "code",
           "grant_type",
-          "redirect_uri",
-          "code"
+          "redirect_uri"
         ]
       },
       "IdentityOidcRoleRequest": {
@@ -22380,6 +23195,10 @@
             "type": "string",
             "description": "The claim to use for the Identity entity alias name"
           },
+          "user_claim_json_pointer": {
+            "type": "boolean",
+            "description": "If true, the user_claim value will use JSON pointer syntax for referencing claims."
+          },
           "verbose_oidc_logging": {
             "type": "boolean",
             "description": "Log received OIDC tokens and claims when debug-level logging is active. Not recommended in production since sensitive information may be present in OIDC responses."
@@ -22756,6 +23575,27 @@
           }
         }
       },
+      "KubernetesCredsRequest": {
+        "type": "object",
+        "properties": {
+          "cluster_role_binding": {
+            "type": "boolean",
+            "description": "If true, generate a ClusterRoleBinding to grant permissions across the whole cluster instead of within a namespace. Requires the Vault role to have kubernetes_role_type set to ClusterRole."
+          },
+          "kubernetes_namespace": {
+            "type": "string",
+            "description": "The name of the Kubernetes namespace in which to generate the credentials"
+          },
+          "ttl": {
+            "type": "integer",
+            "description": "The TTL of the generated credentials",
+            "format": "seconds"
+          }
+        },
+        "required": [
+          "kubernetes_namespace"
+        ]
+      },
       "KubernetesLoginRequest": {
         "type": "object",
         "properties": {
@@ -22918,6 +23758,62 @@
             "deprecated": true
           }
         }
+      },
+      "KubernetesRolesRequest": {
+        "type": "object",
+        "properties": {
+          "allowed_kubernetes_namespaces": {
+            "type": "array",
+            "description": "A list of the Kubernetes namespaces in which credentials can be generated. If set to \"*\" all namespaces are allowed.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "extra_annotations": {
+            "type": "object",
+            "description": "Additional annotations to apply to all generated Kubernetes objects.",
+            "format": "kvpairs"
+          },
+          "extra_labels": {
+            "type": "object",
+            "description": "Additional labels to apply to all generated Kubernetes objects.",
+            "format": "kvpairs"
+          },
+          "generated_role_rules": {
+            "type": "string",
+            "description": "The Role or ClusterRole rules to use when generating a role. Accepts either a JSON or YAML object. If set, the entire chain of Kubernetes objects will be generated."
+          },
+          "kubernetes_role_name": {
+            "type": "string",
+            "description": "The pre-existing Role or ClusterRole to bind a generated service account to. If set, Kubernetes token, service account, and role binding objects will be created."
+          },
+          "kubernetes_role_type": {
+            "type": "string",
+            "description": "Specifies whether the Kubernetes role is a Role or ClusterRole.",
+            "default": "Role"
+          },
+          "name_template": {
+            "type": "string",
+            "description": "The name template to use when generating service accounts, roles and role bindings. If unset, a default template is used."
+          },
+          "service_account_name": {
+            "type": "string",
+            "description": "The pre-existing service account to generate tokens for. Mutually exclusive with all role parameters. If set, only a Kubernetes service account token will be created."
+          },
+          "token_default_ttl": {
+            "type": "integer",
+            "description": "The default ttl for generated Kubernetes service account tokens. If not set or set to 0, will use system default.",
+            "format": "seconds"
+          },
+          "token_max_ttl": {
+            "type": "integer",
+            "description": "The maximum ttl for generated Kubernetes service account tokens. If not set or set to 0, will use system default.",
+            "format": "seconds"
+          }
+        },
+        "required": [
+          "allowed_kubernetes_namespaces"
+        ]
       },
       "KvConfigRequest": {
         "type": "object",
@@ -23290,40 +24186,6 @@
           }
         }
       },
-      "LdapDuoAccessRequest": {
-        "type": "object",
-        "properties": {
-          "host": {
-            "type": "string",
-            "description": "Duo api host"
-          },
-          "ikey": {
-            "type": "string",
-            "description": "Duo integration key"
-          },
-          "skey": {
-            "type": "string",
-            "description": "Duo secret key"
-          }
-        }
-      },
-      "LdapDuoConfigRequest": {
-        "type": "object",
-        "properties": {
-          "push_info": {
-            "type": "string",
-            "description": "A string of URL-encoded key/value pairs that provides additional context about the authentication attempt in the Duo Mobile app"
-          },
-          "user_agent": {
-            "type": "string",
-            "description": "User agent to connect to Duo (default \"\")"
-          },
-          "username_format": {
-            "type": "string",
-            "description": "Format string given auth method username as argument to create Duo username (default '%s')"
-          }
-        }
-      },
       "LdapGroupsRequest": {
         "type": "object",
         "properties": {
@@ -23339,26 +24201,9 @@
       "LdapLoginRequest": {
         "type": "object",
         "properties": {
-          "method": {
-            "type": "string",
-            "description": "Multi-factor auth method to use (optional)"
-          },
-          "passcode": {
-            "type": "string",
-            "description": "One time passcode (optional)"
-          },
           "password": {
             "type": "string",
             "description": "Password for this user."
-          }
-        }
-      },
-      "LdapMfaConfigRequest": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Enables MFA with given backend (available: duo)"
           }
         }
       },
@@ -23964,6 +24809,10 @@
             "type": "string",
             "description": "The claim to use for the Identity entity alias name"
           },
+          "user_claim_json_pointer": {
+            "type": "boolean",
+            "description": "If true, the user_claim value will use JSON pointer syntax for referencing claims."
+          },
           "verbose_oidc_logging": {
             "type": "boolean",
             "description": "Log received OIDC tokens and claims when debug-level logging is active. Not recommended in production since sensitive information may be present in OIDC responses."
@@ -24113,40 +24962,6 @@
           }
         }
       },
-      "OktaDuoAccessRequest": {
-        "type": "object",
-        "properties": {
-          "host": {
-            "type": "string",
-            "description": "Duo api host"
-          },
-          "ikey": {
-            "type": "string",
-            "description": "Duo integration key"
-          },
-          "skey": {
-            "type": "string",
-            "description": "Duo secret key"
-          }
-        }
-      },
-      "OktaDuoConfigRequest": {
-        "type": "object",
-        "properties": {
-          "push_info": {
-            "type": "string",
-            "description": "A string of URL-encoded key/value pairs that provides additional context about the authentication attempt in the Duo Mobile app"
-          },
-          "user_agent": {
-            "type": "string",
-            "description": "User agent to connect to Duo (default \"\")"
-          },
-          "username_format": {
-            "type": "string",
-            "description": "Format string given auth method username as argument to create Duo username (default '%s')"
-          }
-        }
-      },
       "OktaGroupsRequest": {
         "type": "object",
         "properties": {
@@ -24162,30 +24977,21 @@
       "OktaLoginRequest": {
         "type": "object",
         "properties": {
-          "method": {
+          "nonce": {
             "type": "string",
-            "description": "Multi-factor auth method to use (optional)"
-          },
-          "passcode": {
-            "type": "string",
-            "description": "One time passcode (optional)"
+            "description": "Nonce provided if performing login that requires number verification challenge. Logins through the vault login CLI command will automatically generate a nonce."
           },
           "password": {
             "type": "string",
             "description": "Password for this user."
           },
+          "provider": {
+            "type": "string",
+            "description": "Preferred factor provider."
+          },
           "totp": {
             "type": "string",
             "description": "TOTP passcode."
-          }
-        }
-      },
-      "OktaMfaConfigRequest": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Enables MFA with given backend (available: duo)"
           }
         }
       },
@@ -24482,6 +25288,24 @@
           }
         }
       },
+      "PkiBundleRequest": {
+        "type": "object",
+        "properties": {
+          "pem_bundle": {
+            "type": "string",
+            "description": "PEM-format, concatenated unencrypted secret-key (optional) and certificates."
+          }
+        }
+      },
+      "PkiCertRequest": {
+        "type": "object",
+        "properties": {
+          "pem_bundle": {
+            "type": "string",
+            "description": "PEM-format, concatenated unencrypted secret-key (optional) and certificates."
+          }
+        }
+      },
       "PkiConfigCaRequest": {
         "type": "object",
         "properties": {
@@ -24502,6 +25326,24 @@
             "type": "string",
             "description": "The amount of time the generated CRL should be valid; defaults to 72 hours",
             "default": "72h"
+          }
+        }
+      },
+      "PkiConfigIssuersRequest": {
+        "type": "object",
+        "properties": {
+          "default": {
+            "type": "string",
+            "description": "Reference (name or identifier) to the default issuer."
+          }
+        }
+      },
+      "PkiConfigKeysRequest": {
+        "type": "object",
+        "properties": {
+          "default": {
+            "type": "string",
+            "description": "Reference (name or identifier) of the default key."
           }
         }
       },
@@ -24527,6 +25369,260 @@
             "description": "Comma-separated list of URLs to be used for the OCSP servers attribute. See also RFC 5280 Section 4.2.2.1.",
             "items": {
               "type": "string"
+            }
+          }
+        }
+      },
+      "PkiDerPemRequest": {
+        "type": "object",
+        "properties": {
+          "issuer_name": {
+            "type": "string",
+            "description": "Provide a name to the generated or existing issuer, the name must be unique across all issuers and not be the reserved value 'default'"
+          },
+          "leaf_not_after_behavior": {
+            "type": "string",
+            "description": "Behavior of leaf's NotAfter fields: \"err\" to error if the computed NotAfter date exceeds that of this issuer; \"truncate\" to silently truncate to that of this issuer; or \"permit\" to allow this issuance to succeed (with NotAfter exceeding that of an issuer). Note that not all values will results in certificates that can be validated through the entire validity period. It is suggested to use \"truncate\" for intermediate CAs and \"permit\" only for root CAs.",
+            "default": "err"
+          },
+          "manual_chain": {
+            "type": "array",
+            "description": "Chain of issuer references to use to build this issuer's computed CAChain field, when non-empty.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "usage": {
+            "type": "array",
+            "description": "Comma-separated list (or string slice) of usages for this issuer; valid values are \"read-only\", \"issuing-certificates\", and \"crl-signing\". Multiple values may be specified. Read-only is implicit and always set.",
+            "items": {
+              "type": "string"
+            },
+            "default": [
+              "read-only",
+              "issuing-certificates",
+              "crl-signing"
+            ]
+          }
+        }
+      },
+      "PkiIntermediateCrossSignRequest": {
+        "type": "object",
+        "properties": {
+          "add_basic_constraints": {
+            "type": "boolean",
+            "description": "Whether to add a Basic Constraints extension with CA: true. Only needed as a workaround in some compatibility scenarios with Active Directory Certificate Services."
+          },
+          "alt_names": {
+            "type": "string",
+            "description": "The requested Subject Alternative Names, if any, in a comma-delimited list. May contain both DNS names and email addresses.",
+            "x-vault-displayAttrs": {
+              "name": "DNS/Email Subject Alternative Names (SANs)"
+            }
+          },
+          "common_name": {
+            "type": "string",
+            "description": "The requested common name; if you want more than one, specify the alternative names in the alt_names map. If not specified when signing, the common name will be taken from the CSR; other names must still be specified in alt_names or ip_sans."
+          },
+          "country": {
+            "type": "array",
+            "description": "If set, Country will be set to this value.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "exclude_cn_from_sans": {
+            "type": "boolean",
+            "description": "If true, the Common Name will not be included in DNS or Email Subject Alternate Names. Defaults to false (CN is included).",
+            "default": false,
+            "x-vault-displayAttrs": {
+              "name": "Exclude Common Name from Subject Alternative Names (SANs)"
+            }
+          },
+          "exported": {
+            "type": "string",
+            "description": "Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!",
+            "enum": [
+              "internal",
+              "external",
+              "kms"
+            ]
+          },
+          "format": {
+            "type": "string",
+            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "enum": [
+              "pem",
+              "der",
+              "pem_bundle"
+            ],
+            "default": "pem",
+            "x-vault-displayAttrs": {
+              "value": "pem"
+            }
+          },
+          "ip_sans": {
+            "type": "array",
+            "description": "The requested IP SANs, if any, in a comma-delimited list",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "IP Subject Alternative Names (SANs)"
+            }
+          },
+          "key_bits": {
+            "type": "integer",
+            "description": "The number of bits to use. Allowed values are 0 (universal default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type: 224, 256 (default), 384, or 521; ignored with ed25519.",
+            "default": 0,
+            "x-vault-displayAttrs": {
+              "value": 0
+            }
+          },
+          "key_name": {
+            "type": "string",
+            "description": "Provide a name to the generated or existing key, the name must be unique across all keys and not be the reserved value 'default'"
+          },
+          "key_ref": {
+            "type": "string",
+            "description": "Reference to a existing key; either \"default\" for the configured default key, an identifier or the name assigned to the key.",
+            "default": "default"
+          },
+          "key_type": {
+            "type": "string",
+            "description": "The type of key to use; defaults to RSA. \"rsa\" \"ec\" and \"ed25519\" are the only valid values.",
+            "enum": [
+              "rsa",
+              "ec",
+              "ed25519"
+            ],
+            "default": "rsa",
+            "x-vault-displayAttrs": {
+              "value": "rsa"
+            }
+          },
+          "locality": {
+            "type": "array",
+            "description": "If set, Locality will be set to this value.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Locality/City"
+            }
+          },
+          "managed_key_id": {
+            "type": "string",
+            "description": "The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_name is required. Ignored for other types."
+          },
+          "managed_key_name": {
+            "type": "string",
+            "description": "The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_id is required. Ignored for other types."
+          },
+          "not_after": {
+            "type": "string",
+            "description": "Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ"
+          },
+          "not_before_duration": {
+            "type": "integer",
+            "description": "The duration before now which the certificate needs to be backdated by.",
+            "format": "seconds",
+            "default": 30,
+            "x-vault-displayAttrs": {
+              "value": 30
+            }
+          },
+          "organization": {
+            "type": "array",
+            "description": "If set, O (Organization) will be set to this value.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "other_sans": {
+            "type": "array",
+            "description": "Requested other SANs, in an array with the format <oid>;UTF8:<utf8 string value> for each entry.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Other SANs"
+            }
+          },
+          "ou": {
+            "type": "array",
+            "description": "If set, OU (OrganizationalUnit) will be set to this value.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "OU (Organizational Unit)"
+            }
+          },
+          "postal_code": {
+            "type": "array",
+            "description": "If set, Postal Code will be set to this value.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Postal Code"
+            }
+          },
+          "private_key_format": {
+            "type": "string",
+            "description": "Format for the returned private key. Generally the default will be controlled by the \"format\" parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \"pkcs8\" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to \"der\".",
+            "enum": [
+              "",
+              "der",
+              "pem",
+              "pkcs8"
+            ],
+            "default": "der",
+            "x-vault-displayAttrs": {
+              "value": "der"
+            }
+          },
+          "province": {
+            "type": "array",
+            "description": "If set, Province will be set to this value.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Province/State"
+            }
+          },
+          "serial_number": {
+            "type": "string",
+            "description": "The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field."
+          },
+          "street_address": {
+            "type": "array",
+            "description": "If set, Street Address will be set to this value.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Street Address"
+            }
+          },
+          "ttl": {
+            "type": "integer",
+            "description": "The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the mount max TTL. Note: this only has an effect when generating a CA cert or signing a CA cert, not when generating a CSR for an intermediate CA.",
+            "format": "seconds",
+            "x-vault-displayAttrs": {
+              "name": "TTL"
+            }
+          },
+          "uri_sans": {
+            "type": "array",
+            "description": "The requested URI SANs, if any, in a comma-delimited list.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "URI Subject Alternative Names (SANs)"
             }
           }
         }
@@ -24595,6 +25691,15 @@
               "value": 0
             }
           },
+          "key_name": {
+            "type": "string",
+            "description": "Provide a name to the generated or existing key, the name must be unique across all keys and not be the reserved value 'default'"
+          },
+          "key_ref": {
+            "type": "string",
+            "description": "Reference to a existing key; either \"default\" for the configured default key, an identifier or the name assigned to the key.",
+            "default": "default"
+          },
           "key_type": {
             "type": "string",
             "description": "The type of key to use; defaults to RSA. \"rsa\" \"ec\" and \"ed25519\" are the only valid values.",
@@ -24629,6 +25734,15 @@
           "not_after": {
             "type": "string",
             "description": "Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ"
+          },
+          "not_before_duration": {
+            "type": "integer",
+            "description": "The duration before now which the certificate needs to be backdated by.",
+            "format": "seconds",
+            "default": 30,
+            "x-vault-displayAttrs": {
+              "value": 30
+            }
           },
           "organization": {
             "type": "array",
@@ -24695,14 +25809,6 @@
             "type": "string",
             "description": "The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field."
           },
-          "signature_bits": {
-            "type": "integer",
-            "description": "The number of bits to use in the signature algorithm; accepts 256 for SHA-2-256, 384 for SHA-2-384, and 512 for SHA-2-512. Defaults to 0 to automatically detect based on key length (SHA-2-256 for RSA keys, and matching the curve size for NIST P-Curves).",
-            "default": 0,
-            "x-vault-displayAttrs": {
-              "value": 0
-            }
-          },
           "street_address": {
             "type": "array",
             "description": "If set, Street Address will be set to this value.",
@@ -24738,11 +25844,148 @@
         "properties": {
           "certificate": {
             "type": "string",
-            "description": "PEM-format certificate. This must be a CA certificate with a public key matching the previously-generated key from the generation endpoint."
+            "description": "PEM-format certificate. This must be a CA certificate with a public key matching the previously-generated key from the generation endpoint. Additional parent CAs may be optionally appended to the bundle."
+          }
+        }
+      },
+      "PkiInternalExportedRequest": {
+        "type": "object",
+        "properties": {
+          "key_bits": {
+            "type": "integer",
+            "description": "The number of bits to use. Allowed values are 0 (universal default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type: 224, 256 (default), 384, or 521; ignored with ed25519.",
+            "default": 0
+          },
+          "key_name": {
+            "type": "string",
+            "description": "Optional name to be used for this key"
+          },
+          "key_type": {
+            "type": "string",
+            "description": "The type of key to use; defaults to RSA. \"rsa\" \"ec\" and \"ed25519\" are the only valid values.",
+            "enum": [
+              "rsa",
+              "ec",
+              "ed25519"
+            ],
+            "default": "rsa",
+            "x-vault-displayAttrs": {
+              "value": "rsa"
+            }
+          },
+          "managed_key_id": {
+            "type": "string",
+            "description": "The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_name is required. Ignored for other types."
+          },
+          "managed_key_name": {
+            "type": "string",
+            "description": "The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_id is required. Ignored for other types."
           }
         }
       },
       "PkiIssueRequest": {
+        "type": "object",
+        "properties": {
+          "alt_names": {
+            "type": "string",
+            "description": "The requested Subject Alternative Names, if any, in a comma-delimited list. If email protection is enabled for the role, this may contain email addresses.",
+            "x-vault-displayAttrs": {
+              "name": "DNS/Email Subject Alternative Names (SANs)"
+            }
+          },
+          "common_name": {
+            "type": "string",
+            "description": "The requested common name; if you want more than one, specify the alternative names in the alt_names map. If email protection is enabled in the role, this may be an email address."
+          },
+          "exclude_cn_from_sans": {
+            "type": "boolean",
+            "description": "If true, the Common Name will not be included in DNS or Email Subject Alternate Names. Defaults to false (CN is included).",
+            "default": false,
+            "x-vault-displayAttrs": {
+              "name": "Exclude Common Name from Subject Alternative Names (SANs)"
+            }
+          },
+          "format": {
+            "type": "string",
+            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "enum": [
+              "pem",
+              "der",
+              "pem_bundle"
+            ],
+            "default": "pem",
+            "x-vault-displayAttrs": {
+              "value": "pem"
+            }
+          },
+          "ip_sans": {
+            "type": "array",
+            "description": "The requested IP SANs, if any, in a comma-delimited list",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "IP Subject Alternative Names (SANs)"
+            }
+          },
+          "issuer_ref": {
+            "type": "string",
+            "description": "Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.",
+            "default": "default"
+          },
+          "not_after": {
+            "type": "string",
+            "description": "Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ"
+          },
+          "other_sans": {
+            "type": "array",
+            "description": "Requested other SANs, in an array with the format <oid>;UTF8:<utf8 string value> for each entry.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Other SANs"
+            }
+          },
+          "private_key_format": {
+            "type": "string",
+            "description": "Format for the returned private key. Generally the default will be controlled by the \"format\" parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \"pkcs8\" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to \"der\".",
+            "enum": [
+              "",
+              "der",
+              "pem",
+              "pkcs8"
+            ],
+            "default": "der",
+            "x-vault-displayAttrs": {
+              "value": "der"
+            }
+          },
+          "serial_number": {
+            "type": "string",
+            "description": "The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field."
+          },
+          "ttl": {
+            "type": "integer",
+            "description": "The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the role max TTL.",
+            "format": "seconds",
+            "x-vault-displayAttrs": {
+              "name": "TTL"
+            }
+          },
+          "uri_sans": {
+            "type": "array",
+            "description": "The requested URI SANs, if any, in a comma-delimited list.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "URI Subject Alternative Names (SANs)"
+            }
+          }
+        }
+      },
+      "PkiIssuerIssueRequest": {
         "type": "object",
         "properties": {
           "alt_names": {
@@ -24839,6 +26082,996 @@
           }
         }
       },
+      "PkiIssuerSignIntermediateRequest": {
+        "type": "object",
+        "properties": {
+          "alt_names": {
+            "type": "string",
+            "description": "The requested Subject Alternative Names, if any, in a comma-delimited list. May contain both DNS names and email addresses.",
+            "x-vault-displayAttrs": {
+              "name": "DNS/Email Subject Alternative Names (SANs)"
+            }
+          },
+          "common_name": {
+            "type": "string",
+            "description": "The requested common name; if you want more than one, specify the alternative names in the alt_names map. If not specified when signing, the common name will be taken from the CSR; other names must still be specified in alt_names or ip_sans."
+          },
+          "country": {
+            "type": "array",
+            "description": "If set, Country will be set to this value.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "csr": {
+            "type": "string",
+            "description": "PEM-format CSR to be signed.",
+            "default": ""
+          },
+          "exclude_cn_from_sans": {
+            "type": "boolean",
+            "description": "If true, the Common Name will not be included in DNS or Email Subject Alternate Names. Defaults to false (CN is included).",
+            "default": false,
+            "x-vault-displayAttrs": {
+              "name": "Exclude Common Name from Subject Alternative Names (SANs)"
+            }
+          },
+          "format": {
+            "type": "string",
+            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "enum": [
+              "pem",
+              "der",
+              "pem_bundle"
+            ],
+            "default": "pem",
+            "x-vault-displayAttrs": {
+              "value": "pem"
+            }
+          },
+          "ip_sans": {
+            "type": "array",
+            "description": "The requested IP SANs, if any, in a comma-delimited list",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "IP Subject Alternative Names (SANs)"
+            }
+          },
+          "issuer_name": {
+            "type": "string",
+            "description": "Provide a name to the generated or existing issuer, the name must be unique across all issuers and not be the reserved value 'default'"
+          },
+          "locality": {
+            "type": "array",
+            "description": "If set, Locality will be set to this value.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Locality/City"
+            }
+          },
+          "max_path_length": {
+            "type": "integer",
+            "description": "The maximum allowable path length",
+            "default": -1
+          },
+          "not_after": {
+            "type": "string",
+            "description": "Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ"
+          },
+          "not_before_duration": {
+            "type": "integer",
+            "description": "The duration before now which the certificate needs to be backdated by.",
+            "format": "seconds",
+            "default": 30,
+            "x-vault-displayAttrs": {
+              "value": 30
+            }
+          },
+          "organization": {
+            "type": "array",
+            "description": "If set, O (Organization) will be set to this value.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "other_sans": {
+            "type": "array",
+            "description": "Requested other SANs, in an array with the format <oid>;UTF8:<utf8 string value> for each entry.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Other SANs"
+            }
+          },
+          "ou": {
+            "type": "array",
+            "description": "If set, OU (OrganizationalUnit) will be set to this value.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "OU (Organizational Unit)"
+            }
+          },
+          "permitted_dns_domains": {
+            "type": "array",
+            "description": "Domains for which this certificate is allowed to sign or issue child certificates. If set, all DNS names (subject and alt) on child certs must be exact matches or subsets of the given domains (see https://tools.ietf.org/html/rfc5280#section-4.2.1.10).",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Permitted DNS Domains"
+            }
+          },
+          "postal_code": {
+            "type": "array",
+            "description": "If set, Postal Code will be set to this value.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Postal Code"
+            }
+          },
+          "private_key_format": {
+            "type": "string",
+            "description": "Format for the returned private key. Generally the default will be controlled by the \"format\" parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \"pkcs8\" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to \"der\".",
+            "enum": [
+              "",
+              "der",
+              "pem",
+              "pkcs8"
+            ],
+            "default": "der",
+            "x-vault-displayAttrs": {
+              "value": "der"
+            }
+          },
+          "province": {
+            "type": "array",
+            "description": "If set, Province will be set to this value.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Province/State"
+            }
+          },
+          "serial_number": {
+            "type": "string",
+            "description": "The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field."
+          },
+          "street_address": {
+            "type": "array",
+            "description": "If set, Street Address will be set to this value.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Street Address"
+            }
+          },
+          "ttl": {
+            "type": "integer",
+            "description": "The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the mount max TTL. Note: this only has an effect when generating a CA cert or signing a CA cert, not when generating a CSR for an intermediate CA.",
+            "format": "seconds",
+            "x-vault-displayAttrs": {
+              "name": "TTL"
+            }
+          },
+          "uri_sans": {
+            "type": "array",
+            "description": "The requested URI SANs, if any, in a comma-delimited list.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "URI Subject Alternative Names (SANs)"
+            }
+          },
+          "use_csr_values": {
+            "type": "boolean",
+            "description": "If true, then: 1) Subject information, including names and alternate names, will be preserved from the CSR rather than using values provided in the other parameters to this path; 2) Any key usages requested in the CSR will be added to the basic set of key usages used for CA certs signed by this path; for instance, the non-repudiation flag; 3) Extensions requested in the CSR will be copied into the issued certificate.",
+            "default": false
+          }
+        }
+      },
+      "PkiIssuerSignRequest": {
+        "type": "object",
+        "properties": {
+          "alt_names": {
+            "type": "string",
+            "description": "The requested Subject Alternative Names, if any, in a comma-delimited list. If email protection is enabled for the role, this may contain email addresses.",
+            "x-vault-displayAttrs": {
+              "name": "DNS/Email Subject Alternative Names (SANs)"
+            }
+          },
+          "common_name": {
+            "type": "string",
+            "description": "The requested common name; if you want more than one, specify the alternative names in the alt_names map. If email protection is enabled in the role, this may be an email address."
+          },
+          "csr": {
+            "type": "string",
+            "description": "PEM-format CSR to be signed.",
+            "default": ""
+          },
+          "exclude_cn_from_sans": {
+            "type": "boolean",
+            "description": "If true, the Common Name will not be included in DNS or Email Subject Alternate Names. Defaults to false (CN is included).",
+            "default": false,
+            "x-vault-displayAttrs": {
+              "name": "Exclude Common Name from Subject Alternative Names (SANs)"
+            }
+          },
+          "format": {
+            "type": "string",
+            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "enum": [
+              "pem",
+              "der",
+              "pem_bundle"
+            ],
+            "default": "pem",
+            "x-vault-displayAttrs": {
+              "value": "pem"
+            }
+          },
+          "ip_sans": {
+            "type": "array",
+            "description": "The requested IP SANs, if any, in a comma-delimited list",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "IP Subject Alternative Names (SANs)"
+            }
+          },
+          "not_after": {
+            "type": "string",
+            "description": "Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ"
+          },
+          "other_sans": {
+            "type": "array",
+            "description": "Requested other SANs, in an array with the format <oid>;UTF8:<utf8 string value> for each entry.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Other SANs"
+            }
+          },
+          "private_key_format": {
+            "type": "string",
+            "description": "Format for the returned private key. Generally the default will be controlled by the \"format\" parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \"pkcs8\" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to \"der\".",
+            "enum": [
+              "",
+              "der",
+              "pem",
+              "pkcs8"
+            ],
+            "default": "der",
+            "x-vault-displayAttrs": {
+              "value": "der"
+            }
+          },
+          "serial_number": {
+            "type": "string",
+            "description": "The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field."
+          },
+          "ttl": {
+            "type": "integer",
+            "description": "The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the role max TTL.",
+            "format": "seconds",
+            "x-vault-displayAttrs": {
+              "name": "TTL"
+            }
+          },
+          "uri_sans": {
+            "type": "array",
+            "description": "The requested URI SANs, if any, in a comma-delimited list.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "URI Subject Alternative Names (SANs)"
+            }
+          }
+        }
+      },
+      "PkiIssuerSignSelfIssuedRequest": {
+        "type": "object",
+        "properties": {
+          "certificate": {
+            "type": "string",
+            "description": "PEM-format self-issued certificate to be signed."
+          },
+          "require_matching_certificate_algorithms": {
+            "type": "boolean",
+            "description": "If true, require the public key algorithm of the signer to match that of the self issued certificate.",
+            "default": false
+          }
+        }
+      },
+      "PkiIssuerSignVerbatimRequest": {
+        "type": "object",
+        "properties": {
+          "alt_names": {
+            "type": "string",
+            "description": "The requested Subject Alternative Names, if any, in a comma-delimited list. If email protection is enabled for the role, this may contain email addresses.",
+            "x-vault-displayAttrs": {
+              "name": "DNS/Email Subject Alternative Names (SANs)"
+            }
+          },
+          "common_name": {
+            "type": "string",
+            "description": "The requested common name; if you want more than one, specify the alternative names in the alt_names map. If email protection is enabled in the role, this may be an email address."
+          },
+          "csr": {
+            "type": "string",
+            "description": "PEM-format CSR to be signed. Values will be taken verbatim from the CSR, except for basic constraints.",
+            "default": ""
+          },
+          "exclude_cn_from_sans": {
+            "type": "boolean",
+            "description": "If true, the Common Name will not be included in DNS or Email Subject Alternate Names. Defaults to false (CN is included).",
+            "default": false,
+            "x-vault-displayAttrs": {
+              "name": "Exclude Common Name from Subject Alternative Names (SANs)"
+            }
+          },
+          "ext_key_usage": {
+            "type": "array",
+            "description": "A comma-separated string or list of extended key usages. Valid values can be found at https://golang.org/pkg/crypto/x509/#ExtKeyUsage -- simply drop the \"ExtKeyUsage\" part of the name. To remove all key usages from being set, set this value to an empty list.",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
+          "ext_key_usage_oids": {
+            "type": "array",
+            "description": "A comma-separated string or list of extended key usage oids.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "format": {
+            "type": "string",
+            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "enum": [
+              "pem",
+              "der",
+              "pem_bundle"
+            ],
+            "default": "pem",
+            "x-vault-displayAttrs": {
+              "value": "pem"
+            }
+          },
+          "ip_sans": {
+            "type": "array",
+            "description": "The requested IP SANs, if any, in a comma-delimited list",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "IP Subject Alternative Names (SANs)"
+            }
+          },
+          "key_usage": {
+            "type": "array",
+            "description": "A comma-separated string or list of key usages (not extended key usages). Valid values can be found at https://golang.org/pkg/crypto/x509/#KeyUsage -- simply drop the \"KeyUsage\" part of the name. To remove all key usages from being set, set this value to an empty list.",
+            "items": {
+              "type": "string"
+            },
+            "default": [
+              "DigitalSignature",
+              "KeyAgreement",
+              "KeyEncipherment"
+            ]
+          },
+          "not_after": {
+            "type": "string",
+            "description": "Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ"
+          },
+          "other_sans": {
+            "type": "array",
+            "description": "Requested other SANs, in an array with the format <oid>;UTF8:<utf8 string value> for each entry.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Other SANs"
+            }
+          },
+          "private_key_format": {
+            "type": "string",
+            "description": "Format for the returned private key. Generally the default will be controlled by the \"format\" parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \"pkcs8\" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to \"der\".",
+            "enum": [
+              "",
+              "der",
+              "pem",
+              "pkcs8"
+            ],
+            "default": "der",
+            "x-vault-displayAttrs": {
+              "value": "der"
+            }
+          },
+          "role": {
+            "type": "string",
+            "description": "The desired role with configuration for this request"
+          },
+          "serial_number": {
+            "type": "string",
+            "description": "The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field."
+          },
+          "ttl": {
+            "type": "integer",
+            "description": "The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the role max TTL.",
+            "format": "seconds",
+            "x-vault-displayAttrs": {
+              "name": "TTL"
+            }
+          },
+          "uri_sans": {
+            "type": "array",
+            "description": "The requested URI SANs, if any, in a comma-delimited list.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "URI Subject Alternative Names (SANs)"
+            }
+          }
+        }
+      },
+      "PkiIssuersGenerateIntermediateRequest": {
+        "type": "object",
+        "properties": {
+          "add_basic_constraints": {
+            "type": "boolean",
+            "description": "Whether to add a Basic Constraints extension with CA: true. Only needed as a workaround in some compatibility scenarios with Active Directory Certificate Services."
+          },
+          "alt_names": {
+            "type": "string",
+            "description": "The requested Subject Alternative Names, if any, in a comma-delimited list. May contain both DNS names and email addresses.",
+            "x-vault-displayAttrs": {
+              "name": "DNS/Email Subject Alternative Names (SANs)"
+            }
+          },
+          "common_name": {
+            "type": "string",
+            "description": "The requested common name; if you want more than one, specify the alternative names in the alt_names map. If not specified when signing, the common name will be taken from the CSR; other names must still be specified in alt_names or ip_sans."
+          },
+          "country": {
+            "type": "array",
+            "description": "If set, Country will be set to this value.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "exclude_cn_from_sans": {
+            "type": "boolean",
+            "description": "If true, the Common Name will not be included in DNS or Email Subject Alternate Names. Defaults to false (CN is included).",
+            "default": false,
+            "x-vault-displayAttrs": {
+              "name": "Exclude Common Name from Subject Alternative Names (SANs)"
+            }
+          },
+          "format": {
+            "type": "string",
+            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "enum": [
+              "pem",
+              "der",
+              "pem_bundle"
+            ],
+            "default": "pem",
+            "x-vault-displayAttrs": {
+              "value": "pem"
+            }
+          },
+          "ip_sans": {
+            "type": "array",
+            "description": "The requested IP SANs, if any, in a comma-delimited list",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "IP Subject Alternative Names (SANs)"
+            }
+          },
+          "key_bits": {
+            "type": "integer",
+            "description": "The number of bits to use. Allowed values are 0 (universal default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type: 224, 256 (default), 384, or 521; ignored with ed25519.",
+            "default": 0,
+            "x-vault-displayAttrs": {
+              "value": 0
+            }
+          },
+          "key_name": {
+            "type": "string",
+            "description": "Provide a name to the generated or existing key, the name must be unique across all keys and not be the reserved value 'default'"
+          },
+          "key_ref": {
+            "type": "string",
+            "description": "Reference to a existing key; either \"default\" for the configured default key, an identifier or the name assigned to the key.",
+            "default": "default"
+          },
+          "key_type": {
+            "type": "string",
+            "description": "The type of key to use; defaults to RSA. \"rsa\" \"ec\" and \"ed25519\" are the only valid values.",
+            "enum": [
+              "rsa",
+              "ec",
+              "ed25519"
+            ],
+            "default": "rsa",
+            "x-vault-displayAttrs": {
+              "value": "rsa"
+            }
+          },
+          "locality": {
+            "type": "array",
+            "description": "If set, Locality will be set to this value.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Locality/City"
+            }
+          },
+          "managed_key_id": {
+            "type": "string",
+            "description": "The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_name is required. Ignored for other types."
+          },
+          "managed_key_name": {
+            "type": "string",
+            "description": "The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_id is required. Ignored for other types."
+          },
+          "not_after": {
+            "type": "string",
+            "description": "Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ"
+          },
+          "not_before_duration": {
+            "type": "integer",
+            "description": "The duration before now which the certificate needs to be backdated by.",
+            "format": "seconds",
+            "default": 30,
+            "x-vault-displayAttrs": {
+              "value": 30
+            }
+          },
+          "organization": {
+            "type": "array",
+            "description": "If set, O (Organization) will be set to this value.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "other_sans": {
+            "type": "array",
+            "description": "Requested other SANs, in an array with the format <oid>;UTF8:<utf8 string value> for each entry.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Other SANs"
+            }
+          },
+          "ou": {
+            "type": "array",
+            "description": "If set, OU (OrganizationalUnit) will be set to this value.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "OU (Organizational Unit)"
+            }
+          },
+          "postal_code": {
+            "type": "array",
+            "description": "If set, Postal Code will be set to this value.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Postal Code"
+            }
+          },
+          "private_key_format": {
+            "type": "string",
+            "description": "Format for the returned private key. Generally the default will be controlled by the \"format\" parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \"pkcs8\" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to \"der\".",
+            "enum": [
+              "",
+              "der",
+              "pem",
+              "pkcs8"
+            ],
+            "default": "der",
+            "x-vault-displayAttrs": {
+              "value": "der"
+            }
+          },
+          "province": {
+            "type": "array",
+            "description": "If set, Province will be set to this value.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Province/State"
+            }
+          },
+          "serial_number": {
+            "type": "string",
+            "description": "The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field."
+          },
+          "street_address": {
+            "type": "array",
+            "description": "If set, Street Address will be set to this value.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Street Address"
+            }
+          },
+          "ttl": {
+            "type": "integer",
+            "description": "The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the mount max TTL. Note: this only has an effect when generating a CA cert or signing a CA cert, not when generating a CSR for an intermediate CA.",
+            "format": "seconds",
+            "x-vault-displayAttrs": {
+              "name": "TTL"
+            }
+          },
+          "uri_sans": {
+            "type": "array",
+            "description": "The requested URI SANs, if any, in a comma-delimited list.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "URI Subject Alternative Names (SANs)"
+            }
+          }
+        }
+      },
+      "PkiIssuersGenerateRootRequest": {
+        "type": "object",
+        "properties": {
+          "alt_names": {
+            "type": "string",
+            "description": "The requested Subject Alternative Names, if any, in a comma-delimited list. May contain both DNS names and email addresses.",
+            "x-vault-displayAttrs": {
+              "name": "DNS/Email Subject Alternative Names (SANs)"
+            }
+          },
+          "common_name": {
+            "type": "string",
+            "description": "The requested common name; if you want more than one, specify the alternative names in the alt_names map. If not specified when signing, the common name will be taken from the CSR; other names must still be specified in alt_names or ip_sans."
+          },
+          "country": {
+            "type": "array",
+            "description": "If set, Country will be set to this value.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "exclude_cn_from_sans": {
+            "type": "boolean",
+            "description": "If true, the Common Name will not be included in DNS or Email Subject Alternate Names. Defaults to false (CN is included).",
+            "default": false,
+            "x-vault-displayAttrs": {
+              "name": "Exclude Common Name from Subject Alternative Names (SANs)"
+            }
+          },
+          "format": {
+            "type": "string",
+            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "enum": [
+              "pem",
+              "der",
+              "pem_bundle"
+            ],
+            "default": "pem",
+            "x-vault-displayAttrs": {
+              "value": "pem"
+            }
+          },
+          "ip_sans": {
+            "type": "array",
+            "description": "The requested IP SANs, if any, in a comma-delimited list",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "IP Subject Alternative Names (SANs)"
+            }
+          },
+          "issuer_name": {
+            "type": "string",
+            "description": "Provide a name to the generated or existing issuer, the name must be unique across all issuers and not be the reserved value 'default'"
+          },
+          "key_bits": {
+            "type": "integer",
+            "description": "The number of bits to use. Allowed values are 0 (universal default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type: 224, 256 (default), 384, or 521; ignored with ed25519.",
+            "default": 0,
+            "x-vault-displayAttrs": {
+              "value": 0
+            }
+          },
+          "key_name": {
+            "type": "string",
+            "description": "Provide a name to the generated or existing key, the name must be unique across all keys and not be the reserved value 'default'"
+          },
+          "key_ref": {
+            "type": "string",
+            "description": "Reference to a existing key; either \"default\" for the configured default key, an identifier or the name assigned to the key.",
+            "default": "default"
+          },
+          "key_type": {
+            "type": "string",
+            "description": "The type of key to use; defaults to RSA. \"rsa\" \"ec\" and \"ed25519\" are the only valid values.",
+            "enum": [
+              "rsa",
+              "ec",
+              "ed25519"
+            ],
+            "default": "rsa",
+            "x-vault-displayAttrs": {
+              "value": "rsa"
+            }
+          },
+          "locality": {
+            "type": "array",
+            "description": "If set, Locality will be set to this value.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Locality/City"
+            }
+          },
+          "managed_key_id": {
+            "type": "string",
+            "description": "The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_name is required. Ignored for other types."
+          },
+          "managed_key_name": {
+            "type": "string",
+            "description": "The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_id is required. Ignored for other types."
+          },
+          "max_path_length": {
+            "type": "integer",
+            "description": "The maximum allowable path length",
+            "default": -1
+          },
+          "not_after": {
+            "type": "string",
+            "description": "Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ"
+          },
+          "not_before_duration": {
+            "type": "integer",
+            "description": "The duration before now which the certificate needs to be backdated by.",
+            "format": "seconds",
+            "default": 30,
+            "x-vault-displayAttrs": {
+              "value": 30
+            }
+          },
+          "organization": {
+            "type": "array",
+            "description": "If set, O (Organization) will be set to this value.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "other_sans": {
+            "type": "array",
+            "description": "Requested other SANs, in an array with the format <oid>;UTF8:<utf8 string value> for each entry.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Other SANs"
+            }
+          },
+          "ou": {
+            "type": "array",
+            "description": "If set, OU (OrganizationalUnit) will be set to this value.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "OU (Organizational Unit)"
+            }
+          },
+          "permitted_dns_domains": {
+            "type": "array",
+            "description": "Domains for which this certificate is allowed to sign or issue child certificates. If set, all DNS names (subject and alt) on child certs must be exact matches or subsets of the given domains (see https://tools.ietf.org/html/rfc5280#section-4.2.1.10).",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Permitted DNS Domains"
+            }
+          },
+          "postal_code": {
+            "type": "array",
+            "description": "If set, Postal Code will be set to this value.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Postal Code"
+            }
+          },
+          "private_key_format": {
+            "type": "string",
+            "description": "Format for the returned private key. Generally the default will be controlled by the \"format\" parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \"pkcs8\" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to \"der\".",
+            "enum": [
+              "",
+              "der",
+              "pem",
+              "pkcs8"
+            ],
+            "default": "der",
+            "x-vault-displayAttrs": {
+              "value": "der"
+            }
+          },
+          "province": {
+            "type": "array",
+            "description": "If set, Province will be set to this value.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Province/State"
+            }
+          },
+          "serial_number": {
+            "type": "string",
+            "description": "The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field."
+          },
+          "signature_bits": {
+            "type": "integer",
+            "description": "The number of bits to use in the signature algorithm; accepts 256 for SHA-2-256, 384 for SHA-2-384, and 512 for SHA-2-512. Defaults to 0 to automatically detect based on key length (SHA-2-256 for RSA keys, and matching the curve size for NIST P-Curves).",
+            "default": 0,
+            "x-vault-displayAttrs": {
+              "value": 0
+            }
+          },
+          "street_address": {
+            "type": "array",
+            "description": "If set, Street Address will be set to this value.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Street Address"
+            }
+          },
+          "ttl": {
+            "type": "integer",
+            "description": "The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the mount max TTL. Note: this only has an effect when generating a CA cert or signing a CA cert, not when generating a CSR for an intermediate CA.",
+            "format": "seconds",
+            "x-vault-displayAttrs": {
+              "name": "TTL"
+            }
+          },
+          "uri_sans": {
+            "type": "array",
+            "description": "The requested URI SANs, if any, in a comma-delimited list.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "URI Subject Alternative Names (SANs)"
+            }
+          }
+        }
+      },
+      "PkiJsonRequest": {
+        "type": "object",
+        "properties": {
+          "issuer_name": {
+            "type": "string",
+            "description": "Provide a name to the generated or existing issuer, the name must be unique across all issuers and not be the reserved value 'default'"
+          },
+          "issuer_ref": {
+            "type": "string",
+            "description": "Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.",
+            "default": "default"
+          },
+          "leaf_not_after_behavior": {
+            "type": "string",
+            "description": "Behavior of leaf's NotAfter fields: \"err\" to error if the computed NotAfter date exceeds that of this issuer; \"truncate\" to silently truncate to that of this issuer; or \"permit\" to allow this issuance to succeed (with NotAfter exceeding that of an issuer). Note that not all values will results in certificates that can be validated through the entire validity period. It is suggested to use \"truncate\" for intermediate CAs and \"permit\" only for root CAs.",
+            "default": "err"
+          },
+          "manual_chain": {
+            "type": "array",
+            "description": "Chain of issuer references to use to build this issuer's computed CAChain field, when non-empty.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "usage": {
+            "type": "array",
+            "description": "Comma-separated list (or string slice) of usages for this issuer; valid values are \"read-only\", \"issuing-certificates\", and \"crl-signing\". Multiple values may be specified. Read-only is implicit and always set.",
+            "items": {
+              "type": "string"
+            },
+            "default": [
+              "read-only",
+              "issuing-certificates",
+              "crl-signing"
+            ]
+          }
+        }
+      },
+      "PkiKeyRequest": {
+        "type": "object",
+        "properties": {
+          "key_name": {
+            "type": "string",
+            "description": "Human-readable name for this key."
+          }
+        }
+      },
+      "PkiKeysImportRequest": {
+        "type": "object",
+        "properties": {
+          "key_name": {
+            "type": "string",
+            "description": "Optional name to be used for this key"
+          },
+          "pem_bundle": {
+            "type": "string",
+            "description": "PEM-format, unencrypted secret key"
+          }
+        }
+      },
+      "PkiKmsRequest": {
+        "type": "object",
+        "properties": {
+          "key_bits": {
+            "type": "integer",
+            "description": "The number of bits to use. Allowed values are 0 (universal default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type: 224, 256 (default), 384, or 521; ignored with ed25519.",
+            "default": 0
+          },
+          "key_name": {
+            "type": "string",
+            "description": "Optional name to be used for this key"
+          },
+          "key_type": {
+            "type": "string",
+            "description": "The type of key to use; defaults to RSA. \"rsa\" \"ec\" and \"ed25519\" are the only valid values.",
+            "enum": [
+              "rsa",
+              "ec",
+              "ed25519"
+            ],
+            "default": "rsa",
+            "x-vault-displayAttrs": {
+              "value": "rsa"
+            }
+          },
+          "managed_key_id": {
+            "type": "string",
+            "description": "The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_name is required. Ignored for other types."
+          },
+          "managed_key_name": {
+            "type": "string",
+            "description": "The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_id is required. Ignored for other types."
+          }
+        }
+      },
       "PkiRevokeRequest": {
         "type": "object",
         "properties": {
@@ -24886,7 +27119,8 @@
           },
           "allow_wildcard_certificates": {
             "type": "boolean",
-            "description": "If set, allows certificates with wildcards in the common name to be issued, conforming to RFC 6125's Section 6.4.3; e.g., \"*.example.net\" or \"b*z.example.net\". See the documentation for more information."
+            "description": "If set, allows certificates with wildcards in the common name to be issued, conforming to RFC 6125's Section 6.4.3; e.g., \"*.example.net\" or \"b*z.example.net\". See the documentation for more information.",
+            "default": true
           },
           "allowed_domains": {
             "type": "array",
@@ -24999,6 +27233,11 @@
             "type": "boolean",
             "description": "If set, certificates issued/signed against this role will have Vault leases attached to them. Defaults to \"false\". Certificates can be added to the CRL by \"vault revoke <lease_id>\" when certificates are associated with leases. It can also be done using the \"pki/revoke\" endpoint. However, when lease generation is disabled, invoking \"pki/revoke\" would be the only way to add the certificates to the CRL. When large number of certificates are generated with long lifetimes, it is recommended that lease generation be disabled, as large amount of leases adversely affect the startup time of Vault."
           },
+          "issuer_ref": {
+            "type": "string",
+            "description": "Reference to the issuer used to sign requests serviced by this role.",
+            "default": "default"
+          },
           "key_bits": {
             "type": "integer",
             "description": "The number of bits to use. Allowed values are 0 (universal default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type: 224, 256 (default), 384, or 521; ignored with ed25519.",
@@ -25006,11 +27245,12 @@
           },
           "key_type": {
             "type": "string",
-            "description": "The type of key to use; defaults to RSA. \"rsa\" \"ec\" and \"ed25519\" are the only valid values.",
+            "description": "The type of key to use; defaults to RSA. \"rsa\" \"ec\", \"ed25519\" and \"any\" are the only valid values.",
             "enum": [
               "rsa",
               "ec",
-              "ed25519"
+              "ed25519",
+              "any"
             ],
             "default": "rsa"
           },
@@ -25057,7 +27297,7 @@
           },
           "not_before_duration": {
             "type": "integer",
-            "description": "The duration before now the cert needs to be created / signed.",
+            "description": "The duration before now which the certificate needs to be backdated by.",
             "format": "seconds",
             "default": 30,
             "x-vault-displayAttrs": {
@@ -25083,7 +27323,7 @@
           },
           "policy_identifiers": {
             "type": "array",
-            "description": "A comma-separated string or list of policy OIDs.",
+            "description": "A comma-separated string or list of policy OIDs, or a JSON list of qualified policy information, which must include an oid, and may include a notice and/or cps url, using the form [{\"oid\"=\"1.3.6.1.4.1.7.8\",\"notice\"=\"I am a user Notice\"}, {\"oid\"=\"1.3.6.1.4.1.44947.1.2.4 \",\"cps\"=\"https://example.com\"}].",
             "items": {
               "type": "string"
             }
@@ -25213,6 +27453,10 @@
               "name": "IP Subject Alternative Names (SANs)"
             }
           },
+          "issuer_name": {
+            "type": "string",
+            "description": "Provide a name to the generated or existing issuer, the name must be unique across all issuers and not be the reserved value 'default'"
+          },
           "key_bits": {
             "type": "integer",
             "description": "The number of bits to use. Allowed values are 0 (universal default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type: 224, 256 (default), 384, or 521; ignored with ed25519.",
@@ -25220,6 +27464,15 @@
             "x-vault-displayAttrs": {
               "value": 0
             }
+          },
+          "key_name": {
+            "type": "string",
+            "description": "Provide a name to the generated or existing key, the name must be unique across all keys and not be the reserved value 'default'"
+          },
+          "key_ref": {
+            "type": "string",
+            "description": "Reference to a existing key; either \"default\" for the configured default key, an identifier or the name assigned to the key.",
+            "default": "default"
           },
           "key_type": {
             "type": "string",
@@ -25260,6 +27513,260 @@
           "not_after": {
             "type": "string",
             "description": "Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ"
+          },
+          "not_before_duration": {
+            "type": "integer",
+            "description": "The duration before now which the certificate needs to be backdated by.",
+            "format": "seconds",
+            "default": 30,
+            "x-vault-displayAttrs": {
+              "value": 30
+            }
+          },
+          "organization": {
+            "type": "array",
+            "description": "If set, O (Organization) will be set to this value.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "other_sans": {
+            "type": "array",
+            "description": "Requested other SANs, in an array with the format <oid>;UTF8:<utf8 string value> for each entry.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Other SANs"
+            }
+          },
+          "ou": {
+            "type": "array",
+            "description": "If set, OU (OrganizationalUnit) will be set to this value.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "OU (Organizational Unit)"
+            }
+          },
+          "permitted_dns_domains": {
+            "type": "array",
+            "description": "Domains for which this certificate is allowed to sign or issue child certificates. If set, all DNS names (subject and alt) on child certs must be exact matches or subsets of the given domains (see https://tools.ietf.org/html/rfc5280#section-4.2.1.10).",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Permitted DNS Domains"
+            }
+          },
+          "postal_code": {
+            "type": "array",
+            "description": "If set, Postal Code will be set to this value.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Postal Code"
+            }
+          },
+          "private_key_format": {
+            "type": "string",
+            "description": "Format for the returned private key. Generally the default will be controlled by the \"format\" parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \"pkcs8\" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to \"der\".",
+            "enum": [
+              "",
+              "der",
+              "pem",
+              "pkcs8"
+            ],
+            "default": "der",
+            "x-vault-displayAttrs": {
+              "value": "der"
+            }
+          },
+          "province": {
+            "type": "array",
+            "description": "If set, Province will be set to this value.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Province/State"
+            }
+          },
+          "serial_number": {
+            "type": "string",
+            "description": "The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field."
+          },
+          "signature_bits": {
+            "type": "integer",
+            "description": "The number of bits to use in the signature algorithm; accepts 256 for SHA-2-256, 384 for SHA-2-384, and 512 for SHA-2-512. Defaults to 0 to automatically detect based on key length (SHA-2-256 for RSA keys, and matching the curve size for NIST P-Curves).",
+            "default": 0,
+            "x-vault-displayAttrs": {
+              "value": 0
+            }
+          },
+          "street_address": {
+            "type": "array",
+            "description": "If set, Street Address will be set to this value.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Street Address"
+            }
+          },
+          "ttl": {
+            "type": "integer",
+            "description": "The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the mount max TTL. Note: this only has an effect when generating a CA cert or signing a CA cert, not when generating a CSR for an intermediate CA.",
+            "format": "seconds",
+            "x-vault-displayAttrs": {
+              "name": "TTL"
+            }
+          },
+          "uri_sans": {
+            "type": "array",
+            "description": "The requested URI SANs, if any, in a comma-delimited list.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "URI Subject Alternative Names (SANs)"
+            }
+          }
+        }
+      },
+      "PkiRootReplaceRequest": {
+        "type": "object",
+        "properties": {
+          "default": {
+            "type": "string",
+            "description": "Reference (name or identifier) to the default issuer.",
+            "default": "next"
+          }
+        }
+      },
+      "PkiRootRotateRequest": {
+        "type": "object",
+        "properties": {
+          "alt_names": {
+            "type": "string",
+            "description": "The requested Subject Alternative Names, if any, in a comma-delimited list. May contain both DNS names and email addresses.",
+            "x-vault-displayAttrs": {
+              "name": "DNS/Email Subject Alternative Names (SANs)"
+            }
+          },
+          "common_name": {
+            "type": "string",
+            "description": "The requested common name; if you want more than one, specify the alternative names in the alt_names map. If not specified when signing, the common name will be taken from the CSR; other names must still be specified in alt_names or ip_sans."
+          },
+          "country": {
+            "type": "array",
+            "description": "If set, Country will be set to this value.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "exclude_cn_from_sans": {
+            "type": "boolean",
+            "description": "If true, the Common Name will not be included in DNS or Email Subject Alternate Names. Defaults to false (CN is included).",
+            "default": false,
+            "x-vault-displayAttrs": {
+              "name": "Exclude Common Name from Subject Alternative Names (SANs)"
+            }
+          },
+          "format": {
+            "type": "string",
+            "description": "Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".",
+            "enum": [
+              "pem",
+              "der",
+              "pem_bundle"
+            ],
+            "default": "pem",
+            "x-vault-displayAttrs": {
+              "value": "pem"
+            }
+          },
+          "ip_sans": {
+            "type": "array",
+            "description": "The requested IP SANs, if any, in a comma-delimited list",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "IP Subject Alternative Names (SANs)"
+            }
+          },
+          "issuer_name": {
+            "type": "string",
+            "description": "Provide a name to the generated or existing issuer, the name must be unique across all issuers and not be the reserved value 'default'"
+          },
+          "key_bits": {
+            "type": "integer",
+            "description": "The number of bits to use. Allowed values are 0 (universal default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type: 224, 256 (default), 384, or 521; ignored with ed25519.",
+            "default": 0,
+            "x-vault-displayAttrs": {
+              "value": 0
+            }
+          },
+          "key_name": {
+            "type": "string",
+            "description": "Provide a name to the generated or existing key, the name must be unique across all keys and not be the reserved value 'default'"
+          },
+          "key_ref": {
+            "type": "string",
+            "description": "Reference to a existing key; either \"default\" for the configured default key, an identifier or the name assigned to the key.",
+            "default": "default"
+          },
+          "key_type": {
+            "type": "string",
+            "description": "The type of key to use; defaults to RSA. \"rsa\" \"ec\" and \"ed25519\" are the only valid values.",
+            "enum": [
+              "rsa",
+              "ec",
+              "ed25519"
+            ],
+            "default": "rsa",
+            "x-vault-displayAttrs": {
+              "value": "rsa"
+            }
+          },
+          "locality": {
+            "type": "array",
+            "description": "If set, Locality will be set to this value.",
+            "items": {
+              "type": "string"
+            },
+            "x-vault-displayAttrs": {
+              "name": "Locality/City"
+            }
+          },
+          "managed_key_id": {
+            "type": "string",
+            "description": "The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_name is required. Ignored for other types."
+          },
+          "managed_key_name": {
+            "type": "string",
+            "description": "The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_id is required. Ignored for other types."
+          },
+          "max_path_length": {
+            "type": "integer",
+            "description": "The maximum allowable path length",
+            "default": -1
+          },
+          "not_after": {
+            "type": "string",
+            "description": "Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ"
+          },
+          "not_before_duration": {
+            "type": "integer",
+            "description": "The duration before now which the certificate needs to be backdated by.",
+            "format": "seconds",
+            "default": 30,
+            "x-vault-displayAttrs": {
+              "value": 30
+            }
           },
           "organization": {
             "type": "array",
@@ -25431,6 +27938,15 @@
               "name": "IP Subject Alternative Names (SANs)"
             }
           },
+          "issuer_name": {
+            "type": "string",
+            "description": "Provide a name to the generated or existing issuer, the name must be unique across all issuers and not be the reserved value 'default'"
+          },
+          "issuer_ref": {
+            "type": "string",
+            "description": "Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.",
+            "default": "default"
+          },
           "locality": {
             "type": "array",
             "description": "If set, Locality will be set to this value.",
@@ -25449,6 +27965,15 @@
           "not_after": {
             "type": "string",
             "description": "Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ"
+          },
+          "not_before_duration": {
+            "type": "integer",
+            "description": "The duration before now which the certificate needs to be backdated by.",
+            "format": "seconds",
+            "default": 30,
+            "x-vault-displayAttrs": {
+              "value": 30
+            }
           },
           "organization": {
             "type": "array",
@@ -25567,6 +28092,11 @@
             "type": "string",
             "description": "PEM-format self-issued certificate to be signed."
           },
+          "issuer_ref": {
+            "type": "string",
+            "description": "Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.",
+            "default": "default"
+          },
           "require_matching_certificate_algorithms": {
             "type": "boolean",
             "description": "If true, require the public key algorithm of the signer to match that of the self issued certificate.",
@@ -25623,6 +28153,11 @@
             "x-vault-displayAttrs": {
               "name": "IP Subject Alternative Names (SANs)"
             }
+          },
+          "issuer_ref": {
+            "type": "string",
+            "description": "Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.",
+            "default": "default"
           },
           "not_after": {
             "type": "string",
@@ -25740,6 +28275,11 @@
             "x-vault-displayAttrs": {
               "name": "IP Subject Alternative Names (SANs)"
             }
+          },
+          "issuer_ref": {
+            "type": "string",
+            "description": "Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.",
+            "default": "default"
           },
           "key_usage": {
             "type": "array",
@@ -26046,51 +28586,9 @@
           }
         }
       },
-      "RadiusDuoAccessRequest": {
-        "type": "object",
-        "properties": {
-          "host": {
-            "type": "string",
-            "description": "Duo api host"
-          },
-          "ikey": {
-            "type": "string",
-            "description": "Duo integration key"
-          },
-          "skey": {
-            "type": "string",
-            "description": "Duo secret key"
-          }
-        }
-      },
-      "RadiusDuoConfigRequest": {
-        "type": "object",
-        "properties": {
-          "push_info": {
-            "type": "string",
-            "description": "A string of URL-encoded key/value pairs that provides additional context about the authentication attempt in the Duo Mobile app"
-          },
-          "user_agent": {
-            "type": "string",
-            "description": "User agent to connect to Duo (default \"\")"
-          },
-          "username_format": {
-            "type": "string",
-            "description": "Format string given auth method username as argument to create Duo username (default '%s')"
-          }
-        }
-      },
       "RadiusLoginRequest": {
         "type": "object",
         "properties": {
-          "method": {
-            "type": "string",
-            "description": "Multi-factor auth method to use (optional)"
-          },
-          "passcode": {
-            "type": "string",
-            "description": "One time passcode (optional)"
-          },
           "password": {
             "type": "string",
             "description": "Password for this user."
@@ -26102,15 +28600,6 @@
           "username": {
             "type": "string",
             "description": "Username to be used for login. (POST request body)"
-          }
-        }
-      },
-      "RadiusMfaConfigRequest": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Enables MFA with given backend (available: duo)"
           }
         }
       },
@@ -26342,6 +28831,16 @@
             "format": "seconds",
             "x-vault-displayAttrs": {
               "name": "Max TTL"
+            }
+          },
+          "not_before_duration": {
+            "type": "integer",
+            "description": "The duration that the SSH certificate should be backdated by at issuance.",
+            "format": "seconds",
+            "default": 30,
+            "x-vault-displayAttrs": {
+              "name": "Not before duration",
+              "value": 30
             }
           },
           "port": {
@@ -26992,10 +29491,6 @@
             "type": "string",
             "description": "The SHA256 sum of the executable used in the command field. This should be HEX encoded."
           },
-          "sha_256": {
-            "type": "string",
-            "description": "The SHA256 sum of the executable used in the command field. This should be HEX encoded."
-          },
           "type": {
             "type": "string",
             "description": "The type of the plugin, may be auth, secret, or database"
@@ -27272,8 +29767,9 @@
             "format": "seconds"
           },
           "max_operations": {
+            "type": "integer",
             "description": "The number of encryption operations performed before the barrier key is automatically rotated.",
-            "format": "unknown"
+            "format": "int64"
           }
         }
       },
@@ -27312,6 +29808,11 @@
             "type": "string",
             "description": "Encoding format to use. Can be \"hex\" or \"base64\". Defaults to \"base64\".",
             "default": "base64"
+          },
+          "source": {
+            "type": "string",
+            "description": "Which system to source random data from, ether \"platform\", \"seal\", or \"all\".",
+            "default": "platform"
           },
           "urlbytes": {
             "type": "string",
@@ -27860,6 +30361,65 @@
           }
         }
       },
+      "TransitKeysImportRequest": {
+        "type": "object",
+        "properties": {
+          "allow_plaintext_backup": {
+            "type": "boolean",
+            "description": "Enables taking a backup of the named key in plaintext format. Once set, this cannot be disabled."
+          },
+          "allow_rotation": {
+            "type": "boolean",
+            "description": "True if the imported key may be rotated within Vault; false otherwise."
+          },
+          "auto_rotate_period": {
+            "type": "integer",
+            "description": "Amount of time the key should live before being automatically rotated. A value of 0 (default) disables automatic rotation for the key.",
+            "format": "seconds",
+            "default": 0
+          },
+          "ciphertext": {
+            "type": "string",
+            "description": "The base64-encoded ciphertext of the keys. The AES key should be encrypted using OAEP with the wrapping key and then concatenated with the import key, wrapped by the AES key."
+          },
+          "context": {
+            "type": "string",
+            "description": "Base64 encoded context for key derivation. When reading a key with key derivation enabled, if the key type supports public keys, this will return the public key for the given context."
+          },
+          "derived": {
+            "type": "boolean",
+            "description": "Enables key derivation mode. This allows for per-transaction unique keys for encryption operations."
+          },
+          "exportable": {
+            "type": "boolean",
+            "description": "Enables keys to be exportable. This allows for all the valid keys in the key ring to be exported."
+          },
+          "hash_function": {
+            "type": "string",
+            "description": "The hash function used as a random oracle in the OAEP wrapping of the user-generated, ephemeral AES key. Can be one of \"SHA1\", \"SHA224\", \"SHA256\" (default), \"SHA384\", or \"SHA512\"",
+            "default": "SHA256"
+          },
+          "type": {
+            "type": "string",
+            "description": "The type of key being imported. Currently, \"aes128-gcm96\" (symmetric), \"aes256-gcm96\" (symmetric), \"ecdsa-p256\" (asymmetric), \"ecdsa-p384\" (asymmetric), \"ecdsa-p521\" (asymmetric), \"ed25519\" (asymmetric), \"rsa-2048\" (asymmetric), \"rsa-3072\" (asymmetric), \"rsa-4096\" (asymmetric) are supported. Defaults to \"aes256-gcm96\".",
+            "default": "aes256-gcm96"
+          }
+        }
+      },
+      "TransitKeysImportVersionRequest": {
+        "type": "object",
+        "properties": {
+          "ciphertext": {
+            "type": "string",
+            "description": "The base64-encoded ciphertext of the keys. The AES key should be encrypted using OAEP with the wrapping key and then concatenated with the import key, wrapped by the AES key."
+          },
+          "hash_function": {
+            "type": "string",
+            "description": "The hash function used as a random oracle in the OAEP wrapping of the user-generated, ephemeral AES key. Can be one of \"SHA1\", \"SHA224\", \"SHA256\" (default), \"SHA384\", or \"SHA512\"",
+            "default": "SHA256"
+          }
+        }
+      },
       "TransitKeysRequest": {
         "type": "object",
         "properties": {
@@ -27917,6 +30477,11 @@
             "type": "string",
             "description": "Encoding format to use. Can be \"hex\" or \"base64\". Defaults to \"base64\".",
             "default": "base64"
+          },
+          "source": {
+            "type": "string",
+            "description": "Which system to source random data from, ether \"platform\", \"seal\", or \"all\".",
+            "default": "platform"
           },
           "urlbytes": {
             "type": "string",
@@ -28055,63 +30620,12 @@
           }
         }
       },
-      "UserpassDuoAccessRequest": {
-        "type": "object",
-        "properties": {
-          "host": {
-            "type": "string",
-            "description": "Duo api host"
-          },
-          "ikey": {
-            "type": "string",
-            "description": "Duo integration key"
-          },
-          "skey": {
-            "type": "string",
-            "description": "Duo secret key"
-          }
-        }
-      },
-      "UserpassDuoConfigRequest": {
-        "type": "object",
-        "properties": {
-          "push_info": {
-            "type": "string",
-            "description": "A string of URL-encoded key/value pairs that provides additional context about the authentication attempt in the Duo Mobile app"
-          },
-          "user_agent": {
-            "type": "string",
-            "description": "User agent to connect to Duo (default \"\")"
-          },
-          "username_format": {
-            "type": "string",
-            "description": "Format string given auth method username as argument to create Duo username (default '%s')"
-          }
-        }
-      },
       "UserpassLoginRequest": {
         "type": "object",
         "properties": {
-          "method": {
-            "type": "string",
-            "description": "Multi-factor auth method to use (optional)"
-          },
-          "passcode": {
-            "type": "string",
-            "description": "One time passcode (optional)"
-          },
           "password": {
             "type": "string",
             "description": "Password for this user."
-          }
-        }
-      },
-      "UserpassMfaConfigRequest": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Enables MFA with given backend (available: duo)"
           }
         }
       },

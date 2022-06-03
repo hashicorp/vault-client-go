@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MethodId** | Pointer to **string** | The unique identifier for this MFA method. | [optional] 
 **SettingsFileBase64** | Pointer to **string** | The settings file provided by Ping, Base64-encoded. This must be a settings file suitable for third-party clients, not the PingID SDK or PingFederate. | [optional] 
-**UsernameTemplate** | Pointer to **string** | A template string for mapping Identity names to MFA method names. Values to subtitute should be placed in {{}}. For example, \&quot;{{alias.name}}@example.com\&quot;. Currently-supported mappings: alias.name: The name returned by the mount configured via the mount_accessor parameter If blank, the Alias&#39;s name field will be used as-is. | [optional] 
+**UsernameFormat** | Pointer to **string** | A template string for mapping Identity names to MFA method names. Values to subtitute should be placed in {{}}. For example, \&quot;{{alias.name}}@example.com\&quot;. Currently-supported mappings: alias.name: The name returned by the mount configured via the mount_accessor parameter If blank, the Alias&#39;s name field will be used as-is. | [optional] 
 
 ## Methods
 
@@ -77,30 +77,30 @@ SetSettingsFileBase64 sets SettingsFileBase64 field to given value.
 
 HasSettingsFileBase64 returns a boolean if a field has been set.
 
-### GetUsernameTemplate
+### GetUsernameFormat
 
-`func (o *IdentityMfaMethodPingidRequest) GetUsernameTemplate() string`
+`func (o *IdentityMfaMethodPingidRequest) GetUsernameFormat() string`
 
-GetUsernameTemplate returns the UsernameTemplate field if non-nil, zero value otherwise.
+GetUsernameFormat returns the UsernameFormat field if non-nil, zero value otherwise.
 
-### GetUsernameTemplateOk
+### GetUsernameFormatOk
 
-`func (o *IdentityMfaMethodPingidRequest) GetUsernameTemplateOk() (*string, bool)`
+`func (o *IdentityMfaMethodPingidRequest) GetUsernameFormatOk() (*string, bool)`
 
-GetUsernameTemplateOk returns a tuple with the UsernameTemplate field if it's non-nil, zero value otherwise
+GetUsernameFormatOk returns a tuple with the UsernameFormat field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUsernameTemplate
+### SetUsernameFormat
 
-`func (o *IdentityMfaMethodPingidRequest) SetUsernameTemplate(v string)`
+`func (o *IdentityMfaMethodPingidRequest) SetUsernameFormat(v string)`
 
-SetUsernameTemplate sets UsernameTemplate field to given value.
+SetUsernameFormat sets UsernameFormat field to given value.
 
-### HasUsernameTemplate
+### HasUsernameFormat
 
-`func (o *IdentityMfaMethodPingidRequest) HasUsernameTemplate() bool`
+`func (o *IdentityMfaMethodPingidRequest) HasUsernameFormat() bool`
 
-HasUsernameTemplate returns a boolean if a field has been set.
+HasUsernameFormat returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -4,8 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Method** | Pointer to **string** | Multi-factor auth method to use (optional) | [optional] 
-**Passcode** | Pointer to **string** | One time passcode (optional) | [optional] 
 **Password** | Pointer to **string** | Password for this user. | [optional] 
 **Urlusername** | Pointer to **string** | Username to be used for login. (URL parameter) | [optional] 
 **Username** | Pointer to **string** | Username to be used for login. (POST request body) | [optional] 
@@ -28,56 +26,6 @@ will change when the set of required properties is changed
 NewRadiusLoginRequestWithDefaults instantiates a new RadiusLoginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMethod
-
-`func (o *RadiusLoginRequest) GetMethod() string`
-
-GetMethod returns the Method field if non-nil, zero value otherwise.
-
-### GetMethodOk
-
-`func (o *RadiusLoginRequest) GetMethodOk() (*string, bool)`
-
-GetMethodOk returns a tuple with the Method field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMethod
-
-`func (o *RadiusLoginRequest) SetMethod(v string)`
-
-SetMethod sets Method field to given value.
-
-### HasMethod
-
-`func (o *RadiusLoginRequest) HasMethod() bool`
-
-HasMethod returns a boolean if a field has been set.
-
-### GetPasscode
-
-`func (o *RadiusLoginRequest) GetPasscode() string`
-
-GetPasscode returns the Passcode field if non-nil, zero value otherwise.
-
-### GetPasscodeOk
-
-`func (o *RadiusLoginRequest) GetPasscodeOk() (*string, bool)`
-
-GetPasscodeOk returns a tuple with the Passcode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPasscode
-
-`func (o *RadiusLoginRequest) SetPasscode(v string)`
-
-SetPasscode sets Passcode field to given value.
-
-### HasPasscode
-
-`func (o *RadiusLoginRequest) HasPasscode() bool`
-
-HasPasscode returns a boolean if a field has been set.
 
 ### GetPassword
 

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **ExcludeCnFromSans** | Pointer to **bool** | If true, the Common Name will not be included in DNS or Email Subject Alternate Names. Defaults to false (CN is included). | [optional] [default to false]
 **Format** | Pointer to **string** | Format for returned data. Can be \&quot;pem\&quot;, \&quot;der\&quot;, or \&quot;pem_bundle\&quot;. If \&quot;pem_bundle\&quot;, any private key and issuing cert will be appended to the certificate pem. If \&quot;der\&quot;, the value will be base64 encoded. Defaults to \&quot;pem\&quot;. | [optional] [default to "pem"]
 **IpSans** | Pointer to **[]string** | The requested IP SANs, if any, in a comma-delimited list | [optional] 
+**IssuerRef** | Pointer to **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [optional] [default to "default"]
 **NotAfter** | Pointer to **string** | Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ | [optional] 
 **OtherSans** | Pointer to **[]string** | Requested other SANs, in an array with the format &lt;oid&gt;;UTF8:&lt;utf8 string value&gt; for each entry. | [optional] 
 **PrivateKeyFormat** | Pointer to **string** | Format for the returned private key. Generally the default will be controlled by the \&quot;format\&quot; parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \&quot;pkcs8\&quot; to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to \&quot;der\&quot;. | [optional] [default to "der"]
@@ -185,6 +186,31 @@ SetIpSans sets IpSans field to given value.
 `func (o *PkiSignRequest) HasIpSans() bool`
 
 HasIpSans returns a boolean if a field has been set.
+
+### GetIssuerRef
+
+`func (o *PkiSignRequest) GetIssuerRef() string`
+
+GetIssuerRef returns the IssuerRef field if non-nil, zero value otherwise.
+
+### GetIssuerRefOk
+
+`func (o *PkiSignRequest) GetIssuerRefOk() (*string, bool)`
+
+GetIssuerRefOk returns a tuple with the IssuerRef field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIssuerRef
+
+`func (o *PkiSignRequest) SetIssuerRef(v string)`
+
+SetIssuerRef sets IssuerRef field to given value.
+
+### HasIssuerRef
+
+`func (o *PkiSignRequest) HasIssuerRef() bool`
+
+HasIssuerRef returns a boolean if a field has been set.
 
 ### GetNotAfter
 

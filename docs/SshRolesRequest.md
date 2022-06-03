@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **KeyOptionSpecs** | Pointer to **string** | [Optional for Dynamic type] [Not applicable for OTP type] [Not applicable for CA type] Comma separated option specifications which will be prefixed to RSA key in authorized_keys file. Options should be valid and comply with authorized_keys file format and should not contain spaces. | [optional] 
 **KeyType** | Pointer to **string** | [Required for all types] Type of key used to login to hosts. It can be either &#39;otp&#39;, &#39;dynamic&#39; or &#39;ca&#39;. &#39;otp&#39; type requires agent to be installed in remote hosts. | [optional] 
 **MaxTtl** | Pointer to **int32** | [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] The maximum allowed lease duration | [optional] 
+**NotBeforeDuration** | Pointer to **int32** | The duration that the SSH certificate should be backdated by at issuance. | [optional] [default to 30]
 **Port** | Pointer to **int32** | [Optional for Dynamic type] [Optional for OTP type] [Not applicable for CA type] Port number for SSH connection. Default is &#39;22&#39;. Port number does not play any role in creation of OTP. For &#39;otp&#39; type, this is just a way to inform client about the port number to use. Port number will be returned to client by Vault server along with OTP. | [optional] 
 **Ttl** | Pointer to **int32** | [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] The lease duration if no specific lease duration is requested. The lease duration controls the expiration of certificates issued by this backend. Defaults to the value of max_ttl. | [optional] 
 
@@ -701,6 +702,31 @@ SetMaxTtl sets MaxTtl field to given value.
 `func (o *SshRolesRequest) HasMaxTtl() bool`
 
 HasMaxTtl returns a boolean if a field has been set.
+
+### GetNotBeforeDuration
+
+`func (o *SshRolesRequest) GetNotBeforeDuration() int32`
+
+GetNotBeforeDuration returns the NotBeforeDuration field if non-nil, zero value otherwise.
+
+### GetNotBeforeDurationOk
+
+`func (o *SshRolesRequest) GetNotBeforeDurationOk() (*int32, bool)`
+
+GetNotBeforeDurationOk returns a tuple with the NotBeforeDuration field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNotBeforeDuration
+
+`func (o *SshRolesRequest) SetNotBeforeDuration(v int32)`
+
+SetNotBeforeDuration sets NotBeforeDuration field to given value.
+
+### HasNotBeforeDuration
+
+`func (o *SshRolesRequest) HasNotBeforeDuration() bool`
+
+HasNotBeforeDuration returns a boolean if a field has been set.
 
 ### GetPort
 

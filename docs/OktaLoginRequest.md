@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Method** | Pointer to **string** | Multi-factor auth method to use (optional) | [optional] 
-**Passcode** | Pointer to **string** | One time passcode (optional) | [optional] 
+**Nonce** | Pointer to **string** | Nonce provided if performing login that requires number verification challenge. Logins through the vault login CLI command will automatically generate a nonce. | [optional] 
 **Password** | Pointer to **string** | Password for this user. | [optional] 
+**Provider** | Pointer to **string** | Preferred factor provider. | [optional] 
 **Totp** | Pointer to **string** | TOTP passcode. | [optional] 
 
 ## Methods
@@ -28,55 +28,30 @@ NewOktaLoginRequestWithDefaults instantiates a new OktaLoginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetMethod
+### GetNonce
 
-`func (o *OktaLoginRequest) GetMethod() string`
+`func (o *OktaLoginRequest) GetNonce() string`
 
-GetMethod returns the Method field if non-nil, zero value otherwise.
+GetNonce returns the Nonce field if non-nil, zero value otherwise.
 
-### GetMethodOk
+### GetNonceOk
 
-`func (o *OktaLoginRequest) GetMethodOk() (*string, bool)`
+`func (o *OktaLoginRequest) GetNonceOk() (*string, bool)`
 
-GetMethodOk returns a tuple with the Method field if it's non-nil, zero value otherwise
+GetNonceOk returns a tuple with the Nonce field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMethod
+### SetNonce
 
-`func (o *OktaLoginRequest) SetMethod(v string)`
+`func (o *OktaLoginRequest) SetNonce(v string)`
 
-SetMethod sets Method field to given value.
+SetNonce sets Nonce field to given value.
 
-### HasMethod
+### HasNonce
 
-`func (o *OktaLoginRequest) HasMethod() bool`
+`func (o *OktaLoginRequest) HasNonce() bool`
 
-HasMethod returns a boolean if a field has been set.
-
-### GetPasscode
-
-`func (o *OktaLoginRequest) GetPasscode() string`
-
-GetPasscode returns the Passcode field if non-nil, zero value otherwise.
-
-### GetPasscodeOk
-
-`func (o *OktaLoginRequest) GetPasscodeOk() (*string, bool)`
-
-GetPasscodeOk returns a tuple with the Passcode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPasscode
-
-`func (o *OktaLoginRequest) SetPasscode(v string)`
-
-SetPasscode sets Passcode field to given value.
-
-### HasPasscode
-
-`func (o *OktaLoginRequest) HasPasscode() bool`
-
-HasPasscode returns a boolean if a field has been set.
+HasNonce returns a boolean if a field has been set.
 
 ### GetPassword
 
@@ -102,6 +77,31 @@ SetPassword sets Password field to given value.
 `func (o *OktaLoginRequest) HasPassword() bool`
 
 HasPassword returns a boolean if a field has been set.
+
+### GetProvider
+
+`func (o *OktaLoginRequest) GetProvider() string`
+
+GetProvider returns the Provider field if non-nil, zero value otherwise.
+
+### GetProviderOk
+
+`func (o *OktaLoginRequest) GetProviderOk() (*string, bool)`
+
+GetProviderOk returns a tuple with the Provider field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProvider
+
+`func (o *OktaLoginRequest) SetProvider(v string)`
+
+SetProvider sets Provider field to given value.
+
+### HasProvider
+
+`func (o *OktaLoginRequest) HasProvider() bool`
+
+HasProvider returns a boolean if a field has been set.
 
 ### GetTotp
 

@@ -114,12 +114,10 @@ Method | HTTP request | Description
 [**GetAuthGcpRoleName**](AuthApi.md#GetAuthGcpRoleName) | **Get** /auth/gcp/role/{name} | Create a GCP role with associated policies and required attributes.
 [**GetAuthGcpRoles**](AuthApi.md#GetAuthGcpRoles) | **Get** /auth/gcp/roles | Lists all the roles that are registered with Vault.
 [**GetAuthGithubConfig**](AuthApi.md#GetAuthGithubConfig) | **Get** /auth/github/config | 
-[**GetAuthGithubDuoConfig**](AuthApi.md#GetAuthGithubDuoConfig) | **Get** /auth/github/duo/config | Configure Duo second factor behavior.
 [**GetAuthGithubMapTeams**](AuthApi.md#GetAuthGithubMapTeams) | **Get** /auth/github/map/teams | Read mappings for teams
 [**GetAuthGithubMapTeamsKey**](AuthApi.md#GetAuthGithubMapTeamsKey) | **Get** /auth/github/map/teams/{key} | Read/write/delete a single teams mapping
 [**GetAuthGithubMapUsers**](AuthApi.md#GetAuthGithubMapUsers) | **Get** /auth/github/map/users | Read mappings for users
 [**GetAuthGithubMapUsersKey**](AuthApi.md#GetAuthGithubMapUsersKey) | **Get** /auth/github/map/users/{key} | Read/write/delete a single users mapping
-[**GetAuthGithubMfaConfig**](AuthApi.md#GetAuthGithubMfaConfig) | **Get** /auth/github/mfa_config | Configure multi factor backend.
 [**GetAuthJwtConfig**](AuthApi.md#GetAuthJwtConfig) | **Get** /auth/jwt/config | Read the current JWT authentication backend configuration.
 [**GetAuthJwtOidcCallback**](AuthApi.md#GetAuthJwtOidcCallback) | **Get** /auth/jwt/oidc/callback | Callback endpoint to complete an OIDC login.
 [**GetAuthJwtRole**](AuthApi.md#GetAuthJwtRole) | **Get** /auth/jwt/role | Lists all the roles registered with the backend.
@@ -133,10 +131,8 @@ Method | HTTP request | Description
 [**GetAuthKubernetesRole**](AuthApi.md#GetAuthKubernetesRole) | **Get** /auth/kubernetes/role | Lists all the roles registered with the backend.
 [**GetAuthKubernetesRoleName**](AuthApi.md#GetAuthKubernetesRoleName) | **Get** /auth/kubernetes/role/{name} | Register an role with the backend.
 [**GetAuthLdapConfig**](AuthApi.md#GetAuthLdapConfig) | **Get** /auth/ldap/config | Configure the LDAP server to connect to, along with its options.
-[**GetAuthLdapDuoConfig**](AuthApi.md#GetAuthLdapDuoConfig) | **Get** /auth/ldap/duo/config | Configure Duo second factor behavior.
 [**GetAuthLdapGroups**](AuthApi.md#GetAuthLdapGroups) | **Get** /auth/ldap/groups | Manage additional groups for users allowed to authenticate.
 [**GetAuthLdapGroupsName**](AuthApi.md#GetAuthLdapGroupsName) | **Get** /auth/ldap/groups/{name} | Manage additional groups for users allowed to authenticate.
-[**GetAuthLdapMfaConfig**](AuthApi.md#GetAuthLdapMfaConfig) | **Get** /auth/ldap/mfa_config | Configure multi factor backend.
 [**GetAuthLdapUsers**](AuthApi.md#GetAuthLdapUsers) | **Get** /auth/ldap/users | Manage users allowed to authenticate.
 [**GetAuthLdapUsersName**](AuthApi.md#GetAuthLdapUsersName) | **Get** /auth/ldap/users/{name} | Manage users allowed to authenticate.
 [**GetAuthOciConfig**](AuthApi.md#GetAuthOciConfig) | **Get** /auth/oci/config | Manages the configuration for the Vault Auth Plugin.
@@ -147,15 +143,12 @@ Method | HTTP request | Description
 [**GetAuthOidcRole**](AuthApi.md#GetAuthOidcRole) | **Get** /auth/oidc/role | Lists all the roles registered with the backend.
 [**GetAuthOidcRoleName**](AuthApi.md#GetAuthOidcRoleName) | **Get** /auth/oidc/role/{name} | Read an existing role.
 [**GetAuthOktaConfig**](AuthApi.md#GetAuthOktaConfig) | **Get** /auth/okta/config | This endpoint allows you to configure the Okta and its configuration options.  The Okta organization are the characters at the front of the URL for Okta. Example https://ORG.okta.com
-[**GetAuthOktaDuoConfig**](AuthApi.md#GetAuthOktaDuoConfig) | **Get** /auth/okta/duo/config | Configure Duo second factor behavior.
 [**GetAuthOktaGroups**](AuthApi.md#GetAuthOktaGroups) | **Get** /auth/okta/groups | Manage users allowed to authenticate.
 [**GetAuthOktaGroupsName**](AuthApi.md#GetAuthOktaGroupsName) | **Get** /auth/okta/groups/{name} | Manage users allowed to authenticate.
-[**GetAuthOktaMfaConfig**](AuthApi.md#GetAuthOktaMfaConfig) | **Get** /auth/okta/mfa_config | Configure multi factor backend.
 [**GetAuthOktaUsers**](AuthApi.md#GetAuthOktaUsers) | **Get** /auth/okta/users | Manage additional groups for users allowed to authenticate.
 [**GetAuthOktaUsersName**](AuthApi.md#GetAuthOktaUsersName) | **Get** /auth/okta/users/{name} | Manage additional groups for users allowed to authenticate.
+[**GetAuthOktaVerifyNonce**](AuthApi.md#GetAuthOktaVerifyNonce) | **Get** /auth/okta/verify/{nonce} | 
 [**GetAuthRadiusConfig**](AuthApi.md#GetAuthRadiusConfig) | **Get** /auth/radius/config | Configure the RADIUS server to connect to, along with its options.
-[**GetAuthRadiusDuoConfig**](AuthApi.md#GetAuthRadiusDuoConfig) | **Get** /auth/radius/duo/config | Configure Duo second factor behavior.
-[**GetAuthRadiusMfaConfig**](AuthApi.md#GetAuthRadiusMfaConfig) | **Get** /auth/radius/mfa_config | Configure multi factor backend.
 [**GetAuthRadiusUsers**](AuthApi.md#GetAuthRadiusUsers) | **Get** /auth/radius/users | Manage users allowed to authenticate.
 [**GetAuthRadiusUsersName**](AuthApi.md#GetAuthRadiusUsersName) | **Get** /auth/radius/users/{name} | Manage users allowed to authenticate.
 [**GetAuthTokenAccessors**](AuthApi.md#GetAuthTokenAccessors) | **Get** /auth/token/accessors/ | List token accessors, which can then be be used to iterate and discover their properties or revoke them. Because this can be used to cause a denial of service, this endpoint requires &#39;sudo&#39; capability in addition to &#39;list&#39;.
@@ -163,8 +156,6 @@ Method | HTTP request | Description
 [**GetAuthTokenLookupSelf**](AuthApi.md#GetAuthTokenLookupSelf) | **Get** /auth/token/lookup-self | This endpoint will lookup a token and its properties.
 [**GetAuthTokenRoles**](AuthApi.md#GetAuthTokenRoles) | **Get** /auth/token/roles | This endpoint lists configured roles.
 [**GetAuthTokenRolesRoleName**](AuthApi.md#GetAuthTokenRolesRoleName) | **Get** /auth/token/roles/{role_name} | 
-[**GetAuthUserpassDuoConfig**](AuthApi.md#GetAuthUserpassDuoConfig) | **Get** /auth/userpass/duo/config | Configure Duo second factor behavior.
-[**GetAuthUserpassMfaConfig**](AuthApi.md#GetAuthUserpassMfaConfig) | **Get** /auth/userpass/mfa_config | Configure multi factor backend.
 [**GetAuthUserpassUsers**](AuthApi.md#GetAuthUserpassUsers) | **Get** /auth/userpass/users | Manage users allowed to authenticate.
 [**GetAuthUserpassUsersUsername**](AuthApi.md#GetAuthUserpassUsersUsername) | **Get** /auth/userpass/users/{username} | Manage users allowed to authenticate.
 [**PostAuthAlicloudLogin**](AuthApi.md#PostAuthAlicloudLogin) | **Post** /auth/alicloud/login | Authenticates an RAM entity with Vault.
@@ -230,12 +221,9 @@ Method | HTTP request | Description
 [**PostAuthGcpRoleNameLabels**](AuthApi.md#PostAuthGcpRoleNameLabels) | **Post** /auth/gcp/role/{name}/labels | Add or remove labels for an existing &#39;gce&#39; role
 [**PostAuthGcpRoleNameServiceAccounts**](AuthApi.md#PostAuthGcpRoleNameServiceAccounts) | **Post** /auth/gcp/role/{name}/service-accounts | Add or remove service accounts for an existing &#x60;iam&#x60; role
 [**PostAuthGithubConfig**](AuthApi.md#PostAuthGithubConfig) | **Post** /auth/github/config | 
-[**PostAuthGithubDuoAccess**](AuthApi.md#PostAuthGithubDuoAccess) | **Post** /auth/github/duo/access | Configure the access keys and host for Duo API connections.
-[**PostAuthGithubDuoConfig**](AuthApi.md#PostAuthGithubDuoConfig) | **Post** /auth/github/duo/config | Configure Duo second factor behavior.
 [**PostAuthGithubLogin**](AuthApi.md#PostAuthGithubLogin) | **Post** /auth/github/login | 
 [**PostAuthGithubMapTeamsKey**](AuthApi.md#PostAuthGithubMapTeamsKey) | **Post** /auth/github/map/teams/{key} | Read/write/delete a single teams mapping
 [**PostAuthGithubMapUsersKey**](AuthApi.md#PostAuthGithubMapUsersKey) | **Post** /auth/github/map/users/{key} | Read/write/delete a single users mapping
-[**PostAuthGithubMfaConfig**](AuthApi.md#PostAuthGithubMfaConfig) | **Post** /auth/github/mfa_config | Configure multi factor backend.
 [**PostAuthJwtConfig**](AuthApi.md#PostAuthJwtConfig) | **Post** /auth/jwt/config | Configure the JWT authentication backend.
 [**PostAuthJwtLogin**](AuthApi.md#PostAuthJwtLogin) | **Post** /auth/jwt/login | Authenticates to Vault using a JWT (or OIDC) token.
 [**PostAuthJwtOidcAuthUrl**](AuthApi.md#PostAuthJwtOidcAuthUrl) | **Post** /auth/jwt/oidc/auth_url | Request an authorization URL to start an OIDC login flow.
@@ -249,11 +237,8 @@ Method | HTTP request | Description
 [**PostAuthKubernetesLogin**](AuthApi.md#PostAuthKubernetesLogin) | **Post** /auth/kubernetes/login | Authenticates Kubernetes service accounts with Vault.
 [**PostAuthKubernetesRoleName**](AuthApi.md#PostAuthKubernetesRoleName) | **Post** /auth/kubernetes/role/{name} | Register an role with the backend.
 [**PostAuthLdapConfig**](AuthApi.md#PostAuthLdapConfig) | **Post** /auth/ldap/config | Configure the LDAP server to connect to, along with its options.
-[**PostAuthLdapDuoAccess**](AuthApi.md#PostAuthLdapDuoAccess) | **Post** /auth/ldap/duo/access | Configure the access keys and host for Duo API connections.
-[**PostAuthLdapDuoConfig**](AuthApi.md#PostAuthLdapDuoConfig) | **Post** /auth/ldap/duo/config | Configure Duo second factor behavior.
 [**PostAuthLdapGroupsName**](AuthApi.md#PostAuthLdapGroupsName) | **Post** /auth/ldap/groups/{name} | Manage additional groups for users allowed to authenticate.
 [**PostAuthLdapLoginUsername**](AuthApi.md#PostAuthLdapLoginUsername) | **Post** /auth/ldap/login/{username} | Log in with a username and password.
-[**PostAuthLdapMfaConfig**](AuthApi.md#PostAuthLdapMfaConfig) | **Post** /auth/ldap/mfa_config | Configure multi factor backend.
 [**PostAuthLdapUsersName**](AuthApi.md#PostAuthLdapUsersName) | **Post** /auth/ldap/users/{name} | Manage users allowed to authenticate.
 [**PostAuthOciConfig**](AuthApi.md#PostAuthOciConfig) | **Post** /auth/oci/config | Manages the configuration for the Vault Auth Plugin.
 [**PostAuthOciLoginRole**](AuthApi.md#PostAuthOciLoginRole) | **Post** /auth/oci/login/{role} | Authenticates to Vault using OCI credentials
@@ -264,18 +249,12 @@ Method | HTTP request | Description
 [**PostAuthOidcOidcCallback**](AuthApi.md#PostAuthOidcOidcCallback) | **Post** /auth/oidc/oidc/callback | Callback endpoint to handle form_posts.
 [**PostAuthOidcRoleName**](AuthApi.md#PostAuthOidcRoleName) | **Post** /auth/oidc/role/{name} | Register an role with the backend.
 [**PostAuthOktaConfig**](AuthApi.md#PostAuthOktaConfig) | **Post** /auth/okta/config | This endpoint allows you to configure the Okta and its configuration options.  The Okta organization are the characters at the front of the URL for Okta. Example https://ORG.okta.com
-[**PostAuthOktaDuoAccess**](AuthApi.md#PostAuthOktaDuoAccess) | **Post** /auth/okta/duo/access | Configure the access keys and host for Duo API connections.
-[**PostAuthOktaDuoConfig**](AuthApi.md#PostAuthOktaDuoConfig) | **Post** /auth/okta/duo/config | Configure Duo second factor behavior.
 [**PostAuthOktaGroupsName**](AuthApi.md#PostAuthOktaGroupsName) | **Post** /auth/okta/groups/{name} | Manage users allowed to authenticate.
 [**PostAuthOktaLoginUsername**](AuthApi.md#PostAuthOktaLoginUsername) | **Post** /auth/okta/login/{username} | Log in with a username and password.
-[**PostAuthOktaMfaConfig**](AuthApi.md#PostAuthOktaMfaConfig) | **Post** /auth/okta/mfa_config | Configure multi factor backend.
 [**PostAuthOktaUsersName**](AuthApi.md#PostAuthOktaUsersName) | **Post** /auth/okta/users/{name} | Manage additional groups for users allowed to authenticate.
 [**PostAuthRadiusConfig**](AuthApi.md#PostAuthRadiusConfig) | **Post** /auth/radius/config | Configure the RADIUS server to connect to, along with its options.
-[**PostAuthRadiusDuoAccess**](AuthApi.md#PostAuthRadiusDuoAccess) | **Post** /auth/radius/duo/access | Configure the access keys and host for Duo API connections.
-[**PostAuthRadiusDuoConfig**](AuthApi.md#PostAuthRadiusDuoConfig) | **Post** /auth/radius/duo/config | Configure Duo second factor behavior.
 [**PostAuthRadiusLogin**](AuthApi.md#PostAuthRadiusLogin) | **Post** /auth/radius/login | Log in with a username and password.
 [**PostAuthRadiusLoginUrlusername**](AuthApi.md#PostAuthRadiusLoginUrlusername) | **Post** /auth/radius/login/{urlusername} | Log in with a username and password.
-[**PostAuthRadiusMfaConfig**](AuthApi.md#PostAuthRadiusMfaConfig) | **Post** /auth/radius/mfa_config | Configure multi factor backend.
 [**PostAuthRadiusUsersName**](AuthApi.md#PostAuthRadiusUsersName) | **Post** /auth/radius/users/{name} | Manage users allowed to authenticate.
 [**PostAuthTokenCreate**](AuthApi.md#PostAuthTokenCreate) | **Post** /auth/token/create | The token create path is used to create new tokens.
 [**PostAuthTokenCreateOrphan**](AuthApi.md#PostAuthTokenCreateOrphan) | **Post** /auth/token/create-orphan | The token create path is used to create new orphan tokens.
@@ -292,10 +271,7 @@ Method | HTTP request | Description
 [**PostAuthTokenRevokeSelf**](AuthApi.md#PostAuthTokenRevokeSelf) | **Post** /auth/token/revoke-self | This endpoint will delete the token used to call it and all of its child tokens.
 [**PostAuthTokenRolesRoleName**](AuthApi.md#PostAuthTokenRolesRoleName) | **Post** /auth/token/roles/{role_name} | 
 [**PostAuthTokenTidy**](AuthApi.md#PostAuthTokenTidy) | **Post** /auth/token/tidy | This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
-[**PostAuthUserpassDuoAccess**](AuthApi.md#PostAuthUserpassDuoAccess) | **Post** /auth/userpass/duo/access | Configure the access keys and host for Duo API connections.
-[**PostAuthUserpassDuoConfig**](AuthApi.md#PostAuthUserpassDuoConfig) | **Post** /auth/userpass/duo/config | Configure Duo second factor behavior.
 [**PostAuthUserpassLoginUsername**](AuthApi.md#PostAuthUserpassLoginUsername) | **Post** /auth/userpass/login/{username} | Log in with a username and password.
-[**PostAuthUserpassMfaConfig**](AuthApi.md#PostAuthUserpassMfaConfig) | **Post** /auth/userpass/mfa_config | Configure multi factor backend.
 [**PostAuthUserpassUsersUsername**](AuthApi.md#PostAuthUserpassUsersUsername) | **Post** /auth/userpass/users/{username} | Manage users allowed to authenticate.
 [**PostAuthUserpassUsersUsernamePassword**](AuthApi.md#PostAuthUserpassUsersUsernamePassword) | **Post** /auth/userpass/users/{username}/password | Reset user&#39;s password.
 [**PostAuthUserpassUsersUsernamePolicies**](AuthApi.md#PostAuthUserpassUsersUsernamePolicies) | **Post** /auth/userpass/users/{username}/policies | Update the policies associated with the username.
@@ -7321,63 +7297,6 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetAuthGithubDuoConfig
-
-> GetAuthGithubDuoConfig(ctx).Execute()
-
-Configure Duo second factor behavior.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthGithubDuoConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthGithubDuoConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthGithubDuoConfigRequest struct via the builder pattern
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## GetAuthGithubMapTeams
 
 > GetAuthGithubMapTeams(ctx).List(list).Execute()
@@ -7614,63 +7533,6 @@ Other parameters are passed through a pointer to a apiGetAuthGithubMapUsersKeyRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetAuthGithubMfaConfig
-
-> GetAuthGithubMfaConfig(ctx).Execute()
-
-Configure multi factor backend.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthGithubMfaConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthGithubMfaConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthGithubMfaConfigRequest struct via the builder pattern
 
 
 ### Return type
@@ -8476,63 +8338,6 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetAuthLdapDuoConfig
-
-> GetAuthLdapDuoConfig(ctx).Execute()
-
-Configure Duo second factor behavior.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthLdapDuoConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthLdapDuoConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthLdapDuoConfigRequest struct via the builder pattern
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## GetAuthLdapGroups
 
 > GetAuthLdapGroups(ctx).List(list).Execute()
@@ -8641,63 +8446,6 @@ Other parameters are passed through a pointer to a apiGetAuthLdapGroupsNameReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetAuthLdapMfaConfig
-
-> GetAuthLdapMfaConfig(ctx).Execute()
-
-Configure multi factor backend.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthLdapMfaConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthLdapMfaConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthLdapMfaConfigRequest struct via the builder pattern
 
 
 ### Return type
@@ -9332,63 +9080,6 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## GetAuthOktaDuoConfig
-
-> GetAuthOktaDuoConfig(ctx).Execute()
-
-Configure Duo second factor behavior.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthOktaDuoConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthOktaDuoConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthOktaDuoConfigRequest struct via the builder pattern
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## GetAuthOktaGroups
 
 > GetAuthOktaGroups(ctx).List(list).Execute()
@@ -9497,63 +9188,6 @@ Other parameters are passed through a pointer to a apiGetAuthOktaGroupsNameReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetAuthOktaMfaConfig
-
-> GetAuthOktaMfaConfig(ctx).Execute()
-
-Configure multi factor backend.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthOktaMfaConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthOktaMfaConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthOktaMfaConfigRequest struct via the builder pattern
 
 
 ### Return type
@@ -9702,6 +9336,72 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## GetAuthOktaVerifyNonce
+
+> GetAuthOktaVerifyNonce(ctx, nonce).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    nonce := "nonce_example" // string | Nonce provided during a login request to retrieve the number verification challenge for the matching request.
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AuthApi.GetAuthOktaVerifyNonce(context.Background(), nonce).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthOktaVerifyNonce``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**nonce** | **string** | Nonce provided during a login request to retrieve the number verification challenge for the matching request. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAuthOktaVerifyNonceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetAuthRadiusConfig
 
 > GetAuthRadiusConfig(ctx).Execute()
@@ -9739,120 +9439,6 @@ This endpoint does not need any parameter.
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGetAuthRadiusConfigRequest struct via the builder pattern
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetAuthRadiusDuoConfig
-
-> GetAuthRadiusDuoConfig(ctx).Execute()
-
-Configure Duo second factor behavior.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthRadiusDuoConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthRadiusDuoConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthRadiusDuoConfigRequest struct via the builder pattern
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetAuthRadiusMfaConfig
-
-> GetAuthRadiusMfaConfig(ctx).Execute()
-
-Configure multi factor backend.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthRadiusMfaConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthRadiusMfaConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthRadiusMfaConfigRequest struct via the builder pattern
 
 
 ### Return type
@@ -10285,120 +9871,6 @@ Other parameters are passed through a pointer to a apiGetAuthTokenRolesRoleNameR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetAuthUserpassDuoConfig
-
-> GetAuthUserpassDuoConfig(ctx).Execute()
-
-Configure Duo second factor behavior.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthUserpassDuoConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthUserpassDuoConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthUserpassDuoConfigRequest struct via the builder pattern
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetAuthUserpassMfaConfig
-
-> GetAuthUserpassMfaConfig(ctx).Execute()
-
-Configure multi factor backend.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthUserpassMfaConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthUserpassMfaConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetAuthUserpassMfaConfigRequest struct via the builder pattern
 
 
 ### Return type
@@ -14655,130 +14127,6 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## PostAuthGithubDuoAccess
-
-> PostAuthGithubDuoAccess(ctx).GithubDuoAccessRequest(githubDuoAccessRequest).Execute()
-
-Configure the access keys and host for Duo API connections.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    githubDuoAccessRequest := *openapiclient.NewGithubDuoAccessRequest() // GithubDuoAccessRequest |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthGithubDuoAccess(context.Background()).GithubDuoAccessRequest(githubDuoAccessRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthGithubDuoAccess``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthGithubDuoAccessRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **githubDuoAccessRequest** | [**GithubDuoAccessRequest**](GithubDuoAccessRequest.md) |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PostAuthGithubDuoConfig
-
-> PostAuthGithubDuoConfig(ctx).GithubDuoConfigRequest(githubDuoConfigRequest).Execute()
-
-Configure Duo second factor behavior.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    githubDuoConfigRequest := *openapiclient.NewGithubDuoConfigRequest() // GithubDuoConfigRequest |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthGithubDuoConfig(context.Background()).GithubDuoConfigRequest(githubDuoConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthGithubDuoConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthGithubDuoConfigRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **githubDuoConfigRequest** | [**GithubDuoConfigRequest**](GithubDuoConfigRequest.md) |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## PostAuthGithubLogin
 
 > PostAuthGithubLogin(ctx).GithubLoginRequest(githubLoginRequest).Execute()
@@ -14958,68 +14306,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **githubMapUsersRequest** | [**GithubMapUsersRequest**](GithubMapUsersRequest.md) |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PostAuthGithubMfaConfig
-
-> PostAuthGithubMfaConfig(ctx).GithubMfaConfigRequest(githubMfaConfigRequest).Execute()
-
-Configure multi factor backend.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    githubMfaConfigRequest := *openapiclient.NewGithubMfaConfigRequest() // GithubMfaConfigRequest |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthGithubMfaConfig(context.Background()).GithubMfaConfigRequest(githubMfaConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthGithubMfaConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthGithubMfaConfigRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **githubMfaConfigRequest** | [**GithubMfaConfigRequest**](GithubMfaConfigRequest.md) |  | 
 
 ### Return type
 
@@ -15867,130 +15153,6 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## PostAuthLdapDuoAccess
-
-> PostAuthLdapDuoAccess(ctx).LdapDuoAccessRequest(ldapDuoAccessRequest).Execute()
-
-Configure the access keys and host for Duo API connections.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    ldapDuoAccessRequest := *openapiclient.NewLdapDuoAccessRequest() // LdapDuoAccessRequest |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthLdapDuoAccess(context.Background()).LdapDuoAccessRequest(ldapDuoAccessRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthLdapDuoAccess``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthLdapDuoAccessRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ldapDuoAccessRequest** | [**LdapDuoAccessRequest**](LdapDuoAccessRequest.md) |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PostAuthLdapDuoConfig
-
-> PostAuthLdapDuoConfig(ctx).LdapDuoConfigRequest(ldapDuoConfigRequest).Execute()
-
-Configure Duo second factor behavior.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    ldapDuoConfigRequest := *openapiclient.NewLdapDuoConfigRequest() // LdapDuoConfigRequest |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthLdapDuoConfig(context.Background()).LdapDuoConfigRequest(ldapDuoConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthLdapDuoConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthLdapDuoConfigRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ldapDuoConfigRequest** | [**LdapDuoConfigRequest**](LdapDuoConfigRequest.md) |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## PostAuthLdapGroupsName
 
 > PostAuthLdapGroupsName(ctx, name).LdapGroupsRequest(ldapGroupsRequest).Execute()
@@ -16108,68 +15270,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **ldapLoginRequest** | [**LdapLoginRequest**](LdapLoginRequest.md) |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PostAuthLdapMfaConfig
-
-> PostAuthLdapMfaConfig(ctx).LdapMfaConfigRequest(ldapMfaConfigRequest).Execute()
-
-Configure multi factor backend.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    ldapMfaConfigRequest := *openapiclient.NewLdapMfaConfigRequest() // LdapMfaConfigRequest |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthLdapMfaConfig(context.Background()).LdapMfaConfigRequest(ldapMfaConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthLdapMfaConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthLdapMfaConfigRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ldapMfaConfigRequest** | [**LdapMfaConfigRequest**](LdapMfaConfigRequest.md) |  | 
 
 ### Return type
 
@@ -16837,130 +15937,6 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## PostAuthOktaDuoAccess
-
-> PostAuthOktaDuoAccess(ctx).OktaDuoAccessRequest(oktaDuoAccessRequest).Execute()
-
-Configure the access keys and host for Duo API connections.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    oktaDuoAccessRequest := *openapiclient.NewOktaDuoAccessRequest() // OktaDuoAccessRequest |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthOktaDuoAccess(context.Background()).OktaDuoAccessRequest(oktaDuoAccessRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthOktaDuoAccess``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthOktaDuoAccessRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **oktaDuoAccessRequest** | [**OktaDuoAccessRequest**](OktaDuoAccessRequest.md) |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PostAuthOktaDuoConfig
-
-> PostAuthOktaDuoConfig(ctx).OktaDuoConfigRequest(oktaDuoConfigRequest).Execute()
-
-Configure Duo second factor behavior.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    oktaDuoConfigRequest := *openapiclient.NewOktaDuoConfigRequest() // OktaDuoConfigRequest |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthOktaDuoConfig(context.Background()).OktaDuoConfigRequest(oktaDuoConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthOktaDuoConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthOktaDuoConfigRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **oktaDuoConfigRequest** | [**OktaDuoConfigRequest**](OktaDuoConfigRequest.md) |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## PostAuthOktaGroupsName
 
 > PostAuthOktaGroupsName(ctx, name).OktaGroupsRequest(oktaGroupsRequest).Execute()
@@ -17078,68 +16054,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **oktaLoginRequest** | [**OktaLoginRequest**](OktaLoginRequest.md) |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PostAuthOktaMfaConfig
-
-> PostAuthOktaMfaConfig(ctx).OktaMfaConfigRequest(oktaMfaConfigRequest).Execute()
-
-Configure multi factor backend.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    oktaMfaConfigRequest := *openapiclient.NewOktaMfaConfigRequest() // OktaMfaConfigRequest |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthOktaMfaConfig(context.Background()).OktaMfaConfigRequest(oktaMfaConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthOktaMfaConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthOktaMfaConfigRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **oktaMfaConfigRequest** | [**OktaMfaConfigRequest**](OktaMfaConfigRequest.md) |  | 
 
 ### Return type
 
@@ -17289,130 +16203,6 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## PostAuthRadiusDuoAccess
-
-> PostAuthRadiusDuoAccess(ctx).RadiusDuoAccessRequest(radiusDuoAccessRequest).Execute()
-
-Configure the access keys and host for Duo API connections.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    radiusDuoAccessRequest := *openapiclient.NewRadiusDuoAccessRequest() // RadiusDuoAccessRequest |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthRadiusDuoAccess(context.Background()).RadiusDuoAccessRequest(radiusDuoAccessRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthRadiusDuoAccess``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthRadiusDuoAccessRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **radiusDuoAccessRequest** | [**RadiusDuoAccessRequest**](RadiusDuoAccessRequest.md) |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PostAuthRadiusDuoConfig
-
-> PostAuthRadiusDuoConfig(ctx).RadiusDuoConfigRequest(radiusDuoConfigRequest).Execute()
-
-Configure Duo second factor behavior.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    radiusDuoConfigRequest := *openapiclient.NewRadiusDuoConfigRequest() // RadiusDuoConfigRequest |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthRadiusDuoConfig(context.Background()).RadiusDuoConfigRequest(radiusDuoConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthRadiusDuoConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthRadiusDuoConfigRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **radiusDuoConfigRequest** | [**RadiusDuoConfigRequest**](RadiusDuoConfigRequest.md) |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## PostAuthRadiusLogin
 
 > PostAuthRadiusLogin(ctx).RadiusLoginRequest(radiusLoginRequest).Execute()
@@ -17524,68 +16314,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **radiusLoginRequest** | [**RadiusLoginRequest**](RadiusLoginRequest.md) |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PostAuthRadiusMfaConfig
-
-> PostAuthRadiusMfaConfig(ctx).RadiusMfaConfigRequest(radiusMfaConfigRequest).Execute()
-
-Configure multi factor backend.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    radiusMfaConfigRequest := *openapiclient.NewRadiusMfaConfigRequest() // RadiusMfaConfigRequest |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthRadiusMfaConfig(context.Background()).RadiusMfaConfigRequest(radiusMfaConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthRadiusMfaConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthRadiusMfaConfigRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **radiusMfaConfigRequest** | [**RadiusMfaConfigRequest**](RadiusMfaConfigRequest.md) |  | 
 
 ### Return type
 
@@ -18593,130 +17321,6 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## PostAuthUserpassDuoAccess
-
-> PostAuthUserpassDuoAccess(ctx).UserpassDuoAccessRequest(userpassDuoAccessRequest).Execute()
-
-Configure the access keys and host for Duo API connections.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    userpassDuoAccessRequest := *openapiclient.NewUserpassDuoAccessRequest() // UserpassDuoAccessRequest |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthUserpassDuoAccess(context.Background()).UserpassDuoAccessRequest(userpassDuoAccessRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthUserpassDuoAccess``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthUserpassDuoAccessRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userpassDuoAccessRequest** | [**UserpassDuoAccessRequest**](UserpassDuoAccessRequest.md) |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PostAuthUserpassDuoConfig
-
-> PostAuthUserpassDuoConfig(ctx).UserpassDuoConfigRequest(userpassDuoConfigRequest).Execute()
-
-Configure Duo second factor behavior.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    userpassDuoConfigRequest := *openapiclient.NewUserpassDuoConfigRequest() // UserpassDuoConfigRequest |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthUserpassDuoConfig(context.Background()).UserpassDuoConfigRequest(userpassDuoConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthUserpassDuoConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthUserpassDuoConfigRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userpassDuoConfigRequest** | [**UserpassDuoConfigRequest**](UserpassDuoConfigRequest.md) |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## PostAuthUserpassLoginUsername
 
 > PostAuthUserpassLoginUsername(ctx, username).UserpassLoginRequest(userpassLoginRequest).Execute()
@@ -18766,68 +17370,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **userpassLoginRequest** | [**UserpassLoginRequest**](UserpassLoginRequest.md) |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## PostAuthUserpassMfaConfig
-
-> PostAuthUserpassMfaConfig(ctx).UserpassMfaConfigRequest(userpassMfaConfigRequest).Execute()
-
-Configure multi factor backend.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    userpassMfaConfigRequest := *openapiclient.NewUserpassMfaConfigRequest() // UserpassMfaConfigRequest |  (optional)
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthUserpassMfaConfig(context.Background()).UserpassMfaConfigRequest(userpassMfaConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthUserpassMfaConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiPostAuthUserpassMfaConfigRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userpassMfaConfigRequest** | [**UserpassMfaConfigRequest**](UserpassMfaConfigRequest.md) |  | 
 
 ### Return type
 

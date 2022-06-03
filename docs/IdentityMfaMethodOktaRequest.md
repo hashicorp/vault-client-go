@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **OrgName** | Pointer to **string** | Name of the organization to be used in the Okta API. | [optional] 
 **PrimaryEmail** | Pointer to **bool** | If true, the username will only match the primary email for the account. Defaults to false. | [optional] 
 **Production** | Pointer to **bool** | (DEPRECATED) Use base_url instead. | [optional] 
-**UsernameTemplate** | Pointer to **string** | A template string for mapping Identity names to MFA method names. Values to substitute should be placed in {{}}. For example, \&quot;{{entity.name}}@example.com\&quot;. If blank, the Entity&#39;s name field will be used as-is. | [optional] 
+**UsernameFormat** | Pointer to **string** | A template string for mapping Identity names to MFA method names. Values to substitute should be placed in {{}}. For example, \&quot;{{entity.name}}@example.com\&quot;. If blank, the Entity&#39;s name field will be used as-is. | [optional] 
 
 ## Methods
 
@@ -181,30 +181,30 @@ SetProduction sets Production field to given value.
 
 HasProduction returns a boolean if a field has been set.
 
-### GetUsernameTemplate
+### GetUsernameFormat
 
-`func (o *IdentityMfaMethodOktaRequest) GetUsernameTemplate() string`
+`func (o *IdentityMfaMethodOktaRequest) GetUsernameFormat() string`
 
-GetUsernameTemplate returns the UsernameTemplate field if non-nil, zero value otherwise.
+GetUsernameFormat returns the UsernameFormat field if non-nil, zero value otherwise.
 
-### GetUsernameTemplateOk
+### GetUsernameFormatOk
 
-`func (o *IdentityMfaMethodOktaRequest) GetUsernameTemplateOk() (*string, bool)`
+`func (o *IdentityMfaMethodOktaRequest) GetUsernameFormatOk() (*string, bool)`
 
-GetUsernameTemplateOk returns a tuple with the UsernameTemplate field if it's non-nil, zero value otherwise
+GetUsernameFormatOk returns a tuple with the UsernameFormat field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUsernameTemplate
+### SetUsernameFormat
 
-`func (o *IdentityMfaMethodOktaRequest) SetUsernameTemplate(v string)`
+`func (o *IdentityMfaMethodOktaRequest) SetUsernameFormat(v string)`
 
-SetUsernameTemplate sets UsernameTemplate field to given value.
+SetUsernameFormat sets UsernameFormat field to given value.
 
-### HasUsernameTemplate
+### HasUsernameFormat
 
-`func (o *IdentityMfaMethodOktaRequest) HasUsernameTemplate() bool`
+`func (o *IdentityMfaMethodOktaRequest) HasUsernameFormat() bool`
 
-HasUsernameTemplate returns a boolean if a field has been set.
+HasUsernameFormat returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

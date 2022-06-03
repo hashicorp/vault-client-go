@@ -4,8 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Method** | Pointer to **string** | Multi-factor auth method to use (optional) | [optional] 
-**Passcode** | Pointer to **string** | One time passcode (optional) | [optional] 
 **Password** | Pointer to **string** | Password for this user. | [optional] 
 
 ## Methods
@@ -26,56 +24,6 @@ will change when the set of required properties is changed
 NewUserpassLoginRequestWithDefaults instantiates a new UserpassLoginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMethod
-
-`func (o *UserpassLoginRequest) GetMethod() string`
-
-GetMethod returns the Method field if non-nil, zero value otherwise.
-
-### GetMethodOk
-
-`func (o *UserpassLoginRequest) GetMethodOk() (*string, bool)`
-
-GetMethodOk returns a tuple with the Method field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMethod
-
-`func (o *UserpassLoginRequest) SetMethod(v string)`
-
-SetMethod sets Method field to given value.
-
-### HasMethod
-
-`func (o *UserpassLoginRequest) HasMethod() bool`
-
-HasMethod returns a boolean if a field has been set.
-
-### GetPasscode
-
-`func (o *UserpassLoginRequest) GetPasscode() string`
-
-GetPasscode returns the Passcode field if non-nil, zero value otherwise.
-
-### GetPasscodeOk
-
-`func (o *UserpassLoginRequest) GetPasscodeOk() (*string, bool)`
-
-GetPasscodeOk returns a tuple with the Passcode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPasscode
-
-`func (o *UserpassLoginRequest) SetPasscode(v string)`
-
-SetPasscode sets Passcode field to given value.
-
-### HasPasscode
-
-`func (o *UserpassLoginRequest) HasPasscode() bool`
-
-HasPasscode returns a boolean if a field has been set.
 
 ### GetPassword
 

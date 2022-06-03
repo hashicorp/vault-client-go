@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **ExtKeyUsageOids** | Pointer to **[]string** | A comma-separated string or list of extended key usage oids. | [optional] 
 **Format** | Pointer to **string** | Format for returned data. Can be \&quot;pem\&quot;, \&quot;der\&quot;, or \&quot;pem_bundle\&quot;. If \&quot;pem_bundle\&quot;, any private key and issuing cert will be appended to the certificate pem. If \&quot;der\&quot;, the value will be base64 encoded. Defaults to \&quot;pem\&quot;. | [optional] [default to "pem"]
 **IpSans** | Pointer to **[]string** | The requested IP SANs, if any, in a comma-delimited list | [optional] 
+**IssuerRef** | Pointer to **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [optional] [default to "default"]
 **KeyUsage** | Pointer to **[]string** | A comma-separated string or list of key usages (not extended key usages). Valid values can be found at https://golang.org/pkg/crypto/x509/#KeyUsage -- simply drop the \&quot;KeyUsage\&quot; part of the name. To remove all key usages from being set, set this value to an empty list. | [optional] [default to ["DigitalSignature","KeyAgreement","KeyEncipherment"]]
 **NotAfter** | Pointer to **string** | Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ | [optional] 
 **OtherSans** | Pointer to **[]string** | Requested other SANs, in an array with the format &lt;oid&gt;;UTF8:&lt;utf8 string value&gt; for each entry. | [optional] 
@@ -239,6 +240,31 @@ SetIpSans sets IpSans field to given value.
 `func (o *PkiSignVerbatimRequest) HasIpSans() bool`
 
 HasIpSans returns a boolean if a field has been set.
+
+### GetIssuerRef
+
+`func (o *PkiSignVerbatimRequest) GetIssuerRef() string`
+
+GetIssuerRef returns the IssuerRef field if non-nil, zero value otherwise.
+
+### GetIssuerRefOk
+
+`func (o *PkiSignVerbatimRequest) GetIssuerRefOk() (*string, bool)`
+
+GetIssuerRefOk returns a tuple with the IssuerRef field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIssuerRef
+
+`func (o *PkiSignVerbatimRequest) SetIssuerRef(v string)`
+
+SetIssuerRef sets IssuerRef field to given value.
+
+### HasIssuerRef
+
+`func (o *PkiSignVerbatimRequest) HasIssuerRef() bool`
+
+HasIssuerRef returns a boolean if a field has been set.
 
 ### GetKeyUsage
 

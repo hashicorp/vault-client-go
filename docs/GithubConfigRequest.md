@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **BaseUrl** | Pointer to **string** | The API endpoint to use. Useful if you are running GitHub Enterprise or an API-compatible authentication server. | [optional] 
 **MaxTtl** | Pointer to **int32** | Use \&quot;token_max_ttl\&quot; instead. If this and \&quot;token_max_ttl\&quot; are both specified, only \&quot;token_max_ttl\&quot; will be used. | [optional] 
 **Organization** | **string** | The organization users must be part of | 
-**OrganizationId** | Pointer to **interface{}** | The ID of the organization users must be part of | [optional] 
+**OrganizationId** | Pointer to **int64** | The ID of the organization users must be part of | [optional] 
 **TokenBoundCidrs** | Pointer to **[]string** | Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token. | [optional] 
 **TokenExplicitMaxTtl** | Pointer to **int32** | If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed. | [optional] 
 **TokenMaxTtl** | Pointer to **int32** | The maximum lifetime of the generated token | [optional] 
@@ -110,20 +110,20 @@ SetOrganization sets Organization field to given value.
 
 ### GetOrganizationId
 
-`func (o *GithubConfigRequest) GetOrganizationId() interface{}`
+`func (o *GithubConfigRequest) GetOrganizationId() int64`
 
 GetOrganizationId returns the OrganizationId field if non-nil, zero value otherwise.
 
 ### GetOrganizationIdOk
 
-`func (o *GithubConfigRequest) GetOrganizationIdOk() (*interface{}, bool)`
+`func (o *GithubConfigRequest) GetOrganizationIdOk() (*int64, bool)`
 
 GetOrganizationIdOk returns a tuple with the OrganizationId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOrganizationId
 
-`func (o *GithubConfigRequest) SetOrganizationId(v interface{})`
+`func (o *GithubConfigRequest) SetOrganizationId(v int64)`
 
 SetOrganizationId sets OrganizationId field to given value.
 
@@ -133,16 +133,6 @@ SetOrganizationId sets OrganizationId field to given value.
 
 HasOrganizationId returns a boolean if a field has been set.
 
-### SetOrganizationIdNil
-
-`func (o *GithubConfigRequest) SetOrganizationIdNil(b bool)`
-
- SetOrganizationIdNil sets the value for OrganizationId to be an explicit nil
-
-### UnsetOrganizationId
-`func (o *GithubConfigRequest) UnsetOrganizationId()`
-
-UnsetOrganizationId ensures that no value is present for OrganizationId, not even an explicit nil
 ### GetTokenBoundCidrs
 
 `func (o *GithubConfigRequest) GetTokenBoundCidrs() []string`

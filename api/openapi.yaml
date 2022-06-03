@@ -6,7 +6,7 @@ info:
     name: Mozilla Public License 2.0
     url: https://www.mozilla.org/en-US/MPL/2.0
   title: HashiCorp Vault API
-  version: 1.11.0
+  version: 1.12.0
 servers:
 - url: /
 paths:
@@ -3306,46 +3306,6 @@ paths:
           description: OK
       tags:
       - auth
-  /auth/github/duo/access:
-    description: Configure the access keys and host for Duo API connections.
-    post:
-      operationId: postAuthGithubDuoAccess
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/GithubDuoAccessRequest'
-      responses:
-        "200":
-          description: OK
-      summary: Configure the access keys and host for Duo API connections.
-      tags:
-      - auth
-    x-vault-sudo: true
-  /auth/github/duo/config:
-    description: Configure Duo second factor behavior.
-    get:
-      operationId: getAuthGithubDuoConfig
-      responses:
-        "200":
-          description: OK
-      summary: Configure Duo second factor behavior.
-      tags:
-      - auth
-    post:
-      operationId: postAuthGithubDuoConfig
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/GithubDuoConfigRequest'
-      responses:
-        "200":
-          description: OK
-      summary: Configure Duo second factor behavior.
-      tags:
-      - auth
-    x-vault-sudo: true
   /auth/github/login:
     post:
       operationId: postAuthGithubLogin
@@ -3516,30 +3476,6 @@ paths:
       tags:
       - auth
     x-vault-createSupported: true
-  /auth/github/mfa_config:
-    description: Configure multi factor backend.
-    get:
-      operationId: getAuthGithubMfa_config
-      responses:
-        "200":
-          description: OK
-      summary: Configure multi factor backend.
-      tags:
-      - auth
-    post:
-      operationId: postAuthGithubMfa_config
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/GithubMfaConfigRequest'
-      responses:
-        "200":
-          description: OK
-      summary: Configure multi factor backend.
-      tags:
-      - auth
-    x-vault-sudo: true
   /auth/jwt/config:
     description: Configures the JWT authentication backend.
     get:
@@ -3997,46 +3933,6 @@ paths:
       - auth
     x-vault-displayAttrs:
       action: Configure
-  /auth/ldap/duo/access:
-    description: Configure the access keys and host for Duo API connections.
-    post:
-      operationId: postAuthLdapDuoAccess
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/LdapDuoAccessRequest'
-      responses:
-        "200":
-          description: OK
-      summary: Configure the access keys and host for Duo API connections.
-      tags:
-      - auth
-    x-vault-sudo: true
-  /auth/ldap/duo/config:
-    description: Configure Duo second factor behavior.
-    get:
-      operationId: getAuthLdapDuoConfig
-      responses:
-        "200":
-          description: OK
-      summary: Configure Duo second factor behavior.
-      tags:
-      - auth
-    post:
-      operationId: postAuthLdapDuoConfig
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/LdapDuoConfigRequest'
-      responses:
-        "200":
-          description: OK
-      summary: Configure Duo second factor behavior.
-      tags:
-      - auth
-    x-vault-sudo: true
   /auth/ldap/groups:
     description: Manage additional groups for users allowed to authenticate.
     get:
@@ -4147,30 +4043,6 @@ paths:
       tags:
       - auth
     x-vault-unauthenticated: true
-  /auth/ldap/mfa_config:
-    description: Configure multi factor backend.
-    get:
-      operationId: getAuthLdapMfa_config
-      responses:
-        "200":
-          description: OK
-      summary: Configure multi factor backend.
-      tags:
-      - auth
-    post:
-      operationId: postAuthLdapMfa_config
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/LdapMfaConfigRequest'
-      responses:
-        "200":
-          description: OK
-      summary: Configure multi factor backend.
-      tags:
-      - auth
-    x-vault-sudo: true
   /auth/ldap/users:
     description: Manage users allowed to authenticate.
     get:
@@ -4598,46 +4470,6 @@ paths:
     x-vault-createSupported: true
     x-vault-displayAttrs:
       action: Configure
-  /auth/okta/duo/access:
-    description: Configure the access keys and host for Duo API connections.
-    post:
-      operationId: postAuthOktaDuoAccess
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/OktaDuoAccessRequest'
-      responses:
-        "200":
-          description: OK
-      summary: Configure the access keys and host for Duo API connections.
-      tags:
-      - auth
-    x-vault-sudo: true
-  /auth/okta/duo/config:
-    description: Configure Duo second factor behavior.
-    get:
-      operationId: getAuthOktaDuoConfig
-      responses:
-        "200":
-          description: OK
-      summary: Configure Duo second factor behavior.
-      tags:
-      - auth
-    post:
-      operationId: postAuthOktaDuoConfig
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/OktaDuoConfigRequest'
-      responses:
-        "200":
-          description: OK
-      summary: Configure Duo second factor behavior.
-      tags:
-      - auth
-    x-vault-sudo: true
   /auth/okta/groups:
     description: Manage users allowed to authenticate.
     get:
@@ -4748,30 +4580,6 @@ paths:
       tags:
       - auth
     x-vault-unauthenticated: true
-  /auth/okta/mfa_config:
-    description: Configure multi factor backend.
-    get:
-      operationId: getAuthOktaMfa_config
-      responses:
-        "200":
-          description: OK
-      summary: Configure multi factor backend.
-      tags:
-      - auth
-    post:
-      operationId: postAuthOktaMfa_config
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/OktaMfaConfigRequest'
-      responses:
-        "200":
-          description: OK
-      summary: Configure multi factor backend.
-      tags:
-      - auth
-    x-vault-sudo: true
   /auth/okta/users:
     description: Manage additional groups for users allowed to authenticate.
     get:
@@ -4857,6 +4665,25 @@ paths:
     x-vault-displayAttrs:
       itemType: User
       action: Create
+  /auth/okta/verify/{nonce}:
+    get:
+      operationId: getAuthOktaVerifyNonce
+      parameters:
+      - description: Nonce provided during a login request to retrieve the number
+          verification challenge for the matching request.
+        explode: false
+        in: path
+        name: nonce
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      tags:
+      - auth
+    x-vault-unauthenticated: true
   /auth/radius/config:
     description: Configure the RADIUS server to connect to, along with its options.
     get:
@@ -4883,46 +4710,6 @@ paths:
     x-vault-createSupported: true
     x-vault-displayAttrs:
       action: Configure
-  /auth/radius/duo/access:
-    description: Configure the access keys and host for Duo API connections.
-    post:
-      operationId: postAuthRadiusDuoAccess
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/RadiusDuoAccessRequest'
-      responses:
-        "200":
-          description: OK
-      summary: Configure the access keys and host for Duo API connections.
-      tags:
-      - auth
-    x-vault-sudo: true
-  /auth/radius/duo/config:
-    description: Configure Duo second factor behavior.
-    get:
-      operationId: getAuthRadiusDuoConfig
-      responses:
-        "200":
-          description: OK
-      summary: Configure Duo second factor behavior.
-      tags:
-      - auth
-    post:
-      operationId: postAuthRadiusDuoConfig
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/RadiusDuoConfigRequest'
-      responses:
-        "200":
-          description: OK
-      summary: Configure Duo second factor behavior.
-      tags:
-      - auth
-    x-vault-sudo: true
   /auth/radius/login:
     description: Log in with a username and password.
     post:
@@ -4964,30 +4751,6 @@ paths:
       tags:
       - auth
     x-vault-unauthenticated: true
-  /auth/radius/mfa_config:
-    description: Configure multi factor backend.
-    get:
-      operationId: getAuthRadiusMfa_config
-      responses:
-        "200":
-          description: OK
-      summary: Configure multi factor backend.
-      tags:
-      - auth
-    post:
-      operationId: postAuthRadiusMfa_config
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/RadiusMfaConfigRequest'
-      responses:
-        "200":
-          description: OK
-      summary: Configure multi factor backend.
-      tags:
-      - auth
-    x-vault-sudo: true
   /auth/radius/users:
     description: Manage users allowed to authenticate.
     get:
@@ -5403,46 +5166,6 @@ paths:
         conditions have occurred.
       tags:
       - auth
-  /auth/userpass/duo/access:
-    description: Configure the access keys and host for Duo API connections.
-    post:
-      operationId: postAuthUserpassDuoAccess
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/UserpassDuoAccessRequest'
-      responses:
-        "200":
-          description: OK
-      summary: Configure the access keys and host for Duo API connections.
-      tags:
-      - auth
-    x-vault-sudo: true
-  /auth/userpass/duo/config:
-    description: Configure Duo second factor behavior.
-    get:
-      operationId: getAuthUserpassDuoConfig
-      responses:
-        "200":
-          description: OK
-      summary: Configure Duo second factor behavior.
-      tags:
-      - auth
-    post:
-      operationId: postAuthUserpassDuoConfig
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/UserpassDuoConfigRequest'
-      responses:
-        "200":
-          description: OK
-      summary: Configure Duo second factor behavior.
-      tags:
-      - auth
-    x-vault-sudo: true
   /auth/userpass/login/{username}:
     description: Log in with a username and password.
     post:
@@ -5468,30 +5191,6 @@ paths:
       tags:
       - auth
     x-vault-unauthenticated: true
-  /auth/userpass/mfa_config:
-    description: Configure multi factor backend.
-    get:
-      operationId: getAuthUserpassMfa_config
-      responses:
-        "200":
-          description: OK
-      summary: Configure multi factor backend.
-      tags:
-      - auth
-    post:
-      operationId: postAuthUserpassMfa_config
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/UserpassMfaConfigRequest'
-      responses:
-        "200":
-          description: OK
-      summary: Configure multi factor backend.
-      tags:
-      - auth
-    x-vault-sudo: true
   /auth/userpass/users:
     description: Manage users allowed to authenticate.
     get:
@@ -7790,6 +7489,26 @@ paths:
       summary: Create or update a login enforcement
       tags:
       - identity
+  /identity/mfa/method:
+    get:
+      operationId: getIdentityMfaMethod
+      parameters:
+      - description: Must be set to `true`
+        explode: true
+        in: query
+        name: list
+        required: true
+        schema:
+          enum:
+          - "true"
+          type: string
+        style: form
+      responses:
+        "200":
+          description: OK
+      summary: List MFA method configurations for all MFA methods
+      tags:
+      - identity
   /identity/mfa/method/duo:
     get:
       operationId: getIdentityMfaMethodDuo
@@ -8138,6 +7857,25 @@ paths:
         "200":
           description: OK
       summary: Update or create a configuration for the given MFA method
+      tags:
+      - identity
+  /identity/mfa/method/{method_id}:
+    get:
+      operationId: getIdentityMfaMethodMethod_id
+      parameters:
+      - description: The unique identifier for this MFA method.
+        explode: false
+        in: path
+        name: method_id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      summary: Read the current configuration for the given ID regardless of the MFA
+        method type
       tags:
       - identity
   /identity/oidc/.well-known/keys:
@@ -8933,6 +8671,135 @@ paths:
       summary: Update, read or delete an alias ID.
       tags:
       - identity
+  /kubernetes/config:
+    delete:
+      operationId: deleteKubernetesConfig
+      responses:
+        "204":
+          description: empty body
+      tags:
+      - secrets
+    description: Configure the Kubernetes secret engine plugin.
+    get:
+      operationId: getKubernetesConfig
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+    post:
+      operationId: postKubernetesConfig
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/KubernetesConfigRequest'
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+    x-vault-createSupported: true
+  /kubernetes/creds/{name}:
+    description: Request Kubernetes service account credentials for a given Vault
+      role.
+    post:
+      operationId: postKubernetesCredsName
+      parameters:
+      - description: Name of the Vault role
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/KubernetesCredsRequest'
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /kubernetes/roles:
+    description: List the existing roles in this secrets engine.
+    get:
+      operationId: getKubernetesRoles
+      parameters:
+      - description: Must be set to `true`
+        explode: true
+        in: query
+        name: list
+        required: true
+        schema:
+          enum:
+          - "true"
+          type: string
+        style: form
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /kubernetes/roles/{name}:
+    delete:
+      operationId: deleteKubernetesRolesName
+      parameters:
+      - description: Name of the role
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: empty body
+      tags:
+      - secrets
+    description: Manage the roles that can be created with this secrets engine.
+    get:
+      operationId: getKubernetesRolesName
+      parameters:
+      - description: Name of the role
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+    post:
+      operationId: postKubernetesRolesName
+      parameters:
+      - description: Name of the role
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/KubernetesRolesRequest'
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+    x-vault-createSupported: true
   /kv/{path}:
     delete:
       operationId: deleteKvPath
@@ -9541,6 +9408,57 @@ paths:
       tags:
       - secrets
     x-vault-createSupported: true
+  /pki//der:
+    description: Fetch an issuer's Certificate Revocation Log (CRL).
+    get:
+      operationId: getPkiDer
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /pki//json:
+    delete:
+      operationId: deletePkiJson
+      responses:
+        "204":
+          description: empty body
+      tags:
+      - secrets
+    description: Fetch a single issuer certificate.
+    get:
+      operationId: getPkiJson
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+    post:
+      operationId: postPkiJson
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PkiJsonRequest'
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /pki/bundle:
+    description: Import the specified issuing certificates.
+    post:
+      operationId: postPkiBundle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PkiBundleRequest'
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
   /pki/ca:
     description: Fetch a CA, CRL, CA Chain, or non-revoked certificate.
     get:
@@ -9548,7 +9466,6 @@ paths:
       responses:
         "200":
           description: OK
-      summary: Fetch a CA, CRL, CA Chain, or non-revoked certificate.
       tags:
       - secrets
     x-vault-unauthenticated: true
@@ -9559,7 +9476,6 @@ paths:
       responses:
         "200":
           description: OK
-      summary: Fetch a CA, CRL, CA Chain, or non-revoked certificate.
       tags:
       - secrets
     x-vault-unauthenticated: true
@@ -9570,10 +9486,23 @@ paths:
       responses:
         "200":
           description: OK
-      summary: Fetch a CA, CRL, CA Chain, or non-revoked certificate.
       tags:
       - secrets
     x-vault-unauthenticated: true
+  /pki/cert:
+    description: Import the specified issuing certificates.
+    post:
+      operationId: postPkiCert
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PkiCertRequest'
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
   /pki/cert/ca_chain:
     description: Fetch a CA, CRL, CA Chain, or non-revoked certificate.
     get:
@@ -9581,7 +9510,6 @@ paths:
       responses:
         "200":
           description: OK
-      summary: Fetch a CA, CRL, CA Chain, or non-revoked certificate.
       tags:
       - secrets
     x-vault-unauthenticated: true
@@ -9592,7 +9520,6 @@ paths:
       responses:
         "200":
           description: OK
-      summary: Fetch a CA, CRL, CA Chain, or non-revoked certificate.
       tags:
       - secrets
     x-vault-unauthenticated: true
@@ -9612,7 +9539,6 @@ paths:
       responses:
         "200":
           description: OK
-      summary: Fetch a CA, CRL, CA Chain, or non-revoked certificate.
       tags:
       - secrets
     x-vault-unauthenticated: true
@@ -9632,7 +9558,6 @@ paths:
       responses:
         "200":
           description: OK
-      summary: Fetch a CA, CRL, CA Chain, or non-revoked certificate.
       tags:
       - secrets
     x-vault-unauthenticated: true
@@ -9652,7 +9577,6 @@ paths:
       responses:
         "200":
           description: OK
-      summary: Fetch a CA, CRL, CA Chain, or non-revoked certificate.
       tags:
       - secrets
     x-vault-unauthenticated: true
@@ -9674,7 +9598,6 @@ paths:
       responses:
         "200":
           description: OK
-      summary: Fetch a CA, CRL, CA Chain, or non-revoked certificate.
       tags:
       - secrets
   /pki/config/ca:
@@ -9689,7 +9612,6 @@ paths:
       responses:
         "200":
           description: OK
-      summary: Set the CA certificate and private key used for generated credentials.
       tags:
       - secrets
   /pki/config/crl:
@@ -9699,7 +9621,6 @@ paths:
       responses:
         "200":
           description: OK
-      summary: Configure the CRL expiration.
       tags:
       - secrets
     post:
@@ -9712,7 +9633,48 @@ paths:
       responses:
         "200":
           description: OK
-      summary: Configure the CRL expiration.
+      tags:
+      - secrets
+  /pki/config/issuers:
+    description: Read and set the default issuer certificate for signing.
+    get:
+      operationId: getPkiConfigIssuers
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+    post:
+      operationId: postPkiConfigIssuers
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PkiConfigIssuersRequest'
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /pki/config/keys:
+    description: Read and set the default key used for signing
+    get:
+      operationId: getPkiConfigKeys
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+    post:
+      operationId: postPkiConfigKeys
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PkiConfigKeysRequest'
+      responses:
+        "200":
+          description: OK
       tags:
       - secrets
   /pki/config/urls:
@@ -9723,8 +9685,6 @@ paths:
       responses:
         "200":
           description: OK
-      summary: Set the URLs for the issuing CA, CRL distribution points, and OCSP
-        servers.
       tags:
       - secrets
     post:
@@ -9737,8 +9697,6 @@ paths:
       responses:
         "200":
           description: OK
-      summary: Set the URLs for the issuing CA, CRL distribution points, and OCSP
-        servers.
       tags:
       - secrets
   /pki/crl:
@@ -9748,7 +9706,6 @@ paths:
       responses:
         "200":
           description: OK
-      summary: Fetch a CA, CRL, CA Chain, or non-revoked certificate.
       tags:
       - secrets
     x-vault-unauthenticated: true
@@ -9759,7 +9716,6 @@ paths:
       responses:
         "200":
           description: OK
-      summary: Fetch a CA, CRL, CA Chain, or non-revoked certificate.
       tags:
       - secrets
     x-vault-unauthenticated: true
@@ -9770,7 +9726,20 @@ paths:
       responses:
         "200":
           description: OK
-      summary: Force a rebuild of the CRL.
+      tags:
+      - secrets
+  /pki/intermediate/cross-sign:
+    description: Generate a new CSR and private key used for signing.
+    post:
+      operationId: postPkiIntermediateCrossSign
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PkiIntermediateCrossSignRequest'
+      responses:
+        "200":
+          description: OK
       tags:
       - secrets
   /pki/intermediate/generate/{exported}:
@@ -9816,6 +9785,20 @@ paths:
           description: OK
       tags:
       - secrets
+  /pki/internal|exported:
+    description: Generate a new private key used for signing.
+    post:
+      operationId: postPkiInternalExported
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PkiInternalExportedRequest'
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
   /pki/issue/{role}:
     description: Request a certificate using a certain role with the provided details.
     post:
@@ -9837,7 +9820,368 @@ paths:
       responses:
         "200":
           description: OK
-      summary: Request a certificate using a certain role with the provided details.
+      tags:
+      - secrets
+  /pki/issuer/{issuer_ref}/issue/{role}:
+    description: Request a certificate using a certain role with the provided details.
+    post:
+      operationId: postPkiIssuerIssuer_refIssueRole
+      parameters:
+      - description: Reference to a existing issuer; either "default" for the configured
+          default issuer, an identifier or the name assigned to the issuer.
+        explode: false
+        in: path
+        name: issuer_ref
+        required: true
+        schema:
+          default: default
+          type: string
+        style: simple
+      - description: The desired role with configuration for this request
+        explode: false
+        in: path
+        name: role
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PkiIssuerIssueRequest'
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /pki/issuer/{issuer_ref}/sign-intermediate:
+    description: Issue an intermediate CA certificate based on the provided CSR.
+    post:
+      operationId: postPkiIssuerIssuer_refSignIntermediate
+      parameters:
+      - description: Reference to a existing issuer; either "default" for the configured
+          default issuer, an identifier or the name assigned to the issuer.
+        explode: false
+        in: path
+        name: issuer_ref
+        required: true
+        schema:
+          default: default
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PkiIssuerSignIntermediateRequest'
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /pki/issuer/{issuer_ref}/sign-self-issued:
+    description: Re-issue a self-signed certificate based on the provided certificate.
+    post:
+      operationId: postPkiIssuerIssuer_refSignSelfIssued
+      parameters:
+      - description: Reference to a existing issuer; either "default" for the configured
+          default issuer, an identifier or the name assigned to the issuer.
+        explode: false
+        in: path
+        name: issuer_ref
+        required: true
+        schema:
+          default: default
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PkiIssuerSignSelfIssuedRequest'
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /pki/issuer/{issuer_ref}/sign-verbatim:
+    description: Issue a certificate directly based on the provided CSR.
+    post:
+      operationId: postPkiIssuerIssuer_refSignVerbatim
+      parameters:
+      - description: Reference to a existing issuer; either "default" for the configured
+          default issuer, an identifier or the name assigned to the issuer.
+        explode: false
+        in: path
+        name: issuer_ref
+        required: true
+        schema:
+          default: default
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PkiIssuerSignVerbatimRequest'
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /pki/issuer/{issuer_ref}/sign-verbatim/{role}:
+    description: Issue a certificate directly based on the provided CSR.
+    post:
+      operationId: postPkiIssuerIssuer_refSignVerbatimRole
+      parameters:
+      - description: Reference to a existing issuer; either "default" for the configured
+          default issuer, an identifier or the name assigned to the issuer.
+        explode: false
+        in: path
+        name: issuer_ref
+        required: true
+        schema:
+          default: default
+          type: string
+        style: simple
+      - description: The desired role with configuration for this request
+        explode: false
+        in: path
+        name: role
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PkiIssuerSignVerbatimRequest'
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /pki/issuer/{issuer_ref}/sign/{role}:
+    description: Request certificates using a certain role with the provided details.
+    post:
+      operationId: postPkiIssuerIssuer_refSignRole
+      parameters:
+      - description: Reference to a existing issuer; either "default" for the configured
+          default issuer, an identifier or the name assigned to the issuer.
+        explode: false
+        in: path
+        name: issuer_ref
+        required: true
+        schema:
+          default: default
+          type: string
+        style: simple
+      - description: The desired role with configuration for this request
+        explode: false
+        in: path
+        name: role
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PkiIssuerSignRequest'
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /pki/issuers:
+    description: Fetch a list of CA certificates.
+    get:
+      operationId: getPkiIssuers
+      parameters:
+      - description: Must be set to `true`
+        explode: true
+        in: query
+        name: list
+        required: true
+        schema:
+          enum:
+          - "true"
+          type: string
+        style: form
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+    x-vault-unauthenticated: true
+  /pki/issuers/generate/intermediate/{exported}:
+    description: Generate a new CSR and private key used for signing.
+    post:
+      operationId: postPkiIssuersGenerateIntermediateExported
+      parameters:
+      - description: Must be "internal", "exported" or "kms". If set to "exported",
+          the generated private key will be returned. This is your *only* chance to
+          retrieve the private key!
+        explode: false
+        in: path
+        name: exported
+        required: true
+        schema:
+          enum:
+          - internal
+          - external
+          - kms
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PkiIssuersGenerateIntermediateRequest'
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /pki/issuers/generate/root/{exported}:
+    description: Generate a new CA certificate and private key used for signing.
+    post:
+      operationId: postPkiIssuersGenerateRootExported
+      parameters:
+      - description: Must be "internal", "exported" or "kms". If set to "exported",
+          the generated private key will be returned. This is your *only* chance to
+          retrieve the private key!
+        explode: false
+        in: path
+        name: exported
+        required: true
+        schema:
+          enum:
+          - internal
+          - external
+          - kms
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PkiIssuersGenerateRootRequest'
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /pki/key/{key_ref}:
+    delete:
+      operationId: deletePkiKeyKey_ref
+      parameters:
+      - description: Reference to key; either "default" for the configured default
+          key, an identifier of a key, or the name assigned to the key.
+        explode: false
+        in: path
+        name: key_ref
+        required: true
+        schema:
+          default: default
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: empty body
+      tags:
+      - secrets
+    description: Fetch a single issuer key
+    get:
+      operationId: getPkiKeyKey_ref
+      parameters:
+      - description: Reference to key; either "default" for the configured default
+          key, an identifier of a key, or the name assigned to the key.
+        explode: false
+        in: path
+        name: key_ref
+        required: true
+        schema:
+          default: default
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+    post:
+      operationId: postPkiKeyKey_ref
+      parameters:
+      - description: Reference to key; either "default" for the configured default
+          key, an identifier of a key, or the name assigned to the key.
+        explode: false
+        in: path
+        name: key_ref
+        required: true
+        schema:
+          default: default
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PkiKeyRequest'
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /pki/keys:
+    description: Fetch a list of all issuer keys
+    get:
+      operationId: getPkiKeys
+      parameters:
+      - description: Must be set to `true`
+        explode: true
+        in: query
+        name: list
+        required: true
+        schema:
+          enum:
+          - "true"
+          type: string
+        style: form
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /pki/keys/import:
+    description: Import the specified key.
+    post:
+      operationId: postPkiKeysImport
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PkiKeysImportRequest'
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /pki/kms:
+    description: Generate a new private key used for signing.
+    post:
+      operationId: postPkiKms
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PkiKmsRequest'
+      responses:
+        "200":
+          description: OK
       tags:
       - secrets
   /pki/revoke:
@@ -9852,7 +10196,6 @@ paths:
       responses:
         "200":
           description: OK
-      summary: Revoke a certificate by serial number.
       tags:
       - secrets
   /pki/roles:
@@ -9873,7 +10216,6 @@ paths:
       responses:
         "200":
           description: OK
-      summary: List the existing roles in this backend
       tags:
       - secrets
   /pki/roles/{name}:
@@ -9891,7 +10233,6 @@ paths:
       responses:
         "204":
           description: empty body
-      summary: Manage the roles that can be created with this backend.
       tags:
       - secrets
     description: Manage the roles that can be created with this backend.
@@ -9909,7 +10250,6 @@ paths:
       responses:
         "200":
           description: OK
-      summary: Manage the roles that can be created with this backend.
       tags:
       - secrets
     post:
@@ -9931,7 +10271,6 @@ paths:
       responses:
         "200":
           description: OK
-      summary: Manage the roles that can be created with this backend.
       tags:
       - secrets
   /pki/root:
@@ -9973,6 +10312,49 @@ paths:
           description: OK
       tags:
       - secrets
+  /pki/root/replace:
+    description: Read and set the default issuer certificate for signing.
+    post:
+      operationId: postPkiRootReplace
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PkiRootReplaceRequest'
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /pki/root/rotate/{exported}:
+    description: Generate a new CA certificate and private key used for signing.
+    post:
+      operationId: postPkiRootRotateExported
+      parameters:
+      - description: Must be "internal", "exported" or "kms". If set to "exported",
+          the generated private key will be returned. This is your *only* chance to
+          retrieve the private key!
+        explode: false
+        in: path
+        name: exported
+        required: true
+        schema:
+          enum:
+          - internal
+          - external
+          - kms
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PkiRootRotateRequest'
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
   /pki/root/sign-intermediate:
     description: Issue an intermediate CA certificate based on the provided CSR.
     post:
@@ -9988,7 +10370,7 @@ paths:
       tags:
       - secrets
   /pki/root/sign-self-issued:
-    description: Signs another CA's self-issued certificate.
+    description: Re-issue a self-signed certificate based on the provided certificate.
     post:
       operationId: postPkiRootSignSelfIssued
       requestBody:
@@ -10003,7 +10385,7 @@ paths:
       - secrets
     x-vault-sudo: true
   /pki/sign-verbatim:
-    description: Request certificates using a certain role with the provided details.
+    description: Issue a certificate directly based on the provided CSR.
     post:
       operationId: postPkiSignVerbatim
       requestBody:
@@ -10014,11 +10396,10 @@ paths:
       responses:
         "200":
           description: OK
-      summary: Request certificates using a certain role with the provided details.
       tags:
       - secrets
   /pki/sign-verbatim/{role}:
-    description: Request certificates using a certain role with the provided details.
+    description: Issue a certificate directly based on the provided CSR.
     post:
       operationId: postPkiSignVerbatimRole
       parameters:
@@ -10038,7 +10419,6 @@ paths:
       responses:
         "200":
           description: OK
-      summary: Request certificates using a certain role with the provided details.
       tags:
       - secrets
   /pki/sign/{role}:
@@ -10062,7 +10442,6 @@ paths:
       responses:
         "200":
           description: OK
-      summary: Request certificates using a certain role with the provided details.
       tags:
       - secrets
   /pki/tidy:
@@ -10084,6 +10463,87 @@ paths:
     description: Returns the status of the tidy operation.
     get:
       operationId: getPkiTidyStatus
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /pki/{issuer_ref}/crl/pem:
+    description: Fetch an issuer's Certificate Revocation Log (CRL).
+    get:
+      operationId: getPkiIssuer_refCrlPem
+      parameters:
+      - description: Reference to a existing issuer; either "default" for the configured
+          default issuer, an identifier or the name assigned to the issuer.
+        explode: false
+        in: path
+        name: issuer_ref
+        required: true
+        schema:
+          default: default
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+  /pki/{issuer_ref}/der|/pem:
+    delete:
+      operationId: deletePkiIssuer_refDerPem
+      parameters:
+      - description: Reference to a existing issuer; either "default" for the configured
+          default issuer, an identifier or the name assigned to the issuer.
+        explode: false
+        in: path
+        name: issuer_ref
+        required: true
+        schema:
+          default: default
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: empty body
+      tags:
+      - secrets
+    description: Fetch a single issuer certificate.
+    get:
+      operationId: getPkiIssuer_refDerPem
+      parameters:
+      - description: Reference to a existing issuer; either "default" for the configured
+          default issuer, an identifier or the name assigned to the issuer.
+        explode: false
+        in: path
+        name: issuer_ref
+        required: true
+        schema:
+          default: default
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: OK
+      tags:
+      - secrets
+    post:
+      operationId: postPkiIssuer_refDerPem
+      parameters:
+      - description: Reference to a existing issuer; either "default" for the configured
+          default issuer, an identifier or the name assigned to the issuer.
+        explode: false
+        in: path
+        name: issuer_ref
+        required: true
+        schema:
+          default: default
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PkiDerPemRequest'
       responses:
         "200":
           description: OK
@@ -11391,6 +11851,16 @@ paths:
       summary: Report the client count metrics, for this namespace and all child namespaces.
       tags:
       - system
+  /sys/internal/counters/activity/export:
+    description: Export the historical activity of clients.
+    get:
+      operationId: getSysInternalCountersActivityExport
+      responses:
+        "200":
+          description: OK
+      summary: Report the client count metrics, for this namespace and all child namespaces.
+      tags:
+      - system
   /sys/internal/counters/activity/monthly:
     description: Count of active clients so far this month.
     get:
@@ -11824,6 +12294,16 @@ paths:
     get:
       operationId: getSysMonitor
       parameters:
+      - description: Output format of logs. Supported values are "standard" and "json".
+          The default is "standard".
+        explode: true
+        in: query
+        name: log_format
+        required: false
+        schema:
+          default: standard
+          type: string
+        style: form
       - description: Log level to view system logs at. Currently supported values
           are "trace", "debug", "info", "warn", "error".
         explode: true
@@ -13140,6 +13620,66 @@ paths:
       summary: Generate random bytes
       tags:
       - system
+  /sys/tools/random/{source}:
+    description: Generate random bytes
+    post:
+      operationId: postSysToolsRandomSource
+      parameters:
+      - description: Which system to source random data from, ether "platform", "seal",
+          or "all".
+        explode: false
+        in: path
+        name: source
+        required: true
+        schema:
+          default: platform
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SystemToolsRandomRequest'
+      responses:
+        "200":
+          description: OK
+      summary: Generate random bytes
+      tags:
+      - system
+  /sys/tools/random/{source}/{urlbytes}:
+    description: Generate random bytes
+    post:
+      operationId: postSysToolsRandomSourceUrlbytes
+      parameters:
+      - description: Which system to source random data from, ether "platform", "seal",
+          or "all".
+        explode: false
+        in: path
+        name: source
+        required: true
+        schema:
+          default: platform
+          type: string
+        style: simple
+      - description: The number of bytes to generate (POST URL parameter)
+        explode: false
+        in: path
+        name: urlbytes
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SystemToolsRandomRequest'
+      responses:
+        "200":
+          description: OK
+      summary: Generate random bytes
+      tags:
+      - system
   /sys/tools/random/{urlbytes}:
     description: Generate random bytes
     post:
@@ -13940,6 +14480,54 @@ paths:
       summary: Configure a named encryption key
       tags:
       - secrets
+  /transit/keys/{name}/import:
+    description: Imports an externally-generated key into a new transit key
+    post:
+      operationId: postTransitKeysNameImport
+      parameters:
+      - description: The name of the key
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransitKeysImportRequest'
+      responses:
+        "200":
+          description: OK
+      summary: Imports an externally-generated key into a new transit key
+      tags:
+      - secrets
+  /transit/keys/{name}/import_version:
+    description: Imports an externally-generated key into an existing imported key
+    post:
+      operationId: postTransitKeysNameImport_version
+      parameters:
+      - description: The name of the key
+        explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransitKeysImportVersionRequest'
+      responses:
+        "200":
+          description: OK
+      summary: Imports an externally-generated key into an existing imported key
+      tags:
+      - secrets
   /transit/keys/{name}/rotate:
     description: Rotate named encryption key
     post:
@@ -13987,6 +14575,66 @@ paths:
     description: Generate random bytes
     post:
       operationId: postTransitRandom
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransitRandomRequest'
+      responses:
+        "200":
+          description: OK
+      summary: Generate random bytes
+      tags:
+      - secrets
+  /transit/random/{source}:
+    description: Generate random bytes
+    post:
+      operationId: postTransitRandomSource
+      parameters:
+      - description: Which system to source random data from, ether "platform", "seal",
+          or "all".
+        explode: false
+        in: path
+        name: source
+        required: true
+        schema:
+          default: platform
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransitRandomRequest'
+      responses:
+        "200":
+          description: OK
+      summary: Generate random bytes
+      tags:
+      - secrets
+  /transit/random/{source}/{urlbytes}:
+    description: Generate random bytes
+    post:
+      operationId: postTransitRandomSourceUrlbytes
+      parameters:
+      - description: Which system to source random data from, ether "platform", "seal",
+          or "all".
+        explode: false
+        in: path
+        name: source
+        required: true
+        schema:
+          default: platform
+          type: string
+        style: simple
+      - description: The number of bytes to generate (POST URL parameter)
+        explode: false
+        in: path
+        name: urlbytes
+        required: true
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           application/json:
@@ -14197,6 +14845,16 @@ paths:
         "200":
           description: OK
       summary: Verify a signature or HMAC for input data created using the named key
+      tags:
+      - secrets
+  /transit/wrapping_key:
+    description: Returns the public key to use for wrapping imported keys
+    get:
+      operationId: getTransitWrapping_key
+      responses:
+        "200":
+          description: OK
+      summary: Returns the public key to use for wrapping imported keys
       tags:
       - secrets
 components:
@@ -16989,24 +17647,40 @@ components:
     ConsulRolesRequest:
       example:
         consul_namespace: consul_namespace
-        partition: partition
         max_ttl: 6
         policies:
         - policies
         - policies
-        lease: 0
         consul_roles:
         - consul_roles
         - consul_roles
         token_type: client
+        service_identities:
+        - service_identities
+        - service_identities
         ttl: 1
         local: true
+        partition: partition
+        consul_policies:
+        - consul_policies
+        - consul_policies
+        lease: 0
+        node_identities:
+        - node_identities
+        - node_identities
         policy: policy
       properties:
         consul_namespace:
           description: Indicates which namespace that the token will be created within.
             Defaults to 'default'. Available in Consul 1.7 and above.
           type: string
+        consul_policies:
+          description: List of policies to attach to the token. Either "consul_policies"
+            or "consul_roles" are required for Consul 1.5 and above, or just "consul_policies"
+            if using Consul 1.4.
+          items:
+            type: string
+          type: array
         consul_roles:
           description: List of Consul roles to attach to the token. Either "policies"
             or "consul_roles" are required for Consul 1.5 and above.
@@ -17027,23 +17701,36 @@ components:
           description: Max TTL for the Consul token created from the role.
           format: seconds
           type: integer
+        node_identities:
+          description: List of Node Identities to attach to the token. Available in
+            Consul 1.8.1 or above.
+          items:
+            type: string
+          type: array
         partition:
           description: Indicates which admin partition that the token will be created
             within. Defaults to 'default'. Available in Consul 1.11 and above.
           type: string
         policies:
-          description: List of policies to attach to the token. Either "policies"
-            or "consul_roles" are required for Consul 1.5 and above, or just "policies"
-            if using Consul 1.4.
+          deprecated: true
+          description: Use "consul_policies" instead.
           items:
             type: string
           type: array
         policy:
+          deprecated: true
           description: Policy document, base64 encoded. Required for 'client' tokens.
             Required for Consul pre-1.4.
           type: string
+        service_identities:
+          description: List of Service Identities to attach to the token, separated
+            by semicolons. Available in Consul 1.5 or above.
+          items:
+            type: string
+          type: array
         token_type:
           default: client
+          deprecated: true
           description: 'Which type of token to create: ''client'' or ''management''.
             If a ''management'' token, the "policy", "policies", and "consul_roles"
             parameters are not required. Defaults to ''client''.'
@@ -17065,6 +17752,7 @@ components:
         - iam_metadata
         - iam_metadata
         iam_alias: role_id
+        custom_endpoint: '{}'
       properties:
         credentials:
           description: Google credentials JSON that Vault will use to verify users
@@ -17072,6 +17760,11 @@ components:
           type: string
           x-vault-displayAttrs:
             name: Credentials
+        custom_endpoint:
+          description: Specifies overrides for various Google API Service Endpoints
+            used in requests.
+          format: kvpairs
+          type: object
         gce_alias:
           default: role_id
           description: Indicates what value to use when generating an alias for GCE
@@ -17733,16 +18426,16 @@ components:
         - token_policies
         token_num_uses: 5
         max_ttl: 0
-        token_explicit_max_ttl: 6
+        token_explicit_max_ttl: 1
         base_url: base_url
-        token_period: 5
-        token_max_ttl: 1
+        token_period: 2
+        token_max_ttl: 5
         token_type: default-service
-        ttl: 7
+        ttl: 9
         token_no_default_policy: true
-        token_ttl: 2
+        token_ttl: 7
         organization: organization
-        organization_id: ""
+        organization_id: 6
         token_bound_cidrs:
         - token_bound_cidrs
         - token_bound_cidrs
@@ -17765,7 +18458,8 @@ components:
           type: string
         organization_id:
           description: The ID of the organization users must be part of
-          format: unknown
+          format: int64
+          type: integer
         token_bound_cidrs:
           description: Comma separated string or JSON list of CIDR blocks. If set,
             specifies the blocks of IP addresses which are allowed to use the generated
@@ -17849,52 +18543,10 @@ components:
       required:
       - organization
       type: object
-    GithubDuoAccessRequest:
-      example:
-        ikey: ikey
-        host: host
-        skey: skey
-      properties:
-        host:
-          description: Duo api host
-          type: string
-        ikey:
-          description: Duo integration key
-          type: string
-        skey:
-          description: Duo secret key
-          type: string
-      type: object
-    GithubDuoConfigRequest:
-      example:
-        username_format: username_format
-        push_info: push_info
-        user_agent: user_agent
-      properties:
-        push_info:
-          description: A string of URL-encoded key/value pairs that provides additional
-            context about the authentication attempt in the Duo Mobile app
-          type: string
-        user_agent:
-          description: User agent to connect to Duo (default "")
-          type: string
-        username_format:
-          description: Format string given auth method username as argument to create
-            Duo username (default '%s')
-          type: string
-      type: object
     GithubLoginRequest:
       example:
-        method: method
-        passcode: passcode
         token: token
       properties:
-        method:
-          description: Multi-factor auth method to use (optional)
-          type: string
-        passcode:
-          description: One time passcode (optional)
-          type: string
         token:
           description: GitHub personal API token
           type: string
@@ -17913,14 +18565,6 @@ components:
       properties:
         value:
           description: Value for users mapping
-          type: string
-      type: object
-    GithubMfaConfigRequest:
-      example:
-        type: type
-      properties:
-        type:
-          description: 'Enables MFA with given backend (available: duo)'
           type: string
       type: object
     IdentityAliasIdRequest:
@@ -18427,7 +19071,7 @@ components:
         secret_key: secret_key
         integration_key: integration_key
         method_id: method_id
-        username_template: username_template
+        username_format: username_format
         push_info: push_info
         use_passcode: true
         api_hostname: api_hostname
@@ -18452,7 +19096,7 @@ components:
             validation. This option does not enforce using the passcode. Defaults
             to false.
           type: boolean
-        username_template:
+        username_format:
           description: 'A template string for mapping Identity names to MFA method
             names. Values to subtitute should be placed in {{}}. For example, "{{alias.name}}@example.com".
             Currently-supported mappings: alias.name: The name returned by the mount
@@ -18465,8 +19109,8 @@ components:
         production: true
         method_id: method_id
         api_token: api_token
-        username_template: username_template
         base_url: base_url
+        username_format: username_format
         primary_email: true
         org_name: org_name
       properties:
@@ -18490,7 +19134,7 @@ components:
         production:
           description: (DEPRECATED) Use base_url instead.
           type: boolean
-        username_template:
+        username_format:
           description: A template string for mapping Identity names to MFA method
             names. Values to substitute should be placed in {{}}. For example, "{{entity.name}}@example.com".
             If blank, the Entity's name field will be used as-is.
@@ -18499,7 +19143,7 @@ components:
     IdentityMfaMethodPingidRequest:
       example:
         method_id: method_id
-        username_template: username_template
+        username_format: username_format
         settings_file_base64: settings_file_base64
       properties:
         method_id:
@@ -18510,7 +19154,7 @@ components:
             be a settings file suitable for third-party clients, not the PingID SDK
             or PingFederate.
           type: string
-        username_template:
+        username_format:
           description: 'A template string for mapping Identity names to MFA method
             names. Values to subtitute should be placed in {{}}. For example, "{{alias.name}}@example.com".
             Currently-supported mappings: alias.name: The name returned by the mount
@@ -18561,14 +19205,15 @@ components:
       type: object
     IdentityMfaMethodTotpRequest:
       example:
-        period: 1
+        period: 5
         method_id: method_id
         qr_size: 5
         digits: 0
+        max_validation_attempts: 1
         issuer: issuer
         algorithm: SHA1
         key_size: 6
-        skew: 5
+        skew: 2
       properties:
         algorithm:
           default: SHA1
@@ -18586,6 +19231,9 @@ components:
         key_size:
           default: 20
           description: Determines the size in bytes of the generated key.
+          type: integer
+        max_validation_attempts:
+          description: Max number of allowed validation attempts.
           type: integer
         method_id:
           description: The unique identifier for this MFA method.
@@ -19119,6 +19767,7 @@ components:
         token_bound_cidrs:
         - token_bound_cidrs
         - token_bound_cidrs
+        user_claim_json_pointer: true
       properties:
         allowed_redirect_uris:
           description: Comma-separated list of allowed values for redirect_uri
@@ -19296,6 +19945,10 @@ components:
         user_claim:
           description: The claim to use for the Identity entity alias name
           type: string
+        user_claim_json_pointer:
+          description: If true, the user_claim value will use JSON pointer syntax
+            for referencing claims.
+          type: boolean
         verbose_oidc_logging:
           description: Log received OIDC tokens and claims when debug-level logging
             is active. Not recommended in production since sensitive information may
@@ -19685,6 +20338,28 @@ components:
           x-vault-displayAttrs:
             name: Token Reviewer JWT
       type: object
+    KubernetesCredsRequest:
+      example:
+        kubernetes_namespace: kubernetes_namespace
+        cluster_role_binding: true
+        ttl: 0
+      properties:
+        cluster_role_binding:
+          description: If true, generate a ClusterRoleBinding to grant permissions
+            across the whole cluster instead of within a namespace. Requires the Vault
+            role to have kubernetes_role_type set to ClusterRole.
+          type: boolean
+        kubernetes_namespace:
+          description: The name of the Kubernetes namespace in which to generate the
+            credentials
+          type: string
+        ttl:
+          description: The TTL of the generated credentials
+          format: seconds
+          type: integer
+      required:
+      - kubernetes_namespace
+      type: object
     KubernetesLoginRequest:
       example:
         role: role
@@ -19864,6 +20539,72 @@ components:
             only "token_ttl" will be used.
           format: seconds
           type: integer
+      type: object
+    KubernetesRolesRequest:
+      example:
+        service_account_name: service_account_name
+        allowed_kubernetes_namespaces:
+        - allowed_kubernetes_namespaces
+        - allowed_kubernetes_namespaces
+        extra_labels: '{}'
+        extra_annotations: '{}'
+        name_template: name_template
+        token_default_ttl: 0
+        token_max_ttl: 6
+        generated_role_rules: generated_role_rules
+        kubernetes_role_type: Role
+        kubernetes_role_name: kubernetes_role_name
+      properties:
+        allowed_kubernetes_namespaces:
+          description: A list of the Kubernetes namespaces in which credentials can
+            be generated. If set to "*" all namespaces are allowed.
+          items:
+            type: string
+          type: array
+        extra_annotations:
+          description: Additional annotations to apply to all generated Kubernetes
+            objects.
+          format: kvpairs
+          type: object
+        extra_labels:
+          description: Additional labels to apply to all generated Kubernetes objects.
+          format: kvpairs
+          type: object
+        generated_role_rules:
+          description: The Role or ClusterRole rules to use when generating a role.
+            Accepts either a JSON or YAML object. If set, the entire chain of Kubernetes
+            objects will be generated.
+          type: string
+        kubernetes_role_name:
+          description: The pre-existing Role or ClusterRole to bind a generated service
+            account to. If set, Kubernetes token, service account, and role binding
+            objects will be created.
+          type: string
+        kubernetes_role_type:
+          default: Role
+          description: Specifies whether the Kubernetes role is a Role or ClusterRole.
+          type: string
+        name_template:
+          description: The name template to use when generating service accounts,
+            roles and role bindings. If unset, a default template is used.
+          type: string
+        service_account_name:
+          description: The pre-existing service account to generate tokens for. Mutually
+            exclusive with all role parameters. If set, only a Kubernetes service
+            account token will be created.
+          type: string
+        token_default_ttl:
+          description: The default ttl for generated Kubernetes service account tokens.
+            If not set or set to 0, will use system default.
+          format: seconds
+          type: integer
+        token_max_ttl:
+          description: The maximum ttl for generated Kubernetes service account tokens.
+            If not set or set to 0, will use system default.
+          format: seconds
+          type: integer
+      required:
+      - allowed_kubernetes_namespaces
       type: object
     KvConfigRequest:
       example:
@@ -20261,40 +21002,6 @@ components:
           description: If true, sets the alias name to the username
           type: boolean
       type: object
-    LdapDuoAccessRequest:
-      example:
-        ikey: ikey
-        host: host
-        skey: skey
-      properties:
-        host:
-          description: Duo api host
-          type: string
-        ikey:
-          description: Duo integration key
-          type: string
-        skey:
-          description: Duo secret key
-          type: string
-      type: object
-    LdapDuoConfigRequest:
-      example:
-        username_format: username_format
-        push_info: push_info
-        user_agent: user_agent
-      properties:
-        push_info:
-          description: A string of URL-encoded key/value pairs that provides additional
-            context about the authentication attempt in the Duo Mobile app
-          type: string
-        user_agent:
-          description: User agent to connect to Duo (default "")
-          type: string
-        username_format:
-          description: Format string given auth method username as argument to create
-            Duo username (default '%s')
-          type: string
-      type: object
     LdapGroupsRequest:
       example:
         policies:
@@ -20310,25 +21017,9 @@ components:
     LdapLoginRequest:
       example:
         password: password
-        method: method
-        passcode: passcode
       properties:
-        method:
-          description: Multi-factor auth method to use (optional)
-          type: string
-        passcode:
-          description: One time passcode (optional)
-          type: string
         password:
           description: Password for this user.
-          type: string
-      type: object
-    LdapMfaConfigRequest:
-      example:
-        type: type
-      properties:
-        type:
-          description: 'Enables MFA with given backend (available: duo)'
           type: string
       type: object
     LdapUsersRequest:
@@ -20808,6 +21499,7 @@ components:
         token_bound_cidrs:
         - token_bound_cidrs
         - token_bound_cidrs
+        user_claim_json_pointer: true
       properties:
         allowed_redirect_uris:
           description: Comma-separated list of allowed values for redirect_uri
@@ -20985,6 +21677,10 @@ components:
         user_claim:
           description: The claim to use for the Identity entity alias name
           type: string
+        user_claim_json_pointer:
+          description: If true, the user_claim value will use JSON pointer syntax
+            for referencing claims.
+          type: boolean
         verbose_oidc_logging:
           description: Log received OIDC tokens and claims when debug-level logging
             is active. Not recommended in production since sensitive information may
@@ -21138,40 +21834,6 @@ components:
           format: seconds
           type: integer
       type: object
-    OktaDuoAccessRequest:
-      example:
-        ikey: ikey
-        host: host
-        skey: skey
-      properties:
-        host:
-          description: Duo api host
-          type: string
-        ikey:
-          description: Duo integration key
-          type: string
-        skey:
-          description: Duo secret key
-          type: string
-      type: object
-    OktaDuoConfigRequest:
-      example:
-        username_format: username_format
-        push_info: push_info
-        user_agent: user_agent
-      properties:
-        push_info:
-          description: A string of URL-encoded key/value pairs that provides additional
-            context about the authentication attempt in the Duo Mobile app
-          type: string
-        user_agent:
-          description: User agent to connect to Duo (default "")
-          type: string
-        username_format:
-          description: Format string given auth method username as argument to create
-            Duo username (default '%s')
-          type: string
-      type: object
     OktaGroupsRequest:
       example:
         policies:
@@ -21188,28 +21850,22 @@ components:
       example:
         totp: totp
         password: password
-        method: method
-        passcode: passcode
+        provider: provider
+        nonce: nonce
       properties:
-        method:
-          description: Multi-factor auth method to use (optional)
-          type: string
-        passcode:
-          description: One time passcode (optional)
+        nonce:
+          description: Nonce provided if performing login that requires number verification
+            challenge. Logins through the vault login CLI command will automatically
+            generate a nonce.
           type: string
         password:
           description: Password for this user.
           type: string
+        provider:
+          description: Preferred factor provider.
+          type: string
         totp:
           description: TOTP passcode.
-          type: string
-      type: object
-    OktaMfaConfigRequest:
-      example:
-        type: type
-      properties:
-        type:
-          description: 'Enables MFA with given backend (available: duo)'
           type: string
       type: object
     OktaUsersRequest:
@@ -21515,6 +22171,24 @@ components:
             will be associated.
           type: string
       type: object
+    PkiBundleRequest:
+      example:
+        pem_bundle: pem_bundle
+      properties:
+        pem_bundle:
+          description: PEM-format, concatenated unencrypted secret-key (optional)
+            and certificates.
+          type: string
+      type: object
+    PkiCertRequest:
+      example:
+        pem_bundle: pem_bundle
+      properties:
+        pem_bundle:
+          description: PEM-format, concatenated unencrypted secret-key (optional)
+            and certificates.
+          type: string
+      type: object
     PkiConfigCaRequest:
       example:
         pem_bundle: pem_bundle
@@ -21535,6 +22209,22 @@ components:
           default: 72h
           description: The amount of time the generated CRL should be valid; defaults
             to 72 hours
+          type: string
+      type: object
+    PkiConfigIssuersRequest:
+      example:
+        default: default
+      properties:
+        default:
+          description: Reference (name or identifier) to the default issuer.
+          type: string
+      type: object
+    PkiConfigKeysRequest:
+      example:
+        default: default
+      properties:
+        default:
+          description: Reference (name or identifier) of the default key.
           type: string
       type: object
     PkiConfigUrlsRequest:
@@ -21568,6 +22258,294 @@ components:
             type: string
           type: array
       type: object
+    PkiDerPemRequest:
+      example:
+        leaf_not_after_behavior: err
+        usage:
+        - usage
+        - usage
+        manual_chain:
+        - manual_chain
+        - manual_chain
+        issuer_name: issuer_name
+      properties:
+        issuer_name:
+          description: Provide a name to the generated or existing issuer, the name
+            must be unique across all issuers and not be the reserved value 'default'
+          type: string
+        leaf_not_after_behavior:
+          default: err
+          description: 'Behavior of leaf''s NotAfter fields: "err" to error if the
+            computed NotAfter date exceeds that of this issuer; "truncate" to silently
+            truncate to that of this issuer; or "permit" to allow this issuance to
+            succeed (with NotAfter exceeding that of an issuer). Note that not all
+            values will results in certificates that can be validated through the
+            entire validity period. It is suggested to use "truncate" for intermediate
+            CAs and "permit" only for root CAs.'
+          type: string
+        manual_chain:
+          description: Chain of issuer references to use to build this issuer's computed
+            CAChain field, when non-empty.
+          items:
+            type: string
+          type: array
+        usage:
+          default:
+          - read-only
+          - issuing-certificates
+          - crl-signing
+          description: Comma-separated list (or string slice) of usages for this issuer;
+            valid values are "read-only", "issuing-certificates", and "crl-signing".
+            Multiple values may be specified. Read-only is implicit and always set.
+          items:
+            type: string
+          type: array
+      type: object
+    PkiIntermediateCrossSignRequest:
+      example:
+        other_sans:
+        - other_sans
+        - other_sans
+        country:
+        - country
+        - country
+        street_address:
+        - street_address
+        - street_address
+        add_basic_constraints: true
+        key_type: rsa
+        uri_sans:
+        - uri_sans
+        - uri_sans
+        province:
+        - province
+        - province
+        ip_sans:
+        - ip_sans
+        - ip_sans
+        key_ref: default
+        common_name: common_name
+        managed_key_name: managed_key_name
+        exported: internal
+        ou:
+        - ou
+        - ou
+        format: pem
+        locality:
+        - locality
+        - locality
+        private_key_format: der
+        alt_names: alt_names
+        serial_number: serial_number
+        exclude_cn_from_sans: false
+        ttl: 1
+        not_before_duration: 6
+        key_bits: 0
+        key_name: key_name
+        not_after: not_after
+        organization:
+        - organization
+        - organization
+        managed_key_id: managed_key_id
+        postal_code:
+        - postal_code
+        - postal_code
+      properties:
+        add_basic_constraints:
+          description: 'Whether to add a Basic Constraints extension with CA: true.
+            Only needed as a workaround in some compatibility scenarios with Active
+            Directory Certificate Services.'
+          type: boolean
+        alt_names:
+          description: The requested Subject Alternative Names, if any, in a comma-delimited
+            list. May contain both DNS names and email addresses.
+          type: string
+          x-vault-displayAttrs:
+            name: DNS/Email Subject Alternative Names (SANs)
+        common_name:
+          description: The requested common name; if you want more than one, specify
+            the alternative names in the alt_names map. If not specified when signing,
+            the common name will be taken from the CSR; other names must still be
+            specified in alt_names or ip_sans.
+          type: string
+        country:
+          description: If set, Country will be set to this value.
+          items:
+            type: string
+          type: array
+        exclude_cn_from_sans:
+          default: false
+          description: If true, the Common Name will not be included in DNS or Email
+            Subject Alternate Names. Defaults to false (CN is included).
+          type: boolean
+          x-vault-displayAttrs:
+            name: Exclude Common Name from Subject Alternative Names (SANs)
+        exported:
+          description: Must be "internal", "exported" or "kms". If set to "exported",
+            the generated private key will be returned. This is your *only* chance
+            to retrieve the private key!
+          enum:
+          - internal
+          - external
+          - kms
+          type: string
+        format:
+          default: pem
+          description: Format for returned data. Can be "pem", "der", or "pem_bundle".
+            If "pem_bundle", any private key and issuing cert will be appended to
+            the certificate pem. If "der", the value will be base64 encoded. Defaults
+            to "pem".
+          enum:
+          - pem
+          - der
+          - pem_bundle
+          type: string
+          x-vault-displayAttrs:
+            value: pem
+        ip_sans:
+          description: The requested IP SANs, if any, in a comma-delimited list
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: IP Subject Alternative Names (SANs)
+        key_bits:
+          default: 0
+          description: 'The number of bits to use. Allowed values are 0 (universal
+            default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type:
+            224, 256 (default), 384, or 521; ignored with ed25519.'
+          type: integer
+          x-vault-displayAttrs:
+            value: 0
+        key_name:
+          description: Provide a name to the generated or existing key, the name must
+            be unique across all keys and not be the reserved value 'default'
+          type: string
+        key_ref:
+          default: default
+          description: Reference to a existing key; either "default" for the configured
+            default key, an identifier or the name assigned to the key.
+          type: string
+        key_type:
+          default: rsa
+          description: The type of key to use; defaults to RSA. "rsa" "ec" and "ed25519"
+            are the only valid values.
+          enum:
+          - rsa
+          - ec
+          - ed25519
+          type: string
+          x-vault-displayAttrs:
+            value: rsa
+        locality:
+          description: If set, Locality will be set to this value.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Locality/City
+        managed_key_id:
+          description: The name of the managed key to use when the exported type is
+            kms. When kms type is the key type, this field or managed_key_name is
+            required. Ignored for other types.
+          type: string
+        managed_key_name:
+          description: The name of the managed key to use when the exported type is
+            kms. When kms type is the key type, this field or managed_key_id is required.
+            Ignored for other types.
+          type: string
+        not_after:
+          description: Set the not after field of the certificate with specified date
+            value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
+          type: string
+        not_before_duration:
+          default: 30
+          description: The duration before now which the certificate needs to be backdated
+            by.
+          format: seconds
+          type: integer
+          x-vault-displayAttrs:
+            value: 30
+        organization:
+          description: If set, O (Organization) will be set to this value.
+          items:
+            type: string
+          type: array
+        other_sans:
+          description: Requested other SANs, in an array with the format <oid>;UTF8:<utf8
+            string value> for each entry.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Other SANs
+        ou:
+          description: If set, OU (OrganizationalUnit) will be set to this value.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: OU (Organizational Unit)
+        postal_code:
+          description: If set, Postal Code will be set to this value.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Postal Code
+        private_key_format:
+          default: der
+          description: Format for the returned private key. Generally the default
+            will be controlled by the "format" parameter as either base64-encoded
+            DER or PEM-encoded DER. However, this can be set to "pkcs8" to have the
+            returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8
+            instead. Defaults to "der".
+          enum:
+          - ""
+          - der
+          - pem
+          - pkcs8
+          type: string
+          x-vault-displayAttrs:
+            value: der
+        province:
+          description: If set, Province will be set to this value.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Province/State
+        serial_number:
+          description: The Subject's requested serial number, if any. See RFC 4519
+            Section 2.31 'serialNumber' for a description of this field. If you want
+            more than one, specify alternative names in the alt_names map using OID
+            2.5.4.5. This has no impact on the final certificate's Serial Number field.
+          type: string
+        street_address:
+          description: If set, Street Address will be set to this value.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Street Address
+        ttl:
+          description: 'The requested Time To Live for the certificate; sets the expiration
+            date. If not specified the role default, backend default, or system default
+            TTL is used, in that order. Cannot be larger than the mount max TTL. Note:
+            this only has an effect when generating a CA cert or signing a CA cert,
+            not when generating a CSR for an intermediate CA.'
+          format: seconds
+          type: integer
+          x-vault-displayAttrs:
+            name: TTL
+        uri_sans:
+          description: The requested URI SANs, if any, in a comma-delimited list.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: URI Subject Alternative Names (SANs)
+      type: object
     PkiIntermediateGenerateRequest:
       example:
         other_sans:
@@ -21581,6 +22559,18 @@ components:
         - street_address
         add_basic_constraints: true
         key_type: rsa
+        uri_sans:
+        - uri_sans
+        - uri_sans
+        province:
+        - province
+        - province
+        ip_sans:
+        - ip_sans
+        - ip_sans
+        key_ref: default
+        common_name: common_name
+        managed_key_name: managed_key_name
         ou:
         - ou
         - ou
@@ -21589,31 +22579,21 @@ components:
         - locality
         - locality
         private_key_format: der
-        signature_bits: 6
         alt_names: alt_names
         serial_number: serial_number
         exclude_cn_from_sans: false
-        uri_sans:
-        - uri_sans
-        - uri_sans
         ttl: 1
+        not_before_duration: 6
         key_bits: 0
+        key_name: key_name
         not_after: not_after
-        province:
-        - province
-        - province
-        ip_sans:
-        - ip_sans
-        - ip_sans
         organization:
         - organization
         - organization
         managed_key_id: managed_key_id
-        common_name: common_name
         postal_code:
         - postal_code
         - postal_code
-        managed_key_name: managed_key_name
       properties:
         add_basic_constraints:
           description: 'Whether to add a Basic Constraints extension with CA: true.
@@ -21672,6 +22652,15 @@ components:
           type: integer
           x-vault-displayAttrs:
             value: 0
+        key_name:
+          description: Provide a name to the generated or existing key, the name must
+            be unique across all keys and not be the reserved value 'default'
+          type: string
+        key_ref:
+          default: default
+          description: Reference to a existing key; either "default" for the configured
+            default key, an identifier or the name assigned to the key.
+          type: string
         key_type:
           default: rsa
           description: The type of key to use; defaults to RSA. "rsa" "ec" and "ed25519"
@@ -21704,6 +22693,14 @@ components:
           description: Set the not after field of the certificate with specified date
             value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
           type: string
+        not_before_duration:
+          default: 30
+          description: The duration before now which the certificate needs to be backdated
+            by.
+          format: seconds
+          type: integer
+          x-vault-displayAttrs:
+            value: 30
         organization:
           description: If set, O (Organization) will be set to this value.
           items:
@@ -21759,15 +22756,6 @@ components:
             more than one, specify alternative names in the alt_names map using OID
             2.5.4.5. This has no impact on the final certificate's Serial Number field.
           type: string
-        signature_bits:
-          default: 0
-          description: The number of bits to use in the signature algorithm; accepts
-            256 for SHA-2-256, 384 for SHA-2-384, and 512 for SHA-2-512. Defaults
-            to 0 to automatically detect based on key length (SHA-2-256 for RSA keys,
-            and matching the curve size for NIST P-Curves).
-          type: integer
-          x-vault-displayAttrs:
-            value: 0
         street_address:
           description: If set, Street Address will be set to this value.
           items:
@@ -21800,10 +22788,163 @@ components:
         certificate:
           description: PEM-format certificate. This must be a CA certificate with
             a public key matching the previously-generated key from the generation
-            endpoint.
+            endpoint. Additional parent CAs may be optionally appended to the bundle.
+          type: string
+      type: object
+    PkiInternalExportedRequest:
+      example:
+        key_bits: 0
+        key_name: key_name
+        key_type: rsa
+        managed_key_id: managed_key_id
+        managed_key_name: managed_key_name
+      properties:
+        key_bits:
+          default: 0
+          description: 'The number of bits to use. Allowed values are 0 (universal
+            default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type:
+            224, 256 (default), 384, or 521; ignored with ed25519.'
+          type: integer
+        key_name:
+          description: Optional name to be used for this key
+          type: string
+        key_type:
+          default: rsa
+          description: The type of key to use; defaults to RSA. "rsa" "ec" and "ed25519"
+            are the only valid values.
+          enum:
+          - rsa
+          - ec
+          - ed25519
+          type: string
+          x-vault-displayAttrs:
+            value: rsa
+        managed_key_id:
+          description: The name of the managed key to use when the exported type is
+            kms. When kms type is the key type, this field or managed_key_name is
+            required. Ignored for other types.
+          type: string
+        managed_key_name:
+          description: The name of the managed key to use when the exported type is
+            kms. When kms type is the key type, this field or managed_key_id is required.
+            Ignored for other types.
           type: string
       type: object
     PkiIssueRequest:
+      example:
+        not_after: not_after
+        other_sans:
+        - other_sans
+        - other_sans
+        ip_sans:
+        - ip_sans
+        - ip_sans
+        issuer_ref: default
+        format: pem
+        private_key_format: der
+        alt_names: alt_names
+        serial_number: serial_number
+        exclude_cn_from_sans: false
+        uri_sans:
+        - uri_sans
+        - uri_sans
+        common_name: common_name
+        ttl: 0
+      properties:
+        alt_names:
+          description: The requested Subject Alternative Names, if any, in a comma-delimited
+            list. If email protection is enabled for the role, this may contain email
+            addresses.
+          type: string
+          x-vault-displayAttrs:
+            name: DNS/Email Subject Alternative Names (SANs)
+        common_name:
+          description: The requested common name; if you want more than one, specify
+            the alternative names in the alt_names map. If email protection is enabled
+            in the role, this may be an email address.
+          type: string
+        exclude_cn_from_sans:
+          default: false
+          description: If true, the Common Name will not be included in DNS or Email
+            Subject Alternate Names. Defaults to false (CN is included).
+          type: boolean
+          x-vault-displayAttrs:
+            name: Exclude Common Name from Subject Alternative Names (SANs)
+        format:
+          default: pem
+          description: Format for returned data. Can be "pem", "der", or "pem_bundle".
+            If "pem_bundle", any private key and issuing cert will be appended to
+            the certificate pem. If "der", the value will be base64 encoded. Defaults
+            to "pem".
+          enum:
+          - pem
+          - der
+          - pem_bundle
+          type: string
+          x-vault-displayAttrs:
+            value: pem
+        ip_sans:
+          description: The requested IP SANs, if any, in a comma-delimited list
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: IP Subject Alternative Names (SANs)
+        issuer_ref:
+          default: default
+          description: Reference to a existing issuer; either "default" for the configured
+            default issuer, an identifier or the name assigned to the issuer.
+          type: string
+        not_after:
+          description: Set the not after field of the certificate with specified date
+            value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
+          type: string
+        other_sans:
+          description: Requested other SANs, in an array with the format <oid>;UTF8:<utf8
+            string value> for each entry.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Other SANs
+        private_key_format:
+          default: der
+          description: Format for the returned private key. Generally the default
+            will be controlled by the "format" parameter as either base64-encoded
+            DER or PEM-encoded DER. However, this can be set to "pkcs8" to have the
+            returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8
+            instead. Defaults to "der".
+          enum:
+          - ""
+          - der
+          - pem
+          - pkcs8
+          type: string
+          x-vault-displayAttrs:
+            value: der
+        serial_number:
+          description: The Subject's requested serial number, if any. See RFC 4519
+            Section 2.31 'serialNumber' for a description of this field. If you want
+            more than one, specify alternative names in the alt_names map using OID
+            2.5.4.5. This has no impact on the final certificate's Serial Number field.
+          type: string
+        ttl:
+          description: The requested Time To Live for the certificate; sets the expiration
+            date. If not specified the role default, backend default, or system default
+            TTL is used, in that order. Cannot be larger than the role max TTL.
+          format: seconds
+          type: integer
+          x-vault-displayAttrs:
+            name: TTL
+        uri_sans:
+          description: The requested URI SANs, if any, in a comma-delimited list.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: URI Subject Alternative Names (SANs)
+      type: object
+    PkiIssuerIssueRequest:
       example:
         not_after: not_after
         other_sans:
@@ -21911,6 +23052,1112 @@ components:
           x-vault-displayAttrs:
             name: URI Subject Alternative Names (SANs)
       type: object
+    PkiIssuerSignIntermediateRequest:
+      example:
+        other_sans:
+        - other_sans
+        - other_sans
+        country:
+        - country
+        - country
+        street_address:
+        - street_address
+        - street_address
+        csr: csr
+        ou:
+        - ou
+        - ou
+        format: pem
+        locality:
+        - locality
+        - locality
+        private_key_format: der
+        alt_names: alt_names
+        serial_number: serial_number
+        exclude_cn_from_sans: false
+        uri_sans:
+        - uri_sans
+        - uri_sans
+        max_path_length: 0
+        ttl: 1
+        not_before_duration: 6
+        issuer_name: issuer_name
+        not_after: not_after
+        permitted_dns_domains:
+        - permitted_dns_domains
+        - permitted_dns_domains
+        province:
+        - province
+        - province
+        ip_sans:
+        - ip_sans
+        - ip_sans
+        organization:
+        - organization
+        - organization
+        use_csr_values: false
+        common_name: common_name
+        postal_code:
+        - postal_code
+        - postal_code
+      properties:
+        alt_names:
+          description: The requested Subject Alternative Names, if any, in a comma-delimited
+            list. May contain both DNS names and email addresses.
+          type: string
+          x-vault-displayAttrs:
+            name: DNS/Email Subject Alternative Names (SANs)
+        common_name:
+          description: The requested common name; if you want more than one, specify
+            the alternative names in the alt_names map. If not specified when signing,
+            the common name will be taken from the CSR; other names must still be
+            specified in alt_names or ip_sans.
+          type: string
+        country:
+          description: If set, Country will be set to this value.
+          items:
+            type: string
+          type: array
+        csr:
+          default: ""
+          description: PEM-format CSR to be signed.
+          type: string
+        exclude_cn_from_sans:
+          default: false
+          description: If true, the Common Name will not be included in DNS or Email
+            Subject Alternate Names. Defaults to false (CN is included).
+          type: boolean
+          x-vault-displayAttrs:
+            name: Exclude Common Name from Subject Alternative Names (SANs)
+        format:
+          default: pem
+          description: Format for returned data. Can be "pem", "der", or "pem_bundle".
+            If "pem_bundle", any private key and issuing cert will be appended to
+            the certificate pem. If "der", the value will be base64 encoded. Defaults
+            to "pem".
+          enum:
+          - pem
+          - der
+          - pem_bundle
+          type: string
+          x-vault-displayAttrs:
+            value: pem
+        ip_sans:
+          description: The requested IP SANs, if any, in a comma-delimited list
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: IP Subject Alternative Names (SANs)
+        issuer_name:
+          description: Provide a name to the generated or existing issuer, the name
+            must be unique across all issuers and not be the reserved value 'default'
+          type: string
+        locality:
+          description: If set, Locality will be set to this value.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Locality/City
+        max_path_length:
+          default: -1
+          description: The maximum allowable path length
+          type: integer
+        not_after:
+          description: Set the not after field of the certificate with specified date
+            value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
+          type: string
+        not_before_duration:
+          default: 30
+          description: The duration before now which the certificate needs to be backdated
+            by.
+          format: seconds
+          type: integer
+          x-vault-displayAttrs:
+            value: 30
+        organization:
+          description: If set, O (Organization) will be set to this value.
+          items:
+            type: string
+          type: array
+        other_sans:
+          description: Requested other SANs, in an array with the format <oid>;UTF8:<utf8
+            string value> for each entry.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Other SANs
+        ou:
+          description: If set, OU (OrganizationalUnit) will be set to this value.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: OU (Organizational Unit)
+        permitted_dns_domains:
+          description: Domains for which this certificate is allowed to sign or issue
+            child certificates. If set, all DNS names (subject and alt) on child certs
+            must be exact matches or subsets of the given domains (see https://tools.ietf.org/html/rfc5280#section-4.2.1.10).
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Permitted DNS Domains
+        postal_code:
+          description: If set, Postal Code will be set to this value.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Postal Code
+        private_key_format:
+          default: der
+          description: Format for the returned private key. Generally the default
+            will be controlled by the "format" parameter as either base64-encoded
+            DER or PEM-encoded DER. However, this can be set to "pkcs8" to have the
+            returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8
+            instead. Defaults to "der".
+          enum:
+          - ""
+          - der
+          - pem
+          - pkcs8
+          type: string
+          x-vault-displayAttrs:
+            value: der
+        province:
+          description: If set, Province will be set to this value.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Province/State
+        serial_number:
+          description: The Subject's requested serial number, if any. See RFC 4519
+            Section 2.31 'serialNumber' for a description of this field. If you want
+            more than one, specify alternative names in the alt_names map using OID
+            2.5.4.5. This has no impact on the final certificate's Serial Number field.
+          type: string
+        street_address:
+          description: If set, Street Address will be set to this value.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Street Address
+        ttl:
+          description: 'The requested Time To Live for the certificate; sets the expiration
+            date. If not specified the role default, backend default, or system default
+            TTL is used, in that order. Cannot be larger than the mount max TTL. Note:
+            this only has an effect when generating a CA cert or signing a CA cert,
+            not when generating a CSR for an intermediate CA.'
+          format: seconds
+          type: integer
+          x-vault-displayAttrs:
+            name: TTL
+        uri_sans:
+          description: The requested URI SANs, if any, in a comma-delimited list.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: URI Subject Alternative Names (SANs)
+        use_csr_values:
+          default: false
+          description: 'If true, then: 1) Subject information, including names and
+            alternate names, will be preserved from the CSR rather than using values
+            provided in the other parameters to this path; 2) Any key usages requested
+            in the CSR will be added to the basic set of key usages used for CA certs
+            signed by this path; for instance, the non-repudiation flag; 3) Extensions
+            requested in the CSR will be copied into the issued certificate.'
+          type: boolean
+      type: object
+    PkiIssuerSignRequest:
+      example:
+        not_after: not_after
+        other_sans:
+        - other_sans
+        - other_sans
+        csr: csr
+        ip_sans:
+        - ip_sans
+        - ip_sans
+        format: pem
+        private_key_format: der
+        alt_names: alt_names
+        serial_number: serial_number
+        exclude_cn_from_sans: false
+        uri_sans:
+        - uri_sans
+        - uri_sans
+        common_name: common_name
+        ttl: 0
+      properties:
+        alt_names:
+          description: The requested Subject Alternative Names, if any, in a comma-delimited
+            list. If email protection is enabled for the role, this may contain email
+            addresses.
+          type: string
+          x-vault-displayAttrs:
+            name: DNS/Email Subject Alternative Names (SANs)
+        common_name:
+          description: The requested common name; if you want more than one, specify
+            the alternative names in the alt_names map. If email protection is enabled
+            in the role, this may be an email address.
+          type: string
+        csr:
+          default: ""
+          description: PEM-format CSR to be signed.
+          type: string
+        exclude_cn_from_sans:
+          default: false
+          description: If true, the Common Name will not be included in DNS or Email
+            Subject Alternate Names. Defaults to false (CN is included).
+          type: boolean
+          x-vault-displayAttrs:
+            name: Exclude Common Name from Subject Alternative Names (SANs)
+        format:
+          default: pem
+          description: Format for returned data. Can be "pem", "der", or "pem_bundle".
+            If "pem_bundle", any private key and issuing cert will be appended to
+            the certificate pem. If "der", the value will be base64 encoded. Defaults
+            to "pem".
+          enum:
+          - pem
+          - der
+          - pem_bundle
+          type: string
+          x-vault-displayAttrs:
+            value: pem
+        ip_sans:
+          description: The requested IP SANs, if any, in a comma-delimited list
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: IP Subject Alternative Names (SANs)
+        not_after:
+          description: Set the not after field of the certificate with specified date
+            value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
+          type: string
+        other_sans:
+          description: Requested other SANs, in an array with the format <oid>;UTF8:<utf8
+            string value> for each entry.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Other SANs
+        private_key_format:
+          default: der
+          description: Format for the returned private key. Generally the default
+            will be controlled by the "format" parameter as either base64-encoded
+            DER or PEM-encoded DER. However, this can be set to "pkcs8" to have the
+            returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8
+            instead. Defaults to "der".
+          enum:
+          - ""
+          - der
+          - pem
+          - pkcs8
+          type: string
+          x-vault-displayAttrs:
+            value: der
+        serial_number:
+          description: The Subject's requested serial number, if any. See RFC 4519
+            Section 2.31 'serialNumber' for a description of this field. If you want
+            more than one, specify alternative names in the alt_names map using OID
+            2.5.4.5. This has no impact on the final certificate's Serial Number field.
+          type: string
+        ttl:
+          description: The requested Time To Live for the certificate; sets the expiration
+            date. If not specified the role default, backend default, or system default
+            TTL is used, in that order. Cannot be larger than the role max TTL.
+          format: seconds
+          type: integer
+          x-vault-displayAttrs:
+            name: TTL
+        uri_sans:
+          description: The requested URI SANs, if any, in a comma-delimited list.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: URI Subject Alternative Names (SANs)
+      type: object
+    PkiIssuerSignSelfIssuedRequest:
+      example:
+        certificate: certificate
+        require_matching_certificate_algorithms: false
+      properties:
+        certificate:
+          description: PEM-format self-issued certificate to be signed.
+          type: string
+        require_matching_certificate_algorithms:
+          default: false
+          description: If true, require the public key algorithm of the signer to
+            match that of the self issued certificate.
+          type: boolean
+      type: object
+    PkiIssuerSignVerbatimRequest:
+      example:
+        other_sans:
+        - other_sans
+        - other_sans
+        csr: csr
+        role: role
+        key_usage:
+        - key_usage
+        - key_usage
+        format: pem
+        private_key_format: der
+        alt_names: alt_names
+        serial_number: serial_number
+        exclude_cn_from_sans: false
+        uri_sans:
+        - uri_sans
+        - uri_sans
+        ttl: 0
+        not_after: not_after
+        ip_sans:
+        - ip_sans
+        - ip_sans
+        common_name: common_name
+        ext_key_usage:
+        - ext_key_usage
+        - ext_key_usage
+        ext_key_usage_oids:
+        - ext_key_usage_oids
+        - ext_key_usage_oids
+      properties:
+        alt_names:
+          description: The requested Subject Alternative Names, if any, in a comma-delimited
+            list. If email protection is enabled for the role, this may contain email
+            addresses.
+          type: string
+          x-vault-displayAttrs:
+            name: DNS/Email Subject Alternative Names (SANs)
+        common_name:
+          description: The requested common name; if you want more than one, specify
+            the alternative names in the alt_names map. If email protection is enabled
+            in the role, this may be an email address.
+          type: string
+        csr:
+          default: ""
+          description: PEM-format CSR to be signed. Values will be taken verbatim
+            from the CSR, except for basic constraints.
+          type: string
+        exclude_cn_from_sans:
+          default: false
+          description: If true, the Common Name will not be included in DNS or Email
+            Subject Alternate Names. Defaults to false (CN is included).
+          type: boolean
+          x-vault-displayAttrs:
+            name: Exclude Common Name from Subject Alternative Names (SANs)
+        ext_key_usage:
+          default: []
+          description: A comma-separated string or list of extended key usages. Valid
+            values can be found at https://golang.org/pkg/crypto/x509/#ExtKeyUsage
+            -- simply drop the "ExtKeyUsage" part of the name. To remove all key usages
+            from being set, set this value to an empty list.
+          items:
+            type: string
+          type: array
+        ext_key_usage_oids:
+          description: A comma-separated string or list of extended key usage oids.
+          items:
+            type: string
+          type: array
+        format:
+          default: pem
+          description: Format for returned data. Can be "pem", "der", or "pem_bundle".
+            If "pem_bundle", any private key and issuing cert will be appended to
+            the certificate pem. If "der", the value will be base64 encoded. Defaults
+            to "pem".
+          enum:
+          - pem
+          - der
+          - pem_bundle
+          type: string
+          x-vault-displayAttrs:
+            value: pem
+        ip_sans:
+          description: The requested IP SANs, if any, in a comma-delimited list
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: IP Subject Alternative Names (SANs)
+        key_usage:
+          default:
+          - DigitalSignature
+          - KeyAgreement
+          - KeyEncipherment
+          description: A comma-separated string or list of key usages (not extended
+            key usages). Valid values can be found at https://golang.org/pkg/crypto/x509/#KeyUsage
+            -- simply drop the "KeyUsage" part of the name. To remove all key usages
+            from being set, set this value to an empty list.
+          items:
+            type: string
+          type: array
+        not_after:
+          description: Set the not after field of the certificate with specified date
+            value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
+          type: string
+        other_sans:
+          description: Requested other SANs, in an array with the format <oid>;UTF8:<utf8
+            string value> for each entry.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Other SANs
+        private_key_format:
+          default: der
+          description: Format for the returned private key. Generally the default
+            will be controlled by the "format" parameter as either base64-encoded
+            DER or PEM-encoded DER. However, this can be set to "pkcs8" to have the
+            returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8
+            instead. Defaults to "der".
+          enum:
+          - ""
+          - der
+          - pem
+          - pkcs8
+          type: string
+          x-vault-displayAttrs:
+            value: der
+        role:
+          description: The desired role with configuration for this request
+          type: string
+        serial_number:
+          description: The Subject's requested serial number, if any. See RFC 4519
+            Section 2.31 'serialNumber' for a description of this field. If you want
+            more than one, specify alternative names in the alt_names map using OID
+            2.5.4.5. This has no impact on the final certificate's Serial Number field.
+          type: string
+        ttl:
+          description: The requested Time To Live for the certificate; sets the expiration
+            date. If not specified the role default, backend default, or system default
+            TTL is used, in that order. Cannot be larger than the role max TTL.
+          format: seconds
+          type: integer
+          x-vault-displayAttrs:
+            name: TTL
+        uri_sans:
+          description: The requested URI SANs, if any, in a comma-delimited list.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: URI Subject Alternative Names (SANs)
+      type: object
+    PkiIssuersGenerateIntermediateRequest:
+      example:
+        other_sans:
+        - other_sans
+        - other_sans
+        country:
+        - country
+        - country
+        street_address:
+        - street_address
+        - street_address
+        add_basic_constraints: true
+        key_type: rsa
+        uri_sans:
+        - uri_sans
+        - uri_sans
+        province:
+        - province
+        - province
+        ip_sans:
+        - ip_sans
+        - ip_sans
+        key_ref: default
+        common_name: common_name
+        managed_key_name: managed_key_name
+        ou:
+        - ou
+        - ou
+        format: pem
+        locality:
+        - locality
+        - locality
+        private_key_format: der
+        alt_names: alt_names
+        serial_number: serial_number
+        exclude_cn_from_sans: false
+        ttl: 1
+        not_before_duration: 6
+        key_bits: 0
+        key_name: key_name
+        not_after: not_after
+        organization:
+        - organization
+        - organization
+        managed_key_id: managed_key_id
+        postal_code:
+        - postal_code
+        - postal_code
+      properties:
+        add_basic_constraints:
+          description: 'Whether to add a Basic Constraints extension with CA: true.
+            Only needed as a workaround in some compatibility scenarios with Active
+            Directory Certificate Services.'
+          type: boolean
+        alt_names:
+          description: The requested Subject Alternative Names, if any, in a comma-delimited
+            list. May contain both DNS names and email addresses.
+          type: string
+          x-vault-displayAttrs:
+            name: DNS/Email Subject Alternative Names (SANs)
+        common_name:
+          description: The requested common name; if you want more than one, specify
+            the alternative names in the alt_names map. If not specified when signing,
+            the common name will be taken from the CSR; other names must still be
+            specified in alt_names or ip_sans.
+          type: string
+        country:
+          description: If set, Country will be set to this value.
+          items:
+            type: string
+          type: array
+        exclude_cn_from_sans:
+          default: false
+          description: If true, the Common Name will not be included in DNS or Email
+            Subject Alternate Names. Defaults to false (CN is included).
+          type: boolean
+          x-vault-displayAttrs:
+            name: Exclude Common Name from Subject Alternative Names (SANs)
+        format:
+          default: pem
+          description: Format for returned data. Can be "pem", "der", or "pem_bundle".
+            If "pem_bundle", any private key and issuing cert will be appended to
+            the certificate pem. If "der", the value will be base64 encoded. Defaults
+            to "pem".
+          enum:
+          - pem
+          - der
+          - pem_bundle
+          type: string
+          x-vault-displayAttrs:
+            value: pem
+        ip_sans:
+          description: The requested IP SANs, if any, in a comma-delimited list
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: IP Subject Alternative Names (SANs)
+        key_bits:
+          default: 0
+          description: 'The number of bits to use. Allowed values are 0 (universal
+            default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type:
+            224, 256 (default), 384, or 521; ignored with ed25519.'
+          type: integer
+          x-vault-displayAttrs:
+            value: 0
+        key_name:
+          description: Provide a name to the generated or existing key, the name must
+            be unique across all keys and not be the reserved value 'default'
+          type: string
+        key_ref:
+          default: default
+          description: Reference to a existing key; either "default" for the configured
+            default key, an identifier or the name assigned to the key.
+          type: string
+        key_type:
+          default: rsa
+          description: The type of key to use; defaults to RSA. "rsa" "ec" and "ed25519"
+            are the only valid values.
+          enum:
+          - rsa
+          - ec
+          - ed25519
+          type: string
+          x-vault-displayAttrs:
+            value: rsa
+        locality:
+          description: If set, Locality will be set to this value.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Locality/City
+        managed_key_id:
+          description: The name of the managed key to use when the exported type is
+            kms. When kms type is the key type, this field or managed_key_name is
+            required. Ignored for other types.
+          type: string
+        managed_key_name:
+          description: The name of the managed key to use when the exported type is
+            kms. When kms type is the key type, this field or managed_key_id is required.
+            Ignored for other types.
+          type: string
+        not_after:
+          description: Set the not after field of the certificate with specified date
+            value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
+          type: string
+        not_before_duration:
+          default: 30
+          description: The duration before now which the certificate needs to be backdated
+            by.
+          format: seconds
+          type: integer
+          x-vault-displayAttrs:
+            value: 30
+        organization:
+          description: If set, O (Organization) will be set to this value.
+          items:
+            type: string
+          type: array
+        other_sans:
+          description: Requested other SANs, in an array with the format <oid>;UTF8:<utf8
+            string value> for each entry.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Other SANs
+        ou:
+          description: If set, OU (OrganizationalUnit) will be set to this value.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: OU (Organizational Unit)
+        postal_code:
+          description: If set, Postal Code will be set to this value.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Postal Code
+        private_key_format:
+          default: der
+          description: Format for the returned private key. Generally the default
+            will be controlled by the "format" parameter as either base64-encoded
+            DER or PEM-encoded DER. However, this can be set to "pkcs8" to have the
+            returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8
+            instead. Defaults to "der".
+          enum:
+          - ""
+          - der
+          - pem
+          - pkcs8
+          type: string
+          x-vault-displayAttrs:
+            value: der
+        province:
+          description: If set, Province will be set to this value.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Province/State
+        serial_number:
+          description: The Subject's requested serial number, if any. See RFC 4519
+            Section 2.31 'serialNumber' for a description of this field. If you want
+            more than one, specify alternative names in the alt_names map using OID
+            2.5.4.5. This has no impact on the final certificate's Serial Number field.
+          type: string
+        street_address:
+          description: If set, Street Address will be set to this value.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Street Address
+        ttl:
+          description: 'The requested Time To Live for the certificate; sets the expiration
+            date. If not specified the role default, backend default, or system default
+            TTL is used, in that order. Cannot be larger than the mount max TTL. Note:
+            this only has an effect when generating a CA cert or signing a CA cert,
+            not when generating a CSR for an intermediate CA.'
+          format: seconds
+          type: integer
+          x-vault-displayAttrs:
+            name: TTL
+        uri_sans:
+          description: The requested URI SANs, if any, in a comma-delimited list.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: URI Subject Alternative Names (SANs)
+      type: object
+    PkiIssuersGenerateRootRequest:
+      example:
+        other_sans:
+        - other_sans
+        - other_sans
+        country:
+        - country
+        - country
+        street_address:
+        - street_address
+        - street_address
+        key_type: rsa
+        signature_bits: 5
+        uri_sans:
+        - uri_sans
+        - uri_sans
+        max_path_length: 6
+        province:
+        - province
+        - province
+        ip_sans:
+        - ip_sans
+        - ip_sans
+        key_ref: default
+        common_name: common_name
+        managed_key_name: managed_key_name
+        ou:
+        - ou
+        - ou
+        format: pem
+        locality:
+        - locality
+        - locality
+        private_key_format: der
+        alt_names: alt_names
+        serial_number: serial_number
+        exclude_cn_from_sans: false
+        ttl: 5
+        not_before_duration: 1
+        issuer_name: issuer_name
+        key_bits: 0
+        key_name: key_name
+        not_after: not_after
+        permitted_dns_domains:
+        - permitted_dns_domains
+        - permitted_dns_domains
+        organization:
+        - organization
+        - organization
+        managed_key_id: managed_key_id
+        postal_code:
+        - postal_code
+        - postal_code
+      properties:
+        alt_names:
+          description: The requested Subject Alternative Names, if any, in a comma-delimited
+            list. May contain both DNS names and email addresses.
+          type: string
+          x-vault-displayAttrs:
+            name: DNS/Email Subject Alternative Names (SANs)
+        common_name:
+          description: The requested common name; if you want more than one, specify
+            the alternative names in the alt_names map. If not specified when signing,
+            the common name will be taken from the CSR; other names must still be
+            specified in alt_names or ip_sans.
+          type: string
+        country:
+          description: If set, Country will be set to this value.
+          items:
+            type: string
+          type: array
+        exclude_cn_from_sans:
+          default: false
+          description: If true, the Common Name will not be included in DNS or Email
+            Subject Alternate Names. Defaults to false (CN is included).
+          type: boolean
+          x-vault-displayAttrs:
+            name: Exclude Common Name from Subject Alternative Names (SANs)
+        format:
+          default: pem
+          description: Format for returned data. Can be "pem", "der", or "pem_bundle".
+            If "pem_bundle", any private key and issuing cert will be appended to
+            the certificate pem. If "der", the value will be base64 encoded. Defaults
+            to "pem".
+          enum:
+          - pem
+          - der
+          - pem_bundle
+          type: string
+          x-vault-displayAttrs:
+            value: pem
+        ip_sans:
+          description: The requested IP SANs, if any, in a comma-delimited list
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: IP Subject Alternative Names (SANs)
+        issuer_name:
+          description: Provide a name to the generated or existing issuer, the name
+            must be unique across all issuers and not be the reserved value 'default'
+          type: string
+        key_bits:
+          default: 0
+          description: 'The number of bits to use. Allowed values are 0 (universal
+            default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type:
+            224, 256 (default), 384, or 521; ignored with ed25519.'
+          type: integer
+          x-vault-displayAttrs:
+            value: 0
+        key_name:
+          description: Provide a name to the generated or existing key, the name must
+            be unique across all keys and not be the reserved value 'default'
+          type: string
+        key_ref:
+          default: default
+          description: Reference to a existing key; either "default" for the configured
+            default key, an identifier or the name assigned to the key.
+          type: string
+        key_type:
+          default: rsa
+          description: The type of key to use; defaults to RSA. "rsa" "ec" and "ed25519"
+            are the only valid values.
+          enum:
+          - rsa
+          - ec
+          - ed25519
+          type: string
+          x-vault-displayAttrs:
+            value: rsa
+        locality:
+          description: If set, Locality will be set to this value.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Locality/City
+        managed_key_id:
+          description: The name of the managed key to use when the exported type is
+            kms. When kms type is the key type, this field or managed_key_name is
+            required. Ignored for other types.
+          type: string
+        managed_key_name:
+          description: The name of the managed key to use when the exported type is
+            kms. When kms type is the key type, this field or managed_key_id is required.
+            Ignored for other types.
+          type: string
+        max_path_length:
+          default: -1
+          description: The maximum allowable path length
+          type: integer
+        not_after:
+          description: Set the not after field of the certificate with specified date
+            value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
+          type: string
+        not_before_duration:
+          default: 30
+          description: The duration before now which the certificate needs to be backdated
+            by.
+          format: seconds
+          type: integer
+          x-vault-displayAttrs:
+            value: 30
+        organization:
+          description: If set, O (Organization) will be set to this value.
+          items:
+            type: string
+          type: array
+        other_sans:
+          description: Requested other SANs, in an array with the format <oid>;UTF8:<utf8
+            string value> for each entry.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Other SANs
+        ou:
+          description: If set, OU (OrganizationalUnit) will be set to this value.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: OU (Organizational Unit)
+        permitted_dns_domains:
+          description: Domains for which this certificate is allowed to sign or issue
+            child certificates. If set, all DNS names (subject and alt) on child certs
+            must be exact matches or subsets of the given domains (see https://tools.ietf.org/html/rfc5280#section-4.2.1.10).
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Permitted DNS Domains
+        postal_code:
+          description: If set, Postal Code will be set to this value.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Postal Code
+        private_key_format:
+          default: der
+          description: Format for the returned private key. Generally the default
+            will be controlled by the "format" parameter as either base64-encoded
+            DER or PEM-encoded DER. However, this can be set to "pkcs8" to have the
+            returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8
+            instead. Defaults to "der".
+          enum:
+          - ""
+          - der
+          - pem
+          - pkcs8
+          type: string
+          x-vault-displayAttrs:
+            value: der
+        province:
+          description: If set, Province will be set to this value.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Province/State
+        serial_number:
+          description: The Subject's requested serial number, if any. See RFC 4519
+            Section 2.31 'serialNumber' for a description of this field. If you want
+            more than one, specify alternative names in the alt_names map using OID
+            2.5.4.5. This has no impact on the final certificate's Serial Number field.
+          type: string
+        signature_bits:
+          default: 0
+          description: The number of bits to use in the signature algorithm; accepts
+            256 for SHA-2-256, 384 for SHA-2-384, and 512 for SHA-2-512. Defaults
+            to 0 to automatically detect based on key length (SHA-2-256 for RSA keys,
+            and matching the curve size for NIST P-Curves).
+          type: integer
+          x-vault-displayAttrs:
+            value: 0
+        street_address:
+          description: If set, Street Address will be set to this value.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Street Address
+        ttl:
+          description: 'The requested Time To Live for the certificate; sets the expiration
+            date. If not specified the role default, backend default, or system default
+            TTL is used, in that order. Cannot be larger than the mount max TTL. Note:
+            this only has an effect when generating a CA cert or signing a CA cert,
+            not when generating a CSR for an intermediate CA.'
+          format: seconds
+          type: integer
+          x-vault-displayAttrs:
+            name: TTL
+        uri_sans:
+          description: The requested URI SANs, if any, in a comma-delimited list.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: URI Subject Alternative Names (SANs)
+      type: object
+    PkiJsonRequest:
+      example:
+        issuer_ref: default
+        leaf_not_after_behavior: err
+        usage:
+        - usage
+        - usage
+        manual_chain:
+        - manual_chain
+        - manual_chain
+        issuer_name: issuer_name
+      properties:
+        issuer_name:
+          description: Provide a name to the generated or existing issuer, the name
+            must be unique across all issuers and not be the reserved value 'default'
+          type: string
+        issuer_ref:
+          default: default
+          description: Reference to a existing issuer; either "default" for the configured
+            default issuer, an identifier or the name assigned to the issuer.
+          type: string
+        leaf_not_after_behavior:
+          default: err
+          description: 'Behavior of leaf''s NotAfter fields: "err" to error if the
+            computed NotAfter date exceeds that of this issuer; "truncate" to silently
+            truncate to that of this issuer; or "permit" to allow this issuance to
+            succeed (with NotAfter exceeding that of an issuer). Note that not all
+            values will results in certificates that can be validated through the
+            entire validity period. It is suggested to use "truncate" for intermediate
+            CAs and "permit" only for root CAs.'
+          type: string
+        manual_chain:
+          description: Chain of issuer references to use to build this issuer's computed
+            CAChain field, when non-empty.
+          items:
+            type: string
+          type: array
+        usage:
+          default:
+          - read-only
+          - issuing-certificates
+          - crl-signing
+          description: Comma-separated list (or string slice) of usages for this issuer;
+            valid values are "read-only", "issuing-certificates", and "crl-signing".
+            Multiple values may be specified. Read-only is implicit and always set.
+          items:
+            type: string
+          type: array
+      type: object
+    PkiKeyRequest:
+      example:
+        key_name: key_name
+      properties:
+        key_name:
+          description: Human-readable name for this key.
+          type: string
+      type: object
+    PkiKeysImportRequest:
+      example:
+        key_name: key_name
+        pem_bundle: pem_bundle
+      properties:
+        key_name:
+          description: Optional name to be used for this key
+          type: string
+        pem_bundle:
+          description: PEM-format, unencrypted secret key
+          type: string
+      type: object
+    PkiKmsRequest:
+      example:
+        key_bits: 0
+        key_name: key_name
+        key_type: rsa
+        managed_key_id: managed_key_id
+        managed_key_name: managed_key_name
+      properties:
+        key_bits:
+          default: 0
+          description: 'The number of bits to use. Allowed values are 0 (universal
+            default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type:
+            224, 256 (default), 384, or 521; ignored with ed25519.'
+          type: integer
+        key_name:
+          description: Optional name to be used for this key
+          type: string
+        key_type:
+          default: rsa
+          description: The type of key to use; defaults to RSA. "rsa" "ec" and "ed25519"
+            are the only valid values.
+          enum:
+          - rsa
+          - ec
+          - ed25519
+          type: string
+          x-vault-displayAttrs:
+            value: rsa
+        managed_key_id:
+          description: The name of the managed key to use when the exported type is
+            kms. When kms type is the key type, this field or managed_key_name is
+            required. Ignored for other types.
+          type: string
+        managed_key_name:
+          description: The name of the managed key to use when the exported type is
+            kms. When kms type is the key type, this field or managed_key_id is required.
+            Ignored for other types.
+          type: string
+      type: object
     PkiRevokeRequest:
       example:
         serial_number: serial_number
@@ -21936,6 +24183,7 @@ components:
         - key_usage
         - key_usage
         max_ttl: 6
+        issuer_ref: default
         allowed_uri_sans_template: false
         signature_bits: 5
         allow_bare_domains: true
@@ -22031,6 +24279,7 @@ components:
             the documentation for more information.
           type: boolean
         allow_wildcard_certificates:
+          default: true
           description: If set, allows certificates with wildcards in the common name
             to be issued, conforming to RFC 6125's Section 6.4.3; e.g., "*.example.net"
             or "b*z.example.net". See the documentation for more information.
@@ -22145,6 +24394,11 @@ components:
             be disabled, as large amount of leases adversely affect the startup time
             of Vault.
           type: boolean
+        issuer_ref:
+          default: default
+          description: Reference to the issuer used to sign requests serviced by this
+            role.
+          type: string
         key_bits:
           default: 0
           description: 'The number of bits to use. Allowed values are 0 (universal
@@ -22153,12 +24407,13 @@ components:
           type: integer
         key_type:
           default: rsa
-          description: The type of key to use; defaults to RSA. "rsa" "ec" and "ed25519"
-            are the only valid values.
+          description: The type of key to use; defaults to RSA. "rsa" "ec", "ed25519"
+            and "any" are the only valid values.
           enum:
           - rsa
           - ec
           - ed25519
+          - any
           type: string
         key_usage:
           default:
@@ -22204,7 +24459,8 @@ components:
           type: string
         not_before_duration:
           default: 30
-          description: The duration before now the cert needs to be created / signed.
+          description: The duration before now which the certificate needs to be backdated
+            by.
           format: seconds
           type: integer
           x-vault-displayAttrs:
@@ -22224,7 +24480,10 @@ components:
           x-vault-displayAttrs:
             name: Organizational Unit
         policy_identifiers:
-          description: A comma-separated string or list of policy OIDs.
+          description: A comma-separated string or list of policy OIDs, or a JSON
+            list of qualified policy information, which must include an oid, and may
+            include a notice and/or cps url, using the form [{"oid"="1.3.6.1.4.1.7.8","notice"="I
+            am a user Notice"}, {"oid"="1.3.6.1.4.1.44947.1.2.4 ","cps"="https://example.com"}].
           items:
             type: string
           type: array
@@ -22309,7 +24568,7 @@ components:
         - street_address
         - street_address
         key_type: rsa
-        signature_bits: 1
+        signature_bits: 5
         uri_sans:
         - uri_sans
         - uri_sans
@@ -22320,6 +24579,7 @@ components:
         ip_sans:
         - ip_sans
         - ip_sans
+        key_ref: default
         common_name: common_name
         managed_key_name: managed_key_name
         ou:
@@ -22334,7 +24594,10 @@ components:
         serial_number: serial_number
         exclude_cn_from_sans: false
         ttl: 5
+        not_before_duration: 1
+        issuer_name: issuer_name
         key_bits: 0
+        key_name: key_name
         not_after: not_after
         permitted_dns_domains:
         - permitted_dns_domains
@@ -22391,6 +24654,10 @@ components:
           type: array
           x-vault-displayAttrs:
             name: IP Subject Alternative Names (SANs)
+        issuer_name:
+          description: Provide a name to the generated or existing issuer, the name
+            must be unique across all issuers and not be the reserved value 'default'
+          type: string
         key_bits:
           default: 0
           description: 'The number of bits to use. Allowed values are 0 (universal
@@ -22399,6 +24666,15 @@ components:
           type: integer
           x-vault-displayAttrs:
             value: 0
+        key_name:
+          description: Provide a name to the generated or existing key, the name must
+            be unique across all keys and not be the reserved value 'default'
+          type: string
+        key_ref:
+          default: default
+          description: Reference to a existing key; either "default" for the configured
+            default key, an identifier or the name assigned to the key.
+          type: string
         key_type:
           default: rsa
           description: The type of key to use; defaults to RSA. "rsa" "ec" and "ed25519"
@@ -22435,6 +24711,284 @@ components:
           description: Set the not after field of the certificate with specified date
             value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
           type: string
+        not_before_duration:
+          default: 30
+          description: The duration before now which the certificate needs to be backdated
+            by.
+          format: seconds
+          type: integer
+          x-vault-displayAttrs:
+            value: 30
+        organization:
+          description: If set, O (Organization) will be set to this value.
+          items:
+            type: string
+          type: array
+        other_sans:
+          description: Requested other SANs, in an array with the format <oid>;UTF8:<utf8
+            string value> for each entry.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Other SANs
+        ou:
+          description: If set, OU (OrganizationalUnit) will be set to this value.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: OU (Organizational Unit)
+        permitted_dns_domains:
+          description: Domains for which this certificate is allowed to sign or issue
+            child certificates. If set, all DNS names (subject and alt) on child certs
+            must be exact matches or subsets of the given domains (see https://tools.ietf.org/html/rfc5280#section-4.2.1.10).
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Permitted DNS Domains
+        postal_code:
+          description: If set, Postal Code will be set to this value.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Postal Code
+        private_key_format:
+          default: der
+          description: Format for the returned private key. Generally the default
+            will be controlled by the "format" parameter as either base64-encoded
+            DER or PEM-encoded DER. However, this can be set to "pkcs8" to have the
+            returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8
+            instead. Defaults to "der".
+          enum:
+          - ""
+          - der
+          - pem
+          - pkcs8
+          type: string
+          x-vault-displayAttrs:
+            value: der
+        province:
+          description: If set, Province will be set to this value.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Province/State
+        serial_number:
+          description: The Subject's requested serial number, if any. See RFC 4519
+            Section 2.31 'serialNumber' for a description of this field. If you want
+            more than one, specify alternative names in the alt_names map using OID
+            2.5.4.5. This has no impact on the final certificate's Serial Number field.
+          type: string
+        signature_bits:
+          default: 0
+          description: The number of bits to use in the signature algorithm; accepts
+            256 for SHA-2-256, 384 for SHA-2-384, and 512 for SHA-2-512. Defaults
+            to 0 to automatically detect based on key length (SHA-2-256 for RSA keys,
+            and matching the curve size for NIST P-Curves).
+          type: integer
+          x-vault-displayAttrs:
+            value: 0
+        street_address:
+          description: If set, Street Address will be set to this value.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Street Address
+        ttl:
+          description: 'The requested Time To Live for the certificate; sets the expiration
+            date. If not specified the role default, backend default, or system default
+            TTL is used, in that order. Cannot be larger than the mount max TTL. Note:
+            this only has an effect when generating a CA cert or signing a CA cert,
+            not when generating a CSR for an intermediate CA.'
+          format: seconds
+          type: integer
+          x-vault-displayAttrs:
+            name: TTL
+        uri_sans:
+          description: The requested URI SANs, if any, in a comma-delimited list.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: URI Subject Alternative Names (SANs)
+      type: object
+    PkiRootReplaceRequest:
+      example:
+        default: next
+      properties:
+        default:
+          default: next
+          description: Reference (name or identifier) to the default issuer.
+          type: string
+      type: object
+    PkiRootRotateRequest:
+      example:
+        other_sans:
+        - other_sans
+        - other_sans
+        country:
+        - country
+        - country
+        street_address:
+        - street_address
+        - street_address
+        key_type: rsa
+        signature_bits: 5
+        uri_sans:
+        - uri_sans
+        - uri_sans
+        max_path_length: 6
+        province:
+        - province
+        - province
+        ip_sans:
+        - ip_sans
+        - ip_sans
+        key_ref: default
+        common_name: common_name
+        managed_key_name: managed_key_name
+        ou:
+        - ou
+        - ou
+        format: pem
+        locality:
+        - locality
+        - locality
+        private_key_format: der
+        alt_names: alt_names
+        serial_number: serial_number
+        exclude_cn_from_sans: false
+        ttl: 5
+        not_before_duration: 1
+        issuer_name: issuer_name
+        key_bits: 0
+        key_name: key_name
+        not_after: not_after
+        permitted_dns_domains:
+        - permitted_dns_domains
+        - permitted_dns_domains
+        organization:
+        - organization
+        - organization
+        managed_key_id: managed_key_id
+        postal_code:
+        - postal_code
+        - postal_code
+      properties:
+        alt_names:
+          description: The requested Subject Alternative Names, if any, in a comma-delimited
+            list. May contain both DNS names and email addresses.
+          type: string
+          x-vault-displayAttrs:
+            name: DNS/Email Subject Alternative Names (SANs)
+        common_name:
+          description: The requested common name; if you want more than one, specify
+            the alternative names in the alt_names map. If not specified when signing,
+            the common name will be taken from the CSR; other names must still be
+            specified in alt_names or ip_sans.
+          type: string
+        country:
+          description: If set, Country will be set to this value.
+          items:
+            type: string
+          type: array
+        exclude_cn_from_sans:
+          default: false
+          description: If true, the Common Name will not be included in DNS or Email
+            Subject Alternate Names. Defaults to false (CN is included).
+          type: boolean
+          x-vault-displayAttrs:
+            name: Exclude Common Name from Subject Alternative Names (SANs)
+        format:
+          default: pem
+          description: Format for returned data. Can be "pem", "der", or "pem_bundle".
+            If "pem_bundle", any private key and issuing cert will be appended to
+            the certificate pem. If "der", the value will be base64 encoded. Defaults
+            to "pem".
+          enum:
+          - pem
+          - der
+          - pem_bundle
+          type: string
+          x-vault-displayAttrs:
+            value: pem
+        ip_sans:
+          description: The requested IP SANs, if any, in a comma-delimited list
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: IP Subject Alternative Names (SANs)
+        issuer_name:
+          description: Provide a name to the generated or existing issuer, the name
+            must be unique across all issuers and not be the reserved value 'default'
+          type: string
+        key_bits:
+          default: 0
+          description: 'The number of bits to use. Allowed values are 0 (universal
+            default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type:
+            224, 256 (default), 384, or 521; ignored with ed25519.'
+          type: integer
+          x-vault-displayAttrs:
+            value: 0
+        key_name:
+          description: Provide a name to the generated or existing key, the name must
+            be unique across all keys and not be the reserved value 'default'
+          type: string
+        key_ref:
+          default: default
+          description: Reference to a existing key; either "default" for the configured
+            default key, an identifier or the name assigned to the key.
+          type: string
+        key_type:
+          default: rsa
+          description: The type of key to use; defaults to RSA. "rsa" "ec" and "ed25519"
+            are the only valid values.
+          enum:
+          - rsa
+          - ec
+          - ed25519
+          type: string
+          x-vault-displayAttrs:
+            value: rsa
+        locality:
+          description: If set, Locality will be set to this value.
+          items:
+            type: string
+          type: array
+          x-vault-displayAttrs:
+            name: Locality/City
+        managed_key_id:
+          description: The name of the managed key to use when the exported type is
+            kms. When kms type is the key type, this field or managed_key_name is
+            required. Ignored for other types.
+          type: string
+        managed_key_name:
+          description: The name of the managed key to use when the exported type is
+            kms. When kms type is the key type, this field or managed_key_id is required.
+            Ignored for other types.
+          type: string
+        max_path_length:
+          default: -1
+          description: The maximum allowable path length
+          type: integer
+        not_after:
+          description: Set the not after field of the certificate with specified date
+            value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
+          type: string
+        not_before_duration:
+          default: 30
+          description: The duration before now which the certificate needs to be backdated
+            by.
+          format: seconds
+          type: integer
+          x-vault-displayAttrs:
+            value: 30
         organization:
           description: If set, O (Organization) will be set to this value.
           items:
@@ -22545,6 +25099,19 @@ components:
         - street_address
         - street_address
         csr: csr
+        issuer_ref: default
+        uri_sans:
+        - uri_sans
+        - uri_sans
+        max_path_length: 0
+        province:
+        - province
+        - province
+        ip_sans:
+        - ip_sans
+        - ip_sans
+        use_csr_values: false
+        common_name: common_name
         ou:
         - ou
         - ou
@@ -22556,26 +25123,16 @@ components:
         alt_names: alt_names
         serial_number: serial_number
         exclude_cn_from_sans: false
-        uri_sans:
-        - uri_sans
-        - uri_sans
-        max_path_length: 0
-        ttl: 6
+        ttl: 1
+        not_before_duration: 6
+        issuer_name: issuer_name
         not_after: not_after
         permitted_dns_domains:
         - permitted_dns_domains
         - permitted_dns_domains
-        province:
-        - province
-        - province
-        ip_sans:
-        - ip_sans
-        - ip_sans
         organization:
         - organization
         - organization
-        use_csr_values: false
-        common_name: common_name
         postal_code:
         - postal_code
         - postal_code
@@ -22628,6 +25185,15 @@ components:
           type: array
           x-vault-displayAttrs:
             name: IP Subject Alternative Names (SANs)
+        issuer_name:
+          description: Provide a name to the generated or existing issuer, the name
+            must be unique across all issuers and not be the reserved value 'default'
+          type: string
+        issuer_ref:
+          default: default
+          description: Reference to a existing issuer; either "default" for the configured
+            default issuer, an identifier or the name assigned to the issuer.
+          type: string
         locality:
           description: If set, Locality will be set to this value.
           items:
@@ -22643,6 +25209,14 @@ components:
           description: Set the not after field of the certificate with specified date
             value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
           type: string
+        not_before_duration:
+          default: 30
+          description: The duration before now which the certificate needs to be backdated
+            by.
+          format: seconds
+          type: integer
+          x-vault-displayAttrs:
+            value: 30
         organization:
           description: If set, O (Organization) will be set to this value.
           items:
@@ -22743,11 +25317,17 @@ components:
       type: object
     PkiRootSignSelfIssuedRequest:
       example:
+        issuer_ref: default
         certificate: certificate
         require_matching_certificate_algorithms: false
       properties:
         certificate:
           description: PEM-format self-issued certificate to be signed.
+          type: string
+        issuer_ref:
+          default: default
+          description: Reference to a existing issuer; either "default" for the configured
+            default issuer, an identifier or the name assigned to the issuer.
           type: string
         require_matching_certificate_algorithms:
           default: false
@@ -22757,14 +25337,11 @@ components:
       type: object
     PkiSignRequest:
       example:
-        not_after: not_after
         other_sans:
         - other_sans
         - other_sans
         csr: csr
-        ip_sans:
-        - ip_sans
-        - ip_sans
+        issuer_ref: default
         format: pem
         private_key_format: der
         alt_names: alt_names
@@ -22773,8 +25350,12 @@ components:
         uri_sans:
         - uri_sans
         - uri_sans
-        common_name: common_name
         ttl: 0
+        not_after: not_after
+        ip_sans:
+        - ip_sans
+        - ip_sans
+        common_name: common_name
       properties:
         alt_names:
           description: The requested Subject Alternative Names, if any, in a comma-delimited
@@ -22819,6 +25400,11 @@ components:
           type: array
           x-vault-displayAttrs:
             name: IP Subject Alternative Names (SANs)
+        issuer_ref:
+          default: default
+          description: Reference to a existing issuer; either "default" for the configured
+            default issuer, an identifier or the name assigned to the issuer.
+          type: string
         not_after:
           description: Set the not after field of the certificate with specified date
             value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
@@ -22878,6 +25464,7 @@ components:
         key_usage:
         - key_usage
         - key_usage
+        issuer_ref: default
         format: pem
         private_key_format: der
         alt_names: alt_names
@@ -22957,6 +25544,11 @@ components:
           type: array
           x-vault-displayAttrs:
             name: IP Subject Alternative Names (SANs)
+        issuer_ref:
+          default: default
+          description: Reference to a existing issuer; either "default" for the configured
+            default issuer, an identifier or the name assigned to the issuer.
+          type: string
         key_usage:
           default:
           - DigitalSignature
@@ -23258,54 +25850,12 @@ components:
           x-vault-displayAttrs:
             name: Policies for unregistered users
       type: object
-    RadiusDuoAccessRequest:
-      example:
-        ikey: ikey
-        host: host
-        skey: skey
-      properties:
-        host:
-          description: Duo api host
-          type: string
-        ikey:
-          description: Duo integration key
-          type: string
-        skey:
-          description: Duo secret key
-          type: string
-      type: object
-    RadiusDuoConfigRequest:
-      example:
-        username_format: username_format
-        push_info: push_info
-        user_agent: user_agent
-      properties:
-        push_info:
-          description: A string of URL-encoded key/value pairs that provides additional
-            context about the authentication attempt in the Duo Mobile app
-          type: string
-        user_agent:
-          description: User agent to connect to Duo (default "")
-          type: string
-        username_format:
-          description: Format string given auth method username as argument to create
-            Duo username (default '%s')
-          type: string
-      type: object
     RadiusLoginRequest:
       example:
         password: password
-        method: method
         urlusername: urlusername
-        passcode: passcode
         username: username
       properties:
-        method:
-          description: Multi-factor auth method to use (optional)
-          type: string
-        passcode:
-          description: One time passcode (optional)
-          type: string
         password:
           description: Password for this user.
           type: string
@@ -23314,14 +25864,6 @@ components:
           type: string
         username:
           description: Username to be used for login. (POST request body)
-          type: string
-      type: object
-    RadiusMfaConfigRequest:
-      example:
-        type: type
-      properties:
-        type:
-          description: 'Enables MFA with given backend (available: duo)'
           type: string
       type: object
     RadiusUsersRequest:
@@ -23429,13 +25971,14 @@ components:
         default_extensions_template: false
         exclude_cidr_list: exclude_cidr_list
         ttl: 5
+        not_before_duration: 1
         allowed_critical_options: allowed_critical_options
         key_bits: 0
         key_id_format: key_id_format
         key_option_specs: key_option_specs
         allowed_users: allowed_users
         allow_user_key_ids: true
-        port: 1
+        port: 5
         default_user: default_user
         default_extensions: '{}'
         cidr_list: cidr_list
@@ -23633,6 +26176,15 @@ components:
           type: integer
           x-vault-displayAttrs:
             name: Max TTL
+        not_before_duration:
+          default: 30
+          description: The duration that the SSH certificate should be backdated by
+            at issuance.
+          format: seconds
+          type: integer
+          x-vault-displayAttrs:
+            name: Not before duration
+            value: 30
         port:
           description: '[Optional for Dynamic type] [Optional for OTP type] [Not applicable
             for CA type] Port number for SSH connection. Default is ''22''. Port number
@@ -24295,7 +26847,6 @@ components:
         - args
         - args
         sha256: sha256
-        sha_256: sha_256
         env:
         - env
         - env
@@ -24318,10 +26869,6 @@ components:
             type: string
           type: array
         sha256:
-          description: The SHA256 sum of the executable used in the command field.
-            This should be HEX encoded.
-          type: string
-        sha_256:
           description: The SHA256 sum of the executable used in the command field.
             This should be HEX encoded.
           type: string
@@ -24593,7 +27140,7 @@ components:
       example:
         interval: 0
         enabled: true
-        max_operations: ""
+        max_operations: 6
       properties:
         enabled:
           description: Whether automatic rotation is enabled.
@@ -24606,7 +27153,8 @@ components:
         max_operations:
           description: The number of encryption operations performed before the barrier
             key is automatically rotated.
-          format: unknown
+          format: int64
+          type: integer
       type: object
     SystemToolsHashRequest:
       example:
@@ -24637,6 +27185,7 @@ components:
         urlbytes: urlbytes
         bytes: 0
         format: base64
+        source: platform
       properties:
         bytes:
           default: 32
@@ -24647,6 +27196,11 @@ components:
           default: base64
           description: Encoding format to use. Can be "hex" or "base64". Defaults
             to "base64".
+          type: string
+        source:
+          default: platform
+          description: Which system to source random data from, ether "platform",
+            "seal", or "all".
           type: string
         urlbytes:
           description: The number of bytes to generate (POST URL parameter)
@@ -25252,6 +27806,82 @@ components:
             only the latest version of the key is allowed.
           type: integer
       type: object
+    TransitKeysImportRequest:
+      example:
+        ciphertext: ciphertext
+        exportable: true
+        auto_rotate_period: 0
+        context: context
+        hash_function: SHA256
+        allow_plaintext_backup: true
+        allow_rotation: true
+        type: aes256-gcm96
+        derived: true
+      properties:
+        allow_plaintext_backup:
+          description: Enables taking a backup of the named key in plaintext format.
+            Once set, this cannot be disabled.
+          type: boolean
+        allow_rotation:
+          description: True if the imported key may be rotated within Vault; false
+            otherwise.
+          type: boolean
+        auto_rotate_period:
+          default: 0
+          description: Amount of time the key should live before being automatically
+            rotated. A value of 0 (default) disables automatic rotation for the key.
+          format: seconds
+          type: integer
+        ciphertext:
+          description: The base64-encoded ciphertext of the keys. The AES key should
+            be encrypted using OAEP with the wrapping key and then concatenated with
+            the import key, wrapped by the AES key.
+          type: string
+        context:
+          description: Base64 encoded context for key derivation. When reading a key
+            with key derivation enabled, if the key type supports public keys, this
+            will return the public key for the given context.
+          type: string
+        derived:
+          description: Enables key derivation mode. This allows for per-transaction
+            unique keys for encryption operations.
+          type: boolean
+        exportable:
+          description: Enables keys to be exportable. This allows for all the valid
+            keys in the key ring to be exported.
+          type: boolean
+        hash_function:
+          default: SHA256
+          description: The hash function used as a random oracle in the OAEP wrapping
+            of the user-generated, ephemeral AES key. Can be one of "SHA1", "SHA224",
+            "SHA256" (default), "SHA384", or "SHA512"
+          type: string
+        type:
+          default: aes256-gcm96
+          description: The type of key being imported. Currently, "aes128-gcm96" (symmetric),
+            "aes256-gcm96" (symmetric), "ecdsa-p256" (asymmetric), "ecdsa-p384" (asymmetric),
+            "ecdsa-p521" (asymmetric), "ed25519" (asymmetric), "rsa-2048" (asymmetric),
+            "rsa-3072" (asymmetric), "rsa-4096" (asymmetric) are supported. Defaults
+            to "aes256-gcm96".
+          type: string
+      type: object
+    TransitKeysImportVersionRequest:
+      example:
+        ciphertext: ciphertext
+        hash_function: SHA256
+      properties:
+        ciphertext:
+          description: The base64-encoded ciphertext of the keys. The AES key should
+            be encrypted using OAEP with the wrapping key and then concatenated with
+            the import key, wrapped by the AES key.
+          type: string
+        hash_function:
+          default: SHA256
+          description: The hash function used as a random oracle in the OAEP wrapping
+            of the user-generated, ephemeral AES key. Can be one of "SHA1", "SHA224",
+            "SHA256" (default), "SHA384", or "SHA512"
+          type: string
+      type: object
     TransitKeysRequest:
       example:
         exportable: true
@@ -25321,6 +27951,7 @@ components:
         urlbytes: urlbytes
         bytes: 0
         format: base64
+        source: platform
       properties:
         bytes:
           default: 32
@@ -25331,6 +27962,11 @@ components:
           default: base64
           description: Encoding format to use. Can be "hex" or "base64". Defaults
             to "base64".
+          type: string
+        source:
+          default: platform
+          description: Which system to source random data from, ether "platform",
+            "seal", or "all".
           type: string
         urlbytes:
           description: The number of bytes to generate (POST URL parameter)
@@ -25493,62 +28129,12 @@ components:
           description: Hash algorithm to use (POST URL parameter)
           type: string
       type: object
-    UserpassDuoAccessRequest:
-      example:
-        ikey: ikey
-        host: host
-        skey: skey
-      properties:
-        host:
-          description: Duo api host
-          type: string
-        ikey:
-          description: Duo integration key
-          type: string
-        skey:
-          description: Duo secret key
-          type: string
-      type: object
-    UserpassDuoConfigRequest:
-      example:
-        username_format: username_format
-        push_info: push_info
-        user_agent: user_agent
-      properties:
-        push_info:
-          description: A string of URL-encoded key/value pairs that provides additional
-            context about the authentication attempt in the Duo Mobile app
-          type: string
-        user_agent:
-          description: User agent to connect to Duo (default "")
-          type: string
-        username_format:
-          description: Format string given auth method username as argument to create
-            Duo username (default '%s')
-          type: string
-      type: object
     UserpassLoginRequest:
       example:
         password: password
-        method: method
-        passcode: passcode
       properties:
-        method:
-          description: Multi-factor auth method to use (optional)
-          type: string
-        passcode:
-          description: One time passcode (optional)
-          type: string
         password:
           description: Password for this user.
-          type: string
-      type: object
-    UserpassMfaConfigRequest:
-      example:
-        type: type
-      properties:
-        type:
-          description: 'Enables MFA with given backend (available: duo)'
           type: string
       type: object
     UserpassUsersPasswordRequest:

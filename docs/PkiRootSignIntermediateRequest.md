@@ -11,9 +11,12 @@ Name | Type | Description | Notes
 **ExcludeCnFromSans** | Pointer to **bool** | If true, the Common Name will not be included in DNS or Email Subject Alternate Names. Defaults to false (CN is included). | [optional] [default to false]
 **Format** | Pointer to **string** | Format for returned data. Can be \&quot;pem\&quot;, \&quot;der\&quot;, or \&quot;pem_bundle\&quot;. If \&quot;pem_bundle\&quot;, any private key and issuing cert will be appended to the certificate pem. If \&quot;der\&quot;, the value will be base64 encoded. Defaults to \&quot;pem\&quot;. | [optional] [default to "pem"]
 **IpSans** | Pointer to **[]string** | The requested IP SANs, if any, in a comma-delimited list | [optional] 
+**IssuerName** | Pointer to **string** | Provide a name to the generated or existing issuer, the name must be unique across all issuers and not be the reserved value &#39;default&#39; | [optional] 
+**IssuerRef** | Pointer to **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [optional] [default to "default"]
 **Locality** | Pointer to **[]string** | If set, Locality will be set to this value. | [optional] 
 **MaxPathLength** | Pointer to **int32** | The maximum allowable path length | [optional] [default to -1]
 **NotAfter** | Pointer to **string** | Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ | [optional] 
+**NotBeforeDuration** | Pointer to **int32** | The duration before now which the certificate needs to be backdated by. | [optional] [default to 30]
 **Organization** | Pointer to **[]string** | If set, O (Organization) will be set to this value. | [optional] 
 **OtherSans** | Pointer to **[]string** | Requested other SANs, in an array with the format &lt;oid&gt;;UTF8:&lt;utf8 string value&gt; for each entry. | [optional] 
 **Ou** | Pointer to **[]string** | If set, OU (OrganizationalUnit) will be set to this value. | [optional] 
@@ -221,6 +224,56 @@ SetIpSans sets IpSans field to given value.
 
 HasIpSans returns a boolean if a field has been set.
 
+### GetIssuerName
+
+`func (o *PkiRootSignIntermediateRequest) GetIssuerName() string`
+
+GetIssuerName returns the IssuerName field if non-nil, zero value otherwise.
+
+### GetIssuerNameOk
+
+`func (o *PkiRootSignIntermediateRequest) GetIssuerNameOk() (*string, bool)`
+
+GetIssuerNameOk returns a tuple with the IssuerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIssuerName
+
+`func (o *PkiRootSignIntermediateRequest) SetIssuerName(v string)`
+
+SetIssuerName sets IssuerName field to given value.
+
+### HasIssuerName
+
+`func (o *PkiRootSignIntermediateRequest) HasIssuerName() bool`
+
+HasIssuerName returns a boolean if a field has been set.
+
+### GetIssuerRef
+
+`func (o *PkiRootSignIntermediateRequest) GetIssuerRef() string`
+
+GetIssuerRef returns the IssuerRef field if non-nil, zero value otherwise.
+
+### GetIssuerRefOk
+
+`func (o *PkiRootSignIntermediateRequest) GetIssuerRefOk() (*string, bool)`
+
+GetIssuerRefOk returns a tuple with the IssuerRef field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIssuerRef
+
+`func (o *PkiRootSignIntermediateRequest) SetIssuerRef(v string)`
+
+SetIssuerRef sets IssuerRef field to given value.
+
+### HasIssuerRef
+
+`func (o *PkiRootSignIntermediateRequest) HasIssuerRef() bool`
+
+HasIssuerRef returns a boolean if a field has been set.
+
 ### GetLocality
 
 `func (o *PkiRootSignIntermediateRequest) GetLocality() []string`
@@ -295,6 +348,31 @@ SetNotAfter sets NotAfter field to given value.
 `func (o *PkiRootSignIntermediateRequest) HasNotAfter() bool`
 
 HasNotAfter returns a boolean if a field has been set.
+
+### GetNotBeforeDuration
+
+`func (o *PkiRootSignIntermediateRequest) GetNotBeforeDuration() int32`
+
+GetNotBeforeDuration returns the NotBeforeDuration field if non-nil, zero value otherwise.
+
+### GetNotBeforeDurationOk
+
+`func (o *PkiRootSignIntermediateRequest) GetNotBeforeDurationOk() (*int32, bool)`
+
+GetNotBeforeDurationOk returns a tuple with the NotBeforeDuration field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNotBeforeDuration
+
+`func (o *PkiRootSignIntermediateRequest) SetNotBeforeDuration(v int32)`
+
+SetNotBeforeDuration sets NotBeforeDuration field to given value.
+
+### HasNotBeforeDuration
+
+`func (o *PkiRootSignIntermediateRequest) HasNotBeforeDuration() bool`
+
+HasNotBeforeDuration returns a boolean if a field has been set.
 
 ### GetOrganization
 

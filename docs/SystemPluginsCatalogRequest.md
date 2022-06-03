@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **Command** | Pointer to **string** | The command used to start the plugin. The executable defined in this command must exist in vault&#39;s plugin directory. | [optional] 
 **Env** | Pointer to **[]string** | The environment variables passed to plugin command. Each entry is of the form \&quot;key&#x3D;value\&quot;. | [optional] 
 **Sha256** | Pointer to **string** | The SHA256 sum of the executable used in the command field. This should be HEX encoded. | [optional] 
-**Sha256** | Pointer to **string** | The SHA256 sum of the executable used in the command field. This should be HEX encoded. | [optional] 
 **Type** | Pointer to **string** | The type of the plugin, may be auth, secret, or database | [optional] 
 
 ## Methods
@@ -104,31 +103,6 @@ SetEnv sets Env field to given value.
 `func (o *SystemPluginsCatalogRequest) HasEnv() bool`
 
 HasEnv returns a boolean if a field has been set.
-
-### GetSha256
-
-`func (o *SystemPluginsCatalogRequest) GetSha256() string`
-
-GetSha256 returns the Sha256 field if non-nil, zero value otherwise.
-
-### GetSha256Ok
-
-`func (o *SystemPluginsCatalogRequest) GetSha256Ok() (*string, bool)`
-
-GetSha256Ok returns a tuple with the Sha256 field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSha256
-
-`func (o *SystemPluginsCatalogRequest) SetSha256(v string)`
-
-SetSha256 sets Sha256 field to given value.
-
-### HasSha256
-
-`func (o *SystemPluginsCatalogRequest) HasSha256() bool`
-
-HasSha256 returns a boolean if a field has been set.
 
 ### GetSha256
 

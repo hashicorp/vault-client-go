@@ -20,6 +20,8 @@ Method | HTTP request | Description
 [**DeleteGcpkmsKeysDeregisterKey**](SecretsApi.md#DeleteGcpkmsKeysDeregisterKey) | **Delete** /gcpkms/keys/deregister/{key} | Deregister an existing key in Vault
 [**DeleteGcpkmsKeysKey**](SecretsApi.md#DeleteGcpkmsKeysKey) | **Delete** /gcpkms/keys/{key} | Interact with crypto keys in Vault and Google Cloud KMS
 [**DeleteGcpkmsKeysTrimKey**](SecretsApi.md#DeleteGcpkmsKeysTrimKey) | **Delete** /gcpkms/keys/trim/{key} | Delete old crypto key versions from Google Cloud KMS
+[**DeleteKubernetesConfig**](SecretsApi.md#DeleteKubernetesConfig) | **Delete** /kubernetes/config | 
+[**DeleteKubernetesRolesName**](SecretsApi.md#DeleteKubernetesRolesName) | **Delete** /kubernetes/roles/{name} | 
 [**DeleteKvPath**](SecretsApi.md#DeleteKvPath) | **Delete** /kv/{path} | Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
 [**DeleteMongodbatlasRolesName**](SecretsApi.md#DeleteMongodbatlasRolesName) | **Delete** /mongodbatlas/roles/{name} | Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
 [**DeleteNomadConfigAccess**](SecretsApi.md#DeleteNomadConfigAccess) | **Delete** /nomad/config/access | 
@@ -28,7 +30,10 @@ Method | HTTP request | Description
 [**DeleteOpenldapConfig**](SecretsApi.md#DeleteOpenldapConfig) | **Delete** /openldap/config | 
 [**DeleteOpenldapRoleName**](SecretsApi.md#DeleteOpenldapRoleName) | **Delete** /openldap/role/{name} | 
 [**DeleteOpenldapStaticRoleName**](SecretsApi.md#DeleteOpenldapStaticRoleName) | **Delete** /openldap/static-role/{name} | 
-[**DeletePkiRolesName**](SecretsApi.md#DeletePkiRolesName) | **Delete** /pki/roles/{name} | Manage the roles that can be created with this backend.
+[**DeletePkiIssuerRefDerPem**](SecretsApi.md#DeletePkiIssuerRefDerPem) | **Delete** /pki/{issuer_ref}/der|/pem | 
+[**DeletePkiJson**](SecretsApi.md#DeletePkiJson) | **Delete** /pki//json | 
+[**DeletePkiKeyKeyRef**](SecretsApi.md#DeletePkiKeyKeyRef) | **Delete** /pki/key/{key_ref} | 
+[**DeletePkiRolesName**](SecretsApi.md#DeletePkiRolesName) | **Delete** /pki/roles/{name} | 
 [**DeletePkiRoot**](SecretsApi.md#DeletePkiRoot) | **Delete** /pki/root | 
 [**DeleteRabbitmqRolesName**](SecretsApi.md#DeleteRabbitmqRolesName) | **Delete** /rabbitmq/roles/{name} | Manage the roles that can be created with this backend.
 [**DeleteSecretDataPath**](SecretsApi.md#DeleteSecretDataPath) | **Delete** /secret/data/{path} | Write, Patch, Read, and Delete data in the Key-Value Store.
@@ -84,6 +89,9 @@ Method | HTTP request | Description
 [**GetGcpkmsKeysConfigKey**](SecretsApi.md#GetGcpkmsKeysConfigKey) | **Get** /gcpkms/keys/config/{key} | Configure the key in Vault
 [**GetGcpkmsKeysKey**](SecretsApi.md#GetGcpkmsKeysKey) | **Get** /gcpkms/keys/{key} | Interact with crypto keys in Vault and Google Cloud KMS
 [**GetGcpkmsPubkeyKey**](SecretsApi.md#GetGcpkmsPubkeyKey) | **Get** /gcpkms/pubkey/{key} | Retrieve the public key associated with the named key
+[**GetKubernetesConfig**](SecretsApi.md#GetKubernetesConfig) | **Get** /kubernetes/config | 
+[**GetKubernetesRoles**](SecretsApi.md#GetKubernetesRoles) | **Get** /kubernetes/roles | 
+[**GetKubernetesRolesName**](SecretsApi.md#GetKubernetesRolesName) | **Get** /kubernetes/roles/{name} | 
 [**GetKvPath**](SecretsApi.md#GetKvPath) | **Get** /kv/{path} | Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
 [**GetMongodbatlasConfig**](SecretsApi.md#GetMongodbatlasConfig) | **Get** /mongodbatlas/config | Configure the  credentials that are used to manage Database Users.
 [**GetMongodbatlasCredsName**](SecretsApi.md#GetMongodbatlasCredsName) | **Get** /mongodbatlas/creds/{name} | Generate MongoDB Atlas Programmatic API from a specific Vault role.
@@ -101,22 +109,31 @@ Method | HTTP request | Description
 [**GetOpenldapStaticCredName**](SecretsApi.md#GetOpenldapStaticCredName) | **Get** /openldap/static-cred/{name} | 
 [**GetOpenldapStaticRole**](SecretsApi.md#GetOpenldapStaticRole) | **Get** /openldap/static-role | 
 [**GetOpenldapStaticRoleName**](SecretsApi.md#GetOpenldapStaticRoleName) | **Get** /openldap/static-role/{name} | 
-[**GetPkiCa**](SecretsApi.md#GetPkiCa) | **Get** /pki/ca | Fetch a CA, CRL, CA Chain, or non-revoked certificate.
-[**GetPkiCaChain**](SecretsApi.md#GetPkiCaChain) | **Get** /pki/ca_chain | Fetch a CA, CRL, CA Chain, or non-revoked certificate.
-[**GetPkiCaPem**](SecretsApi.md#GetPkiCaPem) | **Get** /pki/ca/pem | Fetch a CA, CRL, CA Chain, or non-revoked certificate.
-[**GetPkiCertCaChain**](SecretsApi.md#GetPkiCertCaChain) | **Get** /pki/cert/ca_chain | Fetch a CA, CRL, CA Chain, or non-revoked certificate.
-[**GetPkiCertCrl**](SecretsApi.md#GetPkiCertCrl) | **Get** /pki/cert/crl | Fetch a CA, CRL, CA Chain, or non-revoked certificate.
-[**GetPkiCertSerial**](SecretsApi.md#GetPkiCertSerial) | **Get** /pki/cert/{serial} | Fetch a CA, CRL, CA Chain, or non-revoked certificate.
-[**GetPkiCertSerialRaw**](SecretsApi.md#GetPkiCertSerialRaw) | **Get** /pki/cert/{serial}/raw | Fetch a CA, CRL, CA Chain, or non-revoked certificate.
-[**GetPkiCertSerialRawPem**](SecretsApi.md#GetPkiCertSerialRawPem) | **Get** /pki/cert/{serial}/raw/pem | Fetch a CA, CRL, CA Chain, or non-revoked certificate.
-[**GetPkiCerts**](SecretsApi.md#GetPkiCerts) | **Get** /pki/certs | Fetch a CA, CRL, CA Chain, or non-revoked certificate.
-[**GetPkiConfigCrl**](SecretsApi.md#GetPkiConfigCrl) | **Get** /pki/config/crl | Configure the CRL expiration.
-[**GetPkiConfigUrls**](SecretsApi.md#GetPkiConfigUrls) | **Get** /pki/config/urls | Set the URLs for the issuing CA, CRL distribution points, and OCSP servers.
-[**GetPkiCrl**](SecretsApi.md#GetPkiCrl) | **Get** /pki/crl | Fetch a CA, CRL, CA Chain, or non-revoked certificate.
-[**GetPkiCrlPem**](SecretsApi.md#GetPkiCrlPem) | **Get** /pki/crl/pem | Fetch a CA, CRL, CA Chain, or non-revoked certificate.
-[**GetPkiCrlRotate**](SecretsApi.md#GetPkiCrlRotate) | **Get** /pki/crl/rotate | Force a rebuild of the CRL.
-[**GetPkiRoles**](SecretsApi.md#GetPkiRoles) | **Get** /pki/roles | List the existing roles in this backend
-[**GetPkiRolesName**](SecretsApi.md#GetPkiRolesName) | **Get** /pki/roles/{name} | Manage the roles that can be created with this backend.
+[**GetPkiCa**](SecretsApi.md#GetPkiCa) | **Get** /pki/ca | 
+[**GetPkiCaChain**](SecretsApi.md#GetPkiCaChain) | **Get** /pki/ca_chain | 
+[**GetPkiCaPem**](SecretsApi.md#GetPkiCaPem) | **Get** /pki/ca/pem | 
+[**GetPkiCertCaChain**](SecretsApi.md#GetPkiCertCaChain) | **Get** /pki/cert/ca_chain | 
+[**GetPkiCertCrl**](SecretsApi.md#GetPkiCertCrl) | **Get** /pki/cert/crl | 
+[**GetPkiCertSerial**](SecretsApi.md#GetPkiCertSerial) | **Get** /pki/cert/{serial} | 
+[**GetPkiCertSerialRaw**](SecretsApi.md#GetPkiCertSerialRaw) | **Get** /pki/cert/{serial}/raw | 
+[**GetPkiCertSerialRawPem**](SecretsApi.md#GetPkiCertSerialRawPem) | **Get** /pki/cert/{serial}/raw/pem | 
+[**GetPkiCerts**](SecretsApi.md#GetPkiCerts) | **Get** /pki/certs | 
+[**GetPkiConfigCrl**](SecretsApi.md#GetPkiConfigCrl) | **Get** /pki/config/crl | 
+[**GetPkiConfigIssuers**](SecretsApi.md#GetPkiConfigIssuers) | **Get** /pki/config/issuers | 
+[**GetPkiConfigKeys**](SecretsApi.md#GetPkiConfigKeys) | **Get** /pki/config/keys | 
+[**GetPkiConfigUrls**](SecretsApi.md#GetPkiConfigUrls) | **Get** /pki/config/urls | 
+[**GetPkiCrl**](SecretsApi.md#GetPkiCrl) | **Get** /pki/crl | 
+[**GetPkiCrlPem**](SecretsApi.md#GetPkiCrlPem) | **Get** /pki/crl/pem | 
+[**GetPkiCrlRotate**](SecretsApi.md#GetPkiCrlRotate) | **Get** /pki/crl/rotate | 
+[**GetPkiDer**](SecretsApi.md#GetPkiDer) | **Get** /pki//der | 
+[**GetPkiIssuerRefCrlPem**](SecretsApi.md#GetPkiIssuerRefCrlPem) | **Get** /pki/{issuer_ref}/crl/pem | 
+[**GetPkiIssuerRefDerPem**](SecretsApi.md#GetPkiIssuerRefDerPem) | **Get** /pki/{issuer_ref}/der|/pem | 
+[**GetPkiIssuers**](SecretsApi.md#GetPkiIssuers) | **Get** /pki/issuers | 
+[**GetPkiJson**](SecretsApi.md#GetPkiJson) | **Get** /pki//json | 
+[**GetPkiKeyKeyRef**](SecretsApi.md#GetPkiKeyKeyRef) | **Get** /pki/key/{key_ref} | 
+[**GetPkiKeys**](SecretsApi.md#GetPkiKeys) | **Get** /pki/keys | 
+[**GetPkiRoles**](SecretsApi.md#GetPkiRoles) | **Get** /pki/roles | 
+[**GetPkiRolesName**](SecretsApi.md#GetPkiRolesName) | **Get** /pki/roles/{name} | 
 [**GetPkiTidyStatus**](SecretsApi.md#GetPkiTidyStatus) | **Get** /pki/tidy-status | 
 [**GetRabbitmqConfigLease**](SecretsApi.md#GetRabbitmqConfigLease) | **Get** /rabbitmq/config/lease | Configure the lease parameters for generated credentials
 [**GetRabbitmqCredsName**](SecretsApi.md#GetRabbitmqCredsName) | **Get** /rabbitmq/creds/{name} | Request RabbitMQ credentials for a certain role.
@@ -144,6 +161,7 @@ Method | HTTP request | Description
 [**GetTransitExportTypeNameVersion**](SecretsApi.md#GetTransitExportTypeNameVersion) | **Get** /transit/export/{type}/{name}/{version} | Export named encryption or signing key
 [**GetTransitKeys**](SecretsApi.md#GetTransitKeys) | **Get** /transit/keys | Managed named encryption keys
 [**GetTransitKeysName**](SecretsApi.md#GetTransitKeysName) | **Get** /transit/keys/{name} | Managed named encryption keys
+[**GetTransitWrappingKey**](SecretsApi.md#GetTransitWrappingKey) | **Get** /transit/wrapping_key | Returns the public key to use for wrapping imported keys
 [**PostAdConfig**](SecretsApi.md#PostAdConfig) | **Post** /ad/config | Configure the AD server to connect to, along with password options.
 [**PostAdLibraryManageNameCheckIn**](SecretsApi.md#PostAdLibraryManageNameCheckIn) | **Post** /ad/library/manage/{name}/check-in | Check service accounts in to the library.
 [**PostAdLibraryName**](SecretsApi.md#PostAdLibraryName) | **Post** /ad/library/{name} | Update a library set.
@@ -191,6 +209,9 @@ Method | HTTP request | Description
 [**PostGcpkmsReencryptKey**](SecretsApi.md#PostGcpkmsReencryptKey) | **Post** /gcpkms/reencrypt/{key} | Re-encrypt existing ciphertext data to a new version
 [**PostGcpkmsSignKey**](SecretsApi.md#PostGcpkmsSignKey) | **Post** /gcpkms/sign/{key} | Signs a message or digest using a named key
 [**PostGcpkmsVerifyKey**](SecretsApi.md#PostGcpkmsVerifyKey) | **Post** /gcpkms/verify/{key} | Verify a signature using a named key
+[**PostKubernetesConfig**](SecretsApi.md#PostKubernetesConfig) | **Post** /kubernetes/config | 
+[**PostKubernetesCredsName**](SecretsApi.md#PostKubernetesCredsName) | **Post** /kubernetes/creds/{name} | 
+[**PostKubernetesRolesName**](SecretsApi.md#PostKubernetesRolesName) | **Post** /kubernetes/roles/{name} | 
 [**PostKvPath**](SecretsApi.md#PostKvPath) | **Post** /kv/{path} | Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
 [**PostMongodbatlasConfig**](SecretsApi.md#PostMongodbatlasConfig) | **Post** /mongodbatlas/config | Configure the  credentials that are used to manage Database Users.
 [**PostMongodbatlasCredsName**](SecretsApi.md#PostMongodbatlasCredsName) | **Post** /mongodbatlas/creds/{name} | Generate MongoDB Atlas Programmatic API from a specific Vault role.
@@ -203,20 +224,41 @@ Method | HTTP request | Description
 [**PostOpenldapRotateRoleName**](SecretsApi.md#PostOpenldapRotateRoleName) | **Post** /openldap/rotate-role/{name} | 
 [**PostOpenldapRotateRoot**](SecretsApi.md#PostOpenldapRotateRoot) | **Post** /openldap/rotate-root | 
 [**PostOpenldapStaticRoleName**](SecretsApi.md#PostOpenldapStaticRoleName) | **Post** /openldap/static-role/{name} | 
-[**PostPkiConfigCa**](SecretsApi.md#PostPkiConfigCa) | **Post** /pki/config/ca | Set the CA certificate and private key used for generated credentials.
-[**PostPkiConfigCrl**](SecretsApi.md#PostPkiConfigCrl) | **Post** /pki/config/crl | Configure the CRL expiration.
-[**PostPkiConfigUrls**](SecretsApi.md#PostPkiConfigUrls) | **Post** /pki/config/urls | Set the URLs for the issuing CA, CRL distribution points, and OCSP servers.
+[**PostPkiBundle**](SecretsApi.md#PostPkiBundle) | **Post** /pki/bundle | 
+[**PostPkiCert**](SecretsApi.md#PostPkiCert) | **Post** /pki/cert | 
+[**PostPkiConfigCa**](SecretsApi.md#PostPkiConfigCa) | **Post** /pki/config/ca | 
+[**PostPkiConfigCrl**](SecretsApi.md#PostPkiConfigCrl) | **Post** /pki/config/crl | 
+[**PostPkiConfigIssuers**](SecretsApi.md#PostPkiConfigIssuers) | **Post** /pki/config/issuers | 
+[**PostPkiConfigKeys**](SecretsApi.md#PostPkiConfigKeys) | **Post** /pki/config/keys | 
+[**PostPkiConfigUrls**](SecretsApi.md#PostPkiConfigUrls) | **Post** /pki/config/urls | 
+[**PostPkiIntermediateCrossSign**](SecretsApi.md#PostPkiIntermediateCrossSign) | **Post** /pki/intermediate/cross-sign | 
 [**PostPkiIntermediateGenerateExported**](SecretsApi.md#PostPkiIntermediateGenerateExported) | **Post** /pki/intermediate/generate/{exported} | 
 [**PostPkiIntermediateSetSigned**](SecretsApi.md#PostPkiIntermediateSetSigned) | **Post** /pki/intermediate/set-signed | 
-[**PostPkiIssueRole**](SecretsApi.md#PostPkiIssueRole) | **Post** /pki/issue/{role} | Request a certificate using a certain role with the provided details.
-[**PostPkiRevoke**](SecretsApi.md#PostPkiRevoke) | **Post** /pki/revoke | Revoke a certificate by serial number.
-[**PostPkiRolesName**](SecretsApi.md#PostPkiRolesName) | **Post** /pki/roles/{name} | Manage the roles that can be created with this backend.
+[**PostPkiInternalExported**](SecretsApi.md#PostPkiInternalExported) | **Post** /pki/internal|exported | 
+[**PostPkiIssueRole**](SecretsApi.md#PostPkiIssueRole) | **Post** /pki/issue/{role} | 
+[**PostPkiIssuerIssuerRefIssueRole**](SecretsApi.md#PostPkiIssuerIssuerRefIssueRole) | **Post** /pki/issuer/{issuer_ref}/issue/{role} | 
+[**PostPkiIssuerIssuerRefSignIntermediate**](SecretsApi.md#PostPkiIssuerIssuerRefSignIntermediate) | **Post** /pki/issuer/{issuer_ref}/sign-intermediate | 
+[**PostPkiIssuerIssuerRefSignRole**](SecretsApi.md#PostPkiIssuerIssuerRefSignRole) | **Post** /pki/issuer/{issuer_ref}/sign/{role} | 
+[**PostPkiIssuerIssuerRefSignSelfIssued**](SecretsApi.md#PostPkiIssuerIssuerRefSignSelfIssued) | **Post** /pki/issuer/{issuer_ref}/sign-self-issued | 
+[**PostPkiIssuerIssuerRefSignVerbatim**](SecretsApi.md#PostPkiIssuerIssuerRefSignVerbatim) | **Post** /pki/issuer/{issuer_ref}/sign-verbatim | 
+[**PostPkiIssuerIssuerRefSignVerbatimRole**](SecretsApi.md#PostPkiIssuerIssuerRefSignVerbatimRole) | **Post** /pki/issuer/{issuer_ref}/sign-verbatim/{role} | 
+[**PostPkiIssuerRefDerPem**](SecretsApi.md#PostPkiIssuerRefDerPem) | **Post** /pki/{issuer_ref}/der|/pem | 
+[**PostPkiIssuersGenerateIntermediateExported**](SecretsApi.md#PostPkiIssuersGenerateIntermediateExported) | **Post** /pki/issuers/generate/intermediate/{exported} | 
+[**PostPkiIssuersGenerateRootExported**](SecretsApi.md#PostPkiIssuersGenerateRootExported) | **Post** /pki/issuers/generate/root/{exported} | 
+[**PostPkiJson**](SecretsApi.md#PostPkiJson) | **Post** /pki//json | 
+[**PostPkiKeyKeyRef**](SecretsApi.md#PostPkiKeyKeyRef) | **Post** /pki/key/{key_ref} | 
+[**PostPkiKeysImport**](SecretsApi.md#PostPkiKeysImport) | **Post** /pki/keys/import | 
+[**PostPkiKms**](SecretsApi.md#PostPkiKms) | **Post** /pki/kms | 
+[**PostPkiRevoke**](SecretsApi.md#PostPkiRevoke) | **Post** /pki/revoke | 
+[**PostPkiRolesName**](SecretsApi.md#PostPkiRolesName) | **Post** /pki/roles/{name} | 
 [**PostPkiRootGenerateExported**](SecretsApi.md#PostPkiRootGenerateExported) | **Post** /pki/root/generate/{exported} | 
+[**PostPkiRootReplace**](SecretsApi.md#PostPkiRootReplace) | **Post** /pki/root/replace | 
+[**PostPkiRootRotateExported**](SecretsApi.md#PostPkiRootRotateExported) | **Post** /pki/root/rotate/{exported} | 
 [**PostPkiRootSignIntermediate**](SecretsApi.md#PostPkiRootSignIntermediate) | **Post** /pki/root/sign-intermediate | 
 [**PostPkiRootSignSelfIssued**](SecretsApi.md#PostPkiRootSignSelfIssued) | **Post** /pki/root/sign-self-issued | 
-[**PostPkiSignRole**](SecretsApi.md#PostPkiSignRole) | **Post** /pki/sign/{role} | Request certificates using a certain role with the provided details.
-[**PostPkiSignVerbatim**](SecretsApi.md#PostPkiSignVerbatim) | **Post** /pki/sign-verbatim | Request certificates using a certain role with the provided details.
-[**PostPkiSignVerbatimRole**](SecretsApi.md#PostPkiSignVerbatimRole) | **Post** /pki/sign-verbatim/{role} | Request certificates using a certain role with the provided details.
+[**PostPkiSignRole**](SecretsApi.md#PostPkiSignRole) | **Post** /pki/sign/{role} | 
+[**PostPkiSignVerbatim**](SecretsApi.md#PostPkiSignVerbatim) | **Post** /pki/sign-verbatim | 
+[**PostPkiSignVerbatimRole**](SecretsApi.md#PostPkiSignVerbatimRole) | **Post** /pki/sign-verbatim/{role} | 
 [**PostPkiTidy**](SecretsApi.md#PostPkiTidy) | **Post** /pki/tidy | 
 [**PostRabbitmqConfigConnection**](SecretsApi.md#PostRabbitmqConfigConnection) | **Post** /rabbitmq/config/connection | Configure the connection URI, username, and password to talk to RabbitMQ management HTTP API.
 [**PostRabbitmqConfigLease**](SecretsApi.md#PostRabbitmqConfigLease) | **Post** /rabbitmq/config/lease | Configure the lease parameters for generated credentials
@@ -251,9 +293,13 @@ Method | HTTP request | Description
 [**PostTransitHmacNameUrlalgorithm**](SecretsApi.md#PostTransitHmacNameUrlalgorithm) | **Post** /transit/hmac/{name}/{urlalgorithm} | Generate an HMAC for input data using the named key
 [**PostTransitKeysName**](SecretsApi.md#PostTransitKeysName) | **Post** /transit/keys/{name} | Managed named encryption keys
 [**PostTransitKeysNameConfig**](SecretsApi.md#PostTransitKeysNameConfig) | **Post** /transit/keys/{name}/config | Configure a named encryption key
+[**PostTransitKeysNameImport**](SecretsApi.md#PostTransitKeysNameImport) | **Post** /transit/keys/{name}/import | Imports an externally-generated key into a new transit key
+[**PostTransitKeysNameImportVersion**](SecretsApi.md#PostTransitKeysNameImportVersion) | **Post** /transit/keys/{name}/import_version | Imports an externally-generated key into an existing imported key
 [**PostTransitKeysNameRotate**](SecretsApi.md#PostTransitKeysNameRotate) | **Post** /transit/keys/{name}/rotate | Rotate named encryption key
 [**PostTransitKeysNameTrim**](SecretsApi.md#PostTransitKeysNameTrim) | **Post** /transit/keys/{name}/trim | Trim key versions of a named key
 [**PostTransitRandom**](SecretsApi.md#PostTransitRandom) | **Post** /transit/random | Generate random bytes
+[**PostTransitRandomSource**](SecretsApi.md#PostTransitRandomSource) | **Post** /transit/random/{source} | Generate random bytes
+[**PostTransitRandomSourceUrlbytes**](SecretsApi.md#PostTransitRandomSourceUrlbytes) | **Post** /transit/random/{source}/{urlbytes} | Generate random bytes
 [**PostTransitRandomUrlbytes**](SecretsApi.md#PostTransitRandomUrlbytes) | **Post** /transit/random/{urlbytes} | Generate random bytes
 [**PostTransitRestore**](SecretsApi.md#PostTransitRestore) | **Post** /transit/restore | Restore the named key
 [**PostTransitRestoreName**](SecretsApi.md#PostTransitRestoreName) | **Post** /transit/restore/{name} | Restore the named key
@@ -1285,6 +1331,129 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## DeleteKubernetesConfig
+
+> DeleteKubernetesConfig(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.DeleteKubernetesConfig(context.Background()).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.DeleteKubernetesConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteKubernetesConfigRequest struct via the builder pattern
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteKubernetesRolesName
+
+> DeleteKubernetesRolesName(ctx, name).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    name := "name_example" // string | Name of the role
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.DeleteKubernetesRolesName(context.Background(), name).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.DeleteKubernetesRolesName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**name** | **string** | Name of the role | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteKubernetesRolesNameRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## DeleteKvPath
 
 > DeleteKvPath(ctx, path).Execute()
@@ -1786,11 +1955,200 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## DeletePkiIssuerRefDerPem
+
+> DeletePkiIssuerRefDerPem(ctx, issuerRef).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (default to "default")
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.DeletePkiIssuerRefDerPem(context.Background(), issuerRef).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.DeletePkiIssuerRefDerPem``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**issuerRef** | **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [default to &quot;default&quot;]
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeletePkiIssuerRefDerPemRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeletePkiJson
+
+> DeletePkiJson(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.DeletePkiJson(context.Background()).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.DeletePkiJson``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeletePkiJsonRequest struct via the builder pattern
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeletePkiKeyKeyRef
+
+> DeletePkiKeyKeyRef(ctx, keyRef).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (default to "default")
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.DeletePkiKeyKeyRef(context.Background(), keyRef).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.DeletePkiKeyKeyRef``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**keyRef** | **string** | Reference to key; either \&quot;default\&quot; for the configured default key, an identifier of a key, or the name assigned to the key. | [default to &quot;default&quot;]
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeletePkiKeyKeyRefRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## DeletePkiRolesName
 
 > DeletePkiRolesName(ctx, name).Execute()
 
-Manage the roles that can be created with this backend.
+
 
 ### Example
 
@@ -5322,6 +5680,191 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## GetKubernetesConfig
+
+> GetKubernetesConfig(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.GetKubernetesConfig(context.Background()).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.GetKubernetesConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetKubernetesConfigRequest struct via the builder pattern
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetKubernetesRoles
+
+> GetKubernetesRoles(ctx).List(list).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    list := "list_example" // string | Must be set to `true`
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.GetKubernetesRoles(context.Background()).List(list).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.GetKubernetesRoles``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetKubernetesRolesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetKubernetesRolesName
+
+> GetKubernetesRolesName(ctx, name).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    name := "name_example" // string | Name of the role
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.GetKubernetesRolesName(context.Background(), name).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.GetKubernetesRolesName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**name** | **string** | Name of the role | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetKubernetesRolesNameRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetKvPath
 
 > GetKvPath(ctx, path).List(list).Execute()
@@ -6398,7 +6941,7 @@ No authorization required
 
 > GetPkiCa(ctx).Execute()
 
-Fetch a CA, CRL, CA Chain, or non-revoked certificate.
+
 
 ### Example
 
@@ -6455,7 +6998,7 @@ No authorization required
 
 > GetPkiCaChain(ctx).Execute()
 
-Fetch a CA, CRL, CA Chain, or non-revoked certificate.
+
 
 ### Example
 
@@ -6512,7 +7055,7 @@ No authorization required
 
 > GetPkiCaPem(ctx).Execute()
 
-Fetch a CA, CRL, CA Chain, or non-revoked certificate.
+
 
 ### Example
 
@@ -6569,7 +7112,7 @@ No authorization required
 
 > GetPkiCertCaChain(ctx).Execute()
 
-Fetch a CA, CRL, CA Chain, or non-revoked certificate.
+
 
 ### Example
 
@@ -6626,7 +7169,7 @@ No authorization required
 
 > GetPkiCertCrl(ctx).Execute()
 
-Fetch a CA, CRL, CA Chain, or non-revoked certificate.
+
 
 ### Example
 
@@ -6683,7 +7226,7 @@ No authorization required
 
 > GetPkiCertSerial(ctx, serial).Execute()
 
-Fetch a CA, CRL, CA Chain, or non-revoked certificate.
+
 
 ### Example
 
@@ -6749,7 +7292,7 @@ No authorization required
 
 > GetPkiCertSerialRaw(ctx, serial).Execute()
 
-Fetch a CA, CRL, CA Chain, or non-revoked certificate.
+
 
 ### Example
 
@@ -6815,7 +7358,7 @@ No authorization required
 
 > GetPkiCertSerialRawPem(ctx, serial).Execute()
 
-Fetch a CA, CRL, CA Chain, or non-revoked certificate.
+
 
 ### Example
 
@@ -6881,7 +7424,7 @@ No authorization required
 
 > GetPkiCerts(ctx).List(list).Execute()
 
-Fetch a CA, CRL, CA Chain, or non-revoked certificate.
+
 
 ### Example
 
@@ -6943,7 +7486,7 @@ No authorization required
 
 > GetPkiConfigCrl(ctx).Execute()
 
-Configure the CRL expiration.
+
 
 ### Example
 
@@ -6996,11 +7539,125 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## GetPkiConfigIssuers
+
+> GetPkiConfigIssuers(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.GetPkiConfigIssuers(context.Background()).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.GetPkiConfigIssuers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetPkiConfigIssuersRequest struct via the builder pattern
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetPkiConfigKeys
+
+> GetPkiConfigKeys(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.GetPkiConfigKeys(context.Background()).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.GetPkiConfigKeys``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetPkiConfigKeysRequest struct via the builder pattern
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetPkiConfigUrls
 
 > GetPkiConfigUrls(ctx).Execute()
 
-Set the URLs for the issuing CA, CRL distribution points, and OCSP servers.
+
 
 ### Example
 
@@ -7057,7 +7714,7 @@ No authorization required
 
 > GetPkiCrl(ctx).Execute()
 
-Fetch a CA, CRL, CA Chain, or non-revoked certificate.
+
 
 ### Example
 
@@ -7114,7 +7771,7 @@ No authorization required
 
 > GetPkiCrlPem(ctx).Execute()
 
-Fetch a CA, CRL, CA Chain, or non-revoked certificate.
+
 
 ### Example
 
@@ -7171,7 +7828,7 @@ No authorization required
 
 > GetPkiCrlRotate(ctx).Execute()
 
-Force a rebuild of the CRL.
+
 
 ### Example
 
@@ -7224,11 +7881,447 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## GetPkiDer
+
+> GetPkiDer(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.GetPkiDer(context.Background()).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.GetPkiDer``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetPkiDerRequest struct via the builder pattern
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetPkiIssuerRefCrlPem
+
+> GetPkiIssuerRefCrlPem(ctx, issuerRef).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (default to "default")
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.GetPkiIssuerRefCrlPem(context.Background(), issuerRef).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.GetPkiIssuerRefCrlPem``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**issuerRef** | **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [default to &quot;default&quot;]
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetPkiIssuerRefCrlPemRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetPkiIssuerRefDerPem
+
+> GetPkiIssuerRefDerPem(ctx, issuerRef).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (default to "default")
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.GetPkiIssuerRefDerPem(context.Background(), issuerRef).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.GetPkiIssuerRefDerPem``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**issuerRef** | **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [default to &quot;default&quot;]
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetPkiIssuerRefDerPemRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetPkiIssuers
+
+> GetPkiIssuers(ctx).List(list).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    list := "list_example" // string | Must be set to `true`
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.GetPkiIssuers(context.Background()).List(list).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.GetPkiIssuers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetPkiIssuersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetPkiJson
+
+> GetPkiJson(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.GetPkiJson(context.Background()).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.GetPkiJson``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetPkiJsonRequest struct via the builder pattern
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetPkiKeyKeyRef
+
+> GetPkiKeyKeyRef(ctx, keyRef).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (default to "default")
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.GetPkiKeyKeyRef(context.Background(), keyRef).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.GetPkiKeyKeyRef``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**keyRef** | **string** | Reference to key; either \&quot;default\&quot; for the configured default key, an identifier of a key, or the name assigned to the key. | [default to &quot;default&quot;]
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetPkiKeyKeyRefRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetPkiKeys
+
+> GetPkiKeys(ctx).List(list).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    list := "list_example" // string | Must be set to `true`
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.GetPkiKeys(context.Background()).List(list).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.GetPkiKeys``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetPkiKeysRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string** | Must be set to &#x60;true&#x60; | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetPkiRoles
 
 > GetPkiRoles(ctx).List(list).Execute()
 
-List the existing roles in this backend
+
 
 ### Example
 
@@ -7290,7 +8383,7 @@ No authorization required
 
 > GetPkiRolesName(ctx, name).Execute()
 
-Manage the roles that can be created with this backend.
+
 
 ### Example
 
@@ -9033,6 +10126,63 @@ Other parameters are passed through a pointer to a apiGetTransitKeysNameRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetTransitWrappingKey
+
+> GetTransitWrappingKey(ctx).Execute()
+
+Returns the public key to use for wrapping imported keys
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.GetTransitWrappingKey(context.Background()).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.GetTransitWrappingKey``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetTransitWrappingKeyRequest struct via the builder pattern
 
 
 ### Return type
@@ -12129,6 +13279,204 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## PostKubernetesConfig
+
+> PostKubernetesConfig(ctx).KubernetesConfigRequest(kubernetesConfigRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    kubernetesConfigRequest := *openapiclient.NewKubernetesConfigRequest() // KubernetesConfigRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.PostKubernetesConfig(context.Background()).KubernetesConfigRequest(kubernetesConfigRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.PostKubernetesConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostKubernetesConfigRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **kubernetesConfigRequest** | [**KubernetesConfigRequest**](KubernetesConfigRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PostKubernetesCredsName
+
+> PostKubernetesCredsName(ctx, name).KubernetesCredsRequest(kubernetesCredsRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    name := "name_example" // string | Name of the Vault role
+    kubernetesCredsRequest := *openapiclient.NewKubernetesCredsRequest("KubernetesNamespace_example") // KubernetesCredsRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.PostKubernetesCredsName(context.Background(), name).KubernetesCredsRequest(kubernetesCredsRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.PostKubernetesCredsName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**name** | **string** | Name of the Vault role | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostKubernetesCredsNameRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **kubernetesCredsRequest** | [**KubernetesCredsRequest**](KubernetesCredsRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PostKubernetesRolesName
+
+> PostKubernetesRolesName(ctx, name).KubernetesRolesRequest(kubernetesRolesRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    name := "name_example" // string | Name of the role
+    kubernetesRolesRequest := *openapiclient.NewKubernetesRolesRequest([]string{"AllowedKubernetesNamespaces_example"}) // KubernetesRolesRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.PostKubernetesRolesName(context.Background(), name).KubernetesRolesRequest(kubernetesRolesRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.PostKubernetesRolesName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**name** | **string** | Name of the role | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostKubernetesRolesNameRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **kubernetesRolesRequest** | [**KubernetesRolesRequest**](KubernetesRolesRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## PostKvPath
 
 > PostKvPath(ctx, path).Execute()
@@ -12904,11 +14252,135 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## PostPkiBundle
+
+> PostPkiBundle(ctx).PkiBundleRequest(pkiBundleRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    pkiBundleRequest := *openapiclient.NewPkiBundleRequest() // PkiBundleRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.PostPkiBundle(context.Background()).PkiBundleRequest(pkiBundleRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.PostPkiBundle``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostPkiBundleRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiBundleRequest** | [**PkiBundleRequest**](PkiBundleRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PostPkiCert
+
+> PostPkiCert(ctx).PkiCertRequest(pkiCertRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    pkiCertRequest := *openapiclient.NewPkiCertRequest() // PkiCertRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.PostPkiCert(context.Background()).PkiCertRequest(pkiCertRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.PostPkiCert``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostPkiCertRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiCertRequest** | [**PkiCertRequest**](PkiCertRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## PostPkiConfigCa
 
 > PostPkiConfigCa(ctx).PkiConfigCaRequest(pkiConfigCaRequest).Execute()
 
-Set the CA certificate and private key used for generated credentials.
+
 
 ### Example
 
@@ -12970,7 +14442,7 @@ No authorization required
 
 > PostPkiConfigCrl(ctx).PkiConfigCrlRequest(pkiConfigCrlRequest).Execute()
 
-Configure the CRL expiration.
+
 
 ### Example
 
@@ -13028,11 +14500,135 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## PostPkiConfigIssuers
+
+> PostPkiConfigIssuers(ctx).PkiConfigIssuersRequest(pkiConfigIssuersRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    pkiConfigIssuersRequest := *openapiclient.NewPkiConfigIssuersRequest() // PkiConfigIssuersRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.PostPkiConfigIssuers(context.Background()).PkiConfigIssuersRequest(pkiConfigIssuersRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.PostPkiConfigIssuers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostPkiConfigIssuersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiConfigIssuersRequest** | [**PkiConfigIssuersRequest**](PkiConfigIssuersRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PostPkiConfigKeys
+
+> PostPkiConfigKeys(ctx).PkiConfigKeysRequest(pkiConfigKeysRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    pkiConfigKeysRequest := *openapiclient.NewPkiConfigKeysRequest() // PkiConfigKeysRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.PostPkiConfigKeys(context.Background()).PkiConfigKeysRequest(pkiConfigKeysRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.PostPkiConfigKeys``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostPkiConfigKeysRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiConfigKeysRequest** | [**PkiConfigKeysRequest**](PkiConfigKeysRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## PostPkiConfigUrls
 
 > PostPkiConfigUrls(ctx).PkiConfigUrlsRequest(pkiConfigUrlsRequest).Execute()
 
-Set the URLs for the issuing CA, CRL distribution points, and OCSP servers.
+
 
 ### Example
 
@@ -13071,6 +14667,68 @@ Other parameters are passed through a pointer to a apiPostPkiConfigUrlsRequest s
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pkiConfigUrlsRequest** | [**PkiConfigUrlsRequest**](PkiConfigUrlsRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PostPkiIntermediateCrossSign
+
+> PostPkiIntermediateCrossSign(ctx).PkiIntermediateCrossSignRequest(pkiIntermediateCrossSignRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    pkiIntermediateCrossSignRequest := *openapiclient.NewPkiIntermediateCrossSignRequest() // PkiIntermediateCrossSignRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.PostPkiIntermediateCrossSign(context.Background()).PkiIntermediateCrossSignRequest(pkiIntermediateCrossSignRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.PostPkiIntermediateCrossSign``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostPkiIntermediateCrossSignRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiIntermediateCrossSignRequest** | [**PkiIntermediateCrossSignRequest**](PkiIntermediateCrossSignRequest.md) |  | 
 
 ### Return type
 
@@ -13220,11 +14878,73 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## PostPkiInternalExported
+
+> PostPkiInternalExported(ctx).PkiInternalExportedRequest(pkiInternalExportedRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    pkiInternalExportedRequest := *openapiclient.NewPkiInternalExportedRequest() // PkiInternalExportedRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.PostPkiInternalExported(context.Background()).PkiInternalExportedRequest(pkiInternalExportedRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.PostPkiInternalExported``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostPkiInternalExportedRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiInternalExportedRequest** | [**PkiInternalExportedRequest**](PkiInternalExportedRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## PostPkiIssueRole
 
 > PostPkiIssueRole(ctx, role).PkiIssueRequest(pkiIssueRequest).Execute()
 
-Request a certificate using a certain role with the provided details.
+
 
 ### Example
 
@@ -13288,11 +15008,886 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## PostPkiIssuerIssuerRefIssueRole
+
+> PostPkiIssuerIssuerRefIssueRole(ctx, issuerRef, role).PkiIssuerIssueRequest(pkiIssuerIssueRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (default to "default")
+    role := "role_example" // string | The desired role with configuration for this request
+    pkiIssuerIssueRequest := *openapiclient.NewPkiIssuerIssueRequest() // PkiIssuerIssueRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.PostPkiIssuerIssuerRefIssueRole(context.Background(), issuerRef, role).PkiIssuerIssueRequest(pkiIssuerIssueRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.PostPkiIssuerIssuerRefIssueRole``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**issuerRef** | **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [default to &quot;default&quot;]
+**role** | **string** | The desired role with configuration for this request | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostPkiIssuerIssuerRefIssueRoleRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **pkiIssuerIssueRequest** | [**PkiIssuerIssueRequest**](PkiIssuerIssueRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PostPkiIssuerIssuerRefSignIntermediate
+
+> PostPkiIssuerIssuerRefSignIntermediate(ctx, issuerRef).PkiIssuerSignIntermediateRequest(pkiIssuerSignIntermediateRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (default to "default")
+    pkiIssuerSignIntermediateRequest := *openapiclient.NewPkiIssuerSignIntermediateRequest() // PkiIssuerSignIntermediateRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.PostPkiIssuerIssuerRefSignIntermediate(context.Background(), issuerRef).PkiIssuerSignIntermediateRequest(pkiIssuerSignIntermediateRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.PostPkiIssuerIssuerRefSignIntermediate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**issuerRef** | **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [default to &quot;default&quot;]
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostPkiIssuerIssuerRefSignIntermediateRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **pkiIssuerSignIntermediateRequest** | [**PkiIssuerSignIntermediateRequest**](PkiIssuerSignIntermediateRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PostPkiIssuerIssuerRefSignRole
+
+> PostPkiIssuerIssuerRefSignRole(ctx, issuerRef, role).PkiIssuerSignRequest(pkiIssuerSignRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (default to "default")
+    role := "role_example" // string | The desired role with configuration for this request
+    pkiIssuerSignRequest := *openapiclient.NewPkiIssuerSignRequest() // PkiIssuerSignRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.PostPkiIssuerIssuerRefSignRole(context.Background(), issuerRef, role).PkiIssuerSignRequest(pkiIssuerSignRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.PostPkiIssuerIssuerRefSignRole``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**issuerRef** | **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [default to &quot;default&quot;]
+**role** | **string** | The desired role with configuration for this request | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostPkiIssuerIssuerRefSignRoleRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **pkiIssuerSignRequest** | [**PkiIssuerSignRequest**](PkiIssuerSignRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PostPkiIssuerIssuerRefSignSelfIssued
+
+> PostPkiIssuerIssuerRefSignSelfIssued(ctx, issuerRef).PkiIssuerSignSelfIssuedRequest(pkiIssuerSignSelfIssuedRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (default to "default")
+    pkiIssuerSignSelfIssuedRequest := *openapiclient.NewPkiIssuerSignSelfIssuedRequest() // PkiIssuerSignSelfIssuedRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.PostPkiIssuerIssuerRefSignSelfIssued(context.Background(), issuerRef).PkiIssuerSignSelfIssuedRequest(pkiIssuerSignSelfIssuedRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.PostPkiIssuerIssuerRefSignSelfIssued``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**issuerRef** | **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [default to &quot;default&quot;]
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostPkiIssuerIssuerRefSignSelfIssuedRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **pkiIssuerSignSelfIssuedRequest** | [**PkiIssuerSignSelfIssuedRequest**](PkiIssuerSignSelfIssuedRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PostPkiIssuerIssuerRefSignVerbatim
+
+> PostPkiIssuerIssuerRefSignVerbatim(ctx, issuerRef).PkiIssuerSignVerbatimRequest(pkiIssuerSignVerbatimRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (default to "default")
+    pkiIssuerSignVerbatimRequest := *openapiclient.NewPkiIssuerSignVerbatimRequest() // PkiIssuerSignVerbatimRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.PostPkiIssuerIssuerRefSignVerbatim(context.Background(), issuerRef).PkiIssuerSignVerbatimRequest(pkiIssuerSignVerbatimRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.PostPkiIssuerIssuerRefSignVerbatim``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**issuerRef** | **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [default to &quot;default&quot;]
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostPkiIssuerIssuerRefSignVerbatimRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **pkiIssuerSignVerbatimRequest** | [**PkiIssuerSignVerbatimRequest**](PkiIssuerSignVerbatimRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PostPkiIssuerIssuerRefSignVerbatimRole
+
+> PostPkiIssuerIssuerRefSignVerbatimRole(ctx, issuerRef, role).PkiIssuerSignVerbatimRequest(pkiIssuerSignVerbatimRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (default to "default")
+    role := "role_example" // string | The desired role with configuration for this request
+    pkiIssuerSignVerbatimRequest := *openapiclient.NewPkiIssuerSignVerbatimRequest() // PkiIssuerSignVerbatimRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.PostPkiIssuerIssuerRefSignVerbatimRole(context.Background(), issuerRef, role).PkiIssuerSignVerbatimRequest(pkiIssuerSignVerbatimRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.PostPkiIssuerIssuerRefSignVerbatimRole``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**issuerRef** | **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [default to &quot;default&quot;]
+**role** | **string** | The desired role with configuration for this request | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostPkiIssuerIssuerRefSignVerbatimRoleRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **pkiIssuerSignVerbatimRequest** | [**PkiIssuerSignVerbatimRequest**](PkiIssuerSignVerbatimRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PostPkiIssuerRefDerPem
+
+> PostPkiIssuerRefDerPem(ctx, issuerRef).PkiDerPemRequest(pkiDerPemRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (default to "default")
+    pkiDerPemRequest := *openapiclient.NewPkiDerPemRequest() // PkiDerPemRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.PostPkiIssuerRefDerPem(context.Background(), issuerRef).PkiDerPemRequest(pkiDerPemRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.PostPkiIssuerRefDerPem``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**issuerRef** | **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [default to &quot;default&quot;]
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostPkiIssuerRefDerPemRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **pkiDerPemRequest** | [**PkiDerPemRequest**](PkiDerPemRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PostPkiIssuersGenerateIntermediateExported
+
+> PostPkiIssuersGenerateIntermediateExported(ctx, exported).PkiIssuersGenerateIntermediateRequest(pkiIssuersGenerateIntermediateRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
+    pkiIssuersGenerateIntermediateRequest := *openapiclient.NewPkiIssuersGenerateIntermediateRequest() // PkiIssuersGenerateIntermediateRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.PostPkiIssuersGenerateIntermediateExported(context.Background(), exported).PkiIssuersGenerateIntermediateRequest(pkiIssuersGenerateIntermediateRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.PostPkiIssuersGenerateIntermediateExported``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**exported** | **string** | Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key! | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostPkiIssuersGenerateIntermediateExportedRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **pkiIssuersGenerateIntermediateRequest** | [**PkiIssuersGenerateIntermediateRequest**](PkiIssuersGenerateIntermediateRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PostPkiIssuersGenerateRootExported
+
+> PostPkiIssuersGenerateRootExported(ctx, exported).PkiIssuersGenerateRootRequest(pkiIssuersGenerateRootRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
+    pkiIssuersGenerateRootRequest := *openapiclient.NewPkiIssuersGenerateRootRequest() // PkiIssuersGenerateRootRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.PostPkiIssuersGenerateRootExported(context.Background(), exported).PkiIssuersGenerateRootRequest(pkiIssuersGenerateRootRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.PostPkiIssuersGenerateRootExported``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**exported** | **string** | Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key! | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostPkiIssuersGenerateRootExportedRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **pkiIssuersGenerateRootRequest** | [**PkiIssuersGenerateRootRequest**](PkiIssuersGenerateRootRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PostPkiJson
+
+> PostPkiJson(ctx).PkiJsonRequest(pkiJsonRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    pkiJsonRequest := *openapiclient.NewPkiJsonRequest() // PkiJsonRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.PostPkiJson(context.Background()).PkiJsonRequest(pkiJsonRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.PostPkiJson``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostPkiJsonRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiJsonRequest** | [**PkiJsonRequest**](PkiJsonRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PostPkiKeyKeyRef
+
+> PostPkiKeyKeyRef(ctx, keyRef).PkiKeyRequest(pkiKeyRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (default to "default")
+    pkiKeyRequest := *openapiclient.NewPkiKeyRequest() // PkiKeyRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.PostPkiKeyKeyRef(context.Background(), keyRef).PkiKeyRequest(pkiKeyRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.PostPkiKeyKeyRef``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**keyRef** | **string** | Reference to key; either \&quot;default\&quot; for the configured default key, an identifier of a key, or the name assigned to the key. | [default to &quot;default&quot;]
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostPkiKeyKeyRefRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **pkiKeyRequest** | [**PkiKeyRequest**](PkiKeyRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PostPkiKeysImport
+
+> PostPkiKeysImport(ctx).PkiKeysImportRequest(pkiKeysImportRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    pkiKeysImportRequest := *openapiclient.NewPkiKeysImportRequest() // PkiKeysImportRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.PostPkiKeysImport(context.Background()).PkiKeysImportRequest(pkiKeysImportRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.PostPkiKeysImport``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostPkiKeysImportRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiKeysImportRequest** | [**PkiKeysImportRequest**](PkiKeysImportRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PostPkiKms
+
+> PostPkiKms(ctx).PkiKmsRequest(pkiKmsRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    pkiKmsRequest := *openapiclient.NewPkiKmsRequest() // PkiKmsRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.PostPkiKms(context.Background()).PkiKmsRequest(pkiKmsRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.PostPkiKms``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostPkiKmsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiKmsRequest** | [**PkiKmsRequest**](PkiKmsRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## PostPkiRevoke
 
 > PostPkiRevoke(ctx).PkiRevokeRequest(pkiRevokeRequest).Execute()
 
-Revoke a certificate by serial number.
+
 
 ### Example
 
@@ -13354,7 +15949,7 @@ No authorization required
 
 > PostPkiRolesName(ctx, name).PkiRolesRequest(pkiRolesRequest).Execute()
 
-Manage the roles that can be created with this backend.
+
 
 ### Example
 
@@ -13467,6 +16062,136 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **pkiRootGenerateRequest** | [**PkiRootGenerateRequest**](PkiRootGenerateRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PostPkiRootReplace
+
+> PostPkiRootReplace(ctx).PkiRootReplaceRequest(pkiRootReplaceRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    pkiRootReplaceRequest := *openapiclient.NewPkiRootReplaceRequest() // PkiRootReplaceRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.PostPkiRootReplace(context.Background()).PkiRootReplaceRequest(pkiRootReplaceRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.PostPkiRootReplace``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostPkiRootReplaceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pkiRootReplaceRequest** | [**PkiRootReplaceRequest**](PkiRootReplaceRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PostPkiRootRotateExported
+
+> PostPkiRootRotateExported(ctx, exported).PkiRootRotateRequest(pkiRootRotateRequest).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
+    pkiRootRotateRequest := *openapiclient.NewPkiRootRotateRequest() // PkiRootRotateRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.PostPkiRootRotateExported(context.Background(), exported).PkiRootRotateRequest(pkiRootRotateRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.PostPkiRootRotateExported``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**exported** | **string** | Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key! | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostPkiRootRotateExportedRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **pkiRootRotateRequest** | [**PkiRootRotateRequest**](PkiRootRotateRequest.md) |  | 
 
 ### Return type
 
@@ -13614,7 +16339,7 @@ No authorization required
 
 > PostPkiSignRole(ctx, role).PkiSignRequest(pkiSignRequest).Execute()
 
-Request certificates using a certain role with the provided details.
+
 
 ### Example
 
@@ -13682,7 +16407,7 @@ No authorization required
 
 > PostPkiSignVerbatim(ctx).PkiSignVerbatimRequest(pkiSignVerbatimRequest).Execute()
 
-Request certificates using a certain role with the provided details.
+
 
 ### Example
 
@@ -13744,7 +16469,7 @@ No authorization required
 
 > PostPkiSignVerbatimRole(ctx, role).PkiSignVerbatimRequest(pkiSignVerbatimRequest).Execute()
 
-Request certificates using a certain role with the provided details.
+
 
 ### Example
 
@@ -16056,6 +18781,142 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## PostTransitKeysNameImport
+
+> PostTransitKeysNameImport(ctx, name).TransitKeysImportRequest(transitKeysImportRequest).Execute()
+
+Imports an externally-generated key into a new transit key
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    name := "name_example" // string | The name of the key
+    transitKeysImportRequest := *openapiclient.NewTransitKeysImportRequest() // TransitKeysImportRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.PostTransitKeysNameImport(context.Background(), name).TransitKeysImportRequest(transitKeysImportRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.PostTransitKeysNameImport``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**name** | **string** | The name of the key | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostTransitKeysNameImportRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **transitKeysImportRequest** | [**TransitKeysImportRequest**](TransitKeysImportRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PostTransitKeysNameImportVersion
+
+> PostTransitKeysNameImportVersion(ctx, name).TransitKeysImportVersionRequest(transitKeysImportVersionRequest).Execute()
+
+Imports an externally-generated key into an existing imported key
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    name := "name_example" // string | The name of the key
+    transitKeysImportVersionRequest := *openapiclient.NewTransitKeysImportVersionRequest() // TransitKeysImportVersionRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.PostTransitKeysNameImportVersion(context.Background(), name).TransitKeysImportVersionRequest(transitKeysImportVersionRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.PostTransitKeysNameImportVersion``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**name** | **string** | The name of the key | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostTransitKeysNameImportVersionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **transitKeysImportVersionRequest** | [**TransitKeysImportVersionRequest**](TransitKeysImportVersionRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## PostTransitKeysNameRotate
 
 > PostTransitKeysNameRotate(ctx, name).Execute()
@@ -16232,6 +19093,145 @@ Other parameters are passed through a pointer to a apiPostTransitRandomRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **transitRandomRequest** | [**TransitRandomRequest**](TransitRandomRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PostTransitRandomSource
+
+> PostTransitRandomSource(ctx, source).TransitRandomRequest(transitRandomRequest).Execute()
+
+Generate random bytes
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (default to "platform")
+    transitRandomRequest := *openapiclient.NewTransitRandomRequest() // TransitRandomRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.PostTransitRandomSource(context.Background(), source).TransitRandomRequest(transitRandomRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.PostTransitRandomSource``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**source** | **string** | Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;. | [default to &quot;platform&quot;]
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostTransitRandomSourceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **transitRandomRequest** | [**TransitRandomRequest**](TransitRandomRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PostTransitRandomSourceUrlbytes
+
+> PostTransitRandomSourceUrlbytes(ctx, source, urlbytes).TransitRandomRequest(transitRandomRequest).Execute()
+
+Generate random bytes
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (default to "platform")
+    urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
+    transitRandomRequest := *openapiclient.NewTransitRandomRequest() // TransitRandomRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SecretsApi.PostTransitRandomSourceUrlbytes(context.Background(), source, urlbytes).TransitRandomRequest(transitRandomRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SecretsApi.PostTransitRandomSourceUrlbytes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**source** | **string** | Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;. | [default to &quot;platform&quot;]
+**urlbytes** | **string** | The number of bytes to generate (POST URL parameter) | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostTransitRandomSourceUrlbytesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
  **transitRandomRequest** | [**TransitRandomRequest**](TransitRandomRequest.md) |  | 
 
 ### Return type

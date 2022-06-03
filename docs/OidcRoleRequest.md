@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 **TokenType** | Pointer to **string** | The type of token to generate, service or batch | [optional] [default to "default-service"]
 **Ttl** | Pointer to **int32** | Use \&quot;token_ttl\&quot; instead. If this and \&quot;token_ttl\&quot; are both specified, only \&quot;token_ttl\&quot; will be used. | [optional] 
 **UserClaim** | Pointer to **string** | The claim to use for the Identity entity alias name | [optional] 
+**UserClaimJsonPointer** | Pointer to **bool** | If true, the user_claim value will use JSON pointer syntax for referencing claims. | [optional] 
 **VerboseOidcLogging** | Pointer to **bool** | Log received OIDC tokens and claims when debug-level logging is active. Not recommended in production since sensitive information may be present in OIDC responses. | [optional] 
 
 ## Methods
@@ -778,6 +779,31 @@ SetUserClaim sets UserClaim field to given value.
 `func (o *OidcRoleRequest) HasUserClaim() bool`
 
 HasUserClaim returns a boolean if a field has been set.
+
+### GetUserClaimJsonPointer
+
+`func (o *OidcRoleRequest) GetUserClaimJsonPointer() bool`
+
+GetUserClaimJsonPointer returns the UserClaimJsonPointer field if non-nil, zero value otherwise.
+
+### GetUserClaimJsonPointerOk
+
+`func (o *OidcRoleRequest) GetUserClaimJsonPointerOk() (*bool, bool)`
+
+GetUserClaimJsonPointerOk returns a tuple with the UserClaimJsonPointer field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserClaimJsonPointer
+
+`func (o *OidcRoleRequest) SetUserClaimJsonPointer(v bool)`
+
+SetUserClaimJsonPointer sets UserClaimJsonPointer field to given value.
+
+### HasUserClaimJsonPointer
+
+`func (o *OidcRoleRequest) HasUserClaimJsonPointer() bool`
+
+HasUserClaimJsonPointer returns a boolean if a field has been set.
 
 ### GetVerboseOidcLogging
 

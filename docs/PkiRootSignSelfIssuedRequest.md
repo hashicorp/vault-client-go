@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Certificate** | Pointer to **string** | PEM-format self-issued certificate to be signed. | [optional] 
+**IssuerRef** | Pointer to **string** | Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer. | [optional] [default to "default"]
 **RequireMatchingCertificateAlgorithms** | Pointer to **bool** | If true, require the public key algorithm of the signer to match that of the self issued certificate. | [optional] [default to false]
 
 ## Methods
@@ -50,6 +51,31 @@ SetCertificate sets Certificate field to given value.
 `func (o *PkiRootSignSelfIssuedRequest) HasCertificate() bool`
 
 HasCertificate returns a boolean if a field has been set.
+
+### GetIssuerRef
+
+`func (o *PkiRootSignSelfIssuedRequest) GetIssuerRef() string`
+
+GetIssuerRef returns the IssuerRef field if non-nil, zero value otherwise.
+
+### GetIssuerRefOk
+
+`func (o *PkiRootSignSelfIssuedRequest) GetIssuerRefOk() (*string, bool)`
+
+GetIssuerRefOk returns a tuple with the IssuerRef field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIssuerRef
+
+`func (o *PkiRootSignSelfIssuedRequest) SetIssuerRef(v string)`
+
+SetIssuerRef sets IssuerRef field to given value.
+
+### HasIssuerRef
+
+`func (o *PkiRootSignSelfIssuedRequest) HasIssuerRef() bool`
+
+HasIssuerRef returns a boolean if a field has been set.
 
 ### GetRequireMatchingCertificateAlgorithms
 

@@ -42,6 +42,7 @@ Method | HTTP request | Description
 [**GetSysInFlightReq**](SystemApi.md#GetSysInFlightReq) | **Get** /sys/in-flight-req | reports in-flight requests
 [**GetSysInit**](SystemApi.md#GetSysInit) | **Get** /sys/init | Returns the initialization status of Vault.
 [**GetSysInternalCountersActivity**](SystemApi.md#GetSysInternalCountersActivity) | **Get** /sys/internal/counters/activity | Report the client count metrics, for this namespace and all child namespaces.
+[**GetSysInternalCountersActivityExport**](SystemApi.md#GetSysInternalCountersActivityExport) | **Get** /sys/internal/counters/activity/export | Report the client count metrics, for this namespace and all child namespaces.
 [**GetSysInternalCountersActivityMonthly**](SystemApi.md#GetSysInternalCountersActivityMonthly) | **Get** /sys/internal/counters/activity/monthly | Report the number of clients for this month, for this namespace and all child namespaces.
 [**GetSysInternalCountersConfig**](SystemApi.md#GetSysInternalCountersConfig) | **Get** /sys/internal/counters/config | Read the client count tracking configuration.
 [**GetSysInternalCountersEntities**](SystemApi.md#GetSysInternalCountersEntities) | **Get** /sys/internal/counters/entities | Backwards compatibility is not guaranteed for this API
@@ -155,6 +156,8 @@ Method | HTTP request | Description
 [**PostSysToolsHash**](SystemApi.md#PostSysToolsHash) | **Post** /sys/tools/hash | Generate a hash sum for input data
 [**PostSysToolsHashUrlalgorithm**](SystemApi.md#PostSysToolsHashUrlalgorithm) | **Post** /sys/tools/hash/{urlalgorithm} | Generate a hash sum for input data
 [**PostSysToolsRandom**](SystemApi.md#PostSysToolsRandom) | **Post** /sys/tools/random | Generate random bytes
+[**PostSysToolsRandomSource**](SystemApi.md#PostSysToolsRandomSource) | **Post** /sys/tools/random/{source} | Generate random bytes
+[**PostSysToolsRandomSourceUrlbytes**](SystemApi.md#PostSysToolsRandomSourceUrlbytes) | **Post** /sys/tools/random/{source}/{urlbytes} | Generate random bytes
 [**PostSysToolsRandomUrlbytes**](SystemApi.md#PostSysToolsRandomUrlbytes) | **Post** /sys/tools/random/{urlbytes} | Generate random bytes
 [**PostSysUnseal**](SystemApi.md#PostSysUnseal) | **Post** /sys/unseal | Unseal the Vault.
 [**PostSysWrappingLookup**](SystemApi.md#PostSysWrappingLookup) | **Post** /sys/wrapping/lookup | Look up wrapping properties for the given token.
@@ -2494,6 +2497,63 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## GetSysInternalCountersActivityExport
+
+> GetSysInternalCountersActivityExport(ctx).Execute()
+
+Report the client count metrics, for this namespace and all child namespaces.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SystemApi.GetSysInternalCountersActivityExport(context.Background()).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SystemApi.GetSysInternalCountersActivityExport``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetSysInternalCountersActivityExportRequest struct via the builder pattern
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetSysInternalCountersActivityMonthly
 
 > GetSysInternalCountersActivityMonthly(ctx).Execute()
@@ -3552,7 +3612,7 @@ No authorization required
 
 ## GetSysMonitor
 
-> GetSysMonitor(ctx).LogLevel(logLevel).Execute()
+> GetSysMonitor(ctx).LogFormat(logFormat).LogLevel(logLevel).Execute()
 
 
 
@@ -3569,11 +3629,12 @@ import (
 )
 
 func main() {
+    logFormat := "logFormat_example" // string | Output format of logs. Supported values are \"standard\" and \"json\". The default is \"standard\". (optional) (default to "standard")
     logLevel := "logLevel_example" // string | Log level to view system logs at. Currently supported values are \"trace\", \"debug\", \"info\", \"warn\", \"error\". (optional)
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SystemApi.GetSysMonitor(context.Background()).LogLevel(logLevel).Execute()
+    resp, r, err := apiClient.SystemApi.GetSysMonitor(context.Background()).LogFormat(logFormat).LogLevel(logLevel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SystemApi.GetSysMonitor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3592,6 +3653,7 @@ Other parameters are passed through a pointer to a apiGetSysMonitorRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **logFormat** | **string** | Output format of logs. Supported values are \&quot;standard\&quot; and \&quot;json\&quot;. The default is \&quot;standard\&quot;. | [default to &quot;standard&quot;]
  **logLevel** | **string** | Log level to view system logs at. Currently supported values are \&quot;trace\&quot;, \&quot;debug\&quot;, \&quot;info\&quot;, \&quot;warn\&quot;, \&quot;error\&quot;. | 
 
 ### Return type
@@ -9536,6 +9598,145 @@ Other parameters are passed through a pointer to a apiPostSysToolsRandomRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **systemToolsRandomRequest** | [**SystemToolsRandomRequest**](SystemToolsRandomRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PostSysToolsRandomSource
+
+> PostSysToolsRandomSource(ctx, source).SystemToolsRandomRequest(systemToolsRandomRequest).Execute()
+
+Generate random bytes
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (default to "platform")
+    systemToolsRandomRequest := *openapiclient.NewSystemToolsRandomRequest() // SystemToolsRandomRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SystemApi.PostSysToolsRandomSource(context.Background(), source).SystemToolsRandomRequest(systemToolsRandomRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SystemApi.PostSysToolsRandomSource``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**source** | **string** | Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;. | [default to &quot;platform&quot;]
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostSysToolsRandomSourceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **systemToolsRandomRequest** | [**SystemToolsRandomRequest**](SystemToolsRandomRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PostSysToolsRandomSourceUrlbytes
+
+> PostSysToolsRandomSourceUrlbytes(ctx, source, urlbytes).SystemToolsRandomRequest(systemToolsRandomRequest).Execute()
+
+Generate random bytes
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (default to "platform")
+    urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
+    systemToolsRandomRequest := *openapiclient.NewSystemToolsRandomRequest() // SystemToolsRandomRequest |  (optional)
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SystemApi.PostSysToolsRandomSourceUrlbytes(context.Background(), source, urlbytes).SystemToolsRandomRequest(systemToolsRandomRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SystemApi.PostSysToolsRandomSourceUrlbytes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**source** | **string** | Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;. | [default to &quot;platform&quot;]
+**urlbytes** | **string** | The number of bytes to generate (POST URL parameter) | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPostSysToolsRandomSourceUrlbytesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
  **systemToolsRandomRequest** | [**SystemToolsRandomRequest**](SystemToolsRandomRequest.md) |  | 
 
 ### Return type

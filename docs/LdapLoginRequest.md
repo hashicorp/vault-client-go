@@ -4,8 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Method** | Pointer to **string** | Multi-factor auth method to use (optional) | [optional] 
-**Passcode** | Pointer to **string** | One time passcode (optional) | [optional] 
 **Password** | Pointer to **string** | Password for this user. | [optional] 
 
 ## Methods
@@ -26,56 +24,6 @@ will change when the set of required properties is changed
 NewLdapLoginRequestWithDefaults instantiates a new LdapLoginRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMethod
-
-`func (o *LdapLoginRequest) GetMethod() string`
-
-GetMethod returns the Method field if non-nil, zero value otherwise.
-
-### GetMethodOk
-
-`func (o *LdapLoginRequest) GetMethodOk() (*string, bool)`
-
-GetMethodOk returns a tuple with the Method field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMethod
-
-`func (o *LdapLoginRequest) SetMethod(v string)`
-
-SetMethod sets Method field to given value.
-
-### HasMethod
-
-`func (o *LdapLoginRequest) HasMethod() bool`
-
-HasMethod returns a boolean if a field has been set.
-
-### GetPasscode
-
-`func (o *LdapLoginRequest) GetPasscode() string`
-
-GetPasscode returns the Passcode field if non-nil, zero value otherwise.
-
-### GetPasscodeOk
-
-`func (o *LdapLoginRequest) GetPasscodeOk() (*string, bool)`
-
-GetPasscodeOk returns a tuple with the Passcode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPasscode
-
-`func (o *LdapLoginRequest) SetPasscode(v string)`
-
-SetPasscode sets Passcode field to given value.
-
-### HasPasscode
-
-`func (o *LdapLoginRequest) HasPasscode() bool`
-
-HasPasscode returns a boolean if a field has been set.
 
 ### GetPassword
 

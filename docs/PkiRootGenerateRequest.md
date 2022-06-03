@@ -10,13 +10,17 @@ Name | Type | Description | Notes
 **ExcludeCnFromSans** | Pointer to **bool** | If true, the Common Name will not be included in DNS or Email Subject Alternate Names. Defaults to false (CN is included). | [optional] [default to false]
 **Format** | Pointer to **string** | Format for returned data. Can be \&quot;pem\&quot;, \&quot;der\&quot;, or \&quot;pem_bundle\&quot;. If \&quot;pem_bundle\&quot;, any private key and issuing cert will be appended to the certificate pem. If \&quot;der\&quot;, the value will be base64 encoded. Defaults to \&quot;pem\&quot;. | [optional] [default to "pem"]
 **IpSans** | Pointer to **[]string** | The requested IP SANs, if any, in a comma-delimited list | [optional] 
+**IssuerName** | Pointer to **string** | Provide a name to the generated or existing issuer, the name must be unique across all issuers and not be the reserved value &#39;default&#39; | [optional] 
 **KeyBits** | Pointer to **int32** | The number of bits to use. Allowed values are 0 (universal default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type: 224, 256 (default), 384, or 521; ignored with ed25519. | [optional] [default to 0]
+**KeyName** | Pointer to **string** | Provide a name to the generated or existing key, the name must be unique across all keys and not be the reserved value &#39;default&#39; | [optional] 
+**KeyRef** | Pointer to **string** | Reference to a existing key; either \&quot;default\&quot; for the configured default key, an identifier or the name assigned to the key. | [optional] [default to "default"]
 **KeyType** | Pointer to **string** | The type of key to use; defaults to RSA. \&quot;rsa\&quot; \&quot;ec\&quot; and \&quot;ed25519\&quot; are the only valid values. | [optional] [default to "rsa"]
 **Locality** | Pointer to **[]string** | If set, Locality will be set to this value. | [optional] 
 **ManagedKeyId** | Pointer to **string** | The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_name is required. Ignored for other types. | [optional] 
 **ManagedKeyName** | Pointer to **string** | The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_id is required. Ignored for other types. | [optional] 
 **MaxPathLength** | Pointer to **int32** | The maximum allowable path length | [optional] [default to -1]
 **NotAfter** | Pointer to **string** | Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ | [optional] 
+**NotBeforeDuration** | Pointer to **int32** | The duration before now which the certificate needs to be backdated by. | [optional] [default to 30]
 **Organization** | Pointer to **[]string** | If set, O (Organization) will be set to this value. | [optional] 
 **OtherSans** | Pointer to **[]string** | Requested other SANs, in an array with the format &lt;oid&gt;;UTF8:&lt;utf8 string value&gt; for each entry. | [optional] 
 **Ou** | Pointer to **[]string** | If set, OU (OrganizationalUnit) will be set to this value. | [optional] 
@@ -199,6 +203,31 @@ SetIpSans sets IpSans field to given value.
 
 HasIpSans returns a boolean if a field has been set.
 
+### GetIssuerName
+
+`func (o *PkiRootGenerateRequest) GetIssuerName() string`
+
+GetIssuerName returns the IssuerName field if non-nil, zero value otherwise.
+
+### GetIssuerNameOk
+
+`func (o *PkiRootGenerateRequest) GetIssuerNameOk() (*string, bool)`
+
+GetIssuerNameOk returns a tuple with the IssuerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIssuerName
+
+`func (o *PkiRootGenerateRequest) SetIssuerName(v string)`
+
+SetIssuerName sets IssuerName field to given value.
+
+### HasIssuerName
+
+`func (o *PkiRootGenerateRequest) HasIssuerName() bool`
+
+HasIssuerName returns a boolean if a field has been set.
+
 ### GetKeyBits
 
 `func (o *PkiRootGenerateRequest) GetKeyBits() int32`
@@ -223,6 +252,56 @@ SetKeyBits sets KeyBits field to given value.
 `func (o *PkiRootGenerateRequest) HasKeyBits() bool`
 
 HasKeyBits returns a boolean if a field has been set.
+
+### GetKeyName
+
+`func (o *PkiRootGenerateRequest) GetKeyName() string`
+
+GetKeyName returns the KeyName field if non-nil, zero value otherwise.
+
+### GetKeyNameOk
+
+`func (o *PkiRootGenerateRequest) GetKeyNameOk() (*string, bool)`
+
+GetKeyNameOk returns a tuple with the KeyName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKeyName
+
+`func (o *PkiRootGenerateRequest) SetKeyName(v string)`
+
+SetKeyName sets KeyName field to given value.
+
+### HasKeyName
+
+`func (o *PkiRootGenerateRequest) HasKeyName() bool`
+
+HasKeyName returns a boolean if a field has been set.
+
+### GetKeyRef
+
+`func (o *PkiRootGenerateRequest) GetKeyRef() string`
+
+GetKeyRef returns the KeyRef field if non-nil, zero value otherwise.
+
+### GetKeyRefOk
+
+`func (o *PkiRootGenerateRequest) GetKeyRefOk() (*string, bool)`
+
+GetKeyRefOk returns a tuple with the KeyRef field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKeyRef
+
+`func (o *PkiRootGenerateRequest) SetKeyRef(v string)`
+
+SetKeyRef sets KeyRef field to given value.
+
+### HasKeyRef
+
+`func (o *PkiRootGenerateRequest) HasKeyRef() bool`
+
+HasKeyRef returns a boolean if a field has been set.
 
 ### GetKeyType
 
@@ -373,6 +452,31 @@ SetNotAfter sets NotAfter field to given value.
 `func (o *PkiRootGenerateRequest) HasNotAfter() bool`
 
 HasNotAfter returns a boolean if a field has been set.
+
+### GetNotBeforeDuration
+
+`func (o *PkiRootGenerateRequest) GetNotBeforeDuration() int32`
+
+GetNotBeforeDuration returns the NotBeforeDuration field if non-nil, zero value otherwise.
+
+### GetNotBeforeDurationOk
+
+`func (o *PkiRootGenerateRequest) GetNotBeforeDurationOk() (*int32, bool)`
+
+GetNotBeforeDurationOk returns a tuple with the NotBeforeDuration field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNotBeforeDuration
+
+`func (o *PkiRootGenerateRequest) SetNotBeforeDuration(v int32)`
+
+SetNotBeforeDuration sets NotBeforeDuration field to given value.
+
+### HasNotBeforeDuration
+
+`func (o *PkiRootGenerateRequest) HasNotBeforeDuration() bool`
+
+HasNotBeforeDuration returns a boolean if a field has been set.
 
 ### GetOrganization
 

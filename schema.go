@@ -1247,42 +1247,6 @@ func (o AdConfigRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableAdConfigRequest struct {
-	value *AdConfigRequest
-	isSet bool
-}
-
-func (v NullableAdConfigRequest) Get() *AdConfigRequest {
-	return v.value
-}
-
-func (v *NullableAdConfigRequest) Set(val *AdConfigRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAdConfigRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAdConfigRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAdConfigRequest(val *AdConfigRequest) *NullableAdConfigRequest {
-	return &NullableAdConfigRequest{value: val, isSet: true}
-}
-
-func (v NullableAdConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAdConfigRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -1354,42 +1318,6 @@ func (o AdLibraryCheckInRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["service_account_names"] = o.ServiceAccountNames
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableAdLibraryCheckInRequest struct {
-	value *AdLibraryCheckInRequest
-	isSet bool
-}
-
-func (v NullableAdLibraryCheckInRequest) Get() *AdLibraryCheckInRequest {
-	return v.value
-}
-
-func (v *NullableAdLibraryCheckInRequest) Set(val *AdLibraryCheckInRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAdLibraryCheckInRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAdLibraryCheckInRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAdLibraryCheckInRequest(val *AdLibraryCheckInRequest) *NullableAdLibraryCheckInRequest {
-	return &NullableAdLibraryCheckInRequest{value: val, isSet: true}
-}
-
-func (v NullableAdLibraryCheckInRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAdLibraryCheckInRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -1465,42 +1393,6 @@ func (o AdLibraryCheckOutRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableAdLibraryCheckOutRequest struct {
-	value *AdLibraryCheckOutRequest
-	isSet bool
-}
-
-func (v NullableAdLibraryCheckOutRequest) Get() *AdLibraryCheckOutRequest {
-	return v.value
-}
-
-func (v *NullableAdLibraryCheckOutRequest) Set(val *AdLibraryCheckOutRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAdLibraryCheckOutRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAdLibraryCheckOutRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAdLibraryCheckOutRequest(val *AdLibraryCheckOutRequest) *NullableAdLibraryCheckOutRequest {
-	return &NullableAdLibraryCheckOutRequest{value: val, isSet: true}
-}
-
-func (v NullableAdLibraryCheckOutRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAdLibraryCheckOutRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -1572,42 +1464,6 @@ func (o AdLibraryManageCheckInRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["service_account_names"] = o.ServiceAccountNames
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableAdLibraryManageCheckInRequest struct {
-	value *AdLibraryManageCheckInRequest
-	isSet bool
-}
-
-func (v NullableAdLibraryManageCheckInRequest) Get() *AdLibraryManageCheckInRequest {
-	return v.value
-}
-
-func (v *NullableAdLibraryManageCheckInRequest) Set(val *AdLibraryManageCheckInRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAdLibraryManageCheckInRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAdLibraryManageCheckInRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAdLibraryManageCheckInRequest(val *AdLibraryManageCheckInRequest) *NullableAdLibraryManageCheckInRequest {
-	return &NullableAdLibraryManageCheckInRequest{value: val, isSet: true}
-}
-
-func (v NullableAdLibraryManageCheckInRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAdLibraryManageCheckInRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -1806,42 +1662,6 @@ func (o AdLibraryRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableAdLibraryRequest struct {
-	value *AdLibraryRequest
-	isSet bool
-}
-
-func (v NullableAdLibraryRequest) Get() *AdLibraryRequest {
-	return v.value
-}
-
-func (v *NullableAdLibraryRequest) Set(val *AdLibraryRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAdLibraryRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAdLibraryRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAdLibraryRequest(val *AdLibraryRequest) *NullableAdLibraryRequest {
-	return &NullableAdLibraryRequest{value: val, isSet: true}
-}
-
-func (v NullableAdLibraryRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAdLibraryRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -1952,42 +1772,6 @@ func (o AdRolesRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableAdRolesRequest struct {
-	value *AdRolesRequest
-	isSet bool
-}
-
-func (v NullableAdRolesRequest) Get() *AdRolesRequest {
-	return v.value
-}
-
-func (v *NullableAdRolesRequest) Set(val *AdRolesRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAdRolesRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAdRolesRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAdRolesRequest(val *AdRolesRequest) *NullableAdRolesRequest {
-	return &NullableAdRolesRequest{value: val, isSet: true}
-}
-
-func (v NullableAdRolesRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAdRolesRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -2096,42 +1880,6 @@ func (o AlicloudConfigRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["secret_key"] = o.SecretKey
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableAlicloudConfigRequest struct {
-	value *AlicloudConfigRequest
-	isSet bool
-}
-
-func (v NullableAlicloudConfigRequest) Get() *AlicloudConfigRequest {
-	return v.value
-}
-
-func (v *NullableAlicloudConfigRequest) Set(val *AlicloudConfigRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAlicloudConfigRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAlicloudConfigRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAlicloudConfigRequest(val *AlicloudConfigRequest) *NullableAlicloudConfigRequest {
-	return &NullableAlicloudConfigRequest{value: val, isSet: true}
-}
-
-func (v NullableAlicloudConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAlicloudConfigRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -2279,42 +2027,6 @@ func (o AlicloudLoginRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["role"] = o.Role
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableAlicloudLoginRequest struct {
-	value *AlicloudLoginRequest
-	isSet bool
-}
-
-func (v NullableAlicloudLoginRequest) Get() *AlicloudLoginRequest {
-	return v.value
-}
-
-func (v *NullableAlicloudLoginRequest) Set(val *AlicloudLoginRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAlicloudLoginRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAlicloudLoginRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAlicloudLoginRequest(val *AlicloudLoginRequest) *NullableAlicloudLoginRequest {
-	return &NullableAlicloudLoginRequest{value: val, isSet: true}
-}
-
-func (v NullableAlicloudLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAlicloudLoginRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -2932,42 +2644,6 @@ func (o AlicloudRoleRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableAlicloudRoleRequest struct {
-	value *AlicloudRoleRequest
-	isSet bool
-}
-
-func (v NullableAlicloudRoleRequest) Get() *AlicloudRoleRequest {
-	return v.value
-}
-
-func (v *NullableAlicloudRoleRequest) Set(val *AlicloudRoleRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAlicloudRoleRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAlicloudRoleRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAlicloudRoleRequest(val *AlicloudRoleRequest) *NullableAlicloudRoleRequest {
-	return &NullableAlicloudRoleRequest{value: val, isSet: true}
-}
-
-func (v NullableAlicloudRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAlicloudRoleRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -3039,42 +2715,6 @@ func (o AppIdLoginRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["user_id"] = o.UserId
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableAppIdLoginRequest struct {
-	value *AppIdLoginRequest
-	isSet bool
-}
-
-func (v NullableAppIdLoginRequest) Get() *AppIdLoginRequest {
-	return v.value
-}
-
-func (v *NullableAppIdLoginRequest) Set(val *AppIdLoginRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAppIdLoginRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAppIdLoginRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAppIdLoginRequest(val *AppIdLoginRequest) *NullableAppIdLoginRequest {
-	return &NullableAppIdLoginRequest{value: val, isSet: true}
-}
-
-func (v NullableAppIdLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAppIdLoginRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -3187,42 +2827,6 @@ func (o AppIdMapAppIdRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableAppIdMapAppIdRequest struct {
-	value *AppIdMapAppIdRequest
-	isSet bool
-}
-
-func (v NullableAppIdMapAppIdRequest) Get() *AppIdMapAppIdRequest {
-	return v.value
-}
-
-func (v *NullableAppIdMapAppIdRequest) Set(val *AppIdMapAppIdRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAppIdMapAppIdRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAppIdMapAppIdRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAppIdMapAppIdRequest(val *AppIdMapAppIdRequest) *NullableAppIdMapAppIdRequest {
-	return &NullableAppIdMapAppIdRequest{value: val, isSet: true}
-}
-
-func (v NullableAppIdMapAppIdRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAppIdMapAppIdRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -3331,42 +2935,6 @@ func (o AppIdMapUserIdRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["value"] = o.Value
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableAppIdMapUserIdRequest struct {
-	value *AppIdMapUserIdRequest
-	isSet bool
-}
-
-func (v NullableAppIdMapUserIdRequest) Get() *AppIdMapUserIdRequest {
-	return v.value
-}
-
-func (v *NullableAppIdMapUserIdRequest) Set(val *AppIdMapUserIdRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAppIdMapUserIdRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAppIdMapUserIdRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAppIdMapUserIdRequest(val *AppIdMapUserIdRequest) *NullableAppIdMapUserIdRequest {
-	return &NullableAppIdMapUserIdRequest{value: val, isSet: true}
-}
-
-func (v NullableAppIdMapUserIdRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAppIdMapUserIdRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -3483,42 +3051,6 @@ func (o ApproleLoginRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableApproleLoginRequest struct {
-	value *ApproleLoginRequest
-	isSet bool
-}
-
-func (v NullableApproleLoginRequest) Get() *ApproleLoginRequest {
-	return v.value
-}
-
-func (v *NullableApproleLoginRequest) Set(val *ApproleLoginRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableApproleLoginRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableApproleLoginRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableApproleLoginRequest(val *ApproleLoginRequest) *NullableApproleLoginRequest {
-	return &NullableApproleLoginRequest{value: val, isSet: true}
-}
-
-func (v NullableApproleLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableApproleLoginRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -3596,42 +3128,6 @@ func (o ApproleRoleBindSecretIdRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableApproleRoleBindSecretIdRequest struct {
-	value *ApproleRoleBindSecretIdRequest
-	isSet bool
-}
-
-func (v NullableApproleRoleBindSecretIdRequest) Get() *ApproleRoleBindSecretIdRequest {
-	return v.value
-}
-
-func (v *NullableApproleRoleBindSecretIdRequest) Set(val *ApproleRoleBindSecretIdRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableApproleRoleBindSecretIdRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableApproleRoleBindSecretIdRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableApproleRoleBindSecretIdRequest(val *ApproleRoleBindSecretIdRequest) *NullableApproleRoleBindSecretIdRequest {
-	return &NullableApproleRoleBindSecretIdRequest{value: val, isSet: true}
-}
-
-func (v NullableApproleRoleBindSecretIdRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableApproleRoleBindSecretIdRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -3703,42 +3199,6 @@ func (o ApproleRoleBoundCidrListRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["bound_cidr_list"] = o.BoundCidrList
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableApproleRoleBoundCidrListRequest struct {
-	value *ApproleRoleBoundCidrListRequest
-	isSet bool
-}
-
-func (v NullableApproleRoleBoundCidrListRequest) Get() *ApproleRoleBoundCidrListRequest {
-	return v.value
-}
-
-func (v *NullableApproleRoleBoundCidrListRequest) Set(val *ApproleRoleBoundCidrListRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableApproleRoleBoundCidrListRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableApproleRoleBoundCidrListRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableApproleRoleBoundCidrListRequest(val *ApproleRoleBoundCidrListRequest) *NullableApproleRoleBoundCidrListRequest {
-	return &NullableApproleRoleBoundCidrListRequest{value: val, isSet: true}
-}
-
-func (v NullableApproleRoleBoundCidrListRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableApproleRoleBoundCidrListRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -3925,42 +3385,6 @@ func (o ApproleRoleCustomSecretIdRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableApproleRoleCustomSecretIdRequest struct {
-	value *ApproleRoleCustomSecretIdRequest
-	isSet bool
-}
-
-func (v NullableApproleRoleCustomSecretIdRequest) Get() *ApproleRoleCustomSecretIdRequest {
-	return v.value
-}
-
-func (v *NullableApproleRoleCustomSecretIdRequest) Set(val *ApproleRoleCustomSecretIdRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableApproleRoleCustomSecretIdRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableApproleRoleCustomSecretIdRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableApproleRoleCustomSecretIdRequest(val *ApproleRoleCustomSecretIdRequest) *NullableApproleRoleCustomSecretIdRequest {
-	return &NullableApproleRoleCustomSecretIdRequest{value: val, isSet: true}
-}
-
-func (v NullableApproleRoleCustomSecretIdRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableApproleRoleCustomSecretIdRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -4075,42 +3499,6 @@ func (o ApproleRolePeriodRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableApproleRolePeriodRequest struct {
-	value *ApproleRolePeriodRequest
-	isSet bool
-}
-
-func (v NullableApproleRolePeriodRequest) Get() *ApproleRolePeriodRequest {
-	return v.value
-}
-
-func (v *NullableApproleRolePeriodRequest) Set(val *ApproleRolePeriodRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableApproleRolePeriodRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableApproleRolePeriodRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableApproleRolePeriodRequest(val *ApproleRolePeriodRequest) *NullableApproleRolePeriodRequest {
-	return &NullableApproleRolePeriodRequest{value: val, isSet: true}
-}
-
-func (v NullableApproleRolePeriodRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableApproleRolePeriodRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -4223,42 +3611,6 @@ func (o ApproleRolePoliciesRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["token_policies"] = o.TokenPolicies
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableApproleRolePoliciesRequest struct {
-	value *ApproleRolePoliciesRequest
-	isSet bool
-}
-
-func (v NullableApproleRolePoliciesRequest) Get() *ApproleRolePoliciesRequest {
-	return v.value
-}
-
-func (v *NullableApproleRolePoliciesRequest) Set(val *ApproleRolePoliciesRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableApproleRolePoliciesRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableApproleRolePoliciesRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableApproleRolePoliciesRequest(val *ApproleRolePoliciesRequest) *NullableApproleRolePoliciesRequest {
-	return &NullableApproleRolePoliciesRequest{value: val, isSet: true}
-}
-
-func (v NullableApproleRolePoliciesRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableApproleRolePoliciesRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -4983,42 +4335,6 @@ func (o ApproleRoleRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableApproleRoleRequest struct {
-	value *ApproleRoleRequest
-	isSet bool
-}
-
-func (v NullableApproleRoleRequest) Get() *ApproleRoleRequest {
-	return v.value
-}
-
-func (v *NullableApproleRoleRequest) Set(val *ApproleRoleRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableApproleRoleRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableApproleRoleRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableApproleRoleRequest(val *ApproleRoleRequest) *NullableApproleRoleRequest {
-	return &NullableApproleRoleRequest{value: val, isSet: true}
-}
-
-func (v NullableApproleRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableApproleRoleRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -5090,42 +4406,6 @@ func (o ApproleRoleRoleIdRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["role_id"] = o.RoleId
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableApproleRoleRoleIdRequest struct {
-	value *ApproleRoleRoleIdRequest
-	isSet bool
-}
-
-func (v NullableApproleRoleRoleIdRequest) Get() *ApproleRoleRoleIdRequest {
-	return v.value
-}
-
-func (v *NullableApproleRoleRoleIdRequest) Set(val *ApproleRoleRoleIdRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableApproleRoleRoleIdRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableApproleRoleRoleIdRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableApproleRoleRoleIdRequest(val *ApproleRoleRoleIdRequest) *NullableApproleRoleRoleIdRequest {
-	return &NullableApproleRoleRoleIdRequest{value: val, isSet: true}
-}
-
-func (v NullableApproleRoleRoleIdRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableApproleRoleRoleIdRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -5201,42 +4481,6 @@ func (o ApproleRoleSecretIdAccessorDestroyRequest) MarshalJSON() ([]byte, error)
 	return json.Marshal(toSerialize)
 }
 
-type NullableApproleRoleSecretIdAccessorDestroyRequest struct {
-	value *ApproleRoleSecretIdAccessorDestroyRequest
-	isSet bool
-}
-
-func (v NullableApproleRoleSecretIdAccessorDestroyRequest) Get() *ApproleRoleSecretIdAccessorDestroyRequest {
-	return v.value
-}
-
-func (v *NullableApproleRoleSecretIdAccessorDestroyRequest) Set(val *ApproleRoleSecretIdAccessorDestroyRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableApproleRoleSecretIdAccessorDestroyRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableApproleRoleSecretIdAccessorDestroyRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableApproleRoleSecretIdAccessorDestroyRequest(val *ApproleRoleSecretIdAccessorDestroyRequest) *NullableApproleRoleSecretIdAccessorDestroyRequest {
-	return &NullableApproleRoleSecretIdAccessorDestroyRequest{value: val, isSet: true}
-}
-
-func (v NullableApproleRoleSecretIdAccessorDestroyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableApproleRoleSecretIdAccessorDestroyRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -5308,42 +4552,6 @@ func (o ApproleRoleSecretIdAccessorLookupRequest) MarshalJSON() ([]byte, error) 
 		toSerialize["secret_id_accessor"] = o.SecretIdAccessor
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableApproleRoleSecretIdAccessorLookupRequest struct {
-	value *ApproleRoleSecretIdAccessorLookupRequest
-	isSet bool
-}
-
-func (v NullableApproleRoleSecretIdAccessorLookupRequest) Get() *ApproleRoleSecretIdAccessorLookupRequest {
-	return v.value
-}
-
-func (v *NullableApproleRoleSecretIdAccessorLookupRequest) Set(val *ApproleRoleSecretIdAccessorLookupRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableApproleRoleSecretIdAccessorLookupRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableApproleRoleSecretIdAccessorLookupRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableApproleRoleSecretIdAccessorLookupRequest(val *ApproleRoleSecretIdAccessorLookupRequest) *NullableApproleRoleSecretIdAccessorLookupRequest {
-	return &NullableApproleRoleSecretIdAccessorLookupRequest{value: val, isSet: true}
-}
-
-func (v NullableApproleRoleSecretIdAccessorLookupRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableApproleRoleSecretIdAccessorLookupRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -5419,42 +4627,6 @@ func (o ApproleRoleSecretIdBoundCidrsRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableApproleRoleSecretIdBoundCidrsRequest struct {
-	value *ApproleRoleSecretIdBoundCidrsRequest
-	isSet bool
-}
-
-func (v NullableApproleRoleSecretIdBoundCidrsRequest) Get() *ApproleRoleSecretIdBoundCidrsRequest {
-	return v.value
-}
-
-func (v *NullableApproleRoleSecretIdBoundCidrsRequest) Set(val *ApproleRoleSecretIdBoundCidrsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableApproleRoleSecretIdBoundCidrsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableApproleRoleSecretIdBoundCidrsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableApproleRoleSecretIdBoundCidrsRequest(val *ApproleRoleSecretIdBoundCidrsRequest) *NullableApproleRoleSecretIdBoundCidrsRequest {
-	return &NullableApproleRoleSecretIdBoundCidrsRequest{value: val, isSet: true}
-}
-
-func (v NullableApproleRoleSecretIdBoundCidrsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableApproleRoleSecretIdBoundCidrsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -5526,42 +4698,6 @@ func (o ApproleRoleSecretIdDestroyRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["secret_id"] = o.SecretId
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableApproleRoleSecretIdDestroyRequest struct {
-	value *ApproleRoleSecretIdDestroyRequest
-	isSet bool
-}
-
-func (v NullableApproleRoleSecretIdDestroyRequest) Get() *ApproleRoleSecretIdDestroyRequest {
-	return v.value
-}
-
-func (v *NullableApproleRoleSecretIdDestroyRequest) Set(val *ApproleRoleSecretIdDestroyRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableApproleRoleSecretIdDestroyRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableApproleRoleSecretIdDestroyRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableApproleRoleSecretIdDestroyRequest(val *ApproleRoleSecretIdDestroyRequest) *NullableApproleRoleSecretIdDestroyRequest {
-	return &NullableApproleRoleSecretIdDestroyRequest{value: val, isSet: true}
-}
-
-func (v NullableApproleRoleSecretIdDestroyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableApproleRoleSecretIdDestroyRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -5637,42 +4773,6 @@ func (o ApproleRoleSecretIdLookupRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableApproleRoleSecretIdLookupRequest struct {
-	value *ApproleRoleSecretIdLookupRequest
-	isSet bool
-}
-
-func (v NullableApproleRoleSecretIdLookupRequest) Get() *ApproleRoleSecretIdLookupRequest {
-	return v.value
-}
-
-func (v *NullableApproleRoleSecretIdLookupRequest) Set(val *ApproleRoleSecretIdLookupRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableApproleRoleSecretIdLookupRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableApproleRoleSecretIdLookupRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableApproleRoleSecretIdLookupRequest(val *ApproleRoleSecretIdLookupRequest) *NullableApproleRoleSecretIdLookupRequest {
-	return &NullableApproleRoleSecretIdLookupRequest{value: val, isSet: true}
-}
-
-func (v NullableApproleRoleSecretIdLookupRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableApproleRoleSecretIdLookupRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -5744,42 +4844,6 @@ func (o ApproleRoleSecretIdNumUsesRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["secret_id_num_uses"] = o.SecretIdNumUses
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableApproleRoleSecretIdNumUsesRequest struct {
-	value *ApproleRoleSecretIdNumUsesRequest
-	isSet bool
-}
-
-func (v NullableApproleRoleSecretIdNumUsesRequest) Get() *ApproleRoleSecretIdNumUsesRequest {
-	return v.value
-}
-
-func (v *NullableApproleRoleSecretIdNumUsesRequest) Set(val *ApproleRoleSecretIdNumUsesRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableApproleRoleSecretIdNumUsesRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableApproleRoleSecretIdNumUsesRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableApproleRoleSecretIdNumUsesRequest(val *ApproleRoleSecretIdNumUsesRequest) *NullableApproleRoleSecretIdNumUsesRequest {
-	return &NullableApproleRoleSecretIdNumUsesRequest{value: val, isSet: true}
-}
-
-func (v NullableApproleRoleSecretIdNumUsesRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableApproleRoleSecretIdNumUsesRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -5929,42 +4993,6 @@ func (o ApproleRoleSecretIdRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableApproleRoleSecretIdRequest struct {
-	value *ApproleRoleSecretIdRequest
-	isSet bool
-}
-
-func (v NullableApproleRoleSecretIdRequest) Get() *ApproleRoleSecretIdRequest {
-	return v.value
-}
-
-func (v *NullableApproleRoleSecretIdRequest) Set(val *ApproleRoleSecretIdRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableApproleRoleSecretIdRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableApproleRoleSecretIdRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableApproleRoleSecretIdRequest(val *ApproleRoleSecretIdRequest) *NullableApproleRoleSecretIdRequest {
-	return &NullableApproleRoleSecretIdRequest{value: val, isSet: true}
-}
-
-func (v NullableApproleRoleSecretIdRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableApproleRoleSecretIdRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -6036,42 +5064,6 @@ func (o ApproleRoleSecretIdTtlRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["secret_id_ttl"] = o.SecretIdTtl
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableApproleRoleSecretIdTtlRequest struct {
-	value *ApproleRoleSecretIdTtlRequest
-	isSet bool
-}
-
-func (v NullableApproleRoleSecretIdTtlRequest) Get() *ApproleRoleSecretIdTtlRequest {
-	return v.value
-}
-
-func (v *NullableApproleRoleSecretIdTtlRequest) Set(val *ApproleRoleSecretIdTtlRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableApproleRoleSecretIdTtlRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableApproleRoleSecretIdTtlRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableApproleRoleSecretIdTtlRequest(val *ApproleRoleSecretIdTtlRequest) *NullableApproleRoleSecretIdTtlRequest {
-	return &NullableApproleRoleSecretIdTtlRequest{value: val, isSet: true}
-}
-
-func (v NullableApproleRoleSecretIdTtlRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableApproleRoleSecretIdTtlRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -6147,42 +5139,6 @@ func (o ApproleRoleTokenBoundCidrsRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableApproleRoleTokenBoundCidrsRequest struct {
-	value *ApproleRoleTokenBoundCidrsRequest
-	isSet bool
-}
-
-func (v NullableApproleRoleTokenBoundCidrsRequest) Get() *ApproleRoleTokenBoundCidrsRequest {
-	return v.value
-}
-
-func (v *NullableApproleRoleTokenBoundCidrsRequest) Set(val *ApproleRoleTokenBoundCidrsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableApproleRoleTokenBoundCidrsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableApproleRoleTokenBoundCidrsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableApproleRoleTokenBoundCidrsRequest(val *ApproleRoleTokenBoundCidrsRequest) *NullableApproleRoleTokenBoundCidrsRequest {
-	return &NullableApproleRoleTokenBoundCidrsRequest{value: val, isSet: true}
-}
-
-func (v NullableApproleRoleTokenBoundCidrsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableApproleRoleTokenBoundCidrsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -6254,42 +5210,6 @@ func (o ApproleRoleTokenMaxTtlRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["token_max_ttl"] = o.TokenMaxTtl
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableApproleRoleTokenMaxTtlRequest struct {
-	value *ApproleRoleTokenMaxTtlRequest
-	isSet bool
-}
-
-func (v NullableApproleRoleTokenMaxTtlRequest) Get() *ApproleRoleTokenMaxTtlRequest {
-	return v.value
-}
-
-func (v *NullableApproleRoleTokenMaxTtlRequest) Set(val *ApproleRoleTokenMaxTtlRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableApproleRoleTokenMaxTtlRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableApproleRoleTokenMaxTtlRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableApproleRoleTokenMaxTtlRequest(val *ApproleRoleTokenMaxTtlRequest) *NullableApproleRoleTokenMaxTtlRequest {
-	return &NullableApproleRoleTokenMaxTtlRequest{value: val, isSet: true}
-}
-
-func (v NullableApproleRoleTokenMaxTtlRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableApproleRoleTokenMaxTtlRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -6365,42 +5285,6 @@ func (o ApproleRoleTokenNumUsesRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableApproleRoleTokenNumUsesRequest struct {
-	value *ApproleRoleTokenNumUsesRequest
-	isSet bool
-}
-
-func (v NullableApproleRoleTokenNumUsesRequest) Get() *ApproleRoleTokenNumUsesRequest {
-	return v.value
-}
-
-func (v *NullableApproleRoleTokenNumUsesRequest) Set(val *ApproleRoleTokenNumUsesRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableApproleRoleTokenNumUsesRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableApproleRoleTokenNumUsesRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableApproleRoleTokenNumUsesRequest(val *ApproleRoleTokenNumUsesRequest) *NullableApproleRoleTokenNumUsesRequest {
-	return &NullableApproleRoleTokenNumUsesRequest{value: val, isSet: true}
-}
-
-func (v NullableApproleRoleTokenNumUsesRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableApproleRoleTokenNumUsesRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -6472,42 +5356,6 @@ func (o ApproleRoleTokenTtlRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["token_ttl"] = o.TokenTtl
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableApproleRoleTokenTtlRequest struct {
-	value *ApproleRoleTokenTtlRequest
-	isSet bool
-}
-
-func (v NullableApproleRoleTokenTtlRequest) Get() *ApproleRoleTokenTtlRequest {
-	return v.value
-}
-
-func (v *NullableApproleRoleTokenTtlRequest) Set(val *ApproleRoleTokenTtlRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableApproleRoleTokenTtlRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableApproleRoleTokenTtlRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableApproleRoleTokenTtlRequest(val *ApproleRoleTokenTtlRequest) *NullableApproleRoleTokenTtlRequest {
-	return &NullableApproleRoleTokenTtlRequest{value: val, isSet: true}
-}
-
-func (v NullableApproleRoleTokenTtlRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableApproleRoleTokenTtlRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -6622,42 +5470,6 @@ func (o AwsConfigCertificateRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["type"] = o.Type
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableAwsConfigCertificateRequest struct {
-	value *AwsConfigCertificateRequest
-	isSet bool
-}
-
-func (v NullableAwsConfigCertificateRequest) Get() *AwsConfigCertificateRequest {
-	return v.value
-}
-
-func (v *NullableAwsConfigCertificateRequest) Set(val *AwsConfigCertificateRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAwsConfigCertificateRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAwsConfigCertificateRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAwsConfigCertificateRequest(val *AwsConfigCertificateRequest) *NullableAwsConfigCertificateRequest {
-	return &NullableAwsConfigCertificateRequest{value: val, isSet: true}
-}
-
-func (v NullableAwsConfigCertificateRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAwsConfigCertificateRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -7061,42 +5873,6 @@ func (o AwsConfigClientRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableAwsConfigClientRequest struct {
-	value *AwsConfigClientRequest
-	isSet bool
-}
-
-func (v NullableAwsConfigClientRequest) Get() *AwsConfigClientRequest {
-	return v.value
-}
-
-func (v *NullableAwsConfigClientRequest) Set(val *AwsConfigClientRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAwsConfigClientRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAwsConfigClientRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAwsConfigClientRequest(val *AwsConfigClientRequest) *NullableAwsConfigClientRequest {
-	return &NullableAwsConfigClientRequest{value: val, isSet: true}
-}
-
-func (v NullableAwsConfigClientRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAwsConfigClientRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -7289,42 +6065,6 @@ func (o AwsConfigIdentityRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableAwsConfigIdentityRequest struct {
-	value *AwsConfigIdentityRequest
-	isSet bool
-}
-
-func (v NullableAwsConfigIdentityRequest) Get() *AwsConfigIdentityRequest {
-	return v.value
-}
-
-func (v *NullableAwsConfigIdentityRequest) Set(val *AwsConfigIdentityRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAwsConfigIdentityRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAwsConfigIdentityRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAwsConfigIdentityRequest(val *AwsConfigIdentityRequest) *NullableAwsConfigIdentityRequest {
-	return &NullableAwsConfigIdentityRequest{value: val, isSet: true}
-}
-
-func (v NullableAwsConfigIdentityRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAwsConfigIdentityRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -7433,42 +6173,6 @@ func (o AwsConfigLeaseRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["lease_max"] = o.LeaseMax
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableAwsConfigLeaseRequest struct {
-	value *AwsConfigLeaseRequest
-	isSet bool
-}
-
-func (v NullableAwsConfigLeaseRequest) Get() *AwsConfigLeaseRequest {
-	return v.value
-}
-
-func (v *NullableAwsConfigLeaseRequest) Set(val *AwsConfigLeaseRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAwsConfigLeaseRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAwsConfigLeaseRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAwsConfigLeaseRequest(val *AwsConfigLeaseRequest) *NullableAwsConfigLeaseRequest {
-	return &NullableAwsConfigLeaseRequest{value: val, isSet: true}
-}
-
-func (v NullableAwsConfigLeaseRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAwsConfigLeaseRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -7770,42 +6474,6 @@ func (o AwsConfigRootRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableAwsConfigRootRequest struct {
-	value *AwsConfigRootRequest
-	isSet bool
-}
-
-func (v NullableAwsConfigRootRequest) Get() *AwsConfigRootRequest {
-	return v.value
-}
-
-func (v *NullableAwsConfigRootRequest) Set(val *AwsConfigRootRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAwsConfigRootRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAwsConfigRootRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAwsConfigRootRequest(val *AwsConfigRootRequest) *NullableAwsConfigRootRequest {
-	return &NullableAwsConfigRootRequest{value: val, isSet: true}
-}
-
-func (v NullableAwsConfigRootRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAwsConfigRootRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -7877,42 +6545,6 @@ func (o AwsConfigStsRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["sts_role"] = o.StsRole
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableAwsConfigStsRequest struct {
-	value *AwsConfigStsRequest
-	isSet bool
-}
-
-func (v NullableAwsConfigStsRequest) Get() *AwsConfigStsRequest {
-	return v.value
-}
-
-func (v *NullableAwsConfigStsRequest) Set(val *AwsConfigStsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAwsConfigStsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAwsConfigStsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAwsConfigStsRequest(val *AwsConfigStsRequest) *NullableAwsConfigStsRequest {
-	return &NullableAwsConfigStsRequest{value: val, isSet: true}
-}
-
-func (v NullableAwsConfigStsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAwsConfigStsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -8033,42 +6665,6 @@ func (o AwsConfigTidyIdentityAccesslistRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableAwsConfigTidyIdentityAccesslistRequest struct {
-	value *AwsConfigTidyIdentityAccesslistRequest
-	isSet bool
-}
-
-func (v NullableAwsConfigTidyIdentityAccesslistRequest) Get() *AwsConfigTidyIdentityAccesslistRequest {
-	return v.value
-}
-
-func (v *NullableAwsConfigTidyIdentityAccesslistRequest) Set(val *AwsConfigTidyIdentityAccesslistRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAwsConfigTidyIdentityAccesslistRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAwsConfigTidyIdentityAccesslistRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAwsConfigTidyIdentityAccesslistRequest(val *AwsConfigTidyIdentityAccesslistRequest) *NullableAwsConfigTidyIdentityAccesslistRequest {
-	return &NullableAwsConfigTidyIdentityAccesslistRequest{value: val, isSet: true}
-}
-
-func (v NullableAwsConfigTidyIdentityAccesslistRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAwsConfigTidyIdentityAccesslistRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -8185,42 +6781,6 @@ func (o AwsConfigTidyIdentityWhitelistRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["safety_buffer"] = o.SafetyBuffer
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableAwsConfigTidyIdentityWhitelistRequest struct {
-	value *AwsConfigTidyIdentityWhitelistRequest
-	isSet bool
-}
-
-func (v NullableAwsConfigTidyIdentityWhitelistRequest) Get() *AwsConfigTidyIdentityWhitelistRequest {
-	return v.value
-}
-
-func (v *NullableAwsConfigTidyIdentityWhitelistRequest) Set(val *AwsConfigTidyIdentityWhitelistRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAwsConfigTidyIdentityWhitelistRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAwsConfigTidyIdentityWhitelistRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAwsConfigTidyIdentityWhitelistRequest(val *AwsConfigTidyIdentityWhitelistRequest) *NullableAwsConfigTidyIdentityWhitelistRequest {
-	return &NullableAwsConfigTidyIdentityWhitelistRequest{value: val, isSet: true}
-}
-
-func (v NullableAwsConfigTidyIdentityWhitelistRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAwsConfigTidyIdentityWhitelistRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -8341,42 +6901,6 @@ func (o AwsConfigTidyRoletagBlacklistRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableAwsConfigTidyRoletagBlacklistRequest struct {
-	value *AwsConfigTidyRoletagBlacklistRequest
-	isSet bool
-}
-
-func (v NullableAwsConfigTidyRoletagBlacklistRequest) Get() *AwsConfigTidyRoletagBlacklistRequest {
-	return v.value
-}
-
-func (v *NullableAwsConfigTidyRoletagBlacklistRequest) Set(val *AwsConfigTidyRoletagBlacklistRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAwsConfigTidyRoletagBlacklistRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAwsConfigTidyRoletagBlacklistRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAwsConfigTidyRoletagBlacklistRequest(val *AwsConfigTidyRoletagBlacklistRequest) *NullableAwsConfigTidyRoletagBlacklistRequest {
-	return &NullableAwsConfigTidyRoletagBlacklistRequest{value: val, isSet: true}
-}
-
-func (v NullableAwsConfigTidyRoletagBlacklistRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAwsConfigTidyRoletagBlacklistRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -8493,42 +7017,6 @@ func (o AwsConfigTidyRoletagDenylistRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["safety_buffer"] = o.SafetyBuffer
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableAwsConfigTidyRoletagDenylistRequest struct {
-	value *AwsConfigTidyRoletagDenylistRequest
-	isSet bool
-}
-
-func (v NullableAwsConfigTidyRoletagDenylistRequest) Get() *AwsConfigTidyRoletagDenylistRequest {
-	return v.value
-}
-
-func (v *NullableAwsConfigTidyRoletagDenylistRequest) Set(val *AwsConfigTidyRoletagDenylistRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAwsConfigTidyRoletagDenylistRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAwsConfigTidyRoletagDenylistRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAwsConfigTidyRoletagDenylistRequest(val *AwsConfigTidyRoletagDenylistRequest) *NullableAwsConfigTidyRoletagDenylistRequest {
-	return &NullableAwsConfigTidyRoletagDenylistRequest{value: val, isSet: true}
-}
-
-func (v NullableAwsConfigTidyRoletagDenylistRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAwsConfigTidyRoletagDenylistRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -8717,42 +7205,6 @@ func (o AwsCredsRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["ttl"] = o.Ttl
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableAwsCredsRequest struct {
-	value *AwsCredsRequest
-	isSet bool
-}
-
-func (v NullableAwsCredsRequest) Get() *AwsCredsRequest {
-	return v.value
-}
-
-func (v *NullableAwsCredsRequest) Set(val *AwsCredsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAwsCredsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAwsCredsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAwsCredsRequest(val *AwsCredsRequest) *NullableAwsCredsRequest {
-	return &NullableAwsCredsRequest{value: val, isSet: true}
-}
-
-func (v NullableAwsCredsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAwsCredsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -9122,42 +7574,6 @@ func (o AwsLoginRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["signature"] = o.Signature
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableAwsLoginRequest struct {
-	value *AwsLoginRequest
-	isSet bool
-}
-
-func (v NullableAwsLoginRequest) Get() *AwsLoginRequest {
-	return v.value
-}
-
-func (v *NullableAwsLoginRequest) Set(val *AwsLoginRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAwsLoginRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAwsLoginRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAwsLoginRequest(val *AwsLoginRequest) *NullableAwsLoginRequest {
-	return &NullableAwsLoginRequest{value: val, isSet: true}
-}
-
-func (v NullableAwsLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAwsLoginRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -10305,42 +8721,6 @@ func (o AwsRoleRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableAwsRoleRequest struct {
-	value *AwsRoleRequest
-	isSet bool
-}
-
-func (v NullableAwsRoleRequest) Get() *AwsRoleRequest {
-	return v.value
-}
-
-func (v *NullableAwsRoleRequest) Set(val *AwsRoleRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAwsRoleRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAwsRoleRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAwsRoleRequest(val *AwsRoleRequest) *NullableAwsRoleRequest {
-	return &NullableAwsRoleRequest{value: val, isSet: true}
-}
-
-func (v NullableAwsRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAwsRoleRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -10572,42 +8952,6 @@ func (o AwsRoleTagRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["policies"] = o.Policies
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableAwsRoleTagRequest struct {
-	value *AwsRoleTagRequest
-	isSet bool
-}
-
-func (v NullableAwsRoleTagRequest) Get() *AwsRoleTagRequest {
-	return v.value
-}
-
-func (v *NullableAwsRoleTagRequest) Set(val *AwsRoleTagRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAwsRoleTagRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAwsRoleTagRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAwsRoleTagRequest(val *AwsRoleTagRequest) *NullableAwsRoleTagRequest {
-	return &NullableAwsRoleTagRequest{value: val, isSet: true}
-}
-
-func (v NullableAwsRoleTagRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAwsRoleTagRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -11102,42 +9446,6 @@ func (o AwsRolesRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableAwsRolesRequest struct {
-	value *AwsRolesRequest
-	isSet bool
-}
-
-func (v NullableAwsRolesRequest) Get() *AwsRolesRequest {
-	return v.value
-}
-
-func (v *NullableAwsRolesRequest) Set(val *AwsRolesRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAwsRolesRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAwsRolesRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAwsRolesRequest(val *AwsRolesRequest) *NullableAwsRolesRequest {
-	return &NullableAwsRolesRequest{value: val, isSet: true}
-}
-
-func (v NullableAwsRolesRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAwsRolesRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -11289,42 +9597,6 @@ func (o AwsStsRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableAwsStsRequest struct {
-	value *AwsStsRequest
-	isSet bool
-}
-
-func (v NullableAwsStsRequest) Get() *AwsStsRequest {
-	return v.value
-}
-
-func (v *NullableAwsStsRequest) Set(val *AwsStsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAwsStsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAwsStsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAwsStsRequest(val *AwsStsRequest) *NullableAwsStsRequest {
-	return &NullableAwsStsRequest{value: val, isSet: true}
-}
-
-func (v NullableAwsStsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAwsStsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -11400,42 +9672,6 @@ func (o AwsTidyIdentityAccesslistRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["safety_buffer"] = o.SafetyBuffer
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableAwsTidyIdentityAccesslistRequest struct {
-	value *AwsTidyIdentityAccesslistRequest
-	isSet bool
-}
-
-func (v NullableAwsTidyIdentityAccesslistRequest) Get() *AwsTidyIdentityAccesslistRequest {
-	return v.value
-}
-
-func (v *NullableAwsTidyIdentityAccesslistRequest) Set(val *AwsTidyIdentityAccesslistRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAwsTidyIdentityAccesslistRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAwsTidyIdentityAccesslistRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAwsTidyIdentityAccesslistRequest(val *AwsTidyIdentityAccesslistRequest) *NullableAwsTidyIdentityAccesslistRequest {
-	return &NullableAwsTidyIdentityAccesslistRequest{value: val, isSet: true}
-}
-
-func (v NullableAwsTidyIdentityAccesslistRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAwsTidyIdentityAccesslistRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -11515,42 +9751,6 @@ func (o AwsTidyIdentityWhitelistRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableAwsTidyIdentityWhitelistRequest struct {
-	value *AwsTidyIdentityWhitelistRequest
-	isSet bool
-}
-
-func (v NullableAwsTidyIdentityWhitelistRequest) Get() *AwsTidyIdentityWhitelistRequest {
-	return v.value
-}
-
-func (v *NullableAwsTidyIdentityWhitelistRequest) Set(val *AwsTidyIdentityWhitelistRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAwsTidyIdentityWhitelistRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAwsTidyIdentityWhitelistRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAwsTidyIdentityWhitelistRequest(val *AwsTidyIdentityWhitelistRequest) *NullableAwsTidyIdentityWhitelistRequest {
-	return &NullableAwsTidyIdentityWhitelistRequest{value: val, isSet: true}
-}
-
-func (v NullableAwsTidyIdentityWhitelistRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAwsTidyIdentityWhitelistRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -11628,42 +9828,6 @@ func (o AwsTidyRoletagBlacklistRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableAwsTidyRoletagBlacklistRequest struct {
-	value *AwsTidyRoletagBlacklistRequest
-	isSet bool
-}
-
-func (v NullableAwsTidyRoletagBlacklistRequest) Get() *AwsTidyRoletagBlacklistRequest {
-	return v.value
-}
-
-func (v *NullableAwsTidyRoletagBlacklistRequest) Set(val *AwsTidyRoletagBlacklistRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAwsTidyRoletagBlacklistRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAwsTidyRoletagBlacklistRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAwsTidyRoletagBlacklistRequest(val *AwsTidyRoletagBlacklistRequest) *NullableAwsTidyRoletagBlacklistRequest {
-	return &NullableAwsTidyRoletagBlacklistRequest{value: val, isSet: true}
-}
-
-func (v NullableAwsTidyRoletagBlacklistRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAwsTidyRoletagBlacklistRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -11739,42 +9903,6 @@ func (o AwsTidyRoletagDenylistRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["safety_buffer"] = o.SafetyBuffer
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableAwsTidyRoletagDenylistRequest struct {
-	value *AwsTidyRoletagDenylistRequest
-	isSet bool
-}
-
-func (v NullableAwsTidyRoletagDenylistRequest) Get() *AwsTidyRoletagDenylistRequest {
-	return v.value
-}
-
-func (v *NullableAwsTidyRoletagDenylistRequest) Set(val *AwsTidyRoletagDenylistRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAwsTidyRoletagDenylistRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAwsTidyRoletagDenylistRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAwsTidyRoletagDenylistRequest(val *AwsTidyRoletagDenylistRequest) *NullableAwsTidyRoletagDenylistRequest {
-	return &NullableAwsTidyRoletagDenylistRequest{value: val, isSet: true}
-}
-
-func (v NullableAwsTidyRoletagDenylistRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAwsTidyRoletagDenylistRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -11996,42 +10124,6 @@ func (o AzureConfigRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["tenant_id"] = o.TenantId
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableAzureConfigRequest struct {
-	value *AzureConfigRequest
-	isSet bool
-}
-
-func (v NullableAzureConfigRequest) Get() *AzureConfigRequest {
-	return v.value
-}
-
-func (v *NullableAzureConfigRequest) Set(val *AzureConfigRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAzureConfigRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAzureConfigRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAzureConfigRequest(val *AzureConfigRequest) *NullableAzureConfigRequest {
-	return &NullableAzureConfigRequest{value: val, isSet: true}
-}
-
-func (v NullableAzureConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAzureConfigRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -12290,42 +10382,6 @@ func (o AzureLoginRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["vmss_name"] = o.VmssName
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableAzureLoginRequest struct {
-	value *AzureLoginRequest
-	isSet bool
-}
-
-func (v NullableAzureLoginRequest) Get() *AzureLoginRequest {
-	return v.value
-}
-
-func (v *NullableAzureLoginRequest) Set(val *AzureLoginRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAzureLoginRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAzureLoginRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAzureLoginRequest(val *AzureLoginRequest) *NullableAzureLoginRequest {
-	return &NullableAzureLoginRequest{value: val, isSet: true}
-}
-
-func (v NullableAzureLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAzureLoginRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -13128,42 +11184,6 @@ func (o AzureRoleRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableAzureRoleRequest struct {
-	value *AzureRoleRequest
-	isSet bool
-}
-
-func (v NullableAzureRoleRequest) Get() *AzureRoleRequest {
-	return v.value
-}
-
-func (v *NullableAzureRoleRequest) Set(val *AzureRoleRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAzureRoleRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAzureRoleRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAzureRoleRequest(val *AzureRoleRequest) *NullableAzureRoleRequest {
-	return &NullableAzureRoleRequest{value: val, isSet: true}
-}
-
-func (v NullableAzureRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAzureRoleRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -13383,42 +11403,6 @@ func (o AzureRolesRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["ttl"] = o.Ttl
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableAzureRolesRequest struct {
-	value *AzureRolesRequest
-	isSet bool
-}
-
-func (v NullableAzureRolesRequest) Get() *AzureRolesRequest {
-	return v.value
-}
-
-func (v *NullableAzureRolesRequest) Set(val *AzureRolesRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableAzureRolesRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableAzureRolesRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableAzureRolesRequest(val *AzureRolesRequest) *NullableAzureRolesRequest {
-	return &NullableAzureRolesRequest{value: val, isSet: true}
-}
-
-func (v NullableAzureRolesRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableAzureRolesRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -13917,42 +11901,6 @@ func (o CentrifyConfigRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableCentrifyConfigRequest struct {
-	value *CentrifyConfigRequest
-	isSet bool
-}
-
-func (v NullableCentrifyConfigRequest) Get() *CentrifyConfigRequest {
-	return v.value
-}
-
-func (v *NullableCentrifyConfigRequest) Set(val *CentrifyConfigRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCentrifyConfigRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCentrifyConfigRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCentrifyConfigRequest(val *CentrifyConfigRequest) *NullableCentrifyConfigRequest {
-	return &NullableCentrifyConfigRequest{value: val, isSet: true}
-}
-
-func (v NullableCentrifyConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCentrifyConfigRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -14102,42 +12050,6 @@ func (o CentrifyLoginRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["username"] = o.Username
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableCentrifyLoginRequest struct {
-	value *CentrifyLoginRequest
-	isSet bool
-}
-
-func (v NullableCentrifyLoginRequest) Get() *CentrifyLoginRequest {
-	return v.value
-}
-
-func (v *NullableCentrifyLoginRequest) Set(val *CentrifyLoginRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCentrifyLoginRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCentrifyLoginRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCentrifyLoginRequest(val *CentrifyLoginRequest) *NullableCentrifyLoginRequest {
-	return &NullableCentrifyLoginRequest{value: val, isSet: true}
-}
-
-func (v NullableCentrifyLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCentrifyLoginRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -15129,42 +13041,6 @@ func (o CertCertsRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableCertCertsRequest struct {
-	value *CertCertsRequest
-	isSet bool
-}
-
-func (v NullableCertCertsRequest) Get() *CertCertsRequest {
-	return v.value
-}
-
-func (v *NullableCertCertsRequest) Set(val *CertCertsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCertCertsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCertCertsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCertCertsRequest(val *CertCertsRequest) *NullableCertCertsRequest {
-	return &NullableCertCertsRequest{value: val, isSet: true}
-}
-
-func (v NullableCertCertsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCertCertsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -15242,42 +13118,6 @@ func (o CertConfigRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableCertConfigRequest struct {
-	value *CertConfigRequest
-	isSet bool
-}
-
-func (v NullableCertConfigRequest) Get() *CertConfigRequest {
-	return v.value
-}
-
-func (v *NullableCertConfigRequest) Set(val *CertConfigRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCertConfigRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCertConfigRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCertConfigRequest(val *CertConfigRequest) *NullableCertConfigRequest {
-	return &NullableCertConfigRequest{value: val, isSet: true}
-}
-
-func (v NullableCertConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCertConfigRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -15351,42 +13191,6 @@ func (o CertCrlsRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableCertCrlsRequest struct {
-	value *CertCrlsRequest
-	isSet bool
-}
-
-func (v NullableCertCrlsRequest) Get() *CertCrlsRequest {
-	return v.value
-}
-
-func (v *NullableCertCrlsRequest) Set(val *CertCrlsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCertCrlsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCertCrlsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCertCrlsRequest(val *CertCrlsRequest) *NullableCertCrlsRequest {
-	return &NullableCertCrlsRequest{value: val, isSet: true}
-}
-
-func (v NullableCertCrlsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCertCrlsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -15458,42 +13262,6 @@ func (o CertLoginRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["name"] = o.Name
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableCertLoginRequest struct {
-	value *CertLoginRequest
-	isSet bool
-}
-
-func (v NullableCertLoginRequest) Get() *CertLoginRequest {
-	return v.value
-}
-
-func (v *NullableCertLoginRequest) Set(val *CertLoginRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCertLoginRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCertLoginRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCertLoginRequest(val *CertLoginRequest) *NullableCertLoginRequest {
-	return &NullableCertLoginRequest{value: val, isSet: true}
-}
-
-func (v NullableCertLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCertLoginRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -16111,42 +13879,6 @@ func (o CfConfigRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableCfConfigRequest struct {
-	value *CfConfigRequest
-	isSet bool
-}
-
-func (v NullableCfConfigRequest) Get() *CfConfigRequest {
-	return v.value
-}
-
-func (v *NullableCfConfigRequest) Set(val *CfConfigRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCfConfigRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCfConfigRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCfConfigRequest(val *CfConfigRequest) *NullableCfConfigRequest {
-	return &NullableCfConfigRequest{value: val, isSet: true}
-}
-
-func (v NullableCfConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCfConfigRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -16301,42 +14033,6 @@ func (o CfLoginRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["signing_time"] = o.SigningTime
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableCfLoginRequest struct {
-	value *CfLoginRequest
-	isSet bool
-}
-
-func (v NullableCfLoginRequest) Get() *CfLoginRequest {
-	return v.value
-}
-
-func (v *NullableCfLoginRequest) Set(val *CfLoginRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCfLoginRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCfLoginRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCfLoginRequest(val *CfLoginRequest) *NullableCfLoginRequest {
-	return &NullableCfLoginRequest{value: val, isSet: true}
-}
-
-func (v NullableCfLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCfLoginRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -17106,42 +14802,6 @@ func (o CfRolesRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableCfRolesRequest struct {
-	value *CfRolesRequest
-	isSet bool
-}
-
-func (v NullableCfRolesRequest) Get() *CfRolesRequest {
-	return v.value
-}
-
-func (v *NullableCfRolesRequest) Set(val *CfRolesRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableCfRolesRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableCfRolesRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableCfRolesRequest(val *CfRolesRequest) *NullableCfRolesRequest {
-	return &NullableCfRolesRequest{value: val, isSet: true}
-}
-
-func (v NullableCfRolesRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableCfRolesRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -17402,42 +15062,6 @@ func (o ConsulConfigAccessRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["token"] = o.Token
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableConsulConfigAccessRequest struct {
-	value *ConsulConfigAccessRequest
-	isSet bool
-}
-
-func (v NullableConsulConfigAccessRequest) Get() *ConsulConfigAccessRequest {
-	return v.value
-}
-
-func (v *NullableConsulConfigAccessRequest) Set(val *ConsulConfigAccessRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableConsulConfigAccessRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableConsulConfigAccessRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableConsulConfigAccessRequest(val *ConsulConfigAccessRequest) *NullableConsulConfigAccessRequest {
-	return &NullableConsulConfigAccessRequest{value: val, isSet: true}
-}
-
-func (v NullableConsulConfigAccessRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableConsulConfigAccessRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -17977,42 +15601,6 @@ func (o ConsulRolesRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableConsulRolesRequest struct {
-	value *ConsulRolesRequest
-	isSet bool
-}
-
-func (v NullableConsulRolesRequest) Get() *ConsulRolesRequest {
-	return v.value
-}
-
-func (v *NullableConsulRolesRequest) Set(val *ConsulRolesRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableConsulRolesRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableConsulRolesRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableConsulRolesRequest(val *ConsulRolesRequest) *NullableConsulRolesRequest {
-	return &NullableConsulRolesRequest{value: val, isSet: true}
-}
-
-func (v NullableConsulRolesRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableConsulRolesRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -18320,42 +15908,6 @@ func (o GcpConfigRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableGcpConfigRequest struct {
-	value *GcpConfigRequest
-	isSet bool
-}
-
-func (v NullableGcpConfigRequest) Get() *GcpConfigRequest {
-	return v.value
-}
-
-func (v *NullableGcpConfigRequest) Set(val *GcpConfigRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGcpConfigRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGcpConfigRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGcpConfigRequest(val *GcpConfigRequest) *NullableGcpConfigRequest {
-	return &NullableGcpConfigRequest{value: val, isSet: true}
-}
-
-func (v NullableGcpConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGcpConfigRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -18511,42 +16063,6 @@ func (o GcpKeyRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableGcpKeyRequest struct {
-	value *GcpKeyRequest
-	isSet bool
-}
-
-func (v NullableGcpKeyRequest) Get() *GcpKeyRequest {
-	return v.value
-}
-
-func (v *NullableGcpKeyRequest) Set(val *GcpKeyRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGcpKeyRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGcpKeyRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGcpKeyRequest(val *GcpKeyRequest) *NullableGcpKeyRequest {
-	return &NullableGcpKeyRequest{value: val, isSet: true}
-}
-
-func (v NullableGcpKeyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGcpKeyRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -18657,42 +16173,6 @@ func (o GcpLoginRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableGcpLoginRequest struct {
-	value *GcpLoginRequest
-	isSet bool
-}
-
-func (v NullableGcpLoginRequest) Get() *GcpLoginRequest {
-	return v.value
-}
-
-func (v *NullableGcpLoginRequest) Set(val *GcpLoginRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGcpLoginRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGcpLoginRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGcpLoginRequest(val *GcpLoginRequest) *NullableGcpLoginRequest {
-	return &NullableGcpLoginRequest{value: val, isSet: true}
-}
-
-func (v NullableGcpLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGcpLoginRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -18801,42 +16281,6 @@ func (o GcpRoleLabelsRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["remove"] = o.Remove
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableGcpRoleLabelsRequest struct {
-	value *GcpRoleLabelsRequest
-	isSet bool
-}
-
-func (v NullableGcpRoleLabelsRequest) Get() *GcpRoleLabelsRequest {
-	return v.value
-}
-
-func (v *NullableGcpRoleLabelsRequest) Set(val *GcpRoleLabelsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGcpRoleLabelsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGcpRoleLabelsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGcpRoleLabelsRequest(val *GcpRoleLabelsRequest) *NullableGcpRoleLabelsRequest {
-	return &NullableGcpRoleLabelsRequest{value: val, isSet: true}
-}
-
-func (v NullableGcpRoleLabelsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGcpRoleLabelsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -19943,42 +17387,6 @@ func (o GcpRoleRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableGcpRoleRequest struct {
-	value *GcpRoleRequest
-	isSet bool
-}
-
-func (v NullableGcpRoleRequest) Get() *GcpRoleRequest {
-	return v.value
-}
-
-func (v *NullableGcpRoleRequest) Set(val *GcpRoleRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGcpRoleRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGcpRoleRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGcpRoleRequest(val *GcpRoleRequest) *NullableGcpRoleRequest {
-	return &NullableGcpRoleRequest{value: val, isSet: true}
-}
-
-func (v NullableGcpRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGcpRoleRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -20087,42 +17495,6 @@ func (o GcpRoleServiceAccountsRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["remove"] = o.Remove
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableGcpRoleServiceAccountsRequest struct {
-	value *GcpRoleServiceAccountsRequest
-	isSet bool
-}
-
-func (v NullableGcpRoleServiceAccountsRequest) Get() *GcpRoleServiceAccountsRequest {
-	return v.value
-}
-
-func (v *NullableGcpRoleServiceAccountsRequest) Set(val *GcpRoleServiceAccountsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGcpRoleServiceAccountsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGcpRoleServiceAccountsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGcpRoleServiceAccountsRequest(val *GcpRoleServiceAccountsRequest) *NullableGcpRoleServiceAccountsRequest {
-	return &NullableGcpRoleServiceAccountsRequest{value: val, isSet: true}
-}
-
-func (v NullableGcpRoleServiceAccountsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGcpRoleServiceAccountsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -20278,42 +17650,6 @@ func (o GcpRolesetKeyRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["ttl"] = o.Ttl
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableGcpRolesetKeyRequest struct {
-	value *GcpRolesetKeyRequest
-	isSet bool
-}
-
-func (v NullableGcpRolesetKeyRequest) Get() *GcpRolesetKeyRequest {
-	return v.value
-}
-
-func (v *NullableGcpRolesetKeyRequest) Set(val *GcpRolesetKeyRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGcpRolesetKeyRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGcpRolesetKeyRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGcpRolesetKeyRequest(val *GcpRolesetKeyRequest) *NullableGcpRolesetKeyRequest {
-	return &NullableGcpRolesetKeyRequest{value: val, isSet: true}
-}
-
-func (v NullableGcpRolesetKeyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGcpRolesetKeyRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -20504,42 +17840,6 @@ func (o GcpRolesetRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableGcpRolesetRequest struct {
-	value *GcpRolesetRequest
-	isSet bool
-}
-
-func (v NullableGcpRolesetRequest) Get() *GcpRolesetRequest {
-	return v.value
-}
-
-func (v *NullableGcpRolesetRequest) Set(val *GcpRolesetRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGcpRolesetRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGcpRolesetRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGcpRolesetRequest(val *GcpRolesetRequest) *NullableGcpRolesetRequest {
-	return &NullableGcpRolesetRequest{value: val, isSet: true}
-}
-
-func (v NullableGcpRolesetRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGcpRolesetRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -20693,42 +17993,6 @@ func (o GcpStaticAccountKeyRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["ttl"] = o.Ttl
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableGcpStaticAccountKeyRequest struct {
-	value *GcpStaticAccountKeyRequest
-	isSet bool
-}
-
-func (v NullableGcpStaticAccountKeyRequest) Get() *GcpStaticAccountKeyRequest {
-	return v.value
-}
-
-func (v *NullableGcpStaticAccountKeyRequest) Set(val *GcpStaticAccountKeyRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGcpStaticAccountKeyRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGcpStaticAccountKeyRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGcpStaticAccountKeyRequest(val *GcpStaticAccountKeyRequest) *NullableGcpStaticAccountKeyRequest {
-	return &NullableGcpStaticAccountKeyRequest{value: val, isSet: true}
-}
-
-func (v NullableGcpStaticAccountKeyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGcpStaticAccountKeyRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -20919,42 +18183,6 @@ func (o GcpStaticAccountRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableGcpStaticAccountRequest struct {
-	value *GcpStaticAccountRequest
-	isSet bool
-}
-
-func (v NullableGcpStaticAccountRequest) Get() *GcpStaticAccountRequest {
-	return v.value
-}
-
-func (v *NullableGcpStaticAccountRequest) Set(val *GcpStaticAccountRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGcpStaticAccountRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGcpStaticAccountRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGcpStaticAccountRequest(val *GcpStaticAccountRequest) *NullableGcpStaticAccountRequest {
-	return &NullableGcpStaticAccountRequest{value: val, isSet: true}
-}
-
-func (v NullableGcpStaticAccountRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGcpStaticAccountRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -21063,42 +18291,6 @@ func (o GcpkmsConfigRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["scopes"] = o.Scopes
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableGcpkmsConfigRequest struct {
-	value *GcpkmsConfigRequest
-	isSet bool
-}
-
-func (v NullableGcpkmsConfigRequest) Get() *GcpkmsConfigRequest {
-	return v.value
-}
-
-func (v *NullableGcpkmsConfigRequest) Set(val *GcpkmsConfigRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGcpkmsConfigRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGcpkmsConfigRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGcpkmsConfigRequest(val *GcpkmsConfigRequest) *NullableGcpkmsConfigRequest {
-	return &NullableGcpkmsConfigRequest{value: val, isSet: true}
-}
-
-func (v NullableGcpkmsConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGcpkmsConfigRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -21248,42 +18440,6 @@ func (o GcpkmsDecryptRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableGcpkmsDecryptRequest struct {
-	value *GcpkmsDecryptRequest
-	isSet bool
-}
-
-func (v NullableGcpkmsDecryptRequest) Get() *GcpkmsDecryptRequest {
-	return v.value
-}
-
-func (v *NullableGcpkmsDecryptRequest) Set(val *GcpkmsDecryptRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGcpkmsDecryptRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGcpkmsDecryptRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGcpkmsDecryptRequest(val *GcpkmsDecryptRequest) *NullableGcpkmsDecryptRequest {
-	return &NullableGcpkmsDecryptRequest{value: val, isSet: true}
-}
-
-func (v NullableGcpkmsDecryptRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGcpkmsDecryptRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -21431,42 +18587,6 @@ func (o GcpkmsEncryptRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableGcpkmsEncryptRequest struct {
-	value *GcpkmsEncryptRequest
-	isSet bool
-}
-
-func (v NullableGcpkmsEncryptRequest) Get() *GcpkmsEncryptRequest {
-	return v.value
-}
-
-func (v *NullableGcpkmsEncryptRequest) Set(val *GcpkmsEncryptRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGcpkmsEncryptRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGcpkmsEncryptRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGcpkmsEncryptRequest(val *GcpkmsEncryptRequest) *NullableGcpkmsEncryptRequest {
-	return &NullableGcpkmsEncryptRequest{value: val, isSet: true}
-}
-
-func (v NullableGcpkmsEncryptRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGcpkmsEncryptRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -21575,42 +18695,6 @@ func (o GcpkmsKeysConfigRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["min_version"] = o.MinVersion
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableGcpkmsKeysConfigRequest struct {
-	value *GcpkmsKeysConfigRequest
-	isSet bool
-}
-
-func (v NullableGcpkmsKeysConfigRequest) Get() *GcpkmsKeysConfigRequest {
-	return v.value
-}
-
-func (v *NullableGcpkmsKeysConfigRequest) Set(val *GcpkmsKeysConfigRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGcpkmsKeysConfigRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGcpkmsKeysConfigRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGcpkmsKeysConfigRequest(val *GcpkmsKeysConfigRequest) *NullableGcpkmsKeysConfigRequest {
-	return &NullableGcpkmsKeysConfigRequest{value: val, isSet: true}
-}
-
-func (v NullableGcpkmsKeysConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGcpkmsKeysConfigRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -21725,42 +18809,6 @@ func (o GcpkmsKeysRegisterRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["verify"] = o.Verify
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableGcpkmsKeysRegisterRequest struct {
-	value *GcpkmsKeysRegisterRequest
-	isSet bool
-}
-
-func (v NullableGcpkmsKeysRegisterRequest) Get() *GcpkmsKeysRegisterRequest {
-	return v.value
-}
-
-func (v *NullableGcpkmsKeysRegisterRequest) Set(val *GcpkmsKeysRegisterRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGcpkmsKeysRegisterRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGcpkmsKeysRegisterRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGcpkmsKeysRegisterRequest(val *GcpkmsKeysRegisterRequest) *NullableGcpkmsKeysRegisterRequest {
-	return &NullableGcpkmsKeysRegisterRequest{value: val, isSet: true}
-}
-
-func (v NullableGcpkmsKeysRegisterRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGcpkmsKeysRegisterRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -22058,42 +19106,6 @@ func (o GcpkmsKeysRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableGcpkmsKeysRequest struct {
-	value *GcpkmsKeysRequest
-	isSet bool
-}
-
-func (v NullableGcpkmsKeysRequest) Get() *GcpkmsKeysRequest {
-	return v.value
-}
-
-func (v *NullableGcpkmsKeysRequest) Set(val *GcpkmsKeysRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGcpkmsKeysRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGcpkmsKeysRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGcpkmsKeysRequest(val *GcpkmsKeysRequest) *NullableGcpkmsKeysRequest {
-	return &NullableGcpkmsKeysRequest{value: val, isSet: true}
-}
-
-func (v NullableGcpkmsKeysRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGcpkmsKeysRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -22241,42 +19253,6 @@ func (o GcpkmsReencryptRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableGcpkmsReencryptRequest struct {
-	value *GcpkmsReencryptRequest
-	isSet bool
-}
-
-func (v NullableGcpkmsReencryptRequest) Get() *GcpkmsReencryptRequest {
-	return v.value
-}
-
-func (v *NullableGcpkmsReencryptRequest) Set(val *GcpkmsReencryptRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGcpkmsReencryptRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGcpkmsReencryptRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGcpkmsReencryptRequest(val *GcpkmsReencryptRequest) *NullableGcpkmsReencryptRequest {
-	return &NullableGcpkmsReencryptRequest{value: val, isSet: true}
-}
-
-func (v NullableGcpkmsReencryptRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGcpkmsReencryptRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -22385,42 +19361,6 @@ func (o GcpkmsSignRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["key_version"] = o.KeyVersion
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableGcpkmsSignRequest struct {
-	value *GcpkmsSignRequest
-	isSet bool
-}
-
-func (v NullableGcpkmsSignRequest) Get() *GcpkmsSignRequest {
-	return v.value
-}
-
-func (v *NullableGcpkmsSignRequest) Set(val *GcpkmsSignRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGcpkmsSignRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGcpkmsSignRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGcpkmsSignRequest(val *GcpkmsSignRequest) *NullableGcpkmsSignRequest {
-	return &NullableGcpkmsSignRequest{value: val, isSet: true}
-}
-
-func (v NullableGcpkmsSignRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGcpkmsSignRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -22568,42 +19508,6 @@ func (o GcpkmsVerifyRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["signature"] = o.Signature
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableGcpkmsVerifyRequest struct {
-	value *GcpkmsVerifyRequest
-	isSet bool
-}
-
-func (v NullableGcpkmsVerifyRequest) Get() *GcpkmsVerifyRequest {
-	return v.value
-}
-
-func (v *NullableGcpkmsVerifyRequest) Set(val *GcpkmsVerifyRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGcpkmsVerifyRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGcpkmsVerifyRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGcpkmsVerifyRequest(val *GcpkmsVerifyRequest) *NullableGcpkmsVerifyRequest {
-	return &NullableGcpkmsVerifyRequest{value: val, isSet: true}
-}
-
-func (v NullableGcpkmsVerifyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGcpkmsVerifyRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -23165,42 +20069,6 @@ func (o GithubConfigRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableGithubConfigRequest struct {
-	value *GithubConfigRequest
-	isSet bool
-}
-
-func (v NullableGithubConfigRequest) Get() *GithubConfigRequest {
-	return v.value
-}
-
-func (v *NullableGithubConfigRequest) Set(val *GithubConfigRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGithubConfigRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGithubConfigRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGithubConfigRequest(val *GithubConfigRequest) *NullableGithubConfigRequest {
-	return &NullableGithubConfigRequest{value: val, isSet: true}
-}
-
-func (v NullableGithubConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGithubConfigRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -23272,42 +20140,6 @@ func (o GithubLoginRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["token"] = o.Token
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableGithubLoginRequest struct {
-	value *GithubLoginRequest
-	isSet bool
-}
-
-func (v NullableGithubLoginRequest) Get() *GithubLoginRequest {
-	return v.value
-}
-
-func (v *NullableGithubLoginRequest) Set(val *GithubLoginRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGithubLoginRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGithubLoginRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGithubLoginRequest(val *GithubLoginRequest) *NullableGithubLoginRequest {
-	return &NullableGithubLoginRequest{value: val, isSet: true}
-}
-
-func (v NullableGithubLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGithubLoginRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -23383,42 +20215,6 @@ func (o GithubMapTeamsRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableGithubMapTeamsRequest struct {
-	value *GithubMapTeamsRequest
-	isSet bool
-}
-
-func (v NullableGithubMapTeamsRequest) Get() *GithubMapTeamsRequest {
-	return v.value
-}
-
-func (v *NullableGithubMapTeamsRequest) Set(val *GithubMapTeamsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGithubMapTeamsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGithubMapTeamsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGithubMapTeamsRequest(val *GithubMapTeamsRequest) *NullableGithubMapTeamsRequest {
-	return &NullableGithubMapTeamsRequest{value: val, isSet: true}
-}
-
-func (v NullableGithubMapTeamsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGithubMapTeamsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -23490,42 +20286,6 @@ func (o GithubMapUsersRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["value"] = o.Value
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableGithubMapUsersRequest struct {
-	value *GithubMapUsersRequest
-	isSet bool
-}
-
-func (v NullableGithubMapUsersRequest) Get() *GithubMapUsersRequest {
-	return v.value
-}
-
-func (v *NullableGithubMapUsersRequest) Set(val *GithubMapUsersRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableGithubMapUsersRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableGithubMapUsersRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableGithubMapUsersRequest(val *GithubMapUsersRequest) *NullableGithubMapUsersRequest {
-	return &NullableGithubMapUsersRequest{value: val, isSet: true}
-}
-
-func (v NullableGithubMapUsersRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableGithubMapUsersRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -23710,42 +20470,6 @@ func (o IdentityAliasIdRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["name"] = o.Name
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableIdentityAliasIdRequest struct {
-	value *IdentityAliasIdRequest
-	isSet bool
-}
-
-func (v NullableIdentityAliasIdRequest) Get() *IdentityAliasIdRequest {
-	return v.value
-}
-
-func (v *NullableIdentityAliasIdRequest) Set(val *IdentityAliasIdRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityAliasIdRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityAliasIdRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityAliasIdRequest(val *IdentityAliasIdRequest) *NullableIdentityAliasIdRequest {
-	return &NullableIdentityAliasIdRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityAliasIdRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityAliasIdRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -23969,42 +20693,6 @@ func (o IdentityAliasRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableIdentityAliasRequest struct {
-	value *IdentityAliasRequest
-	isSet bool
-}
-
-func (v NullableIdentityAliasRequest) Get() *IdentityAliasRequest {
-	return v.value
-}
-
-func (v *NullableIdentityAliasRequest) Set(val *IdentityAliasRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityAliasRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityAliasRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityAliasRequest(val *IdentityAliasRequest) *NullableIdentityAliasRequest {
-	return &NullableIdentityAliasRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityAliasRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityAliasRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -24224,42 +20912,6 @@ func (o IdentityEntityAliasIdRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["name"] = o.Name
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableIdentityEntityAliasIdRequest struct {
-	value *IdentityEntityAliasIdRequest
-	isSet bool
-}
-
-func (v NullableIdentityEntityAliasIdRequest) Get() *IdentityEntityAliasIdRequest {
-	return v.value
-}
-
-func (v *NullableIdentityEntityAliasIdRequest) Set(val *IdentityEntityAliasIdRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityEntityAliasIdRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityEntityAliasIdRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityEntityAliasIdRequest(val *IdentityEntityAliasIdRequest) *NullableIdentityEntityAliasIdRequest {
-	return &NullableIdentityEntityAliasIdRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityEntityAliasIdRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityEntityAliasIdRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -24520,42 +21172,6 @@ func (o IdentityEntityAliasRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableIdentityEntityAliasRequest struct {
-	value *IdentityEntityAliasRequest
-	isSet bool
-}
-
-func (v NullableIdentityEntityAliasRequest) Get() *IdentityEntityAliasRequest {
-	return v.value
-}
-
-func (v *NullableIdentityEntityAliasRequest) Set(val *IdentityEntityAliasRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityEntityAliasRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityEntityAliasRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityEntityAliasRequest(val *IdentityEntityAliasRequest) *NullableIdentityEntityAliasRequest {
-	return &NullableIdentityEntityAliasRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityEntityAliasRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityEntityAliasRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -24627,42 +21243,6 @@ func (o IdentityEntityBatchDeleteRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["entity_ids"] = o.EntityIds
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableIdentityEntityBatchDeleteRequest struct {
-	value *IdentityEntityBatchDeleteRequest
-	isSet bool
-}
-
-func (v NullableIdentityEntityBatchDeleteRequest) Get() *IdentityEntityBatchDeleteRequest {
-	return v.value
-}
-
-func (v *NullableIdentityEntityBatchDeleteRequest) Set(val *IdentityEntityBatchDeleteRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityEntityBatchDeleteRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityEntityBatchDeleteRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityEntityBatchDeleteRequest(val *IdentityEntityBatchDeleteRequest) *NullableIdentityEntityBatchDeleteRequest {
-	return &NullableIdentityEntityBatchDeleteRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityEntityBatchDeleteRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityEntityBatchDeleteRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -24849,42 +21429,6 @@ func (o IdentityEntityIdRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableIdentityEntityIdRequest struct {
-	value *IdentityEntityIdRequest
-	isSet bool
-}
-
-func (v NullableIdentityEntityIdRequest) Get() *IdentityEntityIdRequest {
-	return v.value
-}
-
-func (v *NullableIdentityEntityIdRequest) Set(val *IdentityEntityIdRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityEntityIdRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityEntityIdRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityEntityIdRequest(val *IdentityEntityIdRequest) *NullableIdentityEntityIdRequest {
-	return &NullableIdentityEntityIdRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityEntityIdRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityEntityIdRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -25030,42 +21574,6 @@ func (o IdentityEntityMergeRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["to_entity_id"] = o.ToEntityId
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableIdentityEntityMergeRequest struct {
-	value *IdentityEntityMergeRequest
-	isSet bool
-}
-
-func (v NullableIdentityEntityMergeRequest) Get() *IdentityEntityMergeRequest {
-	return v.value
-}
-
-func (v *NullableIdentityEntityMergeRequest) Set(val *IdentityEntityMergeRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityEntityMergeRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityEntityMergeRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityEntityMergeRequest(val *IdentityEntityMergeRequest) *NullableIdentityEntityMergeRequest {
-	return &NullableIdentityEntityMergeRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityEntityMergeRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityEntityMergeRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -25250,42 +21758,6 @@ func (o IdentityEntityNameRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["policies"] = o.Policies
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableIdentityEntityNameRequest struct {
-	value *IdentityEntityNameRequest
-	isSet bool
-}
-
-func (v NullableIdentityEntityNameRequest) Get() *IdentityEntityNameRequest {
-	return v.value
-}
-
-func (v *NullableIdentityEntityNameRequest) Set(val *IdentityEntityNameRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityEntityNameRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityEntityNameRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityEntityNameRequest(val *IdentityEntityNameRequest) *NullableIdentityEntityNameRequest {
-	return &NullableIdentityEntityNameRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityEntityNameRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityEntityNameRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -25509,42 +21981,6 @@ func (o IdentityEntityRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableIdentityEntityRequest struct {
-	value *IdentityEntityRequest
-	isSet bool
-}
-
-func (v NullableIdentityEntityRequest) Get() *IdentityEntityRequest {
-	return v.value
-}
-
-func (v *NullableIdentityEntityRequest) Set(val *IdentityEntityRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityEntityRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityEntityRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityEntityRequest(val *IdentityEntityRequest) *NullableIdentityEntityRequest {
-	return &NullableIdentityEntityRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityEntityRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityEntityRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -25690,42 +22126,6 @@ func (o IdentityGroupAliasIdRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["name"] = o.Name
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableIdentityGroupAliasIdRequest struct {
-	value *IdentityGroupAliasIdRequest
-	isSet bool
-}
-
-func (v NullableIdentityGroupAliasIdRequest) Get() *IdentityGroupAliasIdRequest {
-	return v.value
-}
-
-func (v *NullableIdentityGroupAliasIdRequest) Set(val *IdentityGroupAliasIdRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityGroupAliasIdRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityGroupAliasIdRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityGroupAliasIdRequest(val *IdentityGroupAliasIdRequest) *NullableIdentityGroupAliasIdRequest {
-	return &NullableIdentityGroupAliasIdRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityGroupAliasIdRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityGroupAliasIdRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -25910,42 +22310,6 @@ func (o IdentityGroupAliasRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["name"] = o.Name
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableIdentityGroupAliasRequest struct {
-	value *IdentityGroupAliasRequest
-	isSet bool
-}
-
-func (v NullableIdentityGroupAliasRequest) Get() *IdentityGroupAliasRequest {
-	return v.value
-}
-
-func (v *NullableIdentityGroupAliasRequest) Set(val *IdentityGroupAliasRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityGroupAliasRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityGroupAliasRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityGroupAliasRequest(val *IdentityGroupAliasRequest) *NullableIdentityGroupAliasRequest {
-	return &NullableIdentityGroupAliasRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityGroupAliasRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityGroupAliasRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -26206,42 +22570,6 @@ func (o IdentityGroupIdRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableIdentityGroupIdRequest struct {
-	value *IdentityGroupIdRequest
-	isSet bool
-}
-
-func (v NullableIdentityGroupIdRequest) Get() *IdentityGroupIdRequest {
-	return v.value
-}
-
-func (v *NullableIdentityGroupIdRequest) Set(val *IdentityGroupIdRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityGroupIdRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityGroupIdRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityGroupIdRequest(val *IdentityGroupIdRequest) *NullableIdentityGroupIdRequest {
-	return &NullableIdentityGroupIdRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityGroupIdRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityGroupIdRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -26498,42 +22826,6 @@ func (o IdentityGroupNameRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["type"] = o.Type
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableIdentityGroupNameRequest struct {
-	value *IdentityGroupNameRequest
-	isSet bool
-}
-
-func (v NullableIdentityGroupNameRequest) Get() *IdentityGroupNameRequest {
-	return v.value
-}
-
-func (v *NullableIdentityGroupNameRequest) Set(val *IdentityGroupNameRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityGroupNameRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityGroupNameRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityGroupNameRequest(val *IdentityGroupNameRequest) *NullableIdentityGroupNameRequest {
-	return &NullableIdentityGroupNameRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityGroupNameRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityGroupNameRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -26831,42 +23123,6 @@ func (o IdentityGroupRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableIdentityGroupRequest struct {
-	value *IdentityGroupRequest
-	isSet bool
-}
-
-func (v NullableIdentityGroupRequest) Get() *IdentityGroupRequest {
-	return v.value
-}
-
-func (v *NullableIdentityGroupRequest) Set(val *IdentityGroupRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityGroupRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityGroupRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityGroupRequest(val *IdentityGroupRequest) *NullableIdentityGroupRequest {
-	return &NullableIdentityGroupRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityGroupRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityGroupRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -27086,42 +23342,6 @@ func (o IdentityLookupEntityRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["name"] = o.Name
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableIdentityLookupEntityRequest struct {
-	value *IdentityLookupEntityRequest
-	isSet bool
-}
-
-func (v NullableIdentityLookupEntityRequest) Get() *IdentityLookupEntityRequest {
-	return v.value
-}
-
-func (v *NullableIdentityLookupEntityRequest) Set(val *IdentityLookupEntityRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityLookupEntityRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityLookupEntityRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityLookupEntityRequest(val *IdentityLookupEntityRequest) *NullableIdentityLookupEntityRequest {
-	return &NullableIdentityLookupEntityRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityLookupEntityRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityLookupEntityRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -27345,42 +23565,6 @@ func (o IdentityLookupGroupRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableIdentityLookupGroupRequest struct {
-	value *IdentityLookupGroupRequest
-	isSet bool
-}
-
-func (v NullableIdentityLookupGroupRequest) Get() *IdentityLookupGroupRequest {
-	return v.value
-}
-
-func (v *NullableIdentityLookupGroupRequest) Set(val *IdentityLookupGroupRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityLookupGroupRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityLookupGroupRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityLookupGroupRequest(val *IdentityLookupGroupRequest) *NullableIdentityLookupGroupRequest {
-	return &NullableIdentityLookupGroupRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityLookupGroupRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityLookupGroupRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -27593,42 +23777,6 @@ func (o IdentityMfaLoginEnforcementRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["mfa_method_ids"] = o.MfaMethodIds
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableIdentityMfaLoginEnforcementRequest struct {
-	value *IdentityMfaLoginEnforcementRequest
-	isSet bool
-}
-
-func (v NullableIdentityMfaLoginEnforcementRequest) Get() *IdentityMfaLoginEnforcementRequest {
-	return v.value
-}
-
-func (v *NullableIdentityMfaLoginEnforcementRequest) Set(val *IdentityMfaLoginEnforcementRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityMfaLoginEnforcementRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityMfaLoginEnforcementRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityMfaLoginEnforcementRequest(val *IdentityMfaLoginEnforcementRequest) *NullableIdentityMfaLoginEnforcementRequest {
-	return &NullableIdentityMfaLoginEnforcementRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityMfaLoginEnforcementRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityMfaLoginEnforcementRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -27926,42 +24074,6 @@ func (o IdentityMfaMethodDuoRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableIdentityMfaMethodDuoRequest struct {
-	value *IdentityMfaMethodDuoRequest
-	isSet bool
-}
-
-func (v NullableIdentityMfaMethodDuoRequest) Get() *IdentityMfaMethodDuoRequest {
-	return v.value
-}
-
-func (v *NullableIdentityMfaMethodDuoRequest) Set(val *IdentityMfaMethodDuoRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityMfaMethodDuoRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityMfaMethodDuoRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityMfaMethodDuoRequest(val *IdentityMfaMethodDuoRequest) *NullableIdentityMfaMethodDuoRequest {
-	return &NullableIdentityMfaMethodDuoRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityMfaMethodDuoRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityMfaMethodDuoRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -28257,42 +24369,6 @@ func (o IdentityMfaMethodOktaRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableIdentityMfaMethodOktaRequest struct {
-	value *IdentityMfaMethodOktaRequest
-	isSet bool
-}
-
-func (v NullableIdentityMfaMethodOktaRequest) Get() *IdentityMfaMethodOktaRequest {
-	return v.value
-}
-
-func (v *NullableIdentityMfaMethodOktaRequest) Set(val *IdentityMfaMethodOktaRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityMfaMethodOktaRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityMfaMethodOktaRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityMfaMethodOktaRequest(val *IdentityMfaMethodOktaRequest) *NullableIdentityMfaMethodOktaRequest {
-	return &NullableIdentityMfaMethodOktaRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityMfaMethodOktaRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityMfaMethodOktaRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -28440,42 +24516,6 @@ func (o IdentityMfaMethodPingidRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableIdentityMfaMethodPingidRequest struct {
-	value *IdentityMfaMethodPingidRequest
-	isSet bool
-}
-
-func (v NullableIdentityMfaMethodPingidRequest) Get() *IdentityMfaMethodPingidRequest {
-	return v.value
-}
-
-func (v *NullableIdentityMfaMethodPingidRequest) Set(val *IdentityMfaMethodPingidRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityMfaMethodPingidRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityMfaMethodPingidRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityMfaMethodPingidRequest(val *IdentityMfaMethodPingidRequest) *NullableIdentityMfaMethodPingidRequest {
-	return &NullableIdentityMfaMethodPingidRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityMfaMethodPingidRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityMfaMethodPingidRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -28570,42 +24610,6 @@ func (o IdentityMfaMethodTotpAdminDestroyRequest) MarshalJSON() ([]byte, error) 
 		toSerialize["method_id"] = o.MethodId
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableIdentityMfaMethodTotpAdminDestroyRequest struct {
-	value *IdentityMfaMethodTotpAdminDestroyRequest
-	isSet bool
-}
-
-func (v NullableIdentityMfaMethodTotpAdminDestroyRequest) Get() *IdentityMfaMethodTotpAdminDestroyRequest {
-	return v.value
-}
-
-func (v *NullableIdentityMfaMethodTotpAdminDestroyRequest) Set(val *IdentityMfaMethodTotpAdminDestroyRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityMfaMethodTotpAdminDestroyRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityMfaMethodTotpAdminDestroyRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityMfaMethodTotpAdminDestroyRequest(val *IdentityMfaMethodTotpAdminDestroyRequest) *NullableIdentityMfaMethodTotpAdminDestroyRequest {
-	return &NullableIdentityMfaMethodTotpAdminDestroyRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityMfaMethodTotpAdminDestroyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityMfaMethodTotpAdminDestroyRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -28704,42 +24708,6 @@ func (o IdentityMfaMethodTotpAdminGenerateRequest) MarshalJSON() ([]byte, error)
 	return json.Marshal(toSerialize)
 }
 
-type NullableIdentityMfaMethodTotpAdminGenerateRequest struct {
-	value *IdentityMfaMethodTotpAdminGenerateRequest
-	isSet bool
-}
-
-func (v NullableIdentityMfaMethodTotpAdminGenerateRequest) Get() *IdentityMfaMethodTotpAdminGenerateRequest {
-	return v.value
-}
-
-func (v *NullableIdentityMfaMethodTotpAdminGenerateRequest) Set(val *IdentityMfaMethodTotpAdminGenerateRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityMfaMethodTotpAdminGenerateRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityMfaMethodTotpAdminGenerateRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityMfaMethodTotpAdminGenerateRequest(val *IdentityMfaMethodTotpAdminGenerateRequest) *NullableIdentityMfaMethodTotpAdminGenerateRequest {
-	return &NullableIdentityMfaMethodTotpAdminGenerateRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityMfaMethodTotpAdminGenerateRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityMfaMethodTotpAdminGenerateRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -28804,42 +24772,6 @@ func (o IdentityMfaMethodTotpGenerateRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["method_id"] = o.MethodId
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableIdentityMfaMethodTotpGenerateRequest struct {
-	value *IdentityMfaMethodTotpGenerateRequest
-	isSet bool
-}
-
-func (v NullableIdentityMfaMethodTotpGenerateRequest) Get() *IdentityMfaMethodTotpGenerateRequest {
-	return v.value
-}
-
-func (v *NullableIdentityMfaMethodTotpGenerateRequest) Set(val *IdentityMfaMethodTotpGenerateRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityMfaMethodTotpGenerateRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityMfaMethodTotpGenerateRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityMfaMethodTotpGenerateRequest(val *IdentityMfaMethodTotpGenerateRequest) *NullableIdentityMfaMethodTotpGenerateRequest {
-	return &NullableIdentityMfaMethodTotpGenerateRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityMfaMethodTotpGenerateRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityMfaMethodTotpGenerateRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -29235,42 +25167,6 @@ func (o IdentityMfaMethodTotpRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableIdentityMfaMethodTotpRequest struct {
-	value *IdentityMfaMethodTotpRequest
-	isSet bool
-}
-
-func (v NullableIdentityMfaMethodTotpRequest) Get() *IdentityMfaMethodTotpRequest {
-	return v.value
-}
-
-func (v *NullableIdentityMfaMethodTotpRequest) Set(val *IdentityMfaMethodTotpRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityMfaMethodTotpRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityMfaMethodTotpRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityMfaMethodTotpRequest(val *IdentityMfaMethodTotpRequest) *NullableIdentityMfaMethodTotpRequest {
-	return &NullableIdentityMfaMethodTotpRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityMfaMethodTotpRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityMfaMethodTotpRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -29379,42 +25275,6 @@ func (o IdentityOidcAssignmentRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["group_ids"] = o.GroupIds
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableIdentityOidcAssignmentRequest struct {
-	value *IdentityOidcAssignmentRequest
-	isSet bool
-}
-
-func (v NullableIdentityOidcAssignmentRequest) Get() *IdentityOidcAssignmentRequest {
-	return v.value
-}
-
-func (v *NullableIdentityOidcAssignmentRequest) Set(val *IdentityOidcAssignmentRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityOidcAssignmentRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityOidcAssignmentRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityOidcAssignmentRequest(val *IdentityOidcAssignmentRequest) *NullableIdentityOidcAssignmentRequest {
-	return &NullableIdentityOidcAssignmentRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityOidcAssignmentRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityOidcAssignmentRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -29683,42 +25543,6 @@ func (o IdentityOidcClientRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableIdentityOidcClientRequest struct {
-	value *IdentityOidcClientRequest
-	isSet bool
-}
-
-func (v NullableIdentityOidcClientRequest) Get() *IdentityOidcClientRequest {
-	return v.value
-}
-
-func (v *NullableIdentityOidcClientRequest) Set(val *IdentityOidcClientRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityOidcClientRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityOidcClientRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityOidcClientRequest(val *IdentityOidcClientRequest) *NullableIdentityOidcClientRequest {
-	return &NullableIdentityOidcClientRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityOidcClientRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityOidcClientRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -29790,42 +25614,6 @@ func (o IdentityOidcConfigRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["issuer"] = o.Issuer
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableIdentityOidcConfigRequest struct {
-	value *IdentityOidcConfigRequest
-	isSet bool
-}
-
-func (v NullableIdentityOidcConfigRequest) Get() *IdentityOidcConfigRequest {
-	return v.value
-}
-
-func (v *NullableIdentityOidcConfigRequest) Set(val *IdentityOidcConfigRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityOidcConfigRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityOidcConfigRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityOidcConfigRequest(val *IdentityOidcConfigRequest) *NullableIdentityOidcConfigRequest {
-	return &NullableIdentityOidcConfigRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityOidcConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityOidcConfigRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -29936,42 +25724,6 @@ func (o IdentityOidcIntrospectRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["token"] = o.Token
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableIdentityOidcIntrospectRequest struct {
-	value *IdentityOidcIntrospectRequest
-	isSet bool
-}
-
-func (v NullableIdentityOidcIntrospectRequest) Get() *IdentityOidcIntrospectRequest {
-	return v.value
-}
-
-func (v *NullableIdentityOidcIntrospectRequest) Set(val *IdentityOidcIntrospectRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityOidcIntrospectRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityOidcIntrospectRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityOidcIntrospectRequest(val *IdentityOidcIntrospectRequest) *NullableIdentityOidcIntrospectRequest {
-	return &NullableIdentityOidcIntrospectRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityOidcIntrospectRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityOidcIntrospectRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -30162,42 +25914,6 @@ func (o IdentityOidcKeyRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableIdentityOidcKeyRequest struct {
-	value *IdentityOidcKeyRequest
-	isSet bool
-}
-
-func (v NullableIdentityOidcKeyRequest) Get() *IdentityOidcKeyRequest {
-	return v.value
-}
-
-func (v *NullableIdentityOidcKeyRequest) Set(val *IdentityOidcKeyRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityOidcKeyRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityOidcKeyRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityOidcKeyRequest(val *IdentityOidcKeyRequest) *NullableIdentityOidcKeyRequest {
-	return &NullableIdentityOidcKeyRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityOidcKeyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityOidcKeyRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -30269,42 +25985,6 @@ func (o IdentityOidcKeyRotateRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["verification_ttl"] = o.VerificationTtl
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableIdentityOidcKeyRotateRequest struct {
-	value *IdentityOidcKeyRotateRequest
-	isSet bool
-}
-
-func (v NullableIdentityOidcKeyRotateRequest) Get() *IdentityOidcKeyRotateRequest {
-	return v.value
-}
-
-func (v *NullableIdentityOidcKeyRotateRequest) Set(val *IdentityOidcKeyRotateRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityOidcKeyRotateRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityOidcKeyRotateRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityOidcKeyRotateRequest(val *IdentityOidcKeyRotateRequest) *NullableIdentityOidcKeyRotateRequest {
-	return &NullableIdentityOidcKeyRotateRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityOidcKeyRotateRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityOidcKeyRotateRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -30645,42 +26325,6 @@ func (o IdentityOidcProviderAuthorizeRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableIdentityOidcProviderAuthorizeRequest struct {
-	value *IdentityOidcProviderAuthorizeRequest
-	isSet bool
-}
-
-func (v NullableIdentityOidcProviderAuthorizeRequest) Get() *IdentityOidcProviderAuthorizeRequest {
-	return v.value
-}
-
-func (v *NullableIdentityOidcProviderAuthorizeRequest) Set(val *IdentityOidcProviderAuthorizeRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityOidcProviderAuthorizeRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityOidcProviderAuthorizeRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityOidcProviderAuthorizeRequest(val *IdentityOidcProviderAuthorizeRequest) *NullableIdentityOidcProviderAuthorizeRequest {
-	return &NullableIdentityOidcProviderAuthorizeRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityOidcProviderAuthorizeRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityOidcProviderAuthorizeRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -30826,42 +26470,6 @@ func (o IdentityOidcProviderRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["scopes_supported"] = o.ScopesSupported
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableIdentityOidcProviderRequest struct {
-	value *IdentityOidcProviderRequest
-	isSet bool
-}
-
-func (v NullableIdentityOidcProviderRequest) Get() *IdentityOidcProviderRequest {
-	return v.value
-}
-
-func (v *NullableIdentityOidcProviderRequest) Set(val *IdentityOidcProviderRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityOidcProviderRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityOidcProviderRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityOidcProviderRequest(val *IdentityOidcProviderRequest) *NullableIdentityOidcProviderRequest {
-	return &NullableIdentityOidcProviderRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityOidcProviderRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityOidcProviderRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -31064,42 +26672,6 @@ func (o IdentityOidcProviderTokenRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableIdentityOidcProviderTokenRequest struct {
-	value *IdentityOidcProviderTokenRequest
-	isSet bool
-}
-
-func (v NullableIdentityOidcProviderTokenRequest) Get() *IdentityOidcProviderTokenRequest {
-	return v.value
-}
-
-func (v *NullableIdentityOidcProviderTokenRequest) Set(val *IdentityOidcProviderTokenRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityOidcProviderTokenRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityOidcProviderTokenRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityOidcProviderTokenRequest(val *IdentityOidcProviderTokenRequest) *NullableIdentityOidcProviderTokenRequest {
-	return &NullableIdentityOidcProviderTokenRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityOidcProviderTokenRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityOidcProviderTokenRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -31277,42 +26849,6 @@ func (o IdentityOidcRoleRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableIdentityOidcRoleRequest struct {
-	value *IdentityOidcRoleRequest
-	isSet bool
-}
-
-func (v NullableIdentityOidcRoleRequest) Get() *IdentityOidcRoleRequest {
-	return v.value
-}
-
-func (v *NullableIdentityOidcRoleRequest) Set(val *IdentityOidcRoleRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityOidcRoleRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityOidcRoleRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityOidcRoleRequest(val *IdentityOidcRoleRequest) *NullableIdentityOidcRoleRequest {
-	return &NullableIdentityOidcRoleRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityOidcRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityOidcRoleRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -31421,42 +26957,6 @@ func (o IdentityOidcScopeRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["template"] = o.Template
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableIdentityOidcScopeRequest struct {
-	value *IdentityOidcScopeRequest
-	isSet bool
-}
-
-func (v NullableIdentityOidcScopeRequest) Get() *IdentityOidcScopeRequest {
-	return v.value
-}
-
-func (v *NullableIdentityOidcScopeRequest) Set(val *IdentityOidcScopeRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityOidcScopeRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityOidcScopeRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityOidcScopeRequest(val *IdentityOidcScopeRequest) *NullableIdentityOidcScopeRequest {
-	return &NullableIdentityOidcScopeRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityOidcScopeRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityOidcScopeRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -31641,42 +27141,6 @@ func (o IdentityPersonaIdRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["name"] = o.Name
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableIdentityPersonaIdRequest struct {
-	value *IdentityPersonaIdRequest
-	isSet bool
-}
-
-func (v NullableIdentityPersonaIdRequest) Get() *IdentityPersonaIdRequest {
-	return v.value
-}
-
-func (v *NullableIdentityPersonaIdRequest) Set(val *IdentityPersonaIdRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityPersonaIdRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityPersonaIdRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityPersonaIdRequest(val *IdentityPersonaIdRequest) *NullableIdentityPersonaIdRequest {
-	return &NullableIdentityPersonaIdRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityPersonaIdRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityPersonaIdRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -31898,42 +27362,6 @@ func (o IdentityPersonaRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["name"] = o.Name
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableIdentityPersonaRequest struct {
-	value *IdentityPersonaRequest
-	isSet bool
-}
-
-func (v NullableIdentityPersonaRequest) Get() *IdentityPersonaRequest {
-	return v.value
-}
-
-func (v *NullableIdentityPersonaRequest) Set(val *IdentityPersonaRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableIdentityPersonaRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableIdentityPersonaRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableIdentityPersonaRequest(val *IdentityPersonaRequest) *NullableIdentityPersonaRequest {
-	return &NullableIdentityPersonaRequest{value: val, isSet: true}
-}
-
-func (v NullableIdentityPersonaRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableIdentityPersonaRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -32490,42 +27918,6 @@ func (o JwtConfigRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableJwtConfigRequest struct {
-	value *JwtConfigRequest
-	isSet bool
-}
-
-func (v NullableJwtConfigRequest) Get() *JwtConfigRequest {
-	return v.value
-}
-
-func (v *NullableJwtConfigRequest) Set(val *JwtConfigRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableJwtConfigRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableJwtConfigRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableJwtConfigRequest(val *JwtConfigRequest) *NullableJwtConfigRequest {
-	return &NullableJwtConfigRequest{value: val, isSet: true}
-}
-
-func (v NullableJwtConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableJwtConfigRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -32634,42 +28026,6 @@ func (o JwtLoginRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["role"] = o.Role
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableJwtLoginRequest struct {
-	value *JwtLoginRequest
-	isSet bool
-}
-
-func (v NullableJwtLoginRequest) Get() *JwtLoginRequest {
-	return v.value
-}
-
-func (v *NullableJwtLoginRequest) Set(val *JwtLoginRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableJwtLoginRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableJwtLoginRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableJwtLoginRequest(val *JwtLoginRequest) *NullableJwtLoginRequest {
-	return &NullableJwtLoginRequest{value: val, isSet: true}
-}
-
-func (v NullableJwtLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableJwtLoginRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -32817,42 +28173,6 @@ func (o JwtOidcAuthUrlRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["role"] = o.Role
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableJwtOidcAuthUrlRequest struct {
-	value *JwtOidcAuthUrlRequest
-	isSet bool
-}
-
-func (v NullableJwtOidcAuthUrlRequest) Get() *JwtOidcAuthUrlRequest {
-	return v.value
-}
-
-func (v *NullableJwtOidcAuthUrlRequest) Set(val *JwtOidcAuthUrlRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableJwtOidcAuthUrlRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableJwtOidcAuthUrlRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableJwtOidcAuthUrlRequest(val *JwtOidcAuthUrlRequest) *NullableJwtOidcAuthUrlRequest {
-	return &NullableJwtOidcAuthUrlRequest{value: val, isSet: true}
-}
-
-func (v NullableJwtOidcAuthUrlRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableJwtOidcAuthUrlRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -33033,42 +28353,6 @@ func (o JwtOidcCallbackRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["state"] = o.State
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableJwtOidcCallbackRequest struct {
-	value *JwtOidcCallbackRequest
-	isSet bool
-}
-
-func (v NullableJwtOidcCallbackRequest) Get() *JwtOidcCallbackRequest {
-	return v.value
-}
-
-func (v *NullableJwtOidcCallbackRequest) Set(val *JwtOidcCallbackRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableJwtOidcCallbackRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableJwtOidcCallbackRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableJwtOidcCallbackRequest(val *JwtOidcCallbackRequest) *NullableJwtOidcCallbackRequest {
-	return &NullableJwtOidcCallbackRequest{value: val, isSet: true}
-}
-
-func (v NullableJwtOidcCallbackRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableJwtOidcCallbackRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -34292,42 +29576,6 @@ func (o JwtRoleRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["verbose_oidc_logging"] = o.VerboseOidcLogging
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableJwtRoleRequest struct {
-	value *JwtRoleRequest
-	isSet bool
-}
-
-func (v NullableJwtRoleRequest) Get() *JwtRoleRequest {
-	return v.value
-}
-
-func (v *NullableJwtRoleRequest) Set(val *JwtRoleRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableJwtRoleRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableJwtRoleRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableJwtRoleRequest(val *JwtRoleRequest) *NullableJwtRoleRequest {
-	return &NullableJwtRoleRequest{value: val, isSet: true}
-}
-
-func (v NullableJwtRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableJwtRoleRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -35672,42 +30920,6 @@ func (o KerberosConfigLdapRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableKerberosConfigLdapRequest struct {
-	value *KerberosConfigLdapRequest
-	isSet bool
-}
-
-func (v NullableKerberosConfigLdapRequest) Get() *KerberosConfigLdapRequest {
-	return v.value
-}
-
-func (v *NullableKerberosConfigLdapRequest) Set(val *KerberosConfigLdapRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableKerberosConfigLdapRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableKerberosConfigLdapRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableKerberosConfigLdapRequest(val *KerberosConfigLdapRequest) *NullableKerberosConfigLdapRequest {
-	return &NullableKerberosConfigLdapRequest{value: val, isSet: true}
-}
-
-func (v NullableKerberosConfigLdapRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableKerberosConfigLdapRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -35818,42 +31030,6 @@ func (o KerberosConfigRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableKerberosConfigRequest struct {
-	value *KerberosConfigRequest
-	isSet bool
-}
-
-func (v NullableKerberosConfigRequest) Get() *KerberosConfigRequest {
-	return v.value
-}
-
-func (v *NullableKerberosConfigRequest) Set(val *KerberosConfigRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableKerberosConfigRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableKerberosConfigRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableKerberosConfigRequest(val *KerberosConfigRequest) *NullableKerberosConfigRequest {
-	return &NullableKerberosConfigRequest{value: val, isSet: true}
-}
-
-func (v NullableKerberosConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableKerberosConfigRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -35927,42 +31103,6 @@ func (o KerberosGroupsRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableKerberosGroupsRequest struct {
-	value *KerberosGroupsRequest
-	isSet bool
-}
-
-func (v NullableKerberosGroupsRequest) Get() *KerberosGroupsRequest {
-	return v.value
-}
-
-func (v *NullableKerberosGroupsRequest) Set(val *KerberosGroupsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableKerberosGroupsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableKerberosGroupsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableKerberosGroupsRequest(val *KerberosGroupsRequest) *NullableKerberosGroupsRequest {
-	return &NullableKerberosGroupsRequest{value: val, isSet: true}
-}
-
-func (v NullableKerberosGroupsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableKerberosGroupsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -36034,42 +31174,6 @@ func (o KerberosLoginRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["authorization"] = o.Authorization
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableKerberosLoginRequest struct {
-	value *KerberosLoginRequest
-	isSet bool
-}
-
-func (v NullableKerberosLoginRequest) Get() *KerberosLoginRequest {
-	return v.value
-}
-
-func (v *NullableKerberosLoginRequest) Set(val *KerberosLoginRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableKerberosLoginRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableKerberosLoginRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableKerberosLoginRequest(val *KerberosLoginRequest) *NullableKerberosLoginRequest {
-	return &NullableKerberosLoginRequest{value: val, isSet: true}
-}
-
-func (v NullableKerberosLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableKerberosLoginRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -36383,42 +31487,6 @@ func (o KubernetesConfigRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableKubernetesConfigRequest struct {
-	value *KubernetesConfigRequest
-	isSet bool
-}
-
-func (v NullableKubernetesConfigRequest) Get() *KubernetesConfigRequest {
-	return v.value
-}
-
-func (v *NullableKubernetesConfigRequest) Set(val *KubernetesConfigRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableKubernetesConfigRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableKubernetesConfigRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableKubernetesConfigRequest(val *KubernetesConfigRequest) *NullableKubernetesConfigRequest {
-	return &NullableKubernetesConfigRequest{value: val, isSet: true}
-}
-
-func (v NullableKubernetesConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableKubernetesConfigRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -36559,42 +31627,6 @@ func (o KubernetesCredsRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableKubernetesCredsRequest struct {
-	value *KubernetesCredsRequest
-	isSet bool
-}
-
-func (v NullableKubernetesCredsRequest) Get() *KubernetesCredsRequest {
-	return v.value
-}
-
-func (v *NullableKubernetesCredsRequest) Set(val *KubernetesCredsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableKubernetesCredsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableKubernetesCredsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableKubernetesCredsRequest(val *KubernetesCredsRequest) *NullableKubernetesCredsRequest {
-	return &NullableKubernetesCredsRequest{value: val, isSet: true}
-}
-
-func (v NullableKubernetesCredsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableKubernetesCredsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -36703,42 +31735,6 @@ func (o KubernetesLoginRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["role"] = o.Role
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableKubernetesLoginRequest struct {
-	value *KubernetesLoginRequest
-	isSet bool
-}
-
-func (v NullableKubernetesLoginRequest) Get() *KubernetesLoginRequest {
-	return v.value
-}
-
-func (v *NullableKubernetesLoginRequest) Set(val *KubernetesLoginRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableKubernetesLoginRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableKubernetesLoginRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableKubernetesLoginRequest(val *KubernetesLoginRequest) *NullableKubernetesLoginRequest {
-	return &NullableKubernetesLoginRequest{value: val, isSet: true}
-}
-
-func (v NullableKubernetesLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableKubernetesLoginRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -37512,42 +32508,6 @@ func (o KubernetesRoleRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableKubernetesRoleRequest struct {
-	value *KubernetesRoleRequest
-	isSet bool
-}
-
-func (v NullableKubernetesRoleRequest) Get() *KubernetesRoleRequest {
-	return v.value
-}
-
-func (v *NullableKubernetesRoleRequest) Set(val *KubernetesRoleRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableKubernetesRoleRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableKubernetesRoleRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableKubernetesRoleRequest(val *KubernetesRoleRequest) *NullableKubernetesRoleRequest {
-	return &NullableKubernetesRoleRequest{value: val, isSet: true}
-}
-
-func (v NullableKubernetesRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableKubernetesRoleRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -37951,42 +32911,6 @@ func (o KubernetesRolesRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableKubernetesRolesRequest struct {
-	value *KubernetesRolesRequest
-	isSet bool
-}
-
-func (v NullableKubernetesRolesRequest) Get() *KubernetesRolesRequest {
-	return v.value
-}
-
-func (v *NullableKubernetesRolesRequest) Set(val *KubernetesRolesRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableKubernetesRolesRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableKubernetesRolesRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableKubernetesRolesRequest(val *KubernetesRolesRequest) *NullableKubernetesRolesRequest {
-	return &NullableKubernetesRolesRequest{value: val, isSet: true}
-}
-
-func (v NullableKubernetesRolesRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableKubernetesRolesRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -38132,42 +33056,6 @@ func (o KvConfigRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["max_versions"] = o.MaxVersions
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableKvConfigRequest struct {
-	value *KvConfigRequest
-	isSet bool
-}
-
-func (v NullableKvConfigRequest) Get() *KvConfigRequest {
-	return v.value
-}
-
-func (v *NullableKvConfigRequest) Set(val *KvConfigRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableKvConfigRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableKvConfigRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableKvConfigRequest(val *KvConfigRequest) *NullableKvConfigRequest {
-	return &NullableKvConfigRequest{value: val, isSet: true}
-}
-
-func (v NullableKvConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableKvConfigRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -38317,42 +33205,6 @@ func (o KvDataRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableKvDataRequest struct {
-	value *KvDataRequest
-	isSet bool
-}
-
-func (v NullableKvDataRequest) Get() *KvDataRequest {
-	return v.value
-}
-
-func (v *NullableKvDataRequest) Set(val *KvDataRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableKvDataRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableKvDataRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableKvDataRequest(val *KvDataRequest) *NullableKvDataRequest {
-	return &NullableKvDataRequest{value: val, isSet: true}
-}
-
-func (v NullableKvDataRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableKvDataRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -38426,42 +33278,6 @@ func (o KvDeleteRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableKvDeleteRequest struct {
-	value *KvDeleteRequest
-	isSet bool
-}
-
-func (v NullableKvDeleteRequest) Get() *KvDeleteRequest {
-	return v.value
-}
-
-func (v *NullableKvDeleteRequest) Set(val *KvDeleteRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableKvDeleteRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableKvDeleteRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableKvDeleteRequest(val *KvDeleteRequest) *NullableKvDeleteRequest {
-	return &NullableKvDeleteRequest{value: val, isSet: true}
-}
-
-func (v NullableKvDeleteRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableKvDeleteRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -38533,42 +33349,6 @@ func (o KvDestroyRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["versions"] = o.Versions
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableKvDestroyRequest struct {
-	value *KvDestroyRequest
-	isSet bool
-}
-
-func (v NullableKvDestroyRequest) Get() *KvDestroyRequest {
-	return v.value
-}
-
-func (v *NullableKvDestroyRequest) Set(val *KvDestroyRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableKvDestroyRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableKvDestroyRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableKvDestroyRequest(val *KvDestroyRequest) *NullableKvDestroyRequest {
-	return &NullableKvDestroyRequest{value: val, isSet: true}
-}
-
-func (v NullableKvDestroyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableKvDestroyRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -38755,42 +33535,6 @@ func (o KvMetadataRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableKvMetadataRequest struct {
-	value *KvMetadataRequest
-	isSet bool
-}
-
-func (v NullableKvMetadataRequest) Get() *KvMetadataRequest {
-	return v.value
-}
-
-func (v *NullableKvMetadataRequest) Set(val *KvMetadataRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableKvMetadataRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableKvMetadataRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableKvMetadataRequest(val *KvMetadataRequest) *NullableKvMetadataRequest {
-	return &NullableKvMetadataRequest{value: val, isSet: true}
-}
-
-func (v NullableKvMetadataRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableKvMetadataRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -38862,42 +33606,6 @@ func (o KvUndeleteRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["versions"] = o.Versions
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableKvUndeleteRequest struct {
-	value *KvUndeleteRequest
-	isSet bool
-}
-
-func (v NullableKvUndeleteRequest) Get() *KvUndeleteRequest {
-	return v.value
-}
-
-func (v *NullableKvUndeleteRequest) Set(val *KvUndeleteRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableKvUndeleteRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableKvUndeleteRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableKvUndeleteRequest(val *KvUndeleteRequest) *NullableKvUndeleteRequest {
-	return &NullableKvUndeleteRequest{value: val, isSet: true}
-}
-
-func (v NullableKvUndeleteRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableKvUndeleteRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -40242,42 +34950,6 @@ func (o LdapConfigRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableLdapConfigRequest struct {
-	value *LdapConfigRequest
-	isSet bool
-}
-
-func (v NullableLdapConfigRequest) Get() *LdapConfigRequest {
-	return v.value
-}
-
-func (v *NullableLdapConfigRequest) Set(val *LdapConfigRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableLdapConfigRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableLdapConfigRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableLdapConfigRequest(val *LdapConfigRequest) *NullableLdapConfigRequest {
-	return &NullableLdapConfigRequest{value: val, isSet: true}
-}
-
-func (v NullableLdapConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableLdapConfigRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -40351,42 +35023,6 @@ func (o LdapGroupsRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableLdapGroupsRequest struct {
-	value *LdapGroupsRequest
-	isSet bool
-}
-
-func (v NullableLdapGroupsRequest) Get() *LdapGroupsRequest {
-	return v.value
-}
-
-func (v *NullableLdapGroupsRequest) Set(val *LdapGroupsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableLdapGroupsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableLdapGroupsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableLdapGroupsRequest(val *LdapGroupsRequest) *NullableLdapGroupsRequest {
-	return &NullableLdapGroupsRequest{value: val, isSet: true}
-}
-
-func (v NullableLdapGroupsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableLdapGroupsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -40458,42 +35094,6 @@ func (o LdapLoginRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["password"] = o.Password
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableLdapLoginRequest struct {
-	value *LdapLoginRequest
-	isSet bool
-}
-
-func (v NullableLdapLoginRequest) Get() *LdapLoginRequest {
-	return v.value
-}
-
-func (v *NullableLdapLoginRequest) Set(val *LdapLoginRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableLdapLoginRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableLdapLoginRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableLdapLoginRequest(val *LdapLoginRequest) *NullableLdapLoginRequest {
-	return &NullableLdapLoginRequest{value: val, isSet: true}
-}
-
-func (v NullableLdapLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableLdapLoginRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -40606,42 +35206,6 @@ func (o LdapUsersRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableLdapUsersRequest struct {
-	value *LdapUsersRequest
-	isSet bool
-}
-
-func (v NullableLdapUsersRequest) Get() *LdapUsersRequest {
-	return v.value
-}
-
-func (v *NullableLdapUsersRequest) Set(val *LdapUsersRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableLdapUsersRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableLdapUsersRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableLdapUsersRequest(val *LdapUsersRequest) *NullableLdapUsersRequest {
-	return &NullableLdapUsersRequest{value: val, isSet: true}
-}
-
-func (v NullableLdapUsersRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableLdapUsersRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -40736,42 +35300,6 @@ func (o MongodbatlasConfigRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["public_key"] = o.PublicKey
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableMongodbatlasConfigRequest struct {
-	value *MongodbatlasConfigRequest
-	isSet bool
-}
-
-func (v NullableMongodbatlasConfigRequest) Get() *MongodbatlasConfigRequest {
-	return v.value
-}
-
-func (v *NullableMongodbatlasConfigRequest) Set(val *MongodbatlasConfigRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableMongodbatlasConfigRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableMongodbatlasConfigRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableMongodbatlasConfigRequest(val *MongodbatlasConfigRequest) *NullableMongodbatlasConfigRequest {
-	return &NullableMongodbatlasConfigRequest{value: val, isSet: true}
-}
-
-func (v NullableMongodbatlasConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableMongodbatlasConfigRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -41099,42 +35627,6 @@ func (o MongodbatlasRolesRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableMongodbatlasRolesRequest struct {
-	value *MongodbatlasRolesRequest
-	isSet bool
-}
-
-func (v NullableMongodbatlasRolesRequest) Get() *MongodbatlasRolesRequest {
-	return v.value
-}
-
-func (v *NullableMongodbatlasRolesRequest) Set(val *MongodbatlasRolesRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableMongodbatlasRolesRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableMongodbatlasRolesRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableMongodbatlasRolesRequest(val *MongodbatlasRolesRequest) *NullableMongodbatlasRolesRequest {
-	return &NullableMongodbatlasRolesRequest{value: val, isSet: true}
-}
-
-func (v NullableMongodbatlasRolesRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableMongodbatlasRolesRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -41393,42 +35885,6 @@ func (o NomadConfigAccessRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableNomadConfigAccessRequest struct {
-	value *NomadConfigAccessRequest
-	isSet bool
-}
-
-func (v NullableNomadConfigAccessRequest) Get() *NomadConfigAccessRequest {
-	return v.value
-}
-
-func (v *NullableNomadConfigAccessRequest) Set(val *NomadConfigAccessRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNomadConfigAccessRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNomadConfigAccessRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNomadConfigAccessRequest(val *NomadConfigAccessRequest) *NullableNomadConfigAccessRequest {
-	return &NullableNomadConfigAccessRequest{value: val, isSet: true}
-}
-
-func (v NullableNomadConfigAccessRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNomadConfigAccessRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -41537,42 +35993,6 @@ func (o NomadConfigLeaseRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["ttl"] = o.Ttl
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableNomadConfigLeaseRequest struct {
-	value *NomadConfigLeaseRequest
-	isSet bool
-}
-
-func (v NullableNomadConfigLeaseRequest) Get() *NomadConfigLeaseRequest {
-	return v.value
-}
-
-func (v *NullableNomadConfigLeaseRequest) Set(val *NomadConfigLeaseRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNomadConfigLeaseRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNomadConfigLeaseRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNomadConfigLeaseRequest(val *NomadConfigLeaseRequest) *NullableNomadConfigLeaseRequest {
-	return &NullableNomadConfigLeaseRequest{value: val, isSet: true}
-}
-
-func (v NullableNomadConfigLeaseRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNomadConfigLeaseRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -41726,42 +36146,6 @@ func (o NomadRoleRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableNomadRoleRequest struct {
-	value *NomadRoleRequest
-	isSet bool
-}
-
-func (v NullableNomadRoleRequest) Get() *NomadRoleRequest {
-	return v.value
-}
-
-func (v *NullableNomadRoleRequest) Set(val *NomadRoleRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableNomadRoleRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableNomadRoleRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableNomadRoleRequest(val *NomadRoleRequest) *NullableNomadRoleRequest {
-	return &NullableNomadRoleRequest{value: val, isSet: true}
-}
-
-func (v NullableNomadRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableNomadRoleRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -41835,42 +36219,6 @@ func (o OciConfigRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableOciConfigRequest struct {
-	value *OciConfigRequest
-	isSet bool
-}
-
-func (v NullableOciConfigRequest) Get() *OciConfigRequest {
-	return v.value
-}
-
-func (v *NullableOciConfigRequest) Set(val *OciConfigRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableOciConfigRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableOciConfigRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableOciConfigRequest(val *OciConfigRequest) *NullableOciConfigRequest {
-	return &NullableOciConfigRequest{value: val, isSet: true}
-}
-
-func (v NullableOciConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableOciConfigRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -41942,42 +36290,6 @@ func (o OciLoginRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["request_headers"] = o.RequestHeaders
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableOciLoginRequest struct {
-	value *OciLoginRequest
-	isSet bool
-}
-
-func (v NullableOciLoginRequest) Get() *OciLoginRequest {
-	return v.value
-}
-
-func (v *NullableOciLoginRequest) Set(val *OciLoginRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableOciLoginRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableOciLoginRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableOciLoginRequest(val *OciLoginRequest) *NullableOciLoginRequest {
-	return &NullableOciLoginRequest{value: val, isSet: true}
-}
-
-func (v NullableOciLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableOciLoginRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -42388,42 +36700,6 @@ func (o OciRoleRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["token_type"] = o.TokenType
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableOciRoleRequest struct {
-	value *OciRoleRequest
-	isSet bool
-}
-
-func (v NullableOciRoleRequest) Get() *OciRoleRequest {
-	return v.value
-}
-
-func (v *NullableOciRoleRequest) Set(val *OciRoleRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableOciRoleRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableOciRoleRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableOciRoleRequest(val *OciRoleRequest) *NullableOciRoleRequest {
-	return &NullableOciRoleRequest{value: val, isSet: true}
-}
-
-func (v NullableOciRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableOciRoleRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -42980,42 +37256,6 @@ func (o OidcConfigRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableOidcConfigRequest struct {
-	value *OidcConfigRequest
-	isSet bool
-}
-
-func (v NullableOidcConfigRequest) Get() *OidcConfigRequest {
-	return v.value
-}
-
-func (v *NullableOidcConfigRequest) Set(val *OidcConfigRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableOidcConfigRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableOidcConfigRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableOidcConfigRequest(val *OidcConfigRequest) *NullableOidcConfigRequest {
-	return &NullableOidcConfigRequest{value: val, isSet: true}
-}
-
-func (v NullableOidcConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableOidcConfigRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -43124,42 +37364,6 @@ func (o OidcLoginRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["role"] = o.Role
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableOidcLoginRequest struct {
-	value *OidcLoginRequest
-	isSet bool
-}
-
-func (v NullableOidcLoginRequest) Get() *OidcLoginRequest {
-	return v.value
-}
-
-func (v *NullableOidcLoginRequest) Set(val *OidcLoginRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableOidcLoginRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableOidcLoginRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableOidcLoginRequest(val *OidcLoginRequest) *NullableOidcLoginRequest {
-	return &NullableOidcLoginRequest{value: val, isSet: true}
-}
-
-func (v NullableOidcLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableOidcLoginRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -43307,42 +37511,6 @@ func (o OidcOidcAuthUrlRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["role"] = o.Role
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableOidcOidcAuthUrlRequest struct {
-	value *OidcOidcAuthUrlRequest
-	isSet bool
-}
-
-func (v NullableOidcOidcAuthUrlRequest) Get() *OidcOidcAuthUrlRequest {
-	return v.value
-}
-
-func (v *NullableOidcOidcAuthUrlRequest) Set(val *OidcOidcAuthUrlRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableOidcOidcAuthUrlRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableOidcOidcAuthUrlRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableOidcOidcAuthUrlRequest(val *OidcOidcAuthUrlRequest) *NullableOidcOidcAuthUrlRequest {
-	return &NullableOidcOidcAuthUrlRequest{value: val, isSet: true}
-}
-
-func (v NullableOidcOidcAuthUrlRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableOidcOidcAuthUrlRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -43523,42 +37691,6 @@ func (o OidcOidcCallbackRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["state"] = o.State
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableOidcOidcCallbackRequest struct {
-	value *OidcOidcCallbackRequest
-	isSet bool
-}
-
-func (v NullableOidcOidcCallbackRequest) Get() *OidcOidcCallbackRequest {
-	return v.value
-}
-
-func (v *NullableOidcOidcCallbackRequest) Set(val *OidcOidcCallbackRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableOidcOidcCallbackRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableOidcOidcCallbackRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableOidcOidcCallbackRequest(val *OidcOidcCallbackRequest) *NullableOidcOidcCallbackRequest {
-	return &NullableOidcOidcCallbackRequest{value: val, isSet: true}
-}
-
-func (v NullableOidcOidcCallbackRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableOidcOidcCallbackRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -44784,42 +38916,6 @@ func (o OidcRoleRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableOidcRoleRequest struct {
-	value *OidcRoleRequest
-	isSet bool
-}
-
-func (v NullableOidcRoleRequest) Get() *OidcRoleRequest {
-	return v.value
-}
-
-func (v *NullableOidcRoleRequest) Set(val *OidcRoleRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableOidcRoleRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableOidcRoleRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableOidcRoleRequest(val *OidcRoleRequest) *NullableOidcRoleRequest {
-	return &NullableOidcRoleRequest{value: val, isSet: true}
-}
-
-func (v NullableOidcRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableOidcRoleRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -45546,42 +39642,6 @@ func (o OktaConfigRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableOktaConfigRequest struct {
-	value *OktaConfigRequest
-	isSet bool
-}
-
-func (v NullableOktaConfigRequest) Get() *OktaConfigRequest {
-	return v.value
-}
-
-func (v *NullableOktaConfigRequest) Set(val *OktaConfigRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableOktaConfigRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableOktaConfigRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableOktaConfigRequest(val *OktaConfigRequest) *NullableOktaConfigRequest {
-	return &NullableOktaConfigRequest{value: val, isSet: true}
-}
-
-func (v NullableOktaConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableOktaConfigRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -45653,42 +39713,6 @@ func (o OktaGroupsRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["policies"] = o.Policies
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableOktaGroupsRequest struct {
-	value *OktaGroupsRequest
-	isSet bool
-}
-
-func (v NullableOktaGroupsRequest) Get() *OktaGroupsRequest {
-	return v.value
-}
-
-func (v *NullableOktaGroupsRequest) Set(val *OktaGroupsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableOktaGroupsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableOktaGroupsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableOktaGroupsRequest(val *OktaGroupsRequest) *NullableOktaGroupsRequest {
-	return &NullableOktaGroupsRequest{value: val, isSet: true}
-}
-
-func (v NullableOktaGroupsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableOktaGroupsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -45875,42 +39899,6 @@ func (o OktaLoginRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableOktaLoginRequest struct {
-	value *OktaLoginRequest
-	isSet bool
-}
-
-func (v NullableOktaLoginRequest) Get() *OktaLoginRequest {
-	return v.value
-}
-
-func (v *NullableOktaLoginRequest) Set(val *OktaLoginRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableOktaLoginRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableOktaLoginRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableOktaLoginRequest(val *OktaLoginRequest) *NullableOktaLoginRequest {
-	return &NullableOktaLoginRequest{value: val, isSet: true}
-}
-
-func (v NullableOktaLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableOktaLoginRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -46019,42 +40007,6 @@ func (o OktaUsersRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["policies"] = o.Policies
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableOktaUsersRequest struct {
-	value *OktaUsersRequest
-	isSet bool
-}
-
-func (v NullableOktaUsersRequest) Get() *OktaUsersRequest {
-	return v.value
-}
-
-func (v *NullableOktaUsersRequest) Set(val *OktaUsersRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableOktaUsersRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableOktaUsersRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableOktaUsersRequest(val *OktaUsersRequest) *NullableOktaUsersRequest {
-	return &NullableOktaUsersRequest{value: val, isSet: true}
-}
-
-func (v NullableOktaUsersRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableOktaUsersRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -47255,42 +41207,6 @@ func (o OpenldapConfigRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableOpenldapConfigRequest struct {
-	value *OpenldapConfigRequest
-	isSet bool
-}
-
-func (v NullableOpenldapConfigRequest) Get() *OpenldapConfigRequest {
-	return v.value
-}
-
-func (v *NullableOpenldapConfigRequest) Set(val *OpenldapConfigRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableOpenldapConfigRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableOpenldapConfigRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableOpenldapConfigRequest(val *OpenldapConfigRequest) *NullableOpenldapConfigRequest {
-	return &NullableOpenldapConfigRequest{value: val, isSet: true}
-}
-
-func (v NullableOpenldapConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableOpenldapConfigRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -47535,42 +41451,6 @@ func (o OpenldapRoleRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableOpenldapRoleRequest struct {
-	value *OpenldapRoleRequest
-	isSet bool
-}
-
-func (v NullableOpenldapRoleRequest) Get() *OpenldapRoleRequest {
-	return v.value
-}
-
-func (v *NullableOpenldapRoleRequest) Set(val *OpenldapRoleRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableOpenldapRoleRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableOpenldapRoleRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableOpenldapRoleRequest(val *OpenldapRoleRequest) *NullableOpenldapRoleRequest {
-	return &NullableOpenldapRoleRequest{value: val, isSet: true}
-}
-
-func (v NullableOpenldapRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableOpenldapRoleRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -47755,42 +41635,6 @@ func (o OpenldapStaticRoleRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableOpenldapStaticRoleRequest struct {
-	value *OpenldapStaticRoleRequest
-	isSet bool
-}
-
-func (v NullableOpenldapStaticRoleRequest) Get() *OpenldapStaticRoleRequest {
-	return v.value
-}
-
-func (v *NullableOpenldapStaticRoleRequest) Set(val *OpenldapStaticRoleRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableOpenldapStaticRoleRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableOpenldapStaticRoleRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableOpenldapStaticRoleRequest(val *OpenldapStaticRoleRequest) *NullableOpenldapStaticRoleRequest {
-	return &NullableOpenldapStaticRoleRequest{value: val, isSet: true}
-}
-
-func (v NullableOpenldapStaticRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableOpenldapStaticRoleRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -47862,42 +41706,6 @@ func (o PkiBundleRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["pem_bundle"] = o.PemBundle
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullablePkiBundleRequest struct {
-	value *PkiBundleRequest
-	isSet bool
-}
-
-func (v NullablePkiBundleRequest) Get() *PkiBundleRequest {
-	return v.value
-}
-
-func (v *NullablePkiBundleRequest) Set(val *PkiBundleRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiBundleRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiBundleRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiBundleRequest(val *PkiBundleRequest) *NullablePkiBundleRequest {
-	return &NullablePkiBundleRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiBundleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiBundleRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -47973,42 +41781,6 @@ func (o PkiCertRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullablePkiCertRequest struct {
-	value *PkiCertRequest
-	isSet bool
-}
-
-func (v NullablePkiCertRequest) Get() *PkiCertRequest {
-	return v.value
-}
-
-func (v *NullablePkiCertRequest) Set(val *PkiCertRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiCertRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiCertRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiCertRequest(val *PkiCertRequest) *NullablePkiCertRequest {
-	return &NullablePkiCertRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiCertRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiCertRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -48080,42 +41852,6 @@ func (o PkiConfigCaRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["pem_bundle"] = o.PemBundle
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullablePkiConfigCaRequest struct {
-	value *PkiConfigCaRequest
-	isSet bool
-}
-
-func (v NullablePkiConfigCaRequest) Get() *PkiConfigCaRequest {
-	return v.value
-}
-
-func (v *NullablePkiConfigCaRequest) Set(val *PkiConfigCaRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiConfigCaRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiConfigCaRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiConfigCaRequest(val *PkiConfigCaRequest) *NullablePkiConfigCaRequest {
-	return &NullablePkiConfigCaRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiConfigCaRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiConfigCaRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -48232,42 +41968,6 @@ func (o PkiConfigCrlRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullablePkiConfigCrlRequest struct {
-	value *PkiConfigCrlRequest
-	isSet bool
-}
-
-func (v NullablePkiConfigCrlRequest) Get() *PkiConfigCrlRequest {
-	return v.value
-}
-
-func (v *NullablePkiConfigCrlRequest) Set(val *PkiConfigCrlRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiConfigCrlRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiConfigCrlRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiConfigCrlRequest(val *PkiConfigCrlRequest) *NullablePkiConfigCrlRequest {
-	return &NullablePkiConfigCrlRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiConfigCrlRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiConfigCrlRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -48341,42 +42041,6 @@ func (o PkiConfigIssuersRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullablePkiConfigIssuersRequest struct {
-	value *PkiConfigIssuersRequest
-	isSet bool
-}
-
-func (v NullablePkiConfigIssuersRequest) Get() *PkiConfigIssuersRequest {
-	return v.value
-}
-
-func (v *NullablePkiConfigIssuersRequest) Set(val *PkiConfigIssuersRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiConfigIssuersRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiConfigIssuersRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiConfigIssuersRequest(val *PkiConfigIssuersRequest) *NullablePkiConfigIssuersRequest {
-	return &NullablePkiConfigIssuersRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiConfigIssuersRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiConfigIssuersRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -48448,42 +42112,6 @@ func (o PkiConfigKeysRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["default"] = o.Default
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullablePkiConfigKeysRequest struct {
-	value *PkiConfigKeysRequest
-	isSet bool
-}
-
-func (v NullablePkiConfigKeysRequest) Get() *PkiConfigKeysRequest {
-	return v.value
-}
-
-func (v *NullablePkiConfigKeysRequest) Set(val *PkiConfigKeysRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiConfigKeysRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiConfigKeysRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiConfigKeysRequest(val *PkiConfigKeysRequest) *NullablePkiConfigKeysRequest {
-	return &NullablePkiConfigKeysRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiConfigKeysRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiConfigKeysRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -48631,42 +42259,6 @@ func (o PkiConfigUrlsRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["ocsp_servers"] = o.OcspServers
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullablePkiConfigUrlsRequest struct {
-	value *PkiConfigUrlsRequest
-	isSet bool
-}
-
-func (v NullablePkiConfigUrlsRequest) Get() *PkiConfigUrlsRequest {
-	return v.value
-}
-
-func (v *NullablePkiConfigUrlsRequest) Set(val *PkiConfigUrlsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiConfigUrlsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiConfigUrlsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiConfigUrlsRequest(val *PkiConfigUrlsRequest) *NullablePkiConfigUrlsRequest {
-	return &NullablePkiConfigUrlsRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiConfigUrlsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiConfigUrlsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -48855,42 +42447,6 @@ func (o PkiDerPemRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["usage"] = o.Usage
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullablePkiDerPemRequest struct {
-	value *PkiDerPemRequest
-	isSet bool
-}
-
-func (v NullablePkiDerPemRequest) Get() *PkiDerPemRequest {
-	return v.value
-}
-
-func (v *NullablePkiDerPemRequest) Set(val *PkiDerPemRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiDerPemRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiDerPemRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiDerPemRequest(val *PkiDerPemRequest) *NullablePkiDerPemRequest {
-	return &NullablePkiDerPemRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiDerPemRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiDerPemRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -49956,42 +43512,6 @@ func (o PkiIntermediateCrossSignRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullablePkiIntermediateCrossSignRequest struct {
-	value *PkiIntermediateCrossSignRequest
-	isSet bool
-}
-
-func (v NullablePkiIntermediateCrossSignRequest) Get() *PkiIntermediateCrossSignRequest {
-	return v.value
-}
-
-func (v *NullablePkiIntermediateCrossSignRequest) Set(val *PkiIntermediateCrossSignRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiIntermediateCrossSignRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiIntermediateCrossSignRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiIntermediateCrossSignRequest(val *PkiIntermediateCrossSignRequest) *NullablePkiIntermediateCrossSignRequest {
-	return &NullablePkiIntermediateCrossSignRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiIntermediateCrossSignRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiIntermediateCrossSignRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -51018,42 +44538,6 @@ func (o PkiIntermediateGenerateRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullablePkiIntermediateGenerateRequest struct {
-	value *PkiIntermediateGenerateRequest
-	isSet bool
-}
-
-func (v NullablePkiIntermediateGenerateRequest) Get() *PkiIntermediateGenerateRequest {
-	return v.value
-}
-
-func (v *NullablePkiIntermediateGenerateRequest) Set(val *PkiIntermediateGenerateRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiIntermediateGenerateRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiIntermediateGenerateRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiIntermediateGenerateRequest(val *PkiIntermediateGenerateRequest) *NullablePkiIntermediateGenerateRequest {
-	return &NullablePkiIntermediateGenerateRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiIntermediateGenerateRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiIntermediateGenerateRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -51125,42 +44609,6 @@ func (o PkiIntermediateSetSignedRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["certificate"] = o.Certificate
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullablePkiIntermediateSetSignedRequest struct {
-	value *PkiIntermediateSetSignedRequest
-	isSet bool
-}
-
-func (v NullablePkiIntermediateSetSignedRequest) Get() *PkiIntermediateSetSignedRequest {
-	return v.value
-}
-
-func (v *NullablePkiIntermediateSetSignedRequest) Set(val *PkiIntermediateSetSignedRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiIntermediateSetSignedRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiIntermediateSetSignedRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiIntermediateSetSignedRequest(val *PkiIntermediateSetSignedRequest) *NullablePkiIntermediateSetSignedRequest {
-	return &NullablePkiIntermediateSetSignedRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiIntermediateSetSignedRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiIntermediateSetSignedRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -51390,42 +44838,6 @@ func (o PkiInternalExportedRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["managed_key_name"] = o.ManagedKeyName
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullablePkiInternalExportedRequest struct {
-	value *PkiInternalExportedRequest
-	isSet bool
-}
-
-func (v NullablePkiInternalExportedRequest) Get() *PkiInternalExportedRequest {
-	return v.value
-}
-
-func (v *NullablePkiInternalExportedRequest) Set(val *PkiInternalExportedRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiInternalExportedRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiInternalExportedRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiInternalExportedRequest(val *PkiInternalExportedRequest) *NullablePkiInternalExportedRequest {
-	return &NullablePkiInternalExportedRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiInternalExportedRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiInternalExportedRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -51924,42 +45336,6 @@ func (o PkiIssueRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullablePkiIssueRequest struct {
-	value *PkiIssueRequest
-	isSet bool
-}
-
-func (v NullablePkiIssueRequest) Get() *PkiIssueRequest {
-	return v.value
-}
-
-func (v *NullablePkiIssueRequest) Set(val *PkiIssueRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiIssueRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiIssueRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiIssueRequest(val *PkiIssueRequest) *NullablePkiIssueRequest {
-	return &NullablePkiIssueRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiIssueRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiIssueRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -52413,42 +45789,6 @@ func (o PkiIssuerIssueRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["uri_sans"] = o.UriSans
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullablePkiIssuerIssueRequest struct {
-	value *PkiIssuerIssueRequest
-	isSet bool
-}
-
-func (v NullablePkiIssuerIssueRequest) Get() *PkiIssuerIssueRequest {
-	return v.value
-}
-
-func (v *NullablePkiIssuerIssueRequest) Set(val *PkiIssuerIssueRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiIssuerIssueRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiIssuerIssueRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiIssuerIssueRequest(val *PkiIssuerIssueRequest) *NullablePkiIssuerIssueRequest {
-	return &NullablePkiIssuerIssueRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiIssuerIssueRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiIssuerIssueRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -53403,42 +46743,6 @@ func (o PkiIssuerSignIntermediateRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullablePkiIssuerSignIntermediateRequest struct {
-	value *PkiIssuerSignIntermediateRequest
-	isSet bool
-}
-
-func (v NullablePkiIssuerSignIntermediateRequest) Get() *PkiIssuerSignIntermediateRequest {
-	return v.value
-}
-
-func (v *NullablePkiIssuerSignIntermediateRequest) Set(val *PkiIssuerSignIntermediateRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiIssuerSignIntermediateRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiIssuerSignIntermediateRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiIssuerSignIntermediateRequest(val *PkiIssuerSignIntermediateRequest) *NullablePkiIssuerSignIntermediateRequest {
-	return &NullablePkiIssuerSignIntermediateRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiIssuerSignIntermediateRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiIssuerSignIntermediateRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -53935,42 +47239,6 @@ func (o PkiIssuerSignRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullablePkiIssuerSignRequest struct {
-	value *PkiIssuerSignRequest
-	isSet bool
-}
-
-func (v NullablePkiIssuerSignRequest) Get() *PkiIssuerSignRequest {
-	return v.value
-}
-
-func (v *NullablePkiIssuerSignRequest) Set(val *PkiIssuerSignRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiIssuerSignRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiIssuerSignRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiIssuerSignRequest(val *PkiIssuerSignRequest) *NullablePkiIssuerSignRequest {
-	return &NullablePkiIssuerSignRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiIssuerSignRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiIssuerSignRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -54083,42 +47351,6 @@ func (o PkiIssuerSignSelfIssuedRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["require_matching_certificate_algorithms"] = o.RequireMatchingCertificateAlgorithms
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullablePkiIssuerSignSelfIssuedRequest struct {
-	value *PkiIssuerSignSelfIssuedRequest
-	isSet bool
-}
-
-func (v NullablePkiIssuerSignSelfIssuedRequest) Get() *PkiIssuerSignSelfIssuedRequest {
-	return v.value
-}
-
-func (v *NullablePkiIssuerSignSelfIssuedRequest) Set(val *PkiIssuerSignSelfIssuedRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiIssuerSignSelfIssuedRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiIssuerSignSelfIssuedRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiIssuerSignSelfIssuedRequest(val *PkiIssuerSignSelfIssuedRequest) *NullablePkiIssuerSignSelfIssuedRequest {
-	return &NullablePkiIssuerSignSelfIssuedRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiIssuerSignSelfIssuedRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiIssuerSignSelfIssuedRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -54763,42 +47995,6 @@ func (o PkiIssuerSignVerbatimRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["uri_sans"] = o.UriSans
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullablePkiIssuerSignVerbatimRequest struct {
-	value *PkiIssuerSignVerbatimRequest
-	isSet bool
-}
-
-func (v NullablePkiIssuerSignVerbatimRequest) Get() *PkiIssuerSignVerbatimRequest {
-	return v.value
-}
-
-func (v *NullablePkiIssuerSignVerbatimRequest) Set(val *PkiIssuerSignVerbatimRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiIssuerSignVerbatimRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiIssuerSignVerbatimRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiIssuerSignVerbatimRequest(val *PkiIssuerSignVerbatimRequest) *NullablePkiIssuerSignVerbatimRequest {
-	return &NullablePkiIssuerSignVerbatimRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiIssuerSignVerbatimRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiIssuerSignVerbatimRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -55825,42 +49021,6 @@ func (o PkiIssuersGenerateIntermediateRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["uri_sans"] = o.UriSans
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullablePkiIssuersGenerateIntermediateRequest struct {
-	value *PkiIssuersGenerateIntermediateRequest
-	isSet bool
-}
-
-func (v NullablePkiIssuersGenerateIntermediateRequest) Get() *PkiIssuersGenerateIntermediateRequest {
-	return v.value
-}
-
-func (v *NullablePkiIssuersGenerateIntermediateRequest) Set(val *PkiIssuersGenerateIntermediateRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiIssuersGenerateIntermediateRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiIssuersGenerateIntermediateRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiIssuersGenerateIntermediateRequest(val *PkiIssuersGenerateIntermediateRequest) *NullablePkiIssuersGenerateIntermediateRequest {
-	return &NullablePkiIssuersGenerateIntermediateRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiIssuersGenerateIntermediateRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiIssuersGenerateIntermediateRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -57008,42 +50168,6 @@ func (o PkiIssuersGenerateRootRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullablePkiIssuersGenerateRootRequest struct {
-	value *PkiIssuersGenerateRootRequest
-	isSet bool
-}
-
-func (v NullablePkiIssuersGenerateRootRequest) Get() *PkiIssuersGenerateRootRequest {
-	return v.value
-}
-
-func (v *NullablePkiIssuersGenerateRootRequest) Set(val *PkiIssuersGenerateRootRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiIssuersGenerateRootRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiIssuersGenerateRootRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiIssuersGenerateRootRequest(val *PkiIssuersGenerateRootRequest) *NullablePkiIssuersGenerateRootRequest {
-	return &NullablePkiIssuersGenerateRootRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiIssuersGenerateRootRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiIssuersGenerateRootRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -57273,42 +50397,6 @@ func (o PkiJsonRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullablePkiJsonRequest struct {
-	value *PkiJsonRequest
-	isSet bool
-}
-
-func (v NullablePkiJsonRequest) Get() *PkiJsonRequest {
-	return v.value
-}
-
-func (v *NullablePkiJsonRequest) Set(val *PkiJsonRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiJsonRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiJsonRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiJsonRequest(val *PkiJsonRequest) *NullablePkiJsonRequest {
-	return &NullablePkiJsonRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiJsonRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiJsonRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -57380,42 +50468,6 @@ func (o PkiKeyRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["key_name"] = o.KeyName
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullablePkiKeyRequest struct {
-	value *PkiKeyRequest
-	isSet bool
-}
-
-func (v NullablePkiKeyRequest) Get() *PkiKeyRequest {
-	return v.value
-}
-
-func (v *NullablePkiKeyRequest) Set(val *PkiKeyRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiKeyRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiKeyRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiKeyRequest(val *PkiKeyRequest) *NullablePkiKeyRequest {
-	return &NullablePkiKeyRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiKeyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiKeyRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -57526,42 +50578,6 @@ func (o PkiKeysImportRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["pem_bundle"] = o.PemBundle
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullablePkiKeysImportRequest struct {
-	value *PkiKeysImportRequest
-	isSet bool
-}
-
-func (v NullablePkiKeysImportRequest) Get() *PkiKeysImportRequest {
-	return v.value
-}
-
-func (v *NullablePkiKeysImportRequest) Set(val *PkiKeysImportRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiKeysImportRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiKeysImportRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiKeysImportRequest(val *PkiKeysImportRequest) *NullablePkiKeysImportRequest {
-	return &NullablePkiKeysImportRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiKeysImportRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiKeysImportRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -57793,42 +50809,6 @@ func (o PkiKmsRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullablePkiKmsRequest struct {
-	value *PkiKmsRequest
-	isSet bool
-}
-
-func (v NullablePkiKmsRequest) Get() *PkiKmsRequest {
-	return v.value
-}
-
-func (v *NullablePkiKmsRequest) Set(val *PkiKmsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiKmsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiKmsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiKmsRequest(val *PkiKmsRequest) *NullablePkiKmsRequest {
-	return &NullablePkiKmsRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiKmsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiKmsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -57900,42 +50880,6 @@ func (o PkiRevokeRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["serial_number"] = o.SerialNumber
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullablePkiRevokeRequest struct {
-	value *PkiRevokeRequest
-	isSet bool
-}
-
-func (v NullablePkiRevokeRequest) Get() *PkiRevokeRequest {
-	return v.value
-}
-
-func (v *NullablePkiRevokeRequest) Set(val *PkiRevokeRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiRevokeRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiRevokeRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiRevokeRequest(val *PkiRevokeRequest) *NullablePkiRevokeRequest {
-	return &NullablePkiRevokeRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiRevokeRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiRevokeRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -59666,42 +52610,6 @@ func (o PkiRolesRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullablePkiRolesRequest struct {
-	value *PkiRolesRequest
-	isSet bool
-}
-
-func (v NullablePkiRolesRequest) Get() *PkiRolesRequest {
-	return v.value
-}
-
-func (v *NullablePkiRolesRequest) Set(val *PkiRolesRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiRolesRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiRolesRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiRolesRequest(val *PkiRolesRequest) *NullablePkiRolesRequest {
-	return &NullablePkiRolesRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiRolesRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiRolesRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -60847,42 +53755,6 @@ func (o PkiRootGenerateRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullablePkiRootGenerateRequest struct {
-	value *PkiRootGenerateRequest
-	isSet bool
-}
-
-func (v NullablePkiRootGenerateRequest) Get() *PkiRootGenerateRequest {
-	return v.value
-}
-
-func (v *NullablePkiRootGenerateRequest) Set(val *PkiRootGenerateRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiRootGenerateRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiRootGenerateRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiRootGenerateRequest(val *PkiRootGenerateRequest) *NullablePkiRootGenerateRequest {
-	return &NullablePkiRootGenerateRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiRootGenerateRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiRootGenerateRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -60958,42 +53830,6 @@ func (o PkiRootReplaceRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["default"] = o.Default
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullablePkiRootReplaceRequest struct {
-	value *PkiRootReplaceRequest
-	isSet bool
-}
-
-func (v NullablePkiRootReplaceRequest) Get() *PkiRootReplaceRequest {
-	return v.value
-}
-
-func (v *NullablePkiRootReplaceRequest) Set(val *PkiRootReplaceRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiRootReplaceRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiRootReplaceRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiRootReplaceRequest(val *PkiRootReplaceRequest) *NullablePkiRootReplaceRequest {
-	return &NullablePkiRootReplaceRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiRootReplaceRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiRootReplaceRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -62141,42 +54977,6 @@ func (o PkiRootRotateRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullablePkiRootRotateRequest struct {
-	value *PkiRootRotateRequest
-	isSet bool
-}
-
-func (v NullablePkiRootRotateRequest) Get() *PkiRootRotateRequest {
-	return v.value
-}
-
-func (v *NullablePkiRootRotateRequest) Set(val *PkiRootRotateRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiRootRotateRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiRootRotateRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiRootRotateRequest(val *PkiRootRotateRequest) *NullablePkiRootRotateRequest {
-	return &NullablePkiRootRotateRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiRootRotateRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiRootRotateRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -63170,42 +55970,6 @@ func (o PkiRootSignIntermediateRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullablePkiRootSignIntermediateRequest struct {
-	value *PkiRootSignIntermediateRequest
-	isSet bool
-}
-
-func (v NullablePkiRootSignIntermediateRequest) Get() *PkiRootSignIntermediateRequest {
-	return v.value
-}
-
-func (v *NullablePkiRootSignIntermediateRequest) Set(val *PkiRootSignIntermediateRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiRootSignIntermediateRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiRootSignIntermediateRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiRootSignIntermediateRequest(val *PkiRootSignIntermediateRequest) *NullablePkiRootSignIntermediateRequest {
-	return &NullablePkiRootSignIntermediateRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiRootSignIntermediateRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiRootSignIntermediateRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -63359,42 +56123,6 @@ func (o PkiRootSignSelfIssuedRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["require_matching_certificate_algorithms"] = o.RequireMatchingCertificateAlgorithms
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullablePkiRootSignSelfIssuedRequest struct {
-	value *PkiRootSignSelfIssuedRequest
-	isSet bool
-}
-
-func (v NullablePkiRootSignSelfIssuedRequest) Get() *PkiRootSignSelfIssuedRequest {
-	return v.value
-}
-
-func (v *NullablePkiRootSignSelfIssuedRequest) Set(val *PkiRootSignSelfIssuedRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiRootSignSelfIssuedRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiRootSignSelfIssuedRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiRootSignSelfIssuedRequest(val *PkiRootSignSelfIssuedRequest) *NullablePkiRootSignSelfIssuedRequest {
-	return &NullablePkiRootSignSelfIssuedRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiRootSignSelfIssuedRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiRootSignSelfIssuedRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -63932,42 +56660,6 @@ func (o PkiSignRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["uri_sans"] = o.UriSans
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullablePkiSignRequest struct {
-	value *PkiSignRequest
-	isSet bool
-}
-
-func (v NullablePkiSignRequest) Get() *PkiSignRequest {
-	return v.value
-}
-
-func (v *NullablePkiSignRequest) Set(val *PkiSignRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiSignRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiSignRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiSignRequest(val *PkiSignRequest) *NullablePkiSignRequest {
-	return &NullablePkiSignRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiSignRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiSignRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -64655,42 +57347,6 @@ func (o PkiSignVerbatimRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullablePkiSignVerbatimRequest struct {
-	value *PkiSignVerbatimRequest
-	isSet bool
-}
-
-func (v NullablePkiSignVerbatimRequest) Get() *PkiSignVerbatimRequest {
-	return v.value
-}
-
-func (v *NullablePkiSignVerbatimRequest) Set(val *PkiSignVerbatimRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiSignVerbatimRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiSignVerbatimRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiSignVerbatimRequest(val *PkiSignVerbatimRequest) *NullablePkiSignVerbatimRequest {
-	return &NullablePkiSignVerbatimRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiSignVerbatimRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiSignVerbatimRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -64877,42 +57533,6 @@ func (o PkiTidyRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["tidy_revoked_certs"] = o.TidyRevokedCerts
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullablePkiTidyRequest struct {
-	value *PkiTidyRequest
-	isSet bool
-}
-
-func (v NullablePkiTidyRequest) Get() *PkiTidyRequest {
-	return v.value
-}
-
-func (v *NullablePkiTidyRequest) Set(val *PkiTidyRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullablePkiTidyRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullablePkiTidyRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullablePkiTidyRequest(val *PkiTidyRequest) *NullablePkiTidyRequest {
-	return &NullablePkiTidyRequest{value: val, isSet: true}
-}
-
-func (v NullablePkiTidyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullablePkiTidyRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -65177,42 +57797,6 @@ func (o RabbitmqConfigConnectionRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableRabbitmqConfigConnectionRequest struct {
-	value *RabbitmqConfigConnectionRequest
-	isSet bool
-}
-
-func (v NullableRabbitmqConfigConnectionRequest) Get() *RabbitmqConfigConnectionRequest {
-	return v.value
-}
-
-func (v *NullableRabbitmqConfigConnectionRequest) Set(val *RabbitmqConfigConnectionRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableRabbitmqConfigConnectionRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableRabbitmqConfigConnectionRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableRabbitmqConfigConnectionRequest(val *RabbitmqConfigConnectionRequest) *NullableRabbitmqConfigConnectionRequest {
-	return &NullableRabbitmqConfigConnectionRequest{value: val, isSet: true}
-}
-
-func (v NullableRabbitmqConfigConnectionRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableRabbitmqConfigConnectionRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -65329,42 +57913,6 @@ func (o RabbitmqConfigLeaseRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["ttl"] = o.Ttl
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableRabbitmqConfigLeaseRequest struct {
-	value *RabbitmqConfigLeaseRequest
-	isSet bool
-}
-
-func (v NullableRabbitmqConfigLeaseRequest) Get() *RabbitmqConfigLeaseRequest {
-	return v.value
-}
-
-func (v *NullableRabbitmqConfigLeaseRequest) Set(val *RabbitmqConfigLeaseRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableRabbitmqConfigLeaseRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableRabbitmqConfigLeaseRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableRabbitmqConfigLeaseRequest(val *RabbitmqConfigLeaseRequest) *NullableRabbitmqConfigLeaseRequest {
-	return &NullableRabbitmqConfigLeaseRequest{value: val, isSet: true}
-}
-
-func (v NullableRabbitmqConfigLeaseRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableRabbitmqConfigLeaseRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -65512,42 +58060,6 @@ func (o RabbitmqRolesRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["vhosts"] = o.Vhosts
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableRabbitmqRolesRequest struct {
-	value *RabbitmqRolesRequest
-	isSet bool
-}
-
-func (v NullableRabbitmqRolesRequest) Get() *RabbitmqRolesRequest {
-	return v.value
-}
-
-func (v *NullableRabbitmqRolesRequest) Set(val *RabbitmqRolesRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableRabbitmqRolesRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableRabbitmqRolesRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableRabbitmqRolesRequest(val *RabbitmqRolesRequest) *NullableRabbitmqRolesRequest {
-	return &NullableRabbitmqRolesRequest{value: val, isSet: true}
-}
-
-func (v NullableRabbitmqRolesRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableRabbitmqRolesRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -66243,42 +58755,6 @@ func (o RadiusConfigRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableRadiusConfigRequest struct {
-	value *RadiusConfigRequest
-	isSet bool
-}
-
-func (v NullableRadiusConfigRequest) Get() *RadiusConfigRequest {
-	return v.value
-}
-
-func (v *NullableRadiusConfigRequest) Set(val *RadiusConfigRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableRadiusConfigRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableRadiusConfigRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableRadiusConfigRequest(val *RadiusConfigRequest) *NullableRadiusConfigRequest {
-	return &NullableRadiusConfigRequest{value: val, isSet: true}
-}
-
-func (v NullableRadiusConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableRadiusConfigRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -66426,42 +58902,6 @@ func (o RadiusLoginRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableRadiusLoginRequest struct {
-	value *RadiusLoginRequest
-	isSet bool
-}
-
-func (v NullableRadiusLoginRequest) Get() *RadiusLoginRequest {
-	return v.value
-}
-
-func (v *NullableRadiusLoginRequest) Set(val *RadiusLoginRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableRadiusLoginRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableRadiusLoginRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableRadiusLoginRequest(val *RadiusLoginRequest) *NullableRadiusLoginRequest {
-	return &NullableRadiusLoginRequest{value: val, isSet: true}
-}
-
-func (v NullableRadiusLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableRadiusLoginRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -66533,42 +58973,6 @@ func (o RadiusUsersRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["policies"] = o.Policies
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableRadiusUsersRequest struct {
-	value *RadiusUsersRequest
-	isSet bool
-}
-
-func (v NullableRadiusUsersRequest) Get() *RadiusUsersRequest {
-	return v.value
-}
-
-func (v *NullableRadiusUsersRequest) Set(val *RadiusUsersRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableRadiusUsersRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableRadiusUsersRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableRadiusUsersRequest(val *RadiusUsersRequest) *NullableRadiusUsersRequest {
-	return &NullableRadiusUsersRequest{value: val, isSet: true}
-}
-
-func (v NullableRadiusUsersRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableRadiusUsersRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -66804,42 +59208,6 @@ func (o SshConfigCaRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSshConfigCaRequest struct {
-	value *SshConfigCaRequest
-	isSet bool
-}
-
-func (v NullableSshConfigCaRequest) Get() *SshConfigCaRequest {
-	return v.value
-}
-
-func (v *NullableSshConfigCaRequest) Set(val *SshConfigCaRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSshConfigCaRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSshConfigCaRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSshConfigCaRequest(val *SshConfigCaRequest) *NullableSshConfigCaRequest {
-	return &NullableSshConfigCaRequest{value: val, isSet: true}
-}
-
-func (v NullableSshConfigCaRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSshConfigCaRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -66911,42 +59279,6 @@ func (o SshConfigZeroaddressRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["roles"] = o.Roles
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableSshConfigZeroaddressRequest struct {
-	value *SshConfigZeroaddressRequest
-	isSet bool
-}
-
-func (v NullableSshConfigZeroaddressRequest) Get() *SshConfigZeroaddressRequest {
-	return v.value
-}
-
-func (v *NullableSshConfigZeroaddressRequest) Set(val *SshConfigZeroaddressRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSshConfigZeroaddressRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSshConfigZeroaddressRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSshConfigZeroaddressRequest(val *SshConfigZeroaddressRequest) *NullableSshConfigZeroaddressRequest {
-	return &NullableSshConfigZeroaddressRequest{value: val, isSet: true}
-}
-
-func (v NullableSshConfigZeroaddressRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSshConfigZeroaddressRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -67059,42 +59391,6 @@ func (o SshCredsRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSshCredsRequest struct {
-	value *SshCredsRequest
-	isSet bool
-}
-
-func (v NullableSshCredsRequest) Get() *SshCredsRequest {
-	return v.value
-}
-
-func (v *NullableSshCredsRequest) Set(val *SshCredsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSshCredsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSshCredsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSshCredsRequest(val *SshCredsRequest) *NullableSshCredsRequest {
-	return &NullableSshCredsRequest{value: val, isSet: true}
-}
-
-func (v NullableSshCredsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSshCredsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -67168,42 +59464,6 @@ func (o SshKeysRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSshKeysRequest struct {
-	value *SshKeysRequest
-	isSet bool
-}
-
-func (v NullableSshKeysRequest) Get() *SshKeysRequest {
-	return v.value
-}
-
-func (v *NullableSshKeysRequest) Set(val *SshKeysRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSshKeysRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSshKeysRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSshKeysRequest(val *SshKeysRequest) *NullableSshKeysRequest {
-	return &NullableSshKeysRequest{value: val, isSet: true}
-}
-
-func (v NullableSshKeysRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSshKeysRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -67275,42 +59535,6 @@ func (o SshLookupRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["ip"] = o.Ip
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableSshLookupRequest struct {
-	value *SshLookupRequest
-	isSet bool
-}
-
-func (v NullableSshLookupRequest) Get() *SshLookupRequest {
-	return v.value
-}
-
-func (v *NullableSshLookupRequest) Set(val *SshLookupRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSshLookupRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSshLookupRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSshLookupRequest(val *SshLookupRequest) *NullableSshLookupRequest {
-	return &NullableSshLookupRequest{value: val, isSet: true}
-}
-
-func (v NullableSshLookupRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSshLookupRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -68442,42 +60666,6 @@ func (o SshRolesRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSshRolesRequest struct {
-	value *SshRolesRequest
-	isSet bool
-}
-
-func (v NullableSshRolesRequest) Get() *SshRolesRequest {
-	return v.value
-}
-
-func (v *NullableSshRolesRequest) Set(val *SshRolesRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSshRolesRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSshRolesRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSshRolesRequest(val *SshRolesRequest) *NullableSshRolesRequest {
-	return &NullableSshRolesRequest{value: val, isSet: true}
-}
-
-func (v NullableSshRolesRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSshRolesRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -68777,42 +60965,6 @@ func (o SshSignRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSshSignRequest struct {
-	value *SshSignRequest
-	isSet bool
-}
-
-func (v NullableSshSignRequest) Get() *SshSignRequest {
-	return v.value
-}
-
-func (v *NullableSshSignRequest) Set(val *SshSignRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSshSignRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSshSignRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSshSignRequest(val *SshSignRequest) *NullableSshSignRequest {
-	return &NullableSshSignRequest{value: val, isSet: true}
-}
-
-func (v NullableSshSignRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSshSignRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -68886,42 +61038,6 @@ func (o SshVerifyRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSshVerifyRequest struct {
-	value *SshVerifyRequest
-	isSet bool
-}
-
-func (v NullableSshVerifyRequest) Get() *SshVerifyRequest {
-	return v.value
-}
-
-func (v *NullableSshVerifyRequest) Set(val *SshVerifyRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSshVerifyRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSshVerifyRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSshVerifyRequest(val *SshVerifyRequest) *NullableSshVerifyRequest {
-	return &NullableSshVerifyRequest{value: val, isSet: true}
-}
-
-func (v NullableSshVerifyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSshVerifyRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -68992,42 +61108,6 @@ func (o SystemAuditHashRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["input"] = o.Input
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableSystemAuditHashRequest struct {
-	value *SystemAuditHashRequest
-	isSet bool
-}
-
-func (v NullableSystemAuditHashRequest) Get() *SystemAuditHashRequest {
-	return v.value
-}
-
-func (v *NullableSystemAuditHashRequest) Set(val *SystemAuditHashRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemAuditHashRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemAuditHashRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemAuditHashRequest(val *SystemAuditHashRequest) *NullableSystemAuditHashRequest {
-	return &NullableSystemAuditHashRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemAuditHashRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemAuditHashRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -69216,42 +61296,6 @@ func (o SystemAuditRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["type"] = o.Type
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableSystemAuditRequest struct {
-	value *SystemAuditRequest
-	isSet bool
-}
-
-func (v NullableSystemAuditRequest) Get() *SystemAuditRequest {
-	return v.value
-}
-
-func (v *NullableSystemAuditRequest) Set(val *SystemAuditRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemAuditRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemAuditRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemAuditRequest(val *SystemAuditRequest) *NullableSystemAuditRequest {
-	return &NullableSystemAuditRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemAuditRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemAuditRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -69596,42 +61640,6 @@ func (o SystemAuthRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["type"] = o.Type
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableSystemAuthRequest struct {
-	value *SystemAuthRequest
-	isSet bool
-}
-
-func (v NullableSystemAuthRequest) Get() *SystemAuthRequest {
-	return v.value
-}
-
-func (v *NullableSystemAuthRequest) Set(val *SystemAuthRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemAuthRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemAuthRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemAuthRequest(val *SystemAuthRequest) *NullableSystemAuthRequest {
-	return &NullableSystemAuthRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemAuthRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemAuthRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -70040,42 +62048,6 @@ func (o SystemAuthTuneRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSystemAuthTuneRequest struct {
-	value *SystemAuthTuneRequest
-	isSet bool
-}
-
-func (v NullableSystemAuthTuneRequest) Get() *SystemAuthTuneRequest {
-	return v.value
-}
-
-func (v *NullableSystemAuthTuneRequest) Set(val *SystemAuthTuneRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemAuthTuneRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemAuthTuneRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemAuthTuneRequest(val *SystemAuthTuneRequest) *NullableSystemAuthTuneRequest {
-	return &NullableSystemAuthTuneRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemAuthTuneRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemAuthTuneRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -70225,42 +62197,6 @@ func (o SystemCapabilitiesAccessorRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["paths"] = o.Paths
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableSystemCapabilitiesAccessorRequest struct {
-	value *SystemCapabilitiesAccessorRequest
-	isSet bool
-}
-
-func (v NullableSystemCapabilitiesAccessorRequest) Get() *SystemCapabilitiesAccessorRequest {
-	return v.value
-}
-
-func (v *NullableSystemCapabilitiesAccessorRequest) Set(val *SystemCapabilitiesAccessorRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemCapabilitiesAccessorRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemCapabilitiesAccessorRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemCapabilitiesAccessorRequest(val *SystemCapabilitiesAccessorRequest) *NullableSystemCapabilitiesAccessorRequest {
-	return &NullableSystemCapabilitiesAccessorRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemCapabilitiesAccessorRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemCapabilitiesAccessorRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -70414,42 +62350,6 @@ func (o SystemCapabilitiesRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSystemCapabilitiesRequest struct {
-	value *SystemCapabilitiesRequest
-	isSet bool
-}
-
-func (v NullableSystemCapabilitiesRequest) Get() *SystemCapabilitiesRequest {
-	return v.value
-}
-
-func (v *NullableSystemCapabilitiesRequest) Set(val *SystemCapabilitiesRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemCapabilitiesRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemCapabilitiesRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemCapabilitiesRequest(val *SystemCapabilitiesRequest) *NullableSystemCapabilitiesRequest {
-	return &NullableSystemCapabilitiesRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemCapabilitiesRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemCapabilitiesRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -70601,42 +62501,6 @@ func (o SystemCapabilitiesSelfRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSystemCapabilitiesSelfRequest struct {
-	value *SystemCapabilitiesSelfRequest
-	isSet bool
-}
-
-func (v NullableSystemCapabilitiesSelfRequest) Get() *SystemCapabilitiesSelfRequest {
-	return v.value
-}
-
-func (v *NullableSystemCapabilitiesSelfRequest) Set(val *SystemCapabilitiesSelfRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemCapabilitiesSelfRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemCapabilitiesSelfRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemCapabilitiesSelfRequest(val *SystemCapabilitiesSelfRequest) *NullableSystemCapabilitiesSelfRequest {
-	return &NullableSystemCapabilitiesSelfRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemCapabilitiesSelfRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemCapabilitiesSelfRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -70707,42 +62571,6 @@ func (o SystemConfigAuditingRequestHeadersRequest) MarshalJSON() ([]byte, error)
 		toSerialize["hmac"] = o.Hmac
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableSystemConfigAuditingRequestHeadersRequest struct {
-	value *SystemConfigAuditingRequestHeadersRequest
-	isSet bool
-}
-
-func (v NullableSystemConfigAuditingRequestHeadersRequest) Get() *SystemConfigAuditingRequestHeadersRequest {
-	return v.value
-}
-
-func (v *NullableSystemConfigAuditingRequestHeadersRequest) Set(val *SystemConfigAuditingRequestHeadersRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemConfigAuditingRequestHeadersRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemConfigAuditingRequestHeadersRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemConfigAuditingRequestHeadersRequest(val *SystemConfigAuditingRequestHeadersRequest) *NullableSystemConfigAuditingRequestHeadersRequest {
-	return &NullableSystemConfigAuditingRequestHeadersRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemConfigAuditingRequestHeadersRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemConfigAuditingRequestHeadersRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -70892,42 +62720,6 @@ func (o SystemConfigCorsRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSystemConfigCorsRequest struct {
-	value *SystemConfigCorsRequest
-	isSet bool
-}
-
-func (v NullableSystemConfigCorsRequest) Get() *SystemConfigCorsRequest {
-	return v.value
-}
-
-func (v *NullableSystemConfigCorsRequest) Set(val *SystemConfigCorsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemConfigCorsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemConfigCorsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemConfigCorsRequest(val *SystemConfigCorsRequest) *NullableSystemConfigCorsRequest {
-	return &NullableSystemConfigCorsRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemConfigCorsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemConfigCorsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -71038,42 +62830,6 @@ func (o SystemConfigUiHeadersRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSystemConfigUiHeadersRequest struct {
-	value *SystemConfigUiHeadersRequest
-	isSet bool
-}
-
-func (v NullableSystemConfigUiHeadersRequest) Get() *SystemConfigUiHeadersRequest {
-	return v.value
-}
-
-func (v *NullableSystemConfigUiHeadersRequest) Set(val *SystemConfigUiHeadersRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemConfigUiHeadersRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemConfigUiHeadersRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemConfigUiHeadersRequest(val *SystemConfigUiHeadersRequest) *NullableSystemConfigUiHeadersRequest {
-	return &NullableSystemConfigUiHeadersRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemConfigUiHeadersRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemConfigUiHeadersRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -71147,42 +62903,6 @@ func (o SystemGenerateRootAttemptRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSystemGenerateRootAttemptRequest struct {
-	value *SystemGenerateRootAttemptRequest
-	isSet bool
-}
-
-func (v NullableSystemGenerateRootAttemptRequest) Get() *SystemGenerateRootAttemptRequest {
-	return v.value
-}
-
-func (v *NullableSystemGenerateRootAttemptRequest) Set(val *SystemGenerateRootAttemptRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemGenerateRootAttemptRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemGenerateRootAttemptRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemGenerateRootAttemptRequest(val *SystemGenerateRootAttemptRequest) *NullableSystemGenerateRootAttemptRequest {
-	return &NullableSystemGenerateRootAttemptRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemGenerateRootAttemptRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemGenerateRootAttemptRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -71254,42 +62974,6 @@ func (o SystemGenerateRootRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["pgp_key"] = o.PgpKey
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableSystemGenerateRootRequest struct {
-	value *SystemGenerateRootRequest
-	isSet bool
-}
-
-func (v NullableSystemGenerateRootRequest) Get() *SystemGenerateRootRequest {
-	return v.value
-}
-
-func (v *NullableSystemGenerateRootRequest) Set(val *SystemGenerateRootRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemGenerateRootRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemGenerateRootRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemGenerateRootRequest(val *SystemGenerateRootRequest) *NullableSystemGenerateRootRequest {
-	return &NullableSystemGenerateRootRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemGenerateRootRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemGenerateRootRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -71400,42 +63084,6 @@ func (o SystemGenerateRootUpdateRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["nonce"] = o.Nonce
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableSystemGenerateRootUpdateRequest struct {
-	value *SystemGenerateRootUpdateRequest
-	isSet bool
-}
-
-func (v NullableSystemGenerateRootUpdateRequest) Get() *SystemGenerateRootUpdateRequest {
-	return v.value
-}
-
-func (v *NullableSystemGenerateRootUpdateRequest) Set(val *SystemGenerateRootUpdateRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemGenerateRootUpdateRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemGenerateRootUpdateRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemGenerateRootUpdateRequest(val *SystemGenerateRootUpdateRequest) *NullableSystemGenerateRootUpdateRequest {
-	return &NullableSystemGenerateRootUpdateRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemGenerateRootUpdateRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemGenerateRootUpdateRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -71770,42 +63418,6 @@ func (o SystemInitRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSystemInitRequest struct {
-	value *SystemInitRequest
-	isSet bool
-}
-
-func (v NullableSystemInitRequest) Get() *SystemInitRequest {
-	return v.value
-}
-
-func (v *NullableSystemInitRequest) Set(val *SystemInitRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemInitRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemInitRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemInitRequest(val *SystemInitRequest) *NullableSystemInitRequest {
-	return &NullableSystemInitRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemInitRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemInitRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -71965,42 +63577,6 @@ func (o SystemInternalCountersConfigRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSystemInternalCountersConfigRequest struct {
-	value *SystemInternalCountersConfigRequest
-	isSet bool
-}
-
-func (v NullableSystemInternalCountersConfigRequest) Get() *SystemInternalCountersConfigRequest {
-	return v.value
-}
-
-func (v *NullableSystemInternalCountersConfigRequest) Set(val *SystemInternalCountersConfigRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemInternalCountersConfigRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemInternalCountersConfigRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemInternalCountersConfigRequest(val *SystemInternalCountersConfigRequest) *NullableSystemInternalCountersConfigRequest {
-	return &NullableSystemInternalCountersConfigRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemInternalCountersConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemInternalCountersConfigRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -72074,42 +63650,6 @@ func (o SystemInternalSpecsOpenapiRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSystemInternalSpecsOpenapiRequest struct {
-	value *SystemInternalSpecsOpenapiRequest
-	isSet bool
-}
-
-func (v NullableSystemInternalSpecsOpenapiRequest) Get() *SystemInternalSpecsOpenapiRequest {
-	return v.value
-}
-
-func (v *NullableSystemInternalSpecsOpenapiRequest) Set(val *SystemInternalSpecsOpenapiRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemInternalSpecsOpenapiRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemInternalSpecsOpenapiRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemInternalSpecsOpenapiRequest(val *SystemInternalSpecsOpenapiRequest) *NullableSystemInternalSpecsOpenapiRequest {
-	return &NullableSystemInternalSpecsOpenapiRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemInternalSpecsOpenapiRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemInternalSpecsOpenapiRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -72181,42 +63721,6 @@ func (o SystemLeasesLookupRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["lease_id"] = o.LeaseId
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableSystemLeasesLookupRequest struct {
-	value *SystemLeasesLookupRequest
-	isSet bool
-}
-
-func (v NullableSystemLeasesLookupRequest) Get() *SystemLeasesLookupRequest {
-	return v.value
-}
-
-func (v *NullableSystemLeasesLookupRequest) Set(val *SystemLeasesLookupRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemLeasesLookupRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemLeasesLookupRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemLeasesLookupRequest(val *SystemLeasesLookupRequest) *NullableSystemLeasesLookupRequest {
-	return &NullableSystemLeasesLookupRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemLeasesLookupRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemLeasesLookupRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -72327,42 +63831,6 @@ func (o SystemLeasesRenewLeaseRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["lease_id"] = o.LeaseId
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableSystemLeasesRenewLeaseRequest struct {
-	value *SystemLeasesRenewLeaseRequest
-	isSet bool
-}
-
-func (v NullableSystemLeasesRenewLeaseRequest) Get() *SystemLeasesRenewLeaseRequest {
-	return v.value
-}
-
-func (v *NullableSystemLeasesRenewLeaseRequest) Set(val *SystemLeasesRenewLeaseRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemLeasesRenewLeaseRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemLeasesRenewLeaseRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemLeasesRenewLeaseRequest(val *SystemLeasesRenewLeaseRequest) *NullableSystemLeasesRenewLeaseRequest {
-	return &NullableSystemLeasesRenewLeaseRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemLeasesRenewLeaseRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemLeasesRenewLeaseRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -72512,42 +63980,6 @@ func (o SystemLeasesRenewRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSystemLeasesRenewRequest struct {
-	value *SystemLeasesRenewRequest
-	isSet bool
-}
-
-func (v NullableSystemLeasesRenewRequest) Get() *SystemLeasesRenewRequest {
-	return v.value
-}
-
-func (v *NullableSystemLeasesRenewRequest) Set(val *SystemLeasesRenewRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemLeasesRenewRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemLeasesRenewRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemLeasesRenewRequest(val *SystemLeasesRenewRequest) *NullableSystemLeasesRenewRequest {
-	return &NullableSystemLeasesRenewRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemLeasesRenewRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemLeasesRenewRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -72662,42 +64094,6 @@ func (o SystemLeasesRevokeLeaseRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSystemLeasesRevokeLeaseRequest struct {
-	value *SystemLeasesRevokeLeaseRequest
-	isSet bool
-}
-
-func (v NullableSystemLeasesRevokeLeaseRequest) Get() *SystemLeasesRevokeLeaseRequest {
-	return v.value
-}
-
-func (v *NullableSystemLeasesRevokeLeaseRequest) Set(val *SystemLeasesRevokeLeaseRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemLeasesRevokeLeaseRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemLeasesRevokeLeaseRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemLeasesRevokeLeaseRequest(val *SystemLeasesRevokeLeaseRequest) *NullableSystemLeasesRevokeLeaseRequest {
-	return &NullableSystemLeasesRevokeLeaseRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemLeasesRevokeLeaseRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemLeasesRevokeLeaseRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -72773,42 +64169,6 @@ func (o SystemLeasesRevokePrefixRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["sync"] = o.Sync
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableSystemLeasesRevokePrefixRequest struct {
-	value *SystemLeasesRevokePrefixRequest
-	isSet bool
-}
-
-func (v NullableSystemLeasesRevokePrefixRequest) Get() *SystemLeasesRevokePrefixRequest {
-	return v.value
-}
-
-func (v *NullableSystemLeasesRevokePrefixRequest) Set(val *SystemLeasesRevokePrefixRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemLeasesRevokePrefixRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemLeasesRevokePrefixRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemLeasesRevokePrefixRequest(val *SystemLeasesRevokePrefixRequest) *NullableSystemLeasesRevokePrefixRequest {
-	return &NullableSystemLeasesRevokePrefixRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemLeasesRevokePrefixRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemLeasesRevokePrefixRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -72962,42 +64322,6 @@ func (o SystemLeasesRevokeRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSystemLeasesRevokeRequest struct {
-	value *SystemLeasesRevokeRequest
-	isSet bool
-}
-
-func (v NullableSystemLeasesRevokeRequest) Get() *SystemLeasesRevokeRequest {
-	return v.value
-}
-
-func (v *NullableSystemLeasesRevokeRequest) Set(val *SystemLeasesRevokeRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemLeasesRevokeRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemLeasesRevokeRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemLeasesRevokeRequest(val *SystemLeasesRevokeRequest) *NullableSystemLeasesRevokeRequest {
-	return &NullableSystemLeasesRevokeRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemLeasesRevokeRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemLeasesRevokeRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -73092,42 +64416,6 @@ func (o SystemMfaValidateRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["mfa_request_id"] = o.MfaRequestId
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableSystemMfaValidateRequest struct {
-	value *SystemMfaValidateRequest
-	isSet bool
-}
-
-func (v NullableSystemMfaValidateRequest) Get() *SystemMfaValidateRequest {
-	return v.value
-}
-
-func (v *NullableSystemMfaValidateRequest) Set(val *SystemMfaValidateRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemMfaValidateRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemMfaValidateRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemMfaValidateRequest(val *SystemMfaValidateRequest) *NullableSystemMfaValidateRequest {
-	return &NullableSystemMfaValidateRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemMfaValidateRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemMfaValidateRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -73472,42 +64760,6 @@ func (o SystemMountsRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["type"] = o.Type
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableSystemMountsRequest struct {
-	value *SystemMountsRequest
-	isSet bool
-}
-
-func (v NullableSystemMountsRequest) Get() *SystemMountsRequest {
-	return v.value
-}
-
-func (v *NullableSystemMountsRequest) Set(val *SystemMountsRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemMountsRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemMountsRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemMountsRequest(val *SystemMountsRequest) *NullableSystemMountsRequest {
-	return &NullableSystemMountsRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemMountsRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemMountsRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -73952,42 +65204,6 @@ func (o SystemMountsTuneRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSystemMountsTuneRequest struct {
-	value *SystemMountsTuneRequest
-	isSet bool
-}
-
-func (v NullableSystemMountsTuneRequest) Get() *SystemMountsTuneRequest {
-	return v.value
-}
-
-func (v *NullableSystemMountsTuneRequest) Set(val *SystemMountsTuneRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemMountsTuneRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemMountsTuneRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemMountsTuneRequest(val *SystemMountsTuneRequest) *NullableSystemMountsTuneRequest {
-	return &NullableSystemMountsTuneRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemMountsTuneRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemMountsTuneRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -74209,42 +65425,6 @@ func (o SystemPluginsCatalogRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSystemPluginsCatalogRequest struct {
-	value *SystemPluginsCatalogRequest
-	isSet bool
-}
-
-func (v NullableSystemPluginsCatalogRequest) Get() *SystemPluginsCatalogRequest {
-	return v.value
-}
-
-func (v *NullableSystemPluginsCatalogRequest) Set(val *SystemPluginsCatalogRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemPluginsCatalogRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemPluginsCatalogRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemPluginsCatalogRequest(val *SystemPluginsCatalogRequest) *NullableSystemPluginsCatalogRequest {
-	return &NullableSystemPluginsCatalogRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemPluginsCatalogRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemPluginsCatalogRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -74391,42 +65571,6 @@ func (o SystemPluginsReloadBackendRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSystemPluginsReloadBackendRequest struct {
-	value *SystemPluginsReloadBackendRequest
-	isSet bool
-}
-
-func (v NullableSystemPluginsReloadBackendRequest) Get() *SystemPluginsReloadBackendRequest {
-	return v.value
-}
-
-func (v *NullableSystemPluginsReloadBackendRequest) Set(val *SystemPluginsReloadBackendRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemPluginsReloadBackendRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemPluginsReloadBackendRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemPluginsReloadBackendRequest(val *SystemPluginsReloadBackendRequest) *NullableSystemPluginsReloadBackendRequest {
-	return &NullableSystemPluginsReloadBackendRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemPluginsReloadBackendRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemPluginsReloadBackendRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -74500,42 +65644,6 @@ func (o SystemPoliciesAclRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSystemPoliciesAclRequest struct {
-	value *SystemPoliciesAclRequest
-	isSet bool
-}
-
-func (v NullableSystemPoliciesAclRequest) Get() *SystemPoliciesAclRequest {
-	return v.value
-}
-
-func (v *NullableSystemPoliciesAclRequest) Set(val *SystemPoliciesAclRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemPoliciesAclRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemPoliciesAclRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemPoliciesAclRequest(val *SystemPoliciesAclRequest) *NullableSystemPoliciesAclRequest {
-	return &NullableSystemPoliciesAclRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemPoliciesAclRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemPoliciesAclRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -74607,42 +65715,6 @@ func (o SystemPoliciesPasswordRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["policy"] = o.Policy
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableSystemPoliciesPasswordRequest struct {
-	value *SystemPoliciesPasswordRequest
-	isSet bool
-}
-
-func (v NullableSystemPoliciesPasswordRequest) Get() *SystemPoliciesPasswordRequest {
-	return v.value
-}
-
-func (v *NullableSystemPoliciesPasswordRequest) Set(val *SystemPoliciesPasswordRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemPoliciesPasswordRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemPoliciesPasswordRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemPoliciesPasswordRequest(val *SystemPoliciesPasswordRequest) *NullableSystemPoliciesPasswordRequest {
-	return &NullableSystemPoliciesPasswordRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemPoliciesPasswordRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemPoliciesPasswordRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -74757,42 +65829,6 @@ func (o SystemPolicyRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["rules"] = o.Rules
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableSystemPolicyRequest struct {
-	value *SystemPolicyRequest
-	isSet bool
-}
-
-func (v NullableSystemPolicyRequest) Get() *SystemPolicyRequest {
-	return v.value
-}
-
-func (v *NullableSystemPolicyRequest) Set(val *SystemPolicyRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemPolicyRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemPolicyRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemPolicyRequest(val *SystemPolicyRequest) *NullableSystemPolicyRequest {
-	return &NullableSystemPolicyRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemPolicyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemPolicyRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -74940,42 +65976,6 @@ func (o SystemQuotasConfigRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["rate_limit_exempt_paths"] = o.RateLimitExemptPaths
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableSystemQuotasConfigRequest struct {
-	value *SystemQuotasConfigRequest
-	isSet bool
-}
-
-func (v NullableSystemQuotasConfigRequest) Get() *SystemQuotasConfigRequest {
-	return v.value
-}
-
-func (v *NullableSystemQuotasConfigRequest) Set(val *SystemQuotasConfigRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemQuotasConfigRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemQuotasConfigRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemQuotasConfigRequest(val *SystemQuotasConfigRequest) *NullableSystemQuotasConfigRequest {
-	return &NullableSystemQuotasConfigRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemQuotasConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemQuotasConfigRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -75199,42 +66199,6 @@ func (o SystemQuotasRateLimitRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSystemQuotasRateLimitRequest struct {
-	value *SystemQuotasRateLimitRequest
-	isSet bool
-}
-
-func (v NullableSystemQuotasRateLimitRequest) Get() *SystemQuotasRateLimitRequest {
-	return v.value
-}
-
-func (v *NullableSystemQuotasRateLimitRequest) Set(val *SystemQuotasRateLimitRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemQuotasRateLimitRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemQuotasRateLimitRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemQuotasRateLimitRequest(val *SystemQuotasRateLimitRequest) *NullableSystemQuotasRateLimitRequest {
-	return &NullableSystemQuotasRateLimitRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemQuotasRateLimitRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemQuotasRateLimitRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -75413,42 +66377,6 @@ func (o SystemRawRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["value"] = o.Value
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableSystemRawRequest struct {
-	value *SystemRawRequest
-	isSet bool
-}
-
-func (v NullableSystemRawRequest) Get() *SystemRawRequest {
-	return v.value
-}
-
-func (v *NullableSystemRawRequest) Set(val *SystemRawRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemRawRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemRawRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemRawRequest(val *SystemRawRequest) *NullableSystemRawRequest {
-	return &NullableSystemRawRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemRawRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemRawRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -75672,42 +66600,6 @@ func (o SystemRekeyInitRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSystemRekeyInitRequest struct {
-	value *SystemRekeyInitRequest
-	isSet bool
-}
-
-func (v NullableSystemRekeyInitRequest) Get() *SystemRekeyInitRequest {
-	return v.value
-}
-
-func (v *NullableSystemRekeyInitRequest) Set(val *SystemRekeyInitRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemRekeyInitRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemRekeyInitRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemRekeyInitRequest(val *SystemRekeyInitRequest) *NullableSystemRekeyInitRequest {
-	return &NullableSystemRekeyInitRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemRekeyInitRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemRekeyInitRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -75816,42 +66708,6 @@ func (o SystemRekeyUpdateRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["nonce"] = o.Nonce
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableSystemRekeyUpdateRequest struct {
-	value *SystemRekeyUpdateRequest
-	isSet bool
-}
-
-func (v NullableSystemRekeyUpdateRequest) Get() *SystemRekeyUpdateRequest {
-	return v.value
-}
-
-func (v *NullableSystemRekeyUpdateRequest) Set(val *SystemRekeyUpdateRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemRekeyUpdateRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemRekeyUpdateRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemRekeyUpdateRequest(val *SystemRekeyUpdateRequest) *NullableSystemRekeyUpdateRequest {
-	return &NullableSystemRekeyUpdateRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemRekeyUpdateRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemRekeyUpdateRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -75964,42 +66820,6 @@ func (o SystemRekeyVerifyRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSystemRekeyVerifyRequest struct {
-	value *SystemRekeyVerifyRequest
-	isSet bool
-}
-
-func (v NullableSystemRekeyVerifyRequest) Get() *SystemRekeyVerifyRequest {
-	return v.value
-}
-
-func (v *NullableSystemRekeyVerifyRequest) Set(val *SystemRekeyVerifyRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemRekeyVerifyRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemRekeyVerifyRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemRekeyVerifyRequest(val *SystemRekeyVerifyRequest) *NullableSystemRekeyVerifyRequest {
-	return &NullableSystemRekeyVerifyRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemRekeyVerifyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemRekeyVerifyRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -76110,42 +66930,6 @@ func (o SystemRemountRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSystemRemountRequest struct {
-	value *SystemRemountRequest
-	isSet bool
-}
-
-func (v NullableSystemRemountRequest) Get() *SystemRemountRequest {
-	return v.value
-}
-
-func (v *NullableSystemRemountRequest) Set(val *SystemRemountRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemRemountRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemRemountRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemRemountRequest(val *SystemRemountRequest) *NullableSystemRemountRequest {
-	return &NullableSystemRemountRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemRemountRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemRemountRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -76254,42 +67038,6 @@ func (o SystemRenewLeaseRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["lease_id"] = o.LeaseId
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableSystemRenewLeaseRequest struct {
-	value *SystemRenewLeaseRequest
-	isSet bool
-}
-
-func (v NullableSystemRenewLeaseRequest) Get() *SystemRenewLeaseRequest {
-	return v.value
-}
-
-func (v *NullableSystemRenewLeaseRequest) Set(val *SystemRenewLeaseRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemRenewLeaseRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemRenewLeaseRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemRenewLeaseRequest(val *SystemRenewLeaseRequest) *NullableSystemRenewLeaseRequest {
-	return &NullableSystemRenewLeaseRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemRenewLeaseRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemRenewLeaseRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -76439,42 +67187,6 @@ func (o SystemRenewRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSystemRenewRequest struct {
-	value *SystemRenewRequest
-	isSet bool
-}
-
-func (v NullableSystemRenewRequest) Get() *SystemRenewRequest {
-	return v.value
-}
-
-func (v *NullableSystemRenewRequest) Set(val *SystemRenewRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemRenewRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemRenewRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemRenewRequest(val *SystemRenewRequest) *NullableSystemRenewRequest {
-	return &NullableSystemRenewRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemRenewRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemRenewRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -76589,42 +67301,6 @@ func (o SystemRevokeLeaseRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSystemRevokeLeaseRequest struct {
-	value *SystemRevokeLeaseRequest
-	isSet bool
-}
-
-func (v NullableSystemRevokeLeaseRequest) Get() *SystemRevokeLeaseRequest {
-	return v.value
-}
-
-func (v *NullableSystemRevokeLeaseRequest) Set(val *SystemRevokeLeaseRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemRevokeLeaseRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemRevokeLeaseRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemRevokeLeaseRequest(val *SystemRevokeLeaseRequest) *NullableSystemRevokeLeaseRequest {
-	return &NullableSystemRevokeLeaseRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemRevokeLeaseRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemRevokeLeaseRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -76700,42 +67376,6 @@ func (o SystemRevokePrefixRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["sync"] = o.Sync
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableSystemRevokePrefixRequest struct {
-	value *SystemRevokePrefixRequest
-	isSet bool
-}
-
-func (v NullableSystemRevokePrefixRequest) Get() *SystemRevokePrefixRequest {
-	return v.value
-}
-
-func (v *NullableSystemRevokePrefixRequest) Set(val *SystemRevokePrefixRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemRevokePrefixRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemRevokePrefixRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemRevokePrefixRequest(val *SystemRevokePrefixRequest) *NullableSystemRevokePrefixRequest {
-	return &NullableSystemRevokePrefixRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemRevokePrefixRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemRevokePrefixRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -76889,42 +67529,6 @@ func (o SystemRevokeRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSystemRevokeRequest struct {
-	value *SystemRevokeRequest
-	isSet bool
-}
-
-func (v NullableSystemRevokeRequest) Get() *SystemRevokeRequest {
-	return v.value
-}
-
-func (v *NullableSystemRevokeRequest) Set(val *SystemRevokeRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemRevokeRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemRevokeRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemRevokeRequest(val *SystemRevokeRequest) *NullableSystemRevokeRequest {
-	return &NullableSystemRevokeRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemRevokeRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemRevokeRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -77070,42 +67674,6 @@ func (o SystemRotateConfigRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["max_operations"] = o.MaxOperations
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableSystemRotateConfigRequest struct {
-	value *SystemRotateConfigRequest
-	isSet bool
-}
-
-func (v NullableSystemRotateConfigRequest) Get() *SystemRotateConfigRequest {
-	return v.value
-}
-
-func (v *NullableSystemRotateConfigRequest) Set(val *SystemRotateConfigRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemRotateConfigRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemRotateConfigRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemRotateConfigRequest(val *SystemRotateConfigRequest) *NullableSystemRotateConfigRequest {
-	return &NullableSystemRotateConfigRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemRotateConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemRotateConfigRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -77298,42 +67866,6 @@ func (o SystemToolsHashRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["urlalgorithm"] = o.Urlalgorithm
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableSystemToolsHashRequest struct {
-	value *SystemToolsHashRequest
-	isSet bool
-}
-
-func (v NullableSystemToolsHashRequest) Get() *SystemToolsHashRequest {
-	return v.value
-}
-
-func (v *NullableSystemToolsHashRequest) Set(val *SystemToolsHashRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemToolsHashRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemToolsHashRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemToolsHashRequest(val *SystemToolsHashRequest) *NullableSystemToolsHashRequest {
-	return &NullableSystemToolsHashRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemToolsHashRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemToolsHashRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -77532,42 +68064,6 @@ func (o SystemToolsRandomRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSystemToolsRandomRequest struct {
-	value *SystemToolsRandomRequest
-	isSet bool
-}
-
-func (v NullableSystemToolsRandomRequest) Get() *SystemToolsRandomRequest {
-	return v.value
-}
-
-func (v *NullableSystemToolsRandomRequest) Set(val *SystemToolsRandomRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemToolsRandomRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemToolsRandomRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemToolsRandomRequest(val *SystemToolsRandomRequest) *NullableSystemToolsRandomRequest {
-	return &NullableSystemToolsRandomRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemToolsRandomRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemToolsRandomRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -77678,42 +68174,6 @@ func (o SystemUnsealRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSystemUnsealRequest struct {
-	value *SystemUnsealRequest
-	isSet bool
-}
-
-func (v NullableSystemUnsealRequest) Get() *SystemUnsealRequest {
-	return v.value
-}
-
-func (v *NullableSystemUnsealRequest) Set(val *SystemUnsealRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemUnsealRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemUnsealRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemUnsealRequest(val *SystemUnsealRequest) *NullableSystemUnsealRequest {
-	return &NullableSystemUnsealRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemUnsealRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemUnsealRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -77784,42 +68244,6 @@ func (o SystemWrappingLookupRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["token"] = o.Token
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableSystemWrappingLookupRequest struct {
-	value *SystemWrappingLookupRequest
-	isSet bool
-}
-
-func (v NullableSystemWrappingLookupRequest) Get() *SystemWrappingLookupRequest {
-	return v.value
-}
-
-func (v *NullableSystemWrappingLookupRequest) Set(val *SystemWrappingLookupRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemWrappingLookupRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemWrappingLookupRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemWrappingLookupRequest(val *SystemWrappingLookupRequest) *NullableSystemWrappingLookupRequest {
-	return &NullableSystemWrappingLookupRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemWrappingLookupRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemWrappingLookupRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -77894,42 +68318,6 @@ func (o SystemWrappingRewrapRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableSystemWrappingRewrapRequest struct {
-	value *SystemWrappingRewrapRequest
-	isSet bool
-}
-
-func (v NullableSystemWrappingRewrapRequest) Get() *SystemWrappingRewrapRequest {
-	return v.value
-}
-
-func (v *NullableSystemWrappingRewrapRequest) Set(val *SystemWrappingRewrapRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemWrappingRewrapRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemWrappingRewrapRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemWrappingRewrapRequest(val *SystemWrappingRewrapRequest) *NullableSystemWrappingRewrapRequest {
-	return &NullableSystemWrappingRewrapRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemWrappingRewrapRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemWrappingRewrapRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -78000,42 +68388,6 @@ func (o SystemWrappingUnwrapRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["token"] = o.Token
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableSystemWrappingUnwrapRequest struct {
-	value *SystemWrappingUnwrapRequest
-	isSet bool
-}
-
-func (v NullableSystemWrappingUnwrapRequest) Get() *SystemWrappingUnwrapRequest {
-	return v.value
-}
-
-func (v *NullableSystemWrappingUnwrapRequest) Set(val *SystemWrappingUnwrapRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableSystemWrappingUnwrapRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableSystemWrappingUnwrapRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableSystemWrappingUnwrapRequest(val *SystemWrappingUnwrapRequest) *NullableSystemWrappingUnwrapRequest {
-	return &NullableSystemWrappingUnwrapRequest{value: val, isSet: true}
-}
-
-func (v NullableSystemWrappingUnwrapRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableSystemWrappingUnwrapRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -78184,42 +68536,6 @@ func (o TerraformConfigRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["token"] = o.Token
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableTerraformConfigRequest struct {
-	value *TerraformConfigRequest
-	isSet bool
-}
-
-func (v NullableTerraformConfigRequest) Get() *TerraformConfigRequest {
-	return v.value
-}
-
-func (v *NullableTerraformConfigRequest) Set(val *TerraformConfigRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTerraformConfigRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTerraformConfigRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTerraformConfigRequest(val *TerraformConfigRequest) *NullableTerraformConfigRequest {
-	return &NullableTerraformConfigRequest{value: val, isSet: true}
-}
-
-func (v NullableTerraformConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTerraformConfigRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -78443,42 +68759,6 @@ func (o TerraformRoleRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableTerraformRoleRequest struct {
-	value *TerraformRoleRequest
-	isSet bool
-}
-
-func (v NullableTerraformRoleRequest) Get() *TerraformRoleRequest {
-	return v.value
-}
-
-func (v *NullableTerraformRoleRequest) Set(val *TerraformRoleRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTerraformRoleRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTerraformRoleRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTerraformRoleRequest(val *TerraformRoleRequest) *NullableTerraformRoleRequest {
-	return &NullableTerraformRoleRequest{value: val, isSet: true}
-}
-
-func (v NullableTerraformRoleRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTerraformRoleRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -78550,42 +68830,6 @@ func (o TokenLookupAccessorRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["accessor"] = o.Accessor
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableTokenLookupAccessorRequest struct {
-	value *TokenLookupAccessorRequest
-	isSet bool
-}
-
-func (v NullableTokenLookupAccessorRequest) Get() *TokenLookupAccessorRequest {
-	return v.value
-}
-
-func (v *NullableTokenLookupAccessorRequest) Set(val *TokenLookupAccessorRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTokenLookupAccessorRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTokenLookupAccessorRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTokenLookupAccessorRequest(val *TokenLookupAccessorRequest) *NullableTokenLookupAccessorRequest {
-	return &NullableTokenLookupAccessorRequest{value: val, isSet: true}
-}
-
-func (v NullableTokenLookupAccessorRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTokenLookupAccessorRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -78661,42 +68905,6 @@ func (o TokenLookupRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableTokenLookupRequest struct {
-	value *TokenLookupRequest
-	isSet bool
-}
-
-func (v NullableTokenLookupRequest) Get() *TokenLookupRequest {
-	return v.value
-}
-
-func (v *NullableTokenLookupRequest) Set(val *TokenLookupRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTokenLookupRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTokenLookupRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTokenLookupRequest(val *TokenLookupRequest) *NullableTokenLookupRequest {
-	return &NullableTokenLookupRequest{value: val, isSet: true}
-}
-
-func (v NullableTokenLookupRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTokenLookupRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -78768,42 +68976,6 @@ func (o TokenLookupSelfRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["token"] = o.Token
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableTokenLookupSelfRequest struct {
-	value *TokenLookupSelfRequest
-	isSet bool
-}
-
-func (v NullableTokenLookupSelfRequest) Get() *TokenLookupSelfRequest {
-	return v.value
-}
-
-func (v *NullableTokenLookupSelfRequest) Set(val *TokenLookupSelfRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTokenLookupSelfRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTokenLookupSelfRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTokenLookupSelfRequest(val *TokenLookupSelfRequest) *NullableTokenLookupSelfRequest {
-	return &NullableTokenLookupSelfRequest{value: val, isSet: true}
-}
-
-func (v NullableTokenLookupSelfRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTokenLookupSelfRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -78920,42 +69092,6 @@ func (o TokenRenewAccessorRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableTokenRenewAccessorRequest struct {
-	value *TokenRenewAccessorRequest
-	isSet bool
-}
-
-func (v NullableTokenRenewAccessorRequest) Get() *TokenRenewAccessorRequest {
-	return v.value
-}
-
-func (v *NullableTokenRenewAccessorRequest) Set(val *TokenRenewAccessorRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTokenRenewAccessorRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTokenRenewAccessorRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTokenRenewAccessorRequest(val *TokenRenewAccessorRequest) *NullableTokenRenewAccessorRequest {
-	return &NullableTokenRenewAccessorRequest{value: val, isSet: true}
-}
-
-func (v NullableTokenRenewAccessorRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTokenRenewAccessorRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -79068,42 +69204,6 @@ func (o TokenRenewRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["token"] = o.Token
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableTokenRenewRequest struct {
-	value *TokenRenewRequest
-	isSet bool
-}
-
-func (v NullableTokenRenewRequest) Get() *TokenRenewRequest {
-	return v.value
-}
-
-func (v *NullableTokenRenewRequest) Set(val *TokenRenewRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTokenRenewRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTokenRenewRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTokenRenewRequest(val *TokenRenewRequest) *NullableTokenRenewRequest {
-	return &NullableTokenRenewRequest{value: val, isSet: true}
-}
-
-func (v NullableTokenRenewRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTokenRenewRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -79220,42 +69320,6 @@ func (o TokenRenewSelfRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableTokenRenewSelfRequest struct {
-	value *TokenRenewSelfRequest
-	isSet bool
-}
-
-func (v NullableTokenRenewSelfRequest) Get() *TokenRenewSelfRequest {
-	return v.value
-}
-
-func (v *NullableTokenRenewSelfRequest) Set(val *TokenRenewSelfRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTokenRenewSelfRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTokenRenewSelfRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTokenRenewSelfRequest(val *TokenRenewSelfRequest) *NullableTokenRenewSelfRequest {
-	return &NullableTokenRenewSelfRequest{value: val, isSet: true}
-}
-
-func (v NullableTokenRenewSelfRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTokenRenewSelfRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -79327,42 +69391,6 @@ func (o TokenRevokeAccessorRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["accessor"] = o.Accessor
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableTokenRevokeAccessorRequest struct {
-	value *TokenRevokeAccessorRequest
-	isSet bool
-}
-
-func (v NullableTokenRevokeAccessorRequest) Get() *TokenRevokeAccessorRequest {
-	return v.value
-}
-
-func (v *NullableTokenRevokeAccessorRequest) Set(val *TokenRevokeAccessorRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTokenRevokeAccessorRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTokenRevokeAccessorRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTokenRevokeAccessorRequest(val *TokenRevokeAccessorRequest) *NullableTokenRevokeAccessorRequest {
-	return &NullableTokenRevokeAccessorRequest{value: val, isSet: true}
-}
-
-func (v NullableTokenRevokeAccessorRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTokenRevokeAccessorRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -79438,42 +69466,6 @@ func (o TokenRevokeOrphanRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableTokenRevokeOrphanRequest struct {
-	value *TokenRevokeOrphanRequest
-	isSet bool
-}
-
-func (v NullableTokenRevokeOrphanRequest) Get() *TokenRevokeOrphanRequest {
-	return v.value
-}
-
-func (v *NullableTokenRevokeOrphanRequest) Set(val *TokenRevokeOrphanRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTokenRevokeOrphanRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTokenRevokeOrphanRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTokenRevokeOrphanRequest(val *TokenRevokeOrphanRequest) *NullableTokenRevokeOrphanRequest {
-	return &NullableTokenRevokeOrphanRequest{value: val, isSet: true}
-}
-
-func (v NullableTokenRevokeOrphanRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTokenRevokeOrphanRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -79545,42 +69537,6 @@ func (o TokenRevokeRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["token"] = o.Token
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableTokenRevokeRequest struct {
-	value *TokenRevokeRequest
-	isSet bool
-}
-
-func (v NullableTokenRevokeRequest) Get() *TokenRevokeRequest {
-	return v.value
-}
-
-func (v *NullableTokenRevokeRequest) Set(val *TokenRevokeRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTokenRevokeRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTokenRevokeRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTokenRevokeRequest(val *TokenRevokeRequest) *NullableTokenRevokeRequest {
-	return &NullableTokenRevokeRequest{value: val, isSet: true}
-}
-
-func (v NullableTokenRevokeRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTokenRevokeRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -80268,42 +70224,6 @@ func (o TokenRolesRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableTokenRolesRequest struct {
-	value *TokenRolesRequest
-	isSet bool
-}
-
-func (v NullableTokenRolesRequest) Get() *TokenRolesRequest {
-	return v.value
-}
-
-func (v *NullableTokenRolesRequest) Set(val *TokenRolesRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTokenRolesRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTokenRolesRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTokenRolesRequest(val *TokenRolesRequest) *NullableTokenRolesRequest {
-	return &NullableTokenRolesRequest{value: val, isSet: true}
-}
-
-func (v NullableTokenRolesRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTokenRolesRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -80375,42 +70295,6 @@ func (o TotpCodeRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["code"] = o.Code
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableTotpCodeRequest struct {
-	value *TotpCodeRequest
-	isSet bool
-}
-
-func (v NullableTotpCodeRequest) Get() *TotpCodeRequest {
-	return v.value
-}
-
-func (v *NullableTotpCodeRequest) Set(val *TotpCodeRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTotpCodeRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTotpCodeRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTotpCodeRequest(val *TotpCodeRequest) *NullableTotpCodeRequest {
-	return &NullableTotpCodeRequest{value: val, isSet: true}
-}
-
-func (v NullableTotpCodeRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTotpCodeRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -80925,42 +70809,6 @@ func (o TotpKeysRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableTotpKeysRequest struct {
-	value *TotpKeysRequest
-	isSet bool
-}
-
-func (v NullableTotpKeysRequest) Get() *TotpKeysRequest {
-	return v.value
-}
-
-func (v *NullableTotpKeysRequest) Set(val *TotpKeysRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTotpKeysRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTotpKeysRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTotpKeysRequest(val *TotpKeysRequest) *NullableTotpKeysRequest {
-	return &NullableTotpKeysRequest{value: val, isSet: true}
-}
-
-func (v NullableTotpKeysRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTotpKeysRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -81036,42 +70884,6 @@ func (o TransitCacheConfigRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["size"] = o.Size
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableTransitCacheConfigRequest struct {
-	value *TransitCacheConfigRequest
-	isSet bool
-}
-
-func (v NullableTransitCacheConfigRequest) Get() *TransitCacheConfigRequest {
-	return v.value
-}
-
-func (v *NullableTransitCacheConfigRequest) Set(val *TransitCacheConfigRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTransitCacheConfigRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTransitCacheConfigRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTransitCacheConfigRequest(val *TransitCacheConfigRequest) *NullableTransitCacheConfigRequest {
-	return &NullableTransitCacheConfigRequest{value: val, isSet: true}
-}
-
-func (v NullableTransitCacheConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTransitCacheConfigRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -81262,42 +71074,6 @@ func (o TransitDatakeyRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableTransitDatakeyRequest struct {
-	value *TransitDatakeyRequest
-	isSet bool
-}
-
-func (v NullableTransitDatakeyRequest) Get() *TransitDatakeyRequest {
-	return v.value
-}
-
-func (v *NullableTransitDatakeyRequest) Set(val *TransitDatakeyRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTransitDatakeyRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTransitDatakeyRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTransitDatakeyRequest(val *TransitDatakeyRequest) *NullableTransitDatakeyRequest {
-	return &NullableTransitDatakeyRequest{value: val, isSet: true}
-}
-
-func (v NullableTransitDatakeyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTransitDatakeyRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -81443,42 +71219,6 @@ func (o TransitDecryptRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["nonce"] = o.Nonce
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableTransitDecryptRequest struct {
-	value *TransitDecryptRequest
-	isSet bool
-}
-
-func (v NullableTransitDecryptRequest) Get() *TransitDecryptRequest {
-	return v.value
-}
-
-func (v *NullableTransitDecryptRequest) Set(val *TransitDecryptRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTransitDecryptRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTransitDecryptRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTransitDecryptRequest(val *TransitDecryptRequest) *NullableTransitDecryptRequest {
-	return &NullableTransitDecryptRequest{value: val, isSet: true}
-}
-
-func (v NullableTransitDecryptRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTransitDecryptRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -81743,42 +71483,6 @@ func (o TransitEncryptRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableTransitEncryptRequest struct {
-	value *TransitEncryptRequest
-	isSet bool
-}
-
-func (v NullableTransitEncryptRequest) Get() *TransitEncryptRequest {
-	return v.value
-}
-
-func (v *NullableTransitEncryptRequest) Set(val *TransitEncryptRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTransitEncryptRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTransitEncryptRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTransitEncryptRequest(val *TransitEncryptRequest) *NullableTransitEncryptRequest {
-	return &NullableTransitEncryptRequest{value: val, isSet: true}
-}
-
-func (v NullableTransitEncryptRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTransitEncryptRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -81971,42 +71675,6 @@ func (o TransitHashRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableTransitHashRequest struct {
-	value *TransitHashRequest
-	isSet bool
-}
-
-func (v NullableTransitHashRequest) Get() *TransitHashRequest {
-	return v.value
-}
-
-func (v *NullableTransitHashRequest) Set(val *TransitHashRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTransitHashRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTransitHashRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTransitHashRequest(val *TransitHashRequest) *NullableTransitHashRequest {
-	return &NullableTransitHashRequest{value: val, isSet: true}
-}
-
-func (v NullableTransitHashRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTransitHashRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -82193,42 +71861,6 @@ func (o TransitHmacRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["urlalgorithm"] = o.Urlalgorithm
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableTransitHmacRequest struct {
-	value *TransitHmacRequest
-	isSet bool
-}
-
-func (v NullableTransitHmacRequest) Get() *TransitHmacRequest {
-	return v.value
-}
-
-func (v *NullableTransitHmacRequest) Set(val *TransitHmacRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTransitHmacRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTransitHmacRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTransitHmacRequest(val *TransitHmacRequest) *NullableTransitHmacRequest {
-	return &NullableTransitHmacRequest{value: val, isSet: true}
-}
-
-func (v NullableTransitHmacRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTransitHmacRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -82487,42 +72119,6 @@ func (o TransitKeysConfigRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["min_encryption_version"] = o.MinEncryptionVersion
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableTransitKeysConfigRequest struct {
-	value *TransitKeysConfigRequest
-	isSet bool
-}
-
-func (v NullableTransitKeysConfigRequest) Get() *TransitKeysConfigRequest {
-	return v.value
-}
-
-func (v *NullableTransitKeysConfigRequest) Set(val *TransitKeysConfigRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTransitKeysConfigRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTransitKeysConfigRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTransitKeysConfigRequest(val *TransitKeysConfigRequest) *NullableTransitKeysConfigRequest {
-	return &NullableTransitKeysConfigRequest{value: val, isSet: true}
-}
-
-func (v NullableTransitKeysConfigRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTransitKeysConfigRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -82906,42 +72502,6 @@ func (o TransitKeysImportRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableTransitKeysImportRequest struct {
-	value *TransitKeysImportRequest
-	isSet bool
-}
-
-func (v NullableTransitKeysImportRequest) Get() *TransitKeysImportRequest {
-	return v.value
-}
-
-func (v *NullableTransitKeysImportRequest) Set(val *TransitKeysImportRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTransitKeysImportRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTransitKeysImportRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTransitKeysImportRequest(val *TransitKeysImportRequest) *NullableTransitKeysImportRequest {
-	return &NullableTransitKeysImportRequest{value: val, isSet: true}
-}
-
-func (v NullableTransitKeysImportRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTransitKeysImportRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -83054,42 +72614,6 @@ func (o TransitKeysImportVersionRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["hash_function"] = o.HashFunction
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableTransitKeysImportVersionRequest struct {
-	value *TransitKeysImportVersionRequest
-	isSet bool
-}
-
-func (v NullableTransitKeysImportVersionRequest) Get() *TransitKeysImportVersionRequest {
-	return v.value
-}
-
-func (v *NullableTransitKeysImportVersionRequest) Set(val *TransitKeysImportVersionRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTransitKeysImportVersionRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTransitKeysImportVersionRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTransitKeysImportVersionRequest(val *TransitKeysImportVersionRequest) *NullableTransitKeysImportVersionRequest {
-	return &NullableTransitKeysImportVersionRequest{value: val, isSet: true}
-}
-
-func (v NullableTransitKeysImportVersionRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTransitKeysImportVersionRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -83395,42 +72919,6 @@ func (o TransitKeysRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableTransitKeysRequest struct {
-	value *TransitKeysRequest
-	isSet bool
-}
-
-func (v NullableTransitKeysRequest) Get() *TransitKeysRequest {
-	return v.value
-}
-
-func (v *NullableTransitKeysRequest) Set(val *TransitKeysRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTransitKeysRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTransitKeysRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTransitKeysRequest(val *TransitKeysRequest) *NullableTransitKeysRequest {
-	return &NullableTransitKeysRequest{value: val, isSet: true}
-}
-
-func (v NullableTransitKeysRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTransitKeysRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -83502,42 +72990,6 @@ func (o TransitKeysTrimRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["min_available_version"] = o.MinAvailableVersion
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableTransitKeysTrimRequest struct {
-	value *TransitKeysTrimRequest
-	isSet bool
-}
-
-func (v NullableTransitKeysTrimRequest) Get() *TransitKeysTrimRequest {
-	return v.value
-}
-
-func (v *NullableTransitKeysTrimRequest) Set(val *TransitKeysTrimRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTransitKeysTrimRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTransitKeysTrimRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTransitKeysTrimRequest(val *TransitKeysTrimRequest) *NullableTransitKeysTrimRequest {
-	return &NullableTransitKeysTrimRequest{value: val, isSet: true}
-}
-
-func (v NullableTransitKeysTrimRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTransitKeysTrimRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -83736,42 +73188,6 @@ func (o TransitRandomRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableTransitRandomRequest struct {
-	value *TransitRandomRequest
-	isSet bool
-}
-
-func (v NullableTransitRandomRequest) Get() *TransitRandomRequest {
-	return v.value
-}
-
-func (v *NullableTransitRandomRequest) Set(val *TransitRandomRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTransitRandomRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTransitRandomRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTransitRandomRequest(val *TransitRandomRequest) *NullableTransitRandomRequest {
-	return &NullableTransitRandomRequest{value: val, isSet: true}
-}
-
-func (v NullableTransitRandomRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTransitRandomRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -83921,42 +73337,6 @@ func (o TransitRestoreRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["name"] = o.Name
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableTransitRestoreRequest struct {
-	value *TransitRestoreRequest
-	isSet bool
-}
-
-func (v NullableTransitRestoreRequest) Get() *TransitRestoreRequest {
-	return v.value
-}
-
-func (v *NullableTransitRestoreRequest) Set(val *TransitRestoreRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTransitRestoreRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTransitRestoreRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTransitRestoreRequest(val *TransitRestoreRequest) *NullableTransitRestoreRequest {
-	return &NullableTransitRestoreRequest{value: val, isSet: true}
-}
-
-func (v NullableTransitRestoreRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTransitRestoreRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -84141,42 +73521,6 @@ func (o TransitRewrapRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["nonce"] = o.Nonce
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableTransitRewrapRequest struct {
-	value *TransitRewrapRequest
-	isSet bool
-}
-
-func (v NullableTransitRewrapRequest) Get() *TransitRewrapRequest {
-	return v.value
-}
-
-func (v *NullableTransitRewrapRequest) Set(val *TransitRewrapRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTransitRewrapRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTransitRewrapRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTransitRewrapRequest(val *TransitRewrapRequest) *NullableTransitRewrapRequest {
-	return &NullableTransitRewrapRequest{value: val, isSet: true}
-}
-
-func (v NullableTransitRewrapRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTransitRewrapRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -84558,42 +73902,6 @@ func (o TransitSignRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["urlalgorithm"] = o.Urlalgorithm
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableTransitSignRequest struct {
-	value *TransitSignRequest
-	isSet bool
-}
-
-func (v NullableTransitSignRequest) Get() *TransitSignRequest {
-	return v.value
-}
-
-func (v *NullableTransitSignRequest) Set(val *TransitSignRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTransitSignRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTransitSignRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTransitSignRequest(val *TransitSignRequest) *NullableTransitSignRequest {
-	return &NullableTransitSignRequest{value: val, isSet: true}
-}
-
-func (v NullableTransitSignRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTransitSignRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -85014,42 +74322,6 @@ func (o TransitVerifyRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableTransitVerifyRequest struct {
-	value *TransitVerifyRequest
-	isSet bool
-}
-
-func (v NullableTransitVerifyRequest) Get() *TransitVerifyRequest {
-	return v.value
-}
-
-func (v *NullableTransitVerifyRequest) Set(val *TransitVerifyRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableTransitVerifyRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableTransitVerifyRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableTransitVerifyRequest(val *TransitVerifyRequest) *NullableTransitVerifyRequest {
-	return &NullableTransitVerifyRequest{value: val, isSet: true}
-}
-
-func (v NullableTransitVerifyRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableTransitVerifyRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -85123,42 +74395,6 @@ func (o UserpassLoginRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableUserpassLoginRequest struct {
-	value *UserpassLoginRequest
-	isSet bool
-}
-
-func (v NullableUserpassLoginRequest) Get() *UserpassLoginRequest {
-	return v.value
-}
-
-func (v *NullableUserpassLoginRequest) Set(val *UserpassLoginRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUserpassLoginRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUserpassLoginRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUserpassLoginRequest(val *UserpassLoginRequest) *NullableUserpassLoginRequest {
-	return &NullableUserpassLoginRequest{value: val, isSet: true}
-}
-
-func (v NullableUserpassLoginRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUserpassLoginRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
-}
-
 /*
 HashiCorp Vault API
 
@@ -85230,42 +74466,6 @@ func (o UserpassUsersPasswordRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["password"] = o.Password
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableUserpassUsersPasswordRequest struct {
-	value *UserpassUsersPasswordRequest
-	isSet bool
-}
-
-func (v NullableUserpassUsersPasswordRequest) Get() *UserpassUsersPasswordRequest {
-	return v.value
-}
-
-func (v *NullableUserpassUsersPasswordRequest) Set(val *UserpassUsersPasswordRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUserpassUsersPasswordRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUserpassUsersPasswordRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUserpassUsersPasswordRequest(val *UserpassUsersPasswordRequest) *NullableUserpassUsersPasswordRequest {
-	return &NullableUserpassUsersPasswordRequest{value: val, isSet: true}
-}
-
-func (v NullableUserpassUsersPasswordRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUserpassUsersPasswordRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -85380,42 +74580,6 @@ func (o UserpassUsersPoliciesRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["token_policies"] = o.TokenPolicies
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableUserpassUsersPoliciesRequest struct {
-	value *UserpassUsersPoliciesRequest
-	isSet bool
-}
-
-func (v NullableUserpassUsersPoliciesRequest) Get() *UserpassUsersPoliciesRequest {
-	return v.value
-}
-
-func (v *NullableUserpassUsersPoliciesRequest) Set(val *UserpassUsersPoliciesRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUserpassUsersPoliciesRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUserpassUsersPoliciesRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUserpassUsersPoliciesRequest(val *UserpassUsersPoliciesRequest) *NullableUserpassUsersPoliciesRequest {
-	return &NullableUserpassUsersPoliciesRequest{value: val, isSet: true}
-}
-
-func (v NullableUserpassUsersPoliciesRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUserpassUsersPoliciesRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }
 
 /*
@@ -85990,40 +75154,4 @@ func (o UserpassUsersRequest) MarshalJSON() ([]byte, error) {
 		toSerialize["ttl"] = o.Ttl
 	}
 	return json.Marshal(toSerialize)
-}
-
-type NullableUserpassUsersRequest struct {
-	value *UserpassUsersRequest
-	isSet bool
-}
-
-func (v NullableUserpassUsersRequest) Get() *UserpassUsersRequest {
-	return v.value
-}
-
-func (v *NullableUserpassUsersRequest) Set(val *UserpassUsersRequest) {
-	v.value = val
-	v.isSet = true
-}
-
-func (v NullableUserpassUsersRequest) IsSet() bool {
-	return v.isSet
-}
-
-func (v *NullableUserpassUsersRequest) Unset() {
-	v.value = nil
-	v.isSet = false
-}
-
-func NewNullableUserpassUsersRequest(val *UserpassUsersRequest) *NullableUserpassUsersRequest {
-	return &NullableUserpassUsersRequest{value: val, isSet: true}
-}
-
-func (v NullableUserpassUsersRequest) MarshalJSON() ([]byte, error) {
-	return json.Marshal(v.value)
-}
-
-func (v *NullableUserpassUsersRequest) UnmarshalJSON(src []byte) error {
-	v.isSet = true
-	return json.Unmarshal(src, &v.value)
 }

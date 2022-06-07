@@ -28,11 +28,10 @@ var (
 type AuthApiService service
 
 type ApiDeleteAuthAlicloudRoleRoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	role string
+	role       string
 }
-
 
 func (r ApiDeleteAuthAlicloudRoleRoleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthAlicloudRoleRoleExecute(r)
@@ -48,17 +47,17 @@ DeleteAuthAlicloudRoleRole Create a role and associate policies to it.
 func (a *AuthApiService) DeleteAuthAlicloudRoleRole(ctx context.Context, role string) ApiDeleteAuthAlicloudRoleRoleRequest {
 	return ApiDeleteAuthAlicloudRoleRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		role: role,
+		ctx:        ctx,
+		role:       role,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthAlicloudRoleRoleExecute(r ApiDeleteAuthAlicloudRoleRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAlicloudRoleRole")
@@ -119,11 +118,10 @@ func (a *AuthApiService) DeleteAuthAlicloudRoleRoleExecute(r ApiDeleteAuthAliclo
 }
 
 type ApiDeleteAuthAppIdMapAppIdKeyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	key string
+	key        string
 }
-
 
 func (r ApiDeleteAuthAppIdMapAppIdKeyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthAppIdMapAppIdKeyExecute(r)
@@ -139,17 +137,17 @@ DeleteAuthAppIdMapAppIdKey Read/write/delete a single app-id mapping
 func (a *AuthApiService) DeleteAuthAppIdMapAppIdKey(ctx context.Context, key string) ApiDeleteAuthAppIdMapAppIdKeyRequest {
 	return ApiDeleteAuthAppIdMapAppIdKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthAppIdMapAppIdKeyExecute(r ApiDeleteAuthAppIdMapAppIdKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAppIdMapAppIdKey")
@@ -210,11 +208,10 @@ func (a *AuthApiService) DeleteAuthAppIdMapAppIdKeyExecute(r ApiDeleteAuthAppIdM
 }
 
 type ApiDeleteAuthAppIdMapUserIdKeyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	key string
+	key        string
 }
-
 
 func (r ApiDeleteAuthAppIdMapUserIdKeyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthAppIdMapUserIdKeyExecute(r)
@@ -230,17 +227,17 @@ DeleteAuthAppIdMapUserIdKey Read/write/delete a single user-id mapping
 func (a *AuthApiService) DeleteAuthAppIdMapUserIdKey(ctx context.Context, key string) ApiDeleteAuthAppIdMapUserIdKeyRequest {
 	return ApiDeleteAuthAppIdMapUserIdKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthAppIdMapUserIdKeyExecute(r ApiDeleteAuthAppIdMapUserIdKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAppIdMapUserIdKey")
@@ -301,11 +298,10 @@ func (a *AuthApiService) DeleteAuthAppIdMapUserIdKeyExecute(r ApiDeleteAuthAppId
 }
 
 type ApiDeleteAuthApproleRoleRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiDeleteAuthApproleRoleRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthApproleRoleRoleNameExecute(r)
@@ -321,17 +317,17 @@ DeleteAuthApproleRoleRoleName Register an role with the backend.
 func (a *AuthApiService) DeleteAuthApproleRoleRoleName(ctx context.Context, roleName string) ApiDeleteAuthApproleRoleRoleNameRequest {
 	return ApiDeleteAuthApproleRoleRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameExecute(r ApiDeleteAuthApproleRoleRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthApproleRoleRoleName")
@@ -392,11 +388,10 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameExecute(r ApiDeleteAuthApp
 }
 
 type ApiDeleteAuthApproleRoleRoleNameBindSecretIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiDeleteAuthApproleRoleRoleNameBindSecretIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthApproleRoleRoleNameBindSecretIdExecute(r)
@@ -412,17 +407,17 @@ DeleteAuthApproleRoleRoleNameBindSecretId Impose secret_id to be presented durin
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string) ApiDeleteAuthApproleRoleRoleNameBindSecretIdRequest {
 	return ApiDeleteAuthApproleRoleRoleNameBindSecretIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameBindSecretIdExecute(r ApiDeleteAuthApproleRoleRoleNameBindSecretIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameBindSecretId")
@@ -483,11 +478,10 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameBindSecretIdExecute(r ApiD
 }
 
 type ApiDeleteAuthApproleRoleRoleNameBoundCidrListRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiDeleteAuthApproleRoleRoleNameBoundCidrListRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthApproleRoleRoleNameBoundCidrListExecute(r)
@@ -503,17 +497,17 @@ DeleteAuthApproleRoleRoleNameBoundCidrList Deprecated: Comma separated list of C
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string) ApiDeleteAuthApproleRoleRoleNameBoundCidrListRequest {
 	return ApiDeleteAuthApproleRoleRoleNameBoundCidrListRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameBoundCidrListExecute(r ApiDeleteAuthApproleRoleRoleNameBoundCidrListRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameBoundCidrList")
@@ -574,11 +568,10 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameBoundCidrListExecute(r Api
 }
 
 type ApiDeleteAuthApproleRoleRoleNamePeriodRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiDeleteAuthApproleRoleRoleNamePeriodRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthApproleRoleRoleNamePeriodExecute(r)
@@ -594,17 +587,17 @@ DeleteAuthApproleRoleRoleNamePeriod Updates the value of 'period' on the role
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string) ApiDeleteAuthApproleRoleRoleNamePeriodRequest {
 	return ApiDeleteAuthApproleRoleRoleNamePeriodRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNamePeriodExecute(r ApiDeleteAuthApproleRoleRoleNamePeriodRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthApproleRoleRoleNamePeriod")
@@ -665,11 +658,10 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNamePeriodExecute(r ApiDeleteA
 }
 
 type ApiDeleteAuthApproleRoleRoleNamePoliciesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiDeleteAuthApproleRoleRoleNamePoliciesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthApproleRoleRoleNamePoliciesExecute(r)
@@ -685,17 +677,17 @@ DeleteAuthApproleRoleRoleNamePolicies Policies of the role.
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string) ApiDeleteAuthApproleRoleRoleNamePoliciesRequest {
 	return ApiDeleteAuthApproleRoleRoleNamePoliciesRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNamePoliciesExecute(r ApiDeleteAuthApproleRoleRoleNamePoliciesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthApproleRoleRoleNamePolicies")
@@ -756,11 +748,10 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNamePoliciesExecute(r ApiDelet
 }
 
 type ApiDeleteAuthApproleRoleRoleNameSecretIdAccessorDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiDeleteAuthApproleRoleRoleNameSecretIdAccessorDestroyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroyExecute(r)
@@ -776,17 +767,17 @@ DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy Method for DeleteAuthApprol
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.Context, roleName string) ApiDeleteAuthApproleRoleRoleNameSecretIdAccessorDestroyRequest {
 	return ApiDeleteAuthApproleRoleRoleNameSecretIdAccessorDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroyExecute(r ApiDeleteAuthApproleRoleRoleNameSecretIdAccessorDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy")
@@ -847,11 +838,10 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroyExe
 }
 
 type ApiDeleteAuthApproleRoleRoleNameSecretIdBoundCidrsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiDeleteAuthApproleRoleRoleNameSecretIdBoundCidrsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthApproleRoleRoleNameSecretIdBoundCidrsExecute(r)
@@ -867,17 +857,17 @@ DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs Comma separated list of CIDR blo
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string) ApiDeleteAuthApproleRoleRoleNameSecretIdBoundCidrsRequest {
 	return ApiDeleteAuthApproleRoleRoleNameSecretIdBoundCidrsRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdBoundCidrsExecute(r ApiDeleteAuthApproleRoleRoleNameSecretIdBoundCidrsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs")
@@ -938,11 +928,10 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdBoundCidrsExecute(
 }
 
 type ApiDeleteAuthApproleRoleRoleNameSecretIdDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiDeleteAuthApproleRoleRoleNameSecretIdDestroyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthApproleRoleRoleNameSecretIdDestroyExecute(r)
@@ -958,17 +947,17 @@ DeleteAuthApproleRoleRoleNameSecretIdDestroy Invalidate an issued secret_id
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context, roleName string) ApiDeleteAuthApproleRoleRoleNameSecretIdDestroyRequest {
 	return ApiDeleteAuthApproleRoleRoleNameSecretIdDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdDestroyExecute(r ApiDeleteAuthApproleRoleRoleNameSecretIdDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameSecretIdDestroy")
@@ -1029,11 +1018,10 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdDestroyExecute(r A
 }
 
 type ApiDeleteAuthApproleRoleRoleNameSecretIdNumUsesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiDeleteAuthApproleRoleRoleNameSecretIdNumUsesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthApproleRoleRoleNameSecretIdNumUsesExecute(r)
@@ -1049,17 +1037,17 @@ DeleteAuthApproleRoleRoleNameSecretIdNumUses Use limit of the SecretID generated
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string) ApiDeleteAuthApproleRoleRoleNameSecretIdNumUsesRequest {
 	return ApiDeleteAuthApproleRoleRoleNameSecretIdNumUsesRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdNumUsesExecute(r ApiDeleteAuthApproleRoleRoleNameSecretIdNumUsesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameSecretIdNumUses")
@@ -1120,11 +1108,10 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdNumUsesExecute(r A
 }
 
 type ApiDeleteAuthApproleRoleRoleNameSecretIdTtlRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiDeleteAuthApproleRoleRoleNameSecretIdTtlRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthApproleRoleRoleNameSecretIdTtlExecute(r)
@@ -1140,17 +1127,17 @@ DeleteAuthApproleRoleRoleNameSecretIdTtl Duration in seconds, representing the l
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string) ApiDeleteAuthApproleRoleRoleNameSecretIdTtlRequest {
 	return ApiDeleteAuthApproleRoleRoleNameSecretIdTtlRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdTtlExecute(r ApiDeleteAuthApproleRoleRoleNameSecretIdTtlRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameSecretIdTtl")
@@ -1211,11 +1198,10 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdTtlExecute(r ApiDe
 }
 
 type ApiDeleteAuthApproleRoleRoleNameTokenBoundCidrsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiDeleteAuthApproleRoleRoleNameTokenBoundCidrsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthApproleRoleRoleNameTokenBoundCidrsExecute(r)
@@ -1231,17 +1217,17 @@ DeleteAuthApproleRoleRoleNameTokenBoundCidrs Comma separated string or list of C
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string) ApiDeleteAuthApproleRoleRoleNameTokenBoundCidrsRequest {
 	return ApiDeleteAuthApproleRoleRoleNameTokenBoundCidrsRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenBoundCidrsExecute(r ApiDeleteAuthApproleRoleRoleNameTokenBoundCidrsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameTokenBoundCidrs")
@@ -1302,11 +1288,10 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenBoundCidrsExecute(r A
 }
 
 type ApiDeleteAuthApproleRoleRoleNameTokenMaxTtlRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiDeleteAuthApproleRoleRoleNameTokenMaxTtlRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthApproleRoleRoleNameTokenMaxTtlExecute(r)
@@ -1322,17 +1307,17 @@ DeleteAuthApproleRoleRoleNameTokenMaxTtl Duration in seconds, the maximum lifeti
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string) ApiDeleteAuthApproleRoleRoleNameTokenMaxTtlRequest {
 	return ApiDeleteAuthApproleRoleRoleNameTokenMaxTtlRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenMaxTtlExecute(r ApiDeleteAuthApproleRoleRoleNameTokenMaxTtlRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameTokenMaxTtl")
@@ -1393,11 +1378,10 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenMaxTtlExecute(r ApiDe
 }
 
 type ApiDeleteAuthApproleRoleRoleNameTokenNumUsesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiDeleteAuthApproleRoleRoleNameTokenNumUsesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthApproleRoleRoleNameTokenNumUsesExecute(r)
@@ -1413,17 +1397,17 @@ DeleteAuthApproleRoleRoleNameTokenNumUses Number of times issued tokens can be u
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string) ApiDeleteAuthApproleRoleRoleNameTokenNumUsesRequest {
 	return ApiDeleteAuthApproleRoleRoleNameTokenNumUsesRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenNumUsesExecute(r ApiDeleteAuthApproleRoleRoleNameTokenNumUsesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameTokenNumUses")
@@ -1484,11 +1468,10 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenNumUsesExecute(r ApiD
 }
 
 type ApiDeleteAuthApproleRoleRoleNameTokenTtlRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiDeleteAuthApproleRoleRoleNameTokenTtlRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthApproleRoleRoleNameTokenTtlExecute(r)
@@ -1504,17 +1487,17 @@ DeleteAuthApproleRoleRoleNameTokenTtl Duration in seconds, the lifetime of the t
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string) ApiDeleteAuthApproleRoleRoleNameTokenTtlRequest {
 	return ApiDeleteAuthApproleRoleRoleNameTokenTtlRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenTtlExecute(r ApiDeleteAuthApproleRoleRoleNameTokenTtlRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameTokenTtl")
@@ -1575,11 +1558,10 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenTtlExecute(r ApiDelet
 }
 
 type ApiDeleteAuthAwsConfigCertificateCertNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	certName string
+	certName   string
 }
-
 
 func (r ApiDeleteAuthAwsConfigCertificateCertNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthAwsConfigCertificateCertNameExecute(r)
@@ -1595,17 +1577,17 @@ DeleteAuthAwsConfigCertificateCertName Method for DeleteAuthAwsConfigCertificate
 func (a *AuthApiService) DeleteAuthAwsConfigCertificateCertName(ctx context.Context, certName string) ApiDeleteAuthAwsConfigCertificateCertNameRequest {
 	return ApiDeleteAuthAwsConfigCertificateCertNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		certName: certName,
+		ctx:        ctx,
+		certName:   certName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthAwsConfigCertificateCertNameExecute(r ApiDeleteAuthAwsConfigCertificateCertNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAwsConfigCertificateCertName")
@@ -1666,10 +1648,9 @@ func (a *AuthApiService) DeleteAuthAwsConfigCertificateCertNameExecute(r ApiDele
 }
 
 type ApiDeleteAuthAwsConfigClientRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiDeleteAuthAwsConfigClientRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthAwsConfigClientExecute(r)
@@ -1684,16 +1665,16 @@ DeleteAuthAwsConfigClient Method for DeleteAuthAwsConfigClient
 func (a *AuthApiService) DeleteAuthAwsConfigClient(ctx context.Context) ApiDeleteAuthAwsConfigClientRequest {
 	return ApiDeleteAuthAwsConfigClientRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthAwsConfigClientExecute(r ApiDeleteAuthAwsConfigClientRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAwsConfigClient")
@@ -1753,11 +1734,10 @@ func (a *AuthApiService) DeleteAuthAwsConfigClientExecute(r ApiDeleteAuthAwsConf
 }
 
 type ApiDeleteAuthAwsConfigStsAccountIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	accountId string
+	accountId  string
 }
-
 
 func (r ApiDeleteAuthAwsConfigStsAccountIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthAwsConfigStsAccountIdExecute(r)
@@ -1773,17 +1753,17 @@ DeleteAuthAwsConfigStsAccountId Method for DeleteAuthAwsConfigStsAccountId
 func (a *AuthApiService) DeleteAuthAwsConfigStsAccountId(ctx context.Context, accountId string) ApiDeleteAuthAwsConfigStsAccountIdRequest {
 	return ApiDeleteAuthAwsConfigStsAccountIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		accountId: accountId,
+		ctx:        ctx,
+		accountId:  accountId,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthAwsConfigStsAccountIdExecute(r ApiDeleteAuthAwsConfigStsAccountIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAwsConfigStsAccountId")
@@ -1844,10 +1824,9 @@ func (a *AuthApiService) DeleteAuthAwsConfigStsAccountIdExecute(r ApiDeleteAuthA
 }
 
 type ApiDeleteAuthAwsConfigTidyIdentityAccesslistRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiDeleteAuthAwsConfigTidyIdentityAccesslistRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthAwsConfigTidyIdentityAccesslistExecute(r)
@@ -1862,16 +1841,16 @@ DeleteAuthAwsConfigTidyIdentityAccesslist Method for DeleteAuthAwsConfigTidyIden
 func (a *AuthApiService) DeleteAuthAwsConfigTidyIdentityAccesslist(ctx context.Context) ApiDeleteAuthAwsConfigTidyIdentityAccesslistRequest {
 	return ApiDeleteAuthAwsConfigTidyIdentityAccesslistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthAwsConfigTidyIdentityAccesslistExecute(r ApiDeleteAuthAwsConfigTidyIdentityAccesslistRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAwsConfigTidyIdentityAccesslist")
@@ -1931,10 +1910,9 @@ func (a *AuthApiService) DeleteAuthAwsConfigTidyIdentityAccesslistExecute(r ApiD
 }
 
 type ApiDeleteAuthAwsConfigTidyIdentityWhitelistRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiDeleteAuthAwsConfigTidyIdentityWhitelistRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthAwsConfigTidyIdentityWhitelistExecute(r)
@@ -1949,16 +1927,16 @@ DeleteAuthAwsConfigTidyIdentityWhitelist Method for DeleteAuthAwsConfigTidyIdent
 func (a *AuthApiService) DeleteAuthAwsConfigTidyIdentityWhitelist(ctx context.Context) ApiDeleteAuthAwsConfigTidyIdentityWhitelistRequest {
 	return ApiDeleteAuthAwsConfigTidyIdentityWhitelistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthAwsConfigTidyIdentityWhitelistExecute(r ApiDeleteAuthAwsConfigTidyIdentityWhitelistRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAwsConfigTidyIdentityWhitelist")
@@ -2018,10 +1996,9 @@ func (a *AuthApiService) DeleteAuthAwsConfigTidyIdentityWhitelistExecute(r ApiDe
 }
 
 type ApiDeleteAuthAwsConfigTidyRoletagBlacklistRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiDeleteAuthAwsConfigTidyRoletagBlacklistRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthAwsConfigTidyRoletagBlacklistExecute(r)
@@ -2036,16 +2013,16 @@ DeleteAuthAwsConfigTidyRoletagBlacklist Method for DeleteAuthAwsConfigTidyRoleta
 func (a *AuthApiService) DeleteAuthAwsConfigTidyRoletagBlacklist(ctx context.Context) ApiDeleteAuthAwsConfigTidyRoletagBlacklistRequest {
 	return ApiDeleteAuthAwsConfigTidyRoletagBlacklistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthAwsConfigTidyRoletagBlacklistExecute(r ApiDeleteAuthAwsConfigTidyRoletagBlacklistRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAwsConfigTidyRoletagBlacklist")
@@ -2105,10 +2082,9 @@ func (a *AuthApiService) DeleteAuthAwsConfigTidyRoletagBlacklistExecute(r ApiDel
 }
 
 type ApiDeleteAuthAwsConfigTidyRoletagDenylistRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiDeleteAuthAwsConfigTidyRoletagDenylistRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthAwsConfigTidyRoletagDenylistExecute(r)
@@ -2123,16 +2099,16 @@ DeleteAuthAwsConfigTidyRoletagDenylist Method for DeleteAuthAwsConfigTidyRoletag
 func (a *AuthApiService) DeleteAuthAwsConfigTidyRoletagDenylist(ctx context.Context) ApiDeleteAuthAwsConfigTidyRoletagDenylistRequest {
 	return ApiDeleteAuthAwsConfigTidyRoletagDenylistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthAwsConfigTidyRoletagDenylistExecute(r ApiDeleteAuthAwsConfigTidyRoletagDenylistRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAwsConfigTidyRoletagDenylist")
@@ -2192,11 +2168,10 @@ func (a *AuthApiService) DeleteAuthAwsConfigTidyRoletagDenylistExecute(r ApiDele
 }
 
 type ApiDeleteAuthAwsIdentityAccesslistInstanceIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 	instanceId string
 }
-
 
 func (r ApiDeleteAuthAwsIdentityAccesslistInstanceIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthAwsIdentityAccesslistInstanceIdExecute(r)
@@ -2212,7 +2187,7 @@ DeleteAuthAwsIdentityAccesslistInstanceId Method for DeleteAuthAwsIdentityAccess
 func (a *AuthApiService) DeleteAuthAwsIdentityAccesslistInstanceId(ctx context.Context, instanceId string) ApiDeleteAuthAwsIdentityAccesslistInstanceIdRequest {
 	return ApiDeleteAuthAwsIdentityAccesslistInstanceIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		instanceId: instanceId,
 	}
 }
@@ -2220,9 +2195,9 @@ func (a *AuthApiService) DeleteAuthAwsIdentityAccesslistInstanceId(ctx context.C
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthAwsIdentityAccesslistInstanceIdExecute(r ApiDeleteAuthAwsIdentityAccesslistInstanceIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAwsIdentityAccesslistInstanceId")
@@ -2283,11 +2258,10 @@ func (a *AuthApiService) DeleteAuthAwsIdentityAccesslistInstanceIdExecute(r ApiD
 }
 
 type ApiDeleteAuthAwsIdentityWhitelistInstanceIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 	instanceId string
 }
-
 
 func (r ApiDeleteAuthAwsIdentityWhitelistInstanceIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthAwsIdentityWhitelistInstanceIdExecute(r)
@@ -2303,7 +2277,7 @@ DeleteAuthAwsIdentityWhitelistInstanceId Method for DeleteAuthAwsIdentityWhiteli
 func (a *AuthApiService) DeleteAuthAwsIdentityWhitelistInstanceId(ctx context.Context, instanceId string) ApiDeleteAuthAwsIdentityWhitelistInstanceIdRequest {
 	return ApiDeleteAuthAwsIdentityWhitelistInstanceIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		instanceId: instanceId,
 	}
 }
@@ -2311,9 +2285,9 @@ func (a *AuthApiService) DeleteAuthAwsIdentityWhitelistInstanceId(ctx context.Co
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthAwsIdentityWhitelistInstanceIdExecute(r ApiDeleteAuthAwsIdentityWhitelistInstanceIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAwsIdentityWhitelistInstanceId")
@@ -2374,11 +2348,10 @@ func (a *AuthApiService) DeleteAuthAwsIdentityWhitelistInstanceIdExecute(r ApiDe
 }
 
 type ApiDeleteAuthAwsRoleRoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	role string
+	role       string
 }
-
 
 func (r ApiDeleteAuthAwsRoleRoleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthAwsRoleRoleExecute(r)
@@ -2394,17 +2367,17 @@ DeleteAuthAwsRoleRole Method for DeleteAuthAwsRoleRole
 func (a *AuthApiService) DeleteAuthAwsRoleRole(ctx context.Context, role string) ApiDeleteAuthAwsRoleRoleRequest {
 	return ApiDeleteAuthAwsRoleRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		role: role,
+		ctx:        ctx,
+		role:       role,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthAwsRoleRoleExecute(r ApiDeleteAuthAwsRoleRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAwsRoleRole")
@@ -2465,11 +2438,10 @@ func (a *AuthApiService) DeleteAuthAwsRoleRoleExecute(r ApiDeleteAuthAwsRoleRole
 }
 
 type ApiDeleteAuthAwsRoletagBlacklistRoleTagRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleTag string
+	roleTag    string
 }
-
 
 func (r ApiDeleteAuthAwsRoletagBlacklistRoleTagRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthAwsRoletagBlacklistRoleTagExecute(r)
@@ -2485,17 +2457,17 @@ DeleteAuthAwsRoletagBlacklistRoleTag Method for DeleteAuthAwsRoletagBlacklistRol
 func (a *AuthApiService) DeleteAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag string) ApiDeleteAuthAwsRoletagBlacklistRoleTagRequest {
 	return ApiDeleteAuthAwsRoletagBlacklistRoleTagRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleTag: roleTag,
+		ctx:        ctx,
+		roleTag:    roleTag,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthAwsRoletagBlacklistRoleTagExecute(r ApiDeleteAuthAwsRoletagBlacklistRoleTagRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAwsRoletagBlacklistRoleTag")
@@ -2556,11 +2528,10 @@ func (a *AuthApiService) DeleteAuthAwsRoletagBlacklistRoleTagExecute(r ApiDelete
 }
 
 type ApiDeleteAuthAwsRoletagDenylistRoleTagRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleTag string
+	roleTag    string
 }
-
 
 func (r ApiDeleteAuthAwsRoletagDenylistRoleTagRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthAwsRoletagDenylistRoleTagExecute(r)
@@ -2576,17 +2547,17 @@ DeleteAuthAwsRoletagDenylistRoleTag Method for DeleteAuthAwsRoletagDenylistRoleT
 func (a *AuthApiService) DeleteAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag string) ApiDeleteAuthAwsRoletagDenylistRoleTagRequest {
 	return ApiDeleteAuthAwsRoletagDenylistRoleTagRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleTag: roleTag,
+		ctx:        ctx,
+		roleTag:    roleTag,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthAwsRoletagDenylistRoleTagExecute(r ApiDeleteAuthAwsRoletagDenylistRoleTagRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAwsRoletagDenylistRoleTag")
@@ -2647,10 +2618,9 @@ func (a *AuthApiService) DeleteAuthAwsRoletagDenylistRoleTagExecute(r ApiDeleteA
 }
 
 type ApiDeleteAuthAzureConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiDeleteAuthAzureConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthAzureConfigExecute(r)
@@ -2665,16 +2635,16 @@ DeleteAuthAzureConfig Method for DeleteAuthAzureConfig
 func (a *AuthApiService) DeleteAuthAzureConfig(ctx context.Context) ApiDeleteAuthAzureConfigRequest {
 	return ApiDeleteAuthAzureConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthAzureConfigExecute(r ApiDeleteAuthAzureConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAzureConfig")
@@ -2734,11 +2704,10 @@ func (a *AuthApiService) DeleteAuthAzureConfigExecute(r ApiDeleteAuthAzureConfig
 }
 
 type ApiDeleteAuthAzureRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteAuthAzureRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthAzureRoleNameExecute(r)
@@ -2754,17 +2723,17 @@ DeleteAuthAzureRoleName Method for DeleteAuthAzureRoleName
 func (a *AuthApiService) DeleteAuthAzureRoleName(ctx context.Context, name string) ApiDeleteAuthAzureRoleNameRequest {
 	return ApiDeleteAuthAzureRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthAzureRoleNameExecute(r ApiDeleteAuthAzureRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAzureRoleName")
@@ -2825,11 +2794,10 @@ func (a *AuthApiService) DeleteAuthAzureRoleNameExecute(r ApiDeleteAuthAzureRole
 }
 
 type ApiDeleteAuthCertCertsNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteAuthCertCertsNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthCertCertsNameExecute(r)
@@ -2845,17 +2813,17 @@ DeleteAuthCertCertsName Manage trusted certificates used for authentication.
 func (a *AuthApiService) DeleteAuthCertCertsName(ctx context.Context, name string) ApiDeleteAuthCertCertsNameRequest {
 	return ApiDeleteAuthCertCertsNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthCertCertsNameExecute(r ApiDeleteAuthCertCertsNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthCertCertsName")
@@ -2916,11 +2884,10 @@ func (a *AuthApiService) DeleteAuthCertCertsNameExecute(r ApiDeleteAuthCertCerts
 }
 
 type ApiDeleteAuthCertCrlsNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteAuthCertCrlsNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthCertCrlsNameExecute(r)
@@ -2936,17 +2903,17 @@ DeleteAuthCertCrlsName Manage Certificate Revocation Lists checked during authen
 func (a *AuthApiService) DeleteAuthCertCrlsName(ctx context.Context, name string) ApiDeleteAuthCertCrlsNameRequest {
 	return ApiDeleteAuthCertCrlsNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthCertCrlsNameExecute(r ApiDeleteAuthCertCrlsNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthCertCrlsName")
@@ -3007,10 +2974,9 @@ func (a *AuthApiService) DeleteAuthCertCrlsNameExecute(r ApiDeleteAuthCertCrlsNa
 }
 
 type ApiDeleteAuthCfConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiDeleteAuthCfConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthCfConfigExecute(r)
@@ -3025,16 +2991,16 @@ DeleteAuthCfConfig Method for DeleteAuthCfConfig
 func (a *AuthApiService) DeleteAuthCfConfig(ctx context.Context) ApiDeleteAuthCfConfigRequest {
 	return ApiDeleteAuthCfConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthCfConfigExecute(r ApiDeleteAuthCfConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthCfConfig")
@@ -3094,11 +3060,10 @@ func (a *AuthApiService) DeleteAuthCfConfigExecute(r ApiDeleteAuthCfConfigReques
 }
 
 type ApiDeleteAuthCfRolesRoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	role string
+	role       string
 }
-
 
 func (r ApiDeleteAuthCfRolesRoleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthCfRolesRoleExecute(r)
@@ -3114,17 +3079,17 @@ DeleteAuthCfRolesRole Method for DeleteAuthCfRolesRole
 func (a *AuthApiService) DeleteAuthCfRolesRole(ctx context.Context, role string) ApiDeleteAuthCfRolesRoleRequest {
 	return ApiDeleteAuthCfRolesRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		role: role,
+		ctx:        ctx,
+		role:       role,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthCfRolesRoleExecute(r ApiDeleteAuthCfRolesRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthCfRolesRole")
@@ -3185,11 +3150,10 @@ func (a *AuthApiService) DeleteAuthCfRolesRoleExecute(r ApiDeleteAuthCfRolesRole
 }
 
 type ApiDeleteAuthGcpRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteAuthGcpRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthGcpRoleNameExecute(r)
@@ -3205,17 +3169,17 @@ DeleteAuthGcpRoleName Create a GCP role with associated policies and required at
 func (a *AuthApiService) DeleteAuthGcpRoleName(ctx context.Context, name string) ApiDeleteAuthGcpRoleNameRequest {
 	return ApiDeleteAuthGcpRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthGcpRoleNameExecute(r ApiDeleteAuthGcpRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthGcpRoleName")
@@ -3276,11 +3240,10 @@ func (a *AuthApiService) DeleteAuthGcpRoleNameExecute(r ApiDeleteAuthGcpRoleName
 }
 
 type ApiDeleteAuthGithubMapTeamsKeyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	key string
+	key        string
 }
-
 
 func (r ApiDeleteAuthGithubMapTeamsKeyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthGithubMapTeamsKeyExecute(r)
@@ -3296,17 +3259,17 @@ DeleteAuthGithubMapTeamsKey Read/write/delete a single teams mapping
 func (a *AuthApiService) DeleteAuthGithubMapTeamsKey(ctx context.Context, key string) ApiDeleteAuthGithubMapTeamsKeyRequest {
 	return ApiDeleteAuthGithubMapTeamsKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthGithubMapTeamsKeyExecute(r ApiDeleteAuthGithubMapTeamsKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthGithubMapTeamsKey")
@@ -3367,11 +3330,10 @@ func (a *AuthApiService) DeleteAuthGithubMapTeamsKeyExecute(r ApiDeleteAuthGithu
 }
 
 type ApiDeleteAuthGithubMapUsersKeyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	key string
+	key        string
 }
-
 
 func (r ApiDeleteAuthGithubMapUsersKeyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthGithubMapUsersKeyExecute(r)
@@ -3387,17 +3349,17 @@ DeleteAuthGithubMapUsersKey Read/write/delete a single users mapping
 func (a *AuthApiService) DeleteAuthGithubMapUsersKey(ctx context.Context, key string) ApiDeleteAuthGithubMapUsersKeyRequest {
 	return ApiDeleteAuthGithubMapUsersKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthGithubMapUsersKeyExecute(r ApiDeleteAuthGithubMapUsersKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthGithubMapUsersKey")
@@ -3458,11 +3420,10 @@ func (a *AuthApiService) DeleteAuthGithubMapUsersKeyExecute(r ApiDeleteAuthGithu
 }
 
 type ApiDeleteAuthJwtRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteAuthJwtRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthJwtRoleNameExecute(r)
@@ -3478,17 +3439,17 @@ DeleteAuthJwtRoleName Delete an existing role.
 func (a *AuthApiService) DeleteAuthJwtRoleName(ctx context.Context, name string) ApiDeleteAuthJwtRoleNameRequest {
 	return ApiDeleteAuthJwtRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthJwtRoleNameExecute(r ApiDeleteAuthJwtRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthJwtRoleName")
@@ -3549,11 +3510,10 @@ func (a *AuthApiService) DeleteAuthJwtRoleNameExecute(r ApiDeleteAuthJwtRoleName
 }
 
 type ApiDeleteAuthKerberosGroupsNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteAuthKerberosGroupsNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthKerberosGroupsNameExecute(r)
@@ -3569,17 +3529,17 @@ DeleteAuthKerberosGroupsName Method for DeleteAuthKerberosGroupsName
 func (a *AuthApiService) DeleteAuthKerberosGroupsName(ctx context.Context, name string) ApiDeleteAuthKerberosGroupsNameRequest {
 	return ApiDeleteAuthKerberosGroupsNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthKerberosGroupsNameExecute(r ApiDeleteAuthKerberosGroupsNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthKerberosGroupsName")
@@ -3640,11 +3600,10 @@ func (a *AuthApiService) DeleteAuthKerberosGroupsNameExecute(r ApiDeleteAuthKerb
 }
 
 type ApiDeleteAuthKubernetesRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteAuthKubernetesRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthKubernetesRoleNameExecute(r)
@@ -3660,17 +3619,17 @@ DeleteAuthKubernetesRoleName Register an role with the backend.
 func (a *AuthApiService) DeleteAuthKubernetesRoleName(ctx context.Context, name string) ApiDeleteAuthKubernetesRoleNameRequest {
 	return ApiDeleteAuthKubernetesRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthKubernetesRoleNameExecute(r ApiDeleteAuthKubernetesRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthKubernetesRoleName")
@@ -3731,11 +3690,10 @@ func (a *AuthApiService) DeleteAuthKubernetesRoleNameExecute(r ApiDeleteAuthKube
 }
 
 type ApiDeleteAuthLdapGroupsNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteAuthLdapGroupsNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthLdapGroupsNameExecute(r)
@@ -3751,17 +3709,17 @@ DeleteAuthLdapGroupsName Manage additional groups for users allowed to authentic
 func (a *AuthApiService) DeleteAuthLdapGroupsName(ctx context.Context, name string) ApiDeleteAuthLdapGroupsNameRequest {
 	return ApiDeleteAuthLdapGroupsNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthLdapGroupsNameExecute(r ApiDeleteAuthLdapGroupsNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthLdapGroupsName")
@@ -3822,11 +3780,10 @@ func (a *AuthApiService) DeleteAuthLdapGroupsNameExecute(r ApiDeleteAuthLdapGrou
 }
 
 type ApiDeleteAuthLdapUsersNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteAuthLdapUsersNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthLdapUsersNameExecute(r)
@@ -3842,17 +3799,17 @@ DeleteAuthLdapUsersName Manage users allowed to authenticate.
 func (a *AuthApiService) DeleteAuthLdapUsersName(ctx context.Context, name string) ApiDeleteAuthLdapUsersNameRequest {
 	return ApiDeleteAuthLdapUsersNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthLdapUsersNameExecute(r ApiDeleteAuthLdapUsersNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthLdapUsersName")
@@ -3913,10 +3870,9 @@ func (a *AuthApiService) DeleteAuthLdapUsersNameExecute(r ApiDeleteAuthLdapUsers
 }
 
 type ApiDeleteAuthOciConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiDeleteAuthOciConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthOciConfigExecute(r)
@@ -3931,16 +3887,16 @@ DeleteAuthOciConfig Manages the configuration for the Vault Auth Plugin.
 func (a *AuthApiService) DeleteAuthOciConfig(ctx context.Context) ApiDeleteAuthOciConfigRequest {
 	return ApiDeleteAuthOciConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthOciConfigExecute(r ApiDeleteAuthOciConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthOciConfig")
@@ -4000,11 +3956,10 @@ func (a *AuthApiService) DeleteAuthOciConfigExecute(r ApiDeleteAuthOciConfigRequ
 }
 
 type ApiDeleteAuthOciRoleRoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	role string
+	role       string
 }
-
 
 func (r ApiDeleteAuthOciRoleRoleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthOciRoleRoleExecute(r)
@@ -4020,17 +3975,17 @@ DeleteAuthOciRoleRole Create a role and associate policies to it.
 func (a *AuthApiService) DeleteAuthOciRoleRole(ctx context.Context, role string) ApiDeleteAuthOciRoleRoleRequest {
 	return ApiDeleteAuthOciRoleRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		role: role,
+		ctx:        ctx,
+		role:       role,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthOciRoleRoleExecute(r ApiDeleteAuthOciRoleRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthOciRoleRole")
@@ -4091,11 +4046,10 @@ func (a *AuthApiService) DeleteAuthOciRoleRoleExecute(r ApiDeleteAuthOciRoleRole
 }
 
 type ApiDeleteAuthOidcRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteAuthOidcRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthOidcRoleNameExecute(r)
@@ -4111,17 +4065,17 @@ DeleteAuthOidcRoleName Delete an existing role.
 func (a *AuthApiService) DeleteAuthOidcRoleName(ctx context.Context, name string) ApiDeleteAuthOidcRoleNameRequest {
 	return ApiDeleteAuthOidcRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthOidcRoleNameExecute(r ApiDeleteAuthOidcRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthOidcRoleName")
@@ -4182,11 +4136,10 @@ func (a *AuthApiService) DeleteAuthOidcRoleNameExecute(r ApiDeleteAuthOidcRoleNa
 }
 
 type ApiDeleteAuthOktaGroupsNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteAuthOktaGroupsNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthOktaGroupsNameExecute(r)
@@ -4202,17 +4155,17 @@ DeleteAuthOktaGroupsName Manage users allowed to authenticate.
 func (a *AuthApiService) DeleteAuthOktaGroupsName(ctx context.Context, name string) ApiDeleteAuthOktaGroupsNameRequest {
 	return ApiDeleteAuthOktaGroupsNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthOktaGroupsNameExecute(r ApiDeleteAuthOktaGroupsNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthOktaGroupsName")
@@ -4273,11 +4226,10 @@ func (a *AuthApiService) DeleteAuthOktaGroupsNameExecute(r ApiDeleteAuthOktaGrou
 }
 
 type ApiDeleteAuthOktaUsersNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteAuthOktaUsersNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthOktaUsersNameExecute(r)
@@ -4293,17 +4245,17 @@ DeleteAuthOktaUsersName Manage additional groups for users allowed to authentica
 func (a *AuthApiService) DeleteAuthOktaUsersName(ctx context.Context, name string) ApiDeleteAuthOktaUsersNameRequest {
 	return ApiDeleteAuthOktaUsersNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthOktaUsersNameExecute(r ApiDeleteAuthOktaUsersNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthOktaUsersName")
@@ -4364,11 +4316,10 @@ func (a *AuthApiService) DeleteAuthOktaUsersNameExecute(r ApiDeleteAuthOktaUsers
 }
 
 type ApiDeleteAuthRadiusUsersNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteAuthRadiusUsersNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthRadiusUsersNameExecute(r)
@@ -4384,17 +4335,17 @@ DeleteAuthRadiusUsersName Manage users allowed to authenticate.
 func (a *AuthApiService) DeleteAuthRadiusUsersName(ctx context.Context, name string) ApiDeleteAuthRadiusUsersNameRequest {
 	return ApiDeleteAuthRadiusUsersNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthRadiusUsersNameExecute(r ApiDeleteAuthRadiusUsersNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthRadiusUsersName")
@@ -4455,11 +4406,10 @@ func (a *AuthApiService) DeleteAuthRadiusUsersNameExecute(r ApiDeleteAuthRadiusU
 }
 
 type ApiDeleteAuthTokenRolesRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiDeleteAuthTokenRolesRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthTokenRolesRoleNameExecute(r)
@@ -4475,17 +4425,17 @@ DeleteAuthTokenRolesRoleName Method for DeleteAuthTokenRolesRoleName
 func (a *AuthApiService) DeleteAuthTokenRolesRoleName(ctx context.Context, roleName string) ApiDeleteAuthTokenRolesRoleNameRequest {
 	return ApiDeleteAuthTokenRolesRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthTokenRolesRoleNameExecute(r ApiDeleteAuthTokenRolesRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthTokenRolesRoleName")
@@ -4546,11 +4496,10 @@ func (a *AuthApiService) DeleteAuthTokenRolesRoleNameExecute(r ApiDeleteAuthToke
 }
 
 type ApiDeleteAuthUserpassUsersUsernameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	username string
+	username   string
 }
-
 
 func (r ApiDeleteAuthUserpassUsersUsernameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAuthUserpassUsersUsernameExecute(r)
@@ -4566,17 +4515,17 @@ DeleteAuthUserpassUsersUsername Manage users allowed to authenticate.
 func (a *AuthApiService) DeleteAuthUserpassUsersUsername(ctx context.Context, username string) ApiDeleteAuthUserpassUsersUsernameRequest {
 	return ApiDeleteAuthUserpassUsersUsernameRequest{
 		ApiService: a,
-		ctx: ctx,
-		username: username,
+		ctx:        ctx,
+		username:   username,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) DeleteAuthUserpassUsersUsernameExecute(r ApiDeleteAuthUserpassUsersUsernameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthUserpassUsersUsername")
@@ -4637,9 +4586,9 @@ func (a *AuthApiService) DeleteAuthUserpassUsersUsernameExecute(r ApiDeleteAuthU
 }
 
 type ApiGetAuthAlicloudRoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -4661,16 +4610,16 @@ GetAuthAlicloudRole Lists all the roles that are registered with Vault.
 func (a *AuthApiService) GetAuthAlicloudRole(ctx context.Context) ApiGetAuthAlicloudRoleRequest {
 	return ApiGetAuthAlicloudRoleRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAlicloudRoleExecute(r ApiGetAuthAlicloudRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAlicloudRole")
@@ -4734,11 +4683,10 @@ func (a *AuthApiService) GetAuthAlicloudRoleExecute(r ApiGetAuthAlicloudRoleRequ
 }
 
 type ApiGetAuthAlicloudRoleRoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	role string
+	role       string
 }
-
 
 func (r ApiGetAuthAlicloudRoleRoleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthAlicloudRoleRoleExecute(r)
@@ -4754,17 +4702,17 @@ GetAuthAlicloudRoleRole Create a role and associate policies to it.
 func (a *AuthApiService) GetAuthAlicloudRoleRole(ctx context.Context, role string) ApiGetAuthAlicloudRoleRoleRequest {
 	return ApiGetAuthAlicloudRoleRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		role: role,
+		ctx:        ctx,
+		role:       role,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAlicloudRoleRoleExecute(r ApiGetAuthAlicloudRoleRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAlicloudRoleRole")
@@ -4825,9 +4773,9 @@ func (a *AuthApiService) GetAuthAlicloudRoleRoleExecute(r ApiGetAuthAlicloudRole
 }
 
 type ApiGetAuthAlicloudRolesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -4849,16 +4797,16 @@ GetAuthAlicloudRoles Lists all the roles that are registered with Vault.
 func (a *AuthApiService) GetAuthAlicloudRoles(ctx context.Context) ApiGetAuthAlicloudRolesRequest {
 	return ApiGetAuthAlicloudRolesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAlicloudRolesExecute(r ApiGetAuthAlicloudRolesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAlicloudRoles")
@@ -4922,9 +4870,9 @@ func (a *AuthApiService) GetAuthAlicloudRolesExecute(r ApiGetAuthAlicloudRolesRe
 }
 
 type ApiGetAuthAppIdMapAppIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Return a list if &#x60;true&#x60;
@@ -4946,16 +4894,16 @@ GetAuthAppIdMapAppId Read mappings for app-id
 func (a *AuthApiService) GetAuthAppIdMapAppId(ctx context.Context) ApiGetAuthAppIdMapAppIdRequest {
 	return ApiGetAuthAppIdMapAppIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAppIdMapAppIdExecute(r ApiGetAuthAppIdMapAppIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAppIdMapAppId")
@@ -5018,11 +4966,10 @@ func (a *AuthApiService) GetAuthAppIdMapAppIdExecute(r ApiGetAuthAppIdMapAppIdRe
 }
 
 type ApiGetAuthAppIdMapAppIdKeyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	key string
+	key        string
 }
-
 
 func (r ApiGetAuthAppIdMapAppIdKeyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthAppIdMapAppIdKeyExecute(r)
@@ -5038,17 +4985,17 @@ GetAuthAppIdMapAppIdKey Read/write/delete a single app-id mapping
 func (a *AuthApiService) GetAuthAppIdMapAppIdKey(ctx context.Context, key string) ApiGetAuthAppIdMapAppIdKeyRequest {
 	return ApiGetAuthAppIdMapAppIdKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAppIdMapAppIdKeyExecute(r ApiGetAuthAppIdMapAppIdKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAppIdMapAppIdKey")
@@ -5109,9 +5056,9 @@ func (a *AuthApiService) GetAuthAppIdMapAppIdKeyExecute(r ApiGetAuthAppIdMapAppI
 }
 
 type ApiGetAuthAppIdMapUserIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Return a list if &#x60;true&#x60;
@@ -5133,16 +5080,16 @@ GetAuthAppIdMapUserId Read mappings for user-id
 func (a *AuthApiService) GetAuthAppIdMapUserId(ctx context.Context) ApiGetAuthAppIdMapUserIdRequest {
 	return ApiGetAuthAppIdMapUserIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAppIdMapUserIdExecute(r ApiGetAuthAppIdMapUserIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAppIdMapUserId")
@@ -5205,11 +5152,10 @@ func (a *AuthApiService) GetAuthAppIdMapUserIdExecute(r ApiGetAuthAppIdMapUserId
 }
 
 type ApiGetAuthAppIdMapUserIdKeyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	key string
+	key        string
 }
-
 
 func (r ApiGetAuthAppIdMapUserIdKeyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthAppIdMapUserIdKeyExecute(r)
@@ -5225,17 +5171,17 @@ GetAuthAppIdMapUserIdKey Read/write/delete a single user-id mapping
 func (a *AuthApiService) GetAuthAppIdMapUserIdKey(ctx context.Context, key string) ApiGetAuthAppIdMapUserIdKeyRequest {
 	return ApiGetAuthAppIdMapUserIdKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAppIdMapUserIdKeyExecute(r ApiGetAuthAppIdMapUserIdKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAppIdMapUserIdKey")
@@ -5296,9 +5242,9 @@ func (a *AuthApiService) GetAuthAppIdMapUserIdKeyExecute(r ApiGetAuthAppIdMapUse
 }
 
 type ApiGetAuthApproleRoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -5320,16 +5266,16 @@ GetAuthApproleRole Lists all the roles registered with the backend.
 func (a *AuthApiService) GetAuthApproleRole(ctx context.Context) ApiGetAuthApproleRoleRequest {
 	return ApiGetAuthApproleRoleRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthApproleRoleExecute(r ApiGetAuthApproleRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRole")
@@ -5393,11 +5339,10 @@ func (a *AuthApiService) GetAuthApproleRoleExecute(r ApiGetAuthApproleRoleReques
 }
 
 type ApiGetAuthApproleRoleRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiGetAuthApproleRoleRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthApproleRoleRoleNameExecute(r)
@@ -5413,17 +5358,17 @@ GetAuthApproleRoleRoleName Register an role with the backend.
 func (a *AuthApiService) GetAuthApproleRoleRoleName(ctx context.Context, roleName string) ApiGetAuthApproleRoleRoleNameRequest {
 	return ApiGetAuthApproleRoleRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthApproleRoleRoleNameExecute(r ApiGetAuthApproleRoleRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleName")
@@ -5484,11 +5429,10 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameExecute(r ApiGetAuthApproleRo
 }
 
 type ApiGetAuthApproleRoleRoleNameBindSecretIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiGetAuthApproleRoleRoleNameBindSecretIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthApproleRoleRoleNameBindSecretIdExecute(r)
@@ -5504,17 +5448,17 @@ GetAuthApproleRoleRoleNameBindSecretId Impose secret_id to be presented during l
 func (a *AuthApiService) GetAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string) ApiGetAuthApproleRoleRoleNameBindSecretIdRequest {
 	return ApiGetAuthApproleRoleRoleNameBindSecretIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthApproleRoleRoleNameBindSecretIdExecute(r ApiGetAuthApproleRoleRoleNameBindSecretIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleNameBindSecretId")
@@ -5575,11 +5519,10 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameBindSecretIdExecute(r ApiGetA
 }
 
 type ApiGetAuthApproleRoleRoleNameBoundCidrListRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiGetAuthApproleRoleRoleNameBoundCidrListRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthApproleRoleRoleNameBoundCidrListExecute(r)
@@ -5595,17 +5538,17 @@ GetAuthApproleRoleRoleNameBoundCidrList Deprecated: Comma separated list of CIDR
 func (a *AuthApiService) GetAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string) ApiGetAuthApproleRoleRoleNameBoundCidrListRequest {
 	return ApiGetAuthApproleRoleRoleNameBoundCidrListRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthApproleRoleRoleNameBoundCidrListExecute(r ApiGetAuthApproleRoleRoleNameBoundCidrListRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleNameBoundCidrList")
@@ -5666,11 +5609,10 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameBoundCidrListExecute(r ApiGet
 }
 
 type ApiGetAuthApproleRoleRoleNameLocalSecretIdsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiGetAuthApproleRoleRoleNameLocalSecretIdsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthApproleRoleRoleNameLocalSecretIdsExecute(r)
@@ -5686,17 +5628,17 @@ GetAuthApproleRoleRoleNameLocalSecretIds Enables cluster local secret IDs
 func (a *AuthApiService) GetAuthApproleRoleRoleNameLocalSecretIds(ctx context.Context, roleName string) ApiGetAuthApproleRoleRoleNameLocalSecretIdsRequest {
 	return ApiGetAuthApproleRoleRoleNameLocalSecretIdsRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthApproleRoleRoleNameLocalSecretIdsExecute(r ApiGetAuthApproleRoleRoleNameLocalSecretIdsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleNameLocalSecretIds")
@@ -5757,11 +5699,10 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameLocalSecretIdsExecute(r ApiGe
 }
 
 type ApiGetAuthApproleRoleRoleNamePeriodRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiGetAuthApproleRoleRoleNamePeriodRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthApproleRoleRoleNamePeriodExecute(r)
@@ -5777,17 +5718,17 @@ GetAuthApproleRoleRoleNamePeriod Updates the value of 'period' on the role
 func (a *AuthApiService) GetAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string) ApiGetAuthApproleRoleRoleNamePeriodRequest {
 	return ApiGetAuthApproleRoleRoleNamePeriodRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthApproleRoleRoleNamePeriodExecute(r ApiGetAuthApproleRoleRoleNamePeriodRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleNamePeriod")
@@ -5848,11 +5789,10 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNamePeriodExecute(r ApiGetAuthApp
 }
 
 type ApiGetAuthApproleRoleRoleNamePoliciesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiGetAuthApproleRoleRoleNamePoliciesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthApproleRoleRoleNamePoliciesExecute(r)
@@ -5868,17 +5808,17 @@ GetAuthApproleRoleRoleNamePolicies Policies of the role.
 func (a *AuthApiService) GetAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string) ApiGetAuthApproleRoleRoleNamePoliciesRequest {
 	return ApiGetAuthApproleRoleRoleNamePoliciesRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthApproleRoleRoleNamePoliciesExecute(r ApiGetAuthApproleRoleRoleNamePoliciesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleNamePolicies")
@@ -5939,11 +5879,10 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNamePoliciesExecute(r ApiGetAuthA
 }
 
 type ApiGetAuthApproleRoleRoleNameRoleIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiGetAuthApproleRoleRoleNameRoleIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthApproleRoleRoleNameRoleIdExecute(r)
@@ -5959,17 +5898,17 @@ GetAuthApproleRoleRoleNameRoleId Returns the 'role_id' of the role.
 func (a *AuthApiService) GetAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName string) ApiGetAuthApproleRoleRoleNameRoleIdRequest {
 	return ApiGetAuthApproleRoleRoleNameRoleIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthApproleRoleRoleNameRoleIdExecute(r ApiGetAuthApproleRoleRoleNameRoleIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleNameRoleId")
@@ -6030,10 +5969,10 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameRoleIdExecute(r ApiGetAuthApp
 }
 
 type ApiGetAuthApproleRoleRoleNameSecretIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
-	list *string
+	roleName   string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -6056,17 +5995,17 @@ GetAuthApproleRoleRoleNameSecretId Generate a SecretID against this role.
 func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName string) ApiGetAuthApproleRoleRoleNameSecretIdRequest {
 	return ApiGetAuthApproleRoleRoleNameSecretIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdExecute(r ApiGetAuthApproleRoleRoleNameSecretIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleNameSecretId")
@@ -6131,11 +6070,10 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdExecute(r ApiGetAuthA
 }
 
 type ApiGetAuthApproleRoleRoleNameSecretIdBoundCidrsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiGetAuthApproleRoleRoleNameSecretIdBoundCidrsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthApproleRoleRoleNameSecretIdBoundCidrsExecute(r)
@@ -6151,17 +6089,17 @@ GetAuthApproleRoleRoleNameSecretIdBoundCidrs Comma separated list of CIDR blocks
 func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string) ApiGetAuthApproleRoleRoleNameSecretIdBoundCidrsRequest {
 	return ApiGetAuthApproleRoleRoleNameSecretIdBoundCidrsRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdBoundCidrsExecute(r ApiGetAuthApproleRoleRoleNameSecretIdBoundCidrsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleNameSecretIdBoundCidrs")
@@ -6222,11 +6160,10 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdBoundCidrsExecute(r A
 }
 
 type ApiGetAuthApproleRoleRoleNameSecretIdNumUsesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiGetAuthApproleRoleRoleNameSecretIdNumUsesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthApproleRoleRoleNameSecretIdNumUsesExecute(r)
@@ -6242,17 +6179,17 @@ GetAuthApproleRoleRoleNameSecretIdNumUses Use limit of the SecretID generated ag
 func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string) ApiGetAuthApproleRoleRoleNameSecretIdNumUsesRequest {
 	return ApiGetAuthApproleRoleRoleNameSecretIdNumUsesRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdNumUsesExecute(r ApiGetAuthApproleRoleRoleNameSecretIdNumUsesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleNameSecretIdNumUses")
@@ -6313,11 +6250,10 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdNumUsesExecute(r ApiG
 }
 
 type ApiGetAuthApproleRoleRoleNameSecretIdTtlRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiGetAuthApproleRoleRoleNameSecretIdTtlRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthApproleRoleRoleNameSecretIdTtlExecute(r)
@@ -6333,17 +6269,17 @@ GetAuthApproleRoleRoleNameSecretIdTtl Duration in seconds, representing the life
 func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string) ApiGetAuthApproleRoleRoleNameSecretIdTtlRequest {
 	return ApiGetAuthApproleRoleRoleNameSecretIdTtlRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdTtlExecute(r ApiGetAuthApproleRoleRoleNameSecretIdTtlRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleNameSecretIdTtl")
@@ -6404,11 +6340,10 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdTtlExecute(r ApiGetAu
 }
 
 type ApiGetAuthApproleRoleRoleNameTokenBoundCidrsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiGetAuthApproleRoleRoleNameTokenBoundCidrsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthApproleRoleRoleNameTokenBoundCidrsExecute(r)
@@ -6424,17 +6359,17 @@ GetAuthApproleRoleRoleNameTokenBoundCidrs Comma separated string or list of CIDR
 func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string) ApiGetAuthApproleRoleRoleNameTokenBoundCidrsRequest {
 	return ApiGetAuthApproleRoleRoleNameTokenBoundCidrsRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenBoundCidrsExecute(r ApiGetAuthApproleRoleRoleNameTokenBoundCidrsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleNameTokenBoundCidrs")
@@ -6495,11 +6430,10 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenBoundCidrsExecute(r ApiG
 }
 
 type ApiGetAuthApproleRoleRoleNameTokenMaxTtlRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiGetAuthApproleRoleRoleNameTokenMaxTtlRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthApproleRoleRoleNameTokenMaxTtlExecute(r)
@@ -6515,17 +6449,17 @@ GetAuthApproleRoleRoleNameTokenMaxTtl Duration in seconds, the maximum lifetime 
 func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string) ApiGetAuthApproleRoleRoleNameTokenMaxTtlRequest {
 	return ApiGetAuthApproleRoleRoleNameTokenMaxTtlRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenMaxTtlExecute(r ApiGetAuthApproleRoleRoleNameTokenMaxTtlRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleNameTokenMaxTtl")
@@ -6586,11 +6520,10 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenMaxTtlExecute(r ApiGetAu
 }
 
 type ApiGetAuthApproleRoleRoleNameTokenNumUsesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiGetAuthApproleRoleRoleNameTokenNumUsesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthApproleRoleRoleNameTokenNumUsesExecute(r)
@@ -6606,17 +6539,17 @@ GetAuthApproleRoleRoleNameTokenNumUses Number of times issued tokens can be used
 func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string) ApiGetAuthApproleRoleRoleNameTokenNumUsesRequest {
 	return ApiGetAuthApproleRoleRoleNameTokenNumUsesRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenNumUsesExecute(r ApiGetAuthApproleRoleRoleNameTokenNumUsesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleNameTokenNumUses")
@@ -6677,11 +6610,10 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenNumUsesExecute(r ApiGetA
 }
 
 type ApiGetAuthApproleRoleRoleNameTokenTtlRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiGetAuthApproleRoleRoleNameTokenTtlRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthApproleRoleRoleNameTokenTtlExecute(r)
@@ -6697,17 +6629,17 @@ GetAuthApproleRoleRoleNameTokenTtl Duration in seconds, the lifetime of the toke
 func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string) ApiGetAuthApproleRoleRoleNameTokenTtlRequest {
 	return ApiGetAuthApproleRoleRoleNameTokenTtlRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenTtlExecute(r ApiGetAuthApproleRoleRoleNameTokenTtlRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleNameTokenTtl")
@@ -6768,11 +6700,10 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenTtlExecute(r ApiGetAuthA
 }
 
 type ApiGetAuthAwsConfigCertificateCertNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	certName string
+	certName   string
 }
-
 
 func (r ApiGetAuthAwsConfigCertificateCertNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthAwsConfigCertificateCertNameExecute(r)
@@ -6788,17 +6719,17 @@ GetAuthAwsConfigCertificateCertName Method for GetAuthAwsConfigCertificateCertNa
 func (a *AuthApiService) GetAuthAwsConfigCertificateCertName(ctx context.Context, certName string) ApiGetAuthAwsConfigCertificateCertNameRequest {
 	return ApiGetAuthAwsConfigCertificateCertNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		certName: certName,
+		ctx:        ctx,
+		certName:   certName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAwsConfigCertificateCertNameExecute(r ApiGetAuthAwsConfigCertificateCertNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsConfigCertificateCertName")
@@ -6859,9 +6790,9 @@ func (a *AuthApiService) GetAuthAwsConfigCertificateCertNameExecute(r ApiGetAuth
 }
 
 type ApiGetAuthAwsConfigCertificatesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -6883,16 +6814,16 @@ GetAuthAwsConfigCertificates Method for GetAuthAwsConfigCertificates
 func (a *AuthApiService) GetAuthAwsConfigCertificates(ctx context.Context) ApiGetAuthAwsConfigCertificatesRequest {
 	return ApiGetAuthAwsConfigCertificatesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAwsConfigCertificatesExecute(r ApiGetAuthAwsConfigCertificatesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsConfigCertificates")
@@ -6956,10 +6887,9 @@ func (a *AuthApiService) GetAuthAwsConfigCertificatesExecute(r ApiGetAuthAwsConf
 }
 
 type ApiGetAuthAwsConfigClientRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiGetAuthAwsConfigClientRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthAwsConfigClientExecute(r)
@@ -6974,16 +6904,16 @@ GetAuthAwsConfigClient Method for GetAuthAwsConfigClient
 func (a *AuthApiService) GetAuthAwsConfigClient(ctx context.Context) ApiGetAuthAwsConfigClientRequest {
 	return ApiGetAuthAwsConfigClientRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAwsConfigClientExecute(r ApiGetAuthAwsConfigClientRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsConfigClient")
@@ -7043,10 +6973,9 @@ func (a *AuthApiService) GetAuthAwsConfigClientExecute(r ApiGetAuthAwsConfigClie
 }
 
 type ApiGetAuthAwsConfigIdentityRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiGetAuthAwsConfigIdentityRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthAwsConfigIdentityExecute(r)
@@ -7061,16 +6990,16 @@ GetAuthAwsConfigIdentity Method for GetAuthAwsConfigIdentity
 func (a *AuthApiService) GetAuthAwsConfigIdentity(ctx context.Context) ApiGetAuthAwsConfigIdentityRequest {
 	return ApiGetAuthAwsConfigIdentityRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAwsConfigIdentityExecute(r ApiGetAuthAwsConfigIdentityRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsConfigIdentity")
@@ -7130,9 +7059,9 @@ func (a *AuthApiService) GetAuthAwsConfigIdentityExecute(r ApiGetAuthAwsConfigId
 }
 
 type ApiGetAuthAwsConfigStsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -7154,16 +7083,16 @@ GetAuthAwsConfigSts Method for GetAuthAwsConfigSts
 func (a *AuthApiService) GetAuthAwsConfigSts(ctx context.Context) ApiGetAuthAwsConfigStsRequest {
 	return ApiGetAuthAwsConfigStsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAwsConfigStsExecute(r ApiGetAuthAwsConfigStsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsConfigSts")
@@ -7227,11 +7156,10 @@ func (a *AuthApiService) GetAuthAwsConfigStsExecute(r ApiGetAuthAwsConfigStsRequ
 }
 
 type ApiGetAuthAwsConfigStsAccountIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	accountId string
+	accountId  string
 }
-
 
 func (r ApiGetAuthAwsConfigStsAccountIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthAwsConfigStsAccountIdExecute(r)
@@ -7247,17 +7175,17 @@ GetAuthAwsConfigStsAccountId Method for GetAuthAwsConfigStsAccountId
 func (a *AuthApiService) GetAuthAwsConfigStsAccountId(ctx context.Context, accountId string) ApiGetAuthAwsConfigStsAccountIdRequest {
 	return ApiGetAuthAwsConfigStsAccountIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		accountId: accountId,
+		ctx:        ctx,
+		accountId:  accountId,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAwsConfigStsAccountIdExecute(r ApiGetAuthAwsConfigStsAccountIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsConfigStsAccountId")
@@ -7318,10 +7246,9 @@ func (a *AuthApiService) GetAuthAwsConfigStsAccountIdExecute(r ApiGetAuthAwsConf
 }
 
 type ApiGetAuthAwsConfigTidyIdentityAccesslistRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiGetAuthAwsConfigTidyIdentityAccesslistRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthAwsConfigTidyIdentityAccesslistExecute(r)
@@ -7336,16 +7263,16 @@ GetAuthAwsConfigTidyIdentityAccesslist Method for GetAuthAwsConfigTidyIdentityAc
 func (a *AuthApiService) GetAuthAwsConfigTidyIdentityAccesslist(ctx context.Context) ApiGetAuthAwsConfigTidyIdentityAccesslistRequest {
 	return ApiGetAuthAwsConfigTidyIdentityAccesslistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAwsConfigTidyIdentityAccesslistExecute(r ApiGetAuthAwsConfigTidyIdentityAccesslistRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsConfigTidyIdentityAccesslist")
@@ -7405,10 +7332,9 @@ func (a *AuthApiService) GetAuthAwsConfigTidyIdentityAccesslistExecute(r ApiGetA
 }
 
 type ApiGetAuthAwsConfigTidyIdentityWhitelistRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiGetAuthAwsConfigTidyIdentityWhitelistRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthAwsConfigTidyIdentityWhitelistExecute(r)
@@ -7423,16 +7349,16 @@ GetAuthAwsConfigTidyIdentityWhitelist Method for GetAuthAwsConfigTidyIdentityWhi
 func (a *AuthApiService) GetAuthAwsConfigTidyIdentityWhitelist(ctx context.Context) ApiGetAuthAwsConfigTidyIdentityWhitelistRequest {
 	return ApiGetAuthAwsConfigTidyIdentityWhitelistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAwsConfigTidyIdentityWhitelistExecute(r ApiGetAuthAwsConfigTidyIdentityWhitelistRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsConfigTidyIdentityWhitelist")
@@ -7492,10 +7418,9 @@ func (a *AuthApiService) GetAuthAwsConfigTidyIdentityWhitelistExecute(r ApiGetAu
 }
 
 type ApiGetAuthAwsConfigTidyRoletagBlacklistRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiGetAuthAwsConfigTidyRoletagBlacklistRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthAwsConfigTidyRoletagBlacklistExecute(r)
@@ -7510,16 +7435,16 @@ GetAuthAwsConfigTidyRoletagBlacklist Method for GetAuthAwsConfigTidyRoletagBlack
 func (a *AuthApiService) GetAuthAwsConfigTidyRoletagBlacklist(ctx context.Context) ApiGetAuthAwsConfigTidyRoletagBlacklistRequest {
 	return ApiGetAuthAwsConfigTidyRoletagBlacklistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAwsConfigTidyRoletagBlacklistExecute(r ApiGetAuthAwsConfigTidyRoletagBlacklistRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsConfigTidyRoletagBlacklist")
@@ -7579,10 +7504,9 @@ func (a *AuthApiService) GetAuthAwsConfigTidyRoletagBlacklistExecute(r ApiGetAut
 }
 
 type ApiGetAuthAwsConfigTidyRoletagDenylistRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiGetAuthAwsConfigTidyRoletagDenylistRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthAwsConfigTidyRoletagDenylistExecute(r)
@@ -7597,16 +7521,16 @@ GetAuthAwsConfigTidyRoletagDenylist Method for GetAuthAwsConfigTidyRoletagDenyli
 func (a *AuthApiService) GetAuthAwsConfigTidyRoletagDenylist(ctx context.Context) ApiGetAuthAwsConfigTidyRoletagDenylistRequest {
 	return ApiGetAuthAwsConfigTidyRoletagDenylistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAwsConfigTidyRoletagDenylistExecute(r ApiGetAuthAwsConfigTidyRoletagDenylistRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsConfigTidyRoletagDenylist")
@@ -7666,9 +7590,9 @@ func (a *AuthApiService) GetAuthAwsConfigTidyRoletagDenylistExecute(r ApiGetAuth
 }
 
 type ApiGetAuthAwsIdentityAccesslistRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -7690,16 +7614,16 @@ GetAuthAwsIdentityAccesslist Method for GetAuthAwsIdentityAccesslist
 func (a *AuthApiService) GetAuthAwsIdentityAccesslist(ctx context.Context) ApiGetAuthAwsIdentityAccesslistRequest {
 	return ApiGetAuthAwsIdentityAccesslistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAwsIdentityAccesslistExecute(r ApiGetAuthAwsIdentityAccesslistRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsIdentityAccesslist")
@@ -7763,11 +7687,10 @@ func (a *AuthApiService) GetAuthAwsIdentityAccesslistExecute(r ApiGetAuthAwsIden
 }
 
 type ApiGetAuthAwsIdentityAccesslistInstanceIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 	instanceId string
 }
-
 
 func (r ApiGetAuthAwsIdentityAccesslistInstanceIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthAwsIdentityAccesslistInstanceIdExecute(r)
@@ -7783,7 +7706,7 @@ GetAuthAwsIdentityAccesslistInstanceId Method for GetAuthAwsIdentityAccesslistIn
 func (a *AuthApiService) GetAuthAwsIdentityAccesslistInstanceId(ctx context.Context, instanceId string) ApiGetAuthAwsIdentityAccesslistInstanceIdRequest {
 	return ApiGetAuthAwsIdentityAccesslistInstanceIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		instanceId: instanceId,
 	}
 }
@@ -7791,9 +7714,9 @@ func (a *AuthApiService) GetAuthAwsIdentityAccesslistInstanceId(ctx context.Cont
 // Execute executes the request
 func (a *AuthApiService) GetAuthAwsIdentityAccesslistInstanceIdExecute(r ApiGetAuthAwsIdentityAccesslistInstanceIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsIdentityAccesslistInstanceId")
@@ -7854,9 +7777,9 @@ func (a *AuthApiService) GetAuthAwsIdentityAccesslistInstanceIdExecute(r ApiGetA
 }
 
 type ApiGetAuthAwsIdentityWhitelistRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -7878,16 +7801,16 @@ GetAuthAwsIdentityWhitelist Method for GetAuthAwsIdentityWhitelist
 func (a *AuthApiService) GetAuthAwsIdentityWhitelist(ctx context.Context) ApiGetAuthAwsIdentityWhitelistRequest {
 	return ApiGetAuthAwsIdentityWhitelistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAwsIdentityWhitelistExecute(r ApiGetAuthAwsIdentityWhitelistRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsIdentityWhitelist")
@@ -7951,11 +7874,10 @@ func (a *AuthApiService) GetAuthAwsIdentityWhitelistExecute(r ApiGetAuthAwsIdent
 }
 
 type ApiGetAuthAwsIdentityWhitelistInstanceIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 	instanceId string
 }
-
 
 func (r ApiGetAuthAwsIdentityWhitelistInstanceIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthAwsIdentityWhitelistInstanceIdExecute(r)
@@ -7971,7 +7893,7 @@ GetAuthAwsIdentityWhitelistInstanceId Method for GetAuthAwsIdentityWhitelistInst
 func (a *AuthApiService) GetAuthAwsIdentityWhitelistInstanceId(ctx context.Context, instanceId string) ApiGetAuthAwsIdentityWhitelistInstanceIdRequest {
 	return ApiGetAuthAwsIdentityWhitelistInstanceIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		instanceId: instanceId,
 	}
 }
@@ -7979,9 +7901,9 @@ func (a *AuthApiService) GetAuthAwsIdentityWhitelistInstanceId(ctx context.Conte
 // Execute executes the request
 func (a *AuthApiService) GetAuthAwsIdentityWhitelistInstanceIdExecute(r ApiGetAuthAwsIdentityWhitelistInstanceIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsIdentityWhitelistInstanceId")
@@ -8042,9 +7964,9 @@ func (a *AuthApiService) GetAuthAwsIdentityWhitelistInstanceIdExecute(r ApiGetAu
 }
 
 type ApiGetAuthAwsRoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -8066,16 +7988,16 @@ GetAuthAwsRole Method for GetAuthAwsRole
 func (a *AuthApiService) GetAuthAwsRole(ctx context.Context) ApiGetAuthAwsRoleRequest {
 	return ApiGetAuthAwsRoleRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAwsRoleExecute(r ApiGetAuthAwsRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsRole")
@@ -8139,11 +8061,10 @@ func (a *AuthApiService) GetAuthAwsRoleExecute(r ApiGetAuthAwsRoleRequest) (*htt
 }
 
 type ApiGetAuthAwsRoleRoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	role string
+	role       string
 }
-
 
 func (r ApiGetAuthAwsRoleRoleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthAwsRoleRoleExecute(r)
@@ -8159,17 +8080,17 @@ GetAuthAwsRoleRole Method for GetAuthAwsRoleRole
 func (a *AuthApiService) GetAuthAwsRoleRole(ctx context.Context, role string) ApiGetAuthAwsRoleRoleRequest {
 	return ApiGetAuthAwsRoleRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		role: role,
+		ctx:        ctx,
+		role:       role,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAwsRoleRoleExecute(r ApiGetAuthAwsRoleRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsRoleRole")
@@ -8230,9 +8151,9 @@ func (a *AuthApiService) GetAuthAwsRoleRoleExecute(r ApiGetAuthAwsRoleRoleReques
 }
 
 type ApiGetAuthAwsRolesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -8254,16 +8175,16 @@ GetAuthAwsRoles Method for GetAuthAwsRoles
 func (a *AuthApiService) GetAuthAwsRoles(ctx context.Context) ApiGetAuthAwsRolesRequest {
 	return ApiGetAuthAwsRolesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAwsRolesExecute(r ApiGetAuthAwsRolesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsRoles")
@@ -8327,9 +8248,9 @@ func (a *AuthApiService) GetAuthAwsRolesExecute(r ApiGetAuthAwsRolesRequest) (*h
 }
 
 type ApiGetAuthAwsRoletagBlacklistRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -8351,16 +8272,16 @@ GetAuthAwsRoletagBlacklist Method for GetAuthAwsRoletagBlacklist
 func (a *AuthApiService) GetAuthAwsRoletagBlacklist(ctx context.Context) ApiGetAuthAwsRoletagBlacklistRequest {
 	return ApiGetAuthAwsRoletagBlacklistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAwsRoletagBlacklistExecute(r ApiGetAuthAwsRoletagBlacklistRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsRoletagBlacklist")
@@ -8424,11 +8345,10 @@ func (a *AuthApiService) GetAuthAwsRoletagBlacklistExecute(r ApiGetAuthAwsRoleta
 }
 
 type ApiGetAuthAwsRoletagBlacklistRoleTagRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleTag string
+	roleTag    string
 }
-
 
 func (r ApiGetAuthAwsRoletagBlacklistRoleTagRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthAwsRoletagBlacklistRoleTagExecute(r)
@@ -8444,17 +8364,17 @@ GetAuthAwsRoletagBlacklistRoleTag Method for GetAuthAwsRoletagBlacklistRoleTag
 func (a *AuthApiService) GetAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag string) ApiGetAuthAwsRoletagBlacklistRoleTagRequest {
 	return ApiGetAuthAwsRoletagBlacklistRoleTagRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleTag: roleTag,
+		ctx:        ctx,
+		roleTag:    roleTag,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAwsRoletagBlacklistRoleTagExecute(r ApiGetAuthAwsRoletagBlacklistRoleTagRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsRoletagBlacklistRoleTag")
@@ -8515,9 +8435,9 @@ func (a *AuthApiService) GetAuthAwsRoletagBlacklistRoleTagExecute(r ApiGetAuthAw
 }
 
 type ApiGetAuthAwsRoletagDenylistRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -8539,16 +8459,16 @@ GetAuthAwsRoletagDenylist Method for GetAuthAwsRoletagDenylist
 func (a *AuthApiService) GetAuthAwsRoletagDenylist(ctx context.Context) ApiGetAuthAwsRoletagDenylistRequest {
 	return ApiGetAuthAwsRoletagDenylistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAwsRoletagDenylistExecute(r ApiGetAuthAwsRoletagDenylistRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsRoletagDenylist")
@@ -8612,11 +8532,10 @@ func (a *AuthApiService) GetAuthAwsRoletagDenylistExecute(r ApiGetAuthAwsRoletag
 }
 
 type ApiGetAuthAwsRoletagDenylistRoleTagRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleTag string
+	roleTag    string
 }
-
 
 func (r ApiGetAuthAwsRoletagDenylistRoleTagRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthAwsRoletagDenylistRoleTagExecute(r)
@@ -8632,17 +8551,17 @@ GetAuthAwsRoletagDenylistRoleTag Method for GetAuthAwsRoletagDenylistRoleTag
 func (a *AuthApiService) GetAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag string) ApiGetAuthAwsRoletagDenylistRoleTagRequest {
 	return ApiGetAuthAwsRoletagDenylistRoleTagRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleTag: roleTag,
+		ctx:        ctx,
+		roleTag:    roleTag,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAwsRoletagDenylistRoleTagExecute(r ApiGetAuthAwsRoletagDenylistRoleTagRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsRoletagDenylistRoleTag")
@@ -8703,10 +8622,9 @@ func (a *AuthApiService) GetAuthAwsRoletagDenylistRoleTagExecute(r ApiGetAuthAws
 }
 
 type ApiGetAuthAzureConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiGetAuthAzureConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthAzureConfigExecute(r)
@@ -8721,16 +8639,16 @@ GetAuthAzureConfig Method for GetAuthAzureConfig
 func (a *AuthApiService) GetAuthAzureConfig(ctx context.Context) ApiGetAuthAzureConfigRequest {
 	return ApiGetAuthAzureConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAzureConfigExecute(r ApiGetAuthAzureConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAzureConfig")
@@ -8790,9 +8708,9 @@ func (a *AuthApiService) GetAuthAzureConfigExecute(r ApiGetAuthAzureConfigReques
 }
 
 type ApiGetAuthAzureRoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -8814,16 +8732,16 @@ GetAuthAzureRole Method for GetAuthAzureRole
 func (a *AuthApiService) GetAuthAzureRole(ctx context.Context) ApiGetAuthAzureRoleRequest {
 	return ApiGetAuthAzureRoleRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAzureRoleExecute(r ApiGetAuthAzureRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAzureRole")
@@ -8887,11 +8805,10 @@ func (a *AuthApiService) GetAuthAzureRoleExecute(r ApiGetAuthAzureRoleRequest) (
 }
 
 type ApiGetAuthAzureRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetAuthAzureRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthAzureRoleNameExecute(r)
@@ -8907,17 +8824,17 @@ GetAuthAzureRoleName Method for GetAuthAzureRoleName
 func (a *AuthApiService) GetAuthAzureRoleName(ctx context.Context, name string) ApiGetAuthAzureRoleNameRequest {
 	return ApiGetAuthAzureRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthAzureRoleNameExecute(r ApiGetAuthAzureRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAzureRoleName")
@@ -8978,10 +8895,9 @@ func (a *AuthApiService) GetAuthAzureRoleNameExecute(r ApiGetAuthAzureRoleNameRe
 }
 
 type ApiGetAuthCentrifyConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiGetAuthCentrifyConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthCentrifyConfigExecute(r)
@@ -8996,16 +8912,16 @@ GetAuthCentrifyConfig This path allows you to configure the centrify auth provid
 func (a *AuthApiService) GetAuthCentrifyConfig(ctx context.Context) ApiGetAuthCentrifyConfigRequest {
 	return ApiGetAuthCentrifyConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthCentrifyConfigExecute(r ApiGetAuthCentrifyConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthCentrifyConfig")
@@ -9065,9 +8981,9 @@ func (a *AuthApiService) GetAuthCentrifyConfigExecute(r ApiGetAuthCentrifyConfig
 }
 
 type ApiGetAuthCertCertsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -9089,16 +9005,16 @@ GetAuthCertCerts Manage trusted certificates used for authentication.
 func (a *AuthApiService) GetAuthCertCerts(ctx context.Context) ApiGetAuthCertCertsRequest {
 	return ApiGetAuthCertCertsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthCertCertsExecute(r ApiGetAuthCertCertsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthCertCerts")
@@ -9162,11 +9078,10 @@ func (a *AuthApiService) GetAuthCertCertsExecute(r ApiGetAuthCertCertsRequest) (
 }
 
 type ApiGetAuthCertCertsNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetAuthCertCertsNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthCertCertsNameExecute(r)
@@ -9182,17 +9097,17 @@ GetAuthCertCertsName Manage trusted certificates used for authentication.
 func (a *AuthApiService) GetAuthCertCertsName(ctx context.Context, name string) ApiGetAuthCertCertsNameRequest {
 	return ApiGetAuthCertCertsNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthCertCertsNameExecute(r ApiGetAuthCertCertsNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthCertCertsName")
@@ -9253,11 +9168,10 @@ func (a *AuthApiService) GetAuthCertCertsNameExecute(r ApiGetAuthCertCertsNameRe
 }
 
 type ApiGetAuthCertCrlsNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetAuthCertCrlsNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthCertCrlsNameExecute(r)
@@ -9273,17 +9187,17 @@ GetAuthCertCrlsName Manage Certificate Revocation Lists checked during authentic
 func (a *AuthApiService) GetAuthCertCrlsName(ctx context.Context, name string) ApiGetAuthCertCrlsNameRequest {
 	return ApiGetAuthCertCrlsNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthCertCrlsNameExecute(r ApiGetAuthCertCrlsNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthCertCrlsName")
@@ -9344,10 +9258,9 @@ func (a *AuthApiService) GetAuthCertCrlsNameExecute(r ApiGetAuthCertCrlsNameRequ
 }
 
 type ApiGetAuthCfConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiGetAuthCfConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthCfConfigExecute(r)
@@ -9362,16 +9275,16 @@ GetAuthCfConfig Method for GetAuthCfConfig
 func (a *AuthApiService) GetAuthCfConfig(ctx context.Context) ApiGetAuthCfConfigRequest {
 	return ApiGetAuthCfConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthCfConfigExecute(r ApiGetAuthCfConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthCfConfig")
@@ -9431,9 +9344,9 @@ func (a *AuthApiService) GetAuthCfConfigExecute(r ApiGetAuthCfConfigRequest) (*h
 }
 
 type ApiGetAuthCfRolesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -9455,16 +9368,16 @@ GetAuthCfRoles Method for GetAuthCfRoles
 func (a *AuthApiService) GetAuthCfRoles(ctx context.Context) ApiGetAuthCfRolesRequest {
 	return ApiGetAuthCfRolesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthCfRolesExecute(r ApiGetAuthCfRolesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthCfRoles")
@@ -9528,11 +9441,10 @@ func (a *AuthApiService) GetAuthCfRolesExecute(r ApiGetAuthCfRolesRequest) (*htt
 }
 
 type ApiGetAuthCfRolesRoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	role string
+	role       string
 }
-
 
 func (r ApiGetAuthCfRolesRoleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthCfRolesRoleExecute(r)
@@ -9548,17 +9460,17 @@ GetAuthCfRolesRole Method for GetAuthCfRolesRole
 func (a *AuthApiService) GetAuthCfRolesRole(ctx context.Context, role string) ApiGetAuthCfRolesRoleRequest {
 	return ApiGetAuthCfRolesRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		role: role,
+		ctx:        ctx,
+		role:       role,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthCfRolesRoleExecute(r ApiGetAuthCfRolesRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthCfRolesRole")
@@ -9619,10 +9531,9 @@ func (a *AuthApiService) GetAuthCfRolesRoleExecute(r ApiGetAuthCfRolesRoleReques
 }
 
 type ApiGetAuthGcpConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiGetAuthGcpConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthGcpConfigExecute(r)
@@ -9637,16 +9548,16 @@ GetAuthGcpConfig Configure credentials used to query the GCP IAM API to verify a
 func (a *AuthApiService) GetAuthGcpConfig(ctx context.Context) ApiGetAuthGcpConfigRequest {
 	return ApiGetAuthGcpConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthGcpConfigExecute(r ApiGetAuthGcpConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthGcpConfig")
@@ -9706,9 +9617,9 @@ func (a *AuthApiService) GetAuthGcpConfigExecute(r ApiGetAuthGcpConfigRequest) (
 }
 
 type ApiGetAuthGcpRoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -9730,16 +9641,16 @@ GetAuthGcpRole Lists all the roles that are registered with Vault.
 func (a *AuthApiService) GetAuthGcpRole(ctx context.Context) ApiGetAuthGcpRoleRequest {
 	return ApiGetAuthGcpRoleRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthGcpRoleExecute(r ApiGetAuthGcpRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthGcpRole")
@@ -9803,11 +9714,10 @@ func (a *AuthApiService) GetAuthGcpRoleExecute(r ApiGetAuthGcpRoleRequest) (*htt
 }
 
 type ApiGetAuthGcpRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetAuthGcpRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthGcpRoleNameExecute(r)
@@ -9823,17 +9733,17 @@ GetAuthGcpRoleName Create a GCP role with associated policies and required attri
 func (a *AuthApiService) GetAuthGcpRoleName(ctx context.Context, name string) ApiGetAuthGcpRoleNameRequest {
 	return ApiGetAuthGcpRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthGcpRoleNameExecute(r ApiGetAuthGcpRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthGcpRoleName")
@@ -9894,9 +9804,9 @@ func (a *AuthApiService) GetAuthGcpRoleNameExecute(r ApiGetAuthGcpRoleNameReques
 }
 
 type ApiGetAuthGcpRolesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -9918,16 +9828,16 @@ GetAuthGcpRoles Lists all the roles that are registered with Vault.
 func (a *AuthApiService) GetAuthGcpRoles(ctx context.Context) ApiGetAuthGcpRolesRequest {
 	return ApiGetAuthGcpRolesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthGcpRolesExecute(r ApiGetAuthGcpRolesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthGcpRoles")
@@ -9991,10 +9901,9 @@ func (a *AuthApiService) GetAuthGcpRolesExecute(r ApiGetAuthGcpRolesRequest) (*h
 }
 
 type ApiGetAuthGithubConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiGetAuthGithubConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthGithubConfigExecute(r)
@@ -10009,16 +9918,16 @@ GetAuthGithubConfig Method for GetAuthGithubConfig
 func (a *AuthApiService) GetAuthGithubConfig(ctx context.Context) ApiGetAuthGithubConfigRequest {
 	return ApiGetAuthGithubConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthGithubConfigExecute(r ApiGetAuthGithubConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthGithubConfig")
@@ -10078,9 +9987,9 @@ func (a *AuthApiService) GetAuthGithubConfigExecute(r ApiGetAuthGithubConfigRequ
 }
 
 type ApiGetAuthGithubMapTeamsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Return a list if &#x60;true&#x60;
@@ -10102,16 +10011,16 @@ GetAuthGithubMapTeams Read mappings for teams
 func (a *AuthApiService) GetAuthGithubMapTeams(ctx context.Context) ApiGetAuthGithubMapTeamsRequest {
 	return ApiGetAuthGithubMapTeamsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthGithubMapTeamsExecute(r ApiGetAuthGithubMapTeamsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthGithubMapTeams")
@@ -10174,11 +10083,10 @@ func (a *AuthApiService) GetAuthGithubMapTeamsExecute(r ApiGetAuthGithubMapTeams
 }
 
 type ApiGetAuthGithubMapTeamsKeyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	key string
+	key        string
 }
-
 
 func (r ApiGetAuthGithubMapTeamsKeyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthGithubMapTeamsKeyExecute(r)
@@ -10194,17 +10102,17 @@ GetAuthGithubMapTeamsKey Read/write/delete a single teams mapping
 func (a *AuthApiService) GetAuthGithubMapTeamsKey(ctx context.Context, key string) ApiGetAuthGithubMapTeamsKeyRequest {
 	return ApiGetAuthGithubMapTeamsKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthGithubMapTeamsKeyExecute(r ApiGetAuthGithubMapTeamsKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthGithubMapTeamsKey")
@@ -10265,9 +10173,9 @@ func (a *AuthApiService) GetAuthGithubMapTeamsKeyExecute(r ApiGetAuthGithubMapTe
 }
 
 type ApiGetAuthGithubMapUsersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Return a list if &#x60;true&#x60;
@@ -10289,16 +10197,16 @@ GetAuthGithubMapUsers Read mappings for users
 func (a *AuthApiService) GetAuthGithubMapUsers(ctx context.Context) ApiGetAuthGithubMapUsersRequest {
 	return ApiGetAuthGithubMapUsersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthGithubMapUsersExecute(r ApiGetAuthGithubMapUsersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthGithubMapUsers")
@@ -10361,11 +10269,10 @@ func (a *AuthApiService) GetAuthGithubMapUsersExecute(r ApiGetAuthGithubMapUsers
 }
 
 type ApiGetAuthGithubMapUsersKeyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	key string
+	key        string
 }
-
 
 func (r ApiGetAuthGithubMapUsersKeyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthGithubMapUsersKeyExecute(r)
@@ -10381,17 +10288,17 @@ GetAuthGithubMapUsersKey Read/write/delete a single users mapping
 func (a *AuthApiService) GetAuthGithubMapUsersKey(ctx context.Context, key string) ApiGetAuthGithubMapUsersKeyRequest {
 	return ApiGetAuthGithubMapUsersKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthGithubMapUsersKeyExecute(r ApiGetAuthGithubMapUsersKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthGithubMapUsersKey")
@@ -10452,10 +10359,9 @@ func (a *AuthApiService) GetAuthGithubMapUsersKeyExecute(r ApiGetAuthGithubMapUs
 }
 
 type ApiGetAuthJwtConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiGetAuthJwtConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthJwtConfigExecute(r)
@@ -10470,16 +10376,16 @@ GetAuthJwtConfig Read the current JWT authentication backend configuration.
 func (a *AuthApiService) GetAuthJwtConfig(ctx context.Context) ApiGetAuthJwtConfigRequest {
 	return ApiGetAuthJwtConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthJwtConfigExecute(r ApiGetAuthJwtConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthJwtConfig")
@@ -10539,10 +10445,9 @@ func (a *AuthApiService) GetAuthJwtConfigExecute(r ApiGetAuthJwtConfigRequest) (
 }
 
 type ApiGetAuthJwtOidcCallbackRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiGetAuthJwtOidcCallbackRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthJwtOidcCallbackExecute(r)
@@ -10557,16 +10462,16 @@ GetAuthJwtOidcCallback Callback endpoint to complete an OIDC login.
 func (a *AuthApiService) GetAuthJwtOidcCallback(ctx context.Context) ApiGetAuthJwtOidcCallbackRequest {
 	return ApiGetAuthJwtOidcCallbackRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthJwtOidcCallbackExecute(r ApiGetAuthJwtOidcCallbackRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthJwtOidcCallback")
@@ -10626,9 +10531,9 @@ func (a *AuthApiService) GetAuthJwtOidcCallbackExecute(r ApiGetAuthJwtOidcCallba
 }
 
 type ApiGetAuthJwtRoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -10652,16 +10557,16 @@ The list will contain the names of the roles.
 func (a *AuthApiService) GetAuthJwtRole(ctx context.Context) ApiGetAuthJwtRoleRequest {
 	return ApiGetAuthJwtRoleRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthJwtRoleExecute(r ApiGetAuthJwtRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthJwtRole")
@@ -10725,11 +10630,10 @@ func (a *AuthApiService) GetAuthJwtRoleExecute(r ApiGetAuthJwtRoleRequest) (*htt
 }
 
 type ApiGetAuthJwtRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetAuthJwtRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthJwtRoleNameExecute(r)
@@ -10745,17 +10649,17 @@ GetAuthJwtRoleName Read an existing role.
 func (a *AuthApiService) GetAuthJwtRoleName(ctx context.Context, name string) ApiGetAuthJwtRoleNameRequest {
 	return ApiGetAuthJwtRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthJwtRoleNameExecute(r ApiGetAuthJwtRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthJwtRoleName")
@@ -10816,10 +10720,9 @@ func (a *AuthApiService) GetAuthJwtRoleNameExecute(r ApiGetAuthJwtRoleNameReques
 }
 
 type ApiGetAuthKerberosConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiGetAuthKerberosConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthKerberosConfigExecute(r)
@@ -10834,16 +10737,16 @@ GetAuthKerberosConfig Method for GetAuthKerberosConfig
 func (a *AuthApiService) GetAuthKerberosConfig(ctx context.Context) ApiGetAuthKerberosConfigRequest {
 	return ApiGetAuthKerberosConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthKerberosConfigExecute(r ApiGetAuthKerberosConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthKerberosConfig")
@@ -10903,10 +10806,9 @@ func (a *AuthApiService) GetAuthKerberosConfigExecute(r ApiGetAuthKerberosConfig
 }
 
 type ApiGetAuthKerberosConfigLdapRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiGetAuthKerberosConfigLdapRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthKerberosConfigLdapExecute(r)
@@ -10921,16 +10823,16 @@ GetAuthKerberosConfigLdap Method for GetAuthKerberosConfigLdap
 func (a *AuthApiService) GetAuthKerberosConfigLdap(ctx context.Context) ApiGetAuthKerberosConfigLdapRequest {
 	return ApiGetAuthKerberosConfigLdapRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthKerberosConfigLdapExecute(r ApiGetAuthKerberosConfigLdapRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthKerberosConfigLdap")
@@ -10990,9 +10892,9 @@ func (a *AuthApiService) GetAuthKerberosConfigLdapExecute(r ApiGetAuthKerberosCo
 }
 
 type ApiGetAuthKerberosGroupsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -11014,16 +10916,16 @@ GetAuthKerberosGroups Method for GetAuthKerberosGroups
 func (a *AuthApiService) GetAuthKerberosGroups(ctx context.Context) ApiGetAuthKerberosGroupsRequest {
 	return ApiGetAuthKerberosGroupsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthKerberosGroupsExecute(r ApiGetAuthKerberosGroupsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthKerberosGroups")
@@ -11087,11 +10989,10 @@ func (a *AuthApiService) GetAuthKerberosGroupsExecute(r ApiGetAuthKerberosGroups
 }
 
 type ApiGetAuthKerberosGroupsNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetAuthKerberosGroupsNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthKerberosGroupsNameExecute(r)
@@ -11107,17 +11008,17 @@ GetAuthKerberosGroupsName Method for GetAuthKerberosGroupsName
 func (a *AuthApiService) GetAuthKerberosGroupsName(ctx context.Context, name string) ApiGetAuthKerberosGroupsNameRequest {
 	return ApiGetAuthKerberosGroupsNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthKerberosGroupsNameExecute(r ApiGetAuthKerberosGroupsNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthKerberosGroupsName")
@@ -11178,10 +11079,9 @@ func (a *AuthApiService) GetAuthKerberosGroupsNameExecute(r ApiGetAuthKerberosGr
 }
 
 type ApiGetAuthKerberosLoginRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiGetAuthKerberosLoginRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthKerberosLoginExecute(r)
@@ -11196,16 +11096,16 @@ GetAuthKerberosLogin Method for GetAuthKerberosLogin
 func (a *AuthApiService) GetAuthKerberosLogin(ctx context.Context) ApiGetAuthKerberosLoginRequest {
 	return ApiGetAuthKerberosLoginRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthKerberosLoginExecute(r ApiGetAuthKerberosLoginRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthKerberosLogin")
@@ -11265,10 +11165,9 @@ func (a *AuthApiService) GetAuthKerberosLoginExecute(r ApiGetAuthKerberosLoginRe
 }
 
 type ApiGetAuthKubernetesConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiGetAuthKubernetesConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthKubernetesConfigExecute(r)
@@ -11283,16 +11182,16 @@ GetAuthKubernetesConfig Configures the JWT Public Key and Kubernetes API informa
 func (a *AuthApiService) GetAuthKubernetesConfig(ctx context.Context) ApiGetAuthKubernetesConfigRequest {
 	return ApiGetAuthKubernetesConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthKubernetesConfigExecute(r ApiGetAuthKubernetesConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthKubernetesConfig")
@@ -11352,9 +11251,9 @@ func (a *AuthApiService) GetAuthKubernetesConfigExecute(r ApiGetAuthKubernetesCo
 }
 
 type ApiGetAuthKubernetesRoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -11376,16 +11275,16 @@ GetAuthKubernetesRole Lists all the roles registered with the backend.
 func (a *AuthApiService) GetAuthKubernetesRole(ctx context.Context) ApiGetAuthKubernetesRoleRequest {
 	return ApiGetAuthKubernetesRoleRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthKubernetesRoleExecute(r ApiGetAuthKubernetesRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthKubernetesRole")
@@ -11449,11 +11348,10 @@ func (a *AuthApiService) GetAuthKubernetesRoleExecute(r ApiGetAuthKubernetesRole
 }
 
 type ApiGetAuthKubernetesRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetAuthKubernetesRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthKubernetesRoleNameExecute(r)
@@ -11469,17 +11367,17 @@ GetAuthKubernetesRoleName Register an role with the backend.
 func (a *AuthApiService) GetAuthKubernetesRoleName(ctx context.Context, name string) ApiGetAuthKubernetesRoleNameRequest {
 	return ApiGetAuthKubernetesRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthKubernetesRoleNameExecute(r ApiGetAuthKubernetesRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthKubernetesRoleName")
@@ -11540,10 +11438,9 @@ func (a *AuthApiService) GetAuthKubernetesRoleNameExecute(r ApiGetAuthKubernetes
 }
 
 type ApiGetAuthLdapConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiGetAuthLdapConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthLdapConfigExecute(r)
@@ -11558,16 +11455,16 @@ GetAuthLdapConfig Configure the LDAP server to connect to, along with its option
 func (a *AuthApiService) GetAuthLdapConfig(ctx context.Context) ApiGetAuthLdapConfigRequest {
 	return ApiGetAuthLdapConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthLdapConfigExecute(r ApiGetAuthLdapConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthLdapConfig")
@@ -11627,9 +11524,9 @@ func (a *AuthApiService) GetAuthLdapConfigExecute(r ApiGetAuthLdapConfigRequest)
 }
 
 type ApiGetAuthLdapGroupsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -11651,16 +11548,16 @@ GetAuthLdapGroups Manage additional groups for users allowed to authenticate.
 func (a *AuthApiService) GetAuthLdapGroups(ctx context.Context) ApiGetAuthLdapGroupsRequest {
 	return ApiGetAuthLdapGroupsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthLdapGroupsExecute(r ApiGetAuthLdapGroupsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthLdapGroups")
@@ -11724,11 +11621,10 @@ func (a *AuthApiService) GetAuthLdapGroupsExecute(r ApiGetAuthLdapGroupsRequest)
 }
 
 type ApiGetAuthLdapGroupsNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetAuthLdapGroupsNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthLdapGroupsNameExecute(r)
@@ -11744,17 +11640,17 @@ GetAuthLdapGroupsName Manage additional groups for users allowed to authenticate
 func (a *AuthApiService) GetAuthLdapGroupsName(ctx context.Context, name string) ApiGetAuthLdapGroupsNameRequest {
 	return ApiGetAuthLdapGroupsNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthLdapGroupsNameExecute(r ApiGetAuthLdapGroupsNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthLdapGroupsName")
@@ -11815,9 +11711,9 @@ func (a *AuthApiService) GetAuthLdapGroupsNameExecute(r ApiGetAuthLdapGroupsName
 }
 
 type ApiGetAuthLdapUsersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -11839,16 +11735,16 @@ GetAuthLdapUsers Manage users allowed to authenticate.
 func (a *AuthApiService) GetAuthLdapUsers(ctx context.Context) ApiGetAuthLdapUsersRequest {
 	return ApiGetAuthLdapUsersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthLdapUsersExecute(r ApiGetAuthLdapUsersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthLdapUsers")
@@ -11912,11 +11808,10 @@ func (a *AuthApiService) GetAuthLdapUsersExecute(r ApiGetAuthLdapUsersRequest) (
 }
 
 type ApiGetAuthLdapUsersNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetAuthLdapUsersNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthLdapUsersNameExecute(r)
@@ -11932,17 +11827,17 @@ GetAuthLdapUsersName Manage users allowed to authenticate.
 func (a *AuthApiService) GetAuthLdapUsersName(ctx context.Context, name string) ApiGetAuthLdapUsersNameRequest {
 	return ApiGetAuthLdapUsersNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthLdapUsersNameExecute(r ApiGetAuthLdapUsersNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthLdapUsersName")
@@ -12003,10 +11898,9 @@ func (a *AuthApiService) GetAuthLdapUsersNameExecute(r ApiGetAuthLdapUsersNameRe
 }
 
 type ApiGetAuthOciConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiGetAuthOciConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthOciConfigExecute(r)
@@ -12021,16 +11915,16 @@ GetAuthOciConfig Manages the configuration for the Vault Auth Plugin.
 func (a *AuthApiService) GetAuthOciConfig(ctx context.Context) ApiGetAuthOciConfigRequest {
 	return ApiGetAuthOciConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthOciConfigExecute(r ApiGetAuthOciConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthOciConfig")
@@ -12090,9 +11984,9 @@ func (a *AuthApiService) GetAuthOciConfigExecute(r ApiGetAuthOciConfigRequest) (
 }
 
 type ApiGetAuthOciRoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -12114,16 +12008,16 @@ GetAuthOciRole Lists all the roles that are registered with Vault.
 func (a *AuthApiService) GetAuthOciRole(ctx context.Context) ApiGetAuthOciRoleRequest {
 	return ApiGetAuthOciRoleRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthOciRoleExecute(r ApiGetAuthOciRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthOciRole")
@@ -12187,11 +12081,10 @@ func (a *AuthApiService) GetAuthOciRoleExecute(r ApiGetAuthOciRoleRequest) (*htt
 }
 
 type ApiGetAuthOciRoleRoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	role string
+	role       string
 }
-
 
 func (r ApiGetAuthOciRoleRoleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthOciRoleRoleExecute(r)
@@ -12207,17 +12100,17 @@ GetAuthOciRoleRole Create a role and associate policies to it.
 func (a *AuthApiService) GetAuthOciRoleRole(ctx context.Context, role string) ApiGetAuthOciRoleRoleRequest {
 	return ApiGetAuthOciRoleRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		role: role,
+		ctx:        ctx,
+		role:       role,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthOciRoleRoleExecute(r ApiGetAuthOciRoleRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthOciRoleRole")
@@ -12278,10 +12171,9 @@ func (a *AuthApiService) GetAuthOciRoleRoleExecute(r ApiGetAuthOciRoleRoleReques
 }
 
 type ApiGetAuthOidcConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiGetAuthOidcConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthOidcConfigExecute(r)
@@ -12296,16 +12188,16 @@ GetAuthOidcConfig Read the current JWT authentication backend configuration.
 func (a *AuthApiService) GetAuthOidcConfig(ctx context.Context) ApiGetAuthOidcConfigRequest {
 	return ApiGetAuthOidcConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthOidcConfigExecute(r ApiGetAuthOidcConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthOidcConfig")
@@ -12365,10 +12257,9 @@ func (a *AuthApiService) GetAuthOidcConfigExecute(r ApiGetAuthOidcConfigRequest)
 }
 
 type ApiGetAuthOidcOidcCallbackRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiGetAuthOidcOidcCallbackRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthOidcOidcCallbackExecute(r)
@@ -12383,16 +12274,16 @@ GetAuthOidcOidcCallback Callback endpoint to complete an OIDC login.
 func (a *AuthApiService) GetAuthOidcOidcCallback(ctx context.Context) ApiGetAuthOidcOidcCallbackRequest {
 	return ApiGetAuthOidcOidcCallbackRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthOidcOidcCallbackExecute(r ApiGetAuthOidcOidcCallbackRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthOidcOidcCallback")
@@ -12452,9 +12343,9 @@ func (a *AuthApiService) GetAuthOidcOidcCallbackExecute(r ApiGetAuthOidcOidcCall
 }
 
 type ApiGetAuthOidcRoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -12478,16 +12369,16 @@ The list will contain the names of the roles.
 func (a *AuthApiService) GetAuthOidcRole(ctx context.Context) ApiGetAuthOidcRoleRequest {
 	return ApiGetAuthOidcRoleRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthOidcRoleExecute(r ApiGetAuthOidcRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthOidcRole")
@@ -12551,11 +12442,10 @@ func (a *AuthApiService) GetAuthOidcRoleExecute(r ApiGetAuthOidcRoleRequest) (*h
 }
 
 type ApiGetAuthOidcRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetAuthOidcRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthOidcRoleNameExecute(r)
@@ -12571,17 +12461,17 @@ GetAuthOidcRoleName Read an existing role.
 func (a *AuthApiService) GetAuthOidcRoleName(ctx context.Context, name string) ApiGetAuthOidcRoleNameRequest {
 	return ApiGetAuthOidcRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthOidcRoleNameExecute(r ApiGetAuthOidcRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthOidcRoleName")
@@ -12642,10 +12532,9 @@ func (a *AuthApiService) GetAuthOidcRoleNameExecute(r ApiGetAuthOidcRoleNameRequ
 }
 
 type ApiGetAuthOktaConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiGetAuthOktaConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthOktaConfigExecute(r)
@@ -12660,16 +12549,16 @@ GetAuthOktaConfig This endpoint allows you to configure the Okta and its configu
 func (a *AuthApiService) GetAuthOktaConfig(ctx context.Context) ApiGetAuthOktaConfigRequest {
 	return ApiGetAuthOktaConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthOktaConfigExecute(r ApiGetAuthOktaConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthOktaConfig")
@@ -12729,9 +12618,9 @@ func (a *AuthApiService) GetAuthOktaConfigExecute(r ApiGetAuthOktaConfigRequest)
 }
 
 type ApiGetAuthOktaGroupsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -12753,16 +12642,16 @@ GetAuthOktaGroups Manage users allowed to authenticate.
 func (a *AuthApiService) GetAuthOktaGroups(ctx context.Context) ApiGetAuthOktaGroupsRequest {
 	return ApiGetAuthOktaGroupsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthOktaGroupsExecute(r ApiGetAuthOktaGroupsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthOktaGroups")
@@ -12826,11 +12715,10 @@ func (a *AuthApiService) GetAuthOktaGroupsExecute(r ApiGetAuthOktaGroupsRequest)
 }
 
 type ApiGetAuthOktaGroupsNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetAuthOktaGroupsNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthOktaGroupsNameExecute(r)
@@ -12846,17 +12734,17 @@ GetAuthOktaGroupsName Manage users allowed to authenticate.
 func (a *AuthApiService) GetAuthOktaGroupsName(ctx context.Context, name string) ApiGetAuthOktaGroupsNameRequest {
 	return ApiGetAuthOktaGroupsNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthOktaGroupsNameExecute(r ApiGetAuthOktaGroupsNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthOktaGroupsName")
@@ -12917,9 +12805,9 @@ func (a *AuthApiService) GetAuthOktaGroupsNameExecute(r ApiGetAuthOktaGroupsName
 }
 
 type ApiGetAuthOktaUsersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -12941,16 +12829,16 @@ GetAuthOktaUsers Manage additional groups for users allowed to authenticate.
 func (a *AuthApiService) GetAuthOktaUsers(ctx context.Context) ApiGetAuthOktaUsersRequest {
 	return ApiGetAuthOktaUsersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthOktaUsersExecute(r ApiGetAuthOktaUsersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthOktaUsers")
@@ -13014,11 +12902,10 @@ func (a *AuthApiService) GetAuthOktaUsersExecute(r ApiGetAuthOktaUsersRequest) (
 }
 
 type ApiGetAuthOktaUsersNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetAuthOktaUsersNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthOktaUsersNameExecute(r)
@@ -13034,17 +12921,17 @@ GetAuthOktaUsersName Manage additional groups for users allowed to authenticate.
 func (a *AuthApiService) GetAuthOktaUsersName(ctx context.Context, name string) ApiGetAuthOktaUsersNameRequest {
 	return ApiGetAuthOktaUsersNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthOktaUsersNameExecute(r ApiGetAuthOktaUsersNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthOktaUsersName")
@@ -13105,11 +12992,10 @@ func (a *AuthApiService) GetAuthOktaUsersNameExecute(r ApiGetAuthOktaUsersNameRe
 }
 
 type ApiGetAuthOktaVerifyNonceRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	nonce string
+	nonce      string
 }
-
 
 func (r ApiGetAuthOktaVerifyNonceRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthOktaVerifyNonceExecute(r)
@@ -13125,17 +13011,17 @@ GetAuthOktaVerifyNonce Method for GetAuthOktaVerifyNonce
 func (a *AuthApiService) GetAuthOktaVerifyNonce(ctx context.Context, nonce string) ApiGetAuthOktaVerifyNonceRequest {
 	return ApiGetAuthOktaVerifyNonceRequest{
 		ApiService: a,
-		ctx: ctx,
-		nonce: nonce,
+		ctx:        ctx,
+		nonce:      nonce,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthOktaVerifyNonceExecute(r ApiGetAuthOktaVerifyNonceRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthOktaVerifyNonce")
@@ -13196,10 +13082,9 @@ func (a *AuthApiService) GetAuthOktaVerifyNonceExecute(r ApiGetAuthOktaVerifyNon
 }
 
 type ApiGetAuthRadiusConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiGetAuthRadiusConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthRadiusConfigExecute(r)
@@ -13214,16 +13099,16 @@ GetAuthRadiusConfig Configure the RADIUS server to connect to, along with its op
 func (a *AuthApiService) GetAuthRadiusConfig(ctx context.Context) ApiGetAuthRadiusConfigRequest {
 	return ApiGetAuthRadiusConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthRadiusConfigExecute(r ApiGetAuthRadiusConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthRadiusConfig")
@@ -13283,9 +13168,9 @@ func (a *AuthApiService) GetAuthRadiusConfigExecute(r ApiGetAuthRadiusConfigRequ
 }
 
 type ApiGetAuthRadiusUsersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -13307,16 +13192,16 @@ GetAuthRadiusUsers Manage users allowed to authenticate.
 func (a *AuthApiService) GetAuthRadiusUsers(ctx context.Context) ApiGetAuthRadiusUsersRequest {
 	return ApiGetAuthRadiusUsersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthRadiusUsersExecute(r ApiGetAuthRadiusUsersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthRadiusUsers")
@@ -13380,11 +13265,10 @@ func (a *AuthApiService) GetAuthRadiusUsersExecute(r ApiGetAuthRadiusUsersReques
 }
 
 type ApiGetAuthRadiusUsersNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetAuthRadiusUsersNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthRadiusUsersNameExecute(r)
@@ -13400,17 +13284,17 @@ GetAuthRadiusUsersName Manage users allowed to authenticate.
 func (a *AuthApiService) GetAuthRadiusUsersName(ctx context.Context, name string) ApiGetAuthRadiusUsersNameRequest {
 	return ApiGetAuthRadiusUsersNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthRadiusUsersNameExecute(r ApiGetAuthRadiusUsersNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthRadiusUsersName")
@@ -13471,9 +13355,9 @@ func (a *AuthApiService) GetAuthRadiusUsersNameExecute(r ApiGetAuthRadiusUsersNa
 }
 
 type ApiGetAuthTokenAccessorsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -13495,16 +13379,16 @@ GetAuthTokenAccessors List token accessors, which can then be be used to iterate
 func (a *AuthApiService) GetAuthTokenAccessors(ctx context.Context) ApiGetAuthTokenAccessorsRequest {
 	return ApiGetAuthTokenAccessorsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthTokenAccessorsExecute(r ApiGetAuthTokenAccessorsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthTokenAccessors")
@@ -13568,10 +13452,9 @@ func (a *AuthApiService) GetAuthTokenAccessorsExecute(r ApiGetAuthTokenAccessors
 }
 
 type ApiGetAuthTokenLookupRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiGetAuthTokenLookupRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthTokenLookupExecute(r)
@@ -13586,16 +13469,16 @@ GetAuthTokenLookup This endpoint will lookup a token and its properties.
 func (a *AuthApiService) GetAuthTokenLookup(ctx context.Context) ApiGetAuthTokenLookupRequest {
 	return ApiGetAuthTokenLookupRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthTokenLookupExecute(r ApiGetAuthTokenLookupRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthTokenLookup")
@@ -13655,10 +13538,9 @@ func (a *AuthApiService) GetAuthTokenLookupExecute(r ApiGetAuthTokenLookupReques
 }
 
 type ApiGetAuthTokenLookupSelfRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiGetAuthTokenLookupSelfRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthTokenLookupSelfExecute(r)
@@ -13673,16 +13555,16 @@ GetAuthTokenLookupSelf This endpoint will lookup a token and its properties.
 func (a *AuthApiService) GetAuthTokenLookupSelf(ctx context.Context) ApiGetAuthTokenLookupSelfRequest {
 	return ApiGetAuthTokenLookupSelfRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthTokenLookupSelfExecute(r ApiGetAuthTokenLookupSelfRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthTokenLookupSelf")
@@ -13742,9 +13624,9 @@ func (a *AuthApiService) GetAuthTokenLookupSelfExecute(r ApiGetAuthTokenLookupSe
 }
 
 type ApiGetAuthTokenRolesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -13766,16 +13648,16 @@ GetAuthTokenRoles This endpoint lists configured roles.
 func (a *AuthApiService) GetAuthTokenRoles(ctx context.Context) ApiGetAuthTokenRolesRequest {
 	return ApiGetAuthTokenRolesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthTokenRolesExecute(r ApiGetAuthTokenRolesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthTokenRoles")
@@ -13839,11 +13721,10 @@ func (a *AuthApiService) GetAuthTokenRolesExecute(r ApiGetAuthTokenRolesRequest)
 }
 
 type ApiGetAuthTokenRolesRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiGetAuthTokenRolesRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthTokenRolesRoleNameExecute(r)
@@ -13859,17 +13740,17 @@ GetAuthTokenRolesRoleName Method for GetAuthTokenRolesRoleName
 func (a *AuthApiService) GetAuthTokenRolesRoleName(ctx context.Context, roleName string) ApiGetAuthTokenRolesRoleNameRequest {
 	return ApiGetAuthTokenRolesRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthTokenRolesRoleNameExecute(r ApiGetAuthTokenRolesRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthTokenRolesRoleName")
@@ -13930,9 +13811,9 @@ func (a *AuthApiService) GetAuthTokenRolesRoleNameExecute(r ApiGetAuthTokenRoles
 }
 
 type ApiGetAuthUserpassUsersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -13954,16 +13835,16 @@ GetAuthUserpassUsers Manage users allowed to authenticate.
 func (a *AuthApiService) GetAuthUserpassUsers(ctx context.Context) ApiGetAuthUserpassUsersRequest {
 	return ApiGetAuthUserpassUsersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthUserpassUsersExecute(r ApiGetAuthUserpassUsersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthUserpassUsers")
@@ -14027,11 +13908,10 @@ func (a *AuthApiService) GetAuthUserpassUsersExecute(r ApiGetAuthUserpassUsersRe
 }
 
 type ApiGetAuthUserpassUsersUsernameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	username string
+	username   string
 }
-
 
 func (r ApiGetAuthUserpassUsersUsernameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAuthUserpassUsersUsernameExecute(r)
@@ -14047,17 +13927,17 @@ GetAuthUserpassUsersUsername Manage users allowed to authenticate.
 func (a *AuthApiService) GetAuthUserpassUsersUsername(ctx context.Context, username string) ApiGetAuthUserpassUsersUsernameRequest {
 	return ApiGetAuthUserpassUsersUsernameRequest{
 		ApiService: a,
-		ctx: ctx,
-		username: username,
+		ctx:        ctx,
+		username:   username,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) GetAuthUserpassUsersUsernameExecute(r ApiGetAuthUserpassUsersUsernameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthUserpassUsersUsername")
@@ -14118,8 +13998,8 @@ func (a *AuthApiService) GetAuthUserpassUsersUsernameExecute(r ApiGetAuthUserpas
 }
 
 type ApiPostAuthAlicloudLoginRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                  context.Context
+	ApiService           *AuthApiService
 	alicloudLoginRequest *AlicloudLoginRequest
 }
 
@@ -14141,16 +14021,16 @@ PostAuthAlicloudLogin Authenticates an RAM entity with Vault.
 func (a *AuthApiService) PostAuthAlicloudLogin(ctx context.Context) ApiPostAuthAlicloudLoginRequest {
 	return ApiPostAuthAlicloudLoginRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthAlicloudLoginExecute(r ApiPostAuthAlicloudLoginRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAlicloudLogin")
@@ -14212,9 +14092,9 @@ func (a *AuthApiService) PostAuthAlicloudLoginExecute(r ApiPostAuthAlicloudLogin
 }
 
 type ApiPostAuthAlicloudRoleRoleRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	role string
+	ctx                 context.Context
+	ApiService          *AuthApiService
+	role                string
 	alicloudRoleRequest *AlicloudRoleRequest
 }
 
@@ -14237,17 +14117,17 @@ PostAuthAlicloudRoleRole Create a role and associate policies to it.
 func (a *AuthApiService) PostAuthAlicloudRoleRole(ctx context.Context, role string) ApiPostAuthAlicloudRoleRoleRequest {
 	return ApiPostAuthAlicloudRoleRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		role: role,
+		ctx:        ctx,
+		role:       role,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthAlicloudRoleRoleExecute(r ApiPostAuthAlicloudRoleRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAlicloudRoleRole")
@@ -14310,8 +14190,8 @@ func (a *AuthApiService) PostAuthAlicloudRoleRoleExecute(r ApiPostAuthAlicloudRo
 }
 
 type ApiPostAuthAppIdLoginRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx               context.Context
+	ApiService        *AuthApiService
 	appIdLoginRequest *AppIdLoginRequest
 }
 
@@ -14333,16 +14213,16 @@ PostAuthAppIdLogin Log in with an App ID and User ID.
 func (a *AuthApiService) PostAuthAppIdLogin(ctx context.Context) ApiPostAuthAppIdLoginRequest {
 	return ApiPostAuthAppIdLoginRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthAppIdLoginExecute(r ApiPostAuthAppIdLoginRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAppIdLogin")
@@ -14404,9 +14284,9 @@ func (a *AuthApiService) PostAuthAppIdLoginExecute(r ApiPostAuthAppIdLoginReques
 }
 
 type ApiPostAuthAppIdLoginAppIdRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	appId string
+	ctx               context.Context
+	ApiService        *AuthApiService
+	appId             string
 	appIdLoginRequest *AppIdLoginRequest
 }
 
@@ -14429,17 +14309,17 @@ PostAuthAppIdLoginAppId Log in with an App ID and User ID.
 func (a *AuthApiService) PostAuthAppIdLoginAppId(ctx context.Context, appId string) ApiPostAuthAppIdLoginAppIdRequest {
 	return ApiPostAuthAppIdLoginAppIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		appId: appId,
+		ctx:        ctx,
+		appId:      appId,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthAppIdLoginAppIdExecute(r ApiPostAuthAppIdLoginAppIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAppIdLoginAppId")
@@ -14502,9 +14382,9 @@ func (a *AuthApiService) PostAuthAppIdLoginAppIdExecute(r ApiPostAuthAppIdLoginA
 }
 
 type ApiPostAuthAppIdMapAppIdKeyRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	key string
+	ctx                  context.Context
+	ApiService           *AuthApiService
+	key                  string
 	appIdMapAppIdRequest *AppIdMapAppIdRequest
 }
 
@@ -14527,17 +14407,17 @@ PostAuthAppIdMapAppIdKey Read/write/delete a single app-id mapping
 func (a *AuthApiService) PostAuthAppIdMapAppIdKey(ctx context.Context, key string) ApiPostAuthAppIdMapAppIdKeyRequest {
 	return ApiPostAuthAppIdMapAppIdKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthAppIdMapAppIdKeyExecute(r ApiPostAuthAppIdMapAppIdKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAppIdMapAppIdKey")
@@ -14600,9 +14480,9 @@ func (a *AuthApiService) PostAuthAppIdMapAppIdKeyExecute(r ApiPostAuthAppIdMapAp
 }
 
 type ApiPostAuthAppIdMapUserIdKeyRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	key string
+	ctx                   context.Context
+	ApiService            *AuthApiService
+	key                   string
 	appIdMapUserIdRequest *AppIdMapUserIdRequest
 }
 
@@ -14625,17 +14505,17 @@ PostAuthAppIdMapUserIdKey Read/write/delete a single user-id mapping
 func (a *AuthApiService) PostAuthAppIdMapUserIdKey(ctx context.Context, key string) ApiPostAuthAppIdMapUserIdKeyRequest {
 	return ApiPostAuthAppIdMapUserIdKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthAppIdMapUserIdKeyExecute(r ApiPostAuthAppIdMapUserIdKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAppIdMapUserIdKey")
@@ -14698,8 +14578,8 @@ func (a *AuthApiService) PostAuthAppIdMapUserIdKeyExecute(r ApiPostAuthAppIdMapU
 }
 
 type ApiPostAuthApproleLoginRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                 context.Context
+	ApiService          *AuthApiService
 	approleLoginRequest *ApproleLoginRequest
 }
 
@@ -14721,16 +14601,16 @@ PostAuthApproleLogin Method for PostAuthApproleLogin
 func (a *AuthApiService) PostAuthApproleLogin(ctx context.Context) ApiPostAuthApproleLoginRequest {
 	return ApiPostAuthApproleLoginRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthApproleLoginExecute(r ApiPostAuthApproleLoginRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleLogin")
@@ -14792,9 +14672,9 @@ func (a *AuthApiService) PostAuthApproleLoginExecute(r ApiPostAuthApproleLoginRe
 }
 
 type ApiPostAuthApproleRoleRoleNameRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	roleName string
+	ctx                context.Context
+	ApiService         *AuthApiService
+	roleName           string
 	approleRoleRequest *ApproleRoleRequest
 }
 
@@ -14817,17 +14697,17 @@ PostAuthApproleRoleRoleName Register an role with the backend.
 func (a *AuthApiService) PostAuthApproleRoleRoleName(ctx context.Context, roleName string) ApiPostAuthApproleRoleRoleNameRequest {
 	return ApiPostAuthApproleRoleRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthApproleRoleRoleNameExecute(r ApiPostAuthApproleRoleRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleName")
@@ -14890,9 +14770,9 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameExecute(r ApiPostAuthApprole
 }
 
 type ApiPostAuthApproleRoleRoleNameBindSecretIdRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	roleName string
+	ctx                            context.Context
+	ApiService                     *AuthApiService
+	roleName                       string
 	approleRoleBindSecretIdRequest *ApproleRoleBindSecretIdRequest
 }
 
@@ -14915,17 +14795,17 @@ PostAuthApproleRoleRoleNameBindSecretId Impose secret_id to be presented during 
 func (a *AuthApiService) PostAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string) ApiPostAuthApproleRoleRoleNameBindSecretIdRequest {
 	return ApiPostAuthApproleRoleRoleNameBindSecretIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthApproleRoleRoleNameBindSecretIdExecute(r ApiPostAuthApproleRoleRoleNameBindSecretIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameBindSecretId")
@@ -14988,9 +14868,9 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameBindSecretIdExecute(r ApiPos
 }
 
 type ApiPostAuthApproleRoleRoleNameBoundCidrListRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	roleName string
+	ctx                             context.Context
+	ApiService                      *AuthApiService
+	roleName                        string
 	approleRoleBoundCidrListRequest *ApproleRoleBoundCidrListRequest
 }
 
@@ -15013,17 +14893,17 @@ PostAuthApproleRoleRoleNameBoundCidrList Deprecated: Comma separated list of CID
 func (a *AuthApiService) PostAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string) ApiPostAuthApproleRoleRoleNameBoundCidrListRequest {
 	return ApiPostAuthApproleRoleRoleNameBoundCidrListRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthApproleRoleRoleNameBoundCidrListExecute(r ApiPostAuthApproleRoleRoleNameBoundCidrListRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameBoundCidrList")
@@ -15086,9 +14966,9 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameBoundCidrListExecute(r ApiPo
 }
 
 type ApiPostAuthApproleRoleRoleNameCustomSecretIdRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	roleName string
+	ctx                              context.Context
+	ApiService                       *AuthApiService
+	roleName                         string
 	approleRoleCustomSecretIdRequest *ApproleRoleCustomSecretIdRequest
 }
 
@@ -15111,17 +14991,17 @@ PostAuthApproleRoleRoleNameCustomSecretId Assign a SecretID of choice against th
 func (a *AuthApiService) PostAuthApproleRoleRoleNameCustomSecretId(ctx context.Context, roleName string) ApiPostAuthApproleRoleRoleNameCustomSecretIdRequest {
 	return ApiPostAuthApproleRoleRoleNameCustomSecretIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthApproleRoleRoleNameCustomSecretIdExecute(r ApiPostAuthApproleRoleRoleNameCustomSecretIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameCustomSecretId")
@@ -15184,9 +15064,9 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameCustomSecretIdExecute(r ApiP
 }
 
 type ApiPostAuthApproleRoleRoleNamePeriodRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	roleName string
+	ctx                      context.Context
+	ApiService               *AuthApiService
+	roleName                 string
 	approleRolePeriodRequest *ApproleRolePeriodRequest
 }
 
@@ -15209,17 +15089,17 @@ PostAuthApproleRoleRoleNamePeriod Updates the value of 'period' on the role
 func (a *AuthApiService) PostAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string) ApiPostAuthApproleRoleRoleNamePeriodRequest {
 	return ApiPostAuthApproleRoleRoleNamePeriodRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthApproleRoleRoleNamePeriodExecute(r ApiPostAuthApproleRoleRoleNamePeriodRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNamePeriod")
@@ -15282,9 +15162,9 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNamePeriodExecute(r ApiPostAuthA
 }
 
 type ApiPostAuthApproleRoleRoleNamePoliciesRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	roleName string
+	ctx                        context.Context
+	ApiService                 *AuthApiService
+	roleName                   string
 	approleRolePoliciesRequest *ApproleRolePoliciesRequest
 }
 
@@ -15307,17 +15187,17 @@ PostAuthApproleRoleRoleNamePolicies Policies of the role.
 func (a *AuthApiService) PostAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string) ApiPostAuthApproleRoleRoleNamePoliciesRequest {
 	return ApiPostAuthApproleRoleRoleNamePoliciesRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthApproleRoleRoleNamePoliciesExecute(r ApiPostAuthApproleRoleRoleNamePoliciesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNamePolicies")
@@ -15380,9 +15260,9 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNamePoliciesExecute(r ApiPostAut
 }
 
 type ApiPostAuthApproleRoleRoleNameRoleIdRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	roleName string
+	ctx                      context.Context
+	ApiService               *AuthApiService
+	roleName                 string
 	approleRoleRoleIdRequest *ApproleRoleRoleIdRequest
 }
 
@@ -15405,17 +15285,17 @@ PostAuthApproleRoleRoleNameRoleId Returns the 'role_id' of the role.
 func (a *AuthApiService) PostAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName string) ApiPostAuthApproleRoleRoleNameRoleIdRequest {
 	return ApiPostAuthApproleRoleRoleNameRoleIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthApproleRoleRoleNameRoleIdExecute(r ApiPostAuthApproleRoleRoleNameRoleIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameRoleId")
@@ -15478,9 +15358,9 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameRoleIdExecute(r ApiPostAuthA
 }
 
 type ApiPostAuthApproleRoleRoleNameSecretIdRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	roleName string
+	ctx                        context.Context
+	ApiService                 *AuthApiService
+	roleName                   string
 	approleRoleSecretIdRequest *ApproleRoleSecretIdRequest
 }
 
@@ -15503,17 +15383,17 @@ PostAuthApproleRoleRoleNameSecretId Generate a SecretID against this role.
 func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName string) ApiPostAuthApproleRoleRoleNameSecretIdRequest {
 	return ApiPostAuthApproleRoleRoleNameSecretIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdExecute(r ApiPostAuthApproleRoleRoleNameSecretIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameSecretId")
@@ -15576,9 +15456,9 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdExecute(r ApiPostAut
 }
 
 type ApiPostAuthApproleRoleRoleNameSecretIdAccessorDestroyRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	roleName string
+	ctx                                       context.Context
+	ApiService                                *AuthApiService
+	roleName                                  string
 	approleRoleSecretIdAccessorDestroyRequest *ApproleRoleSecretIdAccessorDestroyRequest
 }
 
@@ -15601,17 +15481,17 @@ PostAuthApproleRoleRoleNameSecretIdAccessorDestroy Method for PostAuthApproleRol
 func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.Context, roleName string) ApiPostAuthApproleRoleRoleNameSecretIdAccessorDestroyRequest {
 	return ApiPostAuthApproleRoleRoleNameSecretIdAccessorDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdAccessorDestroyExecute(r ApiPostAuthApproleRoleRoleNameSecretIdAccessorDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameSecretIdAccessorDestroy")
@@ -15674,9 +15554,9 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdAccessorDestroyExecu
 }
 
 type ApiPostAuthApproleRoleRoleNameSecretIdAccessorLookupRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	roleName string
+	ctx                                      context.Context
+	ApiService                               *AuthApiService
+	roleName                                 string
 	approleRoleSecretIdAccessorLookupRequest *ApproleRoleSecretIdAccessorLookupRequest
 }
 
@@ -15699,17 +15579,17 @@ PostAuthApproleRoleRoleNameSecretIdAccessorLookup Method for PostAuthApproleRole
 func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdAccessorLookup(ctx context.Context, roleName string) ApiPostAuthApproleRoleRoleNameSecretIdAccessorLookupRequest {
 	return ApiPostAuthApproleRoleRoleNameSecretIdAccessorLookupRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdAccessorLookupExecute(r ApiPostAuthApproleRoleRoleNameSecretIdAccessorLookupRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameSecretIdAccessorLookup")
@@ -15772,9 +15652,9 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdAccessorLookupExecut
 }
 
 type ApiPostAuthApproleRoleRoleNameSecretIdBoundCidrsRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	roleName string
+	ctx                                  context.Context
+	ApiService                           *AuthApiService
+	roleName                             string
 	approleRoleSecretIdBoundCidrsRequest *ApproleRoleSecretIdBoundCidrsRequest
 }
 
@@ -15797,17 +15677,17 @@ PostAuthApproleRoleRoleNameSecretIdBoundCidrs Comma separated list of CIDR block
 func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string) ApiPostAuthApproleRoleRoleNameSecretIdBoundCidrsRequest {
 	return ApiPostAuthApproleRoleRoleNameSecretIdBoundCidrsRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdBoundCidrsExecute(r ApiPostAuthApproleRoleRoleNameSecretIdBoundCidrsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameSecretIdBoundCidrs")
@@ -15870,9 +15750,9 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdBoundCidrsExecute(r 
 }
 
 type ApiPostAuthApproleRoleRoleNameSecretIdDestroyRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	roleName string
+	ctx                               context.Context
+	ApiService                        *AuthApiService
+	roleName                          string
 	approleRoleSecretIdDestroyRequest *ApproleRoleSecretIdDestroyRequest
 }
 
@@ -15895,17 +15775,17 @@ PostAuthApproleRoleRoleNameSecretIdDestroy Invalidate an issued secret_id
 func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context, roleName string) ApiPostAuthApproleRoleRoleNameSecretIdDestroyRequest {
 	return ApiPostAuthApproleRoleRoleNameSecretIdDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdDestroyExecute(r ApiPostAuthApproleRoleRoleNameSecretIdDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameSecretIdDestroy")
@@ -15968,9 +15848,9 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdDestroyExecute(r Api
 }
 
 type ApiPostAuthApproleRoleRoleNameSecretIdLookupRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	roleName string
+	ctx                              context.Context
+	ApiService                       *AuthApiService
+	roleName                         string
 	approleRoleSecretIdLookupRequest *ApproleRoleSecretIdLookupRequest
 }
 
@@ -15993,17 +15873,17 @@ PostAuthApproleRoleRoleNameSecretIdLookup Read the properties of an issued secre
 func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdLookup(ctx context.Context, roleName string) ApiPostAuthApproleRoleRoleNameSecretIdLookupRequest {
 	return ApiPostAuthApproleRoleRoleNameSecretIdLookupRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdLookupExecute(r ApiPostAuthApproleRoleRoleNameSecretIdLookupRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameSecretIdLookup")
@@ -16066,9 +15946,9 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdLookupExecute(r ApiP
 }
 
 type ApiPostAuthApproleRoleRoleNameSecretIdNumUsesRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	roleName string
+	ctx                               context.Context
+	ApiService                        *AuthApiService
+	roleName                          string
 	approleRoleSecretIdNumUsesRequest *ApproleRoleSecretIdNumUsesRequest
 }
 
@@ -16091,17 +15971,17 @@ PostAuthApproleRoleRoleNameSecretIdNumUses Use limit of the SecretID generated a
 func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string) ApiPostAuthApproleRoleRoleNameSecretIdNumUsesRequest {
 	return ApiPostAuthApproleRoleRoleNameSecretIdNumUsesRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdNumUsesExecute(r ApiPostAuthApproleRoleRoleNameSecretIdNumUsesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameSecretIdNumUses")
@@ -16164,9 +16044,9 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdNumUsesExecute(r Api
 }
 
 type ApiPostAuthApproleRoleRoleNameSecretIdTtlRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	roleName string
+	ctx                           context.Context
+	ApiService                    *AuthApiService
+	roleName                      string
 	approleRoleSecretIdTtlRequest *ApproleRoleSecretIdTtlRequest
 }
 
@@ -16189,17 +16069,17 @@ PostAuthApproleRoleRoleNameSecretIdTtl Duration in seconds, representing the lif
 func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string) ApiPostAuthApproleRoleRoleNameSecretIdTtlRequest {
 	return ApiPostAuthApproleRoleRoleNameSecretIdTtlRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdTtlExecute(r ApiPostAuthApproleRoleRoleNameSecretIdTtlRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameSecretIdTtl")
@@ -16262,9 +16142,9 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdTtlExecute(r ApiPost
 }
 
 type ApiPostAuthApproleRoleRoleNameTokenBoundCidrsRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	roleName string
+	ctx                               context.Context
+	ApiService                        *AuthApiService
+	roleName                          string
 	approleRoleTokenBoundCidrsRequest *ApproleRoleTokenBoundCidrsRequest
 }
 
@@ -16287,17 +16167,17 @@ PostAuthApproleRoleRoleNameTokenBoundCidrs Comma separated string or list of CID
 func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string) ApiPostAuthApproleRoleRoleNameTokenBoundCidrsRequest {
 	return ApiPostAuthApproleRoleRoleNameTokenBoundCidrsRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenBoundCidrsExecute(r ApiPostAuthApproleRoleRoleNameTokenBoundCidrsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameTokenBoundCidrs")
@@ -16360,9 +16240,9 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenBoundCidrsExecute(r Api
 }
 
 type ApiPostAuthApproleRoleRoleNameTokenMaxTtlRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	roleName string
+	ctx                           context.Context
+	ApiService                    *AuthApiService
+	roleName                      string
 	approleRoleTokenMaxTtlRequest *ApproleRoleTokenMaxTtlRequest
 }
 
@@ -16385,17 +16265,17 @@ PostAuthApproleRoleRoleNameTokenMaxTtl Duration in seconds, the maximum lifetime
 func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string) ApiPostAuthApproleRoleRoleNameTokenMaxTtlRequest {
 	return ApiPostAuthApproleRoleRoleNameTokenMaxTtlRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenMaxTtlExecute(r ApiPostAuthApproleRoleRoleNameTokenMaxTtlRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameTokenMaxTtl")
@@ -16458,9 +16338,9 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenMaxTtlExecute(r ApiPost
 }
 
 type ApiPostAuthApproleRoleRoleNameTokenNumUsesRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	roleName string
+	ctx                            context.Context
+	ApiService                     *AuthApiService
+	roleName                       string
 	approleRoleTokenNumUsesRequest *ApproleRoleTokenNumUsesRequest
 }
 
@@ -16483,17 +16363,17 @@ PostAuthApproleRoleRoleNameTokenNumUses Number of times issued tokens can be use
 func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string) ApiPostAuthApproleRoleRoleNameTokenNumUsesRequest {
 	return ApiPostAuthApproleRoleRoleNameTokenNumUsesRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenNumUsesExecute(r ApiPostAuthApproleRoleRoleNameTokenNumUsesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameTokenNumUses")
@@ -16556,9 +16436,9 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenNumUsesExecute(r ApiPos
 }
 
 type ApiPostAuthApproleRoleRoleNameTokenTtlRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	roleName string
+	ctx                        context.Context
+	ApiService                 *AuthApiService
+	roleName                   string
 	approleRoleTokenTtlRequest *ApproleRoleTokenTtlRequest
 }
 
@@ -16581,17 +16461,17 @@ PostAuthApproleRoleRoleNameTokenTtl Duration in seconds, the lifetime of the tok
 func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string) ApiPostAuthApproleRoleRoleNameTokenTtlRequest {
 	return ApiPostAuthApproleRoleRoleNameTokenTtlRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenTtlExecute(r ApiPostAuthApproleRoleRoleNameTokenTtlRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameTokenTtl")
@@ -16654,10 +16534,9 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenTtlExecute(r ApiPostAut
 }
 
 type ApiPostAuthApproleTidySecretIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiPostAuthApproleTidySecretIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostAuthApproleTidySecretIdExecute(r)
@@ -16672,16 +16551,16 @@ PostAuthApproleTidySecretId Trigger the clean-up of expired SecretID entries.
 func (a *AuthApiService) PostAuthApproleTidySecretId(ctx context.Context) ApiPostAuthApproleTidySecretIdRequest {
 	return ApiPostAuthApproleTidySecretIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthApproleTidySecretIdExecute(r ApiPostAuthApproleTidySecretIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleTidySecretId")
@@ -16741,9 +16620,9 @@ func (a *AuthApiService) PostAuthApproleTidySecretIdExecute(r ApiPostAuthApprole
 }
 
 type ApiPostAuthAwsConfigCertificateCertNameRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	certName string
+	ctx                         context.Context
+	ApiService                  *AuthApiService
+	certName                    string
 	awsConfigCertificateRequest *AwsConfigCertificateRequest
 }
 
@@ -16766,17 +16645,17 @@ PostAuthAwsConfigCertificateCertName Method for PostAuthAwsConfigCertificateCert
 func (a *AuthApiService) PostAuthAwsConfigCertificateCertName(ctx context.Context, certName string) ApiPostAuthAwsConfigCertificateCertNameRequest {
 	return ApiPostAuthAwsConfigCertificateCertNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		certName: certName,
+		ctx:        ctx,
+		certName:   certName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthAwsConfigCertificateCertNameExecute(r ApiPostAuthAwsConfigCertificateCertNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsConfigCertificateCertName")
@@ -16839,8 +16718,8 @@ func (a *AuthApiService) PostAuthAwsConfigCertificateCertNameExecute(r ApiPostAu
 }
 
 type ApiPostAuthAwsConfigClientRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                    context.Context
+	ApiService             *AuthApiService
 	awsConfigClientRequest *AwsConfigClientRequest
 }
 
@@ -16862,16 +16741,16 @@ PostAuthAwsConfigClient Method for PostAuthAwsConfigClient
 func (a *AuthApiService) PostAuthAwsConfigClient(ctx context.Context) ApiPostAuthAwsConfigClientRequest {
 	return ApiPostAuthAwsConfigClientRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthAwsConfigClientExecute(r ApiPostAuthAwsConfigClientRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsConfigClient")
@@ -16933,8 +16812,8 @@ func (a *AuthApiService) PostAuthAwsConfigClientExecute(r ApiPostAuthAwsConfigCl
 }
 
 type ApiPostAuthAwsConfigIdentityRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                      context.Context
+	ApiService               *AuthApiService
 	awsConfigIdentityRequest *AwsConfigIdentityRequest
 }
 
@@ -16956,16 +16835,16 @@ PostAuthAwsConfigIdentity Method for PostAuthAwsConfigIdentity
 func (a *AuthApiService) PostAuthAwsConfigIdentity(ctx context.Context) ApiPostAuthAwsConfigIdentityRequest {
 	return ApiPostAuthAwsConfigIdentityRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthAwsConfigIdentityExecute(r ApiPostAuthAwsConfigIdentityRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsConfigIdentity")
@@ -17027,10 +16906,9 @@ func (a *AuthApiService) PostAuthAwsConfigIdentityExecute(r ApiPostAuthAwsConfig
 }
 
 type ApiPostAuthAwsConfigRotateRootRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiPostAuthAwsConfigRotateRootRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostAuthAwsConfigRotateRootExecute(r)
@@ -17045,16 +16923,16 @@ PostAuthAwsConfigRotateRoot Method for PostAuthAwsConfigRotateRoot
 func (a *AuthApiService) PostAuthAwsConfigRotateRoot(ctx context.Context) ApiPostAuthAwsConfigRotateRootRequest {
 	return ApiPostAuthAwsConfigRotateRootRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthAwsConfigRotateRootExecute(r ApiPostAuthAwsConfigRotateRootRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsConfigRotateRoot")
@@ -17114,9 +16992,9 @@ func (a *AuthApiService) PostAuthAwsConfigRotateRootExecute(r ApiPostAuthAwsConf
 }
 
 type ApiPostAuthAwsConfigStsAccountIdRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	accountId string
+	ctx                 context.Context
+	ApiService          *AuthApiService
+	accountId           string
 	awsConfigStsRequest *AwsConfigStsRequest
 }
 
@@ -17139,17 +17017,17 @@ PostAuthAwsConfigStsAccountId Method for PostAuthAwsConfigStsAccountId
 func (a *AuthApiService) PostAuthAwsConfigStsAccountId(ctx context.Context, accountId string) ApiPostAuthAwsConfigStsAccountIdRequest {
 	return ApiPostAuthAwsConfigStsAccountIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		accountId: accountId,
+		ctx:        ctx,
+		accountId:  accountId,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthAwsConfigStsAccountIdExecute(r ApiPostAuthAwsConfigStsAccountIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsConfigStsAccountId")
@@ -17212,8 +17090,8 @@ func (a *AuthApiService) PostAuthAwsConfigStsAccountIdExecute(r ApiPostAuthAwsCo
 }
 
 type ApiPostAuthAwsConfigTidyIdentityAccesslistRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                                    context.Context
+	ApiService                             *AuthApiService
 	awsConfigTidyIdentityAccesslistRequest *AwsConfigTidyIdentityAccesslistRequest
 }
 
@@ -17235,16 +17113,16 @@ PostAuthAwsConfigTidyIdentityAccesslist Method for PostAuthAwsConfigTidyIdentity
 func (a *AuthApiService) PostAuthAwsConfigTidyIdentityAccesslist(ctx context.Context) ApiPostAuthAwsConfigTidyIdentityAccesslistRequest {
 	return ApiPostAuthAwsConfigTidyIdentityAccesslistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthAwsConfigTidyIdentityAccesslistExecute(r ApiPostAuthAwsConfigTidyIdentityAccesslistRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsConfigTidyIdentityAccesslist")
@@ -17306,8 +17184,8 @@ func (a *AuthApiService) PostAuthAwsConfigTidyIdentityAccesslistExecute(r ApiPos
 }
 
 type ApiPostAuthAwsConfigTidyIdentityWhitelistRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                                   context.Context
+	ApiService                            *AuthApiService
 	awsConfigTidyIdentityWhitelistRequest *AwsConfigTidyIdentityWhitelistRequest
 }
 
@@ -17329,16 +17207,16 @@ PostAuthAwsConfigTidyIdentityWhitelist Method for PostAuthAwsConfigTidyIdentityW
 func (a *AuthApiService) PostAuthAwsConfigTidyIdentityWhitelist(ctx context.Context) ApiPostAuthAwsConfigTidyIdentityWhitelistRequest {
 	return ApiPostAuthAwsConfigTidyIdentityWhitelistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthAwsConfigTidyIdentityWhitelistExecute(r ApiPostAuthAwsConfigTidyIdentityWhitelistRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsConfigTidyIdentityWhitelist")
@@ -17400,8 +17278,8 @@ func (a *AuthApiService) PostAuthAwsConfigTidyIdentityWhitelistExecute(r ApiPost
 }
 
 type ApiPostAuthAwsConfigTidyRoletagBlacklistRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                                  context.Context
+	ApiService                           *AuthApiService
 	awsConfigTidyRoletagBlacklistRequest *AwsConfigTidyRoletagBlacklistRequest
 }
 
@@ -17423,16 +17301,16 @@ PostAuthAwsConfigTidyRoletagBlacklist Method for PostAuthAwsConfigTidyRoletagBla
 func (a *AuthApiService) PostAuthAwsConfigTidyRoletagBlacklist(ctx context.Context) ApiPostAuthAwsConfigTidyRoletagBlacklistRequest {
 	return ApiPostAuthAwsConfigTidyRoletagBlacklistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthAwsConfigTidyRoletagBlacklistExecute(r ApiPostAuthAwsConfigTidyRoletagBlacklistRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsConfigTidyRoletagBlacklist")
@@ -17494,8 +17372,8 @@ func (a *AuthApiService) PostAuthAwsConfigTidyRoletagBlacklistExecute(r ApiPostA
 }
 
 type ApiPostAuthAwsConfigTidyRoletagDenylistRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                                 context.Context
+	ApiService                          *AuthApiService
 	awsConfigTidyRoletagDenylistRequest *AwsConfigTidyRoletagDenylistRequest
 }
 
@@ -17517,16 +17395,16 @@ PostAuthAwsConfigTidyRoletagDenylist Method for PostAuthAwsConfigTidyRoletagDeny
 func (a *AuthApiService) PostAuthAwsConfigTidyRoletagDenylist(ctx context.Context) ApiPostAuthAwsConfigTidyRoletagDenylistRequest {
 	return ApiPostAuthAwsConfigTidyRoletagDenylistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthAwsConfigTidyRoletagDenylistExecute(r ApiPostAuthAwsConfigTidyRoletagDenylistRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsConfigTidyRoletagDenylist")
@@ -17588,8 +17466,8 @@ func (a *AuthApiService) PostAuthAwsConfigTidyRoletagDenylistExecute(r ApiPostAu
 }
 
 type ApiPostAuthAwsLoginRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx             context.Context
+	ApiService      *AuthApiService
 	awsLoginRequest *AwsLoginRequest
 }
 
@@ -17611,16 +17489,16 @@ PostAuthAwsLogin Method for PostAuthAwsLogin
 func (a *AuthApiService) PostAuthAwsLogin(ctx context.Context) ApiPostAuthAwsLoginRequest {
 	return ApiPostAuthAwsLoginRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthAwsLoginExecute(r ApiPostAuthAwsLoginRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsLogin")
@@ -17682,9 +17560,9 @@ func (a *AuthApiService) PostAuthAwsLoginExecute(r ApiPostAuthAwsLoginRequest) (
 }
 
 type ApiPostAuthAwsRoleRoleRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	role string
+	ctx            context.Context
+	ApiService     *AuthApiService
+	role           string
 	awsRoleRequest *AwsRoleRequest
 }
 
@@ -17707,17 +17585,17 @@ PostAuthAwsRoleRole Method for PostAuthAwsRoleRole
 func (a *AuthApiService) PostAuthAwsRoleRole(ctx context.Context, role string) ApiPostAuthAwsRoleRoleRequest {
 	return ApiPostAuthAwsRoleRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		role: role,
+		ctx:        ctx,
+		role:       role,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthAwsRoleRoleExecute(r ApiPostAuthAwsRoleRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsRoleRole")
@@ -17780,9 +17658,9 @@ func (a *AuthApiService) PostAuthAwsRoleRoleExecute(r ApiPostAuthAwsRoleRoleRequ
 }
 
 type ApiPostAuthAwsRoleRoleTagRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	role string
+	ctx               context.Context
+	ApiService        *AuthApiService
+	role              string
 	awsRoleTagRequest *AwsRoleTagRequest
 }
 
@@ -17805,17 +17683,17 @@ PostAuthAwsRoleRoleTag Method for PostAuthAwsRoleRoleTag
 func (a *AuthApiService) PostAuthAwsRoleRoleTag(ctx context.Context, role string) ApiPostAuthAwsRoleRoleTagRequest {
 	return ApiPostAuthAwsRoleRoleTagRequest{
 		ApiService: a,
-		ctx: ctx,
-		role: role,
+		ctx:        ctx,
+		role:       role,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthAwsRoleRoleTagExecute(r ApiPostAuthAwsRoleRoleTagRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsRoleRoleTag")
@@ -17878,11 +17756,10 @@ func (a *AuthApiService) PostAuthAwsRoleRoleTagExecute(r ApiPostAuthAwsRoleRoleT
 }
 
 type ApiPostAuthAwsRoletagBlacklistRoleTagRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleTag string
+	roleTag    string
 }
-
 
 func (r ApiPostAuthAwsRoletagBlacklistRoleTagRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostAuthAwsRoletagBlacklistRoleTagExecute(r)
@@ -17898,17 +17775,17 @@ PostAuthAwsRoletagBlacklistRoleTag Method for PostAuthAwsRoletagBlacklistRoleTag
 func (a *AuthApiService) PostAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag string) ApiPostAuthAwsRoletagBlacklistRoleTagRequest {
 	return ApiPostAuthAwsRoletagBlacklistRoleTagRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleTag: roleTag,
+		ctx:        ctx,
+		roleTag:    roleTag,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthAwsRoletagBlacklistRoleTagExecute(r ApiPostAuthAwsRoletagBlacklistRoleTagRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsRoletagBlacklistRoleTag")
@@ -17969,11 +17846,10 @@ func (a *AuthApiService) PostAuthAwsRoletagBlacklistRoleTagExecute(r ApiPostAuth
 }
 
 type ApiPostAuthAwsRoletagDenylistRoleTagRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleTag string
+	roleTag    string
 }
-
 
 func (r ApiPostAuthAwsRoletagDenylistRoleTagRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostAuthAwsRoletagDenylistRoleTagExecute(r)
@@ -17989,17 +17865,17 @@ PostAuthAwsRoletagDenylistRoleTag Method for PostAuthAwsRoletagDenylistRoleTag
 func (a *AuthApiService) PostAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag string) ApiPostAuthAwsRoletagDenylistRoleTagRequest {
 	return ApiPostAuthAwsRoletagDenylistRoleTagRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleTag: roleTag,
+		ctx:        ctx,
+		roleTag:    roleTag,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthAwsRoletagDenylistRoleTagExecute(r ApiPostAuthAwsRoletagDenylistRoleTagRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsRoletagDenylistRoleTag")
@@ -18060,8 +17936,8 @@ func (a *AuthApiService) PostAuthAwsRoletagDenylistRoleTagExecute(r ApiPostAuthA
 }
 
 type ApiPostAuthAwsTidyIdentityAccesslistRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                              context.Context
+	ApiService                       *AuthApiService
 	awsTidyIdentityAccesslistRequest *AwsTidyIdentityAccesslistRequest
 }
 
@@ -18083,16 +17959,16 @@ PostAuthAwsTidyIdentityAccesslist Method for PostAuthAwsTidyIdentityAccesslist
 func (a *AuthApiService) PostAuthAwsTidyIdentityAccesslist(ctx context.Context) ApiPostAuthAwsTidyIdentityAccesslistRequest {
 	return ApiPostAuthAwsTidyIdentityAccesslistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthAwsTidyIdentityAccesslistExecute(r ApiPostAuthAwsTidyIdentityAccesslistRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsTidyIdentityAccesslist")
@@ -18154,8 +18030,8 @@ func (a *AuthApiService) PostAuthAwsTidyIdentityAccesslistExecute(r ApiPostAuthA
 }
 
 type ApiPostAuthAwsTidyIdentityWhitelistRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                             context.Context
+	ApiService                      *AuthApiService
 	awsTidyIdentityWhitelistRequest *AwsTidyIdentityWhitelistRequest
 }
 
@@ -18177,16 +18053,16 @@ PostAuthAwsTidyIdentityWhitelist Method for PostAuthAwsTidyIdentityWhitelist
 func (a *AuthApiService) PostAuthAwsTidyIdentityWhitelist(ctx context.Context) ApiPostAuthAwsTidyIdentityWhitelistRequest {
 	return ApiPostAuthAwsTidyIdentityWhitelistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthAwsTidyIdentityWhitelistExecute(r ApiPostAuthAwsTidyIdentityWhitelistRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsTidyIdentityWhitelist")
@@ -18248,8 +18124,8 @@ func (a *AuthApiService) PostAuthAwsTidyIdentityWhitelistExecute(r ApiPostAuthAw
 }
 
 type ApiPostAuthAwsTidyRoletagBlacklistRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                            context.Context
+	ApiService                     *AuthApiService
 	awsTidyRoletagBlacklistRequest *AwsTidyRoletagBlacklistRequest
 }
 
@@ -18271,16 +18147,16 @@ PostAuthAwsTidyRoletagBlacklist Method for PostAuthAwsTidyRoletagBlacklist
 func (a *AuthApiService) PostAuthAwsTidyRoletagBlacklist(ctx context.Context) ApiPostAuthAwsTidyRoletagBlacklistRequest {
 	return ApiPostAuthAwsTidyRoletagBlacklistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthAwsTidyRoletagBlacklistExecute(r ApiPostAuthAwsTidyRoletagBlacklistRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsTidyRoletagBlacklist")
@@ -18342,8 +18218,8 @@ func (a *AuthApiService) PostAuthAwsTidyRoletagBlacklistExecute(r ApiPostAuthAws
 }
 
 type ApiPostAuthAwsTidyRoletagDenylistRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                           context.Context
+	ApiService                    *AuthApiService
 	awsTidyRoletagDenylistRequest *AwsTidyRoletagDenylistRequest
 }
 
@@ -18365,16 +18241,16 @@ PostAuthAwsTidyRoletagDenylist Method for PostAuthAwsTidyRoletagDenylist
 func (a *AuthApiService) PostAuthAwsTidyRoletagDenylist(ctx context.Context) ApiPostAuthAwsTidyRoletagDenylistRequest {
 	return ApiPostAuthAwsTidyRoletagDenylistRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthAwsTidyRoletagDenylistExecute(r ApiPostAuthAwsTidyRoletagDenylistRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsTidyRoletagDenylist")
@@ -18436,8 +18312,8 @@ func (a *AuthApiService) PostAuthAwsTidyRoletagDenylistExecute(r ApiPostAuthAwsT
 }
 
 type ApiPostAuthAzureConfigRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                context.Context
+	ApiService         *AuthApiService
 	azureConfigRequest *AzureConfigRequest
 }
 
@@ -18459,16 +18335,16 @@ PostAuthAzureConfig Method for PostAuthAzureConfig
 func (a *AuthApiService) PostAuthAzureConfig(ctx context.Context) ApiPostAuthAzureConfigRequest {
 	return ApiPostAuthAzureConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthAzureConfigExecute(r ApiPostAuthAzureConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAzureConfig")
@@ -18530,8 +18406,8 @@ func (a *AuthApiService) PostAuthAzureConfigExecute(r ApiPostAuthAzureConfigRequ
 }
 
 type ApiPostAuthAzureLoginRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx               context.Context
+	ApiService        *AuthApiService
 	azureLoginRequest *AzureLoginRequest
 }
 
@@ -18553,16 +18429,16 @@ PostAuthAzureLogin Method for PostAuthAzureLogin
 func (a *AuthApiService) PostAuthAzureLogin(ctx context.Context) ApiPostAuthAzureLoginRequest {
 	return ApiPostAuthAzureLoginRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthAzureLoginExecute(r ApiPostAuthAzureLoginRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAzureLogin")
@@ -18624,9 +18500,9 @@ func (a *AuthApiService) PostAuthAzureLoginExecute(r ApiPostAuthAzureLoginReques
 }
 
 type ApiPostAuthAzureRoleNameRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	name string
+	ctx              context.Context
+	ApiService       *AuthApiService
+	name             string
 	azureRoleRequest *AzureRoleRequest
 }
 
@@ -18649,17 +18525,17 @@ PostAuthAzureRoleName Method for PostAuthAzureRoleName
 func (a *AuthApiService) PostAuthAzureRoleName(ctx context.Context, name string) ApiPostAuthAzureRoleNameRequest {
 	return ApiPostAuthAzureRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthAzureRoleNameExecute(r ApiPostAuthAzureRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAzureRoleName")
@@ -18722,8 +18598,8 @@ func (a *AuthApiService) PostAuthAzureRoleNameExecute(r ApiPostAuthAzureRoleName
 }
 
 type ApiPostAuthCentrifyConfigRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                   context.Context
+	ApiService            *AuthApiService
 	centrifyConfigRequest *CentrifyConfigRequest
 }
 
@@ -18745,16 +18621,16 @@ PostAuthCentrifyConfig This path allows you to configure the centrify auth provi
 func (a *AuthApiService) PostAuthCentrifyConfig(ctx context.Context) ApiPostAuthCentrifyConfigRequest {
 	return ApiPostAuthCentrifyConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthCentrifyConfigExecute(r ApiPostAuthCentrifyConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthCentrifyConfig")
@@ -18816,8 +18692,8 @@ func (a *AuthApiService) PostAuthCentrifyConfigExecute(r ApiPostAuthCentrifyConf
 }
 
 type ApiPostAuthCentrifyLoginRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                  context.Context
+	ApiService           *AuthApiService
 	centrifyLoginRequest *CentrifyLoginRequest
 }
 
@@ -18839,16 +18715,16 @@ PostAuthCentrifyLogin Log in with a username and password.
 func (a *AuthApiService) PostAuthCentrifyLogin(ctx context.Context) ApiPostAuthCentrifyLoginRequest {
 	return ApiPostAuthCentrifyLoginRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthCentrifyLoginExecute(r ApiPostAuthCentrifyLoginRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthCentrifyLogin")
@@ -18910,9 +18786,9 @@ func (a *AuthApiService) PostAuthCentrifyLoginExecute(r ApiPostAuthCentrifyLogin
 }
 
 type ApiPostAuthCertCertsNameRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	name string
+	ctx              context.Context
+	ApiService       *AuthApiService
+	name             string
 	certCertsRequest *CertCertsRequest
 }
 
@@ -18935,17 +18811,17 @@ PostAuthCertCertsName Manage trusted certificates used for authentication.
 func (a *AuthApiService) PostAuthCertCertsName(ctx context.Context, name string) ApiPostAuthCertCertsNameRequest {
 	return ApiPostAuthCertCertsNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthCertCertsNameExecute(r ApiPostAuthCertCertsNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthCertCertsName")
@@ -19008,8 +18884,8 @@ func (a *AuthApiService) PostAuthCertCertsNameExecute(r ApiPostAuthCertCertsName
 }
 
 type ApiPostAuthCertConfigRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx               context.Context
+	ApiService        *AuthApiService
 	certConfigRequest *CertConfigRequest
 }
 
@@ -19031,16 +18907,16 @@ PostAuthCertConfig Method for PostAuthCertConfig
 func (a *AuthApiService) PostAuthCertConfig(ctx context.Context) ApiPostAuthCertConfigRequest {
 	return ApiPostAuthCertConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthCertConfigExecute(r ApiPostAuthCertConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthCertConfig")
@@ -19102,9 +18978,9 @@ func (a *AuthApiService) PostAuthCertConfigExecute(r ApiPostAuthCertConfigReques
 }
 
 type ApiPostAuthCertCrlsNameRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	name string
+	ctx             context.Context
+	ApiService      *AuthApiService
+	name            string
 	certCrlsRequest *CertCrlsRequest
 }
 
@@ -19127,17 +19003,17 @@ PostAuthCertCrlsName Manage Certificate Revocation Lists checked during authenti
 func (a *AuthApiService) PostAuthCertCrlsName(ctx context.Context, name string) ApiPostAuthCertCrlsNameRequest {
 	return ApiPostAuthCertCrlsNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthCertCrlsNameExecute(r ApiPostAuthCertCrlsNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthCertCrlsName")
@@ -19200,8 +19076,8 @@ func (a *AuthApiService) PostAuthCertCrlsNameExecute(r ApiPostAuthCertCrlsNameRe
 }
 
 type ApiPostAuthCertLoginRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx              context.Context
+	ApiService       *AuthApiService
 	certLoginRequest *CertLoginRequest
 }
 
@@ -19223,16 +19099,16 @@ PostAuthCertLogin Method for PostAuthCertLogin
 func (a *AuthApiService) PostAuthCertLogin(ctx context.Context) ApiPostAuthCertLoginRequest {
 	return ApiPostAuthCertLoginRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthCertLoginExecute(r ApiPostAuthCertLoginRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthCertLogin")
@@ -19294,8 +19170,8 @@ func (a *AuthApiService) PostAuthCertLoginExecute(r ApiPostAuthCertLoginRequest)
 }
 
 type ApiPostAuthCfConfigRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx             context.Context
+	ApiService      *AuthApiService
 	cfConfigRequest *CfConfigRequest
 }
 
@@ -19317,16 +19193,16 @@ PostAuthCfConfig Method for PostAuthCfConfig
 func (a *AuthApiService) PostAuthCfConfig(ctx context.Context) ApiPostAuthCfConfigRequest {
 	return ApiPostAuthCfConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthCfConfigExecute(r ApiPostAuthCfConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthCfConfig")
@@ -19388,8 +19264,8 @@ func (a *AuthApiService) PostAuthCfConfigExecute(r ApiPostAuthCfConfigRequest) (
 }
 
 type ApiPostAuthCfLoginRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx            context.Context
+	ApiService     *AuthApiService
 	cfLoginRequest *CfLoginRequest
 }
 
@@ -19411,16 +19287,16 @@ PostAuthCfLogin Method for PostAuthCfLogin
 func (a *AuthApiService) PostAuthCfLogin(ctx context.Context) ApiPostAuthCfLoginRequest {
 	return ApiPostAuthCfLoginRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthCfLoginExecute(r ApiPostAuthCfLoginRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthCfLogin")
@@ -19482,9 +19358,9 @@ func (a *AuthApiService) PostAuthCfLoginExecute(r ApiPostAuthCfLoginRequest) (*h
 }
 
 type ApiPostAuthCfRolesRoleRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	role string
+	ctx            context.Context
+	ApiService     *AuthApiService
+	role           string
 	cfRolesRequest *CfRolesRequest
 }
 
@@ -19507,17 +19383,17 @@ PostAuthCfRolesRole Method for PostAuthCfRolesRole
 func (a *AuthApiService) PostAuthCfRolesRole(ctx context.Context, role string) ApiPostAuthCfRolesRoleRequest {
 	return ApiPostAuthCfRolesRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		role: role,
+		ctx:        ctx,
+		role:       role,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthCfRolesRoleExecute(r ApiPostAuthCfRolesRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthCfRolesRole")
@@ -19580,8 +19456,8 @@ func (a *AuthApiService) PostAuthCfRolesRoleExecute(r ApiPostAuthCfRolesRoleRequ
 }
 
 type ApiPostAuthGcpConfigRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx              context.Context
+	ApiService       *AuthApiService
 	gcpConfigRequest *GcpConfigRequest
 }
 
@@ -19603,16 +19479,16 @@ PostAuthGcpConfig Configure credentials used to query the GCP IAM API to verify 
 func (a *AuthApiService) PostAuthGcpConfig(ctx context.Context) ApiPostAuthGcpConfigRequest {
 	return ApiPostAuthGcpConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthGcpConfigExecute(r ApiPostAuthGcpConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthGcpConfig")
@@ -19674,8 +19550,8 @@ func (a *AuthApiService) PostAuthGcpConfigExecute(r ApiPostAuthGcpConfigRequest)
 }
 
 type ApiPostAuthGcpLoginRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx             context.Context
+	ApiService      *AuthApiService
 	gcpLoginRequest *GcpLoginRequest
 }
 
@@ -19697,16 +19573,16 @@ PostAuthGcpLogin Method for PostAuthGcpLogin
 func (a *AuthApiService) PostAuthGcpLogin(ctx context.Context) ApiPostAuthGcpLoginRequest {
 	return ApiPostAuthGcpLoginRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthGcpLoginExecute(r ApiPostAuthGcpLoginRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthGcpLogin")
@@ -19768,9 +19644,9 @@ func (a *AuthApiService) PostAuthGcpLoginExecute(r ApiPostAuthGcpLoginRequest) (
 }
 
 type ApiPostAuthGcpRoleNameRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	name string
+	ctx            context.Context
+	ApiService     *AuthApiService
+	name           string
 	gcpRoleRequest *GcpRoleRequest
 }
 
@@ -19793,17 +19669,17 @@ PostAuthGcpRoleName Create a GCP role with associated policies and required attr
 func (a *AuthApiService) PostAuthGcpRoleName(ctx context.Context, name string) ApiPostAuthGcpRoleNameRequest {
 	return ApiPostAuthGcpRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthGcpRoleNameExecute(r ApiPostAuthGcpRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthGcpRoleName")
@@ -19866,9 +19742,9 @@ func (a *AuthApiService) PostAuthGcpRoleNameExecute(r ApiPostAuthGcpRoleNameRequ
 }
 
 type ApiPostAuthGcpRoleNameLabelsRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	name string
+	ctx                  context.Context
+	ApiService           *AuthApiService
+	name                 string
 	gcpRoleLabelsRequest *GcpRoleLabelsRequest
 }
 
@@ -19891,17 +19767,17 @@ PostAuthGcpRoleNameLabels Add or remove labels for an existing 'gce' role
 func (a *AuthApiService) PostAuthGcpRoleNameLabels(ctx context.Context, name string) ApiPostAuthGcpRoleNameLabelsRequest {
 	return ApiPostAuthGcpRoleNameLabelsRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthGcpRoleNameLabelsExecute(r ApiPostAuthGcpRoleNameLabelsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthGcpRoleNameLabels")
@@ -19964,9 +19840,9 @@ func (a *AuthApiService) PostAuthGcpRoleNameLabelsExecute(r ApiPostAuthGcpRoleNa
 }
 
 type ApiPostAuthGcpRoleNameServiceAccountsRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	name string
+	ctx                           context.Context
+	ApiService                    *AuthApiService
+	name                          string
 	gcpRoleServiceAccountsRequest *GcpRoleServiceAccountsRequest
 }
 
@@ -19989,17 +19865,17 @@ PostAuthGcpRoleNameServiceAccounts Add or remove service accounts for an existin
 func (a *AuthApiService) PostAuthGcpRoleNameServiceAccounts(ctx context.Context, name string) ApiPostAuthGcpRoleNameServiceAccountsRequest {
 	return ApiPostAuthGcpRoleNameServiceAccountsRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthGcpRoleNameServiceAccountsExecute(r ApiPostAuthGcpRoleNameServiceAccountsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthGcpRoleNameServiceAccounts")
@@ -20062,8 +19938,8 @@ func (a *AuthApiService) PostAuthGcpRoleNameServiceAccountsExecute(r ApiPostAuth
 }
 
 type ApiPostAuthGithubConfigRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                 context.Context
+	ApiService          *AuthApiService
 	githubConfigRequest *GithubConfigRequest
 }
 
@@ -20085,16 +19961,16 @@ PostAuthGithubConfig Method for PostAuthGithubConfig
 func (a *AuthApiService) PostAuthGithubConfig(ctx context.Context) ApiPostAuthGithubConfigRequest {
 	return ApiPostAuthGithubConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthGithubConfigExecute(r ApiPostAuthGithubConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthGithubConfig")
@@ -20156,8 +20032,8 @@ func (a *AuthApiService) PostAuthGithubConfigExecute(r ApiPostAuthGithubConfigRe
 }
 
 type ApiPostAuthGithubLoginRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                context.Context
+	ApiService         *AuthApiService
 	githubLoginRequest *GithubLoginRequest
 }
 
@@ -20179,16 +20055,16 @@ PostAuthGithubLogin Method for PostAuthGithubLogin
 func (a *AuthApiService) PostAuthGithubLogin(ctx context.Context) ApiPostAuthGithubLoginRequest {
 	return ApiPostAuthGithubLoginRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthGithubLoginExecute(r ApiPostAuthGithubLoginRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthGithubLogin")
@@ -20250,9 +20126,9 @@ func (a *AuthApiService) PostAuthGithubLoginExecute(r ApiPostAuthGithubLoginRequ
 }
 
 type ApiPostAuthGithubMapTeamsKeyRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	key string
+	ctx                   context.Context
+	ApiService            *AuthApiService
+	key                   string
 	githubMapTeamsRequest *GithubMapTeamsRequest
 }
 
@@ -20275,17 +20151,17 @@ PostAuthGithubMapTeamsKey Read/write/delete a single teams mapping
 func (a *AuthApiService) PostAuthGithubMapTeamsKey(ctx context.Context, key string) ApiPostAuthGithubMapTeamsKeyRequest {
 	return ApiPostAuthGithubMapTeamsKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthGithubMapTeamsKeyExecute(r ApiPostAuthGithubMapTeamsKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthGithubMapTeamsKey")
@@ -20348,9 +20224,9 @@ func (a *AuthApiService) PostAuthGithubMapTeamsKeyExecute(r ApiPostAuthGithubMap
 }
 
 type ApiPostAuthGithubMapUsersKeyRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	key string
+	ctx                   context.Context
+	ApiService            *AuthApiService
+	key                   string
 	githubMapUsersRequest *GithubMapUsersRequest
 }
 
@@ -20373,17 +20249,17 @@ PostAuthGithubMapUsersKey Read/write/delete a single users mapping
 func (a *AuthApiService) PostAuthGithubMapUsersKey(ctx context.Context, key string) ApiPostAuthGithubMapUsersKeyRequest {
 	return ApiPostAuthGithubMapUsersKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthGithubMapUsersKeyExecute(r ApiPostAuthGithubMapUsersKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthGithubMapUsersKey")
@@ -20446,8 +20322,8 @@ func (a *AuthApiService) PostAuthGithubMapUsersKeyExecute(r ApiPostAuthGithubMap
 }
 
 type ApiPostAuthJwtConfigRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx              context.Context
+	ApiService       *AuthApiService
 	jwtConfigRequest *JwtConfigRequest
 }
 
@@ -20474,16 +20350,16 @@ validation locally, a set of public keys must be provided.
 func (a *AuthApiService) PostAuthJwtConfig(ctx context.Context) ApiPostAuthJwtConfigRequest {
 	return ApiPostAuthJwtConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthJwtConfigExecute(r ApiPostAuthJwtConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthJwtConfig")
@@ -20545,8 +20421,8 @@ func (a *AuthApiService) PostAuthJwtConfigExecute(r ApiPostAuthJwtConfigRequest)
 }
 
 type ApiPostAuthJwtLoginRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx             context.Context
+	ApiService      *AuthApiService
 	jwtLoginRequest *JwtLoginRequest
 }
 
@@ -20568,16 +20444,16 @@ PostAuthJwtLogin Authenticates to Vault using a JWT (or OIDC) token.
 func (a *AuthApiService) PostAuthJwtLogin(ctx context.Context) ApiPostAuthJwtLoginRequest {
 	return ApiPostAuthJwtLoginRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthJwtLoginExecute(r ApiPostAuthJwtLoginRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthJwtLogin")
@@ -20639,8 +20515,8 @@ func (a *AuthApiService) PostAuthJwtLoginExecute(r ApiPostAuthJwtLoginRequest) (
 }
 
 type ApiPostAuthJwtOidcAuthUrlRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                   context.Context
+	ApiService            *AuthApiService
 	jwtOidcAuthUrlRequest *JwtOidcAuthUrlRequest
 }
 
@@ -20662,16 +20538,16 @@ PostAuthJwtOidcAuthUrl Request an authorization URL to start an OIDC login flow.
 func (a *AuthApiService) PostAuthJwtOidcAuthUrl(ctx context.Context) ApiPostAuthJwtOidcAuthUrlRequest {
 	return ApiPostAuthJwtOidcAuthUrlRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthJwtOidcAuthUrlExecute(r ApiPostAuthJwtOidcAuthUrlRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthJwtOidcAuthUrl")
@@ -20733,8 +20609,8 @@ func (a *AuthApiService) PostAuthJwtOidcAuthUrlExecute(r ApiPostAuthJwtOidcAuthU
 }
 
 type ApiPostAuthJwtOidcCallbackRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                    context.Context
+	ApiService             *AuthApiService
 	jwtOidcCallbackRequest *JwtOidcCallbackRequest
 }
 
@@ -20756,16 +20632,16 @@ PostAuthJwtOidcCallback Callback endpoint to handle form_posts.
 func (a *AuthApiService) PostAuthJwtOidcCallback(ctx context.Context) ApiPostAuthJwtOidcCallbackRequest {
 	return ApiPostAuthJwtOidcCallbackRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthJwtOidcCallbackExecute(r ApiPostAuthJwtOidcCallbackRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthJwtOidcCallback")
@@ -20827,9 +20703,9 @@ func (a *AuthApiService) PostAuthJwtOidcCallbackExecute(r ApiPostAuthJwtOidcCall
 }
 
 type ApiPostAuthJwtRoleNameRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	name string
+	ctx            context.Context
+	ApiService     *AuthApiService
+	name           string
 	jwtRoleRequest *JwtRoleRequest
 }
 
@@ -20857,17 +20733,17 @@ A role is required to authenticate with this backend. The role binds
 func (a *AuthApiService) PostAuthJwtRoleName(ctx context.Context, name string) ApiPostAuthJwtRoleNameRequest {
 	return ApiPostAuthJwtRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthJwtRoleNameExecute(r ApiPostAuthJwtRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthJwtRoleName")
@@ -20930,8 +20806,8 @@ func (a *AuthApiService) PostAuthJwtRoleNameExecute(r ApiPostAuthJwtRoleNameRequ
 }
 
 type ApiPostAuthKerberosConfigRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                   context.Context
+	ApiService            *AuthApiService
 	kerberosConfigRequest *KerberosConfigRequest
 }
 
@@ -20953,16 +20829,16 @@ PostAuthKerberosConfig Method for PostAuthKerberosConfig
 func (a *AuthApiService) PostAuthKerberosConfig(ctx context.Context) ApiPostAuthKerberosConfigRequest {
 	return ApiPostAuthKerberosConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthKerberosConfigExecute(r ApiPostAuthKerberosConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthKerberosConfig")
@@ -21024,8 +20900,8 @@ func (a *AuthApiService) PostAuthKerberosConfigExecute(r ApiPostAuthKerberosConf
 }
 
 type ApiPostAuthKerberosConfigLdapRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                       context.Context
+	ApiService                *AuthApiService
 	kerberosConfigLdapRequest *KerberosConfigLdapRequest
 }
 
@@ -21047,16 +20923,16 @@ PostAuthKerberosConfigLdap Method for PostAuthKerberosConfigLdap
 func (a *AuthApiService) PostAuthKerberosConfigLdap(ctx context.Context) ApiPostAuthKerberosConfigLdapRequest {
 	return ApiPostAuthKerberosConfigLdapRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthKerberosConfigLdapExecute(r ApiPostAuthKerberosConfigLdapRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthKerberosConfigLdap")
@@ -21118,9 +20994,9 @@ func (a *AuthApiService) PostAuthKerberosConfigLdapExecute(r ApiPostAuthKerberos
 }
 
 type ApiPostAuthKerberosGroupsNameRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	name string
+	ctx                   context.Context
+	ApiService            *AuthApiService
+	name                  string
 	kerberosGroupsRequest *KerberosGroupsRequest
 }
 
@@ -21143,17 +21019,17 @@ PostAuthKerberosGroupsName Method for PostAuthKerberosGroupsName
 func (a *AuthApiService) PostAuthKerberosGroupsName(ctx context.Context, name string) ApiPostAuthKerberosGroupsNameRequest {
 	return ApiPostAuthKerberosGroupsNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthKerberosGroupsNameExecute(r ApiPostAuthKerberosGroupsNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthKerberosGroupsName")
@@ -21216,8 +21092,8 @@ func (a *AuthApiService) PostAuthKerberosGroupsNameExecute(r ApiPostAuthKerberos
 }
 
 type ApiPostAuthKerberosLoginRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                  context.Context
+	ApiService           *AuthApiService
 	kerberosLoginRequest *KerberosLoginRequest
 }
 
@@ -21239,16 +21115,16 @@ PostAuthKerberosLogin Method for PostAuthKerberosLogin
 func (a *AuthApiService) PostAuthKerberosLogin(ctx context.Context) ApiPostAuthKerberosLoginRequest {
 	return ApiPostAuthKerberosLoginRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthKerberosLoginExecute(r ApiPostAuthKerberosLoginRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthKerberosLogin")
@@ -21310,8 +21186,8 @@ func (a *AuthApiService) PostAuthKerberosLoginExecute(r ApiPostAuthKerberosLogin
 }
 
 type ApiPostAuthKubernetesConfigRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                     context.Context
+	ApiService              *AuthApiService
 	kubernetesConfigRequest *KubernetesConfigRequest
 }
 
@@ -21333,16 +21209,16 @@ PostAuthKubernetesConfig Configures the JWT Public Key and Kubernetes API inform
 func (a *AuthApiService) PostAuthKubernetesConfig(ctx context.Context) ApiPostAuthKubernetesConfigRequest {
 	return ApiPostAuthKubernetesConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthKubernetesConfigExecute(r ApiPostAuthKubernetesConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthKubernetesConfig")
@@ -21404,8 +21280,8 @@ func (a *AuthApiService) PostAuthKubernetesConfigExecute(r ApiPostAuthKubernetes
 }
 
 type ApiPostAuthKubernetesLoginRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                    context.Context
+	ApiService             *AuthApiService
 	kubernetesLoginRequest *KubernetesLoginRequest
 }
 
@@ -21427,16 +21303,16 @@ PostAuthKubernetesLogin Authenticates Kubernetes service accounts with Vault.
 func (a *AuthApiService) PostAuthKubernetesLogin(ctx context.Context) ApiPostAuthKubernetesLoginRequest {
 	return ApiPostAuthKubernetesLoginRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthKubernetesLoginExecute(r ApiPostAuthKubernetesLoginRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthKubernetesLogin")
@@ -21498,9 +21374,9 @@ func (a *AuthApiService) PostAuthKubernetesLoginExecute(r ApiPostAuthKubernetesL
 }
 
 type ApiPostAuthKubernetesRoleNameRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	name string
+	ctx                   context.Context
+	ApiService            *AuthApiService
+	name                  string
 	kubernetesRoleRequest *KubernetesRoleRequest
 }
 
@@ -21523,17 +21399,17 @@ PostAuthKubernetesRoleName Register an role with the backend.
 func (a *AuthApiService) PostAuthKubernetesRoleName(ctx context.Context, name string) ApiPostAuthKubernetesRoleNameRequest {
 	return ApiPostAuthKubernetesRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthKubernetesRoleNameExecute(r ApiPostAuthKubernetesRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthKubernetesRoleName")
@@ -21596,8 +21472,8 @@ func (a *AuthApiService) PostAuthKubernetesRoleNameExecute(r ApiPostAuthKubernet
 }
 
 type ApiPostAuthLdapConfigRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx               context.Context
+	ApiService        *AuthApiService
 	ldapConfigRequest *LdapConfigRequest
 }
 
@@ -21619,16 +21495,16 @@ PostAuthLdapConfig Configure the LDAP server to connect to, along with its optio
 func (a *AuthApiService) PostAuthLdapConfig(ctx context.Context) ApiPostAuthLdapConfigRequest {
 	return ApiPostAuthLdapConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthLdapConfigExecute(r ApiPostAuthLdapConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthLdapConfig")
@@ -21690,9 +21566,9 @@ func (a *AuthApiService) PostAuthLdapConfigExecute(r ApiPostAuthLdapConfigReques
 }
 
 type ApiPostAuthLdapGroupsNameRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	name string
+	ctx               context.Context
+	ApiService        *AuthApiService
+	name              string
 	ldapGroupsRequest *LdapGroupsRequest
 }
 
@@ -21715,17 +21591,17 @@ PostAuthLdapGroupsName Manage additional groups for users allowed to authenticat
 func (a *AuthApiService) PostAuthLdapGroupsName(ctx context.Context, name string) ApiPostAuthLdapGroupsNameRequest {
 	return ApiPostAuthLdapGroupsNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthLdapGroupsNameExecute(r ApiPostAuthLdapGroupsNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthLdapGroupsName")
@@ -21788,9 +21664,9 @@ func (a *AuthApiService) PostAuthLdapGroupsNameExecute(r ApiPostAuthLdapGroupsNa
 }
 
 type ApiPostAuthLdapLoginUsernameRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	username string
+	ctx              context.Context
+	ApiService       *AuthApiService
+	username         string
 	ldapLoginRequest *LdapLoginRequest
 }
 
@@ -21813,17 +21689,17 @@ PostAuthLdapLoginUsername Log in with a username and password.
 func (a *AuthApiService) PostAuthLdapLoginUsername(ctx context.Context, username string) ApiPostAuthLdapLoginUsernameRequest {
 	return ApiPostAuthLdapLoginUsernameRequest{
 		ApiService: a,
-		ctx: ctx,
-		username: username,
+		ctx:        ctx,
+		username:   username,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthLdapLoginUsernameExecute(r ApiPostAuthLdapLoginUsernameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthLdapLoginUsername")
@@ -21886,9 +21762,9 @@ func (a *AuthApiService) PostAuthLdapLoginUsernameExecute(r ApiPostAuthLdapLogin
 }
 
 type ApiPostAuthLdapUsersNameRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	name string
+	ctx              context.Context
+	ApiService       *AuthApiService
+	name             string
 	ldapUsersRequest *LdapUsersRequest
 }
 
@@ -21911,17 +21787,17 @@ PostAuthLdapUsersName Manage users allowed to authenticate.
 func (a *AuthApiService) PostAuthLdapUsersName(ctx context.Context, name string) ApiPostAuthLdapUsersNameRequest {
 	return ApiPostAuthLdapUsersNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthLdapUsersNameExecute(r ApiPostAuthLdapUsersNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthLdapUsersName")
@@ -21984,8 +21860,8 @@ func (a *AuthApiService) PostAuthLdapUsersNameExecute(r ApiPostAuthLdapUsersName
 }
 
 type ApiPostAuthOciConfigRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx              context.Context
+	ApiService       *AuthApiService
 	ociConfigRequest *OciConfigRequest
 }
 
@@ -22007,16 +21883,16 @@ PostAuthOciConfig Manages the configuration for the Vault Auth Plugin.
 func (a *AuthApiService) PostAuthOciConfig(ctx context.Context) ApiPostAuthOciConfigRequest {
 	return ApiPostAuthOciConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthOciConfigExecute(r ApiPostAuthOciConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthOciConfig")
@@ -22078,9 +21954,9 @@ func (a *AuthApiService) PostAuthOciConfigExecute(r ApiPostAuthOciConfigRequest)
 }
 
 type ApiPostAuthOciLoginRoleRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	role string
+	ctx             context.Context
+	ApiService      *AuthApiService
+	role            string
 	ociLoginRequest *OciLoginRequest
 }
 
@@ -22103,17 +21979,17 @@ PostAuthOciLoginRole Authenticates to Vault using OCI credentials
 func (a *AuthApiService) PostAuthOciLoginRole(ctx context.Context, role string) ApiPostAuthOciLoginRoleRequest {
 	return ApiPostAuthOciLoginRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		role: role,
+		ctx:        ctx,
+		role:       role,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthOciLoginRoleExecute(r ApiPostAuthOciLoginRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthOciLoginRole")
@@ -22176,9 +22052,9 @@ func (a *AuthApiService) PostAuthOciLoginRoleExecute(r ApiPostAuthOciLoginRoleRe
 }
 
 type ApiPostAuthOciRoleRoleRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	role string
+	ctx            context.Context
+	ApiService     *AuthApiService
+	role           string
 	ociRoleRequest *OciRoleRequest
 }
 
@@ -22201,17 +22077,17 @@ PostAuthOciRoleRole Create a role and associate policies to it.
 func (a *AuthApiService) PostAuthOciRoleRole(ctx context.Context, role string) ApiPostAuthOciRoleRoleRequest {
 	return ApiPostAuthOciRoleRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		role: role,
+		ctx:        ctx,
+		role:       role,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthOciRoleRoleExecute(r ApiPostAuthOciRoleRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthOciRoleRole")
@@ -22274,8 +22150,8 @@ func (a *AuthApiService) PostAuthOciRoleRoleExecute(r ApiPostAuthOciRoleRoleRequ
 }
 
 type ApiPostAuthOidcConfigRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx               context.Context
+	ApiService        *AuthApiService
 	oidcConfigRequest *OidcConfigRequest
 }
 
@@ -22302,16 +22178,16 @@ validation locally, a set of public keys must be provided.
 func (a *AuthApiService) PostAuthOidcConfig(ctx context.Context) ApiPostAuthOidcConfigRequest {
 	return ApiPostAuthOidcConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthOidcConfigExecute(r ApiPostAuthOidcConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthOidcConfig")
@@ -22373,8 +22249,8 @@ func (a *AuthApiService) PostAuthOidcConfigExecute(r ApiPostAuthOidcConfigReques
 }
 
 type ApiPostAuthOidcLoginRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx              context.Context
+	ApiService       *AuthApiService
 	oidcLoginRequest *OidcLoginRequest
 }
 
@@ -22396,16 +22272,16 @@ PostAuthOidcLogin Authenticates to Vault using a JWT (or OIDC) token.
 func (a *AuthApiService) PostAuthOidcLogin(ctx context.Context) ApiPostAuthOidcLoginRequest {
 	return ApiPostAuthOidcLoginRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthOidcLoginExecute(r ApiPostAuthOidcLoginRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthOidcLogin")
@@ -22467,8 +22343,8 @@ func (a *AuthApiService) PostAuthOidcLoginExecute(r ApiPostAuthOidcLoginRequest)
 }
 
 type ApiPostAuthOidcOidcAuthUrlRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                    context.Context
+	ApiService             *AuthApiService
 	oidcOidcAuthUrlRequest *OidcOidcAuthUrlRequest
 }
 
@@ -22490,16 +22366,16 @@ PostAuthOidcOidcAuthUrl Request an authorization URL to start an OIDC login flow
 func (a *AuthApiService) PostAuthOidcOidcAuthUrl(ctx context.Context) ApiPostAuthOidcOidcAuthUrlRequest {
 	return ApiPostAuthOidcOidcAuthUrlRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthOidcOidcAuthUrlExecute(r ApiPostAuthOidcOidcAuthUrlRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthOidcOidcAuthUrl")
@@ -22561,8 +22437,8 @@ func (a *AuthApiService) PostAuthOidcOidcAuthUrlExecute(r ApiPostAuthOidcOidcAut
 }
 
 type ApiPostAuthOidcOidcCallbackRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                     context.Context
+	ApiService              *AuthApiService
 	oidcOidcCallbackRequest *OidcOidcCallbackRequest
 }
 
@@ -22584,16 +22460,16 @@ PostAuthOidcOidcCallback Callback endpoint to handle form_posts.
 func (a *AuthApiService) PostAuthOidcOidcCallback(ctx context.Context) ApiPostAuthOidcOidcCallbackRequest {
 	return ApiPostAuthOidcOidcCallbackRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthOidcOidcCallbackExecute(r ApiPostAuthOidcOidcCallbackRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthOidcOidcCallback")
@@ -22655,9 +22531,9 @@ func (a *AuthApiService) PostAuthOidcOidcCallbackExecute(r ApiPostAuthOidcOidcCa
 }
 
 type ApiPostAuthOidcRoleNameRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	name string
+	ctx             context.Context
+	ApiService      *AuthApiService
+	name            string
 	oidcRoleRequest *OidcRoleRequest
 }
 
@@ -22685,17 +22561,17 @@ A role is required to authenticate with this backend. The role binds
 func (a *AuthApiService) PostAuthOidcRoleName(ctx context.Context, name string) ApiPostAuthOidcRoleNameRequest {
 	return ApiPostAuthOidcRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthOidcRoleNameExecute(r ApiPostAuthOidcRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthOidcRoleName")
@@ -22758,8 +22634,8 @@ func (a *AuthApiService) PostAuthOidcRoleNameExecute(r ApiPostAuthOidcRoleNameRe
 }
 
 type ApiPostAuthOktaConfigRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx               context.Context
+	ApiService        *AuthApiService
 	oktaConfigRequest *OktaConfigRequest
 }
 
@@ -22781,16 +22657,16 @@ PostAuthOktaConfig This endpoint allows you to configure the Okta and its config
 func (a *AuthApiService) PostAuthOktaConfig(ctx context.Context) ApiPostAuthOktaConfigRequest {
 	return ApiPostAuthOktaConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthOktaConfigExecute(r ApiPostAuthOktaConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthOktaConfig")
@@ -22852,9 +22728,9 @@ func (a *AuthApiService) PostAuthOktaConfigExecute(r ApiPostAuthOktaConfigReques
 }
 
 type ApiPostAuthOktaGroupsNameRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	name string
+	ctx               context.Context
+	ApiService        *AuthApiService
+	name              string
 	oktaGroupsRequest *OktaGroupsRequest
 }
 
@@ -22877,17 +22753,17 @@ PostAuthOktaGroupsName Manage users allowed to authenticate.
 func (a *AuthApiService) PostAuthOktaGroupsName(ctx context.Context, name string) ApiPostAuthOktaGroupsNameRequest {
 	return ApiPostAuthOktaGroupsNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthOktaGroupsNameExecute(r ApiPostAuthOktaGroupsNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthOktaGroupsName")
@@ -22950,9 +22826,9 @@ func (a *AuthApiService) PostAuthOktaGroupsNameExecute(r ApiPostAuthOktaGroupsNa
 }
 
 type ApiPostAuthOktaLoginUsernameRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	username string
+	ctx              context.Context
+	ApiService       *AuthApiService
+	username         string
 	oktaLoginRequest *OktaLoginRequest
 }
 
@@ -22975,17 +22851,17 @@ PostAuthOktaLoginUsername Log in with a username and password.
 func (a *AuthApiService) PostAuthOktaLoginUsername(ctx context.Context, username string) ApiPostAuthOktaLoginUsernameRequest {
 	return ApiPostAuthOktaLoginUsernameRequest{
 		ApiService: a,
-		ctx: ctx,
-		username: username,
+		ctx:        ctx,
+		username:   username,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthOktaLoginUsernameExecute(r ApiPostAuthOktaLoginUsernameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthOktaLoginUsername")
@@ -23048,9 +22924,9 @@ func (a *AuthApiService) PostAuthOktaLoginUsernameExecute(r ApiPostAuthOktaLogin
 }
 
 type ApiPostAuthOktaUsersNameRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	name string
+	ctx              context.Context
+	ApiService       *AuthApiService
+	name             string
 	oktaUsersRequest *OktaUsersRequest
 }
 
@@ -23073,17 +22949,17 @@ PostAuthOktaUsersName Manage additional groups for users allowed to authenticate
 func (a *AuthApiService) PostAuthOktaUsersName(ctx context.Context, name string) ApiPostAuthOktaUsersNameRequest {
 	return ApiPostAuthOktaUsersNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthOktaUsersNameExecute(r ApiPostAuthOktaUsersNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthOktaUsersName")
@@ -23146,8 +23022,8 @@ func (a *AuthApiService) PostAuthOktaUsersNameExecute(r ApiPostAuthOktaUsersName
 }
 
 type ApiPostAuthRadiusConfigRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                 context.Context
+	ApiService          *AuthApiService
 	radiusConfigRequest *RadiusConfigRequest
 }
 
@@ -23169,16 +23045,16 @@ PostAuthRadiusConfig Configure the RADIUS server to connect to, along with its o
 func (a *AuthApiService) PostAuthRadiusConfig(ctx context.Context) ApiPostAuthRadiusConfigRequest {
 	return ApiPostAuthRadiusConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthRadiusConfigExecute(r ApiPostAuthRadiusConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthRadiusConfig")
@@ -23240,8 +23116,8 @@ func (a *AuthApiService) PostAuthRadiusConfigExecute(r ApiPostAuthRadiusConfigRe
 }
 
 type ApiPostAuthRadiusLoginRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                context.Context
+	ApiService         *AuthApiService
 	radiusLoginRequest *RadiusLoginRequest
 }
 
@@ -23263,16 +23139,16 @@ PostAuthRadiusLogin Log in with a username and password.
 func (a *AuthApiService) PostAuthRadiusLogin(ctx context.Context) ApiPostAuthRadiusLoginRequest {
 	return ApiPostAuthRadiusLoginRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthRadiusLoginExecute(r ApiPostAuthRadiusLoginRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthRadiusLogin")
@@ -23334,9 +23210,9 @@ func (a *AuthApiService) PostAuthRadiusLoginExecute(r ApiPostAuthRadiusLoginRequ
 }
 
 type ApiPostAuthRadiusLoginUrlusernameRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	urlusername string
+	ctx                context.Context
+	ApiService         *AuthApiService
+	urlusername        string
 	radiusLoginRequest *RadiusLoginRequest
 }
 
@@ -23358,8 +23234,8 @@ PostAuthRadiusLoginUrlusername Log in with a username and password.
 */
 func (a *AuthApiService) PostAuthRadiusLoginUrlusername(ctx context.Context, urlusername string) ApiPostAuthRadiusLoginUrlusernameRequest {
 	return ApiPostAuthRadiusLoginUrlusernameRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		urlusername: urlusername,
 	}
 }
@@ -23367,9 +23243,9 @@ func (a *AuthApiService) PostAuthRadiusLoginUrlusername(ctx context.Context, url
 // Execute executes the request
 func (a *AuthApiService) PostAuthRadiusLoginUrlusernameExecute(r ApiPostAuthRadiusLoginUrlusernameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthRadiusLoginUrlusername")
@@ -23432,9 +23308,9 @@ func (a *AuthApiService) PostAuthRadiusLoginUrlusernameExecute(r ApiPostAuthRadi
 }
 
 type ApiPostAuthRadiusUsersNameRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	name string
+	ctx                context.Context
+	ApiService         *AuthApiService
+	name               string
 	radiusUsersRequest *RadiusUsersRequest
 }
 
@@ -23457,17 +23333,17 @@ PostAuthRadiusUsersName Manage users allowed to authenticate.
 func (a *AuthApiService) PostAuthRadiusUsersName(ctx context.Context, name string) ApiPostAuthRadiusUsersNameRequest {
 	return ApiPostAuthRadiusUsersNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthRadiusUsersNameExecute(r ApiPostAuthRadiusUsersNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthRadiusUsersName")
@@ -23530,10 +23406,9 @@ func (a *AuthApiService) PostAuthRadiusUsersNameExecute(r ApiPostAuthRadiusUsers
 }
 
 type ApiPostAuthTokenCreateRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiPostAuthTokenCreateRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostAuthTokenCreateExecute(r)
@@ -23548,16 +23423,16 @@ PostAuthTokenCreate The token create path is used to create new tokens.
 func (a *AuthApiService) PostAuthTokenCreate(ctx context.Context) ApiPostAuthTokenCreateRequest {
 	return ApiPostAuthTokenCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthTokenCreateExecute(r ApiPostAuthTokenCreateRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenCreate")
@@ -23617,10 +23492,9 @@ func (a *AuthApiService) PostAuthTokenCreateExecute(r ApiPostAuthTokenCreateRequ
 }
 
 type ApiPostAuthTokenCreateOrphanRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiPostAuthTokenCreateOrphanRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostAuthTokenCreateOrphanExecute(r)
@@ -23635,16 +23509,16 @@ PostAuthTokenCreateOrphan The token create path is used to create new orphan tok
 func (a *AuthApiService) PostAuthTokenCreateOrphan(ctx context.Context) ApiPostAuthTokenCreateOrphanRequest {
 	return ApiPostAuthTokenCreateOrphanRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthTokenCreateOrphanExecute(r ApiPostAuthTokenCreateOrphanRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenCreateOrphan")
@@ -23704,11 +23578,10 @@ func (a *AuthApiService) PostAuthTokenCreateOrphanExecute(r ApiPostAuthTokenCrea
 }
 
 type ApiPostAuthTokenCreateRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
-	roleName string
+	roleName   string
 }
-
 
 func (r ApiPostAuthTokenCreateRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostAuthTokenCreateRoleNameExecute(r)
@@ -23724,17 +23597,17 @@ PostAuthTokenCreateRoleName This token create path is used to create new tokens 
 func (a *AuthApiService) PostAuthTokenCreateRoleName(ctx context.Context, roleName string) ApiPostAuthTokenCreateRoleNameRequest {
 	return ApiPostAuthTokenCreateRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthTokenCreateRoleNameExecute(r ApiPostAuthTokenCreateRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenCreateRoleName")
@@ -23795,8 +23668,8 @@ func (a *AuthApiService) PostAuthTokenCreateRoleNameExecute(r ApiPostAuthTokenCr
 }
 
 type ApiPostAuthTokenLookupRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                context.Context
+	ApiService         *AuthApiService
 	tokenLookupRequest *TokenLookupRequest
 }
 
@@ -23818,16 +23691,16 @@ PostAuthTokenLookup This endpoint will lookup a token and its properties.
 func (a *AuthApiService) PostAuthTokenLookup(ctx context.Context) ApiPostAuthTokenLookupRequest {
 	return ApiPostAuthTokenLookupRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthTokenLookupExecute(r ApiPostAuthTokenLookupRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenLookup")
@@ -23889,8 +23762,8 @@ func (a *AuthApiService) PostAuthTokenLookupExecute(r ApiPostAuthTokenLookupRequ
 }
 
 type ApiPostAuthTokenLookupAccessorRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                        context.Context
+	ApiService                 *AuthApiService
 	tokenLookupAccessorRequest *TokenLookupAccessorRequest
 }
 
@@ -23912,16 +23785,16 @@ PostAuthTokenLookupAccessor This endpoint will lookup a token associated with th
 func (a *AuthApiService) PostAuthTokenLookupAccessor(ctx context.Context) ApiPostAuthTokenLookupAccessorRequest {
 	return ApiPostAuthTokenLookupAccessorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthTokenLookupAccessorExecute(r ApiPostAuthTokenLookupAccessorRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenLookupAccessor")
@@ -23983,8 +23856,8 @@ func (a *AuthApiService) PostAuthTokenLookupAccessorExecute(r ApiPostAuthTokenLo
 }
 
 type ApiPostAuthTokenLookupSelfRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                    context.Context
+	ApiService             *AuthApiService
 	tokenLookupSelfRequest *TokenLookupSelfRequest
 }
 
@@ -24006,16 +23879,16 @@ PostAuthTokenLookupSelf This endpoint will lookup a token and its properties.
 func (a *AuthApiService) PostAuthTokenLookupSelf(ctx context.Context) ApiPostAuthTokenLookupSelfRequest {
 	return ApiPostAuthTokenLookupSelfRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthTokenLookupSelfExecute(r ApiPostAuthTokenLookupSelfRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenLookupSelf")
@@ -24077,8 +23950,8 @@ func (a *AuthApiService) PostAuthTokenLookupSelfExecute(r ApiPostAuthTokenLookup
 }
 
 type ApiPostAuthTokenRenewRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx               context.Context
+	ApiService        *AuthApiService
 	tokenRenewRequest *TokenRenewRequest
 }
 
@@ -24100,16 +23973,16 @@ PostAuthTokenRenew This endpoint will renew the given token and prevent expirati
 func (a *AuthApiService) PostAuthTokenRenew(ctx context.Context) ApiPostAuthTokenRenewRequest {
 	return ApiPostAuthTokenRenewRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthTokenRenewExecute(r ApiPostAuthTokenRenewRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenRenew")
@@ -24171,8 +24044,8 @@ func (a *AuthApiService) PostAuthTokenRenewExecute(r ApiPostAuthTokenRenewReques
 }
 
 type ApiPostAuthTokenRenewAccessorRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                       context.Context
+	ApiService                *AuthApiService
 	tokenRenewAccessorRequest *TokenRenewAccessorRequest
 }
 
@@ -24194,16 +24067,16 @@ PostAuthTokenRenewAccessor This endpoint will renew a token associated with the 
 func (a *AuthApiService) PostAuthTokenRenewAccessor(ctx context.Context) ApiPostAuthTokenRenewAccessorRequest {
 	return ApiPostAuthTokenRenewAccessorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthTokenRenewAccessorExecute(r ApiPostAuthTokenRenewAccessorRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenRenewAccessor")
@@ -24265,8 +24138,8 @@ func (a *AuthApiService) PostAuthTokenRenewAccessorExecute(r ApiPostAuthTokenRen
 }
 
 type ApiPostAuthTokenRenewSelfRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                   context.Context
+	ApiService            *AuthApiService
 	tokenRenewSelfRequest *TokenRenewSelfRequest
 }
 
@@ -24288,16 +24161,16 @@ PostAuthTokenRenewSelf This endpoint will renew the token used to call it and pr
 func (a *AuthApiService) PostAuthTokenRenewSelf(ctx context.Context) ApiPostAuthTokenRenewSelfRequest {
 	return ApiPostAuthTokenRenewSelfRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthTokenRenewSelfExecute(r ApiPostAuthTokenRenewSelfRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenRenewSelf")
@@ -24359,8 +24232,8 @@ func (a *AuthApiService) PostAuthTokenRenewSelfExecute(r ApiPostAuthTokenRenewSe
 }
 
 type ApiPostAuthTokenRevokeRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                context.Context
+	ApiService         *AuthApiService
 	tokenRevokeRequest *TokenRevokeRequest
 }
 
@@ -24382,16 +24255,16 @@ PostAuthTokenRevoke This endpoint will delete the given token and all of its chi
 func (a *AuthApiService) PostAuthTokenRevoke(ctx context.Context) ApiPostAuthTokenRevokeRequest {
 	return ApiPostAuthTokenRevokeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthTokenRevokeExecute(r ApiPostAuthTokenRevokeRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenRevoke")
@@ -24453,8 +24326,8 @@ func (a *AuthApiService) PostAuthTokenRevokeExecute(r ApiPostAuthTokenRevokeRequ
 }
 
 type ApiPostAuthTokenRevokeAccessorRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                        context.Context
+	ApiService                 *AuthApiService
 	tokenRevokeAccessorRequest *TokenRevokeAccessorRequest
 }
 
@@ -24476,16 +24349,16 @@ PostAuthTokenRevokeAccessor This endpoint will delete the token associated with 
 func (a *AuthApiService) PostAuthTokenRevokeAccessor(ctx context.Context) ApiPostAuthTokenRevokeAccessorRequest {
 	return ApiPostAuthTokenRevokeAccessorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthTokenRevokeAccessorExecute(r ApiPostAuthTokenRevokeAccessorRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenRevokeAccessor")
@@ -24547,8 +24420,8 @@ func (a *AuthApiService) PostAuthTokenRevokeAccessorExecute(r ApiPostAuthTokenRe
 }
 
 type ApiPostAuthTokenRevokeOrphanRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
+	ctx                      context.Context
+	ApiService               *AuthApiService
 	tokenRevokeOrphanRequest *TokenRevokeOrphanRequest
 }
 
@@ -24570,16 +24443,16 @@ PostAuthTokenRevokeOrphan This endpoint will delete the token and orphan its chi
 func (a *AuthApiService) PostAuthTokenRevokeOrphan(ctx context.Context) ApiPostAuthTokenRevokeOrphanRequest {
 	return ApiPostAuthTokenRevokeOrphanRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthTokenRevokeOrphanExecute(r ApiPostAuthTokenRevokeOrphanRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenRevokeOrphan")
@@ -24641,10 +24514,9 @@ func (a *AuthApiService) PostAuthTokenRevokeOrphanExecute(r ApiPostAuthTokenRevo
 }
 
 type ApiPostAuthTokenRevokeSelfRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiPostAuthTokenRevokeSelfRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostAuthTokenRevokeSelfExecute(r)
@@ -24659,16 +24531,16 @@ PostAuthTokenRevokeSelf This endpoint will delete the token used to call it and 
 func (a *AuthApiService) PostAuthTokenRevokeSelf(ctx context.Context) ApiPostAuthTokenRevokeSelfRequest {
 	return ApiPostAuthTokenRevokeSelfRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthTokenRevokeSelfExecute(r ApiPostAuthTokenRevokeSelfRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenRevokeSelf")
@@ -24728,9 +24600,9 @@ func (a *AuthApiService) PostAuthTokenRevokeSelfExecute(r ApiPostAuthTokenRevoke
 }
 
 type ApiPostAuthTokenRolesRoleNameRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	roleName string
+	ctx               context.Context
+	ApiService        *AuthApiService
+	roleName          string
 	tokenRolesRequest *TokenRolesRequest
 }
 
@@ -24753,17 +24625,17 @@ PostAuthTokenRolesRoleName Method for PostAuthTokenRolesRoleName
 func (a *AuthApiService) PostAuthTokenRolesRoleName(ctx context.Context, roleName string) ApiPostAuthTokenRolesRoleNameRequest {
 	return ApiPostAuthTokenRolesRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleName: roleName,
+		ctx:        ctx,
+		roleName:   roleName,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthTokenRolesRoleNameExecute(r ApiPostAuthTokenRolesRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenRolesRoleName")
@@ -24826,10 +24698,9 @@ func (a *AuthApiService) PostAuthTokenRolesRoleNameExecute(r ApiPostAuthTokenRol
 }
 
 type ApiPostAuthTokenTidyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthApiService
 }
-
 
 func (r ApiPostAuthTokenTidyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostAuthTokenTidyExecute(r)
@@ -24844,16 +24715,16 @@ PostAuthTokenTidy This endpoint performs cleanup tasks that can be run if certai
 func (a *AuthApiService) PostAuthTokenTidy(ctx context.Context) ApiPostAuthTokenTidyRequest {
 	return ApiPostAuthTokenTidyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthTokenTidyExecute(r ApiPostAuthTokenTidyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenTidy")
@@ -24913,9 +24784,9 @@ func (a *AuthApiService) PostAuthTokenTidyExecute(r ApiPostAuthTokenTidyRequest)
 }
 
 type ApiPostAuthUserpassLoginUsernameRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	username string
+	ctx                  context.Context
+	ApiService           *AuthApiService
+	username             string
 	userpassLoginRequest *UserpassLoginRequest
 }
 
@@ -24938,17 +24809,17 @@ PostAuthUserpassLoginUsername Log in with a username and password.
 func (a *AuthApiService) PostAuthUserpassLoginUsername(ctx context.Context, username string) ApiPostAuthUserpassLoginUsernameRequest {
 	return ApiPostAuthUserpassLoginUsernameRequest{
 		ApiService: a,
-		ctx: ctx,
-		username: username,
+		ctx:        ctx,
+		username:   username,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthUserpassLoginUsernameExecute(r ApiPostAuthUserpassLoginUsernameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthUserpassLoginUsername")
@@ -25011,9 +24882,9 @@ func (a *AuthApiService) PostAuthUserpassLoginUsernameExecute(r ApiPostAuthUserp
 }
 
 type ApiPostAuthUserpassUsersUsernameRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	username string
+	ctx                  context.Context
+	ApiService           *AuthApiService
+	username             string
 	userpassUsersRequest *UserpassUsersRequest
 }
 
@@ -25036,17 +24907,17 @@ PostAuthUserpassUsersUsername Manage users allowed to authenticate.
 func (a *AuthApiService) PostAuthUserpassUsersUsername(ctx context.Context, username string) ApiPostAuthUserpassUsersUsernameRequest {
 	return ApiPostAuthUserpassUsersUsernameRequest{
 		ApiService: a,
-		ctx: ctx,
-		username: username,
+		ctx:        ctx,
+		username:   username,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthUserpassUsersUsernameExecute(r ApiPostAuthUserpassUsersUsernameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthUserpassUsersUsername")
@@ -25109,9 +24980,9 @@ func (a *AuthApiService) PostAuthUserpassUsersUsernameExecute(r ApiPostAuthUserp
 }
 
 type ApiPostAuthUserpassUsersUsernamePasswordRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	username string
+	ctx                          context.Context
+	ApiService                   *AuthApiService
+	username                     string
 	userpassUsersPasswordRequest *UserpassUsersPasswordRequest
 }
 
@@ -25134,17 +25005,17 @@ PostAuthUserpassUsersUsernamePassword Reset user's password.
 func (a *AuthApiService) PostAuthUserpassUsersUsernamePassword(ctx context.Context, username string) ApiPostAuthUserpassUsersUsernamePasswordRequest {
 	return ApiPostAuthUserpassUsersUsernamePasswordRequest{
 		ApiService: a,
-		ctx: ctx,
-		username: username,
+		ctx:        ctx,
+		username:   username,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthUserpassUsersUsernamePasswordExecute(r ApiPostAuthUserpassUsersUsernamePasswordRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthUserpassUsersUsernamePassword")
@@ -25207,9 +25078,9 @@ func (a *AuthApiService) PostAuthUserpassUsersUsernamePasswordExecute(r ApiPostA
 }
 
 type ApiPostAuthUserpassUsersUsernamePoliciesRequest struct {
-	ctx context.Context
-	ApiService *AuthApiService
-	username string
+	ctx                          context.Context
+	ApiService                   *AuthApiService
+	username                     string
 	userpassUsersPoliciesRequest *UserpassUsersPoliciesRequest
 }
 
@@ -25232,17 +25103,17 @@ PostAuthUserpassUsersUsernamePolicies Update the policies associated with the us
 func (a *AuthApiService) PostAuthUserpassUsersUsernamePolicies(ctx context.Context, username string) ApiPostAuthUserpassUsersUsernamePoliciesRequest {
 	return ApiPostAuthUserpassUsersUsernamePoliciesRequest{
 		ApiService: a,
-		ctx: ctx,
-		username: username,
+		ctx:        ctx,
+		username:   username,
 	}
 }
 
 // Execute executes the request
 func (a *AuthApiService) PostAuthUserpassUsersUsernamePoliciesExecute(r ApiPostAuthUserpassUsersUsernamePoliciesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthUserpassUsersUsernamePolicies")

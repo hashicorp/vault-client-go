@@ -28,11 +28,10 @@ var (
 type IdentityApiService service
 
 type ApiDeleteIdentityAliasIdIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	id string
+	id         string
 }
-
 
 func (r ApiDeleteIdentityAliasIdIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteIdentityAliasIdIdExecute(r)
@@ -48,17 +47,17 @@ DeleteIdentityAliasIdId Update, read or delete an alias ID.
 func (a *IdentityApiService) DeleteIdentityAliasIdId(ctx context.Context, id string) ApiDeleteIdentityAliasIdIdRequest {
 	return ApiDeleteIdentityAliasIdIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) DeleteIdentityAliasIdIdExecute(r ApiDeleteIdentityAliasIdIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityAliasIdId")
@@ -119,11 +118,10 @@ func (a *IdentityApiService) DeleteIdentityAliasIdIdExecute(r ApiDeleteIdentityA
 }
 
 type ApiDeleteIdentityEntityAliasIdIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	id string
+	id         string
 }
-
 
 func (r ApiDeleteIdentityEntityAliasIdIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteIdentityEntityAliasIdIdExecute(r)
@@ -139,17 +137,17 @@ DeleteIdentityEntityAliasIdId Update, read or delete an alias ID.
 func (a *IdentityApiService) DeleteIdentityEntityAliasIdId(ctx context.Context, id string) ApiDeleteIdentityEntityAliasIdIdRequest {
 	return ApiDeleteIdentityEntityAliasIdIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) DeleteIdentityEntityAliasIdIdExecute(r ApiDeleteIdentityEntityAliasIdIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityEntityAliasIdId")
@@ -210,11 +208,10 @@ func (a *IdentityApiService) DeleteIdentityEntityAliasIdIdExecute(r ApiDeleteIde
 }
 
 type ApiDeleteIdentityEntityIdIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	id string
+	id         string
 }
-
 
 func (r ApiDeleteIdentityEntityIdIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteIdentityEntityIdIdExecute(r)
@@ -230,17 +227,17 @@ DeleteIdentityEntityIdId Update, read or delete an entity using entity ID
 func (a *IdentityApiService) DeleteIdentityEntityIdId(ctx context.Context, id string) ApiDeleteIdentityEntityIdIdRequest {
 	return ApiDeleteIdentityEntityIdIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) DeleteIdentityEntityIdIdExecute(r ApiDeleteIdentityEntityIdIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityEntityIdId")
@@ -301,11 +298,10 @@ func (a *IdentityApiService) DeleteIdentityEntityIdIdExecute(r ApiDeleteIdentity
 }
 
 type ApiDeleteIdentityEntityNameNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteIdentityEntityNameNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteIdentityEntityNameNameExecute(r)
@@ -321,17 +317,17 @@ DeleteIdentityEntityNameName Update, read or delete an entity using entity name
 func (a *IdentityApiService) DeleteIdentityEntityNameName(ctx context.Context, name string) ApiDeleteIdentityEntityNameNameRequest {
 	return ApiDeleteIdentityEntityNameNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) DeleteIdentityEntityNameNameExecute(r ApiDeleteIdentityEntityNameNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityEntityNameName")
@@ -392,11 +388,10 @@ func (a *IdentityApiService) DeleteIdentityEntityNameNameExecute(r ApiDeleteIden
 }
 
 type ApiDeleteIdentityGroupAliasIdIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	id string
+	id         string
 }
-
 
 func (r ApiDeleteIdentityGroupAliasIdIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteIdentityGroupAliasIdIdExecute(r)
@@ -412,17 +407,17 @@ DeleteIdentityGroupAliasIdId Method for DeleteIdentityGroupAliasIdId
 func (a *IdentityApiService) DeleteIdentityGroupAliasIdId(ctx context.Context, id string) ApiDeleteIdentityGroupAliasIdIdRequest {
 	return ApiDeleteIdentityGroupAliasIdIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) DeleteIdentityGroupAliasIdIdExecute(r ApiDeleteIdentityGroupAliasIdIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityGroupAliasIdId")
@@ -483,11 +478,10 @@ func (a *IdentityApiService) DeleteIdentityGroupAliasIdIdExecute(r ApiDeleteIden
 }
 
 type ApiDeleteIdentityGroupIdIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	id string
+	id         string
 }
-
 
 func (r ApiDeleteIdentityGroupIdIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteIdentityGroupIdIdExecute(r)
@@ -503,17 +497,17 @@ DeleteIdentityGroupIdId Update or delete an existing group using its ID.
 func (a *IdentityApiService) DeleteIdentityGroupIdId(ctx context.Context, id string) ApiDeleteIdentityGroupIdIdRequest {
 	return ApiDeleteIdentityGroupIdIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) DeleteIdentityGroupIdIdExecute(r ApiDeleteIdentityGroupIdIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityGroupIdId")
@@ -574,11 +568,10 @@ func (a *IdentityApiService) DeleteIdentityGroupIdIdExecute(r ApiDeleteIdentityG
 }
 
 type ApiDeleteIdentityGroupNameNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteIdentityGroupNameNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteIdentityGroupNameNameExecute(r)
@@ -594,17 +587,17 @@ DeleteIdentityGroupNameName Method for DeleteIdentityGroupNameName
 func (a *IdentityApiService) DeleteIdentityGroupNameName(ctx context.Context, name string) ApiDeleteIdentityGroupNameNameRequest {
 	return ApiDeleteIdentityGroupNameNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) DeleteIdentityGroupNameNameExecute(r ApiDeleteIdentityGroupNameNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityGroupNameName")
@@ -665,11 +658,10 @@ func (a *IdentityApiService) DeleteIdentityGroupNameNameExecute(r ApiDeleteIdent
 }
 
 type ApiDeleteIdentityMfaLoginEnforcementNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteIdentityMfaLoginEnforcementNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteIdentityMfaLoginEnforcementNameExecute(r)
@@ -685,17 +677,17 @@ DeleteIdentityMfaLoginEnforcementName Delete a login enforcement
 func (a *IdentityApiService) DeleteIdentityMfaLoginEnforcementName(ctx context.Context, name string) ApiDeleteIdentityMfaLoginEnforcementNameRequest {
 	return ApiDeleteIdentityMfaLoginEnforcementNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) DeleteIdentityMfaLoginEnforcementNameExecute(r ApiDeleteIdentityMfaLoginEnforcementNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityMfaLoginEnforcementName")
@@ -756,11 +748,10 @@ func (a *IdentityApiService) DeleteIdentityMfaLoginEnforcementNameExecute(r ApiD
 }
 
 type ApiDeleteIdentityMfaMethodDuoMethodIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	methodId string
+	methodId   string
 }
-
 
 func (r ApiDeleteIdentityMfaMethodDuoMethodIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteIdentityMfaMethodDuoMethodIdExecute(r)
@@ -776,17 +767,17 @@ DeleteIdentityMfaMethodDuoMethodId Delete a configuration for the given MFA meth
 func (a *IdentityApiService) DeleteIdentityMfaMethodDuoMethodId(ctx context.Context, methodId string) ApiDeleteIdentityMfaMethodDuoMethodIdRequest {
 	return ApiDeleteIdentityMfaMethodDuoMethodIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		methodId: methodId,
+		ctx:        ctx,
+		methodId:   methodId,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) DeleteIdentityMfaMethodDuoMethodIdExecute(r ApiDeleteIdentityMfaMethodDuoMethodIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityMfaMethodDuoMethodId")
@@ -847,11 +838,10 @@ func (a *IdentityApiService) DeleteIdentityMfaMethodDuoMethodIdExecute(r ApiDele
 }
 
 type ApiDeleteIdentityMfaMethodOktaMethodIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	methodId string
+	methodId   string
 }
-
 
 func (r ApiDeleteIdentityMfaMethodOktaMethodIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteIdentityMfaMethodOktaMethodIdExecute(r)
@@ -867,17 +857,17 @@ DeleteIdentityMfaMethodOktaMethodId Delete a configuration for the given MFA met
 func (a *IdentityApiService) DeleteIdentityMfaMethodOktaMethodId(ctx context.Context, methodId string) ApiDeleteIdentityMfaMethodOktaMethodIdRequest {
 	return ApiDeleteIdentityMfaMethodOktaMethodIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		methodId: methodId,
+		ctx:        ctx,
+		methodId:   methodId,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) DeleteIdentityMfaMethodOktaMethodIdExecute(r ApiDeleteIdentityMfaMethodOktaMethodIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityMfaMethodOktaMethodId")
@@ -938,11 +928,10 @@ func (a *IdentityApiService) DeleteIdentityMfaMethodOktaMethodIdExecute(r ApiDel
 }
 
 type ApiDeleteIdentityMfaMethodPingidMethodIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	methodId string
+	methodId   string
 }
-
 
 func (r ApiDeleteIdentityMfaMethodPingidMethodIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteIdentityMfaMethodPingidMethodIdExecute(r)
@@ -958,17 +947,17 @@ DeleteIdentityMfaMethodPingidMethodId Delete a configuration for the given MFA m
 func (a *IdentityApiService) DeleteIdentityMfaMethodPingidMethodId(ctx context.Context, methodId string) ApiDeleteIdentityMfaMethodPingidMethodIdRequest {
 	return ApiDeleteIdentityMfaMethodPingidMethodIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		methodId: methodId,
+		ctx:        ctx,
+		methodId:   methodId,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) DeleteIdentityMfaMethodPingidMethodIdExecute(r ApiDeleteIdentityMfaMethodPingidMethodIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityMfaMethodPingidMethodId")
@@ -1029,11 +1018,10 @@ func (a *IdentityApiService) DeleteIdentityMfaMethodPingidMethodIdExecute(r ApiD
 }
 
 type ApiDeleteIdentityMfaMethodTotpMethodIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	methodId string
+	methodId   string
 }
-
 
 func (r ApiDeleteIdentityMfaMethodTotpMethodIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteIdentityMfaMethodTotpMethodIdExecute(r)
@@ -1049,17 +1037,17 @@ DeleteIdentityMfaMethodTotpMethodId Delete a configuration for the given MFA met
 func (a *IdentityApiService) DeleteIdentityMfaMethodTotpMethodId(ctx context.Context, methodId string) ApiDeleteIdentityMfaMethodTotpMethodIdRequest {
 	return ApiDeleteIdentityMfaMethodTotpMethodIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		methodId: methodId,
+		ctx:        ctx,
+		methodId:   methodId,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) DeleteIdentityMfaMethodTotpMethodIdExecute(r ApiDeleteIdentityMfaMethodTotpMethodIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityMfaMethodTotpMethodId")
@@ -1120,11 +1108,10 @@ func (a *IdentityApiService) DeleteIdentityMfaMethodTotpMethodIdExecute(r ApiDel
 }
 
 type ApiDeleteIdentityOidcAssignmentNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteIdentityOidcAssignmentNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteIdentityOidcAssignmentNameExecute(r)
@@ -1140,17 +1127,17 @@ DeleteIdentityOidcAssignmentName Method for DeleteIdentityOidcAssignmentName
 func (a *IdentityApiService) DeleteIdentityOidcAssignmentName(ctx context.Context, name string) ApiDeleteIdentityOidcAssignmentNameRequest {
 	return ApiDeleteIdentityOidcAssignmentNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) DeleteIdentityOidcAssignmentNameExecute(r ApiDeleteIdentityOidcAssignmentNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityOidcAssignmentName")
@@ -1211,11 +1198,10 @@ func (a *IdentityApiService) DeleteIdentityOidcAssignmentNameExecute(r ApiDelete
 }
 
 type ApiDeleteIdentityOidcClientNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteIdentityOidcClientNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteIdentityOidcClientNameExecute(r)
@@ -1231,17 +1217,17 @@ DeleteIdentityOidcClientName Method for DeleteIdentityOidcClientName
 func (a *IdentityApiService) DeleteIdentityOidcClientName(ctx context.Context, name string) ApiDeleteIdentityOidcClientNameRequest {
 	return ApiDeleteIdentityOidcClientNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) DeleteIdentityOidcClientNameExecute(r ApiDeleteIdentityOidcClientNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityOidcClientName")
@@ -1302,11 +1288,10 @@ func (a *IdentityApiService) DeleteIdentityOidcClientNameExecute(r ApiDeleteIden
 }
 
 type ApiDeleteIdentityOidcKeyNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteIdentityOidcKeyNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteIdentityOidcKeyNameExecute(r)
@@ -1322,17 +1307,17 @@ DeleteIdentityOidcKeyName CRUD operations for OIDC keys.
 func (a *IdentityApiService) DeleteIdentityOidcKeyName(ctx context.Context, name string) ApiDeleteIdentityOidcKeyNameRequest {
 	return ApiDeleteIdentityOidcKeyNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) DeleteIdentityOidcKeyNameExecute(r ApiDeleteIdentityOidcKeyNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityOidcKeyName")
@@ -1393,11 +1378,10 @@ func (a *IdentityApiService) DeleteIdentityOidcKeyNameExecute(r ApiDeleteIdentit
 }
 
 type ApiDeleteIdentityOidcProviderNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteIdentityOidcProviderNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteIdentityOidcProviderNameExecute(r)
@@ -1413,17 +1397,17 @@ DeleteIdentityOidcProviderName Method for DeleteIdentityOidcProviderName
 func (a *IdentityApiService) DeleteIdentityOidcProviderName(ctx context.Context, name string) ApiDeleteIdentityOidcProviderNameRequest {
 	return ApiDeleteIdentityOidcProviderNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) DeleteIdentityOidcProviderNameExecute(r ApiDeleteIdentityOidcProviderNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityOidcProviderName")
@@ -1484,11 +1468,10 @@ func (a *IdentityApiService) DeleteIdentityOidcProviderNameExecute(r ApiDeleteId
 }
 
 type ApiDeleteIdentityOidcRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteIdentityOidcRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteIdentityOidcRoleNameExecute(r)
@@ -1504,17 +1487,17 @@ DeleteIdentityOidcRoleName CRUD operations on OIDC Roles
 func (a *IdentityApiService) DeleteIdentityOidcRoleName(ctx context.Context, name string) ApiDeleteIdentityOidcRoleNameRequest {
 	return ApiDeleteIdentityOidcRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) DeleteIdentityOidcRoleNameExecute(r ApiDeleteIdentityOidcRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityOidcRoleName")
@@ -1575,11 +1558,10 @@ func (a *IdentityApiService) DeleteIdentityOidcRoleNameExecute(r ApiDeleteIdenti
 }
 
 type ApiDeleteIdentityOidcScopeNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteIdentityOidcScopeNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteIdentityOidcScopeNameExecute(r)
@@ -1595,17 +1577,17 @@ DeleteIdentityOidcScopeName Method for DeleteIdentityOidcScopeName
 func (a *IdentityApiService) DeleteIdentityOidcScopeName(ctx context.Context, name string) ApiDeleteIdentityOidcScopeNameRequest {
 	return ApiDeleteIdentityOidcScopeNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) DeleteIdentityOidcScopeNameExecute(r ApiDeleteIdentityOidcScopeNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityOidcScopeName")
@@ -1666,11 +1648,10 @@ func (a *IdentityApiService) DeleteIdentityOidcScopeNameExecute(r ApiDeleteIdent
 }
 
 type ApiDeleteIdentityPersonaIdIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	id string
+	id         string
 }
-
 
 func (r ApiDeleteIdentityPersonaIdIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteIdentityPersonaIdIdExecute(r)
@@ -1686,17 +1667,17 @@ DeleteIdentityPersonaIdId Update, read or delete an alias ID.
 func (a *IdentityApiService) DeleteIdentityPersonaIdId(ctx context.Context, id string) ApiDeleteIdentityPersonaIdIdRequest {
 	return ApiDeleteIdentityPersonaIdIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) DeleteIdentityPersonaIdIdExecute(r ApiDeleteIdentityPersonaIdIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityPersonaIdId")
@@ -1757,9 +1738,9 @@ func (a *IdentityApiService) DeleteIdentityPersonaIdIdExecute(r ApiDeleteIdentit
 }
 
 type ApiGetIdentityAliasIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -1781,16 +1762,16 @@ GetIdentityAliasId List all the alias IDs.
 func (a *IdentityApiService) GetIdentityAliasId(ctx context.Context) ApiGetIdentityAliasIdRequest {
 	return ApiGetIdentityAliasIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityAliasIdExecute(r ApiGetIdentityAliasIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityAliasId")
@@ -1854,11 +1835,10 @@ func (a *IdentityApiService) GetIdentityAliasIdExecute(r ApiGetIdentityAliasIdRe
 }
 
 type ApiGetIdentityAliasIdIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	id string
+	id         string
 }
-
 
 func (r ApiGetIdentityAliasIdIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetIdentityAliasIdIdExecute(r)
@@ -1874,17 +1854,17 @@ GetIdentityAliasIdId Update, read or delete an alias ID.
 func (a *IdentityApiService) GetIdentityAliasIdId(ctx context.Context, id string) ApiGetIdentityAliasIdIdRequest {
 	return ApiGetIdentityAliasIdIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityAliasIdIdExecute(r ApiGetIdentityAliasIdIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityAliasIdId")
@@ -1945,9 +1925,9 @@ func (a *IdentityApiService) GetIdentityAliasIdIdExecute(r ApiGetIdentityAliasId
 }
 
 type ApiGetIdentityEntityAliasIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -1969,16 +1949,16 @@ GetIdentityEntityAliasId List all the alias IDs.
 func (a *IdentityApiService) GetIdentityEntityAliasId(ctx context.Context) ApiGetIdentityEntityAliasIdRequest {
 	return ApiGetIdentityEntityAliasIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityEntityAliasIdExecute(r ApiGetIdentityEntityAliasIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityEntityAliasId")
@@ -2042,11 +2022,10 @@ func (a *IdentityApiService) GetIdentityEntityAliasIdExecute(r ApiGetIdentityEnt
 }
 
 type ApiGetIdentityEntityAliasIdIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	id string
+	id         string
 }
-
 
 func (r ApiGetIdentityEntityAliasIdIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetIdentityEntityAliasIdIdExecute(r)
@@ -2062,17 +2041,17 @@ GetIdentityEntityAliasIdId Update, read or delete an alias ID.
 func (a *IdentityApiService) GetIdentityEntityAliasIdId(ctx context.Context, id string) ApiGetIdentityEntityAliasIdIdRequest {
 	return ApiGetIdentityEntityAliasIdIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityEntityAliasIdIdExecute(r ApiGetIdentityEntityAliasIdIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityEntityAliasIdId")
@@ -2133,9 +2112,9 @@ func (a *IdentityApiService) GetIdentityEntityAliasIdIdExecute(r ApiGetIdentityE
 }
 
 type ApiGetIdentityEntityIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -2157,16 +2136,16 @@ GetIdentityEntityId List all the entity IDs
 func (a *IdentityApiService) GetIdentityEntityId(ctx context.Context) ApiGetIdentityEntityIdRequest {
 	return ApiGetIdentityEntityIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityEntityIdExecute(r ApiGetIdentityEntityIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityEntityId")
@@ -2230,11 +2209,10 @@ func (a *IdentityApiService) GetIdentityEntityIdExecute(r ApiGetIdentityEntityId
 }
 
 type ApiGetIdentityEntityIdIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	id string
+	id         string
 }
-
 
 func (r ApiGetIdentityEntityIdIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetIdentityEntityIdIdExecute(r)
@@ -2250,17 +2228,17 @@ GetIdentityEntityIdId Update, read or delete an entity using entity ID
 func (a *IdentityApiService) GetIdentityEntityIdId(ctx context.Context, id string) ApiGetIdentityEntityIdIdRequest {
 	return ApiGetIdentityEntityIdIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityEntityIdIdExecute(r ApiGetIdentityEntityIdIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityEntityIdId")
@@ -2321,9 +2299,9 @@ func (a *IdentityApiService) GetIdentityEntityIdIdExecute(r ApiGetIdentityEntity
 }
 
 type ApiGetIdentityEntityNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -2345,16 +2323,16 @@ GetIdentityEntityName List all the entity names
 func (a *IdentityApiService) GetIdentityEntityName(ctx context.Context) ApiGetIdentityEntityNameRequest {
 	return ApiGetIdentityEntityNameRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityEntityNameExecute(r ApiGetIdentityEntityNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityEntityName")
@@ -2418,11 +2396,10 @@ func (a *IdentityApiService) GetIdentityEntityNameExecute(r ApiGetIdentityEntity
 }
 
 type ApiGetIdentityEntityNameNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetIdentityEntityNameNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetIdentityEntityNameNameExecute(r)
@@ -2438,17 +2415,17 @@ GetIdentityEntityNameName Update, read or delete an entity using entity name
 func (a *IdentityApiService) GetIdentityEntityNameName(ctx context.Context, name string) ApiGetIdentityEntityNameNameRequest {
 	return ApiGetIdentityEntityNameNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityEntityNameNameExecute(r ApiGetIdentityEntityNameNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityEntityNameName")
@@ -2509,9 +2486,9 @@ func (a *IdentityApiService) GetIdentityEntityNameNameExecute(r ApiGetIdentityEn
 }
 
 type ApiGetIdentityGroupAliasIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -2533,16 +2510,16 @@ GetIdentityGroupAliasId List all the group alias IDs.
 func (a *IdentityApiService) GetIdentityGroupAliasId(ctx context.Context) ApiGetIdentityGroupAliasIdRequest {
 	return ApiGetIdentityGroupAliasIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityGroupAliasIdExecute(r ApiGetIdentityGroupAliasIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityGroupAliasId")
@@ -2606,11 +2583,10 @@ func (a *IdentityApiService) GetIdentityGroupAliasIdExecute(r ApiGetIdentityGrou
 }
 
 type ApiGetIdentityGroupAliasIdIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	id string
+	id         string
 }
-
 
 func (r ApiGetIdentityGroupAliasIdIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetIdentityGroupAliasIdIdExecute(r)
@@ -2626,17 +2602,17 @@ GetIdentityGroupAliasIdId Method for GetIdentityGroupAliasIdId
 func (a *IdentityApiService) GetIdentityGroupAliasIdId(ctx context.Context, id string) ApiGetIdentityGroupAliasIdIdRequest {
 	return ApiGetIdentityGroupAliasIdIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityGroupAliasIdIdExecute(r ApiGetIdentityGroupAliasIdIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityGroupAliasIdId")
@@ -2697,9 +2673,9 @@ func (a *IdentityApiService) GetIdentityGroupAliasIdIdExecute(r ApiGetIdentityGr
 }
 
 type ApiGetIdentityGroupIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -2721,16 +2697,16 @@ GetIdentityGroupId List all the group IDs.
 func (a *IdentityApiService) GetIdentityGroupId(ctx context.Context) ApiGetIdentityGroupIdRequest {
 	return ApiGetIdentityGroupIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityGroupIdExecute(r ApiGetIdentityGroupIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityGroupId")
@@ -2794,11 +2770,10 @@ func (a *IdentityApiService) GetIdentityGroupIdExecute(r ApiGetIdentityGroupIdRe
 }
 
 type ApiGetIdentityGroupIdIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	id string
+	id         string
 }
-
 
 func (r ApiGetIdentityGroupIdIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetIdentityGroupIdIdExecute(r)
@@ -2814,17 +2789,17 @@ GetIdentityGroupIdId Update or delete an existing group using its ID.
 func (a *IdentityApiService) GetIdentityGroupIdId(ctx context.Context, id string) ApiGetIdentityGroupIdIdRequest {
 	return ApiGetIdentityGroupIdIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityGroupIdIdExecute(r ApiGetIdentityGroupIdIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityGroupIdId")
@@ -2885,9 +2860,9 @@ func (a *IdentityApiService) GetIdentityGroupIdIdExecute(r ApiGetIdentityGroupId
 }
 
 type ApiGetIdentityGroupNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -2909,16 +2884,16 @@ GetIdentityGroupName Method for GetIdentityGroupName
 func (a *IdentityApiService) GetIdentityGroupName(ctx context.Context) ApiGetIdentityGroupNameRequest {
 	return ApiGetIdentityGroupNameRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityGroupNameExecute(r ApiGetIdentityGroupNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityGroupName")
@@ -2982,11 +2957,10 @@ func (a *IdentityApiService) GetIdentityGroupNameExecute(r ApiGetIdentityGroupNa
 }
 
 type ApiGetIdentityGroupNameNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetIdentityGroupNameNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetIdentityGroupNameNameExecute(r)
@@ -3002,17 +2976,17 @@ GetIdentityGroupNameName Method for GetIdentityGroupNameName
 func (a *IdentityApiService) GetIdentityGroupNameName(ctx context.Context, name string) ApiGetIdentityGroupNameNameRequest {
 	return ApiGetIdentityGroupNameNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityGroupNameNameExecute(r ApiGetIdentityGroupNameNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityGroupNameName")
@@ -3073,9 +3047,9 @@ func (a *IdentityApiService) GetIdentityGroupNameNameExecute(r ApiGetIdentityGro
 }
 
 type ApiGetIdentityMfaLoginEnforcementRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -3097,16 +3071,16 @@ GetIdentityMfaLoginEnforcement List login enforcements
 func (a *IdentityApiService) GetIdentityMfaLoginEnforcement(ctx context.Context) ApiGetIdentityMfaLoginEnforcementRequest {
 	return ApiGetIdentityMfaLoginEnforcementRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityMfaLoginEnforcementExecute(r ApiGetIdentityMfaLoginEnforcementRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityMfaLoginEnforcement")
@@ -3170,11 +3144,10 @@ func (a *IdentityApiService) GetIdentityMfaLoginEnforcementExecute(r ApiGetIdent
 }
 
 type ApiGetIdentityMfaLoginEnforcementNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetIdentityMfaLoginEnforcementNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetIdentityMfaLoginEnforcementNameExecute(r)
@@ -3190,17 +3163,17 @@ GetIdentityMfaLoginEnforcementName Read the current login enforcement
 func (a *IdentityApiService) GetIdentityMfaLoginEnforcementName(ctx context.Context, name string) ApiGetIdentityMfaLoginEnforcementNameRequest {
 	return ApiGetIdentityMfaLoginEnforcementNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityMfaLoginEnforcementNameExecute(r ApiGetIdentityMfaLoginEnforcementNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityMfaLoginEnforcementName")
@@ -3261,9 +3234,9 @@ func (a *IdentityApiService) GetIdentityMfaLoginEnforcementNameExecute(r ApiGetI
 }
 
 type ApiGetIdentityMfaMethodRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -3285,16 +3258,16 @@ GetIdentityMfaMethod List MFA method configurations for all MFA methods
 func (a *IdentityApiService) GetIdentityMfaMethod(ctx context.Context) ApiGetIdentityMfaMethodRequest {
 	return ApiGetIdentityMfaMethodRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityMfaMethodExecute(r ApiGetIdentityMfaMethodRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityMfaMethod")
@@ -3358,9 +3331,9 @@ func (a *IdentityApiService) GetIdentityMfaMethodExecute(r ApiGetIdentityMfaMeth
 }
 
 type ApiGetIdentityMfaMethodDuoRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -3382,16 +3355,16 @@ GetIdentityMfaMethodDuo List MFA method configurations for the given MFA method
 func (a *IdentityApiService) GetIdentityMfaMethodDuo(ctx context.Context) ApiGetIdentityMfaMethodDuoRequest {
 	return ApiGetIdentityMfaMethodDuoRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityMfaMethodDuoExecute(r ApiGetIdentityMfaMethodDuoRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityMfaMethodDuo")
@@ -3455,11 +3428,10 @@ func (a *IdentityApiService) GetIdentityMfaMethodDuoExecute(r ApiGetIdentityMfaM
 }
 
 type ApiGetIdentityMfaMethodDuoMethodIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	methodId string
+	methodId   string
 }
-
 
 func (r ApiGetIdentityMfaMethodDuoMethodIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetIdentityMfaMethodDuoMethodIdExecute(r)
@@ -3475,17 +3447,17 @@ GetIdentityMfaMethodDuoMethodId Read the current configuration for the given MFA
 func (a *IdentityApiService) GetIdentityMfaMethodDuoMethodId(ctx context.Context, methodId string) ApiGetIdentityMfaMethodDuoMethodIdRequest {
 	return ApiGetIdentityMfaMethodDuoMethodIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		methodId: methodId,
+		ctx:        ctx,
+		methodId:   methodId,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityMfaMethodDuoMethodIdExecute(r ApiGetIdentityMfaMethodDuoMethodIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityMfaMethodDuoMethodId")
@@ -3546,11 +3518,10 @@ func (a *IdentityApiService) GetIdentityMfaMethodDuoMethodIdExecute(r ApiGetIden
 }
 
 type ApiGetIdentityMfaMethodMethodIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	methodId string
+	methodId   string
 }
-
 
 func (r ApiGetIdentityMfaMethodMethodIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetIdentityMfaMethodMethodIdExecute(r)
@@ -3566,17 +3537,17 @@ GetIdentityMfaMethodMethodId Read the current configuration for the given ID reg
 func (a *IdentityApiService) GetIdentityMfaMethodMethodId(ctx context.Context, methodId string) ApiGetIdentityMfaMethodMethodIdRequest {
 	return ApiGetIdentityMfaMethodMethodIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		methodId: methodId,
+		ctx:        ctx,
+		methodId:   methodId,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityMfaMethodMethodIdExecute(r ApiGetIdentityMfaMethodMethodIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityMfaMethodMethodId")
@@ -3637,9 +3608,9 @@ func (a *IdentityApiService) GetIdentityMfaMethodMethodIdExecute(r ApiGetIdentit
 }
 
 type ApiGetIdentityMfaMethodOktaRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -3661,16 +3632,16 @@ GetIdentityMfaMethodOkta List MFA method configurations for the given MFA method
 func (a *IdentityApiService) GetIdentityMfaMethodOkta(ctx context.Context) ApiGetIdentityMfaMethodOktaRequest {
 	return ApiGetIdentityMfaMethodOktaRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityMfaMethodOktaExecute(r ApiGetIdentityMfaMethodOktaRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityMfaMethodOkta")
@@ -3734,11 +3705,10 @@ func (a *IdentityApiService) GetIdentityMfaMethodOktaExecute(r ApiGetIdentityMfa
 }
 
 type ApiGetIdentityMfaMethodOktaMethodIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	methodId string
+	methodId   string
 }
-
 
 func (r ApiGetIdentityMfaMethodOktaMethodIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetIdentityMfaMethodOktaMethodIdExecute(r)
@@ -3754,17 +3724,17 @@ GetIdentityMfaMethodOktaMethodId Read the current configuration for the given MF
 func (a *IdentityApiService) GetIdentityMfaMethodOktaMethodId(ctx context.Context, methodId string) ApiGetIdentityMfaMethodOktaMethodIdRequest {
 	return ApiGetIdentityMfaMethodOktaMethodIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		methodId: methodId,
+		ctx:        ctx,
+		methodId:   methodId,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityMfaMethodOktaMethodIdExecute(r ApiGetIdentityMfaMethodOktaMethodIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityMfaMethodOktaMethodId")
@@ -3825,9 +3795,9 @@ func (a *IdentityApiService) GetIdentityMfaMethodOktaMethodIdExecute(r ApiGetIde
 }
 
 type ApiGetIdentityMfaMethodPingidRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -3849,16 +3819,16 @@ GetIdentityMfaMethodPingid List MFA method configurations for the given MFA meth
 func (a *IdentityApiService) GetIdentityMfaMethodPingid(ctx context.Context) ApiGetIdentityMfaMethodPingidRequest {
 	return ApiGetIdentityMfaMethodPingidRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityMfaMethodPingidExecute(r ApiGetIdentityMfaMethodPingidRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityMfaMethodPingid")
@@ -3922,11 +3892,10 @@ func (a *IdentityApiService) GetIdentityMfaMethodPingidExecute(r ApiGetIdentityM
 }
 
 type ApiGetIdentityMfaMethodPingidMethodIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	methodId string
+	methodId   string
 }
-
 
 func (r ApiGetIdentityMfaMethodPingidMethodIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetIdentityMfaMethodPingidMethodIdExecute(r)
@@ -3942,17 +3911,17 @@ GetIdentityMfaMethodPingidMethodId Read the current configuration for the given 
 func (a *IdentityApiService) GetIdentityMfaMethodPingidMethodId(ctx context.Context, methodId string) ApiGetIdentityMfaMethodPingidMethodIdRequest {
 	return ApiGetIdentityMfaMethodPingidMethodIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		methodId: methodId,
+		ctx:        ctx,
+		methodId:   methodId,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityMfaMethodPingidMethodIdExecute(r ApiGetIdentityMfaMethodPingidMethodIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityMfaMethodPingidMethodId")
@@ -4013,9 +3982,9 @@ func (a *IdentityApiService) GetIdentityMfaMethodPingidMethodIdExecute(r ApiGetI
 }
 
 type ApiGetIdentityMfaMethodTotpRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -4037,16 +4006,16 @@ GetIdentityMfaMethodTotp List MFA method configurations for the given MFA method
 func (a *IdentityApiService) GetIdentityMfaMethodTotp(ctx context.Context) ApiGetIdentityMfaMethodTotpRequest {
 	return ApiGetIdentityMfaMethodTotpRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityMfaMethodTotpExecute(r ApiGetIdentityMfaMethodTotpRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityMfaMethodTotp")
@@ -4110,11 +4079,10 @@ func (a *IdentityApiService) GetIdentityMfaMethodTotpExecute(r ApiGetIdentityMfa
 }
 
 type ApiGetIdentityMfaMethodTotpMethodIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	methodId string
+	methodId   string
 }
-
 
 func (r ApiGetIdentityMfaMethodTotpMethodIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetIdentityMfaMethodTotpMethodIdExecute(r)
@@ -4130,17 +4098,17 @@ GetIdentityMfaMethodTotpMethodId Read the current configuration for the given MF
 func (a *IdentityApiService) GetIdentityMfaMethodTotpMethodId(ctx context.Context, methodId string) ApiGetIdentityMfaMethodTotpMethodIdRequest {
 	return ApiGetIdentityMfaMethodTotpMethodIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		methodId: methodId,
+		ctx:        ctx,
+		methodId:   methodId,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityMfaMethodTotpMethodIdExecute(r ApiGetIdentityMfaMethodTotpMethodIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityMfaMethodTotpMethodId")
@@ -4201,9 +4169,9 @@ func (a *IdentityApiService) GetIdentityMfaMethodTotpMethodIdExecute(r ApiGetIde
 }
 
 type ApiGetIdentityOidcAssignmentRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -4225,16 +4193,16 @@ GetIdentityOidcAssignment Method for GetIdentityOidcAssignment
 func (a *IdentityApiService) GetIdentityOidcAssignment(ctx context.Context) ApiGetIdentityOidcAssignmentRequest {
 	return ApiGetIdentityOidcAssignmentRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityOidcAssignmentExecute(r ApiGetIdentityOidcAssignmentRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcAssignment")
@@ -4298,11 +4266,10 @@ func (a *IdentityApiService) GetIdentityOidcAssignmentExecute(r ApiGetIdentityOi
 }
 
 type ApiGetIdentityOidcAssignmentNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetIdentityOidcAssignmentNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetIdentityOidcAssignmentNameExecute(r)
@@ -4318,17 +4285,17 @@ GetIdentityOidcAssignmentName Method for GetIdentityOidcAssignmentName
 func (a *IdentityApiService) GetIdentityOidcAssignmentName(ctx context.Context, name string) ApiGetIdentityOidcAssignmentNameRequest {
 	return ApiGetIdentityOidcAssignmentNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityOidcAssignmentNameExecute(r ApiGetIdentityOidcAssignmentNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcAssignmentName")
@@ -4389,9 +4356,9 @@ func (a *IdentityApiService) GetIdentityOidcAssignmentNameExecute(r ApiGetIdenti
 }
 
 type ApiGetIdentityOidcClientRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -4413,16 +4380,16 @@ GetIdentityOidcClient Method for GetIdentityOidcClient
 func (a *IdentityApiService) GetIdentityOidcClient(ctx context.Context) ApiGetIdentityOidcClientRequest {
 	return ApiGetIdentityOidcClientRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityOidcClientExecute(r ApiGetIdentityOidcClientRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcClient")
@@ -4486,11 +4453,10 @@ func (a *IdentityApiService) GetIdentityOidcClientExecute(r ApiGetIdentityOidcCl
 }
 
 type ApiGetIdentityOidcClientNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetIdentityOidcClientNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetIdentityOidcClientNameExecute(r)
@@ -4506,17 +4472,17 @@ GetIdentityOidcClientName Method for GetIdentityOidcClientName
 func (a *IdentityApiService) GetIdentityOidcClientName(ctx context.Context, name string) ApiGetIdentityOidcClientNameRequest {
 	return ApiGetIdentityOidcClientNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityOidcClientNameExecute(r ApiGetIdentityOidcClientNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcClientName")
@@ -4577,10 +4543,9 @@ func (a *IdentityApiService) GetIdentityOidcClientNameExecute(r ApiGetIdentityOi
 }
 
 type ApiGetIdentityOidcConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
 }
-
 
 func (r ApiGetIdentityOidcConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetIdentityOidcConfigExecute(r)
@@ -4595,16 +4560,16 @@ GetIdentityOidcConfig OIDC configuration
 func (a *IdentityApiService) GetIdentityOidcConfig(ctx context.Context) ApiGetIdentityOidcConfigRequest {
 	return ApiGetIdentityOidcConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityOidcConfigExecute(r ApiGetIdentityOidcConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcConfig")
@@ -4664,9 +4629,9 @@ func (a *IdentityApiService) GetIdentityOidcConfigExecute(r ApiGetIdentityOidcCo
 }
 
 type ApiGetIdentityOidcKeyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -4688,16 +4653,16 @@ GetIdentityOidcKey List OIDC keys
 func (a *IdentityApiService) GetIdentityOidcKey(ctx context.Context) ApiGetIdentityOidcKeyRequest {
 	return ApiGetIdentityOidcKeyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityOidcKeyExecute(r ApiGetIdentityOidcKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcKey")
@@ -4761,11 +4726,10 @@ func (a *IdentityApiService) GetIdentityOidcKeyExecute(r ApiGetIdentityOidcKeyRe
 }
 
 type ApiGetIdentityOidcKeyNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetIdentityOidcKeyNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetIdentityOidcKeyNameExecute(r)
@@ -4781,17 +4745,17 @@ GetIdentityOidcKeyName CRUD operations for OIDC keys.
 func (a *IdentityApiService) GetIdentityOidcKeyName(ctx context.Context, name string) ApiGetIdentityOidcKeyNameRequest {
 	return ApiGetIdentityOidcKeyNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityOidcKeyNameExecute(r ApiGetIdentityOidcKeyNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcKeyName")
@@ -4852,9 +4816,9 @@ func (a *IdentityApiService) GetIdentityOidcKeyNameExecute(r ApiGetIdentityOidcK
 }
 
 type ApiGetIdentityOidcProviderRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -4876,16 +4840,16 @@ GetIdentityOidcProvider Method for GetIdentityOidcProvider
 func (a *IdentityApiService) GetIdentityOidcProvider(ctx context.Context) ApiGetIdentityOidcProviderRequest {
 	return ApiGetIdentityOidcProviderRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityOidcProviderExecute(r ApiGetIdentityOidcProviderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcProvider")
@@ -4949,11 +4913,10 @@ func (a *IdentityApiService) GetIdentityOidcProviderExecute(r ApiGetIdentityOidc
 }
 
 type ApiGetIdentityOidcProviderNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetIdentityOidcProviderNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetIdentityOidcProviderNameExecute(r)
@@ -4969,17 +4932,17 @@ GetIdentityOidcProviderName Method for GetIdentityOidcProviderName
 func (a *IdentityApiService) GetIdentityOidcProviderName(ctx context.Context, name string) ApiGetIdentityOidcProviderNameRequest {
 	return ApiGetIdentityOidcProviderNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityOidcProviderNameExecute(r ApiGetIdentityOidcProviderNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcProviderName")
@@ -5040,11 +5003,10 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameExecute(r ApiGetIdentity
 }
 
 type ApiGetIdentityOidcProviderNameAuthorizeRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetIdentityOidcProviderNameAuthorizeRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetIdentityOidcProviderNameAuthorizeExecute(r)
@@ -5060,17 +5022,17 @@ GetIdentityOidcProviderNameAuthorize Method for GetIdentityOidcProviderNameAutho
 func (a *IdentityApiService) GetIdentityOidcProviderNameAuthorize(ctx context.Context, name string) ApiGetIdentityOidcProviderNameAuthorizeRequest {
 	return ApiGetIdentityOidcProviderNameAuthorizeRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityOidcProviderNameAuthorizeExecute(r ApiGetIdentityOidcProviderNameAuthorizeRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcProviderNameAuthorize")
@@ -5131,11 +5093,10 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameAuthorizeExecute(r ApiGe
 }
 
 type ApiGetIdentityOidcProviderNameUserinfoRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetIdentityOidcProviderNameUserinfoRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetIdentityOidcProviderNameUserinfoExecute(r)
@@ -5151,17 +5112,17 @@ GetIdentityOidcProviderNameUserinfo Method for GetIdentityOidcProviderNameUserin
 func (a *IdentityApiService) GetIdentityOidcProviderNameUserinfo(ctx context.Context, name string) ApiGetIdentityOidcProviderNameUserinfoRequest {
 	return ApiGetIdentityOidcProviderNameUserinfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityOidcProviderNameUserinfoExecute(r ApiGetIdentityOidcProviderNameUserinfoRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcProviderNameUserinfo")
@@ -5222,11 +5183,10 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameUserinfoExecute(r ApiGet
 }
 
 type ApiGetIdentityOidcProviderNameWellKnownKeysRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetIdentityOidcProviderNameWellKnownKeysRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetIdentityOidcProviderNameWellKnownKeysExecute(r)
@@ -5242,17 +5202,17 @@ GetIdentityOidcProviderNameWellKnownKeys Method for GetIdentityOidcProviderNameW
 func (a *IdentityApiService) GetIdentityOidcProviderNameWellKnownKeys(ctx context.Context, name string) ApiGetIdentityOidcProviderNameWellKnownKeysRequest {
 	return ApiGetIdentityOidcProviderNameWellKnownKeysRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityOidcProviderNameWellKnownKeysExecute(r ApiGetIdentityOidcProviderNameWellKnownKeysRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcProviderNameWellKnownKeys")
@@ -5313,11 +5273,10 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameWellKnownKeysExecute(r A
 }
 
 type ApiGetIdentityOidcProviderNameWellKnownOpenidConfigurationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetIdentityOidcProviderNameWellKnownOpenidConfigurationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetIdentityOidcProviderNameWellKnownOpenidConfigurationExecute(r)
@@ -5333,17 +5292,17 @@ GetIdentityOidcProviderNameWellKnownOpenidConfiguration Method for GetIdentityOi
 func (a *IdentityApiService) GetIdentityOidcProviderNameWellKnownOpenidConfiguration(ctx context.Context, name string) ApiGetIdentityOidcProviderNameWellKnownOpenidConfigurationRequest {
 	return ApiGetIdentityOidcProviderNameWellKnownOpenidConfigurationRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityOidcProviderNameWellKnownOpenidConfigurationExecute(r ApiGetIdentityOidcProviderNameWellKnownOpenidConfigurationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcProviderNameWellKnownOpenidConfiguration")
@@ -5404,9 +5363,9 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameWellKnownOpenidConfigura
 }
 
 type ApiGetIdentityOidcRoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -5428,16 +5387,16 @@ GetIdentityOidcRole List configured OIDC roles
 func (a *IdentityApiService) GetIdentityOidcRole(ctx context.Context) ApiGetIdentityOidcRoleRequest {
 	return ApiGetIdentityOidcRoleRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityOidcRoleExecute(r ApiGetIdentityOidcRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcRole")
@@ -5501,11 +5460,10 @@ func (a *IdentityApiService) GetIdentityOidcRoleExecute(r ApiGetIdentityOidcRole
 }
 
 type ApiGetIdentityOidcRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetIdentityOidcRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetIdentityOidcRoleNameExecute(r)
@@ -5521,17 +5479,17 @@ GetIdentityOidcRoleName CRUD operations on OIDC Roles
 func (a *IdentityApiService) GetIdentityOidcRoleName(ctx context.Context, name string) ApiGetIdentityOidcRoleNameRequest {
 	return ApiGetIdentityOidcRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityOidcRoleNameExecute(r ApiGetIdentityOidcRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcRoleName")
@@ -5592,9 +5550,9 @@ func (a *IdentityApiService) GetIdentityOidcRoleNameExecute(r ApiGetIdentityOidc
 }
 
 type ApiGetIdentityOidcScopeRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -5616,16 +5574,16 @@ GetIdentityOidcScope Method for GetIdentityOidcScope
 func (a *IdentityApiService) GetIdentityOidcScope(ctx context.Context) ApiGetIdentityOidcScopeRequest {
 	return ApiGetIdentityOidcScopeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityOidcScopeExecute(r ApiGetIdentityOidcScopeRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcScope")
@@ -5689,11 +5647,10 @@ func (a *IdentityApiService) GetIdentityOidcScopeExecute(r ApiGetIdentityOidcSco
 }
 
 type ApiGetIdentityOidcScopeNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetIdentityOidcScopeNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetIdentityOidcScopeNameExecute(r)
@@ -5709,17 +5666,17 @@ GetIdentityOidcScopeName Method for GetIdentityOidcScopeName
 func (a *IdentityApiService) GetIdentityOidcScopeName(ctx context.Context, name string) ApiGetIdentityOidcScopeNameRequest {
 	return ApiGetIdentityOidcScopeNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityOidcScopeNameExecute(r ApiGetIdentityOidcScopeNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcScopeName")
@@ -5780,11 +5737,10 @@ func (a *IdentityApiService) GetIdentityOidcScopeNameExecute(r ApiGetIdentityOid
 }
 
 type ApiGetIdentityOidcTokenNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetIdentityOidcTokenNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetIdentityOidcTokenNameExecute(r)
@@ -5800,17 +5756,17 @@ GetIdentityOidcTokenName Generate an OIDC token
 func (a *IdentityApiService) GetIdentityOidcTokenName(ctx context.Context, name string) ApiGetIdentityOidcTokenNameRequest {
 	return ApiGetIdentityOidcTokenNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityOidcTokenNameExecute(r ApiGetIdentityOidcTokenNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcTokenName")
@@ -5871,10 +5827,9 @@ func (a *IdentityApiService) GetIdentityOidcTokenNameExecute(r ApiGetIdentityOid
 }
 
 type ApiGetIdentityOidcWellKnownKeysRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
 }
-
 
 func (r ApiGetIdentityOidcWellKnownKeysRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetIdentityOidcWellKnownKeysExecute(r)
@@ -5889,16 +5844,16 @@ GetIdentityOidcWellKnownKeys Retrieve public keys
 func (a *IdentityApiService) GetIdentityOidcWellKnownKeys(ctx context.Context) ApiGetIdentityOidcWellKnownKeysRequest {
 	return ApiGetIdentityOidcWellKnownKeysRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityOidcWellKnownKeysExecute(r ApiGetIdentityOidcWellKnownKeysRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcWellKnownKeys")
@@ -5958,10 +5913,9 @@ func (a *IdentityApiService) GetIdentityOidcWellKnownKeysExecute(r ApiGetIdentit
 }
 
 type ApiGetIdentityOidcWellKnownOpenidConfigurationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
 }
-
 
 func (r ApiGetIdentityOidcWellKnownOpenidConfigurationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetIdentityOidcWellKnownOpenidConfigurationExecute(r)
@@ -5976,16 +5930,16 @@ GetIdentityOidcWellKnownOpenidConfiguration Query OIDC configurations
 func (a *IdentityApiService) GetIdentityOidcWellKnownOpenidConfiguration(ctx context.Context) ApiGetIdentityOidcWellKnownOpenidConfigurationRequest {
 	return ApiGetIdentityOidcWellKnownOpenidConfigurationRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityOidcWellKnownOpenidConfigurationExecute(r ApiGetIdentityOidcWellKnownOpenidConfigurationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcWellKnownOpenidConfiguration")
@@ -6045,9 +5999,9 @@ func (a *IdentityApiService) GetIdentityOidcWellKnownOpenidConfigurationExecute(
 }
 
 type ApiGetIdentityPersonaIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -6069,16 +6023,16 @@ GetIdentityPersonaId List all the alias IDs.
 func (a *IdentityApiService) GetIdentityPersonaId(ctx context.Context) ApiGetIdentityPersonaIdRequest {
 	return ApiGetIdentityPersonaIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityPersonaIdExecute(r ApiGetIdentityPersonaIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityPersonaId")
@@ -6142,11 +6096,10 @@ func (a *IdentityApiService) GetIdentityPersonaIdExecute(r ApiGetIdentityPersona
 }
 
 type ApiGetIdentityPersonaIdIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	id string
+	id         string
 }
-
 
 func (r ApiGetIdentityPersonaIdIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetIdentityPersonaIdIdExecute(r)
@@ -6162,17 +6115,17 @@ GetIdentityPersonaIdId Update, read or delete an alias ID.
 func (a *IdentityApiService) GetIdentityPersonaIdId(ctx context.Context, id string) ApiGetIdentityPersonaIdIdRequest {
 	return ApiGetIdentityPersonaIdIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) GetIdentityPersonaIdIdExecute(r ApiGetIdentityPersonaIdIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityPersonaIdId")
@@ -6233,8 +6186,8 @@ func (a *IdentityApiService) GetIdentityPersonaIdIdExecute(r ApiGetIdentityPerso
 }
 
 type ApiPostIdentityAliasRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
+	ctx                  context.Context
+	ApiService           *IdentityApiService
 	identityAliasRequest *IdentityAliasRequest
 }
 
@@ -6256,16 +6209,16 @@ PostIdentityAlias Create a new alias.
 func (a *IdentityApiService) PostIdentityAlias(ctx context.Context) ApiPostIdentityAliasRequest {
 	return ApiPostIdentityAliasRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityAliasExecute(r ApiPostIdentityAliasRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityAlias")
@@ -6327,9 +6280,9 @@ func (a *IdentityApiService) PostIdentityAliasExecute(r ApiPostIdentityAliasRequ
 }
 
 type ApiPostIdentityAliasIdIdRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
-	id string
+	ctx                    context.Context
+	ApiService             *IdentityApiService
+	id                     string
 	identityAliasIdRequest *IdentityAliasIdRequest
 }
 
@@ -6352,17 +6305,17 @@ PostIdentityAliasIdId Update, read or delete an alias ID.
 func (a *IdentityApiService) PostIdentityAliasIdId(ctx context.Context, id string) ApiPostIdentityAliasIdIdRequest {
 	return ApiPostIdentityAliasIdIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityAliasIdIdExecute(r ApiPostIdentityAliasIdIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityAliasIdId")
@@ -6425,8 +6378,8 @@ func (a *IdentityApiService) PostIdentityAliasIdIdExecute(r ApiPostIdentityAlias
 }
 
 type ApiPostIdentityEntityRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
+	ctx                   context.Context
+	ApiService            *IdentityApiService
 	identityEntityRequest *IdentityEntityRequest
 }
 
@@ -6448,16 +6401,16 @@ PostIdentityEntity Create a new entity
 func (a *IdentityApiService) PostIdentityEntity(ctx context.Context) ApiPostIdentityEntityRequest {
 	return ApiPostIdentityEntityRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityEntityExecute(r ApiPostIdentityEntityRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityEntity")
@@ -6519,8 +6472,8 @@ func (a *IdentityApiService) PostIdentityEntityExecute(r ApiPostIdentityEntityRe
 }
 
 type ApiPostIdentityEntityAliasRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
+	ctx                        context.Context
+	ApiService                 *IdentityApiService
 	identityEntityAliasRequest *IdentityEntityAliasRequest
 }
 
@@ -6542,16 +6495,16 @@ PostIdentityEntityAlias Create a new alias.
 func (a *IdentityApiService) PostIdentityEntityAlias(ctx context.Context) ApiPostIdentityEntityAliasRequest {
 	return ApiPostIdentityEntityAliasRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityEntityAliasExecute(r ApiPostIdentityEntityAliasRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityEntityAlias")
@@ -6613,9 +6566,9 @@ func (a *IdentityApiService) PostIdentityEntityAliasExecute(r ApiPostIdentityEnt
 }
 
 type ApiPostIdentityEntityAliasIdIdRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
-	id string
+	ctx                          context.Context
+	ApiService                   *IdentityApiService
+	id                           string
 	identityEntityAliasIdRequest *IdentityEntityAliasIdRequest
 }
 
@@ -6638,17 +6591,17 @@ PostIdentityEntityAliasIdId Update, read or delete an alias ID.
 func (a *IdentityApiService) PostIdentityEntityAliasIdId(ctx context.Context, id string) ApiPostIdentityEntityAliasIdIdRequest {
 	return ApiPostIdentityEntityAliasIdIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityEntityAliasIdIdExecute(r ApiPostIdentityEntityAliasIdIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityEntityAliasIdId")
@@ -6711,8 +6664,8 @@ func (a *IdentityApiService) PostIdentityEntityAliasIdIdExecute(r ApiPostIdentit
 }
 
 type ApiPostIdentityEntityBatchDeleteRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
+	ctx                              context.Context
+	ApiService                       *IdentityApiService
 	identityEntityBatchDeleteRequest *IdentityEntityBatchDeleteRequest
 }
 
@@ -6734,16 +6687,16 @@ PostIdentityEntityBatchDelete Delete all of the entities provided
 func (a *IdentityApiService) PostIdentityEntityBatchDelete(ctx context.Context) ApiPostIdentityEntityBatchDeleteRequest {
 	return ApiPostIdentityEntityBatchDeleteRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityEntityBatchDeleteExecute(r ApiPostIdentityEntityBatchDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityEntityBatchDelete")
@@ -6805,9 +6758,9 @@ func (a *IdentityApiService) PostIdentityEntityBatchDeleteExecute(r ApiPostIdent
 }
 
 type ApiPostIdentityEntityIdIdRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
-	id string
+	ctx                     context.Context
+	ApiService              *IdentityApiService
+	id                      string
 	identityEntityIdRequest *IdentityEntityIdRequest
 }
 
@@ -6830,17 +6783,17 @@ PostIdentityEntityIdId Update, read or delete an entity using entity ID
 func (a *IdentityApiService) PostIdentityEntityIdId(ctx context.Context, id string) ApiPostIdentityEntityIdIdRequest {
 	return ApiPostIdentityEntityIdIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityEntityIdIdExecute(r ApiPostIdentityEntityIdIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityEntityIdId")
@@ -6903,8 +6856,8 @@ func (a *IdentityApiService) PostIdentityEntityIdIdExecute(r ApiPostIdentityEnti
 }
 
 type ApiPostIdentityEntityMergeRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
+	ctx                        context.Context
+	ApiService                 *IdentityApiService
 	identityEntityMergeRequest *IdentityEntityMergeRequest
 }
 
@@ -6926,16 +6879,16 @@ PostIdentityEntityMerge Merge two or more entities together
 func (a *IdentityApiService) PostIdentityEntityMerge(ctx context.Context) ApiPostIdentityEntityMergeRequest {
 	return ApiPostIdentityEntityMergeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityEntityMergeExecute(r ApiPostIdentityEntityMergeRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityEntityMerge")
@@ -6997,9 +6950,9 @@ func (a *IdentityApiService) PostIdentityEntityMergeExecute(r ApiPostIdentityEnt
 }
 
 type ApiPostIdentityEntityNameNameRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
-	name string
+	ctx                       context.Context
+	ApiService                *IdentityApiService
+	name                      string
 	identityEntityNameRequest *IdentityEntityNameRequest
 }
 
@@ -7022,17 +6975,17 @@ PostIdentityEntityNameName Update, read or delete an entity using entity name
 func (a *IdentityApiService) PostIdentityEntityNameName(ctx context.Context, name string) ApiPostIdentityEntityNameNameRequest {
 	return ApiPostIdentityEntityNameNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityEntityNameNameExecute(r ApiPostIdentityEntityNameNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityEntityNameName")
@@ -7095,8 +7048,8 @@ func (a *IdentityApiService) PostIdentityEntityNameNameExecute(r ApiPostIdentity
 }
 
 type ApiPostIdentityGroupRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
+	ctx                  context.Context
+	ApiService           *IdentityApiService
 	identityGroupRequest *IdentityGroupRequest
 }
 
@@ -7118,16 +7071,16 @@ PostIdentityGroup Create a new group.
 func (a *IdentityApiService) PostIdentityGroup(ctx context.Context) ApiPostIdentityGroupRequest {
 	return ApiPostIdentityGroupRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityGroupExecute(r ApiPostIdentityGroupRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityGroup")
@@ -7189,8 +7142,8 @@ func (a *IdentityApiService) PostIdentityGroupExecute(r ApiPostIdentityGroupRequ
 }
 
 type ApiPostIdentityGroupAliasRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
+	ctx                       context.Context
+	ApiService                *IdentityApiService
 	identityGroupAliasRequest *IdentityGroupAliasRequest
 }
 
@@ -7212,16 +7165,16 @@ PostIdentityGroupAlias Creates a new group alias, or updates an existing one.
 func (a *IdentityApiService) PostIdentityGroupAlias(ctx context.Context) ApiPostIdentityGroupAliasRequest {
 	return ApiPostIdentityGroupAliasRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityGroupAliasExecute(r ApiPostIdentityGroupAliasRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityGroupAlias")
@@ -7283,9 +7236,9 @@ func (a *IdentityApiService) PostIdentityGroupAliasExecute(r ApiPostIdentityGrou
 }
 
 type ApiPostIdentityGroupAliasIdIdRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
-	id string
+	ctx                         context.Context
+	ApiService                  *IdentityApiService
+	id                          string
 	identityGroupAliasIdRequest *IdentityGroupAliasIdRequest
 }
 
@@ -7308,17 +7261,17 @@ PostIdentityGroupAliasIdId Method for PostIdentityGroupAliasIdId
 func (a *IdentityApiService) PostIdentityGroupAliasIdId(ctx context.Context, id string) ApiPostIdentityGroupAliasIdIdRequest {
 	return ApiPostIdentityGroupAliasIdIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityGroupAliasIdIdExecute(r ApiPostIdentityGroupAliasIdIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityGroupAliasIdId")
@@ -7381,9 +7334,9 @@ func (a *IdentityApiService) PostIdentityGroupAliasIdIdExecute(r ApiPostIdentity
 }
 
 type ApiPostIdentityGroupIdIdRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
-	id string
+	ctx                    context.Context
+	ApiService             *IdentityApiService
+	id                     string
 	identityGroupIdRequest *IdentityGroupIdRequest
 }
 
@@ -7406,17 +7359,17 @@ PostIdentityGroupIdId Update or delete an existing group using its ID.
 func (a *IdentityApiService) PostIdentityGroupIdId(ctx context.Context, id string) ApiPostIdentityGroupIdIdRequest {
 	return ApiPostIdentityGroupIdIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityGroupIdIdExecute(r ApiPostIdentityGroupIdIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityGroupIdId")
@@ -7479,9 +7432,9 @@ func (a *IdentityApiService) PostIdentityGroupIdIdExecute(r ApiPostIdentityGroup
 }
 
 type ApiPostIdentityGroupNameNameRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
-	name string
+	ctx                      context.Context
+	ApiService               *IdentityApiService
+	name                     string
 	identityGroupNameRequest *IdentityGroupNameRequest
 }
 
@@ -7504,17 +7457,17 @@ PostIdentityGroupNameName Method for PostIdentityGroupNameName
 func (a *IdentityApiService) PostIdentityGroupNameName(ctx context.Context, name string) ApiPostIdentityGroupNameNameRequest {
 	return ApiPostIdentityGroupNameNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityGroupNameNameExecute(r ApiPostIdentityGroupNameNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityGroupNameName")
@@ -7577,8 +7530,8 @@ func (a *IdentityApiService) PostIdentityGroupNameNameExecute(r ApiPostIdentityG
 }
 
 type ApiPostIdentityLookupEntityRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
+	ctx                         context.Context
+	ApiService                  *IdentityApiService
 	identityLookupEntityRequest *IdentityLookupEntityRequest
 }
 
@@ -7600,16 +7553,16 @@ PostIdentityLookupEntity Query entities based on various properties.
 func (a *IdentityApiService) PostIdentityLookupEntity(ctx context.Context) ApiPostIdentityLookupEntityRequest {
 	return ApiPostIdentityLookupEntityRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityLookupEntityExecute(r ApiPostIdentityLookupEntityRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityLookupEntity")
@@ -7671,8 +7624,8 @@ func (a *IdentityApiService) PostIdentityLookupEntityExecute(r ApiPostIdentityLo
 }
 
 type ApiPostIdentityLookupGroupRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
+	ctx                        context.Context
+	ApiService                 *IdentityApiService
 	identityLookupGroupRequest *IdentityLookupGroupRequest
 }
 
@@ -7694,16 +7647,16 @@ PostIdentityLookupGroup Query groups based on various properties.
 func (a *IdentityApiService) PostIdentityLookupGroup(ctx context.Context) ApiPostIdentityLookupGroupRequest {
 	return ApiPostIdentityLookupGroupRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityLookupGroupExecute(r ApiPostIdentityLookupGroupRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityLookupGroup")
@@ -7765,9 +7718,9 @@ func (a *IdentityApiService) PostIdentityLookupGroupExecute(r ApiPostIdentityLoo
 }
 
 type ApiPostIdentityMfaLoginEnforcementNameRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
-	name string
+	ctx                                context.Context
+	ApiService                         *IdentityApiService
+	name                               string
 	identityMfaLoginEnforcementRequest *IdentityMfaLoginEnforcementRequest
 }
 
@@ -7790,17 +7743,17 @@ PostIdentityMfaLoginEnforcementName Create or update a login enforcement
 func (a *IdentityApiService) PostIdentityMfaLoginEnforcementName(ctx context.Context, name string) ApiPostIdentityMfaLoginEnforcementNameRequest {
 	return ApiPostIdentityMfaLoginEnforcementNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityMfaLoginEnforcementNameExecute(r ApiPostIdentityMfaLoginEnforcementNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityMfaLoginEnforcementName")
@@ -7863,9 +7816,9 @@ func (a *IdentityApiService) PostIdentityMfaLoginEnforcementNameExecute(r ApiPos
 }
 
 type ApiPostIdentityMfaMethodDuoMethodIdRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
-	methodId string
+	ctx                         context.Context
+	ApiService                  *IdentityApiService
+	methodId                    string
 	identityMfaMethodDuoRequest *IdentityMfaMethodDuoRequest
 }
 
@@ -7888,17 +7841,17 @@ PostIdentityMfaMethodDuoMethodId Update or create a configuration for the given 
 func (a *IdentityApiService) PostIdentityMfaMethodDuoMethodId(ctx context.Context, methodId string) ApiPostIdentityMfaMethodDuoMethodIdRequest {
 	return ApiPostIdentityMfaMethodDuoMethodIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		methodId: methodId,
+		ctx:        ctx,
+		methodId:   methodId,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityMfaMethodDuoMethodIdExecute(r ApiPostIdentityMfaMethodDuoMethodIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityMfaMethodDuoMethodId")
@@ -7961,9 +7914,9 @@ func (a *IdentityApiService) PostIdentityMfaMethodDuoMethodIdExecute(r ApiPostId
 }
 
 type ApiPostIdentityMfaMethodOktaMethodIdRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
-	methodId string
+	ctx                          context.Context
+	ApiService                   *IdentityApiService
+	methodId                     string
 	identityMfaMethodOktaRequest *IdentityMfaMethodOktaRequest
 }
 
@@ -7986,17 +7939,17 @@ PostIdentityMfaMethodOktaMethodId Update or create a configuration for the given
 func (a *IdentityApiService) PostIdentityMfaMethodOktaMethodId(ctx context.Context, methodId string) ApiPostIdentityMfaMethodOktaMethodIdRequest {
 	return ApiPostIdentityMfaMethodOktaMethodIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		methodId: methodId,
+		ctx:        ctx,
+		methodId:   methodId,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityMfaMethodOktaMethodIdExecute(r ApiPostIdentityMfaMethodOktaMethodIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityMfaMethodOktaMethodId")
@@ -8059,9 +8012,9 @@ func (a *IdentityApiService) PostIdentityMfaMethodOktaMethodIdExecute(r ApiPostI
 }
 
 type ApiPostIdentityMfaMethodPingidMethodIdRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
-	methodId string
+	ctx                            context.Context
+	ApiService                     *IdentityApiService
+	methodId                       string
 	identityMfaMethodPingidRequest *IdentityMfaMethodPingidRequest
 }
 
@@ -8084,17 +8037,17 @@ PostIdentityMfaMethodPingidMethodId Update or create a configuration for the giv
 func (a *IdentityApiService) PostIdentityMfaMethodPingidMethodId(ctx context.Context, methodId string) ApiPostIdentityMfaMethodPingidMethodIdRequest {
 	return ApiPostIdentityMfaMethodPingidMethodIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		methodId: methodId,
+		ctx:        ctx,
+		methodId:   methodId,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityMfaMethodPingidMethodIdExecute(r ApiPostIdentityMfaMethodPingidMethodIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityMfaMethodPingidMethodId")
@@ -8157,8 +8110,8 @@ func (a *IdentityApiService) PostIdentityMfaMethodPingidMethodIdExecute(r ApiPos
 }
 
 type ApiPostIdentityMfaMethodTotpAdminDestroyRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
+	ctx                                      context.Context
+	ApiService                               *IdentityApiService
 	identityMfaMethodTotpAdminDestroyRequest *IdentityMfaMethodTotpAdminDestroyRequest
 }
 
@@ -8180,16 +8133,16 @@ PostIdentityMfaMethodTotpAdminDestroy Destroys a TOTP secret for the given MFA m
 func (a *IdentityApiService) PostIdentityMfaMethodTotpAdminDestroy(ctx context.Context) ApiPostIdentityMfaMethodTotpAdminDestroyRequest {
 	return ApiPostIdentityMfaMethodTotpAdminDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityMfaMethodTotpAdminDestroyExecute(r ApiPostIdentityMfaMethodTotpAdminDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityMfaMethodTotpAdminDestroy")
@@ -8251,8 +8204,8 @@ func (a *IdentityApiService) PostIdentityMfaMethodTotpAdminDestroyExecute(r ApiP
 }
 
 type ApiPostIdentityMfaMethodTotpAdminGenerateRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
+	ctx                                       context.Context
+	ApiService                                *IdentityApiService
 	identityMfaMethodTotpAdminGenerateRequest *IdentityMfaMethodTotpAdminGenerateRequest
 }
 
@@ -8274,16 +8227,16 @@ PostIdentityMfaMethodTotpAdminGenerate Update or create TOTP secret for the give
 func (a *IdentityApiService) PostIdentityMfaMethodTotpAdminGenerate(ctx context.Context) ApiPostIdentityMfaMethodTotpAdminGenerateRequest {
 	return ApiPostIdentityMfaMethodTotpAdminGenerateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityMfaMethodTotpAdminGenerateExecute(r ApiPostIdentityMfaMethodTotpAdminGenerateRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityMfaMethodTotpAdminGenerate")
@@ -8345,8 +8298,8 @@ func (a *IdentityApiService) PostIdentityMfaMethodTotpAdminGenerateExecute(r Api
 }
 
 type ApiPostIdentityMfaMethodTotpGenerateRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
+	ctx                                  context.Context
+	ApiService                           *IdentityApiService
 	identityMfaMethodTotpGenerateRequest *IdentityMfaMethodTotpGenerateRequest
 }
 
@@ -8368,16 +8321,16 @@ PostIdentityMfaMethodTotpGenerate Update or create TOTP secret for the given met
 func (a *IdentityApiService) PostIdentityMfaMethodTotpGenerate(ctx context.Context) ApiPostIdentityMfaMethodTotpGenerateRequest {
 	return ApiPostIdentityMfaMethodTotpGenerateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityMfaMethodTotpGenerateExecute(r ApiPostIdentityMfaMethodTotpGenerateRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityMfaMethodTotpGenerate")
@@ -8439,9 +8392,9 @@ func (a *IdentityApiService) PostIdentityMfaMethodTotpGenerateExecute(r ApiPostI
 }
 
 type ApiPostIdentityMfaMethodTotpMethodIdRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
-	methodId string
+	ctx                          context.Context
+	ApiService                   *IdentityApiService
+	methodId                     string
 	identityMfaMethodTotpRequest *IdentityMfaMethodTotpRequest
 }
 
@@ -8464,17 +8417,17 @@ PostIdentityMfaMethodTotpMethodId Update or create a configuration for the given
 func (a *IdentityApiService) PostIdentityMfaMethodTotpMethodId(ctx context.Context, methodId string) ApiPostIdentityMfaMethodTotpMethodIdRequest {
 	return ApiPostIdentityMfaMethodTotpMethodIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		methodId: methodId,
+		ctx:        ctx,
+		methodId:   methodId,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityMfaMethodTotpMethodIdExecute(r ApiPostIdentityMfaMethodTotpMethodIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityMfaMethodTotpMethodId")
@@ -8537,9 +8490,9 @@ func (a *IdentityApiService) PostIdentityMfaMethodTotpMethodIdExecute(r ApiPostI
 }
 
 type ApiPostIdentityOidcAssignmentNameRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
-	name string
+	ctx                           context.Context
+	ApiService                    *IdentityApiService
+	name                          string
 	identityOidcAssignmentRequest *IdentityOidcAssignmentRequest
 }
 
@@ -8562,17 +8515,17 @@ PostIdentityOidcAssignmentName Method for PostIdentityOidcAssignmentName
 func (a *IdentityApiService) PostIdentityOidcAssignmentName(ctx context.Context, name string) ApiPostIdentityOidcAssignmentNameRequest {
 	return ApiPostIdentityOidcAssignmentNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityOidcAssignmentNameExecute(r ApiPostIdentityOidcAssignmentNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityOidcAssignmentName")
@@ -8635,9 +8588,9 @@ func (a *IdentityApiService) PostIdentityOidcAssignmentNameExecute(r ApiPostIden
 }
 
 type ApiPostIdentityOidcClientNameRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
-	name string
+	ctx                       context.Context
+	ApiService                *IdentityApiService
+	name                      string
 	identityOidcClientRequest *IdentityOidcClientRequest
 }
 
@@ -8660,17 +8613,17 @@ PostIdentityOidcClientName Method for PostIdentityOidcClientName
 func (a *IdentityApiService) PostIdentityOidcClientName(ctx context.Context, name string) ApiPostIdentityOidcClientNameRequest {
 	return ApiPostIdentityOidcClientNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityOidcClientNameExecute(r ApiPostIdentityOidcClientNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityOidcClientName")
@@ -8733,8 +8686,8 @@ func (a *IdentityApiService) PostIdentityOidcClientNameExecute(r ApiPostIdentity
 }
 
 type ApiPostIdentityOidcConfigRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
+	ctx                       context.Context
+	ApiService                *IdentityApiService
 	identityOidcConfigRequest *IdentityOidcConfigRequest
 }
 
@@ -8756,16 +8709,16 @@ PostIdentityOidcConfig OIDC configuration
 func (a *IdentityApiService) PostIdentityOidcConfig(ctx context.Context) ApiPostIdentityOidcConfigRequest {
 	return ApiPostIdentityOidcConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityOidcConfigExecute(r ApiPostIdentityOidcConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityOidcConfig")
@@ -8827,8 +8780,8 @@ func (a *IdentityApiService) PostIdentityOidcConfigExecute(r ApiPostIdentityOidc
 }
 
 type ApiPostIdentityOidcIntrospectRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
+	ctx                           context.Context
+	ApiService                    *IdentityApiService
 	identityOidcIntrospectRequest *IdentityOidcIntrospectRequest
 }
 
@@ -8850,16 +8803,16 @@ PostIdentityOidcIntrospect Verify the authenticity of an OIDC token
 func (a *IdentityApiService) PostIdentityOidcIntrospect(ctx context.Context) ApiPostIdentityOidcIntrospectRequest {
 	return ApiPostIdentityOidcIntrospectRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityOidcIntrospectExecute(r ApiPostIdentityOidcIntrospectRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityOidcIntrospect")
@@ -8921,9 +8874,9 @@ func (a *IdentityApiService) PostIdentityOidcIntrospectExecute(r ApiPostIdentity
 }
 
 type ApiPostIdentityOidcKeyNameRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
-	name string
+	ctx                    context.Context
+	ApiService             *IdentityApiService
+	name                   string
 	identityOidcKeyRequest *IdentityOidcKeyRequest
 }
 
@@ -8946,17 +8899,17 @@ PostIdentityOidcKeyName CRUD operations for OIDC keys.
 func (a *IdentityApiService) PostIdentityOidcKeyName(ctx context.Context, name string) ApiPostIdentityOidcKeyNameRequest {
 	return ApiPostIdentityOidcKeyNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityOidcKeyNameExecute(r ApiPostIdentityOidcKeyNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityOidcKeyName")
@@ -9019,9 +8972,9 @@ func (a *IdentityApiService) PostIdentityOidcKeyNameExecute(r ApiPostIdentityOid
 }
 
 type ApiPostIdentityOidcKeyNameRotateRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
-	name string
+	ctx                          context.Context
+	ApiService                   *IdentityApiService
+	name                         string
 	identityOidcKeyRotateRequest *IdentityOidcKeyRotateRequest
 }
 
@@ -9044,17 +8997,17 @@ PostIdentityOidcKeyNameRotate Rotate a named OIDC key.
 func (a *IdentityApiService) PostIdentityOidcKeyNameRotate(ctx context.Context, name string) ApiPostIdentityOidcKeyNameRotateRequest {
 	return ApiPostIdentityOidcKeyNameRotateRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityOidcKeyNameRotateExecute(r ApiPostIdentityOidcKeyNameRotateRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityOidcKeyNameRotate")
@@ -9117,9 +9070,9 @@ func (a *IdentityApiService) PostIdentityOidcKeyNameRotateExecute(r ApiPostIdent
 }
 
 type ApiPostIdentityOidcProviderNameRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
-	name string
+	ctx                         context.Context
+	ApiService                  *IdentityApiService
+	name                        string
 	identityOidcProviderRequest *IdentityOidcProviderRequest
 }
 
@@ -9142,17 +9095,17 @@ PostIdentityOidcProviderName Method for PostIdentityOidcProviderName
 func (a *IdentityApiService) PostIdentityOidcProviderName(ctx context.Context, name string) ApiPostIdentityOidcProviderNameRequest {
 	return ApiPostIdentityOidcProviderNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityOidcProviderNameExecute(r ApiPostIdentityOidcProviderNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityOidcProviderName")
@@ -9215,9 +9168,9 @@ func (a *IdentityApiService) PostIdentityOidcProviderNameExecute(r ApiPostIdenti
 }
 
 type ApiPostIdentityOidcProviderNameAuthorizeRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
-	name string
+	ctx                                  context.Context
+	ApiService                           *IdentityApiService
+	name                                 string
 	identityOidcProviderAuthorizeRequest *IdentityOidcProviderAuthorizeRequest
 }
 
@@ -9240,17 +9193,17 @@ PostIdentityOidcProviderNameAuthorize Method for PostIdentityOidcProviderNameAut
 func (a *IdentityApiService) PostIdentityOidcProviderNameAuthorize(ctx context.Context, name string) ApiPostIdentityOidcProviderNameAuthorizeRequest {
 	return ApiPostIdentityOidcProviderNameAuthorizeRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityOidcProviderNameAuthorizeExecute(r ApiPostIdentityOidcProviderNameAuthorizeRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityOidcProviderNameAuthorize")
@@ -9313,9 +9266,9 @@ func (a *IdentityApiService) PostIdentityOidcProviderNameAuthorizeExecute(r ApiP
 }
 
 type ApiPostIdentityOidcProviderNameTokenRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
-	name string
+	ctx                              context.Context
+	ApiService                       *IdentityApiService
+	name                             string
 	identityOidcProviderTokenRequest *IdentityOidcProviderTokenRequest
 }
 
@@ -9338,17 +9291,17 @@ PostIdentityOidcProviderNameToken Method for PostIdentityOidcProviderNameToken
 func (a *IdentityApiService) PostIdentityOidcProviderNameToken(ctx context.Context, name string) ApiPostIdentityOidcProviderNameTokenRequest {
 	return ApiPostIdentityOidcProviderNameTokenRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityOidcProviderNameTokenExecute(r ApiPostIdentityOidcProviderNameTokenRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityOidcProviderNameToken")
@@ -9411,11 +9364,10 @@ func (a *IdentityApiService) PostIdentityOidcProviderNameTokenExecute(r ApiPostI
 }
 
 type ApiPostIdentityOidcProviderNameUserinfoRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *IdentityApiService
-	name string
+	name       string
 }
-
 
 func (r ApiPostIdentityOidcProviderNameUserinfoRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostIdentityOidcProviderNameUserinfoExecute(r)
@@ -9431,17 +9383,17 @@ PostIdentityOidcProviderNameUserinfo Method for PostIdentityOidcProviderNameUser
 func (a *IdentityApiService) PostIdentityOidcProviderNameUserinfo(ctx context.Context, name string) ApiPostIdentityOidcProviderNameUserinfoRequest {
 	return ApiPostIdentityOidcProviderNameUserinfoRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityOidcProviderNameUserinfoExecute(r ApiPostIdentityOidcProviderNameUserinfoRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityOidcProviderNameUserinfo")
@@ -9502,9 +9454,9 @@ func (a *IdentityApiService) PostIdentityOidcProviderNameUserinfoExecute(r ApiPo
 }
 
 type ApiPostIdentityOidcRoleNameRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
-	name string
+	ctx                     context.Context
+	ApiService              *IdentityApiService
+	name                    string
 	identityOidcRoleRequest *IdentityOidcRoleRequest
 }
 
@@ -9527,17 +9479,17 @@ PostIdentityOidcRoleName CRUD operations on OIDC Roles
 func (a *IdentityApiService) PostIdentityOidcRoleName(ctx context.Context, name string) ApiPostIdentityOidcRoleNameRequest {
 	return ApiPostIdentityOidcRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityOidcRoleNameExecute(r ApiPostIdentityOidcRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityOidcRoleName")
@@ -9600,9 +9552,9 @@ func (a *IdentityApiService) PostIdentityOidcRoleNameExecute(r ApiPostIdentityOi
 }
 
 type ApiPostIdentityOidcScopeNameRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
-	name string
+	ctx                      context.Context
+	ApiService               *IdentityApiService
+	name                     string
 	identityOidcScopeRequest *IdentityOidcScopeRequest
 }
 
@@ -9625,17 +9577,17 @@ PostIdentityOidcScopeName Method for PostIdentityOidcScopeName
 func (a *IdentityApiService) PostIdentityOidcScopeName(ctx context.Context, name string) ApiPostIdentityOidcScopeNameRequest {
 	return ApiPostIdentityOidcScopeNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityOidcScopeNameExecute(r ApiPostIdentityOidcScopeNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityOidcScopeName")
@@ -9698,8 +9650,8 @@ func (a *IdentityApiService) PostIdentityOidcScopeNameExecute(r ApiPostIdentityO
 }
 
 type ApiPostIdentityPersonaRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
+	ctx                    context.Context
+	ApiService             *IdentityApiService
 	identityPersonaRequest *IdentityPersonaRequest
 }
 
@@ -9721,16 +9673,16 @@ PostIdentityPersona Create a new alias.
 func (a *IdentityApiService) PostIdentityPersona(ctx context.Context) ApiPostIdentityPersonaRequest {
 	return ApiPostIdentityPersonaRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityPersonaExecute(r ApiPostIdentityPersonaRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityPersona")
@@ -9792,9 +9744,9 @@ func (a *IdentityApiService) PostIdentityPersonaExecute(r ApiPostIdentityPersona
 }
 
 type ApiPostIdentityPersonaIdIdRequest struct {
-	ctx context.Context
-	ApiService *IdentityApiService
-	id string
+	ctx                      context.Context
+	ApiService               *IdentityApiService
+	id                       string
 	identityPersonaIdRequest *IdentityPersonaIdRequest
 }
 
@@ -9817,17 +9769,17 @@ PostIdentityPersonaIdId Update, read or delete an alias ID.
 func (a *IdentityApiService) PostIdentityPersonaIdId(ctx context.Context, id string) ApiPostIdentityPersonaIdIdRequest {
 	return ApiPostIdentityPersonaIdIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *IdentityApiService) PostIdentityPersonaIdIdExecute(r ApiPostIdentityPersonaIdIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityPersonaIdId")

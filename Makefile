@@ -21,8 +21,8 @@ generate:
               -o /local/$(OUTPUT_PATH)
 
 concat:
-	gocat model_*.go > ${OUTPUT_PATH}/schema.go
-	rm -r ${OUTPUT_PATH}/model_*.go
+	gocat ${OUTPUT_PATH}/model_*.go > ${OUTPUT_PATH}/schema.go
+	rm -f ${OUTPUT_PATH}/model_*.go
 
 format:
 	ls ${OUTPUT_PATH}/*.go | xargs gofumpt -l -w

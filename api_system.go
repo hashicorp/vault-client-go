@@ -28,11 +28,10 @@ var (
 type SystemApiService service
 
 type ApiDeleteSysAuditPathRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	path string
+	path       string
 }
-
 
 func (r ApiDeleteSysAuditPathRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSysAuditPathExecute(r)
@@ -48,17 +47,17 @@ DeleteSysAuditPath Disable the audit device at the given path.
 func (a *SystemApiService) DeleteSysAuditPath(ctx context.Context, path string) ApiDeleteSysAuditPathRequest {
 	return ApiDeleteSysAuditPathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) DeleteSysAuditPathExecute(r ApiDeleteSysAuditPathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysAuditPath")
@@ -119,11 +118,10 @@ func (a *SystemApiService) DeleteSysAuditPathExecute(r ApiDeleteSysAuditPathRequ
 }
 
 type ApiDeleteSysAuthPathRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	path string
+	path       string
 }
-
 
 func (r ApiDeleteSysAuthPathRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSysAuthPathExecute(r)
@@ -139,17 +137,17 @@ DeleteSysAuthPath Disable the auth method at the given auth path
 func (a *SystemApiService) DeleteSysAuthPath(ctx context.Context, path string) ApiDeleteSysAuthPathRequest {
 	return ApiDeleteSysAuthPathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) DeleteSysAuthPathExecute(r ApiDeleteSysAuthPathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysAuthPath")
@@ -210,11 +208,10 @@ func (a *SystemApiService) DeleteSysAuthPathExecute(r ApiDeleteSysAuthPathReques
 }
 
 type ApiDeleteSysConfigAuditingRequestHeadersHeaderRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	header string
+	header     string
 }
-
 
 func (r ApiDeleteSysConfigAuditingRequestHeadersHeaderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSysConfigAuditingRequestHeadersHeaderExecute(r)
@@ -230,17 +227,17 @@ DeleteSysConfigAuditingRequestHeadersHeader Disable auditing of the given reques
 func (a *SystemApiService) DeleteSysConfigAuditingRequestHeadersHeader(ctx context.Context, header string) ApiDeleteSysConfigAuditingRequestHeadersHeaderRequest {
 	return ApiDeleteSysConfigAuditingRequestHeadersHeaderRequest{
 		ApiService: a,
-		ctx: ctx,
-		header: header,
+		ctx:        ctx,
+		header:     header,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) DeleteSysConfigAuditingRequestHeadersHeaderExecute(r ApiDeleteSysConfigAuditingRequestHeadersHeaderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysConfigAuditingRequestHeadersHeader")
@@ -301,10 +298,9 @@ func (a *SystemApiService) DeleteSysConfigAuditingRequestHeadersHeaderExecute(r 
 }
 
 type ApiDeleteSysConfigCorsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiDeleteSysConfigCorsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSysConfigCorsExecute(r)
@@ -319,16 +315,16 @@ DeleteSysConfigCors Remove any CORS settings.
 func (a *SystemApiService) DeleteSysConfigCors(ctx context.Context) ApiDeleteSysConfigCorsRequest {
 	return ApiDeleteSysConfigCorsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) DeleteSysConfigCorsExecute(r ApiDeleteSysConfigCorsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysConfigCors")
@@ -388,11 +384,10 @@ func (a *SystemApiService) DeleteSysConfigCorsExecute(r ApiDeleteSysConfigCorsRe
 }
 
 type ApiDeleteSysConfigUiHeadersHeaderRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	header string
+	header     string
 }
-
 
 func (r ApiDeleteSysConfigUiHeadersHeaderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSysConfigUiHeadersHeaderExecute(r)
@@ -408,17 +403,17 @@ DeleteSysConfigUiHeadersHeader Remove a UI header.
 func (a *SystemApiService) DeleteSysConfigUiHeadersHeader(ctx context.Context, header string) ApiDeleteSysConfigUiHeadersHeaderRequest {
 	return ApiDeleteSysConfigUiHeadersHeaderRequest{
 		ApiService: a,
-		ctx: ctx,
-		header: header,
+		ctx:        ctx,
+		header:     header,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) DeleteSysConfigUiHeadersHeaderExecute(r ApiDeleteSysConfigUiHeadersHeaderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysConfigUiHeadersHeader")
@@ -479,10 +474,9 @@ func (a *SystemApiService) DeleteSysConfigUiHeadersHeaderExecute(r ApiDeleteSysC
 }
 
 type ApiDeleteSysGenerateRootRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiDeleteSysGenerateRootRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSysGenerateRootExecute(r)
@@ -497,16 +491,16 @@ DeleteSysGenerateRoot Cancels any in-progress root generation attempt.
 func (a *SystemApiService) DeleteSysGenerateRoot(ctx context.Context) ApiDeleteSysGenerateRootRequest {
 	return ApiDeleteSysGenerateRootRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) DeleteSysGenerateRootExecute(r ApiDeleteSysGenerateRootRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysGenerateRoot")
@@ -566,10 +560,9 @@ func (a *SystemApiService) DeleteSysGenerateRootExecute(r ApiDeleteSysGenerateRo
 }
 
 type ApiDeleteSysGenerateRootAttemptRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiDeleteSysGenerateRootAttemptRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSysGenerateRootAttemptExecute(r)
@@ -584,16 +577,16 @@ DeleteSysGenerateRootAttempt Cancels any in-progress root generation attempt.
 func (a *SystemApiService) DeleteSysGenerateRootAttempt(ctx context.Context) ApiDeleteSysGenerateRootAttemptRequest {
 	return ApiDeleteSysGenerateRootAttemptRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) DeleteSysGenerateRootAttemptExecute(r ApiDeleteSysGenerateRootAttemptRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysGenerateRootAttempt")
@@ -653,11 +646,10 @@ func (a *SystemApiService) DeleteSysGenerateRootAttemptExecute(r ApiDeleteSysGen
 }
 
 type ApiDeleteSysMountsPathRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	path string
+	path       string
 }
-
 
 func (r ApiDeleteSysMountsPathRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSysMountsPathExecute(r)
@@ -673,17 +665,17 @@ DeleteSysMountsPath Disable the mount point specified at the given path.
 func (a *SystemApiService) DeleteSysMountsPath(ctx context.Context, path string) ApiDeleteSysMountsPathRequest {
 	return ApiDeleteSysMountsPathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) DeleteSysMountsPathExecute(r ApiDeleteSysMountsPathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysMountsPath")
@@ -744,11 +736,10 @@ func (a *SystemApiService) DeleteSysMountsPathExecute(r ApiDeleteSysMountsPathRe
 }
 
 type ApiDeleteSysPluginsCatalogNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteSysPluginsCatalogNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSysPluginsCatalogNameExecute(r)
@@ -764,17 +755,17 @@ DeleteSysPluginsCatalogName Remove the plugin with the given name.
 func (a *SystemApiService) DeleteSysPluginsCatalogName(ctx context.Context, name string) ApiDeleteSysPluginsCatalogNameRequest {
 	return ApiDeleteSysPluginsCatalogNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) DeleteSysPluginsCatalogNameExecute(r ApiDeleteSysPluginsCatalogNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysPluginsCatalogName")
@@ -835,12 +826,11 @@ func (a *SystemApiService) DeleteSysPluginsCatalogNameExecute(r ApiDeleteSysPlug
 }
 
 type ApiDeleteSysPluginsCatalogTypeNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	name string
-	type_ string
+	name       string
+	type_      string
 }
-
 
 func (r ApiDeleteSysPluginsCatalogTypeNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSysPluginsCatalogTypeNameExecute(r)
@@ -857,18 +847,18 @@ DeleteSysPluginsCatalogTypeName Remove the plugin with the given name.
 func (a *SystemApiService) DeleteSysPluginsCatalogTypeName(ctx context.Context, name string, type_ string) ApiDeleteSysPluginsCatalogTypeNameRequest {
 	return ApiDeleteSysPluginsCatalogTypeNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
-		type_: type_,
+		ctx:        ctx,
+		name:       name,
+		type_:      type_,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) DeleteSysPluginsCatalogTypeNameExecute(r ApiDeleteSysPluginsCatalogTypeNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysPluginsCatalogTypeName")
@@ -930,11 +920,10 @@ func (a *SystemApiService) DeleteSysPluginsCatalogTypeNameExecute(r ApiDeleteSys
 }
 
 type ApiDeleteSysPoliciesAclNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteSysPoliciesAclNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSysPoliciesAclNameExecute(r)
@@ -950,17 +939,17 @@ DeleteSysPoliciesAclName Delete the ACL policy with the given name.
 func (a *SystemApiService) DeleteSysPoliciesAclName(ctx context.Context, name string) ApiDeleteSysPoliciesAclNameRequest {
 	return ApiDeleteSysPoliciesAclNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) DeleteSysPoliciesAclNameExecute(r ApiDeleteSysPoliciesAclNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysPoliciesAclName")
@@ -1021,11 +1010,10 @@ func (a *SystemApiService) DeleteSysPoliciesAclNameExecute(r ApiDeleteSysPolicie
 }
 
 type ApiDeleteSysPoliciesPasswordNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteSysPoliciesPasswordNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSysPoliciesPasswordNameExecute(r)
@@ -1041,17 +1029,17 @@ DeleteSysPoliciesPasswordName Delete a password policy.
 func (a *SystemApiService) DeleteSysPoliciesPasswordName(ctx context.Context, name string) ApiDeleteSysPoliciesPasswordNameRequest {
 	return ApiDeleteSysPoliciesPasswordNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) DeleteSysPoliciesPasswordNameExecute(r ApiDeleteSysPoliciesPasswordNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysPoliciesPasswordName")
@@ -1112,11 +1100,10 @@ func (a *SystemApiService) DeleteSysPoliciesPasswordNameExecute(r ApiDeleteSysPo
 }
 
 type ApiDeleteSysPolicyNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteSysPolicyNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSysPolicyNameExecute(r)
@@ -1132,17 +1119,17 @@ DeleteSysPolicyName Delete the policy with the given name.
 func (a *SystemApiService) DeleteSysPolicyName(ctx context.Context, name string) ApiDeleteSysPolicyNameRequest {
 	return ApiDeleteSysPolicyNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) DeleteSysPolicyNameExecute(r ApiDeleteSysPolicyNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysPolicyName")
@@ -1203,11 +1190,10 @@ func (a *SystemApiService) DeleteSysPolicyNameExecute(r ApiDeleteSysPolicyNameRe
 }
 
 type ApiDeleteSysQuotasRateLimitNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteSysQuotasRateLimitNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSysQuotasRateLimitNameExecute(r)
@@ -1223,17 +1209,17 @@ DeleteSysQuotasRateLimitName Method for DeleteSysQuotasRateLimitName
 func (a *SystemApiService) DeleteSysQuotasRateLimitName(ctx context.Context, name string) ApiDeleteSysQuotasRateLimitNameRequest {
 	return ApiDeleteSysQuotasRateLimitNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) DeleteSysQuotasRateLimitNameExecute(r ApiDeleteSysQuotasRateLimitNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysQuotasRateLimitName")
@@ -1294,10 +1280,9 @@ func (a *SystemApiService) DeleteSysQuotasRateLimitNameExecute(r ApiDeleteSysQuo
 }
 
 type ApiDeleteSysRawRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiDeleteSysRawRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSysRawExecute(r)
@@ -1312,16 +1297,16 @@ DeleteSysRaw Delete the key with given path.
 func (a *SystemApiService) DeleteSysRaw(ctx context.Context) ApiDeleteSysRawRequest {
 	return ApiDeleteSysRawRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) DeleteSysRawExecute(r ApiDeleteSysRawRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysRaw")
@@ -1381,11 +1366,10 @@ func (a *SystemApiService) DeleteSysRawExecute(r ApiDeleteSysRawRequest) (*http.
 }
 
 type ApiDeleteSysRawPathRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	path string
+	path       string
 }
-
 
 func (r ApiDeleteSysRawPathRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSysRawPathExecute(r)
@@ -1401,17 +1385,17 @@ DeleteSysRawPath Delete the key with given path.
 func (a *SystemApiService) DeleteSysRawPath(ctx context.Context, path string) ApiDeleteSysRawPathRequest {
 	return ApiDeleteSysRawPathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) DeleteSysRawPathExecute(r ApiDeleteSysRawPathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysRawPath")
@@ -1472,10 +1456,9 @@ func (a *SystemApiService) DeleteSysRawPathExecute(r ApiDeleteSysRawPathRequest)
 }
 
 type ApiDeleteSysRekeyBackupRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiDeleteSysRekeyBackupRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSysRekeyBackupExecute(r)
@@ -1490,16 +1473,16 @@ DeleteSysRekeyBackup Delete the backup copy of PGP-encrypted unseal keys.
 func (a *SystemApiService) DeleteSysRekeyBackup(ctx context.Context) ApiDeleteSysRekeyBackupRequest {
 	return ApiDeleteSysRekeyBackupRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) DeleteSysRekeyBackupExecute(r ApiDeleteSysRekeyBackupRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysRekeyBackup")
@@ -1559,10 +1542,9 @@ func (a *SystemApiService) DeleteSysRekeyBackupExecute(r ApiDeleteSysRekeyBackup
 }
 
 type ApiDeleteSysRekeyInitRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiDeleteSysRekeyInitRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSysRekeyInitExecute(r)
@@ -1579,16 +1561,16 @@ This clears the rekey settings as well as any progress made. This must be called
 func (a *SystemApiService) DeleteSysRekeyInit(ctx context.Context) ApiDeleteSysRekeyInitRequest {
 	return ApiDeleteSysRekeyInitRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) DeleteSysRekeyInitExecute(r ApiDeleteSysRekeyInitRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysRekeyInit")
@@ -1648,10 +1630,9 @@ func (a *SystemApiService) DeleteSysRekeyInitExecute(r ApiDeleteSysRekeyInitRequ
 }
 
 type ApiDeleteSysRekeyRecoveryKeyBackupRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiDeleteSysRekeyRecoveryKeyBackupRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSysRekeyRecoveryKeyBackupExecute(r)
@@ -1666,16 +1647,16 @@ DeleteSysRekeyRecoveryKeyBackup Allows fetching or deleting the backup of the ro
 func (a *SystemApiService) DeleteSysRekeyRecoveryKeyBackup(ctx context.Context) ApiDeleteSysRekeyRecoveryKeyBackupRequest {
 	return ApiDeleteSysRekeyRecoveryKeyBackupRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) DeleteSysRekeyRecoveryKeyBackupExecute(r ApiDeleteSysRekeyRecoveryKeyBackupRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysRekeyRecoveryKeyBackup")
@@ -1735,10 +1716,9 @@ func (a *SystemApiService) DeleteSysRekeyRecoveryKeyBackupExecute(r ApiDeleteSys
 }
 
 type ApiDeleteSysRekeyVerifyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiDeleteSysRekeyVerifyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSysRekeyVerifyExecute(r)
@@ -1755,16 +1735,16 @@ This clears any progress made and resets the nonce. Unlike a `DELETE` against `s
 func (a *SystemApiService) DeleteSysRekeyVerify(ctx context.Context) ApiDeleteSysRekeyVerifyRequest {
 	return ApiDeleteSysRekeyVerifyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) DeleteSysRekeyVerifyExecute(r ApiDeleteSysRekeyVerifyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysRekeyVerify")
@@ -1824,10 +1804,9 @@ func (a *SystemApiService) DeleteSysRekeyVerifyExecute(r ApiDeleteSysRekeyVerify
 }
 
 type ApiGetSysAuditRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysAuditRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysAuditExecute(r)
@@ -1842,16 +1821,16 @@ GetSysAudit List the enabled audit devices.
 func (a *SystemApiService) GetSysAudit(ctx context.Context) ApiGetSysAuditRequest {
 	return ApiGetSysAuditRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysAuditExecute(r ApiGetSysAuditRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysAudit")
@@ -1911,10 +1890,9 @@ func (a *SystemApiService) GetSysAuditExecute(r ApiGetSysAuditRequest) (*http.Re
 }
 
 type ApiGetSysAuthRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysAuthRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysAuthExecute(r)
@@ -1929,16 +1907,16 @@ GetSysAuth List the currently enabled credential backends.
 func (a *SystemApiService) GetSysAuth(ctx context.Context) ApiGetSysAuthRequest {
 	return ApiGetSysAuthRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysAuthExecute(r ApiGetSysAuthRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysAuth")
@@ -1998,11 +1976,10 @@ func (a *SystemApiService) GetSysAuthExecute(r ApiGetSysAuthRequest) (*http.Resp
 }
 
 type ApiGetSysAuthPathRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	path string
+	path       string
 }
-
 
 func (r ApiGetSysAuthPathRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysAuthPathExecute(r)
@@ -2018,17 +1995,17 @@ GetSysAuthPath Read the configuration of the auth engine at the given path.
 func (a *SystemApiService) GetSysAuthPath(ctx context.Context, path string) ApiGetSysAuthPathRequest {
 	return ApiGetSysAuthPathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysAuthPathExecute(r ApiGetSysAuthPathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysAuthPath")
@@ -2089,11 +2066,10 @@ func (a *SystemApiService) GetSysAuthPathExecute(r ApiGetSysAuthPathRequest) (*h
 }
 
 type ApiGetSysAuthPathTuneRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	path string
+	path       string
 }
-
 
 func (r ApiGetSysAuthPathTuneRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysAuthPathTuneExecute(r)
@@ -2111,17 +2087,17 @@ This endpoint requires sudo capability on the final path, but the same functiona
 func (a *SystemApiService) GetSysAuthPathTune(ctx context.Context, path string) ApiGetSysAuthPathTuneRequest {
 	return ApiGetSysAuthPathTuneRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysAuthPathTuneExecute(r ApiGetSysAuthPathTuneRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysAuthPathTune")
@@ -2182,10 +2158,9 @@ func (a *SystemApiService) GetSysAuthPathTuneExecute(r ApiGetSysAuthPathTuneRequ
 }
 
 type ApiGetSysConfigAuditingRequestHeadersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysConfigAuditingRequestHeadersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysConfigAuditingRequestHeadersExecute(r)
@@ -2200,16 +2175,16 @@ GetSysConfigAuditingRequestHeaders List the request headers that are configured 
 func (a *SystemApiService) GetSysConfigAuditingRequestHeaders(ctx context.Context) ApiGetSysConfigAuditingRequestHeadersRequest {
 	return ApiGetSysConfigAuditingRequestHeadersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysConfigAuditingRequestHeadersExecute(r ApiGetSysConfigAuditingRequestHeadersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysConfigAuditingRequestHeaders")
@@ -2269,11 +2244,10 @@ func (a *SystemApiService) GetSysConfigAuditingRequestHeadersExecute(r ApiGetSys
 }
 
 type ApiGetSysConfigAuditingRequestHeadersHeaderRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	header string
+	header     string
 }
-
 
 func (r ApiGetSysConfigAuditingRequestHeadersHeaderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysConfigAuditingRequestHeadersHeaderExecute(r)
@@ -2289,17 +2263,17 @@ GetSysConfigAuditingRequestHeadersHeader List the information for the given requ
 func (a *SystemApiService) GetSysConfigAuditingRequestHeadersHeader(ctx context.Context, header string) ApiGetSysConfigAuditingRequestHeadersHeaderRequest {
 	return ApiGetSysConfigAuditingRequestHeadersHeaderRequest{
 		ApiService: a,
-		ctx: ctx,
-		header: header,
+		ctx:        ctx,
+		header:     header,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysConfigAuditingRequestHeadersHeaderExecute(r ApiGetSysConfigAuditingRequestHeadersHeaderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysConfigAuditingRequestHeadersHeader")
@@ -2360,10 +2334,9 @@ func (a *SystemApiService) GetSysConfigAuditingRequestHeadersHeaderExecute(r Api
 }
 
 type ApiGetSysConfigCorsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysConfigCorsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysConfigCorsExecute(r)
@@ -2378,16 +2351,16 @@ GetSysConfigCors Return the current CORS settings.
 func (a *SystemApiService) GetSysConfigCors(ctx context.Context) ApiGetSysConfigCorsRequest {
 	return ApiGetSysConfigCorsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysConfigCorsExecute(r ApiGetSysConfigCorsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysConfigCors")
@@ -2447,10 +2420,9 @@ func (a *SystemApiService) GetSysConfigCorsExecute(r ApiGetSysConfigCorsRequest)
 }
 
 type ApiGetSysConfigStateSanitizedRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysConfigStateSanitizedRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysConfigStateSanitizedExecute(r)
@@ -2467,16 +2439,16 @@ The sanitized output strips configuration values in the storage, HA storage, and
 func (a *SystemApiService) GetSysConfigStateSanitized(ctx context.Context) ApiGetSysConfigStateSanitizedRequest {
 	return ApiGetSysConfigStateSanitizedRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysConfigStateSanitizedExecute(r ApiGetSysConfigStateSanitizedRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysConfigStateSanitized")
@@ -2536,9 +2508,9 @@ func (a *SystemApiService) GetSysConfigStateSanitizedExecute(r ApiGetSysConfigSt
 }
 
 type ApiGetSysConfigUiHeadersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -2560,16 +2532,16 @@ GetSysConfigUiHeaders Return a list of configured UI headers.
 func (a *SystemApiService) GetSysConfigUiHeaders(ctx context.Context) ApiGetSysConfigUiHeadersRequest {
 	return ApiGetSysConfigUiHeadersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysConfigUiHeadersExecute(r ApiGetSysConfigUiHeadersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysConfigUiHeaders")
@@ -2633,11 +2605,10 @@ func (a *SystemApiService) GetSysConfigUiHeadersExecute(r ApiGetSysConfigUiHeade
 }
 
 type ApiGetSysConfigUiHeadersHeaderRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	header string
+	header     string
 }
-
 
 func (r ApiGetSysConfigUiHeadersHeaderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysConfigUiHeadersHeaderExecute(r)
@@ -2653,17 +2624,17 @@ GetSysConfigUiHeadersHeader Return the given UI header's configuration
 func (a *SystemApiService) GetSysConfigUiHeadersHeader(ctx context.Context, header string) ApiGetSysConfigUiHeadersHeaderRequest {
 	return ApiGetSysConfigUiHeadersHeaderRequest{
 		ApiService: a,
-		ctx: ctx,
-		header: header,
+		ctx:        ctx,
+		header:     header,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysConfigUiHeadersHeaderExecute(r ApiGetSysConfigUiHeadersHeaderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysConfigUiHeadersHeader")
@@ -2724,10 +2695,9 @@ func (a *SystemApiService) GetSysConfigUiHeadersHeaderExecute(r ApiGetSysConfigU
 }
 
 type ApiGetSysGenerateRootRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysGenerateRootRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysGenerateRootExecute(r)
@@ -2742,16 +2712,16 @@ GetSysGenerateRoot Read the configuration and progress of the current root gener
 func (a *SystemApiService) GetSysGenerateRoot(ctx context.Context) ApiGetSysGenerateRootRequest {
 	return ApiGetSysGenerateRootRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysGenerateRootExecute(r ApiGetSysGenerateRootRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysGenerateRoot")
@@ -2811,10 +2781,9 @@ func (a *SystemApiService) GetSysGenerateRootExecute(r ApiGetSysGenerateRootRequ
 }
 
 type ApiGetSysGenerateRootAttemptRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysGenerateRootAttemptRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysGenerateRootAttemptExecute(r)
@@ -2829,16 +2798,16 @@ GetSysGenerateRootAttempt Read the configuration and progress of the current roo
 func (a *SystemApiService) GetSysGenerateRootAttempt(ctx context.Context) ApiGetSysGenerateRootAttemptRequest {
 	return ApiGetSysGenerateRootAttemptRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysGenerateRootAttemptExecute(r ApiGetSysGenerateRootAttemptRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysGenerateRootAttempt")
@@ -2898,10 +2867,9 @@ func (a *SystemApiService) GetSysGenerateRootAttemptExecute(r ApiGetSysGenerateR
 }
 
 type ApiGetSysHaStatusRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysHaStatusRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysHaStatusExecute(r)
@@ -2916,16 +2884,16 @@ GetSysHaStatus Check the HA status of a Vault cluster
 func (a *SystemApiService) GetSysHaStatus(ctx context.Context) ApiGetSysHaStatusRequest {
 	return ApiGetSysHaStatusRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysHaStatusExecute(r ApiGetSysHaStatusRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysHaStatus")
@@ -2985,10 +2953,9 @@ func (a *SystemApiService) GetSysHaStatusExecute(r ApiGetSysHaStatusRequest) (*h
 }
 
 type ApiGetSysHealthRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysHealthRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysHealthExecute(r)
@@ -3003,16 +2970,16 @@ GetSysHealth Returns the health status of Vault.
 func (a *SystemApiService) GetSysHealth(ctx context.Context) ApiGetSysHealthRequest {
 	return ApiGetSysHealthRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysHealthExecute(r ApiGetSysHealthRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysHealth")
@@ -3072,10 +3039,9 @@ func (a *SystemApiService) GetSysHealthExecute(r ApiGetSysHealthRequest) (*http.
 }
 
 type ApiGetSysHostInfoRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysHostInfoRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysHostInfoExecute(r)
@@ -3094,16 +3060,16 @@ Information about the host instance that this Vault server is running on.
 func (a *SystemApiService) GetSysHostInfo(ctx context.Context) ApiGetSysHostInfoRequest {
 	return ApiGetSysHostInfoRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysHostInfoExecute(r ApiGetSysHostInfoRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysHostInfo")
@@ -3163,10 +3129,9 @@ func (a *SystemApiService) GetSysHostInfoExecute(r ApiGetSysHostInfoRequest) (*h
 }
 
 type ApiGetSysInFlightReqRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysInFlightReqRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysInFlightReqExecute(r)
@@ -3185,16 +3150,16 @@ This path responds to the following HTTP methods.
 func (a *SystemApiService) GetSysInFlightReq(ctx context.Context) ApiGetSysInFlightReqRequest {
 	return ApiGetSysInFlightReqRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysInFlightReqExecute(r ApiGetSysInFlightReqRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInFlightReq")
@@ -3254,10 +3219,9 @@ func (a *SystemApiService) GetSysInFlightReqExecute(r ApiGetSysInFlightReqReques
 }
 
 type ApiGetSysInitRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysInitRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysInitExecute(r)
@@ -3272,16 +3236,16 @@ GetSysInit Returns the initialization status of Vault.
 func (a *SystemApiService) GetSysInit(ctx context.Context) ApiGetSysInitRequest {
 	return ApiGetSysInitRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysInitExecute(r ApiGetSysInitRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInit")
@@ -3341,10 +3305,9 @@ func (a *SystemApiService) GetSysInitExecute(r ApiGetSysInitRequest) (*http.Resp
 }
 
 type ApiGetSysInternalCountersActivityRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysInternalCountersActivityRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysInternalCountersActivityExecute(r)
@@ -3359,16 +3322,16 @@ GetSysInternalCountersActivity Report the client count metrics, for this namespa
 func (a *SystemApiService) GetSysInternalCountersActivity(ctx context.Context) ApiGetSysInternalCountersActivityRequest {
 	return ApiGetSysInternalCountersActivityRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysInternalCountersActivityExecute(r ApiGetSysInternalCountersActivityRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInternalCountersActivity")
@@ -3428,10 +3391,9 @@ func (a *SystemApiService) GetSysInternalCountersActivityExecute(r ApiGetSysInte
 }
 
 type ApiGetSysInternalCountersActivityExportRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysInternalCountersActivityExportRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysInternalCountersActivityExportExecute(r)
@@ -3446,16 +3408,16 @@ GetSysInternalCountersActivityExport Report the client count metrics, for this n
 func (a *SystemApiService) GetSysInternalCountersActivityExport(ctx context.Context) ApiGetSysInternalCountersActivityExportRequest {
 	return ApiGetSysInternalCountersActivityExportRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysInternalCountersActivityExportExecute(r ApiGetSysInternalCountersActivityExportRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInternalCountersActivityExport")
@@ -3515,10 +3477,9 @@ func (a *SystemApiService) GetSysInternalCountersActivityExportExecute(r ApiGetS
 }
 
 type ApiGetSysInternalCountersActivityMonthlyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysInternalCountersActivityMonthlyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysInternalCountersActivityMonthlyExecute(r)
@@ -3533,16 +3494,16 @@ GetSysInternalCountersActivityMonthly Report the number of clients for this mont
 func (a *SystemApiService) GetSysInternalCountersActivityMonthly(ctx context.Context) ApiGetSysInternalCountersActivityMonthlyRequest {
 	return ApiGetSysInternalCountersActivityMonthlyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysInternalCountersActivityMonthlyExecute(r ApiGetSysInternalCountersActivityMonthlyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInternalCountersActivityMonthly")
@@ -3602,10 +3563,9 @@ func (a *SystemApiService) GetSysInternalCountersActivityMonthlyExecute(r ApiGet
 }
 
 type ApiGetSysInternalCountersConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysInternalCountersConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysInternalCountersConfigExecute(r)
@@ -3620,16 +3580,16 @@ GetSysInternalCountersConfig Read the client count tracking configuration.
 func (a *SystemApiService) GetSysInternalCountersConfig(ctx context.Context) ApiGetSysInternalCountersConfigRequest {
 	return ApiGetSysInternalCountersConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysInternalCountersConfigExecute(r ApiGetSysInternalCountersConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInternalCountersConfig")
@@ -3689,10 +3649,9 @@ func (a *SystemApiService) GetSysInternalCountersConfigExecute(r ApiGetSysIntern
 }
 
 type ApiGetSysInternalCountersEntitiesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysInternalCountersEntitiesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysInternalCountersEntitiesExecute(r)
@@ -3707,16 +3666,16 @@ GetSysInternalCountersEntities Backwards compatibility is not guaranteed for thi
 func (a *SystemApiService) GetSysInternalCountersEntities(ctx context.Context) ApiGetSysInternalCountersEntitiesRequest {
 	return ApiGetSysInternalCountersEntitiesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysInternalCountersEntitiesExecute(r ApiGetSysInternalCountersEntitiesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInternalCountersEntities")
@@ -3776,10 +3735,9 @@ func (a *SystemApiService) GetSysInternalCountersEntitiesExecute(r ApiGetSysInte
 }
 
 type ApiGetSysInternalCountersRequestsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysInternalCountersRequestsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysInternalCountersRequestsExecute(r)
@@ -3794,16 +3752,16 @@ GetSysInternalCountersRequests Backwards compatibility is not guaranteed for thi
 func (a *SystemApiService) GetSysInternalCountersRequests(ctx context.Context) ApiGetSysInternalCountersRequestsRequest {
 	return ApiGetSysInternalCountersRequestsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysInternalCountersRequestsExecute(r ApiGetSysInternalCountersRequestsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInternalCountersRequests")
@@ -3863,10 +3821,9 @@ func (a *SystemApiService) GetSysInternalCountersRequestsExecute(r ApiGetSysInte
 }
 
 type ApiGetSysInternalCountersTokensRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysInternalCountersTokensRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysInternalCountersTokensExecute(r)
@@ -3881,16 +3838,16 @@ GetSysInternalCountersTokens Backwards compatibility is not guaranteed for this 
 func (a *SystemApiService) GetSysInternalCountersTokens(ctx context.Context) ApiGetSysInternalCountersTokensRequest {
 	return ApiGetSysInternalCountersTokensRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysInternalCountersTokensExecute(r ApiGetSysInternalCountersTokensRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInternalCountersTokens")
@@ -3950,10 +3907,9 @@ func (a *SystemApiService) GetSysInternalCountersTokensExecute(r ApiGetSysIntern
 }
 
 type ApiGetSysInternalSpecsOpenapiRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysInternalSpecsOpenapiRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysInternalSpecsOpenapiExecute(r)
@@ -3968,16 +3924,16 @@ GetSysInternalSpecsOpenapi Generate an OpenAPI 3 document of all mounted paths.
 func (a *SystemApiService) GetSysInternalSpecsOpenapi(ctx context.Context) ApiGetSysInternalSpecsOpenapiRequest {
 	return ApiGetSysInternalSpecsOpenapiRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysInternalSpecsOpenapiExecute(r ApiGetSysInternalSpecsOpenapiRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInternalSpecsOpenapi")
@@ -4037,10 +3993,9 @@ func (a *SystemApiService) GetSysInternalSpecsOpenapiExecute(r ApiGetSysInternal
 }
 
 type ApiGetSysInternalUiFeatureFlagsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysInternalUiFeatureFlagsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysInternalUiFeatureFlagsExecute(r)
@@ -4055,16 +4010,16 @@ GetSysInternalUiFeatureFlags Lists enabled feature flags.
 func (a *SystemApiService) GetSysInternalUiFeatureFlags(ctx context.Context) ApiGetSysInternalUiFeatureFlagsRequest {
 	return ApiGetSysInternalUiFeatureFlagsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysInternalUiFeatureFlagsExecute(r ApiGetSysInternalUiFeatureFlagsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInternalUiFeatureFlags")
@@ -4124,10 +4079,9 @@ func (a *SystemApiService) GetSysInternalUiFeatureFlagsExecute(r ApiGetSysIntern
 }
 
 type ApiGetSysInternalUiMountsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysInternalUiMountsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysInternalUiMountsExecute(r)
@@ -4142,16 +4096,16 @@ GetSysInternalUiMounts Lists all enabled and visible auth and secrets mounts.
 func (a *SystemApiService) GetSysInternalUiMounts(ctx context.Context) ApiGetSysInternalUiMountsRequest {
 	return ApiGetSysInternalUiMountsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysInternalUiMountsExecute(r ApiGetSysInternalUiMountsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInternalUiMounts")
@@ -4211,11 +4165,10 @@ func (a *SystemApiService) GetSysInternalUiMountsExecute(r ApiGetSysInternalUiMo
 }
 
 type ApiGetSysInternalUiMountsPathRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	path string
+	path       string
 }
-
 
 func (r ApiGetSysInternalUiMountsPathRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysInternalUiMountsPathExecute(r)
@@ -4231,17 +4184,17 @@ GetSysInternalUiMountsPath Return information about the given mount.
 func (a *SystemApiService) GetSysInternalUiMountsPath(ctx context.Context, path string) ApiGetSysInternalUiMountsPathRequest {
 	return ApiGetSysInternalUiMountsPathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysInternalUiMountsPathExecute(r ApiGetSysInternalUiMountsPathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInternalUiMountsPath")
@@ -4302,10 +4255,9 @@ func (a *SystemApiService) GetSysInternalUiMountsPathExecute(r ApiGetSysInternal
 }
 
 type ApiGetSysInternalUiNamespacesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysInternalUiNamespacesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysInternalUiNamespacesExecute(r)
@@ -4320,16 +4272,16 @@ GetSysInternalUiNamespaces Backwards compatibility is not guaranteed for this AP
 func (a *SystemApiService) GetSysInternalUiNamespaces(ctx context.Context) ApiGetSysInternalUiNamespacesRequest {
 	return ApiGetSysInternalUiNamespacesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysInternalUiNamespacesExecute(r ApiGetSysInternalUiNamespacesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInternalUiNamespaces")
@@ -4389,10 +4341,9 @@ func (a *SystemApiService) GetSysInternalUiNamespacesExecute(r ApiGetSysInternal
 }
 
 type ApiGetSysInternalUiResultantAclRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysInternalUiResultantAclRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysInternalUiResultantAclExecute(r)
@@ -4407,16 +4358,16 @@ GetSysInternalUiResultantAcl Backwards compatibility is not guaranteed for this 
 func (a *SystemApiService) GetSysInternalUiResultantAcl(ctx context.Context) ApiGetSysInternalUiResultantAclRequest {
 	return ApiGetSysInternalUiResultantAclRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysInternalUiResultantAclExecute(r ApiGetSysInternalUiResultantAclRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInternalUiResultantAcl")
@@ -4476,10 +4427,9 @@ func (a *SystemApiService) GetSysInternalUiResultantAclExecute(r ApiGetSysIntern
 }
 
 type ApiGetSysKeyStatusRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysKeyStatusRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysKeyStatusExecute(r)
@@ -4494,16 +4444,16 @@ GetSysKeyStatus Provides information about the backend encryption key.
 func (a *SystemApiService) GetSysKeyStatus(ctx context.Context) ApiGetSysKeyStatusRequest {
 	return ApiGetSysKeyStatusRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysKeyStatusExecute(r ApiGetSysKeyStatusRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysKeyStatus")
@@ -4563,10 +4513,9 @@ func (a *SystemApiService) GetSysKeyStatusExecute(r ApiGetSysKeyStatusRequest) (
 }
 
 type ApiGetSysLeaderRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysLeaderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysLeaderExecute(r)
@@ -4581,16 +4530,16 @@ GetSysLeader Returns the high availability status and current leader instance of
 func (a *SystemApiService) GetSysLeader(ctx context.Context) ApiGetSysLeaderRequest {
 	return ApiGetSysLeaderRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysLeaderExecute(r ApiGetSysLeaderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysLeader")
@@ -4650,10 +4599,9 @@ func (a *SystemApiService) GetSysLeaderExecute(r ApiGetSysLeaderRequest) (*http.
 }
 
 type ApiGetSysLeasesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysLeasesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysLeasesExecute(r)
@@ -4668,16 +4616,16 @@ GetSysLeases List leases associated with this Vault cluster
 func (a *SystemApiService) GetSysLeases(ctx context.Context) ApiGetSysLeasesRequest {
 	return ApiGetSysLeasesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysLeasesExecute(r ApiGetSysLeasesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysLeases")
@@ -4737,10 +4685,9 @@ func (a *SystemApiService) GetSysLeasesExecute(r ApiGetSysLeasesRequest) (*http.
 }
 
 type ApiGetSysLeasesCountRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysLeasesCountRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysLeasesCountExecute(r)
@@ -4755,16 +4702,16 @@ GetSysLeasesCount Count of leases associated with this Vault cluster
 func (a *SystemApiService) GetSysLeasesCount(ctx context.Context) ApiGetSysLeasesCountRequest {
 	return ApiGetSysLeasesCountRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysLeasesCountExecute(r ApiGetSysLeasesCountRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysLeasesCount")
@@ -4824,9 +4771,9 @@ func (a *SystemApiService) GetSysLeasesCountExecute(r ApiGetSysLeasesCountReques
 }
 
 type ApiGetSysLeasesLookupRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -4848,16 +4795,16 @@ GetSysLeasesLookup Returns a list of lease ids.
 func (a *SystemApiService) GetSysLeasesLookup(ctx context.Context) ApiGetSysLeasesLookupRequest {
 	return ApiGetSysLeasesLookupRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysLeasesLookupExecute(r ApiGetSysLeasesLookupRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysLeasesLookup")
@@ -4921,10 +4868,10 @@ func (a *SystemApiService) GetSysLeasesLookupExecute(r ApiGetSysLeasesLookupRequ
 }
 
 type ApiGetSysLeasesLookupPrefixRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	prefix string
-	list *string
+	prefix     string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -4947,17 +4894,17 @@ GetSysLeasesLookupPrefix Returns a list of lease ids.
 func (a *SystemApiService) GetSysLeasesLookupPrefix(ctx context.Context, prefix string) ApiGetSysLeasesLookupPrefixRequest {
 	return ApiGetSysLeasesLookupPrefixRequest{
 		ApiService: a,
-		ctx: ctx,
-		prefix: prefix,
+		ctx:        ctx,
+		prefix:     prefix,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysLeasesLookupPrefixExecute(r ApiGetSysLeasesLookupPrefixRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysLeasesLookupPrefix")
@@ -5022,9 +4969,9 @@ func (a *SystemApiService) GetSysLeasesLookupPrefixExecute(r ApiGetSysLeasesLook
 }
 
 type ApiGetSysMetricsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	format *string
+	format     *string
 }
 
 // Format to export metrics into. Currently accepts only \&quot;prometheus\&quot;.
@@ -5046,16 +4993,16 @@ GetSysMetrics Export the metrics aggregated for telemetry purpose.
 func (a *SystemApiService) GetSysMetrics(ctx context.Context) ApiGetSysMetricsRequest {
 	return ApiGetSysMetricsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysMetricsExecute(r ApiGetSysMetricsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysMetrics")
@@ -5118,10 +5065,10 @@ func (a *SystemApiService) GetSysMetricsExecute(r ApiGetSysMetricsRequest) (*htt
 }
 
 type ApiGetSysMonitorRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	logFormat *string
-	logLevel *string
+	logFormat  *string
+	logLevel   *string
 }
 
 // Output format of logs. Supported values are \&quot;standard\&quot; and \&quot;json\&quot;. The default is \&quot;standard\&quot;.
@@ -5129,6 +5076,7 @@ func (r ApiGetSysMonitorRequest) LogFormat(logFormat string) ApiGetSysMonitorReq
 	r.logFormat = &logFormat
 	return r
 }
+
 // Log level to view system logs at. Currently supported values are \&quot;trace\&quot;, \&quot;debug\&quot;, \&quot;info\&quot;, \&quot;warn\&quot;, \&quot;error\&quot;.
 func (r ApiGetSysMonitorRequest) LogLevel(logLevel string) ApiGetSysMonitorRequest {
 	r.logLevel = &logLevel
@@ -5148,16 +5096,16 @@ GetSysMonitor Method for GetSysMonitor
 func (a *SystemApiService) GetSysMonitor(ctx context.Context) ApiGetSysMonitorRequest {
 	return ApiGetSysMonitorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysMonitorExecute(r ApiGetSysMonitorRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysMonitor")
@@ -5223,10 +5171,9 @@ func (a *SystemApiService) GetSysMonitorExecute(r ApiGetSysMonitorRequest) (*htt
 }
 
 type ApiGetSysMountsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysMountsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysMountsExecute(r)
@@ -5241,16 +5188,16 @@ GetSysMounts List the currently mounted backends.
 func (a *SystemApiService) GetSysMounts(ctx context.Context) ApiGetSysMountsRequest {
 	return ApiGetSysMountsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysMountsExecute(r ApiGetSysMountsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysMounts")
@@ -5310,11 +5257,10 @@ func (a *SystemApiService) GetSysMountsExecute(r ApiGetSysMountsRequest) (*http.
 }
 
 type ApiGetSysMountsPathRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	path string
+	path       string
 }
-
 
 func (r ApiGetSysMountsPathRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysMountsPathExecute(r)
@@ -5330,17 +5276,17 @@ GetSysMountsPath Read the configuration of the secret engine at the given path.
 func (a *SystemApiService) GetSysMountsPath(ctx context.Context, path string) ApiGetSysMountsPathRequest {
 	return ApiGetSysMountsPathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysMountsPathExecute(r ApiGetSysMountsPathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysMountsPath")
@@ -5401,11 +5347,10 @@ func (a *SystemApiService) GetSysMountsPathExecute(r ApiGetSysMountsPathRequest)
 }
 
 type ApiGetSysMountsPathTuneRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	path string
+	path       string
 }
-
 
 func (r ApiGetSysMountsPathTuneRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysMountsPathTuneExecute(r)
@@ -5421,17 +5366,17 @@ GetSysMountsPathTune Tune backend configuration parameters for this mount.
 func (a *SystemApiService) GetSysMountsPathTune(ctx context.Context, path string) ApiGetSysMountsPathTuneRequest {
 	return ApiGetSysMountsPathTuneRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysMountsPathTuneExecute(r ApiGetSysMountsPathTuneRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysMountsPathTune")
@@ -5492,10 +5437,9 @@ func (a *SystemApiService) GetSysMountsPathTuneExecute(r ApiGetSysMountsPathTune
 }
 
 type ApiGetSysPluginsCatalogRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysPluginsCatalogRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysPluginsCatalogExecute(r)
@@ -5510,16 +5454,16 @@ GetSysPluginsCatalog Lists all the plugins known to Vault
 func (a *SystemApiService) GetSysPluginsCatalog(ctx context.Context) ApiGetSysPluginsCatalogRequest {
 	return ApiGetSysPluginsCatalogRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysPluginsCatalogExecute(r ApiGetSysPluginsCatalogRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPluginsCatalog")
@@ -5579,11 +5523,10 @@ func (a *SystemApiService) GetSysPluginsCatalogExecute(r ApiGetSysPluginsCatalog
 }
 
 type ApiGetSysPluginsCatalogNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetSysPluginsCatalogNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysPluginsCatalogNameExecute(r)
@@ -5599,17 +5542,17 @@ GetSysPluginsCatalogName Return the configuration data for the plugin with the g
 func (a *SystemApiService) GetSysPluginsCatalogName(ctx context.Context, name string) ApiGetSysPluginsCatalogNameRequest {
 	return ApiGetSysPluginsCatalogNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysPluginsCatalogNameExecute(r ApiGetSysPluginsCatalogNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPluginsCatalogName")
@@ -5670,10 +5613,10 @@ func (a *SystemApiService) GetSysPluginsCatalogNameExecute(r ApiGetSysPluginsCat
 }
 
 type ApiGetSysPluginsCatalogTypeRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	type_ string
-	list *string
+	type_      string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -5696,17 +5639,17 @@ GetSysPluginsCatalogType List the plugins in the catalog.
 func (a *SystemApiService) GetSysPluginsCatalogType(ctx context.Context, type_ string) ApiGetSysPluginsCatalogTypeRequest {
 	return ApiGetSysPluginsCatalogTypeRequest{
 		ApiService: a,
-		ctx: ctx,
-		type_: type_,
+		ctx:        ctx,
+		type_:      type_,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysPluginsCatalogTypeExecute(r ApiGetSysPluginsCatalogTypeRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPluginsCatalogType")
@@ -5771,12 +5714,11 @@ func (a *SystemApiService) GetSysPluginsCatalogTypeExecute(r ApiGetSysPluginsCat
 }
 
 type ApiGetSysPluginsCatalogTypeNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	name string
-	type_ string
+	name       string
+	type_      string
 }
-
 
 func (r ApiGetSysPluginsCatalogTypeNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysPluginsCatalogTypeNameExecute(r)
@@ -5793,18 +5735,18 @@ GetSysPluginsCatalogTypeName Return the configuration data for the plugin with t
 func (a *SystemApiService) GetSysPluginsCatalogTypeName(ctx context.Context, name string, type_ string) ApiGetSysPluginsCatalogTypeNameRequest {
 	return ApiGetSysPluginsCatalogTypeNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
-		type_: type_,
+		ctx:        ctx,
+		name:       name,
+		type_:      type_,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysPluginsCatalogTypeNameExecute(r ApiGetSysPluginsCatalogTypeNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPluginsCatalogTypeName")
@@ -5866,9 +5808,9 @@ func (a *SystemApiService) GetSysPluginsCatalogTypeNameExecute(r ApiGetSysPlugin
 }
 
 type ApiGetSysPoliciesAclRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -5890,16 +5832,16 @@ GetSysPoliciesAcl List the configured access control policies.
 func (a *SystemApiService) GetSysPoliciesAcl(ctx context.Context) ApiGetSysPoliciesAclRequest {
 	return ApiGetSysPoliciesAclRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysPoliciesAclExecute(r ApiGetSysPoliciesAclRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPoliciesAcl")
@@ -5963,11 +5905,10 @@ func (a *SystemApiService) GetSysPoliciesAclExecute(r ApiGetSysPoliciesAclReques
 }
 
 type ApiGetSysPoliciesAclNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetSysPoliciesAclNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysPoliciesAclNameExecute(r)
@@ -5983,17 +5924,17 @@ GetSysPoliciesAclName Retrieve information about the named ACL policy.
 func (a *SystemApiService) GetSysPoliciesAclName(ctx context.Context, name string) ApiGetSysPoliciesAclNameRequest {
 	return ApiGetSysPoliciesAclNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysPoliciesAclNameExecute(r ApiGetSysPoliciesAclNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPoliciesAclName")
@@ -6054,9 +5995,9 @@ func (a *SystemApiService) GetSysPoliciesAclNameExecute(r ApiGetSysPoliciesAclNa
 }
 
 type ApiGetSysPoliciesPasswordRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -6078,16 +6019,16 @@ GetSysPoliciesPassword List the existing password policies.
 func (a *SystemApiService) GetSysPoliciesPassword(ctx context.Context) ApiGetSysPoliciesPasswordRequest {
 	return ApiGetSysPoliciesPasswordRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysPoliciesPasswordExecute(r ApiGetSysPoliciesPasswordRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPoliciesPassword")
@@ -6151,11 +6092,10 @@ func (a *SystemApiService) GetSysPoliciesPasswordExecute(r ApiGetSysPoliciesPass
 }
 
 type ApiGetSysPoliciesPasswordNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetSysPoliciesPasswordNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysPoliciesPasswordNameExecute(r)
@@ -6171,17 +6111,17 @@ GetSysPoliciesPasswordName Retrieve an existing password policy.
 func (a *SystemApiService) GetSysPoliciesPasswordName(ctx context.Context, name string) ApiGetSysPoliciesPasswordNameRequest {
 	return ApiGetSysPoliciesPasswordNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysPoliciesPasswordNameExecute(r ApiGetSysPoliciesPasswordNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPoliciesPasswordName")
@@ -6242,11 +6182,10 @@ func (a *SystemApiService) GetSysPoliciesPasswordNameExecute(r ApiGetSysPolicies
 }
 
 type ApiGetSysPoliciesPasswordNameGenerateRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetSysPoliciesPasswordNameGenerateRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysPoliciesPasswordNameGenerateExecute(r)
@@ -6262,17 +6201,17 @@ GetSysPoliciesPasswordNameGenerate Generate a password from an existing password
 func (a *SystemApiService) GetSysPoliciesPasswordNameGenerate(ctx context.Context, name string) ApiGetSysPoliciesPasswordNameGenerateRequest {
 	return ApiGetSysPoliciesPasswordNameGenerateRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysPoliciesPasswordNameGenerateExecute(r ApiGetSysPoliciesPasswordNameGenerateRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPoliciesPasswordNameGenerate")
@@ -6333,9 +6272,9 @@ func (a *SystemApiService) GetSysPoliciesPasswordNameGenerateExecute(r ApiGetSys
 }
 
 type ApiGetSysPolicyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	list *string
+	list       *string
 }
 
 // Return a list if &#x60;true&#x60;
@@ -6357,16 +6296,16 @@ GetSysPolicy List the configured access control policies.
 func (a *SystemApiService) GetSysPolicy(ctx context.Context) ApiGetSysPolicyRequest {
 	return ApiGetSysPolicyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysPolicyExecute(r ApiGetSysPolicyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPolicy")
@@ -6429,11 +6368,10 @@ func (a *SystemApiService) GetSysPolicyExecute(r ApiGetSysPolicyRequest) (*http.
 }
 
 type ApiGetSysPolicyNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetSysPolicyNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysPolicyNameExecute(r)
@@ -6449,17 +6387,17 @@ GetSysPolicyName Retrieve the policy body for the named policy.
 func (a *SystemApiService) GetSysPolicyName(ctx context.Context, name string) ApiGetSysPolicyNameRequest {
 	return ApiGetSysPolicyNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysPolicyNameExecute(r ApiGetSysPolicyNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPolicyName")
@@ -6520,10 +6458,9 @@ func (a *SystemApiService) GetSysPolicyNameExecute(r ApiGetSysPolicyNameRequest)
 }
 
 type ApiGetSysPprofRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysPprofRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysPprofExecute(r)
@@ -6532,8 +6469,8 @@ func (r ApiGetSysPprofRequest) Execute() (*http.Response, error) {
 /*
 GetSysPprof Returns an HTML page listing the available profiles.
 
-Returns an HTML page listing the available 
-profiles. This should be mainly accessed via browsers or applications that can 
+Returns an HTML page listing the available
+profiles. This should be mainly accessed via browsers or applications that can
 render pages.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -6542,16 +6479,16 @@ render pages.
 func (a *SystemApiService) GetSysPprof(ctx context.Context) ApiGetSysPprofRequest {
 	return ApiGetSysPprofRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysPprofExecute(r ApiGetSysPprofRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPprof")
@@ -6611,10 +6548,9 @@ func (a *SystemApiService) GetSysPprofExecute(r ApiGetSysPprofRequest) (*http.Re
 }
 
 type ApiGetSysPprofAllocsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysPprofAllocsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysPprofAllocsExecute(r)
@@ -6631,16 +6567,16 @@ Returns a sampling of all past memory allocations.
 func (a *SystemApiService) GetSysPprofAllocs(ctx context.Context) ApiGetSysPprofAllocsRequest {
 	return ApiGetSysPprofAllocsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysPprofAllocsExecute(r ApiGetSysPprofAllocsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPprofAllocs")
@@ -6700,10 +6636,9 @@ func (a *SystemApiService) GetSysPprofAllocsExecute(r ApiGetSysPprofAllocsReques
 }
 
 type ApiGetSysPprofBlockRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysPprofBlockRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysPprofBlockExecute(r)
@@ -6720,16 +6655,16 @@ Returns stack traces that led to blocking on synchronization primitives
 func (a *SystemApiService) GetSysPprofBlock(ctx context.Context) ApiGetSysPprofBlockRequest {
 	return ApiGetSysPprofBlockRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysPprofBlockExecute(r ApiGetSysPprofBlockRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPprofBlock")
@@ -6789,10 +6724,9 @@ func (a *SystemApiService) GetSysPprofBlockExecute(r ApiGetSysPprofBlockRequest)
 }
 
 type ApiGetSysPprofCmdlineRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysPprofCmdlineRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysPprofCmdlineExecute(r)
@@ -6809,16 +6743,16 @@ Returns the running program's command line, with arguments separated by NUL byte
 func (a *SystemApiService) GetSysPprofCmdline(ctx context.Context) ApiGetSysPprofCmdlineRequest {
 	return ApiGetSysPprofCmdlineRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysPprofCmdlineExecute(r ApiGetSysPprofCmdlineRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPprofCmdline")
@@ -6878,10 +6812,9 @@ func (a *SystemApiService) GetSysPprofCmdlineExecute(r ApiGetSysPprofCmdlineRequ
 }
 
 type ApiGetSysPprofGoroutineRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysPprofGoroutineRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysPprofGoroutineExecute(r)
@@ -6898,16 +6831,16 @@ Returns stack traces of all current goroutines.
 func (a *SystemApiService) GetSysPprofGoroutine(ctx context.Context) ApiGetSysPprofGoroutineRequest {
 	return ApiGetSysPprofGoroutineRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysPprofGoroutineExecute(r ApiGetSysPprofGoroutineRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPprofGoroutine")
@@ -6967,10 +6900,9 @@ func (a *SystemApiService) GetSysPprofGoroutineExecute(r ApiGetSysPprofGoroutine
 }
 
 type ApiGetSysPprofHeapRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysPprofHeapRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysPprofHeapExecute(r)
@@ -6987,16 +6919,16 @@ Returns a sampling of memory allocations of live object.
 func (a *SystemApiService) GetSysPprofHeap(ctx context.Context) ApiGetSysPprofHeapRequest {
 	return ApiGetSysPprofHeapRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysPprofHeapExecute(r ApiGetSysPprofHeapRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPprofHeap")
@@ -7056,10 +6988,9 @@ func (a *SystemApiService) GetSysPprofHeapExecute(r ApiGetSysPprofHeapRequest) (
 }
 
 type ApiGetSysPprofMutexRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysPprofMutexRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysPprofMutexExecute(r)
@@ -7076,16 +7007,16 @@ Returns stack traces of holders of contended mutexes
 func (a *SystemApiService) GetSysPprofMutex(ctx context.Context) ApiGetSysPprofMutexRequest {
 	return ApiGetSysPprofMutexRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysPprofMutexExecute(r ApiGetSysPprofMutexRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPprofMutex")
@@ -7145,10 +7076,9 @@ func (a *SystemApiService) GetSysPprofMutexExecute(r ApiGetSysPprofMutexRequest)
 }
 
 type ApiGetSysPprofProfileRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysPprofProfileRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysPprofProfileExecute(r)
@@ -7165,16 +7095,16 @@ Returns a pprof-formatted cpu profile payload. Profiling lasts for duration spec
 func (a *SystemApiService) GetSysPprofProfile(ctx context.Context) ApiGetSysPprofProfileRequest {
 	return ApiGetSysPprofProfileRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysPprofProfileExecute(r ApiGetSysPprofProfileRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPprofProfile")
@@ -7234,10 +7164,9 @@ func (a *SystemApiService) GetSysPprofProfileExecute(r ApiGetSysPprofProfileRequ
 }
 
 type ApiGetSysPprofSymbolRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysPprofSymbolRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysPprofSymbolExecute(r)
@@ -7254,16 +7183,16 @@ Returns the program counters listed in the request.
 func (a *SystemApiService) GetSysPprofSymbol(ctx context.Context) ApiGetSysPprofSymbolRequest {
 	return ApiGetSysPprofSymbolRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysPprofSymbolExecute(r ApiGetSysPprofSymbolRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPprofSymbol")
@@ -7323,10 +7252,9 @@ func (a *SystemApiService) GetSysPprofSymbolExecute(r ApiGetSysPprofSymbolReques
 }
 
 type ApiGetSysPprofThreadcreateRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysPprofThreadcreateRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysPprofThreadcreateExecute(r)
@@ -7343,16 +7271,16 @@ Returns stack traces that led to the creation of new OS threads
 func (a *SystemApiService) GetSysPprofThreadcreate(ctx context.Context) ApiGetSysPprofThreadcreateRequest {
 	return ApiGetSysPprofThreadcreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysPprofThreadcreateExecute(r ApiGetSysPprofThreadcreateRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPprofThreadcreate")
@@ -7412,10 +7340,9 @@ func (a *SystemApiService) GetSysPprofThreadcreateExecute(r ApiGetSysPprofThread
 }
 
 type ApiGetSysPprofTraceRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysPprofTraceRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysPprofTraceExecute(r)
@@ -7432,16 +7359,16 @@ Returns  the execution trace in binary form. Tracing lasts for duration specifie
 func (a *SystemApiService) GetSysPprofTrace(ctx context.Context) ApiGetSysPprofTraceRequest {
 	return ApiGetSysPprofTraceRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysPprofTraceExecute(r ApiGetSysPprofTraceRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPprofTrace")
@@ -7501,10 +7428,9 @@ func (a *SystemApiService) GetSysPprofTraceExecute(r ApiGetSysPprofTraceRequest)
 }
 
 type ApiGetSysQuotasConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysQuotasConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysQuotasConfigExecute(r)
@@ -7519,16 +7445,16 @@ GetSysQuotasConfig Method for GetSysQuotasConfig
 func (a *SystemApiService) GetSysQuotasConfig(ctx context.Context) ApiGetSysQuotasConfigRequest {
 	return ApiGetSysQuotasConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysQuotasConfigExecute(r ApiGetSysQuotasConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysQuotasConfig")
@@ -7588,9 +7514,9 @@ func (a *SystemApiService) GetSysQuotasConfigExecute(r ApiGetSysQuotasConfigRequ
 }
 
 type ApiGetSysQuotasRateLimitRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -7612,16 +7538,16 @@ GetSysQuotasRateLimit Method for GetSysQuotasRateLimit
 func (a *SystemApiService) GetSysQuotasRateLimit(ctx context.Context) ApiGetSysQuotasRateLimitRequest {
 	return ApiGetSysQuotasRateLimitRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysQuotasRateLimitExecute(r ApiGetSysQuotasRateLimitRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysQuotasRateLimit")
@@ -7685,11 +7611,10 @@ func (a *SystemApiService) GetSysQuotasRateLimitExecute(r ApiGetSysQuotasRateLim
 }
 
 type ApiGetSysQuotasRateLimitNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetSysQuotasRateLimitNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysQuotasRateLimitNameExecute(r)
@@ -7705,17 +7630,17 @@ GetSysQuotasRateLimitName Method for GetSysQuotasRateLimitName
 func (a *SystemApiService) GetSysQuotasRateLimitName(ctx context.Context, name string) ApiGetSysQuotasRateLimitNameRequest {
 	return ApiGetSysQuotasRateLimitNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysQuotasRateLimitNameExecute(r ApiGetSysQuotasRateLimitNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysQuotasRateLimitName")
@@ -7776,9 +7701,9 @@ func (a *SystemApiService) GetSysQuotasRateLimitNameExecute(r ApiGetSysQuotasRat
 }
 
 type ApiGetSysRawRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	list *string
+	list       *string
 }
 
 // Return a list if &#x60;true&#x60;
@@ -7800,16 +7725,16 @@ GetSysRaw Read the value of the key at the given path.
 func (a *SystemApiService) GetSysRaw(ctx context.Context) ApiGetSysRawRequest {
 	return ApiGetSysRawRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysRawExecute(r ApiGetSysRawRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysRaw")
@@ -7872,10 +7797,10 @@ func (a *SystemApiService) GetSysRawExecute(r ApiGetSysRawRequest) (*http.Respon
 }
 
 type ApiGetSysRawPathRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	path string
-	list *string
+	path       string
+	list       *string
 }
 
 // Return a list if &#x60;true&#x60;
@@ -7898,17 +7823,17 @@ GetSysRawPath Read the value of the key at the given path.
 func (a *SystemApiService) GetSysRawPath(ctx context.Context, path string) ApiGetSysRawPathRequest {
 	return ApiGetSysRawPathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysRawPathExecute(r ApiGetSysRawPathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysRawPath")
@@ -7972,10 +7897,9 @@ func (a *SystemApiService) GetSysRawPathExecute(r ApiGetSysRawPathRequest) (*htt
 }
 
 type ApiGetSysRekeyBackupRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysRekeyBackupRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysRekeyBackupExecute(r)
@@ -7990,16 +7914,16 @@ GetSysRekeyBackup Return the backup copy of PGP-encrypted unseal keys.
 func (a *SystemApiService) GetSysRekeyBackup(ctx context.Context) ApiGetSysRekeyBackupRequest {
 	return ApiGetSysRekeyBackupRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysRekeyBackupExecute(r ApiGetSysRekeyBackupRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysRekeyBackup")
@@ -8059,10 +7983,9 @@ func (a *SystemApiService) GetSysRekeyBackupExecute(r ApiGetSysRekeyBackupReques
 }
 
 type ApiGetSysRekeyInitRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysRekeyInitRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysRekeyInitExecute(r)
@@ -8077,16 +8000,16 @@ GetSysRekeyInit Reads the configuration and progress of the current rekey attemp
 func (a *SystemApiService) GetSysRekeyInit(ctx context.Context) ApiGetSysRekeyInitRequest {
 	return ApiGetSysRekeyInitRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysRekeyInitExecute(r ApiGetSysRekeyInitRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysRekeyInit")
@@ -8146,10 +8069,9 @@ func (a *SystemApiService) GetSysRekeyInitExecute(r ApiGetSysRekeyInitRequest) (
 }
 
 type ApiGetSysRekeyRecoveryKeyBackupRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysRekeyRecoveryKeyBackupRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysRekeyRecoveryKeyBackupExecute(r)
@@ -8164,16 +8086,16 @@ GetSysRekeyRecoveryKeyBackup Allows fetching or deleting the backup of the rotat
 func (a *SystemApiService) GetSysRekeyRecoveryKeyBackup(ctx context.Context) ApiGetSysRekeyRecoveryKeyBackupRequest {
 	return ApiGetSysRekeyRecoveryKeyBackupRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysRekeyRecoveryKeyBackupExecute(r ApiGetSysRekeyRecoveryKeyBackupRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysRekeyRecoveryKeyBackup")
@@ -8233,10 +8155,9 @@ func (a *SystemApiService) GetSysRekeyRecoveryKeyBackupExecute(r ApiGetSysRekeyR
 }
 
 type ApiGetSysRekeyVerifyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysRekeyVerifyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysRekeyVerifyExecute(r)
@@ -8251,16 +8172,16 @@ GetSysRekeyVerify Read the configuration and progress of the current rekey verif
 func (a *SystemApiService) GetSysRekeyVerify(ctx context.Context) ApiGetSysRekeyVerifyRequest {
 	return ApiGetSysRekeyVerifyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysRekeyVerifyExecute(r ApiGetSysRekeyVerifyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysRekeyVerify")
@@ -8320,11 +8241,10 @@ func (a *SystemApiService) GetSysRekeyVerifyExecute(r ApiGetSysRekeyVerifyReques
 }
 
 type ApiGetSysRemountStatusMigrationIdRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx         context.Context
+	ApiService  *SystemApiService
 	migrationId string
 }
-
 
 func (r ApiGetSysRemountStatusMigrationIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysRemountStatusMigrationIdExecute(r)
@@ -8339,8 +8259,8 @@ GetSysRemountStatusMigrationId Check status of a mount migration
 */
 func (a *SystemApiService) GetSysRemountStatusMigrationId(ctx context.Context, migrationId string) ApiGetSysRemountStatusMigrationIdRequest {
 	return ApiGetSysRemountStatusMigrationIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		migrationId: migrationId,
 	}
 }
@@ -8348,9 +8268,9 @@ func (a *SystemApiService) GetSysRemountStatusMigrationId(ctx context.Context, m
 // Execute executes the request
 func (a *SystemApiService) GetSysRemountStatusMigrationIdExecute(r ApiGetSysRemountStatusMigrationIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysRemountStatusMigrationId")
@@ -8411,10 +8331,9 @@ func (a *SystemApiService) GetSysRemountStatusMigrationIdExecute(r ApiGetSysRemo
 }
 
 type ApiGetSysReplicationStatusRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysReplicationStatusRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysReplicationStatusExecute(r)
@@ -8429,16 +8348,16 @@ GetSysReplicationStatus Method for GetSysReplicationStatus
 func (a *SystemApiService) GetSysReplicationStatus(ctx context.Context) ApiGetSysReplicationStatusRequest {
 	return ApiGetSysReplicationStatusRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysReplicationStatusExecute(r ApiGetSysReplicationStatusRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysReplicationStatus")
@@ -8498,10 +8417,9 @@ func (a *SystemApiService) GetSysReplicationStatusExecute(r ApiGetSysReplication
 }
 
 type ApiGetSysRotateConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysRotateConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysRotateConfigExecute(r)
@@ -8516,16 +8434,16 @@ GetSysRotateConfig Method for GetSysRotateConfig
 func (a *SystemApiService) GetSysRotateConfig(ctx context.Context) ApiGetSysRotateConfigRequest {
 	return ApiGetSysRotateConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysRotateConfigExecute(r ApiGetSysRotateConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysRotateConfig")
@@ -8585,10 +8503,9 @@ func (a *SystemApiService) GetSysRotateConfigExecute(r ApiGetSysRotateConfigRequ
 }
 
 type ApiGetSysSealStatusRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysSealStatusRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysSealStatusExecute(r)
@@ -8603,16 +8520,16 @@ GetSysSealStatus Check the seal status of a Vault.
 func (a *SystemApiService) GetSysSealStatus(ctx context.Context) ApiGetSysSealStatusRequest {
 	return ApiGetSysSealStatusRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysSealStatusExecute(r ApiGetSysSealStatusRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysSealStatus")
@@ -8672,9 +8589,9 @@ func (a *SystemApiService) GetSysSealStatusExecute(r ApiGetSysSealStatusRequest)
 }
 
 type ApiGetSysVersionHistoryRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -8696,16 +8613,16 @@ GetSysVersionHistory Returns map of historical version change entries
 func (a *SystemApiService) GetSysVersionHistory(ctx context.Context) ApiGetSysVersionHistoryRequest {
 	return ApiGetSysVersionHistoryRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysVersionHistoryExecute(r ApiGetSysVersionHistoryRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysVersionHistory")
@@ -8769,10 +8686,9 @@ func (a *SystemApiService) GetSysVersionHistoryExecute(r ApiGetSysVersionHistory
 }
 
 type ApiGetSysWrappingLookupRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiGetSysWrappingLookupRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSysWrappingLookupExecute(r)
@@ -8787,16 +8703,16 @@ GetSysWrappingLookup Look up wrapping properties for the requester's token.
 func (a *SystemApiService) GetSysWrappingLookup(ctx context.Context) ApiGetSysWrappingLookupRequest {
 	return ApiGetSysWrappingLookupRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) GetSysWrappingLookupExecute(r ApiGetSysWrappingLookupRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysWrappingLookup")
@@ -8856,9 +8772,9 @@ func (a *SystemApiService) GetSysWrappingLookupExecute(r ApiGetSysWrappingLookup
 }
 
 type ApiPostSysAuditHashPathRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
-	path string
+	ctx                    context.Context
+	ApiService             *SystemApiService
+	path                   string
 	systemAuditHashRequest *SystemAuditHashRequest
 }
 
@@ -8881,17 +8797,17 @@ PostSysAuditHashPath The hash of the given string via the given audit backend
 func (a *SystemApiService) PostSysAuditHashPath(ctx context.Context, path string) ApiPostSysAuditHashPathRequest {
 	return ApiPostSysAuditHashPathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysAuditHashPathExecute(r ApiPostSysAuditHashPathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysAuditHashPath")
@@ -8954,9 +8870,9 @@ func (a *SystemApiService) PostSysAuditHashPathExecute(r ApiPostSysAuditHashPath
 }
 
 type ApiPostSysAuditPathRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
-	path string
+	ctx                context.Context
+	ApiService         *SystemApiService
+	path               string
 	systemAuditRequest *SystemAuditRequest
 }
 
@@ -8979,17 +8895,17 @@ PostSysAuditPath Enable a new audit device at the supplied path.
 func (a *SystemApiService) PostSysAuditPath(ctx context.Context, path string) ApiPostSysAuditPathRequest {
 	return ApiPostSysAuditPathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysAuditPathExecute(r ApiPostSysAuditPathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysAuditPath")
@@ -9052,9 +8968,9 @@ func (a *SystemApiService) PostSysAuditPathExecute(r ApiPostSysAuditPathRequest)
 }
 
 type ApiPostSysAuthPathRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
-	path string
+	ctx               context.Context
+	ApiService        *SystemApiService
+	path              string
 	systemAuthRequest *SystemAuthRequest
 }
 
@@ -9081,17 +8997,17 @@ For example, enable the "foo" auth method will make it accessible at /auth/foo.
 func (a *SystemApiService) PostSysAuthPath(ctx context.Context, path string) ApiPostSysAuthPathRequest {
 	return ApiPostSysAuthPathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysAuthPathExecute(r ApiPostSysAuthPathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysAuthPath")
@@ -9154,9 +9070,9 @@ func (a *SystemApiService) PostSysAuthPathExecute(r ApiPostSysAuthPathRequest) (
 }
 
 type ApiPostSysAuthPathTuneRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
-	path string
+	ctx                   context.Context
+	ApiService            *SystemApiService
+	path                  string
 	systemAuthTuneRequest *SystemAuthTuneRequest
 }
 
@@ -9181,17 +9097,17 @@ This endpoint requires sudo capability on the final path, but the same functiona
 func (a *SystemApiService) PostSysAuthPathTune(ctx context.Context, path string) ApiPostSysAuthPathTuneRequest {
 	return ApiPostSysAuthPathTuneRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysAuthPathTuneExecute(r ApiPostSysAuthPathTuneRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysAuthPathTune")
@@ -9254,8 +9170,8 @@ func (a *SystemApiService) PostSysAuthPathTuneExecute(r ApiPostSysAuthPathTuneRe
 }
 
 type ApiPostSysCapabilitiesRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx                       context.Context
+	ApiService                *SystemApiService
 	systemCapabilitiesRequest *SystemCapabilitiesRequest
 }
 
@@ -9277,16 +9193,16 @@ PostSysCapabilities Fetches the capabilities of the given token on the given pat
 func (a *SystemApiService) PostSysCapabilities(ctx context.Context) ApiPostSysCapabilitiesRequest {
 	return ApiPostSysCapabilitiesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysCapabilitiesExecute(r ApiPostSysCapabilitiesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysCapabilities")
@@ -9348,8 +9264,8 @@ func (a *SystemApiService) PostSysCapabilitiesExecute(r ApiPostSysCapabilitiesRe
 }
 
 type ApiPostSysCapabilitiesAccessorRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx                               context.Context
+	ApiService                        *SystemApiService
 	systemCapabilitiesAccessorRequest *SystemCapabilitiesAccessorRequest
 }
 
@@ -9371,16 +9287,16 @@ PostSysCapabilitiesAccessor Fetches the capabilities of the token associated wit
 func (a *SystemApiService) PostSysCapabilitiesAccessor(ctx context.Context) ApiPostSysCapabilitiesAccessorRequest {
 	return ApiPostSysCapabilitiesAccessorRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysCapabilitiesAccessorExecute(r ApiPostSysCapabilitiesAccessorRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysCapabilitiesAccessor")
@@ -9442,8 +9358,8 @@ func (a *SystemApiService) PostSysCapabilitiesAccessorExecute(r ApiPostSysCapabi
 }
 
 type ApiPostSysCapabilitiesSelfRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx                           context.Context
+	ApiService                    *SystemApiService
 	systemCapabilitiesSelfRequest *SystemCapabilitiesSelfRequest
 }
 
@@ -9465,16 +9381,16 @@ PostSysCapabilitiesSelf Fetches the capabilities of the given token on the given
 func (a *SystemApiService) PostSysCapabilitiesSelf(ctx context.Context) ApiPostSysCapabilitiesSelfRequest {
 	return ApiPostSysCapabilitiesSelfRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysCapabilitiesSelfExecute(r ApiPostSysCapabilitiesSelfRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysCapabilitiesSelf")
@@ -9536,9 +9452,9 @@ func (a *SystemApiService) PostSysCapabilitiesSelfExecute(r ApiPostSysCapabiliti
 }
 
 type ApiPostSysConfigAuditingRequestHeadersHeaderRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
-	header string
+	ctx                                       context.Context
+	ApiService                                *SystemApiService
+	header                                    string
 	systemConfigAuditingRequestHeadersRequest *SystemConfigAuditingRequestHeadersRequest
 }
 
@@ -9561,17 +9477,17 @@ PostSysConfigAuditingRequestHeadersHeader Enable auditing of a header.
 func (a *SystemApiService) PostSysConfigAuditingRequestHeadersHeader(ctx context.Context, header string) ApiPostSysConfigAuditingRequestHeadersHeaderRequest {
 	return ApiPostSysConfigAuditingRequestHeadersHeaderRequest{
 		ApiService: a,
-		ctx: ctx,
-		header: header,
+		ctx:        ctx,
+		header:     header,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysConfigAuditingRequestHeadersHeaderExecute(r ApiPostSysConfigAuditingRequestHeadersHeaderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysConfigAuditingRequestHeadersHeader")
@@ -9634,8 +9550,8 @@ func (a *SystemApiService) PostSysConfigAuditingRequestHeadersHeaderExecute(r Ap
 }
 
 type ApiPostSysConfigCorsRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx                     context.Context
+	ApiService              *SystemApiService
 	systemConfigCorsRequest *SystemConfigCorsRequest
 }
 
@@ -9657,16 +9573,16 @@ PostSysConfigCors Configure the CORS settings.
 func (a *SystemApiService) PostSysConfigCors(ctx context.Context) ApiPostSysConfigCorsRequest {
 	return ApiPostSysConfigCorsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysConfigCorsExecute(r ApiPostSysConfigCorsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysConfigCors")
@@ -9728,11 +9644,10 @@ func (a *SystemApiService) PostSysConfigCorsExecute(r ApiPostSysConfigCorsReques
 }
 
 type ApiPostSysConfigReloadSubsystemRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	subsystem string
+	subsystem  string
 }
-
 
 func (r ApiPostSysConfigReloadSubsystemRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostSysConfigReloadSubsystemExecute(r)
@@ -9748,17 +9663,17 @@ PostSysConfigReloadSubsystem Reload the given subsystem
 func (a *SystemApiService) PostSysConfigReloadSubsystem(ctx context.Context, subsystem string) ApiPostSysConfigReloadSubsystemRequest {
 	return ApiPostSysConfigReloadSubsystemRequest{
 		ApiService: a,
-		ctx: ctx,
-		subsystem: subsystem,
+		ctx:        ctx,
+		subsystem:  subsystem,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysConfigReloadSubsystemExecute(r ApiPostSysConfigReloadSubsystemRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysConfigReloadSubsystem")
@@ -9819,9 +9734,9 @@ func (a *SystemApiService) PostSysConfigReloadSubsystemExecute(r ApiPostSysConfi
 }
 
 type ApiPostSysConfigUiHeadersHeaderRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
-	header string
+	ctx                          context.Context
+	ApiService                   *SystemApiService
+	header                       string
 	systemConfigUiHeadersRequest *SystemConfigUiHeadersRequest
 }
 
@@ -9844,17 +9759,17 @@ PostSysConfigUiHeadersHeader Configure the values to be returned for the UI head
 func (a *SystemApiService) PostSysConfigUiHeadersHeader(ctx context.Context, header string) ApiPostSysConfigUiHeadersHeaderRequest {
 	return ApiPostSysConfigUiHeadersHeaderRequest{
 		ApiService: a,
-		ctx: ctx,
-		header: header,
+		ctx:        ctx,
+		header:     header,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysConfigUiHeadersHeaderExecute(r ApiPostSysConfigUiHeadersHeaderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysConfigUiHeadersHeader")
@@ -9917,8 +9832,8 @@ func (a *SystemApiService) PostSysConfigUiHeadersHeaderExecute(r ApiPostSysConfi
 }
 
 type ApiPostSysGenerateRootRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx                       context.Context
+	ApiService                *SystemApiService
 	systemGenerateRootRequest *SystemGenerateRootRequest
 }
 
@@ -9942,16 +9857,16 @@ Only a single root generation attempt can take place at a time. One (and only on
 func (a *SystemApiService) PostSysGenerateRoot(ctx context.Context) ApiPostSysGenerateRootRequest {
 	return ApiPostSysGenerateRootRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysGenerateRootExecute(r ApiPostSysGenerateRootRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysGenerateRoot")
@@ -10013,8 +9928,8 @@ func (a *SystemApiService) PostSysGenerateRootExecute(r ApiPostSysGenerateRootRe
 }
 
 type ApiPostSysGenerateRootAttemptRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx                              context.Context
+	ApiService                       *SystemApiService
 	systemGenerateRootAttemptRequest *SystemGenerateRootAttemptRequest
 }
 
@@ -10038,16 +9953,16 @@ Only a single root generation attempt can take place at a time. One (and only on
 func (a *SystemApiService) PostSysGenerateRootAttempt(ctx context.Context) ApiPostSysGenerateRootAttemptRequest {
 	return ApiPostSysGenerateRootAttemptRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysGenerateRootAttemptExecute(r ApiPostSysGenerateRootAttemptRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysGenerateRootAttempt")
@@ -10109,8 +10024,8 @@ func (a *SystemApiService) PostSysGenerateRootAttemptExecute(r ApiPostSysGenerat
 }
 
 type ApiPostSysGenerateRootUpdateRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx                             context.Context
+	ApiService                      *SystemApiService
 	systemGenerateRootUpdateRequest *SystemGenerateRootUpdateRequest
 }
 
@@ -10134,16 +10049,16 @@ If the threshold number of unseal key shares is reached, Vault will complete the
 func (a *SystemApiService) PostSysGenerateRootUpdate(ctx context.Context) ApiPostSysGenerateRootUpdateRequest {
 	return ApiPostSysGenerateRootUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysGenerateRootUpdateExecute(r ApiPostSysGenerateRootUpdateRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysGenerateRootUpdate")
@@ -10205,8 +10120,8 @@ func (a *SystemApiService) PostSysGenerateRootUpdateExecute(r ApiPostSysGenerate
 }
 
 type ApiPostSysInitRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx               context.Context
+	ApiService        *SystemApiService
 	systemInitRequest *SystemInitRequest
 }
 
@@ -10230,16 +10145,16 @@ The Vault must not have been previously initialized. The recovery options, as we
 func (a *SystemApiService) PostSysInit(ctx context.Context) ApiPostSysInitRequest {
 	return ApiPostSysInitRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysInitExecute(r ApiPostSysInitRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysInit")
@@ -10301,8 +10216,8 @@ func (a *SystemApiService) PostSysInitExecute(r ApiPostSysInitRequest) (*http.Re
 }
 
 type ApiPostSysInternalCountersConfigRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx                                 context.Context
+	ApiService                          *SystemApiService
 	systemInternalCountersConfigRequest *SystemInternalCountersConfigRequest
 }
 
@@ -10324,16 +10239,16 @@ PostSysInternalCountersConfig Enable or disable collection of client count, set 
 func (a *SystemApiService) PostSysInternalCountersConfig(ctx context.Context) ApiPostSysInternalCountersConfigRequest {
 	return ApiPostSysInternalCountersConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysInternalCountersConfigExecute(r ApiPostSysInternalCountersConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysInternalCountersConfig")
@@ -10395,8 +10310,8 @@ func (a *SystemApiService) PostSysInternalCountersConfigExecute(r ApiPostSysInte
 }
 
 type ApiPostSysLeasesLookupRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx                       context.Context
+	ApiService                *SystemApiService
 	systemLeasesLookupRequest *SystemLeasesLookupRequest
 }
 
@@ -10418,16 +10333,16 @@ PostSysLeasesLookup Retrieve lease metadata.
 func (a *SystemApiService) PostSysLeasesLookup(ctx context.Context) ApiPostSysLeasesLookupRequest {
 	return ApiPostSysLeasesLookupRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysLeasesLookupExecute(r ApiPostSysLeasesLookupRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysLeasesLookup")
@@ -10489,8 +10404,8 @@ func (a *SystemApiService) PostSysLeasesLookupExecute(r ApiPostSysLeasesLookupRe
 }
 
 type ApiPostSysLeasesRenewRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx                      context.Context
+	ApiService               *SystemApiService
 	systemLeasesRenewRequest *SystemLeasesRenewRequest
 }
 
@@ -10512,16 +10427,16 @@ PostSysLeasesRenew Renews a lease, requesting to extend the lease.
 func (a *SystemApiService) PostSysLeasesRenew(ctx context.Context) ApiPostSysLeasesRenewRequest {
 	return ApiPostSysLeasesRenewRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysLeasesRenewExecute(r ApiPostSysLeasesRenewRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysLeasesRenew")
@@ -10583,9 +10498,9 @@ func (a *SystemApiService) PostSysLeasesRenewExecute(r ApiPostSysLeasesRenewRequ
 }
 
 type ApiPostSysLeasesRenewUrlLeaseIdRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
-	urlLeaseId string
+	ctx                           context.Context
+	ApiService                    *SystemApiService
+	urlLeaseId                    string
 	systemLeasesRenewLeaseRequest *SystemLeasesRenewLeaseRequest
 }
 
@@ -10608,7 +10523,7 @@ PostSysLeasesRenewUrlLeaseId Renews a lease, requesting to extend the lease.
 func (a *SystemApiService) PostSysLeasesRenewUrlLeaseId(ctx context.Context, urlLeaseId string) ApiPostSysLeasesRenewUrlLeaseIdRequest {
 	return ApiPostSysLeasesRenewUrlLeaseIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		urlLeaseId: urlLeaseId,
 	}
 }
@@ -10616,9 +10531,9 @@ func (a *SystemApiService) PostSysLeasesRenewUrlLeaseId(ctx context.Context, url
 // Execute executes the request
 func (a *SystemApiService) PostSysLeasesRenewUrlLeaseIdExecute(r ApiPostSysLeasesRenewUrlLeaseIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysLeasesRenewUrlLeaseId")
@@ -10681,8 +10596,8 @@ func (a *SystemApiService) PostSysLeasesRenewUrlLeaseIdExecute(r ApiPostSysLease
 }
 
 type ApiPostSysLeasesRevokeRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx                       context.Context
+	ApiService                *SystemApiService
 	systemLeasesRevokeRequest *SystemLeasesRevokeRequest
 }
 
@@ -10704,16 +10619,16 @@ PostSysLeasesRevoke Revokes a lease immediately.
 func (a *SystemApiService) PostSysLeasesRevoke(ctx context.Context) ApiPostSysLeasesRevokeRequest {
 	return ApiPostSysLeasesRevokeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysLeasesRevokeExecute(r ApiPostSysLeasesRevokeRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysLeasesRevoke")
@@ -10775,11 +10690,10 @@ func (a *SystemApiService) PostSysLeasesRevokeExecute(r ApiPostSysLeasesRevokeRe
 }
 
 type ApiPostSysLeasesRevokeForcePrefixRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	prefix string
+	prefix     string
 }
-
 
 func (r ApiPostSysLeasesRevokeForcePrefixRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostSysLeasesRevokeForcePrefixExecute(r)
@@ -10799,17 +10713,17 @@ By ignoring these errors, Vault abdicates responsibility for ensuring that the i
 func (a *SystemApiService) PostSysLeasesRevokeForcePrefix(ctx context.Context, prefix string) ApiPostSysLeasesRevokeForcePrefixRequest {
 	return ApiPostSysLeasesRevokeForcePrefixRequest{
 		ApiService: a,
-		ctx: ctx,
-		prefix: prefix,
+		ctx:        ctx,
+		prefix:     prefix,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysLeasesRevokeForcePrefixExecute(r ApiPostSysLeasesRevokeForcePrefixRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysLeasesRevokeForcePrefix")
@@ -10870,9 +10784,9 @@ func (a *SystemApiService) PostSysLeasesRevokeForcePrefixExecute(r ApiPostSysLea
 }
 
 type ApiPostSysLeasesRevokePrefixPrefixRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
-	prefix string
+	ctx                             context.Context
+	ApiService                      *SystemApiService
+	prefix                          string
 	systemLeasesRevokePrefixRequest *SystemLeasesRevokePrefixRequest
 }
 
@@ -10895,17 +10809,17 @@ PostSysLeasesRevokePrefixPrefix Revokes all secrets (via a lease ID prefix) or t
 func (a *SystemApiService) PostSysLeasesRevokePrefixPrefix(ctx context.Context, prefix string) ApiPostSysLeasesRevokePrefixPrefixRequest {
 	return ApiPostSysLeasesRevokePrefixPrefixRequest{
 		ApiService: a,
-		ctx: ctx,
-		prefix: prefix,
+		ctx:        ctx,
+		prefix:     prefix,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysLeasesRevokePrefixPrefixExecute(r ApiPostSysLeasesRevokePrefixPrefixRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysLeasesRevokePrefixPrefix")
@@ -10968,9 +10882,9 @@ func (a *SystemApiService) PostSysLeasesRevokePrefixPrefixExecute(r ApiPostSysLe
 }
 
 type ApiPostSysLeasesRevokeUrlLeaseIdRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
-	urlLeaseId string
+	ctx                            context.Context
+	ApiService                     *SystemApiService
+	urlLeaseId                     string
 	systemLeasesRevokeLeaseRequest *SystemLeasesRevokeLeaseRequest
 }
 
@@ -10993,7 +10907,7 @@ PostSysLeasesRevokeUrlLeaseId Revokes a lease immediately.
 func (a *SystemApiService) PostSysLeasesRevokeUrlLeaseId(ctx context.Context, urlLeaseId string) ApiPostSysLeasesRevokeUrlLeaseIdRequest {
 	return ApiPostSysLeasesRevokeUrlLeaseIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		urlLeaseId: urlLeaseId,
 	}
 }
@@ -11001,9 +10915,9 @@ func (a *SystemApiService) PostSysLeasesRevokeUrlLeaseId(ctx context.Context, ur
 // Execute executes the request
 func (a *SystemApiService) PostSysLeasesRevokeUrlLeaseIdExecute(r ApiPostSysLeasesRevokeUrlLeaseIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysLeasesRevokeUrlLeaseId")
@@ -11066,10 +10980,9 @@ func (a *SystemApiService) PostSysLeasesRevokeUrlLeaseIdExecute(r ApiPostSysLeas
 }
 
 type ApiPostSysLeasesTidyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiPostSysLeasesTidyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostSysLeasesTidyExecute(r)
@@ -11084,16 +10997,16 @@ PostSysLeasesTidy This endpoint performs cleanup tasks that can be run if certai
 func (a *SystemApiService) PostSysLeasesTidy(ctx context.Context) ApiPostSysLeasesTidyRequest {
 	return ApiPostSysLeasesTidyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysLeasesTidyExecute(r ApiPostSysLeasesTidyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysLeasesTidy")
@@ -11153,8 +11066,8 @@ func (a *SystemApiService) PostSysLeasesTidyExecute(r ApiPostSysLeasesTidyReques
 }
 
 type ApiPostSysMfaValidateRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx                      context.Context
+	ApiService               *SystemApiService
 	systemMfaValidateRequest *SystemMfaValidateRequest
 }
 
@@ -11176,16 +11089,16 @@ PostSysMfaValidate Validates the login for the given MFA methods. Upon successfu
 func (a *SystemApiService) PostSysMfaValidate(ctx context.Context) ApiPostSysMfaValidateRequest {
 	return ApiPostSysMfaValidateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysMfaValidateExecute(r ApiPostSysMfaValidateRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysMfaValidate")
@@ -11247,9 +11160,9 @@ func (a *SystemApiService) PostSysMfaValidateExecute(r ApiPostSysMfaValidateRequ
 }
 
 type ApiPostSysMountsPathRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
-	path string
+	ctx                 context.Context
+	ApiService          *SystemApiService
+	path                string
 	systemMountsRequest *SystemMountsRequest
 }
 
@@ -11272,17 +11185,17 @@ PostSysMountsPath Enable a new secrets engine at the given path.
 func (a *SystemApiService) PostSysMountsPath(ctx context.Context, path string) ApiPostSysMountsPathRequest {
 	return ApiPostSysMountsPathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysMountsPathExecute(r ApiPostSysMountsPathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysMountsPath")
@@ -11345,9 +11258,9 @@ func (a *SystemApiService) PostSysMountsPathExecute(r ApiPostSysMountsPathReques
 }
 
 type ApiPostSysMountsPathTuneRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
-	path string
+	ctx                     context.Context
+	ApiService              *SystemApiService
+	path                    string
 	systemMountsTuneRequest *SystemMountsTuneRequest
 }
 
@@ -11370,17 +11283,17 @@ PostSysMountsPathTune Tune backend configuration parameters for this mount.
 func (a *SystemApiService) PostSysMountsPathTune(ctx context.Context, path string) ApiPostSysMountsPathTuneRequest {
 	return ApiPostSysMountsPathTuneRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysMountsPathTuneExecute(r ApiPostSysMountsPathTuneRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysMountsPathTune")
@@ -11443,9 +11356,9 @@ func (a *SystemApiService) PostSysMountsPathTuneExecute(r ApiPostSysMountsPathTu
 }
 
 type ApiPostSysPluginsCatalogNameRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
-	name string
+	ctx                         context.Context
+	ApiService                  *SystemApiService
+	name                        string
 	systemPluginsCatalogRequest *SystemPluginsCatalogRequest
 }
 
@@ -11468,17 +11381,17 @@ PostSysPluginsCatalogName Register a new plugin, or updates an existing one with
 func (a *SystemApiService) PostSysPluginsCatalogName(ctx context.Context, name string) ApiPostSysPluginsCatalogNameRequest {
 	return ApiPostSysPluginsCatalogNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysPluginsCatalogNameExecute(r ApiPostSysPluginsCatalogNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysPluginsCatalogName")
@@ -11541,10 +11454,10 @@ func (a *SystemApiService) PostSysPluginsCatalogNameExecute(r ApiPostSysPluginsC
 }
 
 type ApiPostSysPluginsCatalogTypeNameRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
-	name string
-	type_ string
+	ctx                         context.Context
+	ApiService                  *SystemApiService
+	name                        string
+	type_                       string
 	systemPluginsCatalogRequest *SystemPluginsCatalogRequest
 }
 
@@ -11568,18 +11481,18 @@ PostSysPluginsCatalogTypeName Register a new plugin, or updates an existing one 
 func (a *SystemApiService) PostSysPluginsCatalogTypeName(ctx context.Context, name string, type_ string) ApiPostSysPluginsCatalogTypeNameRequest {
 	return ApiPostSysPluginsCatalogTypeNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
-		type_: type_,
+		ctx:        ctx,
+		name:       name,
+		type_:      type_,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysPluginsCatalogTypeNameExecute(r ApiPostSysPluginsCatalogTypeNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysPluginsCatalogTypeName")
@@ -11643,8 +11556,8 @@ func (a *SystemApiService) PostSysPluginsCatalogTypeNameExecute(r ApiPostSysPlug
 }
 
 type ApiPostSysPluginsReloadBackendRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx                               context.Context
+	ApiService                        *SystemApiService
 	systemPluginsReloadBackendRequest *SystemPluginsReloadBackendRequest
 }
 
@@ -11668,16 +11581,16 @@ Either the plugin name (`plugin`) or the desired plugin backend mounts (`mounts`
 func (a *SystemApiService) PostSysPluginsReloadBackend(ctx context.Context) ApiPostSysPluginsReloadBackendRequest {
 	return ApiPostSysPluginsReloadBackendRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysPluginsReloadBackendExecute(r ApiPostSysPluginsReloadBackendRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysPluginsReloadBackend")
@@ -11739,9 +11652,9 @@ func (a *SystemApiService) PostSysPluginsReloadBackendExecute(r ApiPostSysPlugin
 }
 
 type ApiPostSysPoliciesAclNameRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
-	name string
+	ctx                      context.Context
+	ApiService               *SystemApiService
+	name                     string
 	systemPoliciesAclRequest *SystemPoliciesAclRequest
 }
 
@@ -11764,17 +11677,17 @@ PostSysPoliciesAclName Add a new or update an existing ACL policy.
 func (a *SystemApiService) PostSysPoliciesAclName(ctx context.Context, name string) ApiPostSysPoliciesAclNameRequest {
 	return ApiPostSysPoliciesAclNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysPoliciesAclNameExecute(r ApiPostSysPoliciesAclNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysPoliciesAclName")
@@ -11837,9 +11750,9 @@ func (a *SystemApiService) PostSysPoliciesAclNameExecute(r ApiPostSysPoliciesAcl
 }
 
 type ApiPostSysPoliciesPasswordNameRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
-	name string
+	ctx                           context.Context
+	ApiService                    *SystemApiService
+	name                          string
 	systemPoliciesPasswordRequest *SystemPoliciesPasswordRequest
 }
 
@@ -11862,17 +11775,17 @@ PostSysPoliciesPasswordName Add a new or update an existing password policy.
 func (a *SystemApiService) PostSysPoliciesPasswordName(ctx context.Context, name string) ApiPostSysPoliciesPasswordNameRequest {
 	return ApiPostSysPoliciesPasswordNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysPoliciesPasswordNameExecute(r ApiPostSysPoliciesPasswordNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysPoliciesPasswordName")
@@ -11935,9 +11848,9 @@ func (a *SystemApiService) PostSysPoliciesPasswordNameExecute(r ApiPostSysPolici
 }
 
 type ApiPostSysPolicyNameRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
-	name string
+	ctx                 context.Context
+	ApiService          *SystemApiService
+	name                string
 	systemPolicyRequest *SystemPolicyRequest
 }
 
@@ -11960,17 +11873,17 @@ PostSysPolicyName Add a new or update an existing policy.
 func (a *SystemApiService) PostSysPolicyName(ctx context.Context, name string) ApiPostSysPolicyNameRequest {
 	return ApiPostSysPolicyNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysPolicyNameExecute(r ApiPostSysPolicyNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysPolicyName")
@@ -12033,8 +11946,8 @@ func (a *SystemApiService) PostSysPolicyNameExecute(r ApiPostSysPolicyNameReques
 }
 
 type ApiPostSysQuotasConfigRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx                       context.Context
+	ApiService                *SystemApiService
 	systemQuotasConfigRequest *SystemQuotasConfigRequest
 }
 
@@ -12056,16 +11969,16 @@ PostSysQuotasConfig Method for PostSysQuotasConfig
 func (a *SystemApiService) PostSysQuotasConfig(ctx context.Context) ApiPostSysQuotasConfigRequest {
 	return ApiPostSysQuotasConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysQuotasConfigExecute(r ApiPostSysQuotasConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysQuotasConfig")
@@ -12127,9 +12040,9 @@ func (a *SystemApiService) PostSysQuotasConfigExecute(r ApiPostSysQuotasConfigRe
 }
 
 type ApiPostSysQuotasRateLimitNameRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
-	name string
+	ctx                          context.Context
+	ApiService                   *SystemApiService
+	name                         string
 	systemQuotasRateLimitRequest *SystemQuotasRateLimitRequest
 }
 
@@ -12152,17 +12065,17 @@ PostSysQuotasRateLimitName Method for PostSysQuotasRateLimitName
 func (a *SystemApiService) PostSysQuotasRateLimitName(ctx context.Context, name string) ApiPostSysQuotasRateLimitNameRequest {
 	return ApiPostSysQuotasRateLimitNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysQuotasRateLimitNameExecute(r ApiPostSysQuotasRateLimitNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysQuotasRateLimitName")
@@ -12225,8 +12138,8 @@ func (a *SystemApiService) PostSysQuotasRateLimitNameExecute(r ApiPostSysQuotasR
 }
 
 type ApiPostSysRawRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx              context.Context
+	ApiService       *SystemApiService
 	systemRawRequest *SystemRawRequest
 }
 
@@ -12248,16 +12161,16 @@ PostSysRaw Update the value of the key at the given path.
 func (a *SystemApiService) PostSysRaw(ctx context.Context) ApiPostSysRawRequest {
 	return ApiPostSysRawRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysRawExecute(r ApiPostSysRawRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysRaw")
@@ -12319,9 +12232,9 @@ func (a *SystemApiService) PostSysRawExecute(r ApiPostSysRawRequest) (*http.Resp
 }
 
 type ApiPostSysRawPathRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
-	path string
+	ctx              context.Context
+	ApiService       *SystemApiService
+	path             string
 	systemRawRequest *SystemRawRequest
 }
 
@@ -12344,17 +12257,17 @@ PostSysRawPath Update the value of the key at the given path.
 func (a *SystemApiService) PostSysRawPath(ctx context.Context, path string) ApiPostSysRawPathRequest {
 	return ApiPostSysRawPathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysRawPathExecute(r ApiPostSysRawPathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysRawPath")
@@ -12417,8 +12330,8 @@ func (a *SystemApiService) PostSysRawPathExecute(r ApiPostSysRawPathRequest) (*h
 }
 
 type ApiPostSysRekeyInitRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx                    context.Context
+	ApiService             *SystemApiService
 	systemRekeyInitRequest *SystemRekeyInitRequest
 }
 
@@ -12442,16 +12355,16 @@ Only a single rekey attempt can take place at a time, and changing the parameter
 func (a *SystemApiService) PostSysRekeyInit(ctx context.Context) ApiPostSysRekeyInitRequest {
 	return ApiPostSysRekeyInitRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysRekeyInitExecute(r ApiPostSysRekeyInitRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysRekeyInit")
@@ -12513,8 +12426,8 @@ func (a *SystemApiService) PostSysRekeyInitExecute(r ApiPostSysRekeyInitRequest)
 }
 
 type ApiPostSysRekeyUpdateRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx                      context.Context
+	ApiService               *SystemApiService
 	systemRekeyUpdateRequest *SystemRekeyUpdateRequest
 }
 
@@ -12536,16 +12449,16 @@ PostSysRekeyUpdate Enter a single unseal key share to progress the rekey of the 
 func (a *SystemApiService) PostSysRekeyUpdate(ctx context.Context) ApiPostSysRekeyUpdateRequest {
 	return ApiPostSysRekeyUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysRekeyUpdateExecute(r ApiPostSysRekeyUpdateRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysRekeyUpdate")
@@ -12607,8 +12520,8 @@ func (a *SystemApiService) PostSysRekeyUpdateExecute(r ApiPostSysRekeyUpdateRequ
 }
 
 type ApiPostSysRekeyVerifyRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx                      context.Context
+	ApiService               *SystemApiService
 	systemRekeyVerifyRequest *SystemRekeyVerifyRequest
 }
 
@@ -12630,16 +12543,16 @@ PostSysRekeyVerify Enter a single new key share to progress the rekey verificati
 func (a *SystemApiService) PostSysRekeyVerify(ctx context.Context) ApiPostSysRekeyVerifyRequest {
 	return ApiPostSysRekeyVerifyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysRekeyVerifyExecute(r ApiPostSysRekeyVerifyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysRekeyVerify")
@@ -12701,8 +12614,8 @@ func (a *SystemApiService) PostSysRekeyVerifyExecute(r ApiPostSysRekeyVerifyRequ
 }
 
 type ApiPostSysRemountRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx                  context.Context
+	ApiService           *SystemApiService
 	systemRemountRequest *SystemRemountRequest
 }
 
@@ -12724,16 +12637,16 @@ PostSysRemount Initiate a mount migration
 func (a *SystemApiService) PostSysRemount(ctx context.Context) ApiPostSysRemountRequest {
 	return ApiPostSysRemountRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysRemountExecute(r ApiPostSysRemountRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysRemount")
@@ -12795,8 +12708,8 @@ func (a *SystemApiService) PostSysRemountExecute(r ApiPostSysRemountRequest) (*h
 }
 
 type ApiPostSysRenewRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx                context.Context
+	ApiService         *SystemApiService
 	systemRenewRequest *SystemRenewRequest
 }
 
@@ -12818,16 +12731,16 @@ PostSysRenew Renews a lease, requesting to extend the lease.
 func (a *SystemApiService) PostSysRenew(ctx context.Context) ApiPostSysRenewRequest {
 	return ApiPostSysRenewRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysRenewExecute(r ApiPostSysRenewRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysRenew")
@@ -12889,9 +12802,9 @@ func (a *SystemApiService) PostSysRenewExecute(r ApiPostSysRenewRequest) (*http.
 }
 
 type ApiPostSysRenewUrlLeaseIdRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
-	urlLeaseId string
+	ctx                     context.Context
+	ApiService              *SystemApiService
+	urlLeaseId              string
 	systemRenewLeaseRequest *SystemRenewLeaseRequest
 }
 
@@ -12914,7 +12827,7 @@ PostSysRenewUrlLeaseId Renews a lease, requesting to extend the lease.
 func (a *SystemApiService) PostSysRenewUrlLeaseId(ctx context.Context, urlLeaseId string) ApiPostSysRenewUrlLeaseIdRequest {
 	return ApiPostSysRenewUrlLeaseIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		urlLeaseId: urlLeaseId,
 	}
 }
@@ -12922,9 +12835,9 @@ func (a *SystemApiService) PostSysRenewUrlLeaseId(ctx context.Context, urlLeaseI
 // Execute executes the request
 func (a *SystemApiService) PostSysRenewUrlLeaseIdExecute(r ApiPostSysRenewUrlLeaseIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysRenewUrlLeaseId")
@@ -12987,8 +12900,8 @@ func (a *SystemApiService) PostSysRenewUrlLeaseIdExecute(r ApiPostSysRenewUrlLea
 }
 
 type ApiPostSysRevokeRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx                 context.Context
+	ApiService          *SystemApiService
 	systemRevokeRequest *SystemRevokeRequest
 }
 
@@ -13010,16 +12923,16 @@ PostSysRevoke Revokes a lease immediately.
 func (a *SystemApiService) PostSysRevoke(ctx context.Context) ApiPostSysRevokeRequest {
 	return ApiPostSysRevokeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysRevokeExecute(r ApiPostSysRevokeRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysRevoke")
@@ -13081,11 +12994,10 @@ func (a *SystemApiService) PostSysRevokeExecute(r ApiPostSysRevokeRequest) (*htt
 }
 
 type ApiPostSysRevokeForcePrefixRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
-	prefix string
+	prefix     string
 }
-
 
 func (r ApiPostSysRevokeForcePrefixRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostSysRevokeForcePrefixExecute(r)
@@ -13105,17 +13017,17 @@ By ignoring these errors, Vault abdicates responsibility for ensuring that the i
 func (a *SystemApiService) PostSysRevokeForcePrefix(ctx context.Context, prefix string) ApiPostSysRevokeForcePrefixRequest {
 	return ApiPostSysRevokeForcePrefixRequest{
 		ApiService: a,
-		ctx: ctx,
-		prefix: prefix,
+		ctx:        ctx,
+		prefix:     prefix,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysRevokeForcePrefixExecute(r ApiPostSysRevokeForcePrefixRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysRevokeForcePrefix")
@@ -13176,9 +13088,9 @@ func (a *SystemApiService) PostSysRevokeForcePrefixExecute(r ApiPostSysRevokeFor
 }
 
 type ApiPostSysRevokePrefixPrefixRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
-	prefix string
+	ctx                       context.Context
+	ApiService                *SystemApiService
+	prefix                    string
 	systemRevokePrefixRequest *SystemRevokePrefixRequest
 }
 
@@ -13201,17 +13113,17 @@ PostSysRevokePrefixPrefix Revokes all secrets (via a lease ID prefix) or tokens 
 func (a *SystemApiService) PostSysRevokePrefixPrefix(ctx context.Context, prefix string) ApiPostSysRevokePrefixPrefixRequest {
 	return ApiPostSysRevokePrefixPrefixRequest{
 		ApiService: a,
-		ctx: ctx,
-		prefix: prefix,
+		ctx:        ctx,
+		prefix:     prefix,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysRevokePrefixPrefixExecute(r ApiPostSysRevokePrefixPrefixRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysRevokePrefixPrefix")
@@ -13274,9 +13186,9 @@ func (a *SystemApiService) PostSysRevokePrefixPrefixExecute(r ApiPostSysRevokePr
 }
 
 type ApiPostSysRevokeUrlLeaseIdRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
-	urlLeaseId string
+	ctx                      context.Context
+	ApiService               *SystemApiService
+	urlLeaseId               string
 	systemRevokeLeaseRequest *SystemRevokeLeaseRequest
 }
 
@@ -13299,7 +13211,7 @@ PostSysRevokeUrlLeaseId Revokes a lease immediately.
 func (a *SystemApiService) PostSysRevokeUrlLeaseId(ctx context.Context, urlLeaseId string) ApiPostSysRevokeUrlLeaseIdRequest {
 	return ApiPostSysRevokeUrlLeaseIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		urlLeaseId: urlLeaseId,
 	}
 }
@@ -13307,9 +13219,9 @@ func (a *SystemApiService) PostSysRevokeUrlLeaseId(ctx context.Context, urlLease
 // Execute executes the request
 func (a *SystemApiService) PostSysRevokeUrlLeaseIdExecute(r ApiPostSysRevokeUrlLeaseIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysRevokeUrlLeaseId")
@@ -13372,10 +13284,9 @@ func (a *SystemApiService) PostSysRevokeUrlLeaseIdExecute(r ApiPostSysRevokeUrlL
 }
 
 type ApiPostSysRotateRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiPostSysRotateRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostSysRotateExecute(r)
@@ -13390,16 +13301,16 @@ PostSysRotate Rotates the backend encryption key used to persist data.
 func (a *SystemApiService) PostSysRotate(ctx context.Context) ApiPostSysRotateRequest {
 	return ApiPostSysRotateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysRotateExecute(r ApiPostSysRotateRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysRotate")
@@ -13459,8 +13370,8 @@ func (a *SystemApiService) PostSysRotateExecute(r ApiPostSysRotateRequest) (*htt
 }
 
 type ApiPostSysRotateConfigRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx                       context.Context
+	ApiService                *SystemApiService
 	systemRotateConfigRequest *SystemRotateConfigRequest
 }
 
@@ -13482,16 +13393,16 @@ PostSysRotateConfig Method for PostSysRotateConfig
 func (a *SystemApiService) PostSysRotateConfig(ctx context.Context) ApiPostSysRotateConfigRequest {
 	return ApiPostSysRotateConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysRotateConfigExecute(r ApiPostSysRotateConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysRotateConfig")
@@ -13553,10 +13464,9 @@ func (a *SystemApiService) PostSysRotateConfigExecute(r ApiPostSysRotateConfigRe
 }
 
 type ApiPostSysSealRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiPostSysSealRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostSysSealExecute(r)
@@ -13571,16 +13481,16 @@ PostSysSeal Seal the Vault.
 func (a *SystemApiService) PostSysSeal(ctx context.Context) ApiPostSysSealRequest {
 	return ApiPostSysSealRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysSealExecute(r ApiPostSysSealRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysSeal")
@@ -13640,10 +13550,9 @@ func (a *SystemApiService) PostSysSealExecute(r ApiPostSysSealRequest) (*http.Re
 }
 
 type ApiPostSysStepDownRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiPostSysStepDownRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostSysStepDownExecute(r)
@@ -13660,16 +13569,16 @@ This endpoint forces the node to give up active status. If the node does not hav
 func (a *SystemApiService) PostSysStepDown(ctx context.Context) ApiPostSysStepDownRequest {
 	return ApiPostSysStepDownRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysStepDownExecute(r ApiPostSysStepDownRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysStepDown")
@@ -13729,8 +13638,8 @@ func (a *SystemApiService) PostSysStepDownExecute(r ApiPostSysStepDownRequest) (
 }
 
 type ApiPostSysToolsHashRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx                    context.Context
+	ApiService             *SystemApiService
 	systemToolsHashRequest *SystemToolsHashRequest
 }
 
@@ -13752,16 +13661,16 @@ PostSysToolsHash Generate a hash sum for input data
 func (a *SystemApiService) PostSysToolsHash(ctx context.Context) ApiPostSysToolsHashRequest {
 	return ApiPostSysToolsHashRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysToolsHashExecute(r ApiPostSysToolsHashRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysToolsHash")
@@ -13823,9 +13732,9 @@ func (a *SystemApiService) PostSysToolsHashExecute(r ApiPostSysToolsHashRequest)
 }
 
 type ApiPostSysToolsHashUrlalgorithmRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
-	urlalgorithm string
+	ctx                    context.Context
+	ApiService             *SystemApiService
+	urlalgorithm           string
 	systemToolsHashRequest *SystemToolsHashRequest
 }
 
@@ -13847,8 +13756,8 @@ PostSysToolsHashUrlalgorithm Generate a hash sum for input data
 */
 func (a *SystemApiService) PostSysToolsHashUrlalgorithm(ctx context.Context, urlalgorithm string) ApiPostSysToolsHashUrlalgorithmRequest {
 	return ApiPostSysToolsHashUrlalgorithmRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		urlalgorithm: urlalgorithm,
 	}
 }
@@ -13856,9 +13765,9 @@ func (a *SystemApiService) PostSysToolsHashUrlalgorithm(ctx context.Context, url
 // Execute executes the request
 func (a *SystemApiService) PostSysToolsHashUrlalgorithmExecute(r ApiPostSysToolsHashUrlalgorithmRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysToolsHashUrlalgorithm")
@@ -13921,8 +13830,8 @@ func (a *SystemApiService) PostSysToolsHashUrlalgorithmExecute(r ApiPostSysTools
 }
 
 type ApiPostSysToolsRandomRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx                      context.Context
+	ApiService               *SystemApiService
 	systemToolsRandomRequest *SystemToolsRandomRequest
 }
 
@@ -13944,16 +13853,16 @@ PostSysToolsRandom Generate random bytes
 func (a *SystemApiService) PostSysToolsRandom(ctx context.Context) ApiPostSysToolsRandomRequest {
 	return ApiPostSysToolsRandomRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysToolsRandomExecute(r ApiPostSysToolsRandomRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysToolsRandom")
@@ -14015,9 +13924,9 @@ func (a *SystemApiService) PostSysToolsRandomExecute(r ApiPostSysToolsRandomRequ
 }
 
 type ApiPostSysToolsRandomSourceRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
-	source string
+	ctx                      context.Context
+	ApiService               *SystemApiService
+	source                   string
 	systemToolsRandomRequest *SystemToolsRandomRequest
 }
 
@@ -14040,17 +13949,17 @@ PostSysToolsRandomSource Generate random bytes
 func (a *SystemApiService) PostSysToolsRandomSource(ctx context.Context, source string) ApiPostSysToolsRandomSourceRequest {
 	return ApiPostSysToolsRandomSourceRequest{
 		ApiService: a,
-		ctx: ctx,
-		source: source,
+		ctx:        ctx,
+		source:     source,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysToolsRandomSourceExecute(r ApiPostSysToolsRandomSourceRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysToolsRandomSource")
@@ -14113,10 +14022,10 @@ func (a *SystemApiService) PostSysToolsRandomSourceExecute(r ApiPostSysToolsRand
 }
 
 type ApiPostSysToolsRandomSourceUrlbytesRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
-	source string
-	urlbytes string
+	ctx                      context.Context
+	ApiService               *SystemApiService
+	source                   string
+	urlbytes                 string
 	systemToolsRandomRequest *SystemToolsRandomRequest
 }
 
@@ -14140,18 +14049,18 @@ PostSysToolsRandomSourceUrlbytes Generate random bytes
 func (a *SystemApiService) PostSysToolsRandomSourceUrlbytes(ctx context.Context, source string, urlbytes string) ApiPostSysToolsRandomSourceUrlbytesRequest {
 	return ApiPostSysToolsRandomSourceUrlbytesRequest{
 		ApiService: a,
-		ctx: ctx,
-		source: source,
-		urlbytes: urlbytes,
+		ctx:        ctx,
+		source:     source,
+		urlbytes:   urlbytes,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysToolsRandomSourceUrlbytesExecute(r ApiPostSysToolsRandomSourceUrlbytesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysToolsRandomSourceUrlbytes")
@@ -14215,9 +14124,9 @@ func (a *SystemApiService) PostSysToolsRandomSourceUrlbytesExecute(r ApiPostSysT
 }
 
 type ApiPostSysToolsRandomUrlbytesRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
-	urlbytes string
+	ctx                      context.Context
+	ApiService               *SystemApiService
+	urlbytes                 string
 	systemToolsRandomRequest *SystemToolsRandomRequest
 }
 
@@ -14240,17 +14149,17 @@ PostSysToolsRandomUrlbytes Generate random bytes
 func (a *SystemApiService) PostSysToolsRandomUrlbytes(ctx context.Context, urlbytes string) ApiPostSysToolsRandomUrlbytesRequest {
 	return ApiPostSysToolsRandomUrlbytesRequest{
 		ApiService: a,
-		ctx: ctx,
-		urlbytes: urlbytes,
+		ctx:        ctx,
+		urlbytes:   urlbytes,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysToolsRandomUrlbytesExecute(r ApiPostSysToolsRandomUrlbytesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysToolsRandomUrlbytes")
@@ -14313,8 +14222,8 @@ func (a *SystemApiService) PostSysToolsRandomUrlbytesExecute(r ApiPostSysToolsRa
 }
 
 type ApiPostSysUnsealRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx                 context.Context
+	ApiService          *SystemApiService
 	systemUnsealRequest *SystemUnsealRequest
 }
 
@@ -14336,16 +14245,16 @@ PostSysUnseal Unseal the Vault.
 func (a *SystemApiService) PostSysUnseal(ctx context.Context) ApiPostSysUnsealRequest {
 	return ApiPostSysUnsealRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysUnsealExecute(r ApiPostSysUnsealRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysUnseal")
@@ -14407,8 +14316,8 @@ func (a *SystemApiService) PostSysUnsealExecute(r ApiPostSysUnsealRequest) (*htt
 }
 
 type ApiPostSysWrappingLookupRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx                         context.Context
+	ApiService                  *SystemApiService
 	systemWrappingLookupRequest *SystemWrappingLookupRequest
 }
 
@@ -14430,16 +14339,16 @@ PostSysWrappingLookup Look up wrapping properties for the given token.
 func (a *SystemApiService) PostSysWrappingLookup(ctx context.Context) ApiPostSysWrappingLookupRequest {
 	return ApiPostSysWrappingLookupRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysWrappingLookupExecute(r ApiPostSysWrappingLookupRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysWrappingLookup")
@@ -14501,8 +14410,8 @@ func (a *SystemApiService) PostSysWrappingLookupExecute(r ApiPostSysWrappingLook
 }
 
 type ApiPostSysWrappingRewrapRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx                         context.Context
+	ApiService                  *SystemApiService
 	systemWrappingRewrapRequest *SystemWrappingRewrapRequest
 }
 
@@ -14524,16 +14433,16 @@ PostSysWrappingRewrap Rotates a response-wrapped token.
 func (a *SystemApiService) PostSysWrappingRewrap(ctx context.Context) ApiPostSysWrappingRewrapRequest {
 	return ApiPostSysWrappingRewrapRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysWrappingRewrapExecute(r ApiPostSysWrappingRewrapRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysWrappingRewrap")
@@ -14595,8 +14504,8 @@ func (a *SystemApiService) PostSysWrappingRewrapExecute(r ApiPostSysWrappingRewr
 }
 
 type ApiPostSysWrappingUnwrapRequest struct {
-	ctx context.Context
-	ApiService *SystemApiService
+	ctx                         context.Context
+	ApiService                  *SystemApiService
 	systemWrappingUnwrapRequest *SystemWrappingUnwrapRequest
 }
 
@@ -14618,16 +14527,16 @@ PostSysWrappingUnwrap Unwraps a response-wrapped token.
 func (a *SystemApiService) PostSysWrappingUnwrap(ctx context.Context) ApiPostSysWrappingUnwrapRequest {
 	return ApiPostSysWrappingUnwrapRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysWrappingUnwrapExecute(r ApiPostSysWrappingUnwrapRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysWrappingUnwrap")
@@ -14689,10 +14598,9 @@ func (a *SystemApiService) PostSysWrappingUnwrapExecute(r ApiPostSysWrappingUnwr
 }
 
 type ApiPostSysWrappingWrapRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SystemApiService
 }
-
 
 func (r ApiPostSysWrappingWrapRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostSysWrappingWrapExecute(r)
@@ -14707,16 +14615,16 @@ PostSysWrappingWrap Response-wraps an arbitrary JSON object.
 func (a *SystemApiService) PostSysWrappingWrap(ctx context.Context) ApiPostSysWrappingWrapRequest {
 	return ApiPostSysWrappingWrapRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SystemApiService) PostSysWrappingWrapExecute(r ApiPostSysWrappingWrapRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysWrappingWrap")

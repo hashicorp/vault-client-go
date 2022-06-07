@@ -28,10 +28,9 @@ var (
 type SecretsApiService service
 
 type ApiDeleteAdConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiDeleteAdConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAdConfigExecute(r)
@@ -46,16 +45,16 @@ DeleteAdConfig Configure the AD server to connect to, along with password option
 func (a *SecretsApiService) DeleteAdConfig(ctx context.Context) ApiDeleteAdConfigRequest {
 	return ApiDeleteAdConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteAdConfigExecute(r ApiDeleteAdConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteAdConfig")
@@ -115,11 +114,10 @@ func (a *SecretsApiService) DeleteAdConfigExecute(r ApiDeleteAdConfigRequest) (*
 }
 
 type ApiDeleteAdLibraryNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteAdLibraryNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAdLibraryNameExecute(r)
@@ -135,17 +133,17 @@ DeleteAdLibraryName Delete a library set.
 func (a *SecretsApiService) DeleteAdLibraryName(ctx context.Context, name string) ApiDeleteAdLibraryNameRequest {
 	return ApiDeleteAdLibraryNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteAdLibraryNameExecute(r ApiDeleteAdLibraryNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteAdLibraryName")
@@ -206,11 +204,10 @@ func (a *SecretsApiService) DeleteAdLibraryNameExecute(r ApiDeleteAdLibraryNameR
 }
 
 type ApiDeleteAdRolesNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteAdRolesNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAdRolesNameExecute(r)
@@ -226,17 +223,17 @@ DeleteAdRolesName Manage roles to build links between Vault and Active Directory
 func (a *SecretsApiService) DeleteAdRolesName(ctx context.Context, name string) ApiDeleteAdRolesNameRequest {
 	return ApiDeleteAdRolesNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteAdRolesNameExecute(r ApiDeleteAdRolesNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteAdRolesName")
@@ -297,10 +294,9 @@ func (a *SecretsApiService) DeleteAdRolesNameExecute(r ApiDeleteAdRolesNameReque
 }
 
 type ApiDeleteAlicloudConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiDeleteAlicloudConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAlicloudConfigExecute(r)
@@ -315,16 +311,16 @@ DeleteAlicloudConfig Configure the access key and secret to use for RAM and STS 
 func (a *SecretsApiService) DeleteAlicloudConfig(ctx context.Context) ApiDeleteAlicloudConfigRequest {
 	return ApiDeleteAlicloudConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteAlicloudConfigExecute(r ApiDeleteAlicloudConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteAlicloudConfig")
@@ -384,11 +380,10 @@ func (a *SecretsApiService) DeleteAlicloudConfigExecute(r ApiDeleteAlicloudConfi
 }
 
 type ApiDeleteAlicloudRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteAlicloudRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAlicloudRoleNameExecute(r)
@@ -404,17 +399,17 @@ DeleteAlicloudRoleName Read, write and reference policies and roles that API key
 func (a *SecretsApiService) DeleteAlicloudRoleName(ctx context.Context, name string) ApiDeleteAlicloudRoleNameRequest {
 	return ApiDeleteAlicloudRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteAlicloudRoleNameExecute(r ApiDeleteAlicloudRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteAlicloudRoleName")
@@ -475,11 +470,10 @@ func (a *SecretsApiService) DeleteAlicloudRoleNameExecute(r ApiDeleteAlicloudRol
 }
 
 type ApiDeleteAwsRolesNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteAwsRolesNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAwsRolesNameExecute(r)
@@ -495,17 +489,17 @@ DeleteAwsRolesName Read, write and reference IAM policies that access keys can b
 func (a *SecretsApiService) DeleteAwsRolesName(ctx context.Context, name string) ApiDeleteAwsRolesNameRequest {
 	return ApiDeleteAwsRolesNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteAwsRolesNameExecute(r ApiDeleteAwsRolesNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteAwsRolesName")
@@ -566,10 +560,9 @@ func (a *SecretsApiService) DeleteAwsRolesNameExecute(r ApiDeleteAwsRolesNameReq
 }
 
 type ApiDeleteAzureConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiDeleteAzureConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAzureConfigExecute(r)
@@ -584,16 +577,16 @@ DeleteAzureConfig Method for DeleteAzureConfig
 func (a *SecretsApiService) DeleteAzureConfig(ctx context.Context) ApiDeleteAzureConfigRequest {
 	return ApiDeleteAzureConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteAzureConfigExecute(r ApiDeleteAzureConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteAzureConfig")
@@ -653,11 +646,10 @@ func (a *SecretsApiService) DeleteAzureConfigExecute(r ApiDeleteAzureConfigReque
 }
 
 type ApiDeleteAzureRolesNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteAzureRolesNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteAzureRolesNameExecute(r)
@@ -673,17 +665,17 @@ DeleteAzureRolesName Manage the Vault roles used to generate Azure credentials.
 func (a *SecretsApiService) DeleteAzureRolesName(ctx context.Context, name string) ApiDeleteAzureRolesNameRequest {
 	return ApiDeleteAzureRolesNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteAzureRolesNameExecute(r ApiDeleteAzureRolesNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteAzureRolesName")
@@ -744,11 +736,10 @@ func (a *SecretsApiService) DeleteAzureRolesNameExecute(r ApiDeleteAzureRolesNam
 }
 
 type ApiDeleteConsulRolesNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteConsulRolesNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteConsulRolesNameExecute(r)
@@ -764,17 +755,17 @@ DeleteConsulRolesName Method for DeleteConsulRolesName
 func (a *SecretsApiService) DeleteConsulRolesName(ctx context.Context, name string) ApiDeleteConsulRolesNameRequest {
 	return ApiDeleteConsulRolesNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteConsulRolesNameExecute(r ApiDeleteConsulRolesNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteConsulRolesName")
@@ -835,11 +826,10 @@ func (a *SecretsApiService) DeleteConsulRolesNameExecute(r ApiDeleteConsulRolesN
 }
 
 type ApiDeleteCubbyholePathRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	path string
+	path       string
 }
-
 
 func (r ApiDeleteCubbyholePathRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteCubbyholePathExecute(r)
@@ -855,17 +845,17 @@ DeleteCubbyholePath Deletes the secret at the specified location.
 func (a *SecretsApiService) DeleteCubbyholePath(ctx context.Context, path string) ApiDeleteCubbyholePathRequest {
 	return ApiDeleteCubbyholePathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteCubbyholePathExecute(r ApiDeleteCubbyholePathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteCubbyholePath")
@@ -926,11 +916,10 @@ func (a *SecretsApiService) DeleteCubbyholePathExecute(r ApiDeleteCubbyholePathR
 }
 
 type ApiDeleteGcpRolesetNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteGcpRolesetNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteGcpRolesetNameExecute(r)
@@ -946,17 +935,17 @@ DeleteGcpRolesetName Method for DeleteGcpRolesetName
 func (a *SecretsApiService) DeleteGcpRolesetName(ctx context.Context, name string) ApiDeleteGcpRolesetNameRequest {
 	return ApiDeleteGcpRolesetNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteGcpRolesetNameExecute(r ApiDeleteGcpRolesetNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteGcpRolesetName")
@@ -1017,11 +1006,10 @@ func (a *SecretsApiService) DeleteGcpRolesetNameExecute(r ApiDeleteGcpRolesetNam
 }
 
 type ApiDeleteGcpStaticAccountNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteGcpStaticAccountNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteGcpStaticAccountNameExecute(r)
@@ -1037,17 +1025,17 @@ DeleteGcpStaticAccountName Method for DeleteGcpStaticAccountName
 func (a *SecretsApiService) DeleteGcpStaticAccountName(ctx context.Context, name string) ApiDeleteGcpStaticAccountNameRequest {
 	return ApiDeleteGcpStaticAccountNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteGcpStaticAccountNameExecute(r ApiDeleteGcpStaticAccountNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteGcpStaticAccountName")
@@ -1108,10 +1096,9 @@ func (a *SecretsApiService) DeleteGcpStaticAccountNameExecute(r ApiDeleteGcpStat
 }
 
 type ApiDeleteGcpkmsConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiDeleteGcpkmsConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteGcpkmsConfigExecute(r)
@@ -1126,16 +1113,16 @@ DeleteGcpkmsConfig Configure the GCP KMS secrets engine
 func (a *SecretsApiService) DeleteGcpkmsConfig(ctx context.Context) ApiDeleteGcpkmsConfigRequest {
 	return ApiDeleteGcpkmsConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteGcpkmsConfigExecute(r ApiDeleteGcpkmsConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteGcpkmsConfig")
@@ -1195,11 +1182,10 @@ func (a *SecretsApiService) DeleteGcpkmsConfigExecute(r ApiDeleteGcpkmsConfigReq
 }
 
 type ApiDeleteGcpkmsKeysDeregisterKeyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	key string
+	key        string
 }
-
 
 func (r ApiDeleteGcpkmsKeysDeregisterKeyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteGcpkmsKeysDeregisterKeyExecute(r)
@@ -1215,17 +1201,17 @@ DeleteGcpkmsKeysDeregisterKey Deregister an existing key in Vault
 func (a *SecretsApiService) DeleteGcpkmsKeysDeregisterKey(ctx context.Context, key string) ApiDeleteGcpkmsKeysDeregisterKeyRequest {
 	return ApiDeleteGcpkmsKeysDeregisterKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteGcpkmsKeysDeregisterKeyExecute(r ApiDeleteGcpkmsKeysDeregisterKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteGcpkmsKeysDeregisterKey")
@@ -1286,11 +1272,10 @@ func (a *SecretsApiService) DeleteGcpkmsKeysDeregisterKeyExecute(r ApiDeleteGcpk
 }
 
 type ApiDeleteGcpkmsKeysKeyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	key string
+	key        string
 }
-
 
 func (r ApiDeleteGcpkmsKeysKeyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteGcpkmsKeysKeyExecute(r)
@@ -1306,17 +1291,17 @@ DeleteGcpkmsKeysKey Interact with crypto keys in Vault and Google Cloud KMS
 func (a *SecretsApiService) DeleteGcpkmsKeysKey(ctx context.Context, key string) ApiDeleteGcpkmsKeysKeyRequest {
 	return ApiDeleteGcpkmsKeysKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteGcpkmsKeysKeyExecute(r ApiDeleteGcpkmsKeysKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteGcpkmsKeysKey")
@@ -1377,11 +1362,10 @@ func (a *SecretsApiService) DeleteGcpkmsKeysKeyExecute(r ApiDeleteGcpkmsKeysKeyR
 }
 
 type ApiDeleteGcpkmsKeysTrimKeyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	key string
+	key        string
 }
-
 
 func (r ApiDeleteGcpkmsKeysTrimKeyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteGcpkmsKeysTrimKeyExecute(r)
@@ -1397,17 +1381,17 @@ DeleteGcpkmsKeysTrimKey Delete old crypto key versions from Google Cloud KMS
 func (a *SecretsApiService) DeleteGcpkmsKeysTrimKey(ctx context.Context, key string) ApiDeleteGcpkmsKeysTrimKeyRequest {
 	return ApiDeleteGcpkmsKeysTrimKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteGcpkmsKeysTrimKeyExecute(r ApiDeleteGcpkmsKeysTrimKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteGcpkmsKeysTrimKey")
@@ -1468,10 +1452,9 @@ func (a *SecretsApiService) DeleteGcpkmsKeysTrimKeyExecute(r ApiDeleteGcpkmsKeys
 }
 
 type ApiDeleteKubernetesConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiDeleteKubernetesConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteKubernetesConfigExecute(r)
@@ -1486,16 +1469,16 @@ DeleteKubernetesConfig Method for DeleteKubernetesConfig
 func (a *SecretsApiService) DeleteKubernetesConfig(ctx context.Context) ApiDeleteKubernetesConfigRequest {
 	return ApiDeleteKubernetesConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteKubernetesConfigExecute(r ApiDeleteKubernetesConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteKubernetesConfig")
@@ -1555,11 +1538,10 @@ func (a *SecretsApiService) DeleteKubernetesConfigExecute(r ApiDeleteKubernetesC
 }
 
 type ApiDeleteKubernetesRolesNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteKubernetesRolesNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteKubernetesRolesNameExecute(r)
@@ -1575,17 +1557,17 @@ DeleteKubernetesRolesName Method for DeleteKubernetesRolesName
 func (a *SecretsApiService) DeleteKubernetesRolesName(ctx context.Context, name string) ApiDeleteKubernetesRolesNameRequest {
 	return ApiDeleteKubernetesRolesNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteKubernetesRolesNameExecute(r ApiDeleteKubernetesRolesNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteKubernetesRolesName")
@@ -1646,11 +1628,10 @@ func (a *SecretsApiService) DeleteKubernetesRolesNameExecute(r ApiDeleteKubernet
 }
 
 type ApiDeleteKvPathRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	path string
+	path       string
 }
-
 
 func (r ApiDeleteKvPathRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteKvPathExecute(r)
@@ -1666,17 +1647,17 @@ DeleteKvPath Pass-through secret storage to the storage backend, allowing you to
 func (a *SecretsApiService) DeleteKvPath(ctx context.Context, path string) ApiDeleteKvPathRequest {
 	return ApiDeleteKvPathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteKvPathExecute(r ApiDeleteKvPathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteKvPath")
@@ -1737,11 +1718,10 @@ func (a *SecretsApiService) DeleteKvPathExecute(r ApiDeleteKvPathRequest) (*http
 }
 
 type ApiDeleteMongodbatlasRolesNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteMongodbatlasRolesNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteMongodbatlasRolesNameExecute(r)
@@ -1757,17 +1737,17 @@ DeleteMongodbatlasRolesName Manage the roles used to generate MongoDB Atlas Prog
 func (a *SecretsApiService) DeleteMongodbatlasRolesName(ctx context.Context, name string) ApiDeleteMongodbatlasRolesNameRequest {
 	return ApiDeleteMongodbatlasRolesNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteMongodbatlasRolesNameExecute(r ApiDeleteMongodbatlasRolesNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteMongodbatlasRolesName")
@@ -1828,10 +1808,9 @@ func (a *SecretsApiService) DeleteMongodbatlasRolesNameExecute(r ApiDeleteMongod
 }
 
 type ApiDeleteNomadConfigAccessRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiDeleteNomadConfigAccessRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNomadConfigAccessExecute(r)
@@ -1846,16 +1825,16 @@ DeleteNomadConfigAccess Method for DeleteNomadConfigAccess
 func (a *SecretsApiService) DeleteNomadConfigAccess(ctx context.Context) ApiDeleteNomadConfigAccessRequest {
 	return ApiDeleteNomadConfigAccessRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteNomadConfigAccessExecute(r ApiDeleteNomadConfigAccessRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteNomadConfigAccess")
@@ -1915,10 +1894,9 @@ func (a *SecretsApiService) DeleteNomadConfigAccessExecute(r ApiDeleteNomadConfi
 }
 
 type ApiDeleteNomadConfigLeaseRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiDeleteNomadConfigLeaseRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNomadConfigLeaseExecute(r)
@@ -1933,16 +1911,16 @@ DeleteNomadConfigLease Configure the lease parameters for generated tokens
 func (a *SecretsApiService) DeleteNomadConfigLease(ctx context.Context) ApiDeleteNomadConfigLeaseRequest {
 	return ApiDeleteNomadConfigLeaseRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteNomadConfigLeaseExecute(r ApiDeleteNomadConfigLeaseRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteNomadConfigLease")
@@ -2002,11 +1980,10 @@ func (a *SecretsApiService) DeleteNomadConfigLeaseExecute(r ApiDeleteNomadConfig
 }
 
 type ApiDeleteNomadRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteNomadRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteNomadRoleNameExecute(r)
@@ -2022,17 +1999,17 @@ DeleteNomadRoleName Method for DeleteNomadRoleName
 func (a *SecretsApiService) DeleteNomadRoleName(ctx context.Context, name string) ApiDeleteNomadRoleNameRequest {
 	return ApiDeleteNomadRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteNomadRoleNameExecute(r ApiDeleteNomadRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteNomadRoleName")
@@ -2093,10 +2070,9 @@ func (a *SecretsApiService) DeleteNomadRoleNameExecute(r ApiDeleteNomadRoleNameR
 }
 
 type ApiDeleteOpenldapConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiDeleteOpenldapConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOpenldapConfigExecute(r)
@@ -2111,16 +2087,16 @@ DeleteOpenldapConfig Method for DeleteOpenldapConfig
 func (a *SecretsApiService) DeleteOpenldapConfig(ctx context.Context) ApiDeleteOpenldapConfigRequest {
 	return ApiDeleteOpenldapConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteOpenldapConfigExecute(r ApiDeleteOpenldapConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteOpenldapConfig")
@@ -2180,11 +2156,10 @@ func (a *SecretsApiService) DeleteOpenldapConfigExecute(r ApiDeleteOpenldapConfi
 }
 
 type ApiDeleteOpenldapRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteOpenldapRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOpenldapRoleNameExecute(r)
@@ -2200,17 +2175,17 @@ DeleteOpenldapRoleName Method for DeleteOpenldapRoleName
 func (a *SecretsApiService) DeleteOpenldapRoleName(ctx context.Context, name string) ApiDeleteOpenldapRoleNameRequest {
 	return ApiDeleteOpenldapRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteOpenldapRoleNameExecute(r ApiDeleteOpenldapRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteOpenldapRoleName")
@@ -2271,11 +2246,10 @@ func (a *SecretsApiService) DeleteOpenldapRoleNameExecute(r ApiDeleteOpenldapRol
 }
 
 type ApiDeleteOpenldapStaticRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteOpenldapStaticRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteOpenldapStaticRoleNameExecute(r)
@@ -2291,17 +2265,17 @@ DeleteOpenldapStaticRoleName Method for DeleteOpenldapStaticRoleName
 func (a *SecretsApiService) DeleteOpenldapStaticRoleName(ctx context.Context, name string) ApiDeleteOpenldapStaticRoleNameRequest {
 	return ApiDeleteOpenldapStaticRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteOpenldapStaticRoleNameExecute(r ApiDeleteOpenldapStaticRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteOpenldapStaticRoleName")
@@ -2362,11 +2336,10 @@ func (a *SecretsApiService) DeleteOpenldapStaticRoleNameExecute(r ApiDeleteOpenl
 }
 
 type ApiDeletePkiIssuerRefDerPemRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	issuerRef string
+	issuerRef  string
 }
-
 
 func (r ApiDeletePkiIssuerRefDerPemRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeletePkiIssuerRefDerPemExecute(r)
@@ -2382,17 +2355,17 @@ DeletePkiIssuerRefDerPem Method for DeletePkiIssuerRefDerPem
 func (a *SecretsApiService) DeletePkiIssuerRefDerPem(ctx context.Context, issuerRef string) ApiDeletePkiIssuerRefDerPemRequest {
 	return ApiDeletePkiIssuerRefDerPemRequest{
 		ApiService: a,
-		ctx: ctx,
-		issuerRef: issuerRef,
+		ctx:        ctx,
+		issuerRef:  issuerRef,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeletePkiIssuerRefDerPemExecute(r ApiDeletePkiIssuerRefDerPemRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeletePkiIssuerRefDerPem")
@@ -2453,10 +2426,9 @@ func (a *SecretsApiService) DeletePkiIssuerRefDerPemExecute(r ApiDeletePkiIssuer
 }
 
 type ApiDeletePkiJsonRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiDeletePkiJsonRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeletePkiJsonExecute(r)
@@ -2471,16 +2443,16 @@ DeletePkiJson Method for DeletePkiJson
 func (a *SecretsApiService) DeletePkiJson(ctx context.Context) ApiDeletePkiJsonRequest {
 	return ApiDeletePkiJsonRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeletePkiJsonExecute(r ApiDeletePkiJsonRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeletePkiJson")
@@ -2540,11 +2512,10 @@ func (a *SecretsApiService) DeletePkiJsonExecute(r ApiDeletePkiJsonRequest) (*ht
 }
 
 type ApiDeletePkiKeyKeyRefRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	keyRef string
+	keyRef     string
 }
-
 
 func (r ApiDeletePkiKeyKeyRefRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeletePkiKeyKeyRefExecute(r)
@@ -2560,17 +2531,17 @@ DeletePkiKeyKeyRef Method for DeletePkiKeyKeyRef
 func (a *SecretsApiService) DeletePkiKeyKeyRef(ctx context.Context, keyRef string) ApiDeletePkiKeyKeyRefRequest {
 	return ApiDeletePkiKeyKeyRefRequest{
 		ApiService: a,
-		ctx: ctx,
-		keyRef: keyRef,
+		ctx:        ctx,
+		keyRef:     keyRef,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeletePkiKeyKeyRefExecute(r ApiDeletePkiKeyKeyRefRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeletePkiKeyKeyRef")
@@ -2631,11 +2602,10 @@ func (a *SecretsApiService) DeletePkiKeyKeyRefExecute(r ApiDeletePkiKeyKeyRefReq
 }
 
 type ApiDeletePkiRolesNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeletePkiRolesNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeletePkiRolesNameExecute(r)
@@ -2651,17 +2621,17 @@ DeletePkiRolesName Method for DeletePkiRolesName
 func (a *SecretsApiService) DeletePkiRolesName(ctx context.Context, name string) ApiDeletePkiRolesNameRequest {
 	return ApiDeletePkiRolesNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeletePkiRolesNameExecute(r ApiDeletePkiRolesNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeletePkiRolesName")
@@ -2722,10 +2692,9 @@ func (a *SecretsApiService) DeletePkiRolesNameExecute(r ApiDeletePkiRolesNameReq
 }
 
 type ApiDeletePkiRootRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiDeletePkiRootRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeletePkiRootExecute(r)
@@ -2740,16 +2709,16 @@ DeletePkiRoot Method for DeletePkiRoot
 func (a *SecretsApiService) DeletePkiRoot(ctx context.Context) ApiDeletePkiRootRequest {
 	return ApiDeletePkiRootRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeletePkiRootExecute(r ApiDeletePkiRootRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeletePkiRoot")
@@ -2809,11 +2778,10 @@ func (a *SecretsApiService) DeletePkiRootExecute(r ApiDeletePkiRootRequest) (*ht
 }
 
 type ApiDeleteRabbitmqRolesNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteRabbitmqRolesNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteRabbitmqRolesNameExecute(r)
@@ -2829,17 +2797,17 @@ DeleteRabbitmqRolesName Manage the roles that can be created with this backend.
 func (a *SecretsApiService) DeleteRabbitmqRolesName(ctx context.Context, name string) ApiDeleteRabbitmqRolesNameRequest {
 	return ApiDeleteRabbitmqRolesNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteRabbitmqRolesNameExecute(r ApiDeleteRabbitmqRolesNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteRabbitmqRolesName")
@@ -2900,11 +2868,10 @@ func (a *SecretsApiService) DeleteRabbitmqRolesNameExecute(r ApiDeleteRabbitmqRo
 }
 
 type ApiDeleteSecretDataPathRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	path string
+	path       string
 }
-
 
 func (r ApiDeleteSecretDataPathRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSecretDataPathExecute(r)
@@ -2920,17 +2887,17 @@ DeleteSecretDataPath Write, Patch, Read, and Delete data in the Key-Value Store.
 func (a *SecretsApiService) DeleteSecretDataPath(ctx context.Context, path string) ApiDeleteSecretDataPathRequest {
 	return ApiDeleteSecretDataPathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteSecretDataPathExecute(r ApiDeleteSecretDataPathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteSecretDataPath")
@@ -2991,11 +2958,10 @@ func (a *SecretsApiService) DeleteSecretDataPathExecute(r ApiDeleteSecretDataPat
 }
 
 type ApiDeleteSecretMetadataPathRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	path string
+	path       string
 }
-
 
 func (r ApiDeleteSecretMetadataPathRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSecretMetadataPathExecute(r)
@@ -3011,17 +2977,17 @@ DeleteSecretMetadataPath Configures settings for the KV store
 func (a *SecretsApiService) DeleteSecretMetadataPath(ctx context.Context, path string) ApiDeleteSecretMetadataPathRequest {
 	return ApiDeleteSecretMetadataPathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteSecretMetadataPathExecute(r ApiDeleteSecretMetadataPathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteSecretMetadataPath")
@@ -3082,10 +3048,9 @@ func (a *SecretsApiService) DeleteSecretMetadataPathExecute(r ApiDeleteSecretMet
 }
 
 type ApiDeleteSshConfigCaRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiDeleteSshConfigCaRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSshConfigCaExecute(r)
@@ -3100,16 +3065,16 @@ DeleteSshConfigCa Set the SSH private key used for signing certificates.
 func (a *SecretsApiService) DeleteSshConfigCa(ctx context.Context) ApiDeleteSshConfigCaRequest {
 	return ApiDeleteSshConfigCaRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteSshConfigCaExecute(r ApiDeleteSshConfigCaRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteSshConfigCa")
@@ -3169,10 +3134,9 @@ func (a *SecretsApiService) DeleteSshConfigCaExecute(r ApiDeleteSshConfigCaReque
 }
 
 type ApiDeleteSshConfigZeroaddressRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiDeleteSshConfigZeroaddressRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSshConfigZeroaddressExecute(r)
@@ -3187,16 +3151,16 @@ DeleteSshConfigZeroaddress Assign zero address as default CIDR block for select 
 func (a *SecretsApiService) DeleteSshConfigZeroaddress(ctx context.Context) ApiDeleteSshConfigZeroaddressRequest {
 	return ApiDeleteSshConfigZeroaddressRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteSshConfigZeroaddressExecute(r ApiDeleteSshConfigZeroaddressRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteSshConfigZeroaddress")
@@ -3256,11 +3220,10 @@ func (a *SecretsApiService) DeleteSshConfigZeroaddressExecute(r ApiDeleteSshConf
 }
 
 type ApiDeleteSshKeysKeyNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	keyName string
+	keyName    string
 }
-
 
 func (r ApiDeleteSshKeysKeyNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSshKeysKeyNameExecute(r)
@@ -3276,17 +3239,17 @@ DeleteSshKeysKeyName Register a shared private key with Vault.
 func (a *SecretsApiService) DeleteSshKeysKeyName(ctx context.Context, keyName string) ApiDeleteSshKeysKeyNameRequest {
 	return ApiDeleteSshKeysKeyNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		keyName: keyName,
+		ctx:        ctx,
+		keyName:    keyName,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteSshKeysKeyNameExecute(r ApiDeleteSshKeysKeyNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteSshKeysKeyName")
@@ -3347,11 +3310,10 @@ func (a *SecretsApiService) DeleteSshKeysKeyNameExecute(r ApiDeleteSshKeysKeyNam
 }
 
 type ApiDeleteSshRolesRoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	role string
+	role       string
 }
-
 
 func (r ApiDeleteSshRolesRoleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteSshRolesRoleExecute(r)
@@ -3367,17 +3329,17 @@ DeleteSshRolesRole Manage the 'roles' that can be created with this backend.
 func (a *SecretsApiService) DeleteSshRolesRole(ctx context.Context, role string) ApiDeleteSshRolesRoleRequest {
 	return ApiDeleteSshRolesRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		role: role,
+		ctx:        ctx,
+		role:       role,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteSshRolesRoleExecute(r ApiDeleteSshRolesRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteSshRolesRole")
@@ -3438,10 +3400,9 @@ func (a *SecretsApiService) DeleteSshRolesRoleExecute(r ApiDeleteSshRolesRoleReq
 }
 
 type ApiDeleteTerraformConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiDeleteTerraformConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteTerraformConfigExecute(r)
@@ -3456,16 +3417,16 @@ DeleteTerraformConfig Method for DeleteTerraformConfig
 func (a *SecretsApiService) DeleteTerraformConfig(ctx context.Context) ApiDeleteTerraformConfigRequest {
 	return ApiDeleteTerraformConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteTerraformConfigExecute(r ApiDeleteTerraformConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteTerraformConfig")
@@ -3525,11 +3486,10 @@ func (a *SecretsApiService) DeleteTerraformConfigExecute(r ApiDeleteTerraformCon
 }
 
 type ApiDeleteTerraformRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteTerraformRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteTerraformRoleNameExecute(r)
@@ -3545,17 +3505,17 @@ DeleteTerraformRoleName Method for DeleteTerraformRoleName
 func (a *SecretsApiService) DeleteTerraformRoleName(ctx context.Context, name string) ApiDeleteTerraformRoleNameRequest {
 	return ApiDeleteTerraformRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteTerraformRoleNameExecute(r ApiDeleteTerraformRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteTerraformRoleName")
@@ -3616,11 +3576,10 @@ func (a *SecretsApiService) DeleteTerraformRoleNameExecute(r ApiDeleteTerraformR
 }
 
 type ApiDeleteTotpKeysNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteTotpKeysNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteTotpKeysNameExecute(r)
@@ -3636,17 +3595,17 @@ DeleteTotpKeysName Manage the keys that can be created with this backend.
 func (a *SecretsApiService) DeleteTotpKeysName(ctx context.Context, name string) ApiDeleteTotpKeysNameRequest {
 	return ApiDeleteTotpKeysNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteTotpKeysNameExecute(r ApiDeleteTotpKeysNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteTotpKeysName")
@@ -3707,11 +3666,10 @@ func (a *SecretsApiService) DeleteTotpKeysNameExecute(r ApiDeleteTotpKeysNameReq
 }
 
 type ApiDeleteTransitKeysNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiDeleteTransitKeysNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DeleteTransitKeysNameExecute(r)
@@ -3727,17 +3685,17 @@ DeleteTransitKeysName Managed named encryption keys
 func (a *SecretsApiService) DeleteTransitKeysName(ctx context.Context, name string) ApiDeleteTransitKeysNameRequest {
 	return ApiDeleteTransitKeysNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) DeleteTransitKeysNameExecute(r ApiDeleteTransitKeysNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.DeleteTransitKeysName")
@@ -3798,10 +3756,9 @@ func (a *SecretsApiService) DeleteTransitKeysNameExecute(r ApiDeleteTransitKeysN
 }
 
 type ApiGetAdConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetAdConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAdConfigExecute(r)
@@ -3816,16 +3773,16 @@ GetAdConfig Configure the AD server to connect to, along with password options.
 func (a *SecretsApiService) GetAdConfig(ctx context.Context) ApiGetAdConfigRequest {
 	return ApiGetAdConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetAdConfigExecute(r ApiGetAdConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetAdConfig")
@@ -3885,11 +3842,10 @@ func (a *SecretsApiService) GetAdConfigExecute(r ApiGetAdConfigRequest) (*http.R
 }
 
 type ApiGetAdCredsNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetAdCredsNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAdCredsNameExecute(r)
@@ -3905,17 +3861,17 @@ GetAdCredsName Method for GetAdCredsName
 func (a *SecretsApiService) GetAdCredsName(ctx context.Context, name string) ApiGetAdCredsNameRequest {
 	return ApiGetAdCredsNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetAdCredsNameExecute(r ApiGetAdCredsNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetAdCredsName")
@@ -3976,9 +3932,9 @@ func (a *SecretsApiService) GetAdCredsNameExecute(r ApiGetAdCredsNameRequest) (*
 }
 
 type ApiGetAdLibraryRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -4000,16 +3956,16 @@ GetAdLibrary Method for GetAdLibrary
 func (a *SecretsApiService) GetAdLibrary(ctx context.Context) ApiGetAdLibraryRequest {
 	return ApiGetAdLibraryRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetAdLibraryExecute(r ApiGetAdLibraryRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetAdLibrary")
@@ -4073,11 +4029,10 @@ func (a *SecretsApiService) GetAdLibraryExecute(r ApiGetAdLibraryRequest) (*http
 }
 
 type ApiGetAdLibraryNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetAdLibraryNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAdLibraryNameExecute(r)
@@ -4093,17 +4048,17 @@ GetAdLibraryName Read a library set.
 func (a *SecretsApiService) GetAdLibraryName(ctx context.Context, name string) ApiGetAdLibraryNameRequest {
 	return ApiGetAdLibraryNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetAdLibraryNameExecute(r ApiGetAdLibraryNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetAdLibraryName")
@@ -4164,11 +4119,10 @@ func (a *SecretsApiService) GetAdLibraryNameExecute(r ApiGetAdLibraryNameRequest
 }
 
 type ApiGetAdLibraryNameStatusRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetAdLibraryNameStatusRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAdLibraryNameStatusExecute(r)
@@ -4184,17 +4138,17 @@ GetAdLibraryNameStatus Check the status of the service accounts in a library set
 func (a *SecretsApiService) GetAdLibraryNameStatus(ctx context.Context, name string) ApiGetAdLibraryNameStatusRequest {
 	return ApiGetAdLibraryNameStatusRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetAdLibraryNameStatusExecute(r ApiGetAdLibraryNameStatusRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetAdLibraryNameStatus")
@@ -4255,9 +4209,9 @@ func (a *SecretsApiService) GetAdLibraryNameStatusExecute(r ApiGetAdLibraryNameS
 }
 
 type ApiGetAdRolesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -4279,16 +4233,16 @@ GetAdRoles List the name of each role currently stored.
 func (a *SecretsApiService) GetAdRoles(ctx context.Context) ApiGetAdRolesRequest {
 	return ApiGetAdRolesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetAdRolesExecute(r ApiGetAdRolesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetAdRoles")
@@ -4352,11 +4306,10 @@ func (a *SecretsApiService) GetAdRolesExecute(r ApiGetAdRolesRequest) (*http.Res
 }
 
 type ApiGetAdRolesNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetAdRolesNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAdRolesNameExecute(r)
@@ -4372,17 +4325,17 @@ GetAdRolesName Manage roles to build links between Vault and Active Directory se
 func (a *SecretsApiService) GetAdRolesName(ctx context.Context, name string) ApiGetAdRolesNameRequest {
 	return ApiGetAdRolesNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetAdRolesNameExecute(r ApiGetAdRolesNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetAdRolesName")
@@ -4443,10 +4396,9 @@ func (a *SecretsApiService) GetAdRolesNameExecute(r ApiGetAdRolesNameRequest) (*
 }
 
 type ApiGetAdRotateRootRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetAdRotateRootRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAdRotateRootExecute(r)
@@ -4461,16 +4413,16 @@ GetAdRotateRoot Method for GetAdRotateRoot
 func (a *SecretsApiService) GetAdRotateRoot(ctx context.Context) ApiGetAdRotateRootRequest {
 	return ApiGetAdRotateRootRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetAdRotateRootExecute(r ApiGetAdRotateRootRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetAdRotateRoot")
@@ -4530,10 +4482,9 @@ func (a *SecretsApiService) GetAdRotateRootExecute(r ApiGetAdRotateRootRequest) 
 }
 
 type ApiGetAlicloudConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetAlicloudConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAlicloudConfigExecute(r)
@@ -4548,16 +4499,16 @@ GetAlicloudConfig Configure the access key and secret to use for RAM and STS cal
 func (a *SecretsApiService) GetAlicloudConfig(ctx context.Context) ApiGetAlicloudConfigRequest {
 	return ApiGetAlicloudConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetAlicloudConfigExecute(r ApiGetAlicloudConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetAlicloudConfig")
@@ -4617,11 +4568,10 @@ func (a *SecretsApiService) GetAlicloudConfigExecute(r ApiGetAlicloudConfigReque
 }
 
 type ApiGetAlicloudCredsNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetAlicloudCredsNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAlicloudCredsNameExecute(r)
@@ -4637,17 +4587,17 @@ GetAlicloudCredsName Generate an API key or STS credential using the given role'
 func (a *SecretsApiService) GetAlicloudCredsName(ctx context.Context, name string) ApiGetAlicloudCredsNameRequest {
 	return ApiGetAlicloudCredsNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetAlicloudCredsNameExecute(r ApiGetAlicloudCredsNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetAlicloudCredsName")
@@ -4708,9 +4658,9 @@ func (a *SecretsApiService) GetAlicloudCredsNameExecute(r ApiGetAlicloudCredsNam
 }
 
 type ApiGetAlicloudRoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -4732,16 +4682,16 @@ GetAlicloudRole List the existing roles in this backend.
 func (a *SecretsApiService) GetAlicloudRole(ctx context.Context) ApiGetAlicloudRoleRequest {
 	return ApiGetAlicloudRoleRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetAlicloudRoleExecute(r ApiGetAlicloudRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetAlicloudRole")
@@ -4805,11 +4755,10 @@ func (a *SecretsApiService) GetAlicloudRoleExecute(r ApiGetAlicloudRoleRequest) 
 }
 
 type ApiGetAlicloudRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetAlicloudRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAlicloudRoleNameExecute(r)
@@ -4825,17 +4774,17 @@ GetAlicloudRoleName Read, write and reference policies and roles that API keys o
 func (a *SecretsApiService) GetAlicloudRoleName(ctx context.Context, name string) ApiGetAlicloudRoleNameRequest {
 	return ApiGetAlicloudRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetAlicloudRoleNameExecute(r ApiGetAlicloudRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetAlicloudRoleName")
@@ -4896,10 +4845,9 @@ func (a *SecretsApiService) GetAlicloudRoleNameExecute(r ApiGetAlicloudRoleNameR
 }
 
 type ApiGetAwsConfigLeaseRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetAwsConfigLeaseRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAwsConfigLeaseExecute(r)
@@ -4914,16 +4862,16 @@ GetAwsConfigLease Configure the default lease information for generated credenti
 func (a *SecretsApiService) GetAwsConfigLease(ctx context.Context) ApiGetAwsConfigLeaseRequest {
 	return ApiGetAwsConfigLeaseRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetAwsConfigLeaseExecute(r ApiGetAwsConfigLeaseRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetAwsConfigLease")
@@ -4983,10 +4931,9 @@ func (a *SecretsApiService) GetAwsConfigLeaseExecute(r ApiGetAwsConfigLeaseReque
 }
 
 type ApiGetAwsConfigRootRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetAwsConfigRootRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAwsConfigRootExecute(r)
@@ -5001,16 +4948,16 @@ GetAwsConfigRoot Configure the root credentials that are used to manage IAM.
 func (a *SecretsApiService) GetAwsConfigRoot(ctx context.Context) ApiGetAwsConfigRootRequest {
 	return ApiGetAwsConfigRootRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetAwsConfigRootExecute(r ApiGetAwsConfigRootRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetAwsConfigRoot")
@@ -5070,10 +5017,9 @@ func (a *SecretsApiService) GetAwsConfigRootExecute(r ApiGetAwsConfigRootRequest
 }
 
 type ApiGetAwsCredsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetAwsCredsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAwsCredsExecute(r)
@@ -5088,16 +5034,16 @@ GetAwsCreds Generate AWS credentials from a specific Vault role.
 func (a *SecretsApiService) GetAwsCreds(ctx context.Context) ApiGetAwsCredsRequest {
 	return ApiGetAwsCredsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetAwsCredsExecute(r ApiGetAwsCredsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetAwsCreds")
@@ -5157,9 +5103,9 @@ func (a *SecretsApiService) GetAwsCredsExecute(r ApiGetAwsCredsRequest) (*http.R
 }
 
 type ApiGetAwsRolesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -5181,16 +5127,16 @@ GetAwsRoles List the existing roles in this backend
 func (a *SecretsApiService) GetAwsRoles(ctx context.Context) ApiGetAwsRolesRequest {
 	return ApiGetAwsRolesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetAwsRolesExecute(r ApiGetAwsRolesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetAwsRoles")
@@ -5254,11 +5200,10 @@ func (a *SecretsApiService) GetAwsRolesExecute(r ApiGetAwsRolesRequest) (*http.R
 }
 
 type ApiGetAwsRolesNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetAwsRolesNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAwsRolesNameExecute(r)
@@ -5274,17 +5219,17 @@ GetAwsRolesName Read, write and reference IAM policies that access keys can be m
 func (a *SecretsApiService) GetAwsRolesName(ctx context.Context, name string) ApiGetAwsRolesNameRequest {
 	return ApiGetAwsRolesNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetAwsRolesNameExecute(r ApiGetAwsRolesNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetAwsRolesName")
@@ -5345,11 +5290,10 @@ func (a *SecretsApiService) GetAwsRolesNameExecute(r ApiGetAwsRolesNameRequest) 
 }
 
 type ApiGetAwsStsNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetAwsStsNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAwsStsNameExecute(r)
@@ -5365,17 +5309,17 @@ GetAwsStsName Generate AWS credentials from a specific Vault role.
 func (a *SecretsApiService) GetAwsStsName(ctx context.Context, name string) ApiGetAwsStsNameRequest {
 	return ApiGetAwsStsNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetAwsStsNameExecute(r ApiGetAwsStsNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetAwsStsName")
@@ -5436,10 +5380,9 @@ func (a *SecretsApiService) GetAwsStsNameExecute(r ApiGetAwsStsNameRequest) (*ht
 }
 
 type ApiGetAzureConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetAzureConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAzureConfigExecute(r)
@@ -5454,16 +5397,16 @@ GetAzureConfig Method for GetAzureConfig
 func (a *SecretsApiService) GetAzureConfig(ctx context.Context) ApiGetAzureConfigRequest {
 	return ApiGetAzureConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetAzureConfigExecute(r ApiGetAzureConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetAzureConfig")
@@ -5523,11 +5466,10 @@ func (a *SecretsApiService) GetAzureConfigExecute(r ApiGetAzureConfigRequest) (*
 }
 
 type ApiGetAzureCredsRoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	role string
+	role       string
 }
-
 
 func (r ApiGetAzureCredsRoleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAzureCredsRoleExecute(r)
@@ -5543,17 +5485,17 @@ GetAzureCredsRole Method for GetAzureCredsRole
 func (a *SecretsApiService) GetAzureCredsRole(ctx context.Context, role string) ApiGetAzureCredsRoleRequest {
 	return ApiGetAzureCredsRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		role: role,
+		ctx:        ctx,
+		role:       role,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetAzureCredsRoleExecute(r ApiGetAzureCredsRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetAzureCredsRole")
@@ -5614,9 +5556,9 @@ func (a *SecretsApiService) GetAzureCredsRoleExecute(r ApiGetAzureCredsRoleReque
 }
 
 type ApiGetAzureRolesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -5638,16 +5580,16 @@ GetAzureRoles List existing roles.
 func (a *SecretsApiService) GetAzureRoles(ctx context.Context) ApiGetAzureRolesRequest {
 	return ApiGetAzureRolesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetAzureRolesExecute(r ApiGetAzureRolesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetAzureRoles")
@@ -5711,11 +5653,10 @@ func (a *SecretsApiService) GetAzureRolesExecute(r ApiGetAzureRolesRequest) (*ht
 }
 
 type ApiGetAzureRolesNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetAzureRolesNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetAzureRolesNameExecute(r)
@@ -5731,17 +5672,17 @@ GetAzureRolesName Manage the Vault roles used to generate Azure credentials.
 func (a *SecretsApiService) GetAzureRolesName(ctx context.Context, name string) ApiGetAzureRolesNameRequest {
 	return ApiGetAzureRolesNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetAzureRolesNameExecute(r ApiGetAzureRolesNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetAzureRolesName")
@@ -5802,10 +5743,9 @@ func (a *SecretsApiService) GetAzureRolesNameExecute(r ApiGetAzureRolesNameReque
 }
 
 type ApiGetConsulConfigAccessRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetConsulConfigAccessRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetConsulConfigAccessExecute(r)
@@ -5820,16 +5760,16 @@ GetConsulConfigAccess Method for GetConsulConfigAccess
 func (a *SecretsApiService) GetConsulConfigAccess(ctx context.Context) ApiGetConsulConfigAccessRequest {
 	return ApiGetConsulConfigAccessRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetConsulConfigAccessExecute(r ApiGetConsulConfigAccessRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetConsulConfigAccess")
@@ -5889,11 +5829,10 @@ func (a *SecretsApiService) GetConsulConfigAccessExecute(r ApiGetConsulConfigAcc
 }
 
 type ApiGetConsulCredsRoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	role string
+	role       string
 }
-
 
 func (r ApiGetConsulCredsRoleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetConsulCredsRoleExecute(r)
@@ -5909,17 +5848,17 @@ GetConsulCredsRole Method for GetConsulCredsRole
 func (a *SecretsApiService) GetConsulCredsRole(ctx context.Context, role string) ApiGetConsulCredsRoleRequest {
 	return ApiGetConsulCredsRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		role: role,
+		ctx:        ctx,
+		role:       role,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetConsulCredsRoleExecute(r ApiGetConsulCredsRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetConsulCredsRole")
@@ -5980,9 +5919,9 @@ func (a *SecretsApiService) GetConsulCredsRoleExecute(r ApiGetConsulCredsRoleReq
 }
 
 type ApiGetConsulRolesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -6004,16 +5943,16 @@ GetConsulRoles Method for GetConsulRoles
 func (a *SecretsApiService) GetConsulRoles(ctx context.Context) ApiGetConsulRolesRequest {
 	return ApiGetConsulRolesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetConsulRolesExecute(r ApiGetConsulRolesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetConsulRoles")
@@ -6077,11 +6016,10 @@ func (a *SecretsApiService) GetConsulRolesExecute(r ApiGetConsulRolesRequest) (*
 }
 
 type ApiGetConsulRolesNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetConsulRolesNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetConsulRolesNameExecute(r)
@@ -6097,17 +6035,17 @@ GetConsulRolesName Method for GetConsulRolesName
 func (a *SecretsApiService) GetConsulRolesName(ctx context.Context, name string) ApiGetConsulRolesNameRequest {
 	return ApiGetConsulRolesNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetConsulRolesNameExecute(r ApiGetConsulRolesNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetConsulRolesName")
@@ -6168,10 +6106,10 @@ func (a *SecretsApiService) GetConsulRolesNameExecute(r ApiGetConsulRolesNameReq
 }
 
 type ApiGetCubbyholePathRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	path string
-	list *string
+	path       string
+	list       *string
 }
 
 // Return a list if &#x60;true&#x60;
@@ -6194,17 +6132,17 @@ GetCubbyholePath Retrieve the secret at the specified location.
 func (a *SecretsApiService) GetCubbyholePath(ctx context.Context, path string) ApiGetCubbyholePathRequest {
 	return ApiGetCubbyholePathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetCubbyholePathExecute(r ApiGetCubbyholePathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetCubbyholePath")
@@ -6268,10 +6206,9 @@ func (a *SecretsApiService) GetCubbyholePathExecute(r ApiGetCubbyholePathRequest
 }
 
 type ApiGetGcpConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetGcpConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetGcpConfigExecute(r)
@@ -6286,16 +6223,16 @@ GetGcpConfig Method for GetGcpConfig
 func (a *SecretsApiService) GetGcpConfig(ctx context.Context) ApiGetGcpConfigRequest {
 	return ApiGetGcpConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetGcpConfigExecute(r ApiGetGcpConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetGcpConfig")
@@ -6355,11 +6292,10 @@ func (a *SecretsApiService) GetGcpConfigExecute(r ApiGetGcpConfigRequest) (*http
 }
 
 type ApiGetGcpKeyRolesetRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	roleset string
+	roleset    string
 }
-
 
 func (r ApiGetGcpKeyRolesetRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetGcpKeyRolesetExecute(r)
@@ -6375,17 +6311,17 @@ GetGcpKeyRoleset Method for GetGcpKeyRoleset
 func (a *SecretsApiService) GetGcpKeyRoleset(ctx context.Context, roleset string) ApiGetGcpKeyRolesetRequest {
 	return ApiGetGcpKeyRolesetRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleset: roleset,
+		ctx:        ctx,
+		roleset:    roleset,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetGcpKeyRolesetExecute(r ApiGetGcpKeyRolesetRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetGcpKeyRoleset")
@@ -6446,11 +6382,10 @@ func (a *SecretsApiService) GetGcpKeyRolesetExecute(r ApiGetGcpKeyRolesetRequest
 }
 
 type ApiGetGcpRolesetNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetGcpRolesetNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetGcpRolesetNameExecute(r)
@@ -6466,17 +6401,17 @@ GetGcpRolesetName Method for GetGcpRolesetName
 func (a *SecretsApiService) GetGcpRolesetName(ctx context.Context, name string) ApiGetGcpRolesetNameRequest {
 	return ApiGetGcpRolesetNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetGcpRolesetNameExecute(r ApiGetGcpRolesetNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetGcpRolesetName")
@@ -6537,11 +6472,10 @@ func (a *SecretsApiService) GetGcpRolesetNameExecute(r ApiGetGcpRolesetNameReque
 }
 
 type ApiGetGcpRolesetRolesetKeyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	roleset string
+	roleset    string
 }
-
 
 func (r ApiGetGcpRolesetRolesetKeyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetGcpRolesetRolesetKeyExecute(r)
@@ -6557,17 +6491,17 @@ GetGcpRolesetRolesetKey Method for GetGcpRolesetRolesetKey
 func (a *SecretsApiService) GetGcpRolesetRolesetKey(ctx context.Context, roleset string) ApiGetGcpRolesetRolesetKeyRequest {
 	return ApiGetGcpRolesetRolesetKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleset: roleset,
+		ctx:        ctx,
+		roleset:    roleset,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetGcpRolesetRolesetKeyExecute(r ApiGetGcpRolesetRolesetKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetGcpRolesetRolesetKey")
@@ -6628,11 +6562,10 @@ func (a *SecretsApiService) GetGcpRolesetRolesetKeyExecute(r ApiGetGcpRolesetRol
 }
 
 type ApiGetGcpRolesetRolesetTokenRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	roleset string
+	roleset    string
 }
-
 
 func (r ApiGetGcpRolesetRolesetTokenRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetGcpRolesetRolesetTokenExecute(r)
@@ -6648,17 +6581,17 @@ GetGcpRolesetRolesetToken Method for GetGcpRolesetRolesetToken
 func (a *SecretsApiService) GetGcpRolesetRolesetToken(ctx context.Context, roleset string) ApiGetGcpRolesetRolesetTokenRequest {
 	return ApiGetGcpRolesetRolesetTokenRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleset: roleset,
+		ctx:        ctx,
+		roleset:    roleset,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetGcpRolesetRolesetTokenExecute(r ApiGetGcpRolesetRolesetTokenRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetGcpRolesetRolesetToken")
@@ -6719,9 +6652,9 @@ func (a *SecretsApiService) GetGcpRolesetRolesetTokenExecute(r ApiGetGcpRolesetR
 }
 
 type ApiGetGcpRolesetsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -6743,16 +6676,16 @@ GetGcpRolesets Method for GetGcpRolesets
 func (a *SecretsApiService) GetGcpRolesets(ctx context.Context) ApiGetGcpRolesetsRequest {
 	return ApiGetGcpRolesetsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetGcpRolesetsExecute(r ApiGetGcpRolesetsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetGcpRolesets")
@@ -6816,11 +6749,10 @@ func (a *SecretsApiService) GetGcpRolesetsExecute(r ApiGetGcpRolesetsRequest) (*
 }
 
 type ApiGetGcpStaticAccountNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetGcpStaticAccountNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetGcpStaticAccountNameExecute(r)
@@ -6836,17 +6768,17 @@ GetGcpStaticAccountName Method for GetGcpStaticAccountName
 func (a *SecretsApiService) GetGcpStaticAccountName(ctx context.Context, name string) ApiGetGcpStaticAccountNameRequest {
 	return ApiGetGcpStaticAccountNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetGcpStaticAccountNameExecute(r ApiGetGcpStaticAccountNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetGcpStaticAccountName")
@@ -6907,11 +6839,10 @@ func (a *SecretsApiService) GetGcpStaticAccountNameExecute(r ApiGetGcpStaticAcco
 }
 
 type ApiGetGcpStaticAccountNameKeyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetGcpStaticAccountNameKeyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetGcpStaticAccountNameKeyExecute(r)
@@ -6927,17 +6858,17 @@ GetGcpStaticAccountNameKey Method for GetGcpStaticAccountNameKey
 func (a *SecretsApiService) GetGcpStaticAccountNameKey(ctx context.Context, name string) ApiGetGcpStaticAccountNameKeyRequest {
 	return ApiGetGcpStaticAccountNameKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetGcpStaticAccountNameKeyExecute(r ApiGetGcpStaticAccountNameKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetGcpStaticAccountNameKey")
@@ -6998,11 +6929,10 @@ func (a *SecretsApiService) GetGcpStaticAccountNameKeyExecute(r ApiGetGcpStaticA
 }
 
 type ApiGetGcpStaticAccountNameTokenRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetGcpStaticAccountNameTokenRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetGcpStaticAccountNameTokenExecute(r)
@@ -7018,17 +6948,17 @@ GetGcpStaticAccountNameToken Method for GetGcpStaticAccountNameToken
 func (a *SecretsApiService) GetGcpStaticAccountNameToken(ctx context.Context, name string) ApiGetGcpStaticAccountNameTokenRequest {
 	return ApiGetGcpStaticAccountNameTokenRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetGcpStaticAccountNameTokenExecute(r ApiGetGcpStaticAccountNameTokenRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetGcpStaticAccountNameToken")
@@ -7089,9 +7019,9 @@ func (a *SecretsApiService) GetGcpStaticAccountNameTokenExecute(r ApiGetGcpStati
 }
 
 type ApiGetGcpStaticAccountsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -7113,16 +7043,16 @@ GetGcpStaticAccounts Method for GetGcpStaticAccounts
 func (a *SecretsApiService) GetGcpStaticAccounts(ctx context.Context) ApiGetGcpStaticAccountsRequest {
 	return ApiGetGcpStaticAccountsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetGcpStaticAccountsExecute(r ApiGetGcpStaticAccountsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetGcpStaticAccounts")
@@ -7186,11 +7116,10 @@ func (a *SecretsApiService) GetGcpStaticAccountsExecute(r ApiGetGcpStaticAccount
 }
 
 type ApiGetGcpTokenRolesetRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	roleset string
+	roleset    string
 }
-
 
 func (r ApiGetGcpTokenRolesetRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetGcpTokenRolesetExecute(r)
@@ -7206,17 +7135,17 @@ GetGcpTokenRoleset Method for GetGcpTokenRoleset
 func (a *SecretsApiService) GetGcpTokenRoleset(ctx context.Context, roleset string) ApiGetGcpTokenRolesetRequest {
 	return ApiGetGcpTokenRolesetRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleset: roleset,
+		ctx:        ctx,
+		roleset:    roleset,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetGcpTokenRolesetExecute(r ApiGetGcpTokenRolesetRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetGcpTokenRoleset")
@@ -7277,10 +7206,9 @@ func (a *SecretsApiService) GetGcpTokenRolesetExecute(r ApiGetGcpTokenRolesetReq
 }
 
 type ApiGetGcpkmsConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetGcpkmsConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetGcpkmsConfigExecute(r)
@@ -7295,16 +7223,16 @@ GetGcpkmsConfig Configure the GCP KMS secrets engine
 func (a *SecretsApiService) GetGcpkmsConfig(ctx context.Context) ApiGetGcpkmsConfigRequest {
 	return ApiGetGcpkmsConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetGcpkmsConfigExecute(r ApiGetGcpkmsConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetGcpkmsConfig")
@@ -7364,9 +7292,9 @@ func (a *SecretsApiService) GetGcpkmsConfigExecute(r ApiGetGcpkmsConfigRequest) 
 }
 
 type ApiGetGcpkmsKeysRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -7388,16 +7316,16 @@ GetGcpkmsKeys List named keys
 func (a *SecretsApiService) GetGcpkmsKeys(ctx context.Context) ApiGetGcpkmsKeysRequest {
 	return ApiGetGcpkmsKeysRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetGcpkmsKeysExecute(r ApiGetGcpkmsKeysRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetGcpkmsKeys")
@@ -7461,11 +7389,10 @@ func (a *SecretsApiService) GetGcpkmsKeysExecute(r ApiGetGcpkmsKeysRequest) (*ht
 }
 
 type ApiGetGcpkmsKeysConfigKeyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	key string
+	key        string
 }
-
 
 func (r ApiGetGcpkmsKeysConfigKeyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetGcpkmsKeysConfigKeyExecute(r)
@@ -7481,17 +7408,17 @@ GetGcpkmsKeysConfigKey Configure the key in Vault
 func (a *SecretsApiService) GetGcpkmsKeysConfigKey(ctx context.Context, key string) ApiGetGcpkmsKeysConfigKeyRequest {
 	return ApiGetGcpkmsKeysConfigKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetGcpkmsKeysConfigKeyExecute(r ApiGetGcpkmsKeysConfigKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetGcpkmsKeysConfigKey")
@@ -7552,11 +7479,10 @@ func (a *SecretsApiService) GetGcpkmsKeysConfigKeyExecute(r ApiGetGcpkmsKeysConf
 }
 
 type ApiGetGcpkmsKeysKeyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	key string
+	key        string
 }
-
 
 func (r ApiGetGcpkmsKeysKeyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetGcpkmsKeysKeyExecute(r)
@@ -7572,17 +7498,17 @@ GetGcpkmsKeysKey Interact with crypto keys in Vault and Google Cloud KMS
 func (a *SecretsApiService) GetGcpkmsKeysKey(ctx context.Context, key string) ApiGetGcpkmsKeysKeyRequest {
 	return ApiGetGcpkmsKeysKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetGcpkmsKeysKeyExecute(r ApiGetGcpkmsKeysKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetGcpkmsKeysKey")
@@ -7643,11 +7569,10 @@ func (a *SecretsApiService) GetGcpkmsKeysKeyExecute(r ApiGetGcpkmsKeysKeyRequest
 }
 
 type ApiGetGcpkmsPubkeyKeyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	key string
+	key        string
 }
-
 
 func (r ApiGetGcpkmsPubkeyKeyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetGcpkmsPubkeyKeyExecute(r)
@@ -7663,17 +7588,17 @@ GetGcpkmsPubkeyKey Retrieve the public key associated with the named key
 func (a *SecretsApiService) GetGcpkmsPubkeyKey(ctx context.Context, key string) ApiGetGcpkmsPubkeyKeyRequest {
 	return ApiGetGcpkmsPubkeyKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetGcpkmsPubkeyKeyExecute(r ApiGetGcpkmsPubkeyKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetGcpkmsPubkeyKey")
@@ -7734,10 +7659,9 @@ func (a *SecretsApiService) GetGcpkmsPubkeyKeyExecute(r ApiGetGcpkmsPubkeyKeyReq
 }
 
 type ApiGetKubernetesConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetKubernetesConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetKubernetesConfigExecute(r)
@@ -7752,16 +7676,16 @@ GetKubernetesConfig Method for GetKubernetesConfig
 func (a *SecretsApiService) GetKubernetesConfig(ctx context.Context) ApiGetKubernetesConfigRequest {
 	return ApiGetKubernetesConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetKubernetesConfigExecute(r ApiGetKubernetesConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetKubernetesConfig")
@@ -7821,9 +7745,9 @@ func (a *SecretsApiService) GetKubernetesConfigExecute(r ApiGetKubernetesConfigR
 }
 
 type ApiGetKubernetesRolesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -7845,16 +7769,16 @@ GetKubernetesRoles Method for GetKubernetesRoles
 func (a *SecretsApiService) GetKubernetesRoles(ctx context.Context) ApiGetKubernetesRolesRequest {
 	return ApiGetKubernetesRolesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetKubernetesRolesExecute(r ApiGetKubernetesRolesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetKubernetesRoles")
@@ -7918,11 +7842,10 @@ func (a *SecretsApiService) GetKubernetesRolesExecute(r ApiGetKubernetesRolesReq
 }
 
 type ApiGetKubernetesRolesNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetKubernetesRolesNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetKubernetesRolesNameExecute(r)
@@ -7938,17 +7861,17 @@ GetKubernetesRolesName Method for GetKubernetesRolesName
 func (a *SecretsApiService) GetKubernetesRolesName(ctx context.Context, name string) ApiGetKubernetesRolesNameRequest {
 	return ApiGetKubernetesRolesNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetKubernetesRolesNameExecute(r ApiGetKubernetesRolesNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetKubernetesRolesName")
@@ -8009,10 +7932,10 @@ func (a *SecretsApiService) GetKubernetesRolesNameExecute(r ApiGetKubernetesRole
 }
 
 type ApiGetKvPathRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	path string
-	list *string
+	path       string
+	list       *string
 }
 
 // Return a list if &#x60;true&#x60;
@@ -8035,17 +7958,17 @@ GetKvPath Pass-through secret storage to the storage backend, allowing you to re
 func (a *SecretsApiService) GetKvPath(ctx context.Context, path string) ApiGetKvPathRequest {
 	return ApiGetKvPathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetKvPathExecute(r ApiGetKvPathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetKvPath")
@@ -8109,10 +8032,9 @@ func (a *SecretsApiService) GetKvPathExecute(r ApiGetKvPathRequest) (*http.Respo
 }
 
 type ApiGetMongodbatlasConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetMongodbatlasConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetMongodbatlasConfigExecute(r)
@@ -8127,16 +8049,16 @@ GetMongodbatlasConfig Configure the  credentials that are used to manage Databas
 func (a *SecretsApiService) GetMongodbatlasConfig(ctx context.Context) ApiGetMongodbatlasConfigRequest {
 	return ApiGetMongodbatlasConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetMongodbatlasConfigExecute(r ApiGetMongodbatlasConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetMongodbatlasConfig")
@@ -8196,11 +8118,10 @@ func (a *SecretsApiService) GetMongodbatlasConfigExecute(r ApiGetMongodbatlasCon
 }
 
 type ApiGetMongodbatlasCredsNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetMongodbatlasCredsNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetMongodbatlasCredsNameExecute(r)
@@ -8216,17 +8137,17 @@ GetMongodbatlasCredsName Generate MongoDB Atlas Programmatic API from a specific
 func (a *SecretsApiService) GetMongodbatlasCredsName(ctx context.Context, name string) ApiGetMongodbatlasCredsNameRequest {
 	return ApiGetMongodbatlasCredsNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetMongodbatlasCredsNameExecute(r ApiGetMongodbatlasCredsNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetMongodbatlasCredsName")
@@ -8287,9 +8208,9 @@ func (a *SecretsApiService) GetMongodbatlasCredsNameExecute(r ApiGetMongodbatlas
 }
 
 type ApiGetMongodbatlasRolesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -8311,16 +8232,16 @@ GetMongodbatlasRoles List the existing roles in this backend
 func (a *SecretsApiService) GetMongodbatlasRoles(ctx context.Context) ApiGetMongodbatlasRolesRequest {
 	return ApiGetMongodbatlasRolesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetMongodbatlasRolesExecute(r ApiGetMongodbatlasRolesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetMongodbatlasRoles")
@@ -8384,11 +8305,10 @@ func (a *SecretsApiService) GetMongodbatlasRolesExecute(r ApiGetMongodbatlasRole
 }
 
 type ApiGetMongodbatlasRolesNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetMongodbatlasRolesNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetMongodbatlasRolesNameExecute(r)
@@ -8404,17 +8324,17 @@ GetMongodbatlasRolesName Manage the roles used to generate MongoDB Atlas Program
 func (a *SecretsApiService) GetMongodbatlasRolesName(ctx context.Context, name string) ApiGetMongodbatlasRolesNameRequest {
 	return ApiGetMongodbatlasRolesNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetMongodbatlasRolesNameExecute(r ApiGetMongodbatlasRolesNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetMongodbatlasRolesName")
@@ -8475,10 +8395,9 @@ func (a *SecretsApiService) GetMongodbatlasRolesNameExecute(r ApiGetMongodbatlas
 }
 
 type ApiGetNomadConfigAccessRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetNomadConfigAccessRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetNomadConfigAccessExecute(r)
@@ -8493,16 +8412,16 @@ GetNomadConfigAccess Method for GetNomadConfigAccess
 func (a *SecretsApiService) GetNomadConfigAccess(ctx context.Context) ApiGetNomadConfigAccessRequest {
 	return ApiGetNomadConfigAccessRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetNomadConfigAccessExecute(r ApiGetNomadConfigAccessRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetNomadConfigAccess")
@@ -8562,10 +8481,9 @@ func (a *SecretsApiService) GetNomadConfigAccessExecute(r ApiGetNomadConfigAcces
 }
 
 type ApiGetNomadConfigLeaseRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetNomadConfigLeaseRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetNomadConfigLeaseExecute(r)
@@ -8580,16 +8498,16 @@ GetNomadConfigLease Configure the lease parameters for generated tokens
 func (a *SecretsApiService) GetNomadConfigLease(ctx context.Context) ApiGetNomadConfigLeaseRequest {
 	return ApiGetNomadConfigLeaseRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetNomadConfigLeaseExecute(r ApiGetNomadConfigLeaseRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetNomadConfigLease")
@@ -8649,11 +8567,10 @@ func (a *SecretsApiService) GetNomadConfigLeaseExecute(r ApiGetNomadConfigLeaseR
 }
 
 type ApiGetNomadCredsNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetNomadCredsNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetNomadCredsNameExecute(r)
@@ -8669,17 +8586,17 @@ GetNomadCredsName Method for GetNomadCredsName
 func (a *SecretsApiService) GetNomadCredsName(ctx context.Context, name string) ApiGetNomadCredsNameRequest {
 	return ApiGetNomadCredsNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetNomadCredsNameExecute(r ApiGetNomadCredsNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetNomadCredsName")
@@ -8740,9 +8657,9 @@ func (a *SecretsApiService) GetNomadCredsNameExecute(r ApiGetNomadCredsNameReque
 }
 
 type ApiGetNomadRoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -8764,16 +8681,16 @@ GetNomadRole Method for GetNomadRole
 func (a *SecretsApiService) GetNomadRole(ctx context.Context) ApiGetNomadRoleRequest {
 	return ApiGetNomadRoleRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetNomadRoleExecute(r ApiGetNomadRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetNomadRole")
@@ -8837,11 +8754,10 @@ func (a *SecretsApiService) GetNomadRoleExecute(r ApiGetNomadRoleRequest) (*http
 }
 
 type ApiGetNomadRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetNomadRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetNomadRoleNameExecute(r)
@@ -8857,17 +8773,17 @@ GetNomadRoleName Method for GetNomadRoleName
 func (a *SecretsApiService) GetNomadRoleName(ctx context.Context, name string) ApiGetNomadRoleNameRequest {
 	return ApiGetNomadRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetNomadRoleNameExecute(r ApiGetNomadRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetNomadRoleName")
@@ -8928,10 +8844,9 @@ func (a *SecretsApiService) GetNomadRoleNameExecute(r ApiGetNomadRoleNameRequest
 }
 
 type ApiGetOpenldapConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetOpenldapConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetOpenldapConfigExecute(r)
@@ -8946,16 +8861,16 @@ GetOpenldapConfig Method for GetOpenldapConfig
 func (a *SecretsApiService) GetOpenldapConfig(ctx context.Context) ApiGetOpenldapConfigRequest {
 	return ApiGetOpenldapConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetOpenldapConfigExecute(r ApiGetOpenldapConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetOpenldapConfig")
@@ -9015,11 +8930,10 @@ func (a *SecretsApiService) GetOpenldapConfigExecute(r ApiGetOpenldapConfigReque
 }
 
 type ApiGetOpenldapCredsNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetOpenldapCredsNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetOpenldapCredsNameExecute(r)
@@ -9035,17 +8949,17 @@ GetOpenldapCredsName Method for GetOpenldapCredsName
 func (a *SecretsApiService) GetOpenldapCredsName(ctx context.Context, name string) ApiGetOpenldapCredsNameRequest {
 	return ApiGetOpenldapCredsNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetOpenldapCredsNameExecute(r ApiGetOpenldapCredsNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetOpenldapCredsName")
@@ -9106,9 +9020,9 @@ func (a *SecretsApiService) GetOpenldapCredsNameExecute(r ApiGetOpenldapCredsNam
 }
 
 type ApiGetOpenldapRoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -9130,16 +9044,16 @@ GetOpenldapRole Method for GetOpenldapRole
 func (a *SecretsApiService) GetOpenldapRole(ctx context.Context) ApiGetOpenldapRoleRequest {
 	return ApiGetOpenldapRoleRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetOpenldapRoleExecute(r ApiGetOpenldapRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetOpenldapRole")
@@ -9203,11 +9117,10 @@ func (a *SecretsApiService) GetOpenldapRoleExecute(r ApiGetOpenldapRoleRequest) 
 }
 
 type ApiGetOpenldapRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetOpenldapRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetOpenldapRoleNameExecute(r)
@@ -9223,17 +9136,17 @@ GetOpenldapRoleName Method for GetOpenldapRoleName
 func (a *SecretsApiService) GetOpenldapRoleName(ctx context.Context, name string) ApiGetOpenldapRoleNameRequest {
 	return ApiGetOpenldapRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetOpenldapRoleNameExecute(r ApiGetOpenldapRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetOpenldapRoleName")
@@ -9294,11 +9207,10 @@ func (a *SecretsApiService) GetOpenldapRoleNameExecute(r ApiGetOpenldapRoleNameR
 }
 
 type ApiGetOpenldapStaticCredNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetOpenldapStaticCredNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetOpenldapStaticCredNameExecute(r)
@@ -9314,17 +9226,17 @@ GetOpenldapStaticCredName Method for GetOpenldapStaticCredName
 func (a *SecretsApiService) GetOpenldapStaticCredName(ctx context.Context, name string) ApiGetOpenldapStaticCredNameRequest {
 	return ApiGetOpenldapStaticCredNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetOpenldapStaticCredNameExecute(r ApiGetOpenldapStaticCredNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetOpenldapStaticCredName")
@@ -9385,9 +9297,9 @@ func (a *SecretsApiService) GetOpenldapStaticCredNameExecute(r ApiGetOpenldapSta
 }
 
 type ApiGetOpenldapStaticRoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -9409,16 +9321,16 @@ GetOpenldapStaticRole Method for GetOpenldapStaticRole
 func (a *SecretsApiService) GetOpenldapStaticRole(ctx context.Context) ApiGetOpenldapStaticRoleRequest {
 	return ApiGetOpenldapStaticRoleRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetOpenldapStaticRoleExecute(r ApiGetOpenldapStaticRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetOpenldapStaticRole")
@@ -9482,11 +9394,10 @@ func (a *SecretsApiService) GetOpenldapStaticRoleExecute(r ApiGetOpenldapStaticR
 }
 
 type ApiGetOpenldapStaticRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetOpenldapStaticRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetOpenldapStaticRoleNameExecute(r)
@@ -9502,17 +9413,17 @@ GetOpenldapStaticRoleName Method for GetOpenldapStaticRoleName
 func (a *SecretsApiService) GetOpenldapStaticRoleName(ctx context.Context, name string) ApiGetOpenldapStaticRoleNameRequest {
 	return ApiGetOpenldapStaticRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetOpenldapStaticRoleNameExecute(r ApiGetOpenldapStaticRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetOpenldapStaticRoleName")
@@ -9573,10 +9484,9 @@ func (a *SecretsApiService) GetOpenldapStaticRoleNameExecute(r ApiGetOpenldapSta
 }
 
 type ApiGetPkiCaRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetPkiCaRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetPkiCaExecute(r)
@@ -9591,16 +9501,16 @@ GetPkiCa Method for GetPkiCa
 func (a *SecretsApiService) GetPkiCa(ctx context.Context) ApiGetPkiCaRequest {
 	return ApiGetPkiCaRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetPkiCaExecute(r ApiGetPkiCaRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetPkiCa")
@@ -9660,10 +9570,9 @@ func (a *SecretsApiService) GetPkiCaExecute(r ApiGetPkiCaRequest) (*http.Respons
 }
 
 type ApiGetPkiCaChainRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetPkiCaChainRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetPkiCaChainExecute(r)
@@ -9678,16 +9587,16 @@ GetPkiCaChain Method for GetPkiCaChain
 func (a *SecretsApiService) GetPkiCaChain(ctx context.Context) ApiGetPkiCaChainRequest {
 	return ApiGetPkiCaChainRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetPkiCaChainExecute(r ApiGetPkiCaChainRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetPkiCaChain")
@@ -9747,10 +9656,9 @@ func (a *SecretsApiService) GetPkiCaChainExecute(r ApiGetPkiCaChainRequest) (*ht
 }
 
 type ApiGetPkiCaPemRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetPkiCaPemRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetPkiCaPemExecute(r)
@@ -9765,16 +9673,16 @@ GetPkiCaPem Method for GetPkiCaPem
 func (a *SecretsApiService) GetPkiCaPem(ctx context.Context) ApiGetPkiCaPemRequest {
 	return ApiGetPkiCaPemRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetPkiCaPemExecute(r ApiGetPkiCaPemRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetPkiCaPem")
@@ -9834,10 +9742,9 @@ func (a *SecretsApiService) GetPkiCaPemExecute(r ApiGetPkiCaPemRequest) (*http.R
 }
 
 type ApiGetPkiCertCaChainRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetPkiCertCaChainRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetPkiCertCaChainExecute(r)
@@ -9852,16 +9759,16 @@ GetPkiCertCaChain Method for GetPkiCertCaChain
 func (a *SecretsApiService) GetPkiCertCaChain(ctx context.Context) ApiGetPkiCertCaChainRequest {
 	return ApiGetPkiCertCaChainRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetPkiCertCaChainExecute(r ApiGetPkiCertCaChainRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetPkiCertCaChain")
@@ -9921,10 +9828,9 @@ func (a *SecretsApiService) GetPkiCertCaChainExecute(r ApiGetPkiCertCaChainReque
 }
 
 type ApiGetPkiCertCrlRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetPkiCertCrlRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetPkiCertCrlExecute(r)
@@ -9939,16 +9845,16 @@ GetPkiCertCrl Method for GetPkiCertCrl
 func (a *SecretsApiService) GetPkiCertCrl(ctx context.Context) ApiGetPkiCertCrlRequest {
 	return ApiGetPkiCertCrlRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetPkiCertCrlExecute(r ApiGetPkiCertCrlRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetPkiCertCrl")
@@ -10008,11 +9914,10 @@ func (a *SecretsApiService) GetPkiCertCrlExecute(r ApiGetPkiCertCrlRequest) (*ht
 }
 
 type ApiGetPkiCertSerialRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	serial string
+	serial     string
 }
-
 
 func (r ApiGetPkiCertSerialRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetPkiCertSerialExecute(r)
@@ -10028,17 +9933,17 @@ GetPkiCertSerial Method for GetPkiCertSerial
 func (a *SecretsApiService) GetPkiCertSerial(ctx context.Context, serial string) ApiGetPkiCertSerialRequest {
 	return ApiGetPkiCertSerialRequest{
 		ApiService: a,
-		ctx: ctx,
-		serial: serial,
+		ctx:        ctx,
+		serial:     serial,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetPkiCertSerialExecute(r ApiGetPkiCertSerialRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetPkiCertSerial")
@@ -10099,11 +10004,10 @@ func (a *SecretsApiService) GetPkiCertSerialExecute(r ApiGetPkiCertSerialRequest
 }
 
 type ApiGetPkiCertSerialRawRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	serial string
+	serial     string
 }
-
 
 func (r ApiGetPkiCertSerialRawRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetPkiCertSerialRawExecute(r)
@@ -10119,17 +10023,17 @@ GetPkiCertSerialRaw Method for GetPkiCertSerialRaw
 func (a *SecretsApiService) GetPkiCertSerialRaw(ctx context.Context, serial string) ApiGetPkiCertSerialRawRequest {
 	return ApiGetPkiCertSerialRawRequest{
 		ApiService: a,
-		ctx: ctx,
-		serial: serial,
+		ctx:        ctx,
+		serial:     serial,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetPkiCertSerialRawExecute(r ApiGetPkiCertSerialRawRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetPkiCertSerialRaw")
@@ -10190,11 +10094,10 @@ func (a *SecretsApiService) GetPkiCertSerialRawExecute(r ApiGetPkiCertSerialRawR
 }
 
 type ApiGetPkiCertSerialRawPemRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	serial string
+	serial     string
 }
-
 
 func (r ApiGetPkiCertSerialRawPemRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetPkiCertSerialRawPemExecute(r)
@@ -10210,17 +10113,17 @@ GetPkiCertSerialRawPem Method for GetPkiCertSerialRawPem
 func (a *SecretsApiService) GetPkiCertSerialRawPem(ctx context.Context, serial string) ApiGetPkiCertSerialRawPemRequest {
 	return ApiGetPkiCertSerialRawPemRequest{
 		ApiService: a,
-		ctx: ctx,
-		serial: serial,
+		ctx:        ctx,
+		serial:     serial,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetPkiCertSerialRawPemExecute(r ApiGetPkiCertSerialRawPemRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetPkiCertSerialRawPem")
@@ -10281,9 +10184,9 @@ func (a *SecretsApiService) GetPkiCertSerialRawPemExecute(r ApiGetPkiCertSerialR
 }
 
 type ApiGetPkiCertsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -10305,16 +10208,16 @@ GetPkiCerts Method for GetPkiCerts
 func (a *SecretsApiService) GetPkiCerts(ctx context.Context) ApiGetPkiCertsRequest {
 	return ApiGetPkiCertsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetPkiCertsExecute(r ApiGetPkiCertsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetPkiCerts")
@@ -10378,10 +10281,9 @@ func (a *SecretsApiService) GetPkiCertsExecute(r ApiGetPkiCertsRequest) (*http.R
 }
 
 type ApiGetPkiConfigCrlRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetPkiConfigCrlRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetPkiConfigCrlExecute(r)
@@ -10396,16 +10298,16 @@ GetPkiConfigCrl Method for GetPkiConfigCrl
 func (a *SecretsApiService) GetPkiConfigCrl(ctx context.Context) ApiGetPkiConfigCrlRequest {
 	return ApiGetPkiConfigCrlRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetPkiConfigCrlExecute(r ApiGetPkiConfigCrlRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetPkiConfigCrl")
@@ -10465,10 +10367,9 @@ func (a *SecretsApiService) GetPkiConfigCrlExecute(r ApiGetPkiConfigCrlRequest) 
 }
 
 type ApiGetPkiConfigIssuersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetPkiConfigIssuersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetPkiConfigIssuersExecute(r)
@@ -10483,16 +10384,16 @@ GetPkiConfigIssuers Method for GetPkiConfigIssuers
 func (a *SecretsApiService) GetPkiConfigIssuers(ctx context.Context) ApiGetPkiConfigIssuersRequest {
 	return ApiGetPkiConfigIssuersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetPkiConfigIssuersExecute(r ApiGetPkiConfigIssuersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetPkiConfigIssuers")
@@ -10552,10 +10453,9 @@ func (a *SecretsApiService) GetPkiConfigIssuersExecute(r ApiGetPkiConfigIssuersR
 }
 
 type ApiGetPkiConfigKeysRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetPkiConfigKeysRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetPkiConfigKeysExecute(r)
@@ -10570,16 +10470,16 @@ GetPkiConfigKeys Method for GetPkiConfigKeys
 func (a *SecretsApiService) GetPkiConfigKeys(ctx context.Context) ApiGetPkiConfigKeysRequest {
 	return ApiGetPkiConfigKeysRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetPkiConfigKeysExecute(r ApiGetPkiConfigKeysRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetPkiConfigKeys")
@@ -10639,10 +10539,9 @@ func (a *SecretsApiService) GetPkiConfigKeysExecute(r ApiGetPkiConfigKeysRequest
 }
 
 type ApiGetPkiConfigUrlsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetPkiConfigUrlsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetPkiConfigUrlsExecute(r)
@@ -10657,16 +10556,16 @@ GetPkiConfigUrls Method for GetPkiConfigUrls
 func (a *SecretsApiService) GetPkiConfigUrls(ctx context.Context) ApiGetPkiConfigUrlsRequest {
 	return ApiGetPkiConfigUrlsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetPkiConfigUrlsExecute(r ApiGetPkiConfigUrlsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetPkiConfigUrls")
@@ -10726,10 +10625,9 @@ func (a *SecretsApiService) GetPkiConfigUrlsExecute(r ApiGetPkiConfigUrlsRequest
 }
 
 type ApiGetPkiCrlRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetPkiCrlRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetPkiCrlExecute(r)
@@ -10744,16 +10642,16 @@ GetPkiCrl Method for GetPkiCrl
 func (a *SecretsApiService) GetPkiCrl(ctx context.Context) ApiGetPkiCrlRequest {
 	return ApiGetPkiCrlRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetPkiCrlExecute(r ApiGetPkiCrlRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetPkiCrl")
@@ -10813,10 +10711,9 @@ func (a *SecretsApiService) GetPkiCrlExecute(r ApiGetPkiCrlRequest) (*http.Respo
 }
 
 type ApiGetPkiCrlPemRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetPkiCrlPemRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetPkiCrlPemExecute(r)
@@ -10831,16 +10728,16 @@ GetPkiCrlPem Method for GetPkiCrlPem
 func (a *SecretsApiService) GetPkiCrlPem(ctx context.Context) ApiGetPkiCrlPemRequest {
 	return ApiGetPkiCrlPemRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetPkiCrlPemExecute(r ApiGetPkiCrlPemRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetPkiCrlPem")
@@ -10900,10 +10797,9 @@ func (a *SecretsApiService) GetPkiCrlPemExecute(r ApiGetPkiCrlPemRequest) (*http
 }
 
 type ApiGetPkiCrlRotateRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetPkiCrlRotateRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetPkiCrlRotateExecute(r)
@@ -10918,16 +10814,16 @@ GetPkiCrlRotate Method for GetPkiCrlRotate
 func (a *SecretsApiService) GetPkiCrlRotate(ctx context.Context) ApiGetPkiCrlRotateRequest {
 	return ApiGetPkiCrlRotateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetPkiCrlRotateExecute(r ApiGetPkiCrlRotateRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetPkiCrlRotate")
@@ -10987,10 +10883,9 @@ func (a *SecretsApiService) GetPkiCrlRotateExecute(r ApiGetPkiCrlRotateRequest) 
 }
 
 type ApiGetPkiDerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetPkiDerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetPkiDerExecute(r)
@@ -11005,16 +10900,16 @@ GetPkiDer Method for GetPkiDer
 func (a *SecretsApiService) GetPkiDer(ctx context.Context) ApiGetPkiDerRequest {
 	return ApiGetPkiDerRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetPkiDerExecute(r ApiGetPkiDerRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetPkiDer")
@@ -11074,11 +10969,10 @@ func (a *SecretsApiService) GetPkiDerExecute(r ApiGetPkiDerRequest) (*http.Respo
 }
 
 type ApiGetPkiIssuerRefCrlPemRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	issuerRef string
+	issuerRef  string
 }
-
 
 func (r ApiGetPkiIssuerRefCrlPemRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetPkiIssuerRefCrlPemExecute(r)
@@ -11094,17 +10988,17 @@ GetPkiIssuerRefCrlPem Method for GetPkiIssuerRefCrlPem
 func (a *SecretsApiService) GetPkiIssuerRefCrlPem(ctx context.Context, issuerRef string) ApiGetPkiIssuerRefCrlPemRequest {
 	return ApiGetPkiIssuerRefCrlPemRequest{
 		ApiService: a,
-		ctx: ctx,
-		issuerRef: issuerRef,
+		ctx:        ctx,
+		issuerRef:  issuerRef,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetPkiIssuerRefCrlPemExecute(r ApiGetPkiIssuerRefCrlPemRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetPkiIssuerRefCrlPem")
@@ -11165,11 +11059,10 @@ func (a *SecretsApiService) GetPkiIssuerRefCrlPemExecute(r ApiGetPkiIssuerRefCrl
 }
 
 type ApiGetPkiIssuerRefDerPemRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	issuerRef string
+	issuerRef  string
 }
-
 
 func (r ApiGetPkiIssuerRefDerPemRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetPkiIssuerRefDerPemExecute(r)
@@ -11185,17 +11078,17 @@ GetPkiIssuerRefDerPem Method for GetPkiIssuerRefDerPem
 func (a *SecretsApiService) GetPkiIssuerRefDerPem(ctx context.Context, issuerRef string) ApiGetPkiIssuerRefDerPemRequest {
 	return ApiGetPkiIssuerRefDerPemRequest{
 		ApiService: a,
-		ctx: ctx,
-		issuerRef: issuerRef,
+		ctx:        ctx,
+		issuerRef:  issuerRef,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetPkiIssuerRefDerPemExecute(r ApiGetPkiIssuerRefDerPemRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetPkiIssuerRefDerPem")
@@ -11256,9 +11149,9 @@ func (a *SecretsApiService) GetPkiIssuerRefDerPemExecute(r ApiGetPkiIssuerRefDer
 }
 
 type ApiGetPkiIssuersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -11280,16 +11173,16 @@ GetPkiIssuers Method for GetPkiIssuers
 func (a *SecretsApiService) GetPkiIssuers(ctx context.Context) ApiGetPkiIssuersRequest {
 	return ApiGetPkiIssuersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetPkiIssuersExecute(r ApiGetPkiIssuersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetPkiIssuers")
@@ -11353,10 +11246,9 @@ func (a *SecretsApiService) GetPkiIssuersExecute(r ApiGetPkiIssuersRequest) (*ht
 }
 
 type ApiGetPkiJsonRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetPkiJsonRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetPkiJsonExecute(r)
@@ -11371,16 +11263,16 @@ GetPkiJson Method for GetPkiJson
 func (a *SecretsApiService) GetPkiJson(ctx context.Context) ApiGetPkiJsonRequest {
 	return ApiGetPkiJsonRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetPkiJsonExecute(r ApiGetPkiJsonRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetPkiJson")
@@ -11440,11 +11332,10 @@ func (a *SecretsApiService) GetPkiJsonExecute(r ApiGetPkiJsonRequest) (*http.Res
 }
 
 type ApiGetPkiKeyKeyRefRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	keyRef string
+	keyRef     string
 }
-
 
 func (r ApiGetPkiKeyKeyRefRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetPkiKeyKeyRefExecute(r)
@@ -11460,17 +11351,17 @@ GetPkiKeyKeyRef Method for GetPkiKeyKeyRef
 func (a *SecretsApiService) GetPkiKeyKeyRef(ctx context.Context, keyRef string) ApiGetPkiKeyKeyRefRequest {
 	return ApiGetPkiKeyKeyRefRequest{
 		ApiService: a,
-		ctx: ctx,
-		keyRef: keyRef,
+		ctx:        ctx,
+		keyRef:     keyRef,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetPkiKeyKeyRefExecute(r ApiGetPkiKeyKeyRefRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetPkiKeyKeyRef")
@@ -11531,9 +11422,9 @@ func (a *SecretsApiService) GetPkiKeyKeyRefExecute(r ApiGetPkiKeyKeyRefRequest) 
 }
 
 type ApiGetPkiKeysRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -11555,16 +11446,16 @@ GetPkiKeys Method for GetPkiKeys
 func (a *SecretsApiService) GetPkiKeys(ctx context.Context) ApiGetPkiKeysRequest {
 	return ApiGetPkiKeysRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetPkiKeysExecute(r ApiGetPkiKeysRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetPkiKeys")
@@ -11628,9 +11519,9 @@ func (a *SecretsApiService) GetPkiKeysExecute(r ApiGetPkiKeysRequest) (*http.Res
 }
 
 type ApiGetPkiRolesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -11652,16 +11543,16 @@ GetPkiRoles Method for GetPkiRoles
 func (a *SecretsApiService) GetPkiRoles(ctx context.Context) ApiGetPkiRolesRequest {
 	return ApiGetPkiRolesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetPkiRolesExecute(r ApiGetPkiRolesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetPkiRoles")
@@ -11725,11 +11616,10 @@ func (a *SecretsApiService) GetPkiRolesExecute(r ApiGetPkiRolesRequest) (*http.R
 }
 
 type ApiGetPkiRolesNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetPkiRolesNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetPkiRolesNameExecute(r)
@@ -11745,17 +11635,17 @@ GetPkiRolesName Method for GetPkiRolesName
 func (a *SecretsApiService) GetPkiRolesName(ctx context.Context, name string) ApiGetPkiRolesNameRequest {
 	return ApiGetPkiRolesNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetPkiRolesNameExecute(r ApiGetPkiRolesNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetPkiRolesName")
@@ -11816,10 +11706,9 @@ func (a *SecretsApiService) GetPkiRolesNameExecute(r ApiGetPkiRolesNameRequest) 
 }
 
 type ApiGetPkiTidyStatusRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetPkiTidyStatusRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetPkiTidyStatusExecute(r)
@@ -11834,16 +11723,16 @@ GetPkiTidyStatus Method for GetPkiTidyStatus
 func (a *SecretsApiService) GetPkiTidyStatus(ctx context.Context) ApiGetPkiTidyStatusRequest {
 	return ApiGetPkiTidyStatusRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetPkiTidyStatusExecute(r ApiGetPkiTidyStatusRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetPkiTidyStatus")
@@ -11903,10 +11792,9 @@ func (a *SecretsApiService) GetPkiTidyStatusExecute(r ApiGetPkiTidyStatusRequest
 }
 
 type ApiGetRabbitmqConfigLeaseRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetRabbitmqConfigLeaseRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetRabbitmqConfigLeaseExecute(r)
@@ -11921,16 +11809,16 @@ GetRabbitmqConfigLease Configure the lease parameters for generated credentials
 func (a *SecretsApiService) GetRabbitmqConfigLease(ctx context.Context) ApiGetRabbitmqConfigLeaseRequest {
 	return ApiGetRabbitmqConfigLeaseRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetRabbitmqConfigLeaseExecute(r ApiGetRabbitmqConfigLeaseRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetRabbitmqConfigLease")
@@ -11990,11 +11878,10 @@ func (a *SecretsApiService) GetRabbitmqConfigLeaseExecute(r ApiGetRabbitmqConfig
 }
 
 type ApiGetRabbitmqCredsNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetRabbitmqCredsNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetRabbitmqCredsNameExecute(r)
@@ -12010,17 +11897,17 @@ GetRabbitmqCredsName Request RabbitMQ credentials for a certain role.
 func (a *SecretsApiService) GetRabbitmqCredsName(ctx context.Context, name string) ApiGetRabbitmqCredsNameRequest {
 	return ApiGetRabbitmqCredsNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetRabbitmqCredsNameExecute(r ApiGetRabbitmqCredsNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetRabbitmqCredsName")
@@ -12081,9 +11968,9 @@ func (a *SecretsApiService) GetRabbitmqCredsNameExecute(r ApiGetRabbitmqCredsNam
 }
 
 type ApiGetRabbitmqRolesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -12105,16 +11992,16 @@ GetRabbitmqRoles Manage the roles that can be created with this backend.
 func (a *SecretsApiService) GetRabbitmqRoles(ctx context.Context) ApiGetRabbitmqRolesRequest {
 	return ApiGetRabbitmqRolesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetRabbitmqRolesExecute(r ApiGetRabbitmqRolesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetRabbitmqRoles")
@@ -12178,11 +12065,10 @@ func (a *SecretsApiService) GetRabbitmqRolesExecute(r ApiGetRabbitmqRolesRequest
 }
 
 type ApiGetRabbitmqRolesNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetRabbitmqRolesNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetRabbitmqRolesNameExecute(r)
@@ -12198,17 +12084,17 @@ GetRabbitmqRolesName Manage the roles that can be created with this backend.
 func (a *SecretsApiService) GetRabbitmqRolesName(ctx context.Context, name string) ApiGetRabbitmqRolesNameRequest {
 	return ApiGetRabbitmqRolesNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetRabbitmqRolesNameExecute(r ApiGetRabbitmqRolesNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetRabbitmqRolesName")
@@ -12269,10 +12155,9 @@ func (a *SecretsApiService) GetRabbitmqRolesNameExecute(r ApiGetRabbitmqRolesNam
 }
 
 type ApiGetSecretConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetSecretConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSecretConfigExecute(r)
@@ -12287,16 +12172,16 @@ GetSecretConfig Read the backend level settings.
 func (a *SecretsApiService) GetSecretConfig(ctx context.Context) ApiGetSecretConfigRequest {
 	return ApiGetSecretConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetSecretConfigExecute(r ApiGetSecretConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetSecretConfig")
@@ -12356,11 +12241,10 @@ func (a *SecretsApiService) GetSecretConfigExecute(r ApiGetSecretConfigRequest) 
 }
 
 type ApiGetSecretDataPathRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	path string
+	path       string
 }
-
 
 func (r ApiGetSecretDataPathRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSecretDataPathExecute(r)
@@ -12376,17 +12260,17 @@ GetSecretDataPath Write, Patch, Read, and Delete data in the Key-Value Store.
 func (a *SecretsApiService) GetSecretDataPath(ctx context.Context, path string) ApiGetSecretDataPathRequest {
 	return ApiGetSecretDataPathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetSecretDataPathExecute(r ApiGetSecretDataPathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetSecretDataPath")
@@ -12447,10 +12331,10 @@ func (a *SecretsApiService) GetSecretDataPathExecute(r ApiGetSecretDataPathReque
 }
 
 type ApiGetSecretMetadataPathRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	path string
-	list *string
+	path       string
+	list       *string
 }
 
 // Return a list if &#x60;true&#x60;
@@ -12473,17 +12357,17 @@ GetSecretMetadataPath Configures settings for the KV store
 func (a *SecretsApiService) GetSecretMetadataPath(ctx context.Context, path string) ApiGetSecretMetadataPathRequest {
 	return ApiGetSecretMetadataPathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetSecretMetadataPathExecute(r ApiGetSecretMetadataPathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetSecretMetadataPath")
@@ -12547,11 +12431,10 @@ func (a *SecretsApiService) GetSecretMetadataPathExecute(r ApiGetSecretMetadataP
 }
 
 type ApiGetSecretSubkeysPathRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	path string
+	path       string
 }
-
 
 func (r ApiGetSecretSubkeysPathRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSecretSubkeysPathExecute(r)
@@ -12567,17 +12450,17 @@ GetSecretSubkeysPath Read the structure of a secret entry from the Key-Value sto
 func (a *SecretsApiService) GetSecretSubkeysPath(ctx context.Context, path string) ApiGetSecretSubkeysPathRequest {
 	return ApiGetSecretSubkeysPathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetSecretSubkeysPathExecute(r ApiGetSecretSubkeysPathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetSecretSubkeysPath")
@@ -12638,10 +12521,9 @@ func (a *SecretsApiService) GetSecretSubkeysPathExecute(r ApiGetSecretSubkeysPat
 }
 
 type ApiGetSshConfigCaRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetSshConfigCaRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSshConfigCaExecute(r)
@@ -12656,16 +12538,16 @@ GetSshConfigCa Set the SSH private key used for signing certificates.
 func (a *SecretsApiService) GetSshConfigCa(ctx context.Context) ApiGetSshConfigCaRequest {
 	return ApiGetSshConfigCaRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetSshConfigCaExecute(r ApiGetSshConfigCaRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetSshConfigCa")
@@ -12725,10 +12607,9 @@ func (a *SecretsApiService) GetSshConfigCaExecute(r ApiGetSshConfigCaRequest) (*
 }
 
 type ApiGetSshConfigZeroaddressRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetSshConfigZeroaddressRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSshConfigZeroaddressExecute(r)
@@ -12743,16 +12624,16 @@ GetSshConfigZeroaddress Assign zero address as default CIDR block for select rol
 func (a *SecretsApiService) GetSshConfigZeroaddress(ctx context.Context) ApiGetSshConfigZeroaddressRequest {
 	return ApiGetSshConfigZeroaddressRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetSshConfigZeroaddressExecute(r ApiGetSshConfigZeroaddressRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetSshConfigZeroaddress")
@@ -12812,10 +12693,9 @@ func (a *SecretsApiService) GetSshConfigZeroaddressExecute(r ApiGetSshConfigZero
 }
 
 type ApiGetSshPublicKeyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetSshPublicKeyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSshPublicKeyExecute(r)
@@ -12830,16 +12710,16 @@ GetSshPublicKey Retrieve the public key.
 func (a *SecretsApiService) GetSshPublicKey(ctx context.Context) ApiGetSshPublicKeyRequest {
 	return ApiGetSshPublicKeyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetSshPublicKeyExecute(r ApiGetSshPublicKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetSshPublicKey")
@@ -12899,9 +12779,9 @@ func (a *SecretsApiService) GetSshPublicKeyExecute(r ApiGetSshPublicKeyRequest) 
 }
 
 type ApiGetSshRolesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -12923,16 +12803,16 @@ GetSshRoles Manage the 'roles' that can be created with this backend.
 func (a *SecretsApiService) GetSshRoles(ctx context.Context) ApiGetSshRolesRequest {
 	return ApiGetSshRolesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetSshRolesExecute(r ApiGetSshRolesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetSshRoles")
@@ -12996,11 +12876,10 @@ func (a *SecretsApiService) GetSshRolesExecute(r ApiGetSshRolesRequest) (*http.R
 }
 
 type ApiGetSshRolesRoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	role string
+	role       string
 }
-
 
 func (r ApiGetSshRolesRoleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetSshRolesRoleExecute(r)
@@ -13016,17 +12895,17 @@ GetSshRolesRole Manage the 'roles' that can be created with this backend.
 func (a *SecretsApiService) GetSshRolesRole(ctx context.Context, role string) ApiGetSshRolesRoleRequest {
 	return ApiGetSshRolesRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		role: role,
+		ctx:        ctx,
+		role:       role,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetSshRolesRoleExecute(r ApiGetSshRolesRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetSshRolesRole")
@@ -13087,10 +12966,9 @@ func (a *SecretsApiService) GetSshRolesRoleExecute(r ApiGetSshRolesRoleRequest) 
 }
 
 type ApiGetTerraformConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetTerraformConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetTerraformConfigExecute(r)
@@ -13105,16 +12983,16 @@ GetTerraformConfig Method for GetTerraformConfig
 func (a *SecretsApiService) GetTerraformConfig(ctx context.Context) ApiGetTerraformConfigRequest {
 	return ApiGetTerraformConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetTerraformConfigExecute(r ApiGetTerraformConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetTerraformConfig")
@@ -13174,11 +13052,10 @@ func (a *SecretsApiService) GetTerraformConfigExecute(r ApiGetTerraformConfigReq
 }
 
 type ApiGetTerraformCredsNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetTerraformCredsNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetTerraformCredsNameExecute(r)
@@ -13194,17 +13071,17 @@ GetTerraformCredsName Generate a Terraform Cloud or Enterprise API token from a 
 func (a *SecretsApiService) GetTerraformCredsName(ctx context.Context, name string) ApiGetTerraformCredsNameRequest {
 	return ApiGetTerraformCredsNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetTerraformCredsNameExecute(r ApiGetTerraformCredsNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetTerraformCredsName")
@@ -13265,9 +13142,9 @@ func (a *SecretsApiService) GetTerraformCredsNameExecute(r ApiGetTerraformCredsN
 }
 
 type ApiGetTerraformRoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -13289,16 +13166,16 @@ GetTerraformRole Method for GetTerraformRole
 func (a *SecretsApiService) GetTerraformRole(ctx context.Context) ApiGetTerraformRoleRequest {
 	return ApiGetTerraformRoleRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetTerraformRoleExecute(r ApiGetTerraformRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetTerraformRole")
@@ -13362,11 +13239,10 @@ func (a *SecretsApiService) GetTerraformRoleExecute(r ApiGetTerraformRoleRequest
 }
 
 type ApiGetTerraformRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetTerraformRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetTerraformRoleNameExecute(r)
@@ -13382,17 +13258,17 @@ GetTerraformRoleName Method for GetTerraformRoleName
 func (a *SecretsApiService) GetTerraformRoleName(ctx context.Context, name string) ApiGetTerraformRoleNameRequest {
 	return ApiGetTerraformRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetTerraformRoleNameExecute(r ApiGetTerraformRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetTerraformRoleName")
@@ -13453,11 +13329,10 @@ func (a *SecretsApiService) GetTerraformRoleNameExecute(r ApiGetTerraformRoleNam
 }
 
 type ApiGetTotpCodeNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetTotpCodeNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetTotpCodeNameExecute(r)
@@ -13473,17 +13348,17 @@ GetTotpCodeName Request time-based one-time use password or validate a password 
 func (a *SecretsApiService) GetTotpCodeName(ctx context.Context, name string) ApiGetTotpCodeNameRequest {
 	return ApiGetTotpCodeNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetTotpCodeNameExecute(r ApiGetTotpCodeNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetTotpCodeName")
@@ -13544,9 +13419,9 @@ func (a *SecretsApiService) GetTotpCodeNameExecute(r ApiGetTotpCodeNameRequest) 
 }
 
 type ApiGetTotpKeysRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -13568,16 +13443,16 @@ GetTotpKeys Manage the keys that can be created with this backend.
 func (a *SecretsApiService) GetTotpKeys(ctx context.Context) ApiGetTotpKeysRequest {
 	return ApiGetTotpKeysRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetTotpKeysExecute(r ApiGetTotpKeysRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetTotpKeys")
@@ -13641,11 +13516,10 @@ func (a *SecretsApiService) GetTotpKeysExecute(r ApiGetTotpKeysRequest) (*http.R
 }
 
 type ApiGetTotpKeysNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetTotpKeysNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetTotpKeysNameExecute(r)
@@ -13661,17 +13535,17 @@ GetTotpKeysName Manage the keys that can be created with this backend.
 func (a *SecretsApiService) GetTotpKeysName(ctx context.Context, name string) ApiGetTotpKeysNameRequest {
 	return ApiGetTotpKeysNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetTotpKeysNameExecute(r ApiGetTotpKeysNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetTotpKeysName")
@@ -13732,11 +13606,10 @@ func (a *SecretsApiService) GetTotpKeysNameExecute(r ApiGetTotpKeysNameRequest) 
 }
 
 type ApiGetTransitBackupNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetTransitBackupNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetTransitBackupNameExecute(r)
@@ -13752,17 +13625,17 @@ GetTransitBackupName Backup the named key
 func (a *SecretsApiService) GetTransitBackupName(ctx context.Context, name string) ApiGetTransitBackupNameRequest {
 	return ApiGetTransitBackupNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetTransitBackupNameExecute(r ApiGetTransitBackupNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetTransitBackupName")
@@ -13823,10 +13696,9 @@ func (a *SecretsApiService) GetTransitBackupNameExecute(r ApiGetTransitBackupNam
 }
 
 type ApiGetTransitCacheConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetTransitCacheConfigRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetTransitCacheConfigExecute(r)
@@ -13841,16 +13713,16 @@ GetTransitCacheConfig Returns the size of the active cache
 func (a *SecretsApiService) GetTransitCacheConfig(ctx context.Context) ApiGetTransitCacheConfigRequest {
 	return ApiGetTransitCacheConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetTransitCacheConfigExecute(r ApiGetTransitCacheConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetTransitCacheConfig")
@@ -13910,12 +13782,11 @@ func (a *SecretsApiService) GetTransitCacheConfigExecute(r ApiGetTransitCacheCon
 }
 
 type ApiGetTransitExportTypeNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
-	type_ string
+	name       string
+	type_      string
 }
-
 
 func (r ApiGetTransitExportTypeNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetTransitExportTypeNameExecute(r)
@@ -13932,18 +13803,18 @@ GetTransitExportTypeName Export named encryption or signing key
 func (a *SecretsApiService) GetTransitExportTypeName(ctx context.Context, name string, type_ string) ApiGetTransitExportTypeNameRequest {
 	return ApiGetTransitExportTypeNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
-		type_: type_,
+		ctx:        ctx,
+		name:       name,
+		type_:      type_,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetTransitExportTypeNameExecute(r ApiGetTransitExportTypeNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetTransitExportTypeName")
@@ -14005,13 +13876,12 @@ func (a *SecretsApiService) GetTransitExportTypeNameExecute(r ApiGetTransitExpor
 }
 
 type ApiGetTransitExportTypeNameVersionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
-	type_ string
-	version string
+	name       string
+	type_      string
+	version    string
 }
-
 
 func (r ApiGetTransitExportTypeNameVersionRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetTransitExportTypeNameVersionExecute(r)
@@ -14029,19 +13899,19 @@ GetTransitExportTypeNameVersion Export named encryption or signing key
 func (a *SecretsApiService) GetTransitExportTypeNameVersion(ctx context.Context, name string, type_ string, version string) ApiGetTransitExportTypeNameVersionRequest {
 	return ApiGetTransitExportTypeNameVersionRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
-		type_: type_,
-		version: version,
+		ctx:        ctx,
+		name:       name,
+		type_:      type_,
+		version:    version,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetTransitExportTypeNameVersionExecute(r ApiGetTransitExportTypeNameVersionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetTransitExportTypeNameVersion")
@@ -14104,9 +13974,9 @@ func (a *SecretsApiService) GetTransitExportTypeNameVersionExecute(r ApiGetTrans
 }
 
 type ApiGetTransitKeysRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	list *string
+	list       *string
 }
 
 // Must be set to &#x60;true&#x60;
@@ -14128,16 +13998,16 @@ GetTransitKeys Managed named encryption keys
 func (a *SecretsApiService) GetTransitKeys(ctx context.Context) ApiGetTransitKeysRequest {
 	return ApiGetTransitKeysRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetTransitKeysExecute(r ApiGetTransitKeysRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetTransitKeys")
@@ -14201,11 +14071,10 @@ func (a *SecretsApiService) GetTransitKeysExecute(r ApiGetTransitKeysRequest) (*
 }
 
 type ApiGetTransitKeysNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiGetTransitKeysNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetTransitKeysNameExecute(r)
@@ -14221,17 +14090,17 @@ GetTransitKeysName Managed named encryption keys
 func (a *SecretsApiService) GetTransitKeysName(ctx context.Context, name string) ApiGetTransitKeysNameRequest {
 	return ApiGetTransitKeysNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetTransitKeysNameExecute(r ApiGetTransitKeysNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetTransitKeysName")
@@ -14292,10 +14161,9 @@ func (a *SecretsApiService) GetTransitKeysNameExecute(r ApiGetTransitKeysNameReq
 }
 
 type ApiGetTransitWrappingKeyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiGetTransitWrappingKeyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GetTransitWrappingKeyExecute(r)
@@ -14310,16 +14178,16 @@ GetTransitWrappingKey Returns the public key to use for wrapping imported keys
 func (a *SecretsApiService) GetTransitWrappingKey(ctx context.Context) ApiGetTransitWrappingKeyRequest {
 	return ApiGetTransitWrappingKeyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) GetTransitWrappingKeyExecute(r ApiGetTransitWrappingKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.GetTransitWrappingKey")
@@ -14379,8 +14247,8 @@ func (a *SecretsApiService) GetTransitWrappingKeyExecute(r ApiGetTransitWrapping
 }
 
 type ApiPostAdConfigRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx             context.Context
+	ApiService      *SecretsApiService
 	adConfigRequest *AdConfigRequest
 }
 
@@ -14402,16 +14270,16 @@ PostAdConfig Configure the AD server to connect to, along with password options.
 func (a *SecretsApiService) PostAdConfig(ctx context.Context) ApiPostAdConfigRequest {
 	return ApiPostAdConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostAdConfigExecute(r ApiPostAdConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostAdConfig")
@@ -14473,9 +14341,9 @@ func (a *SecretsApiService) PostAdConfigExecute(r ApiPostAdConfigRequest) (*http
 }
 
 type ApiPostAdLibraryManageNameCheckInRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx                           context.Context
+	ApiService                    *SecretsApiService
+	name                          string
 	adLibraryManageCheckInRequest *AdLibraryManageCheckInRequest
 }
 
@@ -14498,17 +14366,17 @@ PostAdLibraryManageNameCheckIn Check service accounts in to the library.
 func (a *SecretsApiService) PostAdLibraryManageNameCheckIn(ctx context.Context, name string) ApiPostAdLibraryManageNameCheckInRequest {
 	return ApiPostAdLibraryManageNameCheckInRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostAdLibraryManageNameCheckInExecute(r ApiPostAdLibraryManageNameCheckInRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostAdLibraryManageNameCheckIn")
@@ -14571,9 +14439,9 @@ func (a *SecretsApiService) PostAdLibraryManageNameCheckInExecute(r ApiPostAdLib
 }
 
 type ApiPostAdLibraryNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx              context.Context
+	ApiService       *SecretsApiService
+	name             string
 	adLibraryRequest *AdLibraryRequest
 }
 
@@ -14596,17 +14464,17 @@ PostAdLibraryName Update a library set.
 func (a *SecretsApiService) PostAdLibraryName(ctx context.Context, name string) ApiPostAdLibraryNameRequest {
 	return ApiPostAdLibraryNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostAdLibraryNameExecute(r ApiPostAdLibraryNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostAdLibraryName")
@@ -14669,9 +14537,9 @@ func (a *SecretsApiService) PostAdLibraryNameExecute(r ApiPostAdLibraryNameReque
 }
 
 type ApiPostAdLibraryNameCheckInRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx                     context.Context
+	ApiService              *SecretsApiService
+	name                    string
 	adLibraryCheckInRequest *AdLibraryCheckInRequest
 }
 
@@ -14694,17 +14562,17 @@ PostAdLibraryNameCheckIn Check service accounts in to the library.
 func (a *SecretsApiService) PostAdLibraryNameCheckIn(ctx context.Context, name string) ApiPostAdLibraryNameCheckInRequest {
 	return ApiPostAdLibraryNameCheckInRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostAdLibraryNameCheckInExecute(r ApiPostAdLibraryNameCheckInRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostAdLibraryNameCheckIn")
@@ -14767,9 +14635,9 @@ func (a *SecretsApiService) PostAdLibraryNameCheckInExecute(r ApiPostAdLibraryNa
 }
 
 type ApiPostAdLibraryNameCheckOutRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx                      context.Context
+	ApiService               *SecretsApiService
+	name                     string
 	adLibraryCheckOutRequest *AdLibraryCheckOutRequest
 }
 
@@ -14792,17 +14660,17 @@ PostAdLibraryNameCheckOut Check a service account out from the library.
 func (a *SecretsApiService) PostAdLibraryNameCheckOut(ctx context.Context, name string) ApiPostAdLibraryNameCheckOutRequest {
 	return ApiPostAdLibraryNameCheckOutRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostAdLibraryNameCheckOutExecute(r ApiPostAdLibraryNameCheckOutRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostAdLibraryNameCheckOut")
@@ -14865,9 +14733,9 @@ func (a *SecretsApiService) PostAdLibraryNameCheckOutExecute(r ApiPostAdLibraryN
 }
 
 type ApiPostAdRolesNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx            context.Context
+	ApiService     *SecretsApiService
+	name           string
 	adRolesRequest *AdRolesRequest
 }
 
@@ -14890,17 +14758,17 @@ PostAdRolesName Manage roles to build links between Vault and Active Directory s
 func (a *SecretsApiService) PostAdRolesName(ctx context.Context, name string) ApiPostAdRolesNameRequest {
 	return ApiPostAdRolesNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostAdRolesNameExecute(r ApiPostAdRolesNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostAdRolesName")
@@ -14963,11 +14831,10 @@ func (a *SecretsApiService) PostAdRolesNameExecute(r ApiPostAdRolesNameRequest) 
 }
 
 type ApiPostAdRotateRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiPostAdRotateRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostAdRotateRoleNameExecute(r)
@@ -14983,17 +14850,17 @@ PostAdRotateRoleName Method for PostAdRotateRoleName
 func (a *SecretsApiService) PostAdRotateRoleName(ctx context.Context, name string) ApiPostAdRotateRoleNameRequest {
 	return ApiPostAdRotateRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostAdRotateRoleNameExecute(r ApiPostAdRotateRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostAdRotateRoleName")
@@ -15054,10 +14921,9 @@ func (a *SecretsApiService) PostAdRotateRoleNameExecute(r ApiPostAdRotateRoleNam
 }
 
 type ApiPostAdRotateRootRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiPostAdRotateRootRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostAdRotateRootExecute(r)
@@ -15072,16 +14938,16 @@ PostAdRotateRoot Method for PostAdRotateRoot
 func (a *SecretsApiService) PostAdRotateRoot(ctx context.Context) ApiPostAdRotateRootRequest {
 	return ApiPostAdRotateRootRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostAdRotateRootExecute(r ApiPostAdRotateRootRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostAdRotateRoot")
@@ -15141,8 +15007,8 @@ func (a *SecretsApiService) PostAdRotateRootExecute(r ApiPostAdRotateRootRequest
 }
 
 type ApiPostAlicloudConfigRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                   context.Context
+	ApiService            *SecretsApiService
 	alicloudConfigRequest *AlicloudConfigRequest
 }
 
@@ -15164,16 +15030,16 @@ PostAlicloudConfig Configure the access key and secret to use for RAM and STS ca
 func (a *SecretsApiService) PostAlicloudConfig(ctx context.Context) ApiPostAlicloudConfigRequest {
 	return ApiPostAlicloudConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostAlicloudConfigExecute(r ApiPostAlicloudConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostAlicloudConfig")
@@ -15235,9 +15101,9 @@ func (a *SecretsApiService) PostAlicloudConfigExecute(r ApiPostAlicloudConfigReq
 }
 
 type ApiPostAlicloudRoleNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx                 context.Context
+	ApiService          *SecretsApiService
+	name                string
 	alicloudRoleRequest *AlicloudRoleRequest
 }
 
@@ -15260,17 +15126,17 @@ PostAlicloudRoleName Read, write and reference policies and roles that API keys 
 func (a *SecretsApiService) PostAlicloudRoleName(ctx context.Context, name string) ApiPostAlicloudRoleNameRequest {
 	return ApiPostAlicloudRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostAlicloudRoleNameExecute(r ApiPostAlicloudRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostAlicloudRoleName")
@@ -15333,8 +15199,8 @@ func (a *SecretsApiService) PostAlicloudRoleNameExecute(r ApiPostAlicloudRoleNam
 }
 
 type ApiPostAwsConfigLeaseRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                   context.Context
+	ApiService            *SecretsApiService
 	awsConfigLeaseRequest *AwsConfigLeaseRequest
 }
 
@@ -15356,16 +15222,16 @@ PostAwsConfigLease Configure the default lease information for generated credent
 func (a *SecretsApiService) PostAwsConfigLease(ctx context.Context) ApiPostAwsConfigLeaseRequest {
 	return ApiPostAwsConfigLeaseRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostAwsConfigLeaseExecute(r ApiPostAwsConfigLeaseRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostAwsConfigLease")
@@ -15427,8 +15293,8 @@ func (a *SecretsApiService) PostAwsConfigLeaseExecute(r ApiPostAwsConfigLeaseReq
 }
 
 type ApiPostAwsConfigRootRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                  context.Context
+	ApiService           *SecretsApiService
 	awsConfigRootRequest *AwsConfigRootRequest
 }
 
@@ -15450,16 +15316,16 @@ PostAwsConfigRoot Configure the root credentials that are used to manage IAM.
 func (a *SecretsApiService) PostAwsConfigRoot(ctx context.Context) ApiPostAwsConfigRootRequest {
 	return ApiPostAwsConfigRootRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostAwsConfigRootExecute(r ApiPostAwsConfigRootRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostAwsConfigRoot")
@@ -15521,10 +15387,9 @@ func (a *SecretsApiService) PostAwsConfigRootExecute(r ApiPostAwsConfigRootReque
 }
 
 type ApiPostAwsConfigRotateRootRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiPostAwsConfigRotateRootRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostAwsConfigRotateRootExecute(r)
@@ -15539,16 +15404,16 @@ PostAwsConfigRotateRoot Method for PostAwsConfigRotateRoot
 func (a *SecretsApiService) PostAwsConfigRotateRoot(ctx context.Context) ApiPostAwsConfigRotateRootRequest {
 	return ApiPostAwsConfigRotateRootRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostAwsConfigRotateRootExecute(r ApiPostAwsConfigRotateRootRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostAwsConfigRotateRoot")
@@ -15608,8 +15473,8 @@ func (a *SecretsApiService) PostAwsConfigRotateRootExecute(r ApiPostAwsConfigRot
 }
 
 type ApiPostAwsCredsRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx             context.Context
+	ApiService      *SecretsApiService
 	awsCredsRequest *AwsCredsRequest
 }
 
@@ -15631,16 +15496,16 @@ PostAwsCreds Generate AWS credentials from a specific Vault role.
 func (a *SecretsApiService) PostAwsCreds(ctx context.Context) ApiPostAwsCredsRequest {
 	return ApiPostAwsCredsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostAwsCredsExecute(r ApiPostAwsCredsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostAwsCreds")
@@ -15702,9 +15567,9 @@ func (a *SecretsApiService) PostAwsCredsExecute(r ApiPostAwsCredsRequest) (*http
 }
 
 type ApiPostAwsRolesNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx             context.Context
+	ApiService      *SecretsApiService
+	name            string
 	awsRolesRequest *AwsRolesRequest
 }
 
@@ -15727,17 +15592,17 @@ PostAwsRolesName Read, write and reference IAM policies that access keys can be 
 func (a *SecretsApiService) PostAwsRolesName(ctx context.Context, name string) ApiPostAwsRolesNameRequest {
 	return ApiPostAwsRolesNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostAwsRolesNameExecute(r ApiPostAwsRolesNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostAwsRolesName")
@@ -15800,9 +15665,9 @@ func (a *SecretsApiService) PostAwsRolesNameExecute(r ApiPostAwsRolesNameRequest
 }
 
 type ApiPostAwsStsNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx           context.Context
+	ApiService    *SecretsApiService
+	name          string
 	awsStsRequest *AwsStsRequest
 }
 
@@ -15825,17 +15690,17 @@ PostAwsStsName Generate AWS credentials from a specific Vault role.
 func (a *SecretsApiService) PostAwsStsName(ctx context.Context, name string) ApiPostAwsStsNameRequest {
 	return ApiPostAwsStsNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostAwsStsNameExecute(r ApiPostAwsStsNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostAwsStsName")
@@ -15898,8 +15763,8 @@ func (a *SecretsApiService) PostAwsStsNameExecute(r ApiPostAwsStsNameRequest) (*
 }
 
 type ApiPostAzureConfigRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                context.Context
+	ApiService         *SecretsApiService
 	azureConfigRequest *AzureConfigRequest
 }
 
@@ -15921,16 +15786,16 @@ PostAzureConfig Method for PostAzureConfig
 func (a *SecretsApiService) PostAzureConfig(ctx context.Context) ApiPostAzureConfigRequest {
 	return ApiPostAzureConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostAzureConfigExecute(r ApiPostAzureConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostAzureConfig")
@@ -15992,9 +15857,9 @@ func (a *SecretsApiService) PostAzureConfigExecute(r ApiPostAzureConfigRequest) 
 }
 
 type ApiPostAzureRolesNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx               context.Context
+	ApiService        *SecretsApiService
+	name              string
 	azureRolesRequest *AzureRolesRequest
 }
 
@@ -16017,17 +15882,17 @@ PostAzureRolesName Manage the Vault roles used to generate Azure credentials.
 func (a *SecretsApiService) PostAzureRolesName(ctx context.Context, name string) ApiPostAzureRolesNameRequest {
 	return ApiPostAzureRolesNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostAzureRolesNameExecute(r ApiPostAzureRolesNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostAzureRolesName")
@@ -16090,10 +15955,9 @@ func (a *SecretsApiService) PostAzureRolesNameExecute(r ApiPostAzureRolesNameReq
 }
 
 type ApiPostAzureRotateRootRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiPostAzureRotateRootRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostAzureRotateRootExecute(r)
@@ -16108,16 +15972,16 @@ PostAzureRotateRoot Method for PostAzureRotateRoot
 func (a *SecretsApiService) PostAzureRotateRoot(ctx context.Context) ApiPostAzureRotateRootRequest {
 	return ApiPostAzureRotateRootRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostAzureRotateRootExecute(r ApiPostAzureRotateRootRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostAzureRotateRoot")
@@ -16177,8 +16041,8 @@ func (a *SecretsApiService) PostAzureRotateRootExecute(r ApiPostAzureRotateRootR
 }
 
 type ApiPostConsulConfigAccessRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                       context.Context
+	ApiService                *SecretsApiService
 	consulConfigAccessRequest *ConsulConfigAccessRequest
 }
 
@@ -16200,16 +16064,16 @@ PostConsulConfigAccess Method for PostConsulConfigAccess
 func (a *SecretsApiService) PostConsulConfigAccess(ctx context.Context) ApiPostConsulConfigAccessRequest {
 	return ApiPostConsulConfigAccessRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostConsulConfigAccessExecute(r ApiPostConsulConfigAccessRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostConsulConfigAccess")
@@ -16271,9 +16135,9 @@ func (a *SecretsApiService) PostConsulConfigAccessExecute(r ApiPostConsulConfigA
 }
 
 type ApiPostConsulRolesNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx                context.Context
+	ApiService         *SecretsApiService
+	name               string
 	consulRolesRequest *ConsulRolesRequest
 }
 
@@ -16296,17 +16160,17 @@ PostConsulRolesName Method for PostConsulRolesName
 func (a *SecretsApiService) PostConsulRolesName(ctx context.Context, name string) ApiPostConsulRolesNameRequest {
 	return ApiPostConsulRolesNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostConsulRolesNameExecute(r ApiPostConsulRolesNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostConsulRolesName")
@@ -16369,11 +16233,10 @@ func (a *SecretsApiService) PostConsulRolesNameExecute(r ApiPostConsulRolesNameR
 }
 
 type ApiPostCubbyholePathRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	path string
+	path       string
 }
-
 
 func (r ApiPostCubbyholePathRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostCubbyholePathExecute(r)
@@ -16389,17 +16252,17 @@ PostCubbyholePath Store a secret at the specified location.
 func (a *SecretsApiService) PostCubbyholePath(ctx context.Context, path string) ApiPostCubbyholePathRequest {
 	return ApiPostCubbyholePathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostCubbyholePathExecute(r ApiPostCubbyholePathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostCubbyholePath")
@@ -16460,8 +16323,8 @@ func (a *SecretsApiService) PostCubbyholePathExecute(r ApiPostCubbyholePathReque
 }
 
 type ApiPostGcpConfigRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx              context.Context
+	ApiService       *SecretsApiService
 	gcpConfigRequest *GcpConfigRequest
 }
 
@@ -16483,16 +16346,16 @@ PostGcpConfig Method for PostGcpConfig
 func (a *SecretsApiService) PostGcpConfig(ctx context.Context) ApiPostGcpConfigRequest {
 	return ApiPostGcpConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostGcpConfigExecute(r ApiPostGcpConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostGcpConfig")
@@ -16554,10 +16417,9 @@ func (a *SecretsApiService) PostGcpConfigExecute(r ApiPostGcpConfigRequest) (*ht
 }
 
 type ApiPostGcpConfigRotateRootRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiPostGcpConfigRotateRootRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostGcpConfigRotateRootExecute(r)
@@ -16572,16 +16434,16 @@ PostGcpConfigRotateRoot Method for PostGcpConfigRotateRoot
 func (a *SecretsApiService) PostGcpConfigRotateRoot(ctx context.Context) ApiPostGcpConfigRotateRootRequest {
 	return ApiPostGcpConfigRotateRootRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostGcpConfigRotateRootExecute(r ApiPostGcpConfigRotateRootRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostGcpConfigRotateRoot")
@@ -16641,9 +16503,9 @@ func (a *SecretsApiService) PostGcpConfigRotateRootExecute(r ApiPostGcpConfigRot
 }
 
 type ApiPostGcpKeyRolesetRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	roleset string
+	ctx           context.Context
+	ApiService    *SecretsApiService
+	roleset       string
 	gcpKeyRequest *GcpKeyRequest
 }
 
@@ -16666,17 +16528,17 @@ PostGcpKeyRoleset Method for PostGcpKeyRoleset
 func (a *SecretsApiService) PostGcpKeyRoleset(ctx context.Context, roleset string) ApiPostGcpKeyRolesetRequest {
 	return ApiPostGcpKeyRolesetRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleset: roleset,
+		ctx:        ctx,
+		roleset:    roleset,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostGcpKeyRolesetExecute(r ApiPostGcpKeyRolesetRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostGcpKeyRoleset")
@@ -16739,9 +16601,9 @@ func (a *SecretsApiService) PostGcpKeyRolesetExecute(r ApiPostGcpKeyRolesetReque
 }
 
 type ApiPostGcpRolesetNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx               context.Context
+	ApiService        *SecretsApiService
+	name              string
 	gcpRolesetRequest *GcpRolesetRequest
 }
 
@@ -16764,17 +16626,17 @@ PostGcpRolesetName Method for PostGcpRolesetName
 func (a *SecretsApiService) PostGcpRolesetName(ctx context.Context, name string) ApiPostGcpRolesetNameRequest {
 	return ApiPostGcpRolesetNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostGcpRolesetNameExecute(r ApiPostGcpRolesetNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostGcpRolesetName")
@@ -16837,11 +16699,10 @@ func (a *SecretsApiService) PostGcpRolesetNameExecute(r ApiPostGcpRolesetNameReq
 }
 
 type ApiPostGcpRolesetNameRotateRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiPostGcpRolesetNameRotateRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostGcpRolesetNameRotateExecute(r)
@@ -16857,17 +16718,17 @@ PostGcpRolesetNameRotate Method for PostGcpRolesetNameRotate
 func (a *SecretsApiService) PostGcpRolesetNameRotate(ctx context.Context, name string) ApiPostGcpRolesetNameRotateRequest {
 	return ApiPostGcpRolesetNameRotateRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostGcpRolesetNameRotateExecute(r ApiPostGcpRolesetNameRotateRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostGcpRolesetNameRotate")
@@ -16928,11 +16789,10 @@ func (a *SecretsApiService) PostGcpRolesetNameRotateExecute(r ApiPostGcpRolesetN
 }
 
 type ApiPostGcpRolesetNameRotateKeyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiPostGcpRolesetNameRotateKeyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostGcpRolesetNameRotateKeyExecute(r)
@@ -16948,17 +16808,17 @@ PostGcpRolesetNameRotateKey Method for PostGcpRolesetNameRotateKey
 func (a *SecretsApiService) PostGcpRolesetNameRotateKey(ctx context.Context, name string) ApiPostGcpRolesetNameRotateKeyRequest {
 	return ApiPostGcpRolesetNameRotateKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostGcpRolesetNameRotateKeyExecute(r ApiPostGcpRolesetNameRotateKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostGcpRolesetNameRotateKey")
@@ -17019,9 +16879,9 @@ func (a *SecretsApiService) PostGcpRolesetNameRotateKeyExecute(r ApiPostGcpRoles
 }
 
 type ApiPostGcpRolesetRolesetKeyRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	roleset string
+	ctx                  context.Context
+	ApiService           *SecretsApiService
+	roleset              string
 	gcpRolesetKeyRequest *GcpRolesetKeyRequest
 }
 
@@ -17044,17 +16904,17 @@ PostGcpRolesetRolesetKey Method for PostGcpRolesetRolesetKey
 func (a *SecretsApiService) PostGcpRolesetRolesetKey(ctx context.Context, roleset string) ApiPostGcpRolesetRolesetKeyRequest {
 	return ApiPostGcpRolesetRolesetKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleset: roleset,
+		ctx:        ctx,
+		roleset:    roleset,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostGcpRolesetRolesetKeyExecute(r ApiPostGcpRolesetRolesetKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostGcpRolesetRolesetKey")
@@ -17117,11 +16977,10 @@ func (a *SecretsApiService) PostGcpRolesetRolesetKeyExecute(r ApiPostGcpRolesetR
 }
 
 type ApiPostGcpRolesetRolesetTokenRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	roleset string
+	roleset    string
 }
-
 
 func (r ApiPostGcpRolesetRolesetTokenRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostGcpRolesetRolesetTokenExecute(r)
@@ -17137,17 +16996,17 @@ PostGcpRolesetRolesetToken Method for PostGcpRolesetRolesetToken
 func (a *SecretsApiService) PostGcpRolesetRolesetToken(ctx context.Context, roleset string) ApiPostGcpRolesetRolesetTokenRequest {
 	return ApiPostGcpRolesetRolesetTokenRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleset: roleset,
+		ctx:        ctx,
+		roleset:    roleset,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostGcpRolesetRolesetTokenExecute(r ApiPostGcpRolesetRolesetTokenRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostGcpRolesetRolesetToken")
@@ -17208,9 +17067,9 @@ func (a *SecretsApiService) PostGcpRolesetRolesetTokenExecute(r ApiPostGcpRolese
 }
 
 type ApiPostGcpStaticAccountNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx                     context.Context
+	ApiService              *SecretsApiService
+	name                    string
 	gcpStaticAccountRequest *GcpStaticAccountRequest
 }
 
@@ -17233,17 +17092,17 @@ PostGcpStaticAccountName Method for PostGcpStaticAccountName
 func (a *SecretsApiService) PostGcpStaticAccountName(ctx context.Context, name string) ApiPostGcpStaticAccountNameRequest {
 	return ApiPostGcpStaticAccountNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostGcpStaticAccountNameExecute(r ApiPostGcpStaticAccountNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostGcpStaticAccountName")
@@ -17306,9 +17165,9 @@ func (a *SecretsApiService) PostGcpStaticAccountNameExecute(r ApiPostGcpStaticAc
 }
 
 type ApiPostGcpStaticAccountNameKeyRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx                        context.Context
+	ApiService                 *SecretsApiService
+	name                       string
 	gcpStaticAccountKeyRequest *GcpStaticAccountKeyRequest
 }
 
@@ -17331,17 +17190,17 @@ PostGcpStaticAccountNameKey Method for PostGcpStaticAccountNameKey
 func (a *SecretsApiService) PostGcpStaticAccountNameKey(ctx context.Context, name string) ApiPostGcpStaticAccountNameKeyRequest {
 	return ApiPostGcpStaticAccountNameKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostGcpStaticAccountNameKeyExecute(r ApiPostGcpStaticAccountNameKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostGcpStaticAccountNameKey")
@@ -17404,11 +17263,10 @@ func (a *SecretsApiService) PostGcpStaticAccountNameKeyExecute(r ApiPostGcpStati
 }
 
 type ApiPostGcpStaticAccountNameRotateKeyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiPostGcpStaticAccountNameRotateKeyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostGcpStaticAccountNameRotateKeyExecute(r)
@@ -17424,17 +17282,17 @@ PostGcpStaticAccountNameRotateKey Method for PostGcpStaticAccountNameRotateKey
 func (a *SecretsApiService) PostGcpStaticAccountNameRotateKey(ctx context.Context, name string) ApiPostGcpStaticAccountNameRotateKeyRequest {
 	return ApiPostGcpStaticAccountNameRotateKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostGcpStaticAccountNameRotateKeyExecute(r ApiPostGcpStaticAccountNameRotateKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostGcpStaticAccountNameRotateKey")
@@ -17495,11 +17353,10 @@ func (a *SecretsApiService) PostGcpStaticAccountNameRotateKeyExecute(r ApiPostGc
 }
 
 type ApiPostGcpStaticAccountNameTokenRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiPostGcpStaticAccountNameTokenRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostGcpStaticAccountNameTokenExecute(r)
@@ -17515,17 +17372,17 @@ PostGcpStaticAccountNameToken Method for PostGcpStaticAccountNameToken
 func (a *SecretsApiService) PostGcpStaticAccountNameToken(ctx context.Context, name string) ApiPostGcpStaticAccountNameTokenRequest {
 	return ApiPostGcpStaticAccountNameTokenRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostGcpStaticAccountNameTokenExecute(r ApiPostGcpStaticAccountNameTokenRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostGcpStaticAccountNameToken")
@@ -17586,11 +17443,10 @@ func (a *SecretsApiService) PostGcpStaticAccountNameTokenExecute(r ApiPostGcpSta
 }
 
 type ApiPostGcpTokenRolesetRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	roleset string
+	roleset    string
 }
-
 
 func (r ApiPostGcpTokenRolesetRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostGcpTokenRolesetExecute(r)
@@ -17606,17 +17462,17 @@ PostGcpTokenRoleset Method for PostGcpTokenRoleset
 func (a *SecretsApiService) PostGcpTokenRoleset(ctx context.Context, roleset string) ApiPostGcpTokenRolesetRequest {
 	return ApiPostGcpTokenRolesetRequest{
 		ApiService: a,
-		ctx: ctx,
-		roleset: roleset,
+		ctx:        ctx,
+		roleset:    roleset,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostGcpTokenRolesetExecute(r ApiPostGcpTokenRolesetRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostGcpTokenRoleset")
@@ -17677,8 +17533,8 @@ func (a *SecretsApiService) PostGcpTokenRolesetExecute(r ApiPostGcpTokenRolesetR
 }
 
 type ApiPostGcpkmsConfigRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                 context.Context
+	ApiService          *SecretsApiService
 	gcpkmsConfigRequest *GcpkmsConfigRequest
 }
 
@@ -17700,16 +17556,16 @@ PostGcpkmsConfig Configure the GCP KMS secrets engine
 func (a *SecretsApiService) PostGcpkmsConfig(ctx context.Context) ApiPostGcpkmsConfigRequest {
 	return ApiPostGcpkmsConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostGcpkmsConfigExecute(r ApiPostGcpkmsConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostGcpkmsConfig")
@@ -17771,9 +17627,9 @@ func (a *SecretsApiService) PostGcpkmsConfigExecute(r ApiPostGcpkmsConfigRequest
 }
 
 type ApiPostGcpkmsDecryptKeyRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	key string
+	ctx                  context.Context
+	ApiService           *SecretsApiService
+	key                  string
 	gcpkmsDecryptRequest *GcpkmsDecryptRequest
 }
 
@@ -17796,17 +17652,17 @@ PostGcpkmsDecryptKey Decrypt a ciphertext value using a named key
 func (a *SecretsApiService) PostGcpkmsDecryptKey(ctx context.Context, key string) ApiPostGcpkmsDecryptKeyRequest {
 	return ApiPostGcpkmsDecryptKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostGcpkmsDecryptKeyExecute(r ApiPostGcpkmsDecryptKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostGcpkmsDecryptKey")
@@ -17869,9 +17725,9 @@ func (a *SecretsApiService) PostGcpkmsDecryptKeyExecute(r ApiPostGcpkmsDecryptKe
 }
 
 type ApiPostGcpkmsEncryptKeyRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	key string
+	ctx                  context.Context
+	ApiService           *SecretsApiService
+	key                  string
 	gcpkmsEncryptRequest *GcpkmsEncryptRequest
 }
 
@@ -17894,17 +17750,17 @@ PostGcpkmsEncryptKey Encrypt a plaintext value using a named key
 func (a *SecretsApiService) PostGcpkmsEncryptKey(ctx context.Context, key string) ApiPostGcpkmsEncryptKeyRequest {
 	return ApiPostGcpkmsEncryptKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostGcpkmsEncryptKeyExecute(r ApiPostGcpkmsEncryptKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostGcpkmsEncryptKey")
@@ -17967,9 +17823,9 @@ func (a *SecretsApiService) PostGcpkmsEncryptKeyExecute(r ApiPostGcpkmsEncryptKe
 }
 
 type ApiPostGcpkmsKeysConfigKeyRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	key string
+	ctx                     context.Context
+	ApiService              *SecretsApiService
+	key                     string
 	gcpkmsKeysConfigRequest *GcpkmsKeysConfigRequest
 }
 
@@ -17992,17 +17848,17 @@ PostGcpkmsKeysConfigKey Configure the key in Vault
 func (a *SecretsApiService) PostGcpkmsKeysConfigKey(ctx context.Context, key string) ApiPostGcpkmsKeysConfigKeyRequest {
 	return ApiPostGcpkmsKeysConfigKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostGcpkmsKeysConfigKeyExecute(r ApiPostGcpkmsKeysConfigKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostGcpkmsKeysConfigKey")
@@ -18065,11 +17921,10 @@ func (a *SecretsApiService) PostGcpkmsKeysConfigKeyExecute(r ApiPostGcpkmsKeysCo
 }
 
 type ApiPostGcpkmsKeysDeregisterKeyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	key string
+	key        string
 }
-
 
 func (r ApiPostGcpkmsKeysDeregisterKeyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostGcpkmsKeysDeregisterKeyExecute(r)
@@ -18085,17 +17940,17 @@ PostGcpkmsKeysDeregisterKey Deregister an existing key in Vault
 func (a *SecretsApiService) PostGcpkmsKeysDeregisterKey(ctx context.Context, key string) ApiPostGcpkmsKeysDeregisterKeyRequest {
 	return ApiPostGcpkmsKeysDeregisterKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostGcpkmsKeysDeregisterKeyExecute(r ApiPostGcpkmsKeysDeregisterKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostGcpkmsKeysDeregisterKey")
@@ -18156,9 +18011,9 @@ func (a *SecretsApiService) PostGcpkmsKeysDeregisterKeyExecute(r ApiPostGcpkmsKe
 }
 
 type ApiPostGcpkmsKeysKeyRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	key string
+	ctx               context.Context
+	ApiService        *SecretsApiService
+	key               string
 	gcpkmsKeysRequest *GcpkmsKeysRequest
 }
 
@@ -18181,17 +18036,17 @@ PostGcpkmsKeysKey Interact with crypto keys in Vault and Google Cloud KMS
 func (a *SecretsApiService) PostGcpkmsKeysKey(ctx context.Context, key string) ApiPostGcpkmsKeysKeyRequest {
 	return ApiPostGcpkmsKeysKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostGcpkmsKeysKeyExecute(r ApiPostGcpkmsKeysKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostGcpkmsKeysKey")
@@ -18254,9 +18109,9 @@ func (a *SecretsApiService) PostGcpkmsKeysKeyExecute(r ApiPostGcpkmsKeysKeyReque
 }
 
 type ApiPostGcpkmsKeysRegisterKeyRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	key string
+	ctx                       context.Context
+	ApiService                *SecretsApiService
+	key                       string
 	gcpkmsKeysRegisterRequest *GcpkmsKeysRegisterRequest
 }
 
@@ -18279,17 +18134,17 @@ PostGcpkmsKeysRegisterKey Register an existing crypto key in Google Cloud KMS
 func (a *SecretsApiService) PostGcpkmsKeysRegisterKey(ctx context.Context, key string) ApiPostGcpkmsKeysRegisterKeyRequest {
 	return ApiPostGcpkmsKeysRegisterKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostGcpkmsKeysRegisterKeyExecute(r ApiPostGcpkmsKeysRegisterKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostGcpkmsKeysRegisterKey")
@@ -18352,11 +18207,10 @@ func (a *SecretsApiService) PostGcpkmsKeysRegisterKeyExecute(r ApiPostGcpkmsKeys
 }
 
 type ApiPostGcpkmsKeysRotateKeyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	key string
+	key        string
 }
-
 
 func (r ApiPostGcpkmsKeysRotateKeyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostGcpkmsKeysRotateKeyExecute(r)
@@ -18372,17 +18226,17 @@ PostGcpkmsKeysRotateKey Rotate a crypto key to a new primary version
 func (a *SecretsApiService) PostGcpkmsKeysRotateKey(ctx context.Context, key string) ApiPostGcpkmsKeysRotateKeyRequest {
 	return ApiPostGcpkmsKeysRotateKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostGcpkmsKeysRotateKeyExecute(r ApiPostGcpkmsKeysRotateKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostGcpkmsKeysRotateKey")
@@ -18443,11 +18297,10 @@ func (a *SecretsApiService) PostGcpkmsKeysRotateKeyExecute(r ApiPostGcpkmsKeysRo
 }
 
 type ApiPostGcpkmsKeysTrimKeyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	key string
+	key        string
 }
-
 
 func (r ApiPostGcpkmsKeysTrimKeyRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostGcpkmsKeysTrimKeyExecute(r)
@@ -18463,17 +18316,17 @@ PostGcpkmsKeysTrimKey Delete old crypto key versions from Google Cloud KMS
 func (a *SecretsApiService) PostGcpkmsKeysTrimKey(ctx context.Context, key string) ApiPostGcpkmsKeysTrimKeyRequest {
 	return ApiPostGcpkmsKeysTrimKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostGcpkmsKeysTrimKeyExecute(r ApiPostGcpkmsKeysTrimKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostGcpkmsKeysTrimKey")
@@ -18534,9 +18387,9 @@ func (a *SecretsApiService) PostGcpkmsKeysTrimKeyExecute(r ApiPostGcpkmsKeysTrim
 }
 
 type ApiPostGcpkmsReencryptKeyRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	key string
+	ctx                    context.Context
+	ApiService             *SecretsApiService
+	key                    string
 	gcpkmsReencryptRequest *GcpkmsReencryptRequest
 }
 
@@ -18559,17 +18412,17 @@ PostGcpkmsReencryptKey Re-encrypt existing ciphertext data to a new version
 func (a *SecretsApiService) PostGcpkmsReencryptKey(ctx context.Context, key string) ApiPostGcpkmsReencryptKeyRequest {
 	return ApiPostGcpkmsReencryptKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostGcpkmsReencryptKeyExecute(r ApiPostGcpkmsReencryptKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostGcpkmsReencryptKey")
@@ -18632,9 +18485,9 @@ func (a *SecretsApiService) PostGcpkmsReencryptKeyExecute(r ApiPostGcpkmsReencry
 }
 
 type ApiPostGcpkmsSignKeyRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	key string
+	ctx               context.Context
+	ApiService        *SecretsApiService
+	key               string
 	gcpkmsSignRequest *GcpkmsSignRequest
 }
 
@@ -18657,17 +18510,17 @@ PostGcpkmsSignKey Signs a message or digest using a named key
 func (a *SecretsApiService) PostGcpkmsSignKey(ctx context.Context, key string) ApiPostGcpkmsSignKeyRequest {
 	return ApiPostGcpkmsSignKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostGcpkmsSignKeyExecute(r ApiPostGcpkmsSignKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostGcpkmsSignKey")
@@ -18730,9 +18583,9 @@ func (a *SecretsApiService) PostGcpkmsSignKeyExecute(r ApiPostGcpkmsSignKeyReque
 }
 
 type ApiPostGcpkmsVerifyKeyRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	key string
+	ctx                 context.Context
+	ApiService          *SecretsApiService
+	key                 string
 	gcpkmsVerifyRequest *GcpkmsVerifyRequest
 }
 
@@ -18755,17 +18608,17 @@ PostGcpkmsVerifyKey Verify a signature using a named key
 func (a *SecretsApiService) PostGcpkmsVerifyKey(ctx context.Context, key string) ApiPostGcpkmsVerifyKeyRequest {
 	return ApiPostGcpkmsVerifyKeyRequest{
 		ApiService: a,
-		ctx: ctx,
-		key: key,
+		ctx:        ctx,
+		key:        key,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostGcpkmsVerifyKeyExecute(r ApiPostGcpkmsVerifyKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostGcpkmsVerifyKey")
@@ -18828,8 +18681,8 @@ func (a *SecretsApiService) PostGcpkmsVerifyKeyExecute(r ApiPostGcpkmsVerifyKeyR
 }
 
 type ApiPostKubernetesConfigRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                     context.Context
+	ApiService              *SecretsApiService
 	kubernetesConfigRequest *KubernetesConfigRequest
 }
 
@@ -18851,16 +18704,16 @@ PostKubernetesConfig Method for PostKubernetesConfig
 func (a *SecretsApiService) PostKubernetesConfig(ctx context.Context) ApiPostKubernetesConfigRequest {
 	return ApiPostKubernetesConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostKubernetesConfigExecute(r ApiPostKubernetesConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostKubernetesConfig")
@@ -18922,9 +18775,9 @@ func (a *SecretsApiService) PostKubernetesConfigExecute(r ApiPostKubernetesConfi
 }
 
 type ApiPostKubernetesCredsNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx                    context.Context
+	ApiService             *SecretsApiService
+	name                   string
 	kubernetesCredsRequest *KubernetesCredsRequest
 }
 
@@ -18947,17 +18800,17 @@ PostKubernetesCredsName Method for PostKubernetesCredsName
 func (a *SecretsApiService) PostKubernetesCredsName(ctx context.Context, name string) ApiPostKubernetesCredsNameRequest {
 	return ApiPostKubernetesCredsNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostKubernetesCredsNameExecute(r ApiPostKubernetesCredsNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostKubernetesCredsName")
@@ -19020,9 +18873,9 @@ func (a *SecretsApiService) PostKubernetesCredsNameExecute(r ApiPostKubernetesCr
 }
 
 type ApiPostKubernetesRolesNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx                    context.Context
+	ApiService             *SecretsApiService
+	name                   string
 	kubernetesRolesRequest *KubernetesRolesRequest
 }
 
@@ -19045,17 +18898,17 @@ PostKubernetesRolesName Method for PostKubernetesRolesName
 func (a *SecretsApiService) PostKubernetesRolesName(ctx context.Context, name string) ApiPostKubernetesRolesNameRequest {
 	return ApiPostKubernetesRolesNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostKubernetesRolesNameExecute(r ApiPostKubernetesRolesNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostKubernetesRolesName")
@@ -19118,11 +18971,10 @@ func (a *SecretsApiService) PostKubernetesRolesNameExecute(r ApiPostKubernetesRo
 }
 
 type ApiPostKvPathRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	path string
+	path       string
 }
-
 
 func (r ApiPostKvPathRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostKvPathExecute(r)
@@ -19138,17 +18990,17 @@ PostKvPath Pass-through secret storage to the storage backend, allowing you to r
 func (a *SecretsApiService) PostKvPath(ctx context.Context, path string) ApiPostKvPathRequest {
 	return ApiPostKvPathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostKvPathExecute(r ApiPostKvPathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostKvPath")
@@ -19209,8 +19061,8 @@ func (a *SecretsApiService) PostKvPathExecute(r ApiPostKvPathRequest) (*http.Res
 }
 
 type ApiPostMongodbatlasConfigRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                       context.Context
+	ApiService                *SecretsApiService
 	mongodbatlasConfigRequest *MongodbatlasConfigRequest
 }
 
@@ -19232,16 +19084,16 @@ PostMongodbatlasConfig Configure the  credentials that are used to manage Databa
 func (a *SecretsApiService) PostMongodbatlasConfig(ctx context.Context) ApiPostMongodbatlasConfigRequest {
 	return ApiPostMongodbatlasConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostMongodbatlasConfigExecute(r ApiPostMongodbatlasConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostMongodbatlasConfig")
@@ -19303,11 +19155,10 @@ func (a *SecretsApiService) PostMongodbatlasConfigExecute(r ApiPostMongodbatlasC
 }
 
 type ApiPostMongodbatlasCredsNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiPostMongodbatlasCredsNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostMongodbatlasCredsNameExecute(r)
@@ -19323,17 +19174,17 @@ PostMongodbatlasCredsName Generate MongoDB Atlas Programmatic API from a specifi
 func (a *SecretsApiService) PostMongodbatlasCredsName(ctx context.Context, name string) ApiPostMongodbatlasCredsNameRequest {
 	return ApiPostMongodbatlasCredsNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostMongodbatlasCredsNameExecute(r ApiPostMongodbatlasCredsNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostMongodbatlasCredsName")
@@ -19394,9 +19245,9 @@ func (a *SecretsApiService) PostMongodbatlasCredsNameExecute(r ApiPostMongodbatl
 }
 
 type ApiPostMongodbatlasRolesNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx                      context.Context
+	ApiService               *SecretsApiService
+	name                     string
 	mongodbatlasRolesRequest *MongodbatlasRolesRequest
 }
 
@@ -19419,17 +19270,17 @@ PostMongodbatlasRolesName Manage the roles used to generate MongoDB Atlas Progra
 func (a *SecretsApiService) PostMongodbatlasRolesName(ctx context.Context, name string) ApiPostMongodbatlasRolesNameRequest {
 	return ApiPostMongodbatlasRolesNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostMongodbatlasRolesNameExecute(r ApiPostMongodbatlasRolesNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostMongodbatlasRolesName")
@@ -19492,8 +19343,8 @@ func (a *SecretsApiService) PostMongodbatlasRolesNameExecute(r ApiPostMongodbatl
 }
 
 type ApiPostNomadConfigAccessRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                      context.Context
+	ApiService               *SecretsApiService
 	nomadConfigAccessRequest *NomadConfigAccessRequest
 }
 
@@ -19515,16 +19366,16 @@ PostNomadConfigAccess Method for PostNomadConfigAccess
 func (a *SecretsApiService) PostNomadConfigAccess(ctx context.Context) ApiPostNomadConfigAccessRequest {
 	return ApiPostNomadConfigAccessRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostNomadConfigAccessExecute(r ApiPostNomadConfigAccessRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostNomadConfigAccess")
@@ -19586,8 +19437,8 @@ func (a *SecretsApiService) PostNomadConfigAccessExecute(r ApiPostNomadConfigAcc
 }
 
 type ApiPostNomadConfigLeaseRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                     context.Context
+	ApiService              *SecretsApiService
 	nomadConfigLeaseRequest *NomadConfigLeaseRequest
 }
 
@@ -19609,16 +19460,16 @@ PostNomadConfigLease Configure the lease parameters for generated tokens
 func (a *SecretsApiService) PostNomadConfigLease(ctx context.Context) ApiPostNomadConfigLeaseRequest {
 	return ApiPostNomadConfigLeaseRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostNomadConfigLeaseExecute(r ApiPostNomadConfigLeaseRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostNomadConfigLease")
@@ -19680,9 +19531,9 @@ func (a *SecretsApiService) PostNomadConfigLeaseExecute(r ApiPostNomadConfigLeas
 }
 
 type ApiPostNomadRoleNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx              context.Context
+	ApiService       *SecretsApiService
+	name             string
 	nomadRoleRequest *NomadRoleRequest
 }
 
@@ -19705,17 +19556,17 @@ PostNomadRoleName Method for PostNomadRoleName
 func (a *SecretsApiService) PostNomadRoleName(ctx context.Context, name string) ApiPostNomadRoleNameRequest {
 	return ApiPostNomadRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostNomadRoleNameExecute(r ApiPostNomadRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostNomadRoleName")
@@ -19778,8 +19629,8 @@ func (a *SecretsApiService) PostNomadRoleNameExecute(r ApiPostNomadRoleNameReque
 }
 
 type ApiPostOpenldapConfigRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                   context.Context
+	ApiService            *SecretsApiService
 	openldapConfigRequest *OpenldapConfigRequest
 }
 
@@ -19801,16 +19652,16 @@ PostOpenldapConfig Method for PostOpenldapConfig
 func (a *SecretsApiService) PostOpenldapConfig(ctx context.Context) ApiPostOpenldapConfigRequest {
 	return ApiPostOpenldapConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostOpenldapConfigExecute(r ApiPostOpenldapConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostOpenldapConfig")
@@ -19872,9 +19723,9 @@ func (a *SecretsApiService) PostOpenldapConfigExecute(r ApiPostOpenldapConfigReq
 }
 
 type ApiPostOpenldapRoleNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx                 context.Context
+	ApiService          *SecretsApiService
+	name                string
 	openldapRoleRequest *OpenldapRoleRequest
 }
 
@@ -19897,17 +19748,17 @@ PostOpenldapRoleName Method for PostOpenldapRoleName
 func (a *SecretsApiService) PostOpenldapRoleName(ctx context.Context, name string) ApiPostOpenldapRoleNameRequest {
 	return ApiPostOpenldapRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostOpenldapRoleNameExecute(r ApiPostOpenldapRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostOpenldapRoleName")
@@ -19970,11 +19821,10 @@ func (a *SecretsApiService) PostOpenldapRoleNameExecute(r ApiPostOpenldapRoleNam
 }
 
 type ApiPostOpenldapRotateRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiPostOpenldapRotateRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostOpenldapRotateRoleNameExecute(r)
@@ -19990,17 +19840,17 @@ PostOpenldapRotateRoleName Method for PostOpenldapRotateRoleName
 func (a *SecretsApiService) PostOpenldapRotateRoleName(ctx context.Context, name string) ApiPostOpenldapRotateRoleNameRequest {
 	return ApiPostOpenldapRotateRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostOpenldapRotateRoleNameExecute(r ApiPostOpenldapRotateRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostOpenldapRotateRoleName")
@@ -20061,10 +19911,9 @@ func (a *SecretsApiService) PostOpenldapRotateRoleNameExecute(r ApiPostOpenldapR
 }
 
 type ApiPostOpenldapRotateRootRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
 }
-
 
 func (r ApiPostOpenldapRotateRootRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostOpenldapRotateRootExecute(r)
@@ -20079,16 +19928,16 @@ PostOpenldapRotateRoot Method for PostOpenldapRotateRoot
 func (a *SecretsApiService) PostOpenldapRotateRoot(ctx context.Context) ApiPostOpenldapRotateRootRequest {
 	return ApiPostOpenldapRotateRootRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostOpenldapRotateRootExecute(r ApiPostOpenldapRotateRootRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostOpenldapRotateRoot")
@@ -20148,9 +19997,9 @@ func (a *SecretsApiService) PostOpenldapRotateRootExecute(r ApiPostOpenldapRotat
 }
 
 type ApiPostOpenldapStaticRoleNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx                       context.Context
+	ApiService                *SecretsApiService
+	name                      string
 	openldapStaticRoleRequest *OpenldapStaticRoleRequest
 }
 
@@ -20173,17 +20022,17 @@ PostOpenldapStaticRoleName Method for PostOpenldapStaticRoleName
 func (a *SecretsApiService) PostOpenldapStaticRoleName(ctx context.Context, name string) ApiPostOpenldapStaticRoleNameRequest {
 	return ApiPostOpenldapStaticRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostOpenldapStaticRoleNameExecute(r ApiPostOpenldapStaticRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostOpenldapStaticRoleName")
@@ -20246,8 +20095,8 @@ func (a *SecretsApiService) PostOpenldapStaticRoleNameExecute(r ApiPostOpenldapS
 }
 
 type ApiPostPkiBundleRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx              context.Context
+	ApiService       *SecretsApiService
 	pkiBundleRequest *PkiBundleRequest
 }
 
@@ -20269,16 +20118,16 @@ PostPkiBundle Method for PostPkiBundle
 func (a *SecretsApiService) PostPkiBundle(ctx context.Context) ApiPostPkiBundleRequest {
 	return ApiPostPkiBundleRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiBundleExecute(r ApiPostPkiBundleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiBundle")
@@ -20340,8 +20189,8 @@ func (a *SecretsApiService) PostPkiBundleExecute(r ApiPostPkiBundleRequest) (*ht
 }
 
 type ApiPostPkiCertRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx            context.Context
+	ApiService     *SecretsApiService
 	pkiCertRequest *PkiCertRequest
 }
 
@@ -20363,16 +20212,16 @@ PostPkiCert Method for PostPkiCert
 func (a *SecretsApiService) PostPkiCert(ctx context.Context) ApiPostPkiCertRequest {
 	return ApiPostPkiCertRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiCertExecute(r ApiPostPkiCertRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiCert")
@@ -20434,8 +20283,8 @@ func (a *SecretsApiService) PostPkiCertExecute(r ApiPostPkiCertRequest) (*http.R
 }
 
 type ApiPostPkiConfigCaRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                context.Context
+	ApiService         *SecretsApiService
 	pkiConfigCaRequest *PkiConfigCaRequest
 }
 
@@ -20457,16 +20306,16 @@ PostPkiConfigCa Method for PostPkiConfigCa
 func (a *SecretsApiService) PostPkiConfigCa(ctx context.Context) ApiPostPkiConfigCaRequest {
 	return ApiPostPkiConfigCaRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiConfigCaExecute(r ApiPostPkiConfigCaRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiConfigCa")
@@ -20528,8 +20377,8 @@ func (a *SecretsApiService) PostPkiConfigCaExecute(r ApiPostPkiConfigCaRequest) 
 }
 
 type ApiPostPkiConfigCrlRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                 context.Context
+	ApiService          *SecretsApiService
 	pkiConfigCrlRequest *PkiConfigCrlRequest
 }
 
@@ -20551,16 +20400,16 @@ PostPkiConfigCrl Method for PostPkiConfigCrl
 func (a *SecretsApiService) PostPkiConfigCrl(ctx context.Context) ApiPostPkiConfigCrlRequest {
 	return ApiPostPkiConfigCrlRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiConfigCrlExecute(r ApiPostPkiConfigCrlRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiConfigCrl")
@@ -20622,8 +20471,8 @@ func (a *SecretsApiService) PostPkiConfigCrlExecute(r ApiPostPkiConfigCrlRequest
 }
 
 type ApiPostPkiConfigIssuersRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                     context.Context
+	ApiService              *SecretsApiService
 	pkiConfigIssuersRequest *PkiConfigIssuersRequest
 }
 
@@ -20645,16 +20494,16 @@ PostPkiConfigIssuers Method for PostPkiConfigIssuers
 func (a *SecretsApiService) PostPkiConfigIssuers(ctx context.Context) ApiPostPkiConfigIssuersRequest {
 	return ApiPostPkiConfigIssuersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiConfigIssuersExecute(r ApiPostPkiConfigIssuersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiConfigIssuers")
@@ -20716,8 +20565,8 @@ func (a *SecretsApiService) PostPkiConfigIssuersExecute(r ApiPostPkiConfigIssuer
 }
 
 type ApiPostPkiConfigKeysRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                  context.Context
+	ApiService           *SecretsApiService
 	pkiConfigKeysRequest *PkiConfigKeysRequest
 }
 
@@ -20739,16 +20588,16 @@ PostPkiConfigKeys Method for PostPkiConfigKeys
 func (a *SecretsApiService) PostPkiConfigKeys(ctx context.Context) ApiPostPkiConfigKeysRequest {
 	return ApiPostPkiConfigKeysRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiConfigKeysExecute(r ApiPostPkiConfigKeysRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiConfigKeys")
@@ -20810,8 +20659,8 @@ func (a *SecretsApiService) PostPkiConfigKeysExecute(r ApiPostPkiConfigKeysReque
 }
 
 type ApiPostPkiConfigUrlsRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                  context.Context
+	ApiService           *SecretsApiService
 	pkiConfigUrlsRequest *PkiConfigUrlsRequest
 }
 
@@ -20833,16 +20682,16 @@ PostPkiConfigUrls Method for PostPkiConfigUrls
 func (a *SecretsApiService) PostPkiConfigUrls(ctx context.Context) ApiPostPkiConfigUrlsRequest {
 	return ApiPostPkiConfigUrlsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiConfigUrlsExecute(r ApiPostPkiConfigUrlsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiConfigUrls")
@@ -20904,8 +20753,8 @@ func (a *SecretsApiService) PostPkiConfigUrlsExecute(r ApiPostPkiConfigUrlsReque
 }
 
 type ApiPostPkiIntermediateCrossSignRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                             context.Context
+	ApiService                      *SecretsApiService
 	pkiIntermediateCrossSignRequest *PkiIntermediateCrossSignRequest
 }
 
@@ -20927,16 +20776,16 @@ PostPkiIntermediateCrossSign Method for PostPkiIntermediateCrossSign
 func (a *SecretsApiService) PostPkiIntermediateCrossSign(ctx context.Context) ApiPostPkiIntermediateCrossSignRequest {
 	return ApiPostPkiIntermediateCrossSignRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiIntermediateCrossSignExecute(r ApiPostPkiIntermediateCrossSignRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiIntermediateCrossSign")
@@ -20998,9 +20847,9 @@ func (a *SecretsApiService) PostPkiIntermediateCrossSignExecute(r ApiPostPkiInte
 }
 
 type ApiPostPkiIntermediateGenerateExportedRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	exported string
+	ctx                            context.Context
+	ApiService                     *SecretsApiService
+	exported                       string
 	pkiIntermediateGenerateRequest *PkiIntermediateGenerateRequest
 }
 
@@ -21023,17 +20872,17 @@ PostPkiIntermediateGenerateExported Method for PostPkiIntermediateGenerateExport
 func (a *SecretsApiService) PostPkiIntermediateGenerateExported(ctx context.Context, exported string) ApiPostPkiIntermediateGenerateExportedRequest {
 	return ApiPostPkiIntermediateGenerateExportedRequest{
 		ApiService: a,
-		ctx: ctx,
-		exported: exported,
+		ctx:        ctx,
+		exported:   exported,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiIntermediateGenerateExportedExecute(r ApiPostPkiIntermediateGenerateExportedRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiIntermediateGenerateExported")
@@ -21096,8 +20945,8 @@ func (a *SecretsApiService) PostPkiIntermediateGenerateExportedExecute(r ApiPost
 }
 
 type ApiPostPkiIntermediateSetSignedRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                             context.Context
+	ApiService                      *SecretsApiService
 	pkiIntermediateSetSignedRequest *PkiIntermediateSetSignedRequest
 }
 
@@ -21119,16 +20968,16 @@ PostPkiIntermediateSetSigned Method for PostPkiIntermediateSetSigned
 func (a *SecretsApiService) PostPkiIntermediateSetSigned(ctx context.Context) ApiPostPkiIntermediateSetSignedRequest {
 	return ApiPostPkiIntermediateSetSignedRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiIntermediateSetSignedExecute(r ApiPostPkiIntermediateSetSignedRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiIntermediateSetSigned")
@@ -21190,8 +21039,8 @@ func (a *SecretsApiService) PostPkiIntermediateSetSignedExecute(r ApiPostPkiInte
 }
 
 type ApiPostPkiInternalExportedRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                        context.Context
+	ApiService                 *SecretsApiService
 	pkiInternalExportedRequest *PkiInternalExportedRequest
 }
 
@@ -21213,16 +21062,16 @@ PostPkiInternalExported Method for PostPkiInternalExported
 func (a *SecretsApiService) PostPkiInternalExported(ctx context.Context) ApiPostPkiInternalExportedRequest {
 	return ApiPostPkiInternalExportedRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiInternalExportedExecute(r ApiPostPkiInternalExportedRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiInternalExported")
@@ -21284,9 +21133,9 @@ func (a *SecretsApiService) PostPkiInternalExportedExecute(r ApiPostPkiInternalE
 }
 
 type ApiPostPkiIssueRoleRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	role string
+	ctx             context.Context
+	ApiService      *SecretsApiService
+	role            string
 	pkiIssueRequest *PkiIssueRequest
 }
 
@@ -21309,17 +21158,17 @@ PostPkiIssueRole Method for PostPkiIssueRole
 func (a *SecretsApiService) PostPkiIssueRole(ctx context.Context, role string) ApiPostPkiIssueRoleRequest {
 	return ApiPostPkiIssueRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		role: role,
+		ctx:        ctx,
+		role:       role,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiIssueRoleExecute(r ApiPostPkiIssueRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiIssueRole")
@@ -21382,10 +21231,10 @@ func (a *SecretsApiService) PostPkiIssueRoleExecute(r ApiPostPkiIssueRoleRequest
 }
 
 type ApiPostPkiIssuerIssuerRefIssueRoleRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	issuerRef string
-	role string
+	ctx                   context.Context
+	ApiService            *SecretsApiService
+	issuerRef             string
+	role                  string
 	pkiIssuerIssueRequest *PkiIssuerIssueRequest
 }
 
@@ -21409,18 +21258,18 @@ PostPkiIssuerIssuerRefIssueRole Method for PostPkiIssuerIssuerRefIssueRole
 func (a *SecretsApiService) PostPkiIssuerIssuerRefIssueRole(ctx context.Context, issuerRef string, role string) ApiPostPkiIssuerIssuerRefIssueRoleRequest {
 	return ApiPostPkiIssuerIssuerRefIssueRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		issuerRef: issuerRef,
-		role: role,
+		ctx:        ctx,
+		issuerRef:  issuerRef,
+		role:       role,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiIssuerIssuerRefIssueRoleExecute(r ApiPostPkiIssuerIssuerRefIssueRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiIssuerIssuerRefIssueRole")
@@ -21484,9 +21333,9 @@ func (a *SecretsApiService) PostPkiIssuerIssuerRefIssueRoleExecute(r ApiPostPkiI
 }
 
 type ApiPostPkiIssuerIssuerRefSignIntermediateRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	issuerRef string
+	ctx                              context.Context
+	ApiService                       *SecretsApiService
+	issuerRef                        string
 	pkiIssuerSignIntermediateRequest *PkiIssuerSignIntermediateRequest
 }
 
@@ -21509,17 +21358,17 @@ PostPkiIssuerIssuerRefSignIntermediate Method for PostPkiIssuerIssuerRefSignInte
 func (a *SecretsApiService) PostPkiIssuerIssuerRefSignIntermediate(ctx context.Context, issuerRef string) ApiPostPkiIssuerIssuerRefSignIntermediateRequest {
 	return ApiPostPkiIssuerIssuerRefSignIntermediateRequest{
 		ApiService: a,
-		ctx: ctx,
-		issuerRef: issuerRef,
+		ctx:        ctx,
+		issuerRef:  issuerRef,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiIssuerIssuerRefSignIntermediateExecute(r ApiPostPkiIssuerIssuerRefSignIntermediateRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiIssuerIssuerRefSignIntermediate")
@@ -21582,10 +21431,10 @@ func (a *SecretsApiService) PostPkiIssuerIssuerRefSignIntermediateExecute(r ApiP
 }
 
 type ApiPostPkiIssuerIssuerRefSignRoleRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	issuerRef string
-	role string
+	ctx                  context.Context
+	ApiService           *SecretsApiService
+	issuerRef            string
+	role                 string
 	pkiIssuerSignRequest *PkiIssuerSignRequest
 }
 
@@ -21609,18 +21458,18 @@ PostPkiIssuerIssuerRefSignRole Method for PostPkiIssuerIssuerRefSignRole
 func (a *SecretsApiService) PostPkiIssuerIssuerRefSignRole(ctx context.Context, issuerRef string, role string) ApiPostPkiIssuerIssuerRefSignRoleRequest {
 	return ApiPostPkiIssuerIssuerRefSignRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		issuerRef: issuerRef,
-		role: role,
+		ctx:        ctx,
+		issuerRef:  issuerRef,
+		role:       role,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiIssuerIssuerRefSignRoleExecute(r ApiPostPkiIssuerIssuerRefSignRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiIssuerIssuerRefSignRole")
@@ -21684,9 +21533,9 @@ func (a *SecretsApiService) PostPkiIssuerIssuerRefSignRoleExecute(r ApiPostPkiIs
 }
 
 type ApiPostPkiIssuerIssuerRefSignSelfIssuedRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	issuerRef string
+	ctx                            context.Context
+	ApiService                     *SecretsApiService
+	issuerRef                      string
 	pkiIssuerSignSelfIssuedRequest *PkiIssuerSignSelfIssuedRequest
 }
 
@@ -21709,17 +21558,17 @@ PostPkiIssuerIssuerRefSignSelfIssued Method for PostPkiIssuerIssuerRefSignSelfIs
 func (a *SecretsApiService) PostPkiIssuerIssuerRefSignSelfIssued(ctx context.Context, issuerRef string) ApiPostPkiIssuerIssuerRefSignSelfIssuedRequest {
 	return ApiPostPkiIssuerIssuerRefSignSelfIssuedRequest{
 		ApiService: a,
-		ctx: ctx,
-		issuerRef: issuerRef,
+		ctx:        ctx,
+		issuerRef:  issuerRef,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiIssuerIssuerRefSignSelfIssuedExecute(r ApiPostPkiIssuerIssuerRefSignSelfIssuedRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiIssuerIssuerRefSignSelfIssued")
@@ -21782,9 +21631,9 @@ func (a *SecretsApiService) PostPkiIssuerIssuerRefSignSelfIssuedExecute(r ApiPos
 }
 
 type ApiPostPkiIssuerIssuerRefSignVerbatimRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	issuerRef string
+	ctx                          context.Context
+	ApiService                   *SecretsApiService
+	issuerRef                    string
 	pkiIssuerSignVerbatimRequest *PkiIssuerSignVerbatimRequest
 }
 
@@ -21807,17 +21656,17 @@ PostPkiIssuerIssuerRefSignVerbatim Method for PostPkiIssuerIssuerRefSignVerbatim
 func (a *SecretsApiService) PostPkiIssuerIssuerRefSignVerbatim(ctx context.Context, issuerRef string) ApiPostPkiIssuerIssuerRefSignVerbatimRequest {
 	return ApiPostPkiIssuerIssuerRefSignVerbatimRequest{
 		ApiService: a,
-		ctx: ctx,
-		issuerRef: issuerRef,
+		ctx:        ctx,
+		issuerRef:  issuerRef,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiIssuerIssuerRefSignVerbatimExecute(r ApiPostPkiIssuerIssuerRefSignVerbatimRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiIssuerIssuerRefSignVerbatim")
@@ -21880,10 +21729,10 @@ func (a *SecretsApiService) PostPkiIssuerIssuerRefSignVerbatimExecute(r ApiPostP
 }
 
 type ApiPostPkiIssuerIssuerRefSignVerbatimRoleRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	issuerRef string
-	role string
+	ctx                          context.Context
+	ApiService                   *SecretsApiService
+	issuerRef                    string
+	role                         string
 	pkiIssuerSignVerbatimRequest *PkiIssuerSignVerbatimRequest
 }
 
@@ -21907,18 +21756,18 @@ PostPkiIssuerIssuerRefSignVerbatimRole Method for PostPkiIssuerIssuerRefSignVerb
 func (a *SecretsApiService) PostPkiIssuerIssuerRefSignVerbatimRole(ctx context.Context, issuerRef string, role string) ApiPostPkiIssuerIssuerRefSignVerbatimRoleRequest {
 	return ApiPostPkiIssuerIssuerRefSignVerbatimRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		issuerRef: issuerRef,
-		role: role,
+		ctx:        ctx,
+		issuerRef:  issuerRef,
+		role:       role,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiIssuerIssuerRefSignVerbatimRoleExecute(r ApiPostPkiIssuerIssuerRefSignVerbatimRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiIssuerIssuerRefSignVerbatimRole")
@@ -21982,9 +21831,9 @@ func (a *SecretsApiService) PostPkiIssuerIssuerRefSignVerbatimRoleExecute(r ApiP
 }
 
 type ApiPostPkiIssuerRefDerPemRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	issuerRef string
+	ctx              context.Context
+	ApiService       *SecretsApiService
+	issuerRef        string
 	pkiDerPemRequest *PkiDerPemRequest
 }
 
@@ -22007,17 +21856,17 @@ PostPkiIssuerRefDerPem Method for PostPkiIssuerRefDerPem
 func (a *SecretsApiService) PostPkiIssuerRefDerPem(ctx context.Context, issuerRef string) ApiPostPkiIssuerRefDerPemRequest {
 	return ApiPostPkiIssuerRefDerPemRequest{
 		ApiService: a,
-		ctx: ctx,
-		issuerRef: issuerRef,
+		ctx:        ctx,
+		issuerRef:  issuerRef,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiIssuerRefDerPemExecute(r ApiPostPkiIssuerRefDerPemRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiIssuerRefDerPem")
@@ -22080,9 +21929,9 @@ func (a *SecretsApiService) PostPkiIssuerRefDerPemExecute(r ApiPostPkiIssuerRefD
 }
 
 type ApiPostPkiIssuersGenerateIntermediateExportedRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	exported string
+	ctx                                   context.Context
+	ApiService                            *SecretsApiService
+	exported                              string
 	pkiIssuersGenerateIntermediateRequest *PkiIssuersGenerateIntermediateRequest
 }
 
@@ -22105,17 +21954,17 @@ PostPkiIssuersGenerateIntermediateExported Method for PostPkiIssuersGenerateInte
 func (a *SecretsApiService) PostPkiIssuersGenerateIntermediateExported(ctx context.Context, exported string) ApiPostPkiIssuersGenerateIntermediateExportedRequest {
 	return ApiPostPkiIssuersGenerateIntermediateExportedRequest{
 		ApiService: a,
-		ctx: ctx,
-		exported: exported,
+		ctx:        ctx,
+		exported:   exported,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiIssuersGenerateIntermediateExportedExecute(r ApiPostPkiIssuersGenerateIntermediateExportedRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiIssuersGenerateIntermediateExported")
@@ -22178,9 +22027,9 @@ func (a *SecretsApiService) PostPkiIssuersGenerateIntermediateExportedExecute(r 
 }
 
 type ApiPostPkiIssuersGenerateRootExportedRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	exported string
+	ctx                           context.Context
+	ApiService                    *SecretsApiService
+	exported                      string
 	pkiIssuersGenerateRootRequest *PkiIssuersGenerateRootRequest
 }
 
@@ -22203,17 +22052,17 @@ PostPkiIssuersGenerateRootExported Method for PostPkiIssuersGenerateRootExported
 func (a *SecretsApiService) PostPkiIssuersGenerateRootExported(ctx context.Context, exported string) ApiPostPkiIssuersGenerateRootExportedRequest {
 	return ApiPostPkiIssuersGenerateRootExportedRequest{
 		ApiService: a,
-		ctx: ctx,
-		exported: exported,
+		ctx:        ctx,
+		exported:   exported,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiIssuersGenerateRootExportedExecute(r ApiPostPkiIssuersGenerateRootExportedRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiIssuersGenerateRootExported")
@@ -22276,8 +22125,8 @@ func (a *SecretsApiService) PostPkiIssuersGenerateRootExportedExecute(r ApiPostP
 }
 
 type ApiPostPkiJsonRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx            context.Context
+	ApiService     *SecretsApiService
 	pkiJsonRequest *PkiJsonRequest
 }
 
@@ -22299,16 +22148,16 @@ PostPkiJson Method for PostPkiJson
 func (a *SecretsApiService) PostPkiJson(ctx context.Context) ApiPostPkiJsonRequest {
 	return ApiPostPkiJsonRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiJsonExecute(r ApiPostPkiJsonRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiJson")
@@ -22370,9 +22219,9 @@ func (a *SecretsApiService) PostPkiJsonExecute(r ApiPostPkiJsonRequest) (*http.R
 }
 
 type ApiPostPkiKeyKeyRefRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	keyRef string
+	ctx           context.Context
+	ApiService    *SecretsApiService
+	keyRef        string
 	pkiKeyRequest *PkiKeyRequest
 }
 
@@ -22395,17 +22244,17 @@ PostPkiKeyKeyRef Method for PostPkiKeyKeyRef
 func (a *SecretsApiService) PostPkiKeyKeyRef(ctx context.Context, keyRef string) ApiPostPkiKeyKeyRefRequest {
 	return ApiPostPkiKeyKeyRefRequest{
 		ApiService: a,
-		ctx: ctx,
-		keyRef: keyRef,
+		ctx:        ctx,
+		keyRef:     keyRef,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiKeyKeyRefExecute(r ApiPostPkiKeyKeyRefRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiKeyKeyRef")
@@ -22468,8 +22317,8 @@ func (a *SecretsApiService) PostPkiKeyKeyRefExecute(r ApiPostPkiKeyKeyRefRequest
 }
 
 type ApiPostPkiKeysImportRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                  context.Context
+	ApiService           *SecretsApiService
 	pkiKeysImportRequest *PkiKeysImportRequest
 }
 
@@ -22491,16 +22340,16 @@ PostPkiKeysImport Method for PostPkiKeysImport
 func (a *SecretsApiService) PostPkiKeysImport(ctx context.Context) ApiPostPkiKeysImportRequest {
 	return ApiPostPkiKeysImportRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiKeysImportExecute(r ApiPostPkiKeysImportRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiKeysImport")
@@ -22562,8 +22411,8 @@ func (a *SecretsApiService) PostPkiKeysImportExecute(r ApiPostPkiKeysImportReque
 }
 
 type ApiPostPkiKmsRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx           context.Context
+	ApiService    *SecretsApiService
 	pkiKmsRequest *PkiKmsRequest
 }
 
@@ -22585,16 +22434,16 @@ PostPkiKms Method for PostPkiKms
 func (a *SecretsApiService) PostPkiKms(ctx context.Context) ApiPostPkiKmsRequest {
 	return ApiPostPkiKmsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiKmsExecute(r ApiPostPkiKmsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiKms")
@@ -22656,8 +22505,8 @@ func (a *SecretsApiService) PostPkiKmsExecute(r ApiPostPkiKmsRequest) (*http.Res
 }
 
 type ApiPostPkiRevokeRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx              context.Context
+	ApiService       *SecretsApiService
 	pkiRevokeRequest *PkiRevokeRequest
 }
 
@@ -22679,16 +22528,16 @@ PostPkiRevoke Method for PostPkiRevoke
 func (a *SecretsApiService) PostPkiRevoke(ctx context.Context) ApiPostPkiRevokeRequest {
 	return ApiPostPkiRevokeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiRevokeExecute(r ApiPostPkiRevokeRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiRevoke")
@@ -22750,9 +22599,9 @@ func (a *SecretsApiService) PostPkiRevokeExecute(r ApiPostPkiRevokeRequest) (*ht
 }
 
 type ApiPostPkiRolesNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx             context.Context
+	ApiService      *SecretsApiService
+	name            string
 	pkiRolesRequest *PkiRolesRequest
 }
 
@@ -22775,17 +22624,17 @@ PostPkiRolesName Method for PostPkiRolesName
 func (a *SecretsApiService) PostPkiRolesName(ctx context.Context, name string) ApiPostPkiRolesNameRequest {
 	return ApiPostPkiRolesNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiRolesNameExecute(r ApiPostPkiRolesNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiRolesName")
@@ -22848,9 +22697,9 @@ func (a *SecretsApiService) PostPkiRolesNameExecute(r ApiPostPkiRolesNameRequest
 }
 
 type ApiPostPkiRootGenerateExportedRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	exported string
+	ctx                    context.Context
+	ApiService             *SecretsApiService
+	exported               string
 	pkiRootGenerateRequest *PkiRootGenerateRequest
 }
 
@@ -22873,17 +22722,17 @@ PostPkiRootGenerateExported Method for PostPkiRootGenerateExported
 func (a *SecretsApiService) PostPkiRootGenerateExported(ctx context.Context, exported string) ApiPostPkiRootGenerateExportedRequest {
 	return ApiPostPkiRootGenerateExportedRequest{
 		ApiService: a,
-		ctx: ctx,
-		exported: exported,
+		ctx:        ctx,
+		exported:   exported,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiRootGenerateExportedExecute(r ApiPostPkiRootGenerateExportedRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiRootGenerateExported")
@@ -22946,8 +22795,8 @@ func (a *SecretsApiService) PostPkiRootGenerateExportedExecute(r ApiPostPkiRootG
 }
 
 type ApiPostPkiRootReplaceRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                   context.Context
+	ApiService            *SecretsApiService
 	pkiRootReplaceRequest *PkiRootReplaceRequest
 }
 
@@ -22969,16 +22818,16 @@ PostPkiRootReplace Method for PostPkiRootReplace
 func (a *SecretsApiService) PostPkiRootReplace(ctx context.Context) ApiPostPkiRootReplaceRequest {
 	return ApiPostPkiRootReplaceRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiRootReplaceExecute(r ApiPostPkiRootReplaceRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiRootReplace")
@@ -23040,9 +22889,9 @@ func (a *SecretsApiService) PostPkiRootReplaceExecute(r ApiPostPkiRootReplaceReq
 }
 
 type ApiPostPkiRootRotateExportedRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	exported string
+	ctx                  context.Context
+	ApiService           *SecretsApiService
+	exported             string
 	pkiRootRotateRequest *PkiRootRotateRequest
 }
 
@@ -23065,17 +22914,17 @@ PostPkiRootRotateExported Method for PostPkiRootRotateExported
 func (a *SecretsApiService) PostPkiRootRotateExported(ctx context.Context, exported string) ApiPostPkiRootRotateExportedRequest {
 	return ApiPostPkiRootRotateExportedRequest{
 		ApiService: a,
-		ctx: ctx,
-		exported: exported,
+		ctx:        ctx,
+		exported:   exported,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiRootRotateExportedExecute(r ApiPostPkiRootRotateExportedRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiRootRotateExported")
@@ -23138,8 +22987,8 @@ func (a *SecretsApiService) PostPkiRootRotateExportedExecute(r ApiPostPkiRootRot
 }
 
 type ApiPostPkiRootSignIntermediateRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                            context.Context
+	ApiService                     *SecretsApiService
 	pkiRootSignIntermediateRequest *PkiRootSignIntermediateRequest
 }
 
@@ -23161,16 +23010,16 @@ PostPkiRootSignIntermediate Method for PostPkiRootSignIntermediate
 func (a *SecretsApiService) PostPkiRootSignIntermediate(ctx context.Context) ApiPostPkiRootSignIntermediateRequest {
 	return ApiPostPkiRootSignIntermediateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiRootSignIntermediateExecute(r ApiPostPkiRootSignIntermediateRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiRootSignIntermediate")
@@ -23232,8 +23081,8 @@ func (a *SecretsApiService) PostPkiRootSignIntermediateExecute(r ApiPostPkiRootS
 }
 
 type ApiPostPkiRootSignSelfIssuedRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                          context.Context
+	ApiService                   *SecretsApiService
 	pkiRootSignSelfIssuedRequest *PkiRootSignSelfIssuedRequest
 }
 
@@ -23255,16 +23104,16 @@ PostPkiRootSignSelfIssued Method for PostPkiRootSignSelfIssued
 func (a *SecretsApiService) PostPkiRootSignSelfIssued(ctx context.Context) ApiPostPkiRootSignSelfIssuedRequest {
 	return ApiPostPkiRootSignSelfIssuedRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiRootSignSelfIssuedExecute(r ApiPostPkiRootSignSelfIssuedRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiRootSignSelfIssued")
@@ -23326,9 +23175,9 @@ func (a *SecretsApiService) PostPkiRootSignSelfIssuedExecute(r ApiPostPkiRootSig
 }
 
 type ApiPostPkiSignRoleRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	role string
+	ctx            context.Context
+	ApiService     *SecretsApiService
+	role           string
 	pkiSignRequest *PkiSignRequest
 }
 
@@ -23351,17 +23200,17 @@ PostPkiSignRole Method for PostPkiSignRole
 func (a *SecretsApiService) PostPkiSignRole(ctx context.Context, role string) ApiPostPkiSignRoleRequest {
 	return ApiPostPkiSignRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		role: role,
+		ctx:        ctx,
+		role:       role,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiSignRoleExecute(r ApiPostPkiSignRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiSignRole")
@@ -23424,8 +23273,8 @@ func (a *SecretsApiService) PostPkiSignRoleExecute(r ApiPostPkiSignRoleRequest) 
 }
 
 type ApiPostPkiSignVerbatimRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                    context.Context
+	ApiService             *SecretsApiService
 	pkiSignVerbatimRequest *PkiSignVerbatimRequest
 }
 
@@ -23447,16 +23296,16 @@ PostPkiSignVerbatim Method for PostPkiSignVerbatim
 func (a *SecretsApiService) PostPkiSignVerbatim(ctx context.Context) ApiPostPkiSignVerbatimRequest {
 	return ApiPostPkiSignVerbatimRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiSignVerbatimExecute(r ApiPostPkiSignVerbatimRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiSignVerbatim")
@@ -23518,9 +23367,9 @@ func (a *SecretsApiService) PostPkiSignVerbatimExecute(r ApiPostPkiSignVerbatimR
 }
 
 type ApiPostPkiSignVerbatimRoleRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	role string
+	ctx                    context.Context
+	ApiService             *SecretsApiService
+	role                   string
 	pkiSignVerbatimRequest *PkiSignVerbatimRequest
 }
 
@@ -23543,17 +23392,17 @@ PostPkiSignVerbatimRole Method for PostPkiSignVerbatimRole
 func (a *SecretsApiService) PostPkiSignVerbatimRole(ctx context.Context, role string) ApiPostPkiSignVerbatimRoleRequest {
 	return ApiPostPkiSignVerbatimRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		role: role,
+		ctx:        ctx,
+		role:       role,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiSignVerbatimRoleExecute(r ApiPostPkiSignVerbatimRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiSignVerbatimRole")
@@ -23616,8 +23465,8 @@ func (a *SecretsApiService) PostPkiSignVerbatimRoleExecute(r ApiPostPkiSignVerba
 }
 
 type ApiPostPkiTidyRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx            context.Context
+	ApiService     *SecretsApiService
 	pkiTidyRequest *PkiTidyRequest
 }
 
@@ -23639,16 +23488,16 @@ PostPkiTidy Method for PostPkiTidy
 func (a *SecretsApiService) PostPkiTidy(ctx context.Context) ApiPostPkiTidyRequest {
 	return ApiPostPkiTidyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostPkiTidyExecute(r ApiPostPkiTidyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostPkiTidy")
@@ -23710,8 +23559,8 @@ func (a *SecretsApiService) PostPkiTidyExecute(r ApiPostPkiTidyRequest) (*http.R
 }
 
 type ApiPostRabbitmqConfigConnectionRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                             context.Context
+	ApiService                      *SecretsApiService
 	rabbitmqConfigConnectionRequest *RabbitmqConfigConnectionRequest
 }
 
@@ -23733,16 +23582,16 @@ PostRabbitmqConfigConnection Configure the connection URI, username, and passwor
 func (a *SecretsApiService) PostRabbitmqConfigConnection(ctx context.Context) ApiPostRabbitmqConfigConnectionRequest {
 	return ApiPostRabbitmqConfigConnectionRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostRabbitmqConfigConnectionExecute(r ApiPostRabbitmqConfigConnectionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostRabbitmqConfigConnection")
@@ -23804,8 +23653,8 @@ func (a *SecretsApiService) PostRabbitmqConfigConnectionExecute(r ApiPostRabbitm
 }
 
 type ApiPostRabbitmqConfigLeaseRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                        context.Context
+	ApiService                 *SecretsApiService
 	rabbitmqConfigLeaseRequest *RabbitmqConfigLeaseRequest
 }
 
@@ -23827,16 +23676,16 @@ PostRabbitmqConfigLease Configure the lease parameters for generated credentials
 func (a *SecretsApiService) PostRabbitmqConfigLease(ctx context.Context) ApiPostRabbitmqConfigLeaseRequest {
 	return ApiPostRabbitmqConfigLeaseRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostRabbitmqConfigLeaseExecute(r ApiPostRabbitmqConfigLeaseRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostRabbitmqConfigLease")
@@ -23898,9 +23747,9 @@ func (a *SecretsApiService) PostRabbitmqConfigLeaseExecute(r ApiPostRabbitmqConf
 }
 
 type ApiPostRabbitmqRolesNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx                  context.Context
+	ApiService           *SecretsApiService
+	name                 string
 	rabbitmqRolesRequest *RabbitmqRolesRequest
 }
 
@@ -23923,17 +23772,17 @@ PostRabbitmqRolesName Manage the roles that can be created with this backend.
 func (a *SecretsApiService) PostRabbitmqRolesName(ctx context.Context, name string) ApiPostRabbitmqRolesNameRequest {
 	return ApiPostRabbitmqRolesNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostRabbitmqRolesNameExecute(r ApiPostRabbitmqRolesNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostRabbitmqRolesName")
@@ -23996,8 +23845,8 @@ func (a *SecretsApiService) PostRabbitmqRolesNameExecute(r ApiPostRabbitmqRolesN
 }
 
 type ApiPostSecretConfigRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx             context.Context
+	ApiService      *SecretsApiService
 	kvConfigRequest *KvConfigRequest
 }
 
@@ -24019,16 +23868,16 @@ PostSecretConfig Configure backend level settings that are applied to every key 
 func (a *SecretsApiService) PostSecretConfig(ctx context.Context) ApiPostSecretConfigRequest {
 	return ApiPostSecretConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostSecretConfigExecute(r ApiPostSecretConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostSecretConfig")
@@ -24090,9 +23939,9 @@ func (a *SecretsApiService) PostSecretConfigExecute(r ApiPostSecretConfigRequest
 }
 
 type ApiPostSecretDataPathRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	path string
+	ctx           context.Context
+	ApiService    *SecretsApiService
+	path          string
 	kvDataRequest *KvDataRequest
 }
 
@@ -24115,17 +23964,17 @@ PostSecretDataPath Write, Patch, Read, and Delete data in the Key-Value Store.
 func (a *SecretsApiService) PostSecretDataPath(ctx context.Context, path string) ApiPostSecretDataPathRequest {
 	return ApiPostSecretDataPathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostSecretDataPathExecute(r ApiPostSecretDataPathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostSecretDataPath")
@@ -24188,9 +24037,9 @@ func (a *SecretsApiService) PostSecretDataPathExecute(r ApiPostSecretDataPathReq
 }
 
 type ApiPostSecretDeletePathRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	path string
+	ctx             context.Context
+	ApiService      *SecretsApiService
+	path            string
 	kvDeleteRequest *KvDeleteRequest
 }
 
@@ -24213,17 +24062,17 @@ PostSecretDeletePath Marks one or more versions as deleted in the KV store.
 func (a *SecretsApiService) PostSecretDeletePath(ctx context.Context, path string) ApiPostSecretDeletePathRequest {
 	return ApiPostSecretDeletePathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostSecretDeletePathExecute(r ApiPostSecretDeletePathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostSecretDeletePath")
@@ -24286,9 +24135,9 @@ func (a *SecretsApiService) PostSecretDeletePathExecute(r ApiPostSecretDeletePat
 }
 
 type ApiPostSecretDestroyPathRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	path string
+	ctx              context.Context
+	ApiService       *SecretsApiService
+	path             string
 	kvDestroyRequest *KvDestroyRequest
 }
 
@@ -24311,17 +24160,17 @@ PostSecretDestroyPath Permanently removes one or more versions in the KV store
 func (a *SecretsApiService) PostSecretDestroyPath(ctx context.Context, path string) ApiPostSecretDestroyPathRequest {
 	return ApiPostSecretDestroyPathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostSecretDestroyPathExecute(r ApiPostSecretDestroyPathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostSecretDestroyPath")
@@ -24384,9 +24233,9 @@ func (a *SecretsApiService) PostSecretDestroyPathExecute(r ApiPostSecretDestroyP
 }
 
 type ApiPostSecretMetadataPathRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	path string
+	ctx               context.Context
+	ApiService        *SecretsApiService
+	path              string
 	kvMetadataRequest *KvMetadataRequest
 }
 
@@ -24409,17 +24258,17 @@ PostSecretMetadataPath Configures settings for the KV store
 func (a *SecretsApiService) PostSecretMetadataPath(ctx context.Context, path string) ApiPostSecretMetadataPathRequest {
 	return ApiPostSecretMetadataPathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostSecretMetadataPathExecute(r ApiPostSecretMetadataPathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostSecretMetadataPath")
@@ -24482,9 +24331,9 @@ func (a *SecretsApiService) PostSecretMetadataPathExecute(r ApiPostSecretMetadat
 }
 
 type ApiPostSecretUndeletePathRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	path string
+	ctx               context.Context
+	ApiService        *SecretsApiService
+	path              string
 	kvUndeleteRequest *KvUndeleteRequest
 }
 
@@ -24507,17 +24356,17 @@ PostSecretUndeletePath Undeletes one or more versions from the KV store.
 func (a *SecretsApiService) PostSecretUndeletePath(ctx context.Context, path string) ApiPostSecretUndeletePathRequest {
 	return ApiPostSecretUndeletePathRequest{
 		ApiService: a,
-		ctx: ctx,
-		path: path,
+		ctx:        ctx,
+		path:       path,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostSecretUndeletePathExecute(r ApiPostSecretUndeletePathRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostSecretUndeletePath")
@@ -24580,8 +24429,8 @@ func (a *SecretsApiService) PostSecretUndeletePathExecute(r ApiPostSecretUndelet
 }
 
 type ApiPostSshConfigCaRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                context.Context
+	ApiService         *SecretsApiService
 	sshConfigCaRequest *SshConfigCaRequest
 }
 
@@ -24603,16 +24452,16 @@ PostSshConfigCa Set the SSH private key used for signing certificates.
 func (a *SecretsApiService) PostSshConfigCa(ctx context.Context) ApiPostSshConfigCaRequest {
 	return ApiPostSshConfigCaRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostSshConfigCaExecute(r ApiPostSshConfigCaRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostSshConfigCa")
@@ -24674,8 +24523,8 @@ func (a *SecretsApiService) PostSshConfigCaExecute(r ApiPostSshConfigCaRequest) 
 }
 
 type ApiPostSshConfigZeroaddressRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                         context.Context
+	ApiService                  *SecretsApiService
 	sshConfigZeroaddressRequest *SshConfigZeroaddressRequest
 }
 
@@ -24697,16 +24546,16 @@ PostSshConfigZeroaddress Assign zero address as default CIDR block for select ro
 func (a *SecretsApiService) PostSshConfigZeroaddress(ctx context.Context) ApiPostSshConfigZeroaddressRequest {
 	return ApiPostSshConfigZeroaddressRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostSshConfigZeroaddressExecute(r ApiPostSshConfigZeroaddressRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostSshConfigZeroaddress")
@@ -24768,9 +24617,9 @@ func (a *SecretsApiService) PostSshConfigZeroaddressExecute(r ApiPostSshConfigZe
 }
 
 type ApiPostSshCredsRoleRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	role string
+	ctx             context.Context
+	ApiService      *SecretsApiService
+	role            string
 	sshCredsRequest *SshCredsRequest
 }
 
@@ -24793,17 +24642,17 @@ PostSshCredsRole Creates a credential for establishing SSH connection with the r
 func (a *SecretsApiService) PostSshCredsRole(ctx context.Context, role string) ApiPostSshCredsRoleRequest {
 	return ApiPostSshCredsRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		role: role,
+		ctx:        ctx,
+		role:       role,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostSshCredsRoleExecute(r ApiPostSshCredsRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostSshCredsRole")
@@ -24866,9 +24715,9 @@ func (a *SecretsApiService) PostSshCredsRoleExecute(r ApiPostSshCredsRoleRequest
 }
 
 type ApiPostSshKeysKeyNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	keyName string
+	ctx            context.Context
+	ApiService     *SecretsApiService
+	keyName        string
 	sshKeysRequest *SshKeysRequest
 }
 
@@ -24891,17 +24740,17 @@ PostSshKeysKeyName Register a shared private key with Vault.
 func (a *SecretsApiService) PostSshKeysKeyName(ctx context.Context, keyName string) ApiPostSshKeysKeyNameRequest {
 	return ApiPostSshKeysKeyNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		keyName: keyName,
+		ctx:        ctx,
+		keyName:    keyName,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostSshKeysKeyNameExecute(r ApiPostSshKeysKeyNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostSshKeysKeyName")
@@ -24964,8 +24813,8 @@ func (a *SecretsApiService) PostSshKeysKeyNameExecute(r ApiPostSshKeysKeyNameReq
 }
 
 type ApiPostSshLookupRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx              context.Context
+	ApiService       *SecretsApiService
 	sshLookupRequest *SshLookupRequest
 }
 
@@ -24987,16 +24836,16 @@ PostSshLookup List all the roles associated with the given IP address.
 func (a *SecretsApiService) PostSshLookup(ctx context.Context) ApiPostSshLookupRequest {
 	return ApiPostSshLookupRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostSshLookupExecute(r ApiPostSshLookupRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostSshLookup")
@@ -25058,9 +24907,9 @@ func (a *SecretsApiService) PostSshLookupExecute(r ApiPostSshLookupRequest) (*ht
 }
 
 type ApiPostSshRolesRoleRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	role string
+	ctx             context.Context
+	ApiService      *SecretsApiService
+	role            string
 	sshRolesRequest *SshRolesRequest
 }
 
@@ -25083,17 +24932,17 @@ PostSshRolesRole Manage the 'roles' that can be created with this backend.
 func (a *SecretsApiService) PostSshRolesRole(ctx context.Context, role string) ApiPostSshRolesRoleRequest {
 	return ApiPostSshRolesRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		role: role,
+		ctx:        ctx,
+		role:       role,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostSshRolesRoleExecute(r ApiPostSshRolesRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostSshRolesRole")
@@ -25156,9 +25005,9 @@ func (a *SecretsApiService) PostSshRolesRoleExecute(r ApiPostSshRolesRoleRequest
 }
 
 type ApiPostSshSignRoleRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	role string
+	ctx            context.Context
+	ApiService     *SecretsApiService
+	role           string
 	sshSignRequest *SshSignRequest
 }
 
@@ -25181,17 +25030,17 @@ PostSshSignRole Request signing an SSH key using a certain role with the provide
 func (a *SecretsApiService) PostSshSignRole(ctx context.Context, role string) ApiPostSshSignRoleRequest {
 	return ApiPostSshSignRoleRequest{
 		ApiService: a,
-		ctx: ctx,
-		role: role,
+		ctx:        ctx,
+		role:       role,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostSshSignRoleExecute(r ApiPostSshSignRoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostSshSignRole")
@@ -25254,8 +25103,8 @@ func (a *SecretsApiService) PostSshSignRoleExecute(r ApiPostSshSignRoleRequest) 
 }
 
 type ApiPostSshVerifyRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx              context.Context
+	ApiService       *SecretsApiService
 	sshVerifyRequest *SshVerifyRequest
 }
 
@@ -25277,16 +25126,16 @@ PostSshVerify Validate the OTP provided by Vault SSH Agent.
 func (a *SecretsApiService) PostSshVerify(ctx context.Context) ApiPostSshVerifyRequest {
 	return ApiPostSshVerifyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostSshVerifyExecute(r ApiPostSshVerifyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostSshVerify")
@@ -25348,8 +25197,8 @@ func (a *SecretsApiService) PostSshVerifyExecute(r ApiPostSshVerifyRequest) (*ht
 }
 
 type ApiPostTerraformConfigRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                    context.Context
+	ApiService             *SecretsApiService
 	terraformConfigRequest *TerraformConfigRequest
 }
 
@@ -25371,16 +25220,16 @@ PostTerraformConfig Method for PostTerraformConfig
 func (a *SecretsApiService) PostTerraformConfig(ctx context.Context) ApiPostTerraformConfigRequest {
 	return ApiPostTerraformConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostTerraformConfigExecute(r ApiPostTerraformConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTerraformConfig")
@@ -25442,11 +25291,10 @@ func (a *SecretsApiService) PostTerraformConfigExecute(r ApiPostTerraformConfigR
 }
 
 type ApiPostTerraformCredsNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiPostTerraformCredsNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostTerraformCredsNameExecute(r)
@@ -25462,17 +25310,17 @@ PostTerraformCredsName Generate a Terraform Cloud or Enterprise API token from a
 func (a *SecretsApiService) PostTerraformCredsName(ctx context.Context, name string) ApiPostTerraformCredsNameRequest {
 	return ApiPostTerraformCredsNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostTerraformCredsNameExecute(r ApiPostTerraformCredsNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTerraformCredsName")
@@ -25533,9 +25381,9 @@ func (a *SecretsApiService) PostTerraformCredsNameExecute(r ApiPostTerraformCred
 }
 
 type ApiPostTerraformRoleNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx                  context.Context
+	ApiService           *SecretsApiService
+	name                 string
 	terraformRoleRequest *TerraformRoleRequest
 }
 
@@ -25558,17 +25406,17 @@ PostTerraformRoleName Method for PostTerraformRoleName
 func (a *SecretsApiService) PostTerraformRoleName(ctx context.Context, name string) ApiPostTerraformRoleNameRequest {
 	return ApiPostTerraformRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostTerraformRoleNameExecute(r ApiPostTerraformRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTerraformRoleName")
@@ -25631,11 +25479,10 @@ func (a *SecretsApiService) PostTerraformRoleNameExecute(r ApiPostTerraformRoleN
 }
 
 type ApiPostTerraformRotateRoleNameRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiPostTerraformRotateRoleNameRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostTerraformRotateRoleNameExecute(r)
@@ -25651,17 +25498,17 @@ PostTerraformRotateRoleName Method for PostTerraformRotateRoleName
 func (a *SecretsApiService) PostTerraformRotateRoleName(ctx context.Context, name string) ApiPostTerraformRotateRoleNameRequest {
 	return ApiPostTerraformRotateRoleNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostTerraformRotateRoleNameExecute(r ApiPostTerraformRotateRoleNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTerraformRotateRoleName")
@@ -25722,9 +25569,9 @@ func (a *SecretsApiService) PostTerraformRotateRoleNameExecute(r ApiPostTerrafor
 }
 
 type ApiPostTotpCodeNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx             context.Context
+	ApiService      *SecretsApiService
+	name            string
 	totpCodeRequest *TotpCodeRequest
 }
 
@@ -25747,17 +25594,17 @@ PostTotpCodeName Request time-based one-time use password or validate a password
 func (a *SecretsApiService) PostTotpCodeName(ctx context.Context, name string) ApiPostTotpCodeNameRequest {
 	return ApiPostTotpCodeNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostTotpCodeNameExecute(r ApiPostTotpCodeNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTotpCodeName")
@@ -25820,9 +25667,9 @@ func (a *SecretsApiService) PostTotpCodeNameExecute(r ApiPostTotpCodeNameRequest
 }
 
 type ApiPostTotpKeysNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx             context.Context
+	ApiService      *SecretsApiService
+	name            string
 	totpKeysRequest *TotpKeysRequest
 }
 
@@ -25845,17 +25692,17 @@ PostTotpKeysName Manage the keys that can be created with this backend.
 func (a *SecretsApiService) PostTotpKeysName(ctx context.Context, name string) ApiPostTotpKeysNameRequest {
 	return ApiPostTotpKeysNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostTotpKeysNameExecute(r ApiPostTotpKeysNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTotpKeysName")
@@ -25918,8 +25765,8 @@ func (a *SecretsApiService) PostTotpKeysNameExecute(r ApiPostTotpKeysNameRequest
 }
 
 type ApiPostTransitCacheConfigRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                       context.Context
+	ApiService                *SecretsApiService
 	transitCacheConfigRequest *TransitCacheConfigRequest
 }
 
@@ -25941,16 +25788,16 @@ PostTransitCacheConfig Configures a new cache of the specified size
 func (a *SecretsApiService) PostTransitCacheConfig(ctx context.Context) ApiPostTransitCacheConfigRequest {
 	return ApiPostTransitCacheConfigRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostTransitCacheConfigExecute(r ApiPostTransitCacheConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTransitCacheConfig")
@@ -26012,10 +25859,10 @@ func (a *SecretsApiService) PostTransitCacheConfigExecute(r ApiPostTransitCacheC
 }
 
 type ApiPostTransitDatakeyPlaintextNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
-	plaintext string
+	ctx                   context.Context
+	ApiService            *SecretsApiService
+	name                  string
+	plaintext             string
 	transitDatakeyRequest *TransitDatakeyRequest
 }
 
@@ -26039,18 +25886,18 @@ PostTransitDatakeyPlaintextName Generate a data key
 func (a *SecretsApiService) PostTransitDatakeyPlaintextName(ctx context.Context, name string, plaintext string) ApiPostTransitDatakeyPlaintextNameRequest {
 	return ApiPostTransitDatakeyPlaintextNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
-		plaintext: plaintext,
+		ctx:        ctx,
+		name:       name,
+		plaintext:  plaintext,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostTransitDatakeyPlaintextNameExecute(r ApiPostTransitDatakeyPlaintextNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTransitDatakeyPlaintextName")
@@ -26114,9 +25961,9 @@ func (a *SecretsApiService) PostTransitDatakeyPlaintextNameExecute(r ApiPostTran
 }
 
 type ApiPostTransitDecryptNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx                   context.Context
+	ApiService            *SecretsApiService
+	name                  string
 	transitDecryptRequest *TransitDecryptRequest
 }
 
@@ -26139,17 +25986,17 @@ PostTransitDecryptName Decrypt a ciphertext value using a named key
 func (a *SecretsApiService) PostTransitDecryptName(ctx context.Context, name string) ApiPostTransitDecryptNameRequest {
 	return ApiPostTransitDecryptNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostTransitDecryptNameExecute(r ApiPostTransitDecryptNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTransitDecryptName")
@@ -26212,9 +26059,9 @@ func (a *SecretsApiService) PostTransitDecryptNameExecute(r ApiPostTransitDecryp
 }
 
 type ApiPostTransitEncryptNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx                   context.Context
+	ApiService            *SecretsApiService
+	name                  string
 	transitEncryptRequest *TransitEncryptRequest
 }
 
@@ -26237,17 +26084,17 @@ PostTransitEncryptName Encrypt a plaintext value or a batch of plaintext blocks 
 func (a *SecretsApiService) PostTransitEncryptName(ctx context.Context, name string) ApiPostTransitEncryptNameRequest {
 	return ApiPostTransitEncryptNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostTransitEncryptNameExecute(r ApiPostTransitEncryptNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTransitEncryptName")
@@ -26310,8 +26157,8 @@ func (a *SecretsApiService) PostTransitEncryptNameExecute(r ApiPostTransitEncryp
 }
 
 type ApiPostTransitHashRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                context.Context
+	ApiService         *SecretsApiService
 	transitHashRequest *TransitHashRequest
 }
 
@@ -26333,16 +26180,16 @@ PostTransitHash Generate a hash sum for input data
 func (a *SecretsApiService) PostTransitHash(ctx context.Context) ApiPostTransitHashRequest {
 	return ApiPostTransitHashRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostTransitHashExecute(r ApiPostTransitHashRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTransitHash")
@@ -26404,9 +26251,9 @@ func (a *SecretsApiService) PostTransitHashExecute(r ApiPostTransitHashRequest) 
 }
 
 type ApiPostTransitHashUrlalgorithmRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	urlalgorithm string
+	ctx                context.Context
+	ApiService         *SecretsApiService
+	urlalgorithm       string
 	transitHashRequest *TransitHashRequest
 }
 
@@ -26428,8 +26275,8 @@ PostTransitHashUrlalgorithm Generate a hash sum for input data
 */
 func (a *SecretsApiService) PostTransitHashUrlalgorithm(ctx context.Context, urlalgorithm string) ApiPostTransitHashUrlalgorithmRequest {
 	return ApiPostTransitHashUrlalgorithmRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		urlalgorithm: urlalgorithm,
 	}
 }
@@ -26437,9 +26284,9 @@ func (a *SecretsApiService) PostTransitHashUrlalgorithm(ctx context.Context, url
 // Execute executes the request
 func (a *SecretsApiService) PostTransitHashUrlalgorithmExecute(r ApiPostTransitHashUrlalgorithmRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTransitHashUrlalgorithm")
@@ -26502,9 +26349,9 @@ func (a *SecretsApiService) PostTransitHashUrlalgorithmExecute(r ApiPostTransitH
 }
 
 type ApiPostTransitHmacNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx                context.Context
+	ApiService         *SecretsApiService
+	name               string
 	transitHmacRequest *TransitHmacRequest
 }
 
@@ -26527,17 +26374,17 @@ PostTransitHmacName Generate an HMAC for input data using the named key
 func (a *SecretsApiService) PostTransitHmacName(ctx context.Context, name string) ApiPostTransitHmacNameRequest {
 	return ApiPostTransitHmacNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostTransitHmacNameExecute(r ApiPostTransitHmacNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTransitHmacName")
@@ -26600,10 +26447,10 @@ func (a *SecretsApiService) PostTransitHmacNameExecute(r ApiPostTransitHmacNameR
 }
 
 type ApiPostTransitHmacNameUrlalgorithmRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
-	urlalgorithm string
+	ctx                context.Context
+	ApiService         *SecretsApiService
+	name               string
+	urlalgorithm       string
 	transitHmacRequest *TransitHmacRequest
 }
 
@@ -26626,9 +26473,9 @@ PostTransitHmacNameUrlalgorithm Generate an HMAC for input data using the named 
 */
 func (a *SecretsApiService) PostTransitHmacNameUrlalgorithm(ctx context.Context, name string, urlalgorithm string) ApiPostTransitHmacNameUrlalgorithmRequest {
 	return ApiPostTransitHmacNameUrlalgorithmRequest{
-		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ApiService:   a,
+		ctx:          ctx,
+		name:         name,
 		urlalgorithm: urlalgorithm,
 	}
 }
@@ -26636,9 +26483,9 @@ func (a *SecretsApiService) PostTransitHmacNameUrlalgorithm(ctx context.Context,
 // Execute executes the request
 func (a *SecretsApiService) PostTransitHmacNameUrlalgorithmExecute(r ApiPostTransitHmacNameUrlalgorithmRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTransitHmacNameUrlalgorithm")
@@ -26702,9 +26549,9 @@ func (a *SecretsApiService) PostTransitHmacNameUrlalgorithmExecute(r ApiPostTran
 }
 
 type ApiPostTransitKeysNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx                context.Context
+	ApiService         *SecretsApiService
+	name               string
 	transitKeysRequest *TransitKeysRequest
 }
 
@@ -26727,17 +26574,17 @@ PostTransitKeysName Managed named encryption keys
 func (a *SecretsApiService) PostTransitKeysName(ctx context.Context, name string) ApiPostTransitKeysNameRequest {
 	return ApiPostTransitKeysNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostTransitKeysNameExecute(r ApiPostTransitKeysNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTransitKeysName")
@@ -26800,9 +26647,9 @@ func (a *SecretsApiService) PostTransitKeysNameExecute(r ApiPostTransitKeysNameR
 }
 
 type ApiPostTransitKeysNameConfigRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx                      context.Context
+	ApiService               *SecretsApiService
+	name                     string
 	transitKeysConfigRequest *TransitKeysConfigRequest
 }
 
@@ -26825,17 +26672,17 @@ PostTransitKeysNameConfig Configure a named encryption key
 func (a *SecretsApiService) PostTransitKeysNameConfig(ctx context.Context, name string) ApiPostTransitKeysNameConfigRequest {
 	return ApiPostTransitKeysNameConfigRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostTransitKeysNameConfigExecute(r ApiPostTransitKeysNameConfigRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTransitKeysNameConfig")
@@ -26898,9 +26745,9 @@ func (a *SecretsApiService) PostTransitKeysNameConfigExecute(r ApiPostTransitKey
 }
 
 type ApiPostTransitKeysNameImportRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx                      context.Context
+	ApiService               *SecretsApiService
+	name                     string
 	transitKeysImportRequest *TransitKeysImportRequest
 }
 
@@ -26923,17 +26770,17 @@ PostTransitKeysNameImport Imports an externally-generated key into a new transit
 func (a *SecretsApiService) PostTransitKeysNameImport(ctx context.Context, name string) ApiPostTransitKeysNameImportRequest {
 	return ApiPostTransitKeysNameImportRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostTransitKeysNameImportExecute(r ApiPostTransitKeysNameImportRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTransitKeysNameImport")
@@ -26996,9 +26843,9 @@ func (a *SecretsApiService) PostTransitKeysNameImportExecute(r ApiPostTransitKey
 }
 
 type ApiPostTransitKeysNameImportVersionRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx                             context.Context
+	ApiService                      *SecretsApiService
+	name                            string
 	transitKeysImportVersionRequest *TransitKeysImportVersionRequest
 }
 
@@ -27021,17 +26868,17 @@ PostTransitKeysNameImportVersion Imports an externally-generated key into an exi
 func (a *SecretsApiService) PostTransitKeysNameImportVersion(ctx context.Context, name string) ApiPostTransitKeysNameImportVersionRequest {
 	return ApiPostTransitKeysNameImportVersionRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostTransitKeysNameImportVersionExecute(r ApiPostTransitKeysNameImportVersionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTransitKeysNameImportVersion")
@@ -27094,11 +26941,10 @@ func (a *SecretsApiService) PostTransitKeysNameImportVersionExecute(r ApiPostTra
 }
 
 type ApiPostTransitKeysNameRotateRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SecretsApiService
-	name string
+	name       string
 }
-
 
 func (r ApiPostTransitKeysNameRotateRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PostTransitKeysNameRotateExecute(r)
@@ -27114,17 +26960,17 @@ PostTransitKeysNameRotate Rotate named encryption key
 func (a *SecretsApiService) PostTransitKeysNameRotate(ctx context.Context, name string) ApiPostTransitKeysNameRotateRequest {
 	return ApiPostTransitKeysNameRotateRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostTransitKeysNameRotateExecute(r ApiPostTransitKeysNameRotateRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTransitKeysNameRotate")
@@ -27185,9 +27031,9 @@ func (a *SecretsApiService) PostTransitKeysNameRotateExecute(r ApiPostTransitKey
 }
 
 type ApiPostTransitKeysNameTrimRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx                    context.Context
+	ApiService             *SecretsApiService
+	name                   string
 	transitKeysTrimRequest *TransitKeysTrimRequest
 }
 
@@ -27210,17 +27056,17 @@ PostTransitKeysNameTrim Trim key versions of a named key
 func (a *SecretsApiService) PostTransitKeysNameTrim(ctx context.Context, name string) ApiPostTransitKeysNameTrimRequest {
 	return ApiPostTransitKeysNameTrimRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostTransitKeysNameTrimExecute(r ApiPostTransitKeysNameTrimRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTransitKeysNameTrim")
@@ -27283,8 +27129,8 @@ func (a *SecretsApiService) PostTransitKeysNameTrimExecute(r ApiPostTransitKeysN
 }
 
 type ApiPostTransitRandomRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                  context.Context
+	ApiService           *SecretsApiService
 	transitRandomRequest *TransitRandomRequest
 }
 
@@ -27306,16 +27152,16 @@ PostTransitRandom Generate random bytes
 func (a *SecretsApiService) PostTransitRandom(ctx context.Context) ApiPostTransitRandomRequest {
 	return ApiPostTransitRandomRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostTransitRandomExecute(r ApiPostTransitRandomRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTransitRandom")
@@ -27377,9 +27223,9 @@ func (a *SecretsApiService) PostTransitRandomExecute(r ApiPostTransitRandomReque
 }
 
 type ApiPostTransitRandomSourceRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	source string
+	ctx                  context.Context
+	ApiService           *SecretsApiService
+	source               string
 	transitRandomRequest *TransitRandomRequest
 }
 
@@ -27402,17 +27248,17 @@ PostTransitRandomSource Generate random bytes
 func (a *SecretsApiService) PostTransitRandomSource(ctx context.Context, source string) ApiPostTransitRandomSourceRequest {
 	return ApiPostTransitRandomSourceRequest{
 		ApiService: a,
-		ctx: ctx,
-		source: source,
+		ctx:        ctx,
+		source:     source,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostTransitRandomSourceExecute(r ApiPostTransitRandomSourceRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTransitRandomSource")
@@ -27475,10 +27321,10 @@ func (a *SecretsApiService) PostTransitRandomSourceExecute(r ApiPostTransitRando
 }
 
 type ApiPostTransitRandomSourceUrlbytesRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	source string
-	urlbytes string
+	ctx                  context.Context
+	ApiService           *SecretsApiService
+	source               string
+	urlbytes             string
 	transitRandomRequest *TransitRandomRequest
 }
 
@@ -27502,18 +27348,18 @@ PostTransitRandomSourceUrlbytes Generate random bytes
 func (a *SecretsApiService) PostTransitRandomSourceUrlbytes(ctx context.Context, source string, urlbytes string) ApiPostTransitRandomSourceUrlbytesRequest {
 	return ApiPostTransitRandomSourceUrlbytesRequest{
 		ApiService: a,
-		ctx: ctx,
-		source: source,
-		urlbytes: urlbytes,
+		ctx:        ctx,
+		source:     source,
+		urlbytes:   urlbytes,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostTransitRandomSourceUrlbytesExecute(r ApiPostTransitRandomSourceUrlbytesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTransitRandomSourceUrlbytes")
@@ -27577,9 +27423,9 @@ func (a *SecretsApiService) PostTransitRandomSourceUrlbytesExecute(r ApiPostTran
 }
 
 type ApiPostTransitRandomUrlbytesRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	urlbytes string
+	ctx                  context.Context
+	ApiService           *SecretsApiService
+	urlbytes             string
 	transitRandomRequest *TransitRandomRequest
 }
 
@@ -27602,17 +27448,17 @@ PostTransitRandomUrlbytes Generate random bytes
 func (a *SecretsApiService) PostTransitRandomUrlbytes(ctx context.Context, urlbytes string) ApiPostTransitRandomUrlbytesRequest {
 	return ApiPostTransitRandomUrlbytesRequest{
 		ApiService: a,
-		ctx: ctx,
-		urlbytes: urlbytes,
+		ctx:        ctx,
+		urlbytes:   urlbytes,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostTransitRandomUrlbytesExecute(r ApiPostTransitRandomUrlbytesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTransitRandomUrlbytes")
@@ -27675,8 +27521,8 @@ func (a *SecretsApiService) PostTransitRandomUrlbytesExecute(r ApiPostTransitRan
 }
 
 type ApiPostTransitRestoreRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
+	ctx                   context.Context
+	ApiService            *SecretsApiService
 	transitRestoreRequest *TransitRestoreRequest
 }
 
@@ -27698,16 +27544,16 @@ PostTransitRestore Restore the named key
 func (a *SecretsApiService) PostTransitRestore(ctx context.Context) ApiPostTransitRestoreRequest {
 	return ApiPostTransitRestoreRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostTransitRestoreExecute(r ApiPostTransitRestoreRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTransitRestore")
@@ -27769,9 +27615,9 @@ func (a *SecretsApiService) PostTransitRestoreExecute(r ApiPostTransitRestoreReq
 }
 
 type ApiPostTransitRestoreNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx                   context.Context
+	ApiService            *SecretsApiService
+	name                  string
 	transitRestoreRequest *TransitRestoreRequest
 }
 
@@ -27794,17 +27640,17 @@ PostTransitRestoreName Restore the named key
 func (a *SecretsApiService) PostTransitRestoreName(ctx context.Context, name string) ApiPostTransitRestoreNameRequest {
 	return ApiPostTransitRestoreNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostTransitRestoreNameExecute(r ApiPostTransitRestoreNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTransitRestoreName")
@@ -27867,9 +27713,9 @@ func (a *SecretsApiService) PostTransitRestoreNameExecute(r ApiPostTransitRestor
 }
 
 type ApiPostTransitRewrapNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx                  context.Context
+	ApiService           *SecretsApiService
+	name                 string
 	transitRewrapRequest *TransitRewrapRequest
 }
 
@@ -27892,17 +27738,17 @@ PostTransitRewrapName Rewrap ciphertext
 func (a *SecretsApiService) PostTransitRewrapName(ctx context.Context, name string) ApiPostTransitRewrapNameRequest {
 	return ApiPostTransitRewrapNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostTransitRewrapNameExecute(r ApiPostTransitRewrapNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTransitRewrapName")
@@ -27965,9 +27811,9 @@ func (a *SecretsApiService) PostTransitRewrapNameExecute(r ApiPostTransitRewrapN
 }
 
 type ApiPostTransitSignNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx                context.Context
+	ApiService         *SecretsApiService
+	name               string
 	transitSignRequest *TransitSignRequest
 }
 
@@ -27990,17 +27836,17 @@ PostTransitSignName Generate a signature for input data using the named key
 func (a *SecretsApiService) PostTransitSignName(ctx context.Context, name string) ApiPostTransitSignNameRequest {
 	return ApiPostTransitSignNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostTransitSignNameExecute(r ApiPostTransitSignNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTransitSignName")
@@ -28063,10 +27909,10 @@ func (a *SecretsApiService) PostTransitSignNameExecute(r ApiPostTransitSignNameR
 }
 
 type ApiPostTransitSignNameUrlalgorithmRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
-	urlalgorithm string
+	ctx                context.Context
+	ApiService         *SecretsApiService
+	name               string
+	urlalgorithm       string
 	transitSignRequest *TransitSignRequest
 }
 
@@ -28089,9 +27935,9 @@ PostTransitSignNameUrlalgorithm Generate a signature for input data using the na
 */
 func (a *SecretsApiService) PostTransitSignNameUrlalgorithm(ctx context.Context, name string, urlalgorithm string) ApiPostTransitSignNameUrlalgorithmRequest {
 	return ApiPostTransitSignNameUrlalgorithmRequest{
-		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ApiService:   a,
+		ctx:          ctx,
+		name:         name,
 		urlalgorithm: urlalgorithm,
 	}
 }
@@ -28099,9 +27945,9 @@ func (a *SecretsApiService) PostTransitSignNameUrlalgorithm(ctx context.Context,
 // Execute executes the request
 func (a *SecretsApiService) PostTransitSignNameUrlalgorithmExecute(r ApiPostTransitSignNameUrlalgorithmRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTransitSignNameUrlalgorithm")
@@ -28165,9 +28011,9 @@ func (a *SecretsApiService) PostTransitSignNameUrlalgorithmExecute(r ApiPostTran
 }
 
 type ApiPostTransitVerifyNameRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
+	ctx                  context.Context
+	ApiService           *SecretsApiService
+	name                 string
 	transitVerifyRequest *TransitVerifyRequest
 }
 
@@ -28190,17 +28036,17 @@ PostTransitVerifyName Verify a signature or HMAC for input data created using th
 func (a *SecretsApiService) PostTransitVerifyName(ctx context.Context, name string) ApiPostTransitVerifyNameRequest {
 	return ApiPostTransitVerifyNameRequest{
 		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ctx:        ctx,
+		name:       name,
 	}
 }
 
 // Execute executes the request
 func (a *SecretsApiService) PostTransitVerifyNameExecute(r ApiPostTransitVerifyNameRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTransitVerifyName")
@@ -28263,10 +28109,10 @@ func (a *SecretsApiService) PostTransitVerifyNameExecute(r ApiPostTransitVerifyN
 }
 
 type ApiPostTransitVerifyNameUrlalgorithmRequest struct {
-	ctx context.Context
-	ApiService *SecretsApiService
-	name string
-	urlalgorithm string
+	ctx                  context.Context
+	ApiService           *SecretsApiService
+	name                 string
+	urlalgorithm         string
 	transitVerifyRequest *TransitVerifyRequest
 }
 
@@ -28289,9 +28135,9 @@ PostTransitVerifyNameUrlalgorithm Verify a signature or HMAC for input data crea
 */
 func (a *SecretsApiService) PostTransitVerifyNameUrlalgorithm(ctx context.Context, name string, urlalgorithm string) ApiPostTransitVerifyNameUrlalgorithmRequest {
 	return ApiPostTransitVerifyNameUrlalgorithmRequest{
-		ApiService: a,
-		ctx: ctx,
-		name: name,
+		ApiService:   a,
+		ctx:          ctx,
+		name:         name,
 		urlalgorithm: urlalgorithm,
 	}
 }
@@ -28299,9 +28145,9 @@ func (a *SecretsApiService) PostTransitVerifyNameUrlalgorithm(ctx context.Contex
 // Execute executes the request
 func (a *SecretsApiService) PostTransitVerifyNameUrlalgorithmExecute(r ApiPostTransitVerifyNameUrlalgorithmRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretsApiService.PostTransitVerifyNameUrlalgorithm")

@@ -82,41 +82,6 @@ type AdConfigRequest struct {
 	UsernameAsAlias *bool `json:"username_as_alias,omitempty"`
 }
 
-// NewAdConfigRequest instantiates a new AdConfigRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAdConfigRequest() *AdConfigRequest {
-	this := AdConfigRequest{}
-	var anonymousGroupSearch bool = false
-	this.AnonymousGroupSearch = &anonymousGroupSearch
-	var denyNullBind bool = true
-	this.DenyNullBind = &denyNullBind
-	var groupattr string = "cn"
-	this.Groupattr = &groupattr
-	var groupfilter string = "(|(memberUid={{.Username}})(member={{.UserDN}})(uniqueMember={{.UserDN}}))"
-	this.Groupfilter = &groupfilter
-	var lastRotationTolerance int32 = 5
-	this.LastRotationTolerance = &lastRotationTolerance
-	var length int32 = 64
-	this.Length = &length
-	var tlsMaxVersion string = "tls12"
-	this.TlsMaxVersion = &tlsMaxVersion
-	var tlsMinVersion string = "tls12"
-	this.TlsMinVersion = &tlsMinVersion
-	var url string = "ldap://127.0.0.1"
-	this.Url = &url
-	var useTokenGroups bool = false
-	this.UseTokenGroups = &useTokenGroups
-	var userattr string = "cn"
-	this.Userattr = &userattr
-	var userfilter string = "({{.UserAttr}}={{.Username}})"
-	this.Userfilter = &userfilter
-	var usernameAsAlias bool = false
-	this.UsernameAsAlias = &usernameAsAlias
-	return &this
-}
-
 // NewAdConfigRequestWithDefaults instantiates a new AdConfigRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -265,15 +230,6 @@ type AdLibraryCheckInRequest struct {
 	ServiceAccountNames []string `json:"service_account_names,omitempty"`
 }
 
-// NewAdLibraryCheckInRequest instantiates a new AdLibraryCheckInRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAdLibraryCheckInRequest() *AdLibraryCheckInRequest {
-	this := AdLibraryCheckInRequest{}
-	return &this
-}
-
 // NewAdLibraryCheckInRequestWithDefaults instantiates a new AdLibraryCheckInRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -306,15 +262,6 @@ type AdLibraryCheckOutRequest struct {
 	Ttl *int32 `json:"ttl,omitempty"`
 }
 
-// NewAdLibraryCheckOutRequest instantiates a new AdLibraryCheckOutRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAdLibraryCheckOutRequest() *AdLibraryCheckOutRequest {
-	this := AdLibraryCheckOutRequest{}
-	return &this
-}
-
 // NewAdLibraryCheckOutRequestWithDefaults instantiates a new AdLibraryCheckOutRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -345,15 +292,6 @@ API version: 1.12.0
 type AdLibraryManageCheckInRequest struct {
 	// The username/logon name for the service accounts to check in.
 	ServiceAccountNames []string `json:"service_account_names,omitempty"`
-}
-
-// NewAdLibraryManageCheckInRequest instantiates a new AdLibraryManageCheckInRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAdLibraryManageCheckInRequest() *AdLibraryManageCheckInRequest {
-	this := AdLibraryManageCheckInRequest{}
-	return &this
 }
 
 // NewAdLibraryManageCheckInRequestWithDefaults instantiates a new AdLibraryManageCheckInRequest object
@@ -392,21 +330,6 @@ type AdLibraryRequest struct {
 	ServiceAccountNames []string `json:"service_account_names,omitempty"`
 	// In seconds, the amount of time a check-out should last. Defaults to 24 hours.
 	Ttl *int32 `json:"ttl,omitempty"`
-}
-
-// NewAdLibraryRequest instantiates a new AdLibraryRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAdLibraryRequest() *AdLibraryRequest {
-	this := AdLibraryRequest{}
-	var disableCheckInEnforcement bool = false
-	this.DisableCheckInEnforcement = &disableCheckInEnforcement
-	var maxTtl int32 = 86400
-	this.MaxTtl = &maxTtl
-	var ttl int32 = 86400
-	this.Ttl = &ttl
-	return &this
 }
 
 // NewAdLibraryRequestWithDefaults instantiates a new AdLibraryRequest object
@@ -458,15 +381,6 @@ type AdRolesRequest struct {
 	Ttl *int32 `json:"ttl,omitempty"`
 }
 
-// NewAdRolesRequest instantiates a new AdRolesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAdRolesRequest() *AdRolesRequest {
-	this := AdRolesRequest{}
-	return &this
-}
-
 // NewAdRolesRequestWithDefaults instantiates a new AdRolesRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -502,15 +416,6 @@ type AlicloudConfigRequest struct {
 	AccessKey *string `json:"access_key,omitempty"`
 	// Secret key with appropriate permissions.
 	SecretKey *string `json:"secret_key,omitempty"`
-}
-
-// NewAlicloudConfigRequest instantiates a new AlicloudConfigRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAlicloudConfigRequest() *AlicloudConfigRequest {
-	this := AlicloudConfigRequest{}
-	return &this
 }
 
 // NewAlicloudConfigRequestWithDefaults instantiates a new AlicloudConfigRequest object
@@ -550,15 +455,6 @@ type AlicloudLoginRequest struct {
 	IdentityRequestUrl *string `json:"identity_request_url,omitempty"`
 	// Name of the role against which the login is being attempted. If 'role' is not specified, then the login endpoint looks for a role name in the ARN returned by the GetCallerIdentity request. If a matching role is not found, login fails.
 	Role *string `json:"role,omitempty"`
-}
-
-// NewAlicloudLoginRequest instantiates a new AlicloudLoginRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAlicloudLoginRequest() *AlicloudLoginRequest {
-	this := AlicloudLoginRequest{}
-	return &this
 }
 
 // NewAlicloudLoginRequestWithDefaults instantiates a new AlicloudLoginRequest object
@@ -630,17 +526,6 @@ type AlicloudRoleRequest struct {
 	// Use \"token_ttl\" instead. If this and \"token_ttl\" are both specified, only \"token_ttl\" will be used.
 	// Deprecated
 	Ttl *int32 `json:"ttl,omitempty"`
-}
-
-// NewAlicloudRoleRequest instantiates a new AlicloudRoleRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAlicloudRoleRequest() *AlicloudRoleRequest {
-	this := AlicloudRoleRequest{}
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
-	return &this
 }
 
 // NewAlicloudRoleRequestWithDefaults instantiates a new AlicloudRoleRequest object
@@ -719,15 +604,6 @@ type AppIdLoginRequest struct {
 	UserId *string `json:"user_id,omitempty"`
 }
 
-// NewAppIdLoginRequest instantiates a new AppIdLoginRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAppIdLoginRequest() *AppIdLoginRequest {
-	this := AppIdLoginRequest{}
-	return &this
-}
-
 // NewAppIdLoginRequestWithDefaults instantiates a new AppIdLoginRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -760,15 +636,6 @@ type AppIdMapAppIdRequest struct {
 	DisplayName *string `json:"display_name,omitempty"`
 	// Policies for the app ID.
 	Value *string `json:"value,omitempty"`
-}
-
-// NewAppIdMapAppIdRequest instantiates a new AppIdMapAppIdRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAppIdMapAppIdRequest() *AppIdMapAppIdRequest {
-	this := AppIdMapAppIdRequest{}
-	return &this
 }
 
 // NewAppIdMapAppIdRequestWithDefaults instantiates a new AppIdMapAppIdRequest object
@@ -808,15 +675,6 @@ type AppIdMapUserIdRequest struct {
 	Value *string `json:"value,omitempty"`
 }
 
-// NewAppIdMapUserIdRequest instantiates a new AppIdMapUserIdRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAppIdMapUserIdRequest() *AppIdMapUserIdRequest {
-	this := AppIdMapUserIdRequest{}
-	return &this
-}
-
 // NewAppIdMapUserIdRequestWithDefaults instantiates a new AppIdMapUserIdRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -852,17 +710,6 @@ type ApproleLoginRequest struct {
 	RoleId *string `json:"role_id,omitempty"`
 	// SecretID belong to the App role
 	SecretId *string `json:"secret_id,omitempty"`
-}
-
-// NewApproleLoginRequest instantiates a new ApproleLoginRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewApproleLoginRequest() *ApproleLoginRequest {
-	this := ApproleLoginRequest{}
-	var secretId string = ""
-	this.SecretId = &secretId
-	return &this
 }
 
 // NewApproleLoginRequestWithDefaults instantiates a new ApproleLoginRequest object
@@ -902,17 +749,6 @@ type ApproleRoleBindSecretIdRequest struct {
 	BindSecretId *bool `json:"bind_secret_id,omitempty"`
 }
 
-// NewApproleRoleBindSecretIdRequest instantiates a new ApproleRoleBindSecretIdRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewApproleRoleBindSecretIdRequest() *ApproleRoleBindSecretIdRequest {
-	this := ApproleRoleBindSecretIdRequest{}
-	var bindSecretId bool = true
-	this.BindSecretId = &bindSecretId
-	return &this
-}
-
 // NewApproleRoleBindSecretIdRequestWithDefaults instantiates a new ApproleRoleBindSecretIdRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -945,15 +781,6 @@ API version: 1.12.0
 type ApproleRoleBoundCidrListRequest struct {
 	// Deprecated: Please use \"secret_id_bound_cidrs\" instead. Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can perform the login operation.
 	BoundCidrList []string `json:"bound_cidr_list,omitempty"`
-}
-
-// NewApproleRoleBoundCidrListRequest instantiates a new ApproleRoleBoundCidrListRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewApproleRoleBoundCidrListRequest() *ApproleRoleBoundCidrListRequest {
-	this := ApproleRoleBoundCidrListRequest{}
-	return &this
 }
 
 // NewApproleRoleBoundCidrListRequestWithDefaults instantiates a new ApproleRoleBoundCidrListRequest object
@@ -992,15 +819,6 @@ type ApproleRoleCustomSecretIdRequest struct {
 	SecretId *string `json:"secret_id,omitempty"`
 	// Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token. Should be a subset of the token CIDR blocks listed on the role, if any.
 	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
-}
-
-// NewApproleRoleCustomSecretIdRequest instantiates a new ApproleRoleCustomSecretIdRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewApproleRoleCustomSecretIdRequest() *ApproleRoleCustomSecretIdRequest {
-	this := ApproleRoleCustomSecretIdRequest{}
-	return &this
 }
 
 // NewApproleRoleCustomSecretIdRequestWithDefaults instantiates a new ApproleRoleCustomSecretIdRequest object
@@ -1047,15 +865,6 @@ type ApproleRolePeriodRequest struct {
 	TokenPeriod *int32 `json:"token_period,omitempty"`
 }
 
-// NewApproleRolePeriodRequest instantiates a new ApproleRolePeriodRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewApproleRolePeriodRequest() *ApproleRolePeriodRequest {
-	this := ApproleRolePeriodRequest{}
-	return &this
-}
-
 // NewApproleRolePeriodRequestWithDefaults instantiates a new ApproleRolePeriodRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -1092,15 +901,6 @@ type ApproleRolePoliciesRequest struct {
 	Policies []string `json:"policies,omitempty"`
 	// Comma-separated list of policies
 	TokenPolicies []string `json:"token_policies,omitempty"`
-}
-
-// NewApproleRolePoliciesRequest instantiates a new ApproleRolePoliciesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewApproleRolePoliciesRequest() *ApproleRolePoliciesRequest {
-	this := ApproleRolePoliciesRequest{}
-	return &this
 }
 
 // NewApproleRolePoliciesRequestWithDefaults instantiates a new ApproleRolePoliciesRequest object
@@ -1173,19 +973,6 @@ type ApproleRoleRequest struct {
 	TokenTtl *int32 `json:"token_ttl,omitempty"`
 	// The type of token to generate, service or batch
 	TokenType *string `json:"token_type,omitempty"`
-}
-
-// NewApproleRoleRequest instantiates a new ApproleRoleRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewApproleRoleRequest() *ApproleRoleRequest {
-	this := ApproleRoleRequest{}
-	var bindSecretId bool = true
-	this.BindSecretId = &bindSecretId
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
-	return &this
 }
 
 // NewApproleRoleRequestWithDefaults instantiates a new ApproleRoleRequest object
@@ -1275,15 +1062,6 @@ type ApproleRoleRoleIdRequest struct {
 	RoleId *string `json:"role_id,omitempty"`
 }
 
-// NewApproleRoleRoleIdRequest instantiates a new ApproleRoleRoleIdRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewApproleRoleRoleIdRequest() *ApproleRoleRoleIdRequest {
-	this := ApproleRoleRoleIdRequest{}
-	return &this
-}
-
 // NewApproleRoleRoleIdRequestWithDefaults instantiates a new ApproleRoleRoleIdRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -1314,15 +1092,6 @@ API version: 1.12.0
 type ApproleRoleSecretIdAccessorDestroyRequest struct {
 	// Accessor of the SecretID
 	SecretIdAccessor *string `json:"secret_id_accessor,omitempty"`
-}
-
-// NewApproleRoleSecretIdAccessorDestroyRequest instantiates a new ApproleRoleSecretIdAccessorDestroyRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewApproleRoleSecretIdAccessorDestroyRequest() *ApproleRoleSecretIdAccessorDestroyRequest {
-	this := ApproleRoleSecretIdAccessorDestroyRequest{}
-	return &this
 }
 
 // NewApproleRoleSecretIdAccessorDestroyRequestWithDefaults instantiates a new ApproleRoleSecretIdAccessorDestroyRequest object
@@ -1357,15 +1126,6 @@ type ApproleRoleSecretIdAccessorLookupRequest struct {
 	SecretIdAccessor *string `json:"secret_id_accessor,omitempty"`
 }
 
-// NewApproleRoleSecretIdAccessorLookupRequest instantiates a new ApproleRoleSecretIdAccessorLookupRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewApproleRoleSecretIdAccessorLookupRequest() *ApproleRoleSecretIdAccessorLookupRequest {
-	this := ApproleRoleSecretIdAccessorLookupRequest{}
-	return &this
-}
-
 // NewApproleRoleSecretIdAccessorLookupRequestWithDefaults instantiates a new ApproleRoleSecretIdAccessorLookupRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -1396,15 +1156,6 @@ API version: 1.12.0
 type ApproleRoleSecretIdBoundCidrsRequest struct {
 	// Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can perform the login operation.
 	SecretIdBoundCidrs []string `json:"secret_id_bound_cidrs,omitempty"`
-}
-
-// NewApproleRoleSecretIdBoundCidrsRequest instantiates a new ApproleRoleSecretIdBoundCidrsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewApproleRoleSecretIdBoundCidrsRequest() *ApproleRoleSecretIdBoundCidrsRequest {
-	this := ApproleRoleSecretIdBoundCidrsRequest{}
-	return &this
 }
 
 // NewApproleRoleSecretIdBoundCidrsRequestWithDefaults instantiates a new ApproleRoleSecretIdBoundCidrsRequest object
@@ -1439,15 +1190,6 @@ type ApproleRoleSecretIdDestroyRequest struct {
 	SecretId *string `json:"secret_id,omitempty"`
 }
 
-// NewApproleRoleSecretIdDestroyRequest instantiates a new ApproleRoleSecretIdDestroyRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewApproleRoleSecretIdDestroyRequest() *ApproleRoleSecretIdDestroyRequest {
-	this := ApproleRoleSecretIdDestroyRequest{}
-	return &this
-}
-
 // NewApproleRoleSecretIdDestroyRequestWithDefaults instantiates a new ApproleRoleSecretIdDestroyRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -1480,15 +1222,6 @@ type ApproleRoleSecretIdLookupRequest struct {
 	SecretId *string `json:"secret_id,omitempty"`
 }
 
-// NewApproleRoleSecretIdLookupRequest instantiates a new ApproleRoleSecretIdLookupRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewApproleRoleSecretIdLookupRequest() *ApproleRoleSecretIdLookupRequest {
-	this := ApproleRoleSecretIdLookupRequest{}
-	return &this
-}
-
 // NewApproleRoleSecretIdLookupRequestWithDefaults instantiates a new ApproleRoleSecretIdLookupRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -1519,15 +1252,6 @@ API version: 1.12.0
 type ApproleRoleSecretIdNumUsesRequest struct {
 	// Number of times a SecretID can access the role, after which the SecretID will expire.
 	SecretIdNumUses *int32 `json:"secret_id_num_uses,omitempty"`
-}
-
-// NewApproleRoleSecretIdNumUsesRequest instantiates a new ApproleRoleSecretIdNumUsesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewApproleRoleSecretIdNumUsesRequest() *ApproleRoleSecretIdNumUsesRequest {
-	this := ApproleRoleSecretIdNumUsesRequest{}
-	return &this
 }
 
 // NewApproleRoleSecretIdNumUsesRequestWithDefaults instantiates a new ApproleRoleSecretIdNumUsesRequest object
@@ -1564,15 +1288,6 @@ type ApproleRoleSecretIdRequest struct {
 	Metadata *string `json:"metadata,omitempty"`
 	// Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
 	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
-}
-
-// NewApproleRoleSecretIdRequest instantiates a new ApproleRoleSecretIdRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewApproleRoleSecretIdRequest() *ApproleRoleSecretIdRequest {
-	this := ApproleRoleSecretIdRequest{}
-	return &this
 }
 
 // NewApproleRoleSecretIdRequestWithDefaults instantiates a new ApproleRoleSecretIdRequest object
@@ -1613,15 +1328,6 @@ type ApproleRoleSecretIdTtlRequest struct {
 	SecretIdTtl *int32 `json:"secret_id_ttl,omitempty"`
 }
 
-// NewApproleRoleSecretIdTtlRequest instantiates a new ApproleRoleSecretIdTtlRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewApproleRoleSecretIdTtlRequest() *ApproleRoleSecretIdTtlRequest {
-	this := ApproleRoleSecretIdTtlRequest{}
-	return &this
-}
-
 // NewApproleRoleSecretIdTtlRequestWithDefaults instantiates a new ApproleRoleSecretIdTtlRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -1652,15 +1358,6 @@ API version: 1.12.0
 type ApproleRoleTokenBoundCidrsRequest struct {
 	// Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
 	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
-}
-
-// NewApproleRoleTokenBoundCidrsRequest instantiates a new ApproleRoleTokenBoundCidrsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewApproleRoleTokenBoundCidrsRequest() *ApproleRoleTokenBoundCidrsRequest {
-	this := ApproleRoleTokenBoundCidrsRequest{}
-	return &this
 }
 
 // NewApproleRoleTokenBoundCidrsRequestWithDefaults instantiates a new ApproleRoleTokenBoundCidrsRequest object
@@ -1695,15 +1392,6 @@ type ApproleRoleTokenMaxTtlRequest struct {
 	TokenMaxTtl *int32 `json:"token_max_ttl,omitempty"`
 }
 
-// NewApproleRoleTokenMaxTtlRequest instantiates a new ApproleRoleTokenMaxTtlRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewApproleRoleTokenMaxTtlRequest() *ApproleRoleTokenMaxTtlRequest {
-	this := ApproleRoleTokenMaxTtlRequest{}
-	return &this
-}
-
 // NewApproleRoleTokenMaxTtlRequestWithDefaults instantiates a new ApproleRoleTokenMaxTtlRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -1734,15 +1422,6 @@ API version: 1.12.0
 type ApproleRoleTokenNumUsesRequest struct {
 	// The maximum number of times a token may be used, a value of zero means unlimited
 	TokenNumUses *int32 `json:"token_num_uses,omitempty"`
-}
-
-// NewApproleRoleTokenNumUsesRequest instantiates a new ApproleRoleTokenNumUsesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewApproleRoleTokenNumUsesRequest() *ApproleRoleTokenNumUsesRequest {
-	this := ApproleRoleTokenNumUsesRequest{}
-	return &this
 }
 
 // NewApproleRoleTokenNumUsesRequestWithDefaults instantiates a new ApproleRoleTokenNumUsesRequest object
@@ -1777,15 +1456,6 @@ type ApproleRoleTokenTtlRequest struct {
 	TokenTtl *int32 `json:"token_ttl,omitempty"`
 }
 
-// NewApproleRoleTokenTtlRequest instantiates a new ApproleRoleTokenTtlRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewApproleRoleTokenTtlRequest() *ApproleRoleTokenTtlRequest {
-	this := ApproleRoleTokenTtlRequest{}
-	return &this
-}
-
 // NewApproleRoleTokenTtlRequestWithDefaults instantiates a new ApproleRoleTokenTtlRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -1818,17 +1488,6 @@ type AwsConfigCertificateRequest struct {
 	AwsPublicCert *string `json:"aws_public_cert,omitempty"`
 	// Takes the value of either \"pkcs7\" or \"identity\", indicating the type of document which can be verified using the given certificate. The reason is that the PKCS#7 document will have a DSA digest and the identity signature will have an RSA signature, and accordingly the public certificates to verify those also vary. Defaults to \"pkcs7\".
 	Type *string `json:"type,omitempty"`
-}
-
-// NewAwsConfigCertificateRequest instantiates a new AwsConfigCertificateRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAwsConfigCertificateRequest() *AwsConfigCertificateRequest {
-	this := AwsConfigCertificateRequest{}
-	var type_ string = "pkcs7"
-	this.Type = &type_
-	return &this
 }
 
 // NewAwsConfigCertificateRequestWithDefaults instantiates a new AwsConfigCertificateRequest object
@@ -1882,31 +1541,6 @@ type AwsConfigClientRequest struct {
 	StsEndpoint *string `json:"sts_endpoint,omitempty"`
 	// The region ID for the sts_endpoint, if set.
 	StsRegion *string `json:"sts_region,omitempty"`
-}
-
-// NewAwsConfigClientRequest instantiates a new AwsConfigClientRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAwsConfigClientRequest() *AwsConfigClientRequest {
-	this := AwsConfigClientRequest{}
-	var accessKey string = ""
-	this.AccessKey = &accessKey
-	var endpoint string = ""
-	this.Endpoint = &endpoint
-	var iamEndpoint string = ""
-	this.IamEndpoint = &iamEndpoint
-	var iamServerIdHeaderValue string = ""
-	this.IamServerIdHeaderValue = &iamServerIdHeaderValue
-	var maxRetries int32 = -1
-	this.MaxRetries = &maxRetries
-	var secretKey string = ""
-	this.SecretKey = &secretKey
-	var stsEndpoint string = ""
-	this.StsEndpoint = &stsEndpoint
-	var stsRegion string = ""
-	this.StsRegion = &stsRegion
-	return &this
 }
 
 // NewAwsConfigClientRequestWithDefaults instantiates a new AwsConfigClientRequest object
@@ -1987,19 +1621,6 @@ type AwsConfigIdentityRequest struct {
 	IamMetadata []string `json:"iam_metadata,omitempty"`
 }
 
-// NewAwsConfigIdentityRequest instantiates a new AwsConfigIdentityRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAwsConfigIdentityRequest() *AwsConfigIdentityRequest {
-	this := AwsConfigIdentityRequest{}
-	var ec2Alias string = "instance_id"
-	this.Ec2Alias = &ec2Alias
-	var iamAlias string = "unique_id"
-	this.IamAlias = &iamAlias
-	return &this
-}
-
 // NewAwsConfigIdentityRequestWithDefaults instantiates a new AwsConfigIdentityRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -2047,15 +1668,6 @@ type AwsConfigLeaseRequest struct {
 	LeaseMax *string `json:"lease_max,omitempty"`
 }
 
-// NewAwsConfigLeaseRequest instantiates a new AwsConfigLeaseRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAwsConfigLeaseRequest() *AwsConfigLeaseRequest {
-	this := AwsConfigLeaseRequest{}
-	return &this
-}
-
 // NewAwsConfigLeaseRequestWithDefaults instantiates a new AwsConfigLeaseRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -2101,17 +1713,6 @@ type AwsConfigRootRequest struct {
 	StsEndpoint *string `json:"sts_endpoint,omitempty"`
 	// Template to generate custom IAM usernames
 	UsernameTemplate *string `json:"username_template,omitempty"`
-}
-
-// NewAwsConfigRootRequest instantiates a new AwsConfigRootRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAwsConfigRootRequest() *AwsConfigRootRequest {
-	this := AwsConfigRootRequest{}
-	var maxRetries int32 = -1
-	this.MaxRetries = &maxRetries
-	return &this
 }
 
 // NewAwsConfigRootRequestWithDefaults instantiates a new AwsConfigRootRequest object
@@ -2166,15 +1767,6 @@ type AwsConfigStsRequest struct {
 	StsRole *string `json:"sts_role,omitempty"`
 }
 
-// NewAwsConfigStsRequest instantiates a new AwsConfigStsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAwsConfigStsRequest() *AwsConfigStsRequest {
-	this := AwsConfigStsRequest{}
-	return &this
-}
-
 // NewAwsConfigStsRequestWithDefaults instantiates a new AwsConfigStsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -2207,19 +1799,6 @@ type AwsConfigTidyIdentityAccesslistRequest struct {
 	DisablePeriodicTidy *bool `json:"disable_periodic_tidy,omitempty"`
 	// The amount of extra time that must have passed beyond the identity's expiration, before it is removed from the backend storage.
 	SafetyBuffer *int32 `json:"safety_buffer,omitempty"`
-}
-
-// NewAwsConfigTidyIdentityAccesslistRequest instantiates a new AwsConfigTidyIdentityAccesslistRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAwsConfigTidyIdentityAccesslistRequest() *AwsConfigTidyIdentityAccesslistRequest {
-	this := AwsConfigTidyIdentityAccesslistRequest{}
-	var disablePeriodicTidy bool = false
-	this.DisablePeriodicTidy = &disablePeriodicTidy
-	var safetyBuffer int32 = 259200
-	this.SafetyBuffer = &safetyBuffer
-	return &this
 }
 
 // NewAwsConfigTidyIdentityAccesslistRequestWithDefaults instantiates a new AwsConfigTidyIdentityAccesslistRequest object
@@ -2263,19 +1842,6 @@ type AwsConfigTidyIdentityWhitelistRequest struct {
 	SafetyBuffer *int32 `json:"safety_buffer,omitempty"`
 }
 
-// NewAwsConfigTidyIdentityWhitelistRequest instantiates a new AwsConfigTidyIdentityWhitelistRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAwsConfigTidyIdentityWhitelistRequest() *AwsConfigTidyIdentityWhitelistRequest {
-	this := AwsConfigTidyIdentityWhitelistRequest{}
-	var disablePeriodicTidy bool = false
-	this.DisablePeriodicTidy = &disablePeriodicTidy
-	var safetyBuffer int32 = 259200
-	this.SafetyBuffer = &safetyBuffer
-	return &this
-}
-
 // NewAwsConfigTidyIdentityWhitelistRequestWithDefaults instantiates a new AwsConfigTidyIdentityWhitelistRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -2317,19 +1883,6 @@ type AwsConfigTidyRoletagBlacklistRequest struct {
 	SafetyBuffer *int32 `json:"safety_buffer,omitempty"`
 }
 
-// NewAwsConfigTidyRoletagBlacklistRequest instantiates a new AwsConfigTidyRoletagBlacklistRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAwsConfigTidyRoletagBlacklistRequest() *AwsConfigTidyRoletagBlacklistRequest {
-	this := AwsConfigTidyRoletagBlacklistRequest{}
-	var disablePeriodicTidy bool = false
-	this.DisablePeriodicTidy = &disablePeriodicTidy
-	var safetyBuffer int32 = 15552000
-	this.SafetyBuffer = &safetyBuffer
-	return &this
-}
-
 // NewAwsConfigTidyRoletagBlacklistRequestWithDefaults instantiates a new AwsConfigTidyRoletagBlacklistRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -2369,19 +1922,6 @@ type AwsConfigTidyRoletagDenylistRequest struct {
 	DisablePeriodicTidy *bool `json:"disable_periodic_tidy,omitempty"`
 	// The amount of extra time that must have passed beyond the roletag expiration, before it is removed from the backend storage. Defaults to 4320h (180 days).
 	SafetyBuffer *int32 `json:"safety_buffer,omitempty"`
-}
-
-// NewAwsConfigTidyRoletagDenylistRequest instantiates a new AwsConfigTidyRoletagDenylistRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAwsConfigTidyRoletagDenylistRequest() *AwsConfigTidyRoletagDenylistRequest {
-	this := AwsConfigTidyRoletagDenylistRequest{}
-	var disablePeriodicTidy bool = false
-	this.DisablePeriodicTidy = &disablePeriodicTidy
-	var safetyBuffer int32 = 15552000
-	this.SafetyBuffer = &safetyBuffer
-	return &this
 }
 
 // NewAwsConfigTidyRoletagDenylistRequestWithDefaults instantiates a new AwsConfigTidyRoletagDenylistRequest object
@@ -2427,17 +1967,6 @@ type AwsCredsRequest struct {
 	RoleSessionName *string `json:"role_session_name,omitempty"`
 	// Lifetime of the returned credentials in seconds
 	Ttl *int32 `json:"ttl,omitempty"`
-}
-
-// NewAwsCredsRequest instantiates a new AwsCredsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAwsCredsRequest() *AwsCredsRequest {
-	this := AwsCredsRequest{}
-	var ttl int32 = 3600
-	this.Ttl = &ttl
-	return &this
 }
 
 // NewAwsCredsRequestWithDefaults instantiates a new AwsCredsRequest object
@@ -2497,15 +2026,6 @@ type AwsLoginRequest struct {
 	Role *string `json:"role,omitempty"`
 	// Base64 encoded SHA256 RSA signature of the instance identity document. This needs to be supplied along with 'identity' parameter.
 	Signature *string `json:"signature,omitempty"`
-}
-
-// NewAwsLoginRequest instantiates a new AwsLoginRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAwsLoginRequest() *AwsLoginRequest {
-	this := AwsLoginRequest{}
-	return &this
 }
 
 // NewAwsLoginRequestWithDefaults instantiates a new AwsLoginRequest object
@@ -2622,25 +2142,6 @@ type AwsRoleRequest struct {
 	// Use \"token_ttl\" instead. If this and \"token_ttl\" are both specified, only \"token_ttl\" will be used.
 	// Deprecated
 	Ttl *int32 `json:"ttl,omitempty"`
-}
-
-// NewAwsRoleRequest instantiates a new AwsRoleRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAwsRoleRequest() *AwsRoleRequest {
-	this := AwsRoleRequest{}
-	var allowInstanceMigration bool = false
-	this.AllowInstanceMigration = &allowInstanceMigration
-	var disallowReauthentication bool = false
-	this.DisallowReauthentication = &disallowReauthentication
-	var resolveAwsUniqueIds bool = true
-	this.ResolveAwsUniqueIds = &resolveAwsUniqueIds
-	var roleTag string = ""
-	this.RoleTag = &roleTag
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
-	return &this
 }
 
 // NewAwsRoleRequestWithDefaults instantiates a new AwsRoleRequest object
@@ -2777,21 +2278,6 @@ type AwsRoleTagRequest struct {
 	Policies []string `json:"policies,omitempty"`
 }
 
-// NewAwsRoleTagRequest instantiates a new AwsRoleTagRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAwsRoleTagRequest() *AwsRoleTagRequest {
-	this := AwsRoleTagRequest{}
-	var allowInstanceMigration bool = false
-	this.AllowInstanceMigration = &allowInstanceMigration
-	var disallowReauthentication bool = false
-	this.DisallowReauthentication = &disallowReauthentication
-	var maxTtl int32 = 0
-	this.MaxTtl = &maxTtl
-	return &this
-}
-
 // NewAwsRoleTagRequestWithDefaults instantiates a new AwsRoleTagRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -2866,17 +2352,6 @@ type AwsRolesRequest struct {
 	UserPath *string `json:"user_path,omitempty"`
 }
 
-// NewAwsRolesRequest instantiates a new AwsRolesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAwsRolesRequest() *AwsRolesRequest {
-	this := AwsRolesRequest{}
-	var userPath string = "/"
-	this.UserPath = &userPath
-	return &this
-}
-
 // NewAwsRolesRequestWithDefaults instantiates a new AwsRolesRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -2948,17 +2423,6 @@ type AwsStsRequest struct {
 	Ttl *int32 `json:"ttl,omitempty"`
 }
 
-// NewAwsStsRequest instantiates a new AwsStsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAwsStsRequest() *AwsStsRequest {
-	this := AwsStsRequest{}
-	var ttl int32 = 3600
-	this.Ttl = &ttl
-	return &this
-}
-
 // NewAwsStsRequestWithDefaults instantiates a new AwsStsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -2999,17 +2463,6 @@ type AwsTidyIdentityAccesslistRequest struct {
 	SafetyBuffer *int32 `json:"safety_buffer,omitempty"`
 }
 
-// NewAwsTidyIdentityAccesslistRequest instantiates a new AwsTidyIdentityAccesslistRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAwsTidyIdentityAccesslistRequest() *AwsTidyIdentityAccesslistRequest {
-	this := AwsTidyIdentityAccesslistRequest{}
-	var safetyBuffer int32 = 259200
-	this.SafetyBuffer = &safetyBuffer
-	return &this
-}
-
 // NewAwsTidyIdentityAccesslistRequestWithDefaults instantiates a new AwsTidyIdentityAccesslistRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -3042,17 +2495,6 @@ API version: 1.12.0
 type AwsTidyIdentityWhitelistRequest struct {
 	// The amount of extra time that must have passed beyond the identity's expiration, before it is removed from the backend storage.
 	SafetyBuffer *int32 `json:"safety_buffer,omitempty"`
-}
-
-// NewAwsTidyIdentityWhitelistRequest instantiates a new AwsTidyIdentityWhitelistRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAwsTidyIdentityWhitelistRequest() *AwsTidyIdentityWhitelistRequest {
-	this := AwsTidyIdentityWhitelistRequest{}
-	var safetyBuffer int32 = 259200
-	this.SafetyBuffer = &safetyBuffer
-	return &this
 }
 
 // NewAwsTidyIdentityWhitelistRequestWithDefaults instantiates a new AwsTidyIdentityWhitelistRequest object
@@ -3089,17 +2531,6 @@ type AwsTidyRoletagBlacklistRequest struct {
 	SafetyBuffer *int32 `json:"safety_buffer,omitempty"`
 }
 
-// NewAwsTidyRoletagBlacklistRequest instantiates a new AwsTidyRoletagBlacklistRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAwsTidyRoletagBlacklistRequest() *AwsTidyRoletagBlacklistRequest {
-	this := AwsTidyRoletagBlacklistRequest{}
-	var safetyBuffer int32 = 259200
-	this.SafetyBuffer = &safetyBuffer
-	return &this
-}
-
 // NewAwsTidyRoletagBlacklistRequestWithDefaults instantiates a new AwsTidyRoletagBlacklistRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -3132,17 +2563,6 @@ API version: 1.12.0
 type AwsTidyRoletagDenylistRequest struct {
 	// The amount of extra time that must have passed beyond the roletag expiration, before it is removed from the backend storage.
 	SafetyBuffer *int32 `json:"safety_buffer,omitempty"`
-}
-
-// NewAwsTidyRoletagDenylistRequest instantiates a new AwsTidyRoletagDenylistRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAwsTidyRoletagDenylistRequest() *AwsTidyRoletagDenylistRequest {
-	this := AwsTidyRoletagDenylistRequest{}
-	var safetyBuffer int32 = 259200
-	this.SafetyBuffer = &safetyBuffer
-	return &this
 }
 
 // NewAwsTidyRoletagDenylistRequestWithDefaults instantiates a new AwsTidyRoletagDenylistRequest object
@@ -3185,15 +2605,6 @@ type AzureConfigRequest struct {
 	Resource *string `json:"resource,omitempty"`
 	// The tenant id for the Azure Active Directory. This is sometimes referred to as Directory ID in AD. This value can also be provided with the AZURE_TENANT_ID environment variable.
 	TenantId *string `json:"tenant_id,omitempty"`
-}
-
-// NewAzureConfigRequest instantiates a new AzureConfigRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAzureConfigRequest() *AzureConfigRequest {
-	this := AzureConfigRequest{}
-	return &this
 }
 
 // NewAzureConfigRequestWithDefaults instantiates a new AzureConfigRequest object
@@ -3248,15 +2659,6 @@ type AzureLoginRequest struct {
 	VmName *string `json:"vm_name,omitempty"`
 	// The name of the virtual machine scale set the instance is in.
 	VmssName *string `json:"vmss_name,omitempty"`
-}
-
-// NewAzureLoginRequest instantiates a new AzureLoginRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAzureLoginRequest() *AzureLoginRequest {
-	this := AzureLoginRequest{}
-	return &this
 }
 
 // NewAzureLoginRequestWithDefaults instantiates a new AzureLoginRequest object
@@ -3347,17 +2749,6 @@ type AzureRoleRequest struct {
 	// Use \"token_ttl\" instead. If this and \"token_ttl\" are both specified, only \"token_ttl\" will be used.
 	// Deprecated
 	Ttl *int32 `json:"ttl,omitempty"`
-}
-
-// NewAzureRoleRequest instantiates a new AzureRoleRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAzureRoleRequest() *AzureRoleRequest {
-	this := AzureRoleRequest{}
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
-	return &this
 }
 
 // NewAzureRoleRequestWithDefaults instantiates a new AzureRoleRequest object
@@ -3459,15 +2850,6 @@ type AzureRolesRequest struct {
 	Ttl *int32 `json:"ttl,omitempty"`
 }
 
-// NewAzureRolesRequest instantiates a new AzureRolesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewAzureRolesRequest() *AzureRolesRequest {
-	this := AzureRolesRequest{}
-	return &this
-}
-
 // NewAzureRolesRequestWithDefaults instantiates a new AzureRolesRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -3533,21 +2915,6 @@ type CentrifyConfigRequest struct {
 	TokenTtl *int32 `json:"token_ttl,omitempty"`
 	// The type of token to generate, service or batch
 	TokenType *string `json:"token_type,omitempty"`
-}
-
-// NewCentrifyConfigRequest instantiates a new CentrifyConfigRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCentrifyConfigRequest() *CentrifyConfigRequest {
-	this := CentrifyConfigRequest{}
-	var appId string = "vault_io_integration"
-	this.AppId = &appId
-	var scope string = "vault_io_integration"
-	this.Scope = &scope
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
-	return &this
 }
 
 // NewCentrifyConfigRequestWithDefaults instantiates a new CentrifyConfigRequest object
@@ -3623,17 +2990,6 @@ type CentrifyLoginRequest struct {
 	Password *string `json:"password,omitempty"`
 	// Username of the user.
 	Username *string `json:"username,omitempty"`
-}
-
-// NewCentrifyLoginRequest instantiates a new CentrifyLoginRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCentrifyLoginRequest() *CentrifyLoginRequest {
-	this := CentrifyLoginRequest{}
-	var mode string = "ro"
-	this.Mode = &mode
-	return &this
 }
 
 // NewCentrifyLoginRequestWithDefaults instantiates a new CentrifyLoginRequest object
@@ -3728,17 +3084,6 @@ type CertCertsRequest struct {
 	// Use \"token_ttl\" instead. If this and \"token_ttl\" are both specified, only \"token_ttl\" will be used.
 	// Deprecated
 	Ttl *int32 `json:"ttl,omitempty"`
-}
-
-// NewCertCertsRequest instantiates a new CertCertsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCertCertsRequest() *CertCertsRequest {
-	this := CertCertsRequest{}
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
-	return &this
 }
 
 // NewCertCertsRequestWithDefaults instantiates a new CertCertsRequest object
@@ -3847,17 +3192,6 @@ type CertConfigRequest struct {
 	DisableBinding *bool `json:"disable_binding,omitempty"`
 }
 
-// NewCertConfigRequest instantiates a new CertConfigRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCertConfigRequest() *CertConfigRequest {
-	this := CertConfigRequest{}
-	var disableBinding bool = false
-	this.DisableBinding = &disableBinding
-	return &this
-}
-
 // NewCertConfigRequestWithDefaults instantiates a new CertConfigRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -3892,15 +3226,6 @@ type CertCrlsRequest struct {
 	Crl *string `json:"crl,omitempty"`
 }
 
-// NewCertCrlsRequest instantiates a new CertCrlsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCertCrlsRequest() *CertCrlsRequest {
-	this := CertCrlsRequest{}
-	return &this
-}
-
 // NewCertCrlsRequestWithDefaults instantiates a new CertCrlsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -3931,15 +3256,6 @@ API version: 1.12.0
 type CertLoginRequest struct {
 	// The name of the certificate role to authenticate against.
 	Name *string `json:"name,omitempty"`
-}
-
-// NewCertLoginRequest instantiates a new CertLoginRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCertLoginRequest() *CertLoginRequest {
-	this := CertLoginRequest{}
-	return &this
 }
 
 // NewCertLoginRequestWithDefaults instantiates a new CertLoginRequest object
@@ -4004,19 +3320,6 @@ type CfConfigRequest struct {
 	// Deprecated. Please use \"cf_username\".
 	// Deprecated
 	PcfUsername *string `json:"pcf_username,omitempty"`
-}
-
-// NewCfConfigRequest instantiates a new CfConfigRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCfConfigRequest() *CfConfigRequest {
-	this := CfConfigRequest{}
-	var loginMaxSecondsNotAfter int32 = 60
-	this.LoginMaxSecondsNotAfter = &loginMaxSecondsNotAfter
-	var loginMaxSecondsNotBefore int32 = 300
-	this.LoginMaxSecondsNotBefore = &loginMaxSecondsNotBefore
-	return &this
 }
 
 // NewCfConfigRequestWithDefaults instantiates a new CfConfigRequest object
@@ -4103,19 +3406,6 @@ type CfLoginRequest struct {
 	SigningTime string `json:"signing_time"`
 }
 
-// NewCfLoginRequest instantiates a new CfLoginRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCfLoginRequest(cfInstanceCert string, role string, signature string, signingTime string) *CfLoginRequest {
-	this := CfLoginRequest{}
-	this.CfInstanceCert = cfInstanceCert
-	this.Role = role
-	this.Signature = signature
-	this.SigningTime = signingTime
-	return &this
-}
-
 // NewCfLoginRequestWithDefaults instantiates a new CfLoginRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -4196,19 +3486,6 @@ type CfRolesRequest struct {
 	// Use \"token_ttl\" instead. If this and \"token_ttl\" are both specified, only \"token_ttl\" will be used.
 	// Deprecated
 	Ttl *int32 `json:"ttl,omitempty"`
-}
-
-// NewCfRolesRequest instantiates a new CfRolesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewCfRolesRequest() *CfRolesRequest {
-	this := CfRolesRequest{}
-	var disableIpMatching bool = false
-	this.DisableIpMatching = &disableIpMatching
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
-	return &this
 }
 
 // NewCfRolesRequestWithDefaults instantiates a new CfRolesRequest object
@@ -4311,17 +3588,6 @@ type ConsulConfigAccessRequest struct {
 	Token *string `json:"token,omitempty"`
 }
 
-// NewConsulConfigAccessRequest instantiates a new ConsulConfigAccessRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewConsulConfigAccessRequest() *ConsulConfigAccessRequest {
-	this := ConsulConfigAccessRequest{}
-	var scheme string = "http"
-	this.Scheme = &scheme
-	return &this
-}
-
 // NewConsulConfigAccessRequestWithDefaults instantiates a new ConsulConfigAccessRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -4397,17 +3663,6 @@ type ConsulRolesRequest struct {
 	TokenType *string `json:"token_type,omitempty"`
 	// TTL for the Consul token created from the role.
 	Ttl *int32 `json:"ttl,omitempty"`
-}
-
-// NewConsulRolesRequest instantiates a new ConsulRolesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewConsulRolesRequest() *ConsulRolesRequest {
-	this := ConsulRolesRequest{}
-	var tokenType string = "client"
-	this.TokenType = &tokenType
-	return &this
 }
 
 // NewConsulRolesRequestWithDefaults instantiates a new ConsulRolesRequest object
@@ -4493,19 +3748,6 @@ type GcpConfigRequest struct {
 	IamMetadata []string `json:"iam_metadata,omitempty"`
 }
 
-// NewGcpConfigRequest instantiates a new GcpConfigRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGcpConfigRequest() *GcpConfigRequest {
-	this := GcpConfigRequest{}
-	var gceAlias string = "role_id"
-	this.GceAlias = &gceAlias
-	var iamAlias string = "role_id"
-	this.IamAlias = &iamAlias
-	return &this
-}
-
 // NewGcpConfigRequestWithDefaults instantiates a new GcpConfigRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -4564,19 +3806,6 @@ type GcpKeyRequest struct {
 	Ttl *int32 `json:"ttl,omitempty"`
 }
 
-// NewGcpKeyRequest instantiates a new GcpKeyRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGcpKeyRequest() *GcpKeyRequest {
-	this := GcpKeyRequest{}
-	var keyAlgorithm string = "KEY_ALG_RSA_2048"
-	this.KeyAlgorithm = &keyAlgorithm
-	var keyType string = "TYPE_GOOGLE_CREDENTIALS_FILE"
-	this.KeyType = &keyType
-	return &this
-}
-
 // NewGcpKeyRequestWithDefaults instantiates a new GcpKeyRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -4621,15 +3850,6 @@ type GcpLoginRequest struct {
 	Role *string `json:"role,omitempty"`
 }
 
-// NewGcpLoginRequest instantiates a new GcpLoginRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGcpLoginRequest() *GcpLoginRequest {
-	this := GcpLoginRequest{}
-	return &this
-}
-
 // NewGcpLoginRequestWithDefaults instantiates a new GcpLoginRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -4665,15 +3885,6 @@ type GcpRoleLabelsRequest struct {
 	Add []string `json:"add,omitempty"`
 	// Label key values to remove
 	Remove []string `json:"remove,omitempty"`
-}
-
-// NewGcpRoleLabelsRequest instantiates a new GcpRoleLabelsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGcpRoleLabelsRequest() *GcpRoleLabelsRequest {
-	this := GcpRoleLabelsRequest{}
-	return &this
 }
 
 // NewGcpRoleLabelsRequestWithDefaults instantiates a new GcpRoleLabelsRequest object
@@ -4767,23 +3978,6 @@ type GcpRoleRequest struct {
 	Ttl *int32 `json:"ttl,omitempty"`
 	// Type of the role. Currently supported: iam, gce
 	Type *string `json:"type,omitempty"`
-}
-
-// NewGcpRoleRequest instantiates a new GcpRoleRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGcpRoleRequest() *GcpRoleRequest {
-	this := GcpRoleRequest{}
-	var addGroupAliases bool = false
-	this.AddGroupAliases = &addGroupAliases
-	var allowGceInference bool = true
-	this.AllowGceInference = &allowGceInference
-	var maxJwtExp int32 = 900
-	this.MaxJwtExp = &maxJwtExp
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
-	return &this
 }
 
 // NewGcpRoleRequestWithDefaults instantiates a new GcpRoleRequest object
@@ -4909,15 +4103,6 @@ type GcpRoleServiceAccountsRequest struct {
 	Remove []string `json:"remove,omitempty"`
 }
 
-// NewGcpRoleServiceAccountsRequest instantiates a new GcpRoleServiceAccountsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGcpRoleServiceAccountsRequest() *GcpRoleServiceAccountsRequest {
-	this := GcpRoleServiceAccountsRequest{}
-	return &this
-}
-
 // NewGcpRoleServiceAccountsRequestWithDefaults instantiates a new GcpRoleServiceAccountsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -4955,19 +4140,6 @@ type GcpRolesetKeyRequest struct {
 	KeyType *string `json:"key_type,omitempty"`
 	// Lifetime of the service account key
 	Ttl *int32 `json:"ttl,omitempty"`
-}
-
-// NewGcpRolesetKeyRequest instantiates a new GcpRolesetKeyRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGcpRolesetKeyRequest() *GcpRolesetKeyRequest {
-	this := GcpRolesetKeyRequest{}
-	var keyAlgorithm string = "KEY_ALG_RSA_2048"
-	this.KeyAlgorithm = &keyAlgorithm
-	var keyType string = "TYPE_GOOGLE_CREDENTIALS_FILE"
-	this.KeyType = &keyType
-	return &this
 }
 
 // NewGcpRolesetKeyRequestWithDefaults instantiates a new GcpRolesetKeyRequest object
@@ -5018,17 +4190,6 @@ type GcpRolesetRequest struct {
 	TokenScopes []string `json:"token_scopes,omitempty"`
 }
 
-// NewGcpRolesetRequest instantiates a new GcpRolesetRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGcpRolesetRequest() *GcpRolesetRequest {
-	this := GcpRolesetRequest{}
-	var secretType string = "access_token"
-	this.SecretType = &secretType
-	return &this
-}
-
 // NewGcpRolesetRequestWithDefaults instantiates a new GcpRolesetRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -5074,19 +4235,6 @@ type GcpStaticAccountKeyRequest struct {
 	KeyType *string `json:"key_type,omitempty"`
 	// Lifetime of the service account key
 	Ttl *int32 `json:"ttl,omitempty"`
-}
-
-// NewGcpStaticAccountKeyRequest instantiates a new GcpStaticAccountKeyRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGcpStaticAccountKeyRequest() *GcpStaticAccountKeyRequest {
-	this := GcpStaticAccountKeyRequest{}
-	var keyAlgorithm string = "KEY_ALG_RSA_2048"
-	this.KeyAlgorithm = &keyAlgorithm
-	var keyType string = "TYPE_GOOGLE_CREDENTIALS_FILE"
-	this.KeyType = &keyType
-	return &this
 }
 
 // NewGcpStaticAccountKeyRequestWithDefaults instantiates a new GcpStaticAccountKeyRequest object
@@ -5137,17 +4285,6 @@ type GcpStaticAccountRequest struct {
 	TokenScopes []string `json:"token_scopes,omitempty"`
 }
 
-// NewGcpStaticAccountRequest instantiates a new GcpStaticAccountRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGcpStaticAccountRequest() *GcpStaticAccountRequest {
-	this := GcpStaticAccountRequest{}
-	var secretType string = "access_token"
-	this.SecretType = &secretType
-	return &this
-}
-
 // NewGcpStaticAccountRequestWithDefaults instantiates a new GcpStaticAccountRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -5193,15 +4330,6 @@ type GcpkmsConfigRequest struct {
 	Scopes []string `json:"scopes,omitempty"`
 }
 
-// NewGcpkmsConfigRequest instantiates a new GcpkmsConfigRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGcpkmsConfigRequest() *GcpkmsConfigRequest {
-	this := GcpkmsConfigRequest{}
-	return &this
-}
-
 // NewGcpkmsConfigRequestWithDefaults instantiates a new GcpkmsConfigRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -5239,15 +4367,6 @@ type GcpkmsDecryptRequest struct {
 	Ciphertext *string `json:"ciphertext,omitempty"`
 	// Integer version of the crypto key version to use for decryption. This is required for asymmetric keys. For symmetric keys, Cloud KMS will choose the correct version automatically.
 	KeyVersion *int32 `json:"key_version,omitempty"`
-}
-
-// NewGcpkmsDecryptRequest instantiates a new GcpkmsDecryptRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGcpkmsDecryptRequest() *GcpkmsDecryptRequest {
-	this := GcpkmsDecryptRequest{}
-	return &this
 }
 
 // NewGcpkmsDecryptRequestWithDefaults instantiates a new GcpkmsDecryptRequest object
@@ -5292,15 +4411,6 @@ type GcpkmsEncryptRequest struct {
 	Plaintext *string `json:"plaintext,omitempty"`
 }
 
-// NewGcpkmsEncryptRequest instantiates a new GcpkmsEncryptRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGcpkmsEncryptRequest() *GcpkmsEncryptRequest {
-	this := GcpkmsEncryptRequest{}
-	return &this
-}
-
 // NewGcpkmsEncryptRequestWithDefaults instantiates a new GcpkmsEncryptRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -5341,15 +4451,6 @@ type GcpkmsKeysConfigRequest struct {
 	MinVersion *int32 `json:"min_version,omitempty"`
 }
 
-// NewGcpkmsKeysConfigRequest instantiates a new GcpkmsKeysConfigRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGcpkmsKeysConfigRequest() *GcpkmsKeysConfigRequest {
-	this := GcpkmsKeysConfigRequest{}
-	return &this
-}
-
 // NewGcpkmsKeysConfigRequestWithDefaults instantiates a new GcpkmsKeysConfigRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -5385,17 +4486,6 @@ type GcpkmsKeysRegisterRequest struct {
 	CryptoKey *string `json:"crypto_key,omitempty"`
 	// Verify that the given Google Cloud KMS crypto key exists and is accessible before creating the storage entry in Vault. Set this to \"false\" if the key will not exist at creation time.
 	Verify *bool `json:"verify,omitempty"`
-}
-
-// NewGcpkmsKeysRegisterRequest instantiates a new GcpkmsKeysRegisterRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGcpkmsKeysRegisterRequest() *GcpkmsKeysRegisterRequest {
-	this := GcpkmsKeysRegisterRequest{}
-	var verify bool = true
-	this.Verify = &verify
-	return &this
 }
 
 // NewGcpkmsKeysRegisterRequestWithDefaults instantiates a new GcpkmsKeysRegisterRequest object
@@ -5445,15 +4535,6 @@ type GcpkmsKeysRequest struct {
 	Purpose *string `json:"purpose,omitempty"`
 	// Amount of time between crypto key version rotations. This is specified as a time duration value like 72h (72 hours). The smallest possible value is 24h. This value only applies to keys with a purpose of \"encrypt_decrypt\".
 	RotationPeriod *int32 `json:"rotation_period,omitempty"`
-}
-
-// NewGcpkmsKeysRequest instantiates a new GcpkmsKeysRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGcpkmsKeysRequest() *GcpkmsKeysRequest {
-	this := GcpkmsKeysRequest{}
-	return &this
 }
 
 // NewGcpkmsKeysRequestWithDefaults instantiates a new GcpkmsKeysRequest object
@@ -5510,15 +4591,6 @@ type GcpkmsReencryptRequest struct {
 	KeyVersion *int32 `json:"key_version,omitempty"`
 }
 
-// NewGcpkmsReencryptRequest instantiates a new GcpkmsReencryptRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGcpkmsReencryptRequest() *GcpkmsReencryptRequest {
-	this := GcpkmsReencryptRequest{}
-	return &this
-}
-
 // NewGcpkmsReencryptRequestWithDefaults instantiates a new GcpkmsReencryptRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -5559,15 +4631,6 @@ type GcpkmsSignRequest struct {
 	KeyVersion *int32 `json:"key_version,omitempty"`
 }
 
-// NewGcpkmsSignRequest instantiates a new GcpkmsSignRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGcpkmsSignRequest() *GcpkmsSignRequest {
-	this := GcpkmsSignRequest{}
-	return &this
-}
-
 // NewGcpkmsSignRequestWithDefaults instantiates a new GcpkmsSignRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -5605,15 +4668,6 @@ type GcpkmsVerifyRequest struct {
 	KeyVersion *int32 `json:"key_version,omitempty"`
 	// Base64-encoded signature to use for verification. This field is required.
 	Signature *string `json:"signature,omitempty"`
-}
-
-// NewGcpkmsVerifyRequest instantiates a new GcpkmsVerifyRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGcpkmsVerifyRequest() *GcpkmsVerifyRequest {
-	this := GcpkmsVerifyRequest{}
-	return &this
 }
 
 // NewGcpkmsVerifyRequestWithDefaults instantiates a new GcpkmsVerifyRequest object
@@ -5680,18 +4734,6 @@ type GithubConfigRequest struct {
 	// Use \"token_ttl\" instead. If this and \"token_ttl\" are both specified, only \"token_ttl\" will be used.
 	// Deprecated
 	Ttl *int32 `json:"ttl,omitempty"`
-}
-
-// NewGithubConfigRequest instantiates a new GithubConfigRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGithubConfigRequest(organization string) *GithubConfigRequest {
-	this := GithubConfigRequest{}
-	this.Organization = organization
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
-	return &this
 }
 
 // NewGithubConfigRequestWithDefaults instantiates a new GithubConfigRequest object
@@ -5767,15 +4809,6 @@ type GithubLoginRequest struct {
 	Token *string `json:"token,omitempty"`
 }
 
-// NewGithubLoginRequest instantiates a new GithubLoginRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGithubLoginRequest() *GithubLoginRequest {
-	this := GithubLoginRequest{}
-	return &this
-}
-
 // NewGithubLoginRequestWithDefaults instantiates a new GithubLoginRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -5808,15 +4841,6 @@ type GithubMapTeamsRequest struct {
 	Value *string `json:"value,omitempty"`
 }
 
-// NewGithubMapTeamsRequest instantiates a new GithubMapTeamsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGithubMapTeamsRequest() *GithubMapTeamsRequest {
-	this := GithubMapTeamsRequest{}
-	return &this
-}
-
 // NewGithubMapTeamsRequestWithDefaults instantiates a new GithubMapTeamsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -5847,15 +4871,6 @@ API version: 1.12.0
 type GithubMapUsersRequest struct {
 	// Value for users mapping
 	Value *string `json:"value,omitempty"`
-}
-
-// NewGithubMapUsersRequest instantiates a new GithubMapUsersRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewGithubMapUsersRequest() *GithubMapUsersRequest {
-	this := GithubMapUsersRequest{}
-	return &this
 }
 
 // NewGithubMapUsersRequestWithDefaults instantiates a new GithubMapUsersRequest object
@@ -5894,15 +4909,6 @@ type IdentityAliasIdRequest struct {
 	MountAccessor *string `json:"mount_accessor,omitempty"`
 	// Name of the alias
 	Name *string `json:"name,omitempty"`
-}
-
-// NewIdentityAliasIdRequest instantiates a new IdentityAliasIdRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityAliasIdRequest() *IdentityAliasIdRequest {
-	this := IdentityAliasIdRequest{}
-	return &this
 }
 
 // NewIdentityAliasIdRequestWithDefaults instantiates a new IdentityAliasIdRequest object
@@ -5952,15 +4958,6 @@ type IdentityAliasRequest struct {
 	MountAccessor *string `json:"mount_accessor,omitempty"`
 	// Name of the alias
 	Name *string `json:"name,omitempty"`
-}
-
-// NewIdentityAliasRequest instantiates a new IdentityAliasRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityAliasRequest() *IdentityAliasRequest {
-	this := IdentityAliasRequest{}
-	return &this
 }
 
 // NewIdentityAliasRequestWithDefaults instantiates a new IdentityAliasRequest object
@@ -6013,15 +5010,6 @@ type IdentityEntityAliasIdRequest struct {
 	MountAccessor *string `json:"mount_accessor,omitempty"`
 	// (Unused)
 	Name *string `json:"name,omitempty"`
-}
-
-// NewIdentityEntityAliasIdRequest instantiates a new IdentityEntityAliasIdRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityEntityAliasIdRequest() *IdentityEntityAliasIdRequest {
-	this := IdentityEntityAliasIdRequest{}
-	return &this
 }
 
 // NewIdentityEntityAliasIdRequestWithDefaults instantiates a new IdentityEntityAliasIdRequest object
@@ -6078,15 +5066,6 @@ type IdentityEntityAliasRequest struct {
 	Name *string `json:"name,omitempty"`
 }
 
-// NewIdentityEntityAliasRequest instantiates a new IdentityEntityAliasRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityEntityAliasRequest() *IdentityEntityAliasRequest {
-	this := IdentityEntityAliasRequest{}
-	return &this
-}
-
 // NewIdentityEntityAliasRequestWithDefaults instantiates a new IdentityEntityAliasRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -6134,15 +5113,6 @@ type IdentityEntityBatchDeleteRequest struct {
 	EntityIds []string `json:"entity_ids,omitempty"`
 }
 
-// NewIdentityEntityBatchDeleteRequest instantiates a new IdentityEntityBatchDeleteRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityEntityBatchDeleteRequest() *IdentityEntityBatchDeleteRequest {
-	this := IdentityEntityBatchDeleteRequest{}
-	return &this
-}
-
 // NewIdentityEntityBatchDeleteRequestWithDefaults instantiates a new IdentityEntityBatchDeleteRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -6179,15 +5149,6 @@ type IdentityEntityIdRequest struct {
 	Name *string `json:"name,omitempty"`
 	// Policies to be tied to the entity.
 	Policies []string `json:"policies,omitempty"`
-}
-
-// NewIdentityEntityIdRequest instantiates a new IdentityEntityIdRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityEntityIdRequest() *IdentityEntityIdRequest {
-	this := IdentityEntityIdRequest{}
-	return &this
 }
 
 // NewIdentityEntityIdRequestWithDefaults instantiates a new IdentityEntityIdRequest object
@@ -6235,15 +5196,6 @@ type IdentityEntityMergeRequest struct {
 	ToEntityId *string `json:"to_entity_id,omitempty"`
 }
 
-// NewIdentityEntityMergeRequest instantiates a new IdentityEntityMergeRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityEntityMergeRequest() *IdentityEntityMergeRequest {
-	this := IdentityEntityMergeRequest{}
-	return &this
-}
-
 // NewIdentityEntityMergeRequestWithDefaults instantiates a new IdentityEntityMergeRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -6286,15 +5238,6 @@ type IdentityEntityNameRequest struct {
 	Metadata map[string]interface{} `json:"metadata,omitempty"`
 	// Policies to be tied to the entity.
 	Policies []string `json:"policies,omitempty"`
-}
-
-// NewIdentityEntityNameRequest instantiates a new IdentityEntityNameRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityEntityNameRequest() *IdentityEntityNameRequest {
-	this := IdentityEntityNameRequest{}
-	return &this
 }
 
 // NewIdentityEntityNameRequestWithDefaults instantiates a new IdentityEntityNameRequest object
@@ -6346,15 +5289,6 @@ type IdentityEntityRequest struct {
 	Policies []string `json:"policies,omitempty"`
 }
 
-// NewIdentityEntityRequest instantiates a new IdentityEntityRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityEntityRequest() *IdentityEntityRequest {
-	this := IdentityEntityRequest{}
-	return &this
-}
-
 // NewIdentityEntityRequestWithDefaults instantiates a new IdentityEntityRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -6403,15 +5337,6 @@ type IdentityGroupAliasIdRequest struct {
 	Name *string `json:"name,omitempty"`
 }
 
-// NewIdentityGroupAliasIdRequest instantiates a new IdentityGroupAliasIdRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityGroupAliasIdRequest() *IdentityGroupAliasIdRequest {
-	this := IdentityGroupAliasIdRequest{}
-	return &this
-}
-
 // NewIdentityGroupAliasIdRequestWithDefaults instantiates a new IdentityGroupAliasIdRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -6454,15 +5379,6 @@ type IdentityGroupAliasRequest struct {
 	MountAccessor *string `json:"mount_accessor,omitempty"`
 	// Alias of the group.
 	Name *string `json:"name,omitempty"`
-}
-
-// NewIdentityGroupAliasRequest instantiates a new IdentityGroupAliasRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityGroupAliasRequest() *IdentityGroupAliasRequest {
-	this := IdentityGroupAliasRequest{}
-	return &this
 }
 
 // NewIdentityGroupAliasRequestWithDefaults instantiates a new IdentityGroupAliasRequest object
@@ -6514,15 +5430,6 @@ type IdentityGroupIdRequest struct {
 	Policies []string `json:"policies,omitempty"`
 	// Type of the group, 'internal' or 'external'. Defaults to 'internal'
 	Type *string `json:"type,omitempty"`
-}
-
-// NewIdentityGroupIdRequest instantiates a new IdentityGroupIdRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityGroupIdRequest() *IdentityGroupIdRequest {
-	this := IdentityGroupIdRequest{}
-	return &this
 }
 
 // NewIdentityGroupIdRequestWithDefaults instantiates a new IdentityGroupIdRequest object
@@ -6580,15 +5487,6 @@ type IdentityGroupNameRequest struct {
 	Policies []string `json:"policies,omitempty"`
 	// Type of the group, 'internal' or 'external'. Defaults to 'internal'
 	Type *string `json:"type,omitempty"`
-}
-
-// NewIdentityGroupNameRequest instantiates a new IdentityGroupNameRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityGroupNameRequest() *IdentityGroupNameRequest {
-	this := IdentityGroupNameRequest{}
-	return &this
 }
 
 // NewIdentityGroupNameRequestWithDefaults instantiates a new IdentityGroupNameRequest object
@@ -6650,15 +5548,6 @@ type IdentityGroupRequest struct {
 	Type *string `json:"type,omitempty"`
 }
 
-// NewIdentityGroupRequest instantiates a new IdentityGroupRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityGroupRequest() *IdentityGroupRequest {
-	this := IdentityGroupRequest{}
-	return &this
-}
-
 // NewIdentityGroupRequestWithDefaults instantiates a new IdentityGroupRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -6717,15 +5606,6 @@ type IdentityLookupEntityRequest struct {
 	Name *string `json:"name,omitempty"`
 }
 
-// NewIdentityLookupEntityRequest instantiates a new IdentityLookupEntityRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityLookupEntityRequest() *IdentityLookupEntityRequest {
-	this := IdentityLookupEntityRequest{}
-	return &this
-}
-
 // NewIdentityLookupEntityRequestWithDefaults instantiates a new IdentityLookupEntityRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -6778,15 +5658,6 @@ type IdentityLookupGroupRequest struct {
 	Name *string `json:"name,omitempty"`
 }
 
-// NewIdentityLookupGroupRequest instantiates a new IdentityLookupGroupRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityLookupGroupRequest() *IdentityLookupGroupRequest {
-	this := IdentityLookupGroupRequest{}
-	return &this
-}
-
 // NewIdentityLookupGroupRequestWithDefaults instantiates a new IdentityLookupGroupRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -6837,16 +5708,6 @@ type IdentityMfaLoginEnforcementRequest struct {
 	IdentityGroupIds []string `json:"identity_group_ids,omitempty"`
 	// Array of Method IDs that determine what methods will be enforced
 	MfaMethodIds []string `json:"mfa_method_ids"`
-}
-
-// NewIdentityMfaLoginEnforcementRequest instantiates a new IdentityMfaLoginEnforcementRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityMfaLoginEnforcementRequest(mfaMethodIds []string) *IdentityMfaLoginEnforcementRequest {
-	this := IdentityMfaLoginEnforcementRequest{}
-	this.MfaMethodIds = mfaMethodIds
-	return &this
 }
 
 // NewIdentityMfaLoginEnforcementRequestWithDefaults instantiates a new IdentityMfaLoginEnforcementRequest object
@@ -6903,15 +5764,6 @@ type IdentityMfaMethodDuoRequest struct {
 	UsePasscode *bool `json:"use_passcode,omitempty"`
 	// A template string for mapping Identity names to MFA method names. Values to subtitute should be placed in {{}}. For example, \"{{alias.name}}@example.com\". Currently-supported mappings: alias.name: The name returned by the mount configured via the mount_accessor parameter If blank, the Alias's name field will be used as-is.
 	UsernameFormat *string `json:"username_format,omitempty"`
-}
-
-// NewIdentityMfaMethodDuoRequest instantiates a new IdentityMfaMethodDuoRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityMfaMethodDuoRequest() *IdentityMfaMethodDuoRequest {
-	this := IdentityMfaMethodDuoRequest{}
-	return &this
 }
 
 // NewIdentityMfaMethodDuoRequestWithDefaults instantiates a new IdentityMfaMethodDuoRequest object
@@ -6976,15 +5828,6 @@ type IdentityMfaMethodOktaRequest struct {
 	UsernameFormat *string `json:"username_format,omitempty"`
 }
 
-// NewIdentityMfaMethodOktaRequest instantiates a new IdentityMfaMethodOktaRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityMfaMethodOktaRequest() *IdentityMfaMethodOktaRequest {
-	this := IdentityMfaMethodOktaRequest{}
-	return &this
-}
-
 // NewIdentityMfaMethodOktaRequestWithDefaults instantiates a new IdentityMfaMethodOktaRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -7039,15 +5882,6 @@ type IdentityMfaMethodPingidRequest struct {
 	UsernameFormat *string `json:"username_format,omitempty"`
 }
 
-// NewIdentityMfaMethodPingidRequest instantiates a new IdentityMfaMethodPingidRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityMfaMethodPingidRequest() *IdentityMfaMethodPingidRequest {
-	this := IdentityMfaMethodPingidRequest{}
-	return &this
-}
-
 // NewIdentityMfaMethodPingidRequestWithDefaults instantiates a new IdentityMfaMethodPingidRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -7088,17 +5922,6 @@ type IdentityMfaMethodTotpAdminDestroyRequest struct {
 	MethodId string `json:"method_id"`
 }
 
-// NewIdentityMfaMethodTotpAdminDestroyRequest instantiates a new IdentityMfaMethodTotpAdminDestroyRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityMfaMethodTotpAdminDestroyRequest(entityId string, methodId string) *IdentityMfaMethodTotpAdminDestroyRequest {
-	this := IdentityMfaMethodTotpAdminDestroyRequest{}
-	this.EntityId = entityId
-	this.MethodId = methodId
-	return &this
-}
-
 // NewIdentityMfaMethodTotpAdminDestroyRequestWithDefaults instantiates a new IdentityMfaMethodTotpAdminDestroyRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -7136,17 +5959,6 @@ type IdentityMfaMethodTotpAdminGenerateRequest struct {
 	MethodId string `json:"method_id"`
 }
 
-// NewIdentityMfaMethodTotpAdminGenerateRequest instantiates a new IdentityMfaMethodTotpAdminGenerateRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityMfaMethodTotpAdminGenerateRequest(entityId string, methodId string) *IdentityMfaMethodTotpAdminGenerateRequest {
-	this := IdentityMfaMethodTotpAdminGenerateRequest{}
-	this.EntityId = entityId
-	this.MethodId = methodId
-	return &this
-}
-
 // NewIdentityMfaMethodTotpAdminGenerateRequestWithDefaults instantiates a new IdentityMfaMethodTotpAdminGenerateRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -7180,16 +5992,6 @@ API version: 1.12.0
 type IdentityMfaMethodTotpGenerateRequest struct {
 	// The unique identifier for this MFA method.
 	MethodId string `json:"method_id"`
-}
-
-// NewIdentityMfaMethodTotpGenerateRequest instantiates a new IdentityMfaMethodTotpGenerateRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityMfaMethodTotpGenerateRequest(methodId string) *IdentityMfaMethodTotpGenerateRequest {
-	this := IdentityMfaMethodTotpGenerateRequest{}
-	this.MethodId = methodId
-	return &this
 }
 
 // NewIdentityMfaMethodTotpGenerateRequestWithDefaults instantiates a new IdentityMfaMethodTotpGenerateRequest object
@@ -7238,27 +6040,6 @@ type IdentityMfaMethodTotpRequest struct {
 	QrSize *int32 `json:"qr_size,omitempty"`
 	// The number of delay periods that are allowed when validating a TOTP token. This value can either be 0 or 1.
 	Skew *int32 `json:"skew,omitempty"`
-}
-
-// NewIdentityMfaMethodTotpRequest instantiates a new IdentityMfaMethodTotpRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityMfaMethodTotpRequest() *IdentityMfaMethodTotpRequest {
-	this := IdentityMfaMethodTotpRequest{}
-	var algorithm string = "SHA1"
-	this.Algorithm = &algorithm
-	var digits int32 = 6
-	this.Digits = &digits
-	var keySize int32 = 20
-	this.KeySize = &keySize
-	var period int32 = 30
-	this.Period = &period
-	var qrSize int32 = 200
-	this.QrSize = &qrSize
-	var skew int32 = 1
-	this.Skew = &skew
-	return &this
 }
 
 // NewIdentityMfaMethodTotpRequestWithDefaults instantiates a new IdentityMfaMethodTotpRequest object
@@ -7331,15 +6112,6 @@ type IdentityOidcAssignmentRequest struct {
 	GroupIds []string `json:"group_ids,omitempty"`
 }
 
-// NewIdentityOidcAssignmentRequest instantiates a new IdentityOidcAssignmentRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityOidcAssignmentRequest() *IdentityOidcAssignmentRequest {
-	this := IdentityOidcAssignmentRequest{}
-	return &this
-}
-
 // NewIdentityOidcAssignmentRequestWithDefaults instantiates a new IdentityOidcAssignmentRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -7383,19 +6155,6 @@ type IdentityOidcClientRequest struct {
 	Key *string `json:"key,omitempty"`
 	// Comma separated string or array of redirect URIs used by the client. One of these values must exactly match the redirect_uri parameter value used in each authentication request.
 	RedirectUris []string `json:"redirect_uris,omitempty"`
-}
-
-// NewIdentityOidcClientRequest instantiates a new IdentityOidcClientRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityOidcClientRequest() *IdentityOidcClientRequest {
-	this := IdentityOidcClientRequest{}
-	var clientType string = "confidential"
-	this.ClientType = &clientType
-	var key string = "default"
-	this.Key = &key
-	return &this
 }
 
 // NewIdentityOidcClientRequestWithDefaults instantiates a new IdentityOidcClientRequest object
@@ -7449,15 +6208,6 @@ type IdentityOidcConfigRequest struct {
 	Issuer *string `json:"issuer,omitempty"`
 }
 
-// NewIdentityOidcConfigRequest instantiates a new IdentityOidcConfigRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityOidcConfigRequest() *IdentityOidcConfigRequest {
-	this := IdentityOidcConfigRequest{}
-	return &this
-}
-
 // NewIdentityOidcConfigRequestWithDefaults instantiates a new IdentityOidcConfigRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -7490,15 +6240,6 @@ type IdentityOidcIntrospectRequest struct {
 	ClientId *string `json:"client_id,omitempty"`
 	// Token to verify
 	Token *string `json:"token,omitempty"`
-}
-
-// NewIdentityOidcIntrospectRequest instantiates a new IdentityOidcIntrospectRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityOidcIntrospectRequest() *IdentityOidcIntrospectRequest {
-	this := IdentityOidcIntrospectRequest{}
-	return &this
 }
 
 // NewIdentityOidcIntrospectRequestWithDefaults instantiates a new IdentityOidcIntrospectRequest object
@@ -7542,17 +6283,6 @@ type IdentityOidcKeyRequest struct {
 	VerificationTtl *int32 `json:"verification_ttl,omitempty"`
 }
 
-// NewIdentityOidcKeyRequest instantiates a new IdentityOidcKeyRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityOidcKeyRequest() *IdentityOidcKeyRequest {
-	this := IdentityOidcKeyRequest{}
-	var algorithm string = "RS256"
-	this.Algorithm = &algorithm
-	return &this
-}
-
 // NewIdentityOidcKeyRequestWithDefaults instantiates a new IdentityOidcKeyRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -7594,15 +6324,6 @@ API version: 1.12.0
 type IdentityOidcKeyRotateRequest struct {
 	// Controls how long the public portion of a key will be available for verification after being rotated. Setting verification_ttl here will override the verification_ttl set on the key.
 	VerificationTtl *int32 `json:"verification_ttl,omitempty"`
-}
-
-// NewIdentityOidcKeyRotateRequest instantiates a new IdentityOidcKeyRotateRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityOidcKeyRotateRequest() *IdentityOidcKeyRotateRequest {
-	this := IdentityOidcKeyRotateRequest{}
-	return &this
 }
 
 // NewIdentityOidcKeyRotateRequestWithDefaults instantiates a new IdentityOidcKeyRotateRequest object
@@ -7651,22 +6372,6 @@ type IdentityOidcProviderAuthorizeRequest struct {
 	Scope string `json:"scope"`
 	// The value used to maintain state between the authentication request and client.
 	State string `json:"state"`
-}
-
-// NewIdentityOidcProviderAuthorizeRequest instantiates a new IdentityOidcProviderAuthorizeRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityOidcProviderAuthorizeRequest(clientId string, redirectUri string, responseType string, scope string, state string) *IdentityOidcProviderAuthorizeRequest {
-	this := IdentityOidcProviderAuthorizeRequest{}
-	this.ClientId = clientId
-	var codeChallengeMethod string = "plain"
-	this.CodeChallengeMethod = &codeChallengeMethod
-	this.RedirectUri = redirectUri
-	this.ResponseType = responseType
-	this.Scope = scope
-	this.State = state
-	return &this
 }
 
 // NewIdentityOidcProviderAuthorizeRequestWithDefaults instantiates a new IdentityOidcProviderAuthorizeRequest object
@@ -7731,15 +6436,6 @@ type IdentityOidcProviderRequest struct {
 	ScopesSupported []string `json:"scopes_supported,omitempty"`
 }
 
-// NewIdentityOidcProviderRequest instantiates a new IdentityOidcProviderRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityOidcProviderRequest() *IdentityOidcProviderRequest {
-	this := IdentityOidcProviderRequest{}
-	return &this
-}
-
 // NewIdentityOidcProviderRequestWithDefaults instantiates a new IdentityOidcProviderRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -7784,18 +6480,6 @@ type IdentityOidcProviderTokenRequest struct {
 	GrantType string `json:"grant_type"`
 	// The callback location where the authentication response was sent.
 	RedirectUri string `json:"redirect_uri"`
-}
-
-// NewIdentityOidcProviderTokenRequest instantiates a new IdentityOidcProviderTokenRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityOidcProviderTokenRequest(code string, grantType string, redirectUri string) *IdentityOidcProviderTokenRequest {
-	this := IdentityOidcProviderTokenRequest{}
-	this.Code = code
-	this.GrantType = grantType
-	this.RedirectUri = redirectUri
-	return &this
 }
 
 // NewIdentityOidcProviderTokenRequestWithDefaults instantiates a new IdentityOidcProviderTokenRequest object
@@ -7848,16 +6532,6 @@ type IdentityOidcRoleRequest struct {
 	Ttl *int32 `json:"ttl,omitempty"`
 }
 
-// NewIdentityOidcRoleRequest instantiates a new IdentityOidcRoleRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityOidcRoleRequest(key string) *IdentityOidcRoleRequest {
-	this := IdentityOidcRoleRequest{}
-	this.Key = key
-	return &this
-}
-
 // NewIdentityOidcRoleRequestWithDefaults instantiates a new IdentityOidcRoleRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -7901,15 +6575,6 @@ type IdentityOidcScopeRequest struct {
 	Template *string `json:"template,omitempty"`
 }
 
-// NewIdentityOidcScopeRequest instantiates a new IdentityOidcScopeRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityOidcScopeRequest() *IdentityOidcScopeRequest {
-	this := IdentityOidcScopeRequest{}
-	return &this
-}
-
 // NewIdentityOidcScopeRequestWithDefaults instantiates a new IdentityOidcScopeRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -7949,15 +6614,6 @@ type IdentityPersonaIdRequest struct {
 	MountAccessor *string `json:"mount_accessor,omitempty"`
 	// Name of the persona
 	Name *string `json:"name,omitempty"`
-}
-
-// NewIdentityPersonaIdRequest instantiates a new IdentityPersonaIdRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityPersonaIdRequest() *IdentityPersonaIdRequest {
-	this := IdentityPersonaIdRequest{}
-	return &this
 }
 
 // NewIdentityPersonaIdRequestWithDefaults instantiates a new IdentityPersonaIdRequest object
@@ -8007,15 +6663,6 @@ type IdentityPersonaRequest struct {
 	MountAccessor *string `json:"mount_accessor,omitempty"`
 	// Name of the persona
 	Name *string `json:"name,omitempty"`
-}
-
-// NewIdentityPersonaRequest instantiates a new IdentityPersonaRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewIdentityPersonaRequest() *IdentityPersonaRequest {
-	this := IdentityPersonaRequest{}
-	return &this
 }
 
 // NewIdentityPersonaRequestWithDefaults instantiates a new IdentityPersonaRequest object
@@ -8086,15 +6733,6 @@ type JwtConfigRequest struct {
 	OidcResponseTypes []string `json:"oidc_response_types,omitempty"`
 	// Provider-specific configuration. Optional.
 	ProviderConfig map[string]interface{} `json:"provider_config,omitempty"`
-}
-
-// NewJwtConfigRequest instantiates a new JwtConfigRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewJwtConfigRequest() *JwtConfigRequest {
-	this := JwtConfigRequest{}
-	return &this
 }
 
 // NewJwtConfigRequestWithDefaults instantiates a new JwtConfigRequest object
@@ -8170,15 +6808,6 @@ type JwtLoginRequest struct {
 	Role *string `json:"role,omitempty"`
 }
 
-// NewJwtLoginRequest instantiates a new JwtLoginRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewJwtLoginRequest() *JwtLoginRequest {
-	this := JwtLoginRequest{}
-	return &this
-}
-
 // NewJwtLoginRequestWithDefaults instantiates a new JwtLoginRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -8216,15 +6845,6 @@ type JwtOidcAuthUrlRequest struct {
 	RedirectUri *string `json:"redirect_uri,omitempty"`
 	// The role to issue an OIDC authorization URL against.
 	Role *string `json:"role,omitempty"`
-}
-
-// NewJwtOidcAuthUrlRequest instantiates a new JwtOidcAuthUrlRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewJwtOidcAuthUrlRequest() *JwtOidcAuthUrlRequest {
-	this := JwtOidcAuthUrlRequest{}
-	return &this
 }
 
 // NewJwtOidcAuthUrlRequestWithDefaults instantiates a new JwtOidcAuthUrlRequest object
@@ -8265,15 +6885,6 @@ type JwtOidcCallbackRequest struct {
 	Code        *string `json:"code,omitempty"`
 	IdToken     *string `json:"id_token,omitempty"`
 	State       *string `json:"state,omitempty"`
-}
-
-// NewJwtOidcCallbackRequest instantiates a new JwtOidcCallbackRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewJwtOidcCallbackRequest() *JwtOidcCallbackRequest {
-	this := JwtOidcCallbackRequest{}
-	return &this
 }
 
 // NewJwtOidcCallbackRequestWithDefaults instantiates a new JwtOidcCallbackRequest object
@@ -8381,23 +6992,6 @@ type JwtRoleRequest struct {
 	UserClaimJsonPointer *bool `json:"user_claim_json_pointer,omitempty"`
 	// Log received OIDC tokens and claims when debug-level logging is active. Not recommended in production since sensitive information may be present in OIDC responses.
 	VerboseOidcLogging *bool `json:"verbose_oidc_logging,omitempty"`
-}
-
-// NewJwtRoleRequest instantiates a new JwtRoleRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewJwtRoleRequest() *JwtRoleRequest {
-	this := JwtRoleRequest{}
-	var boundClaimsType string = "string"
-	this.BoundClaimsType = &boundClaimsType
-	var expirationLeeway int32 = 150
-	this.ExpirationLeeway = &expirationLeeway
-	var notBeforeLeeway int32 = 150
-	this.NotBeforeLeeway = &notBeforeLeeway
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
-	return &this
 }
 
 // NewJwtRoleRequestWithDefaults instantiates a new JwtRoleRequest object
@@ -8596,39 +7190,6 @@ type KerberosConfigLdapRequest struct {
 	UsernameAsAlias *bool `json:"username_as_alias,omitempty"`
 }
 
-// NewKerberosConfigLdapRequest instantiates a new KerberosConfigLdapRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewKerberosConfigLdapRequest() *KerberosConfigLdapRequest {
-	this := KerberosConfigLdapRequest{}
-	var anonymousGroupSearch bool = false
-	this.AnonymousGroupSearch = &anonymousGroupSearch
-	var denyNullBind bool = true
-	this.DenyNullBind = &denyNullBind
-	var groupattr string = "cn"
-	this.Groupattr = &groupattr
-	var groupfilter string = "(|(memberUid={{.Username}})(member={{.UserDN}})(uniqueMember={{.UserDN}}))"
-	this.Groupfilter = &groupfilter
-	var tlsMaxVersion string = "tls12"
-	this.TlsMaxVersion = &tlsMaxVersion
-	var tlsMinVersion string = "tls12"
-	this.TlsMinVersion = &tlsMinVersion
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
-	var url string = "ldap://127.0.0.1"
-	this.Url = &url
-	var useTokenGroups bool = false
-	this.UseTokenGroups = &useTokenGroups
-	var userattr string = "cn"
-	this.Userattr = &userattr
-	var userfilter string = "({{.UserAttr}}={{.Username}})"
-	this.Userfilter = &userfilter
-	var usernameAsAlias bool = false
-	this.UsernameAsAlias = &usernameAsAlias
-	return &this
-}
-
 // NewKerberosConfigLdapRequestWithDefaults instantiates a new KerberosConfigLdapRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -8786,15 +7347,6 @@ type KerberosConfigRequest struct {
 	ServiceAccount *string `json:"service_account,omitempty"`
 }
 
-// NewKerberosConfigRequest instantiates a new KerberosConfigRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewKerberosConfigRequest() *KerberosConfigRequest {
-	this := KerberosConfigRequest{}
-	return &this
-}
-
 // NewKerberosConfigRequestWithDefaults instantiates a new KerberosConfigRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -8830,15 +7382,6 @@ type KerberosGroupsRequest struct {
 	Policies []string `json:"policies,omitempty"`
 }
 
-// NewKerberosGroupsRequest instantiates a new KerberosGroupsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewKerberosGroupsRequest() *KerberosGroupsRequest {
-	this := KerberosGroupsRequest{}
-	return &this
-}
-
 // NewKerberosGroupsRequestWithDefaults instantiates a new KerberosGroupsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -8869,15 +7412,6 @@ API version: 1.12.0
 type KerberosLoginRequest struct {
 	// SPNEGO Authorization header. Required.
 	Authorization *string `json:"authorization,omitempty"`
-}
-
-// NewKerberosLoginRequest instantiates a new KerberosLoginRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewKerberosLoginRequest() *KerberosLoginRequest {
-	this := KerberosLoginRequest{}
-	return &this
 }
 
 // NewKerberosLoginRequestWithDefaults instantiates a new KerberosLoginRequest object
@@ -8924,19 +7458,6 @@ type KubernetesConfigRequest struct {
 	PemKeys []string `json:"pem_keys,omitempty"`
 	// A service account JWT used to access the TokenReview API to validate other JWTs during login. If not set the JWT used for login will be used to access the API.
 	TokenReviewerJwt *string `json:"token_reviewer_jwt,omitempty"`
-}
-
-// NewKubernetesConfigRequest instantiates a new KubernetesConfigRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewKubernetesConfigRequest() *KubernetesConfigRequest {
-	this := KubernetesConfigRequest{}
-	var disableIssValidation bool = true
-	this.DisableIssValidation = &disableIssValidation
-	var disableLocalCaJwt bool = false
-	this.DisableLocalCaJwt = &disableLocalCaJwt
-	return &this
 }
 
 // NewKubernetesConfigRequestWithDefaults instantiates a new KubernetesConfigRequest object
@@ -8997,16 +7518,6 @@ type KubernetesCredsRequest struct {
 	Ttl *int32 `json:"ttl,omitempty"`
 }
 
-// NewKubernetesCredsRequest instantiates a new KubernetesCredsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewKubernetesCredsRequest(kubernetesNamespace string) *KubernetesCredsRequest {
-	this := KubernetesCredsRequest{}
-	this.KubernetesNamespace = kubernetesNamespace
-	return &this
-}
-
 // NewKubernetesCredsRequestWithDefaults instantiates a new KubernetesCredsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -9045,15 +7556,6 @@ type KubernetesLoginRequest struct {
 	Jwt *string `json:"jwt,omitempty"`
 	// Name of the role against which the login is being attempted. This field is required
 	Role *string `json:"role,omitempty"`
-}
-
-// NewKubernetesLoginRequest instantiates a new KubernetesLoginRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewKubernetesLoginRequest() *KubernetesLoginRequest {
-	this := KubernetesLoginRequest{}
-	return &this
 }
 
 // NewKubernetesLoginRequestWithDefaults instantiates a new KubernetesLoginRequest object
@@ -9131,19 +7633,6 @@ type KubernetesRoleRequest struct {
 	// Use \"token_ttl\" instead. If this and \"token_ttl\" are both specified, only \"token_ttl\" will be used.
 	// Deprecated
 	Ttl *int32 `json:"ttl,omitempty"`
-}
-
-// NewKubernetesRoleRequest instantiates a new KubernetesRoleRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewKubernetesRoleRequest() *KubernetesRoleRequest {
-	this := KubernetesRoleRequest{}
-	var aliasNameSource string = "serviceaccount_uid"
-	this.AliasNameSource = &aliasNameSource
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
-	return &this
 }
 
 // NewKubernetesRoleRequestWithDefaults instantiates a new KubernetesRoleRequest object
@@ -9254,18 +7743,6 @@ type KubernetesRolesRequest struct {
 	TokenMaxTtl *int32 `json:"token_max_ttl,omitempty"`
 }
 
-// NewKubernetesRolesRequest instantiates a new KubernetesRolesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewKubernetesRolesRequest(allowedKubernetesNamespaces []string) *KubernetesRolesRequest {
-	this := KubernetesRolesRequest{}
-	this.AllowedKubernetesNamespaces = allowedKubernetesNamespaces
-	var kubernetesRoleType string = "Role"
-	this.KubernetesRoleType = &kubernetesRoleType
-	return &this
-}
-
 // NewKubernetesRolesRequestWithDefaults instantiates a new KubernetesRolesRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -9331,15 +7808,6 @@ type KvConfigRequest struct {
 	MaxVersions *int32 `json:"max_versions,omitempty"`
 }
 
-// NewKvConfigRequest instantiates a new KvConfigRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewKvConfigRequest() *KvConfigRequest {
-	this := KvConfigRequest{}
-	return &this
-}
-
 // NewKvConfigRequestWithDefaults instantiates a new KvConfigRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -9382,15 +7850,6 @@ type KvDataRequest struct {
 	Version *int32 `json:"version,omitempty"`
 }
 
-// NewKvDataRequest instantiates a new KvDataRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewKvDataRequest() *KvDataRequest {
-	this := KvDataRequest{}
-	return &this
-}
-
 // NewKvDataRequestWithDefaults instantiates a new KvDataRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -9429,15 +7888,6 @@ type KvDeleteRequest struct {
 	Versions []int32 `json:"versions,omitempty"`
 }
 
-// NewKvDeleteRequest instantiates a new KvDeleteRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewKvDeleteRequest() *KvDeleteRequest {
-	this := KvDeleteRequest{}
-	return &this
-}
-
 // NewKvDeleteRequestWithDefaults instantiates a new KvDeleteRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -9468,15 +7918,6 @@ API version: 1.12.0
 type KvDestroyRequest struct {
 	// The versions to destroy. Their data will be permanently deleted.
 	Versions []int32 `json:"versions,omitempty"`
-}
-
-// NewKvDestroyRequest instantiates a new KvDestroyRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewKvDestroyRequest() *KvDestroyRequest {
-	this := KvDestroyRequest{}
-	return &this
 }
 
 // NewKvDestroyRequestWithDefaults instantiates a new KvDestroyRequest object
@@ -9515,15 +7956,6 @@ type KvMetadataRequest struct {
 	DeleteVersionAfter *int32 `json:"delete_version_after,omitempty"`
 	// The number of versions to keep. If not set, the backend’s configured max version is used.
 	MaxVersions *int32 `json:"max_versions,omitempty"`
-}
-
-// NewKvMetadataRequest instantiates a new KvMetadataRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewKvMetadataRequest() *KvMetadataRequest {
-	this := KvMetadataRequest{}
-	return &this
 }
 
 // NewKvMetadataRequestWithDefaults instantiates a new KvMetadataRequest object
@@ -9565,15 +7997,6 @@ API version: 1.12.0
 type KvUndeleteRequest struct {
 	// The versions to unarchive. The versions will be restored and their data will be returned on normal get requests.
 	Versions []int32 `json:"versions,omitempty"`
-}
-
-// NewKvUndeleteRequest instantiates a new KvUndeleteRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewKvUndeleteRequest() *KvUndeleteRequest {
-	this := KvUndeleteRequest{}
-	return &this
 }
 
 // NewKvUndeleteRequestWithDefaults instantiates a new KvUndeleteRequest object
@@ -9672,39 +8095,6 @@ type LdapConfigRequest struct {
 	Userfilter *string `json:"userfilter,omitempty"`
 	// If true, sets the alias name to the username
 	UsernameAsAlias *bool `json:"username_as_alias,omitempty"`
-}
-
-// NewLdapConfigRequest instantiates a new LdapConfigRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewLdapConfigRequest() *LdapConfigRequest {
-	this := LdapConfigRequest{}
-	var anonymousGroupSearch bool = false
-	this.AnonymousGroupSearch = &anonymousGroupSearch
-	var denyNullBind bool = true
-	this.DenyNullBind = &denyNullBind
-	var groupattr string = "cn"
-	this.Groupattr = &groupattr
-	var groupfilter string = "(|(memberUid={{.Username}})(member={{.UserDN}})(uniqueMember={{.UserDN}}))"
-	this.Groupfilter = &groupfilter
-	var tlsMaxVersion string = "tls12"
-	this.TlsMaxVersion = &tlsMaxVersion
-	var tlsMinVersion string = "tls12"
-	this.TlsMinVersion = &tlsMinVersion
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
-	var url string = "ldap://127.0.0.1"
-	this.Url = &url
-	var useTokenGroups bool = false
-	this.UseTokenGroups = &useTokenGroups
-	var userattr string = "cn"
-	this.Userattr = &userattr
-	var userfilter string = "({{.UserAttr}}={{.Username}})"
-	this.Userfilter = &userfilter
-	var usernameAsAlias bool = false
-	this.UsernameAsAlias = &usernameAsAlias
-	return &this
 }
 
 // NewLdapConfigRequestWithDefaults instantiates a new LdapConfigRequest object
@@ -9862,15 +8252,6 @@ type LdapGroupsRequest struct {
 	Policies []string `json:"policies,omitempty"`
 }
 
-// NewLdapGroupsRequest instantiates a new LdapGroupsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewLdapGroupsRequest() *LdapGroupsRequest {
-	this := LdapGroupsRequest{}
-	return &this
-}
-
 // NewLdapGroupsRequestWithDefaults instantiates a new LdapGroupsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -9901,15 +8282,6 @@ API version: 1.12.0
 type LdapLoginRequest struct {
 	// Password for this user.
 	Password *string `json:"password,omitempty"`
-}
-
-// NewLdapLoginRequest instantiates a new LdapLoginRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewLdapLoginRequest() *LdapLoginRequest {
-	this := LdapLoginRequest{}
-	return &this
 }
 
 // NewLdapLoginRequestWithDefaults instantiates a new LdapLoginRequest object
@@ -9944,15 +8316,6 @@ type LdapUsersRequest struct {
 	Groups []string `json:"groups,omitempty"`
 	// Comma-separated list of policies associated with the user.
 	Policies []string `json:"policies,omitempty"`
-}
-
-// NewLdapUsersRequest instantiates a new LdapUsersRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewLdapUsersRequest() *LdapUsersRequest {
-	this := LdapUsersRequest{}
-	return &this
 }
 
 // NewLdapUsersRequestWithDefaults instantiates a new LdapUsersRequest object
@@ -9990,17 +8353,6 @@ type MongodbatlasConfigRequest struct {
 	PrivateKey string `json:"private_key"`
 	// MongoDB Atlas Programmatic Public Key
 	PublicKey string `json:"public_key"`
-}
-
-// NewMongodbatlasConfigRequest instantiates a new MongodbatlasConfigRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewMongodbatlasConfigRequest(privateKey string, publicKey string) *MongodbatlasConfigRequest {
-	this := MongodbatlasConfigRequest{}
-	this.PrivateKey = privateKey
-	this.PublicKey = publicKey
-	return &this
 }
 
 // NewMongodbatlasConfigRequestWithDefaults instantiates a new MongodbatlasConfigRequest object
@@ -10050,16 +8402,6 @@ type MongodbatlasRolesRequest struct {
 	Roles []string `json:"roles"`
 	// Duration in seconds after which the issued credential should expire. Defaults to 0, in which case the value will fallback to the system/mount defaults.
 	Ttl *int32 `json:"ttl,omitempty"`
-}
-
-// NewMongodbatlasRolesRequest instantiates a new MongodbatlasRolesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewMongodbatlasRolesRequest(roles []string) *MongodbatlasRolesRequest {
-	this := MongodbatlasRolesRequest{}
-	this.Roles = roles
-	return &this
 }
 
 // NewMongodbatlasRolesRequestWithDefaults instantiates a new MongodbatlasRolesRequest object
@@ -10125,15 +8467,6 @@ type NomadConfigAccessRequest struct {
 	Token *string `json:"token,omitempty"`
 }
 
-// NewNomadConfigAccessRequest instantiates a new NomadConfigAccessRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNomadConfigAccessRequest() *NomadConfigAccessRequest {
-	this := NomadConfigAccessRequest{}
-	return &this
-}
-
 // NewNomadConfigAccessRequestWithDefaults instantiates a new NomadConfigAccessRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -10183,15 +8516,6 @@ type NomadConfigLeaseRequest struct {
 	Ttl *int32 `json:"ttl,omitempty"`
 }
 
-// NewNomadConfigLeaseRequest instantiates a new NomadConfigLeaseRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNomadConfigLeaseRequest() *NomadConfigLeaseRequest {
-	this := NomadConfigLeaseRequest{}
-	return &this
-}
-
 // NewNomadConfigLeaseRequestWithDefaults instantiates a new NomadConfigLeaseRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -10229,17 +8553,6 @@ type NomadRoleRequest struct {
 	Policies []string `json:"policies,omitempty"`
 	// Which type of token to create: 'client' or 'management'. If a 'management' token, the \"policies\" parameter is not required. Defaults to 'client'.
 	Type *string `json:"type,omitempty"`
-}
-
-// NewNomadRoleRequest instantiates a new NomadRoleRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewNomadRoleRequest() *NomadRoleRequest {
-	this := NomadRoleRequest{}
-	var type_ string = "client"
-	this.Type = &type_
-	return &this
 }
 
 // NewNomadRoleRequestWithDefaults instantiates a new NomadRoleRequest object
@@ -10282,15 +8595,6 @@ type OciConfigRequest struct {
 	HomeTenancyId *string `json:"home_tenancy_id,omitempty"`
 }
 
-// NewOciConfigRequest instantiates a new OciConfigRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewOciConfigRequest() *OciConfigRequest {
-	this := OciConfigRequest{}
-	return &this
-}
-
 // NewOciConfigRequestWithDefaults instantiates a new OciConfigRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -10321,15 +8625,6 @@ API version: 1.12.0
 type OciLoginRequest struct {
 	// The signed headers of the client
 	RequestHeaders *string `json:"request_headers,omitempty"`
-}
-
-// NewOciLoginRequest instantiates a new OciLoginRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewOciLoginRequest() *OciLoginRequest {
-	this := OciLoginRequest{}
-	return &this
 }
 
 // NewOciLoginRequestWithDefaults instantiates a new OciLoginRequest object
@@ -10380,17 +8675,6 @@ type OciRoleRequest struct {
 	TokenTtl *int32 `json:"token_ttl,omitempty"`
 	// The type of token to generate, service or batch
 	TokenType *string `json:"token_type,omitempty"`
-}
-
-// NewOciRoleRequest instantiates a new OciRoleRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewOciRoleRequest() *OciRoleRequest {
-	this := OciRoleRequest{}
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
-	return &this
 }
 
 // NewOciRoleRequestWithDefaults instantiates a new OciRoleRequest object
@@ -10480,15 +8764,6 @@ type OidcConfigRequest struct {
 	ProviderConfig map[string]interface{} `json:"provider_config,omitempty"`
 }
 
-// NewOidcConfigRequest instantiates a new OidcConfigRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewOidcConfigRequest() *OidcConfigRequest {
-	this := OidcConfigRequest{}
-	return &this
-}
-
 // NewOidcConfigRequestWithDefaults instantiates a new OidcConfigRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -10562,15 +8837,6 @@ type OidcLoginRequest struct {
 	Role *string `json:"role,omitempty"`
 }
 
-// NewOidcLoginRequest instantiates a new OidcLoginRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewOidcLoginRequest() *OidcLoginRequest {
-	this := OidcLoginRequest{}
-	return &this
-}
-
 // NewOidcLoginRequestWithDefaults instantiates a new OidcLoginRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -10608,15 +8874,6 @@ type OidcOidcAuthUrlRequest struct {
 	RedirectUri *string `json:"redirect_uri,omitempty"`
 	// The role to issue an OIDC authorization URL against.
 	Role *string `json:"role,omitempty"`
-}
-
-// NewOidcOidcAuthUrlRequest instantiates a new OidcOidcAuthUrlRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewOidcOidcAuthUrlRequest() *OidcOidcAuthUrlRequest {
-	this := OidcOidcAuthUrlRequest{}
-	return &this
 }
 
 // NewOidcOidcAuthUrlRequestWithDefaults instantiates a new OidcOidcAuthUrlRequest object
@@ -10657,15 +8914,6 @@ type OidcOidcCallbackRequest struct {
 	Code        *string `json:"code,omitempty"`
 	IdToken     *string `json:"id_token,omitempty"`
 	State       *string `json:"state,omitempty"`
-}
-
-// NewOidcOidcCallbackRequest instantiates a new OidcOidcCallbackRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewOidcOidcCallbackRequest() *OidcOidcCallbackRequest {
-	this := OidcOidcCallbackRequest{}
-	return &this
 }
 
 // NewOidcOidcCallbackRequestWithDefaults instantiates a new OidcOidcCallbackRequest object
@@ -10773,23 +9021,6 @@ type OidcRoleRequest struct {
 	UserClaimJsonPointer *bool `json:"user_claim_json_pointer,omitempty"`
 	// Log received OIDC tokens and claims when debug-level logging is active. Not recommended in production since sensitive information may be present in OIDC responses.
 	VerboseOidcLogging *bool `json:"verbose_oidc_logging,omitempty"`
-}
-
-// NewOidcRoleRequest instantiates a new OidcRoleRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewOidcRoleRequest() *OidcRoleRequest {
-	this := OidcRoleRequest{}
-	var boundClaimsType string = "string"
-	this.BoundClaimsType = &boundClaimsType
-	var expirationLeeway int32 = 150
-	this.ExpirationLeeway = &expirationLeeway
-	var notBeforeLeeway int32 = 150
-	this.NotBeforeLeeway = &notBeforeLeeway
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
-	return &this
 }
 
 // NewOidcRoleRequestWithDefaults instantiates a new OidcRoleRequest object
@@ -10961,17 +9192,6 @@ type OktaConfigRequest struct {
 	Ttl *int32 `json:"ttl,omitempty"`
 }
 
-// NewOktaConfigRequest instantiates a new OktaConfigRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewOktaConfigRequest() *OktaConfigRequest {
-	this := OktaConfigRequest{}
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
-	return &this
-}
-
 // NewOktaConfigRequestWithDefaults instantiates a new OktaConfigRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -11057,15 +9277,6 @@ type OktaGroupsRequest struct {
 	Policies []string `json:"policies,omitempty"`
 }
 
-// NewOktaGroupsRequest instantiates a new OktaGroupsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewOktaGroupsRequest() *OktaGroupsRequest {
-	this := OktaGroupsRequest{}
-	return &this
-}
-
 // NewOktaGroupsRequestWithDefaults instantiates a new OktaGroupsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -11102,15 +9313,6 @@ type OktaLoginRequest struct {
 	Provider *string `json:"provider,omitempty"`
 	// TOTP passcode.
 	Totp *string `json:"totp,omitempty"`
-}
-
-// NewOktaLoginRequest instantiates a new OktaLoginRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewOktaLoginRequest() *OktaLoginRequest {
-	this := OktaLoginRequest{}
-	return &this
 }
 
 // NewOktaLoginRequestWithDefaults instantiates a new OktaLoginRequest object
@@ -11154,15 +9356,6 @@ type OktaUsersRequest struct {
 	Groups []string `json:"groups,omitempty"`
 	// List of policies associated with the user.
 	Policies []string `json:"policies,omitempty"`
-}
-
-// NewOktaUsersRequest instantiates a new OktaUsersRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewOktaUsersRequest() *OktaUsersRequest {
-	this := OktaUsersRequest{}
-	return &this
 }
 
 // NewOktaUsersRequestWithDefaults instantiates a new OktaUsersRequest object
@@ -11257,39 +9450,6 @@ type OpenldapConfigRequest struct {
 	Userfilter *string `json:"userfilter,omitempty"`
 	// If true, sets the alias name to the username
 	UsernameAsAlias *bool `json:"username_as_alias,omitempty"`
-}
-
-// NewOpenldapConfigRequest instantiates a new OpenldapConfigRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewOpenldapConfigRequest() *OpenldapConfigRequest {
-	this := OpenldapConfigRequest{}
-	var anonymousGroupSearch bool = false
-	this.AnonymousGroupSearch = &anonymousGroupSearch
-	var denyNullBind bool = true
-	this.DenyNullBind = &denyNullBind
-	var groupattr string = "cn"
-	this.Groupattr = &groupattr
-	var groupfilter string = "(|(memberUid={{.Username}})(member={{.UserDN}})(uniqueMember={{.UserDN}}))"
-	this.Groupfilter = &groupfilter
-	var schema string = "openldap"
-	this.Schema = &schema
-	var tlsMaxVersion string = "tls12"
-	this.TlsMaxVersion = &tlsMaxVersion
-	var tlsMinVersion string = "tls12"
-	this.TlsMinVersion = &tlsMinVersion
-	var url string = "ldap://127.0.0.1"
-	this.Url = &url
-	var useTokenGroups bool = false
-	this.UseTokenGroups = &useTokenGroups
-	var userattr string = "cn"
-	this.Userattr = &userattr
-	var userfilter string = "({{.UserAttr}}={{.Username}})"
-	this.Userfilter = &userfilter
-	var usernameAsAlias bool = false
-	this.UsernameAsAlias = &usernameAsAlias
-	return &this
 }
 
 // NewOpenldapConfigRequestWithDefaults instantiates a new OpenldapConfigRequest object
@@ -11445,17 +9605,6 @@ type OpenldapRoleRequest struct {
 	UsernameTemplate *string `json:"username_template,omitempty"`
 }
 
-// NewOpenldapRoleRequest instantiates a new OpenldapRoleRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewOpenldapRoleRequest(creationLdif string, deletionLdif string) *OpenldapRoleRequest {
-	this := OpenldapRoleRequest{}
-	this.CreationLdif = creationLdif
-	this.DeletionLdif = deletionLdif
-	return &this
-}
-
 // NewOpenldapRoleRequestWithDefaults instantiates a new OpenldapRoleRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -11509,15 +9658,6 @@ type OpenldapStaticRoleRequest struct {
 	Username *string `json:"username,omitempty"`
 }
 
-// NewOpenldapStaticRoleRequest instantiates a new OpenldapStaticRoleRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewOpenldapStaticRoleRequest() *OpenldapStaticRoleRequest {
-	this := OpenldapStaticRoleRequest{}
-	return &this
-}
-
 // NewOpenldapStaticRoleRequestWithDefaults instantiates a new OpenldapStaticRoleRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -11559,15 +9699,6 @@ type PkiBundleRequest struct {
 	PemBundle *string `json:"pem_bundle,omitempty"`
 }
 
-// NewPkiBundleRequest instantiates a new PkiBundleRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiBundleRequest() *PkiBundleRequest {
-	this := PkiBundleRequest{}
-	return &this
-}
-
 // NewPkiBundleRequestWithDefaults instantiates a new PkiBundleRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -11598,15 +9729,6 @@ API version: 1.12.0
 type PkiCertRequest struct {
 	// PEM-format, concatenated unencrypted secret-key (optional) and certificates.
 	PemBundle *string `json:"pem_bundle,omitempty"`
-}
-
-// NewPkiCertRequest instantiates a new PkiCertRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiCertRequest() *PkiCertRequest {
-	this := PkiCertRequest{}
-	return &this
 }
 
 // NewPkiCertRequestWithDefaults instantiates a new PkiCertRequest object
@@ -11641,15 +9763,6 @@ type PkiConfigCaRequest struct {
 	PemBundle *string `json:"pem_bundle,omitempty"`
 }
 
-// NewPkiConfigCaRequest instantiates a new PkiConfigCaRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiConfigCaRequest() *PkiConfigCaRequest {
-	this := PkiConfigCaRequest{}
-	return &this
-}
-
 // NewPkiConfigCaRequestWithDefaults instantiates a new PkiConfigCaRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -11682,17 +9795,6 @@ type PkiConfigCrlRequest struct {
 	Disable *bool `json:"disable,omitempty"`
 	// The amount of time the generated CRL should be valid; defaults to 72 hours
 	Expiry *string `json:"expiry,omitempty"`
-}
-
-// NewPkiConfigCrlRequest instantiates a new PkiConfigCrlRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiConfigCrlRequest() *PkiConfigCrlRequest {
-	this := PkiConfigCrlRequest{}
-	var expiry string = "72h"
-	this.Expiry = &expiry
-	return &this
 }
 
 // NewPkiConfigCrlRequestWithDefaults instantiates a new PkiConfigCrlRequest object
@@ -11732,15 +9834,6 @@ type PkiConfigIssuersRequest struct {
 	Default *string `json:"default,omitempty"`
 }
 
-// NewPkiConfigIssuersRequest instantiates a new PkiConfigIssuersRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiConfigIssuersRequest() *PkiConfigIssuersRequest {
-	this := PkiConfigIssuersRequest{}
-	return &this
-}
-
 // NewPkiConfigIssuersRequestWithDefaults instantiates a new PkiConfigIssuersRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -11771,15 +9864,6 @@ API version: 1.12.0
 type PkiConfigKeysRequest struct {
 	// Reference (name or identifier) of the default key.
 	Default *string `json:"default,omitempty"`
-}
-
-// NewPkiConfigKeysRequest instantiates a new PkiConfigKeysRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiConfigKeysRequest() *PkiConfigKeysRequest {
-	this := PkiConfigKeysRequest{}
-	return &this
 }
 
 // NewPkiConfigKeysRequestWithDefaults instantiates a new PkiConfigKeysRequest object
@@ -11816,15 +9900,6 @@ type PkiConfigUrlsRequest struct {
 	IssuingCertificates []string `json:"issuing_certificates,omitempty"`
 	// Comma-separated list of URLs to be used for the OCSP servers attribute. See also RFC 5280 Section 4.2.2.1.
 	OcspServers []string `json:"ocsp_servers,omitempty"`
-}
-
-// NewPkiConfigUrlsRequest instantiates a new PkiConfigUrlsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiConfigUrlsRequest() *PkiConfigUrlsRequest {
-	this := PkiConfigUrlsRequest{}
-	return &this
 }
 
 // NewPkiConfigUrlsRequestWithDefaults instantiates a new PkiConfigUrlsRequest object
@@ -11869,17 +9944,6 @@ type PkiDerPemRequest struct {
 	ManualChain []string `json:"manual_chain,omitempty"`
 	// Comma-separated list (or string slice) of usages for this issuer; valid values are \"read-only\", \"issuing-certificates\", and \"crl-signing\". Multiple values may be specified. Read-only is implicit and always set.
 	Usage []string `json:"usage,omitempty"`
-}
-
-// NewPkiDerPemRequest instantiates a new PkiDerPemRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiDerPemRequest() *PkiDerPemRequest {
-	this := PkiDerPemRequest{}
-	var leafNotAfterBehavior string = "err"
-	this.LeafNotAfterBehavior = &leafNotAfterBehavior
-	return &this
 }
 
 // NewPkiDerPemRequestWithDefaults instantiates a new PkiDerPemRequest object
@@ -11975,29 +10039,6 @@ type PkiIntermediateCrossSignRequest struct {
 	Ttl *int32 `json:"ttl,omitempty"`
 	// The requested URI SANs, if any, in a comma-delimited list.
 	UriSans []string `json:"uri_sans,omitempty"`
-}
-
-// NewPkiIntermediateCrossSignRequest instantiates a new PkiIntermediateCrossSignRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiIntermediateCrossSignRequest() *PkiIntermediateCrossSignRequest {
-	this := PkiIntermediateCrossSignRequest{}
-	var excludeCnFromSans bool = false
-	this.ExcludeCnFromSans = &excludeCnFromSans
-	var format string = "pem"
-	this.Format = &format
-	var keyBits int32 = 0
-	this.KeyBits = &keyBits
-	var keyRef string = "default"
-	this.KeyRef = &keyRef
-	var keyType string = "rsa"
-	this.KeyType = &keyType
-	var notBeforeDuration int32 = 30
-	this.NotBeforeDuration = &notBeforeDuration
-	var privateKeyFormat string = "der"
-	this.PrivateKeyFormat = &privateKeyFormat
-	return &this
 }
 
 // NewPkiIntermediateCrossSignRequestWithDefaults instantiates a new PkiIntermediateCrossSignRequest object
@@ -12174,29 +10215,6 @@ type PkiIntermediateGenerateRequest struct {
 	UriSans []string `json:"uri_sans,omitempty"`
 }
 
-// NewPkiIntermediateGenerateRequest instantiates a new PkiIntermediateGenerateRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiIntermediateGenerateRequest() *PkiIntermediateGenerateRequest {
-	this := PkiIntermediateGenerateRequest{}
-	var excludeCnFromSans bool = false
-	this.ExcludeCnFromSans = &excludeCnFromSans
-	var format string = "pem"
-	this.Format = &format
-	var keyBits int32 = 0
-	this.KeyBits = &keyBits
-	var keyRef string = "default"
-	this.KeyRef = &keyRef
-	var keyType string = "rsa"
-	this.KeyType = &keyType
-	var notBeforeDuration int32 = 30
-	this.NotBeforeDuration = &notBeforeDuration
-	var privateKeyFormat string = "der"
-	this.PrivateKeyFormat = &privateKeyFormat
-	return &this
-}
-
 // NewPkiIntermediateGenerateRequestWithDefaults instantiates a new PkiIntermediateGenerateRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -12318,15 +10336,6 @@ type PkiIntermediateSetSignedRequest struct {
 	Certificate *string `json:"certificate,omitempty"`
 }
 
-// NewPkiIntermediateSetSignedRequest instantiates a new PkiIntermediateSetSignedRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiIntermediateSetSignedRequest() *PkiIntermediateSetSignedRequest {
-	this := PkiIntermediateSetSignedRequest{}
-	return &this
-}
-
 // NewPkiIntermediateSetSignedRequestWithDefaults instantiates a new PkiIntermediateSetSignedRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -12365,19 +10374,6 @@ type PkiInternalExportedRequest struct {
 	ManagedKeyId *string `json:"managed_key_id,omitempty"`
 	// The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_id is required. Ignored for other types.
 	ManagedKeyName *string `json:"managed_key_name,omitempty"`
-}
-
-// NewPkiInternalExportedRequest instantiates a new PkiInternalExportedRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiInternalExportedRequest() *PkiInternalExportedRequest {
-	this := PkiInternalExportedRequest{}
-	var keyBits int32 = 0
-	this.KeyBits = &keyBits
-	var keyType string = "rsa"
-	this.KeyType = &keyType
-	return &this
 }
 
 // NewPkiInternalExportedRequestWithDefaults instantiates a new PkiInternalExportedRequest object
@@ -12448,23 +10444,6 @@ type PkiIssueRequest struct {
 	Ttl *int32 `json:"ttl,omitempty"`
 	// The requested URI SANs, if any, in a comma-delimited list.
 	UriSans []string `json:"uri_sans,omitempty"`
-}
-
-// NewPkiIssueRequest instantiates a new PkiIssueRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiIssueRequest() *PkiIssueRequest {
-	this := PkiIssueRequest{}
-	var excludeCnFromSans bool = false
-	this.ExcludeCnFromSans = &excludeCnFromSans
-	var format string = "pem"
-	this.Format = &format
-	var issuerRef string = "default"
-	this.IssuerRef = &issuerRef
-	var privateKeyFormat string = "der"
-	this.PrivateKeyFormat = &privateKeyFormat
-	return &this
 }
 
 // NewPkiIssueRequestWithDefaults instantiates a new PkiIssueRequest object
@@ -12558,21 +10537,6 @@ type PkiIssuerIssueRequest struct {
 	Ttl *int32 `json:"ttl,omitempty"`
 	// The requested URI SANs, if any, in a comma-delimited list.
 	UriSans []string `json:"uri_sans,omitempty"`
-}
-
-// NewPkiIssuerIssueRequest instantiates a new PkiIssuerIssueRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiIssuerIssueRequest() *PkiIssuerIssueRequest {
-	this := PkiIssuerIssueRequest{}
-	var excludeCnFromSans bool = false
-	this.ExcludeCnFromSans = &excludeCnFromSans
-	var format string = "pem"
-	this.Format = &format
-	var privateKeyFormat string = "der"
-	this.PrivateKeyFormat = &privateKeyFormat
-	return &this
 }
 
 // NewPkiIssuerIssueRequestWithDefaults instantiates a new PkiIssuerIssueRequest object
@@ -12687,29 +10651,6 @@ type PkiIssuerSignIntermediateRequest struct {
 	UriSans []string `json:"uri_sans,omitempty"`
 	// If true, then: 1) Subject information, including names and alternate names, will be preserved from the CSR rather than using values provided in the other parameters to this path; 2) Any key usages requested in the CSR will be added to the basic set of key usages used for CA certs signed by this path; for instance, the non-repudiation flag; 3) Extensions requested in the CSR will be copied into the issued certificate.
 	UseCsrValues *bool `json:"use_csr_values,omitempty"`
-}
-
-// NewPkiIssuerSignIntermediateRequest instantiates a new PkiIssuerSignIntermediateRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiIssuerSignIntermediateRequest() *PkiIssuerSignIntermediateRequest {
-	this := PkiIssuerSignIntermediateRequest{}
-	var csr string = ""
-	this.Csr = &csr
-	var excludeCnFromSans bool = false
-	this.ExcludeCnFromSans = &excludeCnFromSans
-	var format string = "pem"
-	this.Format = &format
-	var maxPathLength int32 = -1
-	this.MaxPathLength = &maxPathLength
-	var notBeforeDuration int32 = 30
-	this.NotBeforeDuration = &notBeforeDuration
-	var privateKeyFormat string = "der"
-	this.PrivateKeyFormat = &privateKeyFormat
-	var useCsrValues bool = false
-	this.UseCsrValues = &useCsrValues
-	return &this
 }
 
 // NewPkiIssuerSignIntermediateRequestWithDefaults instantiates a new PkiIssuerSignIntermediateRequest object
@@ -12849,23 +10790,6 @@ type PkiIssuerSignRequest struct {
 	UriSans []string `json:"uri_sans,omitempty"`
 }
 
-// NewPkiIssuerSignRequest instantiates a new PkiIssuerSignRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiIssuerSignRequest() *PkiIssuerSignRequest {
-	this := PkiIssuerSignRequest{}
-	var csr string = ""
-	this.Csr = &csr
-	var excludeCnFromSans bool = false
-	this.ExcludeCnFromSans = &excludeCnFromSans
-	var format string = "pem"
-	this.Format = &format
-	var privateKeyFormat string = "der"
-	this.PrivateKeyFormat = &privateKeyFormat
-	return &this
-}
-
 // NewPkiIssuerSignRequestWithDefaults instantiates a new PkiIssuerSignRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -12941,17 +10865,6 @@ type PkiIssuerSignSelfIssuedRequest struct {
 	RequireMatchingCertificateAlgorithms *bool `json:"require_matching_certificate_algorithms,omitempty"`
 }
 
-// NewPkiIssuerSignSelfIssuedRequest instantiates a new PkiIssuerSignSelfIssuedRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiIssuerSignSelfIssuedRequest() *PkiIssuerSignSelfIssuedRequest {
-	this := PkiIssuerSignSelfIssuedRequest{}
-	var requireMatchingCertificateAlgorithms bool = false
-	this.RequireMatchingCertificateAlgorithms = &requireMatchingCertificateAlgorithms
-	return &this
-}
-
 // NewPkiIssuerSignSelfIssuedRequestWithDefaults instantiates a new PkiIssuerSignSelfIssuedRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -13017,23 +10930,6 @@ type PkiIssuerSignVerbatimRequest struct {
 	Ttl *int32 `json:"ttl,omitempty"`
 	// The requested URI SANs, if any, in a comma-delimited list.
 	UriSans []string `json:"uri_sans,omitempty"`
-}
-
-// NewPkiIssuerSignVerbatimRequest instantiates a new PkiIssuerSignVerbatimRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiIssuerSignVerbatimRequest() *PkiIssuerSignVerbatimRequest {
-	this := PkiIssuerSignVerbatimRequest{}
-	var csr string = ""
-	this.Csr = &csr
-	var excludeCnFromSans bool = false
-	this.ExcludeCnFromSans = &excludeCnFromSans
-	var format string = "pem"
-	this.Format = &format
-	var privateKeyFormat string = "der"
-	this.PrivateKeyFormat = &privateKeyFormat
-	return &this
 }
 
 // NewPkiIssuerSignVerbatimRequestWithDefaults instantiates a new PkiIssuerSignVerbatimRequest object
@@ -13169,29 +11065,6 @@ type PkiIssuersGenerateIntermediateRequest struct {
 	Ttl *int32 `json:"ttl,omitempty"`
 	// The requested URI SANs, if any, in a comma-delimited list.
 	UriSans []string `json:"uri_sans,omitempty"`
-}
-
-// NewPkiIssuersGenerateIntermediateRequest instantiates a new PkiIssuersGenerateIntermediateRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiIssuersGenerateIntermediateRequest() *PkiIssuersGenerateIntermediateRequest {
-	this := PkiIssuersGenerateIntermediateRequest{}
-	var excludeCnFromSans bool = false
-	this.ExcludeCnFromSans = &excludeCnFromSans
-	var format string = "pem"
-	this.Format = &format
-	var keyBits int32 = 0
-	this.KeyBits = &keyBits
-	var keyRef string = "default"
-	this.KeyRef = &keyRef
-	var keyType string = "rsa"
-	this.KeyType = &keyType
-	var notBeforeDuration int32 = 30
-	this.NotBeforeDuration = &notBeforeDuration
-	var privateKeyFormat string = "der"
-	this.PrivateKeyFormat = &privateKeyFormat
-	return &this
 }
 
 // NewPkiIssuersGenerateIntermediateRequestWithDefaults instantiates a new PkiIssuersGenerateIntermediateRequest object
@@ -13371,33 +11244,6 @@ type PkiIssuersGenerateRootRequest struct {
 	UriSans []string `json:"uri_sans,omitempty"`
 }
 
-// NewPkiIssuersGenerateRootRequest instantiates a new PkiIssuersGenerateRootRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiIssuersGenerateRootRequest() *PkiIssuersGenerateRootRequest {
-	this := PkiIssuersGenerateRootRequest{}
-	var excludeCnFromSans bool = false
-	this.ExcludeCnFromSans = &excludeCnFromSans
-	var format string = "pem"
-	this.Format = &format
-	var keyBits int32 = 0
-	this.KeyBits = &keyBits
-	var keyRef string = "default"
-	this.KeyRef = &keyRef
-	var keyType string = "rsa"
-	this.KeyType = &keyType
-	var maxPathLength int32 = -1
-	this.MaxPathLength = &maxPathLength
-	var notBeforeDuration int32 = 30
-	this.NotBeforeDuration = &notBeforeDuration
-	var privateKeyFormat string = "der"
-	this.PrivateKeyFormat = &privateKeyFormat
-	var signatureBits int32 = 0
-	this.SignatureBits = &signatureBits
-	return &this
-}
-
 // NewPkiIssuersGenerateRootRequestWithDefaults instantiates a new PkiIssuersGenerateRootRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -13540,19 +11386,6 @@ type PkiJsonRequest struct {
 	Usage []string `json:"usage,omitempty"`
 }
 
-// NewPkiJsonRequest instantiates a new PkiJsonRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiJsonRequest() *PkiJsonRequest {
-	this := PkiJsonRequest{}
-	var issuerRef string = "default"
-	this.IssuerRef = &issuerRef
-	var leafNotAfterBehavior string = "err"
-	this.LeafNotAfterBehavior = &leafNotAfterBehavior
-	return &this
-}
-
 // NewPkiJsonRequestWithDefaults instantiates a new PkiJsonRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -13601,15 +11434,6 @@ type PkiKeyRequest struct {
 	KeyName *string `json:"key_name,omitempty"`
 }
 
-// NewPkiKeyRequest instantiates a new PkiKeyRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiKeyRequest() *PkiKeyRequest {
-	this := PkiKeyRequest{}
-	return &this
-}
-
 // NewPkiKeyRequestWithDefaults instantiates a new PkiKeyRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -13642,15 +11466,6 @@ type PkiKeysImportRequest struct {
 	KeyName *string `json:"key_name,omitempty"`
 	// PEM-format, unencrypted secret key
 	PemBundle *string `json:"pem_bundle,omitempty"`
-}
-
-// NewPkiKeysImportRequest instantiates a new PkiKeysImportRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiKeysImportRequest() *PkiKeysImportRequest {
-	this := PkiKeysImportRequest{}
-	return &this
 }
 
 // NewPkiKeysImportRequestWithDefaults instantiates a new PkiKeysImportRequest object
@@ -13694,19 +11509,6 @@ type PkiKmsRequest struct {
 	ManagedKeyId *string `json:"managed_key_id,omitempty"`
 	// The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_id is required. Ignored for other types.
 	ManagedKeyName *string `json:"managed_key_name,omitempty"`
-}
-
-// NewPkiKmsRequest instantiates a new PkiKmsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiKmsRequest() *PkiKmsRequest {
-	this := PkiKmsRequest{}
-	var keyBits int32 = 0
-	this.KeyBits = &keyBits
-	var keyType string = "rsa"
-	this.KeyType = &keyType
-	return &this
 }
 
 // NewPkiKmsRequestWithDefaults instantiates a new PkiKmsRequest object
@@ -13755,15 +11557,6 @@ API version: 1.12.0
 type PkiRevokeRequest struct {
 	// Certificate serial number, in colon- or hyphen-separated octal
 	SerialNumber *string `json:"serial_number,omitempty"`
-}
-
-// NewPkiRevokeRequest instantiates a new PkiRevokeRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiRevokeRequest() *PkiRevokeRequest {
-	this := PkiRevokeRequest{}
-	return &this
 }
 
 // NewPkiRevokeRequestWithDefaults instantiates a new PkiRevokeRequest object
@@ -13882,47 +11675,6 @@ type PkiRolesRequest struct {
 	UseCsrCommonName *bool `json:"use_csr_common_name,omitempty"`
 	// If set, when used with a signing profile, the SANs in the CSR will be used. This does *not* include the Common Name (cn); use use_csr_common_name for that. Defaults to true.
 	UseCsrSans *bool `json:"use_csr_sans,omitempty"`
-}
-
-// NewPkiRolesRequest instantiates a new PkiRolesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiRolesRequest() *PkiRolesRequest {
-	this := PkiRolesRequest{}
-	var allowIpSans bool = true
-	this.AllowIpSans = &allowIpSans
-	var allowLocalhost bool = true
-	this.AllowLocalhost = &allowLocalhost
-	var allowWildcardCertificates bool = true
-	this.AllowWildcardCertificates = &allowWildcardCertificates
-	var allowedDomainsTemplate bool = false
-	this.AllowedDomainsTemplate = &allowedDomainsTemplate
-	var allowedUriSansTemplate bool = false
-	this.AllowedUriSansTemplate = &allowedUriSansTemplate
-	var clientFlag bool = true
-	this.ClientFlag = &clientFlag
-	var enforceHostnames bool = true
-	this.EnforceHostnames = &enforceHostnames
-	var issuerRef string = "default"
-	this.IssuerRef = &issuerRef
-	var keyBits int32 = 0
-	this.KeyBits = &keyBits
-	var keyType string = "rsa"
-	this.KeyType = &keyType
-	var notBeforeDuration int32 = 30
-	this.NotBeforeDuration = &notBeforeDuration
-	var requireCn bool = true
-	this.RequireCn = &requireCn
-	var serverFlag bool = true
-	this.ServerFlag = &serverFlag
-	var signatureBits int32 = 0
-	this.SignatureBits = &signatureBits
-	var useCsrCommonName bool = true
-	this.UseCsrCommonName = &useCsrCommonName
-	var useCsrSans bool = true
-	this.UseCsrSans = &useCsrSans
-	return &this
 }
 
 // NewPkiRolesRequestWithDefaults instantiates a new PkiRolesRequest object
@@ -14174,33 +11926,6 @@ type PkiRootGenerateRequest struct {
 	UriSans []string `json:"uri_sans,omitempty"`
 }
 
-// NewPkiRootGenerateRequest instantiates a new PkiRootGenerateRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiRootGenerateRequest() *PkiRootGenerateRequest {
-	this := PkiRootGenerateRequest{}
-	var excludeCnFromSans bool = false
-	this.ExcludeCnFromSans = &excludeCnFromSans
-	var format string = "pem"
-	this.Format = &format
-	var keyBits int32 = 0
-	this.KeyBits = &keyBits
-	var keyRef string = "default"
-	this.KeyRef = &keyRef
-	var keyType string = "rsa"
-	this.KeyType = &keyType
-	var maxPathLength int32 = -1
-	this.MaxPathLength = &maxPathLength
-	var notBeforeDuration int32 = 30
-	this.NotBeforeDuration = &notBeforeDuration
-	var privateKeyFormat string = "der"
-	this.PrivateKeyFormat = &privateKeyFormat
-	var signatureBits int32 = 0
-	this.SignatureBits = &signatureBits
-	return &this
-}
-
 // NewPkiRootGenerateRequestWithDefaults instantiates a new PkiRootGenerateRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -14335,17 +12060,6 @@ type PkiRootReplaceRequest struct {
 	Default *string `json:"default,omitempty"`
 }
 
-// NewPkiRootReplaceRequest instantiates a new PkiRootReplaceRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiRootReplaceRequest() *PkiRootReplaceRequest {
-	this := PkiRootReplaceRequest{}
-	var default_ string = "next"
-	this.Default = &default_
-	return &this
-}
-
 // NewPkiRootReplaceRequestWithDefaults instantiates a new PkiRootReplaceRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -14434,33 +12148,6 @@ type PkiRootRotateRequest struct {
 	Ttl *int32 `json:"ttl,omitempty"`
 	// The requested URI SANs, if any, in a comma-delimited list.
 	UriSans []string `json:"uri_sans,omitempty"`
-}
-
-// NewPkiRootRotateRequest instantiates a new PkiRootRotateRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiRootRotateRequest() *PkiRootRotateRequest {
-	this := PkiRootRotateRequest{}
-	var excludeCnFromSans bool = false
-	this.ExcludeCnFromSans = &excludeCnFromSans
-	var format string = "pem"
-	this.Format = &format
-	var keyBits int32 = 0
-	this.KeyBits = &keyBits
-	var keyRef string = "default"
-	this.KeyRef = &keyRef
-	var keyType string = "rsa"
-	this.KeyType = &keyType
-	var maxPathLength int32 = -1
-	this.MaxPathLength = &maxPathLength
-	var notBeforeDuration int32 = 30
-	this.NotBeforeDuration = &notBeforeDuration
-	var privateKeyFormat string = "der"
-	this.PrivateKeyFormat = &privateKeyFormat
-	var signatureBits int32 = 0
-	this.SignatureBits = &signatureBits
-	return &this
 }
 
 // NewPkiRootRotateRequestWithDefaults instantiates a new PkiRootRotateRequest object
@@ -14645,31 +12332,6 @@ type PkiRootSignIntermediateRequest struct {
 	UseCsrValues *bool `json:"use_csr_values,omitempty"`
 }
 
-// NewPkiRootSignIntermediateRequest instantiates a new PkiRootSignIntermediateRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiRootSignIntermediateRequest() *PkiRootSignIntermediateRequest {
-	this := PkiRootSignIntermediateRequest{}
-	var csr string = ""
-	this.Csr = &csr
-	var excludeCnFromSans bool = false
-	this.ExcludeCnFromSans = &excludeCnFromSans
-	var format string = "pem"
-	this.Format = &format
-	var issuerRef string = "default"
-	this.IssuerRef = &issuerRef
-	var maxPathLength int32 = -1
-	this.MaxPathLength = &maxPathLength
-	var notBeforeDuration int32 = 30
-	this.NotBeforeDuration = &notBeforeDuration
-	var privateKeyFormat string = "der"
-	this.PrivateKeyFormat = &privateKeyFormat
-	var useCsrValues bool = false
-	this.UseCsrValues = &useCsrValues
-	return &this
-}
-
 // NewPkiRootSignIntermediateRequestWithDefaults instantiates a new PkiRootSignIntermediateRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -14794,19 +12456,6 @@ type PkiRootSignSelfIssuedRequest struct {
 	RequireMatchingCertificateAlgorithms *bool `json:"require_matching_certificate_algorithms,omitempty"`
 }
 
-// NewPkiRootSignSelfIssuedRequest instantiates a new PkiRootSignSelfIssuedRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiRootSignSelfIssuedRequest() *PkiRootSignSelfIssuedRequest {
-	this := PkiRootSignSelfIssuedRequest{}
-	var issuerRef string = "default"
-	this.IssuerRef = &issuerRef
-	var requireMatchingCertificateAlgorithms bool = false
-	this.RequireMatchingCertificateAlgorithms = &requireMatchingCertificateAlgorithms
-	return &this
-}
-
 // NewPkiRootSignSelfIssuedRequestWithDefaults instantiates a new PkiRootSignSelfIssuedRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -14871,25 +12520,6 @@ type PkiSignRequest struct {
 	Ttl *int32 `json:"ttl,omitempty"`
 	// The requested URI SANs, if any, in a comma-delimited list.
 	UriSans []string `json:"uri_sans,omitempty"`
-}
-
-// NewPkiSignRequest instantiates a new PkiSignRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiSignRequest() *PkiSignRequest {
-	this := PkiSignRequest{}
-	var csr string = ""
-	this.Csr = &csr
-	var excludeCnFromSans bool = false
-	this.ExcludeCnFromSans = &excludeCnFromSans
-	var format string = "pem"
-	this.Format = &format
-	var issuerRef string = "default"
-	this.IssuerRef = &issuerRef
-	var privateKeyFormat string = "der"
-	this.PrivateKeyFormat = &privateKeyFormat
-	return &this
 }
 
 // NewPkiSignRequestWithDefaults instantiates a new PkiSignRequest object
@@ -15002,25 +12632,6 @@ type PkiSignVerbatimRequest struct {
 	UriSans []string `json:"uri_sans,omitempty"`
 }
 
-// NewPkiSignVerbatimRequest instantiates a new PkiSignVerbatimRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiSignVerbatimRequest() *PkiSignVerbatimRequest {
-	this := PkiSignVerbatimRequest{}
-	var csr string = ""
-	this.Csr = &csr
-	var excludeCnFromSans bool = false
-	this.ExcludeCnFromSans = &excludeCnFromSans
-	var format string = "pem"
-	this.Format = &format
-	var issuerRef string = "default"
-	this.IssuerRef = &issuerRef
-	var privateKeyFormat string = "der"
-	this.PrivateKeyFormat = &privateKeyFormat
-	return &this
-}
-
 // NewPkiSignVerbatimRequestWithDefaults instantiates a new PkiSignVerbatimRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -15117,17 +12728,6 @@ type PkiTidyRequest struct {
 	TidyRevokedCerts *bool `json:"tidy_revoked_certs,omitempty"`
 }
 
-// NewPkiTidyRequest instantiates a new PkiTidyRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewPkiTidyRequest() *PkiTidyRequest {
-	this := PkiTidyRequest{}
-	var safetyBuffer int32 = 259200
-	this.SafetyBuffer = &safetyBuffer
-	return &this
-}
-
 // NewPkiTidyRequestWithDefaults instantiates a new PkiTidyRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -15181,17 +12781,6 @@ type RabbitmqConfigConnectionRequest struct {
 	VerifyConnection *bool `json:"verify_connection,omitempty"`
 }
 
-// NewRabbitmqConfigConnectionRequest instantiates a new RabbitmqConfigConnectionRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRabbitmqConfigConnectionRequest() *RabbitmqConfigConnectionRequest {
-	this := RabbitmqConfigConnectionRequest{}
-	var verifyConnection bool = true
-	this.VerifyConnection = &verifyConnection
-	return &this
-}
-
 // NewRabbitmqConfigConnectionRequestWithDefaults instantiates a new RabbitmqConfigConnectionRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -15243,19 +12832,6 @@ type RabbitmqConfigLeaseRequest struct {
 	Ttl *int32 `json:"ttl,omitempty"`
 }
 
-// NewRabbitmqConfigLeaseRequest instantiates a new RabbitmqConfigLeaseRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRabbitmqConfigLeaseRequest() *RabbitmqConfigLeaseRequest {
-	this := RabbitmqConfigLeaseRequest{}
-	var maxTtl int32 = 0
-	this.MaxTtl = &maxTtl
-	var ttl int32 = 0
-	this.Ttl = &ttl
-	return &this
-}
-
 // NewRabbitmqConfigLeaseRequestWithDefaults instantiates a new RabbitmqConfigLeaseRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -15297,15 +12873,6 @@ type RabbitmqRolesRequest struct {
 	VhostTopics *string `json:"vhost_topics,omitempty"`
 	// A map of virtual hosts to permissions.
 	Vhosts *string `json:"vhosts,omitempty"`
-}
-
-// NewRabbitmqRolesRequest instantiates a new RabbitmqRolesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRabbitmqRolesRequest() *RabbitmqRolesRequest {
-	this := RabbitmqRolesRequest{}
-	return &this
 }
 
 // NewRabbitmqRolesRequestWithDefaults instantiates a new RabbitmqRolesRequest object
@@ -15376,29 +12943,6 @@ type RadiusConfigRequest struct {
 	TokenType *string `json:"token_type,omitempty"`
 	// Comma-separated list of policies to grant upon successful RADIUS authentication of an unregisted user (default: empty)
 	UnregisteredUserPolicies *string `json:"unregistered_user_policies,omitempty"`
-}
-
-// NewRadiusConfigRequest instantiates a new RadiusConfigRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRadiusConfigRequest() *RadiusConfigRequest {
-	this := RadiusConfigRequest{}
-	var dialTimeout int32 = 10
-	this.DialTimeout = &dialTimeout
-	var nasIdentifier string = ""
-	this.NasIdentifier = &nasIdentifier
-	var nasPort int32 = 10
-	this.NasPort = &nasPort
-	var port int32 = 1812
-	this.Port = &port
-	var readTimeout int32 = 10
-	this.ReadTimeout = &readTimeout
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
-	var unregisteredUserPolicies string = ""
-	this.UnregisteredUserPolicies = &unregisteredUserPolicies
-	return &this
 }
 
 // NewRadiusConfigRequestWithDefaults instantiates a new RadiusConfigRequest object
@@ -15499,15 +13043,6 @@ type RadiusLoginRequest struct {
 	Username *string `json:"username,omitempty"`
 }
 
-// NewRadiusLoginRequest instantiates a new RadiusLoginRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRadiusLoginRequest() *RadiusLoginRequest {
-	this := RadiusLoginRequest{}
-	return &this
-}
-
 // NewRadiusLoginRequestWithDefaults instantiates a new RadiusLoginRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -15544,15 +13079,6 @@ API version: 1.12.0
 type RadiusUsersRequest struct {
 	// Comma-separated list of policies associated to the user.
 	Policies []string `json:"policies,omitempty"`
-}
-
-// NewRadiusUsersRequest instantiates a new RadiusUsersRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewRadiusUsersRequest() *RadiusUsersRequest {
-	this := RadiusUsersRequest{}
-	return &this
 }
 
 // NewRadiusUsersRequestWithDefaults instantiates a new RadiusUsersRequest object
@@ -15593,21 +13119,6 @@ type SshConfigCaRequest struct {
 	PrivateKey *string `json:"private_key,omitempty"`
 	// Public half of the SSH key that will be used to sign certificates.
 	PublicKey *string `json:"public_key,omitempty"`
-}
-
-// NewSshConfigCaRequest instantiates a new SshConfigCaRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSshConfigCaRequest() *SshConfigCaRequest {
-	this := SshConfigCaRequest{}
-	var generateSigningKey bool = true
-	this.GenerateSigningKey = &generateSigningKey
-	var keyBits int32 = 0
-	this.KeyBits = &keyBits
-	var keyType string = "ssh-rsa"
-	this.KeyType = &keyType
-	return &this
 }
 
 // NewSshConfigCaRequestWithDefaults instantiates a new SshConfigCaRequest object
@@ -15660,15 +13171,6 @@ type SshConfigZeroaddressRequest struct {
 	Roles []string `json:"roles,omitempty"`
 }
 
-// NewSshConfigZeroaddressRequest instantiates a new SshConfigZeroaddressRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSshConfigZeroaddressRequest() *SshConfigZeroaddressRequest {
-	this := SshConfigZeroaddressRequest{}
-	return &this
-}
-
 // NewSshConfigZeroaddressRequestWithDefaults instantiates a new SshConfigZeroaddressRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -15701,15 +13203,6 @@ type SshCredsRequest struct {
 	Ip *string `json:"ip,omitempty"`
 	// [Optional] Username in remote host
 	Username *string `json:"username,omitempty"`
-}
-
-// NewSshCredsRequest instantiates a new SshCredsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSshCredsRequest() *SshCredsRequest {
-	this := SshCredsRequest{}
-	return &this
 }
 
 // NewSshCredsRequestWithDefaults instantiates a new SshCredsRequest object
@@ -15747,15 +13240,6 @@ type SshKeysRequest struct {
 	Key *string `json:"key,omitempty"`
 }
 
-// NewSshKeysRequest instantiates a new SshKeysRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSshKeysRequest() *SshKeysRequest {
-	this := SshKeysRequest{}
-	return &this
-}
-
 // NewSshKeysRequestWithDefaults instantiates a new SshKeysRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -15786,15 +13270,6 @@ API version: 1.12.0
 type SshLookupRequest struct {
 	// [Required] IP address of remote host
 	Ip *string `json:"ip,omitempty"`
-}
-
-// NewSshLookupRequest instantiates a new SshLookupRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSshLookupRequest() *SshLookupRequest {
-	this := SshLookupRequest{}
-	return &this
 }
 
 // NewSshLookupRequestWithDefaults instantiates a new SshLookupRequest object
@@ -15883,25 +13358,6 @@ type SshRolesRequest struct {
 	Port *int32 `json:"port,omitempty"`
 	// [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] The lease duration if no specific lease duration is requested. The lease duration controls the expiration of certificates issued by this backend. Defaults to the value of max_ttl.
 	Ttl *int32 `json:"ttl,omitempty"`
-}
-
-// NewSshRolesRequest instantiates a new SshRolesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSshRolesRequest() *SshRolesRequest {
-	this := SshRolesRequest{}
-	var allowHostCertificates bool = false
-	this.AllowHostCertificates = &allowHostCertificates
-	var allowUserCertificates bool = false
-	this.AllowUserCertificates = &allowUserCertificates
-	var allowedUsersTemplate bool = false
-	this.AllowedUsersTemplate = &allowedUsersTemplate
-	var defaultExtensionsTemplate bool = false
-	this.DefaultExtensionsTemplate = &defaultExtensionsTemplate
-	var notBeforeDuration int32 = 30
-	this.NotBeforeDuration = &notBeforeDuration
-	return &this
 }
 
 // NewSshRolesRequestWithDefaults instantiates a new SshRolesRequest object
@@ -16042,17 +13498,6 @@ type SshSignRequest struct {
 	ValidPrincipals *string `json:"valid_principals,omitempty"`
 }
 
-// NewSshSignRequest instantiates a new SshSignRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSshSignRequest() *SshSignRequest {
-	this := SshSignRequest{}
-	var certType string = "user"
-	this.CertType = &certType
-	return &this
-}
-
 // NewSshSignRequestWithDefaults instantiates a new SshSignRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -16105,15 +13550,6 @@ type SshVerifyRequest struct {
 	Otp *string `json:"otp,omitempty"`
 }
 
-// NewSshVerifyRequest instantiates a new SshVerifyRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSshVerifyRequest() *SshVerifyRequest {
-	this := SshVerifyRequest{}
-	return &this
-}
-
 // NewSshVerifyRequestWithDefaults instantiates a new SshVerifyRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -16143,15 +13579,6 @@ API version: 1.12.0
 // SystemAuditHashRequest struct for SystemAuditHashRequest
 type SystemAuditHashRequest struct {
 	Input *string `json:"input,omitempty"`
-}
-
-// NewSystemAuditHashRequest instantiates a new SystemAuditHashRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemAuditHashRequest() *SystemAuditHashRequest {
-	this := SystemAuditHashRequest{}
-	return &this
 }
 
 // NewSystemAuditHashRequestWithDefaults instantiates a new SystemAuditHashRequest object
@@ -16190,17 +13617,6 @@ type SystemAuditRequest struct {
 	Options map[string]interface{} `json:"options,omitempty"`
 	// The type of the backend. Example: \"mysql\"
 	Type *string `json:"type,omitempty"`
-}
-
-// NewSystemAuditRequest instantiates a new SystemAuditRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemAuditRequest() *SystemAuditRequest {
-	this := SystemAuditRequest{}
-	var local bool = false
-	this.Local = &local
-	return &this
 }
 
 // NewSystemAuditRequestWithDefaults instantiates a new SystemAuditRequest object
@@ -16258,21 +13674,6 @@ type SystemAuthRequest struct {
 	SealWrap *bool `json:"seal_wrap,omitempty"`
 	// The type of the backend. Example: \"userpass\"
 	Type *string `json:"type,omitempty"`
-}
-
-// NewSystemAuthRequest instantiates a new SystemAuthRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemAuthRequest() *SystemAuthRequest {
-	this := SystemAuthRequest{}
-	var externalEntropyAccess bool = false
-	this.ExternalEntropyAccess = &externalEntropyAccess
-	var local bool = false
-	this.Local = &local
-	var sealWrap bool = false
-	this.SealWrap = &sealWrap
-	return &this
 }
 
 // NewSystemAuthRequestWithDefaults instantiates a new SystemAuthRequest object
@@ -16352,15 +13753,6 @@ type SystemAuthTuneRequest struct {
 	TokenType *string `json:"token_type,omitempty"`
 }
 
-// NewSystemAuthTuneRequest instantiates a new SystemAuthTuneRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemAuthTuneRequest() *SystemAuthTuneRequest {
-	this := SystemAuthTuneRequest{}
-	return &this
-}
-
 // NewSystemAuthTuneRequestWithDefaults instantiates a new SystemAuthTuneRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -16425,15 +13817,6 @@ type SystemCapabilitiesAccessorRequest struct {
 	Paths []string `json:"paths,omitempty"`
 }
 
-// NewSystemCapabilitiesAccessorRequest instantiates a new SystemCapabilitiesAccessorRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemCapabilitiesAccessorRequest() *SystemCapabilitiesAccessorRequest {
-	this := SystemCapabilitiesAccessorRequest{}
-	return &this
-}
-
 // NewSystemCapabilitiesAccessorRequestWithDefaults instantiates a new SystemCapabilitiesAccessorRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -16475,15 +13858,6 @@ type SystemCapabilitiesRequest struct {
 	Paths []string `json:"paths,omitempty"`
 	// Token for which capabilities are being queried.
 	Token *string `json:"token,omitempty"`
-}
-
-// NewSystemCapabilitiesRequest instantiates a new SystemCapabilitiesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemCapabilitiesRequest() *SystemCapabilitiesRequest {
-	this := SystemCapabilitiesRequest{}
-	return &this
 }
 
 // NewSystemCapabilitiesRequestWithDefaults instantiates a new SystemCapabilitiesRequest object
@@ -16529,15 +13903,6 @@ type SystemCapabilitiesSelfRequest struct {
 	Token *string `json:"token,omitempty"`
 }
 
-// NewSystemCapabilitiesSelfRequest instantiates a new SystemCapabilitiesSelfRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemCapabilitiesSelfRequest() *SystemCapabilitiesSelfRequest {
-	this := SystemCapabilitiesSelfRequest{}
-	return &this
-}
-
 // NewSystemCapabilitiesSelfRequestWithDefaults instantiates a new SystemCapabilitiesSelfRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -16575,15 +13940,6 @@ type SystemConfigAuditingRequestHeadersRequest struct {
 	Hmac *bool `json:"hmac,omitempty"`
 }
 
-// NewSystemConfigAuditingRequestHeadersRequest instantiates a new SystemConfigAuditingRequestHeadersRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemConfigAuditingRequestHeadersRequest() *SystemConfigAuditingRequestHeadersRequest {
-	this := SystemConfigAuditingRequestHeadersRequest{}
-	return &this
-}
-
 // NewSystemConfigAuditingRequestHeadersRequestWithDefaults instantiates a new SystemConfigAuditingRequestHeadersRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -16618,15 +13974,6 @@ type SystemConfigCorsRequest struct {
 	AllowedOrigins []string `json:"allowed_origins,omitempty"`
 	// Enables or disables CORS headers on requests.
 	Enable *bool `json:"enable,omitempty"`
-}
-
-// NewSystemConfigCorsRequest instantiates a new SystemConfigCorsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemConfigCorsRequest() *SystemConfigCorsRequest {
-	this := SystemConfigCorsRequest{}
-	return &this
 }
 
 // NewSystemConfigCorsRequestWithDefaults instantiates a new SystemConfigCorsRequest object
@@ -16669,15 +14016,6 @@ type SystemConfigUiHeadersRequest struct {
 	Values []string `json:"values,omitempty"`
 }
 
-// NewSystemConfigUiHeadersRequest instantiates a new SystemConfigUiHeadersRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemConfigUiHeadersRequest() *SystemConfigUiHeadersRequest {
-	this := SystemConfigUiHeadersRequest{}
-	return &this
-}
-
 // NewSystemConfigUiHeadersRequestWithDefaults instantiates a new SystemConfigUiHeadersRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -16713,15 +14051,6 @@ type SystemGenerateRootAttemptRequest struct {
 	PgpKey *string `json:"pgp_key,omitempty"`
 }
 
-// NewSystemGenerateRootAttemptRequest instantiates a new SystemGenerateRootAttemptRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemGenerateRootAttemptRequest() *SystemGenerateRootAttemptRequest {
-	this := SystemGenerateRootAttemptRequest{}
-	return &this
-}
-
 // NewSystemGenerateRootAttemptRequestWithDefaults instantiates a new SystemGenerateRootAttemptRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -16752,15 +14081,6 @@ API version: 1.12.0
 type SystemGenerateRootRequest struct {
 	// Specifies a base64-encoded PGP public key.
 	PgpKey *string `json:"pgp_key,omitempty"`
-}
-
-// NewSystemGenerateRootRequest instantiates a new SystemGenerateRootRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemGenerateRootRequest() *SystemGenerateRootRequest {
-	this := SystemGenerateRootRequest{}
-	return &this
 }
 
 // NewSystemGenerateRootRequestWithDefaults instantiates a new SystemGenerateRootRequest object
@@ -16795,15 +14115,6 @@ type SystemGenerateRootUpdateRequest struct {
 	Key *string `json:"key,omitempty"`
 	// Specifies the nonce of the attempt.
 	Nonce *string `json:"nonce,omitempty"`
-}
-
-// NewSystemGenerateRootUpdateRequest instantiates a new SystemGenerateRootUpdateRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemGenerateRootUpdateRequest() *SystemGenerateRootUpdateRequest {
-	this := SystemGenerateRootUpdateRequest{}
-	return &this
 }
 
 // NewSystemGenerateRootUpdateRequestWithDefaults instantiates a new SystemGenerateRootUpdateRequest object
@@ -16853,15 +14164,6 @@ type SystemInitRequest struct {
 	SecretThreshold *int32 `json:"secret_threshold,omitempty"`
 	// Specifies the number of shares that should be encrypted by the HSM and stored for auto-unsealing. Currently must be the same as `secret_shares`.
 	StoredShares *int32 `json:"stored_shares,omitempty"`
-}
-
-// NewSystemInitRequest instantiates a new SystemInitRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemInitRequest() *SystemInitRequest {
-	this := SystemInitRequest{}
-	return &this
 }
 
 // NewSystemInitRequestWithDefaults instantiates a new SystemInitRequest object
@@ -16921,21 +14223,6 @@ type SystemInternalCountersConfigRequest struct {
 	RetentionMonths *int32 `json:"retention_months,omitempty"`
 }
 
-// NewSystemInternalCountersConfigRequest instantiates a new SystemInternalCountersConfigRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemInternalCountersConfigRequest() *SystemInternalCountersConfigRequest {
-	this := SystemInternalCountersConfigRequest{}
-	var defaultReportMonths int32 = 12
-	this.DefaultReportMonths = &defaultReportMonths
-	var enabled string = "default"
-	this.Enabled = &enabled
-	var retentionMonths int32 = 24
-	this.RetentionMonths = &retentionMonths
-	return &this
-}
-
 // NewSystemInternalCountersConfigRequestWithDefaults instantiates a new SystemInternalCountersConfigRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -16980,15 +14267,6 @@ type SystemInternalSpecsOpenapiRequest struct {
 	Context *string `json:"context,omitempty"`
 }
 
-// NewSystemInternalSpecsOpenapiRequest instantiates a new SystemInternalSpecsOpenapiRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemInternalSpecsOpenapiRequest() *SystemInternalSpecsOpenapiRequest {
-	this := SystemInternalSpecsOpenapiRequest{}
-	return &this
-}
-
 // NewSystemInternalSpecsOpenapiRequestWithDefaults instantiates a new SystemInternalSpecsOpenapiRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -17019,15 +14297,6 @@ API version: 1.12.0
 type SystemLeasesLookupRequest struct {
 	// The lease identifier to renew. This is included with a lease.
 	LeaseId *string `json:"lease_id,omitempty"`
-}
-
-// NewSystemLeasesLookupRequest instantiates a new SystemLeasesLookupRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemLeasesLookupRequest() *SystemLeasesLookupRequest {
-	this := SystemLeasesLookupRequest{}
-	return &this
 }
 
 // NewSystemLeasesLookupRequestWithDefaults instantiates a new SystemLeasesLookupRequest object
@@ -17062,15 +14331,6 @@ type SystemLeasesRenewLeaseRequest struct {
 	Increment *int32 `json:"increment,omitempty"`
 	// The lease identifier to renew. This is included with a lease.
 	LeaseId *string `json:"lease_id,omitempty"`
-}
-
-// NewSystemLeasesRenewLeaseRequest instantiates a new SystemLeasesRenewLeaseRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemLeasesRenewLeaseRequest() *SystemLeasesRenewLeaseRequest {
-	this := SystemLeasesRenewLeaseRequest{}
-	return &this
 }
 
 // NewSystemLeasesRenewLeaseRequestWithDefaults instantiates a new SystemLeasesRenewLeaseRequest object
@@ -17110,15 +14370,6 @@ type SystemLeasesRenewRequest struct {
 	LeaseId *string `json:"lease_id,omitempty"`
 	// The lease identifier to renew. This is included with a lease.
 	UrlLeaseId *string `json:"url_lease_id,omitempty"`
-}
-
-// NewSystemLeasesRenewRequest instantiates a new SystemLeasesRenewRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemLeasesRenewRequest() *SystemLeasesRenewRequest {
-	this := SystemLeasesRenewRequest{}
-	return &this
 }
 
 // NewSystemLeasesRenewRequestWithDefaults instantiates a new SystemLeasesRenewRequest object
@@ -17161,17 +14412,6 @@ type SystemLeasesRevokeLeaseRequest struct {
 	Sync *bool `json:"sync,omitempty"`
 }
 
-// NewSystemLeasesRevokeLeaseRequest instantiates a new SystemLeasesRevokeLeaseRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemLeasesRevokeLeaseRequest() *SystemLeasesRevokeLeaseRequest {
-	this := SystemLeasesRevokeLeaseRequest{}
-	var sync bool = true
-	this.Sync = &sync
-	return &this
-}
-
 // NewSystemLeasesRevokeLeaseRequestWithDefaults instantiates a new SystemLeasesRevokeLeaseRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -17207,17 +14447,6 @@ API version: 1.12.0
 type SystemLeasesRevokePrefixRequest struct {
 	// Whether or not to perform the revocation synchronously
 	Sync *bool `json:"sync,omitempty"`
-}
-
-// NewSystemLeasesRevokePrefixRequest instantiates a new SystemLeasesRevokePrefixRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemLeasesRevokePrefixRequest() *SystemLeasesRevokePrefixRequest {
-	this := SystemLeasesRevokePrefixRequest{}
-	var sync bool = true
-	this.Sync = &sync
-	return &this
 }
 
 // NewSystemLeasesRevokePrefixRequestWithDefaults instantiates a new SystemLeasesRevokePrefixRequest object
@@ -17256,17 +14485,6 @@ type SystemLeasesRevokeRequest struct {
 	Sync *bool `json:"sync,omitempty"`
 	// The lease identifier to renew. This is included with a lease.
 	UrlLeaseId *string `json:"url_lease_id,omitempty"`
-}
-
-// NewSystemLeasesRevokeRequest instantiates a new SystemLeasesRevokeRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemLeasesRevokeRequest() *SystemLeasesRevokeRequest {
-	this := SystemLeasesRevokeRequest{}
-	var sync bool = true
-	this.Sync = &sync
-	return &this
 }
 
 // NewSystemLeasesRevokeRequestWithDefaults instantiates a new SystemLeasesRevokeRequest object
@@ -17309,17 +14527,6 @@ type SystemMfaValidateRequest struct {
 	MfaPayload map[string]interface{} `json:"mfa_payload"`
 	// ID for this MFA request
 	MfaRequestId string `json:"mfa_request_id"`
-}
-
-// NewSystemMfaValidateRequest instantiates a new SystemMfaValidateRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemMfaValidateRequest(mfaPayload map[string]interface{}, mfaRequestId string) *SystemMfaValidateRequest {
-	this := SystemMfaValidateRequest{}
-	this.MfaPayload = mfaPayload
-	this.MfaRequestId = mfaRequestId
-	return &this
 }
 
 // NewSystemMfaValidateRequestWithDefaults instantiates a new SystemMfaValidateRequest object
@@ -17369,21 +14576,6 @@ type SystemMountsRequest struct {
 	SealWrap *bool `json:"seal_wrap,omitempty"`
 	// The type of the backend. Example: \"passthrough\"
 	Type *string `json:"type,omitempty"`
-}
-
-// NewSystemMountsRequest instantiates a new SystemMountsRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemMountsRequest() *SystemMountsRequest {
-	this := SystemMountsRequest{}
-	var externalEntropyAccess bool = false
-	this.ExternalEntropyAccess = &externalEntropyAccess
-	var local bool = false
-	this.Local = &local
-	var sealWrap bool = false
-	this.SealWrap = &sealWrap
-	return &this
 }
 
 // NewSystemMountsRequestWithDefaults instantiates a new SystemMountsRequest object
@@ -17464,15 +14656,6 @@ type SystemMountsTuneRequest struct {
 	TokenType *string `json:"token_type,omitempty"`
 }
 
-// NewSystemMountsTuneRequest instantiates a new SystemMountsTuneRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemMountsTuneRequest() *SystemMountsTuneRequest {
-	this := SystemMountsTuneRequest{}
-	return &this
-}
-
 // NewSystemMountsTuneRequestWithDefaults instantiates a new SystemMountsTuneRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -17543,15 +14726,6 @@ type SystemPluginsCatalogRequest struct {
 	Type *string `json:"type,omitempty"`
 }
 
-// NewSystemPluginsCatalogRequest instantiates a new SystemPluginsCatalogRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemPluginsCatalogRequest() *SystemPluginsCatalogRequest {
-	this := SystemPluginsCatalogRequest{}
-	return &this
-}
-
 // NewSystemPluginsCatalogRequestWithDefaults instantiates a new SystemPluginsCatalogRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -17599,15 +14773,6 @@ type SystemPluginsReloadBackendRequest struct {
 	Scope  *string `json:"scope,omitempty"`
 }
 
-// NewSystemPluginsReloadBackendRequest instantiates a new SystemPluginsReloadBackendRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemPluginsReloadBackendRequest() *SystemPluginsReloadBackendRequest {
-	this := SystemPluginsReloadBackendRequest{}
-	return &this
-}
-
 // NewSystemPluginsReloadBackendRequestWithDefaults instantiates a new SystemPluginsReloadBackendRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -17646,15 +14811,6 @@ type SystemPoliciesAclRequest struct {
 	Policy *string `json:"policy,omitempty"`
 }
 
-// NewSystemPoliciesAclRequest instantiates a new SystemPoliciesAclRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemPoliciesAclRequest() *SystemPoliciesAclRequest {
-	this := SystemPoliciesAclRequest{}
-	return &this
-}
-
 // NewSystemPoliciesAclRequestWithDefaults instantiates a new SystemPoliciesAclRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -17685,15 +14841,6 @@ API version: 1.12.0
 type SystemPoliciesPasswordRequest struct {
 	// The password policy
 	Policy *string `json:"policy,omitempty"`
-}
-
-// NewSystemPoliciesPasswordRequest instantiates a new SystemPoliciesPasswordRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemPoliciesPasswordRequest() *SystemPoliciesPasswordRequest {
-	this := SystemPoliciesPasswordRequest{}
-	return &this
 }
 
 // NewSystemPoliciesPasswordRequestWithDefaults instantiates a new SystemPoliciesPasswordRequest object
@@ -17729,15 +14876,6 @@ type SystemPolicyRequest struct {
 	// The rules of the policy.
 	// Deprecated
 	Rules *string `json:"rules,omitempty"`
-}
-
-// NewSystemPolicyRequest instantiates a new SystemPolicyRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemPolicyRequest() *SystemPolicyRequest {
-	this := SystemPolicyRequest{}
-	return &this
 }
 
 // NewSystemPolicyRequestWithDefaults instantiates a new SystemPolicyRequest object
@@ -17777,15 +14915,6 @@ type SystemQuotasConfigRequest struct {
 	EnableRateLimitResponseHeaders *bool `json:"enable_rate_limit_response_headers,omitempty"`
 	// Specifies the list of exempt paths from all rate limit quotas. If empty no paths will be exempt.
 	RateLimitExemptPaths []string `json:"rate_limit_exempt_paths,omitempty"`
-}
-
-// NewSystemQuotasConfigRequest instantiates a new SystemQuotasConfigRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemQuotasConfigRequest() *SystemQuotasConfigRequest {
-	this := SystemQuotasConfigRequest{}
-	return &this
 }
 
 // NewSystemQuotasConfigRequestWithDefaults instantiates a new SystemQuotasConfigRequest object
@@ -17834,15 +14963,6 @@ type SystemQuotasRateLimitRequest struct {
 	Type *string `json:"type,omitempty"`
 }
 
-// NewSystemQuotasRateLimitRequest instantiates a new SystemQuotasRateLimitRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemQuotasRateLimitRequest() *SystemQuotasRateLimitRequest {
-	this := SystemQuotasRateLimitRequest{}
-	return &this
-}
-
 // NewSystemQuotasRateLimitRequestWithDefaults instantiates a new SystemQuotasRateLimitRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -17887,15 +15007,6 @@ type SystemRawRequest struct {
 	CompressionType *string `json:"compression_type,omitempty"`
 	Encoding        *string `json:"encoding,omitempty"`
 	Value           *string `json:"value,omitempty"`
-}
-
-// NewSystemRawRequest instantiates a new SystemRawRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemRawRequest() *SystemRawRequest {
-	this := SystemRawRequest{}
-	return &this
 }
 
 // NewSystemRawRequestWithDefaults instantiates a new SystemRawRequest object
@@ -17947,15 +15058,6 @@ type SystemRekeyInitRequest struct {
 	SecretThreshold *int32 `json:"secret_threshold,omitempty"`
 }
 
-// NewSystemRekeyInitRequest instantiates a new SystemRekeyInitRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemRekeyInitRequest() *SystemRekeyInitRequest {
-	this := SystemRekeyInitRequest{}
-	return &this
-}
-
 // NewSystemRekeyInitRequestWithDefaults instantiates a new SystemRekeyInitRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -18002,15 +15104,6 @@ type SystemRekeyUpdateRequest struct {
 	Nonce *string `json:"nonce,omitempty"`
 }
 
-// NewSystemRekeyUpdateRequest instantiates a new SystemRekeyUpdateRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemRekeyUpdateRequest() *SystemRekeyUpdateRequest {
-	this := SystemRekeyUpdateRequest{}
-	return &this
-}
-
 // NewSystemRekeyUpdateRequestWithDefaults instantiates a new SystemRekeyUpdateRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -18046,15 +15139,6 @@ type SystemRekeyVerifyRequest struct {
 	Key *string `json:"key,omitempty"`
 	// Specifies the nonce of the rekey verification operation.
 	Nonce *string `json:"nonce,omitempty"`
-}
-
-// NewSystemRekeyVerifyRequest instantiates a new SystemRekeyVerifyRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemRekeyVerifyRequest() *SystemRekeyVerifyRequest {
-	this := SystemRekeyVerifyRequest{}
-	return &this
 }
 
 // NewSystemRekeyVerifyRequestWithDefaults instantiates a new SystemRekeyVerifyRequest object
@@ -18094,15 +15178,6 @@ type SystemRemountRequest struct {
 	To *string `json:"to,omitempty"`
 }
 
-// NewSystemRemountRequest instantiates a new SystemRemountRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemRemountRequest() *SystemRemountRequest {
-	this := SystemRemountRequest{}
-	return &this
-}
-
 // NewSystemRemountRequestWithDefaults instantiates a new SystemRemountRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -18138,15 +15213,6 @@ type SystemRenewLeaseRequest struct {
 	Increment *int32 `json:"increment,omitempty"`
 	// The lease identifier to renew. This is included with a lease.
 	LeaseId *string `json:"lease_id,omitempty"`
-}
-
-// NewSystemRenewLeaseRequest instantiates a new SystemRenewLeaseRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemRenewLeaseRequest() *SystemRenewLeaseRequest {
-	this := SystemRenewLeaseRequest{}
-	return &this
 }
 
 // NewSystemRenewLeaseRequestWithDefaults instantiates a new SystemRenewLeaseRequest object
@@ -18186,15 +15252,6 @@ type SystemRenewRequest struct {
 	LeaseId *string `json:"lease_id,omitempty"`
 	// The lease identifier to renew. This is included with a lease.
 	UrlLeaseId *string `json:"url_lease_id,omitempty"`
-}
-
-// NewSystemRenewRequest instantiates a new SystemRenewRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemRenewRequest() *SystemRenewRequest {
-	this := SystemRenewRequest{}
-	return &this
 }
 
 // NewSystemRenewRequestWithDefaults instantiates a new SystemRenewRequest object
@@ -18237,17 +15294,6 @@ type SystemRevokeLeaseRequest struct {
 	Sync *bool `json:"sync,omitempty"`
 }
 
-// NewSystemRevokeLeaseRequest instantiates a new SystemRevokeLeaseRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemRevokeLeaseRequest() *SystemRevokeLeaseRequest {
-	this := SystemRevokeLeaseRequest{}
-	var sync bool = true
-	this.Sync = &sync
-	return &this
-}
-
 // NewSystemRevokeLeaseRequestWithDefaults instantiates a new SystemRevokeLeaseRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -18283,17 +15329,6 @@ API version: 1.12.0
 type SystemRevokePrefixRequest struct {
 	// Whether or not to perform the revocation synchronously
 	Sync *bool `json:"sync,omitempty"`
-}
-
-// NewSystemRevokePrefixRequest instantiates a new SystemRevokePrefixRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemRevokePrefixRequest() *SystemRevokePrefixRequest {
-	this := SystemRevokePrefixRequest{}
-	var sync bool = true
-	this.Sync = &sync
-	return &this
 }
 
 // NewSystemRevokePrefixRequestWithDefaults instantiates a new SystemRevokePrefixRequest object
@@ -18332,17 +15367,6 @@ type SystemRevokeRequest struct {
 	Sync *bool `json:"sync,omitempty"`
 	// The lease identifier to renew. This is included with a lease.
 	UrlLeaseId *string `json:"url_lease_id,omitempty"`
-}
-
-// NewSystemRevokeRequest instantiates a new SystemRevokeRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemRevokeRequest() *SystemRevokeRequest {
-	this := SystemRevokeRequest{}
-	var sync bool = true
-	this.Sync = &sync
-	return &this
 }
 
 // NewSystemRevokeRequestWithDefaults instantiates a new SystemRevokeRequest object
@@ -18389,15 +15413,6 @@ type SystemRotateConfigRequest struct {
 	MaxOperations *int64 `json:"max_operations,omitempty"`
 }
 
-// NewSystemRotateConfigRequest instantiates a new SystemRotateConfigRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemRotateConfigRequest() *SystemRotateConfigRequest {
-	this := SystemRotateConfigRequest{}
-	return &this
-}
-
 // NewSystemRotateConfigRequestWithDefaults instantiates a new SystemRotateConfigRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -18440,19 +15455,6 @@ type SystemToolsHashRequest struct {
 	Input *string `json:"input,omitempty"`
 	// Algorithm to use (POST URL parameter)
 	Urlalgorithm *string `json:"urlalgorithm,omitempty"`
-}
-
-// NewSystemToolsHashRequest instantiates a new SystemToolsHashRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemToolsHashRequest() *SystemToolsHashRequest {
-	this := SystemToolsHashRequest{}
-	var algorithm string = "sha2-256"
-	this.Algorithm = &algorithm
-	var format string = "hex"
-	this.Format = &format
-	return &this
 }
 
 // NewSystemToolsHashRequestWithDefaults instantiates a new SystemToolsHashRequest object
@@ -18506,21 +15508,6 @@ type SystemToolsRandomRequest struct {
 	Urlbytes *string `json:"urlbytes,omitempty"`
 }
 
-// NewSystemToolsRandomRequest instantiates a new SystemToolsRandomRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemToolsRandomRequest() *SystemToolsRandomRequest {
-	this := SystemToolsRandomRequest{}
-	var bytes int32 = 32
-	this.Bytes = &bytes
-	var format string = "base64"
-	this.Format = &format
-	var source string = "platform"
-	this.Source = &source
-	return &this
-}
-
 // NewSystemToolsRandomRequestWithDefaults instantiates a new SystemToolsRandomRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -18570,15 +15557,6 @@ type SystemUnsealRequest struct {
 	Reset *bool `json:"reset,omitempty"`
 }
 
-// NewSystemUnsealRequest instantiates a new SystemUnsealRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemUnsealRequest() *SystemUnsealRequest {
-	this := SystemUnsealRequest{}
-	return &this
-}
-
 // NewSystemUnsealRequestWithDefaults instantiates a new SystemUnsealRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -18613,15 +15591,6 @@ type SystemWrappingLookupRequest struct {
 	Token *string `json:"token,omitempty"`
 }
 
-// NewSystemWrappingLookupRequest instantiates a new SystemWrappingLookupRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemWrappingLookupRequest() *SystemWrappingLookupRequest {
-	this := SystemWrappingLookupRequest{}
-	return &this
-}
-
 // NewSystemWrappingLookupRequestWithDefaults instantiates a new SystemWrappingLookupRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -18653,15 +15622,6 @@ type SystemWrappingRewrapRequest struct {
 	Token *string `json:"token,omitempty"`
 }
 
-// NewSystemWrappingRewrapRequest instantiates a new SystemWrappingRewrapRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemWrappingRewrapRequest() *SystemWrappingRewrapRequest {
-	this := SystemWrappingRewrapRequest{}
-	return &this
-}
-
 // NewSystemWrappingRewrapRequestWithDefaults instantiates a new SystemWrappingRewrapRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -18691,15 +15651,6 @@ API version: 1.12.0
 // SystemWrappingUnwrapRequest struct for SystemWrappingUnwrapRequest
 type SystemWrappingUnwrapRequest struct {
 	Token *string `json:"token,omitempty"`
-}
-
-// NewSystemWrappingUnwrapRequest instantiates a new SystemWrappingUnwrapRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewSystemWrappingUnwrapRequest() *SystemWrappingUnwrapRequest {
-	this := SystemWrappingUnwrapRequest{}
-	return &this
 }
 
 // NewSystemWrappingUnwrapRequestWithDefaults instantiates a new SystemWrappingUnwrapRequest object
@@ -18736,20 +15687,6 @@ type TerraformConfigRequest struct {
 	BasePath *string `json:"base_path,omitempty"`
 	// The token to access Terraform Cloud
 	Token string `json:"token"`
-}
-
-// NewTerraformConfigRequest instantiates a new TerraformConfigRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTerraformConfigRequest(token string) *TerraformConfigRequest {
-	this := TerraformConfigRequest{}
-	var address string = "https://app.terraform.io"
-	this.Address = &address
-	var basePath string = "/api/v2/"
-	this.BasePath = &basePath
-	this.Token = token
-	return &this
 }
 
 // NewTerraformConfigRequestWithDefaults instantiates a new TerraformConfigRequest object
@@ -18802,15 +15739,6 @@ type TerraformRoleRequest struct {
 	UserId *string `json:"user_id,omitempty"`
 }
 
-// NewTerraformRoleRequest instantiates a new TerraformRoleRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTerraformRoleRequest() *TerraformRoleRequest {
-	this := TerraformRoleRequest{}
-	return &this
-}
-
 // NewTerraformRoleRequestWithDefaults instantiates a new TerraformRoleRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -18855,15 +15783,6 @@ type TokenLookupAccessorRequest struct {
 	Accessor *string `json:"accessor,omitempty"`
 }
 
-// NewTokenLookupAccessorRequest instantiates a new TokenLookupAccessorRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTokenLookupAccessorRequest() *TokenLookupAccessorRequest {
-	this := TokenLookupAccessorRequest{}
-	return &this
-}
-
 // NewTokenLookupAccessorRequestWithDefaults instantiates a new TokenLookupAccessorRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -18894,15 +15813,6 @@ API version: 1.12.0
 type TokenLookupRequest struct {
 	// Token to lookup (POST request body)
 	Token *string `json:"token,omitempty"`
-}
-
-// NewTokenLookupRequest instantiates a new TokenLookupRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTokenLookupRequest() *TokenLookupRequest {
-	this := TokenLookupRequest{}
-	return &this
 }
 
 // NewTokenLookupRequestWithDefaults instantiates a new TokenLookupRequest object
@@ -18937,15 +15847,6 @@ type TokenLookupSelfRequest struct {
 	Token *string `json:"token,omitempty"`
 }
 
-// NewTokenLookupSelfRequest instantiates a new TokenLookupSelfRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTokenLookupSelfRequest() *TokenLookupSelfRequest {
-	this := TokenLookupSelfRequest{}
-	return &this
-}
-
 // NewTokenLookupSelfRequestWithDefaults instantiates a new TokenLookupSelfRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -18978,17 +15879,6 @@ type TokenRenewAccessorRequest struct {
 	Accessor *string `json:"accessor,omitempty"`
 	// The desired increment in seconds to the token expiration
 	Increment *int32 `json:"increment,omitempty"`
-}
-
-// NewTokenRenewAccessorRequest instantiates a new TokenRenewAccessorRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTokenRenewAccessorRequest() *TokenRenewAccessorRequest {
-	this := TokenRenewAccessorRequest{}
-	var increment int32 = 0
-	this.Increment = &increment
-	return &this
 }
 
 // NewTokenRenewAccessorRequestWithDefaults instantiates a new TokenRenewAccessorRequest object
@@ -19030,17 +15920,6 @@ type TokenRenewRequest struct {
 	Token *string `json:"token,omitempty"`
 }
 
-// NewTokenRenewRequest instantiates a new TokenRenewRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTokenRenewRequest() *TokenRenewRequest {
-	this := TokenRenewRequest{}
-	var increment int32 = 0
-	this.Increment = &increment
-	return &this
-}
-
 // NewTokenRenewRequestWithDefaults instantiates a new TokenRenewRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -19080,17 +15959,6 @@ type TokenRenewSelfRequest struct {
 	Token *string `json:"token,omitempty"`
 }
 
-// NewTokenRenewSelfRequest instantiates a new TokenRenewSelfRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTokenRenewSelfRequest() *TokenRenewSelfRequest {
-	this := TokenRenewSelfRequest{}
-	var increment int32 = 0
-	this.Increment = &increment
-	return &this
-}
-
 // NewTokenRenewSelfRequestWithDefaults instantiates a new TokenRenewSelfRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -19128,15 +15996,6 @@ type TokenRevokeAccessorRequest struct {
 	Accessor *string `json:"accessor,omitempty"`
 }
 
-// NewTokenRevokeAccessorRequest instantiates a new TokenRevokeAccessorRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTokenRevokeAccessorRequest() *TokenRevokeAccessorRequest {
-	this := TokenRevokeAccessorRequest{}
-	return &this
-}
-
 // NewTokenRevokeAccessorRequestWithDefaults instantiates a new TokenRevokeAccessorRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -19169,15 +16028,6 @@ type TokenRevokeOrphanRequest struct {
 	Token *string `json:"token,omitempty"`
 }
 
-// NewTokenRevokeOrphanRequest instantiates a new TokenRevokeOrphanRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTokenRevokeOrphanRequest() *TokenRevokeOrphanRequest {
-	this := TokenRevokeOrphanRequest{}
-	return &this
-}
-
 // NewTokenRevokeOrphanRequestWithDefaults instantiates a new TokenRevokeOrphanRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -19208,15 +16058,6 @@ API version: 1.12.0
 type TokenRevokeRequest struct {
 	// Token to revoke (request body)
 	Token *string `json:"token,omitempty"`
-}
-
-// NewTokenRevokeRequest instantiates a new TokenRevokeRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTokenRevokeRequest() *TokenRevokeRequest {
-	this := TokenRevokeRequest{}
-	return &this
 }
 
 // NewTokenRevokeRequestWithDefaults instantiates a new TokenRevokeRequest object
@@ -19284,19 +16125,6 @@ type TokenRolesRequest struct {
 	TokenPeriod *int32 `json:"token_period,omitempty"`
 	// The type of token to generate, service or batch
 	TokenType *string `json:"token_type,omitempty"`
-}
-
-// NewTokenRolesRequest instantiates a new TokenRolesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTokenRolesRequest() *TokenRolesRequest {
-	this := TokenRolesRequest{}
-	var renewable bool = true
-	this.Renewable = &renewable
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
-	return &this
 }
 
 // NewTokenRolesRequestWithDefaults instantiates a new TokenRolesRequest object
@@ -19383,15 +16211,6 @@ type TotpCodeRequest struct {
 	Code *string `json:"code,omitempty"`
 }
 
-// NewTotpCodeRequest instantiates a new TotpCodeRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTotpCodeRequest() *TotpCodeRequest {
-	this := TotpCodeRequest{}
-	return &this
-}
-
 // NewTotpCodeRequestWithDefaults instantiates a new TotpCodeRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -19444,31 +16263,6 @@ type TotpKeysRequest struct {
 	Skew *int32 `json:"skew,omitempty"`
 	// A TOTP url string containing all of the parameters for key setup. Only used if generate is false.
 	Url *string `json:"url,omitempty"`
-}
-
-// NewTotpKeysRequest instantiates a new TotpKeysRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTotpKeysRequest() *TotpKeysRequest {
-	this := TotpKeysRequest{}
-	var algorithm string = "SHA1"
-	this.Algorithm = &algorithm
-	var digits int32 = 6
-	this.Digits = &digits
-	var exported bool = true
-	this.Exported = &exported
-	var generate bool = false
-	this.Generate = &generate
-	var keySize int32 = 20
-	this.KeySize = &keySize
-	var period int32 = 30
-	this.Period = &period
-	var qrSize int32 = 200
-	this.QrSize = &qrSize
-	var skew int32 = 1
-	this.Skew = &skew
-	return &this
 }
 
 // NewTotpKeysRequestWithDefaults instantiates a new TotpKeysRequest object
@@ -19552,17 +16346,6 @@ type TransitCacheConfigRequest struct {
 	Size *int32 `json:"size,omitempty"`
 }
 
-// NewTransitCacheConfigRequest instantiates a new TransitCacheConfigRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTransitCacheConfigRequest() *TransitCacheConfigRequest {
-	this := TransitCacheConfigRequest{}
-	var size int32 = 0
-	this.Size = &size
-	return &this
-}
-
 // NewTransitCacheConfigRequestWithDefaults instantiates a new TransitCacheConfigRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -19601,17 +16384,6 @@ type TransitDatakeyRequest struct {
 	KeyVersion *int32 `json:"key_version,omitempty"`
 	// Nonce for when convergent encryption v1 is used (only in Vault 0.6.1)
 	Nonce *string `json:"nonce,omitempty"`
-}
-
-// NewTransitDatakeyRequest instantiates a new TransitDatakeyRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTransitDatakeyRequest() *TransitDatakeyRequest {
-	this := TransitDatakeyRequest{}
-	var bits int32 = 256
-	this.Bits = &bits
-	return &this
 }
 
 // NewTransitDatakeyRequestWithDefaults instantiates a new TransitDatakeyRequest object
@@ -19661,15 +16433,6 @@ type TransitDecryptRequest struct {
 	Nonce *string `json:"nonce,omitempty"`
 }
 
-// NewTransitDecryptRequest instantiates a new TransitDecryptRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTransitDecryptRequest() *TransitDecryptRequest {
-	this := TransitDecryptRequest{}
-	return &this
-}
-
 // NewTransitDecryptRequestWithDefaults instantiates a new TransitDecryptRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -19716,17 +16479,6 @@ type TransitEncryptRequest struct {
 	Plaintext *string `json:"plaintext,omitempty"`
 	// This parameter is required when encryption key is expected to be created. When performing an upsert operation, the type of key to create. Currently, \"aes128-gcm96\" (symmetric) and \"aes256-gcm96\" (symmetric) are the only types supported. Defaults to \"aes256-gcm96\".
 	Type *string `json:"type,omitempty"`
-}
-
-// NewTransitEncryptRequest instantiates a new TransitEncryptRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTransitEncryptRequest() *TransitEncryptRequest {
-	this := TransitEncryptRequest{}
-	var type_ string = "aes256-gcm96"
-	this.Type = &type_
-	return &this
 }
 
 // NewTransitEncryptRequestWithDefaults instantiates a new TransitEncryptRequest object
@@ -19784,19 +16536,6 @@ type TransitHashRequest struct {
 	Urlalgorithm *string `json:"urlalgorithm,omitempty"`
 }
 
-// NewTransitHashRequest instantiates a new TransitHashRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTransitHashRequest() *TransitHashRequest {
-	this := TransitHashRequest{}
-	var algorithm string = "sha2-256"
-	this.Algorithm = &algorithm
-	var format string = "hex"
-	this.Format = &format
-	return &this
-}
-
 // NewTransitHashRequestWithDefaults instantiates a new TransitHashRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -19846,17 +16585,6 @@ type TransitHmacRequest struct {
 	KeyVersion *int32 `json:"key_version,omitempty"`
 	// Algorithm to use (POST URL parameter)
 	Urlalgorithm *string `json:"urlalgorithm,omitempty"`
-}
-
-// NewTransitHmacRequest instantiates a new TransitHmacRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTransitHmacRequest() *TransitHmacRequest {
-	this := TransitHmacRequest{}
-	var algorithm string = "sha2-256"
-	this.Algorithm = &algorithm
-	return &this
 }
 
 // NewTransitHmacRequestWithDefaults instantiates a new TransitHmacRequest object
@@ -19910,15 +16638,6 @@ type TransitKeysConfigRequest struct {
 	MinDecryptionVersion *int32 `json:"min_decryption_version,omitempty"`
 	// If set, the minimum version of the key allowed to be used for encryption; or for signing keys, to be used for signing. If set to zero, only the latest version of the key is allowed.
 	MinEncryptionVersion *int32 `json:"min_encryption_version,omitempty"`
-}
-
-// NewTransitKeysConfigRequest instantiates a new TransitKeysConfigRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTransitKeysConfigRequest() *TransitKeysConfigRequest {
-	this := TransitKeysConfigRequest{}
-	return &this
 }
 
 // NewTransitKeysConfigRequestWithDefaults instantiates a new TransitKeysConfigRequest object
@@ -19982,21 +16701,6 @@ type TransitKeysImportRequest struct {
 	HashFunction *string `json:"hash_function,omitempty"`
 	// The type of key being imported. Currently, \"aes128-gcm96\" (symmetric), \"aes256-gcm96\" (symmetric), \"ecdsa-p256\" (asymmetric), \"ecdsa-p384\" (asymmetric), \"ecdsa-p521\" (asymmetric), \"ed25519\" (asymmetric), \"rsa-2048\" (asymmetric), \"rsa-3072\" (asymmetric), \"rsa-4096\" (asymmetric) are supported. Defaults to \"aes256-gcm96\".
 	Type *string `json:"type,omitempty"`
-}
-
-// NewTransitKeysImportRequest instantiates a new TransitKeysImportRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTransitKeysImportRequest() *TransitKeysImportRequest {
-	this := TransitKeysImportRequest{}
-	var autoRotatePeriod int32 = 0
-	this.AutoRotatePeriod = &autoRotatePeriod
-	var hashFunction string = "SHA256"
-	this.HashFunction = &hashFunction
-	var type_ string = "aes256-gcm96"
-	this.Type = &type_
-	return &this
 }
 
 // NewTransitKeysImportRequestWithDefaults instantiates a new TransitKeysImportRequest object
@@ -20063,17 +16767,6 @@ type TransitKeysImportVersionRequest struct {
 	HashFunction *string `json:"hash_function,omitempty"`
 }
 
-// NewTransitKeysImportVersionRequest instantiates a new TransitKeysImportVersionRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTransitKeysImportVersionRequest() *TransitKeysImportVersionRequest {
-	this := TransitKeysImportVersionRequest{}
-	var hashFunction string = "SHA256"
-	this.HashFunction = &hashFunction
-	return &this
-}
-
 // NewTransitKeysImportVersionRequestWithDefaults instantiates a new TransitKeysImportVersionRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -20121,19 +16814,6 @@ type TransitKeysRequest struct {
 	Exportable *bool `json:"exportable,omitempty"`
 	// The type of key to create. Currently, \"aes128-gcm96\" (symmetric), \"aes256-gcm96\" (symmetric), \"ecdsa-p256\" (asymmetric), \"ecdsa-p384\" (asymmetric), \"ecdsa-p521\" (asymmetric), \"ed25519\" (asymmetric), \"rsa-2048\" (asymmetric), \"rsa-3072\" (asymmetric), \"rsa-4096\" (asymmetric) are supported. Defaults to \"aes256-gcm96\".
 	Type *string `json:"type,omitempty"`
-}
-
-// NewTransitKeysRequest instantiates a new TransitKeysRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTransitKeysRequest() *TransitKeysRequest {
-	this := TransitKeysRequest{}
-	var autoRotatePeriod int32 = 0
-	this.AutoRotatePeriod = &autoRotatePeriod
-	var type_ string = "aes256-gcm96"
-	this.Type = &type_
-	return &this
 }
 
 // NewTransitKeysRequestWithDefaults instantiates a new TransitKeysRequest object
@@ -20190,15 +16870,6 @@ type TransitKeysTrimRequest struct {
 	MinAvailableVersion *int32 `json:"min_available_version,omitempty"`
 }
 
-// NewTransitKeysTrimRequest instantiates a new TransitKeysTrimRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTransitKeysTrimRequest() *TransitKeysTrimRequest {
-	this := TransitKeysTrimRequest{}
-	return &this
-}
-
 // NewTransitKeysTrimRequestWithDefaults instantiates a new TransitKeysTrimRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -20235,21 +16906,6 @@ type TransitRandomRequest struct {
 	Source *string `json:"source,omitempty"`
 	// The number of bytes to generate (POST URL parameter)
 	Urlbytes *string `json:"urlbytes,omitempty"`
-}
-
-// NewTransitRandomRequest instantiates a new TransitRandomRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTransitRandomRequest() *TransitRandomRequest {
-	this := TransitRandomRequest{}
-	var bytes int32 = 32
-	this.Bytes = &bytes
-	var format string = "base64"
-	this.Format = &format
-	var source string = "platform"
-	this.Source = &source
-	return &this
 }
 
 // NewTransitRandomRequestWithDefaults instantiates a new TransitRandomRequest object
@@ -20303,17 +16959,6 @@ type TransitRestoreRequest struct {
 	Name *string `json:"name,omitempty"`
 }
 
-// NewTransitRestoreRequest instantiates a new TransitRestoreRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTransitRestoreRequest() *TransitRestoreRequest {
-	this := TransitRestoreRequest{}
-	var force bool = false
-	this.Force = &force
-	return &this
-}
-
 // NewTransitRestoreRequestWithDefaults instantiates a new TransitRestoreRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -20358,15 +17003,6 @@ type TransitRewrapRequest struct {
 	KeyVersion *int32 `json:"key_version,omitempty"`
 	// Nonce for when convergent encryption is used
 	Nonce *string `json:"nonce,omitempty"`
-}
-
-// NewTransitRewrapRequest instantiates a new TransitRewrapRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTransitRewrapRequest() *TransitRewrapRequest {
-	this := TransitRewrapRequest{}
-	return &this
 }
 
 // NewTransitRewrapRequestWithDefaults instantiates a new TransitRewrapRequest object
@@ -20424,21 +17060,6 @@ type TransitSignRequest struct {
 	SignatureAlgorithm *string `json:"signature_algorithm,omitempty"`
 	// Hash algorithm to use (POST URL parameter)
 	Urlalgorithm *string `json:"urlalgorithm,omitempty"`
-}
-
-// NewTransitSignRequest instantiates a new TransitSignRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTransitSignRequest() *TransitSignRequest {
-	this := TransitSignRequest{}
-	var algorithm string = "sha2-256"
-	this.Algorithm = &algorithm
-	var hashAlgorithm string = "sha2-256"
-	this.HashAlgorithm = &hashAlgorithm
-	var marshalingAlgorithm string = "asn1"
-	this.MarshalingAlgorithm = &marshalingAlgorithm
-	return &this
 }
 
 // NewTransitSignRequestWithDefaults instantiates a new TransitSignRequest object
@@ -20521,21 +17142,6 @@ type TransitVerifyRequest struct {
 	Urlalgorithm *string `json:"urlalgorithm,omitempty"`
 }
 
-// NewTransitVerifyRequest instantiates a new TransitVerifyRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewTransitVerifyRequest() *TransitVerifyRequest {
-	this := TransitVerifyRequest{}
-	var algorithm string = "sha2-256"
-	this.Algorithm = &algorithm
-	var hashAlgorithm string = "sha2-256"
-	this.HashAlgorithm = &hashAlgorithm
-	var marshalingAlgorithm string = "asn1"
-	this.MarshalingAlgorithm = &marshalingAlgorithm
-	return &this
-}
-
 // NewTransitVerifyRequestWithDefaults instantiates a new TransitVerifyRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -20601,15 +17207,6 @@ type UserpassLoginRequest struct {
 	Password *string `json:"password,omitempty"`
 }
 
-// NewUserpassLoginRequest instantiates a new UserpassLoginRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUserpassLoginRequest() *UserpassLoginRequest {
-	this := UserpassLoginRequest{}
-	return &this
-}
-
 // NewUserpassLoginRequestWithDefaults instantiates a new UserpassLoginRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
@@ -20640,15 +17237,6 @@ API version: 1.12.0
 type UserpassUsersPasswordRequest struct {
 	// Password for this user.
 	Password *string `json:"password,omitempty"`
-}
-
-// NewUserpassUsersPasswordRequest instantiates a new UserpassUsersPasswordRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUserpassUsersPasswordRequest() *UserpassUsersPasswordRequest {
-	this := UserpassUsersPasswordRequest{}
-	return &this
 }
 
 // NewUserpassUsersPasswordRequestWithDefaults instantiates a new UserpassUsersPasswordRequest object
@@ -20684,15 +17272,6 @@ type UserpassUsersPoliciesRequest struct {
 	Policies []string `json:"policies,omitempty"`
 	// Comma-separated list of policies
 	TokenPolicies []string `json:"token_policies,omitempty"`
-}
-
-// NewUserpassUsersPoliciesRequest instantiates a new UserpassUsersPoliciesRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUserpassUsersPoliciesRequest() *UserpassUsersPoliciesRequest {
-	this := UserpassUsersPoliciesRequest{}
-	return &this
 }
 
 // NewUserpassUsersPoliciesRequestWithDefaults instantiates a new UserpassUsersPoliciesRequest object
@@ -20758,17 +17337,6 @@ type UserpassUsersRequest struct {
 	// Use \"token_ttl\" instead. If this and \"token_ttl\" are both specified, only \"token_ttl\" will be used.
 	// Deprecated
 	Ttl *int32 `json:"ttl,omitempty"`
-}
-
-// NewUserpassUsersRequest instantiates a new UserpassUsersRequest object
-// This constructor will assign default values to properties that have it defined,
-// and makes sure properties required by API are set, but the set of arguments
-// will change when the set of required properties is changed
-func NewUserpassUsersRequest() *UserpassUsersRequest {
-	this := UserpassUsersRequest{}
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
-	return &this
 }
 
 // NewUserpassUsersRequestWithDefaults instantiates a new UserpassUsersRequest object

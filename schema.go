@@ -17,69 +17,69 @@ import (
 // AdConfigRequest struct for AdConfigRequest
 type AdConfigRequest struct {
 	// Use anonymous binds when performing LDAP group searches (if true the initial credentials will still be used for the initial connection test).
-	AnonymousGroupSearch *bool `json:"anonymous_group_search,omitempty"`
+	AnonymousGroupSearch bool `json:"anonymous_group_search"`
 	// LDAP DN for searching for the user DN (optional)
-	Binddn *string `json:"binddn,omitempty"`
+	Binddn string `json:"binddn"`
 	// LDAP password for searching for the user DN (optional)
-	Bindpass *string `json:"bindpass,omitempty"`
+	Bindpass string `json:"bindpass"`
 	// If true, case sensitivity will be used when comparing usernames and groups for matching policies.
-	CaseSensitiveNames *bool `json:"case_sensitive_names,omitempty"`
+	CaseSensitiveNames bool `json:"case_sensitive_names"`
 	// CA certificate to use when verifying LDAP server certificate, must be x509 PEM encoded (optional)
-	Certificate *string `json:"certificate,omitempty"`
+	Certificate string `json:"certificate"`
 	// Client certificate to provide to the LDAP server, must be x509 PEM encoded (optional)
-	ClientTlsCert *string `json:"client_tls_cert,omitempty"`
+	ClientTlsCert string `json:"client_tls_cert"`
 	// Client certificate key to provide to the LDAP server, must be x509 PEM encoded (optional)
-	ClientTlsKey *string `json:"client_tls_key,omitempty"`
+	ClientTlsKey string `json:"client_tls_key"`
 	// Denies an unauthenticated LDAP bind request if the user's password is empty; defaults to true
-	DenyNullBind *bool `json:"deny_null_bind,omitempty"`
+	DenyNullBind bool `json:"deny_null_bind"`
 	// Use anonymous bind to discover the bind DN of a user (optional)
-	Discoverdn *bool `json:"discoverdn,omitempty"`
+	Discoverdn bool `json:"discoverdn"`
 	// Text to insert the password into, ex. \"customPrefix{{PASSWORD}}customSuffix\".
 	// Deprecated
-	Formatter *string `json:"formatter,omitempty"`
+	Formatter string `json:"formatter"`
 	// LDAP attribute to follow on objects returned by <groupfilter> in order to enumerate user group membership. Examples: \"cn\" or \"memberOf\", etc. Default: cn
-	Groupattr *string `json:"groupattr,omitempty"`
+	Groupattr string `json:"groupattr"`
 	// LDAP search base to use for group membership search (eg: ou=Groups,dc=example,dc=org)
-	Groupdn *string `json:"groupdn,omitempty"`
+	Groupdn string `json:"groupdn"`
 	// Go template for querying group membership of user (optional) The template can access the following context variables: UserDN, Username Example: (&(objectClass=group)(member:1.2.840.113556.1.4.1941:={{.UserDN}})) Default: (|(memberUid={{.Username}})(member={{.UserDN}})(uniqueMember={{.UserDN}}))
-	Groupfilter *string `json:"groupfilter,omitempty"`
+	Groupfilter string `json:"groupfilter"`
 	// Skip LDAP server SSL Certificate verification - VERY insecure (optional)
-	InsecureTls *bool `json:"insecure_tls,omitempty"`
+	InsecureTls bool `json:"insecure_tls"`
 	// The number of seconds after a Vault rotation where, if Active Directory shows a later rotation, it should be considered out-of-band.
-	LastRotationTolerance *int32 `json:"last_rotation_tolerance,omitempty"`
+	LastRotationTolerance int32 `json:"last_rotation_tolerance"`
 	// The desired length of passwords that Vault generates.
 	// Deprecated
-	Length *int32 `json:"length,omitempty"`
+	Length int32 `json:"length"`
 	// In seconds, the maximum password time-to-live.
-	MaxTtl *int32 `json:"max_ttl,omitempty"`
+	MaxTtl int32 `json:"max_ttl"`
 	// Name of the password policy to use to generate passwords.
-	PasswordPolicy *string `json:"password_policy,omitempty"`
+	PasswordPolicy string `json:"password_policy"`
 	// Timeout, in seconds, for the connection when making requests against the server before returning back an error.
-	RequestTimeout *int32 `json:"request_timeout,omitempty"`
+	RequestTimeout int32 `json:"request_timeout"`
 	// Issue a StartTLS command after establishing unencrypted connection (optional)
-	Starttls *bool `json:"starttls,omitempty"`
+	Starttls bool `json:"starttls"`
 	// Maximum TLS version to use. Accepted values are 'tls10', 'tls11', 'tls12' or 'tls13'. Defaults to 'tls12'
-	TlsMaxVersion *string `json:"tls_max_version,omitempty"`
+	TlsMaxVersion string `json:"tls_max_version"`
 	// Minimum TLS version to use. Accepted values are 'tls10', 'tls11', 'tls12' or 'tls13'. Defaults to 'tls12'
-	TlsMinVersion *string `json:"tls_min_version,omitempty"`
+	TlsMinVersion string `json:"tls_min_version"`
 	// In seconds, the default password time-to-live.
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 	// Enables userPrincipalDomain login with [username]@UPNDomain (optional)
-	Upndomain *string `json:"upndomain,omitempty"`
+	Upndomain string `json:"upndomain"`
 	// LDAP URL to connect to (default: ldap://127.0.0.1). Multiple URLs can be specified by concatenating them with commas; they will be tried in-order.
-	Url *string `json:"url,omitempty"`
+	Url string `json:"url"`
 	// In Vault 1.1.1 a fix for handling group CN values of different cases unfortunately introduced a regression that could cause previously defined groups to not be found due to a change in the resulting name. If set true, the pre-1.1.1 behavior for matching group CNs will be used. This is only needed in some upgrade scenarios for backwards compatibility. It is enabled by default if the config is upgraded but disabled by default on new configurations.
-	UsePre111GroupCnBehavior *bool `json:"use_pre111_group_cn_behavior,omitempty"`
+	UsePre111GroupCnBehavior bool `json:"use_pre111_group_cn_behavior"`
 	// If true, use the Active Directory tokenGroups constructed attribute of the user to find the group memberships. This will find all security groups including nested ones.
-	UseTokenGroups *bool `json:"use_token_groups,omitempty"`
+	UseTokenGroups bool `json:"use_token_groups"`
 	// Attribute used for users (default: cn)
-	Userattr *string `json:"userattr,omitempty"`
+	Userattr string `json:"userattr"`
 	// LDAP domain to use for users (eg: ou=People,dc=example,dc=org)
-	Userdn *string `json:"userdn,omitempty"`
+	Userdn string `json:"userdn"`
 	// Go template for LDAP user search filer (optional) The template can access the following context variables: UserAttr, Username Default: ({{.UserAttr}}={{.Username}})
-	Userfilter *string `json:"userfilter,omitempty"`
+	Userfilter string `json:"userfilter"`
 	// If true, sets the alias name to the username
-	UsernameAsAlias *bool `json:"username_as_alias,omitempty"`
+	UsernameAsAlias bool `json:"username_as_alias"`
 }
 
 // NewAdConfigRequestWithDefaults instantiates a new AdConfigRequest object
@@ -87,130 +87,59 @@ type AdConfigRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAdConfigRequestWithDefaults() *AdConfigRequest {
 	this := AdConfigRequest{}
-	var anonymousGroupSearch bool = false
-	this.AnonymousGroupSearch = &anonymousGroupSearch
-	var denyNullBind bool = true
-	this.DenyNullBind = &denyNullBind
-	var groupattr string = "cn"
-	this.Groupattr = &groupattr
-	var groupfilter string = "(|(memberUid={{.Username}})(member={{.UserDN}})(uniqueMember={{.UserDN}}))"
-	this.Groupfilter = &groupfilter
-	var lastRotationTolerance int32 = 5
-	this.LastRotationTolerance = &lastRotationTolerance
-	var length int32 = 64
-	this.Length = &length
-	var tlsMaxVersion string = "tls12"
-	this.TlsMaxVersion = &tlsMaxVersion
-	var tlsMinVersion string = "tls12"
-	this.TlsMinVersion = &tlsMinVersion
-	var url string = "ldap://127.0.0.1"
-	this.Url = &url
-	var useTokenGroups bool = false
-	this.UseTokenGroups = &useTokenGroups
-	var userattr string = "cn"
-	this.Userattr = &userattr
-	var userfilter string = "({{.UserAttr}}={{.Username}})"
-	this.Userfilter = &userfilter
-	var usernameAsAlias bool = false
-	this.UsernameAsAlias = &usernameAsAlias
+
+	this.AnonymousGroupSearch = false
+	this.DenyNullBind = true
+	this.Groupattr = "cn"
+	this.Groupfilter = "(|(memberUid={{.Username}})(member={{.UserDN}})(uniqueMember={{.UserDN}}))"
+	this.LastRotationTolerance = 5
+	this.Length = 64
+	this.TlsMaxVersion = "tls12"
+	this.TlsMinVersion = "tls12"
+	this.Url = "ldap://127.0.0.1"
+	this.UseTokenGroups = false
+	this.Userattr = "cn"
+	this.Userfilter = "({{.UserAttr}}={{.Username}})"
+	this.UsernameAsAlias = false
+
 	return &this
 }
 
 func (o AdConfigRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AnonymousGroupSearch != nil {
-		toSerialize["anonymous_group_search"] = o.AnonymousGroupSearch
-	}
-	if o.Binddn != nil {
-		toSerialize["binddn"] = o.Binddn
-	}
-	if o.Bindpass != nil {
-		toSerialize["bindpass"] = o.Bindpass
-	}
-	if o.CaseSensitiveNames != nil {
-		toSerialize["case_sensitive_names"] = o.CaseSensitiveNames
-	}
-	if o.Certificate != nil {
-		toSerialize["certificate"] = o.Certificate
-	}
-	if o.ClientTlsCert != nil {
-		toSerialize["client_tls_cert"] = o.ClientTlsCert
-	}
-	if o.ClientTlsKey != nil {
-		toSerialize["client_tls_key"] = o.ClientTlsKey
-	}
-	if o.DenyNullBind != nil {
-		toSerialize["deny_null_bind"] = o.DenyNullBind
-	}
-	if o.Discoverdn != nil {
-		toSerialize["discoverdn"] = o.Discoverdn
-	}
-	if o.Formatter != nil {
-		toSerialize["formatter"] = o.Formatter
-	}
-	if o.Groupattr != nil {
-		toSerialize["groupattr"] = o.Groupattr
-	}
-	if o.Groupdn != nil {
-		toSerialize["groupdn"] = o.Groupdn
-	}
-	if o.Groupfilter != nil {
-		toSerialize["groupfilter"] = o.Groupfilter
-	}
-	if o.InsecureTls != nil {
-		toSerialize["insecure_tls"] = o.InsecureTls
-	}
-	if o.LastRotationTolerance != nil {
-		toSerialize["last_rotation_tolerance"] = o.LastRotationTolerance
-	}
-	if o.Length != nil {
-		toSerialize["length"] = o.Length
-	}
-	if o.MaxTtl != nil {
-		toSerialize["max_ttl"] = o.MaxTtl
-	}
-	if o.PasswordPolicy != nil {
-		toSerialize["password_policy"] = o.PasswordPolicy
-	}
-	if o.RequestTimeout != nil {
-		toSerialize["request_timeout"] = o.RequestTimeout
-	}
-	if o.Starttls != nil {
-		toSerialize["starttls"] = o.Starttls
-	}
-	if o.TlsMaxVersion != nil {
-		toSerialize["tls_max_version"] = o.TlsMaxVersion
-	}
-	if o.TlsMinVersion != nil {
-		toSerialize["tls_min_version"] = o.TlsMinVersion
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
-	if o.Upndomain != nil {
-		toSerialize["upndomain"] = o.Upndomain
-	}
-	if o.Url != nil {
-		toSerialize["url"] = o.Url
-	}
-	if o.UsePre111GroupCnBehavior != nil {
-		toSerialize["use_pre111_group_cn_behavior"] = o.UsePre111GroupCnBehavior
-	}
-	if o.UseTokenGroups != nil {
-		toSerialize["use_token_groups"] = o.UseTokenGroups
-	}
-	if o.Userattr != nil {
-		toSerialize["userattr"] = o.Userattr
-	}
-	if o.Userdn != nil {
-		toSerialize["userdn"] = o.Userdn
-	}
-	if o.Userfilter != nil {
-		toSerialize["userfilter"] = o.Userfilter
-	}
-	if o.UsernameAsAlias != nil {
-		toSerialize["username_as_alias"] = o.UsernameAsAlias
-	}
+
+	toSerialize["anonymous_group_search"] = o.AnonymousGroupSearch
+	toSerialize["binddn"] = o.Binddn
+	toSerialize["bindpass"] = o.Bindpass
+	toSerialize["case_sensitive_names"] = o.CaseSensitiveNames
+	toSerialize["certificate"] = o.Certificate
+	toSerialize["client_tls_cert"] = o.ClientTlsCert
+	toSerialize["client_tls_key"] = o.ClientTlsKey
+	toSerialize["deny_null_bind"] = o.DenyNullBind
+	toSerialize["discoverdn"] = o.Discoverdn
+	toSerialize["formatter"] = o.Formatter
+	toSerialize["groupattr"] = o.Groupattr
+	toSerialize["groupdn"] = o.Groupdn
+	toSerialize["groupfilter"] = o.Groupfilter
+	toSerialize["insecure_tls"] = o.InsecureTls
+	toSerialize["last_rotation_tolerance"] = o.LastRotationTolerance
+	toSerialize["length"] = o.Length
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["password_policy"] = o.PasswordPolicy
+	toSerialize["request_timeout"] = o.RequestTimeout
+	toSerialize["starttls"] = o.Starttls
+	toSerialize["tls_max_version"] = o.TlsMaxVersion
+	toSerialize["tls_min_version"] = o.TlsMinVersion
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["upndomain"] = o.Upndomain
+	toSerialize["url"] = o.Url
+	toSerialize["use_pre111_group_cn_behavior"] = o.UsePre111GroupCnBehavior
+	toSerialize["use_token_groups"] = o.UseTokenGroups
+	toSerialize["userattr"] = o.Userattr
+	toSerialize["userdn"] = o.Userdn
+	toSerialize["userfilter"] = o.Userfilter
+	toSerialize["username_as_alias"] = o.UsernameAsAlias
+
 	return json.Marshal(toSerialize)
 }
 
@@ -227,7 +156,7 @@ API version: 1.12.0
 // AdLibraryCheckInRequest struct for AdLibraryCheckInRequest
 type AdLibraryCheckInRequest struct {
 	// The username/logon name for the service accounts to check in.
-	ServiceAccountNames []string `json:"service_account_names,omitempty"`
+	ServiceAccountNames []string `json:"service_account_names"`
 }
 
 // NewAdLibraryCheckInRequestWithDefaults instantiates a new AdLibraryCheckInRequest object
@@ -235,14 +164,15 @@ type AdLibraryCheckInRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAdLibraryCheckInRequestWithDefaults() *AdLibraryCheckInRequest {
 	this := AdLibraryCheckInRequest{}
+
 	return &this
 }
 
 func (o AdLibraryCheckInRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.ServiceAccountNames != nil {
-		toSerialize["service_account_names"] = o.ServiceAccountNames
-	}
+
+	toSerialize["service_account_names"] = o.ServiceAccountNames
+
 	return json.Marshal(toSerialize)
 }
 
@@ -259,7 +189,7 @@ API version: 1.12.0
 // AdLibraryCheckOutRequest struct for AdLibraryCheckOutRequest
 type AdLibraryCheckOutRequest struct {
 	// The length of time before the check-out will expire, in seconds.
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 }
 
 // NewAdLibraryCheckOutRequestWithDefaults instantiates a new AdLibraryCheckOutRequest object
@@ -267,14 +197,15 @@ type AdLibraryCheckOutRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAdLibraryCheckOutRequestWithDefaults() *AdLibraryCheckOutRequest {
 	this := AdLibraryCheckOutRequest{}
+
 	return &this
 }
 
 func (o AdLibraryCheckOutRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
+
+	toSerialize["ttl"] = o.Ttl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -291,7 +222,7 @@ API version: 1.12.0
 // AdLibraryManageCheckInRequest struct for AdLibraryManageCheckInRequest
 type AdLibraryManageCheckInRequest struct {
 	// The username/logon name for the service accounts to check in.
-	ServiceAccountNames []string `json:"service_account_names,omitempty"`
+	ServiceAccountNames []string `json:"service_account_names"`
 }
 
 // NewAdLibraryManageCheckInRequestWithDefaults instantiates a new AdLibraryManageCheckInRequest object
@@ -299,14 +230,15 @@ type AdLibraryManageCheckInRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAdLibraryManageCheckInRequestWithDefaults() *AdLibraryManageCheckInRequest {
 	this := AdLibraryManageCheckInRequest{}
+
 	return &this
 }
 
 func (o AdLibraryManageCheckInRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.ServiceAccountNames != nil {
-		toSerialize["service_account_names"] = o.ServiceAccountNames
-	}
+
+	toSerialize["service_account_names"] = o.ServiceAccountNames
+
 	return json.Marshal(toSerialize)
 }
 
@@ -323,13 +255,13 @@ API version: 1.12.0
 // AdLibraryRequest struct for AdLibraryRequest
 type AdLibraryRequest struct {
 	// Disable the default behavior of requiring that check-ins are performed by the entity that checked them out.
-	DisableCheckInEnforcement *bool `json:"disable_check_in_enforcement,omitempty"`
+	DisableCheckInEnforcement bool `json:"disable_check_in_enforcement"`
 	// In seconds, the max amount of time a check-out's renewals should last. Defaults to 24 hours.
-	MaxTtl *int32 `json:"max_ttl,omitempty"`
+	MaxTtl int32 `json:"max_ttl"`
 	// The username/logon name for the service accounts with which this set will be associated.
-	ServiceAccountNames []string `json:"service_account_names,omitempty"`
+	ServiceAccountNames []string `json:"service_account_names"`
 	// In seconds, the amount of time a check-out should last. Defaults to 24 hours.
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 }
 
 // NewAdLibraryRequestWithDefaults instantiates a new AdLibraryRequest object
@@ -337,29 +269,22 @@ type AdLibraryRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAdLibraryRequestWithDefaults() *AdLibraryRequest {
 	this := AdLibraryRequest{}
-	var disableCheckInEnforcement bool = false
-	this.DisableCheckInEnforcement = &disableCheckInEnforcement
-	var maxTtl int32 = 86400
-	this.MaxTtl = &maxTtl
-	var ttl int32 = 86400
-	this.Ttl = &ttl
+
+	this.DisableCheckInEnforcement = false
+	this.MaxTtl = 86400
+	this.Ttl = 86400
+
 	return &this
 }
 
 func (o AdLibraryRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.DisableCheckInEnforcement != nil {
-		toSerialize["disable_check_in_enforcement"] = o.DisableCheckInEnforcement
-	}
-	if o.MaxTtl != nil {
-		toSerialize["max_ttl"] = o.MaxTtl
-	}
-	if o.ServiceAccountNames != nil {
-		toSerialize["service_account_names"] = o.ServiceAccountNames
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
+
+	toSerialize["disable_check_in_enforcement"] = o.DisableCheckInEnforcement
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["service_account_names"] = o.ServiceAccountNames
+	toSerialize["ttl"] = o.Ttl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -376,9 +301,9 @@ API version: 1.12.0
 // AdRolesRequest struct for AdRolesRequest
 type AdRolesRequest struct {
 	// The username/logon name for the service account with which this role will be associated.
-	ServiceAccountName *string `json:"service_account_name,omitempty"`
+	ServiceAccountName string `json:"service_account_name"`
 	// In seconds, the default password time-to-live.
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 }
 
 // NewAdRolesRequestWithDefaults instantiates a new AdRolesRequest object
@@ -386,17 +311,16 @@ type AdRolesRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAdRolesRequestWithDefaults() *AdRolesRequest {
 	this := AdRolesRequest{}
+
 	return &this
 }
 
 func (o AdRolesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.ServiceAccountName != nil {
-		toSerialize["service_account_name"] = o.ServiceAccountName
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
+
+	toSerialize["service_account_name"] = o.ServiceAccountName
+	toSerialize["ttl"] = o.Ttl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -413,9 +337,9 @@ API version: 1.12.0
 // AlicloudConfigRequest struct for AlicloudConfigRequest
 type AlicloudConfigRequest struct {
 	// Access key with appropriate permissions.
-	AccessKey *string `json:"access_key,omitempty"`
+	AccessKey string `json:"access_key"`
 	// Secret key with appropriate permissions.
-	SecretKey *string `json:"secret_key,omitempty"`
+	SecretKey string `json:"secret_key"`
 }
 
 // NewAlicloudConfigRequestWithDefaults instantiates a new AlicloudConfigRequest object
@@ -423,17 +347,16 @@ type AlicloudConfigRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAlicloudConfigRequestWithDefaults() *AlicloudConfigRequest {
 	this := AlicloudConfigRequest{}
+
 	return &this
 }
 
 func (o AlicloudConfigRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AccessKey != nil {
-		toSerialize["access_key"] = o.AccessKey
-	}
-	if o.SecretKey != nil {
-		toSerialize["secret_key"] = o.SecretKey
-	}
+
+	toSerialize["access_key"] = o.AccessKey
+	toSerialize["secret_key"] = o.SecretKey
+
 	return json.Marshal(toSerialize)
 }
 
@@ -450,11 +373,11 @@ API version: 1.12.0
 // AlicloudLoginRequest struct for AlicloudLoginRequest
 type AlicloudLoginRequest struct {
 	// The request headers. This must include the headers over which AliCloud has included a signature.
-	IdentityRequestHeaders *string `json:"identity_request_headers,omitempty"`
+	IdentityRequestHeaders string `json:"identity_request_headers"`
 	// Base64-encoded full URL against which to make the AliCloud request.
-	IdentityRequestUrl *string `json:"identity_request_url,omitempty"`
+	IdentityRequestUrl string `json:"identity_request_url"`
 	// Name of the role against which the login is being attempted. If 'role' is not specified, then the login endpoint looks for a role name in the ARN returned by the GetCallerIdentity request. If a matching role is not found, login fails.
-	Role *string `json:"role,omitempty"`
+	Role string `json:"role"`
 }
 
 // NewAlicloudLoginRequestWithDefaults instantiates a new AlicloudLoginRequest object
@@ -462,20 +385,17 @@ type AlicloudLoginRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAlicloudLoginRequestWithDefaults() *AlicloudLoginRequest {
 	this := AlicloudLoginRequest{}
+
 	return &this
 }
 
 func (o AlicloudLoginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.IdentityRequestHeaders != nil {
-		toSerialize["identity_request_headers"] = o.IdentityRequestHeaders
-	}
-	if o.IdentityRequestUrl != nil {
-		toSerialize["identity_request_url"] = o.IdentityRequestUrl
-	}
-	if o.Role != nil {
-		toSerialize["role"] = o.Role
-	}
+
+	toSerialize["identity_request_headers"] = o.IdentityRequestHeaders
+	toSerialize["identity_request_url"] = o.IdentityRequestUrl
+	toSerialize["role"] = o.Role
+
 	return json.Marshal(toSerialize)
 }
 
@@ -492,40 +412,40 @@ API version: 1.12.0
 // AlicloudRoleRequest struct for AlicloudRoleRequest
 type AlicloudRoleRequest struct {
 	// ARN of the RAM to bind to this role.
-	Arn *string `json:"arn,omitempty"`
+	Arn string `json:"arn"`
 	// Use \"token_bound_cidrs\" instead. If this and \"token_bound_cidrs\" are both specified, only \"token_bound_cidrs\" will be used.
 	// Deprecated
-	BoundCidrs []string `json:"bound_cidrs,omitempty"`
+	BoundCidrs []string `json:"bound_cidrs"`
 	// Use \"token_max_ttl\" instead. If this and \"token_max_ttl\" are both specified, only \"token_max_ttl\" will be used.
 	// Deprecated
-	MaxTtl *int32 `json:"max_ttl,omitempty"`
+	MaxTtl int32 `json:"max_ttl"`
 	// Use \"token_period\" instead. If this and \"token_period\" are both specified, only \"token_period\" will be used.
 	// Deprecated
-	Period *int32 `json:"period,omitempty"`
+	Period int32 `json:"period"`
 	// Use \"token_policies\" instead. If this and \"token_policies\" are both specified, only \"token_policies\" will be used.
 	// Deprecated
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 	// Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
-	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
+	TokenBoundCidrs []string `json:"token_bound_cidrs"`
 	// If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
-	TokenExplicitMaxTtl *int32 `json:"token_explicit_max_ttl,omitempty"`
+	TokenExplicitMaxTtl int32 `json:"token_explicit_max_ttl"`
 	// The maximum lifetime of the generated token
-	TokenMaxTtl *int32 `json:"token_max_ttl,omitempty"`
+	TokenMaxTtl int32 `json:"token_max_ttl"`
 	// If true, the 'default' policy will not automatically be added to generated tokens
-	TokenNoDefaultPolicy *bool `json:"token_no_default_policy,omitempty"`
+	TokenNoDefaultPolicy bool `json:"token_no_default_policy"`
 	// The maximum number of times a token may be used, a value of zero means unlimited
-	TokenNumUses *int32 `json:"token_num_uses,omitempty"`
+	TokenNumUses int32 `json:"token_num_uses"`
 	// If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \"24h\").
-	TokenPeriod *int32 `json:"token_period,omitempty"`
+	TokenPeriod int32 `json:"token_period"`
 	// Comma-separated list of policies
-	TokenPolicies []string `json:"token_policies,omitempty"`
+	TokenPolicies []string `json:"token_policies"`
 	// The initial ttl of the token to generate
-	TokenTtl *int32 `json:"token_ttl,omitempty"`
+	TokenTtl int32 `json:"token_ttl"`
 	// The type of token to generate, service or batch
-	TokenType *string `json:"token_type,omitempty"`
+	TokenType string `json:"token_type"`
 	// Use \"token_ttl\" instead. If this and \"token_ttl\" are both specified, only \"token_ttl\" will be used.
 	// Deprecated
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 }
 
 // NewAlicloudRoleRequestWithDefaults instantiates a new AlicloudRoleRequest object
@@ -533,58 +453,31 @@ type AlicloudRoleRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAlicloudRoleRequestWithDefaults() *AlicloudRoleRequest {
 	this := AlicloudRoleRequest{}
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
+
+	this.TokenType = "default-service"
+
 	return &this
 }
 
 func (o AlicloudRoleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Arn != nil {
-		toSerialize["arn"] = o.Arn
-	}
-	if o.BoundCidrs != nil {
-		toSerialize["bound_cidrs"] = o.BoundCidrs
-	}
-	if o.MaxTtl != nil {
-		toSerialize["max_ttl"] = o.MaxTtl
-	}
-	if o.Period != nil {
-		toSerialize["period"] = o.Period
-	}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
-	if o.TokenBoundCidrs != nil {
-		toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
-	}
-	if o.TokenExplicitMaxTtl != nil {
-		toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
-	}
-	if o.TokenMaxTtl != nil {
-		toSerialize["token_max_ttl"] = o.TokenMaxTtl
-	}
-	if o.TokenNoDefaultPolicy != nil {
-		toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
-	}
-	if o.TokenNumUses != nil {
-		toSerialize["token_num_uses"] = o.TokenNumUses
-	}
-	if o.TokenPeriod != nil {
-		toSerialize["token_period"] = o.TokenPeriod
-	}
-	if o.TokenPolicies != nil {
-		toSerialize["token_policies"] = o.TokenPolicies
-	}
-	if o.TokenTtl != nil {
-		toSerialize["token_ttl"] = o.TokenTtl
-	}
-	if o.TokenType != nil {
-		toSerialize["token_type"] = o.TokenType
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
+
+	toSerialize["arn"] = o.Arn
+	toSerialize["bound_cidrs"] = o.BoundCidrs
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["period"] = o.Period
+	toSerialize["policies"] = o.Policies
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+	toSerialize["ttl"] = o.Ttl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -601,7 +494,7 @@ API version: 1.12.0
 // AppIdLoginRequest struct for AppIdLoginRequest
 type AppIdLoginRequest struct {
 	// The unique user ID
-	UserId *string `json:"user_id,omitempty"`
+	UserId string `json:"user_id"`
 }
 
 // NewAppIdLoginRequestWithDefaults instantiates a new AppIdLoginRequest object
@@ -609,14 +502,15 @@ type AppIdLoginRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAppIdLoginRequestWithDefaults() *AppIdLoginRequest {
 	this := AppIdLoginRequest{}
+
 	return &this
 }
 
 func (o AppIdLoginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.UserId != nil {
-		toSerialize["user_id"] = o.UserId
-	}
+
+	toSerialize["user_id"] = o.UserId
+
 	return json.Marshal(toSerialize)
 }
 
@@ -633,9 +527,9 @@ API version: 1.12.0
 // AppIdMapAppIdRequest struct for AppIdMapAppIdRequest
 type AppIdMapAppIdRequest struct {
 	// A name to map to this app ID for logs.
-	DisplayName *string `json:"display_name,omitempty"`
+	DisplayName string `json:"display_name"`
 	// Policies for the app ID.
-	Value *string `json:"value,omitempty"`
+	Value string `json:"value"`
 }
 
 // NewAppIdMapAppIdRequestWithDefaults instantiates a new AppIdMapAppIdRequest object
@@ -643,17 +537,16 @@ type AppIdMapAppIdRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAppIdMapAppIdRequestWithDefaults() *AppIdMapAppIdRequest {
 	this := AppIdMapAppIdRequest{}
+
 	return &this
 }
 
 func (o AppIdMapAppIdRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.DisplayName != nil {
-		toSerialize["display_name"] = o.DisplayName
-	}
-	if o.Value != nil {
-		toSerialize["value"] = o.Value
-	}
+
+	toSerialize["display_name"] = o.DisplayName
+	toSerialize["value"] = o.Value
+
 	return json.Marshal(toSerialize)
 }
 
@@ -670,9 +563,9 @@ API version: 1.12.0
 // AppIdMapUserIdRequest struct for AppIdMapUserIdRequest
 type AppIdMapUserIdRequest struct {
 	// If not blank, restricts auth by this CIDR block
-	CidrBlock *string `json:"cidr_block,omitempty"`
+	CidrBlock string `json:"cidr_block"`
 	// App IDs that this user associates with.
-	Value *string `json:"value,omitempty"`
+	Value string `json:"value"`
 }
 
 // NewAppIdMapUserIdRequestWithDefaults instantiates a new AppIdMapUserIdRequest object
@@ -680,17 +573,16 @@ type AppIdMapUserIdRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAppIdMapUserIdRequestWithDefaults() *AppIdMapUserIdRequest {
 	this := AppIdMapUserIdRequest{}
+
 	return &this
 }
 
 func (o AppIdMapUserIdRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.CidrBlock != nil {
-		toSerialize["cidr_block"] = o.CidrBlock
-	}
-	if o.Value != nil {
-		toSerialize["value"] = o.Value
-	}
+
+	toSerialize["cidr_block"] = o.CidrBlock
+	toSerialize["value"] = o.Value
+
 	return json.Marshal(toSerialize)
 }
 
@@ -707,9 +599,9 @@ API version: 1.12.0
 // ApproleLoginRequest struct for ApproleLoginRequest
 type ApproleLoginRequest struct {
 	// Unique identifier of the Role. Required to be supplied when the 'bind_secret_id' constraint is set.
-	RoleId *string `json:"role_id,omitempty"`
+	RoleId string `json:"role_id"`
 	// SecretID belong to the App role
-	SecretId *string `json:"secret_id,omitempty"`
+	SecretId string `json:"secret_id"`
 }
 
 // NewApproleLoginRequestWithDefaults instantiates a new ApproleLoginRequest object
@@ -717,19 +609,18 @@ type ApproleLoginRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewApproleLoginRequestWithDefaults() *ApproleLoginRequest {
 	this := ApproleLoginRequest{}
-	var secretId string = ""
-	this.SecretId = &secretId
+
+	this.SecretId = ""
+
 	return &this
 }
 
 func (o ApproleLoginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.RoleId != nil {
-		toSerialize["role_id"] = o.RoleId
-	}
-	if o.SecretId != nil {
-		toSerialize["secret_id"] = o.SecretId
-	}
+
+	toSerialize["role_id"] = o.RoleId
+	toSerialize["secret_id"] = o.SecretId
+
 	return json.Marshal(toSerialize)
 }
 
@@ -746,7 +637,7 @@ API version: 1.12.0
 // ApproleRoleBindSecretIdRequest struct for ApproleRoleBindSecretIdRequest
 type ApproleRoleBindSecretIdRequest struct {
 	// Impose secret_id to be presented when logging in using this role.
-	BindSecretId *bool `json:"bind_secret_id,omitempty"`
+	BindSecretId bool `json:"bind_secret_id"`
 }
 
 // NewApproleRoleBindSecretIdRequestWithDefaults instantiates a new ApproleRoleBindSecretIdRequest object
@@ -754,16 +645,17 @@ type ApproleRoleBindSecretIdRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleBindSecretIdRequestWithDefaults() *ApproleRoleBindSecretIdRequest {
 	this := ApproleRoleBindSecretIdRequest{}
-	var bindSecretId bool = true
-	this.BindSecretId = &bindSecretId
+
+	this.BindSecretId = true
+
 	return &this
 }
 
 func (o ApproleRoleBindSecretIdRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.BindSecretId != nil {
-		toSerialize["bind_secret_id"] = o.BindSecretId
-	}
+
+	toSerialize["bind_secret_id"] = o.BindSecretId
+
 	return json.Marshal(toSerialize)
 }
 
@@ -780,7 +672,7 @@ API version: 1.12.0
 // ApproleRoleBoundCidrListRequest struct for ApproleRoleBoundCidrListRequest
 type ApproleRoleBoundCidrListRequest struct {
 	// Deprecated: Please use \"secret_id_bound_cidrs\" instead. Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can perform the login operation.
-	BoundCidrList []string `json:"bound_cidr_list,omitempty"`
+	BoundCidrList []string `json:"bound_cidr_list"`
 }
 
 // NewApproleRoleBoundCidrListRequestWithDefaults instantiates a new ApproleRoleBoundCidrListRequest object
@@ -788,14 +680,15 @@ type ApproleRoleBoundCidrListRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleBoundCidrListRequestWithDefaults() *ApproleRoleBoundCidrListRequest {
 	this := ApproleRoleBoundCidrListRequest{}
+
 	return &this
 }
 
 func (o ApproleRoleBoundCidrListRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.BoundCidrList != nil {
-		toSerialize["bound_cidr_list"] = o.BoundCidrList
-	}
+
+	toSerialize["bound_cidr_list"] = o.BoundCidrList
+
 	return json.Marshal(toSerialize)
 }
 
@@ -812,13 +705,13 @@ API version: 1.12.0
 // ApproleRoleCustomSecretIdRequest struct for ApproleRoleCustomSecretIdRequest
 type ApproleRoleCustomSecretIdRequest struct {
 	// Comma separated string or list of CIDR blocks enforcing secret IDs to be used from specific set of IP addresses. If 'bound_cidr_list' is set on the role, then the list of CIDR blocks listed here should be a subset of the CIDR blocks listed on the role.
-	CidrList []string `json:"cidr_list,omitempty"`
+	CidrList []string `json:"cidr_list"`
 	// Metadata to be tied to the SecretID. This should be a JSON formatted string containing metadata in key value pairs.
-	Metadata *string `json:"metadata,omitempty"`
+	Metadata string `json:"metadata"`
 	// SecretID to be attached to the role.
-	SecretId *string `json:"secret_id,omitempty"`
+	SecretId string `json:"secret_id"`
 	// Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token. Should be a subset of the token CIDR blocks listed on the role, if any.
-	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
+	TokenBoundCidrs []string `json:"token_bound_cidrs"`
 }
 
 // NewApproleRoleCustomSecretIdRequestWithDefaults instantiates a new ApproleRoleCustomSecretIdRequest object
@@ -826,23 +719,18 @@ type ApproleRoleCustomSecretIdRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleCustomSecretIdRequestWithDefaults() *ApproleRoleCustomSecretIdRequest {
 	this := ApproleRoleCustomSecretIdRequest{}
+
 	return &this
 }
 
 func (o ApproleRoleCustomSecretIdRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.CidrList != nil {
-		toSerialize["cidr_list"] = o.CidrList
-	}
-	if o.Metadata != nil {
-		toSerialize["metadata"] = o.Metadata
-	}
-	if o.SecretId != nil {
-		toSerialize["secret_id"] = o.SecretId
-	}
-	if o.TokenBoundCidrs != nil {
-		toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
-	}
+
+	toSerialize["cidr_list"] = o.CidrList
+	toSerialize["metadata"] = o.Metadata
+	toSerialize["secret_id"] = o.SecretId
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+
 	return json.Marshal(toSerialize)
 }
 
@@ -860,9 +748,9 @@ API version: 1.12.0
 type ApproleRolePeriodRequest struct {
 	// Use \"token_period\" instead. If this and \"token_period\" are both specified, only \"token_period\" will be used.
 	// Deprecated
-	Period *int32 `json:"period,omitempty"`
+	Period int32 `json:"period"`
 	// If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \"24h\").
-	TokenPeriod *int32 `json:"token_period,omitempty"`
+	TokenPeriod int32 `json:"token_period"`
 }
 
 // NewApproleRolePeriodRequestWithDefaults instantiates a new ApproleRolePeriodRequest object
@@ -870,17 +758,16 @@ type ApproleRolePeriodRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRolePeriodRequestWithDefaults() *ApproleRolePeriodRequest {
 	this := ApproleRolePeriodRequest{}
+
 	return &this
 }
 
 func (o ApproleRolePeriodRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Period != nil {
-		toSerialize["period"] = o.Period
-	}
-	if o.TokenPeriod != nil {
-		toSerialize["token_period"] = o.TokenPeriod
-	}
+
+	toSerialize["period"] = o.Period
+	toSerialize["token_period"] = o.TokenPeriod
+
 	return json.Marshal(toSerialize)
 }
 
@@ -898,9 +785,9 @@ API version: 1.12.0
 type ApproleRolePoliciesRequest struct {
 	// Use \"token_policies\" instead. If this and \"token_policies\" are both specified, only \"token_policies\" will be used.
 	// Deprecated
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 	// Comma-separated list of policies
-	TokenPolicies []string `json:"token_policies,omitempty"`
+	TokenPolicies []string `json:"token_policies"`
 }
 
 // NewApproleRolePoliciesRequestWithDefaults instantiates a new ApproleRolePoliciesRequest object
@@ -908,17 +795,16 @@ type ApproleRolePoliciesRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRolePoliciesRequestWithDefaults() *ApproleRolePoliciesRequest {
 	this := ApproleRolePoliciesRequest{}
+
 	return &this
 }
 
 func (o ApproleRolePoliciesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
-	if o.TokenPolicies != nil {
-		toSerialize["token_policies"] = o.TokenPolicies
-	}
+
+	toSerialize["policies"] = o.Policies
+	toSerialize["token_policies"] = o.TokenPolicies
+
 	return json.Marshal(toSerialize)
 }
 
@@ -935,44 +821,44 @@ API version: 1.12.0
 // ApproleRoleRequest struct for ApproleRoleRequest
 type ApproleRoleRequest struct {
 	// Impose secret_id to be presented when logging in using this role. Defaults to 'true'.
-	BindSecretId *bool `json:"bind_secret_id,omitempty"`
+	BindSecretId bool `json:"bind_secret_id"`
 	// Use \"secret_id_bound_cidrs\" instead.
 	// Deprecated
-	BoundCidrList []string `json:"bound_cidr_list,omitempty"`
+	BoundCidrList []string `json:"bound_cidr_list"`
 	// If set, the secret IDs generated using this role will be cluster local. This can only be set during role creation and once set, it can't be reset later.
-	LocalSecretIds *bool `json:"local_secret_ids,omitempty"`
+	LocalSecretIds bool `json:"local_secret_ids"`
 	// Use \"token_period\" instead. If this and \"token_period\" are both specified, only \"token_period\" will be used.
 	// Deprecated
-	Period *int32 `json:"period,omitempty"`
+	Period int32 `json:"period"`
 	// Use \"token_policies\" instead. If this and \"token_policies\" are both specified, only \"token_policies\" will be used.
 	// Deprecated
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 	// Identifier of the role. Defaults to a UUID.
-	RoleId *string `json:"role_id,omitempty"`
+	RoleId string `json:"role_id"`
 	// Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can perform the login operation.
-	SecretIdBoundCidrs []string `json:"secret_id_bound_cidrs,omitempty"`
+	SecretIdBoundCidrs []string `json:"secret_id_bound_cidrs"`
 	// Number of times a SecretID can access the role, after which the SecretID will expire. Defaults to 0 meaning that the the secret_id is of unlimited use.
-	SecretIdNumUses *int32 `json:"secret_id_num_uses,omitempty"`
+	SecretIdNumUses int32 `json:"secret_id_num_uses"`
 	// Duration in seconds after which the issued SecretID should expire. Defaults to 0, meaning no expiration.
-	SecretIdTtl *int32 `json:"secret_id_ttl,omitempty"`
+	SecretIdTtl int32 `json:"secret_id_ttl"`
 	// Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
-	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
+	TokenBoundCidrs []string `json:"token_bound_cidrs"`
 	// If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
-	TokenExplicitMaxTtl *int32 `json:"token_explicit_max_ttl,omitempty"`
+	TokenExplicitMaxTtl int32 `json:"token_explicit_max_ttl"`
 	// The maximum lifetime of the generated token
-	TokenMaxTtl *int32 `json:"token_max_ttl,omitempty"`
+	TokenMaxTtl int32 `json:"token_max_ttl"`
 	// If true, the 'default' policy will not automatically be added to generated tokens
-	TokenNoDefaultPolicy *bool `json:"token_no_default_policy,omitempty"`
+	TokenNoDefaultPolicy bool `json:"token_no_default_policy"`
 	// The maximum number of times a token may be used, a value of zero means unlimited
-	TokenNumUses *int32 `json:"token_num_uses,omitempty"`
+	TokenNumUses int32 `json:"token_num_uses"`
 	// If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \"24h\").
-	TokenPeriod *int32 `json:"token_period,omitempty"`
+	TokenPeriod int32 `json:"token_period"`
 	// Comma-separated list of policies
-	TokenPolicies []string `json:"token_policies,omitempty"`
+	TokenPolicies []string `json:"token_policies"`
 	// The initial ttl of the token to generate
-	TokenTtl *int32 `json:"token_ttl,omitempty"`
+	TokenTtl int32 `json:"token_ttl"`
 	// The type of token to generate, service or batch
-	TokenType *string `json:"token_type,omitempty"`
+	TokenType string `json:"token_type"`
 }
 
 // NewApproleRoleRequestWithDefaults instantiates a new ApproleRoleRequest object
@@ -980,69 +866,35 @@ type ApproleRoleRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleRequestWithDefaults() *ApproleRoleRequest {
 	this := ApproleRoleRequest{}
-	var bindSecretId bool = true
-	this.BindSecretId = &bindSecretId
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
+
+	this.BindSecretId = true
+	this.TokenType = "default-service"
+
 	return &this
 }
 
 func (o ApproleRoleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.BindSecretId != nil {
-		toSerialize["bind_secret_id"] = o.BindSecretId
-	}
-	if o.BoundCidrList != nil {
-		toSerialize["bound_cidr_list"] = o.BoundCidrList
-	}
-	if o.LocalSecretIds != nil {
-		toSerialize["local_secret_ids"] = o.LocalSecretIds
-	}
-	if o.Period != nil {
-		toSerialize["period"] = o.Period
-	}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
-	if o.RoleId != nil {
-		toSerialize["role_id"] = o.RoleId
-	}
-	if o.SecretIdBoundCidrs != nil {
-		toSerialize["secret_id_bound_cidrs"] = o.SecretIdBoundCidrs
-	}
-	if o.SecretIdNumUses != nil {
-		toSerialize["secret_id_num_uses"] = o.SecretIdNumUses
-	}
-	if o.SecretIdTtl != nil {
-		toSerialize["secret_id_ttl"] = o.SecretIdTtl
-	}
-	if o.TokenBoundCidrs != nil {
-		toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
-	}
-	if o.TokenExplicitMaxTtl != nil {
-		toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
-	}
-	if o.TokenMaxTtl != nil {
-		toSerialize["token_max_ttl"] = o.TokenMaxTtl
-	}
-	if o.TokenNoDefaultPolicy != nil {
-		toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
-	}
-	if o.TokenNumUses != nil {
-		toSerialize["token_num_uses"] = o.TokenNumUses
-	}
-	if o.TokenPeriod != nil {
-		toSerialize["token_period"] = o.TokenPeriod
-	}
-	if o.TokenPolicies != nil {
-		toSerialize["token_policies"] = o.TokenPolicies
-	}
-	if o.TokenTtl != nil {
-		toSerialize["token_ttl"] = o.TokenTtl
-	}
-	if o.TokenType != nil {
-		toSerialize["token_type"] = o.TokenType
-	}
+
+	toSerialize["bind_secret_id"] = o.BindSecretId
+	toSerialize["bound_cidr_list"] = o.BoundCidrList
+	toSerialize["local_secret_ids"] = o.LocalSecretIds
+	toSerialize["period"] = o.Period
+	toSerialize["policies"] = o.Policies
+	toSerialize["role_id"] = o.RoleId
+	toSerialize["secret_id_bound_cidrs"] = o.SecretIdBoundCidrs
+	toSerialize["secret_id_num_uses"] = o.SecretIdNumUses
+	toSerialize["secret_id_ttl"] = o.SecretIdTtl
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+
 	return json.Marshal(toSerialize)
 }
 
@@ -1059,7 +911,7 @@ API version: 1.12.0
 // ApproleRoleRoleIdRequest struct for ApproleRoleRoleIdRequest
 type ApproleRoleRoleIdRequest struct {
 	// Identifier of the role. Defaults to a UUID.
-	RoleId *string `json:"role_id,omitempty"`
+	RoleId string `json:"role_id"`
 }
 
 // NewApproleRoleRoleIdRequestWithDefaults instantiates a new ApproleRoleRoleIdRequest object
@@ -1067,14 +919,15 @@ type ApproleRoleRoleIdRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleRoleIdRequestWithDefaults() *ApproleRoleRoleIdRequest {
 	this := ApproleRoleRoleIdRequest{}
+
 	return &this
 }
 
 func (o ApproleRoleRoleIdRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.RoleId != nil {
-		toSerialize["role_id"] = o.RoleId
-	}
+
+	toSerialize["role_id"] = o.RoleId
+
 	return json.Marshal(toSerialize)
 }
 
@@ -1091,7 +944,7 @@ API version: 1.12.0
 // ApproleRoleSecretIdAccessorDestroyRequest struct for ApproleRoleSecretIdAccessorDestroyRequest
 type ApproleRoleSecretIdAccessorDestroyRequest struct {
 	// Accessor of the SecretID
-	SecretIdAccessor *string `json:"secret_id_accessor,omitempty"`
+	SecretIdAccessor string `json:"secret_id_accessor"`
 }
 
 // NewApproleRoleSecretIdAccessorDestroyRequestWithDefaults instantiates a new ApproleRoleSecretIdAccessorDestroyRequest object
@@ -1099,14 +952,15 @@ type ApproleRoleSecretIdAccessorDestroyRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleSecretIdAccessorDestroyRequestWithDefaults() *ApproleRoleSecretIdAccessorDestroyRequest {
 	this := ApproleRoleSecretIdAccessorDestroyRequest{}
+
 	return &this
 }
 
 func (o ApproleRoleSecretIdAccessorDestroyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.SecretIdAccessor != nil {
-		toSerialize["secret_id_accessor"] = o.SecretIdAccessor
-	}
+
+	toSerialize["secret_id_accessor"] = o.SecretIdAccessor
+
 	return json.Marshal(toSerialize)
 }
 
@@ -1123,7 +977,7 @@ API version: 1.12.0
 // ApproleRoleSecretIdAccessorLookupRequest struct for ApproleRoleSecretIdAccessorLookupRequest
 type ApproleRoleSecretIdAccessorLookupRequest struct {
 	// Accessor of the SecretID
-	SecretIdAccessor *string `json:"secret_id_accessor,omitempty"`
+	SecretIdAccessor string `json:"secret_id_accessor"`
 }
 
 // NewApproleRoleSecretIdAccessorLookupRequestWithDefaults instantiates a new ApproleRoleSecretIdAccessorLookupRequest object
@@ -1131,14 +985,15 @@ type ApproleRoleSecretIdAccessorLookupRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleSecretIdAccessorLookupRequestWithDefaults() *ApproleRoleSecretIdAccessorLookupRequest {
 	this := ApproleRoleSecretIdAccessorLookupRequest{}
+
 	return &this
 }
 
 func (o ApproleRoleSecretIdAccessorLookupRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.SecretIdAccessor != nil {
-		toSerialize["secret_id_accessor"] = o.SecretIdAccessor
-	}
+
+	toSerialize["secret_id_accessor"] = o.SecretIdAccessor
+
 	return json.Marshal(toSerialize)
 }
 
@@ -1155,7 +1010,7 @@ API version: 1.12.0
 // ApproleRoleSecretIdBoundCidrsRequest struct for ApproleRoleSecretIdBoundCidrsRequest
 type ApproleRoleSecretIdBoundCidrsRequest struct {
 	// Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can perform the login operation.
-	SecretIdBoundCidrs []string `json:"secret_id_bound_cidrs,omitempty"`
+	SecretIdBoundCidrs []string `json:"secret_id_bound_cidrs"`
 }
 
 // NewApproleRoleSecretIdBoundCidrsRequestWithDefaults instantiates a new ApproleRoleSecretIdBoundCidrsRequest object
@@ -1163,14 +1018,15 @@ type ApproleRoleSecretIdBoundCidrsRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleSecretIdBoundCidrsRequestWithDefaults() *ApproleRoleSecretIdBoundCidrsRequest {
 	this := ApproleRoleSecretIdBoundCidrsRequest{}
+
 	return &this
 }
 
 func (o ApproleRoleSecretIdBoundCidrsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.SecretIdBoundCidrs != nil {
-		toSerialize["secret_id_bound_cidrs"] = o.SecretIdBoundCidrs
-	}
+
+	toSerialize["secret_id_bound_cidrs"] = o.SecretIdBoundCidrs
+
 	return json.Marshal(toSerialize)
 }
 
@@ -1187,7 +1043,7 @@ API version: 1.12.0
 // ApproleRoleSecretIdDestroyRequest struct for ApproleRoleSecretIdDestroyRequest
 type ApproleRoleSecretIdDestroyRequest struct {
 	// SecretID attached to the role.
-	SecretId *string `json:"secret_id,omitempty"`
+	SecretId string `json:"secret_id"`
 }
 
 // NewApproleRoleSecretIdDestroyRequestWithDefaults instantiates a new ApproleRoleSecretIdDestroyRequest object
@@ -1195,14 +1051,15 @@ type ApproleRoleSecretIdDestroyRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleSecretIdDestroyRequestWithDefaults() *ApproleRoleSecretIdDestroyRequest {
 	this := ApproleRoleSecretIdDestroyRequest{}
+
 	return &this
 }
 
 func (o ApproleRoleSecretIdDestroyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.SecretId != nil {
-		toSerialize["secret_id"] = o.SecretId
-	}
+
+	toSerialize["secret_id"] = o.SecretId
+
 	return json.Marshal(toSerialize)
 }
 
@@ -1219,7 +1076,7 @@ API version: 1.12.0
 // ApproleRoleSecretIdLookupRequest struct for ApproleRoleSecretIdLookupRequest
 type ApproleRoleSecretIdLookupRequest struct {
 	// SecretID attached to the role.
-	SecretId *string `json:"secret_id,omitempty"`
+	SecretId string `json:"secret_id"`
 }
 
 // NewApproleRoleSecretIdLookupRequestWithDefaults instantiates a new ApproleRoleSecretIdLookupRequest object
@@ -1227,14 +1084,15 @@ type ApproleRoleSecretIdLookupRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleSecretIdLookupRequestWithDefaults() *ApproleRoleSecretIdLookupRequest {
 	this := ApproleRoleSecretIdLookupRequest{}
+
 	return &this
 }
 
 func (o ApproleRoleSecretIdLookupRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.SecretId != nil {
-		toSerialize["secret_id"] = o.SecretId
-	}
+
+	toSerialize["secret_id"] = o.SecretId
+
 	return json.Marshal(toSerialize)
 }
 
@@ -1251,7 +1109,7 @@ API version: 1.12.0
 // ApproleRoleSecretIdNumUsesRequest struct for ApproleRoleSecretIdNumUsesRequest
 type ApproleRoleSecretIdNumUsesRequest struct {
 	// Number of times a SecretID can access the role, after which the SecretID will expire.
-	SecretIdNumUses *int32 `json:"secret_id_num_uses,omitempty"`
+	SecretIdNumUses int32 `json:"secret_id_num_uses"`
 }
 
 // NewApproleRoleSecretIdNumUsesRequestWithDefaults instantiates a new ApproleRoleSecretIdNumUsesRequest object
@@ -1259,14 +1117,15 @@ type ApproleRoleSecretIdNumUsesRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleSecretIdNumUsesRequestWithDefaults() *ApproleRoleSecretIdNumUsesRequest {
 	this := ApproleRoleSecretIdNumUsesRequest{}
+
 	return &this
 }
 
 func (o ApproleRoleSecretIdNumUsesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.SecretIdNumUses != nil {
-		toSerialize["secret_id_num_uses"] = o.SecretIdNumUses
-	}
+
+	toSerialize["secret_id_num_uses"] = o.SecretIdNumUses
+
 	return json.Marshal(toSerialize)
 }
 
@@ -1283,11 +1142,11 @@ API version: 1.12.0
 // ApproleRoleSecretIdRequest struct for ApproleRoleSecretIdRequest
 type ApproleRoleSecretIdRequest struct {
 	// Comma separated string or list of CIDR blocks enforcing secret IDs to be used from specific set of IP addresses. If 'bound_cidr_list' is set on the role, then the list of CIDR blocks listed here should be a subset of the CIDR blocks listed on the role.
-	CidrList []string `json:"cidr_list,omitempty"`
+	CidrList []string `json:"cidr_list"`
 	// Metadata to be tied to the SecretID. This should be a JSON formatted string containing the metadata in key value pairs.
-	Metadata *string `json:"metadata,omitempty"`
+	Metadata string `json:"metadata"`
 	// Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
-	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
+	TokenBoundCidrs []string `json:"token_bound_cidrs"`
 }
 
 // NewApproleRoleSecretIdRequestWithDefaults instantiates a new ApproleRoleSecretIdRequest object
@@ -1295,20 +1154,17 @@ type ApproleRoleSecretIdRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleSecretIdRequestWithDefaults() *ApproleRoleSecretIdRequest {
 	this := ApproleRoleSecretIdRequest{}
+
 	return &this
 }
 
 func (o ApproleRoleSecretIdRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.CidrList != nil {
-		toSerialize["cidr_list"] = o.CidrList
-	}
-	if o.Metadata != nil {
-		toSerialize["metadata"] = o.Metadata
-	}
-	if o.TokenBoundCidrs != nil {
-		toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
-	}
+
+	toSerialize["cidr_list"] = o.CidrList
+	toSerialize["metadata"] = o.Metadata
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+
 	return json.Marshal(toSerialize)
 }
 
@@ -1325,7 +1181,7 @@ API version: 1.12.0
 // ApproleRoleSecretIdTtlRequest struct for ApproleRoleSecretIdTtlRequest
 type ApproleRoleSecretIdTtlRequest struct {
 	// Duration in seconds after which the issued SecretID should expire. Defaults to 0, meaning no expiration.
-	SecretIdTtl *int32 `json:"secret_id_ttl,omitempty"`
+	SecretIdTtl int32 `json:"secret_id_ttl"`
 }
 
 // NewApproleRoleSecretIdTtlRequestWithDefaults instantiates a new ApproleRoleSecretIdTtlRequest object
@@ -1333,14 +1189,15 @@ type ApproleRoleSecretIdTtlRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleSecretIdTtlRequestWithDefaults() *ApproleRoleSecretIdTtlRequest {
 	this := ApproleRoleSecretIdTtlRequest{}
+
 	return &this
 }
 
 func (o ApproleRoleSecretIdTtlRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.SecretIdTtl != nil {
-		toSerialize["secret_id_ttl"] = o.SecretIdTtl
-	}
+
+	toSerialize["secret_id_ttl"] = o.SecretIdTtl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -1357,7 +1214,7 @@ API version: 1.12.0
 // ApproleRoleTokenBoundCidrsRequest struct for ApproleRoleTokenBoundCidrsRequest
 type ApproleRoleTokenBoundCidrsRequest struct {
 	// Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
-	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
+	TokenBoundCidrs []string `json:"token_bound_cidrs"`
 }
 
 // NewApproleRoleTokenBoundCidrsRequestWithDefaults instantiates a new ApproleRoleTokenBoundCidrsRequest object
@@ -1365,14 +1222,15 @@ type ApproleRoleTokenBoundCidrsRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleTokenBoundCidrsRequestWithDefaults() *ApproleRoleTokenBoundCidrsRequest {
 	this := ApproleRoleTokenBoundCidrsRequest{}
+
 	return &this
 }
 
 func (o ApproleRoleTokenBoundCidrsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.TokenBoundCidrs != nil {
-		toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
-	}
+
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+
 	return json.Marshal(toSerialize)
 }
 
@@ -1389,7 +1247,7 @@ API version: 1.12.0
 // ApproleRoleTokenMaxTtlRequest struct for ApproleRoleTokenMaxTtlRequest
 type ApproleRoleTokenMaxTtlRequest struct {
 	// The maximum lifetime of the generated token
-	TokenMaxTtl *int32 `json:"token_max_ttl,omitempty"`
+	TokenMaxTtl int32 `json:"token_max_ttl"`
 }
 
 // NewApproleRoleTokenMaxTtlRequestWithDefaults instantiates a new ApproleRoleTokenMaxTtlRequest object
@@ -1397,14 +1255,15 @@ type ApproleRoleTokenMaxTtlRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleTokenMaxTtlRequestWithDefaults() *ApproleRoleTokenMaxTtlRequest {
 	this := ApproleRoleTokenMaxTtlRequest{}
+
 	return &this
 }
 
 func (o ApproleRoleTokenMaxTtlRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.TokenMaxTtl != nil {
-		toSerialize["token_max_ttl"] = o.TokenMaxTtl
-	}
+
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -1421,7 +1280,7 @@ API version: 1.12.0
 // ApproleRoleTokenNumUsesRequest struct for ApproleRoleTokenNumUsesRequest
 type ApproleRoleTokenNumUsesRequest struct {
 	// The maximum number of times a token may be used, a value of zero means unlimited
-	TokenNumUses *int32 `json:"token_num_uses,omitempty"`
+	TokenNumUses int32 `json:"token_num_uses"`
 }
 
 // NewApproleRoleTokenNumUsesRequestWithDefaults instantiates a new ApproleRoleTokenNumUsesRequest object
@@ -1429,14 +1288,15 @@ type ApproleRoleTokenNumUsesRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleTokenNumUsesRequestWithDefaults() *ApproleRoleTokenNumUsesRequest {
 	this := ApproleRoleTokenNumUsesRequest{}
+
 	return &this
 }
 
 func (o ApproleRoleTokenNumUsesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.TokenNumUses != nil {
-		toSerialize["token_num_uses"] = o.TokenNumUses
-	}
+
+	toSerialize["token_num_uses"] = o.TokenNumUses
+
 	return json.Marshal(toSerialize)
 }
 
@@ -1453,7 +1313,7 @@ API version: 1.12.0
 // ApproleRoleTokenTtlRequest struct for ApproleRoleTokenTtlRequest
 type ApproleRoleTokenTtlRequest struct {
 	// The initial ttl of the token to generate
-	TokenTtl *int32 `json:"token_ttl,omitempty"`
+	TokenTtl int32 `json:"token_ttl"`
 }
 
 // NewApproleRoleTokenTtlRequestWithDefaults instantiates a new ApproleRoleTokenTtlRequest object
@@ -1461,14 +1321,15 @@ type ApproleRoleTokenTtlRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleTokenTtlRequestWithDefaults() *ApproleRoleTokenTtlRequest {
 	this := ApproleRoleTokenTtlRequest{}
+
 	return &this
 }
 
 func (o ApproleRoleTokenTtlRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.TokenTtl != nil {
-		toSerialize["token_ttl"] = o.TokenTtl
-	}
+
+	toSerialize["token_ttl"] = o.TokenTtl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -1485,9 +1346,9 @@ API version: 1.12.0
 // AwsConfigCertificateRequest struct for AwsConfigCertificateRequest
 type AwsConfigCertificateRequest struct {
 	// Base64 encoded AWS Public cert required to verify PKCS7 signature of the EC2 instance metadata.
-	AwsPublicCert *string `json:"aws_public_cert,omitempty"`
+	AwsPublicCert string `json:"aws_public_cert"`
 	// Takes the value of either \"pkcs7\" or \"identity\", indicating the type of document which can be verified using the given certificate. The reason is that the PKCS#7 document will have a DSA digest and the identity signature will have an RSA signature, and accordingly the public certificates to verify those also vary. Defaults to \"pkcs7\".
-	Type *string `json:"type,omitempty"`
+	Type string `json:"type"`
 }
 
 // NewAwsConfigCertificateRequestWithDefaults instantiates a new AwsConfigCertificateRequest object
@@ -1495,19 +1356,18 @@ type AwsConfigCertificateRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAwsConfigCertificateRequestWithDefaults() *AwsConfigCertificateRequest {
 	this := AwsConfigCertificateRequest{}
-	var type_ string = "pkcs7"
-	this.Type = &type_
+
+	this.Type = "pkcs7"
+
 	return &this
 }
 
 func (o AwsConfigCertificateRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AwsPublicCert != nil {
-		toSerialize["aws_public_cert"] = o.AwsPublicCert
-	}
-	if o.Type != nil {
-		toSerialize["type"] = o.Type
-	}
+
+	toSerialize["aws_public_cert"] = o.AwsPublicCert
+	toSerialize["type"] = o.Type
+
 	return json.Marshal(toSerialize)
 }
 
@@ -1524,23 +1384,23 @@ API version: 1.12.0
 // AwsConfigClientRequest struct for AwsConfigClientRequest
 type AwsConfigClientRequest struct {
 	// AWS Access Key ID for the account used to make AWS API requests.
-	AccessKey *string `json:"access_key,omitempty"`
+	AccessKey string `json:"access_key"`
 	// List of additional headers that are allowed to be in AWS STS request headers
-	AllowedStsHeaderValues []string `json:"allowed_sts_header_values,omitempty"`
+	AllowedStsHeaderValues []string `json:"allowed_sts_header_values"`
 	// URL to override the default generated endpoint for making AWS EC2 API calls.
-	Endpoint *string `json:"endpoint,omitempty"`
+	Endpoint string `json:"endpoint"`
 	// URL to override the default generated endpoint for making AWS IAM API calls.
-	IamEndpoint *string `json:"iam_endpoint,omitempty"`
+	IamEndpoint string `json:"iam_endpoint"`
 	// Value to require in the X-Vault-AWS-IAM-Server-ID request header
-	IamServerIdHeaderValue *string `json:"iam_server_id_header_value,omitempty"`
+	IamServerIdHeaderValue string `json:"iam_server_id_header_value"`
 	// Maximum number of retries for recoverable exceptions of AWS APIs
-	MaxRetries *int32 `json:"max_retries,omitempty"`
+	MaxRetries int32 `json:"max_retries"`
 	// AWS Secret Access Key for the account used to make AWS API requests.
-	SecretKey *string `json:"secret_key,omitempty"`
+	SecretKey string `json:"secret_key"`
 	// URL to override the default generated endpoint for making AWS STS API calls.
-	StsEndpoint *string `json:"sts_endpoint,omitempty"`
+	StsEndpoint string `json:"sts_endpoint"`
 	// The region ID for the sts_endpoint, if set.
-	StsRegion *string `json:"sts_region,omitempty"`
+	StsRegion string `json:"sts_region"`
 }
 
 // NewAwsConfigClientRequestWithDefaults instantiates a new AwsConfigClientRequest object
@@ -1548,54 +1408,32 @@ type AwsConfigClientRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAwsConfigClientRequestWithDefaults() *AwsConfigClientRequest {
 	this := AwsConfigClientRequest{}
-	var accessKey string = ""
-	this.AccessKey = &accessKey
-	var endpoint string = ""
-	this.Endpoint = &endpoint
-	var iamEndpoint string = ""
-	this.IamEndpoint = &iamEndpoint
-	var iamServerIdHeaderValue string = ""
-	this.IamServerIdHeaderValue = &iamServerIdHeaderValue
-	var maxRetries int32 = -1
-	this.MaxRetries = &maxRetries
-	var secretKey string = ""
-	this.SecretKey = &secretKey
-	var stsEndpoint string = ""
-	this.StsEndpoint = &stsEndpoint
-	var stsRegion string = ""
-	this.StsRegion = &stsRegion
+
+	this.AccessKey = ""
+	this.Endpoint = ""
+	this.IamEndpoint = ""
+	this.IamServerIdHeaderValue = ""
+	this.MaxRetries = -1
+	this.SecretKey = ""
+	this.StsEndpoint = ""
+	this.StsRegion = ""
+
 	return &this
 }
 
 func (o AwsConfigClientRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AccessKey != nil {
-		toSerialize["access_key"] = o.AccessKey
-	}
-	if o.AllowedStsHeaderValues != nil {
-		toSerialize["allowed_sts_header_values"] = o.AllowedStsHeaderValues
-	}
-	if o.Endpoint != nil {
-		toSerialize["endpoint"] = o.Endpoint
-	}
-	if o.IamEndpoint != nil {
-		toSerialize["iam_endpoint"] = o.IamEndpoint
-	}
-	if o.IamServerIdHeaderValue != nil {
-		toSerialize["iam_server_id_header_value"] = o.IamServerIdHeaderValue
-	}
-	if o.MaxRetries != nil {
-		toSerialize["max_retries"] = o.MaxRetries
-	}
-	if o.SecretKey != nil {
-		toSerialize["secret_key"] = o.SecretKey
-	}
-	if o.StsEndpoint != nil {
-		toSerialize["sts_endpoint"] = o.StsEndpoint
-	}
-	if o.StsRegion != nil {
-		toSerialize["sts_region"] = o.StsRegion
-	}
+
+	toSerialize["access_key"] = o.AccessKey
+	toSerialize["allowed_sts_header_values"] = o.AllowedStsHeaderValues
+	toSerialize["endpoint"] = o.Endpoint
+	toSerialize["iam_endpoint"] = o.IamEndpoint
+	toSerialize["iam_server_id_header_value"] = o.IamServerIdHeaderValue
+	toSerialize["max_retries"] = o.MaxRetries
+	toSerialize["secret_key"] = o.SecretKey
+	toSerialize["sts_endpoint"] = o.StsEndpoint
+	toSerialize["sts_region"] = o.StsRegion
+
 	return json.Marshal(toSerialize)
 }
 
@@ -1612,13 +1450,13 @@ API version: 1.12.0
 // AwsConfigIdentityRequest struct for AwsConfigIdentityRequest
 type AwsConfigIdentityRequest struct {
 	// Configure how the AWS auth method generates entity alias when using EC2 auth. Valid values are \"role_id\", \"instance_id\", and \"image_id\". Defaults to \"role_id\".
-	Ec2Alias *string `json:"ec2_alias,omitempty"`
+	Ec2Alias string `json:"ec2_alias"`
 	// The metadata to include on the aliases and audit logs generated by this plugin. When set to 'default', includes: account_id, auth_type. These fields are available to add: ami_id, instance_id, region. Not editing this field means the 'default' fields are included. Explicitly setting this field to empty overrides the 'default' and means no metadata will be included. If not using 'default', explicit fields must be sent like: 'field1,field2'.
-	Ec2Metadata []string `json:"ec2_metadata,omitempty"`
+	Ec2Metadata []string `json:"ec2_metadata"`
 	// Configure how the AWS auth method generates entity aliases when using IAM auth. Valid values are \"role_id\", \"unique_id\", and \"full_arn\". Defaults to \"role_id\".
-	IamAlias *string `json:"iam_alias,omitempty"`
+	IamAlias string `json:"iam_alias"`
 	// The metadata to include on the aliases and audit logs generated by this plugin. When set to 'default', includes: account_id, auth_type. These fields are available to add: canonical_arn, client_arn, client_user_id, inferred_aws_region, inferred_entity_id, inferred_entity_type. Not editing this field means the 'default' fields are included. Explicitly setting this field to empty overrides the 'default' and means no metadata will be included. If not using 'default', explicit fields must be sent like: 'field1,field2'.
-	IamMetadata []string `json:"iam_metadata,omitempty"`
+	IamMetadata []string `json:"iam_metadata"`
 }
 
 // NewAwsConfigIdentityRequestWithDefaults instantiates a new AwsConfigIdentityRequest object
@@ -1626,27 +1464,21 @@ type AwsConfigIdentityRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAwsConfigIdentityRequestWithDefaults() *AwsConfigIdentityRequest {
 	this := AwsConfigIdentityRequest{}
-	var ec2Alias string = "instance_id"
-	this.Ec2Alias = &ec2Alias
-	var iamAlias string = "unique_id"
-	this.IamAlias = &iamAlias
+
+	this.Ec2Alias = "instance_id"
+	this.IamAlias = "unique_id"
+
 	return &this
 }
 
 func (o AwsConfigIdentityRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Ec2Alias != nil {
-		toSerialize["ec2_alias"] = o.Ec2Alias
-	}
-	if o.Ec2Metadata != nil {
-		toSerialize["ec2_metadata"] = o.Ec2Metadata
-	}
-	if o.IamAlias != nil {
-		toSerialize["iam_alias"] = o.IamAlias
-	}
-	if o.IamMetadata != nil {
-		toSerialize["iam_metadata"] = o.IamMetadata
-	}
+
+	toSerialize["ec2_alias"] = o.Ec2Alias
+	toSerialize["ec2_metadata"] = o.Ec2Metadata
+	toSerialize["iam_alias"] = o.IamAlias
+	toSerialize["iam_metadata"] = o.IamMetadata
+
 	return json.Marshal(toSerialize)
 }
 
@@ -1663,9 +1495,9 @@ API version: 1.12.0
 // AwsConfigLeaseRequest struct for AwsConfigLeaseRequest
 type AwsConfigLeaseRequest struct {
 	// Default lease for roles.
-	Lease *string `json:"lease,omitempty"`
+	Lease string `json:"lease"`
 	// Maximum time a credential is valid for.
-	LeaseMax *string `json:"lease_max,omitempty"`
+	LeaseMax string `json:"lease_max"`
 }
 
 // NewAwsConfigLeaseRequestWithDefaults instantiates a new AwsConfigLeaseRequest object
@@ -1673,17 +1505,16 @@ type AwsConfigLeaseRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAwsConfigLeaseRequestWithDefaults() *AwsConfigLeaseRequest {
 	this := AwsConfigLeaseRequest{}
+
 	return &this
 }
 
 func (o AwsConfigLeaseRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Lease != nil {
-		toSerialize["lease"] = o.Lease
-	}
-	if o.LeaseMax != nil {
-		toSerialize["lease_max"] = o.LeaseMax
-	}
+
+	toSerialize["lease"] = o.Lease
+	toSerialize["lease_max"] = o.LeaseMax
+
 	return json.Marshal(toSerialize)
 }
 
@@ -1700,19 +1531,19 @@ API version: 1.12.0
 // AwsConfigRootRequest struct for AwsConfigRootRequest
 type AwsConfigRootRequest struct {
 	// Access key with permission to create new keys.
-	AccessKey *string `json:"access_key,omitempty"`
+	AccessKey string `json:"access_key"`
 	// Endpoint to custom IAM server URL
-	IamEndpoint *string `json:"iam_endpoint,omitempty"`
+	IamEndpoint string `json:"iam_endpoint"`
 	// Maximum number of retries for recoverable exceptions of AWS APIs
-	MaxRetries *int32 `json:"max_retries,omitempty"`
+	MaxRetries int32 `json:"max_retries"`
 	// Region for API calls.
-	Region *string `json:"region,omitempty"`
+	Region string `json:"region"`
 	// Secret key with permission to create new keys.
-	SecretKey *string `json:"secret_key,omitempty"`
+	SecretKey string `json:"secret_key"`
 	// Endpoint to custom STS server URL
-	StsEndpoint *string `json:"sts_endpoint,omitempty"`
+	StsEndpoint string `json:"sts_endpoint"`
 	// Template to generate custom IAM usernames
-	UsernameTemplate *string `json:"username_template,omitempty"`
+	UsernameTemplate string `json:"username_template"`
 }
 
 // NewAwsConfigRootRequestWithDefaults instantiates a new AwsConfigRootRequest object
@@ -1720,34 +1551,23 @@ type AwsConfigRootRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAwsConfigRootRequestWithDefaults() *AwsConfigRootRequest {
 	this := AwsConfigRootRequest{}
-	var maxRetries int32 = -1
-	this.MaxRetries = &maxRetries
+
+	this.MaxRetries = -1
+
 	return &this
 }
 
 func (o AwsConfigRootRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AccessKey != nil {
-		toSerialize["access_key"] = o.AccessKey
-	}
-	if o.IamEndpoint != nil {
-		toSerialize["iam_endpoint"] = o.IamEndpoint
-	}
-	if o.MaxRetries != nil {
-		toSerialize["max_retries"] = o.MaxRetries
-	}
-	if o.Region != nil {
-		toSerialize["region"] = o.Region
-	}
-	if o.SecretKey != nil {
-		toSerialize["secret_key"] = o.SecretKey
-	}
-	if o.StsEndpoint != nil {
-		toSerialize["sts_endpoint"] = o.StsEndpoint
-	}
-	if o.UsernameTemplate != nil {
-		toSerialize["username_template"] = o.UsernameTemplate
-	}
+
+	toSerialize["access_key"] = o.AccessKey
+	toSerialize["iam_endpoint"] = o.IamEndpoint
+	toSerialize["max_retries"] = o.MaxRetries
+	toSerialize["region"] = o.Region
+	toSerialize["secret_key"] = o.SecretKey
+	toSerialize["sts_endpoint"] = o.StsEndpoint
+	toSerialize["username_template"] = o.UsernameTemplate
+
 	return json.Marshal(toSerialize)
 }
 
@@ -1764,7 +1584,7 @@ API version: 1.12.0
 // AwsConfigStsRequest struct for AwsConfigStsRequest
 type AwsConfigStsRequest struct {
 	// AWS ARN for STS role to be assumed when interacting with the account specified. The Vault server must have permissions to assume this role.
-	StsRole *string `json:"sts_role,omitempty"`
+	StsRole string `json:"sts_role"`
 }
 
 // NewAwsConfigStsRequestWithDefaults instantiates a new AwsConfigStsRequest object
@@ -1772,14 +1592,15 @@ type AwsConfigStsRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAwsConfigStsRequestWithDefaults() *AwsConfigStsRequest {
 	this := AwsConfigStsRequest{}
+
 	return &this
 }
 
 func (o AwsConfigStsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.StsRole != nil {
-		toSerialize["sts_role"] = o.StsRole
-	}
+
+	toSerialize["sts_role"] = o.StsRole
+
 	return json.Marshal(toSerialize)
 }
 
@@ -1796,9 +1617,9 @@ API version: 1.12.0
 // AwsConfigTidyIdentityAccesslistRequest struct for AwsConfigTidyIdentityAccesslistRequest
 type AwsConfigTidyIdentityAccesslistRequest struct {
 	// If set to 'true', disables the periodic tidying of the 'identity-accesslist/<instance_id>' entries.
-	DisablePeriodicTidy *bool `json:"disable_periodic_tidy,omitempty"`
+	DisablePeriodicTidy bool `json:"disable_periodic_tidy"`
 	// The amount of extra time that must have passed beyond the identity's expiration, before it is removed from the backend storage.
-	SafetyBuffer *int32 `json:"safety_buffer,omitempty"`
+	SafetyBuffer int32 `json:"safety_buffer"`
 }
 
 // NewAwsConfigTidyIdentityAccesslistRequestWithDefaults instantiates a new AwsConfigTidyIdentityAccesslistRequest object
@@ -1806,21 +1627,19 @@ type AwsConfigTidyIdentityAccesslistRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAwsConfigTidyIdentityAccesslistRequestWithDefaults() *AwsConfigTidyIdentityAccesslistRequest {
 	this := AwsConfigTidyIdentityAccesslistRequest{}
-	var disablePeriodicTidy bool = false
-	this.DisablePeriodicTidy = &disablePeriodicTidy
-	var safetyBuffer int32 = 259200
-	this.SafetyBuffer = &safetyBuffer
+
+	this.DisablePeriodicTidy = false
+	this.SafetyBuffer = 259200
+
 	return &this
 }
 
 func (o AwsConfigTidyIdentityAccesslistRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.DisablePeriodicTidy != nil {
-		toSerialize["disable_periodic_tidy"] = o.DisablePeriodicTidy
-	}
-	if o.SafetyBuffer != nil {
-		toSerialize["safety_buffer"] = o.SafetyBuffer
-	}
+
+	toSerialize["disable_periodic_tidy"] = o.DisablePeriodicTidy
+	toSerialize["safety_buffer"] = o.SafetyBuffer
+
 	return json.Marshal(toSerialize)
 }
 
@@ -1837,9 +1656,9 @@ API version: 1.12.0
 // AwsConfigTidyIdentityWhitelistRequest struct for AwsConfigTidyIdentityWhitelistRequest
 type AwsConfigTidyIdentityWhitelistRequest struct {
 	// If set to 'true', disables the periodic tidying of the 'identity-accesslist/<instance_id>' entries.
-	DisablePeriodicTidy *bool `json:"disable_periodic_tidy,omitempty"`
+	DisablePeriodicTidy bool `json:"disable_periodic_tidy"`
 	// The amount of extra time that must have passed beyond the identity's expiration, before it is removed from the backend storage.
-	SafetyBuffer *int32 `json:"safety_buffer,omitempty"`
+	SafetyBuffer int32 `json:"safety_buffer"`
 }
 
 // NewAwsConfigTidyIdentityWhitelistRequestWithDefaults instantiates a new AwsConfigTidyIdentityWhitelistRequest object
@@ -1847,21 +1666,19 @@ type AwsConfigTidyIdentityWhitelistRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAwsConfigTidyIdentityWhitelistRequestWithDefaults() *AwsConfigTidyIdentityWhitelistRequest {
 	this := AwsConfigTidyIdentityWhitelistRequest{}
-	var disablePeriodicTidy bool = false
-	this.DisablePeriodicTidy = &disablePeriodicTidy
-	var safetyBuffer int32 = 259200
-	this.SafetyBuffer = &safetyBuffer
+
+	this.DisablePeriodicTidy = false
+	this.SafetyBuffer = 259200
+
 	return &this
 }
 
 func (o AwsConfigTidyIdentityWhitelistRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.DisablePeriodicTidy != nil {
-		toSerialize["disable_periodic_tidy"] = o.DisablePeriodicTidy
-	}
-	if o.SafetyBuffer != nil {
-		toSerialize["safety_buffer"] = o.SafetyBuffer
-	}
+
+	toSerialize["disable_periodic_tidy"] = o.DisablePeriodicTidy
+	toSerialize["safety_buffer"] = o.SafetyBuffer
+
 	return json.Marshal(toSerialize)
 }
 
@@ -1878,9 +1695,9 @@ API version: 1.12.0
 // AwsConfigTidyRoletagBlacklistRequest struct for AwsConfigTidyRoletagBlacklistRequest
 type AwsConfigTidyRoletagBlacklistRequest struct {
 	// If set to 'true', disables the periodic tidying of deny listed entries.
-	DisablePeriodicTidy *bool `json:"disable_periodic_tidy,omitempty"`
+	DisablePeriodicTidy bool `json:"disable_periodic_tidy"`
 	// The amount of extra time that must have passed beyond the roletag expiration, before it is removed from the backend storage. Defaults to 4320h (180 days).
-	SafetyBuffer *int32 `json:"safety_buffer,omitempty"`
+	SafetyBuffer int32 `json:"safety_buffer"`
 }
 
 // NewAwsConfigTidyRoletagBlacklistRequestWithDefaults instantiates a new AwsConfigTidyRoletagBlacklistRequest object
@@ -1888,21 +1705,19 @@ type AwsConfigTidyRoletagBlacklistRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAwsConfigTidyRoletagBlacklistRequestWithDefaults() *AwsConfigTidyRoletagBlacklistRequest {
 	this := AwsConfigTidyRoletagBlacklistRequest{}
-	var disablePeriodicTidy bool = false
-	this.DisablePeriodicTidy = &disablePeriodicTidy
-	var safetyBuffer int32 = 15552000
-	this.SafetyBuffer = &safetyBuffer
+
+	this.DisablePeriodicTidy = false
+	this.SafetyBuffer = 15552000
+
 	return &this
 }
 
 func (o AwsConfigTidyRoletagBlacklistRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.DisablePeriodicTidy != nil {
-		toSerialize["disable_periodic_tidy"] = o.DisablePeriodicTidy
-	}
-	if o.SafetyBuffer != nil {
-		toSerialize["safety_buffer"] = o.SafetyBuffer
-	}
+
+	toSerialize["disable_periodic_tidy"] = o.DisablePeriodicTidy
+	toSerialize["safety_buffer"] = o.SafetyBuffer
+
 	return json.Marshal(toSerialize)
 }
 
@@ -1919,9 +1734,9 @@ API version: 1.12.0
 // AwsConfigTidyRoletagDenylistRequest struct for AwsConfigTidyRoletagDenylistRequest
 type AwsConfigTidyRoletagDenylistRequest struct {
 	// If set to 'true', disables the periodic tidying of deny listed entries.
-	DisablePeriodicTidy *bool `json:"disable_periodic_tidy,omitempty"`
+	DisablePeriodicTidy bool `json:"disable_periodic_tidy"`
 	// The amount of extra time that must have passed beyond the roletag expiration, before it is removed from the backend storage. Defaults to 4320h (180 days).
-	SafetyBuffer *int32 `json:"safety_buffer,omitempty"`
+	SafetyBuffer int32 `json:"safety_buffer"`
 }
 
 // NewAwsConfigTidyRoletagDenylistRequestWithDefaults instantiates a new AwsConfigTidyRoletagDenylistRequest object
@@ -1929,21 +1744,19 @@ type AwsConfigTidyRoletagDenylistRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAwsConfigTidyRoletagDenylistRequestWithDefaults() *AwsConfigTidyRoletagDenylistRequest {
 	this := AwsConfigTidyRoletagDenylistRequest{}
-	var disablePeriodicTidy bool = false
-	this.DisablePeriodicTidy = &disablePeriodicTidy
-	var safetyBuffer int32 = 15552000
-	this.SafetyBuffer = &safetyBuffer
+
+	this.DisablePeriodicTidy = false
+	this.SafetyBuffer = 15552000
+
 	return &this
 }
 
 func (o AwsConfigTidyRoletagDenylistRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.DisablePeriodicTidy != nil {
-		toSerialize["disable_periodic_tidy"] = o.DisablePeriodicTidy
-	}
-	if o.SafetyBuffer != nil {
-		toSerialize["safety_buffer"] = o.SafetyBuffer
-	}
+
+	toSerialize["disable_periodic_tidy"] = o.DisablePeriodicTidy
+	toSerialize["safety_buffer"] = o.SafetyBuffer
+
 	return json.Marshal(toSerialize)
 }
 
@@ -1960,13 +1773,13 @@ API version: 1.12.0
 // AwsCredsRequest struct for AwsCredsRequest
 type AwsCredsRequest struct {
 	// Name of the role
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 	// ARN of role to assume when credential_type is assumed_role
-	RoleArn *string `json:"role_arn,omitempty"`
+	RoleArn string `json:"role_arn"`
 	// Session name to use when assuming role. Max chars: 64
-	RoleSessionName *string `json:"role_session_name,omitempty"`
+	RoleSessionName string `json:"role_session_name"`
 	// Lifetime of the returned credentials in seconds
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 }
 
 // NewAwsCredsRequestWithDefaults instantiates a new AwsCredsRequest object
@@ -1974,25 +1787,20 @@ type AwsCredsRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAwsCredsRequestWithDefaults() *AwsCredsRequest {
 	this := AwsCredsRequest{}
-	var ttl int32 = 3600
-	this.Ttl = &ttl
+
+	this.Ttl = 3600
+
 	return &this
 }
 
 func (o AwsCredsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
-	}
-	if o.RoleArn != nil {
-		toSerialize["role_arn"] = o.RoleArn
-	}
-	if o.RoleSessionName != nil {
-		toSerialize["role_session_name"] = o.RoleSessionName
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
+
+	toSerialize["name"] = o.Name
+	toSerialize["role_arn"] = o.RoleArn
+	toSerialize["role_session_name"] = o.RoleSessionName
+	toSerialize["ttl"] = o.Ttl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -2009,23 +1817,23 @@ API version: 1.12.0
 // AwsLoginRequest struct for AwsLoginRequest
 type AwsLoginRequest struct {
 	// HTTP method to use for the AWS request when auth_type is iam. This must match what has been signed in the presigned request. Currently, POST is the only supported value
-	IamHttpRequestMethod *string `json:"iam_http_request_method,omitempty"`
+	IamHttpRequestMethod string `json:"iam_http_request_method"`
 	// Base64-encoded request body when auth_type is iam. This must match the request body included in the signature.
-	IamRequestBody *string `json:"iam_request_body,omitempty"`
+	IamRequestBody string `json:"iam_request_body"`
 	// Key/value pairs of headers for use in the sts:GetCallerIdentity HTTP requests headers when auth_type is iam. Can be either a Base64-encoded, JSON-serialized string, or a JSON object of key/value pairs. This must at a minimum include the headers over which AWS has included a signature.
-	IamRequestHeaders *string `json:"iam_request_headers,omitempty"`
+	IamRequestHeaders string `json:"iam_request_headers"`
 	// Base64-encoded full URL against which to make the AWS request when using iam auth_type.
-	IamRequestUrl *string `json:"iam_request_url,omitempty"`
+	IamRequestUrl string `json:"iam_request_url"`
 	// Base64 encoded EC2 instance identity document. This needs to be supplied along with the 'signature' parameter. If using 'curl' for fetching the identity document, consider using the option '-w 0' while piping the output to 'base64' binary.
-	Identity *string `json:"identity,omitempty"`
+	Identity string `json:"identity"`
 	// The nonce to be used for subsequent login requests when auth_type is ec2. If this parameter is not specified at all and if reauthentication is allowed, then the backend will generate a random nonce, attaches it to the instance's identity access list entry and returns the nonce back as part of auth metadata. This value should be used with further login requests, to establish client authenticity. Clients can choose to set a custom nonce if preferred, in which case, it is recommended that clients provide a strong nonce. If a nonce is provided but with an empty value, it indicates intent to disable reauthentication. Note that, when 'disallow_reauthentication' option is enabled on either the role or the role tag, the 'nonce' holds no significance.
-	Nonce *string `json:"nonce,omitempty"`
+	Nonce string `json:"nonce"`
 	// PKCS7 signature of the identity document when using an auth_type of ec2.
-	Pkcs7 *string `json:"pkcs7,omitempty"`
+	Pkcs7 string `json:"pkcs7"`
 	// Name of the role against which the login is being attempted. If 'role' is not specified, then the login endpoint looks for a role bearing the name of the AMI ID of the EC2 instance that is trying to login. If a matching role is not found, login fails.
-	Role *string `json:"role,omitempty"`
+	Role string `json:"role"`
 	// Base64 encoded SHA256 RSA signature of the instance identity document. This needs to be supplied along with 'identity' parameter.
-	Signature *string `json:"signature,omitempty"`
+	Signature string `json:"signature"`
 }
 
 // NewAwsLoginRequestWithDefaults instantiates a new AwsLoginRequest object
@@ -2033,38 +1841,23 @@ type AwsLoginRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAwsLoginRequestWithDefaults() *AwsLoginRequest {
 	this := AwsLoginRequest{}
+
 	return &this
 }
 
 func (o AwsLoginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.IamHttpRequestMethod != nil {
-		toSerialize["iam_http_request_method"] = o.IamHttpRequestMethod
-	}
-	if o.IamRequestBody != nil {
-		toSerialize["iam_request_body"] = o.IamRequestBody
-	}
-	if o.IamRequestHeaders != nil {
-		toSerialize["iam_request_headers"] = o.IamRequestHeaders
-	}
-	if o.IamRequestUrl != nil {
-		toSerialize["iam_request_url"] = o.IamRequestUrl
-	}
-	if o.Identity != nil {
-		toSerialize["identity"] = o.Identity
-	}
-	if o.Nonce != nil {
-		toSerialize["nonce"] = o.Nonce
-	}
-	if o.Pkcs7 != nil {
-		toSerialize["pkcs7"] = o.Pkcs7
-	}
-	if o.Role != nil {
-		toSerialize["role"] = o.Role
-	}
-	if o.Signature != nil {
-		toSerialize["signature"] = o.Signature
-	}
+
+	toSerialize["iam_http_request_method"] = o.IamHttpRequestMethod
+	toSerialize["iam_request_body"] = o.IamRequestBody
+	toSerialize["iam_request_headers"] = o.IamRequestHeaders
+	toSerialize["iam_request_url"] = o.IamRequestUrl
+	toSerialize["identity"] = o.Identity
+	toSerialize["nonce"] = o.Nonce
+	toSerialize["pkcs7"] = o.Pkcs7
+	toSerialize["role"] = o.Role
+	toSerialize["signature"] = o.Signature
+
 	return json.Marshal(toSerialize)
 }
 
@@ -2081,67 +1874,67 @@ API version: 1.12.0
 // AwsRoleRequest struct for AwsRoleRequest
 type AwsRoleRequest struct {
 	// If set, allows migration of the underlying instance where the client resides. This keys off of pendingTime in the metadata document, so essentially, this disables the client nonce check whenever the instance is migrated to a new host and pendingTime is newer than the previously-remembered time. Use with caution. This is only checked when auth_type is ec2.
-	AllowInstanceMigration *bool `json:"allow_instance_migration,omitempty"`
+	AllowInstanceMigration bool `json:"allow_instance_migration"`
 	// The auth_type permitted to authenticate to this role. Must be one of iam or ec2 and cannot be changed after role creation.
-	AuthType *string `json:"auth_type,omitempty"`
+	AuthType string `json:"auth_type"`
 	// If set, defines a constraint on the EC2 instances that the account ID in its identity document to match one of the IDs specified by this parameter. This is only applicable when auth_type is ec2 or inferred_entity_type is ec2_instance.
-	BoundAccountId []string `json:"bound_account_id,omitempty"`
+	BoundAccountId []string `json:"bound_account_id"`
 	// If set, defines a constraint on the EC2 instances that they should be using one of the AMI IDs specified by this parameter. This is only applicable when auth_type is ec2 or inferred_entity_type is ec2_instance.
-	BoundAmiId []string `json:"bound_ami_id,omitempty"`
+	BoundAmiId []string `json:"bound_ami_id"`
 	// If set, defines a constraint on the EC2 instances to have one of the given instance IDs. Can be a list or comma-separated string of EC2 instance IDs. This is only applicable when auth_type is ec2 or inferred_entity_type is ec2_instance.
-	BoundEc2InstanceId []string `json:"bound_ec2_instance_id,omitempty"`
+	BoundEc2InstanceId []string `json:"bound_ec2_instance_id"`
 	// If set, defines a constraint on the EC2 instances to be associated with an IAM instance profile ARN which has a prefix that matches one of the values specified by this parameter. The value is prefix-matched (as though it were a glob ending in '*'). This is only applicable when auth_type is ec2 or inferred_entity_type is ec2_instance.
-	BoundIamInstanceProfileArn []string `json:"bound_iam_instance_profile_arn,omitempty"`
+	BoundIamInstanceProfileArn []string `json:"bound_iam_instance_profile_arn"`
 	// ARN of the IAM principals to bind to this role. Only applicable when auth_type is iam.
-	BoundIamPrincipalArn []string `json:"bound_iam_principal_arn,omitempty"`
+	BoundIamPrincipalArn []string `json:"bound_iam_principal_arn"`
 	// If set, defines a constraint on the authenticating EC2 instance that it must match one of the IAM role ARNs specified by this parameter. The value is prefix-matched (as though it were a glob ending in '*'). The configured IAM user or EC2 instance role must be allowed to execute the 'iam:GetInstanceProfile' action if this is specified. This is only applicable when auth_type is ec2 or inferred_entity_type is ec2_instance.
-	BoundIamRoleArn []string `json:"bound_iam_role_arn,omitempty"`
+	BoundIamRoleArn []string `json:"bound_iam_role_arn"`
 	// If set, defines a constraint on the EC2 instances that the region in its identity document match one of the regions specified by this parameter. This is only applicable when auth_type is ec2.
-	BoundRegion []string `json:"bound_region,omitempty"`
+	BoundRegion []string `json:"bound_region"`
 	// If set, defines a constraint on the EC2 instance to be associated with the subnet ID that matches one of the values specified by this parameter. This is only applicable when auth_type is ec2 or inferred_entity_type is ec2_instance.
-	BoundSubnetId []string `json:"bound_subnet_id,omitempty"`
+	BoundSubnetId []string `json:"bound_subnet_id"`
 	// If set, defines a constraint on the EC2 instance to be associated with a VPC ID that matches one of the value specified by this parameter. This is only applicable when auth_type is ec2 or inferred_entity_type is ec2_instance.
-	BoundVpcId []string `json:"bound_vpc_id,omitempty"`
+	BoundVpcId []string `json:"bound_vpc_id"`
 	// If set, only allows a single token to be granted per instance ID. In order to perform a fresh login, the entry in the access list for the instance ID needs to be cleared using 'auth/aws-ec2/identity-accesslist/<instance_id>' endpoint. This is only applicable when auth_type is ec2.
-	DisallowReauthentication *bool `json:"disallow_reauthentication,omitempty"`
+	DisallowReauthentication bool `json:"disallow_reauthentication"`
 	// When auth_type is iam and inferred_entity_type is set, the region to assume the inferred entity exists in.
-	InferredAwsRegion *string `json:"inferred_aws_region,omitempty"`
+	InferredAwsRegion string `json:"inferred_aws_region"`
 	// When auth_type is iam, the AWS entity type to infer from the authenticated principal. The only supported value is ec2_instance, which will extract the EC2 instance ID from the authenticated role and apply the following restrictions specific to EC2 instances: bound_ami_id, bound_account_id, bound_iam_role_arn, bound_iam_instance_profile_arn, bound_vpc_id, bound_subnet_id. The configured EC2 client must be able to find the inferred instance ID in the results, and the instance must be running. If unable to determine the EC2 instance ID or unable to find the EC2 instance ID among running instances, then authentication will fail.
-	InferredEntityType *string `json:"inferred_entity_type,omitempty"`
+	InferredEntityType string `json:"inferred_entity_type"`
 	// Use \"token_max_ttl\" instead. If this and \"token_max_ttl\" are both specified, only \"token_max_ttl\" will be used.
 	// Deprecated
-	MaxTtl *int32 `json:"max_ttl,omitempty"`
+	MaxTtl int32 `json:"max_ttl"`
 	// Use \"token_period\" instead. If this and \"token_period\" are both specified, only \"token_period\" will be used.
 	// Deprecated
-	Period *int32 `json:"period,omitempty"`
+	Period int32 `json:"period"`
 	// Use \"token_policies\" instead. If this and \"token_policies\" are both specified, only \"token_policies\" will be used.
 	// Deprecated
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 	// If set, resolve all AWS IAM ARNs into AWS's internal unique IDs. When an IAM entity (e.g., user, role, or instance profile) is deleted, then all references to it within the role will be invalidated, which prevents a new IAM entity from being created with the same name and matching the role's IAM binds. Once set, this cannot be unset.
-	ResolveAwsUniqueIds *bool `json:"resolve_aws_unique_ids,omitempty"`
+	ResolveAwsUniqueIds bool `json:"resolve_aws_unique_ids"`
 	// If set, enables the role tags for this role. The value set for this field should be the 'key' of the tag on the EC2 instance. The 'value' of the tag should be generated using 'role/<role>/tag' endpoint. Defaults to an empty string, meaning that role tags are disabled. This is only allowed if auth_type is ec2.
-	RoleTag *string `json:"role_tag,omitempty"`
+	RoleTag string `json:"role_tag"`
 	// Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
-	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
+	TokenBoundCidrs []string `json:"token_bound_cidrs"`
 	// If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
-	TokenExplicitMaxTtl *int32 `json:"token_explicit_max_ttl,omitempty"`
+	TokenExplicitMaxTtl int32 `json:"token_explicit_max_ttl"`
 	// The maximum lifetime of the generated token
-	TokenMaxTtl *int32 `json:"token_max_ttl,omitempty"`
+	TokenMaxTtl int32 `json:"token_max_ttl"`
 	// If true, the 'default' policy will not automatically be added to generated tokens
-	TokenNoDefaultPolicy *bool `json:"token_no_default_policy,omitempty"`
+	TokenNoDefaultPolicy bool `json:"token_no_default_policy"`
 	// The maximum number of times a token may be used, a value of zero means unlimited
-	TokenNumUses *int32 `json:"token_num_uses,omitempty"`
+	TokenNumUses int32 `json:"token_num_uses"`
 	// If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \"24h\").
-	TokenPeriod *int32 `json:"token_period,omitempty"`
+	TokenPeriod int32 `json:"token_period"`
 	// Comma-separated list of policies
-	TokenPolicies []string `json:"token_policies,omitempty"`
+	TokenPolicies []string `json:"token_policies"`
 	// The initial ttl of the token to generate
-	TokenTtl *int32 `json:"token_ttl,omitempty"`
+	TokenTtl int32 `json:"token_ttl"`
 	// The type of token to generate, service or batch
-	TokenType *string `json:"token_type,omitempty"`
+	TokenType string `json:"token_type"`
 	// Use \"token_ttl\" instead. If this and \"token_ttl\" are both specified, only \"token_ttl\" will be used.
 	// Deprecated
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 }
 
 // NewAwsRoleRequestWithDefaults instantiates a new AwsRoleRequest object
@@ -2149,108 +1942,49 @@ type AwsRoleRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAwsRoleRequestWithDefaults() *AwsRoleRequest {
 	this := AwsRoleRequest{}
-	var allowInstanceMigration bool = false
-	this.AllowInstanceMigration = &allowInstanceMigration
-	var disallowReauthentication bool = false
-	this.DisallowReauthentication = &disallowReauthentication
-	var resolveAwsUniqueIds bool = true
-	this.ResolveAwsUniqueIds = &resolveAwsUniqueIds
-	var roleTag string = ""
-	this.RoleTag = &roleTag
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
+
+	this.AllowInstanceMigration = false
+	this.DisallowReauthentication = false
+	this.ResolveAwsUniqueIds = true
+	this.RoleTag = ""
+	this.TokenType = "default-service"
+
 	return &this
 }
 
 func (o AwsRoleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AllowInstanceMigration != nil {
-		toSerialize["allow_instance_migration"] = o.AllowInstanceMigration
-	}
-	if o.AuthType != nil {
-		toSerialize["auth_type"] = o.AuthType
-	}
-	if o.BoundAccountId != nil {
-		toSerialize["bound_account_id"] = o.BoundAccountId
-	}
-	if o.BoundAmiId != nil {
-		toSerialize["bound_ami_id"] = o.BoundAmiId
-	}
-	if o.BoundEc2InstanceId != nil {
-		toSerialize["bound_ec2_instance_id"] = o.BoundEc2InstanceId
-	}
-	if o.BoundIamInstanceProfileArn != nil {
-		toSerialize["bound_iam_instance_profile_arn"] = o.BoundIamInstanceProfileArn
-	}
-	if o.BoundIamPrincipalArn != nil {
-		toSerialize["bound_iam_principal_arn"] = o.BoundIamPrincipalArn
-	}
-	if o.BoundIamRoleArn != nil {
-		toSerialize["bound_iam_role_arn"] = o.BoundIamRoleArn
-	}
-	if o.BoundRegion != nil {
-		toSerialize["bound_region"] = o.BoundRegion
-	}
-	if o.BoundSubnetId != nil {
-		toSerialize["bound_subnet_id"] = o.BoundSubnetId
-	}
-	if o.BoundVpcId != nil {
-		toSerialize["bound_vpc_id"] = o.BoundVpcId
-	}
-	if o.DisallowReauthentication != nil {
-		toSerialize["disallow_reauthentication"] = o.DisallowReauthentication
-	}
-	if o.InferredAwsRegion != nil {
-		toSerialize["inferred_aws_region"] = o.InferredAwsRegion
-	}
-	if o.InferredEntityType != nil {
-		toSerialize["inferred_entity_type"] = o.InferredEntityType
-	}
-	if o.MaxTtl != nil {
-		toSerialize["max_ttl"] = o.MaxTtl
-	}
-	if o.Period != nil {
-		toSerialize["period"] = o.Period
-	}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
-	if o.ResolveAwsUniqueIds != nil {
-		toSerialize["resolve_aws_unique_ids"] = o.ResolveAwsUniqueIds
-	}
-	if o.RoleTag != nil {
-		toSerialize["role_tag"] = o.RoleTag
-	}
-	if o.TokenBoundCidrs != nil {
-		toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
-	}
-	if o.TokenExplicitMaxTtl != nil {
-		toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
-	}
-	if o.TokenMaxTtl != nil {
-		toSerialize["token_max_ttl"] = o.TokenMaxTtl
-	}
-	if o.TokenNoDefaultPolicy != nil {
-		toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
-	}
-	if o.TokenNumUses != nil {
-		toSerialize["token_num_uses"] = o.TokenNumUses
-	}
-	if o.TokenPeriod != nil {
-		toSerialize["token_period"] = o.TokenPeriod
-	}
-	if o.TokenPolicies != nil {
-		toSerialize["token_policies"] = o.TokenPolicies
-	}
-	if o.TokenTtl != nil {
-		toSerialize["token_ttl"] = o.TokenTtl
-	}
-	if o.TokenType != nil {
-		toSerialize["token_type"] = o.TokenType
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
+
+	toSerialize["allow_instance_migration"] = o.AllowInstanceMigration
+	toSerialize["auth_type"] = o.AuthType
+	toSerialize["bound_account_id"] = o.BoundAccountId
+	toSerialize["bound_ami_id"] = o.BoundAmiId
+	toSerialize["bound_ec2_instance_id"] = o.BoundEc2InstanceId
+	toSerialize["bound_iam_instance_profile_arn"] = o.BoundIamInstanceProfileArn
+	toSerialize["bound_iam_principal_arn"] = o.BoundIamPrincipalArn
+	toSerialize["bound_iam_role_arn"] = o.BoundIamRoleArn
+	toSerialize["bound_region"] = o.BoundRegion
+	toSerialize["bound_subnet_id"] = o.BoundSubnetId
+	toSerialize["bound_vpc_id"] = o.BoundVpcId
+	toSerialize["disallow_reauthentication"] = o.DisallowReauthentication
+	toSerialize["inferred_aws_region"] = o.InferredAwsRegion
+	toSerialize["inferred_entity_type"] = o.InferredEntityType
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["period"] = o.Period
+	toSerialize["policies"] = o.Policies
+	toSerialize["resolve_aws_unique_ids"] = o.ResolveAwsUniqueIds
+	toSerialize["role_tag"] = o.RoleTag
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+	toSerialize["ttl"] = o.Ttl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -2267,15 +2001,15 @@ API version: 1.12.0
 // AwsRoleTagRequest struct for AwsRoleTagRequest
 type AwsRoleTagRequest struct {
 	// If set, allows migration of the underlying instance where the client resides. This keys off of pendingTime in the metadata document, so essentially, this disables the client nonce check whenever the instance is migrated to a new host and pendingTime is newer than the previously-remembered time. Use with caution.
-	AllowInstanceMigration *bool `json:"allow_instance_migration,omitempty"`
+	AllowInstanceMigration bool `json:"allow_instance_migration"`
 	// If set, only allows a single token to be granted per instance ID. In order to perform a fresh login, the entry in access list for the instance ID needs to be cleared using the 'auth/aws-ec2/identity-accesslist/<instance_id>' endpoint.
-	DisallowReauthentication *bool `json:"disallow_reauthentication,omitempty"`
+	DisallowReauthentication bool `json:"disallow_reauthentication"`
 	// Instance ID for which this tag is intended for. If set, the created tag can only be used by the instance with the given ID.
-	InstanceId *string `json:"instance_id,omitempty"`
+	InstanceId string `json:"instance_id"`
 	// If set, specifies the maximum allowed token lifetime.
-	MaxTtl *int32 `json:"max_ttl,omitempty"`
+	MaxTtl int32 `json:"max_ttl"`
 	// Policies to be associated with the tag. If set, must be a subset of the role's policies. If set, but set to an empty value, only the 'default' policy will be given to issued tokens.
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 }
 
 // NewAwsRoleTagRequestWithDefaults instantiates a new AwsRoleTagRequest object
@@ -2283,32 +2017,23 @@ type AwsRoleTagRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAwsRoleTagRequestWithDefaults() *AwsRoleTagRequest {
 	this := AwsRoleTagRequest{}
-	var allowInstanceMigration bool = false
-	this.AllowInstanceMigration = &allowInstanceMigration
-	var disallowReauthentication bool = false
-	this.DisallowReauthentication = &disallowReauthentication
-	var maxTtl int32 = 0
-	this.MaxTtl = &maxTtl
+
+	this.AllowInstanceMigration = false
+	this.DisallowReauthentication = false
+	this.MaxTtl = 0
+
 	return &this
 }
 
 func (o AwsRoleTagRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AllowInstanceMigration != nil {
-		toSerialize["allow_instance_migration"] = o.AllowInstanceMigration
-	}
-	if o.DisallowReauthentication != nil {
-		toSerialize["disallow_reauthentication"] = o.DisallowReauthentication
-	}
-	if o.InstanceId != nil {
-		toSerialize["instance_id"] = o.InstanceId
-	}
-	if o.MaxTtl != nil {
-		toSerialize["max_ttl"] = o.MaxTtl
-	}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
+
+	toSerialize["allow_instance_migration"] = o.AllowInstanceMigration
+	toSerialize["disallow_reauthentication"] = o.DisallowReauthentication
+	toSerialize["instance_id"] = o.InstanceId
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["policies"] = o.Policies
+
 	return json.Marshal(toSerialize)
 }
 
@@ -2326,30 +2051,30 @@ API version: 1.12.0
 type AwsRolesRequest struct {
 	// Use role_arns or policy_arns instead.
 	// Deprecated
-	Arn *string `json:"arn,omitempty"`
+	Arn string `json:"arn"`
 	// Type of credential to retrieve. Must be one of assumed_role, iam_user, or federation_token
-	CredentialType *string `json:"credential_type,omitempty"`
+	CredentialType string `json:"credential_type"`
 	// Default TTL for assumed_role and federation_token credential types when no TTL is explicitly requested with the credentials
-	DefaultStsTtl *int32 `json:"default_sts_ttl,omitempty"`
+	DefaultStsTtl int32 `json:"default_sts_ttl"`
 	// Names of IAM groups that generated IAM users will be added to. For a credential type of assumed_role or federation_token, the policies sent to the corresponding AWS call (sts:AssumeRole or sts:GetFederation) will be the policies from each group in iam_groups combined with the policy_document and policy_arns parameters.
-	IamGroups []string `json:"iam_groups,omitempty"`
+	IamGroups []string `json:"iam_groups"`
 	// IAM tags to be set for any users created by this role. These must be presented as Key-Value pairs. This can be represented as a map or a list of equal sign delimited key pairs.
-	IamTags map[string]interface{} `json:"iam_tags,omitempty"`
+	IamTags map[string]interface{} `json:"iam_tags"`
 	// Max allowed TTL for assumed_role and federation_token credential types
-	MaxStsTtl *int32 `json:"max_sts_ttl,omitempty"`
+	MaxStsTtl int32 `json:"max_sts_ttl"`
 	// ARN of an IAM policy to attach as a permissions boundary on IAM user credentials; only valid when credential_type isiam_user
-	PermissionsBoundaryArn *string `json:"permissions_boundary_arn,omitempty"`
+	PermissionsBoundaryArn string `json:"permissions_boundary_arn"`
 	// Use policy_document instead.
 	// Deprecated
-	Policy *string `json:"policy,omitempty"`
+	Policy string `json:"policy"`
 	// ARNs of AWS policies. Behavior varies by credential_type. When credential_type is iam_user, then it will attach the specified policies to the generated IAM user. When credential_type is assumed_role or federation_token, the policies will be passed as the PolicyArns parameter, acting as a filter on permissions available.
-	PolicyArns []string `json:"policy_arns,omitempty"`
+	PolicyArns []string `json:"policy_arns"`
 	// JSON-encoded IAM policy document. Behavior varies by credential_type. When credential_type is iam_user, then it will attach the contents of the policy_document to the IAM user generated. When credential_type is assumed_role or federation_token, this will be passed in as the Policy parameter to the AssumeRole or GetFederationToken API call, acting as a filter on permissions available.
-	PolicyDocument *string `json:"policy_document,omitempty"`
+	PolicyDocument string `json:"policy_document"`
 	// ARNs of AWS roles allowed to be assumed. Only valid when credential_type is assumed_role
-	RoleArns []string `json:"role_arns,omitempty"`
+	RoleArns []string `json:"role_arns"`
 	// Path for IAM User. Only valid when credential_type is iam_user
-	UserPath *string `json:"user_path,omitempty"`
+	UserPath string `json:"user_path"`
 }
 
 // NewAwsRolesRequestWithDefaults instantiates a new AwsRolesRequest object
@@ -2357,49 +2082,28 @@ type AwsRolesRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAwsRolesRequestWithDefaults() *AwsRolesRequest {
 	this := AwsRolesRequest{}
-	var userPath string = "/"
-	this.UserPath = &userPath
+
+	this.UserPath = "/"
+
 	return &this
 }
 
 func (o AwsRolesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Arn != nil {
-		toSerialize["arn"] = o.Arn
-	}
-	if o.CredentialType != nil {
-		toSerialize["credential_type"] = o.CredentialType
-	}
-	if o.DefaultStsTtl != nil {
-		toSerialize["default_sts_ttl"] = o.DefaultStsTtl
-	}
-	if o.IamGroups != nil {
-		toSerialize["iam_groups"] = o.IamGroups
-	}
-	if o.IamTags != nil {
-		toSerialize["iam_tags"] = o.IamTags
-	}
-	if o.MaxStsTtl != nil {
-		toSerialize["max_sts_ttl"] = o.MaxStsTtl
-	}
-	if o.PermissionsBoundaryArn != nil {
-		toSerialize["permissions_boundary_arn"] = o.PermissionsBoundaryArn
-	}
-	if o.Policy != nil {
-		toSerialize["policy"] = o.Policy
-	}
-	if o.PolicyArns != nil {
-		toSerialize["policy_arns"] = o.PolicyArns
-	}
-	if o.PolicyDocument != nil {
-		toSerialize["policy_document"] = o.PolicyDocument
-	}
-	if o.RoleArns != nil {
-		toSerialize["role_arns"] = o.RoleArns
-	}
-	if o.UserPath != nil {
-		toSerialize["user_path"] = o.UserPath
-	}
+
+	toSerialize["arn"] = o.Arn
+	toSerialize["credential_type"] = o.CredentialType
+	toSerialize["default_sts_ttl"] = o.DefaultStsTtl
+	toSerialize["iam_groups"] = o.IamGroups
+	toSerialize["iam_tags"] = o.IamTags
+	toSerialize["max_sts_ttl"] = o.MaxStsTtl
+	toSerialize["permissions_boundary_arn"] = o.PermissionsBoundaryArn
+	toSerialize["policy"] = o.Policy
+	toSerialize["policy_arns"] = o.PolicyArns
+	toSerialize["policy_document"] = o.PolicyDocument
+	toSerialize["role_arns"] = o.RoleArns
+	toSerialize["user_path"] = o.UserPath
+
 	return json.Marshal(toSerialize)
 }
 
@@ -2416,11 +2120,11 @@ API version: 1.12.0
 // AwsStsRequest struct for AwsStsRequest
 type AwsStsRequest struct {
 	// ARN of role to assume when credential_type is assumed_role
-	RoleArn *string `json:"role_arn,omitempty"`
+	RoleArn string `json:"role_arn"`
 	// Session name to use when assuming role. Max chars: 64
-	RoleSessionName *string `json:"role_session_name,omitempty"`
+	RoleSessionName string `json:"role_session_name"`
 	// Lifetime of the returned credentials in seconds
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 }
 
 // NewAwsStsRequestWithDefaults instantiates a new AwsStsRequest object
@@ -2428,22 +2132,19 @@ type AwsStsRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAwsStsRequestWithDefaults() *AwsStsRequest {
 	this := AwsStsRequest{}
-	var ttl int32 = 3600
-	this.Ttl = &ttl
+
+	this.Ttl = 3600
+
 	return &this
 }
 
 func (o AwsStsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.RoleArn != nil {
-		toSerialize["role_arn"] = o.RoleArn
-	}
-	if o.RoleSessionName != nil {
-		toSerialize["role_session_name"] = o.RoleSessionName
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
+
+	toSerialize["role_arn"] = o.RoleArn
+	toSerialize["role_session_name"] = o.RoleSessionName
+	toSerialize["ttl"] = o.Ttl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -2460,7 +2161,7 @@ API version: 1.12.0
 // AwsTidyIdentityAccesslistRequest struct for AwsTidyIdentityAccesslistRequest
 type AwsTidyIdentityAccesslistRequest struct {
 	// The amount of extra time that must have passed beyond the identity's expiration, before it is removed from the backend storage.
-	SafetyBuffer *int32 `json:"safety_buffer,omitempty"`
+	SafetyBuffer int32 `json:"safety_buffer"`
 }
 
 // NewAwsTidyIdentityAccesslistRequestWithDefaults instantiates a new AwsTidyIdentityAccesslistRequest object
@@ -2468,16 +2169,17 @@ type AwsTidyIdentityAccesslistRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAwsTidyIdentityAccesslistRequestWithDefaults() *AwsTidyIdentityAccesslistRequest {
 	this := AwsTidyIdentityAccesslistRequest{}
-	var safetyBuffer int32 = 259200
-	this.SafetyBuffer = &safetyBuffer
+
+	this.SafetyBuffer = 259200
+
 	return &this
 }
 
 func (o AwsTidyIdentityAccesslistRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.SafetyBuffer != nil {
-		toSerialize["safety_buffer"] = o.SafetyBuffer
-	}
+
+	toSerialize["safety_buffer"] = o.SafetyBuffer
+
 	return json.Marshal(toSerialize)
 }
 
@@ -2494,7 +2196,7 @@ API version: 1.12.0
 // AwsTidyIdentityWhitelistRequest struct for AwsTidyIdentityWhitelistRequest
 type AwsTidyIdentityWhitelistRequest struct {
 	// The amount of extra time that must have passed beyond the identity's expiration, before it is removed from the backend storage.
-	SafetyBuffer *int32 `json:"safety_buffer,omitempty"`
+	SafetyBuffer int32 `json:"safety_buffer"`
 }
 
 // NewAwsTidyIdentityWhitelistRequestWithDefaults instantiates a new AwsTidyIdentityWhitelistRequest object
@@ -2502,16 +2204,17 @@ type AwsTidyIdentityWhitelistRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAwsTidyIdentityWhitelistRequestWithDefaults() *AwsTidyIdentityWhitelistRequest {
 	this := AwsTidyIdentityWhitelistRequest{}
-	var safetyBuffer int32 = 259200
-	this.SafetyBuffer = &safetyBuffer
+
+	this.SafetyBuffer = 259200
+
 	return &this
 }
 
 func (o AwsTidyIdentityWhitelistRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.SafetyBuffer != nil {
-		toSerialize["safety_buffer"] = o.SafetyBuffer
-	}
+
+	toSerialize["safety_buffer"] = o.SafetyBuffer
+
 	return json.Marshal(toSerialize)
 }
 
@@ -2528,7 +2231,7 @@ API version: 1.12.0
 // AwsTidyRoletagBlacklistRequest struct for AwsTidyRoletagBlacklistRequest
 type AwsTidyRoletagBlacklistRequest struct {
 	// The amount of extra time that must have passed beyond the roletag expiration, before it is removed from the backend storage.
-	SafetyBuffer *int32 `json:"safety_buffer,omitempty"`
+	SafetyBuffer int32 `json:"safety_buffer"`
 }
 
 // NewAwsTidyRoletagBlacklistRequestWithDefaults instantiates a new AwsTidyRoletagBlacklistRequest object
@@ -2536,16 +2239,17 @@ type AwsTidyRoletagBlacklistRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAwsTidyRoletagBlacklistRequestWithDefaults() *AwsTidyRoletagBlacklistRequest {
 	this := AwsTidyRoletagBlacklistRequest{}
-	var safetyBuffer int32 = 259200
-	this.SafetyBuffer = &safetyBuffer
+
+	this.SafetyBuffer = 259200
+
 	return &this
 }
 
 func (o AwsTidyRoletagBlacklistRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.SafetyBuffer != nil {
-		toSerialize["safety_buffer"] = o.SafetyBuffer
-	}
+
+	toSerialize["safety_buffer"] = o.SafetyBuffer
+
 	return json.Marshal(toSerialize)
 }
 
@@ -2562,7 +2266,7 @@ API version: 1.12.0
 // AwsTidyRoletagDenylistRequest struct for AwsTidyRoletagDenylistRequest
 type AwsTidyRoletagDenylistRequest struct {
 	// The amount of extra time that must have passed beyond the roletag expiration, before it is removed from the backend storage.
-	SafetyBuffer *int32 `json:"safety_buffer,omitempty"`
+	SafetyBuffer int32 `json:"safety_buffer"`
 }
 
 // NewAwsTidyRoletagDenylistRequestWithDefaults instantiates a new AwsTidyRoletagDenylistRequest object
@@ -2570,16 +2274,17 @@ type AwsTidyRoletagDenylistRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAwsTidyRoletagDenylistRequestWithDefaults() *AwsTidyRoletagDenylistRequest {
 	this := AwsTidyRoletagDenylistRequest{}
-	var safetyBuffer int32 = 259200
-	this.SafetyBuffer = &safetyBuffer
+
+	this.SafetyBuffer = 259200
+
 	return &this
 }
 
 func (o AwsTidyRoletagDenylistRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.SafetyBuffer != nil {
-		toSerialize["safety_buffer"] = o.SafetyBuffer
-	}
+
+	toSerialize["safety_buffer"] = o.SafetyBuffer
+
 	return json.Marshal(toSerialize)
 }
 
@@ -2596,15 +2301,15 @@ API version: 1.12.0
 // AzureConfigRequest struct for AzureConfigRequest
 type AzureConfigRequest struct {
 	// The OAuth2 client id to connection to Azure. This value can also be provided with the AZURE_CLIENT_ID environment variable.
-	ClientId *string `json:"client_id,omitempty"`
+	ClientId string `json:"client_id"`
 	// The OAuth2 client secret to connection to Azure. This value can also be provided with the AZURE_CLIENT_SECRET environment variable.
-	ClientSecret *string `json:"client_secret,omitempty"`
+	ClientSecret string `json:"client_secret"`
 	// The Azure environment name. If not provided, AzurePublicCloud is used. This value can also be provided with the AZURE_ENVIRONMENT environment variable.
-	Environment *string `json:"environment,omitempty"`
+	Environment string `json:"environment"`
 	// The resource URL for the vault application in Azure Active Directory. This value can also be provided with the AZURE_AD_RESOURCE environment variable.
-	Resource *string `json:"resource,omitempty"`
+	Resource string `json:"resource"`
 	// The tenant id for the Azure Active Directory. This is sometimes referred to as Directory ID in AD. This value can also be provided with the AZURE_TENANT_ID environment variable.
-	TenantId *string `json:"tenant_id,omitempty"`
+	TenantId string `json:"tenant_id"`
 }
 
 // NewAzureConfigRequestWithDefaults instantiates a new AzureConfigRequest object
@@ -2612,26 +2317,19 @@ type AzureConfigRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAzureConfigRequestWithDefaults() *AzureConfigRequest {
 	this := AzureConfigRequest{}
+
 	return &this
 }
 
 func (o AzureConfigRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.ClientId != nil {
-		toSerialize["client_id"] = o.ClientId
-	}
-	if o.ClientSecret != nil {
-		toSerialize["client_secret"] = o.ClientSecret
-	}
-	if o.Environment != nil {
-		toSerialize["environment"] = o.Environment
-	}
-	if o.Resource != nil {
-		toSerialize["resource"] = o.Resource
-	}
-	if o.TenantId != nil {
-		toSerialize["tenant_id"] = o.TenantId
-	}
+
+	toSerialize["client_id"] = o.ClientId
+	toSerialize["client_secret"] = o.ClientSecret
+	toSerialize["environment"] = o.Environment
+	toSerialize["resource"] = o.Resource
+	toSerialize["tenant_id"] = o.TenantId
+
 	return json.Marshal(toSerialize)
 }
 
@@ -2648,17 +2346,17 @@ API version: 1.12.0
 // AzureLoginRequest struct for AzureLoginRequest
 type AzureLoginRequest struct {
 	// A signed JWT
-	Jwt *string `json:"jwt,omitempty"`
+	Jwt string `json:"jwt"`
 	// The resource group from the instance.
-	ResourceGroupName *string `json:"resource_group_name,omitempty"`
+	ResourceGroupName string `json:"resource_group_name"`
 	// The token role.
-	Role *string `json:"role,omitempty"`
+	Role string `json:"role"`
 	// The subscription id for the instance.
-	SubscriptionId *string `json:"subscription_id,omitempty"`
+	SubscriptionId string `json:"subscription_id"`
 	// The name of the virtual machine. This value is ignored if vmss_name is specified.
-	VmName *string `json:"vm_name,omitempty"`
+	VmName string `json:"vm_name"`
 	// The name of the virtual machine scale set the instance is in.
-	VmssName *string `json:"vmss_name,omitempty"`
+	VmssName string `json:"vmss_name"`
 }
 
 // NewAzureLoginRequestWithDefaults instantiates a new AzureLoginRequest object
@@ -2666,29 +2364,20 @@ type AzureLoginRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAzureLoginRequestWithDefaults() *AzureLoginRequest {
 	this := AzureLoginRequest{}
+
 	return &this
 }
 
 func (o AzureLoginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Jwt != nil {
-		toSerialize["jwt"] = o.Jwt
-	}
-	if o.ResourceGroupName != nil {
-		toSerialize["resource_group_name"] = o.ResourceGroupName
-	}
-	if o.Role != nil {
-		toSerialize["role"] = o.Role
-	}
-	if o.SubscriptionId != nil {
-		toSerialize["subscription_id"] = o.SubscriptionId
-	}
-	if o.VmName != nil {
-		toSerialize["vm_name"] = o.VmName
-	}
-	if o.VmssName != nil {
-		toSerialize["vmss_name"] = o.VmssName
-	}
+
+	toSerialize["jwt"] = o.Jwt
+	toSerialize["resource_group_name"] = o.ResourceGroupName
+	toSerialize["role"] = o.Role
+	toSerialize["subscription_id"] = o.SubscriptionId
+	toSerialize["vm_name"] = o.VmName
+	toSerialize["vmss_name"] = o.VmssName
+
 	return json.Marshal(toSerialize)
 }
 
@@ -2705,50 +2394,50 @@ API version: 1.12.0
 // AzureRoleRequest struct for AzureRoleRequest
 type AzureRoleRequest struct {
 	// Comma-separated list of group ids that login is restricted to.
-	BoundGroupIds []string `json:"bound_group_ids,omitempty"`
+	BoundGroupIds []string `json:"bound_group_ids"`
 	// Comma-separated list of locations that login is restricted to.
-	BoundLocations []string `json:"bound_locations,omitempty"`
+	BoundLocations []string `json:"bound_locations"`
 	// Comma-separated list of resource groups that login is restricted to.
-	BoundResourceGroups []string `json:"bound_resource_groups,omitempty"`
+	BoundResourceGroups []string `json:"bound_resource_groups"`
 	// Comma-separated list of scale sets that login is restricted to.
-	BoundScaleSets []string `json:"bound_scale_sets,omitempty"`
+	BoundScaleSets []string `json:"bound_scale_sets"`
 	// Comma-separated list of service principal ids that login is restricted to.
-	BoundServicePrincipalIds []string `json:"bound_service_principal_ids,omitempty"`
+	BoundServicePrincipalIds []string `json:"bound_service_principal_ids"`
 	// Comma-separated list of subscription ids that login is restricted to.
-	BoundSubscriptionIds []string `json:"bound_subscription_ids,omitempty"`
+	BoundSubscriptionIds []string `json:"bound_subscription_ids"`
 	// Use \"token_max_ttl\" instead. If this and \"token_max_ttl\" are both specified, only \"token_max_ttl\" will be used.
 	// Deprecated
-	MaxTtl *int32 `json:"max_ttl,omitempty"`
+	MaxTtl int32 `json:"max_ttl"`
 	// Use \"token_num_uses\" instead. If this and \"token_num_uses\" are both specified, only \"token_num_uses\" will be used.
 	// Deprecated
-	NumUses *int32 `json:"num_uses,omitempty"`
+	NumUses int32 `json:"num_uses"`
 	// Use \"token_period\" instead. If this and \"token_period\" are both specified, only \"token_period\" will be used.
 	// Deprecated
-	Period *int32 `json:"period,omitempty"`
+	Period int32 `json:"period"`
 	// Use \"token_policies\" instead. If this and \"token_policies\" are both specified, only \"token_policies\" will be used.
 	// Deprecated
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 	// Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
-	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
+	TokenBoundCidrs []string `json:"token_bound_cidrs"`
 	// If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
-	TokenExplicitMaxTtl *int32 `json:"token_explicit_max_ttl,omitempty"`
+	TokenExplicitMaxTtl int32 `json:"token_explicit_max_ttl"`
 	// The maximum lifetime of the generated token
-	TokenMaxTtl *int32 `json:"token_max_ttl,omitempty"`
+	TokenMaxTtl int32 `json:"token_max_ttl"`
 	// If true, the 'default' policy will not automatically be added to generated tokens
-	TokenNoDefaultPolicy *bool `json:"token_no_default_policy,omitempty"`
+	TokenNoDefaultPolicy bool `json:"token_no_default_policy"`
 	// The maximum number of times a token may be used, a value of zero means unlimited
-	TokenNumUses *int32 `json:"token_num_uses,omitempty"`
+	TokenNumUses int32 `json:"token_num_uses"`
 	// If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \"24h\").
-	TokenPeriod *int32 `json:"token_period,omitempty"`
+	TokenPeriod int32 `json:"token_period"`
 	// Comma-separated list of policies
-	TokenPolicies []string `json:"token_policies,omitempty"`
+	TokenPolicies []string `json:"token_policies"`
 	// The initial ttl of the token to generate
-	TokenTtl *int32 `json:"token_ttl,omitempty"`
+	TokenTtl int32 `json:"token_ttl"`
 	// The type of token to generate, service or batch
-	TokenType *string `json:"token_type,omitempty"`
+	TokenType string `json:"token_type"`
 	// Use \"token_ttl\" instead. If this and \"token_ttl\" are both specified, only \"token_ttl\" will be used.
 	// Deprecated
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 }
 
 // NewAzureRoleRequestWithDefaults instantiates a new AzureRoleRequest object
@@ -2756,73 +2445,36 @@ type AzureRoleRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAzureRoleRequestWithDefaults() *AzureRoleRequest {
 	this := AzureRoleRequest{}
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
+
+	this.TokenType = "default-service"
+
 	return &this
 }
 
 func (o AzureRoleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.BoundGroupIds != nil {
-		toSerialize["bound_group_ids"] = o.BoundGroupIds
-	}
-	if o.BoundLocations != nil {
-		toSerialize["bound_locations"] = o.BoundLocations
-	}
-	if o.BoundResourceGroups != nil {
-		toSerialize["bound_resource_groups"] = o.BoundResourceGroups
-	}
-	if o.BoundScaleSets != nil {
-		toSerialize["bound_scale_sets"] = o.BoundScaleSets
-	}
-	if o.BoundServicePrincipalIds != nil {
-		toSerialize["bound_service_principal_ids"] = o.BoundServicePrincipalIds
-	}
-	if o.BoundSubscriptionIds != nil {
-		toSerialize["bound_subscription_ids"] = o.BoundSubscriptionIds
-	}
-	if o.MaxTtl != nil {
-		toSerialize["max_ttl"] = o.MaxTtl
-	}
-	if o.NumUses != nil {
-		toSerialize["num_uses"] = o.NumUses
-	}
-	if o.Period != nil {
-		toSerialize["period"] = o.Period
-	}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
-	if o.TokenBoundCidrs != nil {
-		toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
-	}
-	if o.TokenExplicitMaxTtl != nil {
-		toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
-	}
-	if o.TokenMaxTtl != nil {
-		toSerialize["token_max_ttl"] = o.TokenMaxTtl
-	}
-	if o.TokenNoDefaultPolicy != nil {
-		toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
-	}
-	if o.TokenNumUses != nil {
-		toSerialize["token_num_uses"] = o.TokenNumUses
-	}
-	if o.TokenPeriod != nil {
-		toSerialize["token_period"] = o.TokenPeriod
-	}
-	if o.TokenPolicies != nil {
-		toSerialize["token_policies"] = o.TokenPolicies
-	}
-	if o.TokenTtl != nil {
-		toSerialize["token_ttl"] = o.TokenTtl
-	}
-	if o.TokenType != nil {
-		toSerialize["token_type"] = o.TokenType
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
+
+	toSerialize["bound_group_ids"] = o.BoundGroupIds
+	toSerialize["bound_locations"] = o.BoundLocations
+	toSerialize["bound_resource_groups"] = o.BoundResourceGroups
+	toSerialize["bound_scale_sets"] = o.BoundScaleSets
+	toSerialize["bound_service_principal_ids"] = o.BoundServicePrincipalIds
+	toSerialize["bound_subscription_ids"] = o.BoundSubscriptionIds
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["num_uses"] = o.NumUses
+	toSerialize["period"] = o.Period
+	toSerialize["policies"] = o.Policies
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+	toSerialize["ttl"] = o.Ttl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -2839,15 +2491,15 @@ API version: 1.12.0
 // AzureRolesRequest struct for AzureRolesRequest
 type AzureRolesRequest struct {
 	// Application Object ID to use for static service principal credentials.
-	ApplicationObjectId *string `json:"application_object_id,omitempty"`
+	ApplicationObjectId string `json:"application_object_id"`
 	// JSON list of Azure groups to add the service principal to.
-	AzureGroups *string `json:"azure_groups,omitempty"`
+	AzureGroups string `json:"azure_groups"`
 	// JSON list of Azure roles to assign.
-	AzureRoles *string `json:"azure_roles,omitempty"`
+	AzureRoles string `json:"azure_roles"`
 	// Maximum time a service principal. If not set or set to 0, will use system default.
-	MaxTtl *int32 `json:"max_ttl,omitempty"`
+	MaxTtl int32 `json:"max_ttl"`
 	// Default lease for generated credentials. If not set or set to 0, will use system default.
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 }
 
 // NewAzureRolesRequestWithDefaults instantiates a new AzureRolesRequest object
@@ -2855,26 +2507,19 @@ type AzureRolesRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewAzureRolesRequestWithDefaults() *AzureRolesRequest {
 	this := AzureRolesRequest{}
+
 	return &this
 }
 
 func (o AzureRolesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.ApplicationObjectId != nil {
-		toSerialize["application_object_id"] = o.ApplicationObjectId
-	}
-	if o.AzureGroups != nil {
-		toSerialize["azure_groups"] = o.AzureGroups
-	}
-	if o.AzureRoles != nil {
-		toSerialize["azure_roles"] = o.AzureRoles
-	}
-	if o.MaxTtl != nil {
-		toSerialize["max_ttl"] = o.MaxTtl
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
+
+	toSerialize["application_object_id"] = o.ApplicationObjectId
+	toSerialize["azure_groups"] = o.AzureGroups
+	toSerialize["azure_roles"] = o.AzureRoles
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["ttl"] = o.Ttl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -2891,30 +2536,30 @@ API version: 1.12.0
 // CentrifyConfigRequest struct for CentrifyConfigRequest
 type CentrifyConfigRequest struct {
 	// OAuth2 App ID
-	AppId *string `json:"app_id,omitempty"`
+	AppId string `json:"app_id"`
 	// OAuth2 Client ID
-	ClientId *string `json:"client_id,omitempty"`
+	ClientId string `json:"client_id"`
 	// OAuth2 Client Secret
-	ClientSecret *string `json:"client_secret,omitempty"`
+	ClientSecret string `json:"client_secret"`
 	// Use \"token_policies\" instead. If this and \"token_policies\" are both specified, only \"token_policies\" will be used.
 	// Deprecated
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 	// OAuth2 App Scope
-	Scope *string `json:"scope,omitempty"`
+	Scope string `json:"scope"`
 	// Service URL (https://<tenant>.my.centrify.com)
-	ServiceUrl *string `json:"service_url,omitempty"`
+	ServiceUrl string `json:"service_url"`
 	// Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
-	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
+	TokenBoundCidrs []string `json:"token_bound_cidrs"`
 	// If true, the 'default' policy will not automatically be added to generated tokens
-	TokenNoDefaultPolicy *bool `json:"token_no_default_policy,omitempty"`
+	TokenNoDefaultPolicy bool `json:"token_no_default_policy"`
 	// The maximum number of times a token may be used, a value of zero means unlimited
-	TokenNumUses *int32 `json:"token_num_uses,omitempty"`
+	TokenNumUses int32 `json:"token_num_uses"`
 	// Comma-separated list of policies
-	TokenPolicies []string `json:"token_policies,omitempty"`
+	TokenPolicies []string `json:"token_policies"`
 	// The initial ttl of the token to generate
-	TokenTtl *int32 `json:"token_ttl,omitempty"`
+	TokenTtl int32 `json:"token_ttl"`
 	// The type of token to generate, service or batch
-	TokenType *string `json:"token_type,omitempty"`
+	TokenType string `json:"token_type"`
 }
 
 // NewCentrifyConfigRequestWithDefaults instantiates a new CentrifyConfigRequest object
@@ -2922,53 +2567,30 @@ type CentrifyConfigRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewCentrifyConfigRequestWithDefaults() *CentrifyConfigRequest {
 	this := CentrifyConfigRequest{}
-	var appId string = "vault_io_integration"
-	this.AppId = &appId
-	var scope string = "vault_io_integration"
-	this.Scope = &scope
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
+
+	this.AppId = "vault_io_integration"
+	this.Scope = "vault_io_integration"
+	this.TokenType = "default-service"
+
 	return &this
 }
 
 func (o CentrifyConfigRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AppId != nil {
-		toSerialize["app_id"] = o.AppId
-	}
-	if o.ClientId != nil {
-		toSerialize["client_id"] = o.ClientId
-	}
-	if o.ClientSecret != nil {
-		toSerialize["client_secret"] = o.ClientSecret
-	}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
-	if o.Scope != nil {
-		toSerialize["scope"] = o.Scope
-	}
-	if o.ServiceUrl != nil {
-		toSerialize["service_url"] = o.ServiceUrl
-	}
-	if o.TokenBoundCidrs != nil {
-		toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
-	}
-	if o.TokenNoDefaultPolicy != nil {
-		toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
-	}
-	if o.TokenNumUses != nil {
-		toSerialize["token_num_uses"] = o.TokenNumUses
-	}
-	if o.TokenPolicies != nil {
-		toSerialize["token_policies"] = o.TokenPolicies
-	}
-	if o.TokenTtl != nil {
-		toSerialize["token_ttl"] = o.TokenTtl
-	}
-	if o.TokenType != nil {
-		toSerialize["token_type"] = o.TokenType
-	}
+
+	toSerialize["app_id"] = o.AppId
+	toSerialize["client_id"] = o.ClientId
+	toSerialize["client_secret"] = o.ClientSecret
+	toSerialize["policies"] = o.Policies
+	toSerialize["scope"] = o.Scope
+	toSerialize["service_url"] = o.ServiceUrl
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+
 	return json.Marshal(toSerialize)
 }
 
@@ -2985,11 +2607,11 @@ API version: 1.12.0
 // CentrifyLoginRequest struct for CentrifyLoginRequest
 type CentrifyLoginRequest struct {
 	// Auth mode ('ro' for resource owner, 'cc' for credential client).
-	Mode *string `json:"mode,omitempty"`
+	Mode string `json:"mode"`
 	// Password for this user.
-	Password *string `json:"password,omitempty"`
+	Password string `json:"password"`
 	// Username of the user.
-	Username *string `json:"username,omitempty"`
+	Username string `json:"username"`
 }
 
 // NewCentrifyLoginRequestWithDefaults instantiates a new CentrifyLoginRequest object
@@ -2997,22 +2619,19 @@ type CentrifyLoginRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewCentrifyLoginRequestWithDefaults() *CentrifyLoginRequest {
 	this := CentrifyLoginRequest{}
-	var mode string = "ro"
-	this.Mode = &mode
+
+	this.Mode = "ro"
+
 	return &this
 }
 
 func (o CentrifyLoginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Mode != nil {
-		toSerialize["mode"] = o.Mode
-	}
-	if o.Password != nil {
-		toSerialize["password"] = o.Password
-	}
-	if o.Username != nil {
-		toSerialize["username"] = o.Username
-	}
+
+	toSerialize["mode"] = o.Mode
+	toSerialize["password"] = o.Password
+	toSerialize["username"] = o.Username
+
 	return json.Marshal(toSerialize)
 }
 
@@ -3029,61 +2648,61 @@ API version: 1.12.0
 // CertCertsRequest struct for CertCertsRequest
 type CertCertsRequest struct {
 	// A comma-separated list of names. At least one must exist in the Common Name. Supports globbing.
-	AllowedCommonNames []string `json:"allowed_common_names,omitempty"`
+	AllowedCommonNames []string `json:"allowed_common_names"`
 	// A comma-separated list of DNS names. At least one must exist in the SANs. Supports globbing.
-	AllowedDnsSans []string `json:"allowed_dns_sans,omitempty"`
+	AllowedDnsSans []string `json:"allowed_dns_sans"`
 	// A comma-separated list of Email Addresses. At least one must exist in the SANs. Supports globbing.
-	AllowedEmailSans []string `json:"allowed_email_sans,omitempty"`
+	AllowedEmailSans []string `json:"allowed_email_sans"`
 	// A comma-separated string or array of oid extensions. Upon successfull authentication, these extensions will be added as metadata if they are present in the certificate. The metadata key will be the string consisting of the oid numbers separated by a dash (-) instead of a dot (.) to allow usage in ACL templates.
-	AllowedMetadataExtensions []string `json:"allowed_metadata_extensions,omitempty"`
+	AllowedMetadataExtensions []string `json:"allowed_metadata_extensions"`
 	// A comma-separated list of names. At least one must exist in either the Common Name or SANs. Supports globbing. This parameter is deprecated, please use allowed_common_names, allowed_dns_sans, allowed_email_sans, allowed_uri_sans.
-	AllowedNames []string `json:"allowed_names,omitempty"`
+	AllowedNames []string `json:"allowed_names"`
 	// A comma-separated list of Organizational Units names. At least one must exist in the OU field.
-	AllowedOrganizationalUnits []string `json:"allowed_organizational_units,omitempty"`
+	AllowedOrganizationalUnits []string `json:"allowed_organizational_units"`
 	// A comma-separated list of URIs. At least one must exist in the SANs. Supports globbing.
-	AllowedUriSans []string `json:"allowed_uri_sans,omitempty"`
+	AllowedUriSans []string `json:"allowed_uri_sans"`
 	// Use \"token_bound_cidrs\" instead. If this and \"token_bound_cidrs\" are both specified, only \"token_bound_cidrs\" will be used.
 	// Deprecated
-	BoundCidrs []string `json:"bound_cidrs,omitempty"`
+	BoundCidrs []string `json:"bound_cidrs"`
 	// The public certificate that should be trusted. Must be x509 PEM encoded.
-	Certificate *string `json:"certificate,omitempty"`
+	Certificate string `json:"certificate"`
 	// The display name to use for clients using this certificate.
-	DisplayName *string `json:"display_name,omitempty"`
+	DisplayName string `json:"display_name"`
 	// Use \"token_ttl\" instead. If this and \"token_ttl\" are both specified, only \"token_ttl\" will be used.
 	// Deprecated
-	Lease *int32 `json:"lease,omitempty"`
+	Lease int32 `json:"lease"`
 	// Use \"token_max_ttl\" instead. If this and \"token_max_ttl\" are both specified, only \"token_max_ttl\" will be used.
 	// Deprecated
-	MaxTtl *int32 `json:"max_ttl,omitempty"`
+	MaxTtl int32 `json:"max_ttl"`
 	// Use \"token_period\" instead. If this and \"token_period\" are both specified, only \"token_period\" will be used.
 	// Deprecated
-	Period *int32 `json:"period,omitempty"`
+	Period int32 `json:"period"`
 	// Use \"token_policies\" instead. If this and \"token_policies\" are both specified, only \"token_policies\" will be used.
 	// Deprecated
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 	// A comma-separated string or array of extensions formatted as \"oid:value\". Expects the extension value to be some type of ASN1 encoded string. All values much match. Supports globbing on \"value\".
-	RequiredExtensions []string `json:"required_extensions,omitempty"`
+	RequiredExtensions []string `json:"required_extensions"`
 	// Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
-	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
+	TokenBoundCidrs []string `json:"token_bound_cidrs"`
 	// If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
-	TokenExplicitMaxTtl *int32 `json:"token_explicit_max_ttl,omitempty"`
+	TokenExplicitMaxTtl int32 `json:"token_explicit_max_ttl"`
 	// The maximum lifetime of the generated token
-	TokenMaxTtl *int32 `json:"token_max_ttl,omitempty"`
+	TokenMaxTtl int32 `json:"token_max_ttl"`
 	// If true, the 'default' policy will not automatically be added to generated tokens
-	TokenNoDefaultPolicy *bool `json:"token_no_default_policy,omitempty"`
+	TokenNoDefaultPolicy bool `json:"token_no_default_policy"`
 	// The maximum number of times a token may be used, a value of zero means unlimited
-	TokenNumUses *int32 `json:"token_num_uses,omitempty"`
+	TokenNumUses int32 `json:"token_num_uses"`
 	// If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \"24h\").
-	TokenPeriod *int32 `json:"token_period,omitempty"`
+	TokenPeriod int32 `json:"token_period"`
 	// Comma-separated list of policies
-	TokenPolicies []string `json:"token_policies,omitempty"`
+	TokenPolicies []string `json:"token_policies"`
 	// The initial ttl of the token to generate
-	TokenTtl *int32 `json:"token_ttl,omitempty"`
+	TokenTtl int32 `json:"token_ttl"`
 	// The type of token to generate, service or batch
-	TokenType *string `json:"token_type,omitempty"`
+	TokenType string `json:"token_type"`
 	// Use \"token_ttl\" instead. If this and \"token_ttl\" are both specified, only \"token_ttl\" will be used.
 	// Deprecated
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 }
 
 // NewCertCertsRequestWithDefaults instantiates a new CertCertsRequest object
@@ -3091,88 +2710,41 @@ type CertCertsRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewCertCertsRequestWithDefaults() *CertCertsRequest {
 	this := CertCertsRequest{}
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
+
+	this.TokenType = "default-service"
+
 	return &this
 }
 
 func (o CertCertsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AllowedCommonNames != nil {
-		toSerialize["allowed_common_names"] = o.AllowedCommonNames
-	}
-	if o.AllowedDnsSans != nil {
-		toSerialize["allowed_dns_sans"] = o.AllowedDnsSans
-	}
-	if o.AllowedEmailSans != nil {
-		toSerialize["allowed_email_sans"] = o.AllowedEmailSans
-	}
-	if o.AllowedMetadataExtensions != nil {
-		toSerialize["allowed_metadata_extensions"] = o.AllowedMetadataExtensions
-	}
-	if o.AllowedNames != nil {
-		toSerialize["allowed_names"] = o.AllowedNames
-	}
-	if o.AllowedOrganizationalUnits != nil {
-		toSerialize["allowed_organizational_units"] = o.AllowedOrganizationalUnits
-	}
-	if o.AllowedUriSans != nil {
-		toSerialize["allowed_uri_sans"] = o.AllowedUriSans
-	}
-	if o.BoundCidrs != nil {
-		toSerialize["bound_cidrs"] = o.BoundCidrs
-	}
-	if o.Certificate != nil {
-		toSerialize["certificate"] = o.Certificate
-	}
-	if o.DisplayName != nil {
-		toSerialize["display_name"] = o.DisplayName
-	}
-	if o.Lease != nil {
-		toSerialize["lease"] = o.Lease
-	}
-	if o.MaxTtl != nil {
-		toSerialize["max_ttl"] = o.MaxTtl
-	}
-	if o.Period != nil {
-		toSerialize["period"] = o.Period
-	}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
-	if o.RequiredExtensions != nil {
-		toSerialize["required_extensions"] = o.RequiredExtensions
-	}
-	if o.TokenBoundCidrs != nil {
-		toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
-	}
-	if o.TokenExplicitMaxTtl != nil {
-		toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
-	}
-	if o.TokenMaxTtl != nil {
-		toSerialize["token_max_ttl"] = o.TokenMaxTtl
-	}
-	if o.TokenNoDefaultPolicy != nil {
-		toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
-	}
-	if o.TokenNumUses != nil {
-		toSerialize["token_num_uses"] = o.TokenNumUses
-	}
-	if o.TokenPeriod != nil {
-		toSerialize["token_period"] = o.TokenPeriod
-	}
-	if o.TokenPolicies != nil {
-		toSerialize["token_policies"] = o.TokenPolicies
-	}
-	if o.TokenTtl != nil {
-		toSerialize["token_ttl"] = o.TokenTtl
-	}
-	if o.TokenType != nil {
-		toSerialize["token_type"] = o.TokenType
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
+
+	toSerialize["allowed_common_names"] = o.AllowedCommonNames
+	toSerialize["allowed_dns_sans"] = o.AllowedDnsSans
+	toSerialize["allowed_email_sans"] = o.AllowedEmailSans
+	toSerialize["allowed_metadata_extensions"] = o.AllowedMetadataExtensions
+	toSerialize["allowed_names"] = o.AllowedNames
+	toSerialize["allowed_organizational_units"] = o.AllowedOrganizationalUnits
+	toSerialize["allowed_uri_sans"] = o.AllowedUriSans
+	toSerialize["bound_cidrs"] = o.BoundCidrs
+	toSerialize["certificate"] = o.Certificate
+	toSerialize["display_name"] = o.DisplayName
+	toSerialize["lease"] = o.Lease
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["period"] = o.Period
+	toSerialize["policies"] = o.Policies
+	toSerialize["required_extensions"] = o.RequiredExtensions
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+	toSerialize["ttl"] = o.Ttl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -3189,7 +2761,7 @@ API version: 1.12.0
 // CertConfigRequest struct for CertConfigRequest
 type CertConfigRequest struct {
 	// If set, during renewal, skips the matching of presented client identity with the client identity used during login. Defaults to false.
-	DisableBinding *bool `json:"disable_binding,omitempty"`
+	DisableBinding bool `json:"disable_binding"`
 }
 
 // NewCertConfigRequestWithDefaults instantiates a new CertConfigRequest object
@@ -3197,16 +2769,17 @@ type CertConfigRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewCertConfigRequestWithDefaults() *CertConfigRequest {
 	this := CertConfigRequest{}
-	var disableBinding bool = false
-	this.DisableBinding = &disableBinding
+
+	this.DisableBinding = false
+
 	return &this
 }
 
 func (o CertConfigRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.DisableBinding != nil {
-		toSerialize["disable_binding"] = o.DisableBinding
-	}
+
+	toSerialize["disable_binding"] = o.DisableBinding
+
 	return json.Marshal(toSerialize)
 }
 
@@ -3223,7 +2796,7 @@ API version: 1.12.0
 // CertCrlsRequest struct for CertCrlsRequest
 type CertCrlsRequest struct {
 	// The public certificate that should be trusted. May be DER or PEM encoded. Note: the expiration time is ignored; if the CRL is no longer valid, delete it using the same name as specified here.
-	Crl *string `json:"crl,omitempty"`
+	Crl string `json:"crl"`
 }
 
 // NewCertCrlsRequestWithDefaults instantiates a new CertCrlsRequest object
@@ -3231,14 +2804,15 @@ type CertCrlsRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewCertCrlsRequestWithDefaults() *CertCrlsRequest {
 	this := CertCrlsRequest{}
+
 	return &this
 }
 
 func (o CertCrlsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Crl != nil {
-		toSerialize["crl"] = o.Crl
-	}
+
+	toSerialize["crl"] = o.Crl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -3255,7 +2829,7 @@ API version: 1.12.0
 // CertLoginRequest struct for CertLoginRequest
 type CertLoginRequest struct {
 	// The name of the certificate role to authenticate against.
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 }
 
 // NewCertLoginRequestWithDefaults instantiates a new CertLoginRequest object
@@ -3263,14 +2837,15 @@ type CertLoginRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewCertLoginRequestWithDefaults() *CertLoginRequest {
 	this := CertLoginRequest{}
+
 	return &this
 }
 
 func (o CertLoginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
-	}
+
+	toSerialize["name"] = o.Name
+
 	return json.Marshal(toSerialize)
 }
 
@@ -3287,39 +2862,39 @@ API version: 1.12.0
 // CfConfigRequest struct for CfConfigRequest
 type CfConfigRequest struct {
 	// CF’s API address.
-	CfApiAddr *string `json:"cf_api_addr,omitempty"`
+	CfApiAddr string `json:"cf_api_addr"`
 	// The PEM-format certificates that are presented for mutual TLS with the CloudFoundry API. If not set, mutual TLS is not used
-	CfApiMutualTlsCertificate *string `json:"cf_api_mutual_tls_certificate,omitempty"`
+	CfApiMutualTlsCertificate string `json:"cf_api_mutual_tls_certificate"`
 	// The PEM-format private key that are used for mutual TLS with the CloudFoundry API. If not set, mutual TLS is not used
-	CfApiMutualTlsKey *string `json:"cf_api_mutual_tls_key,omitempty"`
+	CfApiMutualTlsKey string `json:"cf_api_mutual_tls_key"`
 	// The PEM-format CA certificates that are acceptable for the CF API to present.
-	CfApiTrustedCertificates []string `json:"cf_api_trusted_certificates,omitempty"`
+	CfApiTrustedCertificates []string `json:"cf_api_trusted_certificates"`
 	// The client id for CF’s API.
-	CfClientId *string `json:"cf_client_id,omitempty"`
+	CfClientId string `json:"cf_client_id"`
 	// The client secret for CF’s API.
-	CfClientSecret *string `json:"cf_client_secret,omitempty"`
+	CfClientSecret string `json:"cf_client_secret"`
 	// The password for CF’s API.
-	CfPassword *string `json:"cf_password,omitempty"`
+	CfPassword string `json:"cf_password"`
 	// The username for CF’s API.
-	CfUsername *string `json:"cf_username,omitempty"`
+	CfUsername string `json:"cf_username"`
 	// The PEM-format CA certificates that are required to have issued the instance certificates presented for logging in.
-	IdentityCaCertificates []string `json:"identity_ca_certificates,omitempty"`
+	IdentityCaCertificates []string `json:"identity_ca_certificates"`
 	// Duration in seconds for the maximum acceptable length in the future a \"signing_time\" can be. Useful for clock drift. Set low to reduce the opportunity for replay attacks.
-	LoginMaxSecondsNotAfter *int32 `json:"login_max_seconds_not_after,omitempty"`
+	LoginMaxSecondsNotAfter int32 `json:"login_max_seconds_not_after"`
 	// Duration in seconds for the maximum acceptable age of a \"signing_time\". Useful for clock drift. Set low to reduce the opportunity for replay attacks.
-	LoginMaxSecondsNotBefore *int32 `json:"login_max_seconds_not_before,omitempty"`
+	LoginMaxSecondsNotBefore int32 `json:"login_max_seconds_not_before"`
 	// Deprecated. Please use \"cf_api_addr\".
 	// Deprecated
-	PcfApiAddr *string `json:"pcf_api_addr,omitempty"`
+	PcfApiAddr string `json:"pcf_api_addr"`
 	// Deprecated. Please use \"cf_api_trusted_certificates\".
 	// Deprecated
-	PcfApiTrustedCertificates []string `json:"pcf_api_trusted_certificates,omitempty"`
+	PcfApiTrustedCertificates []string `json:"pcf_api_trusted_certificates"`
 	// Deprecated. Please use \"cf_password\".
 	// Deprecated
-	PcfPassword *string `json:"pcf_password,omitempty"`
+	PcfPassword string `json:"pcf_password"`
 	// Deprecated. Please use \"cf_username\".
 	// Deprecated
-	PcfUsername *string `json:"pcf_username,omitempty"`
+	PcfUsername string `json:"pcf_username"`
 }
 
 // NewCfConfigRequestWithDefaults instantiates a new CfConfigRequest object
@@ -3327,60 +2902,32 @@ type CfConfigRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewCfConfigRequestWithDefaults() *CfConfigRequest {
 	this := CfConfigRequest{}
-	var loginMaxSecondsNotAfter int32 = 60
-	this.LoginMaxSecondsNotAfter = &loginMaxSecondsNotAfter
-	var loginMaxSecondsNotBefore int32 = 300
-	this.LoginMaxSecondsNotBefore = &loginMaxSecondsNotBefore
+
+	this.LoginMaxSecondsNotAfter = 60
+	this.LoginMaxSecondsNotBefore = 300
+
 	return &this
 }
 
 func (o CfConfigRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.CfApiAddr != nil {
-		toSerialize["cf_api_addr"] = o.CfApiAddr
-	}
-	if o.CfApiMutualTlsCertificate != nil {
-		toSerialize["cf_api_mutual_tls_certificate"] = o.CfApiMutualTlsCertificate
-	}
-	if o.CfApiMutualTlsKey != nil {
-		toSerialize["cf_api_mutual_tls_key"] = o.CfApiMutualTlsKey
-	}
-	if o.CfApiTrustedCertificates != nil {
-		toSerialize["cf_api_trusted_certificates"] = o.CfApiTrustedCertificates
-	}
-	if o.CfClientId != nil {
-		toSerialize["cf_client_id"] = o.CfClientId
-	}
-	if o.CfClientSecret != nil {
-		toSerialize["cf_client_secret"] = o.CfClientSecret
-	}
-	if o.CfPassword != nil {
-		toSerialize["cf_password"] = o.CfPassword
-	}
-	if o.CfUsername != nil {
-		toSerialize["cf_username"] = o.CfUsername
-	}
-	if o.IdentityCaCertificates != nil {
-		toSerialize["identity_ca_certificates"] = o.IdentityCaCertificates
-	}
-	if o.LoginMaxSecondsNotAfter != nil {
-		toSerialize["login_max_seconds_not_after"] = o.LoginMaxSecondsNotAfter
-	}
-	if o.LoginMaxSecondsNotBefore != nil {
-		toSerialize["login_max_seconds_not_before"] = o.LoginMaxSecondsNotBefore
-	}
-	if o.PcfApiAddr != nil {
-		toSerialize["pcf_api_addr"] = o.PcfApiAddr
-	}
-	if o.PcfApiTrustedCertificates != nil {
-		toSerialize["pcf_api_trusted_certificates"] = o.PcfApiTrustedCertificates
-	}
-	if o.PcfPassword != nil {
-		toSerialize["pcf_password"] = o.PcfPassword
-	}
-	if o.PcfUsername != nil {
-		toSerialize["pcf_username"] = o.PcfUsername
-	}
+
+	toSerialize["cf_api_addr"] = o.CfApiAddr
+	toSerialize["cf_api_mutual_tls_certificate"] = o.CfApiMutualTlsCertificate
+	toSerialize["cf_api_mutual_tls_key"] = o.CfApiMutualTlsKey
+	toSerialize["cf_api_trusted_certificates"] = o.CfApiTrustedCertificates
+	toSerialize["cf_client_id"] = o.CfClientId
+	toSerialize["cf_client_secret"] = o.CfClientSecret
+	toSerialize["cf_password"] = o.CfPassword
+	toSerialize["cf_username"] = o.CfUsername
+	toSerialize["identity_ca_certificates"] = o.IdentityCaCertificates
+	toSerialize["login_max_seconds_not_after"] = o.LoginMaxSecondsNotAfter
+	toSerialize["login_max_seconds_not_before"] = o.LoginMaxSecondsNotBefore
+	toSerialize["pcf_api_addr"] = o.PcfApiAddr
+	toSerialize["pcf_api_trusted_certificates"] = o.PcfApiTrustedCertificates
+	toSerialize["pcf_password"] = o.PcfPassword
+	toSerialize["pcf_username"] = o.PcfUsername
+
 	return json.Marshal(toSerialize)
 }
 
@@ -3411,23 +2958,18 @@ type CfLoginRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewCfLoginRequestWithDefaults() *CfLoginRequest {
 	this := CfLoginRequest{}
+
 	return &this
 }
 
 func (o CfLoginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["cf_instance_cert"] = o.CfInstanceCert
-	}
-	if true {
-		toSerialize["role"] = o.Role
-	}
-	if true {
-		toSerialize["signature"] = o.Signature
-	}
-	if true {
-		toSerialize["signing_time"] = o.SigningTime
-	}
+
+	toSerialize["cf_instance_cert"] = o.CfInstanceCert
+	toSerialize["role"] = o.Role
+	toSerialize["signature"] = o.Signature
+	toSerialize["signing_time"] = o.SigningTime
+
 	return json.Marshal(toSerialize)
 }
 
@@ -3444,48 +2986,48 @@ API version: 1.12.0
 // CfRolesRequest struct for CfRolesRequest
 type CfRolesRequest struct {
 	// Require that the client certificate presented has at least one of these app IDs.
-	BoundApplicationIds []string `json:"bound_application_ids,omitempty"`
+	BoundApplicationIds []string `json:"bound_application_ids"`
 	// Use \"token_bound_cidrs\" instead. If this and \"token_bound_cidrs\" are both specified, only \"token_bound_cidrs\" will be used.
 	// Deprecated
-	BoundCidrs []string `json:"bound_cidrs,omitempty"`
+	BoundCidrs []string `json:"bound_cidrs"`
 	// Require that the client certificate presented has at least one of these instance IDs.
-	BoundInstanceIds []string `json:"bound_instance_ids,omitempty"`
+	BoundInstanceIds []string `json:"bound_instance_ids"`
 	// Require that the client certificate presented has at least one of these org IDs.
-	BoundOrganizationIds []string `json:"bound_organization_ids,omitempty"`
+	BoundOrganizationIds []string `json:"bound_organization_ids"`
 	// Require that the client certificate presented has at least one of these space IDs.
-	BoundSpaceIds []string `json:"bound_space_ids,omitempty"`
+	BoundSpaceIds []string `json:"bound_space_ids"`
 	// If set to true, disables the default behavior that logging in must be performed from an acceptable IP address described by the certificate presented.
-	DisableIpMatching *bool `json:"disable_ip_matching,omitempty"`
+	DisableIpMatching bool `json:"disable_ip_matching"`
 	// Use \"token_max_ttl\" instead. If this and \"token_max_ttl\" are both specified, only \"token_max_ttl\" will be used.
 	// Deprecated
-	MaxTtl *int32 `json:"max_ttl,omitempty"`
+	MaxTtl int32 `json:"max_ttl"`
 	// Use \"token_period\" instead. If this and \"token_period\" are both specified, only \"token_period\" will be used.
 	// Deprecated
-	Period *int32 `json:"period,omitempty"`
+	Period int32 `json:"period"`
 	// Use \"token_policies\" instead. If this and \"token_policies\" are both specified, only \"token_policies\" will be used.
 	// Deprecated
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 	// Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
-	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
+	TokenBoundCidrs []string `json:"token_bound_cidrs"`
 	// If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
-	TokenExplicitMaxTtl *int32 `json:"token_explicit_max_ttl,omitempty"`
+	TokenExplicitMaxTtl int32 `json:"token_explicit_max_ttl"`
 	// The maximum lifetime of the generated token
-	TokenMaxTtl *int32 `json:"token_max_ttl,omitempty"`
+	TokenMaxTtl int32 `json:"token_max_ttl"`
 	// If true, the 'default' policy will not automatically be added to generated tokens
-	TokenNoDefaultPolicy *bool `json:"token_no_default_policy,omitempty"`
+	TokenNoDefaultPolicy bool `json:"token_no_default_policy"`
 	// The maximum number of times a token may be used, a value of zero means unlimited
-	TokenNumUses *int32 `json:"token_num_uses,omitempty"`
+	TokenNumUses int32 `json:"token_num_uses"`
 	// If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \"24h\").
-	TokenPeriod *int32 `json:"token_period,omitempty"`
+	TokenPeriod int32 `json:"token_period"`
 	// Comma-separated list of policies
-	TokenPolicies []string `json:"token_policies,omitempty"`
+	TokenPolicies []string `json:"token_policies"`
 	// The initial ttl of the token to generate
-	TokenTtl *int32 `json:"token_ttl,omitempty"`
+	TokenTtl int32 `json:"token_ttl"`
 	// The type of token to generate, service or batch
-	TokenType *string `json:"token_type,omitempty"`
+	TokenType string `json:"token_type"`
 	// Use \"token_ttl\" instead. If this and \"token_ttl\" are both specified, only \"token_ttl\" will be used.
 	// Deprecated
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 }
 
 // NewCfRolesRequestWithDefaults instantiates a new CfRolesRequest object
@@ -3493,72 +3035,36 @@ type CfRolesRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewCfRolesRequestWithDefaults() *CfRolesRequest {
 	this := CfRolesRequest{}
-	var disableIpMatching bool = false
-	this.DisableIpMatching = &disableIpMatching
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
+
+	this.DisableIpMatching = false
+	this.TokenType = "default-service"
+
 	return &this
 }
 
 func (o CfRolesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.BoundApplicationIds != nil {
-		toSerialize["bound_application_ids"] = o.BoundApplicationIds
-	}
-	if o.BoundCidrs != nil {
-		toSerialize["bound_cidrs"] = o.BoundCidrs
-	}
-	if o.BoundInstanceIds != nil {
-		toSerialize["bound_instance_ids"] = o.BoundInstanceIds
-	}
-	if o.BoundOrganizationIds != nil {
-		toSerialize["bound_organization_ids"] = o.BoundOrganizationIds
-	}
-	if o.BoundSpaceIds != nil {
-		toSerialize["bound_space_ids"] = o.BoundSpaceIds
-	}
-	if o.DisableIpMatching != nil {
-		toSerialize["disable_ip_matching"] = o.DisableIpMatching
-	}
-	if o.MaxTtl != nil {
-		toSerialize["max_ttl"] = o.MaxTtl
-	}
-	if o.Period != nil {
-		toSerialize["period"] = o.Period
-	}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
-	if o.TokenBoundCidrs != nil {
-		toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
-	}
-	if o.TokenExplicitMaxTtl != nil {
-		toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
-	}
-	if o.TokenMaxTtl != nil {
-		toSerialize["token_max_ttl"] = o.TokenMaxTtl
-	}
-	if o.TokenNoDefaultPolicy != nil {
-		toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
-	}
-	if o.TokenNumUses != nil {
-		toSerialize["token_num_uses"] = o.TokenNumUses
-	}
-	if o.TokenPeriod != nil {
-		toSerialize["token_period"] = o.TokenPeriod
-	}
-	if o.TokenPolicies != nil {
-		toSerialize["token_policies"] = o.TokenPolicies
-	}
-	if o.TokenTtl != nil {
-		toSerialize["token_ttl"] = o.TokenTtl
-	}
-	if o.TokenType != nil {
-		toSerialize["token_type"] = o.TokenType
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
+
+	toSerialize["bound_application_ids"] = o.BoundApplicationIds
+	toSerialize["bound_cidrs"] = o.BoundCidrs
+	toSerialize["bound_instance_ids"] = o.BoundInstanceIds
+	toSerialize["bound_organization_ids"] = o.BoundOrganizationIds
+	toSerialize["bound_space_ids"] = o.BoundSpaceIds
+	toSerialize["disable_ip_matching"] = o.DisableIpMatching
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["period"] = o.Period
+	toSerialize["policies"] = o.Policies
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+	toSerialize["ttl"] = o.Ttl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -3575,17 +3081,17 @@ API version: 1.12.0
 // ConsulConfigAccessRequest struct for ConsulConfigAccessRequest
 type ConsulConfigAccessRequest struct {
 	// Consul server address
-	Address *string `json:"address,omitempty"`
+	Address string `json:"address"`
 	// CA certificate to use when verifying Consul server certificate, must be x509 PEM encoded.
-	CaCert *string `json:"ca_cert,omitempty"`
+	CaCert string `json:"ca_cert"`
 	// Client certificate used for Consul's TLS communication, must be x509 PEM encoded and if this is set you need to also set client_key.
-	ClientCert *string `json:"client_cert,omitempty"`
+	ClientCert string `json:"client_cert"`
 	// Client key used for Consul's TLS communication, must be x509 PEM encoded and if this is set you need to also set client_cert.
-	ClientKey *string `json:"client_key,omitempty"`
+	ClientKey string `json:"client_key"`
 	// URI scheme for the Consul address
-	Scheme *string `json:"scheme,omitempty"`
+	Scheme string `json:"scheme"`
 	// Token for API calls
-	Token *string `json:"token,omitempty"`
+	Token string `json:"token"`
 }
 
 // NewConsulConfigAccessRequestWithDefaults instantiates a new ConsulConfigAccessRequest object
@@ -3593,31 +3099,22 @@ type ConsulConfigAccessRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewConsulConfigAccessRequestWithDefaults() *ConsulConfigAccessRequest {
 	this := ConsulConfigAccessRequest{}
-	var scheme string = "http"
-	this.Scheme = &scheme
+
+	this.Scheme = "http"
+
 	return &this
 }
 
 func (o ConsulConfigAccessRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Address != nil {
-		toSerialize["address"] = o.Address
-	}
-	if o.CaCert != nil {
-		toSerialize["ca_cert"] = o.CaCert
-	}
-	if o.ClientCert != nil {
-		toSerialize["client_cert"] = o.ClientCert
-	}
-	if o.ClientKey != nil {
-		toSerialize["client_key"] = o.ClientKey
-	}
-	if o.Scheme != nil {
-		toSerialize["scheme"] = o.Scheme
-	}
-	if o.Token != nil {
-		toSerialize["token"] = o.Token
-	}
+
+	toSerialize["address"] = o.Address
+	toSerialize["ca_cert"] = o.CaCert
+	toSerialize["client_cert"] = o.ClientCert
+	toSerialize["client_key"] = o.ClientKey
+	toSerialize["scheme"] = o.Scheme
+	toSerialize["token"] = o.Token
+
 	return json.Marshal(toSerialize)
 }
 
@@ -3634,35 +3131,35 @@ API version: 1.12.0
 // ConsulRolesRequest struct for ConsulRolesRequest
 type ConsulRolesRequest struct {
 	// Indicates which namespace that the token will be created within. Defaults to 'default'. Available in Consul 1.7 and above.
-	ConsulNamespace *string `json:"consul_namespace,omitempty"`
+	ConsulNamespace string `json:"consul_namespace"`
 	// List of policies to attach to the token. Either \"consul_policies\" or \"consul_roles\" are required for Consul 1.5 and above, or just \"consul_policies\" if using Consul 1.4.
-	ConsulPolicies []string `json:"consul_policies,omitempty"`
+	ConsulPolicies []string `json:"consul_policies"`
 	// List of Consul roles to attach to the token. Either \"policies\" or \"consul_roles\" are required for Consul 1.5 and above.
-	ConsulRoles []string `json:"consul_roles,omitempty"`
+	ConsulRoles []string `json:"consul_roles"`
 	// Use \"ttl\" instead.
 	// Deprecated
-	Lease *int32 `json:"lease,omitempty"`
+	Lease int32 `json:"lease"`
 	// Indicates that the token should not be replicated globally and instead be local to the current datacenter. Available in Consul 1.4 and above.
-	Local *bool `json:"local,omitempty"`
+	Local bool `json:"local"`
 	// Max TTL for the Consul token created from the role.
-	MaxTtl *int32 `json:"max_ttl,omitempty"`
+	MaxTtl int32 `json:"max_ttl"`
 	// List of Node Identities to attach to the token. Available in Consul 1.8.1 or above.
-	NodeIdentities []string `json:"node_identities,omitempty"`
+	NodeIdentities []string `json:"node_identities"`
 	// Indicates which admin partition that the token will be created within. Defaults to 'default'. Available in Consul 1.11 and above.
-	Partition *string `json:"partition,omitempty"`
+	Partition string `json:"partition"`
 	// Use \"consul_policies\" instead.
 	// Deprecated
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 	// Policy document, base64 encoded. Required for 'client' tokens. Required for Consul pre-1.4.
 	// Deprecated
-	Policy *string `json:"policy,omitempty"`
+	Policy string `json:"policy"`
 	// List of Service Identities to attach to the token, separated by semicolons. Available in Consul 1.5 or above.
-	ServiceIdentities []string `json:"service_identities,omitempty"`
+	ServiceIdentities []string `json:"service_identities"`
 	// Which type of token to create: 'client' or 'management'. If a 'management' token, the \"policy\", \"policies\", and \"consul_roles\" parameters are not required. Defaults to 'client'.
 	// Deprecated
-	TokenType *string `json:"token_type,omitempty"`
+	TokenType string `json:"token_type"`
 	// TTL for the Consul token created from the role.
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 }
 
 // NewConsulRolesRequestWithDefaults instantiates a new ConsulRolesRequest object
@@ -3670,52 +3167,29 @@ type ConsulRolesRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewConsulRolesRequestWithDefaults() *ConsulRolesRequest {
 	this := ConsulRolesRequest{}
-	var tokenType string = "client"
-	this.TokenType = &tokenType
+
+	this.TokenType = "client"
+
 	return &this
 }
 
 func (o ConsulRolesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.ConsulNamespace != nil {
-		toSerialize["consul_namespace"] = o.ConsulNamespace
-	}
-	if o.ConsulPolicies != nil {
-		toSerialize["consul_policies"] = o.ConsulPolicies
-	}
-	if o.ConsulRoles != nil {
-		toSerialize["consul_roles"] = o.ConsulRoles
-	}
-	if o.Lease != nil {
-		toSerialize["lease"] = o.Lease
-	}
-	if o.Local != nil {
-		toSerialize["local"] = o.Local
-	}
-	if o.MaxTtl != nil {
-		toSerialize["max_ttl"] = o.MaxTtl
-	}
-	if o.NodeIdentities != nil {
-		toSerialize["node_identities"] = o.NodeIdentities
-	}
-	if o.Partition != nil {
-		toSerialize["partition"] = o.Partition
-	}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
-	if o.Policy != nil {
-		toSerialize["policy"] = o.Policy
-	}
-	if o.ServiceIdentities != nil {
-		toSerialize["service_identities"] = o.ServiceIdentities
-	}
-	if o.TokenType != nil {
-		toSerialize["token_type"] = o.TokenType
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
+
+	toSerialize["consul_namespace"] = o.ConsulNamespace
+	toSerialize["consul_policies"] = o.ConsulPolicies
+	toSerialize["consul_roles"] = o.ConsulRoles
+	toSerialize["lease"] = o.Lease
+	toSerialize["local"] = o.Local
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["node_identities"] = o.NodeIdentities
+	toSerialize["partition"] = o.Partition
+	toSerialize["policies"] = o.Policies
+	toSerialize["policy"] = o.Policy
+	toSerialize["service_identities"] = o.ServiceIdentities
+	toSerialize["token_type"] = o.TokenType
+	toSerialize["ttl"] = o.Ttl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -3732,20 +3206,20 @@ API version: 1.12.0
 // GcpConfigRequest struct for GcpConfigRequest
 type GcpConfigRequest struct {
 	// Google credentials JSON that Vault will use to verify users against GCP APIs. If not specified, will use application default credentials
-	Credentials *string `json:"credentials,omitempty"`
+	Credentials string `json:"credentials"`
 	// Specifies overrides for various Google API Service Endpoints used in requests.
-	CustomEndpoint map[string]interface{} `json:"custom_endpoint,omitempty"`
+	CustomEndpoint map[string]interface{} `json:"custom_endpoint"`
 	// Indicates what value to use when generating an alias for GCE authentications.
-	GceAlias *string `json:"gce_alias,omitempty"`
+	GceAlias string `json:"gce_alias"`
 	// The metadata to include on the aliases and audit logs generated by this plugin. When set to 'default', includes: instance_creation_timestamp, instance_id, instance_name, project_id, project_number, role, service_account_id, service_account_email, zone. Not editing this field means the 'default' fields are included. Explicitly setting this field to empty overrides the 'default' and means no metadata will be included. If not using 'default', explicit fields must be sent like: 'field1,field2'.
-	GceMetadata []string `json:"gce_metadata,omitempty"`
+	GceMetadata []string `json:"gce_metadata"`
 	// Deprecated. This field does nothing and be removed in a future release
 	// Deprecated
-	GoogleCertsEndpoint *string `json:"google_certs_endpoint,omitempty"`
+	GoogleCertsEndpoint string `json:"google_certs_endpoint"`
 	// Indicates what value to use when generating an alias for IAM authentications.
-	IamAlias *string `json:"iam_alias,omitempty"`
+	IamAlias string `json:"iam_alias"`
 	// The metadata to include on the aliases and audit logs generated by this plugin. When set to 'default', includes: project_id, role, service_account_id, service_account_email. Not editing this field means the 'default' fields are included. Explicitly setting this field to empty overrides the 'default' and means no metadata will be included. If not using 'default', explicit fields must be sent like: 'field1,field2'.
-	IamMetadata []string `json:"iam_metadata,omitempty"`
+	IamMetadata []string `json:"iam_metadata"`
 }
 
 // NewGcpConfigRequestWithDefaults instantiates a new GcpConfigRequest object
@@ -3753,36 +3227,24 @@ type GcpConfigRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewGcpConfigRequestWithDefaults() *GcpConfigRequest {
 	this := GcpConfigRequest{}
-	var gceAlias string = "role_id"
-	this.GceAlias = &gceAlias
-	var iamAlias string = "role_id"
-	this.IamAlias = &iamAlias
+
+	this.GceAlias = "role_id"
+	this.IamAlias = "role_id"
+
 	return &this
 }
 
 func (o GcpConfigRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Credentials != nil {
-		toSerialize["credentials"] = o.Credentials
-	}
-	if o.CustomEndpoint != nil {
-		toSerialize["custom_endpoint"] = o.CustomEndpoint
-	}
-	if o.GceAlias != nil {
-		toSerialize["gce_alias"] = o.GceAlias
-	}
-	if o.GceMetadata != nil {
-		toSerialize["gce_metadata"] = o.GceMetadata
-	}
-	if o.GoogleCertsEndpoint != nil {
-		toSerialize["google_certs_endpoint"] = o.GoogleCertsEndpoint
-	}
-	if o.IamAlias != nil {
-		toSerialize["iam_alias"] = o.IamAlias
-	}
-	if o.IamMetadata != nil {
-		toSerialize["iam_metadata"] = o.IamMetadata
-	}
+
+	toSerialize["credentials"] = o.Credentials
+	toSerialize["custom_endpoint"] = o.CustomEndpoint
+	toSerialize["gce_alias"] = o.GceAlias
+	toSerialize["gce_metadata"] = o.GceMetadata
+	toSerialize["google_certs_endpoint"] = o.GoogleCertsEndpoint
+	toSerialize["iam_alias"] = o.IamAlias
+	toSerialize["iam_metadata"] = o.IamMetadata
+
 	return json.Marshal(toSerialize)
 }
 
@@ -3799,11 +3261,11 @@ API version: 1.12.0
 // GcpKeyRequest struct for GcpKeyRequest
 type GcpKeyRequest struct {
 	// Private key algorithm for service account key - defaults to KEY_ALG_RSA_2048\"
-	KeyAlgorithm *string `json:"key_algorithm,omitempty"`
+	KeyAlgorithm string `json:"key_algorithm"`
 	// Private key type for service account key - defaults to TYPE_GOOGLE_CREDENTIALS_FILE\"
-	KeyType *string `json:"key_type,omitempty"`
+	KeyType string `json:"key_type"`
 	// Lifetime of the service account key
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 }
 
 // NewGcpKeyRequestWithDefaults instantiates a new GcpKeyRequest object
@@ -3811,24 +3273,20 @@ type GcpKeyRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewGcpKeyRequestWithDefaults() *GcpKeyRequest {
 	this := GcpKeyRequest{}
-	var keyAlgorithm string = "KEY_ALG_RSA_2048"
-	this.KeyAlgorithm = &keyAlgorithm
-	var keyType string = "TYPE_GOOGLE_CREDENTIALS_FILE"
-	this.KeyType = &keyType
+
+	this.KeyAlgorithm = "KEY_ALG_RSA_2048"
+	this.KeyType = "TYPE_GOOGLE_CREDENTIALS_FILE"
+
 	return &this
 }
 
 func (o GcpKeyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.KeyAlgorithm != nil {
-		toSerialize["key_algorithm"] = o.KeyAlgorithm
-	}
-	if o.KeyType != nil {
-		toSerialize["key_type"] = o.KeyType
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
+
+	toSerialize["key_algorithm"] = o.KeyAlgorithm
+	toSerialize["key_type"] = o.KeyType
+	toSerialize["ttl"] = o.Ttl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -3845,9 +3303,9 @@ API version: 1.12.0
 // GcpLoginRequest struct for GcpLoginRequest
 type GcpLoginRequest struct {
 	// A signed JWT. This is either a self-signed service account JWT ('iam' roles only) or a GCE identity metadata token ('iam', 'gce' roles).
-	Jwt *string `json:"jwt,omitempty"`
+	Jwt string `json:"jwt"`
 	// Name of the role against which the login is being attempted. Required.
-	Role *string `json:"role,omitempty"`
+	Role string `json:"role"`
 }
 
 // NewGcpLoginRequestWithDefaults instantiates a new GcpLoginRequest object
@@ -3855,17 +3313,16 @@ type GcpLoginRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewGcpLoginRequestWithDefaults() *GcpLoginRequest {
 	this := GcpLoginRequest{}
+
 	return &this
 }
 
 func (o GcpLoginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Jwt != nil {
-		toSerialize["jwt"] = o.Jwt
-	}
-	if o.Role != nil {
-		toSerialize["role"] = o.Role
-	}
+
+	toSerialize["jwt"] = o.Jwt
+	toSerialize["role"] = o.Role
+
 	return json.Marshal(toSerialize)
 }
 
@@ -3882,9 +3339,9 @@ API version: 1.12.0
 // GcpRoleLabelsRequest struct for GcpRoleLabelsRequest
 type GcpRoleLabelsRequest struct {
 	// BoundLabels to add (in $key:$value)
-	Add []string `json:"add,omitempty"`
+	Add []string `json:"add"`
 	// Label key values to remove
-	Remove []string `json:"remove,omitempty"`
+	Remove []string `json:"remove"`
 }
 
 // NewGcpRoleLabelsRequestWithDefaults instantiates a new GcpRoleLabelsRequest object
@@ -3892,17 +3349,16 @@ type GcpRoleLabelsRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewGcpRoleLabelsRequestWithDefaults() *GcpRoleLabelsRequest {
 	this := GcpRoleLabelsRequest{}
+
 	return &this
 }
 
 func (o GcpRoleLabelsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Add != nil {
-		toSerialize["add"] = o.Add
-	}
-	if o.Remove != nil {
-		toSerialize["remove"] = o.Remove
-	}
+
+	toSerialize["add"] = o.Add
+	toSerialize["remove"] = o.Remove
+
 	return json.Marshal(toSerialize)
 }
 
@@ -3919,65 +3375,65 @@ API version: 1.12.0
 // GcpRoleRequest struct for GcpRoleRequest
 type GcpRoleRequest struct {
 	// If true, will add group aliases to auth tokens generated under this role. This will add the full list of ancestors (projects, folders, organizations) for the given entity's project. Requires IAM permission `resourcemanager.projects.get` on this project.
-	AddGroupAliases *bool `json:"add_group_aliases,omitempty"`
+	AddGroupAliases bool `json:"add_group_aliases"`
 	// 'iam' roles only. If false, Vault will not not allow GCE instances to login in against this role
-	AllowGceInference *bool `json:"allow_gce_inference,omitempty"`
+	AllowGceInference bool `json:"allow_gce_inference"`
 	// Deprecated: use \"bound_instance_groups\" instead.
-	BoundInstanceGroup *string `json:"bound_instance_group,omitempty"`
+	BoundInstanceGroup string `json:"bound_instance_group"`
 	// Comma-separated list of permitted instance groups to which the GCE instance must belong. This option only applies to \"gce\" roles.
-	BoundInstanceGroups []string `json:"bound_instance_groups,omitempty"`
+	BoundInstanceGroups []string `json:"bound_instance_groups"`
 	// Comma-separated list of GCP labels formatted as\"key:value\" strings that must be present on the GCE instance in order to authenticate. This option only applies to \"gce\" roles.
-	BoundLabels []string `json:"bound_labels,omitempty"`
+	BoundLabels []string `json:"bound_labels"`
 	// GCP Projects that authenticating entities must belong to.
-	BoundProjects []string `json:"bound_projects,omitempty"`
+	BoundProjects []string `json:"bound_projects"`
 	// Deprecated: use \"bound_regions\" instead.
-	BoundRegion *string `json:"bound_region,omitempty"`
+	BoundRegion string `json:"bound_region"`
 	// Comma-separated list of permitted regions to which the GCE instance must belong. If a group is provided, it is assumed to be a regional group. If \"zone\" is provided, this option is ignored. This can be a self-link or region name. This option only applies to \"gce\" roles.
-	BoundRegions []string `json:"bound_regions,omitempty"`
+	BoundRegions []string `json:"bound_regions"`
 	// Can be set for both 'iam' and 'gce' roles (required for 'iam'). A comma-seperated list of authorized service accounts. If the single value \"*\" is given, this is assumed to be all service accounts under the role's project. If this is set on a GCE role, the inferred service account from the instance metadata token will be used.
-	BoundServiceAccounts []string `json:"bound_service_accounts,omitempty"`
+	BoundServiceAccounts []string `json:"bound_service_accounts"`
 	// Deprecated: use \"bound_zones\" instead.
-	BoundZone *string `json:"bound_zone,omitempty"`
+	BoundZone string `json:"bound_zone"`
 	// Comma-separated list of permitted zones to which the GCE instance must belong. If a group is provided, it is assumed to be a zonal group. This can be a self-link or zone name. This option only applies to \"gce\" roles.
-	BoundZones []string `json:"bound_zones,omitempty"`
+	BoundZones []string `json:"bound_zones"`
 	// Currently enabled for 'iam' only. Duration in seconds from time of validation that a JWT must expire within.
-	MaxJwtExp *int32 `json:"max_jwt_exp,omitempty"`
+	MaxJwtExp int32 `json:"max_jwt_exp"`
 	// Use \"token_max_ttl\" instead. If this and \"token_max_ttl\" are both specified, only \"token_max_ttl\" will be used.
 	// Deprecated
-	MaxTtl *int32 `json:"max_ttl,omitempty"`
+	MaxTtl int32 `json:"max_ttl"`
 	// Use \"token_period\" instead. If this and \"token_period\" are both specified, only \"token_period\" will be used.
 	// Deprecated
-	Period *int32 `json:"period,omitempty"`
+	Period int32 `json:"period"`
 	// Use \"token_policies\" instead. If this and \"token_policies\" are both specified, only \"token_policies\" will be used.
 	// Deprecated
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 	// Deprecated: use \"bound_projects\" instead
-	ProjectId *string `json:"project_id,omitempty"`
+	ProjectId string `json:"project_id"`
 	// Deprecated: use \"bound_service_accounts\" instead.
-	ServiceAccounts []string `json:"service_accounts,omitempty"`
+	ServiceAccounts []string `json:"service_accounts"`
 	// Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
-	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
+	TokenBoundCidrs []string `json:"token_bound_cidrs"`
 	// If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
-	TokenExplicitMaxTtl *int32 `json:"token_explicit_max_ttl,omitempty"`
+	TokenExplicitMaxTtl int32 `json:"token_explicit_max_ttl"`
 	// The maximum lifetime of the generated token
-	TokenMaxTtl *int32 `json:"token_max_ttl,omitempty"`
+	TokenMaxTtl int32 `json:"token_max_ttl"`
 	// If true, the 'default' policy will not automatically be added to generated tokens
-	TokenNoDefaultPolicy *bool `json:"token_no_default_policy,omitempty"`
+	TokenNoDefaultPolicy bool `json:"token_no_default_policy"`
 	// The maximum number of times a token may be used, a value of zero means unlimited
-	TokenNumUses *int32 `json:"token_num_uses,omitempty"`
+	TokenNumUses int32 `json:"token_num_uses"`
 	// If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \"24h\").
-	TokenPeriod *int32 `json:"token_period,omitempty"`
+	TokenPeriod int32 `json:"token_period"`
 	// Comma-separated list of policies
-	TokenPolicies []string `json:"token_policies,omitempty"`
+	TokenPolicies []string `json:"token_policies"`
 	// The initial ttl of the token to generate
-	TokenTtl *int32 `json:"token_ttl,omitempty"`
+	TokenTtl int32 `json:"token_ttl"`
 	// The type of token to generate, service or batch
-	TokenType *string `json:"token_type,omitempty"`
+	TokenType string `json:"token_type"`
 	// Use \"token_ttl\" instead. If this and \"token_ttl\" are both specified, only \"token_ttl\" will be used.
 	// Deprecated
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 	// Type of the role. Currently supported: iam, gce
-	Type *string `json:"type,omitempty"`
+	Type string `json:"type"`
 }
 
 // NewGcpRoleRequestWithDefaults instantiates a new GcpRoleRequest object
@@ -3985,103 +3441,47 @@ type GcpRoleRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewGcpRoleRequestWithDefaults() *GcpRoleRequest {
 	this := GcpRoleRequest{}
-	var addGroupAliases bool = false
-	this.AddGroupAliases = &addGroupAliases
-	var allowGceInference bool = true
-	this.AllowGceInference = &allowGceInference
-	var maxJwtExp int32 = 900
-	this.MaxJwtExp = &maxJwtExp
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
+
+	this.AddGroupAliases = false
+	this.AllowGceInference = true
+	this.MaxJwtExp = 900
+	this.TokenType = "default-service"
+
 	return &this
 }
 
 func (o GcpRoleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AddGroupAliases != nil {
-		toSerialize["add_group_aliases"] = o.AddGroupAliases
-	}
-	if o.AllowGceInference != nil {
-		toSerialize["allow_gce_inference"] = o.AllowGceInference
-	}
-	if o.BoundInstanceGroup != nil {
-		toSerialize["bound_instance_group"] = o.BoundInstanceGroup
-	}
-	if o.BoundInstanceGroups != nil {
-		toSerialize["bound_instance_groups"] = o.BoundInstanceGroups
-	}
-	if o.BoundLabels != nil {
-		toSerialize["bound_labels"] = o.BoundLabels
-	}
-	if o.BoundProjects != nil {
-		toSerialize["bound_projects"] = o.BoundProjects
-	}
-	if o.BoundRegion != nil {
-		toSerialize["bound_region"] = o.BoundRegion
-	}
-	if o.BoundRegions != nil {
-		toSerialize["bound_regions"] = o.BoundRegions
-	}
-	if o.BoundServiceAccounts != nil {
-		toSerialize["bound_service_accounts"] = o.BoundServiceAccounts
-	}
-	if o.BoundZone != nil {
-		toSerialize["bound_zone"] = o.BoundZone
-	}
-	if o.BoundZones != nil {
-		toSerialize["bound_zones"] = o.BoundZones
-	}
-	if o.MaxJwtExp != nil {
-		toSerialize["max_jwt_exp"] = o.MaxJwtExp
-	}
-	if o.MaxTtl != nil {
-		toSerialize["max_ttl"] = o.MaxTtl
-	}
-	if o.Period != nil {
-		toSerialize["period"] = o.Period
-	}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
-	if o.ProjectId != nil {
-		toSerialize["project_id"] = o.ProjectId
-	}
-	if o.ServiceAccounts != nil {
-		toSerialize["service_accounts"] = o.ServiceAccounts
-	}
-	if o.TokenBoundCidrs != nil {
-		toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
-	}
-	if o.TokenExplicitMaxTtl != nil {
-		toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
-	}
-	if o.TokenMaxTtl != nil {
-		toSerialize["token_max_ttl"] = o.TokenMaxTtl
-	}
-	if o.TokenNoDefaultPolicy != nil {
-		toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
-	}
-	if o.TokenNumUses != nil {
-		toSerialize["token_num_uses"] = o.TokenNumUses
-	}
-	if o.TokenPeriod != nil {
-		toSerialize["token_period"] = o.TokenPeriod
-	}
-	if o.TokenPolicies != nil {
-		toSerialize["token_policies"] = o.TokenPolicies
-	}
-	if o.TokenTtl != nil {
-		toSerialize["token_ttl"] = o.TokenTtl
-	}
-	if o.TokenType != nil {
-		toSerialize["token_type"] = o.TokenType
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
-	if o.Type != nil {
-		toSerialize["type"] = o.Type
-	}
+
+	toSerialize["add_group_aliases"] = o.AddGroupAliases
+	toSerialize["allow_gce_inference"] = o.AllowGceInference
+	toSerialize["bound_instance_group"] = o.BoundInstanceGroup
+	toSerialize["bound_instance_groups"] = o.BoundInstanceGroups
+	toSerialize["bound_labels"] = o.BoundLabels
+	toSerialize["bound_projects"] = o.BoundProjects
+	toSerialize["bound_region"] = o.BoundRegion
+	toSerialize["bound_regions"] = o.BoundRegions
+	toSerialize["bound_service_accounts"] = o.BoundServiceAccounts
+	toSerialize["bound_zone"] = o.BoundZone
+	toSerialize["bound_zones"] = o.BoundZones
+	toSerialize["max_jwt_exp"] = o.MaxJwtExp
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["period"] = o.Period
+	toSerialize["policies"] = o.Policies
+	toSerialize["project_id"] = o.ProjectId
+	toSerialize["service_accounts"] = o.ServiceAccounts
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["type"] = o.Type
+
 	return json.Marshal(toSerialize)
 }
 
@@ -4098,9 +3498,9 @@ API version: 1.12.0
 // GcpRoleServiceAccountsRequest struct for GcpRoleServiceAccountsRequest
 type GcpRoleServiceAccountsRequest struct {
 	// Service-account emails or IDs to add.
-	Add []string `json:"add,omitempty"`
+	Add []string `json:"add"`
 	// Service-account emails or IDs to remove.
-	Remove []string `json:"remove,omitempty"`
+	Remove []string `json:"remove"`
 }
 
 // NewGcpRoleServiceAccountsRequestWithDefaults instantiates a new GcpRoleServiceAccountsRequest object
@@ -4108,17 +3508,16 @@ type GcpRoleServiceAccountsRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewGcpRoleServiceAccountsRequestWithDefaults() *GcpRoleServiceAccountsRequest {
 	this := GcpRoleServiceAccountsRequest{}
+
 	return &this
 }
 
 func (o GcpRoleServiceAccountsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Add != nil {
-		toSerialize["add"] = o.Add
-	}
-	if o.Remove != nil {
-		toSerialize["remove"] = o.Remove
-	}
+
+	toSerialize["add"] = o.Add
+	toSerialize["remove"] = o.Remove
+
 	return json.Marshal(toSerialize)
 }
 
@@ -4135,11 +3534,11 @@ API version: 1.12.0
 // GcpRolesetKeyRequest struct for GcpRolesetKeyRequest
 type GcpRolesetKeyRequest struct {
 	// Private key algorithm for service account key - defaults to KEY_ALG_RSA_2048\"
-	KeyAlgorithm *string `json:"key_algorithm,omitempty"`
+	KeyAlgorithm string `json:"key_algorithm"`
 	// Private key type for service account key - defaults to TYPE_GOOGLE_CREDENTIALS_FILE\"
-	KeyType *string `json:"key_type,omitempty"`
+	KeyType string `json:"key_type"`
 	// Lifetime of the service account key
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 }
 
 // NewGcpRolesetKeyRequestWithDefaults instantiates a new GcpRolesetKeyRequest object
@@ -4147,24 +3546,20 @@ type GcpRolesetKeyRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewGcpRolesetKeyRequestWithDefaults() *GcpRolesetKeyRequest {
 	this := GcpRolesetKeyRequest{}
-	var keyAlgorithm string = "KEY_ALG_RSA_2048"
-	this.KeyAlgorithm = &keyAlgorithm
-	var keyType string = "TYPE_GOOGLE_CREDENTIALS_FILE"
-	this.KeyType = &keyType
+
+	this.KeyAlgorithm = "KEY_ALG_RSA_2048"
+	this.KeyType = "TYPE_GOOGLE_CREDENTIALS_FILE"
+
 	return &this
 }
 
 func (o GcpRolesetKeyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.KeyAlgorithm != nil {
-		toSerialize["key_algorithm"] = o.KeyAlgorithm
-	}
-	if o.KeyType != nil {
-		toSerialize["key_type"] = o.KeyType
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
+
+	toSerialize["key_algorithm"] = o.KeyAlgorithm
+	toSerialize["key_type"] = o.KeyType
+	toSerialize["ttl"] = o.Ttl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -4181,13 +3576,13 @@ API version: 1.12.0
 // GcpRolesetRequest struct for GcpRolesetRequest
 type GcpRolesetRequest struct {
 	// Bindings configuration string.
-	Bindings *string `json:"bindings,omitempty"`
+	Bindings string `json:"bindings"`
 	// Name of the GCP project that this roleset's service account will belong to.
-	Project *string `json:"project,omitempty"`
+	Project string `json:"project"`
 	// Type of secret generated for this role set. Defaults to 'access_token'
-	SecretType *string `json:"secret_type,omitempty"`
+	SecretType string `json:"secret_type"`
 	// List of OAuth scopes to assign to credentials generated under this role set
-	TokenScopes []string `json:"token_scopes,omitempty"`
+	TokenScopes []string `json:"token_scopes"`
 }
 
 // NewGcpRolesetRequestWithDefaults instantiates a new GcpRolesetRequest object
@@ -4195,25 +3590,20 @@ type GcpRolesetRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewGcpRolesetRequestWithDefaults() *GcpRolesetRequest {
 	this := GcpRolesetRequest{}
-	var secretType string = "access_token"
-	this.SecretType = &secretType
+
+	this.SecretType = "access_token"
+
 	return &this
 }
 
 func (o GcpRolesetRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Bindings != nil {
-		toSerialize["bindings"] = o.Bindings
-	}
-	if o.Project != nil {
-		toSerialize["project"] = o.Project
-	}
-	if o.SecretType != nil {
-		toSerialize["secret_type"] = o.SecretType
-	}
-	if o.TokenScopes != nil {
-		toSerialize["token_scopes"] = o.TokenScopes
-	}
+
+	toSerialize["bindings"] = o.Bindings
+	toSerialize["project"] = o.Project
+	toSerialize["secret_type"] = o.SecretType
+	toSerialize["token_scopes"] = o.TokenScopes
+
 	return json.Marshal(toSerialize)
 }
 
@@ -4230,11 +3620,11 @@ API version: 1.12.0
 // GcpStaticAccountKeyRequest struct for GcpStaticAccountKeyRequest
 type GcpStaticAccountKeyRequest struct {
 	// Private key algorithm for service account key. Defaults to KEY_ALG_RSA_2048.\"
-	KeyAlgorithm *string `json:"key_algorithm,omitempty"`
+	KeyAlgorithm string `json:"key_algorithm"`
 	// Private key type for service account key. Defaults to TYPE_GOOGLE_CREDENTIALS_FILE.\"
-	KeyType *string `json:"key_type,omitempty"`
+	KeyType string `json:"key_type"`
 	// Lifetime of the service account key
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 }
 
 // NewGcpStaticAccountKeyRequestWithDefaults instantiates a new GcpStaticAccountKeyRequest object
@@ -4242,24 +3632,20 @@ type GcpStaticAccountKeyRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewGcpStaticAccountKeyRequestWithDefaults() *GcpStaticAccountKeyRequest {
 	this := GcpStaticAccountKeyRequest{}
-	var keyAlgorithm string = "KEY_ALG_RSA_2048"
-	this.KeyAlgorithm = &keyAlgorithm
-	var keyType string = "TYPE_GOOGLE_CREDENTIALS_FILE"
-	this.KeyType = &keyType
+
+	this.KeyAlgorithm = "KEY_ALG_RSA_2048"
+	this.KeyType = "TYPE_GOOGLE_CREDENTIALS_FILE"
+
 	return &this
 }
 
 func (o GcpStaticAccountKeyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.KeyAlgorithm != nil {
-		toSerialize["key_algorithm"] = o.KeyAlgorithm
-	}
-	if o.KeyType != nil {
-		toSerialize["key_type"] = o.KeyType
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
+
+	toSerialize["key_algorithm"] = o.KeyAlgorithm
+	toSerialize["key_type"] = o.KeyType
+	toSerialize["ttl"] = o.Ttl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -4276,13 +3662,13 @@ API version: 1.12.0
 // GcpStaticAccountRequest struct for GcpStaticAccountRequest
 type GcpStaticAccountRequest struct {
 	// Bindings configuration string.
-	Bindings *string `json:"bindings,omitempty"`
+	Bindings string `json:"bindings"`
 	// Type of secret generated for this account. Cannot be updated. Defaults to \"access_token\"
-	SecretType *string `json:"secret_type,omitempty"`
+	SecretType string `json:"secret_type"`
 	// Required. Email of the GCP service account to manage. Cannot be updated.
-	ServiceAccountEmail *string `json:"service_account_email,omitempty"`
+	ServiceAccountEmail string `json:"service_account_email"`
 	// List of OAuth scopes to assign to access tokens generated under this account. Ignored if \"secret_type\" is not \"\"access_token\"\"
-	TokenScopes []string `json:"token_scopes,omitempty"`
+	TokenScopes []string `json:"token_scopes"`
 }
 
 // NewGcpStaticAccountRequestWithDefaults instantiates a new GcpStaticAccountRequest object
@@ -4290,25 +3676,20 @@ type GcpStaticAccountRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewGcpStaticAccountRequestWithDefaults() *GcpStaticAccountRequest {
 	this := GcpStaticAccountRequest{}
-	var secretType string = "access_token"
-	this.SecretType = &secretType
+
+	this.SecretType = "access_token"
+
 	return &this
 }
 
 func (o GcpStaticAccountRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Bindings != nil {
-		toSerialize["bindings"] = o.Bindings
-	}
-	if o.SecretType != nil {
-		toSerialize["secret_type"] = o.SecretType
-	}
-	if o.ServiceAccountEmail != nil {
-		toSerialize["service_account_email"] = o.ServiceAccountEmail
-	}
-	if o.TokenScopes != nil {
-		toSerialize["token_scopes"] = o.TokenScopes
-	}
+
+	toSerialize["bindings"] = o.Bindings
+	toSerialize["secret_type"] = o.SecretType
+	toSerialize["service_account_email"] = o.ServiceAccountEmail
+	toSerialize["token_scopes"] = o.TokenScopes
+
 	return json.Marshal(toSerialize)
 }
 
@@ -4325,9 +3706,9 @@ API version: 1.12.0
 // GcpkmsConfigRequest struct for GcpkmsConfigRequest
 type GcpkmsConfigRequest struct {
 	// The credentials to use for authenticating to Google Cloud. Leave this blank to use the Default Application Credentials or instance metadata authentication.
-	Credentials *string `json:"credentials,omitempty"`
+	Credentials string `json:"credentials"`
 	// The list of full-URL scopes to request when authenticating. By default, this requests https://www.googleapis.com/auth/cloudkms.
-	Scopes []string `json:"scopes,omitempty"`
+	Scopes []string `json:"scopes"`
 }
 
 // NewGcpkmsConfigRequestWithDefaults instantiates a new GcpkmsConfigRequest object
@@ -4335,17 +3716,16 @@ type GcpkmsConfigRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewGcpkmsConfigRequestWithDefaults() *GcpkmsConfigRequest {
 	this := GcpkmsConfigRequest{}
+
 	return &this
 }
 
 func (o GcpkmsConfigRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Credentials != nil {
-		toSerialize["credentials"] = o.Credentials
-	}
-	if o.Scopes != nil {
-		toSerialize["scopes"] = o.Scopes
-	}
+
+	toSerialize["credentials"] = o.Credentials
+	toSerialize["scopes"] = o.Scopes
+
 	return json.Marshal(toSerialize)
 }
 
@@ -4362,11 +3742,11 @@ API version: 1.12.0
 // GcpkmsDecryptRequest struct for GcpkmsDecryptRequest
 type GcpkmsDecryptRequest struct {
 	// Optional data that was specified during encryption of this payload.
-	AdditionalAuthenticatedData *string `json:"additional_authenticated_data,omitempty"`
+	AdditionalAuthenticatedData string `json:"additional_authenticated_data"`
 	// Ciphertext to decrypt as previously returned from an encrypt operation. This must be base64-encoded ciphertext as previously returned from an encrypt operation.
-	Ciphertext *string `json:"ciphertext,omitempty"`
+	Ciphertext string `json:"ciphertext"`
 	// Integer version of the crypto key version to use for decryption. This is required for asymmetric keys. For symmetric keys, Cloud KMS will choose the correct version automatically.
-	KeyVersion *int32 `json:"key_version,omitempty"`
+	KeyVersion int32 `json:"key_version"`
 }
 
 // NewGcpkmsDecryptRequestWithDefaults instantiates a new GcpkmsDecryptRequest object
@@ -4374,20 +3754,17 @@ type GcpkmsDecryptRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewGcpkmsDecryptRequestWithDefaults() *GcpkmsDecryptRequest {
 	this := GcpkmsDecryptRequest{}
+
 	return &this
 }
 
 func (o GcpkmsDecryptRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AdditionalAuthenticatedData != nil {
-		toSerialize["additional_authenticated_data"] = o.AdditionalAuthenticatedData
-	}
-	if o.Ciphertext != nil {
-		toSerialize["ciphertext"] = o.Ciphertext
-	}
-	if o.KeyVersion != nil {
-		toSerialize["key_version"] = o.KeyVersion
-	}
+
+	toSerialize["additional_authenticated_data"] = o.AdditionalAuthenticatedData
+	toSerialize["ciphertext"] = o.Ciphertext
+	toSerialize["key_version"] = o.KeyVersion
+
 	return json.Marshal(toSerialize)
 }
 
@@ -4404,11 +3781,11 @@ API version: 1.12.0
 // GcpkmsEncryptRequest struct for GcpkmsEncryptRequest
 type GcpkmsEncryptRequest struct {
 	// Optional base64-encoded data that, if specified, must also be provided to decrypt this payload.
-	AdditionalAuthenticatedData *string `json:"additional_authenticated_data,omitempty"`
+	AdditionalAuthenticatedData string `json:"additional_authenticated_data"`
 	// Integer version of the crypto key version to use for encryption. If unspecified, this defaults to the latest active crypto key version.
-	KeyVersion *int32 `json:"key_version,omitempty"`
+	KeyVersion int32 `json:"key_version"`
 	// Plaintext value to be encrypted. This can be a string or binary, but the size is limited. See the Google Cloud KMS documentation for information on size limitations by key types.
-	Plaintext *string `json:"plaintext,omitempty"`
+	Plaintext string `json:"plaintext"`
 }
 
 // NewGcpkmsEncryptRequestWithDefaults instantiates a new GcpkmsEncryptRequest object
@@ -4416,20 +3793,17 @@ type GcpkmsEncryptRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewGcpkmsEncryptRequestWithDefaults() *GcpkmsEncryptRequest {
 	this := GcpkmsEncryptRequest{}
+
 	return &this
 }
 
 func (o GcpkmsEncryptRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AdditionalAuthenticatedData != nil {
-		toSerialize["additional_authenticated_data"] = o.AdditionalAuthenticatedData
-	}
-	if o.KeyVersion != nil {
-		toSerialize["key_version"] = o.KeyVersion
-	}
-	if o.Plaintext != nil {
-		toSerialize["plaintext"] = o.Plaintext
-	}
+
+	toSerialize["additional_authenticated_data"] = o.AdditionalAuthenticatedData
+	toSerialize["key_version"] = o.KeyVersion
+	toSerialize["plaintext"] = o.Plaintext
+
 	return json.Marshal(toSerialize)
 }
 
@@ -4446,9 +3820,9 @@ API version: 1.12.0
 // GcpkmsKeysConfigRequest struct for GcpkmsKeysConfigRequest
 type GcpkmsKeysConfigRequest struct {
 	// Maximum allowed crypto key version. If set to a positive value, key versions greater than the given value are not permitted to be used. If set to 0 or a negative value, there is no maximum key version.
-	MaxVersion *int32 `json:"max_version,omitempty"`
+	MaxVersion int32 `json:"max_version"`
 	// Minimum allowed crypto key version. If set to a positive value, key versions less than the given value are not permitted to be used. If set to 0 or a negative value, there is no minimum key version. This value only affects encryption/re-encryption, not decryption. To restrict old values from being decrypted, increase this value and then perform a trim operation.
-	MinVersion *int32 `json:"min_version,omitempty"`
+	MinVersion int32 `json:"min_version"`
 }
 
 // NewGcpkmsKeysConfigRequestWithDefaults instantiates a new GcpkmsKeysConfigRequest object
@@ -4456,17 +3830,16 @@ type GcpkmsKeysConfigRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewGcpkmsKeysConfigRequestWithDefaults() *GcpkmsKeysConfigRequest {
 	this := GcpkmsKeysConfigRequest{}
+
 	return &this
 }
 
 func (o GcpkmsKeysConfigRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.MaxVersion != nil {
-		toSerialize["max_version"] = o.MaxVersion
-	}
-	if o.MinVersion != nil {
-		toSerialize["min_version"] = o.MinVersion
-	}
+
+	toSerialize["max_version"] = o.MaxVersion
+	toSerialize["min_version"] = o.MinVersion
+
 	return json.Marshal(toSerialize)
 }
 
@@ -4483,9 +3856,9 @@ API version: 1.12.0
 // GcpkmsKeysRegisterRequest struct for GcpkmsKeysRegisterRequest
 type GcpkmsKeysRegisterRequest struct {
 	// Full resource ID of the crypto key including the project, location, key ring, and crypto key like \"projects/%s/locations/%s/keyRings/%s/cryptoKeys/%s\". This crypto key must already exist in Google Cloud KMS unless verify is set to \"false\".
-	CryptoKey *string `json:"crypto_key,omitempty"`
+	CryptoKey string `json:"crypto_key"`
 	// Verify that the given Google Cloud KMS crypto key exists and is accessible before creating the storage entry in Vault. Set this to \"false\" if the key will not exist at creation time.
-	Verify *bool `json:"verify,omitempty"`
+	Verify bool `json:"verify"`
 }
 
 // NewGcpkmsKeysRegisterRequestWithDefaults instantiates a new GcpkmsKeysRegisterRequest object
@@ -4493,19 +3866,18 @@ type GcpkmsKeysRegisterRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewGcpkmsKeysRegisterRequestWithDefaults() *GcpkmsKeysRegisterRequest {
 	this := GcpkmsKeysRegisterRequest{}
-	var verify bool = true
-	this.Verify = &verify
+
+	this.Verify = true
+
 	return &this
 }
 
 func (o GcpkmsKeysRegisterRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.CryptoKey != nil {
-		toSerialize["crypto_key"] = o.CryptoKey
-	}
-	if o.Verify != nil {
-		toSerialize["verify"] = o.Verify
-	}
+
+	toSerialize["crypto_key"] = o.CryptoKey
+	toSerialize["verify"] = o.Verify
+
 	return json.Marshal(toSerialize)
 }
 
@@ -4522,19 +3894,19 @@ API version: 1.12.0
 // GcpkmsKeysRequest struct for GcpkmsKeysRequest
 type GcpkmsKeysRequest struct {
 	// Algorithm to use for encryption, decryption, or signing. The value depends on the key purpose. The value cannot be changed after creation. For a key purpose of \"encrypt_decrypt\", the valid values are: - symmetric_encryption (default) For a key purpose of \"asymmetric_sign\", valid values are: - rsa_sign_pss_2048_sha256 - rsa_sign_pss_3072_sha256 - rsa_sign_pss_4096_sha256 - rsa_sign_pkcs1_2048_sha256 - rsa_sign_pkcs1_3072_sha256 - rsa_sign_pkcs1_4096_sha256 - ec_sign_p256_sha256 - ec_sign_p384_sha384 For a key purpose of \"asymmetric_decrypt\", valid values are: - rsa_decrypt_oaep_2048_sha256 - rsa_decrypt_oaep_3072_sha256 - rsa_decrypt_oaep_4096_sha256
-	Algorithm *string `json:"algorithm,omitempty"`
+	Algorithm string `json:"algorithm"`
 	// Name of the crypto key to use. If the given crypto key does not exist, Vault will try to create it. This defaults to the name of the key given to Vault as the parameter if unspecified.
-	CryptoKey *string `json:"crypto_key,omitempty"`
+	CryptoKey string `json:"crypto_key"`
 	// Full Google Cloud resource ID of the key ring with the project and location (e.g. projects/my-project/locations/global/keyRings/my-keyring). If the given key ring does not exist, Vault will try to create it during a create operation.
-	KeyRing *string `json:"key_ring,omitempty"`
+	KeyRing string `json:"key_ring"`
 	// Arbitrary key=value label to apply to the crypto key. To specify multiple labels, specify this argument multiple times (e.g. labels=\"a=b\" labels=\"c=d\").
-	Labels map[string]interface{} `json:"labels,omitempty"`
+	Labels map[string]interface{} `json:"labels"`
 	// Level of protection to use for the key management. Valid values are \"software\" and \"hsm\". The default value is \"software\". The value cannot be changed after creation.
-	ProtectionLevel *string `json:"protection_level,omitempty"`
+	ProtectionLevel string `json:"protection_level"`
 	// Purpose of the key. Valid options are \"asymmetric_decrypt\", \"asymmetric_sign\", and \"encrypt_decrypt\". The default value is \"encrypt_decrypt\". The value cannot be changed after creation.
-	Purpose *string `json:"purpose,omitempty"`
+	Purpose string `json:"purpose"`
 	// Amount of time between crypto key version rotations. This is specified as a time duration value like 72h (72 hours). The smallest possible value is 24h. This value only applies to keys with a purpose of \"encrypt_decrypt\".
-	RotationPeriod *int32 `json:"rotation_period,omitempty"`
+	RotationPeriod int32 `json:"rotation_period"`
 }
 
 // NewGcpkmsKeysRequestWithDefaults instantiates a new GcpkmsKeysRequest object
@@ -4542,32 +3914,21 @@ type GcpkmsKeysRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewGcpkmsKeysRequestWithDefaults() *GcpkmsKeysRequest {
 	this := GcpkmsKeysRequest{}
+
 	return &this
 }
 
 func (o GcpkmsKeysRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Algorithm != nil {
-		toSerialize["algorithm"] = o.Algorithm
-	}
-	if o.CryptoKey != nil {
-		toSerialize["crypto_key"] = o.CryptoKey
-	}
-	if o.KeyRing != nil {
-		toSerialize["key_ring"] = o.KeyRing
-	}
-	if o.Labels != nil {
-		toSerialize["labels"] = o.Labels
-	}
-	if o.ProtectionLevel != nil {
-		toSerialize["protection_level"] = o.ProtectionLevel
-	}
-	if o.Purpose != nil {
-		toSerialize["purpose"] = o.Purpose
-	}
-	if o.RotationPeriod != nil {
-		toSerialize["rotation_period"] = o.RotationPeriod
-	}
+
+	toSerialize["algorithm"] = o.Algorithm
+	toSerialize["crypto_key"] = o.CryptoKey
+	toSerialize["key_ring"] = o.KeyRing
+	toSerialize["labels"] = o.Labels
+	toSerialize["protection_level"] = o.ProtectionLevel
+	toSerialize["purpose"] = o.Purpose
+	toSerialize["rotation_period"] = o.RotationPeriod
+
 	return json.Marshal(toSerialize)
 }
 
@@ -4584,11 +3945,11 @@ API version: 1.12.0
 // GcpkmsReencryptRequest struct for GcpkmsReencryptRequest
 type GcpkmsReencryptRequest struct {
 	// Optional data that, if specified, must also be provided during decryption.
-	AdditionalAuthenticatedData *string `json:"additional_authenticated_data,omitempty"`
+	AdditionalAuthenticatedData string `json:"additional_authenticated_data"`
 	// Ciphertext to be re-encrypted to the latest key version. This must be ciphertext that Vault previously generated for this named key.
-	Ciphertext *string `json:"ciphertext,omitempty"`
+	Ciphertext string `json:"ciphertext"`
 	// Integer version of the crypto key version to use for the new encryption. If unspecified, this defaults to the latest active crypto key version.
-	KeyVersion *int32 `json:"key_version,omitempty"`
+	KeyVersion int32 `json:"key_version"`
 }
 
 // NewGcpkmsReencryptRequestWithDefaults instantiates a new GcpkmsReencryptRequest object
@@ -4596,20 +3957,17 @@ type GcpkmsReencryptRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewGcpkmsReencryptRequestWithDefaults() *GcpkmsReencryptRequest {
 	this := GcpkmsReencryptRequest{}
+
 	return &this
 }
 
 func (o GcpkmsReencryptRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AdditionalAuthenticatedData != nil {
-		toSerialize["additional_authenticated_data"] = o.AdditionalAuthenticatedData
-	}
-	if o.Ciphertext != nil {
-		toSerialize["ciphertext"] = o.Ciphertext
-	}
-	if o.KeyVersion != nil {
-		toSerialize["key_version"] = o.KeyVersion
-	}
+
+	toSerialize["additional_authenticated_data"] = o.AdditionalAuthenticatedData
+	toSerialize["ciphertext"] = o.Ciphertext
+	toSerialize["key_version"] = o.KeyVersion
+
 	return json.Marshal(toSerialize)
 }
 
@@ -4626,9 +3984,9 @@ API version: 1.12.0
 // GcpkmsSignRequest struct for GcpkmsSignRequest
 type GcpkmsSignRequest struct {
 	// Digest to sign. This digest must use the same SHA algorithm as the underlying Cloud KMS key. The digest must be the base64-encoded binary value. This field is required.
-	Digest *string `json:"digest,omitempty"`
+	Digest string `json:"digest"`
 	// Integer version of the crypto key version to use for signing. This field is required.
-	KeyVersion *int32 `json:"key_version,omitempty"`
+	KeyVersion int32 `json:"key_version"`
 }
 
 // NewGcpkmsSignRequestWithDefaults instantiates a new GcpkmsSignRequest object
@@ -4636,17 +3994,16 @@ type GcpkmsSignRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewGcpkmsSignRequestWithDefaults() *GcpkmsSignRequest {
 	this := GcpkmsSignRequest{}
+
 	return &this
 }
 
 func (o GcpkmsSignRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Digest != nil {
-		toSerialize["digest"] = o.Digest
-	}
-	if o.KeyVersion != nil {
-		toSerialize["key_version"] = o.KeyVersion
-	}
+
+	toSerialize["digest"] = o.Digest
+	toSerialize["key_version"] = o.KeyVersion
+
 	return json.Marshal(toSerialize)
 }
 
@@ -4663,11 +4020,11 @@ API version: 1.12.0
 // GcpkmsVerifyRequest struct for GcpkmsVerifyRequest
 type GcpkmsVerifyRequest struct {
 	// Digest to verify. This digest must use the same SHA algorithm as the underlying Cloud KMS key. The digest must be the base64-encoded binary value. This field is required.
-	Digest *string `json:"digest,omitempty"`
+	Digest string `json:"digest"`
 	// Integer version of the crypto key version to use for verification. This field is required.
-	KeyVersion *int32 `json:"key_version,omitempty"`
+	KeyVersion int32 `json:"key_version"`
 	// Base64-encoded signature to use for verification. This field is required.
-	Signature *string `json:"signature,omitempty"`
+	Signature string `json:"signature"`
 }
 
 // NewGcpkmsVerifyRequestWithDefaults instantiates a new GcpkmsVerifyRequest object
@@ -4675,20 +4032,17 @@ type GcpkmsVerifyRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewGcpkmsVerifyRequestWithDefaults() *GcpkmsVerifyRequest {
 	this := GcpkmsVerifyRequest{}
+
 	return &this
 }
 
 func (o GcpkmsVerifyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Digest != nil {
-		toSerialize["digest"] = o.Digest
-	}
-	if o.KeyVersion != nil {
-		toSerialize["key_version"] = o.KeyVersion
-	}
-	if o.Signature != nil {
-		toSerialize["signature"] = o.Signature
-	}
+
+	toSerialize["digest"] = o.Digest
+	toSerialize["key_version"] = o.KeyVersion
+	toSerialize["signature"] = o.Signature
+
 	return json.Marshal(toSerialize)
 }
 
@@ -4705,35 +4059,35 @@ API version: 1.12.0
 // GithubConfigRequest struct for GithubConfigRequest
 type GithubConfigRequest struct {
 	// The API endpoint to use. Useful if you are running GitHub Enterprise or an API-compatible authentication server.
-	BaseUrl *string `json:"base_url,omitempty"`
+	BaseUrl string `json:"base_url"`
 	// Use \"token_max_ttl\" instead. If this and \"token_max_ttl\" are both specified, only \"token_max_ttl\" will be used.
 	// Deprecated
-	MaxTtl *int32 `json:"max_ttl,omitempty"`
+	MaxTtl int32 `json:"max_ttl"`
 	// The organization users must be part of
 	Organization string `json:"organization"`
 	// The ID of the organization users must be part of
-	OrganizationId *int64 `json:"organization_id,omitempty"`
+	OrganizationId int64 `json:"organization_id"`
 	// Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
-	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
+	TokenBoundCidrs []string `json:"token_bound_cidrs"`
 	// If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
-	TokenExplicitMaxTtl *int32 `json:"token_explicit_max_ttl,omitempty"`
+	TokenExplicitMaxTtl int32 `json:"token_explicit_max_ttl"`
 	// The maximum lifetime of the generated token
-	TokenMaxTtl *int32 `json:"token_max_ttl,omitempty"`
+	TokenMaxTtl int32 `json:"token_max_ttl"`
 	// If true, the 'default' policy will not automatically be added to generated tokens
-	TokenNoDefaultPolicy *bool `json:"token_no_default_policy,omitempty"`
+	TokenNoDefaultPolicy bool `json:"token_no_default_policy"`
 	// The maximum number of times a token may be used, a value of zero means unlimited
-	TokenNumUses *int32 `json:"token_num_uses,omitempty"`
+	TokenNumUses int32 `json:"token_num_uses"`
 	// If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \"24h\").
-	TokenPeriod *int32 `json:"token_period,omitempty"`
+	TokenPeriod int32 `json:"token_period"`
 	// Comma-separated list of policies. This will apply to all tokens generated by this auth method, in addition to any policies configured for specific users/groups.
-	TokenPolicies []string `json:"token_policies,omitempty"`
+	TokenPolicies []string `json:"token_policies"`
 	// The initial ttl of the token to generate
-	TokenTtl *int32 `json:"token_ttl,omitempty"`
+	TokenTtl int32 `json:"token_ttl"`
 	// The type of token to generate, service or batch
-	TokenType *string `json:"token_type,omitempty"`
+	TokenType string `json:"token_type"`
 	// Use \"token_ttl\" instead. If this and \"token_ttl\" are both specified, only \"token_ttl\" will be used.
 	// Deprecated
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 }
 
 // NewGithubConfigRequestWithDefaults instantiates a new GithubConfigRequest object
@@ -4741,55 +4095,30 @@ type GithubConfigRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewGithubConfigRequestWithDefaults() *GithubConfigRequest {
 	this := GithubConfigRequest{}
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
+
+	this.TokenType = "default-service"
+
 	return &this
 }
 
 func (o GithubConfigRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.BaseUrl != nil {
-		toSerialize["base_url"] = o.BaseUrl
-	}
-	if o.MaxTtl != nil {
-		toSerialize["max_ttl"] = o.MaxTtl
-	}
-	if true {
-		toSerialize["organization"] = o.Organization
-	}
-	if o.OrganizationId != nil {
-		toSerialize["organization_id"] = o.OrganizationId
-	}
-	if o.TokenBoundCidrs != nil {
-		toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
-	}
-	if o.TokenExplicitMaxTtl != nil {
-		toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
-	}
-	if o.TokenMaxTtl != nil {
-		toSerialize["token_max_ttl"] = o.TokenMaxTtl
-	}
-	if o.TokenNoDefaultPolicy != nil {
-		toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
-	}
-	if o.TokenNumUses != nil {
-		toSerialize["token_num_uses"] = o.TokenNumUses
-	}
-	if o.TokenPeriod != nil {
-		toSerialize["token_period"] = o.TokenPeriod
-	}
-	if o.TokenPolicies != nil {
-		toSerialize["token_policies"] = o.TokenPolicies
-	}
-	if o.TokenTtl != nil {
-		toSerialize["token_ttl"] = o.TokenTtl
-	}
-	if o.TokenType != nil {
-		toSerialize["token_type"] = o.TokenType
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
+
+	toSerialize["base_url"] = o.BaseUrl
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["organization"] = o.Organization
+	toSerialize["organization_id"] = o.OrganizationId
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+	toSerialize["ttl"] = o.Ttl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -4806,7 +4135,7 @@ API version: 1.12.0
 // GithubLoginRequest struct for GithubLoginRequest
 type GithubLoginRequest struct {
 	// GitHub personal API token
-	Token *string `json:"token,omitempty"`
+	Token string `json:"token"`
 }
 
 // NewGithubLoginRequestWithDefaults instantiates a new GithubLoginRequest object
@@ -4814,14 +4143,15 @@ type GithubLoginRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewGithubLoginRequestWithDefaults() *GithubLoginRequest {
 	this := GithubLoginRequest{}
+
 	return &this
 }
 
 func (o GithubLoginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Token != nil {
-		toSerialize["token"] = o.Token
-	}
+
+	toSerialize["token"] = o.Token
+
 	return json.Marshal(toSerialize)
 }
 
@@ -4838,7 +4168,7 @@ API version: 1.12.0
 // GithubMapTeamsRequest struct for GithubMapTeamsRequest
 type GithubMapTeamsRequest struct {
 	// Value for teams mapping
-	Value *string `json:"value,omitempty"`
+	Value string `json:"value"`
 }
 
 // NewGithubMapTeamsRequestWithDefaults instantiates a new GithubMapTeamsRequest object
@@ -4846,14 +4176,15 @@ type GithubMapTeamsRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewGithubMapTeamsRequestWithDefaults() *GithubMapTeamsRequest {
 	this := GithubMapTeamsRequest{}
+
 	return &this
 }
 
 func (o GithubMapTeamsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Value != nil {
-		toSerialize["value"] = o.Value
-	}
+
+	toSerialize["value"] = o.Value
+
 	return json.Marshal(toSerialize)
 }
 
@@ -4870,7 +4201,7 @@ API version: 1.12.0
 // GithubMapUsersRequest struct for GithubMapUsersRequest
 type GithubMapUsersRequest struct {
 	// Value for users mapping
-	Value *string `json:"value,omitempty"`
+	Value string `json:"value"`
 }
 
 // NewGithubMapUsersRequestWithDefaults instantiates a new GithubMapUsersRequest object
@@ -4878,14 +4209,15 @@ type GithubMapUsersRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewGithubMapUsersRequestWithDefaults() *GithubMapUsersRequest {
 	this := GithubMapUsersRequest{}
+
 	return &this
 }
 
 func (o GithubMapUsersRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Value != nil {
-		toSerialize["value"] = o.Value
-	}
+
+	toSerialize["value"] = o.Value
+
 	return json.Marshal(toSerialize)
 }
 
@@ -4902,13 +4234,13 @@ API version: 1.12.0
 // IdentityAliasIdRequest struct for IdentityAliasIdRequest
 type IdentityAliasIdRequest struct {
 	// Entity ID to which this alias should be tied to
-	CanonicalId *string `json:"canonical_id,omitempty"`
+	CanonicalId string `json:"canonical_id"`
 	// Entity ID to which this alias should be tied to. This field is deprecated in favor of 'canonical_id'.
-	EntityId *string `json:"entity_id,omitempty"`
+	EntityId string `json:"entity_id"`
 	// Mount accessor to which this alias belongs to
-	MountAccessor *string `json:"mount_accessor,omitempty"`
+	MountAccessor string `json:"mount_accessor"`
 	// Name of the alias
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 }
 
 // NewIdentityAliasIdRequestWithDefaults instantiates a new IdentityAliasIdRequest object
@@ -4916,23 +4248,18 @@ type IdentityAliasIdRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityAliasIdRequestWithDefaults() *IdentityAliasIdRequest {
 	this := IdentityAliasIdRequest{}
+
 	return &this
 }
 
 func (o IdentityAliasIdRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.CanonicalId != nil {
-		toSerialize["canonical_id"] = o.CanonicalId
-	}
-	if o.EntityId != nil {
-		toSerialize["entity_id"] = o.EntityId
-	}
-	if o.MountAccessor != nil {
-		toSerialize["mount_accessor"] = o.MountAccessor
-	}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
-	}
+
+	toSerialize["canonical_id"] = o.CanonicalId
+	toSerialize["entity_id"] = o.EntityId
+	toSerialize["mount_accessor"] = o.MountAccessor
+	toSerialize["name"] = o.Name
+
 	return json.Marshal(toSerialize)
 }
 
@@ -4949,15 +4276,15 @@ API version: 1.12.0
 // IdentityAliasRequest struct for IdentityAliasRequest
 type IdentityAliasRequest struct {
 	// Entity ID to which this alias belongs to
-	CanonicalId *string `json:"canonical_id,omitempty"`
+	CanonicalId string `json:"canonical_id"`
 	// Entity ID to which this alias belongs to. This field is deprecated in favor of 'canonical_id'.
-	EntityId *string `json:"entity_id,omitempty"`
+	EntityId string `json:"entity_id"`
 	// ID of the alias
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	// Mount accessor to which this alias belongs to
-	MountAccessor *string `json:"mount_accessor,omitempty"`
+	MountAccessor string `json:"mount_accessor"`
 	// Name of the alias
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 }
 
 // NewIdentityAliasRequestWithDefaults instantiates a new IdentityAliasRequest object
@@ -4965,26 +4292,19 @@ type IdentityAliasRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityAliasRequestWithDefaults() *IdentityAliasRequest {
 	this := IdentityAliasRequest{}
+
 	return &this
 }
 
 func (o IdentityAliasRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.CanonicalId != nil {
-		toSerialize["canonical_id"] = o.CanonicalId
-	}
-	if o.EntityId != nil {
-		toSerialize["entity_id"] = o.EntityId
-	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
-	}
-	if o.MountAccessor != nil {
-		toSerialize["mount_accessor"] = o.MountAccessor
-	}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
-	}
+
+	toSerialize["canonical_id"] = o.CanonicalId
+	toSerialize["entity_id"] = o.EntityId
+	toSerialize["id"] = o.Id
+	toSerialize["mount_accessor"] = o.MountAccessor
+	toSerialize["name"] = o.Name
+
 	return json.Marshal(toSerialize)
 }
 
@@ -5001,15 +4321,15 @@ API version: 1.12.0
 // IdentityEntityAliasIdRequest struct for IdentityEntityAliasIdRequest
 type IdentityEntityAliasIdRequest struct {
 	// Entity ID to which this alias should be tied to
-	CanonicalId *string `json:"canonical_id,omitempty"`
+	CanonicalId string `json:"canonical_id"`
 	// User provided key-value pairs
-	CustomMetadata map[string]interface{} `json:"custom_metadata,omitempty"`
+	CustomMetadata map[string]interface{} `json:"custom_metadata"`
 	// Entity ID to which this alias belongs to. This field is deprecated, use canonical_id.
-	EntityId *string `json:"entity_id,omitempty"`
+	EntityId string `json:"entity_id"`
 	// (Unused)
-	MountAccessor *string `json:"mount_accessor,omitempty"`
+	MountAccessor string `json:"mount_accessor"`
 	// (Unused)
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 }
 
 // NewIdentityEntityAliasIdRequestWithDefaults instantiates a new IdentityEntityAliasIdRequest object
@@ -5017,26 +4337,19 @@ type IdentityEntityAliasIdRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityEntityAliasIdRequestWithDefaults() *IdentityEntityAliasIdRequest {
 	this := IdentityEntityAliasIdRequest{}
+
 	return &this
 }
 
 func (o IdentityEntityAliasIdRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.CanonicalId != nil {
-		toSerialize["canonical_id"] = o.CanonicalId
-	}
-	if o.CustomMetadata != nil {
-		toSerialize["custom_metadata"] = o.CustomMetadata
-	}
-	if o.EntityId != nil {
-		toSerialize["entity_id"] = o.EntityId
-	}
-	if o.MountAccessor != nil {
-		toSerialize["mount_accessor"] = o.MountAccessor
-	}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
-	}
+
+	toSerialize["canonical_id"] = o.CanonicalId
+	toSerialize["custom_metadata"] = o.CustomMetadata
+	toSerialize["entity_id"] = o.EntityId
+	toSerialize["mount_accessor"] = o.MountAccessor
+	toSerialize["name"] = o.Name
+
 	return json.Marshal(toSerialize)
 }
 
@@ -5053,17 +4366,17 @@ API version: 1.12.0
 // IdentityEntityAliasRequest struct for IdentityEntityAliasRequest
 type IdentityEntityAliasRequest struct {
 	// Entity ID to which this alias belongs
-	CanonicalId *string `json:"canonical_id,omitempty"`
+	CanonicalId string `json:"canonical_id"`
 	// User provided key-value pairs
-	CustomMetadata map[string]interface{} `json:"custom_metadata,omitempty"`
+	CustomMetadata map[string]interface{} `json:"custom_metadata"`
 	// Entity ID to which this alias belongs. This field is deprecated, use canonical_id.
-	EntityId *string `json:"entity_id,omitempty"`
+	EntityId string `json:"entity_id"`
 	// ID of the entity alias. If set, updates the corresponding entity alias.
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	// Mount accessor to which this alias belongs to; unused for a modify
-	MountAccessor *string `json:"mount_accessor,omitempty"`
+	MountAccessor string `json:"mount_accessor"`
 	// Name of the alias; unused for a modify
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 }
 
 // NewIdentityEntityAliasRequestWithDefaults instantiates a new IdentityEntityAliasRequest object
@@ -5071,29 +4384,20 @@ type IdentityEntityAliasRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityEntityAliasRequestWithDefaults() *IdentityEntityAliasRequest {
 	this := IdentityEntityAliasRequest{}
+
 	return &this
 }
 
 func (o IdentityEntityAliasRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.CanonicalId != nil {
-		toSerialize["canonical_id"] = o.CanonicalId
-	}
-	if o.CustomMetadata != nil {
-		toSerialize["custom_metadata"] = o.CustomMetadata
-	}
-	if o.EntityId != nil {
-		toSerialize["entity_id"] = o.EntityId
-	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
-	}
-	if o.MountAccessor != nil {
-		toSerialize["mount_accessor"] = o.MountAccessor
-	}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
-	}
+
+	toSerialize["canonical_id"] = o.CanonicalId
+	toSerialize["custom_metadata"] = o.CustomMetadata
+	toSerialize["entity_id"] = o.EntityId
+	toSerialize["id"] = o.Id
+	toSerialize["mount_accessor"] = o.MountAccessor
+	toSerialize["name"] = o.Name
+
 	return json.Marshal(toSerialize)
 }
 
@@ -5110,7 +4414,7 @@ API version: 1.12.0
 // IdentityEntityBatchDeleteRequest struct for IdentityEntityBatchDeleteRequest
 type IdentityEntityBatchDeleteRequest struct {
 	// Entity IDs to delete
-	EntityIds []string `json:"entity_ids,omitempty"`
+	EntityIds []string `json:"entity_ids"`
 }
 
 // NewIdentityEntityBatchDeleteRequestWithDefaults instantiates a new IdentityEntityBatchDeleteRequest object
@@ -5118,14 +4422,15 @@ type IdentityEntityBatchDeleteRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityEntityBatchDeleteRequestWithDefaults() *IdentityEntityBatchDeleteRequest {
 	this := IdentityEntityBatchDeleteRequest{}
+
 	return &this
 }
 
 func (o IdentityEntityBatchDeleteRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.EntityIds != nil {
-		toSerialize["entity_ids"] = o.EntityIds
-	}
+
+	toSerialize["entity_ids"] = o.EntityIds
+
 	return json.Marshal(toSerialize)
 }
 
@@ -5142,13 +4447,13 @@ API version: 1.12.0
 // IdentityEntityIdRequest struct for IdentityEntityIdRequest
 type IdentityEntityIdRequest struct {
 	// If set true, tokens tied to this identity will not be able to be used (but will not be revoked).
-	Disabled *bool `json:"disabled,omitempty"`
+	Disabled bool `json:"disabled"`
 	// Metadata to be associated with the entity. In CLI, this parameter can be repeated multiple times, and it all gets merged together. For example: vault <command> <path> metadata=key1=value1 metadata=key2=value2
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata map[string]interface{} `json:"metadata"`
 	// Name of the entity
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 	// Policies to be tied to the entity.
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 }
 
 // NewIdentityEntityIdRequestWithDefaults instantiates a new IdentityEntityIdRequest object
@@ -5156,23 +4461,18 @@ type IdentityEntityIdRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityEntityIdRequestWithDefaults() *IdentityEntityIdRequest {
 	this := IdentityEntityIdRequest{}
+
 	return &this
 }
 
 func (o IdentityEntityIdRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Disabled != nil {
-		toSerialize["disabled"] = o.Disabled
-	}
-	if o.Metadata != nil {
-		toSerialize["metadata"] = o.Metadata
-	}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
-	}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
+
+	toSerialize["disabled"] = o.Disabled
+	toSerialize["metadata"] = o.Metadata
+	toSerialize["name"] = o.Name
+	toSerialize["policies"] = o.Policies
+
 	return json.Marshal(toSerialize)
 }
 
@@ -5189,11 +4489,11 @@ API version: 1.12.0
 // IdentityEntityMergeRequest struct for IdentityEntityMergeRequest
 type IdentityEntityMergeRequest struct {
 	// Setting this will follow the 'mine' strategy for merging MFA secrets. If there are secrets of the same type both in entities that are merged from and in entity into which all others are getting merged, secrets in the destination will be unaltered. If not set, this API will throw an error containing all the conflicts.
-	Force *bool `json:"force,omitempty"`
+	Force bool `json:"force"`
 	// Entity IDs which needs to get merged
-	FromEntityIds []string `json:"from_entity_ids,omitempty"`
+	FromEntityIds []string `json:"from_entity_ids"`
 	// Entity ID into which all the other entities need to get merged
-	ToEntityId *string `json:"to_entity_id,omitempty"`
+	ToEntityId string `json:"to_entity_id"`
 }
 
 // NewIdentityEntityMergeRequestWithDefaults instantiates a new IdentityEntityMergeRequest object
@@ -5201,20 +4501,17 @@ type IdentityEntityMergeRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityEntityMergeRequestWithDefaults() *IdentityEntityMergeRequest {
 	this := IdentityEntityMergeRequest{}
+
 	return &this
 }
 
 func (o IdentityEntityMergeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Force != nil {
-		toSerialize["force"] = o.Force
-	}
-	if o.FromEntityIds != nil {
-		toSerialize["from_entity_ids"] = o.FromEntityIds
-	}
-	if o.ToEntityId != nil {
-		toSerialize["to_entity_id"] = o.ToEntityId
-	}
+
+	toSerialize["force"] = o.Force
+	toSerialize["from_entity_ids"] = o.FromEntityIds
+	toSerialize["to_entity_id"] = o.ToEntityId
+
 	return json.Marshal(toSerialize)
 }
 
@@ -5231,13 +4528,13 @@ API version: 1.12.0
 // IdentityEntityNameRequest struct for IdentityEntityNameRequest
 type IdentityEntityNameRequest struct {
 	// If set true, tokens tied to this identity will not be able to be used (but will not be revoked).
-	Disabled *bool `json:"disabled,omitempty"`
+	Disabled bool `json:"disabled"`
 	// ID of the entity. If set, updates the corresponding existing entity.
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	// Metadata to be associated with the entity. In CLI, this parameter can be repeated multiple times, and it all gets merged together. For example: vault <command> <path> metadata=key1=value1 metadata=key2=value2
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata map[string]interface{} `json:"metadata"`
 	// Policies to be tied to the entity.
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 }
 
 // NewIdentityEntityNameRequestWithDefaults instantiates a new IdentityEntityNameRequest object
@@ -5245,23 +4542,18 @@ type IdentityEntityNameRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityEntityNameRequestWithDefaults() *IdentityEntityNameRequest {
 	this := IdentityEntityNameRequest{}
+
 	return &this
 }
 
 func (o IdentityEntityNameRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Disabled != nil {
-		toSerialize["disabled"] = o.Disabled
-	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
-	}
-	if o.Metadata != nil {
-		toSerialize["metadata"] = o.Metadata
-	}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
+
+	toSerialize["disabled"] = o.Disabled
+	toSerialize["id"] = o.Id
+	toSerialize["metadata"] = o.Metadata
+	toSerialize["policies"] = o.Policies
+
 	return json.Marshal(toSerialize)
 }
 
@@ -5278,15 +4570,15 @@ API version: 1.12.0
 // IdentityEntityRequest struct for IdentityEntityRequest
 type IdentityEntityRequest struct {
 	// If set true, tokens tied to this identity will not be able to be used (but will not be revoked).
-	Disabled *bool `json:"disabled,omitempty"`
+	Disabled bool `json:"disabled"`
 	// ID of the entity. If set, updates the corresponding existing entity.
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	// Metadata to be associated with the entity. In CLI, this parameter can be repeated multiple times, and it all gets merged together. For example: vault <command> <path> metadata=key1=value1 metadata=key2=value2
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata map[string]interface{} `json:"metadata"`
 	// Name of the entity
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 	// Policies to be tied to the entity.
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 }
 
 // NewIdentityEntityRequestWithDefaults instantiates a new IdentityEntityRequest object
@@ -5294,26 +4586,19 @@ type IdentityEntityRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityEntityRequestWithDefaults() *IdentityEntityRequest {
 	this := IdentityEntityRequest{}
+
 	return &this
 }
 
 func (o IdentityEntityRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Disabled != nil {
-		toSerialize["disabled"] = o.Disabled
-	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
-	}
-	if o.Metadata != nil {
-		toSerialize["metadata"] = o.Metadata
-	}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
-	}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
+
+	toSerialize["disabled"] = o.Disabled
+	toSerialize["id"] = o.Id
+	toSerialize["metadata"] = o.Metadata
+	toSerialize["name"] = o.Name
+	toSerialize["policies"] = o.Policies
+
 	return json.Marshal(toSerialize)
 }
 
@@ -5330,11 +4615,11 @@ API version: 1.12.0
 // IdentityGroupAliasIdRequest struct for IdentityGroupAliasIdRequest
 type IdentityGroupAliasIdRequest struct {
 	// ID of the group to which this is an alias.
-	CanonicalId *string `json:"canonical_id,omitempty"`
+	CanonicalId string `json:"canonical_id"`
 	// Mount accessor to which this alias belongs to.
-	MountAccessor *string `json:"mount_accessor,omitempty"`
+	MountAccessor string `json:"mount_accessor"`
 	// Alias of the group.
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 }
 
 // NewIdentityGroupAliasIdRequestWithDefaults instantiates a new IdentityGroupAliasIdRequest object
@@ -5342,20 +4627,17 @@ type IdentityGroupAliasIdRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityGroupAliasIdRequestWithDefaults() *IdentityGroupAliasIdRequest {
 	this := IdentityGroupAliasIdRequest{}
+
 	return &this
 }
 
 func (o IdentityGroupAliasIdRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.CanonicalId != nil {
-		toSerialize["canonical_id"] = o.CanonicalId
-	}
-	if o.MountAccessor != nil {
-		toSerialize["mount_accessor"] = o.MountAccessor
-	}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
-	}
+
+	toSerialize["canonical_id"] = o.CanonicalId
+	toSerialize["mount_accessor"] = o.MountAccessor
+	toSerialize["name"] = o.Name
+
 	return json.Marshal(toSerialize)
 }
 
@@ -5372,13 +4654,13 @@ API version: 1.12.0
 // IdentityGroupAliasRequest struct for IdentityGroupAliasRequest
 type IdentityGroupAliasRequest struct {
 	// ID of the group to which this is an alias.
-	CanonicalId *string `json:"canonical_id,omitempty"`
+	CanonicalId string `json:"canonical_id"`
 	// ID of the group alias.
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	// Mount accessor to which this alias belongs to.
-	MountAccessor *string `json:"mount_accessor,omitempty"`
+	MountAccessor string `json:"mount_accessor"`
 	// Alias of the group.
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 }
 
 // NewIdentityGroupAliasRequestWithDefaults instantiates a new IdentityGroupAliasRequest object
@@ -5386,23 +4668,18 @@ type IdentityGroupAliasRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityGroupAliasRequestWithDefaults() *IdentityGroupAliasRequest {
 	this := IdentityGroupAliasRequest{}
+
 	return &this
 }
 
 func (o IdentityGroupAliasRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.CanonicalId != nil {
-		toSerialize["canonical_id"] = o.CanonicalId
-	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
-	}
-	if o.MountAccessor != nil {
-		toSerialize["mount_accessor"] = o.MountAccessor
-	}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
-	}
+
+	toSerialize["canonical_id"] = o.CanonicalId
+	toSerialize["id"] = o.Id
+	toSerialize["mount_accessor"] = o.MountAccessor
+	toSerialize["name"] = o.Name
+
 	return json.Marshal(toSerialize)
 }
 
@@ -5419,17 +4696,17 @@ API version: 1.12.0
 // IdentityGroupIdRequest struct for IdentityGroupIdRequest
 type IdentityGroupIdRequest struct {
 	// Entity IDs to be assigned as group members.
-	MemberEntityIds []string `json:"member_entity_ids,omitempty"`
+	MemberEntityIds []string `json:"member_entity_ids"`
 	// Group IDs to be assigned as group members.
-	MemberGroupIds []string `json:"member_group_ids,omitempty"`
+	MemberGroupIds []string `json:"member_group_ids"`
 	// Metadata to be associated with the group. In CLI, this parameter can be repeated multiple times, and it all gets merged together. For example: vault <command> <path> metadata=key1=value1 metadata=key2=value2
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata map[string]interface{} `json:"metadata"`
 	// Name of the group.
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 	// Policies to be tied to the group.
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 	// Type of the group, 'internal' or 'external'. Defaults to 'internal'
-	Type *string `json:"type,omitempty"`
+	Type string `json:"type"`
 }
 
 // NewIdentityGroupIdRequestWithDefaults instantiates a new IdentityGroupIdRequest object
@@ -5437,29 +4714,20 @@ type IdentityGroupIdRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityGroupIdRequestWithDefaults() *IdentityGroupIdRequest {
 	this := IdentityGroupIdRequest{}
+
 	return &this
 }
 
 func (o IdentityGroupIdRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.MemberEntityIds != nil {
-		toSerialize["member_entity_ids"] = o.MemberEntityIds
-	}
-	if o.MemberGroupIds != nil {
-		toSerialize["member_group_ids"] = o.MemberGroupIds
-	}
-	if o.Metadata != nil {
-		toSerialize["metadata"] = o.Metadata
-	}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
-	}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
-	if o.Type != nil {
-		toSerialize["type"] = o.Type
-	}
+
+	toSerialize["member_entity_ids"] = o.MemberEntityIds
+	toSerialize["member_group_ids"] = o.MemberGroupIds
+	toSerialize["metadata"] = o.Metadata
+	toSerialize["name"] = o.Name
+	toSerialize["policies"] = o.Policies
+	toSerialize["type"] = o.Type
+
 	return json.Marshal(toSerialize)
 }
 
@@ -5476,17 +4744,17 @@ API version: 1.12.0
 // IdentityGroupNameRequest struct for IdentityGroupNameRequest
 type IdentityGroupNameRequest struct {
 	// ID of the group. If set, updates the corresponding existing group.
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	// Entity IDs to be assigned as group members.
-	MemberEntityIds []string `json:"member_entity_ids,omitempty"`
+	MemberEntityIds []string `json:"member_entity_ids"`
 	// Group IDs to be assigned as group members.
-	MemberGroupIds []string `json:"member_group_ids,omitempty"`
+	MemberGroupIds []string `json:"member_group_ids"`
 	// Metadata to be associated with the group. In CLI, this parameter can be repeated multiple times, and it all gets merged together. For example: vault <command> <path> metadata=key1=value1 metadata=key2=value2
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata map[string]interface{} `json:"metadata"`
 	// Policies to be tied to the group.
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 	// Type of the group, 'internal' or 'external'. Defaults to 'internal'
-	Type *string `json:"type,omitempty"`
+	Type string `json:"type"`
 }
 
 // NewIdentityGroupNameRequestWithDefaults instantiates a new IdentityGroupNameRequest object
@@ -5494,29 +4762,20 @@ type IdentityGroupNameRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityGroupNameRequestWithDefaults() *IdentityGroupNameRequest {
 	this := IdentityGroupNameRequest{}
+
 	return &this
 }
 
 func (o IdentityGroupNameRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
-	}
-	if o.MemberEntityIds != nil {
-		toSerialize["member_entity_ids"] = o.MemberEntityIds
-	}
-	if o.MemberGroupIds != nil {
-		toSerialize["member_group_ids"] = o.MemberGroupIds
-	}
-	if o.Metadata != nil {
-		toSerialize["metadata"] = o.Metadata
-	}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
-	if o.Type != nil {
-		toSerialize["type"] = o.Type
-	}
+
+	toSerialize["id"] = o.Id
+	toSerialize["member_entity_ids"] = o.MemberEntityIds
+	toSerialize["member_group_ids"] = o.MemberGroupIds
+	toSerialize["metadata"] = o.Metadata
+	toSerialize["policies"] = o.Policies
+	toSerialize["type"] = o.Type
+
 	return json.Marshal(toSerialize)
 }
 
@@ -5533,19 +4792,19 @@ API version: 1.12.0
 // IdentityGroupRequest struct for IdentityGroupRequest
 type IdentityGroupRequest struct {
 	// ID of the group. If set, updates the corresponding existing group.
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	// Entity IDs to be assigned as group members.
-	MemberEntityIds []string `json:"member_entity_ids,omitempty"`
+	MemberEntityIds []string `json:"member_entity_ids"`
 	// Group IDs to be assigned as group members.
-	MemberGroupIds []string `json:"member_group_ids,omitempty"`
+	MemberGroupIds []string `json:"member_group_ids"`
 	// Metadata to be associated with the group. In CLI, this parameter can be repeated multiple times, and it all gets merged together. For example: vault <command> <path> metadata=key1=value1 metadata=key2=value2
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata map[string]interface{} `json:"metadata"`
 	// Name of the group.
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 	// Policies to be tied to the group.
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 	// Type of the group, 'internal' or 'external'. Defaults to 'internal'
-	Type *string `json:"type,omitempty"`
+	Type string `json:"type"`
 }
 
 // NewIdentityGroupRequestWithDefaults instantiates a new IdentityGroupRequest object
@@ -5553,32 +4812,21 @@ type IdentityGroupRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityGroupRequestWithDefaults() *IdentityGroupRequest {
 	this := IdentityGroupRequest{}
+
 	return &this
 }
 
 func (o IdentityGroupRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
-	}
-	if o.MemberEntityIds != nil {
-		toSerialize["member_entity_ids"] = o.MemberEntityIds
-	}
-	if o.MemberGroupIds != nil {
-		toSerialize["member_group_ids"] = o.MemberGroupIds
-	}
-	if o.Metadata != nil {
-		toSerialize["metadata"] = o.Metadata
-	}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
-	}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
-	if o.Type != nil {
-		toSerialize["type"] = o.Type
-	}
+
+	toSerialize["id"] = o.Id
+	toSerialize["member_entity_ids"] = o.MemberEntityIds
+	toSerialize["member_group_ids"] = o.MemberGroupIds
+	toSerialize["metadata"] = o.Metadata
+	toSerialize["name"] = o.Name
+	toSerialize["policies"] = o.Policies
+	toSerialize["type"] = o.Type
+
 	return json.Marshal(toSerialize)
 }
 
@@ -5595,15 +4843,15 @@ API version: 1.12.0
 // IdentityLookupEntityRequest struct for IdentityLookupEntityRequest
 type IdentityLookupEntityRequest struct {
 	// ID of the alias.
-	AliasId *string `json:"alias_id,omitempty"`
+	AliasId string `json:"alias_id"`
 	// Accessor of the mount to which the alias belongs to. This should be supplied in conjunction with 'alias_name'.
-	AliasMountAccessor *string `json:"alias_mount_accessor,omitempty"`
+	AliasMountAccessor string `json:"alias_mount_accessor"`
 	// Name of the alias. This should be supplied in conjunction with 'alias_mount_accessor'.
-	AliasName *string `json:"alias_name,omitempty"`
+	AliasName string `json:"alias_name"`
 	// ID of the entity.
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	// Name of the entity.
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 }
 
 // NewIdentityLookupEntityRequestWithDefaults instantiates a new IdentityLookupEntityRequest object
@@ -5611,26 +4859,19 @@ type IdentityLookupEntityRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityLookupEntityRequestWithDefaults() *IdentityLookupEntityRequest {
 	this := IdentityLookupEntityRequest{}
+
 	return &this
 }
 
 func (o IdentityLookupEntityRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AliasId != nil {
-		toSerialize["alias_id"] = o.AliasId
-	}
-	if o.AliasMountAccessor != nil {
-		toSerialize["alias_mount_accessor"] = o.AliasMountAccessor
-	}
-	if o.AliasName != nil {
-		toSerialize["alias_name"] = o.AliasName
-	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
-	}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
-	}
+
+	toSerialize["alias_id"] = o.AliasId
+	toSerialize["alias_mount_accessor"] = o.AliasMountAccessor
+	toSerialize["alias_name"] = o.AliasName
+	toSerialize["id"] = o.Id
+	toSerialize["name"] = o.Name
+
 	return json.Marshal(toSerialize)
 }
 
@@ -5647,15 +4888,15 @@ API version: 1.12.0
 // IdentityLookupGroupRequest struct for IdentityLookupGroupRequest
 type IdentityLookupGroupRequest struct {
 	// ID of the alias.
-	AliasId *string `json:"alias_id,omitempty"`
+	AliasId string `json:"alias_id"`
 	// Accessor of the mount to which the alias belongs to. This should be supplied in conjunction with 'alias_name'.
-	AliasMountAccessor *string `json:"alias_mount_accessor,omitempty"`
+	AliasMountAccessor string `json:"alias_mount_accessor"`
 	// Name of the alias. This should be supplied in conjunction with 'alias_mount_accessor'.
-	AliasName *string `json:"alias_name,omitempty"`
+	AliasName string `json:"alias_name"`
 	// ID of the group.
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	// Name of the group.
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 }
 
 // NewIdentityLookupGroupRequestWithDefaults instantiates a new IdentityLookupGroupRequest object
@@ -5663,26 +4904,19 @@ type IdentityLookupGroupRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityLookupGroupRequestWithDefaults() *IdentityLookupGroupRequest {
 	this := IdentityLookupGroupRequest{}
+
 	return &this
 }
 
 func (o IdentityLookupGroupRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AliasId != nil {
-		toSerialize["alias_id"] = o.AliasId
-	}
-	if o.AliasMountAccessor != nil {
-		toSerialize["alias_mount_accessor"] = o.AliasMountAccessor
-	}
-	if o.AliasName != nil {
-		toSerialize["alias_name"] = o.AliasName
-	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
-	}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
-	}
+
+	toSerialize["alias_id"] = o.AliasId
+	toSerialize["alias_mount_accessor"] = o.AliasMountAccessor
+	toSerialize["alias_name"] = o.AliasName
+	toSerialize["id"] = o.Id
+	toSerialize["name"] = o.Name
+
 	return json.Marshal(toSerialize)
 }
 
@@ -5699,13 +4933,13 @@ API version: 1.12.0
 // IdentityMfaLoginEnforcementRequest struct for IdentityMfaLoginEnforcementRequest
 type IdentityMfaLoginEnforcementRequest struct {
 	// Array of auth mount accessor IDs
-	AuthMethodAccessors []string `json:"auth_method_accessors,omitempty"`
+	AuthMethodAccessors []string `json:"auth_method_accessors"`
 	// Array of auth mount types
-	AuthMethodTypes []string `json:"auth_method_types,omitempty"`
+	AuthMethodTypes []string `json:"auth_method_types"`
 	// Array of identity entity IDs
-	IdentityEntityIds []string `json:"identity_entity_ids,omitempty"`
+	IdentityEntityIds []string `json:"identity_entity_ids"`
 	// Array of identity group IDs
-	IdentityGroupIds []string `json:"identity_group_ids,omitempty"`
+	IdentityGroupIds []string `json:"identity_group_ids"`
 	// Array of Method IDs that determine what methods will be enforced
 	MfaMethodIds []string `json:"mfa_method_ids"`
 }
@@ -5715,26 +4949,19 @@ type IdentityMfaLoginEnforcementRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityMfaLoginEnforcementRequestWithDefaults() *IdentityMfaLoginEnforcementRequest {
 	this := IdentityMfaLoginEnforcementRequest{}
+
 	return &this
 }
 
 func (o IdentityMfaLoginEnforcementRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AuthMethodAccessors != nil {
-		toSerialize["auth_method_accessors"] = o.AuthMethodAccessors
-	}
-	if o.AuthMethodTypes != nil {
-		toSerialize["auth_method_types"] = o.AuthMethodTypes
-	}
-	if o.IdentityEntityIds != nil {
-		toSerialize["identity_entity_ids"] = o.IdentityEntityIds
-	}
-	if o.IdentityGroupIds != nil {
-		toSerialize["identity_group_ids"] = o.IdentityGroupIds
-	}
-	if true {
-		toSerialize["mfa_method_ids"] = o.MfaMethodIds
-	}
+
+	toSerialize["auth_method_accessors"] = o.AuthMethodAccessors
+	toSerialize["auth_method_types"] = o.AuthMethodTypes
+	toSerialize["identity_entity_ids"] = o.IdentityEntityIds
+	toSerialize["identity_group_ids"] = o.IdentityGroupIds
+	toSerialize["mfa_method_ids"] = o.MfaMethodIds
+
 	return json.Marshal(toSerialize)
 }
 
@@ -5751,19 +4978,19 @@ API version: 1.12.0
 // IdentityMfaMethodDuoRequest struct for IdentityMfaMethodDuoRequest
 type IdentityMfaMethodDuoRequest struct {
 	// API host name for Duo.
-	ApiHostname *string `json:"api_hostname,omitempty"`
+	ApiHostname string `json:"api_hostname"`
 	// Integration key for Duo.
-	IntegrationKey *string `json:"integration_key,omitempty"`
+	IntegrationKey string `json:"integration_key"`
 	// The unique identifier for this MFA method.
-	MethodId *string `json:"method_id,omitempty"`
+	MethodId string `json:"method_id"`
 	// Push information for Duo.
-	PushInfo *string `json:"push_info,omitempty"`
+	PushInfo string `json:"push_info"`
 	// Secret key for Duo.
-	SecretKey *string `json:"secret_key,omitempty"`
+	SecretKey string `json:"secret_key"`
 	// If true, the user is reminded to use the passcode upon MFA validation. This option does not enforce using the passcode. Defaults to false.
-	UsePasscode *bool `json:"use_passcode,omitempty"`
+	UsePasscode bool `json:"use_passcode"`
 	// A template string for mapping Identity names to MFA method names. Values to subtitute should be placed in {{}}. For example, \"{{alias.name}}@example.com\". Currently-supported mappings: alias.name: The name returned by the mount configured via the mount_accessor parameter If blank, the Alias's name field will be used as-is.
-	UsernameFormat *string `json:"username_format,omitempty"`
+	UsernameFormat string `json:"username_format"`
 }
 
 // NewIdentityMfaMethodDuoRequestWithDefaults instantiates a new IdentityMfaMethodDuoRequest object
@@ -5771,32 +4998,21 @@ type IdentityMfaMethodDuoRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityMfaMethodDuoRequestWithDefaults() *IdentityMfaMethodDuoRequest {
 	this := IdentityMfaMethodDuoRequest{}
+
 	return &this
 }
 
 func (o IdentityMfaMethodDuoRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.ApiHostname != nil {
-		toSerialize["api_hostname"] = o.ApiHostname
-	}
-	if o.IntegrationKey != nil {
-		toSerialize["integration_key"] = o.IntegrationKey
-	}
-	if o.MethodId != nil {
-		toSerialize["method_id"] = o.MethodId
-	}
-	if o.PushInfo != nil {
-		toSerialize["push_info"] = o.PushInfo
-	}
-	if o.SecretKey != nil {
-		toSerialize["secret_key"] = o.SecretKey
-	}
-	if o.UsePasscode != nil {
-		toSerialize["use_passcode"] = o.UsePasscode
-	}
-	if o.UsernameFormat != nil {
-		toSerialize["username_format"] = o.UsernameFormat
-	}
+
+	toSerialize["api_hostname"] = o.ApiHostname
+	toSerialize["integration_key"] = o.IntegrationKey
+	toSerialize["method_id"] = o.MethodId
+	toSerialize["push_info"] = o.PushInfo
+	toSerialize["secret_key"] = o.SecretKey
+	toSerialize["use_passcode"] = o.UsePasscode
+	toSerialize["username_format"] = o.UsernameFormat
+
 	return json.Marshal(toSerialize)
 }
 
@@ -5813,19 +5029,19 @@ API version: 1.12.0
 // IdentityMfaMethodOktaRequest struct for IdentityMfaMethodOktaRequest
 type IdentityMfaMethodOktaRequest struct {
 	// Okta API key.
-	ApiToken *string `json:"api_token,omitempty"`
+	ApiToken string `json:"api_token"`
 	// The base domain to use for the Okta API. When not specified in the configuration, \"okta.com\" is used.
-	BaseUrl *string `json:"base_url,omitempty"`
+	BaseUrl string `json:"base_url"`
 	// The unique identifier for this MFA method.
-	MethodId *string `json:"method_id,omitempty"`
+	MethodId string `json:"method_id"`
 	// Name of the organization to be used in the Okta API.
-	OrgName *string `json:"org_name,omitempty"`
+	OrgName string `json:"org_name"`
 	// If true, the username will only match the primary email for the account. Defaults to false.
-	PrimaryEmail *bool `json:"primary_email,omitempty"`
+	PrimaryEmail bool `json:"primary_email"`
 	// (DEPRECATED) Use base_url instead.
-	Production *bool `json:"production,omitempty"`
+	Production bool `json:"production"`
 	// A template string for mapping Identity names to MFA method names. Values to substitute should be placed in {{}}. For example, \"{{entity.name}}@example.com\". If blank, the Entity's name field will be used as-is.
-	UsernameFormat *string `json:"username_format,omitempty"`
+	UsernameFormat string `json:"username_format"`
 }
 
 // NewIdentityMfaMethodOktaRequestWithDefaults instantiates a new IdentityMfaMethodOktaRequest object
@@ -5833,32 +5049,21 @@ type IdentityMfaMethodOktaRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityMfaMethodOktaRequestWithDefaults() *IdentityMfaMethodOktaRequest {
 	this := IdentityMfaMethodOktaRequest{}
+
 	return &this
 }
 
 func (o IdentityMfaMethodOktaRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.ApiToken != nil {
-		toSerialize["api_token"] = o.ApiToken
-	}
-	if o.BaseUrl != nil {
-		toSerialize["base_url"] = o.BaseUrl
-	}
-	if o.MethodId != nil {
-		toSerialize["method_id"] = o.MethodId
-	}
-	if o.OrgName != nil {
-		toSerialize["org_name"] = o.OrgName
-	}
-	if o.PrimaryEmail != nil {
-		toSerialize["primary_email"] = o.PrimaryEmail
-	}
-	if o.Production != nil {
-		toSerialize["production"] = o.Production
-	}
-	if o.UsernameFormat != nil {
-		toSerialize["username_format"] = o.UsernameFormat
-	}
+
+	toSerialize["api_token"] = o.ApiToken
+	toSerialize["base_url"] = o.BaseUrl
+	toSerialize["method_id"] = o.MethodId
+	toSerialize["org_name"] = o.OrgName
+	toSerialize["primary_email"] = o.PrimaryEmail
+	toSerialize["production"] = o.Production
+	toSerialize["username_format"] = o.UsernameFormat
+
 	return json.Marshal(toSerialize)
 }
 
@@ -5875,11 +5080,11 @@ API version: 1.12.0
 // IdentityMfaMethodPingidRequest struct for IdentityMfaMethodPingidRequest
 type IdentityMfaMethodPingidRequest struct {
 	// The unique identifier for this MFA method.
-	MethodId *string `json:"method_id,omitempty"`
+	MethodId string `json:"method_id"`
 	// The settings file provided by Ping, Base64-encoded. This must be a settings file suitable for third-party clients, not the PingID SDK or PingFederate.
-	SettingsFileBase64 *string `json:"settings_file_base64,omitempty"`
+	SettingsFileBase64 string `json:"settings_file_base64"`
 	// A template string for mapping Identity names to MFA method names. Values to subtitute should be placed in {{}}. For example, \"{{alias.name}}@example.com\". Currently-supported mappings: alias.name: The name returned by the mount configured via the mount_accessor parameter If blank, the Alias's name field will be used as-is.
-	UsernameFormat *string `json:"username_format,omitempty"`
+	UsernameFormat string `json:"username_format"`
 }
 
 // NewIdentityMfaMethodPingidRequestWithDefaults instantiates a new IdentityMfaMethodPingidRequest object
@@ -5887,20 +5092,17 @@ type IdentityMfaMethodPingidRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityMfaMethodPingidRequestWithDefaults() *IdentityMfaMethodPingidRequest {
 	this := IdentityMfaMethodPingidRequest{}
+
 	return &this
 }
 
 func (o IdentityMfaMethodPingidRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.MethodId != nil {
-		toSerialize["method_id"] = o.MethodId
-	}
-	if o.SettingsFileBase64 != nil {
-		toSerialize["settings_file_base64"] = o.SettingsFileBase64
-	}
-	if o.UsernameFormat != nil {
-		toSerialize["username_format"] = o.UsernameFormat
-	}
+
+	toSerialize["method_id"] = o.MethodId
+	toSerialize["settings_file_base64"] = o.SettingsFileBase64
+	toSerialize["username_format"] = o.UsernameFormat
+
 	return json.Marshal(toSerialize)
 }
 
@@ -5927,17 +5129,16 @@ type IdentityMfaMethodTotpAdminDestroyRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityMfaMethodTotpAdminDestroyRequestWithDefaults() *IdentityMfaMethodTotpAdminDestroyRequest {
 	this := IdentityMfaMethodTotpAdminDestroyRequest{}
+
 	return &this
 }
 
 func (o IdentityMfaMethodTotpAdminDestroyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["entity_id"] = o.EntityId
-	}
-	if true {
-		toSerialize["method_id"] = o.MethodId
-	}
+
+	toSerialize["entity_id"] = o.EntityId
+	toSerialize["method_id"] = o.MethodId
+
 	return json.Marshal(toSerialize)
 }
 
@@ -5964,17 +5165,16 @@ type IdentityMfaMethodTotpAdminGenerateRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityMfaMethodTotpAdminGenerateRequestWithDefaults() *IdentityMfaMethodTotpAdminGenerateRequest {
 	this := IdentityMfaMethodTotpAdminGenerateRequest{}
+
 	return &this
 }
 
 func (o IdentityMfaMethodTotpAdminGenerateRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["entity_id"] = o.EntityId
-	}
-	if true {
-		toSerialize["method_id"] = o.MethodId
-	}
+
+	toSerialize["entity_id"] = o.EntityId
+	toSerialize["method_id"] = o.MethodId
+
 	return json.Marshal(toSerialize)
 }
 
@@ -5999,14 +5199,15 @@ type IdentityMfaMethodTotpGenerateRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityMfaMethodTotpGenerateRequestWithDefaults() *IdentityMfaMethodTotpGenerateRequest {
 	this := IdentityMfaMethodTotpGenerateRequest{}
+
 	return &this
 }
 
 func (o IdentityMfaMethodTotpGenerateRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["method_id"] = o.MethodId
-	}
+
+	toSerialize["method_id"] = o.MethodId
+
 	return json.Marshal(toSerialize)
 }
 
@@ -6023,23 +5224,23 @@ API version: 1.12.0
 // IdentityMfaMethodTotpRequest struct for IdentityMfaMethodTotpRequest
 type IdentityMfaMethodTotpRequest struct {
 	// The hashing algorithm used to generate the TOTP token. Options include SHA1, SHA256 and SHA512.
-	Algorithm *string `json:"algorithm,omitempty"`
+	Algorithm string `json:"algorithm"`
 	// The number of digits in the generated TOTP token. This value can either be 6 or 8.
-	Digits *int32 `json:"digits,omitempty"`
+	Digits int32 `json:"digits"`
 	// The name of the key's issuing organization.
-	Issuer *string `json:"issuer,omitempty"`
+	Issuer string `json:"issuer"`
 	// Determines the size in bytes of the generated key.
-	KeySize *int32 `json:"key_size,omitempty"`
+	KeySize int32 `json:"key_size"`
 	// Max number of allowed validation attempts.
-	MaxValidationAttempts *int32 `json:"max_validation_attempts,omitempty"`
+	MaxValidationAttempts int32 `json:"max_validation_attempts"`
 	// The unique identifier for this MFA method.
-	MethodId *string `json:"method_id,omitempty"`
+	MethodId string `json:"method_id"`
 	// The length of time used to generate a counter for the TOTP token calculation.
-	Period *int32 `json:"period,omitempty"`
+	Period int32 `json:"period"`
 	// The pixel size of the generated square QR code.
-	QrSize *int32 `json:"qr_size,omitempty"`
+	QrSize int32 `json:"qr_size"`
 	// The number of delay periods that are allowed when validating a TOTP token. This value can either be 0 or 1.
-	Skew *int32 `json:"skew,omitempty"`
+	Skew int32 `json:"skew"`
 }
 
 // NewIdentityMfaMethodTotpRequestWithDefaults instantiates a new IdentityMfaMethodTotpRequest object
@@ -6047,50 +5248,30 @@ type IdentityMfaMethodTotpRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityMfaMethodTotpRequestWithDefaults() *IdentityMfaMethodTotpRequest {
 	this := IdentityMfaMethodTotpRequest{}
-	var algorithm string = "SHA1"
-	this.Algorithm = &algorithm
-	var digits int32 = 6
-	this.Digits = &digits
-	var keySize int32 = 20
-	this.KeySize = &keySize
-	var period int32 = 30
-	this.Period = &period
-	var qrSize int32 = 200
-	this.QrSize = &qrSize
-	var skew int32 = 1
-	this.Skew = &skew
+
+	this.Algorithm = "SHA1"
+	this.Digits = 6
+	this.KeySize = 20
+	this.Period = 30
+	this.QrSize = 200
+	this.Skew = 1
+
 	return &this
 }
 
 func (o IdentityMfaMethodTotpRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Algorithm != nil {
-		toSerialize["algorithm"] = o.Algorithm
-	}
-	if o.Digits != nil {
-		toSerialize["digits"] = o.Digits
-	}
-	if o.Issuer != nil {
-		toSerialize["issuer"] = o.Issuer
-	}
-	if o.KeySize != nil {
-		toSerialize["key_size"] = o.KeySize
-	}
-	if o.MaxValidationAttempts != nil {
-		toSerialize["max_validation_attempts"] = o.MaxValidationAttempts
-	}
-	if o.MethodId != nil {
-		toSerialize["method_id"] = o.MethodId
-	}
-	if o.Period != nil {
-		toSerialize["period"] = o.Period
-	}
-	if o.QrSize != nil {
-		toSerialize["qr_size"] = o.QrSize
-	}
-	if o.Skew != nil {
-		toSerialize["skew"] = o.Skew
-	}
+
+	toSerialize["algorithm"] = o.Algorithm
+	toSerialize["digits"] = o.Digits
+	toSerialize["issuer"] = o.Issuer
+	toSerialize["key_size"] = o.KeySize
+	toSerialize["max_validation_attempts"] = o.MaxValidationAttempts
+	toSerialize["method_id"] = o.MethodId
+	toSerialize["period"] = o.Period
+	toSerialize["qr_size"] = o.QrSize
+	toSerialize["skew"] = o.Skew
+
 	return json.Marshal(toSerialize)
 }
 
@@ -6107,9 +5288,9 @@ API version: 1.12.0
 // IdentityOidcAssignmentRequest struct for IdentityOidcAssignmentRequest
 type IdentityOidcAssignmentRequest struct {
 	// Comma separated string or array of identity entity IDs
-	EntityIds []string `json:"entity_ids,omitempty"`
+	EntityIds []string `json:"entity_ids"`
 	// Comma separated string or array of identity group IDs
-	GroupIds []string `json:"group_ids,omitempty"`
+	GroupIds []string `json:"group_ids"`
 }
 
 // NewIdentityOidcAssignmentRequestWithDefaults instantiates a new IdentityOidcAssignmentRequest object
@@ -6117,17 +5298,16 @@ type IdentityOidcAssignmentRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityOidcAssignmentRequestWithDefaults() *IdentityOidcAssignmentRequest {
 	this := IdentityOidcAssignmentRequest{}
+
 	return &this
 }
 
 func (o IdentityOidcAssignmentRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.EntityIds != nil {
-		toSerialize["entity_ids"] = o.EntityIds
-	}
-	if o.GroupIds != nil {
-		toSerialize["group_ids"] = o.GroupIds
-	}
+
+	toSerialize["entity_ids"] = o.EntityIds
+	toSerialize["group_ids"] = o.GroupIds
+
 	return json.Marshal(toSerialize)
 }
 
@@ -6144,17 +5324,17 @@ API version: 1.12.0
 // IdentityOidcClientRequest struct for IdentityOidcClientRequest
 type IdentityOidcClientRequest struct {
 	// The time-to-live for access tokens obtained by the client.
-	AccessTokenTtl *int32 `json:"access_token_ttl,omitempty"`
+	AccessTokenTtl int32 `json:"access_token_ttl"`
 	// Comma separated string or array of assignment resources.
-	Assignments []string `json:"assignments,omitempty"`
+	Assignments []string `json:"assignments"`
 	// The client type based on its ability to maintain confidentiality of credentials. The following client types are supported: 'confidential', 'public'. Defaults to 'confidential'.
-	ClientType *string `json:"client_type,omitempty"`
+	ClientType string `json:"client_type"`
 	// The time-to-live for ID tokens obtained by the client.
-	IdTokenTtl *int32 `json:"id_token_ttl,omitempty"`
+	IdTokenTtl int32 `json:"id_token_ttl"`
 	// A reference to a named key resource. Cannot be modified after creation. Defaults to the 'default' key.
-	Key *string `json:"key,omitempty"`
+	Key string `json:"key"`
 	// Comma separated string or array of redirect URIs used by the client. One of these values must exactly match the redirect_uri parameter value used in each authentication request.
-	RedirectUris []string `json:"redirect_uris,omitempty"`
+	RedirectUris []string `json:"redirect_uris"`
 }
 
 // NewIdentityOidcClientRequestWithDefaults instantiates a new IdentityOidcClientRequest object
@@ -6162,33 +5342,23 @@ type IdentityOidcClientRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityOidcClientRequestWithDefaults() *IdentityOidcClientRequest {
 	this := IdentityOidcClientRequest{}
-	var clientType string = "confidential"
-	this.ClientType = &clientType
-	var key string = "default"
-	this.Key = &key
+
+	this.ClientType = "confidential"
+	this.Key = "default"
+
 	return &this
 }
 
 func (o IdentityOidcClientRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AccessTokenTtl != nil {
-		toSerialize["access_token_ttl"] = o.AccessTokenTtl
-	}
-	if o.Assignments != nil {
-		toSerialize["assignments"] = o.Assignments
-	}
-	if o.ClientType != nil {
-		toSerialize["client_type"] = o.ClientType
-	}
-	if o.IdTokenTtl != nil {
-		toSerialize["id_token_ttl"] = o.IdTokenTtl
-	}
-	if o.Key != nil {
-		toSerialize["key"] = o.Key
-	}
-	if o.RedirectUris != nil {
-		toSerialize["redirect_uris"] = o.RedirectUris
-	}
+
+	toSerialize["access_token_ttl"] = o.AccessTokenTtl
+	toSerialize["assignments"] = o.Assignments
+	toSerialize["client_type"] = o.ClientType
+	toSerialize["id_token_ttl"] = o.IdTokenTtl
+	toSerialize["key"] = o.Key
+	toSerialize["redirect_uris"] = o.RedirectUris
+
 	return json.Marshal(toSerialize)
 }
 
@@ -6205,7 +5375,7 @@ API version: 1.12.0
 // IdentityOidcConfigRequest struct for IdentityOidcConfigRequest
 type IdentityOidcConfigRequest struct {
 	// Issuer URL to be used in the iss claim of the token. If not set, Vault's app_addr will be used.
-	Issuer *string `json:"issuer,omitempty"`
+	Issuer string `json:"issuer"`
 }
 
 // NewIdentityOidcConfigRequestWithDefaults instantiates a new IdentityOidcConfigRequest object
@@ -6213,14 +5383,15 @@ type IdentityOidcConfigRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityOidcConfigRequestWithDefaults() *IdentityOidcConfigRequest {
 	this := IdentityOidcConfigRequest{}
+
 	return &this
 }
 
 func (o IdentityOidcConfigRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Issuer != nil {
-		toSerialize["issuer"] = o.Issuer
-	}
+
+	toSerialize["issuer"] = o.Issuer
+
 	return json.Marshal(toSerialize)
 }
 
@@ -6237,9 +5408,9 @@ API version: 1.12.0
 // IdentityOidcIntrospectRequest struct for IdentityOidcIntrospectRequest
 type IdentityOidcIntrospectRequest struct {
 	// Optional client_id to verify
-	ClientId *string `json:"client_id,omitempty"`
+	ClientId string `json:"client_id"`
 	// Token to verify
-	Token *string `json:"token,omitempty"`
+	Token string `json:"token"`
 }
 
 // NewIdentityOidcIntrospectRequestWithDefaults instantiates a new IdentityOidcIntrospectRequest object
@@ -6247,17 +5418,16 @@ type IdentityOidcIntrospectRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityOidcIntrospectRequestWithDefaults() *IdentityOidcIntrospectRequest {
 	this := IdentityOidcIntrospectRequest{}
+
 	return &this
 }
 
 func (o IdentityOidcIntrospectRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.ClientId != nil {
-		toSerialize["client_id"] = o.ClientId
-	}
-	if o.Token != nil {
-		toSerialize["token"] = o.Token
-	}
+
+	toSerialize["client_id"] = o.ClientId
+	toSerialize["token"] = o.Token
+
 	return json.Marshal(toSerialize)
 }
 
@@ -6274,13 +5444,13 @@ API version: 1.12.0
 // IdentityOidcKeyRequest struct for IdentityOidcKeyRequest
 type IdentityOidcKeyRequest struct {
 	// Signing algorithm to use. This will default to RS256.
-	Algorithm *string `json:"algorithm,omitempty"`
+	Algorithm string `json:"algorithm"`
 	// Comma separated string or array of role client ids allowed to use this key for signing. If empty no roles are allowed. If \"*\" all roles are allowed.
-	AllowedClientIds []string `json:"allowed_client_ids,omitempty"`
+	AllowedClientIds []string `json:"allowed_client_ids"`
 	// How often to generate a new keypair.
-	RotationPeriod *int32 `json:"rotation_period,omitempty"`
+	RotationPeriod int32 `json:"rotation_period"`
 	// Controls how long the public portion of a key will be available for verification after being rotated.
-	VerificationTtl *int32 `json:"verification_ttl,omitempty"`
+	VerificationTtl int32 `json:"verification_ttl"`
 }
 
 // NewIdentityOidcKeyRequestWithDefaults instantiates a new IdentityOidcKeyRequest object
@@ -6288,25 +5458,20 @@ type IdentityOidcKeyRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityOidcKeyRequestWithDefaults() *IdentityOidcKeyRequest {
 	this := IdentityOidcKeyRequest{}
-	var algorithm string = "RS256"
-	this.Algorithm = &algorithm
+
+	this.Algorithm = "RS256"
+
 	return &this
 }
 
 func (o IdentityOidcKeyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Algorithm != nil {
-		toSerialize["algorithm"] = o.Algorithm
-	}
-	if o.AllowedClientIds != nil {
-		toSerialize["allowed_client_ids"] = o.AllowedClientIds
-	}
-	if o.RotationPeriod != nil {
-		toSerialize["rotation_period"] = o.RotationPeriod
-	}
-	if o.VerificationTtl != nil {
-		toSerialize["verification_ttl"] = o.VerificationTtl
-	}
+
+	toSerialize["algorithm"] = o.Algorithm
+	toSerialize["allowed_client_ids"] = o.AllowedClientIds
+	toSerialize["rotation_period"] = o.RotationPeriod
+	toSerialize["verification_ttl"] = o.VerificationTtl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -6323,7 +5488,7 @@ API version: 1.12.0
 // IdentityOidcKeyRotateRequest struct for IdentityOidcKeyRotateRequest
 type IdentityOidcKeyRotateRequest struct {
 	// Controls how long the public portion of a key will be available for verification after being rotated. Setting verification_ttl here will override the verification_ttl set on the key.
-	VerificationTtl *int32 `json:"verification_ttl,omitempty"`
+	VerificationTtl int32 `json:"verification_ttl"`
 }
 
 // NewIdentityOidcKeyRotateRequestWithDefaults instantiates a new IdentityOidcKeyRotateRequest object
@@ -6331,14 +5496,15 @@ type IdentityOidcKeyRotateRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityOidcKeyRotateRequestWithDefaults() *IdentityOidcKeyRotateRequest {
 	this := IdentityOidcKeyRotateRequest{}
+
 	return &this
 }
 
 func (o IdentityOidcKeyRotateRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.VerificationTtl != nil {
-		toSerialize["verification_ttl"] = o.VerificationTtl
-	}
+
+	toSerialize["verification_ttl"] = o.VerificationTtl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -6357,13 +5523,13 @@ type IdentityOidcProviderAuthorizeRequest struct {
 	// The ID of the requesting client.
 	ClientId string `json:"client_id"`
 	// The code challenge derived from the code verifier.
-	CodeChallenge *string `json:"code_challenge,omitempty"`
+	CodeChallenge string `json:"code_challenge"`
 	// The method that was used to derive the code challenge. The following methods are supported: 'S256', 'plain'. Defaults to 'plain'.
-	CodeChallengeMethod *string `json:"code_challenge_method,omitempty"`
+	CodeChallengeMethod string `json:"code_challenge_method"`
 	// The allowable elapsed time in seconds since the last time the end-user was actively authenticated.
-	MaxAge *int32 `json:"max_age,omitempty"`
+	MaxAge int32 `json:"max_age"`
 	// The value that will be returned in the ID token nonce claim after a token exchange.
-	Nonce *string `json:"nonce,omitempty"`
+	Nonce string `json:"nonce"`
 	// The redirection URI to which the response will be sent.
 	RedirectUri string `json:"redirect_uri"`
 	// The OIDC authentication flow to be used. The following response types are supported: 'code'
@@ -6379,40 +5545,25 @@ type IdentityOidcProviderAuthorizeRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityOidcProviderAuthorizeRequestWithDefaults() *IdentityOidcProviderAuthorizeRequest {
 	this := IdentityOidcProviderAuthorizeRequest{}
-	var codeChallengeMethod string = "plain"
-	this.CodeChallengeMethod = &codeChallengeMethod
+
+	this.CodeChallengeMethod = "plain"
+
 	return &this
 }
 
 func (o IdentityOidcProviderAuthorizeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["client_id"] = o.ClientId
-	}
-	if o.CodeChallenge != nil {
-		toSerialize["code_challenge"] = o.CodeChallenge
-	}
-	if o.CodeChallengeMethod != nil {
-		toSerialize["code_challenge_method"] = o.CodeChallengeMethod
-	}
-	if o.MaxAge != nil {
-		toSerialize["max_age"] = o.MaxAge
-	}
-	if o.Nonce != nil {
-		toSerialize["nonce"] = o.Nonce
-	}
-	if true {
-		toSerialize["redirect_uri"] = o.RedirectUri
-	}
-	if true {
-		toSerialize["response_type"] = o.ResponseType
-	}
-	if true {
-		toSerialize["scope"] = o.Scope
-	}
-	if true {
-		toSerialize["state"] = o.State
-	}
+
+	toSerialize["client_id"] = o.ClientId
+	toSerialize["code_challenge"] = o.CodeChallenge
+	toSerialize["code_challenge_method"] = o.CodeChallengeMethod
+	toSerialize["max_age"] = o.MaxAge
+	toSerialize["nonce"] = o.Nonce
+	toSerialize["redirect_uri"] = o.RedirectUri
+	toSerialize["response_type"] = o.ResponseType
+	toSerialize["scope"] = o.Scope
+	toSerialize["state"] = o.State
+
 	return json.Marshal(toSerialize)
 }
 
@@ -6429,11 +5580,11 @@ API version: 1.12.0
 // IdentityOidcProviderRequest struct for IdentityOidcProviderRequest
 type IdentityOidcProviderRequest struct {
 	// The client IDs that are permitted to use the provider
-	AllowedClientIds []string `json:"allowed_client_ids,omitempty"`
+	AllowedClientIds []string `json:"allowed_client_ids"`
 	// Specifies what will be used for the iss claim of ID tokens.
-	Issuer *string `json:"issuer,omitempty"`
+	Issuer string `json:"issuer"`
 	// The scopes supported for requesting on the provider
-	ScopesSupported []string `json:"scopes_supported,omitempty"`
+	ScopesSupported []string `json:"scopes_supported"`
 }
 
 // NewIdentityOidcProviderRequestWithDefaults instantiates a new IdentityOidcProviderRequest object
@@ -6441,20 +5592,17 @@ type IdentityOidcProviderRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityOidcProviderRequestWithDefaults() *IdentityOidcProviderRequest {
 	this := IdentityOidcProviderRequest{}
+
 	return &this
 }
 
 func (o IdentityOidcProviderRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AllowedClientIds != nil {
-		toSerialize["allowed_client_ids"] = o.AllowedClientIds
-	}
-	if o.Issuer != nil {
-		toSerialize["issuer"] = o.Issuer
-	}
-	if o.ScopesSupported != nil {
-		toSerialize["scopes_supported"] = o.ScopesSupported
-	}
+
+	toSerialize["allowed_client_ids"] = o.AllowedClientIds
+	toSerialize["issuer"] = o.Issuer
+	toSerialize["scopes_supported"] = o.ScopesSupported
+
 	return json.Marshal(toSerialize)
 }
 
@@ -6471,11 +5619,11 @@ API version: 1.12.0
 // IdentityOidcProviderTokenRequest struct for IdentityOidcProviderTokenRequest
 type IdentityOidcProviderTokenRequest struct {
 	// The ID of the requesting client.
-	ClientId *string `json:"client_id,omitempty"`
+	ClientId string `json:"client_id"`
 	// The authorization code received from the provider's authorization endpoint.
 	Code string `json:"code"`
 	// The code verifier associated with the authorization code.
-	CodeVerifier *string `json:"code_verifier,omitempty"`
+	CodeVerifier string `json:"code_verifier"`
 	// The authorization grant type. The following grant types are supported: 'authorization_code'.
 	GrantType string `json:"grant_type"`
 	// The callback location where the authentication response was sent.
@@ -6487,26 +5635,19 @@ type IdentityOidcProviderTokenRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityOidcProviderTokenRequestWithDefaults() *IdentityOidcProviderTokenRequest {
 	this := IdentityOidcProviderTokenRequest{}
+
 	return &this
 }
 
 func (o IdentityOidcProviderTokenRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.ClientId != nil {
-		toSerialize["client_id"] = o.ClientId
-	}
-	if true {
-		toSerialize["code"] = o.Code
-	}
-	if o.CodeVerifier != nil {
-		toSerialize["code_verifier"] = o.CodeVerifier
-	}
-	if true {
-		toSerialize["grant_type"] = o.GrantType
-	}
-	if true {
-		toSerialize["redirect_uri"] = o.RedirectUri
-	}
+
+	toSerialize["client_id"] = o.ClientId
+	toSerialize["code"] = o.Code
+	toSerialize["code_verifier"] = o.CodeVerifier
+	toSerialize["grant_type"] = o.GrantType
+	toSerialize["redirect_uri"] = o.RedirectUri
+
 	return json.Marshal(toSerialize)
 }
 
@@ -6523,13 +5664,13 @@ API version: 1.12.0
 // IdentityOidcRoleRequest struct for IdentityOidcRoleRequest
 type IdentityOidcRoleRequest struct {
 	// Optional client_id
-	ClientId *string `json:"client_id,omitempty"`
+	ClientId string `json:"client_id"`
 	// The OIDC key to use for generating tokens. The specified key must already exist.
 	Key string `json:"key"`
 	// The template string to use for generating tokens. This may be in string-ified JSON or base64 format.
-	Template *string `json:"template,omitempty"`
+	Template string `json:"template"`
 	// TTL of the tokens generated against the role.
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 }
 
 // NewIdentityOidcRoleRequestWithDefaults instantiates a new IdentityOidcRoleRequest object
@@ -6537,23 +5678,18 @@ type IdentityOidcRoleRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityOidcRoleRequestWithDefaults() *IdentityOidcRoleRequest {
 	this := IdentityOidcRoleRequest{}
+
 	return &this
 }
 
 func (o IdentityOidcRoleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.ClientId != nil {
-		toSerialize["client_id"] = o.ClientId
-	}
-	if true {
-		toSerialize["key"] = o.Key
-	}
-	if o.Template != nil {
-		toSerialize["template"] = o.Template
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
+
+	toSerialize["client_id"] = o.ClientId
+	toSerialize["key"] = o.Key
+	toSerialize["template"] = o.Template
+	toSerialize["ttl"] = o.Ttl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -6570,9 +5706,9 @@ API version: 1.12.0
 // IdentityOidcScopeRequest struct for IdentityOidcScopeRequest
 type IdentityOidcScopeRequest struct {
 	// The description of the scope
-	Description *string `json:"description,omitempty"`
+	Description string `json:"description"`
 	// The template string to use for the scope. This may be in string-ified JSON or base64 format.
-	Template *string `json:"template,omitempty"`
+	Template string `json:"template"`
 }
 
 // NewIdentityOidcScopeRequestWithDefaults instantiates a new IdentityOidcScopeRequest object
@@ -6580,17 +5716,16 @@ type IdentityOidcScopeRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityOidcScopeRequestWithDefaults() *IdentityOidcScopeRequest {
 	this := IdentityOidcScopeRequest{}
+
 	return &this
 }
 
 func (o IdentityOidcScopeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Description != nil {
-		toSerialize["description"] = o.Description
-	}
-	if o.Template != nil {
-		toSerialize["template"] = o.Template
-	}
+
+	toSerialize["description"] = o.Description
+	toSerialize["template"] = o.Template
+
 	return json.Marshal(toSerialize)
 }
 
@@ -6607,13 +5742,13 @@ API version: 1.12.0
 // IdentityPersonaIdRequest struct for IdentityPersonaIdRequest
 type IdentityPersonaIdRequest struct {
 	// Entity ID to which this persona should be tied to
-	EntityId *string `json:"entity_id,omitempty"`
+	EntityId string `json:"entity_id"`
 	// Metadata to be associated with the persona. In CLI, this parameter can be repeated multiple times, and it all gets merged together. For example: vault <command> <path> metadata=key1=value1 metadata=key2=value2
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata map[string]interface{} `json:"metadata"`
 	// Mount accessor to which this persona belongs to
-	MountAccessor *string `json:"mount_accessor,omitempty"`
+	MountAccessor string `json:"mount_accessor"`
 	// Name of the persona
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 }
 
 // NewIdentityPersonaIdRequestWithDefaults instantiates a new IdentityPersonaIdRequest object
@@ -6621,23 +5756,18 @@ type IdentityPersonaIdRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityPersonaIdRequestWithDefaults() *IdentityPersonaIdRequest {
 	this := IdentityPersonaIdRequest{}
+
 	return &this
 }
 
 func (o IdentityPersonaIdRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.EntityId != nil {
-		toSerialize["entity_id"] = o.EntityId
-	}
-	if o.Metadata != nil {
-		toSerialize["metadata"] = o.Metadata
-	}
-	if o.MountAccessor != nil {
-		toSerialize["mount_accessor"] = o.MountAccessor
-	}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
-	}
+
+	toSerialize["entity_id"] = o.EntityId
+	toSerialize["metadata"] = o.Metadata
+	toSerialize["mount_accessor"] = o.MountAccessor
+	toSerialize["name"] = o.Name
+
 	return json.Marshal(toSerialize)
 }
 
@@ -6654,15 +5784,15 @@ API version: 1.12.0
 // IdentityPersonaRequest struct for IdentityPersonaRequest
 type IdentityPersonaRequest struct {
 	// Entity ID to which this persona belongs to
-	EntityId *string `json:"entity_id,omitempty"`
+	EntityId string `json:"entity_id"`
 	// ID of the persona
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	// Metadata to be associated with the persona. In CLI, this parameter can be repeated multiple times, and it all gets merged together. For example: vault <command> <path> metadata=key1=value1 metadata=key2=value2
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata map[string]interface{} `json:"metadata"`
 	// Mount accessor to which this persona belongs to
-	MountAccessor *string `json:"mount_accessor,omitempty"`
+	MountAccessor string `json:"mount_accessor"`
 	// Name of the persona
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 }
 
 // NewIdentityPersonaRequestWithDefaults instantiates a new IdentityPersonaRequest object
@@ -6670,26 +5800,19 @@ type IdentityPersonaRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityPersonaRequestWithDefaults() *IdentityPersonaRequest {
 	this := IdentityPersonaRequest{}
+
 	return &this
 }
 
 func (o IdentityPersonaRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.EntityId != nil {
-		toSerialize["entity_id"] = o.EntityId
-	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
-	}
-	if o.Metadata != nil {
-		toSerialize["metadata"] = o.Metadata
-	}
-	if o.MountAccessor != nil {
-		toSerialize["mount_accessor"] = o.MountAccessor
-	}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
-	}
+
+	toSerialize["entity_id"] = o.EntityId
+	toSerialize["id"] = o.Id
+	toSerialize["metadata"] = o.Metadata
+	toSerialize["mount_accessor"] = o.MountAccessor
+	toSerialize["name"] = o.Name
+
 	return json.Marshal(toSerialize)
 }
 
@@ -6706,33 +5829,33 @@ API version: 1.12.0
 // JwtConfigRequest struct for JwtConfigRequest
 type JwtConfigRequest struct {
 	// The value against which to match the 'iss' claim in a JWT. Optional.
-	BoundIssuer *string `json:"bound_issuer,omitempty"`
+	BoundIssuer string `json:"bound_issuer"`
 	// The default role to use if none is provided during login. If not set, a role is required during login.
-	DefaultRole *string `json:"default_role,omitempty"`
+	DefaultRole string `json:"default_role"`
 	// The CA certificate or chain of certificates, in PEM format, to use to validate connections to the JWKS URL. If not set, system certificates are used.
-	JwksCaPem *string `json:"jwks_ca_pem,omitempty"`
+	JwksCaPem string `json:"jwks_ca_pem"`
 	// JWKS URL to use to authenticate signatures. Cannot be used with \"oidc_discovery_url\" or \"jwt_validation_pubkeys\".
-	JwksUrl *string `json:"jwks_url,omitempty"`
+	JwksUrl string `json:"jwks_url"`
 	// A list of supported signing algorithms. Defaults to RS256.
-	JwtSupportedAlgs []string `json:"jwt_supported_algs,omitempty"`
+	JwtSupportedAlgs []string `json:"jwt_supported_algs"`
 	// A list of PEM-encoded public keys to use to authenticate signatures locally. Cannot be used with \"jwks_url\" or \"oidc_discovery_url\".
-	JwtValidationPubkeys []string `json:"jwt_validation_pubkeys,omitempty"`
+	JwtValidationPubkeys []string `json:"jwt_validation_pubkeys"`
 	// Pass namespace in the OIDC state parameter instead of as a separate query parameter. With this setting, the allowed redirect URL(s) in Vault and on the provider side should not contain a namespace query parameter. This means only one redirect URL entry needs to be maintained on the provider side for all vault namespaces that will be authenticating against it. Defaults to true for new configs.
-	NamespaceInState *bool `json:"namespace_in_state,omitempty"`
+	NamespaceInState bool `json:"namespace_in_state"`
 	// The OAuth Client ID configured with your OIDC provider.
-	OidcClientId *string `json:"oidc_client_id,omitempty"`
+	OidcClientId string `json:"oidc_client_id"`
 	// The OAuth Client Secret configured with your OIDC provider.
-	OidcClientSecret *string `json:"oidc_client_secret,omitempty"`
+	OidcClientSecret string `json:"oidc_client_secret"`
 	// The CA certificate or chain of certificates, in PEM format, to use to validate connections to the OIDC Discovery URL. If not set, system certificates are used.
-	OidcDiscoveryCaPem *string `json:"oidc_discovery_ca_pem,omitempty"`
+	OidcDiscoveryCaPem string `json:"oidc_discovery_ca_pem"`
 	// OIDC Discovery URL, without any .well-known component (base path). Cannot be used with \"jwks_url\" or \"jwt_validation_pubkeys\".
-	OidcDiscoveryUrl *string `json:"oidc_discovery_url,omitempty"`
+	OidcDiscoveryUrl string `json:"oidc_discovery_url"`
 	// The response mode to be used in the OAuth2 request. Allowed values are 'query' and 'form_post'.
-	OidcResponseMode *string `json:"oidc_response_mode,omitempty"`
+	OidcResponseMode string `json:"oidc_response_mode"`
 	// The response types to request. Allowed values are 'code' and 'id_token'. Defaults to 'code'.
-	OidcResponseTypes []string `json:"oidc_response_types,omitempty"`
+	OidcResponseTypes []string `json:"oidc_response_types"`
 	// Provider-specific configuration. Optional.
-	ProviderConfig map[string]interface{} `json:"provider_config,omitempty"`
+	ProviderConfig map[string]interface{} `json:"provider_config"`
 }
 
 // NewJwtConfigRequestWithDefaults instantiates a new JwtConfigRequest object
@@ -6740,53 +5863,28 @@ type JwtConfigRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewJwtConfigRequestWithDefaults() *JwtConfigRequest {
 	this := JwtConfigRequest{}
+
 	return &this
 }
 
 func (o JwtConfigRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.BoundIssuer != nil {
-		toSerialize["bound_issuer"] = o.BoundIssuer
-	}
-	if o.DefaultRole != nil {
-		toSerialize["default_role"] = o.DefaultRole
-	}
-	if o.JwksCaPem != nil {
-		toSerialize["jwks_ca_pem"] = o.JwksCaPem
-	}
-	if o.JwksUrl != nil {
-		toSerialize["jwks_url"] = o.JwksUrl
-	}
-	if o.JwtSupportedAlgs != nil {
-		toSerialize["jwt_supported_algs"] = o.JwtSupportedAlgs
-	}
-	if o.JwtValidationPubkeys != nil {
-		toSerialize["jwt_validation_pubkeys"] = o.JwtValidationPubkeys
-	}
-	if o.NamespaceInState != nil {
-		toSerialize["namespace_in_state"] = o.NamespaceInState
-	}
-	if o.OidcClientId != nil {
-		toSerialize["oidc_client_id"] = o.OidcClientId
-	}
-	if o.OidcClientSecret != nil {
-		toSerialize["oidc_client_secret"] = o.OidcClientSecret
-	}
-	if o.OidcDiscoveryCaPem != nil {
-		toSerialize["oidc_discovery_ca_pem"] = o.OidcDiscoveryCaPem
-	}
-	if o.OidcDiscoveryUrl != nil {
-		toSerialize["oidc_discovery_url"] = o.OidcDiscoveryUrl
-	}
-	if o.OidcResponseMode != nil {
-		toSerialize["oidc_response_mode"] = o.OidcResponseMode
-	}
-	if o.OidcResponseTypes != nil {
-		toSerialize["oidc_response_types"] = o.OidcResponseTypes
-	}
-	if o.ProviderConfig != nil {
-		toSerialize["provider_config"] = o.ProviderConfig
-	}
+
+	toSerialize["bound_issuer"] = o.BoundIssuer
+	toSerialize["default_role"] = o.DefaultRole
+	toSerialize["jwks_ca_pem"] = o.JwksCaPem
+	toSerialize["jwks_url"] = o.JwksUrl
+	toSerialize["jwt_supported_algs"] = o.JwtSupportedAlgs
+	toSerialize["jwt_validation_pubkeys"] = o.JwtValidationPubkeys
+	toSerialize["namespace_in_state"] = o.NamespaceInState
+	toSerialize["oidc_client_id"] = o.OidcClientId
+	toSerialize["oidc_client_secret"] = o.OidcClientSecret
+	toSerialize["oidc_discovery_ca_pem"] = o.OidcDiscoveryCaPem
+	toSerialize["oidc_discovery_url"] = o.OidcDiscoveryUrl
+	toSerialize["oidc_response_mode"] = o.OidcResponseMode
+	toSerialize["oidc_response_types"] = o.OidcResponseTypes
+	toSerialize["provider_config"] = o.ProviderConfig
+
 	return json.Marshal(toSerialize)
 }
 
@@ -6803,9 +5901,9 @@ API version: 1.12.0
 // JwtLoginRequest struct for JwtLoginRequest
 type JwtLoginRequest struct {
 	// The signed JWT to validate.
-	Jwt *string `json:"jwt,omitempty"`
+	Jwt string `json:"jwt"`
 	// The role to log in against.
-	Role *string `json:"role,omitempty"`
+	Role string `json:"role"`
 }
 
 // NewJwtLoginRequestWithDefaults instantiates a new JwtLoginRequest object
@@ -6813,17 +5911,16 @@ type JwtLoginRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewJwtLoginRequestWithDefaults() *JwtLoginRequest {
 	this := JwtLoginRequest{}
+
 	return &this
 }
 
 func (o JwtLoginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Jwt != nil {
-		toSerialize["jwt"] = o.Jwt
-	}
-	if o.Role != nil {
-		toSerialize["role"] = o.Role
-	}
+
+	toSerialize["jwt"] = o.Jwt
+	toSerialize["role"] = o.Role
+
 	return json.Marshal(toSerialize)
 }
 
@@ -6840,11 +5937,11 @@ API version: 1.12.0
 // JwtOidcAuthUrlRequest struct for JwtOidcAuthUrlRequest
 type JwtOidcAuthUrlRequest struct {
 	// Optional client-provided nonce that must match during callback, if present.
-	ClientNonce *string `json:"client_nonce,omitempty"`
+	ClientNonce string `json:"client_nonce"`
 	// The OAuth redirect_uri to use in the authorization URL.
-	RedirectUri *string `json:"redirect_uri,omitempty"`
+	RedirectUri string `json:"redirect_uri"`
 	// The role to issue an OIDC authorization URL against.
-	Role *string `json:"role,omitempty"`
+	Role string `json:"role"`
 }
 
 // NewJwtOidcAuthUrlRequestWithDefaults instantiates a new JwtOidcAuthUrlRequest object
@@ -6852,20 +5949,17 @@ type JwtOidcAuthUrlRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewJwtOidcAuthUrlRequestWithDefaults() *JwtOidcAuthUrlRequest {
 	this := JwtOidcAuthUrlRequest{}
+
 	return &this
 }
 
 func (o JwtOidcAuthUrlRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.ClientNonce != nil {
-		toSerialize["client_nonce"] = o.ClientNonce
-	}
-	if o.RedirectUri != nil {
-		toSerialize["redirect_uri"] = o.RedirectUri
-	}
-	if o.Role != nil {
-		toSerialize["role"] = o.Role
-	}
+
+	toSerialize["client_nonce"] = o.ClientNonce
+	toSerialize["redirect_uri"] = o.RedirectUri
+	toSerialize["role"] = o.Role
+
 	return json.Marshal(toSerialize)
 }
 
@@ -6881,10 +5975,10 @@ API version: 1.12.0
 
 // JwtOidcCallbackRequest struct for JwtOidcCallbackRequest
 type JwtOidcCallbackRequest struct {
-	ClientNonce *string `json:"client_nonce,omitempty"`
-	Code        *string `json:"code,omitempty"`
-	IdToken     *string `json:"id_token,omitempty"`
-	State       *string `json:"state,omitempty"`
+	ClientNonce string `json:"client_nonce"`
+	Code        string `json:"code"`
+	IdToken     string `json:"id_token"`
+	State       string `json:"state"`
 }
 
 // NewJwtOidcCallbackRequestWithDefaults instantiates a new JwtOidcCallbackRequest object
@@ -6892,23 +5986,18 @@ type JwtOidcCallbackRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewJwtOidcCallbackRequestWithDefaults() *JwtOidcCallbackRequest {
 	this := JwtOidcCallbackRequest{}
+
 	return &this
 }
 
 func (o JwtOidcCallbackRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.ClientNonce != nil {
-		toSerialize["client_nonce"] = o.ClientNonce
-	}
-	if o.Code != nil {
-		toSerialize["code"] = o.Code
-	}
-	if o.IdToken != nil {
-		toSerialize["id_token"] = o.IdToken
-	}
-	if o.State != nil {
-		toSerialize["state"] = o.State
-	}
+
+	toSerialize["client_nonce"] = o.ClientNonce
+	toSerialize["code"] = o.Code
+	toSerialize["id_token"] = o.IdToken
+	toSerialize["state"] = o.State
+
 	return json.Marshal(toSerialize)
 }
 
@@ -6925,73 +6014,73 @@ API version: 1.12.0
 // JwtRoleRequest struct for JwtRoleRequest
 type JwtRoleRequest struct {
 	// Comma-separated list of allowed values for redirect_uri
-	AllowedRedirectUris []string `json:"allowed_redirect_uris,omitempty"`
+	AllowedRedirectUris []string `json:"allowed_redirect_uris"`
 	// Comma-separated list of 'aud' claims that are valid for login; any match is sufficient
-	BoundAudiences []string `json:"bound_audiences,omitempty"`
+	BoundAudiences []string `json:"bound_audiences"`
 	// Use \"token_bound_cidrs\" instead. If this and \"token_bound_cidrs\" are both specified, only \"token_bound_cidrs\" will be used.
 	// Deprecated
-	BoundCidrs []string `json:"bound_cidrs,omitempty"`
+	BoundCidrs []string `json:"bound_cidrs"`
 	// Map of claims/values which must match for login
-	BoundClaims map[string]interface{} `json:"bound_claims,omitempty"`
+	BoundClaims map[string]interface{} `json:"bound_claims"`
 	// How to interpret values in the map of claims/values (which must match for login): allowed values are 'string' or 'glob'
-	BoundClaimsType *string `json:"bound_claims_type,omitempty"`
+	BoundClaimsType string `json:"bound_claims_type"`
 	// The 'sub' claim that is valid for login. Optional.
-	BoundSubject *string `json:"bound_subject,omitempty"`
+	BoundSubject string `json:"bound_subject"`
 	// Mappings of claims (key) that will be copied to a metadata field (value)
-	ClaimMappings map[string]interface{} `json:"claim_mappings,omitempty"`
+	ClaimMappings map[string]interface{} `json:"claim_mappings"`
 	// Duration in seconds of leeway when validating all claims to account for clock skew. Defaults to 60 (1 minute) if set to 0 and can be disabled if set to -1.
-	ClockSkewLeeway *int32 `json:"clock_skew_leeway,omitempty"`
+	ClockSkewLeeway int32 `json:"clock_skew_leeway"`
 	// Duration in seconds of leeway when validating expiration of a token to account for clock skew. Defaults to 150 (2.5 minutes) if set to 0 and can be disabled if set to -1.
-	ExpirationLeeway *int32 `json:"expiration_leeway,omitempty"`
+	ExpirationLeeway int32 `json:"expiration_leeway"`
 	// The claim to use for the Identity group alias names
-	GroupsClaim *string `json:"groups_claim,omitempty"`
+	GroupsClaim string `json:"groups_claim"`
 	// Specifies the allowable elapsed time in seconds since the last time the user was actively authenticated.
-	MaxAge *int32 `json:"max_age,omitempty"`
+	MaxAge int32 `json:"max_age"`
 	// Use \"token_max_ttl\" instead. If this and \"token_max_ttl\" are both specified, only \"token_max_ttl\" will be used.
 	// Deprecated
-	MaxTtl *int32 `json:"max_ttl,omitempty"`
+	MaxTtl int32 `json:"max_ttl"`
 	// Duration in seconds of leeway when validating not before values of a token to account for clock skew. Defaults to 150 (2.5 minutes) if set to 0 and can be disabled if set to -1.
-	NotBeforeLeeway *int32 `json:"not_before_leeway,omitempty"`
+	NotBeforeLeeway int32 `json:"not_before_leeway"`
 	// Use \"token_num_uses\" instead. If this and \"token_num_uses\" are both specified, only \"token_num_uses\" will be used.
 	// Deprecated
-	NumUses *int32 `json:"num_uses,omitempty"`
+	NumUses int32 `json:"num_uses"`
 	// Comma-separated list of OIDC scopes
-	OidcScopes []string `json:"oidc_scopes,omitempty"`
+	OidcScopes []string `json:"oidc_scopes"`
 	// Use \"token_period\" instead. If this and \"token_period\" are both specified, only \"token_period\" will be used.
 	// Deprecated
-	Period *int32 `json:"period,omitempty"`
+	Period int32 `json:"period"`
 	// Use \"token_policies\" instead. If this and \"token_policies\" are both specified, only \"token_policies\" will be used.
 	// Deprecated
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 	// Type of the role, either 'jwt' or 'oidc'.
-	RoleType *string `json:"role_type,omitempty"`
+	RoleType string `json:"role_type"`
 	// Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
-	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
+	TokenBoundCidrs []string `json:"token_bound_cidrs"`
 	// If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
-	TokenExplicitMaxTtl *int32 `json:"token_explicit_max_ttl,omitempty"`
+	TokenExplicitMaxTtl int32 `json:"token_explicit_max_ttl"`
 	// The maximum lifetime of the generated token
-	TokenMaxTtl *int32 `json:"token_max_ttl,omitempty"`
+	TokenMaxTtl int32 `json:"token_max_ttl"`
 	// If true, the 'default' policy will not automatically be added to generated tokens
-	TokenNoDefaultPolicy *bool `json:"token_no_default_policy,omitempty"`
+	TokenNoDefaultPolicy bool `json:"token_no_default_policy"`
 	// The maximum number of times a token may be used, a value of zero means unlimited
-	TokenNumUses *int32 `json:"token_num_uses,omitempty"`
+	TokenNumUses int32 `json:"token_num_uses"`
 	// If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \"24h\").
-	TokenPeriod *int32 `json:"token_period,omitempty"`
+	TokenPeriod int32 `json:"token_period"`
 	// Comma-separated list of policies
-	TokenPolicies []string `json:"token_policies,omitempty"`
+	TokenPolicies []string `json:"token_policies"`
 	// The initial ttl of the token to generate
-	TokenTtl *int32 `json:"token_ttl,omitempty"`
+	TokenTtl int32 `json:"token_ttl"`
 	// The type of token to generate, service or batch
-	TokenType *string `json:"token_type,omitempty"`
+	TokenType string `json:"token_type"`
 	// Use \"token_ttl\" instead. If this and \"token_ttl\" are both specified, only \"token_ttl\" will be used.
 	// Deprecated
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 	// The claim to use for the Identity entity alias name
-	UserClaim *string `json:"user_claim,omitempty"`
+	UserClaim string `json:"user_claim"`
 	// If true, the user_claim value will use JSON pointer syntax for referencing claims.
-	UserClaimJsonPointer *bool `json:"user_claim_json_pointer,omitempty"`
+	UserClaimJsonPointer bool `json:"user_claim_json_pointer"`
 	// Log received OIDC tokens and claims when debug-level logging is active. Not recommended in production since sensitive information may be present in OIDC responses.
-	VerboseOidcLogging *bool `json:"verbose_oidc_logging,omitempty"`
+	VerboseOidcLogging bool `json:"verbose_oidc_logging"`
 }
 
 // NewJwtRoleRequestWithDefaults instantiates a new JwtRoleRequest object
@@ -6999,112 +6088,50 @@ type JwtRoleRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewJwtRoleRequestWithDefaults() *JwtRoleRequest {
 	this := JwtRoleRequest{}
-	var boundClaimsType string = "string"
-	this.BoundClaimsType = &boundClaimsType
-	var expirationLeeway int32 = 150
-	this.ExpirationLeeway = &expirationLeeway
-	var notBeforeLeeway int32 = 150
-	this.NotBeforeLeeway = &notBeforeLeeway
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
+
+	this.BoundClaimsType = "string"
+	this.ExpirationLeeway = 150
+	this.NotBeforeLeeway = 150
+	this.TokenType = "default-service"
+
 	return &this
 }
 
 func (o JwtRoleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AllowedRedirectUris != nil {
-		toSerialize["allowed_redirect_uris"] = o.AllowedRedirectUris
-	}
-	if o.BoundAudiences != nil {
-		toSerialize["bound_audiences"] = o.BoundAudiences
-	}
-	if o.BoundCidrs != nil {
-		toSerialize["bound_cidrs"] = o.BoundCidrs
-	}
-	if o.BoundClaims != nil {
-		toSerialize["bound_claims"] = o.BoundClaims
-	}
-	if o.BoundClaimsType != nil {
-		toSerialize["bound_claims_type"] = o.BoundClaimsType
-	}
-	if o.BoundSubject != nil {
-		toSerialize["bound_subject"] = o.BoundSubject
-	}
-	if o.ClaimMappings != nil {
-		toSerialize["claim_mappings"] = o.ClaimMappings
-	}
-	if o.ClockSkewLeeway != nil {
-		toSerialize["clock_skew_leeway"] = o.ClockSkewLeeway
-	}
-	if o.ExpirationLeeway != nil {
-		toSerialize["expiration_leeway"] = o.ExpirationLeeway
-	}
-	if o.GroupsClaim != nil {
-		toSerialize["groups_claim"] = o.GroupsClaim
-	}
-	if o.MaxAge != nil {
-		toSerialize["max_age"] = o.MaxAge
-	}
-	if o.MaxTtl != nil {
-		toSerialize["max_ttl"] = o.MaxTtl
-	}
-	if o.NotBeforeLeeway != nil {
-		toSerialize["not_before_leeway"] = o.NotBeforeLeeway
-	}
-	if o.NumUses != nil {
-		toSerialize["num_uses"] = o.NumUses
-	}
-	if o.OidcScopes != nil {
-		toSerialize["oidc_scopes"] = o.OidcScopes
-	}
-	if o.Period != nil {
-		toSerialize["period"] = o.Period
-	}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
-	if o.RoleType != nil {
-		toSerialize["role_type"] = o.RoleType
-	}
-	if o.TokenBoundCidrs != nil {
-		toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
-	}
-	if o.TokenExplicitMaxTtl != nil {
-		toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
-	}
-	if o.TokenMaxTtl != nil {
-		toSerialize["token_max_ttl"] = o.TokenMaxTtl
-	}
-	if o.TokenNoDefaultPolicy != nil {
-		toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
-	}
-	if o.TokenNumUses != nil {
-		toSerialize["token_num_uses"] = o.TokenNumUses
-	}
-	if o.TokenPeriod != nil {
-		toSerialize["token_period"] = o.TokenPeriod
-	}
-	if o.TokenPolicies != nil {
-		toSerialize["token_policies"] = o.TokenPolicies
-	}
-	if o.TokenTtl != nil {
-		toSerialize["token_ttl"] = o.TokenTtl
-	}
-	if o.TokenType != nil {
-		toSerialize["token_type"] = o.TokenType
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
-	if o.UserClaim != nil {
-		toSerialize["user_claim"] = o.UserClaim
-	}
-	if o.UserClaimJsonPointer != nil {
-		toSerialize["user_claim_json_pointer"] = o.UserClaimJsonPointer
-	}
-	if o.VerboseOidcLogging != nil {
-		toSerialize["verbose_oidc_logging"] = o.VerboseOidcLogging
-	}
+
+	toSerialize["allowed_redirect_uris"] = o.AllowedRedirectUris
+	toSerialize["bound_audiences"] = o.BoundAudiences
+	toSerialize["bound_cidrs"] = o.BoundCidrs
+	toSerialize["bound_claims"] = o.BoundClaims
+	toSerialize["bound_claims_type"] = o.BoundClaimsType
+	toSerialize["bound_subject"] = o.BoundSubject
+	toSerialize["claim_mappings"] = o.ClaimMappings
+	toSerialize["clock_skew_leeway"] = o.ClockSkewLeeway
+	toSerialize["expiration_leeway"] = o.ExpirationLeeway
+	toSerialize["groups_claim"] = o.GroupsClaim
+	toSerialize["max_age"] = o.MaxAge
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["not_before_leeway"] = o.NotBeforeLeeway
+	toSerialize["num_uses"] = o.NumUses
+	toSerialize["oidc_scopes"] = o.OidcScopes
+	toSerialize["period"] = o.Period
+	toSerialize["policies"] = o.Policies
+	toSerialize["role_type"] = o.RoleType
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["user_claim"] = o.UserClaim
+	toSerialize["user_claim_json_pointer"] = o.UserClaimJsonPointer
+	toSerialize["verbose_oidc_logging"] = o.VerboseOidcLogging
+
 	return json.Marshal(toSerialize)
 }
 
@@ -7121,73 +6148,73 @@ API version: 1.12.0
 // KerberosConfigLdapRequest struct for KerberosConfigLdapRequest
 type KerberosConfigLdapRequest struct {
 	// Use anonymous binds when performing LDAP group searches (if true the initial credentials will still be used for the initial connection test).
-	AnonymousGroupSearch *bool `json:"anonymous_group_search,omitempty"`
+	AnonymousGroupSearch bool `json:"anonymous_group_search"`
 	// LDAP DN for searching for the user DN (optional)
-	Binddn *string `json:"binddn,omitempty"`
+	Binddn string `json:"binddn"`
 	// LDAP password for searching for the user DN (optional)
-	Bindpass *string `json:"bindpass,omitempty"`
+	Bindpass string `json:"bindpass"`
 	// If true, case sensitivity will be used when comparing usernames and groups for matching policies.
-	CaseSensitiveNames *bool `json:"case_sensitive_names,omitempty"`
+	CaseSensitiveNames bool `json:"case_sensitive_names"`
 	// CA certificate to use when verifying LDAP server certificate, must be x509 PEM encoded (optional)
-	Certificate *string `json:"certificate,omitempty"`
+	Certificate string `json:"certificate"`
 	// Client certificate to provide to the LDAP server, must be x509 PEM encoded (optional)
-	ClientTlsCert *string `json:"client_tls_cert,omitempty"`
+	ClientTlsCert string `json:"client_tls_cert"`
 	// Client certificate key to provide to the LDAP server, must be x509 PEM encoded (optional)
-	ClientTlsKey *string `json:"client_tls_key,omitempty"`
+	ClientTlsKey string `json:"client_tls_key"`
 	// Denies an unauthenticated LDAP bind request if the user's password is empty; defaults to true
-	DenyNullBind *bool `json:"deny_null_bind,omitempty"`
+	DenyNullBind bool `json:"deny_null_bind"`
 	// Use anonymous bind to discover the bind DN of a user (optional)
-	Discoverdn *bool `json:"discoverdn,omitempty"`
+	Discoverdn bool `json:"discoverdn"`
 	// LDAP attribute to follow on objects returned by <groupfilter> in order to enumerate user group membership. Examples: \"cn\" or \"memberOf\", etc. Default: cn
-	Groupattr *string `json:"groupattr,omitempty"`
+	Groupattr string `json:"groupattr"`
 	// LDAP search base to use for group membership search (eg: ou=Groups,dc=example,dc=org)
-	Groupdn *string `json:"groupdn,omitempty"`
+	Groupdn string `json:"groupdn"`
 	// Go template for querying group membership of user (optional) The template can access the following context variables: UserDN, Username Example: (&(objectClass=group)(member:1.2.840.113556.1.4.1941:={{.UserDN}})) Default: (|(memberUid={{.Username}})(member={{.UserDN}})(uniqueMember={{.UserDN}}))
-	Groupfilter *string `json:"groupfilter,omitempty"`
+	Groupfilter string `json:"groupfilter"`
 	// Skip LDAP server SSL Certificate verification - VERY insecure (optional)
-	InsecureTls *bool `json:"insecure_tls,omitempty"`
+	InsecureTls bool `json:"insecure_tls"`
 	// Timeout, in seconds, for the connection when making requests against the server before returning back an error.
-	RequestTimeout *int32 `json:"request_timeout,omitempty"`
+	RequestTimeout int32 `json:"request_timeout"`
 	// Issue a StartTLS command after establishing unencrypted connection (optional)
-	Starttls *bool `json:"starttls,omitempty"`
+	Starttls bool `json:"starttls"`
 	// Maximum TLS version to use. Accepted values are 'tls10', 'tls11', 'tls12' or 'tls13'. Defaults to 'tls12'
-	TlsMaxVersion *string `json:"tls_max_version,omitempty"`
+	TlsMaxVersion string `json:"tls_max_version"`
 	// Minimum TLS version to use. Accepted values are 'tls10', 'tls11', 'tls12' or 'tls13'. Defaults to 'tls12'
-	TlsMinVersion *string `json:"tls_min_version,omitempty"`
+	TlsMinVersion string `json:"tls_min_version"`
 	// Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
-	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
+	TokenBoundCidrs []string `json:"token_bound_cidrs"`
 	// If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
-	TokenExplicitMaxTtl *int32 `json:"token_explicit_max_ttl,omitempty"`
+	TokenExplicitMaxTtl int32 `json:"token_explicit_max_ttl"`
 	// The maximum lifetime of the generated token
-	TokenMaxTtl *int32 `json:"token_max_ttl,omitempty"`
+	TokenMaxTtl int32 `json:"token_max_ttl"`
 	// If true, the 'default' policy will not automatically be added to generated tokens
-	TokenNoDefaultPolicy *bool `json:"token_no_default_policy,omitempty"`
+	TokenNoDefaultPolicy bool `json:"token_no_default_policy"`
 	// The maximum number of times a token may be used, a value of zero means unlimited
-	TokenNumUses *int32 `json:"token_num_uses,omitempty"`
+	TokenNumUses int32 `json:"token_num_uses"`
 	// If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \"24h\").
-	TokenPeriod *int32 `json:"token_period,omitempty"`
+	TokenPeriod int32 `json:"token_period"`
 	// Comma-separated list of policies. This will apply to all tokens generated by this auth method, in addition to any configured for specific users/groups.
-	TokenPolicies []string `json:"token_policies,omitempty"`
+	TokenPolicies []string `json:"token_policies"`
 	// The initial ttl of the token to generate
-	TokenTtl *int32 `json:"token_ttl,omitempty"`
+	TokenTtl int32 `json:"token_ttl"`
 	// The type of token to generate, service or batch
-	TokenType *string `json:"token_type,omitempty"`
+	TokenType string `json:"token_type"`
 	// Enables userPrincipalDomain login with [username]@UPNDomain (optional)
-	Upndomain *string `json:"upndomain,omitempty"`
+	Upndomain string `json:"upndomain"`
 	// LDAP URL to connect to (default: ldap://127.0.0.1). Multiple URLs can be specified by concatenating them with commas; they will be tried in-order.
-	Url *string `json:"url,omitempty"`
+	Url string `json:"url"`
 	// In Vault 1.1.1 a fix for handling group CN values of different cases unfortunately introduced a regression that could cause previously defined groups to not be found due to a change in the resulting name. If set true, the pre-1.1.1 behavior for matching group CNs will be used. This is only needed in some upgrade scenarios for backwards compatibility. It is enabled by default if the config is upgraded but disabled by default on new configurations.
-	UsePre111GroupCnBehavior *bool `json:"use_pre111_group_cn_behavior,omitempty"`
+	UsePre111GroupCnBehavior bool `json:"use_pre111_group_cn_behavior"`
 	// If true, use the Active Directory tokenGroups constructed attribute of the user to find the group memberships. This will find all security groups including nested ones.
-	UseTokenGroups *bool `json:"use_token_groups,omitempty"`
+	UseTokenGroups bool `json:"use_token_groups"`
 	// Attribute used for users (default: cn)
-	Userattr *string `json:"userattr,omitempty"`
+	Userattr string `json:"userattr"`
 	// LDAP domain to use for users (eg: ou=People,dc=example,dc=org)
-	Userdn *string `json:"userdn,omitempty"`
+	Userdn string `json:"userdn"`
 	// Go template for LDAP user search filer (optional) The template can access the following context variables: UserAttr, Username Default: ({{.UserAttr}}={{.Username}})
-	Userfilter *string `json:"userfilter,omitempty"`
+	Userfilter string `json:"userfilter"`
 	// If true, sets the alias name to the username
-	UsernameAsAlias *bool `json:"username_as_alias,omitempty"`
+	UsernameAsAlias bool `json:"username_as_alias"`
 }
 
 // NewKerberosConfigLdapRequestWithDefaults instantiates a new KerberosConfigLdapRequest object
@@ -7195,137 +6222,61 @@ type KerberosConfigLdapRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewKerberosConfigLdapRequestWithDefaults() *KerberosConfigLdapRequest {
 	this := KerberosConfigLdapRequest{}
-	var anonymousGroupSearch bool = false
-	this.AnonymousGroupSearch = &anonymousGroupSearch
-	var denyNullBind bool = true
-	this.DenyNullBind = &denyNullBind
-	var groupattr string = "cn"
-	this.Groupattr = &groupattr
-	var groupfilter string = "(|(memberUid={{.Username}})(member={{.UserDN}})(uniqueMember={{.UserDN}}))"
-	this.Groupfilter = &groupfilter
-	var tlsMaxVersion string = "tls12"
-	this.TlsMaxVersion = &tlsMaxVersion
-	var tlsMinVersion string = "tls12"
-	this.TlsMinVersion = &tlsMinVersion
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
-	var url string = "ldap://127.0.0.1"
-	this.Url = &url
-	var useTokenGroups bool = false
-	this.UseTokenGroups = &useTokenGroups
-	var userattr string = "cn"
-	this.Userattr = &userattr
-	var userfilter string = "({{.UserAttr}}={{.Username}})"
-	this.Userfilter = &userfilter
-	var usernameAsAlias bool = false
-	this.UsernameAsAlias = &usernameAsAlias
+
+	this.AnonymousGroupSearch = false
+	this.DenyNullBind = true
+	this.Groupattr = "cn"
+	this.Groupfilter = "(|(memberUid={{.Username}})(member={{.UserDN}})(uniqueMember={{.UserDN}}))"
+	this.TlsMaxVersion = "tls12"
+	this.TlsMinVersion = "tls12"
+	this.TokenType = "default-service"
+	this.Url = "ldap://127.0.0.1"
+	this.UseTokenGroups = false
+	this.Userattr = "cn"
+	this.Userfilter = "({{.UserAttr}}={{.Username}})"
+	this.UsernameAsAlias = false
+
 	return &this
 }
 
 func (o KerberosConfigLdapRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AnonymousGroupSearch != nil {
-		toSerialize["anonymous_group_search"] = o.AnonymousGroupSearch
-	}
-	if o.Binddn != nil {
-		toSerialize["binddn"] = o.Binddn
-	}
-	if o.Bindpass != nil {
-		toSerialize["bindpass"] = o.Bindpass
-	}
-	if o.CaseSensitiveNames != nil {
-		toSerialize["case_sensitive_names"] = o.CaseSensitiveNames
-	}
-	if o.Certificate != nil {
-		toSerialize["certificate"] = o.Certificate
-	}
-	if o.ClientTlsCert != nil {
-		toSerialize["client_tls_cert"] = o.ClientTlsCert
-	}
-	if o.ClientTlsKey != nil {
-		toSerialize["client_tls_key"] = o.ClientTlsKey
-	}
-	if o.DenyNullBind != nil {
-		toSerialize["deny_null_bind"] = o.DenyNullBind
-	}
-	if o.Discoverdn != nil {
-		toSerialize["discoverdn"] = o.Discoverdn
-	}
-	if o.Groupattr != nil {
-		toSerialize["groupattr"] = o.Groupattr
-	}
-	if o.Groupdn != nil {
-		toSerialize["groupdn"] = o.Groupdn
-	}
-	if o.Groupfilter != nil {
-		toSerialize["groupfilter"] = o.Groupfilter
-	}
-	if o.InsecureTls != nil {
-		toSerialize["insecure_tls"] = o.InsecureTls
-	}
-	if o.RequestTimeout != nil {
-		toSerialize["request_timeout"] = o.RequestTimeout
-	}
-	if o.Starttls != nil {
-		toSerialize["starttls"] = o.Starttls
-	}
-	if o.TlsMaxVersion != nil {
-		toSerialize["tls_max_version"] = o.TlsMaxVersion
-	}
-	if o.TlsMinVersion != nil {
-		toSerialize["tls_min_version"] = o.TlsMinVersion
-	}
-	if o.TokenBoundCidrs != nil {
-		toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
-	}
-	if o.TokenExplicitMaxTtl != nil {
-		toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
-	}
-	if o.TokenMaxTtl != nil {
-		toSerialize["token_max_ttl"] = o.TokenMaxTtl
-	}
-	if o.TokenNoDefaultPolicy != nil {
-		toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
-	}
-	if o.TokenNumUses != nil {
-		toSerialize["token_num_uses"] = o.TokenNumUses
-	}
-	if o.TokenPeriod != nil {
-		toSerialize["token_period"] = o.TokenPeriod
-	}
-	if o.TokenPolicies != nil {
-		toSerialize["token_policies"] = o.TokenPolicies
-	}
-	if o.TokenTtl != nil {
-		toSerialize["token_ttl"] = o.TokenTtl
-	}
-	if o.TokenType != nil {
-		toSerialize["token_type"] = o.TokenType
-	}
-	if o.Upndomain != nil {
-		toSerialize["upndomain"] = o.Upndomain
-	}
-	if o.Url != nil {
-		toSerialize["url"] = o.Url
-	}
-	if o.UsePre111GroupCnBehavior != nil {
-		toSerialize["use_pre111_group_cn_behavior"] = o.UsePre111GroupCnBehavior
-	}
-	if o.UseTokenGroups != nil {
-		toSerialize["use_token_groups"] = o.UseTokenGroups
-	}
-	if o.Userattr != nil {
-		toSerialize["userattr"] = o.Userattr
-	}
-	if o.Userdn != nil {
-		toSerialize["userdn"] = o.Userdn
-	}
-	if o.Userfilter != nil {
-		toSerialize["userfilter"] = o.Userfilter
-	}
-	if o.UsernameAsAlias != nil {
-		toSerialize["username_as_alias"] = o.UsernameAsAlias
-	}
+
+	toSerialize["anonymous_group_search"] = o.AnonymousGroupSearch
+	toSerialize["binddn"] = o.Binddn
+	toSerialize["bindpass"] = o.Bindpass
+	toSerialize["case_sensitive_names"] = o.CaseSensitiveNames
+	toSerialize["certificate"] = o.Certificate
+	toSerialize["client_tls_cert"] = o.ClientTlsCert
+	toSerialize["client_tls_key"] = o.ClientTlsKey
+	toSerialize["deny_null_bind"] = o.DenyNullBind
+	toSerialize["discoverdn"] = o.Discoverdn
+	toSerialize["groupattr"] = o.Groupattr
+	toSerialize["groupdn"] = o.Groupdn
+	toSerialize["groupfilter"] = o.Groupfilter
+	toSerialize["insecure_tls"] = o.InsecureTls
+	toSerialize["request_timeout"] = o.RequestTimeout
+	toSerialize["starttls"] = o.Starttls
+	toSerialize["tls_max_version"] = o.TlsMaxVersion
+	toSerialize["tls_min_version"] = o.TlsMinVersion
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+	toSerialize["upndomain"] = o.Upndomain
+	toSerialize["url"] = o.Url
+	toSerialize["use_pre111_group_cn_behavior"] = o.UsePre111GroupCnBehavior
+	toSerialize["use_token_groups"] = o.UseTokenGroups
+	toSerialize["userattr"] = o.Userattr
+	toSerialize["userdn"] = o.Userdn
+	toSerialize["userfilter"] = o.Userfilter
+	toSerialize["username_as_alias"] = o.UsernameAsAlias
+
 	return json.Marshal(toSerialize)
 }
 
@@ -7342,9 +6293,9 @@ API version: 1.12.0
 // KerberosConfigRequest struct for KerberosConfigRequest
 type KerberosConfigRequest struct {
 	// Base64 encoded keytab
-	Keytab *string `json:"keytab,omitempty"`
+	Keytab string `json:"keytab"`
 	// Service Account
-	ServiceAccount *string `json:"service_account,omitempty"`
+	ServiceAccount string `json:"service_account"`
 }
 
 // NewKerberosConfigRequestWithDefaults instantiates a new KerberosConfigRequest object
@@ -7352,17 +6303,16 @@ type KerberosConfigRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewKerberosConfigRequestWithDefaults() *KerberosConfigRequest {
 	this := KerberosConfigRequest{}
+
 	return &this
 }
 
 func (o KerberosConfigRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Keytab != nil {
-		toSerialize["keytab"] = o.Keytab
-	}
-	if o.ServiceAccount != nil {
-		toSerialize["service_account"] = o.ServiceAccount
-	}
+
+	toSerialize["keytab"] = o.Keytab
+	toSerialize["service_account"] = o.ServiceAccount
+
 	return json.Marshal(toSerialize)
 }
 
@@ -7379,7 +6329,7 @@ API version: 1.12.0
 // KerberosGroupsRequest struct for KerberosGroupsRequest
 type KerberosGroupsRequest struct {
 	// Comma-separated list of policies associated to the group.
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 }
 
 // NewKerberosGroupsRequestWithDefaults instantiates a new KerberosGroupsRequest object
@@ -7387,14 +6337,15 @@ type KerberosGroupsRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewKerberosGroupsRequestWithDefaults() *KerberosGroupsRequest {
 	this := KerberosGroupsRequest{}
+
 	return &this
 }
 
 func (o KerberosGroupsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
+
+	toSerialize["policies"] = o.Policies
+
 	return json.Marshal(toSerialize)
 }
 
@@ -7411,7 +6362,7 @@ API version: 1.12.0
 // KerberosLoginRequest struct for KerberosLoginRequest
 type KerberosLoginRequest struct {
 	// SPNEGO Authorization header. Required.
-	Authorization *string `json:"authorization,omitempty"`
+	Authorization string `json:"authorization"`
 }
 
 // NewKerberosLoginRequestWithDefaults instantiates a new KerberosLoginRequest object
@@ -7419,14 +6370,15 @@ type KerberosLoginRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewKerberosLoginRequestWithDefaults() *KerberosLoginRequest {
 	this := KerberosLoginRequest{}
+
 	return &this
 }
 
 func (o KerberosLoginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Authorization != nil {
-		toSerialize["authorization"] = o.Authorization
-	}
+
+	toSerialize["authorization"] = o.Authorization
+
 	return json.Marshal(toSerialize)
 }
 
@@ -7444,20 +6396,20 @@ API version: 1.12.0
 type KubernetesConfigRequest struct {
 	// Disable JWT issuer validation (Deprecated, will be removed in a future release)
 	// Deprecated
-	DisableIssValidation *bool `json:"disable_iss_validation,omitempty"`
+	DisableIssValidation bool `json:"disable_iss_validation"`
 	// Disable defaulting to the local CA cert and service account JWT when running in a Kubernetes pod
-	DisableLocalCaJwt *bool `json:"disable_local_ca_jwt,omitempty"`
+	DisableLocalCaJwt bool `json:"disable_local_ca_jwt"`
 	// Optional JWT issuer. If no issuer is specified, then this plugin will use kubernetes.io/serviceaccount as the default issuer. (Deprecated, will be removed in a future release)
 	// Deprecated
-	Issuer *string `json:"issuer,omitempty"`
+	Issuer string `json:"issuer"`
 	// PEM encoded CA cert for use by the TLS client used to talk with the API.
-	KubernetesCaCert *string `json:"kubernetes_ca_cert,omitempty"`
+	KubernetesCaCert string `json:"kubernetes_ca_cert"`
 	// Host must be a host string, a host:port pair, or a URL to the base of the Kubernetes API server.
-	KubernetesHost *string `json:"kubernetes_host,omitempty"`
+	KubernetesHost string `json:"kubernetes_host"`
 	// Optional list of PEM-formated public keys or certificates used to verify the signatures of kubernetes service account JWTs. If a certificate is given, its public key will be extracted. Not every installation of Kubernetes exposes these keys.
-	PemKeys []string `json:"pem_keys,omitempty"`
+	PemKeys []string `json:"pem_keys"`
 	// A service account JWT used to access the TokenReview API to validate other JWTs during login. If not set the JWT used for login will be used to access the API.
-	TokenReviewerJwt *string `json:"token_reviewer_jwt,omitempty"`
+	TokenReviewerJwt string `json:"token_reviewer_jwt"`
 }
 
 // NewKubernetesConfigRequestWithDefaults instantiates a new KubernetesConfigRequest object
@@ -7465,36 +6417,24 @@ type KubernetesConfigRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewKubernetesConfigRequestWithDefaults() *KubernetesConfigRequest {
 	this := KubernetesConfigRequest{}
-	var disableIssValidation bool = true
-	this.DisableIssValidation = &disableIssValidation
-	var disableLocalCaJwt bool = false
-	this.DisableLocalCaJwt = &disableLocalCaJwt
+
+	this.DisableIssValidation = true
+	this.DisableLocalCaJwt = false
+
 	return &this
 }
 
 func (o KubernetesConfigRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.DisableIssValidation != nil {
-		toSerialize["disable_iss_validation"] = o.DisableIssValidation
-	}
-	if o.DisableLocalCaJwt != nil {
-		toSerialize["disable_local_ca_jwt"] = o.DisableLocalCaJwt
-	}
-	if o.Issuer != nil {
-		toSerialize["issuer"] = o.Issuer
-	}
-	if o.KubernetesCaCert != nil {
-		toSerialize["kubernetes_ca_cert"] = o.KubernetesCaCert
-	}
-	if o.KubernetesHost != nil {
-		toSerialize["kubernetes_host"] = o.KubernetesHost
-	}
-	if o.PemKeys != nil {
-		toSerialize["pem_keys"] = o.PemKeys
-	}
-	if o.TokenReviewerJwt != nil {
-		toSerialize["token_reviewer_jwt"] = o.TokenReviewerJwt
-	}
+
+	toSerialize["disable_iss_validation"] = o.DisableIssValidation
+	toSerialize["disable_local_ca_jwt"] = o.DisableLocalCaJwt
+	toSerialize["issuer"] = o.Issuer
+	toSerialize["kubernetes_ca_cert"] = o.KubernetesCaCert
+	toSerialize["kubernetes_host"] = o.KubernetesHost
+	toSerialize["pem_keys"] = o.PemKeys
+	toSerialize["token_reviewer_jwt"] = o.TokenReviewerJwt
+
 	return json.Marshal(toSerialize)
 }
 
@@ -7511,11 +6451,11 @@ API version: 1.12.0
 // KubernetesCredsRequest struct for KubernetesCredsRequest
 type KubernetesCredsRequest struct {
 	// If true, generate a ClusterRoleBinding to grant permissions across the whole cluster instead of within a namespace. Requires the Vault role to have kubernetes_role_type set to ClusterRole.
-	ClusterRoleBinding *bool `json:"cluster_role_binding,omitempty"`
+	ClusterRoleBinding bool `json:"cluster_role_binding"`
 	// The name of the Kubernetes namespace in which to generate the credentials
 	KubernetesNamespace string `json:"kubernetes_namespace"`
 	// The TTL of the generated credentials
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 }
 
 // NewKubernetesCredsRequestWithDefaults instantiates a new KubernetesCredsRequest object
@@ -7523,20 +6463,17 @@ type KubernetesCredsRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewKubernetesCredsRequestWithDefaults() *KubernetesCredsRequest {
 	this := KubernetesCredsRequest{}
+
 	return &this
 }
 
 func (o KubernetesCredsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.ClusterRoleBinding != nil {
-		toSerialize["cluster_role_binding"] = o.ClusterRoleBinding
-	}
-	if true {
-		toSerialize["kubernetes_namespace"] = o.KubernetesNamespace
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
+
+	toSerialize["cluster_role_binding"] = o.ClusterRoleBinding
+	toSerialize["kubernetes_namespace"] = o.KubernetesNamespace
+	toSerialize["ttl"] = o.Ttl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -7553,9 +6490,9 @@ API version: 1.12.0
 // KubernetesLoginRequest struct for KubernetesLoginRequest
 type KubernetesLoginRequest struct {
 	// A signed JWT for authenticating a service account. This field is required.
-	Jwt *string `json:"jwt,omitempty"`
+	Jwt string `json:"jwt"`
 	// Name of the role against which the login is being attempted. This field is required
-	Role *string `json:"role,omitempty"`
+	Role string `json:"role"`
 }
 
 // NewKubernetesLoginRequestWithDefaults instantiates a new KubernetesLoginRequest object
@@ -7563,17 +6500,16 @@ type KubernetesLoginRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewKubernetesLoginRequestWithDefaults() *KubernetesLoginRequest {
 	this := KubernetesLoginRequest{}
+
 	return &this
 }
 
 func (o KubernetesLoginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Jwt != nil {
-		toSerialize["jwt"] = o.Jwt
-	}
-	if o.Role != nil {
-		toSerialize["role"] = o.Role
-	}
+
+	toSerialize["jwt"] = o.Jwt
+	toSerialize["role"] = o.Role
+
 	return json.Marshal(toSerialize)
 }
 
@@ -7590,49 +6526,49 @@ API version: 1.12.0
 // KubernetesRoleRequest struct for KubernetesRoleRequest
 type KubernetesRoleRequest struct {
 	// Source to use when deriving the Alias name. valid choices: \"serviceaccount_uid\" : <token.uid> e.g. 474b11b5-0f20-4f9d-8ca5-65715ab325e0 (most secure choice) \"serviceaccount_name\" : <namespace>/<serviceaccount> e.g. vault/vault-agent default: \"serviceaccount_uid\"
-	AliasNameSource *string `json:"alias_name_source,omitempty"`
+	AliasNameSource string `json:"alias_name_source"`
 	// Optional Audience claim to verify in the jwt.
-	Audience *string `json:"audience,omitempty"`
+	Audience string `json:"audience"`
 	// Use \"token_bound_cidrs\" instead. If this and \"token_bound_cidrs\" are both specified, only \"token_bound_cidrs\" will be used.
 	// Deprecated
-	BoundCidrs []string `json:"bound_cidrs,omitempty"`
+	BoundCidrs []string `json:"bound_cidrs"`
 	// List of service account names able to access this role. If set to \"*\" all names are allowed.
-	BoundServiceAccountNames []string `json:"bound_service_account_names,omitempty"`
+	BoundServiceAccountNames []string `json:"bound_service_account_names"`
 	// List of namespaces allowed to access this role. If set to \"*\" all namespaces are allowed.
-	BoundServiceAccountNamespaces []string `json:"bound_service_account_namespaces,omitempty"`
+	BoundServiceAccountNamespaces []string `json:"bound_service_account_namespaces"`
 	// Use \"token_max_ttl\" instead. If this and \"token_max_ttl\" are both specified, only \"token_max_ttl\" will be used.
 	// Deprecated
-	MaxTtl *int32 `json:"max_ttl,omitempty"`
+	MaxTtl int32 `json:"max_ttl"`
 	// Use \"token_num_uses\" instead. If this and \"token_num_uses\" are both specified, only \"token_num_uses\" will be used.
 	// Deprecated
-	NumUses *int32 `json:"num_uses,omitempty"`
+	NumUses int32 `json:"num_uses"`
 	// Use \"token_period\" instead. If this and \"token_period\" are both specified, only \"token_period\" will be used.
 	// Deprecated
-	Period *int32 `json:"period,omitempty"`
+	Period int32 `json:"period"`
 	// Use \"token_policies\" instead. If this and \"token_policies\" are both specified, only \"token_policies\" will be used.
 	// Deprecated
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 	// Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
-	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
+	TokenBoundCidrs []string `json:"token_bound_cidrs"`
 	// If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
-	TokenExplicitMaxTtl *int32 `json:"token_explicit_max_ttl,omitempty"`
+	TokenExplicitMaxTtl int32 `json:"token_explicit_max_ttl"`
 	// The maximum lifetime of the generated token
-	TokenMaxTtl *int32 `json:"token_max_ttl,omitempty"`
+	TokenMaxTtl int32 `json:"token_max_ttl"`
 	// If true, the 'default' policy will not automatically be added to generated tokens
-	TokenNoDefaultPolicy *bool `json:"token_no_default_policy,omitempty"`
+	TokenNoDefaultPolicy bool `json:"token_no_default_policy"`
 	// The maximum number of times a token may be used, a value of zero means unlimited
-	TokenNumUses *int32 `json:"token_num_uses,omitempty"`
+	TokenNumUses int32 `json:"token_num_uses"`
 	// If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \"24h\").
-	TokenPeriod *int32 `json:"token_period,omitempty"`
+	TokenPeriod int32 `json:"token_period"`
 	// Comma-separated list of policies
-	TokenPolicies []string `json:"token_policies,omitempty"`
+	TokenPolicies []string `json:"token_policies"`
 	// The initial ttl of the token to generate
-	TokenTtl *int32 `json:"token_ttl,omitempty"`
+	TokenTtl int32 `json:"token_ttl"`
 	// The type of token to generate, service or batch
-	TokenType *string `json:"token_type,omitempty"`
+	TokenType string `json:"token_type"`
 	// Use \"token_ttl\" instead. If this and \"token_ttl\" are both specified, only \"token_ttl\" will be used.
 	// Deprecated
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 }
 
 // NewKubernetesRoleRequestWithDefaults instantiates a new KubernetesRoleRequest object
@@ -7640,72 +6576,36 @@ type KubernetesRoleRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewKubernetesRoleRequestWithDefaults() *KubernetesRoleRequest {
 	this := KubernetesRoleRequest{}
-	var aliasNameSource string = "serviceaccount_uid"
-	this.AliasNameSource = &aliasNameSource
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
+
+	this.AliasNameSource = "serviceaccount_uid"
+	this.TokenType = "default-service"
+
 	return &this
 }
 
 func (o KubernetesRoleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AliasNameSource != nil {
-		toSerialize["alias_name_source"] = o.AliasNameSource
-	}
-	if o.Audience != nil {
-		toSerialize["audience"] = o.Audience
-	}
-	if o.BoundCidrs != nil {
-		toSerialize["bound_cidrs"] = o.BoundCidrs
-	}
-	if o.BoundServiceAccountNames != nil {
-		toSerialize["bound_service_account_names"] = o.BoundServiceAccountNames
-	}
-	if o.BoundServiceAccountNamespaces != nil {
-		toSerialize["bound_service_account_namespaces"] = o.BoundServiceAccountNamespaces
-	}
-	if o.MaxTtl != nil {
-		toSerialize["max_ttl"] = o.MaxTtl
-	}
-	if o.NumUses != nil {
-		toSerialize["num_uses"] = o.NumUses
-	}
-	if o.Period != nil {
-		toSerialize["period"] = o.Period
-	}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
-	if o.TokenBoundCidrs != nil {
-		toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
-	}
-	if o.TokenExplicitMaxTtl != nil {
-		toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
-	}
-	if o.TokenMaxTtl != nil {
-		toSerialize["token_max_ttl"] = o.TokenMaxTtl
-	}
-	if o.TokenNoDefaultPolicy != nil {
-		toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
-	}
-	if o.TokenNumUses != nil {
-		toSerialize["token_num_uses"] = o.TokenNumUses
-	}
-	if o.TokenPeriod != nil {
-		toSerialize["token_period"] = o.TokenPeriod
-	}
-	if o.TokenPolicies != nil {
-		toSerialize["token_policies"] = o.TokenPolicies
-	}
-	if o.TokenTtl != nil {
-		toSerialize["token_ttl"] = o.TokenTtl
-	}
-	if o.TokenType != nil {
-		toSerialize["token_type"] = o.TokenType
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
+
+	toSerialize["alias_name_source"] = o.AliasNameSource
+	toSerialize["audience"] = o.Audience
+	toSerialize["bound_cidrs"] = o.BoundCidrs
+	toSerialize["bound_service_account_names"] = o.BoundServiceAccountNames
+	toSerialize["bound_service_account_namespaces"] = o.BoundServiceAccountNamespaces
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["num_uses"] = o.NumUses
+	toSerialize["period"] = o.Period
+	toSerialize["policies"] = o.Policies
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+	toSerialize["ttl"] = o.Ttl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -7724,23 +6624,23 @@ type KubernetesRolesRequest struct {
 	// A list of the Kubernetes namespaces in which credentials can be generated. If set to \"*\" all namespaces are allowed.
 	AllowedKubernetesNamespaces []string `json:"allowed_kubernetes_namespaces"`
 	// Additional annotations to apply to all generated Kubernetes objects.
-	ExtraAnnotations map[string]interface{} `json:"extra_annotations,omitempty"`
+	ExtraAnnotations map[string]interface{} `json:"extra_annotations"`
 	// Additional labels to apply to all generated Kubernetes objects.
-	ExtraLabels map[string]interface{} `json:"extra_labels,omitempty"`
+	ExtraLabels map[string]interface{} `json:"extra_labels"`
 	// The Role or ClusterRole rules to use when generating a role. Accepts either a JSON or YAML object. If set, the entire chain of Kubernetes objects will be generated.
-	GeneratedRoleRules *string `json:"generated_role_rules,omitempty"`
+	GeneratedRoleRules string `json:"generated_role_rules"`
 	// The pre-existing Role or ClusterRole to bind a generated service account to. If set, Kubernetes token, service account, and role binding objects will be created.
-	KubernetesRoleName *string `json:"kubernetes_role_name,omitempty"`
+	KubernetesRoleName string `json:"kubernetes_role_name"`
 	// Specifies whether the Kubernetes role is a Role or ClusterRole.
-	KubernetesRoleType *string `json:"kubernetes_role_type,omitempty"`
+	KubernetesRoleType string `json:"kubernetes_role_type"`
 	// The name template to use when generating service accounts, roles and role bindings. If unset, a default template is used.
-	NameTemplate *string `json:"name_template,omitempty"`
+	NameTemplate string `json:"name_template"`
 	// The pre-existing service account to generate tokens for. Mutually exclusive with all role parameters. If set, only a Kubernetes service account token will be created.
-	ServiceAccountName *string `json:"service_account_name,omitempty"`
+	ServiceAccountName string `json:"service_account_name"`
 	// The default ttl for generated Kubernetes service account tokens. If not set or set to 0, will use system default.
-	TokenDefaultTtl *int32 `json:"token_default_ttl,omitempty"`
+	TokenDefaultTtl int32 `json:"token_default_ttl"`
 	// The maximum ttl for generated Kubernetes service account tokens. If not set or set to 0, will use system default.
-	TokenMaxTtl *int32 `json:"token_max_ttl,omitempty"`
+	TokenMaxTtl int32 `json:"token_max_ttl"`
 }
 
 // NewKubernetesRolesRequestWithDefaults instantiates a new KubernetesRolesRequest object
@@ -7748,43 +6648,26 @@ type KubernetesRolesRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewKubernetesRolesRequestWithDefaults() *KubernetesRolesRequest {
 	this := KubernetesRolesRequest{}
-	var kubernetesRoleType string = "Role"
-	this.KubernetesRoleType = &kubernetesRoleType
+
+	this.KubernetesRoleType = "Role"
+
 	return &this
 }
 
 func (o KubernetesRolesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["allowed_kubernetes_namespaces"] = o.AllowedKubernetesNamespaces
-	}
-	if o.ExtraAnnotations != nil {
-		toSerialize["extra_annotations"] = o.ExtraAnnotations
-	}
-	if o.ExtraLabels != nil {
-		toSerialize["extra_labels"] = o.ExtraLabels
-	}
-	if o.GeneratedRoleRules != nil {
-		toSerialize["generated_role_rules"] = o.GeneratedRoleRules
-	}
-	if o.KubernetesRoleName != nil {
-		toSerialize["kubernetes_role_name"] = o.KubernetesRoleName
-	}
-	if o.KubernetesRoleType != nil {
-		toSerialize["kubernetes_role_type"] = o.KubernetesRoleType
-	}
-	if o.NameTemplate != nil {
-		toSerialize["name_template"] = o.NameTemplate
-	}
-	if o.ServiceAccountName != nil {
-		toSerialize["service_account_name"] = o.ServiceAccountName
-	}
-	if o.TokenDefaultTtl != nil {
-		toSerialize["token_default_ttl"] = o.TokenDefaultTtl
-	}
-	if o.TokenMaxTtl != nil {
-		toSerialize["token_max_ttl"] = o.TokenMaxTtl
-	}
+
+	toSerialize["allowed_kubernetes_namespaces"] = o.AllowedKubernetesNamespaces
+	toSerialize["extra_annotations"] = o.ExtraAnnotations
+	toSerialize["extra_labels"] = o.ExtraLabels
+	toSerialize["generated_role_rules"] = o.GeneratedRoleRules
+	toSerialize["kubernetes_role_name"] = o.KubernetesRoleName
+	toSerialize["kubernetes_role_type"] = o.KubernetesRoleType
+	toSerialize["name_template"] = o.NameTemplate
+	toSerialize["service_account_name"] = o.ServiceAccountName
+	toSerialize["token_default_ttl"] = o.TokenDefaultTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -7801,11 +6684,11 @@ API version: 1.12.0
 // KvConfigRequest struct for KvConfigRequest
 type KvConfigRequest struct {
 	// If true, the backend will require the cas parameter to be set for each write
-	CasRequired *bool `json:"cas_required,omitempty"`
+	CasRequired bool `json:"cas_required"`
 	// If set, the length of time before a version is deleted. A negative duration disables the use of delete_version_after on all keys. A zero duration clears the current setting. Accepts a Go duration format string.
-	DeleteVersionAfter *int32 `json:"delete_version_after,omitempty"`
+	DeleteVersionAfter int32 `json:"delete_version_after"`
 	// The number of versions to keep for each key. Defaults to 10
-	MaxVersions *int32 `json:"max_versions,omitempty"`
+	MaxVersions int32 `json:"max_versions"`
 }
 
 // NewKvConfigRequestWithDefaults instantiates a new KvConfigRequest object
@@ -7813,20 +6696,17 @@ type KvConfigRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewKvConfigRequestWithDefaults() *KvConfigRequest {
 	this := KvConfigRequest{}
+
 	return &this
 }
 
 func (o KvConfigRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.CasRequired != nil {
-		toSerialize["cas_required"] = o.CasRequired
-	}
-	if o.DeleteVersionAfter != nil {
-		toSerialize["delete_version_after"] = o.DeleteVersionAfter
-	}
-	if o.MaxVersions != nil {
-		toSerialize["max_versions"] = o.MaxVersions
-	}
+
+	toSerialize["cas_required"] = o.CasRequired
+	toSerialize["delete_version_after"] = o.DeleteVersionAfter
+	toSerialize["max_versions"] = o.MaxVersions
+
 	return json.Marshal(toSerialize)
 }
 
@@ -7843,11 +6723,11 @@ API version: 1.12.0
 // KvDataRequest struct for KvDataRequest
 type KvDataRequest struct {
 	// The contents of the data map will be stored and returned on read.
-	Data map[string]interface{} `json:"data,omitempty"`
+	Data map[string]interface{} `json:"data"`
 	// Options for writing a KV entry. Set the \"cas\" value to use a Check-And-Set operation. If not set the write will be allowed. If set to 0 a write will only be allowed if the key doesn’t exist. If the index is non-zero the write will only be allowed if the key’s current version matches the version specified in the cas parameter.
-	Options map[string]interface{} `json:"options,omitempty"`
+	Options map[string]interface{} `json:"options"`
 	// If provided during a read, the value at the version number will be returned
-	Version *int32 `json:"version,omitempty"`
+	Version int32 `json:"version"`
 }
 
 // NewKvDataRequestWithDefaults instantiates a new KvDataRequest object
@@ -7855,20 +6735,17 @@ type KvDataRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewKvDataRequestWithDefaults() *KvDataRequest {
 	this := KvDataRequest{}
+
 	return &this
 }
 
 func (o KvDataRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
-	}
-	if o.Options != nil {
-		toSerialize["options"] = o.Options
-	}
-	if o.Version != nil {
-		toSerialize["version"] = o.Version
-	}
+
+	toSerialize["data"] = o.Data
+	toSerialize["options"] = o.Options
+	toSerialize["version"] = o.Version
+
 	return json.Marshal(toSerialize)
 }
 
@@ -7885,7 +6762,7 @@ API version: 1.12.0
 // KvDeleteRequest struct for KvDeleteRequest
 type KvDeleteRequest struct {
 	// The versions to be archived. The versioned data will not be deleted, but it will no longer be returned in normal get requests.
-	Versions []int32 `json:"versions,omitempty"`
+	Versions []int32 `json:"versions"`
 }
 
 // NewKvDeleteRequestWithDefaults instantiates a new KvDeleteRequest object
@@ -7893,14 +6770,15 @@ type KvDeleteRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewKvDeleteRequestWithDefaults() *KvDeleteRequest {
 	this := KvDeleteRequest{}
+
 	return &this
 }
 
 func (o KvDeleteRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Versions != nil {
-		toSerialize["versions"] = o.Versions
-	}
+
+	toSerialize["versions"] = o.Versions
+
 	return json.Marshal(toSerialize)
 }
 
@@ -7917,7 +6795,7 @@ API version: 1.12.0
 // KvDestroyRequest struct for KvDestroyRequest
 type KvDestroyRequest struct {
 	// The versions to destroy. Their data will be permanently deleted.
-	Versions []int32 `json:"versions,omitempty"`
+	Versions []int32 `json:"versions"`
 }
 
 // NewKvDestroyRequestWithDefaults instantiates a new KvDestroyRequest object
@@ -7925,14 +6803,15 @@ type KvDestroyRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewKvDestroyRequestWithDefaults() *KvDestroyRequest {
 	this := KvDestroyRequest{}
+
 	return &this
 }
 
 func (o KvDestroyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Versions != nil {
-		toSerialize["versions"] = o.Versions
-	}
+
+	toSerialize["versions"] = o.Versions
+
 	return json.Marshal(toSerialize)
 }
 
@@ -7949,13 +6828,13 @@ API version: 1.12.0
 // KvMetadataRequest struct for KvMetadataRequest
 type KvMetadataRequest struct {
 	// If true the key will require the cas parameter to be set on all write requests. If false, the backend’s configuration will be used.
-	CasRequired *bool `json:"cas_required,omitempty"`
+	CasRequired bool `json:"cas_required"`
 	// User-provided key-value pairs that are used to describe arbitrary and version-agnostic information about a secret.
-	CustomMetadata map[string]interface{} `json:"custom_metadata,omitempty"`
+	CustomMetadata map[string]interface{} `json:"custom_metadata"`
 	// The length of time before a version is deleted. If not set, the backend's configured delete_version_after is used. Cannot be greater than the backend's delete_version_after. A zero duration clears the current setting. A negative duration will cause an error.
-	DeleteVersionAfter *int32 `json:"delete_version_after,omitempty"`
+	DeleteVersionAfter int32 `json:"delete_version_after"`
 	// The number of versions to keep. If not set, the backend’s configured max version is used.
-	MaxVersions *int32 `json:"max_versions,omitempty"`
+	MaxVersions int32 `json:"max_versions"`
 }
 
 // NewKvMetadataRequestWithDefaults instantiates a new KvMetadataRequest object
@@ -7963,23 +6842,18 @@ type KvMetadataRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewKvMetadataRequestWithDefaults() *KvMetadataRequest {
 	this := KvMetadataRequest{}
+
 	return &this
 }
 
 func (o KvMetadataRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.CasRequired != nil {
-		toSerialize["cas_required"] = o.CasRequired
-	}
-	if o.CustomMetadata != nil {
-		toSerialize["custom_metadata"] = o.CustomMetadata
-	}
-	if o.DeleteVersionAfter != nil {
-		toSerialize["delete_version_after"] = o.DeleteVersionAfter
-	}
-	if o.MaxVersions != nil {
-		toSerialize["max_versions"] = o.MaxVersions
-	}
+
+	toSerialize["cas_required"] = o.CasRequired
+	toSerialize["custom_metadata"] = o.CustomMetadata
+	toSerialize["delete_version_after"] = o.DeleteVersionAfter
+	toSerialize["max_versions"] = o.MaxVersions
+
 	return json.Marshal(toSerialize)
 }
 
@@ -7996,7 +6870,7 @@ API version: 1.12.0
 // KvUndeleteRequest struct for KvUndeleteRequest
 type KvUndeleteRequest struct {
 	// The versions to unarchive. The versions will be restored and their data will be returned on normal get requests.
-	Versions []int32 `json:"versions,omitempty"`
+	Versions []int32 `json:"versions"`
 }
 
 // NewKvUndeleteRequestWithDefaults instantiates a new KvUndeleteRequest object
@@ -8004,14 +6878,15 @@ type KvUndeleteRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewKvUndeleteRequestWithDefaults() *KvUndeleteRequest {
 	this := KvUndeleteRequest{}
+
 	return &this
 }
 
 func (o KvUndeleteRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Versions != nil {
-		toSerialize["versions"] = o.Versions
-	}
+
+	toSerialize["versions"] = o.Versions
+
 	return json.Marshal(toSerialize)
 }
 
@@ -8028,73 +6903,73 @@ API version: 1.12.0
 // LdapConfigRequest struct for LdapConfigRequest
 type LdapConfigRequest struct {
 	// Use anonymous binds when performing LDAP group searches (if true the initial credentials will still be used for the initial connection test).
-	AnonymousGroupSearch *bool `json:"anonymous_group_search,omitempty"`
+	AnonymousGroupSearch bool `json:"anonymous_group_search"`
 	// LDAP DN for searching for the user DN (optional)
-	Binddn *string `json:"binddn,omitempty"`
+	Binddn string `json:"binddn"`
 	// LDAP password for searching for the user DN (optional)
-	Bindpass *string `json:"bindpass,omitempty"`
+	Bindpass string `json:"bindpass"`
 	// If true, case sensitivity will be used when comparing usernames and groups for matching policies.
-	CaseSensitiveNames *bool `json:"case_sensitive_names,omitempty"`
+	CaseSensitiveNames bool `json:"case_sensitive_names"`
 	// CA certificate to use when verifying LDAP server certificate, must be x509 PEM encoded (optional)
-	Certificate *string `json:"certificate,omitempty"`
+	Certificate string `json:"certificate"`
 	// Client certificate to provide to the LDAP server, must be x509 PEM encoded (optional)
-	ClientTlsCert *string `json:"client_tls_cert,omitempty"`
+	ClientTlsCert string `json:"client_tls_cert"`
 	// Client certificate key to provide to the LDAP server, must be x509 PEM encoded (optional)
-	ClientTlsKey *string `json:"client_tls_key,omitempty"`
+	ClientTlsKey string `json:"client_tls_key"`
 	// Denies an unauthenticated LDAP bind request if the user's password is empty; defaults to true
-	DenyNullBind *bool `json:"deny_null_bind,omitempty"`
+	DenyNullBind bool `json:"deny_null_bind"`
 	// Use anonymous bind to discover the bind DN of a user (optional)
-	Discoverdn *bool `json:"discoverdn,omitempty"`
+	Discoverdn bool `json:"discoverdn"`
 	// LDAP attribute to follow on objects returned by <groupfilter> in order to enumerate user group membership. Examples: \"cn\" or \"memberOf\", etc. Default: cn
-	Groupattr *string `json:"groupattr,omitempty"`
+	Groupattr string `json:"groupattr"`
 	// LDAP search base to use for group membership search (eg: ou=Groups,dc=example,dc=org)
-	Groupdn *string `json:"groupdn,omitempty"`
+	Groupdn string `json:"groupdn"`
 	// Go template for querying group membership of user (optional) The template can access the following context variables: UserDN, Username Example: (&(objectClass=group)(member:1.2.840.113556.1.4.1941:={{.UserDN}})) Default: (|(memberUid={{.Username}})(member={{.UserDN}})(uniqueMember={{.UserDN}}))
-	Groupfilter *string `json:"groupfilter,omitempty"`
+	Groupfilter string `json:"groupfilter"`
 	// Skip LDAP server SSL Certificate verification - VERY insecure (optional)
-	InsecureTls *bool `json:"insecure_tls,omitempty"`
+	InsecureTls bool `json:"insecure_tls"`
 	// Timeout, in seconds, for the connection when making requests against the server before returning back an error.
-	RequestTimeout *int32 `json:"request_timeout,omitempty"`
+	RequestTimeout int32 `json:"request_timeout"`
 	// Issue a StartTLS command after establishing unencrypted connection (optional)
-	Starttls *bool `json:"starttls,omitempty"`
+	Starttls bool `json:"starttls"`
 	// Maximum TLS version to use. Accepted values are 'tls10', 'tls11', 'tls12' or 'tls13'. Defaults to 'tls12'
-	TlsMaxVersion *string `json:"tls_max_version,omitempty"`
+	TlsMaxVersion string `json:"tls_max_version"`
 	// Minimum TLS version to use. Accepted values are 'tls10', 'tls11', 'tls12' or 'tls13'. Defaults to 'tls12'
-	TlsMinVersion *string `json:"tls_min_version,omitempty"`
+	TlsMinVersion string `json:"tls_min_version"`
 	// Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
-	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
+	TokenBoundCidrs []string `json:"token_bound_cidrs"`
 	// If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
-	TokenExplicitMaxTtl *int32 `json:"token_explicit_max_ttl,omitempty"`
+	TokenExplicitMaxTtl int32 `json:"token_explicit_max_ttl"`
 	// The maximum lifetime of the generated token
-	TokenMaxTtl *int32 `json:"token_max_ttl,omitempty"`
+	TokenMaxTtl int32 `json:"token_max_ttl"`
 	// If true, the 'default' policy will not automatically be added to generated tokens
-	TokenNoDefaultPolicy *bool `json:"token_no_default_policy,omitempty"`
+	TokenNoDefaultPolicy bool `json:"token_no_default_policy"`
 	// The maximum number of times a token may be used, a value of zero means unlimited
-	TokenNumUses *int32 `json:"token_num_uses,omitempty"`
+	TokenNumUses int32 `json:"token_num_uses"`
 	// If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \"24h\").
-	TokenPeriod *int32 `json:"token_period,omitempty"`
+	TokenPeriod int32 `json:"token_period"`
 	// Comma-separated list of policies. This will apply to all tokens generated by this auth method, in addition to any configured for specific users/groups.
-	TokenPolicies []string `json:"token_policies,omitempty"`
+	TokenPolicies []string `json:"token_policies"`
 	// The initial ttl of the token to generate
-	TokenTtl *int32 `json:"token_ttl,omitempty"`
+	TokenTtl int32 `json:"token_ttl"`
 	// The type of token to generate, service or batch
-	TokenType *string `json:"token_type,omitempty"`
+	TokenType string `json:"token_type"`
 	// Enables userPrincipalDomain login with [username]@UPNDomain (optional)
-	Upndomain *string `json:"upndomain,omitempty"`
+	Upndomain string `json:"upndomain"`
 	// LDAP URL to connect to (default: ldap://127.0.0.1). Multiple URLs can be specified by concatenating them with commas; they will be tried in-order.
-	Url *string `json:"url,omitempty"`
+	Url string `json:"url"`
 	// In Vault 1.1.1 a fix for handling group CN values of different cases unfortunately introduced a regression that could cause previously defined groups to not be found due to a change in the resulting name. If set true, the pre-1.1.1 behavior for matching group CNs will be used. This is only needed in some upgrade scenarios for backwards compatibility. It is enabled by default if the config is upgraded but disabled by default on new configurations.
-	UsePre111GroupCnBehavior *bool `json:"use_pre111_group_cn_behavior,omitempty"`
+	UsePre111GroupCnBehavior bool `json:"use_pre111_group_cn_behavior"`
 	// If true, use the Active Directory tokenGroups constructed attribute of the user to find the group memberships. This will find all security groups including nested ones.
-	UseTokenGroups *bool `json:"use_token_groups,omitempty"`
+	UseTokenGroups bool `json:"use_token_groups"`
 	// Attribute used for users (default: cn)
-	Userattr *string `json:"userattr,omitempty"`
+	Userattr string `json:"userattr"`
 	// LDAP domain to use for users (eg: ou=People,dc=example,dc=org)
-	Userdn *string `json:"userdn,omitempty"`
+	Userdn string `json:"userdn"`
 	// Go template for LDAP user search filer (optional) The template can access the following context variables: UserAttr, Username Default: ({{.UserAttr}}={{.Username}})
-	Userfilter *string `json:"userfilter,omitempty"`
+	Userfilter string `json:"userfilter"`
 	// If true, sets the alias name to the username
-	UsernameAsAlias *bool `json:"username_as_alias,omitempty"`
+	UsernameAsAlias bool `json:"username_as_alias"`
 }
 
 // NewLdapConfigRequestWithDefaults instantiates a new LdapConfigRequest object
@@ -8102,137 +6977,61 @@ type LdapConfigRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewLdapConfigRequestWithDefaults() *LdapConfigRequest {
 	this := LdapConfigRequest{}
-	var anonymousGroupSearch bool = false
-	this.AnonymousGroupSearch = &anonymousGroupSearch
-	var denyNullBind bool = true
-	this.DenyNullBind = &denyNullBind
-	var groupattr string = "cn"
-	this.Groupattr = &groupattr
-	var groupfilter string = "(|(memberUid={{.Username}})(member={{.UserDN}})(uniqueMember={{.UserDN}}))"
-	this.Groupfilter = &groupfilter
-	var tlsMaxVersion string = "tls12"
-	this.TlsMaxVersion = &tlsMaxVersion
-	var tlsMinVersion string = "tls12"
-	this.TlsMinVersion = &tlsMinVersion
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
-	var url string = "ldap://127.0.0.1"
-	this.Url = &url
-	var useTokenGroups bool = false
-	this.UseTokenGroups = &useTokenGroups
-	var userattr string = "cn"
-	this.Userattr = &userattr
-	var userfilter string = "({{.UserAttr}}={{.Username}})"
-	this.Userfilter = &userfilter
-	var usernameAsAlias bool = false
-	this.UsernameAsAlias = &usernameAsAlias
+
+	this.AnonymousGroupSearch = false
+	this.DenyNullBind = true
+	this.Groupattr = "cn"
+	this.Groupfilter = "(|(memberUid={{.Username}})(member={{.UserDN}})(uniqueMember={{.UserDN}}))"
+	this.TlsMaxVersion = "tls12"
+	this.TlsMinVersion = "tls12"
+	this.TokenType = "default-service"
+	this.Url = "ldap://127.0.0.1"
+	this.UseTokenGroups = false
+	this.Userattr = "cn"
+	this.Userfilter = "({{.UserAttr}}={{.Username}})"
+	this.UsernameAsAlias = false
+
 	return &this
 }
 
 func (o LdapConfigRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AnonymousGroupSearch != nil {
-		toSerialize["anonymous_group_search"] = o.AnonymousGroupSearch
-	}
-	if o.Binddn != nil {
-		toSerialize["binddn"] = o.Binddn
-	}
-	if o.Bindpass != nil {
-		toSerialize["bindpass"] = o.Bindpass
-	}
-	if o.CaseSensitiveNames != nil {
-		toSerialize["case_sensitive_names"] = o.CaseSensitiveNames
-	}
-	if o.Certificate != nil {
-		toSerialize["certificate"] = o.Certificate
-	}
-	if o.ClientTlsCert != nil {
-		toSerialize["client_tls_cert"] = o.ClientTlsCert
-	}
-	if o.ClientTlsKey != nil {
-		toSerialize["client_tls_key"] = o.ClientTlsKey
-	}
-	if o.DenyNullBind != nil {
-		toSerialize["deny_null_bind"] = o.DenyNullBind
-	}
-	if o.Discoverdn != nil {
-		toSerialize["discoverdn"] = o.Discoverdn
-	}
-	if o.Groupattr != nil {
-		toSerialize["groupattr"] = o.Groupattr
-	}
-	if o.Groupdn != nil {
-		toSerialize["groupdn"] = o.Groupdn
-	}
-	if o.Groupfilter != nil {
-		toSerialize["groupfilter"] = o.Groupfilter
-	}
-	if o.InsecureTls != nil {
-		toSerialize["insecure_tls"] = o.InsecureTls
-	}
-	if o.RequestTimeout != nil {
-		toSerialize["request_timeout"] = o.RequestTimeout
-	}
-	if o.Starttls != nil {
-		toSerialize["starttls"] = o.Starttls
-	}
-	if o.TlsMaxVersion != nil {
-		toSerialize["tls_max_version"] = o.TlsMaxVersion
-	}
-	if o.TlsMinVersion != nil {
-		toSerialize["tls_min_version"] = o.TlsMinVersion
-	}
-	if o.TokenBoundCidrs != nil {
-		toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
-	}
-	if o.TokenExplicitMaxTtl != nil {
-		toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
-	}
-	if o.TokenMaxTtl != nil {
-		toSerialize["token_max_ttl"] = o.TokenMaxTtl
-	}
-	if o.TokenNoDefaultPolicy != nil {
-		toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
-	}
-	if o.TokenNumUses != nil {
-		toSerialize["token_num_uses"] = o.TokenNumUses
-	}
-	if o.TokenPeriod != nil {
-		toSerialize["token_period"] = o.TokenPeriod
-	}
-	if o.TokenPolicies != nil {
-		toSerialize["token_policies"] = o.TokenPolicies
-	}
-	if o.TokenTtl != nil {
-		toSerialize["token_ttl"] = o.TokenTtl
-	}
-	if o.TokenType != nil {
-		toSerialize["token_type"] = o.TokenType
-	}
-	if o.Upndomain != nil {
-		toSerialize["upndomain"] = o.Upndomain
-	}
-	if o.Url != nil {
-		toSerialize["url"] = o.Url
-	}
-	if o.UsePre111GroupCnBehavior != nil {
-		toSerialize["use_pre111_group_cn_behavior"] = o.UsePre111GroupCnBehavior
-	}
-	if o.UseTokenGroups != nil {
-		toSerialize["use_token_groups"] = o.UseTokenGroups
-	}
-	if o.Userattr != nil {
-		toSerialize["userattr"] = o.Userattr
-	}
-	if o.Userdn != nil {
-		toSerialize["userdn"] = o.Userdn
-	}
-	if o.Userfilter != nil {
-		toSerialize["userfilter"] = o.Userfilter
-	}
-	if o.UsernameAsAlias != nil {
-		toSerialize["username_as_alias"] = o.UsernameAsAlias
-	}
+
+	toSerialize["anonymous_group_search"] = o.AnonymousGroupSearch
+	toSerialize["binddn"] = o.Binddn
+	toSerialize["bindpass"] = o.Bindpass
+	toSerialize["case_sensitive_names"] = o.CaseSensitiveNames
+	toSerialize["certificate"] = o.Certificate
+	toSerialize["client_tls_cert"] = o.ClientTlsCert
+	toSerialize["client_tls_key"] = o.ClientTlsKey
+	toSerialize["deny_null_bind"] = o.DenyNullBind
+	toSerialize["discoverdn"] = o.Discoverdn
+	toSerialize["groupattr"] = o.Groupattr
+	toSerialize["groupdn"] = o.Groupdn
+	toSerialize["groupfilter"] = o.Groupfilter
+	toSerialize["insecure_tls"] = o.InsecureTls
+	toSerialize["request_timeout"] = o.RequestTimeout
+	toSerialize["starttls"] = o.Starttls
+	toSerialize["tls_max_version"] = o.TlsMaxVersion
+	toSerialize["tls_min_version"] = o.TlsMinVersion
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+	toSerialize["upndomain"] = o.Upndomain
+	toSerialize["url"] = o.Url
+	toSerialize["use_pre111_group_cn_behavior"] = o.UsePre111GroupCnBehavior
+	toSerialize["use_token_groups"] = o.UseTokenGroups
+	toSerialize["userattr"] = o.Userattr
+	toSerialize["userdn"] = o.Userdn
+	toSerialize["userfilter"] = o.Userfilter
+	toSerialize["username_as_alias"] = o.UsernameAsAlias
+
 	return json.Marshal(toSerialize)
 }
 
@@ -8249,7 +7048,7 @@ API version: 1.12.0
 // LdapGroupsRequest struct for LdapGroupsRequest
 type LdapGroupsRequest struct {
 	// Comma-separated list of policies associated to the group.
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 }
 
 // NewLdapGroupsRequestWithDefaults instantiates a new LdapGroupsRequest object
@@ -8257,14 +7056,15 @@ type LdapGroupsRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewLdapGroupsRequestWithDefaults() *LdapGroupsRequest {
 	this := LdapGroupsRequest{}
+
 	return &this
 }
 
 func (o LdapGroupsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
+
+	toSerialize["policies"] = o.Policies
+
 	return json.Marshal(toSerialize)
 }
 
@@ -8281,7 +7081,7 @@ API version: 1.12.0
 // LdapLoginRequest struct for LdapLoginRequest
 type LdapLoginRequest struct {
 	// Password for this user.
-	Password *string `json:"password,omitempty"`
+	Password string `json:"password"`
 }
 
 // NewLdapLoginRequestWithDefaults instantiates a new LdapLoginRequest object
@@ -8289,14 +7089,15 @@ type LdapLoginRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewLdapLoginRequestWithDefaults() *LdapLoginRequest {
 	this := LdapLoginRequest{}
+
 	return &this
 }
 
 func (o LdapLoginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Password != nil {
-		toSerialize["password"] = o.Password
-	}
+
+	toSerialize["password"] = o.Password
+
 	return json.Marshal(toSerialize)
 }
 
@@ -8313,9 +7114,9 @@ API version: 1.12.0
 // LdapUsersRequest struct for LdapUsersRequest
 type LdapUsersRequest struct {
 	// Comma-separated list of additional groups associated with the user.
-	Groups []string `json:"groups,omitempty"`
+	Groups []string `json:"groups"`
 	// Comma-separated list of policies associated with the user.
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 }
 
 // NewLdapUsersRequestWithDefaults instantiates a new LdapUsersRequest object
@@ -8323,17 +7124,16 @@ type LdapUsersRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewLdapUsersRequestWithDefaults() *LdapUsersRequest {
 	this := LdapUsersRequest{}
+
 	return &this
 }
 
 func (o LdapUsersRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Groups != nil {
-		toSerialize["groups"] = o.Groups
-	}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
+
+	toSerialize["groups"] = o.Groups
+	toSerialize["policies"] = o.Policies
+
 	return json.Marshal(toSerialize)
 }
 
@@ -8360,17 +7160,16 @@ type MongodbatlasConfigRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewMongodbatlasConfigRequestWithDefaults() *MongodbatlasConfigRequest {
 	this := MongodbatlasConfigRequest{}
+
 	return &this
 }
 
 func (o MongodbatlasConfigRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["private_key"] = o.PrivateKey
-	}
-	if true {
-		toSerialize["public_key"] = o.PublicKey
-	}
+
+	toSerialize["private_key"] = o.PrivateKey
+	toSerialize["public_key"] = o.PublicKey
+
 	return json.Marshal(toSerialize)
 }
 
@@ -8387,21 +7186,21 @@ API version: 1.12.0
 // MongodbatlasRolesRequest struct for MongodbatlasRolesRequest
 type MongodbatlasRolesRequest struct {
 	// Access list entry in CIDR notation to be added for the API key. Optional for organization and project keys.
-	CidrBlocks []string `json:"cidr_blocks,omitempty"`
+	CidrBlocks []string `json:"cidr_blocks"`
 	// IP address to be added to the access list for the API key. Optional for organization and project keys.
-	IpAddresses []string `json:"ip_addresses,omitempty"`
+	IpAddresses []string `json:"ip_addresses"`
 	// The maximum allowed lifetime of credentials issued using this role.
-	MaxTtl *int32 `json:"max_ttl,omitempty"`
+	MaxTtl int32 `json:"max_ttl"`
 	// Organization ID required for an organization API key
-	OrganizationId *string `json:"organization_id,omitempty"`
+	OrganizationId string `json:"organization_id"`
 	// Project ID the project API key belongs to.
-	ProjectId *string `json:"project_id,omitempty"`
+	ProjectId string `json:"project_id"`
 	// Roles assigned when an organization API Key is assigned to a project API key
-	ProjectRoles []string `json:"project_roles,omitempty"`
+	ProjectRoles []string `json:"project_roles"`
 	// List of roles that the API Key should be granted. A minimum of one role must be provided. Any roles provided must be valid for the assigned Project, required for organization and project keys.
 	Roles []string `json:"roles"`
 	// Duration in seconds after which the issued credential should expire. Defaults to 0, in which case the value will fallback to the system/mount defaults.
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 }
 
 // NewMongodbatlasRolesRequestWithDefaults instantiates a new MongodbatlasRolesRequest object
@@ -8409,35 +7208,22 @@ type MongodbatlasRolesRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewMongodbatlasRolesRequestWithDefaults() *MongodbatlasRolesRequest {
 	this := MongodbatlasRolesRequest{}
+
 	return &this
 }
 
 func (o MongodbatlasRolesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.CidrBlocks != nil {
-		toSerialize["cidr_blocks"] = o.CidrBlocks
-	}
-	if o.IpAddresses != nil {
-		toSerialize["ip_addresses"] = o.IpAddresses
-	}
-	if o.MaxTtl != nil {
-		toSerialize["max_ttl"] = o.MaxTtl
-	}
-	if o.OrganizationId != nil {
-		toSerialize["organization_id"] = o.OrganizationId
-	}
-	if o.ProjectId != nil {
-		toSerialize["project_id"] = o.ProjectId
-	}
-	if o.ProjectRoles != nil {
-		toSerialize["project_roles"] = o.ProjectRoles
-	}
-	if true {
-		toSerialize["roles"] = o.Roles
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
+
+	toSerialize["cidr_blocks"] = o.CidrBlocks
+	toSerialize["ip_addresses"] = o.IpAddresses
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["organization_id"] = o.OrganizationId
+	toSerialize["project_id"] = o.ProjectId
+	toSerialize["project_roles"] = o.ProjectRoles
+	toSerialize["roles"] = o.Roles
+	toSerialize["ttl"] = o.Ttl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -8454,17 +7240,17 @@ API version: 1.12.0
 // NomadConfigAccessRequest struct for NomadConfigAccessRequest
 type NomadConfigAccessRequest struct {
 	// Nomad server address
-	Address *string `json:"address,omitempty"`
+	Address string `json:"address"`
 	// CA certificate to use when verifying Nomad server certificate, must be x509 PEM encoded.
-	CaCert *string `json:"ca_cert,omitempty"`
+	CaCert string `json:"ca_cert"`
 	// Client certificate used for Nomad's TLS communication, must be x509 PEM encoded and if this is set you need to also set client_key.
-	ClientCert *string `json:"client_cert,omitempty"`
+	ClientCert string `json:"client_cert"`
 	// Client key used for Nomad's TLS communication, must be x509 PEM encoded and if this is set you need to also set client_cert.
-	ClientKey *string `json:"client_key,omitempty"`
+	ClientKey string `json:"client_key"`
 	// Max length for name of generated Nomad tokens
-	MaxTokenNameLength *int32 `json:"max_token_name_length,omitempty"`
+	MaxTokenNameLength int32 `json:"max_token_name_length"`
 	// Token for API calls
-	Token *string `json:"token,omitempty"`
+	Token string `json:"token"`
 }
 
 // NewNomadConfigAccessRequestWithDefaults instantiates a new NomadConfigAccessRequest object
@@ -8472,29 +7258,20 @@ type NomadConfigAccessRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewNomadConfigAccessRequestWithDefaults() *NomadConfigAccessRequest {
 	this := NomadConfigAccessRequest{}
+
 	return &this
 }
 
 func (o NomadConfigAccessRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Address != nil {
-		toSerialize["address"] = o.Address
-	}
-	if o.CaCert != nil {
-		toSerialize["ca_cert"] = o.CaCert
-	}
-	if o.ClientCert != nil {
-		toSerialize["client_cert"] = o.ClientCert
-	}
-	if o.ClientKey != nil {
-		toSerialize["client_key"] = o.ClientKey
-	}
-	if o.MaxTokenNameLength != nil {
-		toSerialize["max_token_name_length"] = o.MaxTokenNameLength
-	}
-	if o.Token != nil {
-		toSerialize["token"] = o.Token
-	}
+
+	toSerialize["address"] = o.Address
+	toSerialize["ca_cert"] = o.CaCert
+	toSerialize["client_cert"] = o.ClientCert
+	toSerialize["client_key"] = o.ClientKey
+	toSerialize["max_token_name_length"] = o.MaxTokenNameLength
+	toSerialize["token"] = o.Token
+
 	return json.Marshal(toSerialize)
 }
 
@@ -8511,9 +7288,9 @@ API version: 1.12.0
 // NomadConfigLeaseRequest struct for NomadConfigLeaseRequest
 type NomadConfigLeaseRequest struct {
 	// Duration after which the issued token should not be allowed to be renewed
-	MaxTtl *int32 `json:"max_ttl,omitempty"`
+	MaxTtl int32 `json:"max_ttl"`
 	// Duration before which the issued token needs renewal
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 }
 
 // NewNomadConfigLeaseRequestWithDefaults instantiates a new NomadConfigLeaseRequest object
@@ -8521,17 +7298,16 @@ type NomadConfigLeaseRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewNomadConfigLeaseRequestWithDefaults() *NomadConfigLeaseRequest {
 	this := NomadConfigLeaseRequest{}
+
 	return &this
 }
 
 func (o NomadConfigLeaseRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.MaxTtl != nil {
-		toSerialize["max_ttl"] = o.MaxTtl
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
+
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["ttl"] = o.Ttl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -8548,11 +7324,11 @@ API version: 1.12.0
 // NomadRoleRequest struct for NomadRoleRequest
 type NomadRoleRequest struct {
 	// Boolean value describing if the token should be global or not. Defaults to false.
-	Global *bool `json:"global,omitempty"`
+	Global bool `json:"global"`
 	// Comma-separated string or list of policies as previously created in Nomad. Required for 'client' token.
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 	// Which type of token to create: 'client' or 'management'. If a 'management' token, the \"policies\" parameter is not required. Defaults to 'client'.
-	Type *string `json:"type,omitempty"`
+	Type string `json:"type"`
 }
 
 // NewNomadRoleRequestWithDefaults instantiates a new NomadRoleRequest object
@@ -8560,22 +7336,19 @@ type NomadRoleRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewNomadRoleRequestWithDefaults() *NomadRoleRequest {
 	this := NomadRoleRequest{}
-	var type_ string = "client"
-	this.Type = &type_
+
+	this.Type = "client"
+
 	return &this
 }
 
 func (o NomadRoleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Global != nil {
-		toSerialize["global"] = o.Global
-	}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
-	if o.Type != nil {
-		toSerialize["type"] = o.Type
-	}
+
+	toSerialize["global"] = o.Global
+	toSerialize["policies"] = o.Policies
+	toSerialize["type"] = o.Type
+
 	return json.Marshal(toSerialize)
 }
 
@@ -8592,7 +7365,7 @@ API version: 1.12.0
 // OciConfigRequest struct for OciConfigRequest
 type OciConfigRequest struct {
 	// The tenancy id of the account.
-	HomeTenancyId *string `json:"home_tenancy_id,omitempty"`
+	HomeTenancyId string `json:"home_tenancy_id"`
 }
 
 // NewOciConfigRequestWithDefaults instantiates a new OciConfigRequest object
@@ -8600,14 +7373,15 @@ type OciConfigRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewOciConfigRequestWithDefaults() *OciConfigRequest {
 	this := OciConfigRequest{}
+
 	return &this
 }
 
 func (o OciConfigRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.HomeTenancyId != nil {
-		toSerialize["home_tenancy_id"] = o.HomeTenancyId
-	}
+
+	toSerialize["home_tenancy_id"] = o.HomeTenancyId
+
 	return json.Marshal(toSerialize)
 }
 
@@ -8624,7 +7398,7 @@ API version: 1.12.0
 // OciLoginRequest struct for OciLoginRequest
 type OciLoginRequest struct {
 	// The signed headers of the client
-	RequestHeaders *string `json:"request_headers,omitempty"`
+	RequestHeaders string `json:"request_headers"`
 }
 
 // NewOciLoginRequestWithDefaults instantiates a new OciLoginRequest object
@@ -8632,14 +7406,15 @@ type OciLoginRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewOciLoginRequestWithDefaults() *OciLoginRequest {
 	this := OciLoginRequest{}
+
 	return &this
 }
 
 func (o OciLoginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.RequestHeaders != nil {
-		toSerialize["request_headers"] = o.RequestHeaders
-	}
+
+	toSerialize["request_headers"] = o.RequestHeaders
+
 	return json.Marshal(toSerialize)
 }
 
@@ -8656,25 +7431,25 @@ API version: 1.12.0
 // OciRoleRequest struct for OciRoleRequest
 type OciRoleRequest struct {
 	// A comma separated list of Group or Dynamic Group OCIDs that are allowed to take this role.
-	OcidList []string `json:"ocid_list,omitempty"`
+	OcidList []string `json:"ocid_list"`
 	// Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
-	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
+	TokenBoundCidrs []string `json:"token_bound_cidrs"`
 	// If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
-	TokenExplicitMaxTtl *int32 `json:"token_explicit_max_ttl,omitempty"`
+	TokenExplicitMaxTtl int32 `json:"token_explicit_max_ttl"`
 	// The maximum lifetime of the generated token
-	TokenMaxTtl *int32 `json:"token_max_ttl,omitempty"`
+	TokenMaxTtl int32 `json:"token_max_ttl"`
 	// If true, the 'default' policy will not automatically be added to generated tokens
-	TokenNoDefaultPolicy *bool `json:"token_no_default_policy,omitempty"`
+	TokenNoDefaultPolicy bool `json:"token_no_default_policy"`
 	// The maximum number of times a token may be used, a value of zero means unlimited
-	TokenNumUses *int32 `json:"token_num_uses,omitempty"`
+	TokenNumUses int32 `json:"token_num_uses"`
 	// If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \"24h\").
-	TokenPeriod *int32 `json:"token_period,omitempty"`
+	TokenPeriod int32 `json:"token_period"`
 	// Comma-separated list of policies
-	TokenPolicies []string `json:"token_policies,omitempty"`
+	TokenPolicies []string `json:"token_policies"`
 	// The initial ttl of the token to generate
-	TokenTtl *int32 `json:"token_ttl,omitempty"`
+	TokenTtl int32 `json:"token_ttl"`
 	// The type of token to generate, service or batch
-	TokenType *string `json:"token_type,omitempty"`
+	TokenType string `json:"token_type"`
 }
 
 // NewOciRoleRequestWithDefaults instantiates a new OciRoleRequest object
@@ -8682,43 +7457,26 @@ type OciRoleRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewOciRoleRequestWithDefaults() *OciRoleRequest {
 	this := OciRoleRequest{}
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
+
+	this.TokenType = "default-service"
+
 	return &this
 }
 
 func (o OciRoleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.OcidList != nil {
-		toSerialize["ocid_list"] = o.OcidList
-	}
-	if o.TokenBoundCidrs != nil {
-		toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
-	}
-	if o.TokenExplicitMaxTtl != nil {
-		toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
-	}
-	if o.TokenMaxTtl != nil {
-		toSerialize["token_max_ttl"] = o.TokenMaxTtl
-	}
-	if o.TokenNoDefaultPolicy != nil {
-		toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
-	}
-	if o.TokenNumUses != nil {
-		toSerialize["token_num_uses"] = o.TokenNumUses
-	}
-	if o.TokenPeriod != nil {
-		toSerialize["token_period"] = o.TokenPeriod
-	}
-	if o.TokenPolicies != nil {
-		toSerialize["token_policies"] = o.TokenPolicies
-	}
-	if o.TokenTtl != nil {
-		toSerialize["token_ttl"] = o.TokenTtl
-	}
-	if o.TokenType != nil {
-		toSerialize["token_type"] = o.TokenType
-	}
+
+	toSerialize["ocid_list"] = o.OcidList
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+
 	return json.Marshal(toSerialize)
 }
 
@@ -8735,33 +7493,33 @@ API version: 1.12.0
 // OidcConfigRequest struct for OidcConfigRequest
 type OidcConfigRequest struct {
 	// The value against which to match the 'iss' claim in a JWT. Optional.
-	BoundIssuer *string `json:"bound_issuer,omitempty"`
+	BoundIssuer string `json:"bound_issuer"`
 	// The default role to use if none is provided during login. If not set, a role is required during login.
-	DefaultRole *string `json:"default_role,omitempty"`
+	DefaultRole string `json:"default_role"`
 	// The CA certificate or chain of certificates, in PEM format, to use to validate connections to the JWKS URL. If not set, system certificates are used.
-	JwksCaPem *string `json:"jwks_ca_pem,omitempty"`
+	JwksCaPem string `json:"jwks_ca_pem"`
 	// JWKS URL to use to authenticate signatures. Cannot be used with \"oidc_discovery_url\" or \"jwt_validation_pubkeys\".
-	JwksUrl *string `json:"jwks_url,omitempty"`
+	JwksUrl string `json:"jwks_url"`
 	// A list of supported signing algorithms. Defaults to RS256.
-	JwtSupportedAlgs []string `json:"jwt_supported_algs,omitempty"`
+	JwtSupportedAlgs []string `json:"jwt_supported_algs"`
 	// A list of PEM-encoded public keys to use to authenticate signatures locally. Cannot be used with \"jwks_url\" or \"oidc_discovery_url\".
-	JwtValidationPubkeys []string `json:"jwt_validation_pubkeys,omitempty"`
+	JwtValidationPubkeys []string `json:"jwt_validation_pubkeys"`
 	// Pass namespace in the OIDC state parameter instead of as a separate query parameter. With this setting, the allowed redirect URL(s) in Vault and on the provider side should not contain a namespace query parameter. This means only one redirect URL entry needs to be maintained on the provider side for all vault namespaces that will be authenticating against it. Defaults to true for new configs.
-	NamespaceInState *bool `json:"namespace_in_state,omitempty"`
+	NamespaceInState bool `json:"namespace_in_state"`
 	// The OAuth Client ID configured with your OIDC provider.
-	OidcClientId *string `json:"oidc_client_id,omitempty"`
+	OidcClientId string `json:"oidc_client_id"`
 	// The OAuth Client Secret configured with your OIDC provider.
-	OidcClientSecret *string `json:"oidc_client_secret,omitempty"`
+	OidcClientSecret string `json:"oidc_client_secret"`
 	// The CA certificate or chain of certificates, in PEM format, to use to validate connections to the OIDC Discovery URL. If not set, system certificates are used.
-	OidcDiscoveryCaPem *string `json:"oidc_discovery_ca_pem,omitempty"`
+	OidcDiscoveryCaPem string `json:"oidc_discovery_ca_pem"`
 	// OIDC Discovery URL, without any .well-known component (base path). Cannot be used with \"jwks_url\" or \"jwt_validation_pubkeys\".
-	OidcDiscoveryUrl *string `json:"oidc_discovery_url,omitempty"`
+	OidcDiscoveryUrl string `json:"oidc_discovery_url"`
 	// The response mode to be used in the OAuth2 request. Allowed values are 'query' and 'form_post'.
-	OidcResponseMode *string `json:"oidc_response_mode,omitempty"`
+	OidcResponseMode string `json:"oidc_response_mode"`
 	// The response types to request. Allowed values are 'code' and 'id_token'. Defaults to 'code'.
-	OidcResponseTypes []string `json:"oidc_response_types,omitempty"`
+	OidcResponseTypes []string `json:"oidc_response_types"`
 	// Provider-specific configuration. Optional.
-	ProviderConfig map[string]interface{} `json:"provider_config,omitempty"`
+	ProviderConfig map[string]interface{} `json:"provider_config"`
 }
 
 // NewOidcConfigRequestWithDefaults instantiates a new OidcConfigRequest object
@@ -8769,53 +7527,28 @@ type OidcConfigRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewOidcConfigRequestWithDefaults() *OidcConfigRequest {
 	this := OidcConfigRequest{}
+
 	return &this
 }
 
 func (o OidcConfigRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.BoundIssuer != nil {
-		toSerialize["bound_issuer"] = o.BoundIssuer
-	}
-	if o.DefaultRole != nil {
-		toSerialize["default_role"] = o.DefaultRole
-	}
-	if o.JwksCaPem != nil {
-		toSerialize["jwks_ca_pem"] = o.JwksCaPem
-	}
-	if o.JwksUrl != nil {
-		toSerialize["jwks_url"] = o.JwksUrl
-	}
-	if o.JwtSupportedAlgs != nil {
-		toSerialize["jwt_supported_algs"] = o.JwtSupportedAlgs
-	}
-	if o.JwtValidationPubkeys != nil {
-		toSerialize["jwt_validation_pubkeys"] = o.JwtValidationPubkeys
-	}
-	if o.NamespaceInState != nil {
-		toSerialize["namespace_in_state"] = o.NamespaceInState
-	}
-	if o.OidcClientId != nil {
-		toSerialize["oidc_client_id"] = o.OidcClientId
-	}
-	if o.OidcClientSecret != nil {
-		toSerialize["oidc_client_secret"] = o.OidcClientSecret
-	}
-	if o.OidcDiscoveryCaPem != nil {
-		toSerialize["oidc_discovery_ca_pem"] = o.OidcDiscoveryCaPem
-	}
-	if o.OidcDiscoveryUrl != nil {
-		toSerialize["oidc_discovery_url"] = o.OidcDiscoveryUrl
-	}
-	if o.OidcResponseMode != nil {
-		toSerialize["oidc_response_mode"] = o.OidcResponseMode
-	}
-	if o.OidcResponseTypes != nil {
-		toSerialize["oidc_response_types"] = o.OidcResponseTypes
-	}
-	if o.ProviderConfig != nil {
-		toSerialize["provider_config"] = o.ProviderConfig
-	}
+
+	toSerialize["bound_issuer"] = o.BoundIssuer
+	toSerialize["default_role"] = o.DefaultRole
+	toSerialize["jwks_ca_pem"] = o.JwksCaPem
+	toSerialize["jwks_url"] = o.JwksUrl
+	toSerialize["jwt_supported_algs"] = o.JwtSupportedAlgs
+	toSerialize["jwt_validation_pubkeys"] = o.JwtValidationPubkeys
+	toSerialize["namespace_in_state"] = o.NamespaceInState
+	toSerialize["oidc_client_id"] = o.OidcClientId
+	toSerialize["oidc_client_secret"] = o.OidcClientSecret
+	toSerialize["oidc_discovery_ca_pem"] = o.OidcDiscoveryCaPem
+	toSerialize["oidc_discovery_url"] = o.OidcDiscoveryUrl
+	toSerialize["oidc_response_mode"] = o.OidcResponseMode
+	toSerialize["oidc_response_types"] = o.OidcResponseTypes
+	toSerialize["provider_config"] = o.ProviderConfig
+
 	return json.Marshal(toSerialize)
 }
 
@@ -8832,9 +7565,9 @@ API version: 1.12.0
 // OidcLoginRequest struct for OidcLoginRequest
 type OidcLoginRequest struct {
 	// The signed JWT to validate.
-	Jwt *string `json:"jwt,omitempty"`
+	Jwt string `json:"jwt"`
 	// The role to log in against.
-	Role *string `json:"role,omitempty"`
+	Role string `json:"role"`
 }
 
 // NewOidcLoginRequestWithDefaults instantiates a new OidcLoginRequest object
@@ -8842,17 +7575,16 @@ type OidcLoginRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewOidcLoginRequestWithDefaults() *OidcLoginRequest {
 	this := OidcLoginRequest{}
+
 	return &this
 }
 
 func (o OidcLoginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Jwt != nil {
-		toSerialize["jwt"] = o.Jwt
-	}
-	if o.Role != nil {
-		toSerialize["role"] = o.Role
-	}
+
+	toSerialize["jwt"] = o.Jwt
+	toSerialize["role"] = o.Role
+
 	return json.Marshal(toSerialize)
 }
 
@@ -8869,11 +7601,11 @@ API version: 1.12.0
 // OidcOidcAuthUrlRequest struct for OidcOidcAuthUrlRequest
 type OidcOidcAuthUrlRequest struct {
 	// Optional client-provided nonce that must match during callback, if present.
-	ClientNonce *string `json:"client_nonce,omitempty"`
+	ClientNonce string `json:"client_nonce"`
 	// The OAuth redirect_uri to use in the authorization URL.
-	RedirectUri *string `json:"redirect_uri,omitempty"`
+	RedirectUri string `json:"redirect_uri"`
 	// The role to issue an OIDC authorization URL against.
-	Role *string `json:"role,omitempty"`
+	Role string `json:"role"`
 }
 
 // NewOidcOidcAuthUrlRequestWithDefaults instantiates a new OidcOidcAuthUrlRequest object
@@ -8881,20 +7613,17 @@ type OidcOidcAuthUrlRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewOidcOidcAuthUrlRequestWithDefaults() *OidcOidcAuthUrlRequest {
 	this := OidcOidcAuthUrlRequest{}
+
 	return &this
 }
 
 func (o OidcOidcAuthUrlRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.ClientNonce != nil {
-		toSerialize["client_nonce"] = o.ClientNonce
-	}
-	if o.RedirectUri != nil {
-		toSerialize["redirect_uri"] = o.RedirectUri
-	}
-	if o.Role != nil {
-		toSerialize["role"] = o.Role
-	}
+
+	toSerialize["client_nonce"] = o.ClientNonce
+	toSerialize["redirect_uri"] = o.RedirectUri
+	toSerialize["role"] = o.Role
+
 	return json.Marshal(toSerialize)
 }
 
@@ -8910,10 +7639,10 @@ API version: 1.12.0
 
 // OidcOidcCallbackRequest struct for OidcOidcCallbackRequest
 type OidcOidcCallbackRequest struct {
-	ClientNonce *string `json:"client_nonce,omitempty"`
-	Code        *string `json:"code,omitempty"`
-	IdToken     *string `json:"id_token,omitempty"`
-	State       *string `json:"state,omitempty"`
+	ClientNonce string `json:"client_nonce"`
+	Code        string `json:"code"`
+	IdToken     string `json:"id_token"`
+	State       string `json:"state"`
 }
 
 // NewOidcOidcCallbackRequestWithDefaults instantiates a new OidcOidcCallbackRequest object
@@ -8921,23 +7650,18 @@ type OidcOidcCallbackRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewOidcOidcCallbackRequestWithDefaults() *OidcOidcCallbackRequest {
 	this := OidcOidcCallbackRequest{}
+
 	return &this
 }
 
 func (o OidcOidcCallbackRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.ClientNonce != nil {
-		toSerialize["client_nonce"] = o.ClientNonce
-	}
-	if o.Code != nil {
-		toSerialize["code"] = o.Code
-	}
-	if o.IdToken != nil {
-		toSerialize["id_token"] = o.IdToken
-	}
-	if o.State != nil {
-		toSerialize["state"] = o.State
-	}
+
+	toSerialize["client_nonce"] = o.ClientNonce
+	toSerialize["code"] = o.Code
+	toSerialize["id_token"] = o.IdToken
+	toSerialize["state"] = o.State
+
 	return json.Marshal(toSerialize)
 }
 
@@ -8954,73 +7678,73 @@ API version: 1.12.0
 // OidcRoleRequest struct for OidcRoleRequest
 type OidcRoleRequest struct {
 	// Comma-separated list of allowed values for redirect_uri
-	AllowedRedirectUris []string `json:"allowed_redirect_uris,omitempty"`
+	AllowedRedirectUris []string `json:"allowed_redirect_uris"`
 	// Comma-separated list of 'aud' claims that are valid for login; any match is sufficient
-	BoundAudiences []string `json:"bound_audiences,omitempty"`
+	BoundAudiences []string `json:"bound_audiences"`
 	// Use \"token_bound_cidrs\" instead. If this and \"token_bound_cidrs\" are both specified, only \"token_bound_cidrs\" will be used.
 	// Deprecated
-	BoundCidrs []string `json:"bound_cidrs,omitempty"`
+	BoundCidrs []string `json:"bound_cidrs"`
 	// Map of claims/values which must match for login
-	BoundClaims map[string]interface{} `json:"bound_claims,omitempty"`
+	BoundClaims map[string]interface{} `json:"bound_claims"`
 	// How to interpret values in the map of claims/values (which must match for login): allowed values are 'string' or 'glob'
-	BoundClaimsType *string `json:"bound_claims_type,omitempty"`
+	BoundClaimsType string `json:"bound_claims_type"`
 	// The 'sub' claim that is valid for login. Optional.
-	BoundSubject *string `json:"bound_subject,omitempty"`
+	BoundSubject string `json:"bound_subject"`
 	// Mappings of claims (key) that will be copied to a metadata field (value)
-	ClaimMappings map[string]interface{} `json:"claim_mappings,omitempty"`
+	ClaimMappings map[string]interface{} `json:"claim_mappings"`
 	// Duration in seconds of leeway when validating all claims to account for clock skew. Defaults to 60 (1 minute) if set to 0 and can be disabled if set to -1.
-	ClockSkewLeeway *int32 `json:"clock_skew_leeway,omitempty"`
+	ClockSkewLeeway int32 `json:"clock_skew_leeway"`
 	// Duration in seconds of leeway when validating expiration of a token to account for clock skew. Defaults to 150 (2.5 minutes) if set to 0 and can be disabled if set to -1.
-	ExpirationLeeway *int32 `json:"expiration_leeway,omitempty"`
+	ExpirationLeeway int32 `json:"expiration_leeway"`
 	// The claim to use for the Identity group alias names
-	GroupsClaim *string `json:"groups_claim,omitempty"`
+	GroupsClaim string `json:"groups_claim"`
 	// Specifies the allowable elapsed time in seconds since the last time the user was actively authenticated.
-	MaxAge *int32 `json:"max_age,omitempty"`
+	MaxAge int32 `json:"max_age"`
 	// Use \"token_max_ttl\" instead. If this and \"token_max_ttl\" are both specified, only \"token_max_ttl\" will be used.
 	// Deprecated
-	MaxTtl *int32 `json:"max_ttl,omitempty"`
+	MaxTtl int32 `json:"max_ttl"`
 	// Duration in seconds of leeway when validating not before values of a token to account for clock skew. Defaults to 150 (2.5 minutes) if set to 0 and can be disabled if set to -1.
-	NotBeforeLeeway *int32 `json:"not_before_leeway,omitempty"`
+	NotBeforeLeeway int32 `json:"not_before_leeway"`
 	// Use \"token_num_uses\" instead. If this and \"token_num_uses\" are both specified, only \"token_num_uses\" will be used.
 	// Deprecated
-	NumUses *int32 `json:"num_uses,omitempty"`
+	NumUses int32 `json:"num_uses"`
 	// Comma-separated list of OIDC scopes
-	OidcScopes []string `json:"oidc_scopes,omitempty"`
+	OidcScopes []string `json:"oidc_scopes"`
 	// Use \"token_period\" instead. If this and \"token_period\" are both specified, only \"token_period\" will be used.
 	// Deprecated
-	Period *int32 `json:"period,omitempty"`
+	Period int32 `json:"period"`
 	// Use \"token_policies\" instead. If this and \"token_policies\" are both specified, only \"token_policies\" will be used.
 	// Deprecated
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 	// Type of the role, either 'jwt' or 'oidc'.
-	RoleType *string `json:"role_type,omitempty"`
+	RoleType string `json:"role_type"`
 	// Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
-	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
+	TokenBoundCidrs []string `json:"token_bound_cidrs"`
 	// If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
-	TokenExplicitMaxTtl *int32 `json:"token_explicit_max_ttl,omitempty"`
+	TokenExplicitMaxTtl int32 `json:"token_explicit_max_ttl"`
 	// The maximum lifetime of the generated token
-	TokenMaxTtl *int32 `json:"token_max_ttl,omitempty"`
+	TokenMaxTtl int32 `json:"token_max_ttl"`
 	// If true, the 'default' policy will not automatically be added to generated tokens
-	TokenNoDefaultPolicy *bool `json:"token_no_default_policy,omitempty"`
+	TokenNoDefaultPolicy bool `json:"token_no_default_policy"`
 	// The maximum number of times a token may be used, a value of zero means unlimited
-	TokenNumUses *int32 `json:"token_num_uses,omitempty"`
+	TokenNumUses int32 `json:"token_num_uses"`
 	// If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \"24h\").
-	TokenPeriod *int32 `json:"token_period,omitempty"`
+	TokenPeriod int32 `json:"token_period"`
 	// Comma-separated list of policies
-	TokenPolicies []string `json:"token_policies,omitempty"`
+	TokenPolicies []string `json:"token_policies"`
 	// The initial ttl of the token to generate
-	TokenTtl *int32 `json:"token_ttl,omitempty"`
+	TokenTtl int32 `json:"token_ttl"`
 	// The type of token to generate, service or batch
-	TokenType *string `json:"token_type,omitempty"`
+	TokenType string `json:"token_type"`
 	// Use \"token_ttl\" instead. If this and \"token_ttl\" are both specified, only \"token_ttl\" will be used.
 	// Deprecated
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 	// The claim to use for the Identity entity alias name
-	UserClaim *string `json:"user_claim,omitempty"`
+	UserClaim string `json:"user_claim"`
 	// If true, the user_claim value will use JSON pointer syntax for referencing claims.
-	UserClaimJsonPointer *bool `json:"user_claim_json_pointer,omitempty"`
+	UserClaimJsonPointer bool `json:"user_claim_json_pointer"`
 	// Log received OIDC tokens and claims when debug-level logging is active. Not recommended in production since sensitive information may be present in OIDC responses.
-	VerboseOidcLogging *bool `json:"verbose_oidc_logging,omitempty"`
+	VerboseOidcLogging bool `json:"verbose_oidc_logging"`
 }
 
 // NewOidcRoleRequestWithDefaults instantiates a new OidcRoleRequest object
@@ -9028,112 +7752,50 @@ type OidcRoleRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewOidcRoleRequestWithDefaults() *OidcRoleRequest {
 	this := OidcRoleRequest{}
-	var boundClaimsType string = "string"
-	this.BoundClaimsType = &boundClaimsType
-	var expirationLeeway int32 = 150
-	this.ExpirationLeeway = &expirationLeeway
-	var notBeforeLeeway int32 = 150
-	this.NotBeforeLeeway = &notBeforeLeeway
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
+
+	this.BoundClaimsType = "string"
+	this.ExpirationLeeway = 150
+	this.NotBeforeLeeway = 150
+	this.TokenType = "default-service"
+
 	return &this
 }
 
 func (o OidcRoleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AllowedRedirectUris != nil {
-		toSerialize["allowed_redirect_uris"] = o.AllowedRedirectUris
-	}
-	if o.BoundAudiences != nil {
-		toSerialize["bound_audiences"] = o.BoundAudiences
-	}
-	if o.BoundCidrs != nil {
-		toSerialize["bound_cidrs"] = o.BoundCidrs
-	}
-	if o.BoundClaims != nil {
-		toSerialize["bound_claims"] = o.BoundClaims
-	}
-	if o.BoundClaimsType != nil {
-		toSerialize["bound_claims_type"] = o.BoundClaimsType
-	}
-	if o.BoundSubject != nil {
-		toSerialize["bound_subject"] = o.BoundSubject
-	}
-	if o.ClaimMappings != nil {
-		toSerialize["claim_mappings"] = o.ClaimMappings
-	}
-	if o.ClockSkewLeeway != nil {
-		toSerialize["clock_skew_leeway"] = o.ClockSkewLeeway
-	}
-	if o.ExpirationLeeway != nil {
-		toSerialize["expiration_leeway"] = o.ExpirationLeeway
-	}
-	if o.GroupsClaim != nil {
-		toSerialize["groups_claim"] = o.GroupsClaim
-	}
-	if o.MaxAge != nil {
-		toSerialize["max_age"] = o.MaxAge
-	}
-	if o.MaxTtl != nil {
-		toSerialize["max_ttl"] = o.MaxTtl
-	}
-	if o.NotBeforeLeeway != nil {
-		toSerialize["not_before_leeway"] = o.NotBeforeLeeway
-	}
-	if o.NumUses != nil {
-		toSerialize["num_uses"] = o.NumUses
-	}
-	if o.OidcScopes != nil {
-		toSerialize["oidc_scopes"] = o.OidcScopes
-	}
-	if o.Period != nil {
-		toSerialize["period"] = o.Period
-	}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
-	if o.RoleType != nil {
-		toSerialize["role_type"] = o.RoleType
-	}
-	if o.TokenBoundCidrs != nil {
-		toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
-	}
-	if o.TokenExplicitMaxTtl != nil {
-		toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
-	}
-	if o.TokenMaxTtl != nil {
-		toSerialize["token_max_ttl"] = o.TokenMaxTtl
-	}
-	if o.TokenNoDefaultPolicy != nil {
-		toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
-	}
-	if o.TokenNumUses != nil {
-		toSerialize["token_num_uses"] = o.TokenNumUses
-	}
-	if o.TokenPeriod != nil {
-		toSerialize["token_period"] = o.TokenPeriod
-	}
-	if o.TokenPolicies != nil {
-		toSerialize["token_policies"] = o.TokenPolicies
-	}
-	if o.TokenTtl != nil {
-		toSerialize["token_ttl"] = o.TokenTtl
-	}
-	if o.TokenType != nil {
-		toSerialize["token_type"] = o.TokenType
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
-	if o.UserClaim != nil {
-		toSerialize["user_claim"] = o.UserClaim
-	}
-	if o.UserClaimJsonPointer != nil {
-		toSerialize["user_claim_json_pointer"] = o.UserClaimJsonPointer
-	}
-	if o.VerboseOidcLogging != nil {
-		toSerialize["verbose_oidc_logging"] = o.VerboseOidcLogging
-	}
+
+	toSerialize["allowed_redirect_uris"] = o.AllowedRedirectUris
+	toSerialize["bound_audiences"] = o.BoundAudiences
+	toSerialize["bound_cidrs"] = o.BoundCidrs
+	toSerialize["bound_claims"] = o.BoundClaims
+	toSerialize["bound_claims_type"] = o.BoundClaimsType
+	toSerialize["bound_subject"] = o.BoundSubject
+	toSerialize["claim_mappings"] = o.ClaimMappings
+	toSerialize["clock_skew_leeway"] = o.ClockSkewLeeway
+	toSerialize["expiration_leeway"] = o.ExpirationLeeway
+	toSerialize["groups_claim"] = o.GroupsClaim
+	toSerialize["max_age"] = o.MaxAge
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["not_before_leeway"] = o.NotBeforeLeeway
+	toSerialize["num_uses"] = o.NumUses
+	toSerialize["oidc_scopes"] = o.OidcScopes
+	toSerialize["period"] = o.Period
+	toSerialize["policies"] = o.Policies
+	toSerialize["role_type"] = o.RoleType
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["user_claim"] = o.UserClaim
+	toSerialize["user_claim_json_pointer"] = o.UserClaimJsonPointer
+	toSerialize["verbose_oidc_logging"] = o.VerboseOidcLogging
+
 	return json.Marshal(toSerialize)
 }
 
@@ -9150,46 +7812,46 @@ API version: 1.12.0
 // OktaConfigRequest struct for OktaConfigRequest
 type OktaConfigRequest struct {
 	// Okta API key.
-	ApiToken *string `json:"api_token,omitempty"`
+	ApiToken string `json:"api_token"`
 	// The base domain to use for the Okta API. When not specified in the configuration, \"okta.com\" is used.
-	BaseUrl *string `json:"base_url,omitempty"`
+	BaseUrl string `json:"base_url"`
 	// When set true, requests by Okta for a MFA check will be bypassed. This also disallows certain status checks on the account, such as whether the password is expired.
-	BypassOktaMfa *bool `json:"bypass_okta_mfa,omitempty"`
+	BypassOktaMfa bool `json:"bypass_okta_mfa"`
 	// Use \"token_max_ttl\" instead. If this and \"token_max_ttl\" are both specified, only \"token_max_ttl\" will be used.
 	// Deprecated
-	MaxTtl *int32 `json:"max_ttl,omitempty"`
+	MaxTtl int32 `json:"max_ttl"`
 	// Name of the organization to be used in the Okta API.
-	OrgName *string `json:"org_name,omitempty"`
+	OrgName string `json:"org_name"`
 	// Use org_name instead.
 	// Deprecated
-	Organization *string `json:"organization,omitempty"`
+	Organization string `json:"organization"`
 	// Use base_url instead.
 	// Deprecated
-	Production *bool `json:"production,omitempty"`
+	Production bool `json:"production"`
 	// Use api_token instead.
 	// Deprecated
-	Token *string `json:"token,omitempty"`
+	Token string `json:"token"`
 	// Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
-	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
+	TokenBoundCidrs []string `json:"token_bound_cidrs"`
 	// If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
-	TokenExplicitMaxTtl *int32 `json:"token_explicit_max_ttl,omitempty"`
+	TokenExplicitMaxTtl int32 `json:"token_explicit_max_ttl"`
 	// The maximum lifetime of the generated token
-	TokenMaxTtl *int32 `json:"token_max_ttl,omitempty"`
+	TokenMaxTtl int32 `json:"token_max_ttl"`
 	// If true, the 'default' policy will not automatically be added to generated tokens
-	TokenNoDefaultPolicy *bool `json:"token_no_default_policy,omitempty"`
+	TokenNoDefaultPolicy bool `json:"token_no_default_policy"`
 	// The maximum number of times a token may be used, a value of zero means unlimited
-	TokenNumUses *int32 `json:"token_num_uses,omitempty"`
+	TokenNumUses int32 `json:"token_num_uses"`
 	// If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \"24h\").
-	TokenPeriod *int32 `json:"token_period,omitempty"`
+	TokenPeriod int32 `json:"token_period"`
 	// Comma-separated list of policies. This will apply to all tokens generated by this auth method, in addition to any configured for specific users/groups.
-	TokenPolicies []string `json:"token_policies,omitempty"`
+	TokenPolicies []string `json:"token_policies"`
 	// The initial ttl of the token to generate
-	TokenTtl *int32 `json:"token_ttl,omitempty"`
+	TokenTtl int32 `json:"token_ttl"`
 	// The type of token to generate, service or batch
-	TokenType *string `json:"token_type,omitempty"`
+	TokenType string `json:"token_type"`
 	// Use \"token_ttl\" instead. If this and \"token_ttl\" are both specified, only \"token_ttl\" will be used.
 	// Deprecated
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 }
 
 // NewOktaConfigRequestWithDefaults instantiates a new OktaConfigRequest object
@@ -9197,67 +7859,34 @@ type OktaConfigRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewOktaConfigRequestWithDefaults() *OktaConfigRequest {
 	this := OktaConfigRequest{}
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
+
+	this.TokenType = "default-service"
+
 	return &this
 }
 
 func (o OktaConfigRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.ApiToken != nil {
-		toSerialize["api_token"] = o.ApiToken
-	}
-	if o.BaseUrl != nil {
-		toSerialize["base_url"] = o.BaseUrl
-	}
-	if o.BypassOktaMfa != nil {
-		toSerialize["bypass_okta_mfa"] = o.BypassOktaMfa
-	}
-	if o.MaxTtl != nil {
-		toSerialize["max_ttl"] = o.MaxTtl
-	}
-	if o.OrgName != nil {
-		toSerialize["org_name"] = o.OrgName
-	}
-	if o.Organization != nil {
-		toSerialize["organization"] = o.Organization
-	}
-	if o.Production != nil {
-		toSerialize["production"] = o.Production
-	}
-	if o.Token != nil {
-		toSerialize["token"] = o.Token
-	}
-	if o.TokenBoundCidrs != nil {
-		toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
-	}
-	if o.TokenExplicitMaxTtl != nil {
-		toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
-	}
-	if o.TokenMaxTtl != nil {
-		toSerialize["token_max_ttl"] = o.TokenMaxTtl
-	}
-	if o.TokenNoDefaultPolicy != nil {
-		toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
-	}
-	if o.TokenNumUses != nil {
-		toSerialize["token_num_uses"] = o.TokenNumUses
-	}
-	if o.TokenPeriod != nil {
-		toSerialize["token_period"] = o.TokenPeriod
-	}
-	if o.TokenPolicies != nil {
-		toSerialize["token_policies"] = o.TokenPolicies
-	}
-	if o.TokenTtl != nil {
-		toSerialize["token_ttl"] = o.TokenTtl
-	}
-	if o.TokenType != nil {
-		toSerialize["token_type"] = o.TokenType
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
+
+	toSerialize["api_token"] = o.ApiToken
+	toSerialize["base_url"] = o.BaseUrl
+	toSerialize["bypass_okta_mfa"] = o.BypassOktaMfa
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["org_name"] = o.OrgName
+	toSerialize["organization"] = o.Organization
+	toSerialize["production"] = o.Production
+	toSerialize["token"] = o.Token
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+	toSerialize["ttl"] = o.Ttl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -9274,7 +7903,7 @@ API version: 1.12.0
 // OktaGroupsRequest struct for OktaGroupsRequest
 type OktaGroupsRequest struct {
 	// Comma-separated list of policies associated to the group.
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 }
 
 // NewOktaGroupsRequestWithDefaults instantiates a new OktaGroupsRequest object
@@ -9282,14 +7911,15 @@ type OktaGroupsRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewOktaGroupsRequestWithDefaults() *OktaGroupsRequest {
 	this := OktaGroupsRequest{}
+
 	return &this
 }
 
 func (o OktaGroupsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
+
+	toSerialize["policies"] = o.Policies
+
 	return json.Marshal(toSerialize)
 }
 
@@ -9306,13 +7936,13 @@ API version: 1.12.0
 // OktaLoginRequest struct for OktaLoginRequest
 type OktaLoginRequest struct {
 	// Nonce provided if performing login that requires number verification challenge. Logins through the vault login CLI command will automatically generate a nonce.
-	Nonce *string `json:"nonce,omitempty"`
+	Nonce string `json:"nonce"`
 	// Password for this user.
-	Password *string `json:"password,omitempty"`
+	Password string `json:"password"`
 	// Preferred factor provider.
-	Provider *string `json:"provider,omitempty"`
+	Provider string `json:"provider"`
 	// TOTP passcode.
-	Totp *string `json:"totp,omitempty"`
+	Totp string `json:"totp"`
 }
 
 // NewOktaLoginRequestWithDefaults instantiates a new OktaLoginRequest object
@@ -9320,23 +7950,18 @@ type OktaLoginRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewOktaLoginRequestWithDefaults() *OktaLoginRequest {
 	this := OktaLoginRequest{}
+
 	return &this
 }
 
 func (o OktaLoginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Nonce != nil {
-		toSerialize["nonce"] = o.Nonce
-	}
-	if o.Password != nil {
-		toSerialize["password"] = o.Password
-	}
-	if o.Provider != nil {
-		toSerialize["provider"] = o.Provider
-	}
-	if o.Totp != nil {
-		toSerialize["totp"] = o.Totp
-	}
+
+	toSerialize["nonce"] = o.Nonce
+	toSerialize["password"] = o.Password
+	toSerialize["provider"] = o.Provider
+	toSerialize["totp"] = o.Totp
+
 	return json.Marshal(toSerialize)
 }
 
@@ -9353,9 +7978,9 @@ API version: 1.12.0
 // OktaUsersRequest struct for OktaUsersRequest
 type OktaUsersRequest struct {
 	// List of groups associated with the user.
-	Groups []string `json:"groups,omitempty"`
+	Groups []string `json:"groups"`
 	// List of policies associated with the user.
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 }
 
 // NewOktaUsersRequestWithDefaults instantiates a new OktaUsersRequest object
@@ -9363,17 +7988,16 @@ type OktaUsersRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewOktaUsersRequestWithDefaults() *OktaUsersRequest {
 	this := OktaUsersRequest{}
+
 	return &this
 }
 
 func (o OktaUsersRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Groups != nil {
-		toSerialize["groups"] = o.Groups
-	}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
+
+	toSerialize["groups"] = o.Groups
+	toSerialize["policies"] = o.Policies
+
 	return json.Marshal(toSerialize)
 }
 
@@ -9390,66 +8014,66 @@ API version: 1.12.0
 // OpenldapConfigRequest struct for OpenldapConfigRequest
 type OpenldapConfigRequest struct {
 	// Use anonymous binds when performing LDAP group searches (if true the initial credentials will still be used for the initial connection test).
-	AnonymousGroupSearch *bool `json:"anonymous_group_search,omitempty"`
+	AnonymousGroupSearch bool `json:"anonymous_group_search"`
 	// LDAP DN for searching for the user DN (optional)
-	Binddn *string `json:"binddn,omitempty"`
+	Binddn string `json:"binddn"`
 	// LDAP password for searching for the user DN (optional)
-	Bindpass *string `json:"bindpass,omitempty"`
+	Bindpass string `json:"bindpass"`
 	// If true, case sensitivity will be used when comparing usernames and groups for matching policies.
-	CaseSensitiveNames *bool `json:"case_sensitive_names,omitempty"`
+	CaseSensitiveNames bool `json:"case_sensitive_names"`
 	// CA certificate to use when verifying LDAP server certificate, must be x509 PEM encoded (optional)
-	Certificate *string `json:"certificate,omitempty"`
+	Certificate string `json:"certificate"`
 	// Client certificate to provide to the LDAP server, must be x509 PEM encoded (optional)
-	ClientTlsCert *string `json:"client_tls_cert,omitempty"`
+	ClientTlsCert string `json:"client_tls_cert"`
 	// Client certificate key to provide to the LDAP server, must be x509 PEM encoded (optional)
-	ClientTlsKey *string `json:"client_tls_key,omitempty"`
+	ClientTlsKey string `json:"client_tls_key"`
 	// Denies an unauthenticated LDAP bind request if the user's password is empty; defaults to true
-	DenyNullBind *bool `json:"deny_null_bind,omitempty"`
+	DenyNullBind bool `json:"deny_null_bind"`
 	// Use anonymous bind to discover the bind DN of a user (optional)
-	Discoverdn *bool `json:"discoverdn,omitempty"`
+	Discoverdn bool `json:"discoverdn"`
 	// LDAP attribute to follow on objects returned by <groupfilter> in order to enumerate user group membership. Examples: \"cn\" or \"memberOf\", etc. Default: cn
-	Groupattr *string `json:"groupattr,omitempty"`
+	Groupattr string `json:"groupattr"`
 	// LDAP search base to use for group membership search (eg: ou=Groups,dc=example,dc=org)
-	Groupdn *string `json:"groupdn,omitempty"`
+	Groupdn string `json:"groupdn"`
 	// Go template for querying group membership of user (optional) The template can access the following context variables: UserDN, Username Example: (&(objectClass=group)(member:1.2.840.113556.1.4.1941:={{.UserDN}})) Default: (|(memberUid={{.Username}})(member={{.UserDN}})(uniqueMember={{.UserDN}}))
-	Groupfilter *string `json:"groupfilter,omitempty"`
+	Groupfilter string `json:"groupfilter"`
 	// Skip LDAP server SSL Certificate verification - VERY insecure (optional)
-	InsecureTls *bool `json:"insecure_tls,omitempty"`
+	InsecureTls bool `json:"insecure_tls"`
 	// The desired length of passwords that Vault generates.
 	// Deprecated
-	Length *int32 `json:"length,omitempty"`
+	Length int32 `json:"length"`
 	// The maximum password time-to-live.
-	MaxTtl *int32 `json:"max_ttl,omitempty"`
+	MaxTtl int32 `json:"max_ttl"`
 	// Password policy to use to generate passwords
-	PasswordPolicy *string `json:"password_policy,omitempty"`
+	PasswordPolicy string `json:"password_policy"`
 	// Timeout, in seconds, for the connection when making requests against the server before returning back an error.
-	RequestTimeout *int32 `json:"request_timeout,omitempty"`
+	RequestTimeout int32 `json:"request_timeout"`
 	// The desired OpenLDAP schema used when modifying user account passwords.
-	Schema *string `json:"schema,omitempty"`
+	Schema string `json:"schema"`
 	// Issue a StartTLS command after establishing unencrypted connection (optional)
-	Starttls *bool `json:"starttls,omitempty"`
+	Starttls bool `json:"starttls"`
 	// Maximum TLS version to use. Accepted values are 'tls10', 'tls11', 'tls12' or 'tls13'. Defaults to 'tls12'
-	TlsMaxVersion *string `json:"tls_max_version,omitempty"`
+	TlsMaxVersion string `json:"tls_max_version"`
 	// Minimum TLS version to use. Accepted values are 'tls10', 'tls11', 'tls12' or 'tls13'. Defaults to 'tls12'
-	TlsMinVersion *string `json:"tls_min_version,omitempty"`
+	TlsMinVersion string `json:"tls_min_version"`
 	// The default password time-to-live.
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 	// Enables userPrincipalDomain login with [username]@UPNDomain (optional)
-	Upndomain *string `json:"upndomain,omitempty"`
+	Upndomain string `json:"upndomain"`
 	// LDAP URL to connect to (default: ldap://127.0.0.1). Multiple URLs can be specified by concatenating them with commas; they will be tried in-order.
-	Url *string `json:"url,omitempty"`
+	Url string `json:"url"`
 	// In Vault 1.1.1 a fix for handling group CN values of different cases unfortunately introduced a regression that could cause previously defined groups to not be found due to a change in the resulting name. If set true, the pre-1.1.1 behavior for matching group CNs will be used. This is only needed in some upgrade scenarios for backwards compatibility. It is enabled by default if the config is upgraded but disabled by default on new configurations.
-	UsePre111GroupCnBehavior *bool `json:"use_pre111_group_cn_behavior,omitempty"`
+	UsePre111GroupCnBehavior bool `json:"use_pre111_group_cn_behavior"`
 	// If true, use the Active Directory tokenGroups constructed attribute of the user to find the group memberships. This will find all security groups including nested ones.
-	UseTokenGroups *bool `json:"use_token_groups,omitempty"`
+	UseTokenGroups bool `json:"use_token_groups"`
 	// Attribute used for users (default: cn)
-	Userattr *string `json:"userattr,omitempty"`
+	Userattr string `json:"userattr"`
 	// LDAP domain to use for users (eg: ou=People,dc=example,dc=org)
-	Userdn *string `json:"userdn,omitempty"`
+	Userdn string `json:"userdn"`
 	// Go template for LDAP user search filer (optional) The template can access the following context variables: UserAttr, Username Default: ({{.UserAttr}}={{.Username}})
-	Userfilter *string `json:"userfilter,omitempty"`
+	Userfilter string `json:"userfilter"`
 	// If true, sets the alias name to the username
-	UsernameAsAlias *bool `json:"username_as_alias,omitempty"`
+	UsernameAsAlias bool `json:"username_as_alias"`
 }
 
 // NewOpenldapConfigRequestWithDefaults instantiates a new OpenldapConfigRequest object
@@ -9457,125 +8081,57 @@ type OpenldapConfigRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewOpenldapConfigRequestWithDefaults() *OpenldapConfigRequest {
 	this := OpenldapConfigRequest{}
-	var anonymousGroupSearch bool = false
-	this.AnonymousGroupSearch = &anonymousGroupSearch
-	var denyNullBind bool = true
-	this.DenyNullBind = &denyNullBind
-	var groupattr string = "cn"
-	this.Groupattr = &groupattr
-	var groupfilter string = "(|(memberUid={{.Username}})(member={{.UserDN}})(uniqueMember={{.UserDN}}))"
-	this.Groupfilter = &groupfilter
-	var schema string = "openldap"
-	this.Schema = &schema
-	var tlsMaxVersion string = "tls12"
-	this.TlsMaxVersion = &tlsMaxVersion
-	var tlsMinVersion string = "tls12"
-	this.TlsMinVersion = &tlsMinVersion
-	var url string = "ldap://127.0.0.1"
-	this.Url = &url
-	var useTokenGroups bool = false
-	this.UseTokenGroups = &useTokenGroups
-	var userattr string = "cn"
-	this.Userattr = &userattr
-	var userfilter string = "({{.UserAttr}}={{.Username}})"
-	this.Userfilter = &userfilter
-	var usernameAsAlias bool = false
-	this.UsernameAsAlias = &usernameAsAlias
+
+	this.AnonymousGroupSearch = false
+	this.DenyNullBind = true
+	this.Groupattr = "cn"
+	this.Groupfilter = "(|(memberUid={{.Username}})(member={{.UserDN}})(uniqueMember={{.UserDN}}))"
+	this.Schema = "openldap"
+	this.TlsMaxVersion = "tls12"
+	this.TlsMinVersion = "tls12"
+	this.Url = "ldap://127.0.0.1"
+	this.UseTokenGroups = false
+	this.Userattr = "cn"
+	this.Userfilter = "({{.UserAttr}}={{.Username}})"
+	this.UsernameAsAlias = false
+
 	return &this
 }
 
 func (o OpenldapConfigRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AnonymousGroupSearch != nil {
-		toSerialize["anonymous_group_search"] = o.AnonymousGroupSearch
-	}
-	if o.Binddn != nil {
-		toSerialize["binddn"] = o.Binddn
-	}
-	if o.Bindpass != nil {
-		toSerialize["bindpass"] = o.Bindpass
-	}
-	if o.CaseSensitiveNames != nil {
-		toSerialize["case_sensitive_names"] = o.CaseSensitiveNames
-	}
-	if o.Certificate != nil {
-		toSerialize["certificate"] = o.Certificate
-	}
-	if o.ClientTlsCert != nil {
-		toSerialize["client_tls_cert"] = o.ClientTlsCert
-	}
-	if o.ClientTlsKey != nil {
-		toSerialize["client_tls_key"] = o.ClientTlsKey
-	}
-	if o.DenyNullBind != nil {
-		toSerialize["deny_null_bind"] = o.DenyNullBind
-	}
-	if o.Discoverdn != nil {
-		toSerialize["discoverdn"] = o.Discoverdn
-	}
-	if o.Groupattr != nil {
-		toSerialize["groupattr"] = o.Groupattr
-	}
-	if o.Groupdn != nil {
-		toSerialize["groupdn"] = o.Groupdn
-	}
-	if o.Groupfilter != nil {
-		toSerialize["groupfilter"] = o.Groupfilter
-	}
-	if o.InsecureTls != nil {
-		toSerialize["insecure_tls"] = o.InsecureTls
-	}
-	if o.Length != nil {
-		toSerialize["length"] = o.Length
-	}
-	if o.MaxTtl != nil {
-		toSerialize["max_ttl"] = o.MaxTtl
-	}
-	if o.PasswordPolicy != nil {
-		toSerialize["password_policy"] = o.PasswordPolicy
-	}
-	if o.RequestTimeout != nil {
-		toSerialize["request_timeout"] = o.RequestTimeout
-	}
-	if o.Schema != nil {
-		toSerialize["schema"] = o.Schema
-	}
-	if o.Starttls != nil {
-		toSerialize["starttls"] = o.Starttls
-	}
-	if o.TlsMaxVersion != nil {
-		toSerialize["tls_max_version"] = o.TlsMaxVersion
-	}
-	if o.TlsMinVersion != nil {
-		toSerialize["tls_min_version"] = o.TlsMinVersion
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
-	if o.Upndomain != nil {
-		toSerialize["upndomain"] = o.Upndomain
-	}
-	if o.Url != nil {
-		toSerialize["url"] = o.Url
-	}
-	if o.UsePre111GroupCnBehavior != nil {
-		toSerialize["use_pre111_group_cn_behavior"] = o.UsePre111GroupCnBehavior
-	}
-	if o.UseTokenGroups != nil {
-		toSerialize["use_token_groups"] = o.UseTokenGroups
-	}
-	if o.Userattr != nil {
-		toSerialize["userattr"] = o.Userattr
-	}
-	if o.Userdn != nil {
-		toSerialize["userdn"] = o.Userdn
-	}
-	if o.Userfilter != nil {
-		toSerialize["userfilter"] = o.Userfilter
-	}
-	if o.UsernameAsAlias != nil {
-		toSerialize["username_as_alias"] = o.UsernameAsAlias
-	}
+
+	toSerialize["anonymous_group_search"] = o.AnonymousGroupSearch
+	toSerialize["binddn"] = o.Binddn
+	toSerialize["bindpass"] = o.Bindpass
+	toSerialize["case_sensitive_names"] = o.CaseSensitiveNames
+	toSerialize["certificate"] = o.Certificate
+	toSerialize["client_tls_cert"] = o.ClientTlsCert
+	toSerialize["client_tls_key"] = o.ClientTlsKey
+	toSerialize["deny_null_bind"] = o.DenyNullBind
+	toSerialize["discoverdn"] = o.Discoverdn
+	toSerialize["groupattr"] = o.Groupattr
+	toSerialize["groupdn"] = o.Groupdn
+	toSerialize["groupfilter"] = o.Groupfilter
+	toSerialize["insecure_tls"] = o.InsecureTls
+	toSerialize["length"] = o.Length
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["password_policy"] = o.PasswordPolicy
+	toSerialize["request_timeout"] = o.RequestTimeout
+	toSerialize["schema"] = o.Schema
+	toSerialize["starttls"] = o.Starttls
+	toSerialize["tls_max_version"] = o.TlsMaxVersion
+	toSerialize["tls_min_version"] = o.TlsMinVersion
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["upndomain"] = o.Upndomain
+	toSerialize["url"] = o.Url
+	toSerialize["use_pre111_group_cn_behavior"] = o.UsePre111GroupCnBehavior
+	toSerialize["use_token_groups"] = o.UseTokenGroups
+	toSerialize["userattr"] = o.Userattr
+	toSerialize["userdn"] = o.Userdn
+	toSerialize["userfilter"] = o.Userfilter
+	toSerialize["username_as_alias"] = o.UsernameAsAlias
+
 	return json.Marshal(toSerialize)
 }
 
@@ -9594,15 +8150,15 @@ type OpenldapRoleRequest struct {
 	// LDIF string used to create new entities within OpenLDAP. This LDIF can be templated.
 	CreationLdif string `json:"creation_ldif"`
 	// Default TTL for dynamic credentials
-	DefaultTtl *int32 `json:"default_ttl,omitempty"`
+	DefaultTtl int32 `json:"default_ttl"`
 	// LDIF string used to delete entities created within OpenLDAP. This LDIF can be templated.
 	DeletionLdif string `json:"deletion_ldif"`
 	// Max TTL a dynamic credential can be extended to
-	MaxTtl *int32 `json:"max_ttl,omitempty"`
+	MaxTtl int32 `json:"max_ttl"`
 	// LDIF string used to rollback changes in the event of a failure to create credentials. This LDIF can be templated.
-	RollbackLdif *string `json:"rollback_ldif,omitempty"`
+	RollbackLdif string `json:"rollback_ldif"`
 	// The template used to create a username
-	UsernameTemplate *string `json:"username_template,omitempty"`
+	UsernameTemplate string `json:"username_template"`
 }
 
 // NewOpenldapRoleRequestWithDefaults instantiates a new OpenldapRoleRequest object
@@ -9610,29 +8166,20 @@ type OpenldapRoleRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewOpenldapRoleRequestWithDefaults() *OpenldapRoleRequest {
 	this := OpenldapRoleRequest{}
+
 	return &this
 }
 
 func (o OpenldapRoleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["creation_ldif"] = o.CreationLdif
-	}
-	if o.DefaultTtl != nil {
-		toSerialize["default_ttl"] = o.DefaultTtl
-	}
-	if true {
-		toSerialize["deletion_ldif"] = o.DeletionLdif
-	}
-	if o.MaxTtl != nil {
-		toSerialize["max_ttl"] = o.MaxTtl
-	}
-	if o.RollbackLdif != nil {
-		toSerialize["rollback_ldif"] = o.RollbackLdif
-	}
-	if o.UsernameTemplate != nil {
-		toSerialize["username_template"] = o.UsernameTemplate
-	}
+
+	toSerialize["creation_ldif"] = o.CreationLdif
+	toSerialize["default_ttl"] = o.DefaultTtl
+	toSerialize["deletion_ldif"] = o.DeletionLdif
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["rollback_ldif"] = o.RollbackLdif
+	toSerialize["username_template"] = o.UsernameTemplate
+
 	return json.Marshal(toSerialize)
 }
 
@@ -9649,13 +8196,13 @@ API version: 1.12.0
 // OpenldapStaticRoleRequest struct for OpenldapStaticRoleRequest
 type OpenldapStaticRoleRequest struct {
 	// The distinguished name of the entry to manage.
-	Dn *string `json:"dn,omitempty"`
+	Dn string `json:"dn"`
 	// Period for automatic credential rotation of the given entry.
-	RotationPeriod *int32 `json:"rotation_period,omitempty"`
+	RotationPeriod int32 `json:"rotation_period"`
 	// The time-to-live for the password.
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 	// The username/logon name for the entry with which this role will be associated.
-	Username *string `json:"username,omitempty"`
+	Username string `json:"username"`
 }
 
 // NewOpenldapStaticRoleRequestWithDefaults instantiates a new OpenldapStaticRoleRequest object
@@ -9663,23 +8210,18 @@ type OpenldapStaticRoleRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewOpenldapStaticRoleRequestWithDefaults() *OpenldapStaticRoleRequest {
 	this := OpenldapStaticRoleRequest{}
+
 	return &this
 }
 
 func (o OpenldapStaticRoleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Dn != nil {
-		toSerialize["dn"] = o.Dn
-	}
-	if o.RotationPeriod != nil {
-		toSerialize["rotation_period"] = o.RotationPeriod
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
-	if o.Username != nil {
-		toSerialize["username"] = o.Username
-	}
+
+	toSerialize["dn"] = o.Dn
+	toSerialize["rotation_period"] = o.RotationPeriod
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["username"] = o.Username
+
 	return json.Marshal(toSerialize)
 }
 
@@ -9696,7 +8238,7 @@ API version: 1.12.0
 // PkiBundleRequest struct for PkiBundleRequest
 type PkiBundleRequest struct {
 	// PEM-format, concatenated unencrypted secret-key (optional) and certificates.
-	PemBundle *string `json:"pem_bundle,omitempty"`
+	PemBundle string `json:"pem_bundle"`
 }
 
 // NewPkiBundleRequestWithDefaults instantiates a new PkiBundleRequest object
@@ -9704,14 +8246,15 @@ type PkiBundleRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiBundleRequestWithDefaults() *PkiBundleRequest {
 	this := PkiBundleRequest{}
+
 	return &this
 }
 
 func (o PkiBundleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.PemBundle != nil {
-		toSerialize["pem_bundle"] = o.PemBundle
-	}
+
+	toSerialize["pem_bundle"] = o.PemBundle
+
 	return json.Marshal(toSerialize)
 }
 
@@ -9728,7 +8271,7 @@ API version: 1.12.0
 // PkiCertRequest struct for PkiCertRequest
 type PkiCertRequest struct {
 	// PEM-format, concatenated unencrypted secret-key (optional) and certificates.
-	PemBundle *string `json:"pem_bundle,omitempty"`
+	PemBundle string `json:"pem_bundle"`
 }
 
 // NewPkiCertRequestWithDefaults instantiates a new PkiCertRequest object
@@ -9736,14 +8279,15 @@ type PkiCertRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiCertRequestWithDefaults() *PkiCertRequest {
 	this := PkiCertRequest{}
+
 	return &this
 }
 
 func (o PkiCertRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.PemBundle != nil {
-		toSerialize["pem_bundle"] = o.PemBundle
-	}
+
+	toSerialize["pem_bundle"] = o.PemBundle
+
 	return json.Marshal(toSerialize)
 }
 
@@ -9760,7 +8304,7 @@ API version: 1.12.0
 // PkiConfigCaRequest struct for PkiConfigCaRequest
 type PkiConfigCaRequest struct {
 	// PEM-format, concatenated unencrypted secret key and certificate.
-	PemBundle *string `json:"pem_bundle,omitempty"`
+	PemBundle string `json:"pem_bundle"`
 }
 
 // NewPkiConfigCaRequestWithDefaults instantiates a new PkiConfigCaRequest object
@@ -9768,14 +8312,15 @@ type PkiConfigCaRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiConfigCaRequestWithDefaults() *PkiConfigCaRequest {
 	this := PkiConfigCaRequest{}
+
 	return &this
 }
 
 func (o PkiConfigCaRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.PemBundle != nil {
-		toSerialize["pem_bundle"] = o.PemBundle
-	}
+
+	toSerialize["pem_bundle"] = o.PemBundle
+
 	return json.Marshal(toSerialize)
 }
 
@@ -9792,9 +8337,9 @@ API version: 1.12.0
 // PkiConfigCrlRequest struct for PkiConfigCrlRequest
 type PkiConfigCrlRequest struct {
 	// If set to true, disables generating the CRL entirely.
-	Disable *bool `json:"disable,omitempty"`
+	Disable bool `json:"disable"`
 	// The amount of time the generated CRL should be valid; defaults to 72 hours
-	Expiry *string `json:"expiry,omitempty"`
+	Expiry string `json:"expiry"`
 }
 
 // NewPkiConfigCrlRequestWithDefaults instantiates a new PkiConfigCrlRequest object
@@ -9802,19 +8347,18 @@ type PkiConfigCrlRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiConfigCrlRequestWithDefaults() *PkiConfigCrlRequest {
 	this := PkiConfigCrlRequest{}
-	var expiry string = "72h"
-	this.Expiry = &expiry
+
+	this.Expiry = "72h"
+
 	return &this
 }
 
 func (o PkiConfigCrlRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Disable != nil {
-		toSerialize["disable"] = o.Disable
-	}
-	if o.Expiry != nil {
-		toSerialize["expiry"] = o.Expiry
-	}
+
+	toSerialize["disable"] = o.Disable
+	toSerialize["expiry"] = o.Expiry
+
 	return json.Marshal(toSerialize)
 }
 
@@ -9831,7 +8375,7 @@ API version: 1.12.0
 // PkiConfigIssuersRequest struct for PkiConfigIssuersRequest
 type PkiConfigIssuersRequest struct {
 	// Reference (name or identifier) to the default issuer.
-	Default *string `json:"default,omitempty"`
+	Default string `json:"default"`
 }
 
 // NewPkiConfigIssuersRequestWithDefaults instantiates a new PkiConfigIssuersRequest object
@@ -9839,14 +8383,15 @@ type PkiConfigIssuersRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiConfigIssuersRequestWithDefaults() *PkiConfigIssuersRequest {
 	this := PkiConfigIssuersRequest{}
+
 	return &this
 }
 
 func (o PkiConfigIssuersRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Default != nil {
-		toSerialize["default"] = o.Default
-	}
+
+	toSerialize["default"] = o.Default
+
 	return json.Marshal(toSerialize)
 }
 
@@ -9863,7 +8408,7 @@ API version: 1.12.0
 // PkiConfigKeysRequest struct for PkiConfigKeysRequest
 type PkiConfigKeysRequest struct {
 	// Reference (name or identifier) of the default key.
-	Default *string `json:"default,omitempty"`
+	Default string `json:"default"`
 }
 
 // NewPkiConfigKeysRequestWithDefaults instantiates a new PkiConfigKeysRequest object
@@ -9871,14 +8416,15 @@ type PkiConfigKeysRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiConfigKeysRequestWithDefaults() *PkiConfigKeysRequest {
 	this := PkiConfigKeysRequest{}
+
 	return &this
 }
 
 func (o PkiConfigKeysRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Default != nil {
-		toSerialize["default"] = o.Default
-	}
+
+	toSerialize["default"] = o.Default
+
 	return json.Marshal(toSerialize)
 }
 
@@ -9895,11 +8441,11 @@ API version: 1.12.0
 // PkiConfigUrlsRequest struct for PkiConfigUrlsRequest
 type PkiConfigUrlsRequest struct {
 	// Comma-separated list of URLs to be used for the CRL distribution points attribute. See also RFC 5280 Section 4.2.1.13.
-	CrlDistributionPoints []string `json:"crl_distribution_points,omitempty"`
+	CrlDistributionPoints []string `json:"crl_distribution_points"`
 	// Comma-separated list of URLs to be used for the issuing certificate attribute. See also RFC 5280 Section 4.2.2.1.
-	IssuingCertificates []string `json:"issuing_certificates,omitempty"`
+	IssuingCertificates []string `json:"issuing_certificates"`
 	// Comma-separated list of URLs to be used for the OCSP servers attribute. See also RFC 5280 Section 4.2.2.1.
-	OcspServers []string `json:"ocsp_servers,omitempty"`
+	OcspServers []string `json:"ocsp_servers"`
 }
 
 // NewPkiConfigUrlsRequestWithDefaults instantiates a new PkiConfigUrlsRequest object
@@ -9907,20 +8453,17 @@ type PkiConfigUrlsRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiConfigUrlsRequestWithDefaults() *PkiConfigUrlsRequest {
 	this := PkiConfigUrlsRequest{}
+
 	return &this
 }
 
 func (o PkiConfigUrlsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.CrlDistributionPoints != nil {
-		toSerialize["crl_distribution_points"] = o.CrlDistributionPoints
-	}
-	if o.IssuingCertificates != nil {
-		toSerialize["issuing_certificates"] = o.IssuingCertificates
-	}
-	if o.OcspServers != nil {
-		toSerialize["ocsp_servers"] = o.OcspServers
-	}
+
+	toSerialize["crl_distribution_points"] = o.CrlDistributionPoints
+	toSerialize["issuing_certificates"] = o.IssuingCertificates
+	toSerialize["ocsp_servers"] = o.OcspServers
+
 	return json.Marshal(toSerialize)
 }
 
@@ -9937,13 +8480,13 @@ API version: 1.12.0
 // PkiDerPemRequest struct for PkiDerPemRequest
 type PkiDerPemRequest struct {
 	// Provide a name to the generated or existing issuer, the name must be unique across all issuers and not be the reserved value 'default'
-	IssuerName *string `json:"issuer_name,omitempty"`
+	IssuerName string `json:"issuer_name"`
 	// Behavior of leaf's NotAfter fields: \"err\" to error if the computed NotAfter date exceeds that of this issuer; \"truncate\" to silently truncate to that of this issuer; or \"permit\" to allow this issuance to succeed (with NotAfter exceeding that of an issuer). Note that not all values will results in certificates that can be validated through the entire validity period. It is suggested to use \"truncate\" for intermediate CAs and \"permit\" only for root CAs.
-	LeafNotAfterBehavior *string `json:"leaf_not_after_behavior,omitempty"`
+	LeafNotAfterBehavior string `json:"leaf_not_after_behavior"`
 	// Chain of issuer references to use to build this issuer's computed CAChain field, when non-empty.
-	ManualChain []string `json:"manual_chain,omitempty"`
+	ManualChain []string `json:"manual_chain"`
 	// Comma-separated list (or string slice) of usages for this issuer; valid values are \"read-only\", \"issuing-certificates\", and \"crl-signing\". Multiple values may be specified. Read-only is implicit and always set.
-	Usage []string `json:"usage,omitempty"`
+	Usage []string `json:"usage"`
 }
 
 // NewPkiDerPemRequestWithDefaults instantiates a new PkiDerPemRequest object
@@ -9951,25 +8494,20 @@ type PkiDerPemRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiDerPemRequestWithDefaults() *PkiDerPemRequest {
 	this := PkiDerPemRequest{}
-	var leafNotAfterBehavior string = "err"
-	this.LeafNotAfterBehavior = &leafNotAfterBehavior
+
+	this.LeafNotAfterBehavior = "err"
+
 	return &this
 }
 
 func (o PkiDerPemRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.IssuerName != nil {
-		toSerialize["issuer_name"] = o.IssuerName
-	}
-	if o.LeafNotAfterBehavior != nil {
-		toSerialize["leaf_not_after_behavior"] = o.LeafNotAfterBehavior
-	}
-	if o.ManualChain != nil {
-		toSerialize["manual_chain"] = o.ManualChain
-	}
-	if o.Usage != nil {
-		toSerialize["usage"] = o.Usage
-	}
+
+	toSerialize["issuer_name"] = o.IssuerName
+	toSerialize["leaf_not_after_behavior"] = o.LeafNotAfterBehavior
+	toSerialize["manual_chain"] = o.ManualChain
+	toSerialize["usage"] = o.Usage
+
 	return json.Marshal(toSerialize)
 }
 
@@ -9986,59 +8524,59 @@ API version: 1.12.0
 // PkiIntermediateCrossSignRequest struct for PkiIntermediateCrossSignRequest
 type PkiIntermediateCrossSignRequest struct {
 	// Whether to add a Basic Constraints extension with CA: true. Only needed as a workaround in some compatibility scenarios with Active Directory Certificate Services.
-	AddBasicConstraints *bool `json:"add_basic_constraints,omitempty"`
+	AddBasicConstraints bool `json:"add_basic_constraints"`
 	// The requested Subject Alternative Names, if any, in a comma-delimited list. May contain both DNS names and email addresses.
-	AltNames *string `json:"alt_names,omitempty"`
+	AltNames string `json:"alt_names"`
 	// The requested common name; if you want more than one, specify the alternative names in the alt_names map. If not specified when signing, the common name will be taken from the CSR; other names must still be specified in alt_names or ip_sans.
-	CommonName *string `json:"common_name,omitempty"`
+	CommonName string `json:"common_name"`
 	// If set, Country will be set to this value.
-	Country []string `json:"country,omitempty"`
+	Country []string `json:"country"`
 	// If true, the Common Name will not be included in DNS or Email Subject Alternate Names. Defaults to false (CN is included).
-	ExcludeCnFromSans *bool `json:"exclude_cn_from_sans,omitempty"`
+	ExcludeCnFromSans bool `json:"exclude_cn_from_sans"`
 	// Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
-	Exported *string `json:"exported,omitempty"`
+	Exported string `json:"exported"`
 	// Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".
-	Format *string `json:"format,omitempty"`
+	Format string `json:"format"`
 	// The requested IP SANs, if any, in a comma-delimited list
-	IpSans []string `json:"ip_sans,omitempty"`
+	IpSans []string `json:"ip_sans"`
 	// The number of bits to use. Allowed values are 0 (universal default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type: 224, 256 (default), 384, or 521; ignored with ed25519.
-	KeyBits *int32 `json:"key_bits,omitempty"`
+	KeyBits int32 `json:"key_bits"`
 	// Provide a name to the generated or existing key, the name must be unique across all keys and not be the reserved value 'default'
-	KeyName *string `json:"key_name,omitempty"`
+	KeyName string `json:"key_name"`
 	// Reference to a existing key; either \"default\" for the configured default key, an identifier or the name assigned to the key.
-	KeyRef *string `json:"key_ref,omitempty"`
+	KeyRef string `json:"key_ref"`
 	// The type of key to use; defaults to RSA. \"rsa\" \"ec\" and \"ed25519\" are the only valid values.
-	KeyType *string `json:"key_type,omitempty"`
+	KeyType string `json:"key_type"`
 	// If set, Locality will be set to this value.
-	Locality []string `json:"locality,omitempty"`
+	Locality []string `json:"locality"`
 	// The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_name is required. Ignored for other types.
-	ManagedKeyId *string `json:"managed_key_id,omitempty"`
+	ManagedKeyId string `json:"managed_key_id"`
 	// The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_id is required. Ignored for other types.
-	ManagedKeyName *string `json:"managed_key_name,omitempty"`
+	ManagedKeyName string `json:"managed_key_name"`
 	// Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
-	NotAfter *string `json:"not_after,omitempty"`
+	NotAfter string `json:"not_after"`
 	// The duration before now which the certificate needs to be backdated by.
-	NotBeforeDuration *int32 `json:"not_before_duration,omitempty"`
+	NotBeforeDuration int32 `json:"not_before_duration"`
 	// If set, O (Organization) will be set to this value.
-	Organization []string `json:"organization,omitempty"`
+	Organization []string `json:"organization"`
 	// Requested other SANs, in an array with the format <oid>;UTF8:<utf8 string value> for each entry.
-	OtherSans []string `json:"other_sans,omitempty"`
+	OtherSans []string `json:"other_sans"`
 	// If set, OU (OrganizationalUnit) will be set to this value.
-	Ou []string `json:"ou,omitempty"`
+	Ou []string `json:"ou"`
 	// If set, Postal Code will be set to this value.
-	PostalCode []string `json:"postal_code,omitempty"`
+	PostalCode []string `json:"postal_code"`
 	// Format for the returned private key. Generally the default will be controlled by the \"format\" parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \"pkcs8\" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to \"der\".
-	PrivateKeyFormat *string `json:"private_key_format,omitempty"`
+	PrivateKeyFormat string `json:"private_key_format"`
 	// If set, Province will be set to this value.
-	Province []string `json:"province,omitempty"`
+	Province []string `json:"province"`
 	// The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field.
-	SerialNumber *string `json:"serial_number,omitempty"`
+	SerialNumber string `json:"serial_number"`
 	// If set, Street Address will be set to this value.
-	StreetAddress []string `json:"street_address,omitempty"`
+	StreetAddress []string `json:"street_address"`
 	// The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the mount max TTL. Note: this only has an effect when generating a CA cert or signing a CA cert, not when generating a CSR for an intermediate CA.
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 	// The requested URI SANs, if any, in a comma-delimited list.
-	UriSans []string `json:"uri_sans,omitempty"`
+	UriSans []string `json:"uri_sans"`
 }
 
 // NewPkiIntermediateCrossSignRequestWithDefaults instantiates a new PkiIntermediateCrossSignRequest object
@@ -10046,106 +8584,49 @@ type PkiIntermediateCrossSignRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiIntermediateCrossSignRequestWithDefaults() *PkiIntermediateCrossSignRequest {
 	this := PkiIntermediateCrossSignRequest{}
-	var excludeCnFromSans bool = false
-	this.ExcludeCnFromSans = &excludeCnFromSans
-	var format string = "pem"
-	this.Format = &format
-	var keyBits int32 = 0
-	this.KeyBits = &keyBits
-	var keyRef string = "default"
-	this.KeyRef = &keyRef
-	var keyType string = "rsa"
-	this.KeyType = &keyType
-	var notBeforeDuration int32 = 30
-	this.NotBeforeDuration = &notBeforeDuration
-	var privateKeyFormat string = "der"
-	this.PrivateKeyFormat = &privateKeyFormat
+
+	this.ExcludeCnFromSans = false
+	this.Format = "pem"
+	this.KeyBits = 0
+	this.KeyRef = "default"
+	this.KeyType = "rsa"
+	this.NotBeforeDuration = 30
+	this.PrivateKeyFormat = "der"
+
 	return &this
 }
 
 func (o PkiIntermediateCrossSignRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AddBasicConstraints != nil {
-		toSerialize["add_basic_constraints"] = o.AddBasicConstraints
-	}
-	if o.AltNames != nil {
-		toSerialize["alt_names"] = o.AltNames
-	}
-	if o.CommonName != nil {
-		toSerialize["common_name"] = o.CommonName
-	}
-	if o.Country != nil {
-		toSerialize["country"] = o.Country
-	}
-	if o.ExcludeCnFromSans != nil {
-		toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
-	}
-	if o.Exported != nil {
-		toSerialize["exported"] = o.Exported
-	}
-	if o.Format != nil {
-		toSerialize["format"] = o.Format
-	}
-	if o.IpSans != nil {
-		toSerialize["ip_sans"] = o.IpSans
-	}
-	if o.KeyBits != nil {
-		toSerialize["key_bits"] = o.KeyBits
-	}
-	if o.KeyName != nil {
-		toSerialize["key_name"] = o.KeyName
-	}
-	if o.KeyRef != nil {
-		toSerialize["key_ref"] = o.KeyRef
-	}
-	if o.KeyType != nil {
-		toSerialize["key_type"] = o.KeyType
-	}
-	if o.Locality != nil {
-		toSerialize["locality"] = o.Locality
-	}
-	if o.ManagedKeyId != nil {
-		toSerialize["managed_key_id"] = o.ManagedKeyId
-	}
-	if o.ManagedKeyName != nil {
-		toSerialize["managed_key_name"] = o.ManagedKeyName
-	}
-	if o.NotAfter != nil {
-		toSerialize["not_after"] = o.NotAfter
-	}
-	if o.NotBeforeDuration != nil {
-		toSerialize["not_before_duration"] = o.NotBeforeDuration
-	}
-	if o.Organization != nil {
-		toSerialize["organization"] = o.Organization
-	}
-	if o.OtherSans != nil {
-		toSerialize["other_sans"] = o.OtherSans
-	}
-	if o.Ou != nil {
-		toSerialize["ou"] = o.Ou
-	}
-	if o.PostalCode != nil {
-		toSerialize["postal_code"] = o.PostalCode
-	}
-	if o.PrivateKeyFormat != nil {
-		toSerialize["private_key_format"] = o.PrivateKeyFormat
-	}
-	if o.Province != nil {
-		toSerialize["province"] = o.Province
-	}
-	if o.SerialNumber != nil {
-		toSerialize["serial_number"] = o.SerialNumber
-	}
-	if o.StreetAddress != nil {
-		toSerialize["street_address"] = o.StreetAddress
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
-	if o.UriSans != nil {
-		toSerialize["uri_sans"] = o.UriSans
-	}
+
+	toSerialize["add_basic_constraints"] = o.AddBasicConstraints
+	toSerialize["alt_names"] = o.AltNames
+	toSerialize["common_name"] = o.CommonName
+	toSerialize["country"] = o.Country
+	toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
+	toSerialize["exported"] = o.Exported
+	toSerialize["format"] = o.Format
+	toSerialize["ip_sans"] = o.IpSans
+	toSerialize["key_bits"] = o.KeyBits
+	toSerialize["key_name"] = o.KeyName
+	toSerialize["key_ref"] = o.KeyRef
+	toSerialize["key_type"] = o.KeyType
+	toSerialize["locality"] = o.Locality
+	toSerialize["managed_key_id"] = o.ManagedKeyId
+	toSerialize["managed_key_name"] = o.ManagedKeyName
+	toSerialize["not_after"] = o.NotAfter
+	toSerialize["not_before_duration"] = o.NotBeforeDuration
+	toSerialize["organization"] = o.Organization
+	toSerialize["other_sans"] = o.OtherSans
+	toSerialize["ou"] = o.Ou
+	toSerialize["postal_code"] = o.PostalCode
+	toSerialize["private_key_format"] = o.PrivateKeyFormat
+	toSerialize["province"] = o.Province
+	toSerialize["serial_number"] = o.SerialNumber
+	toSerialize["street_address"] = o.StreetAddress
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["uri_sans"] = o.UriSans
+
 	return json.Marshal(toSerialize)
 }
 
@@ -10162,57 +8643,57 @@ API version: 1.12.0
 // PkiIntermediateGenerateRequest struct for PkiIntermediateGenerateRequest
 type PkiIntermediateGenerateRequest struct {
 	// Whether to add a Basic Constraints extension with CA: true. Only needed as a workaround in some compatibility scenarios with Active Directory Certificate Services.
-	AddBasicConstraints *bool `json:"add_basic_constraints,omitempty"`
+	AddBasicConstraints bool `json:"add_basic_constraints"`
 	// The requested Subject Alternative Names, if any, in a comma-delimited list. May contain both DNS names and email addresses.
-	AltNames *string `json:"alt_names,omitempty"`
+	AltNames string `json:"alt_names"`
 	// The requested common name; if you want more than one, specify the alternative names in the alt_names map. If not specified when signing, the common name will be taken from the CSR; other names must still be specified in alt_names or ip_sans.
-	CommonName *string `json:"common_name,omitempty"`
+	CommonName string `json:"common_name"`
 	// If set, Country will be set to this value.
-	Country []string `json:"country,omitempty"`
+	Country []string `json:"country"`
 	// If true, the Common Name will not be included in DNS or Email Subject Alternate Names. Defaults to false (CN is included).
-	ExcludeCnFromSans *bool `json:"exclude_cn_from_sans,omitempty"`
+	ExcludeCnFromSans bool `json:"exclude_cn_from_sans"`
 	// Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".
-	Format *string `json:"format,omitempty"`
+	Format string `json:"format"`
 	// The requested IP SANs, if any, in a comma-delimited list
-	IpSans []string `json:"ip_sans,omitempty"`
+	IpSans []string `json:"ip_sans"`
 	// The number of bits to use. Allowed values are 0 (universal default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type: 224, 256 (default), 384, or 521; ignored with ed25519.
-	KeyBits *int32 `json:"key_bits,omitempty"`
+	KeyBits int32 `json:"key_bits"`
 	// Provide a name to the generated or existing key, the name must be unique across all keys and not be the reserved value 'default'
-	KeyName *string `json:"key_name,omitempty"`
+	KeyName string `json:"key_name"`
 	// Reference to a existing key; either \"default\" for the configured default key, an identifier or the name assigned to the key.
-	KeyRef *string `json:"key_ref,omitempty"`
+	KeyRef string `json:"key_ref"`
 	// The type of key to use; defaults to RSA. \"rsa\" \"ec\" and \"ed25519\" are the only valid values.
-	KeyType *string `json:"key_type,omitempty"`
+	KeyType string `json:"key_type"`
 	// If set, Locality will be set to this value.
-	Locality []string `json:"locality,omitempty"`
+	Locality []string `json:"locality"`
 	// The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_name is required. Ignored for other types.
-	ManagedKeyId *string `json:"managed_key_id,omitempty"`
+	ManagedKeyId string `json:"managed_key_id"`
 	// The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_id is required. Ignored for other types.
-	ManagedKeyName *string `json:"managed_key_name,omitempty"`
+	ManagedKeyName string `json:"managed_key_name"`
 	// Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
-	NotAfter *string `json:"not_after,omitempty"`
+	NotAfter string `json:"not_after"`
 	// The duration before now which the certificate needs to be backdated by.
-	NotBeforeDuration *int32 `json:"not_before_duration,omitempty"`
+	NotBeforeDuration int32 `json:"not_before_duration"`
 	// If set, O (Organization) will be set to this value.
-	Organization []string `json:"organization,omitempty"`
+	Organization []string `json:"organization"`
 	// Requested other SANs, in an array with the format <oid>;UTF8:<utf8 string value> for each entry.
-	OtherSans []string `json:"other_sans,omitempty"`
+	OtherSans []string `json:"other_sans"`
 	// If set, OU (OrganizationalUnit) will be set to this value.
-	Ou []string `json:"ou,omitempty"`
+	Ou []string `json:"ou"`
 	// If set, Postal Code will be set to this value.
-	PostalCode []string `json:"postal_code,omitempty"`
+	PostalCode []string `json:"postal_code"`
 	// Format for the returned private key. Generally the default will be controlled by the \"format\" parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \"pkcs8\" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to \"der\".
-	PrivateKeyFormat *string `json:"private_key_format,omitempty"`
+	PrivateKeyFormat string `json:"private_key_format"`
 	// If set, Province will be set to this value.
-	Province []string `json:"province,omitempty"`
+	Province []string `json:"province"`
 	// The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field.
-	SerialNumber *string `json:"serial_number,omitempty"`
+	SerialNumber string `json:"serial_number"`
 	// If set, Street Address will be set to this value.
-	StreetAddress []string `json:"street_address,omitempty"`
+	StreetAddress []string `json:"street_address"`
 	// The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the mount max TTL. Note: this only has an effect when generating a CA cert or signing a CA cert, not when generating a CSR for an intermediate CA.
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 	// The requested URI SANs, if any, in a comma-delimited list.
-	UriSans []string `json:"uri_sans,omitempty"`
+	UriSans []string `json:"uri_sans"`
 }
 
 // NewPkiIntermediateGenerateRequestWithDefaults instantiates a new PkiIntermediateGenerateRequest object
@@ -10220,103 +8701,48 @@ type PkiIntermediateGenerateRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiIntermediateGenerateRequestWithDefaults() *PkiIntermediateGenerateRequest {
 	this := PkiIntermediateGenerateRequest{}
-	var excludeCnFromSans bool = false
-	this.ExcludeCnFromSans = &excludeCnFromSans
-	var format string = "pem"
-	this.Format = &format
-	var keyBits int32 = 0
-	this.KeyBits = &keyBits
-	var keyRef string = "default"
-	this.KeyRef = &keyRef
-	var keyType string = "rsa"
-	this.KeyType = &keyType
-	var notBeforeDuration int32 = 30
-	this.NotBeforeDuration = &notBeforeDuration
-	var privateKeyFormat string = "der"
-	this.PrivateKeyFormat = &privateKeyFormat
+
+	this.ExcludeCnFromSans = false
+	this.Format = "pem"
+	this.KeyBits = 0
+	this.KeyRef = "default"
+	this.KeyType = "rsa"
+	this.NotBeforeDuration = 30
+	this.PrivateKeyFormat = "der"
+
 	return &this
 }
 
 func (o PkiIntermediateGenerateRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AddBasicConstraints != nil {
-		toSerialize["add_basic_constraints"] = o.AddBasicConstraints
-	}
-	if o.AltNames != nil {
-		toSerialize["alt_names"] = o.AltNames
-	}
-	if o.CommonName != nil {
-		toSerialize["common_name"] = o.CommonName
-	}
-	if o.Country != nil {
-		toSerialize["country"] = o.Country
-	}
-	if o.ExcludeCnFromSans != nil {
-		toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
-	}
-	if o.Format != nil {
-		toSerialize["format"] = o.Format
-	}
-	if o.IpSans != nil {
-		toSerialize["ip_sans"] = o.IpSans
-	}
-	if o.KeyBits != nil {
-		toSerialize["key_bits"] = o.KeyBits
-	}
-	if o.KeyName != nil {
-		toSerialize["key_name"] = o.KeyName
-	}
-	if o.KeyRef != nil {
-		toSerialize["key_ref"] = o.KeyRef
-	}
-	if o.KeyType != nil {
-		toSerialize["key_type"] = o.KeyType
-	}
-	if o.Locality != nil {
-		toSerialize["locality"] = o.Locality
-	}
-	if o.ManagedKeyId != nil {
-		toSerialize["managed_key_id"] = o.ManagedKeyId
-	}
-	if o.ManagedKeyName != nil {
-		toSerialize["managed_key_name"] = o.ManagedKeyName
-	}
-	if o.NotAfter != nil {
-		toSerialize["not_after"] = o.NotAfter
-	}
-	if o.NotBeforeDuration != nil {
-		toSerialize["not_before_duration"] = o.NotBeforeDuration
-	}
-	if o.Organization != nil {
-		toSerialize["organization"] = o.Organization
-	}
-	if o.OtherSans != nil {
-		toSerialize["other_sans"] = o.OtherSans
-	}
-	if o.Ou != nil {
-		toSerialize["ou"] = o.Ou
-	}
-	if o.PostalCode != nil {
-		toSerialize["postal_code"] = o.PostalCode
-	}
-	if o.PrivateKeyFormat != nil {
-		toSerialize["private_key_format"] = o.PrivateKeyFormat
-	}
-	if o.Province != nil {
-		toSerialize["province"] = o.Province
-	}
-	if o.SerialNumber != nil {
-		toSerialize["serial_number"] = o.SerialNumber
-	}
-	if o.StreetAddress != nil {
-		toSerialize["street_address"] = o.StreetAddress
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
-	if o.UriSans != nil {
-		toSerialize["uri_sans"] = o.UriSans
-	}
+
+	toSerialize["add_basic_constraints"] = o.AddBasicConstraints
+	toSerialize["alt_names"] = o.AltNames
+	toSerialize["common_name"] = o.CommonName
+	toSerialize["country"] = o.Country
+	toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
+	toSerialize["format"] = o.Format
+	toSerialize["ip_sans"] = o.IpSans
+	toSerialize["key_bits"] = o.KeyBits
+	toSerialize["key_name"] = o.KeyName
+	toSerialize["key_ref"] = o.KeyRef
+	toSerialize["key_type"] = o.KeyType
+	toSerialize["locality"] = o.Locality
+	toSerialize["managed_key_id"] = o.ManagedKeyId
+	toSerialize["managed_key_name"] = o.ManagedKeyName
+	toSerialize["not_after"] = o.NotAfter
+	toSerialize["not_before_duration"] = o.NotBeforeDuration
+	toSerialize["organization"] = o.Organization
+	toSerialize["other_sans"] = o.OtherSans
+	toSerialize["ou"] = o.Ou
+	toSerialize["postal_code"] = o.PostalCode
+	toSerialize["private_key_format"] = o.PrivateKeyFormat
+	toSerialize["province"] = o.Province
+	toSerialize["serial_number"] = o.SerialNumber
+	toSerialize["street_address"] = o.StreetAddress
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["uri_sans"] = o.UriSans
+
 	return json.Marshal(toSerialize)
 }
 
@@ -10333,7 +8759,7 @@ API version: 1.12.0
 // PkiIntermediateSetSignedRequest struct for PkiIntermediateSetSignedRequest
 type PkiIntermediateSetSignedRequest struct {
 	// PEM-format certificate. This must be a CA certificate with a public key matching the previously-generated key from the generation endpoint. Additional parent CAs may be optionally appended to the bundle.
-	Certificate *string `json:"certificate,omitempty"`
+	Certificate string `json:"certificate"`
 }
 
 // NewPkiIntermediateSetSignedRequestWithDefaults instantiates a new PkiIntermediateSetSignedRequest object
@@ -10341,14 +8767,15 @@ type PkiIntermediateSetSignedRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiIntermediateSetSignedRequestWithDefaults() *PkiIntermediateSetSignedRequest {
 	this := PkiIntermediateSetSignedRequest{}
+
 	return &this
 }
 
 func (o PkiIntermediateSetSignedRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Certificate != nil {
-		toSerialize["certificate"] = o.Certificate
-	}
+
+	toSerialize["certificate"] = o.Certificate
+
 	return json.Marshal(toSerialize)
 }
 
@@ -10365,15 +8792,15 @@ API version: 1.12.0
 // PkiInternalExportedRequest struct for PkiInternalExportedRequest
 type PkiInternalExportedRequest struct {
 	// The number of bits to use. Allowed values are 0 (universal default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type: 224, 256 (default), 384, or 521; ignored with ed25519.
-	KeyBits *int32 `json:"key_bits,omitempty"`
+	KeyBits int32 `json:"key_bits"`
 	// Optional name to be used for this key
-	KeyName *string `json:"key_name,omitempty"`
+	KeyName string `json:"key_name"`
 	// The type of key to use; defaults to RSA. \"rsa\" \"ec\" and \"ed25519\" are the only valid values.
-	KeyType *string `json:"key_type,omitempty"`
+	KeyType string `json:"key_type"`
 	// The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_name is required. Ignored for other types.
-	ManagedKeyId *string `json:"managed_key_id,omitempty"`
+	ManagedKeyId string `json:"managed_key_id"`
 	// The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_id is required. Ignored for other types.
-	ManagedKeyName *string `json:"managed_key_name,omitempty"`
+	ManagedKeyName string `json:"managed_key_name"`
 }
 
 // NewPkiInternalExportedRequestWithDefaults instantiates a new PkiInternalExportedRequest object
@@ -10381,30 +8808,22 @@ type PkiInternalExportedRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiInternalExportedRequestWithDefaults() *PkiInternalExportedRequest {
 	this := PkiInternalExportedRequest{}
-	var keyBits int32 = 0
-	this.KeyBits = &keyBits
-	var keyType string = "rsa"
-	this.KeyType = &keyType
+
+	this.KeyBits = 0
+	this.KeyType = "rsa"
+
 	return &this
 }
 
 func (o PkiInternalExportedRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.KeyBits != nil {
-		toSerialize["key_bits"] = o.KeyBits
-	}
-	if o.KeyName != nil {
-		toSerialize["key_name"] = o.KeyName
-	}
-	if o.KeyType != nil {
-		toSerialize["key_type"] = o.KeyType
-	}
-	if o.ManagedKeyId != nil {
-		toSerialize["managed_key_id"] = o.ManagedKeyId
-	}
-	if o.ManagedKeyName != nil {
-		toSerialize["managed_key_name"] = o.ManagedKeyName
-	}
+
+	toSerialize["key_bits"] = o.KeyBits
+	toSerialize["key_name"] = o.KeyName
+	toSerialize["key_type"] = o.KeyType
+	toSerialize["managed_key_id"] = o.ManagedKeyId
+	toSerialize["managed_key_name"] = o.ManagedKeyName
+
 	return json.Marshal(toSerialize)
 }
 
@@ -10421,29 +8840,29 @@ API version: 1.12.0
 // PkiIssueRequest struct for PkiIssueRequest
 type PkiIssueRequest struct {
 	// The requested Subject Alternative Names, if any, in a comma-delimited list. If email protection is enabled for the role, this may contain email addresses.
-	AltNames *string `json:"alt_names,omitempty"`
+	AltNames string `json:"alt_names"`
 	// The requested common name; if you want more than one, specify the alternative names in the alt_names map. If email protection is enabled in the role, this may be an email address.
-	CommonName *string `json:"common_name,omitempty"`
+	CommonName string `json:"common_name"`
 	// If true, the Common Name will not be included in DNS or Email Subject Alternate Names. Defaults to false (CN is included).
-	ExcludeCnFromSans *bool `json:"exclude_cn_from_sans,omitempty"`
+	ExcludeCnFromSans bool `json:"exclude_cn_from_sans"`
 	// Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".
-	Format *string `json:"format,omitempty"`
+	Format string `json:"format"`
 	// The requested IP SANs, if any, in a comma-delimited list
-	IpSans []string `json:"ip_sans,omitempty"`
+	IpSans []string `json:"ip_sans"`
 	// Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.
-	IssuerRef *string `json:"issuer_ref,omitempty"`
+	IssuerRef string `json:"issuer_ref"`
 	// Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
-	NotAfter *string `json:"not_after,omitempty"`
+	NotAfter string `json:"not_after"`
 	// Requested other SANs, in an array with the format <oid>;UTF8:<utf8 string value> for each entry.
-	OtherSans []string `json:"other_sans,omitempty"`
+	OtherSans []string `json:"other_sans"`
 	// Format for the returned private key. Generally the default will be controlled by the \"format\" parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \"pkcs8\" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to \"der\".
-	PrivateKeyFormat *string `json:"private_key_format,omitempty"`
+	PrivateKeyFormat string `json:"private_key_format"`
 	// The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field.
-	SerialNumber *string `json:"serial_number,omitempty"`
+	SerialNumber string `json:"serial_number"`
 	// The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the role max TTL.
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 	// The requested URI SANs, if any, in a comma-delimited list.
-	UriSans []string `json:"uri_sans,omitempty"`
+	UriSans []string `json:"uri_sans"`
 }
 
 // NewPkiIssueRequestWithDefaults instantiates a new PkiIssueRequest object
@@ -10451,55 +8870,31 @@ type PkiIssueRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiIssueRequestWithDefaults() *PkiIssueRequest {
 	this := PkiIssueRequest{}
-	var excludeCnFromSans bool = false
-	this.ExcludeCnFromSans = &excludeCnFromSans
-	var format string = "pem"
-	this.Format = &format
-	var issuerRef string = "default"
-	this.IssuerRef = &issuerRef
-	var privateKeyFormat string = "der"
-	this.PrivateKeyFormat = &privateKeyFormat
+
+	this.ExcludeCnFromSans = false
+	this.Format = "pem"
+	this.IssuerRef = "default"
+	this.PrivateKeyFormat = "der"
+
 	return &this
 }
 
 func (o PkiIssueRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AltNames != nil {
-		toSerialize["alt_names"] = o.AltNames
-	}
-	if o.CommonName != nil {
-		toSerialize["common_name"] = o.CommonName
-	}
-	if o.ExcludeCnFromSans != nil {
-		toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
-	}
-	if o.Format != nil {
-		toSerialize["format"] = o.Format
-	}
-	if o.IpSans != nil {
-		toSerialize["ip_sans"] = o.IpSans
-	}
-	if o.IssuerRef != nil {
-		toSerialize["issuer_ref"] = o.IssuerRef
-	}
-	if o.NotAfter != nil {
-		toSerialize["not_after"] = o.NotAfter
-	}
-	if o.OtherSans != nil {
-		toSerialize["other_sans"] = o.OtherSans
-	}
-	if o.PrivateKeyFormat != nil {
-		toSerialize["private_key_format"] = o.PrivateKeyFormat
-	}
-	if o.SerialNumber != nil {
-		toSerialize["serial_number"] = o.SerialNumber
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
-	if o.UriSans != nil {
-		toSerialize["uri_sans"] = o.UriSans
-	}
+
+	toSerialize["alt_names"] = o.AltNames
+	toSerialize["common_name"] = o.CommonName
+	toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
+	toSerialize["format"] = o.Format
+	toSerialize["ip_sans"] = o.IpSans
+	toSerialize["issuer_ref"] = o.IssuerRef
+	toSerialize["not_after"] = o.NotAfter
+	toSerialize["other_sans"] = o.OtherSans
+	toSerialize["private_key_format"] = o.PrivateKeyFormat
+	toSerialize["serial_number"] = o.SerialNumber
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["uri_sans"] = o.UriSans
+
 	return json.Marshal(toSerialize)
 }
 
@@ -10516,27 +8911,27 @@ API version: 1.12.0
 // PkiIssuerIssueRequest struct for PkiIssuerIssueRequest
 type PkiIssuerIssueRequest struct {
 	// The requested Subject Alternative Names, if any, in a comma-delimited list. If email protection is enabled for the role, this may contain email addresses.
-	AltNames *string `json:"alt_names,omitempty"`
+	AltNames string `json:"alt_names"`
 	// The requested common name; if you want more than one, specify the alternative names in the alt_names map. If email protection is enabled in the role, this may be an email address.
-	CommonName *string `json:"common_name,omitempty"`
+	CommonName string `json:"common_name"`
 	// If true, the Common Name will not be included in DNS or Email Subject Alternate Names. Defaults to false (CN is included).
-	ExcludeCnFromSans *bool `json:"exclude_cn_from_sans,omitempty"`
+	ExcludeCnFromSans bool `json:"exclude_cn_from_sans"`
 	// Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".
-	Format *string `json:"format,omitempty"`
+	Format string `json:"format"`
 	// The requested IP SANs, if any, in a comma-delimited list
-	IpSans []string `json:"ip_sans,omitempty"`
+	IpSans []string `json:"ip_sans"`
 	// Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
-	NotAfter *string `json:"not_after,omitempty"`
+	NotAfter string `json:"not_after"`
 	// Requested other SANs, in an array with the format <oid>;UTF8:<utf8 string value> for each entry.
-	OtherSans []string `json:"other_sans,omitempty"`
+	OtherSans []string `json:"other_sans"`
 	// Format for the returned private key. Generally the default will be controlled by the \"format\" parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \"pkcs8\" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to \"der\".
-	PrivateKeyFormat *string `json:"private_key_format,omitempty"`
+	PrivateKeyFormat string `json:"private_key_format"`
 	// The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field.
-	SerialNumber *string `json:"serial_number,omitempty"`
+	SerialNumber string `json:"serial_number"`
 	// The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the role max TTL.
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 	// The requested URI SANs, if any, in a comma-delimited list.
-	UriSans []string `json:"uri_sans,omitempty"`
+	UriSans []string `json:"uri_sans"`
 }
 
 // NewPkiIssuerIssueRequestWithDefaults instantiates a new PkiIssuerIssueRequest object
@@ -10544,50 +8939,29 @@ type PkiIssuerIssueRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiIssuerIssueRequestWithDefaults() *PkiIssuerIssueRequest {
 	this := PkiIssuerIssueRequest{}
-	var excludeCnFromSans bool = false
-	this.ExcludeCnFromSans = &excludeCnFromSans
-	var format string = "pem"
-	this.Format = &format
-	var privateKeyFormat string = "der"
-	this.PrivateKeyFormat = &privateKeyFormat
+
+	this.ExcludeCnFromSans = false
+	this.Format = "pem"
+	this.PrivateKeyFormat = "der"
+
 	return &this
 }
 
 func (o PkiIssuerIssueRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AltNames != nil {
-		toSerialize["alt_names"] = o.AltNames
-	}
-	if o.CommonName != nil {
-		toSerialize["common_name"] = o.CommonName
-	}
-	if o.ExcludeCnFromSans != nil {
-		toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
-	}
-	if o.Format != nil {
-		toSerialize["format"] = o.Format
-	}
-	if o.IpSans != nil {
-		toSerialize["ip_sans"] = o.IpSans
-	}
-	if o.NotAfter != nil {
-		toSerialize["not_after"] = o.NotAfter
-	}
-	if o.OtherSans != nil {
-		toSerialize["other_sans"] = o.OtherSans
-	}
-	if o.PrivateKeyFormat != nil {
-		toSerialize["private_key_format"] = o.PrivateKeyFormat
-	}
-	if o.SerialNumber != nil {
-		toSerialize["serial_number"] = o.SerialNumber
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
-	if o.UriSans != nil {
-		toSerialize["uri_sans"] = o.UriSans
-	}
+
+	toSerialize["alt_names"] = o.AltNames
+	toSerialize["common_name"] = o.CommonName
+	toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
+	toSerialize["format"] = o.Format
+	toSerialize["ip_sans"] = o.IpSans
+	toSerialize["not_after"] = o.NotAfter
+	toSerialize["other_sans"] = o.OtherSans
+	toSerialize["private_key_format"] = o.PrivateKeyFormat
+	toSerialize["serial_number"] = o.SerialNumber
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["uri_sans"] = o.UriSans
+
 	return json.Marshal(toSerialize)
 }
 
@@ -10604,53 +8978,53 @@ API version: 1.12.0
 // PkiIssuerSignIntermediateRequest struct for PkiIssuerSignIntermediateRequest
 type PkiIssuerSignIntermediateRequest struct {
 	// The requested Subject Alternative Names, if any, in a comma-delimited list. May contain both DNS names and email addresses.
-	AltNames *string `json:"alt_names,omitempty"`
+	AltNames string `json:"alt_names"`
 	// The requested common name; if you want more than one, specify the alternative names in the alt_names map. If not specified when signing, the common name will be taken from the CSR; other names must still be specified in alt_names or ip_sans.
-	CommonName *string `json:"common_name,omitempty"`
+	CommonName string `json:"common_name"`
 	// If set, Country will be set to this value.
-	Country []string `json:"country,omitempty"`
+	Country []string `json:"country"`
 	// PEM-format CSR to be signed.
-	Csr *string `json:"csr,omitempty"`
+	Csr string `json:"csr"`
 	// If true, the Common Name will not be included in DNS or Email Subject Alternate Names. Defaults to false (CN is included).
-	ExcludeCnFromSans *bool `json:"exclude_cn_from_sans,omitempty"`
+	ExcludeCnFromSans bool `json:"exclude_cn_from_sans"`
 	// Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".
-	Format *string `json:"format,omitempty"`
+	Format string `json:"format"`
 	// The requested IP SANs, if any, in a comma-delimited list
-	IpSans []string `json:"ip_sans,omitempty"`
+	IpSans []string `json:"ip_sans"`
 	// Provide a name to the generated or existing issuer, the name must be unique across all issuers and not be the reserved value 'default'
-	IssuerName *string `json:"issuer_name,omitempty"`
+	IssuerName string `json:"issuer_name"`
 	// If set, Locality will be set to this value.
-	Locality []string `json:"locality,omitempty"`
+	Locality []string `json:"locality"`
 	// The maximum allowable path length
-	MaxPathLength *int32 `json:"max_path_length,omitempty"`
+	MaxPathLength int32 `json:"max_path_length"`
 	// Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
-	NotAfter *string `json:"not_after,omitempty"`
+	NotAfter string `json:"not_after"`
 	// The duration before now which the certificate needs to be backdated by.
-	NotBeforeDuration *int32 `json:"not_before_duration,omitempty"`
+	NotBeforeDuration int32 `json:"not_before_duration"`
 	// If set, O (Organization) will be set to this value.
-	Organization []string `json:"organization,omitempty"`
+	Organization []string `json:"organization"`
 	// Requested other SANs, in an array with the format <oid>;UTF8:<utf8 string value> for each entry.
-	OtherSans []string `json:"other_sans,omitempty"`
+	OtherSans []string `json:"other_sans"`
 	// If set, OU (OrganizationalUnit) will be set to this value.
-	Ou []string `json:"ou,omitempty"`
+	Ou []string `json:"ou"`
 	// Domains for which this certificate is allowed to sign or issue child certificates. If set, all DNS names (subject and alt) on child certs must be exact matches or subsets of the given domains (see https://tools.ietf.org/html/rfc5280#section-4.2.1.10).
-	PermittedDnsDomains []string `json:"permitted_dns_domains,omitempty"`
+	PermittedDnsDomains []string `json:"permitted_dns_domains"`
 	// If set, Postal Code will be set to this value.
-	PostalCode []string `json:"postal_code,omitempty"`
+	PostalCode []string `json:"postal_code"`
 	// Format for the returned private key. Generally the default will be controlled by the \"format\" parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \"pkcs8\" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to \"der\".
-	PrivateKeyFormat *string `json:"private_key_format,omitempty"`
+	PrivateKeyFormat string `json:"private_key_format"`
 	// If set, Province will be set to this value.
-	Province []string `json:"province,omitempty"`
+	Province []string `json:"province"`
 	// The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field.
-	SerialNumber *string `json:"serial_number,omitempty"`
+	SerialNumber string `json:"serial_number"`
 	// If set, Street Address will be set to this value.
-	StreetAddress []string `json:"street_address,omitempty"`
+	StreetAddress []string `json:"street_address"`
 	// The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the mount max TTL. Note: this only has an effect when generating a CA cert or signing a CA cert, not when generating a CSR for an intermediate CA.
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 	// The requested URI SANs, if any, in a comma-delimited list.
-	UriSans []string `json:"uri_sans,omitempty"`
+	UriSans []string `json:"uri_sans"`
 	// If true, then: 1) Subject information, including names and alternate names, will be preserved from the CSR rather than using values provided in the other parameters to this path; 2) Any key usages requested in the CSR will be added to the basic set of key usages used for CA certs signed by this path; for instance, the non-repudiation flag; 3) Extensions requested in the CSR will be copied into the issued certificate.
-	UseCsrValues *bool `json:"use_csr_values,omitempty"`
+	UseCsrValues bool `json:"use_csr_values"`
 }
 
 // NewPkiIssuerSignIntermediateRequestWithDefaults instantiates a new PkiIssuerSignIntermediateRequest object
@@ -10658,97 +9032,46 @@ type PkiIssuerSignIntermediateRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiIssuerSignIntermediateRequestWithDefaults() *PkiIssuerSignIntermediateRequest {
 	this := PkiIssuerSignIntermediateRequest{}
-	var csr string = ""
-	this.Csr = &csr
-	var excludeCnFromSans bool = false
-	this.ExcludeCnFromSans = &excludeCnFromSans
-	var format string = "pem"
-	this.Format = &format
-	var maxPathLength int32 = -1
-	this.MaxPathLength = &maxPathLength
-	var notBeforeDuration int32 = 30
-	this.NotBeforeDuration = &notBeforeDuration
-	var privateKeyFormat string = "der"
-	this.PrivateKeyFormat = &privateKeyFormat
-	var useCsrValues bool = false
-	this.UseCsrValues = &useCsrValues
+
+	this.Csr = ""
+	this.ExcludeCnFromSans = false
+	this.Format = "pem"
+	this.MaxPathLength = -1
+	this.NotBeforeDuration = 30
+	this.PrivateKeyFormat = "der"
+	this.UseCsrValues = false
+
 	return &this
 }
 
 func (o PkiIssuerSignIntermediateRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AltNames != nil {
-		toSerialize["alt_names"] = o.AltNames
-	}
-	if o.CommonName != nil {
-		toSerialize["common_name"] = o.CommonName
-	}
-	if o.Country != nil {
-		toSerialize["country"] = o.Country
-	}
-	if o.Csr != nil {
-		toSerialize["csr"] = o.Csr
-	}
-	if o.ExcludeCnFromSans != nil {
-		toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
-	}
-	if o.Format != nil {
-		toSerialize["format"] = o.Format
-	}
-	if o.IpSans != nil {
-		toSerialize["ip_sans"] = o.IpSans
-	}
-	if o.IssuerName != nil {
-		toSerialize["issuer_name"] = o.IssuerName
-	}
-	if o.Locality != nil {
-		toSerialize["locality"] = o.Locality
-	}
-	if o.MaxPathLength != nil {
-		toSerialize["max_path_length"] = o.MaxPathLength
-	}
-	if o.NotAfter != nil {
-		toSerialize["not_after"] = o.NotAfter
-	}
-	if o.NotBeforeDuration != nil {
-		toSerialize["not_before_duration"] = o.NotBeforeDuration
-	}
-	if o.Organization != nil {
-		toSerialize["organization"] = o.Organization
-	}
-	if o.OtherSans != nil {
-		toSerialize["other_sans"] = o.OtherSans
-	}
-	if o.Ou != nil {
-		toSerialize["ou"] = o.Ou
-	}
-	if o.PermittedDnsDomains != nil {
-		toSerialize["permitted_dns_domains"] = o.PermittedDnsDomains
-	}
-	if o.PostalCode != nil {
-		toSerialize["postal_code"] = o.PostalCode
-	}
-	if o.PrivateKeyFormat != nil {
-		toSerialize["private_key_format"] = o.PrivateKeyFormat
-	}
-	if o.Province != nil {
-		toSerialize["province"] = o.Province
-	}
-	if o.SerialNumber != nil {
-		toSerialize["serial_number"] = o.SerialNumber
-	}
-	if o.StreetAddress != nil {
-		toSerialize["street_address"] = o.StreetAddress
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
-	if o.UriSans != nil {
-		toSerialize["uri_sans"] = o.UriSans
-	}
-	if o.UseCsrValues != nil {
-		toSerialize["use_csr_values"] = o.UseCsrValues
-	}
+
+	toSerialize["alt_names"] = o.AltNames
+	toSerialize["common_name"] = o.CommonName
+	toSerialize["country"] = o.Country
+	toSerialize["csr"] = o.Csr
+	toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
+	toSerialize["format"] = o.Format
+	toSerialize["ip_sans"] = o.IpSans
+	toSerialize["issuer_name"] = o.IssuerName
+	toSerialize["locality"] = o.Locality
+	toSerialize["max_path_length"] = o.MaxPathLength
+	toSerialize["not_after"] = o.NotAfter
+	toSerialize["not_before_duration"] = o.NotBeforeDuration
+	toSerialize["organization"] = o.Organization
+	toSerialize["other_sans"] = o.OtherSans
+	toSerialize["ou"] = o.Ou
+	toSerialize["permitted_dns_domains"] = o.PermittedDnsDomains
+	toSerialize["postal_code"] = o.PostalCode
+	toSerialize["private_key_format"] = o.PrivateKeyFormat
+	toSerialize["province"] = o.Province
+	toSerialize["serial_number"] = o.SerialNumber
+	toSerialize["street_address"] = o.StreetAddress
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["uri_sans"] = o.UriSans
+	toSerialize["use_csr_values"] = o.UseCsrValues
+
 	return json.Marshal(toSerialize)
 }
 
@@ -10765,29 +9088,29 @@ API version: 1.12.0
 // PkiIssuerSignRequest struct for PkiIssuerSignRequest
 type PkiIssuerSignRequest struct {
 	// The requested Subject Alternative Names, if any, in a comma-delimited list. If email protection is enabled for the role, this may contain email addresses.
-	AltNames *string `json:"alt_names,omitempty"`
+	AltNames string `json:"alt_names"`
 	// The requested common name; if you want more than one, specify the alternative names in the alt_names map. If email protection is enabled in the role, this may be an email address.
-	CommonName *string `json:"common_name,omitempty"`
+	CommonName string `json:"common_name"`
 	// PEM-format CSR to be signed.
-	Csr *string `json:"csr,omitempty"`
+	Csr string `json:"csr"`
 	// If true, the Common Name will not be included in DNS or Email Subject Alternate Names. Defaults to false (CN is included).
-	ExcludeCnFromSans *bool `json:"exclude_cn_from_sans,omitempty"`
+	ExcludeCnFromSans bool `json:"exclude_cn_from_sans"`
 	// Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".
-	Format *string `json:"format,omitempty"`
+	Format string `json:"format"`
 	// The requested IP SANs, if any, in a comma-delimited list
-	IpSans []string `json:"ip_sans,omitempty"`
+	IpSans []string `json:"ip_sans"`
 	// Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
-	NotAfter *string `json:"not_after,omitempty"`
+	NotAfter string `json:"not_after"`
 	// Requested other SANs, in an array with the format <oid>;UTF8:<utf8 string value> for each entry.
-	OtherSans []string `json:"other_sans,omitempty"`
+	OtherSans []string `json:"other_sans"`
 	// Format for the returned private key. Generally the default will be controlled by the \"format\" parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \"pkcs8\" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to \"der\".
-	PrivateKeyFormat *string `json:"private_key_format,omitempty"`
+	PrivateKeyFormat string `json:"private_key_format"`
 	// The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field.
-	SerialNumber *string `json:"serial_number,omitempty"`
+	SerialNumber string `json:"serial_number"`
 	// The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the role max TTL.
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 	// The requested URI SANs, if any, in a comma-delimited list.
-	UriSans []string `json:"uri_sans,omitempty"`
+	UriSans []string `json:"uri_sans"`
 }
 
 // NewPkiIssuerSignRequestWithDefaults instantiates a new PkiIssuerSignRequest object
@@ -10795,55 +9118,31 @@ type PkiIssuerSignRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiIssuerSignRequestWithDefaults() *PkiIssuerSignRequest {
 	this := PkiIssuerSignRequest{}
-	var csr string = ""
-	this.Csr = &csr
-	var excludeCnFromSans bool = false
-	this.ExcludeCnFromSans = &excludeCnFromSans
-	var format string = "pem"
-	this.Format = &format
-	var privateKeyFormat string = "der"
-	this.PrivateKeyFormat = &privateKeyFormat
+
+	this.Csr = ""
+	this.ExcludeCnFromSans = false
+	this.Format = "pem"
+	this.PrivateKeyFormat = "der"
+
 	return &this
 }
 
 func (o PkiIssuerSignRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AltNames != nil {
-		toSerialize["alt_names"] = o.AltNames
-	}
-	if o.CommonName != nil {
-		toSerialize["common_name"] = o.CommonName
-	}
-	if o.Csr != nil {
-		toSerialize["csr"] = o.Csr
-	}
-	if o.ExcludeCnFromSans != nil {
-		toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
-	}
-	if o.Format != nil {
-		toSerialize["format"] = o.Format
-	}
-	if o.IpSans != nil {
-		toSerialize["ip_sans"] = o.IpSans
-	}
-	if o.NotAfter != nil {
-		toSerialize["not_after"] = o.NotAfter
-	}
-	if o.OtherSans != nil {
-		toSerialize["other_sans"] = o.OtherSans
-	}
-	if o.PrivateKeyFormat != nil {
-		toSerialize["private_key_format"] = o.PrivateKeyFormat
-	}
-	if o.SerialNumber != nil {
-		toSerialize["serial_number"] = o.SerialNumber
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
-	if o.UriSans != nil {
-		toSerialize["uri_sans"] = o.UriSans
-	}
+
+	toSerialize["alt_names"] = o.AltNames
+	toSerialize["common_name"] = o.CommonName
+	toSerialize["csr"] = o.Csr
+	toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
+	toSerialize["format"] = o.Format
+	toSerialize["ip_sans"] = o.IpSans
+	toSerialize["not_after"] = o.NotAfter
+	toSerialize["other_sans"] = o.OtherSans
+	toSerialize["private_key_format"] = o.PrivateKeyFormat
+	toSerialize["serial_number"] = o.SerialNumber
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["uri_sans"] = o.UriSans
+
 	return json.Marshal(toSerialize)
 }
 
@@ -10860,9 +9159,9 @@ API version: 1.12.0
 // PkiIssuerSignSelfIssuedRequest struct for PkiIssuerSignSelfIssuedRequest
 type PkiIssuerSignSelfIssuedRequest struct {
 	// PEM-format self-issued certificate to be signed.
-	Certificate *string `json:"certificate,omitempty"`
+	Certificate string `json:"certificate"`
 	// If true, require the public key algorithm of the signer to match that of the self issued certificate.
-	RequireMatchingCertificateAlgorithms *bool `json:"require_matching_certificate_algorithms,omitempty"`
+	RequireMatchingCertificateAlgorithms bool `json:"require_matching_certificate_algorithms"`
 }
 
 // NewPkiIssuerSignSelfIssuedRequestWithDefaults instantiates a new PkiIssuerSignSelfIssuedRequest object
@@ -10870,19 +9169,18 @@ type PkiIssuerSignSelfIssuedRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiIssuerSignSelfIssuedRequestWithDefaults() *PkiIssuerSignSelfIssuedRequest {
 	this := PkiIssuerSignSelfIssuedRequest{}
-	var requireMatchingCertificateAlgorithms bool = false
-	this.RequireMatchingCertificateAlgorithms = &requireMatchingCertificateAlgorithms
+
+	this.RequireMatchingCertificateAlgorithms = false
+
 	return &this
 }
 
 func (o PkiIssuerSignSelfIssuedRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Certificate != nil {
-		toSerialize["certificate"] = o.Certificate
-	}
-	if o.RequireMatchingCertificateAlgorithms != nil {
-		toSerialize["require_matching_certificate_algorithms"] = o.RequireMatchingCertificateAlgorithms
-	}
+
+	toSerialize["certificate"] = o.Certificate
+	toSerialize["require_matching_certificate_algorithms"] = o.RequireMatchingCertificateAlgorithms
+
 	return json.Marshal(toSerialize)
 }
 
@@ -10899,37 +9197,37 @@ API version: 1.12.0
 // PkiIssuerSignVerbatimRequest struct for PkiIssuerSignVerbatimRequest
 type PkiIssuerSignVerbatimRequest struct {
 	// The requested Subject Alternative Names, if any, in a comma-delimited list. If email protection is enabled for the role, this may contain email addresses.
-	AltNames *string `json:"alt_names,omitempty"`
+	AltNames string `json:"alt_names"`
 	// The requested common name; if you want more than one, specify the alternative names in the alt_names map. If email protection is enabled in the role, this may be an email address.
-	CommonName *string `json:"common_name,omitempty"`
+	CommonName string `json:"common_name"`
 	// PEM-format CSR to be signed. Values will be taken verbatim from the CSR, except for basic constraints.
-	Csr *string `json:"csr,omitempty"`
+	Csr string `json:"csr"`
 	// If true, the Common Name will not be included in DNS or Email Subject Alternate Names. Defaults to false (CN is included).
-	ExcludeCnFromSans *bool `json:"exclude_cn_from_sans,omitempty"`
+	ExcludeCnFromSans bool `json:"exclude_cn_from_sans"`
 	// A comma-separated string or list of extended key usages. Valid values can be found at https://golang.org/pkg/crypto/x509/#ExtKeyUsage -- simply drop the \"ExtKeyUsage\" part of the name. To remove all key usages from being set, set this value to an empty list.
-	ExtKeyUsage []string `json:"ext_key_usage,omitempty"`
+	ExtKeyUsage []string `json:"ext_key_usage"`
 	// A comma-separated string or list of extended key usage oids.
-	ExtKeyUsageOids []string `json:"ext_key_usage_oids,omitempty"`
+	ExtKeyUsageOids []string `json:"ext_key_usage_oids"`
 	// Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".
-	Format *string `json:"format,omitempty"`
+	Format string `json:"format"`
 	// The requested IP SANs, if any, in a comma-delimited list
-	IpSans []string `json:"ip_sans,omitempty"`
+	IpSans []string `json:"ip_sans"`
 	// A comma-separated string or list of key usages (not extended key usages). Valid values can be found at https://golang.org/pkg/crypto/x509/#KeyUsage -- simply drop the \"KeyUsage\" part of the name. To remove all key usages from being set, set this value to an empty list.
-	KeyUsage []string `json:"key_usage,omitempty"`
+	KeyUsage []string `json:"key_usage"`
 	// Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
-	NotAfter *string `json:"not_after,omitempty"`
+	NotAfter string `json:"not_after"`
 	// Requested other SANs, in an array with the format <oid>;UTF8:<utf8 string value> for each entry.
-	OtherSans []string `json:"other_sans,omitempty"`
+	OtherSans []string `json:"other_sans"`
 	// Format for the returned private key. Generally the default will be controlled by the \"format\" parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \"pkcs8\" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to \"der\".
-	PrivateKeyFormat *string `json:"private_key_format,omitempty"`
+	PrivateKeyFormat string `json:"private_key_format"`
 	// The desired role with configuration for this request
-	Role *string `json:"role,omitempty"`
+	Role string `json:"role"`
 	// The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field.
-	SerialNumber *string `json:"serial_number,omitempty"`
+	SerialNumber string `json:"serial_number"`
 	// The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the role max TTL.
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 	// The requested URI SANs, if any, in a comma-delimited list.
-	UriSans []string `json:"uri_sans,omitempty"`
+	UriSans []string `json:"uri_sans"`
 }
 
 // NewPkiIssuerSignVerbatimRequestWithDefaults instantiates a new PkiIssuerSignVerbatimRequest object
@@ -10937,67 +9235,35 @@ type PkiIssuerSignVerbatimRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiIssuerSignVerbatimRequestWithDefaults() *PkiIssuerSignVerbatimRequest {
 	this := PkiIssuerSignVerbatimRequest{}
-	var csr string = ""
-	this.Csr = &csr
-	var excludeCnFromSans bool = false
-	this.ExcludeCnFromSans = &excludeCnFromSans
-	var format string = "pem"
-	this.Format = &format
-	var privateKeyFormat string = "der"
-	this.PrivateKeyFormat = &privateKeyFormat
+
+	this.Csr = ""
+	this.ExcludeCnFromSans = false
+	this.Format = "pem"
+	this.PrivateKeyFormat = "der"
+
 	return &this
 }
 
 func (o PkiIssuerSignVerbatimRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AltNames != nil {
-		toSerialize["alt_names"] = o.AltNames
-	}
-	if o.CommonName != nil {
-		toSerialize["common_name"] = o.CommonName
-	}
-	if o.Csr != nil {
-		toSerialize["csr"] = o.Csr
-	}
-	if o.ExcludeCnFromSans != nil {
-		toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
-	}
-	if o.ExtKeyUsage != nil {
-		toSerialize["ext_key_usage"] = o.ExtKeyUsage
-	}
-	if o.ExtKeyUsageOids != nil {
-		toSerialize["ext_key_usage_oids"] = o.ExtKeyUsageOids
-	}
-	if o.Format != nil {
-		toSerialize["format"] = o.Format
-	}
-	if o.IpSans != nil {
-		toSerialize["ip_sans"] = o.IpSans
-	}
-	if o.KeyUsage != nil {
-		toSerialize["key_usage"] = o.KeyUsage
-	}
-	if o.NotAfter != nil {
-		toSerialize["not_after"] = o.NotAfter
-	}
-	if o.OtherSans != nil {
-		toSerialize["other_sans"] = o.OtherSans
-	}
-	if o.PrivateKeyFormat != nil {
-		toSerialize["private_key_format"] = o.PrivateKeyFormat
-	}
-	if o.Role != nil {
-		toSerialize["role"] = o.Role
-	}
-	if o.SerialNumber != nil {
-		toSerialize["serial_number"] = o.SerialNumber
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
-	if o.UriSans != nil {
-		toSerialize["uri_sans"] = o.UriSans
-	}
+
+	toSerialize["alt_names"] = o.AltNames
+	toSerialize["common_name"] = o.CommonName
+	toSerialize["csr"] = o.Csr
+	toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
+	toSerialize["ext_key_usage"] = o.ExtKeyUsage
+	toSerialize["ext_key_usage_oids"] = o.ExtKeyUsageOids
+	toSerialize["format"] = o.Format
+	toSerialize["ip_sans"] = o.IpSans
+	toSerialize["key_usage"] = o.KeyUsage
+	toSerialize["not_after"] = o.NotAfter
+	toSerialize["other_sans"] = o.OtherSans
+	toSerialize["private_key_format"] = o.PrivateKeyFormat
+	toSerialize["role"] = o.Role
+	toSerialize["serial_number"] = o.SerialNumber
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["uri_sans"] = o.UriSans
+
 	return json.Marshal(toSerialize)
 }
 
@@ -11014,57 +9280,57 @@ API version: 1.12.0
 // PkiIssuersGenerateIntermediateRequest struct for PkiIssuersGenerateIntermediateRequest
 type PkiIssuersGenerateIntermediateRequest struct {
 	// Whether to add a Basic Constraints extension with CA: true. Only needed as a workaround in some compatibility scenarios with Active Directory Certificate Services.
-	AddBasicConstraints *bool `json:"add_basic_constraints,omitempty"`
+	AddBasicConstraints bool `json:"add_basic_constraints"`
 	// The requested Subject Alternative Names, if any, in a comma-delimited list. May contain both DNS names and email addresses.
-	AltNames *string `json:"alt_names,omitempty"`
+	AltNames string `json:"alt_names"`
 	// The requested common name; if you want more than one, specify the alternative names in the alt_names map. If not specified when signing, the common name will be taken from the CSR; other names must still be specified in alt_names or ip_sans.
-	CommonName *string `json:"common_name,omitempty"`
+	CommonName string `json:"common_name"`
 	// If set, Country will be set to this value.
-	Country []string `json:"country,omitempty"`
+	Country []string `json:"country"`
 	// If true, the Common Name will not be included in DNS or Email Subject Alternate Names. Defaults to false (CN is included).
-	ExcludeCnFromSans *bool `json:"exclude_cn_from_sans,omitempty"`
+	ExcludeCnFromSans bool `json:"exclude_cn_from_sans"`
 	// Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".
-	Format *string `json:"format,omitempty"`
+	Format string `json:"format"`
 	// The requested IP SANs, if any, in a comma-delimited list
-	IpSans []string `json:"ip_sans,omitempty"`
+	IpSans []string `json:"ip_sans"`
 	// The number of bits to use. Allowed values are 0 (universal default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type: 224, 256 (default), 384, or 521; ignored with ed25519.
-	KeyBits *int32 `json:"key_bits,omitempty"`
+	KeyBits int32 `json:"key_bits"`
 	// Provide a name to the generated or existing key, the name must be unique across all keys and not be the reserved value 'default'
-	KeyName *string `json:"key_name,omitempty"`
+	KeyName string `json:"key_name"`
 	// Reference to a existing key; either \"default\" for the configured default key, an identifier or the name assigned to the key.
-	KeyRef *string `json:"key_ref,omitempty"`
+	KeyRef string `json:"key_ref"`
 	// The type of key to use; defaults to RSA. \"rsa\" \"ec\" and \"ed25519\" are the only valid values.
-	KeyType *string `json:"key_type,omitempty"`
+	KeyType string `json:"key_type"`
 	// If set, Locality will be set to this value.
-	Locality []string `json:"locality,omitempty"`
+	Locality []string `json:"locality"`
 	// The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_name is required. Ignored for other types.
-	ManagedKeyId *string `json:"managed_key_id,omitempty"`
+	ManagedKeyId string `json:"managed_key_id"`
 	// The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_id is required. Ignored for other types.
-	ManagedKeyName *string `json:"managed_key_name,omitempty"`
+	ManagedKeyName string `json:"managed_key_name"`
 	// Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
-	NotAfter *string `json:"not_after,omitempty"`
+	NotAfter string `json:"not_after"`
 	// The duration before now which the certificate needs to be backdated by.
-	NotBeforeDuration *int32 `json:"not_before_duration,omitempty"`
+	NotBeforeDuration int32 `json:"not_before_duration"`
 	// If set, O (Organization) will be set to this value.
-	Organization []string `json:"organization,omitempty"`
+	Organization []string `json:"organization"`
 	// Requested other SANs, in an array with the format <oid>;UTF8:<utf8 string value> for each entry.
-	OtherSans []string `json:"other_sans,omitempty"`
+	OtherSans []string `json:"other_sans"`
 	// If set, OU (OrganizationalUnit) will be set to this value.
-	Ou []string `json:"ou,omitempty"`
+	Ou []string `json:"ou"`
 	// If set, Postal Code will be set to this value.
-	PostalCode []string `json:"postal_code,omitempty"`
+	PostalCode []string `json:"postal_code"`
 	// Format for the returned private key. Generally the default will be controlled by the \"format\" parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \"pkcs8\" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to \"der\".
-	PrivateKeyFormat *string `json:"private_key_format,omitempty"`
+	PrivateKeyFormat string `json:"private_key_format"`
 	// If set, Province will be set to this value.
-	Province []string `json:"province,omitempty"`
+	Province []string `json:"province"`
 	// The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field.
-	SerialNumber *string `json:"serial_number,omitempty"`
+	SerialNumber string `json:"serial_number"`
 	// If set, Street Address will be set to this value.
-	StreetAddress []string `json:"street_address,omitempty"`
+	StreetAddress []string `json:"street_address"`
 	// The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the mount max TTL. Note: this only has an effect when generating a CA cert or signing a CA cert, not when generating a CSR for an intermediate CA.
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 	// The requested URI SANs, if any, in a comma-delimited list.
-	UriSans []string `json:"uri_sans,omitempty"`
+	UriSans []string `json:"uri_sans"`
 }
 
 // NewPkiIssuersGenerateIntermediateRequestWithDefaults instantiates a new PkiIssuersGenerateIntermediateRequest object
@@ -11072,103 +9338,48 @@ type PkiIssuersGenerateIntermediateRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiIssuersGenerateIntermediateRequestWithDefaults() *PkiIssuersGenerateIntermediateRequest {
 	this := PkiIssuersGenerateIntermediateRequest{}
-	var excludeCnFromSans bool = false
-	this.ExcludeCnFromSans = &excludeCnFromSans
-	var format string = "pem"
-	this.Format = &format
-	var keyBits int32 = 0
-	this.KeyBits = &keyBits
-	var keyRef string = "default"
-	this.KeyRef = &keyRef
-	var keyType string = "rsa"
-	this.KeyType = &keyType
-	var notBeforeDuration int32 = 30
-	this.NotBeforeDuration = &notBeforeDuration
-	var privateKeyFormat string = "der"
-	this.PrivateKeyFormat = &privateKeyFormat
+
+	this.ExcludeCnFromSans = false
+	this.Format = "pem"
+	this.KeyBits = 0
+	this.KeyRef = "default"
+	this.KeyType = "rsa"
+	this.NotBeforeDuration = 30
+	this.PrivateKeyFormat = "der"
+
 	return &this
 }
 
 func (o PkiIssuersGenerateIntermediateRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AddBasicConstraints != nil {
-		toSerialize["add_basic_constraints"] = o.AddBasicConstraints
-	}
-	if o.AltNames != nil {
-		toSerialize["alt_names"] = o.AltNames
-	}
-	if o.CommonName != nil {
-		toSerialize["common_name"] = o.CommonName
-	}
-	if o.Country != nil {
-		toSerialize["country"] = o.Country
-	}
-	if o.ExcludeCnFromSans != nil {
-		toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
-	}
-	if o.Format != nil {
-		toSerialize["format"] = o.Format
-	}
-	if o.IpSans != nil {
-		toSerialize["ip_sans"] = o.IpSans
-	}
-	if o.KeyBits != nil {
-		toSerialize["key_bits"] = o.KeyBits
-	}
-	if o.KeyName != nil {
-		toSerialize["key_name"] = o.KeyName
-	}
-	if o.KeyRef != nil {
-		toSerialize["key_ref"] = o.KeyRef
-	}
-	if o.KeyType != nil {
-		toSerialize["key_type"] = o.KeyType
-	}
-	if o.Locality != nil {
-		toSerialize["locality"] = o.Locality
-	}
-	if o.ManagedKeyId != nil {
-		toSerialize["managed_key_id"] = o.ManagedKeyId
-	}
-	if o.ManagedKeyName != nil {
-		toSerialize["managed_key_name"] = o.ManagedKeyName
-	}
-	if o.NotAfter != nil {
-		toSerialize["not_after"] = o.NotAfter
-	}
-	if o.NotBeforeDuration != nil {
-		toSerialize["not_before_duration"] = o.NotBeforeDuration
-	}
-	if o.Organization != nil {
-		toSerialize["organization"] = o.Organization
-	}
-	if o.OtherSans != nil {
-		toSerialize["other_sans"] = o.OtherSans
-	}
-	if o.Ou != nil {
-		toSerialize["ou"] = o.Ou
-	}
-	if o.PostalCode != nil {
-		toSerialize["postal_code"] = o.PostalCode
-	}
-	if o.PrivateKeyFormat != nil {
-		toSerialize["private_key_format"] = o.PrivateKeyFormat
-	}
-	if o.Province != nil {
-		toSerialize["province"] = o.Province
-	}
-	if o.SerialNumber != nil {
-		toSerialize["serial_number"] = o.SerialNumber
-	}
-	if o.StreetAddress != nil {
-		toSerialize["street_address"] = o.StreetAddress
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
-	if o.UriSans != nil {
-		toSerialize["uri_sans"] = o.UriSans
-	}
+
+	toSerialize["add_basic_constraints"] = o.AddBasicConstraints
+	toSerialize["alt_names"] = o.AltNames
+	toSerialize["common_name"] = o.CommonName
+	toSerialize["country"] = o.Country
+	toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
+	toSerialize["format"] = o.Format
+	toSerialize["ip_sans"] = o.IpSans
+	toSerialize["key_bits"] = o.KeyBits
+	toSerialize["key_name"] = o.KeyName
+	toSerialize["key_ref"] = o.KeyRef
+	toSerialize["key_type"] = o.KeyType
+	toSerialize["locality"] = o.Locality
+	toSerialize["managed_key_id"] = o.ManagedKeyId
+	toSerialize["managed_key_name"] = o.ManagedKeyName
+	toSerialize["not_after"] = o.NotAfter
+	toSerialize["not_before_duration"] = o.NotBeforeDuration
+	toSerialize["organization"] = o.Organization
+	toSerialize["other_sans"] = o.OtherSans
+	toSerialize["ou"] = o.Ou
+	toSerialize["postal_code"] = o.PostalCode
+	toSerialize["private_key_format"] = o.PrivateKeyFormat
+	toSerialize["province"] = o.Province
+	toSerialize["serial_number"] = o.SerialNumber
+	toSerialize["street_address"] = o.StreetAddress
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["uri_sans"] = o.UriSans
+
 	return json.Marshal(toSerialize)
 }
 
@@ -11185,63 +9396,63 @@ API version: 1.12.0
 // PkiIssuersGenerateRootRequest struct for PkiIssuersGenerateRootRequest
 type PkiIssuersGenerateRootRequest struct {
 	// The requested Subject Alternative Names, if any, in a comma-delimited list. May contain both DNS names and email addresses.
-	AltNames *string `json:"alt_names,omitempty"`
+	AltNames string `json:"alt_names"`
 	// The requested common name; if you want more than one, specify the alternative names in the alt_names map. If not specified when signing, the common name will be taken from the CSR; other names must still be specified in alt_names or ip_sans.
-	CommonName *string `json:"common_name,omitempty"`
+	CommonName string `json:"common_name"`
 	// If set, Country will be set to this value.
-	Country []string `json:"country,omitempty"`
+	Country []string `json:"country"`
 	// If true, the Common Name will not be included in DNS or Email Subject Alternate Names. Defaults to false (CN is included).
-	ExcludeCnFromSans *bool `json:"exclude_cn_from_sans,omitempty"`
+	ExcludeCnFromSans bool `json:"exclude_cn_from_sans"`
 	// Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".
-	Format *string `json:"format,omitempty"`
+	Format string `json:"format"`
 	// The requested IP SANs, if any, in a comma-delimited list
-	IpSans []string `json:"ip_sans,omitempty"`
+	IpSans []string `json:"ip_sans"`
 	// Provide a name to the generated or existing issuer, the name must be unique across all issuers and not be the reserved value 'default'
-	IssuerName *string `json:"issuer_name,omitempty"`
+	IssuerName string `json:"issuer_name"`
 	// The number of bits to use. Allowed values are 0 (universal default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type: 224, 256 (default), 384, or 521; ignored with ed25519.
-	KeyBits *int32 `json:"key_bits,omitempty"`
+	KeyBits int32 `json:"key_bits"`
 	// Provide a name to the generated or existing key, the name must be unique across all keys and not be the reserved value 'default'
-	KeyName *string `json:"key_name,omitempty"`
+	KeyName string `json:"key_name"`
 	// Reference to a existing key; either \"default\" for the configured default key, an identifier or the name assigned to the key.
-	KeyRef *string `json:"key_ref,omitempty"`
+	KeyRef string `json:"key_ref"`
 	// The type of key to use; defaults to RSA. \"rsa\" \"ec\" and \"ed25519\" are the only valid values.
-	KeyType *string `json:"key_type,omitempty"`
+	KeyType string `json:"key_type"`
 	// If set, Locality will be set to this value.
-	Locality []string `json:"locality,omitempty"`
+	Locality []string `json:"locality"`
 	// The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_name is required. Ignored for other types.
-	ManagedKeyId *string `json:"managed_key_id,omitempty"`
+	ManagedKeyId string `json:"managed_key_id"`
 	// The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_id is required. Ignored for other types.
-	ManagedKeyName *string `json:"managed_key_name,omitempty"`
+	ManagedKeyName string `json:"managed_key_name"`
 	// The maximum allowable path length
-	MaxPathLength *int32 `json:"max_path_length,omitempty"`
+	MaxPathLength int32 `json:"max_path_length"`
 	// Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
-	NotAfter *string `json:"not_after,omitempty"`
+	NotAfter string `json:"not_after"`
 	// The duration before now which the certificate needs to be backdated by.
-	NotBeforeDuration *int32 `json:"not_before_duration,omitempty"`
+	NotBeforeDuration int32 `json:"not_before_duration"`
 	// If set, O (Organization) will be set to this value.
-	Organization []string `json:"organization,omitempty"`
+	Organization []string `json:"organization"`
 	// Requested other SANs, in an array with the format <oid>;UTF8:<utf8 string value> for each entry.
-	OtherSans []string `json:"other_sans,omitempty"`
+	OtherSans []string `json:"other_sans"`
 	// If set, OU (OrganizationalUnit) will be set to this value.
-	Ou []string `json:"ou,omitempty"`
+	Ou []string `json:"ou"`
 	// Domains for which this certificate is allowed to sign or issue child certificates. If set, all DNS names (subject and alt) on child certs must be exact matches or subsets of the given domains (see https://tools.ietf.org/html/rfc5280#section-4.2.1.10).
-	PermittedDnsDomains []string `json:"permitted_dns_domains,omitempty"`
+	PermittedDnsDomains []string `json:"permitted_dns_domains"`
 	// If set, Postal Code will be set to this value.
-	PostalCode []string `json:"postal_code,omitempty"`
+	PostalCode []string `json:"postal_code"`
 	// Format for the returned private key. Generally the default will be controlled by the \"format\" parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \"pkcs8\" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to \"der\".
-	PrivateKeyFormat *string `json:"private_key_format,omitempty"`
+	PrivateKeyFormat string `json:"private_key_format"`
 	// If set, Province will be set to this value.
-	Province []string `json:"province,omitempty"`
+	Province []string `json:"province"`
 	// The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field.
-	SerialNumber *string `json:"serial_number,omitempty"`
+	SerialNumber string `json:"serial_number"`
 	// The number of bits to use in the signature algorithm; accepts 256 for SHA-2-256, 384 for SHA-2-384, and 512 for SHA-2-512. Defaults to 0 to automatically detect based on key length (SHA-2-256 for RSA keys, and matching the curve size for NIST P-Curves).
-	SignatureBits *int32 `json:"signature_bits,omitempty"`
+	SignatureBits int32 `json:"signature_bits"`
 	// If set, Street Address will be set to this value.
-	StreetAddress []string `json:"street_address,omitempty"`
+	StreetAddress []string `json:"street_address"`
 	// The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the mount max TTL. Note: this only has an effect when generating a CA cert or signing a CA cert, not when generating a CSR for an intermediate CA.
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 	// The requested URI SANs, if any, in a comma-delimited list.
-	UriSans []string `json:"uri_sans,omitempty"`
+	UriSans []string `json:"uri_sans"`
 }
 
 // NewPkiIssuersGenerateRootRequestWithDefaults instantiates a new PkiIssuersGenerateRootRequest object
@@ -11249,116 +9460,53 @@ type PkiIssuersGenerateRootRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiIssuersGenerateRootRequestWithDefaults() *PkiIssuersGenerateRootRequest {
 	this := PkiIssuersGenerateRootRequest{}
-	var excludeCnFromSans bool = false
-	this.ExcludeCnFromSans = &excludeCnFromSans
-	var format string = "pem"
-	this.Format = &format
-	var keyBits int32 = 0
-	this.KeyBits = &keyBits
-	var keyRef string = "default"
-	this.KeyRef = &keyRef
-	var keyType string = "rsa"
-	this.KeyType = &keyType
-	var maxPathLength int32 = -1
-	this.MaxPathLength = &maxPathLength
-	var notBeforeDuration int32 = 30
-	this.NotBeforeDuration = &notBeforeDuration
-	var privateKeyFormat string = "der"
-	this.PrivateKeyFormat = &privateKeyFormat
-	var signatureBits int32 = 0
-	this.SignatureBits = &signatureBits
+
+	this.ExcludeCnFromSans = false
+	this.Format = "pem"
+	this.KeyBits = 0
+	this.KeyRef = "default"
+	this.KeyType = "rsa"
+	this.MaxPathLength = -1
+	this.NotBeforeDuration = 30
+	this.PrivateKeyFormat = "der"
+	this.SignatureBits = 0
+
 	return &this
 }
 
 func (o PkiIssuersGenerateRootRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AltNames != nil {
-		toSerialize["alt_names"] = o.AltNames
-	}
-	if o.CommonName != nil {
-		toSerialize["common_name"] = o.CommonName
-	}
-	if o.Country != nil {
-		toSerialize["country"] = o.Country
-	}
-	if o.ExcludeCnFromSans != nil {
-		toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
-	}
-	if o.Format != nil {
-		toSerialize["format"] = o.Format
-	}
-	if o.IpSans != nil {
-		toSerialize["ip_sans"] = o.IpSans
-	}
-	if o.IssuerName != nil {
-		toSerialize["issuer_name"] = o.IssuerName
-	}
-	if o.KeyBits != nil {
-		toSerialize["key_bits"] = o.KeyBits
-	}
-	if o.KeyName != nil {
-		toSerialize["key_name"] = o.KeyName
-	}
-	if o.KeyRef != nil {
-		toSerialize["key_ref"] = o.KeyRef
-	}
-	if o.KeyType != nil {
-		toSerialize["key_type"] = o.KeyType
-	}
-	if o.Locality != nil {
-		toSerialize["locality"] = o.Locality
-	}
-	if o.ManagedKeyId != nil {
-		toSerialize["managed_key_id"] = o.ManagedKeyId
-	}
-	if o.ManagedKeyName != nil {
-		toSerialize["managed_key_name"] = o.ManagedKeyName
-	}
-	if o.MaxPathLength != nil {
-		toSerialize["max_path_length"] = o.MaxPathLength
-	}
-	if o.NotAfter != nil {
-		toSerialize["not_after"] = o.NotAfter
-	}
-	if o.NotBeforeDuration != nil {
-		toSerialize["not_before_duration"] = o.NotBeforeDuration
-	}
-	if o.Organization != nil {
-		toSerialize["organization"] = o.Organization
-	}
-	if o.OtherSans != nil {
-		toSerialize["other_sans"] = o.OtherSans
-	}
-	if o.Ou != nil {
-		toSerialize["ou"] = o.Ou
-	}
-	if o.PermittedDnsDomains != nil {
-		toSerialize["permitted_dns_domains"] = o.PermittedDnsDomains
-	}
-	if o.PostalCode != nil {
-		toSerialize["postal_code"] = o.PostalCode
-	}
-	if o.PrivateKeyFormat != nil {
-		toSerialize["private_key_format"] = o.PrivateKeyFormat
-	}
-	if o.Province != nil {
-		toSerialize["province"] = o.Province
-	}
-	if o.SerialNumber != nil {
-		toSerialize["serial_number"] = o.SerialNumber
-	}
-	if o.SignatureBits != nil {
-		toSerialize["signature_bits"] = o.SignatureBits
-	}
-	if o.StreetAddress != nil {
-		toSerialize["street_address"] = o.StreetAddress
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
-	if o.UriSans != nil {
-		toSerialize["uri_sans"] = o.UriSans
-	}
+
+	toSerialize["alt_names"] = o.AltNames
+	toSerialize["common_name"] = o.CommonName
+	toSerialize["country"] = o.Country
+	toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
+	toSerialize["format"] = o.Format
+	toSerialize["ip_sans"] = o.IpSans
+	toSerialize["issuer_name"] = o.IssuerName
+	toSerialize["key_bits"] = o.KeyBits
+	toSerialize["key_name"] = o.KeyName
+	toSerialize["key_ref"] = o.KeyRef
+	toSerialize["key_type"] = o.KeyType
+	toSerialize["locality"] = o.Locality
+	toSerialize["managed_key_id"] = o.ManagedKeyId
+	toSerialize["managed_key_name"] = o.ManagedKeyName
+	toSerialize["max_path_length"] = o.MaxPathLength
+	toSerialize["not_after"] = o.NotAfter
+	toSerialize["not_before_duration"] = o.NotBeforeDuration
+	toSerialize["organization"] = o.Organization
+	toSerialize["other_sans"] = o.OtherSans
+	toSerialize["ou"] = o.Ou
+	toSerialize["permitted_dns_domains"] = o.PermittedDnsDomains
+	toSerialize["postal_code"] = o.PostalCode
+	toSerialize["private_key_format"] = o.PrivateKeyFormat
+	toSerialize["province"] = o.Province
+	toSerialize["serial_number"] = o.SerialNumber
+	toSerialize["signature_bits"] = o.SignatureBits
+	toSerialize["street_address"] = o.StreetAddress
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["uri_sans"] = o.UriSans
+
 	return json.Marshal(toSerialize)
 }
 
@@ -11375,15 +9523,15 @@ API version: 1.12.0
 // PkiJsonRequest struct for PkiJsonRequest
 type PkiJsonRequest struct {
 	// Provide a name to the generated or existing issuer, the name must be unique across all issuers and not be the reserved value 'default'
-	IssuerName *string `json:"issuer_name,omitempty"`
+	IssuerName string `json:"issuer_name"`
 	// Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.
-	IssuerRef *string `json:"issuer_ref,omitempty"`
+	IssuerRef string `json:"issuer_ref"`
 	// Behavior of leaf's NotAfter fields: \"err\" to error if the computed NotAfter date exceeds that of this issuer; \"truncate\" to silently truncate to that of this issuer; or \"permit\" to allow this issuance to succeed (with NotAfter exceeding that of an issuer). Note that not all values will results in certificates that can be validated through the entire validity period. It is suggested to use \"truncate\" for intermediate CAs and \"permit\" only for root CAs.
-	LeafNotAfterBehavior *string `json:"leaf_not_after_behavior,omitempty"`
+	LeafNotAfterBehavior string `json:"leaf_not_after_behavior"`
 	// Chain of issuer references to use to build this issuer's computed CAChain field, when non-empty.
-	ManualChain []string `json:"manual_chain,omitempty"`
+	ManualChain []string `json:"manual_chain"`
 	// Comma-separated list (or string slice) of usages for this issuer; valid values are \"read-only\", \"issuing-certificates\", and \"crl-signing\". Multiple values may be specified. Read-only is implicit and always set.
-	Usage []string `json:"usage,omitempty"`
+	Usage []string `json:"usage"`
 }
 
 // NewPkiJsonRequestWithDefaults instantiates a new PkiJsonRequest object
@@ -11391,30 +9539,22 @@ type PkiJsonRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiJsonRequestWithDefaults() *PkiJsonRequest {
 	this := PkiJsonRequest{}
-	var issuerRef string = "default"
-	this.IssuerRef = &issuerRef
-	var leafNotAfterBehavior string = "err"
-	this.LeafNotAfterBehavior = &leafNotAfterBehavior
+
+	this.IssuerRef = "default"
+	this.LeafNotAfterBehavior = "err"
+
 	return &this
 }
 
 func (o PkiJsonRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.IssuerName != nil {
-		toSerialize["issuer_name"] = o.IssuerName
-	}
-	if o.IssuerRef != nil {
-		toSerialize["issuer_ref"] = o.IssuerRef
-	}
-	if o.LeafNotAfterBehavior != nil {
-		toSerialize["leaf_not_after_behavior"] = o.LeafNotAfterBehavior
-	}
-	if o.ManualChain != nil {
-		toSerialize["manual_chain"] = o.ManualChain
-	}
-	if o.Usage != nil {
-		toSerialize["usage"] = o.Usage
-	}
+
+	toSerialize["issuer_name"] = o.IssuerName
+	toSerialize["issuer_ref"] = o.IssuerRef
+	toSerialize["leaf_not_after_behavior"] = o.LeafNotAfterBehavior
+	toSerialize["manual_chain"] = o.ManualChain
+	toSerialize["usage"] = o.Usage
+
 	return json.Marshal(toSerialize)
 }
 
@@ -11431,7 +9571,7 @@ API version: 1.12.0
 // PkiKeyRequest struct for PkiKeyRequest
 type PkiKeyRequest struct {
 	// Human-readable name for this key.
-	KeyName *string `json:"key_name,omitempty"`
+	KeyName string `json:"key_name"`
 }
 
 // NewPkiKeyRequestWithDefaults instantiates a new PkiKeyRequest object
@@ -11439,14 +9579,15 @@ type PkiKeyRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiKeyRequestWithDefaults() *PkiKeyRequest {
 	this := PkiKeyRequest{}
+
 	return &this
 }
 
 func (o PkiKeyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.KeyName != nil {
-		toSerialize["key_name"] = o.KeyName
-	}
+
+	toSerialize["key_name"] = o.KeyName
+
 	return json.Marshal(toSerialize)
 }
 
@@ -11463,9 +9604,9 @@ API version: 1.12.0
 // PkiKeysImportRequest struct for PkiKeysImportRequest
 type PkiKeysImportRequest struct {
 	// Optional name to be used for this key
-	KeyName *string `json:"key_name,omitempty"`
+	KeyName string `json:"key_name"`
 	// PEM-format, unencrypted secret key
-	PemBundle *string `json:"pem_bundle,omitempty"`
+	PemBundle string `json:"pem_bundle"`
 }
 
 // NewPkiKeysImportRequestWithDefaults instantiates a new PkiKeysImportRequest object
@@ -11473,17 +9614,16 @@ type PkiKeysImportRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiKeysImportRequestWithDefaults() *PkiKeysImportRequest {
 	this := PkiKeysImportRequest{}
+
 	return &this
 }
 
 func (o PkiKeysImportRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.KeyName != nil {
-		toSerialize["key_name"] = o.KeyName
-	}
-	if o.PemBundle != nil {
-		toSerialize["pem_bundle"] = o.PemBundle
-	}
+
+	toSerialize["key_name"] = o.KeyName
+	toSerialize["pem_bundle"] = o.PemBundle
+
 	return json.Marshal(toSerialize)
 }
 
@@ -11500,15 +9640,15 @@ API version: 1.12.0
 // PkiKmsRequest struct for PkiKmsRequest
 type PkiKmsRequest struct {
 	// The number of bits to use. Allowed values are 0 (universal default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type: 224, 256 (default), 384, or 521; ignored with ed25519.
-	KeyBits *int32 `json:"key_bits,omitempty"`
+	KeyBits int32 `json:"key_bits"`
 	// Optional name to be used for this key
-	KeyName *string `json:"key_name,omitempty"`
+	KeyName string `json:"key_name"`
 	// The type of key to use; defaults to RSA. \"rsa\" \"ec\" and \"ed25519\" are the only valid values.
-	KeyType *string `json:"key_type,omitempty"`
+	KeyType string `json:"key_type"`
 	// The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_name is required. Ignored for other types.
-	ManagedKeyId *string `json:"managed_key_id,omitempty"`
+	ManagedKeyId string `json:"managed_key_id"`
 	// The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_id is required. Ignored for other types.
-	ManagedKeyName *string `json:"managed_key_name,omitempty"`
+	ManagedKeyName string `json:"managed_key_name"`
 }
 
 // NewPkiKmsRequestWithDefaults instantiates a new PkiKmsRequest object
@@ -11516,30 +9656,22 @@ type PkiKmsRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiKmsRequestWithDefaults() *PkiKmsRequest {
 	this := PkiKmsRequest{}
-	var keyBits int32 = 0
-	this.KeyBits = &keyBits
-	var keyType string = "rsa"
-	this.KeyType = &keyType
+
+	this.KeyBits = 0
+	this.KeyType = "rsa"
+
 	return &this
 }
 
 func (o PkiKmsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.KeyBits != nil {
-		toSerialize["key_bits"] = o.KeyBits
-	}
-	if o.KeyName != nil {
-		toSerialize["key_name"] = o.KeyName
-	}
-	if o.KeyType != nil {
-		toSerialize["key_type"] = o.KeyType
-	}
-	if o.ManagedKeyId != nil {
-		toSerialize["managed_key_id"] = o.ManagedKeyId
-	}
-	if o.ManagedKeyName != nil {
-		toSerialize["managed_key_name"] = o.ManagedKeyName
-	}
+
+	toSerialize["key_bits"] = o.KeyBits
+	toSerialize["key_name"] = o.KeyName
+	toSerialize["key_type"] = o.KeyType
+	toSerialize["managed_key_id"] = o.ManagedKeyId
+	toSerialize["managed_key_name"] = o.ManagedKeyName
+
 	return json.Marshal(toSerialize)
 }
 
@@ -11556,7 +9688,7 @@ API version: 1.12.0
 // PkiRevokeRequest struct for PkiRevokeRequest
 type PkiRevokeRequest struct {
 	// Certificate serial number, in colon- or hyphen-separated octal
-	SerialNumber *string `json:"serial_number,omitempty"`
+	SerialNumber string `json:"serial_number"`
 }
 
 // NewPkiRevokeRequestWithDefaults instantiates a new PkiRevokeRequest object
@@ -11564,14 +9696,15 @@ type PkiRevokeRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiRevokeRequestWithDefaults() *PkiRevokeRequest {
 	this := PkiRevokeRequest{}
+
 	return &this
 }
 
 func (o PkiRevokeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.SerialNumber != nil {
-		toSerialize["serial_number"] = o.SerialNumber
-	}
+
+	toSerialize["serial_number"] = o.SerialNumber
+
 	return json.Marshal(toSerialize)
 }
 
@@ -11588,93 +9721,93 @@ API version: 1.12.0
 // PkiRolesRequest struct for PkiRolesRequest
 type PkiRolesRequest struct {
 	// If set, clients can request certificates for any domain, regardless of allowed_domains restrictions. See the documentation for more information.
-	AllowAnyName *bool `json:"allow_any_name,omitempty"`
+	AllowAnyName bool `json:"allow_any_name"`
 	// If set, clients can request certificates for the base domains themselves, e.g. \"example.com\" of domains listed in allowed_domains. This is a separate option as in some cases this can be considered a security threat. See the documentation for more information.
-	AllowBareDomains *bool `json:"allow_bare_domains,omitempty"`
+	AllowBareDomains bool `json:"allow_bare_domains"`
 	// If set, domains specified in allowed_domains can include shell-style glob patterns, e.g. \"ftp*.example.com\". See the documentation for more information.
-	AllowGlobDomains *bool `json:"allow_glob_domains,omitempty"`
+	AllowGlobDomains bool `json:"allow_glob_domains"`
 	// If set, IP Subject Alternative Names are allowed. Any valid IP is accepted and No authorization checking is performed.
-	AllowIpSans *bool `json:"allow_ip_sans,omitempty"`
+	AllowIpSans bool `json:"allow_ip_sans"`
 	// Whether to allow \"localhost\" and \"localdomain\" as a valid common name in a request, independent of allowed_domains value.
-	AllowLocalhost *bool `json:"allow_localhost,omitempty"`
+	AllowLocalhost bool `json:"allow_localhost"`
 	// If set, clients can request certificates for subdomains of domains listed in allowed_domains, including wildcard subdomains. See the documentation for more information.
-	AllowSubdomains *bool `json:"allow_subdomains,omitempty"`
+	AllowSubdomains bool `json:"allow_subdomains"`
 	// If set, allows certificates with wildcards in the common name to be issued, conforming to RFC 6125's Section 6.4.3; e.g., \"*.example.net\" or \"b*z.example.net\". See the documentation for more information.
-	AllowWildcardCertificates *bool `json:"allow_wildcard_certificates,omitempty"`
+	AllowWildcardCertificates bool `json:"allow_wildcard_certificates"`
 	// Specifies the domains this role is allowed to issue certificates for. This is used with the allow_bare_domains, allow_subdomains, and allow_glob_domains to determine matches for the common name, DNS-typed SAN entries, and Email-typed SAN entries of certificates. See the documentation for more information. This parameter accepts a comma-separated string or list of domains.
-	AllowedDomains []string `json:"allowed_domains,omitempty"`
+	AllowedDomains []string `json:"allowed_domains"`
 	// If set, Allowed domains can be specified using identity template policies. Non-templated domains are also permitted.
-	AllowedDomainsTemplate *bool `json:"allowed_domains_template,omitempty"`
+	AllowedDomainsTemplate bool `json:"allowed_domains_template"`
 	// If set, an array of allowed other names to put in SANs. These values support globbing and must be in the format <oid>;<type>:<value>. Currently only \"utf8\" is a valid type. All values, including globbing values, must use this syntax, with the exception being a single \"*\" which allows any OID and any value (but type must still be utf8).
-	AllowedOtherSans []string `json:"allowed_other_sans,omitempty"`
+	AllowedOtherSans []string `json:"allowed_other_sans"`
 	// If set, an array of allowed serial numbers to put in Subject. These values support globbing.
-	AllowedSerialNumbers []string `json:"allowed_serial_numbers,omitempty"`
+	AllowedSerialNumbers []string `json:"allowed_serial_numbers"`
 	// If set, an array of allowed URIs for URI Subject Alternative Names. Any valid URI is accepted, these values support globbing.
-	AllowedUriSans []string `json:"allowed_uri_sans,omitempty"`
+	AllowedUriSans []string `json:"allowed_uri_sans"`
 	// If set, Allowed URI SANs can be specified using identity template policies. Non-templated URI SANs are also permitted.
-	AllowedUriSansTemplate *bool `json:"allowed_uri_sans_template,omitempty"`
+	AllowedUriSansTemplate bool `json:"allowed_uri_sans_template"`
 	// Backend Type
-	Backend *string `json:"backend,omitempty"`
+	Backend string `json:"backend"`
 	// Mark Basic Constraints valid when issuing non-CA certificates.
-	BasicConstraintsValidForNonCa *bool `json:"basic_constraints_valid_for_non_ca,omitempty"`
+	BasicConstraintsValidForNonCa bool `json:"basic_constraints_valid_for_non_ca"`
 	// If set, certificates are flagged for client auth use. Defaults to true. See also RFC 5280 Section 4.2.1.12.
-	ClientFlag *bool `json:"client_flag,omitempty"`
+	ClientFlag bool `json:"client_flag"`
 	// If set, certificates are flagged for code signing use. Defaults to false. See also RFC 5280 Section 4.2.1.12.
-	CodeSigningFlag *bool `json:"code_signing_flag,omitempty"`
+	CodeSigningFlag bool `json:"code_signing_flag"`
 	// If set, Country will be set to this value in certificates issued by this role.
-	Country []string `json:"country,omitempty"`
+	Country []string `json:"country"`
 	// If set, certificates are flagged for email protection use. Defaults to false. See also RFC 5280 Section 4.2.1.12.
-	EmailProtectionFlag *bool `json:"email_protection_flag,omitempty"`
+	EmailProtectionFlag bool `json:"email_protection_flag"`
 	// If set, only valid host names are allowed for CN and DNS SANs, and the host part of email addresses. Defaults to true.
-	EnforceHostnames *bool `json:"enforce_hostnames,omitempty"`
+	EnforceHostnames bool `json:"enforce_hostnames"`
 	// A comma-separated string or list of extended key usages. Valid values can be found at https://golang.org/pkg/crypto/x509/#ExtKeyUsage -- simply drop the \"ExtKeyUsage\" part of the name. To remove all key usages from being set, set this value to an empty list. See also RFC 5280 Section 4.2.1.12.
-	ExtKeyUsage []string `json:"ext_key_usage,omitempty"`
+	ExtKeyUsage []string `json:"ext_key_usage"`
 	// A comma-separated string or list of extended key usage oids.
-	ExtKeyUsageOids []string `json:"ext_key_usage_oids,omitempty"`
+	ExtKeyUsageOids []string `json:"ext_key_usage_oids"`
 	// If set, certificates issued/signed against this role will have Vault leases attached to them. Defaults to \"false\". Certificates can be added to the CRL by \"vault revoke <lease_id>\" when certificates are associated with leases. It can also be done using the \"pki/revoke\" endpoint. However, when lease generation is disabled, invoking \"pki/revoke\" would be the only way to add the certificates to the CRL. When large number of certificates are generated with long lifetimes, it is recommended that lease generation be disabled, as large amount of leases adversely affect the startup time of Vault.
-	GenerateLease *bool `json:"generate_lease,omitempty"`
+	GenerateLease bool `json:"generate_lease"`
 	// Reference to the issuer used to sign requests serviced by this role.
-	IssuerRef *string `json:"issuer_ref,omitempty"`
+	IssuerRef string `json:"issuer_ref"`
 	// The number of bits to use. Allowed values are 0 (universal default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type: 224, 256 (default), 384, or 521; ignored with ed25519.
-	KeyBits *int32 `json:"key_bits,omitempty"`
+	KeyBits int32 `json:"key_bits"`
 	// The type of key to use; defaults to RSA. \"rsa\" \"ec\", \"ed25519\" and \"any\" are the only valid values.
-	KeyType *string `json:"key_type,omitempty"`
+	KeyType string `json:"key_type"`
 	// A comma-separated string or list of key usages (not extended key usages). Valid values can be found at https://golang.org/pkg/crypto/x509/#KeyUsage -- simply drop the \"KeyUsage\" part of the name. To remove all key usages from being set, set this value to an empty list. See also RFC 5280 Section 4.2.1.3.
-	KeyUsage []string `json:"key_usage,omitempty"`
+	KeyUsage []string `json:"key_usage"`
 	// If set, Locality will be set to this value in certificates issued by this role.
-	Locality []string `json:"locality,omitempty"`
+	Locality []string `json:"locality"`
 	// The maximum allowed lease duration. If not set, defaults to the system maximum lease TTL.
-	MaxTtl *int32 `json:"max_ttl,omitempty"`
+	MaxTtl int32 `json:"max_ttl"`
 	// If set, certificates issued/signed against this role will not be stored in the storage backend. This can improve performance when issuing large numbers of certificates. However, certificates issued in this way cannot be enumerated or revoked, so this option is recommended only for certificates that are non-sensitive, or extremely short-lived. This option implies a value of \"false\" for \"generate_lease\".
-	NoStore *bool `json:"no_store,omitempty"`
+	NoStore bool `json:"no_store"`
 	// Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ.
-	NotAfter *string `json:"not_after,omitempty"`
+	NotAfter string `json:"not_after"`
 	// The duration before now which the certificate needs to be backdated by.
-	NotBeforeDuration *int32 `json:"not_before_duration,omitempty"`
+	NotBeforeDuration int32 `json:"not_before_duration"`
 	// If set, O (Organization) will be set to this value in certificates issued by this role.
-	Organization []string `json:"organization,omitempty"`
+	Organization []string `json:"organization"`
 	// If set, OU (OrganizationalUnit) will be set to this value in certificates issued by this role.
-	Ou []string `json:"ou,omitempty"`
+	Ou []string `json:"ou"`
 	// A comma-separated string or list of policy OIDs, or a JSON list of qualified policy information, which must include an oid, and may include a notice and/or cps url, using the form [{\"oid\"=\"1.3.6.1.4.1.7.8\",\"notice\"=\"I am a user Notice\"}, {\"oid\"=\"1.3.6.1.4.1.44947.1.2.4 \",\"cps\"=\"https://example.com\"}].
-	PolicyIdentifiers []string `json:"policy_identifiers,omitempty"`
+	PolicyIdentifiers []string `json:"policy_identifiers"`
 	// If set, Postal Code will be set to this value in certificates issued by this role.
-	PostalCode []string `json:"postal_code,omitempty"`
+	PostalCode []string `json:"postal_code"`
 	// If set, Province will be set to this value in certificates issued by this role.
-	Province []string `json:"province,omitempty"`
+	Province []string `json:"province"`
 	// If set to false, makes the 'common_name' field optional while generating a certificate.
-	RequireCn *bool `json:"require_cn,omitempty"`
+	RequireCn bool `json:"require_cn"`
 	// If set, certificates are flagged for server auth use. Defaults to true. See also RFC 5280 Section 4.2.1.12.
-	ServerFlag *bool `json:"server_flag,omitempty"`
+	ServerFlag bool `json:"server_flag"`
 	// The number of bits to use in the signature algorithm; accepts 256 for SHA-2-256, 384 for SHA-2-384, and 512 for SHA-2-512. Defaults to 0 to automatically detect based on key length (SHA-2-256 for RSA keys, and matching the curve size for NIST P-Curves).
-	SignatureBits *int32 `json:"signature_bits,omitempty"`
+	SignatureBits int32 `json:"signature_bits"`
 	// If set, Street Address will be set to this value in certificates issued by this role.
-	StreetAddress []string `json:"street_address,omitempty"`
+	StreetAddress []string `json:"street_address"`
 	// The lease duration (validity period of the certificate) if no specific lease duration is requested. The lease duration controls the expiration of certificates issued by this backend. Defaults to the system default value or the value of max_ttl, whichever is shorter.
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 	// If set, when used with a signing profile, the common name in the CSR will be used. This does *not* include any requested Subject Alternative Names; use use_csr_sans for that. Defaults to true.
-	UseCsrCommonName *bool `json:"use_csr_common_name,omitempty"`
+	UseCsrCommonName bool `json:"use_csr_common_name"`
 	// If set, when used with a signing profile, the SANs in the CSR will be used. This does *not* include the Common Name (cn); use use_csr_common_name for that. Defaults to true.
-	UseCsrSans *bool `json:"use_csr_sans,omitempty"`
+	UseCsrSans bool `json:"use_csr_sans"`
 }
 
 // NewPkiRolesRequestWithDefaults instantiates a new PkiRolesRequest object
@@ -11682,175 +9815,75 @@ type PkiRolesRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiRolesRequestWithDefaults() *PkiRolesRequest {
 	this := PkiRolesRequest{}
-	var allowIpSans bool = true
-	this.AllowIpSans = &allowIpSans
-	var allowLocalhost bool = true
-	this.AllowLocalhost = &allowLocalhost
-	var allowWildcardCertificates bool = true
-	this.AllowWildcardCertificates = &allowWildcardCertificates
-	var allowedDomainsTemplate bool = false
-	this.AllowedDomainsTemplate = &allowedDomainsTemplate
-	var allowedUriSansTemplate bool = false
-	this.AllowedUriSansTemplate = &allowedUriSansTemplate
-	var clientFlag bool = true
-	this.ClientFlag = &clientFlag
-	var enforceHostnames bool = true
-	this.EnforceHostnames = &enforceHostnames
-	var issuerRef string = "default"
-	this.IssuerRef = &issuerRef
-	var keyBits int32 = 0
-	this.KeyBits = &keyBits
-	var keyType string = "rsa"
-	this.KeyType = &keyType
-	var notBeforeDuration int32 = 30
-	this.NotBeforeDuration = &notBeforeDuration
-	var requireCn bool = true
-	this.RequireCn = &requireCn
-	var serverFlag bool = true
-	this.ServerFlag = &serverFlag
-	var signatureBits int32 = 0
-	this.SignatureBits = &signatureBits
-	var useCsrCommonName bool = true
-	this.UseCsrCommonName = &useCsrCommonName
-	var useCsrSans bool = true
-	this.UseCsrSans = &useCsrSans
+
+	this.AllowIpSans = true
+	this.AllowLocalhost = true
+	this.AllowWildcardCertificates = true
+	this.AllowedDomainsTemplate = false
+	this.AllowedUriSansTemplate = false
+	this.ClientFlag = true
+	this.EnforceHostnames = true
+	this.IssuerRef = "default"
+	this.KeyBits = 0
+	this.KeyType = "rsa"
+	this.NotBeforeDuration = 30
+	this.RequireCn = true
+	this.ServerFlag = true
+	this.SignatureBits = 0
+	this.UseCsrCommonName = true
+	this.UseCsrSans = true
+
 	return &this
 }
 
 func (o PkiRolesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AllowAnyName != nil {
-		toSerialize["allow_any_name"] = o.AllowAnyName
-	}
-	if o.AllowBareDomains != nil {
-		toSerialize["allow_bare_domains"] = o.AllowBareDomains
-	}
-	if o.AllowGlobDomains != nil {
-		toSerialize["allow_glob_domains"] = o.AllowGlobDomains
-	}
-	if o.AllowIpSans != nil {
-		toSerialize["allow_ip_sans"] = o.AllowIpSans
-	}
-	if o.AllowLocalhost != nil {
-		toSerialize["allow_localhost"] = o.AllowLocalhost
-	}
-	if o.AllowSubdomains != nil {
-		toSerialize["allow_subdomains"] = o.AllowSubdomains
-	}
-	if o.AllowWildcardCertificates != nil {
-		toSerialize["allow_wildcard_certificates"] = o.AllowWildcardCertificates
-	}
-	if o.AllowedDomains != nil {
-		toSerialize["allowed_domains"] = o.AllowedDomains
-	}
-	if o.AllowedDomainsTemplate != nil {
-		toSerialize["allowed_domains_template"] = o.AllowedDomainsTemplate
-	}
-	if o.AllowedOtherSans != nil {
-		toSerialize["allowed_other_sans"] = o.AllowedOtherSans
-	}
-	if o.AllowedSerialNumbers != nil {
-		toSerialize["allowed_serial_numbers"] = o.AllowedSerialNumbers
-	}
-	if o.AllowedUriSans != nil {
-		toSerialize["allowed_uri_sans"] = o.AllowedUriSans
-	}
-	if o.AllowedUriSansTemplate != nil {
-		toSerialize["allowed_uri_sans_template"] = o.AllowedUriSansTemplate
-	}
-	if o.Backend != nil {
-		toSerialize["backend"] = o.Backend
-	}
-	if o.BasicConstraintsValidForNonCa != nil {
-		toSerialize["basic_constraints_valid_for_non_ca"] = o.BasicConstraintsValidForNonCa
-	}
-	if o.ClientFlag != nil {
-		toSerialize["client_flag"] = o.ClientFlag
-	}
-	if o.CodeSigningFlag != nil {
-		toSerialize["code_signing_flag"] = o.CodeSigningFlag
-	}
-	if o.Country != nil {
-		toSerialize["country"] = o.Country
-	}
-	if o.EmailProtectionFlag != nil {
-		toSerialize["email_protection_flag"] = o.EmailProtectionFlag
-	}
-	if o.EnforceHostnames != nil {
-		toSerialize["enforce_hostnames"] = o.EnforceHostnames
-	}
-	if o.ExtKeyUsage != nil {
-		toSerialize["ext_key_usage"] = o.ExtKeyUsage
-	}
-	if o.ExtKeyUsageOids != nil {
-		toSerialize["ext_key_usage_oids"] = o.ExtKeyUsageOids
-	}
-	if o.GenerateLease != nil {
-		toSerialize["generate_lease"] = o.GenerateLease
-	}
-	if o.IssuerRef != nil {
-		toSerialize["issuer_ref"] = o.IssuerRef
-	}
-	if o.KeyBits != nil {
-		toSerialize["key_bits"] = o.KeyBits
-	}
-	if o.KeyType != nil {
-		toSerialize["key_type"] = o.KeyType
-	}
-	if o.KeyUsage != nil {
-		toSerialize["key_usage"] = o.KeyUsage
-	}
-	if o.Locality != nil {
-		toSerialize["locality"] = o.Locality
-	}
-	if o.MaxTtl != nil {
-		toSerialize["max_ttl"] = o.MaxTtl
-	}
-	if o.NoStore != nil {
-		toSerialize["no_store"] = o.NoStore
-	}
-	if o.NotAfter != nil {
-		toSerialize["not_after"] = o.NotAfter
-	}
-	if o.NotBeforeDuration != nil {
-		toSerialize["not_before_duration"] = o.NotBeforeDuration
-	}
-	if o.Organization != nil {
-		toSerialize["organization"] = o.Organization
-	}
-	if o.Ou != nil {
-		toSerialize["ou"] = o.Ou
-	}
-	if o.PolicyIdentifiers != nil {
-		toSerialize["policy_identifiers"] = o.PolicyIdentifiers
-	}
-	if o.PostalCode != nil {
-		toSerialize["postal_code"] = o.PostalCode
-	}
-	if o.Province != nil {
-		toSerialize["province"] = o.Province
-	}
-	if o.RequireCn != nil {
-		toSerialize["require_cn"] = o.RequireCn
-	}
-	if o.ServerFlag != nil {
-		toSerialize["server_flag"] = o.ServerFlag
-	}
-	if o.SignatureBits != nil {
-		toSerialize["signature_bits"] = o.SignatureBits
-	}
-	if o.StreetAddress != nil {
-		toSerialize["street_address"] = o.StreetAddress
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
-	if o.UseCsrCommonName != nil {
-		toSerialize["use_csr_common_name"] = o.UseCsrCommonName
-	}
-	if o.UseCsrSans != nil {
-		toSerialize["use_csr_sans"] = o.UseCsrSans
-	}
+
+	toSerialize["allow_any_name"] = o.AllowAnyName
+	toSerialize["allow_bare_domains"] = o.AllowBareDomains
+	toSerialize["allow_glob_domains"] = o.AllowGlobDomains
+	toSerialize["allow_ip_sans"] = o.AllowIpSans
+	toSerialize["allow_localhost"] = o.AllowLocalhost
+	toSerialize["allow_subdomains"] = o.AllowSubdomains
+	toSerialize["allow_wildcard_certificates"] = o.AllowWildcardCertificates
+	toSerialize["allowed_domains"] = o.AllowedDomains
+	toSerialize["allowed_domains_template"] = o.AllowedDomainsTemplate
+	toSerialize["allowed_other_sans"] = o.AllowedOtherSans
+	toSerialize["allowed_serial_numbers"] = o.AllowedSerialNumbers
+	toSerialize["allowed_uri_sans"] = o.AllowedUriSans
+	toSerialize["allowed_uri_sans_template"] = o.AllowedUriSansTemplate
+	toSerialize["backend"] = o.Backend
+	toSerialize["basic_constraints_valid_for_non_ca"] = o.BasicConstraintsValidForNonCa
+	toSerialize["client_flag"] = o.ClientFlag
+	toSerialize["code_signing_flag"] = o.CodeSigningFlag
+	toSerialize["country"] = o.Country
+	toSerialize["email_protection_flag"] = o.EmailProtectionFlag
+	toSerialize["enforce_hostnames"] = o.EnforceHostnames
+	toSerialize["ext_key_usage"] = o.ExtKeyUsage
+	toSerialize["ext_key_usage_oids"] = o.ExtKeyUsageOids
+	toSerialize["generate_lease"] = o.GenerateLease
+	toSerialize["issuer_ref"] = o.IssuerRef
+	toSerialize["key_bits"] = o.KeyBits
+	toSerialize["key_type"] = o.KeyType
+	toSerialize["key_usage"] = o.KeyUsage
+	toSerialize["locality"] = o.Locality
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["no_store"] = o.NoStore
+	toSerialize["not_after"] = o.NotAfter
+	toSerialize["not_before_duration"] = o.NotBeforeDuration
+	toSerialize["organization"] = o.Organization
+	toSerialize["ou"] = o.Ou
+	toSerialize["policy_identifiers"] = o.PolicyIdentifiers
+	toSerialize["postal_code"] = o.PostalCode
+	toSerialize["province"] = o.Province
+	toSerialize["require_cn"] = o.RequireCn
+	toSerialize["server_flag"] = o.ServerFlag
+	toSerialize["signature_bits"] = o.SignatureBits
+	toSerialize["street_address"] = o.StreetAddress
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["use_csr_common_name"] = o.UseCsrCommonName
+	toSerialize["use_csr_sans"] = o.UseCsrSans
+
 	return json.Marshal(toSerialize)
 }
 
@@ -11867,63 +9900,63 @@ API version: 1.12.0
 // PkiRootGenerateRequest struct for PkiRootGenerateRequest
 type PkiRootGenerateRequest struct {
 	// The requested Subject Alternative Names, if any, in a comma-delimited list. May contain both DNS names and email addresses.
-	AltNames *string `json:"alt_names,omitempty"`
+	AltNames string `json:"alt_names"`
 	// The requested common name; if you want more than one, specify the alternative names in the alt_names map. If not specified when signing, the common name will be taken from the CSR; other names must still be specified in alt_names or ip_sans.
-	CommonName *string `json:"common_name,omitempty"`
+	CommonName string `json:"common_name"`
 	// If set, Country will be set to this value.
-	Country []string `json:"country,omitempty"`
+	Country []string `json:"country"`
 	// If true, the Common Name will not be included in DNS or Email Subject Alternate Names. Defaults to false (CN is included).
-	ExcludeCnFromSans *bool `json:"exclude_cn_from_sans,omitempty"`
+	ExcludeCnFromSans bool `json:"exclude_cn_from_sans"`
 	// Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".
-	Format *string `json:"format,omitempty"`
+	Format string `json:"format"`
 	// The requested IP SANs, if any, in a comma-delimited list
-	IpSans []string `json:"ip_sans,omitempty"`
+	IpSans []string `json:"ip_sans"`
 	// Provide a name to the generated or existing issuer, the name must be unique across all issuers and not be the reserved value 'default'
-	IssuerName *string `json:"issuer_name,omitempty"`
+	IssuerName string `json:"issuer_name"`
 	// The number of bits to use. Allowed values are 0 (universal default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type: 224, 256 (default), 384, or 521; ignored with ed25519.
-	KeyBits *int32 `json:"key_bits,omitempty"`
+	KeyBits int32 `json:"key_bits"`
 	// Provide a name to the generated or existing key, the name must be unique across all keys and not be the reserved value 'default'
-	KeyName *string `json:"key_name,omitempty"`
+	KeyName string `json:"key_name"`
 	// Reference to a existing key; either \"default\" for the configured default key, an identifier or the name assigned to the key.
-	KeyRef *string `json:"key_ref,omitempty"`
+	KeyRef string `json:"key_ref"`
 	// The type of key to use; defaults to RSA. \"rsa\" \"ec\" and \"ed25519\" are the only valid values.
-	KeyType *string `json:"key_type,omitempty"`
+	KeyType string `json:"key_type"`
 	// If set, Locality will be set to this value.
-	Locality []string `json:"locality,omitempty"`
+	Locality []string `json:"locality"`
 	// The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_name is required. Ignored for other types.
-	ManagedKeyId *string `json:"managed_key_id,omitempty"`
+	ManagedKeyId string `json:"managed_key_id"`
 	// The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_id is required. Ignored for other types.
-	ManagedKeyName *string `json:"managed_key_name,omitempty"`
+	ManagedKeyName string `json:"managed_key_name"`
 	// The maximum allowable path length
-	MaxPathLength *int32 `json:"max_path_length,omitempty"`
+	MaxPathLength int32 `json:"max_path_length"`
 	// Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
-	NotAfter *string `json:"not_after,omitempty"`
+	NotAfter string `json:"not_after"`
 	// The duration before now which the certificate needs to be backdated by.
-	NotBeforeDuration *int32 `json:"not_before_duration,omitempty"`
+	NotBeforeDuration int32 `json:"not_before_duration"`
 	// If set, O (Organization) will be set to this value.
-	Organization []string `json:"organization,omitempty"`
+	Organization []string `json:"organization"`
 	// Requested other SANs, in an array with the format <oid>;UTF8:<utf8 string value> for each entry.
-	OtherSans []string `json:"other_sans,omitempty"`
+	OtherSans []string `json:"other_sans"`
 	// If set, OU (OrganizationalUnit) will be set to this value.
-	Ou []string `json:"ou,omitempty"`
+	Ou []string `json:"ou"`
 	// Domains for which this certificate is allowed to sign or issue child certificates. If set, all DNS names (subject and alt) on child certs must be exact matches or subsets of the given domains (see https://tools.ietf.org/html/rfc5280#section-4.2.1.10).
-	PermittedDnsDomains []string `json:"permitted_dns_domains,omitempty"`
+	PermittedDnsDomains []string `json:"permitted_dns_domains"`
 	// If set, Postal Code will be set to this value.
-	PostalCode []string `json:"postal_code,omitempty"`
+	PostalCode []string `json:"postal_code"`
 	// Format for the returned private key. Generally the default will be controlled by the \"format\" parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \"pkcs8\" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to \"der\".
-	PrivateKeyFormat *string `json:"private_key_format,omitempty"`
+	PrivateKeyFormat string `json:"private_key_format"`
 	// If set, Province will be set to this value.
-	Province []string `json:"province,omitempty"`
+	Province []string `json:"province"`
 	// The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field.
-	SerialNumber *string `json:"serial_number,omitempty"`
+	SerialNumber string `json:"serial_number"`
 	// The number of bits to use in the signature algorithm; accepts 256 for SHA-2-256, 384 for SHA-2-384, and 512 for SHA-2-512. Defaults to 0 to automatically detect based on key length (SHA-2-256 for RSA keys, and matching the curve size for NIST P-Curves).
-	SignatureBits *int32 `json:"signature_bits,omitempty"`
+	SignatureBits int32 `json:"signature_bits"`
 	// If set, Street Address will be set to this value.
-	StreetAddress []string `json:"street_address,omitempty"`
+	StreetAddress []string `json:"street_address"`
 	// The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the mount max TTL. Note: this only has an effect when generating a CA cert or signing a CA cert, not when generating a CSR for an intermediate CA.
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 	// The requested URI SANs, if any, in a comma-delimited list.
-	UriSans []string `json:"uri_sans,omitempty"`
+	UriSans []string `json:"uri_sans"`
 }
 
 // NewPkiRootGenerateRequestWithDefaults instantiates a new PkiRootGenerateRequest object
@@ -11931,116 +9964,53 @@ type PkiRootGenerateRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiRootGenerateRequestWithDefaults() *PkiRootGenerateRequest {
 	this := PkiRootGenerateRequest{}
-	var excludeCnFromSans bool = false
-	this.ExcludeCnFromSans = &excludeCnFromSans
-	var format string = "pem"
-	this.Format = &format
-	var keyBits int32 = 0
-	this.KeyBits = &keyBits
-	var keyRef string = "default"
-	this.KeyRef = &keyRef
-	var keyType string = "rsa"
-	this.KeyType = &keyType
-	var maxPathLength int32 = -1
-	this.MaxPathLength = &maxPathLength
-	var notBeforeDuration int32 = 30
-	this.NotBeforeDuration = &notBeforeDuration
-	var privateKeyFormat string = "der"
-	this.PrivateKeyFormat = &privateKeyFormat
-	var signatureBits int32 = 0
-	this.SignatureBits = &signatureBits
+
+	this.ExcludeCnFromSans = false
+	this.Format = "pem"
+	this.KeyBits = 0
+	this.KeyRef = "default"
+	this.KeyType = "rsa"
+	this.MaxPathLength = -1
+	this.NotBeforeDuration = 30
+	this.PrivateKeyFormat = "der"
+	this.SignatureBits = 0
+
 	return &this
 }
 
 func (o PkiRootGenerateRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AltNames != nil {
-		toSerialize["alt_names"] = o.AltNames
-	}
-	if o.CommonName != nil {
-		toSerialize["common_name"] = o.CommonName
-	}
-	if o.Country != nil {
-		toSerialize["country"] = o.Country
-	}
-	if o.ExcludeCnFromSans != nil {
-		toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
-	}
-	if o.Format != nil {
-		toSerialize["format"] = o.Format
-	}
-	if o.IpSans != nil {
-		toSerialize["ip_sans"] = o.IpSans
-	}
-	if o.IssuerName != nil {
-		toSerialize["issuer_name"] = o.IssuerName
-	}
-	if o.KeyBits != nil {
-		toSerialize["key_bits"] = o.KeyBits
-	}
-	if o.KeyName != nil {
-		toSerialize["key_name"] = o.KeyName
-	}
-	if o.KeyRef != nil {
-		toSerialize["key_ref"] = o.KeyRef
-	}
-	if o.KeyType != nil {
-		toSerialize["key_type"] = o.KeyType
-	}
-	if o.Locality != nil {
-		toSerialize["locality"] = o.Locality
-	}
-	if o.ManagedKeyId != nil {
-		toSerialize["managed_key_id"] = o.ManagedKeyId
-	}
-	if o.ManagedKeyName != nil {
-		toSerialize["managed_key_name"] = o.ManagedKeyName
-	}
-	if o.MaxPathLength != nil {
-		toSerialize["max_path_length"] = o.MaxPathLength
-	}
-	if o.NotAfter != nil {
-		toSerialize["not_after"] = o.NotAfter
-	}
-	if o.NotBeforeDuration != nil {
-		toSerialize["not_before_duration"] = o.NotBeforeDuration
-	}
-	if o.Organization != nil {
-		toSerialize["organization"] = o.Organization
-	}
-	if o.OtherSans != nil {
-		toSerialize["other_sans"] = o.OtherSans
-	}
-	if o.Ou != nil {
-		toSerialize["ou"] = o.Ou
-	}
-	if o.PermittedDnsDomains != nil {
-		toSerialize["permitted_dns_domains"] = o.PermittedDnsDomains
-	}
-	if o.PostalCode != nil {
-		toSerialize["postal_code"] = o.PostalCode
-	}
-	if o.PrivateKeyFormat != nil {
-		toSerialize["private_key_format"] = o.PrivateKeyFormat
-	}
-	if o.Province != nil {
-		toSerialize["province"] = o.Province
-	}
-	if o.SerialNumber != nil {
-		toSerialize["serial_number"] = o.SerialNumber
-	}
-	if o.SignatureBits != nil {
-		toSerialize["signature_bits"] = o.SignatureBits
-	}
-	if o.StreetAddress != nil {
-		toSerialize["street_address"] = o.StreetAddress
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
-	if o.UriSans != nil {
-		toSerialize["uri_sans"] = o.UriSans
-	}
+
+	toSerialize["alt_names"] = o.AltNames
+	toSerialize["common_name"] = o.CommonName
+	toSerialize["country"] = o.Country
+	toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
+	toSerialize["format"] = o.Format
+	toSerialize["ip_sans"] = o.IpSans
+	toSerialize["issuer_name"] = o.IssuerName
+	toSerialize["key_bits"] = o.KeyBits
+	toSerialize["key_name"] = o.KeyName
+	toSerialize["key_ref"] = o.KeyRef
+	toSerialize["key_type"] = o.KeyType
+	toSerialize["locality"] = o.Locality
+	toSerialize["managed_key_id"] = o.ManagedKeyId
+	toSerialize["managed_key_name"] = o.ManagedKeyName
+	toSerialize["max_path_length"] = o.MaxPathLength
+	toSerialize["not_after"] = o.NotAfter
+	toSerialize["not_before_duration"] = o.NotBeforeDuration
+	toSerialize["organization"] = o.Organization
+	toSerialize["other_sans"] = o.OtherSans
+	toSerialize["ou"] = o.Ou
+	toSerialize["permitted_dns_domains"] = o.PermittedDnsDomains
+	toSerialize["postal_code"] = o.PostalCode
+	toSerialize["private_key_format"] = o.PrivateKeyFormat
+	toSerialize["province"] = o.Province
+	toSerialize["serial_number"] = o.SerialNumber
+	toSerialize["signature_bits"] = o.SignatureBits
+	toSerialize["street_address"] = o.StreetAddress
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["uri_sans"] = o.UriSans
+
 	return json.Marshal(toSerialize)
 }
 
@@ -12057,7 +10027,7 @@ API version: 1.12.0
 // PkiRootReplaceRequest struct for PkiRootReplaceRequest
 type PkiRootReplaceRequest struct {
 	// Reference (name or identifier) to the default issuer.
-	Default *string `json:"default,omitempty"`
+	Default string `json:"default"`
 }
 
 // NewPkiRootReplaceRequestWithDefaults instantiates a new PkiRootReplaceRequest object
@@ -12065,16 +10035,17 @@ type PkiRootReplaceRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiRootReplaceRequestWithDefaults() *PkiRootReplaceRequest {
 	this := PkiRootReplaceRequest{}
-	var default_ string = "next"
-	this.Default = &default_
+
+	this.Default = "next"
+
 	return &this
 }
 
 func (o PkiRootReplaceRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Default != nil {
-		toSerialize["default"] = o.Default
-	}
+
+	toSerialize["default"] = o.Default
+
 	return json.Marshal(toSerialize)
 }
 
@@ -12091,63 +10062,63 @@ API version: 1.12.0
 // PkiRootRotateRequest struct for PkiRootRotateRequest
 type PkiRootRotateRequest struct {
 	// The requested Subject Alternative Names, if any, in a comma-delimited list. May contain both DNS names and email addresses.
-	AltNames *string `json:"alt_names,omitempty"`
+	AltNames string `json:"alt_names"`
 	// The requested common name; if you want more than one, specify the alternative names in the alt_names map. If not specified when signing, the common name will be taken from the CSR; other names must still be specified in alt_names or ip_sans.
-	CommonName *string `json:"common_name,omitempty"`
+	CommonName string `json:"common_name"`
 	// If set, Country will be set to this value.
-	Country []string `json:"country,omitempty"`
+	Country []string `json:"country"`
 	// If true, the Common Name will not be included in DNS or Email Subject Alternate Names. Defaults to false (CN is included).
-	ExcludeCnFromSans *bool `json:"exclude_cn_from_sans,omitempty"`
+	ExcludeCnFromSans bool `json:"exclude_cn_from_sans"`
 	// Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".
-	Format *string `json:"format,omitempty"`
+	Format string `json:"format"`
 	// The requested IP SANs, if any, in a comma-delimited list
-	IpSans []string `json:"ip_sans,omitempty"`
+	IpSans []string `json:"ip_sans"`
 	// Provide a name to the generated or existing issuer, the name must be unique across all issuers and not be the reserved value 'default'
-	IssuerName *string `json:"issuer_name,omitempty"`
+	IssuerName string `json:"issuer_name"`
 	// The number of bits to use. Allowed values are 0 (universal default); with rsa key_type: 2048 (default), 3072, or 4096; with ec key_type: 224, 256 (default), 384, or 521; ignored with ed25519.
-	KeyBits *int32 `json:"key_bits,omitempty"`
+	KeyBits int32 `json:"key_bits"`
 	// Provide a name to the generated or existing key, the name must be unique across all keys and not be the reserved value 'default'
-	KeyName *string `json:"key_name,omitempty"`
+	KeyName string `json:"key_name"`
 	// Reference to a existing key; either \"default\" for the configured default key, an identifier or the name assigned to the key.
-	KeyRef *string `json:"key_ref,omitempty"`
+	KeyRef string `json:"key_ref"`
 	// The type of key to use; defaults to RSA. \"rsa\" \"ec\" and \"ed25519\" are the only valid values.
-	KeyType *string `json:"key_type,omitempty"`
+	KeyType string `json:"key_type"`
 	// If set, Locality will be set to this value.
-	Locality []string `json:"locality,omitempty"`
+	Locality []string `json:"locality"`
 	// The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_name is required. Ignored for other types.
-	ManagedKeyId *string `json:"managed_key_id,omitempty"`
+	ManagedKeyId string `json:"managed_key_id"`
 	// The name of the managed key to use when the exported type is kms. When kms type is the key type, this field or managed_key_id is required. Ignored for other types.
-	ManagedKeyName *string `json:"managed_key_name,omitempty"`
+	ManagedKeyName string `json:"managed_key_name"`
 	// The maximum allowable path length
-	MaxPathLength *int32 `json:"max_path_length,omitempty"`
+	MaxPathLength int32 `json:"max_path_length"`
 	// Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
-	NotAfter *string `json:"not_after,omitempty"`
+	NotAfter string `json:"not_after"`
 	// The duration before now which the certificate needs to be backdated by.
-	NotBeforeDuration *int32 `json:"not_before_duration,omitempty"`
+	NotBeforeDuration int32 `json:"not_before_duration"`
 	// If set, O (Organization) will be set to this value.
-	Organization []string `json:"organization,omitempty"`
+	Organization []string `json:"organization"`
 	// Requested other SANs, in an array with the format <oid>;UTF8:<utf8 string value> for each entry.
-	OtherSans []string `json:"other_sans,omitempty"`
+	OtherSans []string `json:"other_sans"`
 	// If set, OU (OrganizationalUnit) will be set to this value.
-	Ou []string `json:"ou,omitempty"`
+	Ou []string `json:"ou"`
 	// Domains for which this certificate is allowed to sign or issue child certificates. If set, all DNS names (subject and alt) on child certs must be exact matches or subsets of the given domains (see https://tools.ietf.org/html/rfc5280#section-4.2.1.10).
-	PermittedDnsDomains []string `json:"permitted_dns_domains,omitempty"`
+	PermittedDnsDomains []string `json:"permitted_dns_domains"`
 	// If set, Postal Code will be set to this value.
-	PostalCode []string `json:"postal_code,omitempty"`
+	PostalCode []string `json:"postal_code"`
 	// Format for the returned private key. Generally the default will be controlled by the \"format\" parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \"pkcs8\" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to \"der\".
-	PrivateKeyFormat *string `json:"private_key_format,omitempty"`
+	PrivateKeyFormat string `json:"private_key_format"`
 	// If set, Province will be set to this value.
-	Province []string `json:"province,omitempty"`
+	Province []string `json:"province"`
 	// The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field.
-	SerialNumber *string `json:"serial_number,omitempty"`
+	SerialNumber string `json:"serial_number"`
 	// The number of bits to use in the signature algorithm; accepts 256 for SHA-2-256, 384 for SHA-2-384, and 512 for SHA-2-512. Defaults to 0 to automatically detect based on key length (SHA-2-256 for RSA keys, and matching the curve size for NIST P-Curves).
-	SignatureBits *int32 `json:"signature_bits,omitempty"`
+	SignatureBits int32 `json:"signature_bits"`
 	// If set, Street Address will be set to this value.
-	StreetAddress []string `json:"street_address,omitempty"`
+	StreetAddress []string `json:"street_address"`
 	// The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the mount max TTL. Note: this only has an effect when generating a CA cert or signing a CA cert, not when generating a CSR for an intermediate CA.
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 	// The requested URI SANs, if any, in a comma-delimited list.
-	UriSans []string `json:"uri_sans,omitempty"`
+	UriSans []string `json:"uri_sans"`
 }
 
 // NewPkiRootRotateRequestWithDefaults instantiates a new PkiRootRotateRequest object
@@ -12155,116 +10126,53 @@ type PkiRootRotateRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiRootRotateRequestWithDefaults() *PkiRootRotateRequest {
 	this := PkiRootRotateRequest{}
-	var excludeCnFromSans bool = false
-	this.ExcludeCnFromSans = &excludeCnFromSans
-	var format string = "pem"
-	this.Format = &format
-	var keyBits int32 = 0
-	this.KeyBits = &keyBits
-	var keyRef string = "default"
-	this.KeyRef = &keyRef
-	var keyType string = "rsa"
-	this.KeyType = &keyType
-	var maxPathLength int32 = -1
-	this.MaxPathLength = &maxPathLength
-	var notBeforeDuration int32 = 30
-	this.NotBeforeDuration = &notBeforeDuration
-	var privateKeyFormat string = "der"
-	this.PrivateKeyFormat = &privateKeyFormat
-	var signatureBits int32 = 0
-	this.SignatureBits = &signatureBits
+
+	this.ExcludeCnFromSans = false
+	this.Format = "pem"
+	this.KeyBits = 0
+	this.KeyRef = "default"
+	this.KeyType = "rsa"
+	this.MaxPathLength = -1
+	this.NotBeforeDuration = 30
+	this.PrivateKeyFormat = "der"
+	this.SignatureBits = 0
+
 	return &this
 }
 
 func (o PkiRootRotateRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AltNames != nil {
-		toSerialize["alt_names"] = o.AltNames
-	}
-	if o.CommonName != nil {
-		toSerialize["common_name"] = o.CommonName
-	}
-	if o.Country != nil {
-		toSerialize["country"] = o.Country
-	}
-	if o.ExcludeCnFromSans != nil {
-		toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
-	}
-	if o.Format != nil {
-		toSerialize["format"] = o.Format
-	}
-	if o.IpSans != nil {
-		toSerialize["ip_sans"] = o.IpSans
-	}
-	if o.IssuerName != nil {
-		toSerialize["issuer_name"] = o.IssuerName
-	}
-	if o.KeyBits != nil {
-		toSerialize["key_bits"] = o.KeyBits
-	}
-	if o.KeyName != nil {
-		toSerialize["key_name"] = o.KeyName
-	}
-	if o.KeyRef != nil {
-		toSerialize["key_ref"] = o.KeyRef
-	}
-	if o.KeyType != nil {
-		toSerialize["key_type"] = o.KeyType
-	}
-	if o.Locality != nil {
-		toSerialize["locality"] = o.Locality
-	}
-	if o.ManagedKeyId != nil {
-		toSerialize["managed_key_id"] = o.ManagedKeyId
-	}
-	if o.ManagedKeyName != nil {
-		toSerialize["managed_key_name"] = o.ManagedKeyName
-	}
-	if o.MaxPathLength != nil {
-		toSerialize["max_path_length"] = o.MaxPathLength
-	}
-	if o.NotAfter != nil {
-		toSerialize["not_after"] = o.NotAfter
-	}
-	if o.NotBeforeDuration != nil {
-		toSerialize["not_before_duration"] = o.NotBeforeDuration
-	}
-	if o.Organization != nil {
-		toSerialize["organization"] = o.Organization
-	}
-	if o.OtherSans != nil {
-		toSerialize["other_sans"] = o.OtherSans
-	}
-	if o.Ou != nil {
-		toSerialize["ou"] = o.Ou
-	}
-	if o.PermittedDnsDomains != nil {
-		toSerialize["permitted_dns_domains"] = o.PermittedDnsDomains
-	}
-	if o.PostalCode != nil {
-		toSerialize["postal_code"] = o.PostalCode
-	}
-	if o.PrivateKeyFormat != nil {
-		toSerialize["private_key_format"] = o.PrivateKeyFormat
-	}
-	if o.Province != nil {
-		toSerialize["province"] = o.Province
-	}
-	if o.SerialNumber != nil {
-		toSerialize["serial_number"] = o.SerialNumber
-	}
-	if o.SignatureBits != nil {
-		toSerialize["signature_bits"] = o.SignatureBits
-	}
-	if o.StreetAddress != nil {
-		toSerialize["street_address"] = o.StreetAddress
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
-	if o.UriSans != nil {
-		toSerialize["uri_sans"] = o.UriSans
-	}
+
+	toSerialize["alt_names"] = o.AltNames
+	toSerialize["common_name"] = o.CommonName
+	toSerialize["country"] = o.Country
+	toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
+	toSerialize["format"] = o.Format
+	toSerialize["ip_sans"] = o.IpSans
+	toSerialize["issuer_name"] = o.IssuerName
+	toSerialize["key_bits"] = o.KeyBits
+	toSerialize["key_name"] = o.KeyName
+	toSerialize["key_ref"] = o.KeyRef
+	toSerialize["key_type"] = o.KeyType
+	toSerialize["locality"] = o.Locality
+	toSerialize["managed_key_id"] = o.ManagedKeyId
+	toSerialize["managed_key_name"] = o.ManagedKeyName
+	toSerialize["max_path_length"] = o.MaxPathLength
+	toSerialize["not_after"] = o.NotAfter
+	toSerialize["not_before_duration"] = o.NotBeforeDuration
+	toSerialize["organization"] = o.Organization
+	toSerialize["other_sans"] = o.OtherSans
+	toSerialize["ou"] = o.Ou
+	toSerialize["permitted_dns_domains"] = o.PermittedDnsDomains
+	toSerialize["postal_code"] = o.PostalCode
+	toSerialize["private_key_format"] = o.PrivateKeyFormat
+	toSerialize["province"] = o.Province
+	toSerialize["serial_number"] = o.SerialNumber
+	toSerialize["signature_bits"] = o.SignatureBits
+	toSerialize["street_address"] = o.StreetAddress
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["uri_sans"] = o.UriSans
+
 	return json.Marshal(toSerialize)
 }
 
@@ -12281,55 +10189,55 @@ API version: 1.12.0
 // PkiRootSignIntermediateRequest struct for PkiRootSignIntermediateRequest
 type PkiRootSignIntermediateRequest struct {
 	// The requested Subject Alternative Names, if any, in a comma-delimited list. May contain both DNS names and email addresses.
-	AltNames *string `json:"alt_names,omitempty"`
+	AltNames string `json:"alt_names"`
 	// The requested common name; if you want more than one, specify the alternative names in the alt_names map. If not specified when signing, the common name will be taken from the CSR; other names must still be specified in alt_names or ip_sans.
-	CommonName *string `json:"common_name,omitempty"`
+	CommonName string `json:"common_name"`
 	// If set, Country will be set to this value.
-	Country []string `json:"country,omitempty"`
+	Country []string `json:"country"`
 	// PEM-format CSR to be signed.
-	Csr *string `json:"csr,omitempty"`
+	Csr string `json:"csr"`
 	// If true, the Common Name will not be included in DNS or Email Subject Alternate Names. Defaults to false (CN is included).
-	ExcludeCnFromSans *bool `json:"exclude_cn_from_sans,omitempty"`
+	ExcludeCnFromSans bool `json:"exclude_cn_from_sans"`
 	// Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".
-	Format *string `json:"format,omitempty"`
+	Format string `json:"format"`
 	// The requested IP SANs, if any, in a comma-delimited list
-	IpSans []string `json:"ip_sans,omitempty"`
+	IpSans []string `json:"ip_sans"`
 	// Provide a name to the generated or existing issuer, the name must be unique across all issuers and not be the reserved value 'default'
-	IssuerName *string `json:"issuer_name,omitempty"`
+	IssuerName string `json:"issuer_name"`
 	// Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.
-	IssuerRef *string `json:"issuer_ref,omitempty"`
+	IssuerRef string `json:"issuer_ref"`
 	// If set, Locality will be set to this value.
-	Locality []string `json:"locality,omitempty"`
+	Locality []string `json:"locality"`
 	// The maximum allowable path length
-	MaxPathLength *int32 `json:"max_path_length,omitempty"`
+	MaxPathLength int32 `json:"max_path_length"`
 	// Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
-	NotAfter *string `json:"not_after,omitempty"`
+	NotAfter string `json:"not_after"`
 	// The duration before now which the certificate needs to be backdated by.
-	NotBeforeDuration *int32 `json:"not_before_duration,omitempty"`
+	NotBeforeDuration int32 `json:"not_before_duration"`
 	// If set, O (Organization) will be set to this value.
-	Organization []string `json:"organization,omitempty"`
+	Organization []string `json:"organization"`
 	// Requested other SANs, in an array with the format <oid>;UTF8:<utf8 string value> for each entry.
-	OtherSans []string `json:"other_sans,omitempty"`
+	OtherSans []string `json:"other_sans"`
 	// If set, OU (OrganizationalUnit) will be set to this value.
-	Ou []string `json:"ou,omitempty"`
+	Ou []string `json:"ou"`
 	// Domains for which this certificate is allowed to sign or issue child certificates. If set, all DNS names (subject and alt) on child certs must be exact matches or subsets of the given domains (see https://tools.ietf.org/html/rfc5280#section-4.2.1.10).
-	PermittedDnsDomains []string `json:"permitted_dns_domains,omitempty"`
+	PermittedDnsDomains []string `json:"permitted_dns_domains"`
 	// If set, Postal Code will be set to this value.
-	PostalCode []string `json:"postal_code,omitempty"`
+	PostalCode []string `json:"postal_code"`
 	// Format for the returned private key. Generally the default will be controlled by the \"format\" parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \"pkcs8\" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to \"der\".
-	PrivateKeyFormat *string `json:"private_key_format,omitempty"`
+	PrivateKeyFormat string `json:"private_key_format"`
 	// If set, Province will be set to this value.
-	Province []string `json:"province,omitempty"`
+	Province []string `json:"province"`
 	// The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field.
-	SerialNumber *string `json:"serial_number,omitempty"`
+	SerialNumber string `json:"serial_number"`
 	// If set, Street Address will be set to this value.
-	StreetAddress []string `json:"street_address,omitempty"`
+	StreetAddress []string `json:"street_address"`
 	// The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the mount max TTL. Note: this only has an effect when generating a CA cert or signing a CA cert, not when generating a CSR for an intermediate CA.
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 	// The requested URI SANs, if any, in a comma-delimited list.
-	UriSans []string `json:"uri_sans,omitempty"`
+	UriSans []string `json:"uri_sans"`
 	// If true, then: 1) Subject information, including names and alternate names, will be preserved from the CSR rather than using values provided in the other parameters to this path; 2) Any key usages requested in the CSR will be added to the basic set of key usages used for CA certs signed by this path; for instance, the non-repudiation flag; 3) Extensions requested in the CSR will be copied into the issued certificate.
-	UseCsrValues *bool `json:"use_csr_values,omitempty"`
+	UseCsrValues bool `json:"use_csr_values"`
 }
 
 // NewPkiRootSignIntermediateRequestWithDefaults instantiates a new PkiRootSignIntermediateRequest object
@@ -12337,102 +10245,48 @@ type PkiRootSignIntermediateRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiRootSignIntermediateRequestWithDefaults() *PkiRootSignIntermediateRequest {
 	this := PkiRootSignIntermediateRequest{}
-	var csr string = ""
-	this.Csr = &csr
-	var excludeCnFromSans bool = false
-	this.ExcludeCnFromSans = &excludeCnFromSans
-	var format string = "pem"
-	this.Format = &format
-	var issuerRef string = "default"
-	this.IssuerRef = &issuerRef
-	var maxPathLength int32 = -1
-	this.MaxPathLength = &maxPathLength
-	var notBeforeDuration int32 = 30
-	this.NotBeforeDuration = &notBeforeDuration
-	var privateKeyFormat string = "der"
-	this.PrivateKeyFormat = &privateKeyFormat
-	var useCsrValues bool = false
-	this.UseCsrValues = &useCsrValues
+
+	this.Csr = ""
+	this.ExcludeCnFromSans = false
+	this.Format = "pem"
+	this.IssuerRef = "default"
+	this.MaxPathLength = -1
+	this.NotBeforeDuration = 30
+	this.PrivateKeyFormat = "der"
+	this.UseCsrValues = false
+
 	return &this
 }
 
 func (o PkiRootSignIntermediateRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AltNames != nil {
-		toSerialize["alt_names"] = o.AltNames
-	}
-	if o.CommonName != nil {
-		toSerialize["common_name"] = o.CommonName
-	}
-	if o.Country != nil {
-		toSerialize["country"] = o.Country
-	}
-	if o.Csr != nil {
-		toSerialize["csr"] = o.Csr
-	}
-	if o.ExcludeCnFromSans != nil {
-		toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
-	}
-	if o.Format != nil {
-		toSerialize["format"] = o.Format
-	}
-	if o.IpSans != nil {
-		toSerialize["ip_sans"] = o.IpSans
-	}
-	if o.IssuerName != nil {
-		toSerialize["issuer_name"] = o.IssuerName
-	}
-	if o.IssuerRef != nil {
-		toSerialize["issuer_ref"] = o.IssuerRef
-	}
-	if o.Locality != nil {
-		toSerialize["locality"] = o.Locality
-	}
-	if o.MaxPathLength != nil {
-		toSerialize["max_path_length"] = o.MaxPathLength
-	}
-	if o.NotAfter != nil {
-		toSerialize["not_after"] = o.NotAfter
-	}
-	if o.NotBeforeDuration != nil {
-		toSerialize["not_before_duration"] = o.NotBeforeDuration
-	}
-	if o.Organization != nil {
-		toSerialize["organization"] = o.Organization
-	}
-	if o.OtherSans != nil {
-		toSerialize["other_sans"] = o.OtherSans
-	}
-	if o.Ou != nil {
-		toSerialize["ou"] = o.Ou
-	}
-	if o.PermittedDnsDomains != nil {
-		toSerialize["permitted_dns_domains"] = o.PermittedDnsDomains
-	}
-	if o.PostalCode != nil {
-		toSerialize["postal_code"] = o.PostalCode
-	}
-	if o.PrivateKeyFormat != nil {
-		toSerialize["private_key_format"] = o.PrivateKeyFormat
-	}
-	if o.Province != nil {
-		toSerialize["province"] = o.Province
-	}
-	if o.SerialNumber != nil {
-		toSerialize["serial_number"] = o.SerialNumber
-	}
-	if o.StreetAddress != nil {
-		toSerialize["street_address"] = o.StreetAddress
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
-	if o.UriSans != nil {
-		toSerialize["uri_sans"] = o.UriSans
-	}
-	if o.UseCsrValues != nil {
-		toSerialize["use_csr_values"] = o.UseCsrValues
-	}
+
+	toSerialize["alt_names"] = o.AltNames
+	toSerialize["common_name"] = o.CommonName
+	toSerialize["country"] = o.Country
+	toSerialize["csr"] = o.Csr
+	toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
+	toSerialize["format"] = o.Format
+	toSerialize["ip_sans"] = o.IpSans
+	toSerialize["issuer_name"] = o.IssuerName
+	toSerialize["issuer_ref"] = o.IssuerRef
+	toSerialize["locality"] = o.Locality
+	toSerialize["max_path_length"] = o.MaxPathLength
+	toSerialize["not_after"] = o.NotAfter
+	toSerialize["not_before_duration"] = o.NotBeforeDuration
+	toSerialize["organization"] = o.Organization
+	toSerialize["other_sans"] = o.OtherSans
+	toSerialize["ou"] = o.Ou
+	toSerialize["permitted_dns_domains"] = o.PermittedDnsDomains
+	toSerialize["postal_code"] = o.PostalCode
+	toSerialize["private_key_format"] = o.PrivateKeyFormat
+	toSerialize["province"] = o.Province
+	toSerialize["serial_number"] = o.SerialNumber
+	toSerialize["street_address"] = o.StreetAddress
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["uri_sans"] = o.UriSans
+	toSerialize["use_csr_values"] = o.UseCsrValues
+
 	return json.Marshal(toSerialize)
 }
 
@@ -12449,11 +10303,11 @@ API version: 1.12.0
 // PkiRootSignSelfIssuedRequest struct for PkiRootSignSelfIssuedRequest
 type PkiRootSignSelfIssuedRequest struct {
 	// PEM-format self-issued certificate to be signed.
-	Certificate *string `json:"certificate,omitempty"`
+	Certificate string `json:"certificate"`
 	// Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.
-	IssuerRef *string `json:"issuer_ref,omitempty"`
+	IssuerRef string `json:"issuer_ref"`
 	// If true, require the public key algorithm of the signer to match that of the self issued certificate.
-	RequireMatchingCertificateAlgorithms *bool `json:"require_matching_certificate_algorithms,omitempty"`
+	RequireMatchingCertificateAlgorithms bool `json:"require_matching_certificate_algorithms"`
 }
 
 // NewPkiRootSignSelfIssuedRequestWithDefaults instantiates a new PkiRootSignSelfIssuedRequest object
@@ -12461,24 +10315,20 @@ type PkiRootSignSelfIssuedRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiRootSignSelfIssuedRequestWithDefaults() *PkiRootSignSelfIssuedRequest {
 	this := PkiRootSignSelfIssuedRequest{}
-	var issuerRef string = "default"
-	this.IssuerRef = &issuerRef
-	var requireMatchingCertificateAlgorithms bool = false
-	this.RequireMatchingCertificateAlgorithms = &requireMatchingCertificateAlgorithms
+
+	this.IssuerRef = "default"
+	this.RequireMatchingCertificateAlgorithms = false
+
 	return &this
 }
 
 func (o PkiRootSignSelfIssuedRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Certificate != nil {
-		toSerialize["certificate"] = o.Certificate
-	}
-	if o.IssuerRef != nil {
-		toSerialize["issuer_ref"] = o.IssuerRef
-	}
-	if o.RequireMatchingCertificateAlgorithms != nil {
-		toSerialize["require_matching_certificate_algorithms"] = o.RequireMatchingCertificateAlgorithms
-	}
+
+	toSerialize["certificate"] = o.Certificate
+	toSerialize["issuer_ref"] = o.IssuerRef
+	toSerialize["require_matching_certificate_algorithms"] = o.RequireMatchingCertificateAlgorithms
+
 	return json.Marshal(toSerialize)
 }
 
@@ -12495,31 +10345,31 @@ API version: 1.12.0
 // PkiSignRequest struct for PkiSignRequest
 type PkiSignRequest struct {
 	// The requested Subject Alternative Names, if any, in a comma-delimited list. If email protection is enabled for the role, this may contain email addresses.
-	AltNames *string `json:"alt_names,omitempty"`
+	AltNames string `json:"alt_names"`
 	// The requested common name; if you want more than one, specify the alternative names in the alt_names map. If email protection is enabled in the role, this may be an email address.
-	CommonName *string `json:"common_name,omitempty"`
+	CommonName string `json:"common_name"`
 	// PEM-format CSR to be signed.
-	Csr *string `json:"csr,omitempty"`
+	Csr string `json:"csr"`
 	// If true, the Common Name will not be included in DNS or Email Subject Alternate Names. Defaults to false (CN is included).
-	ExcludeCnFromSans *bool `json:"exclude_cn_from_sans,omitempty"`
+	ExcludeCnFromSans bool `json:"exclude_cn_from_sans"`
 	// Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".
-	Format *string `json:"format,omitempty"`
+	Format string `json:"format"`
 	// The requested IP SANs, if any, in a comma-delimited list
-	IpSans []string `json:"ip_sans,omitempty"`
+	IpSans []string `json:"ip_sans"`
 	// Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.
-	IssuerRef *string `json:"issuer_ref,omitempty"`
+	IssuerRef string `json:"issuer_ref"`
 	// Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
-	NotAfter *string `json:"not_after,omitempty"`
+	NotAfter string `json:"not_after"`
 	// Requested other SANs, in an array with the format <oid>;UTF8:<utf8 string value> for each entry.
-	OtherSans []string `json:"other_sans,omitempty"`
+	OtherSans []string `json:"other_sans"`
 	// Format for the returned private key. Generally the default will be controlled by the \"format\" parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \"pkcs8\" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to \"der\".
-	PrivateKeyFormat *string `json:"private_key_format,omitempty"`
+	PrivateKeyFormat string `json:"private_key_format"`
 	// The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field.
-	SerialNumber *string `json:"serial_number,omitempty"`
+	SerialNumber string `json:"serial_number"`
 	// The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the role max TTL.
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 	// The requested URI SANs, if any, in a comma-delimited list.
-	UriSans []string `json:"uri_sans,omitempty"`
+	UriSans []string `json:"uri_sans"`
 }
 
 // NewPkiSignRequestWithDefaults instantiates a new PkiSignRequest object
@@ -12527,60 +10377,33 @@ type PkiSignRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiSignRequestWithDefaults() *PkiSignRequest {
 	this := PkiSignRequest{}
-	var csr string = ""
-	this.Csr = &csr
-	var excludeCnFromSans bool = false
-	this.ExcludeCnFromSans = &excludeCnFromSans
-	var format string = "pem"
-	this.Format = &format
-	var issuerRef string = "default"
-	this.IssuerRef = &issuerRef
-	var privateKeyFormat string = "der"
-	this.PrivateKeyFormat = &privateKeyFormat
+
+	this.Csr = ""
+	this.ExcludeCnFromSans = false
+	this.Format = "pem"
+	this.IssuerRef = "default"
+	this.PrivateKeyFormat = "der"
+
 	return &this
 }
 
 func (o PkiSignRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AltNames != nil {
-		toSerialize["alt_names"] = o.AltNames
-	}
-	if o.CommonName != nil {
-		toSerialize["common_name"] = o.CommonName
-	}
-	if o.Csr != nil {
-		toSerialize["csr"] = o.Csr
-	}
-	if o.ExcludeCnFromSans != nil {
-		toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
-	}
-	if o.Format != nil {
-		toSerialize["format"] = o.Format
-	}
-	if o.IpSans != nil {
-		toSerialize["ip_sans"] = o.IpSans
-	}
-	if o.IssuerRef != nil {
-		toSerialize["issuer_ref"] = o.IssuerRef
-	}
-	if o.NotAfter != nil {
-		toSerialize["not_after"] = o.NotAfter
-	}
-	if o.OtherSans != nil {
-		toSerialize["other_sans"] = o.OtherSans
-	}
-	if o.PrivateKeyFormat != nil {
-		toSerialize["private_key_format"] = o.PrivateKeyFormat
-	}
-	if o.SerialNumber != nil {
-		toSerialize["serial_number"] = o.SerialNumber
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
-	if o.UriSans != nil {
-		toSerialize["uri_sans"] = o.UriSans
-	}
+
+	toSerialize["alt_names"] = o.AltNames
+	toSerialize["common_name"] = o.CommonName
+	toSerialize["csr"] = o.Csr
+	toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
+	toSerialize["format"] = o.Format
+	toSerialize["ip_sans"] = o.IpSans
+	toSerialize["issuer_ref"] = o.IssuerRef
+	toSerialize["not_after"] = o.NotAfter
+	toSerialize["other_sans"] = o.OtherSans
+	toSerialize["private_key_format"] = o.PrivateKeyFormat
+	toSerialize["serial_number"] = o.SerialNumber
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["uri_sans"] = o.UriSans
+
 	return json.Marshal(toSerialize)
 }
 
@@ -12597,39 +10420,39 @@ API version: 1.12.0
 // PkiSignVerbatimRequest struct for PkiSignVerbatimRequest
 type PkiSignVerbatimRequest struct {
 	// The requested Subject Alternative Names, if any, in a comma-delimited list. If email protection is enabled for the role, this may contain email addresses.
-	AltNames *string `json:"alt_names,omitempty"`
+	AltNames string `json:"alt_names"`
 	// The requested common name; if you want more than one, specify the alternative names in the alt_names map. If email protection is enabled in the role, this may be an email address.
-	CommonName *string `json:"common_name,omitempty"`
+	CommonName string `json:"common_name"`
 	// PEM-format CSR to be signed. Values will be taken verbatim from the CSR, except for basic constraints.
-	Csr *string `json:"csr,omitempty"`
+	Csr string `json:"csr"`
 	// If true, the Common Name will not be included in DNS or Email Subject Alternate Names. Defaults to false (CN is included).
-	ExcludeCnFromSans *bool `json:"exclude_cn_from_sans,omitempty"`
+	ExcludeCnFromSans bool `json:"exclude_cn_from_sans"`
 	// A comma-separated string or list of extended key usages. Valid values can be found at https://golang.org/pkg/crypto/x509/#ExtKeyUsage -- simply drop the \"ExtKeyUsage\" part of the name. To remove all key usages from being set, set this value to an empty list.
-	ExtKeyUsage []string `json:"ext_key_usage,omitempty"`
+	ExtKeyUsage []string `json:"ext_key_usage"`
 	// A comma-separated string or list of extended key usage oids.
-	ExtKeyUsageOids []string `json:"ext_key_usage_oids,omitempty"`
+	ExtKeyUsageOids []string `json:"ext_key_usage_oids"`
 	// Format for returned data. Can be \"pem\", \"der\", or \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Defaults to \"pem\".
-	Format *string `json:"format,omitempty"`
+	Format string `json:"format"`
 	// The requested IP SANs, if any, in a comma-delimited list
-	IpSans []string `json:"ip_sans,omitempty"`
+	IpSans []string `json:"ip_sans"`
 	// Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.
-	IssuerRef *string `json:"issuer_ref,omitempty"`
+	IssuerRef string `json:"issuer_ref"`
 	// A comma-separated string or list of key usages (not extended key usages). Valid values can be found at https://golang.org/pkg/crypto/x509/#KeyUsage -- simply drop the \"KeyUsage\" part of the name. To remove all key usages from being set, set this value to an empty list.
-	KeyUsage []string `json:"key_usage,omitempty"`
+	KeyUsage []string `json:"key_usage"`
 	// Set the not after field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ
-	NotAfter *string `json:"not_after,omitempty"`
+	NotAfter string `json:"not_after"`
 	// Requested other SANs, in an array with the format <oid>;UTF8:<utf8 string value> for each entry.
-	OtherSans []string `json:"other_sans,omitempty"`
+	OtherSans []string `json:"other_sans"`
 	// Format for the returned private key. Generally the default will be controlled by the \"format\" parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \"pkcs8\" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Defaults to \"der\".
-	PrivateKeyFormat *string `json:"private_key_format,omitempty"`
+	PrivateKeyFormat string `json:"private_key_format"`
 	// The desired role with configuration for this request
-	Role *string `json:"role,omitempty"`
+	Role string `json:"role"`
 	// The Subject's requested serial number, if any. See RFC 4519 Section 2.31 'serialNumber' for a description of this field. If you want more than one, specify alternative names in the alt_names map using OID 2.5.4.5. This has no impact on the final certificate's Serial Number field.
-	SerialNumber *string `json:"serial_number,omitempty"`
+	SerialNumber string `json:"serial_number"`
 	// The requested Time To Live for the certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be larger than the role max TTL.
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 	// The requested URI SANs, if any, in a comma-delimited list.
-	UriSans []string `json:"uri_sans,omitempty"`
+	UriSans []string `json:"uri_sans"`
 }
 
 // NewPkiSignVerbatimRequestWithDefaults instantiates a new PkiSignVerbatimRequest object
@@ -12637,72 +10460,37 @@ type PkiSignVerbatimRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiSignVerbatimRequestWithDefaults() *PkiSignVerbatimRequest {
 	this := PkiSignVerbatimRequest{}
-	var csr string = ""
-	this.Csr = &csr
-	var excludeCnFromSans bool = false
-	this.ExcludeCnFromSans = &excludeCnFromSans
-	var format string = "pem"
-	this.Format = &format
-	var issuerRef string = "default"
-	this.IssuerRef = &issuerRef
-	var privateKeyFormat string = "der"
-	this.PrivateKeyFormat = &privateKeyFormat
+
+	this.Csr = ""
+	this.ExcludeCnFromSans = false
+	this.Format = "pem"
+	this.IssuerRef = "default"
+	this.PrivateKeyFormat = "der"
+
 	return &this
 }
 
 func (o PkiSignVerbatimRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AltNames != nil {
-		toSerialize["alt_names"] = o.AltNames
-	}
-	if o.CommonName != nil {
-		toSerialize["common_name"] = o.CommonName
-	}
-	if o.Csr != nil {
-		toSerialize["csr"] = o.Csr
-	}
-	if o.ExcludeCnFromSans != nil {
-		toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
-	}
-	if o.ExtKeyUsage != nil {
-		toSerialize["ext_key_usage"] = o.ExtKeyUsage
-	}
-	if o.ExtKeyUsageOids != nil {
-		toSerialize["ext_key_usage_oids"] = o.ExtKeyUsageOids
-	}
-	if o.Format != nil {
-		toSerialize["format"] = o.Format
-	}
-	if o.IpSans != nil {
-		toSerialize["ip_sans"] = o.IpSans
-	}
-	if o.IssuerRef != nil {
-		toSerialize["issuer_ref"] = o.IssuerRef
-	}
-	if o.KeyUsage != nil {
-		toSerialize["key_usage"] = o.KeyUsage
-	}
-	if o.NotAfter != nil {
-		toSerialize["not_after"] = o.NotAfter
-	}
-	if o.OtherSans != nil {
-		toSerialize["other_sans"] = o.OtherSans
-	}
-	if o.PrivateKeyFormat != nil {
-		toSerialize["private_key_format"] = o.PrivateKeyFormat
-	}
-	if o.Role != nil {
-		toSerialize["role"] = o.Role
-	}
-	if o.SerialNumber != nil {
-		toSerialize["serial_number"] = o.SerialNumber
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
-	if o.UriSans != nil {
-		toSerialize["uri_sans"] = o.UriSans
-	}
+
+	toSerialize["alt_names"] = o.AltNames
+	toSerialize["common_name"] = o.CommonName
+	toSerialize["csr"] = o.Csr
+	toSerialize["exclude_cn_from_sans"] = o.ExcludeCnFromSans
+	toSerialize["ext_key_usage"] = o.ExtKeyUsage
+	toSerialize["ext_key_usage_oids"] = o.ExtKeyUsageOids
+	toSerialize["format"] = o.Format
+	toSerialize["ip_sans"] = o.IpSans
+	toSerialize["issuer_ref"] = o.IssuerRef
+	toSerialize["key_usage"] = o.KeyUsage
+	toSerialize["not_after"] = o.NotAfter
+	toSerialize["other_sans"] = o.OtherSans
+	toSerialize["private_key_format"] = o.PrivateKeyFormat
+	toSerialize["role"] = o.Role
+	toSerialize["serial_number"] = o.SerialNumber
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["uri_sans"] = o.UriSans
+
 	return json.Marshal(toSerialize)
 }
 
@@ -12719,13 +10507,13 @@ API version: 1.12.0
 // PkiTidyRequest struct for PkiTidyRequest
 type PkiTidyRequest struct {
 	// The amount of extra time that must have passed beyond certificate expiration before it is removed from the backend storage and/or revocation list. Defaults to 72 hours.
-	SafetyBuffer *int32 `json:"safety_buffer,omitempty"`
+	SafetyBuffer int32 `json:"safety_buffer"`
 	// Set to true to enable tidying up the certificate store
-	TidyCertStore *bool `json:"tidy_cert_store,omitempty"`
+	TidyCertStore bool `json:"tidy_cert_store"`
 	// Deprecated; synonym for 'tidy_revoked_certs
-	TidyRevocationList *bool `json:"tidy_revocation_list,omitempty"`
+	TidyRevocationList bool `json:"tidy_revocation_list"`
 	// Set to true to expire all revoked and expired certificates, removing them both from the CRL and from storage. The CRL will be rotated if this causes any values to be removed.
-	TidyRevokedCerts *bool `json:"tidy_revoked_certs,omitempty"`
+	TidyRevokedCerts bool `json:"tidy_revoked_certs"`
 }
 
 // NewPkiTidyRequestWithDefaults instantiates a new PkiTidyRequest object
@@ -12733,25 +10521,20 @@ type PkiTidyRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewPkiTidyRequestWithDefaults() *PkiTidyRequest {
 	this := PkiTidyRequest{}
-	var safetyBuffer int32 = 259200
-	this.SafetyBuffer = &safetyBuffer
+
+	this.SafetyBuffer = 259200
+
 	return &this
 }
 
 func (o PkiTidyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.SafetyBuffer != nil {
-		toSerialize["safety_buffer"] = o.SafetyBuffer
-	}
-	if o.TidyCertStore != nil {
-		toSerialize["tidy_cert_store"] = o.TidyCertStore
-	}
-	if o.TidyRevocationList != nil {
-		toSerialize["tidy_revocation_list"] = o.TidyRevocationList
-	}
-	if o.TidyRevokedCerts != nil {
-		toSerialize["tidy_revoked_certs"] = o.TidyRevokedCerts
-	}
+
+	toSerialize["safety_buffer"] = o.SafetyBuffer
+	toSerialize["tidy_cert_store"] = o.TidyCertStore
+	toSerialize["tidy_revocation_list"] = o.TidyRevocationList
+	toSerialize["tidy_revoked_certs"] = o.TidyRevokedCerts
+
 	return json.Marshal(toSerialize)
 }
 
@@ -12768,17 +10551,17 @@ API version: 1.12.0
 // RabbitmqConfigConnectionRequest struct for RabbitmqConfigConnectionRequest
 type RabbitmqConfigConnectionRequest struct {
 	// RabbitMQ Management URI
-	ConnectionUri *string `json:"connection_uri,omitempty"`
+	ConnectionUri string `json:"connection_uri"`
 	// Password of the provided RabbitMQ management user
-	Password *string `json:"password,omitempty"`
+	Password string `json:"password"`
 	// Name of the password policy to use to generate passwords for dynamic credentials.
-	PasswordPolicy *string `json:"password_policy,omitempty"`
+	PasswordPolicy string `json:"password_policy"`
 	// Username of a RabbitMQ management administrator
-	Username *string `json:"username,omitempty"`
+	Username string `json:"username"`
 	// Template describing how dynamic usernames are generated.
-	UsernameTemplate *string `json:"username_template,omitempty"`
+	UsernameTemplate string `json:"username_template"`
 	// If set, connection_uri is verified by actually connecting to the RabbitMQ management API
-	VerifyConnection *bool `json:"verify_connection,omitempty"`
+	VerifyConnection bool `json:"verify_connection"`
 }
 
 // NewRabbitmqConfigConnectionRequestWithDefaults instantiates a new RabbitmqConfigConnectionRequest object
@@ -12786,31 +10569,22 @@ type RabbitmqConfigConnectionRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewRabbitmqConfigConnectionRequestWithDefaults() *RabbitmqConfigConnectionRequest {
 	this := RabbitmqConfigConnectionRequest{}
-	var verifyConnection bool = true
-	this.VerifyConnection = &verifyConnection
+
+	this.VerifyConnection = true
+
 	return &this
 }
 
 func (o RabbitmqConfigConnectionRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.ConnectionUri != nil {
-		toSerialize["connection_uri"] = o.ConnectionUri
-	}
-	if o.Password != nil {
-		toSerialize["password"] = o.Password
-	}
-	if o.PasswordPolicy != nil {
-		toSerialize["password_policy"] = o.PasswordPolicy
-	}
-	if o.Username != nil {
-		toSerialize["username"] = o.Username
-	}
-	if o.UsernameTemplate != nil {
-		toSerialize["username_template"] = o.UsernameTemplate
-	}
-	if o.VerifyConnection != nil {
-		toSerialize["verify_connection"] = o.VerifyConnection
-	}
+
+	toSerialize["connection_uri"] = o.ConnectionUri
+	toSerialize["password"] = o.Password
+	toSerialize["password_policy"] = o.PasswordPolicy
+	toSerialize["username"] = o.Username
+	toSerialize["username_template"] = o.UsernameTemplate
+	toSerialize["verify_connection"] = o.VerifyConnection
+
 	return json.Marshal(toSerialize)
 }
 
@@ -12827,9 +10601,9 @@ API version: 1.12.0
 // RabbitmqConfigLeaseRequest struct for RabbitmqConfigLeaseRequest
 type RabbitmqConfigLeaseRequest struct {
 	// Duration after which the issued credentials should not be allowed to be renewed
-	MaxTtl *int32 `json:"max_ttl,omitempty"`
+	MaxTtl int32 `json:"max_ttl"`
 	// Duration before which the issued credentials needs renewal
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 }
 
 // NewRabbitmqConfigLeaseRequestWithDefaults instantiates a new RabbitmqConfigLeaseRequest object
@@ -12837,21 +10611,19 @@ type RabbitmqConfigLeaseRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewRabbitmqConfigLeaseRequestWithDefaults() *RabbitmqConfigLeaseRequest {
 	this := RabbitmqConfigLeaseRequest{}
-	var maxTtl int32 = 0
-	this.MaxTtl = &maxTtl
-	var ttl int32 = 0
-	this.Ttl = &ttl
+
+	this.MaxTtl = 0
+	this.Ttl = 0
+
 	return &this
 }
 
 func (o RabbitmqConfigLeaseRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.MaxTtl != nil {
-		toSerialize["max_ttl"] = o.MaxTtl
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
+
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["ttl"] = o.Ttl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -12868,11 +10640,11 @@ API version: 1.12.0
 // RabbitmqRolesRequest struct for RabbitmqRolesRequest
 type RabbitmqRolesRequest struct {
 	// Comma-separated list of tags for this role.
-	Tags *string `json:"tags,omitempty"`
+	Tags string `json:"tags"`
 	// A nested map of virtual hosts and exchanges to topic permissions.
-	VhostTopics *string `json:"vhost_topics,omitempty"`
+	VhostTopics string `json:"vhost_topics"`
 	// A map of virtual hosts to permissions.
-	Vhosts *string `json:"vhosts,omitempty"`
+	Vhosts string `json:"vhosts"`
 }
 
 // NewRabbitmqRolesRequestWithDefaults instantiates a new RabbitmqRolesRequest object
@@ -12880,20 +10652,17 @@ type RabbitmqRolesRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewRabbitmqRolesRequestWithDefaults() *RabbitmqRolesRequest {
 	this := RabbitmqRolesRequest{}
+
 	return &this
 }
 
 func (o RabbitmqRolesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Tags != nil {
-		toSerialize["tags"] = o.Tags
-	}
-	if o.VhostTopics != nil {
-		toSerialize["vhost_topics"] = o.VhostTopics
-	}
-	if o.Vhosts != nil {
-		toSerialize["vhosts"] = o.Vhosts
-	}
+
+	toSerialize["tags"] = o.Tags
+	toSerialize["vhost_topics"] = o.VhostTopics
+	toSerialize["vhosts"] = o.Vhosts
+
 	return json.Marshal(toSerialize)
 }
 
@@ -12910,39 +10679,39 @@ API version: 1.12.0
 // RadiusConfigRequest struct for RadiusConfigRequest
 type RadiusConfigRequest struct {
 	// Number of seconds before connect times out (default: 10)
-	DialTimeout *int32 `json:"dial_timeout,omitempty"`
+	DialTimeout int32 `json:"dial_timeout"`
 	// RADIUS server host
-	Host *string `json:"host,omitempty"`
+	Host string `json:"host"`
 	// RADIUS NAS Identifier field (optional)
-	NasIdentifier *string `json:"nas_identifier,omitempty"`
+	NasIdentifier string `json:"nas_identifier"`
 	// RADIUS NAS port field (default: 10)
-	NasPort *int32 `json:"nas_port,omitempty"`
+	NasPort int32 `json:"nas_port"`
 	// RADIUS server port (default: 1812)
-	Port *int32 `json:"port,omitempty"`
+	Port int32 `json:"port"`
 	// Number of seconds before response times out (default: 10)
-	ReadTimeout *int32 `json:"read_timeout,omitempty"`
+	ReadTimeout int32 `json:"read_timeout"`
 	// Secret shared with the RADIUS server
-	Secret *string `json:"secret,omitempty"`
+	Secret string `json:"secret"`
 	// Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
-	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
+	TokenBoundCidrs []string `json:"token_bound_cidrs"`
 	// If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
-	TokenExplicitMaxTtl *int32 `json:"token_explicit_max_ttl,omitempty"`
+	TokenExplicitMaxTtl int32 `json:"token_explicit_max_ttl"`
 	// The maximum lifetime of the generated token
-	TokenMaxTtl *int32 `json:"token_max_ttl,omitempty"`
+	TokenMaxTtl int32 `json:"token_max_ttl"`
 	// If true, the 'default' policy will not automatically be added to generated tokens
-	TokenNoDefaultPolicy *bool `json:"token_no_default_policy,omitempty"`
+	TokenNoDefaultPolicy bool `json:"token_no_default_policy"`
 	// The maximum number of times a token may be used, a value of zero means unlimited
-	TokenNumUses *int32 `json:"token_num_uses,omitempty"`
+	TokenNumUses int32 `json:"token_num_uses"`
 	// If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \"24h\").
-	TokenPeriod *int32 `json:"token_period,omitempty"`
+	TokenPeriod int32 `json:"token_period"`
 	// Comma-separated list of policies. This will apply to all tokens generated by this auth method, in addition to any configured for specific users.
-	TokenPolicies []string `json:"token_policies,omitempty"`
+	TokenPolicies []string `json:"token_policies"`
 	// The initial ttl of the token to generate
-	TokenTtl *int32 `json:"token_ttl,omitempty"`
+	TokenTtl int32 `json:"token_ttl"`
 	// The type of token to generate, service or batch
-	TokenType *string `json:"token_type,omitempty"`
+	TokenType string `json:"token_type"`
 	// Comma-separated list of policies to grant upon successful RADIUS authentication of an unregisted user (default: empty)
-	UnregisteredUserPolicies *string `json:"unregistered_user_policies,omitempty"`
+	UnregisteredUserPolicies string `json:"unregistered_user_policies"`
 }
 
 // NewRadiusConfigRequestWithDefaults instantiates a new RadiusConfigRequest object
@@ -12950,76 +10719,39 @@ type RadiusConfigRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewRadiusConfigRequestWithDefaults() *RadiusConfigRequest {
 	this := RadiusConfigRequest{}
-	var dialTimeout int32 = 10
-	this.DialTimeout = &dialTimeout
-	var nasIdentifier string = ""
-	this.NasIdentifier = &nasIdentifier
-	var nasPort int32 = 10
-	this.NasPort = &nasPort
-	var port int32 = 1812
-	this.Port = &port
-	var readTimeout int32 = 10
-	this.ReadTimeout = &readTimeout
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
-	var unregisteredUserPolicies string = ""
-	this.UnregisteredUserPolicies = &unregisteredUserPolicies
+
+	this.DialTimeout = 10
+	this.NasIdentifier = ""
+	this.NasPort = 10
+	this.Port = 1812
+	this.ReadTimeout = 10
+	this.TokenType = "default-service"
+	this.UnregisteredUserPolicies = ""
+
 	return &this
 }
 
 func (o RadiusConfigRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.DialTimeout != nil {
-		toSerialize["dial_timeout"] = o.DialTimeout
-	}
-	if o.Host != nil {
-		toSerialize["host"] = o.Host
-	}
-	if o.NasIdentifier != nil {
-		toSerialize["nas_identifier"] = o.NasIdentifier
-	}
-	if o.NasPort != nil {
-		toSerialize["nas_port"] = o.NasPort
-	}
-	if o.Port != nil {
-		toSerialize["port"] = o.Port
-	}
-	if o.ReadTimeout != nil {
-		toSerialize["read_timeout"] = o.ReadTimeout
-	}
-	if o.Secret != nil {
-		toSerialize["secret"] = o.Secret
-	}
-	if o.TokenBoundCidrs != nil {
-		toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
-	}
-	if o.TokenExplicitMaxTtl != nil {
-		toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
-	}
-	if o.TokenMaxTtl != nil {
-		toSerialize["token_max_ttl"] = o.TokenMaxTtl
-	}
-	if o.TokenNoDefaultPolicy != nil {
-		toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
-	}
-	if o.TokenNumUses != nil {
-		toSerialize["token_num_uses"] = o.TokenNumUses
-	}
-	if o.TokenPeriod != nil {
-		toSerialize["token_period"] = o.TokenPeriod
-	}
-	if o.TokenPolicies != nil {
-		toSerialize["token_policies"] = o.TokenPolicies
-	}
-	if o.TokenTtl != nil {
-		toSerialize["token_ttl"] = o.TokenTtl
-	}
-	if o.TokenType != nil {
-		toSerialize["token_type"] = o.TokenType
-	}
-	if o.UnregisteredUserPolicies != nil {
-		toSerialize["unregistered_user_policies"] = o.UnregisteredUserPolicies
-	}
+
+	toSerialize["dial_timeout"] = o.DialTimeout
+	toSerialize["host"] = o.Host
+	toSerialize["nas_identifier"] = o.NasIdentifier
+	toSerialize["nas_port"] = o.NasPort
+	toSerialize["port"] = o.Port
+	toSerialize["read_timeout"] = o.ReadTimeout
+	toSerialize["secret"] = o.Secret
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+	toSerialize["unregistered_user_policies"] = o.UnregisteredUserPolicies
+
 	return json.Marshal(toSerialize)
 }
 
@@ -13036,11 +10768,11 @@ API version: 1.12.0
 // RadiusLoginRequest struct for RadiusLoginRequest
 type RadiusLoginRequest struct {
 	// Password for this user.
-	Password *string `json:"password,omitempty"`
+	Password string `json:"password"`
 	// Username to be used for login. (URL parameter)
-	Urlusername *string `json:"urlusername,omitempty"`
+	Urlusername string `json:"urlusername"`
 	// Username to be used for login. (POST request body)
-	Username *string `json:"username,omitempty"`
+	Username string `json:"username"`
 }
 
 // NewRadiusLoginRequestWithDefaults instantiates a new RadiusLoginRequest object
@@ -13048,20 +10780,17 @@ type RadiusLoginRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewRadiusLoginRequestWithDefaults() *RadiusLoginRequest {
 	this := RadiusLoginRequest{}
+
 	return &this
 }
 
 func (o RadiusLoginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Password != nil {
-		toSerialize["password"] = o.Password
-	}
-	if o.Urlusername != nil {
-		toSerialize["urlusername"] = o.Urlusername
-	}
-	if o.Username != nil {
-		toSerialize["username"] = o.Username
-	}
+
+	toSerialize["password"] = o.Password
+	toSerialize["urlusername"] = o.Urlusername
+	toSerialize["username"] = o.Username
+
 	return json.Marshal(toSerialize)
 }
 
@@ -13078,7 +10807,7 @@ API version: 1.12.0
 // RadiusUsersRequest struct for RadiusUsersRequest
 type RadiusUsersRequest struct {
 	// Comma-separated list of policies associated to the user.
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 }
 
 // NewRadiusUsersRequestWithDefaults instantiates a new RadiusUsersRequest object
@@ -13086,14 +10815,15 @@ type RadiusUsersRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewRadiusUsersRequestWithDefaults() *RadiusUsersRequest {
 	this := RadiusUsersRequest{}
+
 	return &this
 }
 
 func (o RadiusUsersRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
+
+	toSerialize["policies"] = o.Policies
+
 	return json.Marshal(toSerialize)
 }
 
@@ -13110,15 +10840,15 @@ API version: 1.12.0
 // SshConfigCaRequest struct for SshConfigCaRequest
 type SshConfigCaRequest struct {
 	// Generate SSH key pair internally rather than use the private_key and public_key fields.
-	GenerateSigningKey *bool `json:"generate_signing_key,omitempty"`
+	GenerateSigningKey bool `json:"generate_signing_key"`
 	// Specifies the desired key bits when generating variable-length keys (such as when key_type=\"ssh-rsa\") or which NIST P-curve to use when key_type=\"ec\" (256, 384, or 521).
-	KeyBits *int32 `json:"key_bits,omitempty"`
+	KeyBits int32 `json:"key_bits"`
 	// Specifies the desired key type when generating; could be a OpenSSH key type identifier (ssh-rsa, ecdsa-sha2-nistp256, ecdsa-sha2-nistp384, ecdsa-sha2-nistp521, or ssh-ed25519) or an algorithm (rsa, ec, ed25519).
-	KeyType *string `json:"key_type,omitempty"`
+	KeyType string `json:"key_type"`
 	// Private half of the SSH key that will be used to sign certificates.
-	PrivateKey *string `json:"private_key,omitempty"`
+	PrivateKey string `json:"private_key"`
 	// Public half of the SSH key that will be used to sign certificates.
-	PublicKey *string `json:"public_key,omitempty"`
+	PublicKey string `json:"public_key"`
 }
 
 // NewSshConfigCaRequestWithDefaults instantiates a new SshConfigCaRequest object
@@ -13126,32 +10856,23 @@ type SshConfigCaRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSshConfigCaRequestWithDefaults() *SshConfigCaRequest {
 	this := SshConfigCaRequest{}
-	var generateSigningKey bool = true
-	this.GenerateSigningKey = &generateSigningKey
-	var keyBits int32 = 0
-	this.KeyBits = &keyBits
-	var keyType string = "ssh-rsa"
-	this.KeyType = &keyType
+
+	this.GenerateSigningKey = true
+	this.KeyBits = 0
+	this.KeyType = "ssh-rsa"
+
 	return &this
 }
 
 func (o SshConfigCaRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.GenerateSigningKey != nil {
-		toSerialize["generate_signing_key"] = o.GenerateSigningKey
-	}
-	if o.KeyBits != nil {
-		toSerialize["key_bits"] = o.KeyBits
-	}
-	if o.KeyType != nil {
-		toSerialize["key_type"] = o.KeyType
-	}
-	if o.PrivateKey != nil {
-		toSerialize["private_key"] = o.PrivateKey
-	}
-	if o.PublicKey != nil {
-		toSerialize["public_key"] = o.PublicKey
-	}
+
+	toSerialize["generate_signing_key"] = o.GenerateSigningKey
+	toSerialize["key_bits"] = o.KeyBits
+	toSerialize["key_type"] = o.KeyType
+	toSerialize["private_key"] = o.PrivateKey
+	toSerialize["public_key"] = o.PublicKey
+
 	return json.Marshal(toSerialize)
 }
 
@@ -13168,7 +10889,7 @@ API version: 1.12.0
 // SshConfigZeroaddressRequest struct for SshConfigZeroaddressRequest
 type SshConfigZeroaddressRequest struct {
 	// [Required] Comma separated list of role names which allows credentials to be requested for any IP address. CIDR blocks previously registered under these roles will be ignored.
-	Roles []string `json:"roles,omitempty"`
+	Roles []string `json:"roles"`
 }
 
 // NewSshConfigZeroaddressRequestWithDefaults instantiates a new SshConfigZeroaddressRequest object
@@ -13176,14 +10897,15 @@ type SshConfigZeroaddressRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSshConfigZeroaddressRequestWithDefaults() *SshConfigZeroaddressRequest {
 	this := SshConfigZeroaddressRequest{}
+
 	return &this
 }
 
 func (o SshConfigZeroaddressRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Roles != nil {
-		toSerialize["roles"] = o.Roles
-	}
+
+	toSerialize["roles"] = o.Roles
+
 	return json.Marshal(toSerialize)
 }
 
@@ -13200,9 +10922,9 @@ API version: 1.12.0
 // SshCredsRequest struct for SshCredsRequest
 type SshCredsRequest struct {
 	// [Required] IP of the remote host
-	Ip *string `json:"ip,omitempty"`
+	Ip string `json:"ip"`
 	// [Optional] Username in remote host
-	Username *string `json:"username,omitempty"`
+	Username string `json:"username"`
 }
 
 // NewSshCredsRequestWithDefaults instantiates a new SshCredsRequest object
@@ -13210,17 +10932,16 @@ type SshCredsRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSshCredsRequestWithDefaults() *SshCredsRequest {
 	this := SshCredsRequest{}
+
 	return &this
 }
 
 func (o SshCredsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Ip != nil {
-		toSerialize["ip"] = o.Ip
-	}
-	if o.Username != nil {
-		toSerialize["username"] = o.Username
-	}
+
+	toSerialize["ip"] = o.Ip
+	toSerialize["username"] = o.Username
+
 	return json.Marshal(toSerialize)
 }
 
@@ -13237,7 +10958,7 @@ API version: 1.12.0
 // SshKeysRequest struct for SshKeysRequest
 type SshKeysRequest struct {
 	// [Required] SSH private key with super user privileges in host
-	Key *string `json:"key,omitempty"`
+	Key string `json:"key"`
 }
 
 // NewSshKeysRequestWithDefaults instantiates a new SshKeysRequest object
@@ -13245,14 +10966,15 @@ type SshKeysRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSshKeysRequestWithDefaults() *SshKeysRequest {
 	this := SshKeysRequest{}
+
 	return &this
 }
 
 func (o SshKeysRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Key != nil {
-		toSerialize["key"] = o.Key
-	}
+
+	toSerialize["key"] = o.Key
+
 	return json.Marshal(toSerialize)
 }
 
@@ -13269,7 +10991,7 @@ API version: 1.12.0
 // SshLookupRequest struct for SshLookupRequest
 type SshLookupRequest struct {
 	// [Required] IP address of remote host
-	Ip *string `json:"ip,omitempty"`
+	Ip string `json:"ip"`
 }
 
 // NewSshLookupRequestWithDefaults instantiates a new SshLookupRequest object
@@ -13277,14 +10999,15 @@ type SshLookupRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSshLookupRequestWithDefaults() *SshLookupRequest {
 	this := SshLookupRequest{}
+
 	return &this
 }
 
 func (o SshLookupRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Ip != nil {
-		toSerialize["ip"] = o.Ip
-	}
+
+	toSerialize["ip"] = o.Ip
+
 	return json.Marshal(toSerialize)
 }
 
@@ -13301,63 +11024,63 @@ API version: 1.12.0
 // SshRolesRequest struct for SshRolesRequest
 type SshRolesRequest struct {
 	// [Required for Dynamic type] [Not applicable for OTP type] [Not applicable for CA type] Admin user at remote host. The shared key being registered should be for this user and should have root privileges. Everytime a dynamic credential is being generated for other users, Vault uses this admin username to login to remote host and install the generated credential for the other user.
-	AdminUser *string `json:"admin_user,omitempty"`
+	AdminUser string `json:"admin_user"`
 	// When supplied, this value specifies a signing algorithm for the key. Possible values: ssh-rsa, rsa-sha2-256, rsa-sha2-512, default, or the empty string.
-	AlgorithmSigner *string `json:"algorithm_signer,omitempty"`
+	AlgorithmSigner string `json:"algorithm_signer"`
 	// [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] If set, host certificates that are requested are allowed to use the base domains listed in \"allowed_domains\", e.g. \"example.com\". This is a separate option as in some cases this can be considered a security threat.
-	AllowBareDomains *bool `json:"allow_bare_domains,omitempty"`
+	AllowBareDomains bool `json:"allow_bare_domains"`
 	// [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] If set, certificates are allowed to be signed for use as a 'host'.
-	AllowHostCertificates *bool `json:"allow_host_certificates,omitempty"`
+	AllowHostCertificates bool `json:"allow_host_certificates"`
 	// [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] If set, host certificates that are requested are allowed to use subdomains of those listed in \"allowed_domains\".
-	AllowSubdomains *bool `json:"allow_subdomains,omitempty"`
+	AllowSubdomains bool `json:"allow_subdomains"`
 	// [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] If set, certificates are allowed to be signed for use as a 'user'.
-	AllowUserCertificates *bool `json:"allow_user_certificates,omitempty"`
+	AllowUserCertificates bool `json:"allow_user_certificates"`
 	// [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] If true, users can override the key ID for a signed certificate with the \"key_id\" field. When false, the key ID will always be the token display name. The key ID is logged by the SSH server and can be useful for auditing.
-	AllowUserKeyIds *bool `json:"allow_user_key_ids,omitempty"`
+	AllowUserKeyIds bool `json:"allow_user_key_ids"`
 	// [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] A comma-separated list of critical options that certificates can have when signed. To allow any critical options, set this to an empty string.
-	AllowedCriticalOptions *string `json:"allowed_critical_options,omitempty"`
+	AllowedCriticalOptions string `json:"allowed_critical_options"`
 	// [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] If this option is not specified, client can request for a signed certificate for any valid host. If only certain domains are allowed, then this list enforces it.
-	AllowedDomains *string `json:"allowed_domains,omitempty"`
+	AllowedDomains string `json:"allowed_domains"`
 	// [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] A comma-separated list of extensions that certificates can have when signed. An empty list means that no extension overrides are allowed by an end-user; explicitly specify '*' to allow any extensions to be set.
-	AllowedExtensions *string `json:"allowed_extensions,omitempty"`
+	AllowedExtensions string `json:"allowed_extensions"`
 	// [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] If set, allows the enforcement of key types and minimum key sizes to be signed.
-	AllowedUserKeyLengths map[string]interface{} `json:"allowed_user_key_lengths,omitempty"`
+	AllowedUserKeyLengths map[string]interface{} `json:"allowed_user_key_lengths"`
 	// [Optional for all types] [Works differently for CA type] If this option is not specified, or is '*', client can request a credential for any valid user at the remote host, including the admin user. If only certain usernames are to be allowed, then this list enforces it. If this field is set, then credentials can only be created for default_user and usernames present in this list. Setting this option will enable all the users with access to this role to fetch credentials for all other usernames in this list. Use with caution. N.B.: with the CA type, an empty list means that no users are allowed; explicitly specify '*' to allow any user.
-	AllowedUsers *string `json:"allowed_users,omitempty"`
+	AllowedUsers string `json:"allowed_users"`
 	// [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] If set, Allowed users can be specified using identity template policies. Non-templated users are also permitted.
-	AllowedUsersTemplate *bool `json:"allowed_users_template,omitempty"`
+	AllowedUsersTemplate bool `json:"allowed_users_template"`
 	// [Optional for Dynamic type] [Optional for OTP type] [Not applicable for CA type] Comma separated list of CIDR blocks for which the role is applicable for. CIDR blocks can belong to more than one role.
-	CidrList *string `json:"cidr_list,omitempty"`
+	CidrList string `json:"cidr_list"`
 	// [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] Critical options certificates should have if none are provided when signing. This field takes in key value pairs in JSON format. Note that these are not restricted by \"allowed_critical_options\". Defaults to none.
-	DefaultCriticalOptions map[string]interface{} `json:"default_critical_options,omitempty"`
+	DefaultCriticalOptions map[string]interface{} `json:"default_critical_options"`
 	// [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] Extensions certificates should have if none are provided when signing. This field takes in key value pairs in JSON format. Note that these are not restricted by \"allowed_extensions\". Defaults to none.
-	DefaultExtensions map[string]interface{} `json:"default_extensions,omitempty"`
+	DefaultExtensions map[string]interface{} `json:"default_extensions"`
 	// [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] If set, Default extension values can be specified using identity template policies. Non-templated extension values are also permitted.
-	DefaultExtensionsTemplate *bool `json:"default_extensions_template,omitempty"`
+	DefaultExtensionsTemplate bool `json:"default_extensions_template"`
 	// [Required for Dynamic type] [Required for OTP type] [Optional for CA type] Default username for which a credential will be generated. When the endpoint 'creds/' is used without a username, this value will be used as default username.
-	DefaultUser *string `json:"default_user,omitempty"`
+	DefaultUser string `json:"default_user"`
 	// [Optional for Dynamic type] [Optional for OTP type] [Not applicable for CA type] Comma separated list of CIDR blocks. IP addresses belonging to these blocks are not accepted by the role. This is particularly useful when big CIDR blocks are being used by the role and certain parts of it needs to be kept out.
-	ExcludeCidrList *string `json:"exclude_cidr_list,omitempty"`
+	ExcludeCidrList string `json:"exclude_cidr_list"`
 	// [Optional for Dynamic type] [Not-applicable for OTP type] [Not applicable for CA type] Script used to install and uninstall public keys in the target machine. The inbuilt default install script will be for Linux hosts. For sample script, refer the project documentation website.
-	InstallScript *string `json:"install_script,omitempty"`
+	InstallScript string `json:"install_script"`
 	// [Required for Dynamic type] [Not applicable for OTP type] [Not applicable for CA type] Name of the registered key in Vault. Before creating the role, use the 'keys/' endpoint to create a named key.
-	Key *string `json:"key,omitempty"`
+	Key string `json:"key"`
 	// [Optional for Dynamic type] [Not applicable for OTP type] [Not applicable for CA type] Length of the RSA dynamic key in bits. It is 1024 by default or it can be 2048.
-	KeyBits *int32 `json:"key_bits,omitempty"`
+	KeyBits int32 `json:"key_bits"`
 	// [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] When supplied, this value specifies a custom format for the key id of a signed certificate. The following variables are available for use: '{{token_display_name}}' - The display name of the token used to make the request. '{{role_name}}' - The name of the role signing the request. '{{public_key_hash}}' - A SHA256 checksum of the public key that is being signed.
-	KeyIdFormat *string `json:"key_id_format,omitempty"`
+	KeyIdFormat string `json:"key_id_format"`
 	// [Optional for Dynamic type] [Not applicable for OTP type] [Not applicable for CA type] Comma separated option specifications which will be prefixed to RSA key in authorized_keys file. Options should be valid and comply with authorized_keys file format and should not contain spaces.
-	KeyOptionSpecs *string `json:"key_option_specs,omitempty"`
+	KeyOptionSpecs string `json:"key_option_specs"`
 	// [Required for all types] Type of key used to login to hosts. It can be either 'otp', 'dynamic' or 'ca'. 'otp' type requires agent to be installed in remote hosts.
-	KeyType *string `json:"key_type,omitempty"`
+	KeyType string `json:"key_type"`
 	// [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] The maximum allowed lease duration
-	MaxTtl *int32 `json:"max_ttl,omitempty"`
+	MaxTtl int32 `json:"max_ttl"`
 	// The duration that the SSH certificate should be backdated by at issuance.
-	NotBeforeDuration *int32 `json:"not_before_duration,omitempty"`
+	NotBeforeDuration int32 `json:"not_before_duration"`
 	// [Optional for Dynamic type] [Optional for OTP type] [Not applicable for CA type] Port number for SSH connection. Default is '22'. Port number does not play any role in creation of OTP. For 'otp' type, this is just a way to inform client about the port number to use. Port number will be returned to client by Vault server along with OTP.
-	Port *int32 `json:"port,omitempty"`
+	Port int32 `json:"port"`
 	// [Not applicable for Dynamic type] [Not applicable for OTP type] [Optional for CA type] The lease duration if no specific lease duration is requested. The lease duration controls the expiration of certificates issued by this backend. Defaults to the value of max_ttl.
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 }
 
 // NewSshRolesRequestWithDefaults instantiates a new SshRolesRequest object
@@ -13365,108 +11088,49 @@ type SshRolesRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSshRolesRequestWithDefaults() *SshRolesRequest {
 	this := SshRolesRequest{}
-	var allowHostCertificates bool = false
-	this.AllowHostCertificates = &allowHostCertificates
-	var allowUserCertificates bool = false
-	this.AllowUserCertificates = &allowUserCertificates
-	var allowedUsersTemplate bool = false
-	this.AllowedUsersTemplate = &allowedUsersTemplate
-	var defaultExtensionsTemplate bool = false
-	this.DefaultExtensionsTemplate = &defaultExtensionsTemplate
-	var notBeforeDuration int32 = 30
-	this.NotBeforeDuration = &notBeforeDuration
+
+	this.AllowHostCertificates = false
+	this.AllowUserCertificates = false
+	this.AllowedUsersTemplate = false
+	this.DefaultExtensionsTemplate = false
+	this.NotBeforeDuration = 30
+
 	return &this
 }
 
 func (o SshRolesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AdminUser != nil {
-		toSerialize["admin_user"] = o.AdminUser
-	}
-	if o.AlgorithmSigner != nil {
-		toSerialize["algorithm_signer"] = o.AlgorithmSigner
-	}
-	if o.AllowBareDomains != nil {
-		toSerialize["allow_bare_domains"] = o.AllowBareDomains
-	}
-	if o.AllowHostCertificates != nil {
-		toSerialize["allow_host_certificates"] = o.AllowHostCertificates
-	}
-	if o.AllowSubdomains != nil {
-		toSerialize["allow_subdomains"] = o.AllowSubdomains
-	}
-	if o.AllowUserCertificates != nil {
-		toSerialize["allow_user_certificates"] = o.AllowUserCertificates
-	}
-	if o.AllowUserKeyIds != nil {
-		toSerialize["allow_user_key_ids"] = o.AllowUserKeyIds
-	}
-	if o.AllowedCriticalOptions != nil {
-		toSerialize["allowed_critical_options"] = o.AllowedCriticalOptions
-	}
-	if o.AllowedDomains != nil {
-		toSerialize["allowed_domains"] = o.AllowedDomains
-	}
-	if o.AllowedExtensions != nil {
-		toSerialize["allowed_extensions"] = o.AllowedExtensions
-	}
-	if o.AllowedUserKeyLengths != nil {
-		toSerialize["allowed_user_key_lengths"] = o.AllowedUserKeyLengths
-	}
-	if o.AllowedUsers != nil {
-		toSerialize["allowed_users"] = o.AllowedUsers
-	}
-	if o.AllowedUsersTemplate != nil {
-		toSerialize["allowed_users_template"] = o.AllowedUsersTemplate
-	}
-	if o.CidrList != nil {
-		toSerialize["cidr_list"] = o.CidrList
-	}
-	if o.DefaultCriticalOptions != nil {
-		toSerialize["default_critical_options"] = o.DefaultCriticalOptions
-	}
-	if o.DefaultExtensions != nil {
-		toSerialize["default_extensions"] = o.DefaultExtensions
-	}
-	if o.DefaultExtensionsTemplate != nil {
-		toSerialize["default_extensions_template"] = o.DefaultExtensionsTemplate
-	}
-	if o.DefaultUser != nil {
-		toSerialize["default_user"] = o.DefaultUser
-	}
-	if o.ExcludeCidrList != nil {
-		toSerialize["exclude_cidr_list"] = o.ExcludeCidrList
-	}
-	if o.InstallScript != nil {
-		toSerialize["install_script"] = o.InstallScript
-	}
-	if o.Key != nil {
-		toSerialize["key"] = o.Key
-	}
-	if o.KeyBits != nil {
-		toSerialize["key_bits"] = o.KeyBits
-	}
-	if o.KeyIdFormat != nil {
-		toSerialize["key_id_format"] = o.KeyIdFormat
-	}
-	if o.KeyOptionSpecs != nil {
-		toSerialize["key_option_specs"] = o.KeyOptionSpecs
-	}
-	if o.KeyType != nil {
-		toSerialize["key_type"] = o.KeyType
-	}
-	if o.MaxTtl != nil {
-		toSerialize["max_ttl"] = o.MaxTtl
-	}
-	if o.NotBeforeDuration != nil {
-		toSerialize["not_before_duration"] = o.NotBeforeDuration
-	}
-	if o.Port != nil {
-		toSerialize["port"] = o.Port
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
+
+	toSerialize["admin_user"] = o.AdminUser
+	toSerialize["algorithm_signer"] = o.AlgorithmSigner
+	toSerialize["allow_bare_domains"] = o.AllowBareDomains
+	toSerialize["allow_host_certificates"] = o.AllowHostCertificates
+	toSerialize["allow_subdomains"] = o.AllowSubdomains
+	toSerialize["allow_user_certificates"] = o.AllowUserCertificates
+	toSerialize["allow_user_key_ids"] = o.AllowUserKeyIds
+	toSerialize["allowed_critical_options"] = o.AllowedCriticalOptions
+	toSerialize["allowed_domains"] = o.AllowedDomains
+	toSerialize["allowed_extensions"] = o.AllowedExtensions
+	toSerialize["allowed_user_key_lengths"] = o.AllowedUserKeyLengths
+	toSerialize["allowed_users"] = o.AllowedUsers
+	toSerialize["allowed_users_template"] = o.AllowedUsersTemplate
+	toSerialize["cidr_list"] = o.CidrList
+	toSerialize["default_critical_options"] = o.DefaultCriticalOptions
+	toSerialize["default_extensions"] = o.DefaultExtensions
+	toSerialize["default_extensions_template"] = o.DefaultExtensionsTemplate
+	toSerialize["default_user"] = o.DefaultUser
+	toSerialize["exclude_cidr_list"] = o.ExcludeCidrList
+	toSerialize["install_script"] = o.InstallScript
+	toSerialize["key"] = o.Key
+	toSerialize["key_bits"] = o.KeyBits
+	toSerialize["key_id_format"] = o.KeyIdFormat
+	toSerialize["key_option_specs"] = o.KeyOptionSpecs
+	toSerialize["key_type"] = o.KeyType
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["not_before_duration"] = o.NotBeforeDuration
+	toSerialize["port"] = o.Port
+	toSerialize["ttl"] = o.Ttl
+
 	return json.Marshal(toSerialize)
 }
 
@@ -13483,19 +11147,19 @@ API version: 1.12.0
 // SshSignRequest struct for SshSignRequest
 type SshSignRequest struct {
 	// Type of certificate to be created; either \"user\" or \"host\".
-	CertType *string `json:"cert_type,omitempty"`
+	CertType string `json:"cert_type"`
 	// Critical options that the certificate should be signed for.
-	CriticalOptions map[string]interface{} `json:"critical_options,omitempty"`
+	CriticalOptions map[string]interface{} `json:"critical_options"`
 	// Extensions that the certificate should be signed for.
-	Extensions map[string]interface{} `json:"extensions,omitempty"`
+	Extensions map[string]interface{} `json:"extensions"`
 	// Key id that the created certificate should have. If not specified, the display name of the token will be used.
-	KeyId *string `json:"key_id,omitempty"`
+	KeyId string `json:"key_id"`
 	// SSH public key that should be signed.
-	PublicKey *string `json:"public_key,omitempty"`
+	PublicKey string `json:"public_key"`
 	// The requested Time To Live for the SSH certificate; sets the expiration date. If not specified the role default, backend default, or system default TTL is used, in that order. Cannot be later than the role max TTL.
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 	// Valid principals, either usernames or hostnames, that the certificate should be signed for.
-	ValidPrincipals *string `json:"valid_principals,omitempty"`
+	ValidPrincipals string `json:"valid_principals"`
 }
 
 // NewSshSignRequestWithDefaults instantiates a new SshSignRequest object
@@ -13503,34 +11167,23 @@ type SshSignRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSshSignRequestWithDefaults() *SshSignRequest {
 	this := SshSignRequest{}
-	var certType string = "user"
-	this.CertType = &certType
+
+	this.CertType = "user"
+
 	return &this
 }
 
 func (o SshSignRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.CertType != nil {
-		toSerialize["cert_type"] = o.CertType
-	}
-	if o.CriticalOptions != nil {
-		toSerialize["critical_options"] = o.CriticalOptions
-	}
-	if o.Extensions != nil {
-		toSerialize["extensions"] = o.Extensions
-	}
-	if o.KeyId != nil {
-		toSerialize["key_id"] = o.KeyId
-	}
-	if o.PublicKey != nil {
-		toSerialize["public_key"] = o.PublicKey
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
-	if o.ValidPrincipals != nil {
-		toSerialize["valid_principals"] = o.ValidPrincipals
-	}
+
+	toSerialize["cert_type"] = o.CertType
+	toSerialize["critical_options"] = o.CriticalOptions
+	toSerialize["extensions"] = o.Extensions
+	toSerialize["key_id"] = o.KeyId
+	toSerialize["public_key"] = o.PublicKey
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["valid_principals"] = o.ValidPrincipals
+
 	return json.Marshal(toSerialize)
 }
 
@@ -13547,7 +11200,7 @@ API version: 1.12.0
 // SshVerifyRequest struct for SshVerifyRequest
 type SshVerifyRequest struct {
 	// [Required] One-Time-Key that needs to be validated
-	Otp *string `json:"otp,omitempty"`
+	Otp string `json:"otp"`
 }
 
 // NewSshVerifyRequestWithDefaults instantiates a new SshVerifyRequest object
@@ -13555,14 +11208,15 @@ type SshVerifyRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSshVerifyRequestWithDefaults() *SshVerifyRequest {
 	this := SshVerifyRequest{}
+
 	return &this
 }
 
 func (o SshVerifyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Otp != nil {
-		toSerialize["otp"] = o.Otp
-	}
+
+	toSerialize["otp"] = o.Otp
+
 	return json.Marshal(toSerialize)
 }
 
@@ -13578,7 +11232,7 @@ API version: 1.12.0
 
 // SystemAuditHashRequest struct for SystemAuditHashRequest
 type SystemAuditHashRequest struct {
-	Input *string `json:"input,omitempty"`
+	Input string `json:"input"`
 }
 
 // NewSystemAuditHashRequestWithDefaults instantiates a new SystemAuditHashRequest object
@@ -13586,14 +11240,15 @@ type SystemAuditHashRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemAuditHashRequestWithDefaults() *SystemAuditHashRequest {
 	this := SystemAuditHashRequest{}
+
 	return &this
 }
 
 func (o SystemAuditHashRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Input != nil {
-		toSerialize["input"] = o.Input
-	}
+
+	toSerialize["input"] = o.Input
+
 	return json.Marshal(toSerialize)
 }
 
@@ -13610,13 +11265,13 @@ API version: 1.12.0
 // SystemAuditRequest struct for SystemAuditRequest
 type SystemAuditRequest struct {
 	// User-friendly description for this audit backend.
-	Description *string `json:"description,omitempty"`
+	Description string `json:"description"`
 	// Mark the mount as a local mount, which is not replicated and is unaffected by replication.
-	Local *bool `json:"local,omitempty"`
+	Local bool `json:"local"`
 	// Configuration options for the audit backend.
-	Options map[string]interface{} `json:"options,omitempty"`
+	Options map[string]interface{} `json:"options"`
 	// The type of the backend. Example: \"mysql\"
-	Type *string `json:"type,omitempty"`
+	Type string `json:"type"`
 }
 
 // NewSystemAuditRequestWithDefaults instantiates a new SystemAuditRequest object
@@ -13624,25 +11279,20 @@ type SystemAuditRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemAuditRequestWithDefaults() *SystemAuditRequest {
 	this := SystemAuditRequest{}
-	var local bool = false
-	this.Local = &local
+
+	this.Local = false
+
 	return &this
 }
 
 func (o SystemAuditRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Description != nil {
-		toSerialize["description"] = o.Description
-	}
-	if o.Local != nil {
-		toSerialize["local"] = o.Local
-	}
-	if o.Options != nil {
-		toSerialize["options"] = o.Options
-	}
-	if o.Type != nil {
-		toSerialize["type"] = o.Type
-	}
+
+	toSerialize["description"] = o.Description
+	toSerialize["local"] = o.Local
+	toSerialize["options"] = o.Options
+	toSerialize["type"] = o.Type
+
 	return json.Marshal(toSerialize)
 }
 
@@ -13659,21 +11309,21 @@ API version: 1.12.0
 // SystemAuthRequest struct for SystemAuthRequest
 type SystemAuthRequest struct {
 	// Configuration for this mount, such as plugin_name.
-	Config map[string]interface{} `json:"config,omitempty"`
+	Config map[string]interface{} `json:"config"`
 	// User-friendly description for this credential backend.
-	Description *string `json:"description,omitempty"`
+	Description string `json:"description"`
 	// Whether to give the mount access to Vault's external entropy.
-	ExternalEntropyAccess *bool `json:"external_entropy_access,omitempty"`
+	ExternalEntropyAccess bool `json:"external_entropy_access"`
 	// Mark the mount as a local mount, which is not replicated and is unaffected by replication.
-	Local *bool `json:"local,omitempty"`
+	Local bool `json:"local"`
 	// The options to pass into the backend. Should be a json object with string keys and values.
-	Options map[string]interface{} `json:"options,omitempty"`
+	Options map[string]interface{} `json:"options"`
 	// Name of the auth plugin to use based from the name in the plugin catalog.
-	PluginName *string `json:"plugin_name,omitempty"`
+	PluginName string `json:"plugin_name"`
 	// Whether to turn on seal wrapping for the mount.
-	SealWrap *bool `json:"seal_wrap,omitempty"`
+	SealWrap bool `json:"seal_wrap"`
 	// The type of the backend. Example: \"userpass\"
-	Type *string `json:"type,omitempty"`
+	Type string `json:"type"`
 }
 
 // NewSystemAuthRequestWithDefaults instantiates a new SystemAuthRequest object
@@ -13681,41 +11331,26 @@ type SystemAuthRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemAuthRequestWithDefaults() *SystemAuthRequest {
 	this := SystemAuthRequest{}
-	var externalEntropyAccess bool = false
-	this.ExternalEntropyAccess = &externalEntropyAccess
-	var local bool = false
-	this.Local = &local
-	var sealWrap bool = false
-	this.SealWrap = &sealWrap
+
+	this.ExternalEntropyAccess = false
+	this.Local = false
+	this.SealWrap = false
+
 	return &this
 }
 
 func (o SystemAuthRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Config != nil {
-		toSerialize["config"] = o.Config
-	}
-	if o.Description != nil {
-		toSerialize["description"] = o.Description
-	}
-	if o.ExternalEntropyAccess != nil {
-		toSerialize["external_entropy_access"] = o.ExternalEntropyAccess
-	}
-	if o.Local != nil {
-		toSerialize["local"] = o.Local
-	}
-	if o.Options != nil {
-		toSerialize["options"] = o.Options
-	}
-	if o.PluginName != nil {
-		toSerialize["plugin_name"] = o.PluginName
-	}
-	if o.SealWrap != nil {
-		toSerialize["seal_wrap"] = o.SealWrap
-	}
-	if o.Type != nil {
-		toSerialize["type"] = o.Type
-	}
+
+	toSerialize["config"] = o.Config
+	toSerialize["description"] = o.Description
+	toSerialize["external_entropy_access"] = o.ExternalEntropyAccess
+	toSerialize["local"] = o.Local
+	toSerialize["options"] = o.Options
+	toSerialize["plugin_name"] = o.PluginName
+	toSerialize["seal_wrap"] = o.SealWrap
+	toSerialize["type"] = o.Type
+
 	return json.Marshal(toSerialize)
 }
 
@@ -13732,25 +11367,25 @@ API version: 1.12.0
 // SystemAuthTuneRequest struct for SystemAuthTuneRequest
 type SystemAuthTuneRequest struct {
 	// A list of headers to whitelist and allow a plugin to set on responses.
-	AllowedResponseHeaders []string `json:"allowed_response_headers,omitempty"`
+	AllowedResponseHeaders []string `json:"allowed_response_headers"`
 	// The list of keys in the request data object that will not be HMAC'ed by audit devices.
-	AuditNonHmacRequestKeys []string `json:"audit_non_hmac_request_keys,omitempty"`
+	AuditNonHmacRequestKeys []string `json:"audit_non_hmac_request_keys"`
 	// The list of keys in the response data object that will not be HMAC'ed by audit devices.
-	AuditNonHmacResponseKeys []string `json:"audit_non_hmac_response_keys,omitempty"`
+	AuditNonHmacResponseKeys []string `json:"audit_non_hmac_response_keys"`
 	// The default lease TTL for this mount.
-	DefaultLeaseTtl *string `json:"default_lease_ttl,omitempty"`
+	DefaultLeaseTtl string `json:"default_lease_ttl"`
 	// User-friendly description for this credential backend.
-	Description *string `json:"description,omitempty"`
+	Description string `json:"description"`
 	// Determines the visibility of the mount in the UI-specific listing endpoint. Accepted value are 'unauth' and ''.
-	ListingVisibility *string `json:"listing_visibility,omitempty"`
+	ListingVisibility string `json:"listing_visibility"`
 	// The max lease TTL for this mount.
-	MaxLeaseTtl *string `json:"max_lease_ttl,omitempty"`
+	MaxLeaseTtl string `json:"max_lease_ttl"`
 	// The options to pass into the backend. Should be a json object with string keys and values.
-	Options map[string]interface{} `json:"options,omitempty"`
+	Options map[string]interface{} `json:"options"`
 	// A list of headers to whitelist and pass from the request to the plugin.
-	PassthroughRequestHeaders []string `json:"passthrough_request_headers,omitempty"`
+	PassthroughRequestHeaders []string `json:"passthrough_request_headers"`
 	// The type of token to issue (service or batch).
-	TokenType *string `json:"token_type,omitempty"`
+	TokenType string `json:"token_type"`
 }
 
 // NewSystemAuthTuneRequestWithDefaults instantiates a new SystemAuthTuneRequest object
@@ -13758,41 +11393,24 @@ type SystemAuthTuneRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemAuthTuneRequestWithDefaults() *SystemAuthTuneRequest {
 	this := SystemAuthTuneRequest{}
+
 	return &this
 }
 
 func (o SystemAuthTuneRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AllowedResponseHeaders != nil {
-		toSerialize["allowed_response_headers"] = o.AllowedResponseHeaders
-	}
-	if o.AuditNonHmacRequestKeys != nil {
-		toSerialize["audit_non_hmac_request_keys"] = o.AuditNonHmacRequestKeys
-	}
-	if o.AuditNonHmacResponseKeys != nil {
-		toSerialize["audit_non_hmac_response_keys"] = o.AuditNonHmacResponseKeys
-	}
-	if o.DefaultLeaseTtl != nil {
-		toSerialize["default_lease_ttl"] = o.DefaultLeaseTtl
-	}
-	if o.Description != nil {
-		toSerialize["description"] = o.Description
-	}
-	if o.ListingVisibility != nil {
-		toSerialize["listing_visibility"] = o.ListingVisibility
-	}
-	if o.MaxLeaseTtl != nil {
-		toSerialize["max_lease_ttl"] = o.MaxLeaseTtl
-	}
-	if o.Options != nil {
-		toSerialize["options"] = o.Options
-	}
-	if o.PassthroughRequestHeaders != nil {
-		toSerialize["passthrough_request_headers"] = o.PassthroughRequestHeaders
-	}
-	if o.TokenType != nil {
-		toSerialize["token_type"] = o.TokenType
-	}
+
+	toSerialize["allowed_response_headers"] = o.AllowedResponseHeaders
+	toSerialize["audit_non_hmac_request_keys"] = o.AuditNonHmacRequestKeys
+	toSerialize["audit_non_hmac_response_keys"] = o.AuditNonHmacResponseKeys
+	toSerialize["default_lease_ttl"] = o.DefaultLeaseTtl
+	toSerialize["description"] = o.Description
+	toSerialize["listing_visibility"] = o.ListingVisibility
+	toSerialize["max_lease_ttl"] = o.MaxLeaseTtl
+	toSerialize["options"] = o.Options
+	toSerialize["passthrough_request_headers"] = o.PassthroughRequestHeaders
+	toSerialize["token_type"] = o.TokenType
+
 	return json.Marshal(toSerialize)
 }
 
@@ -13809,12 +11427,12 @@ API version: 1.12.0
 // SystemCapabilitiesAccessorRequest struct for SystemCapabilitiesAccessorRequest
 type SystemCapabilitiesAccessorRequest struct {
 	// Accessor of the token for which capabilities are being queried.
-	Accessor *string `json:"accessor,omitempty"`
+	Accessor string `json:"accessor"`
 	// Use 'paths' instead.
 	// Deprecated
-	Path []string `json:"path,omitempty"`
+	Path []string `json:"path"`
 	// Paths on which capabilities are being queried.
-	Paths []string `json:"paths,omitempty"`
+	Paths []string `json:"paths"`
 }
 
 // NewSystemCapabilitiesAccessorRequestWithDefaults instantiates a new SystemCapabilitiesAccessorRequest object
@@ -13822,20 +11440,17 @@ type SystemCapabilitiesAccessorRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemCapabilitiesAccessorRequestWithDefaults() *SystemCapabilitiesAccessorRequest {
 	this := SystemCapabilitiesAccessorRequest{}
+
 	return &this
 }
 
 func (o SystemCapabilitiesAccessorRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Accessor != nil {
-		toSerialize["accessor"] = o.Accessor
-	}
-	if o.Path != nil {
-		toSerialize["path"] = o.Path
-	}
-	if o.Paths != nil {
-		toSerialize["paths"] = o.Paths
-	}
+
+	toSerialize["accessor"] = o.Accessor
+	toSerialize["path"] = o.Path
+	toSerialize["paths"] = o.Paths
+
 	return json.Marshal(toSerialize)
 }
 
@@ -13853,11 +11468,11 @@ API version: 1.12.0
 type SystemCapabilitiesRequest struct {
 	// Use 'paths' instead.
 	// Deprecated
-	Path []string `json:"path,omitempty"`
+	Path []string `json:"path"`
 	// Paths on which capabilities are being queried.
-	Paths []string `json:"paths,omitempty"`
+	Paths []string `json:"paths"`
 	// Token for which capabilities are being queried.
-	Token *string `json:"token,omitempty"`
+	Token string `json:"token"`
 }
 
 // NewSystemCapabilitiesRequestWithDefaults instantiates a new SystemCapabilitiesRequest object
@@ -13865,20 +11480,17 @@ type SystemCapabilitiesRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemCapabilitiesRequestWithDefaults() *SystemCapabilitiesRequest {
 	this := SystemCapabilitiesRequest{}
+
 	return &this
 }
 
 func (o SystemCapabilitiesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Path != nil {
-		toSerialize["path"] = o.Path
-	}
-	if o.Paths != nil {
-		toSerialize["paths"] = o.Paths
-	}
-	if o.Token != nil {
-		toSerialize["token"] = o.Token
-	}
+
+	toSerialize["path"] = o.Path
+	toSerialize["paths"] = o.Paths
+	toSerialize["token"] = o.Token
+
 	return json.Marshal(toSerialize)
 }
 
@@ -13896,11 +11508,11 @@ API version: 1.12.0
 type SystemCapabilitiesSelfRequest struct {
 	// Use 'paths' instead.
 	// Deprecated
-	Path []string `json:"path,omitempty"`
+	Path []string `json:"path"`
 	// Paths on which capabilities are being queried.
-	Paths []string `json:"paths,omitempty"`
+	Paths []string `json:"paths"`
 	// Token for which capabilities are being queried.
-	Token *string `json:"token,omitempty"`
+	Token string `json:"token"`
 }
 
 // NewSystemCapabilitiesSelfRequestWithDefaults instantiates a new SystemCapabilitiesSelfRequest object
@@ -13908,20 +11520,17 @@ type SystemCapabilitiesSelfRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemCapabilitiesSelfRequestWithDefaults() *SystemCapabilitiesSelfRequest {
 	this := SystemCapabilitiesSelfRequest{}
+
 	return &this
 }
 
 func (o SystemCapabilitiesSelfRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Path != nil {
-		toSerialize["path"] = o.Path
-	}
-	if o.Paths != nil {
-		toSerialize["paths"] = o.Paths
-	}
-	if o.Token != nil {
-		toSerialize["token"] = o.Token
-	}
+
+	toSerialize["path"] = o.Path
+	toSerialize["paths"] = o.Paths
+	toSerialize["token"] = o.Token
+
 	return json.Marshal(toSerialize)
 }
 
@@ -13937,7 +11546,7 @@ API version: 1.12.0
 
 // SystemConfigAuditingRequestHeadersRequest struct for SystemConfigAuditingRequestHeadersRequest
 type SystemConfigAuditingRequestHeadersRequest struct {
-	Hmac *bool `json:"hmac,omitempty"`
+	Hmac bool `json:"hmac"`
 }
 
 // NewSystemConfigAuditingRequestHeadersRequestWithDefaults instantiates a new SystemConfigAuditingRequestHeadersRequest object
@@ -13945,14 +11554,15 @@ type SystemConfigAuditingRequestHeadersRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemConfigAuditingRequestHeadersRequestWithDefaults() *SystemConfigAuditingRequestHeadersRequest {
 	this := SystemConfigAuditingRequestHeadersRequest{}
+
 	return &this
 }
 
 func (o SystemConfigAuditingRequestHeadersRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Hmac != nil {
-		toSerialize["hmac"] = o.Hmac
-	}
+
+	toSerialize["hmac"] = o.Hmac
+
 	return json.Marshal(toSerialize)
 }
 
@@ -13969,11 +11579,11 @@ API version: 1.12.0
 // SystemConfigCorsRequest struct for SystemConfigCorsRequest
 type SystemConfigCorsRequest struct {
 	// A comma-separated string or array of strings indicating headers that are allowed on cross-origin requests.
-	AllowedHeaders []string `json:"allowed_headers,omitempty"`
+	AllowedHeaders []string `json:"allowed_headers"`
 	// A comma-separated string or array of strings indicating origins that may make cross-origin requests.
-	AllowedOrigins []string `json:"allowed_origins,omitempty"`
+	AllowedOrigins []string `json:"allowed_origins"`
 	// Enables or disables CORS headers on requests.
-	Enable *bool `json:"enable,omitempty"`
+	Enable bool `json:"enable"`
 }
 
 // NewSystemConfigCorsRequestWithDefaults instantiates a new SystemConfigCorsRequest object
@@ -13981,20 +11591,17 @@ type SystemConfigCorsRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemConfigCorsRequestWithDefaults() *SystemConfigCorsRequest {
 	this := SystemConfigCorsRequest{}
+
 	return &this
 }
 
 func (o SystemConfigCorsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AllowedHeaders != nil {
-		toSerialize["allowed_headers"] = o.AllowedHeaders
-	}
-	if o.AllowedOrigins != nil {
-		toSerialize["allowed_origins"] = o.AllowedOrigins
-	}
-	if o.Enable != nil {
-		toSerialize["enable"] = o.Enable
-	}
+
+	toSerialize["allowed_headers"] = o.AllowedHeaders
+	toSerialize["allowed_origins"] = o.AllowedOrigins
+	toSerialize["enable"] = o.Enable
+
 	return json.Marshal(toSerialize)
 }
 
@@ -14011,9 +11618,9 @@ API version: 1.12.0
 // SystemConfigUiHeadersRequest struct for SystemConfigUiHeadersRequest
 type SystemConfigUiHeadersRequest struct {
 	// Returns multiple values if true
-	Multivalue *bool `json:"multivalue,omitempty"`
+	Multivalue bool `json:"multivalue"`
 	// The values to set the header.
-	Values []string `json:"values,omitempty"`
+	Values []string `json:"values"`
 }
 
 // NewSystemConfigUiHeadersRequestWithDefaults instantiates a new SystemConfigUiHeadersRequest object
@@ -14021,17 +11628,16 @@ type SystemConfigUiHeadersRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemConfigUiHeadersRequestWithDefaults() *SystemConfigUiHeadersRequest {
 	this := SystemConfigUiHeadersRequest{}
+
 	return &this
 }
 
 func (o SystemConfigUiHeadersRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Multivalue != nil {
-		toSerialize["multivalue"] = o.Multivalue
-	}
-	if o.Values != nil {
-		toSerialize["values"] = o.Values
-	}
+
+	toSerialize["multivalue"] = o.Multivalue
+	toSerialize["values"] = o.Values
+
 	return json.Marshal(toSerialize)
 }
 
@@ -14048,7 +11654,7 @@ API version: 1.12.0
 // SystemGenerateRootAttemptRequest struct for SystemGenerateRootAttemptRequest
 type SystemGenerateRootAttemptRequest struct {
 	// Specifies a base64-encoded PGP public key.
-	PgpKey *string `json:"pgp_key,omitempty"`
+	PgpKey string `json:"pgp_key"`
 }
 
 // NewSystemGenerateRootAttemptRequestWithDefaults instantiates a new SystemGenerateRootAttemptRequest object
@@ -14056,14 +11662,15 @@ type SystemGenerateRootAttemptRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemGenerateRootAttemptRequestWithDefaults() *SystemGenerateRootAttemptRequest {
 	this := SystemGenerateRootAttemptRequest{}
+
 	return &this
 }
 
 func (o SystemGenerateRootAttemptRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.PgpKey != nil {
-		toSerialize["pgp_key"] = o.PgpKey
-	}
+
+	toSerialize["pgp_key"] = o.PgpKey
+
 	return json.Marshal(toSerialize)
 }
 
@@ -14080,7 +11687,7 @@ API version: 1.12.0
 // SystemGenerateRootRequest struct for SystemGenerateRootRequest
 type SystemGenerateRootRequest struct {
 	// Specifies a base64-encoded PGP public key.
-	PgpKey *string `json:"pgp_key,omitempty"`
+	PgpKey string `json:"pgp_key"`
 }
 
 // NewSystemGenerateRootRequestWithDefaults instantiates a new SystemGenerateRootRequest object
@@ -14088,14 +11695,15 @@ type SystemGenerateRootRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemGenerateRootRequestWithDefaults() *SystemGenerateRootRequest {
 	this := SystemGenerateRootRequest{}
+
 	return &this
 }
 
 func (o SystemGenerateRootRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.PgpKey != nil {
-		toSerialize["pgp_key"] = o.PgpKey
-	}
+
+	toSerialize["pgp_key"] = o.PgpKey
+
 	return json.Marshal(toSerialize)
 }
 
@@ -14112,9 +11720,9 @@ API version: 1.12.0
 // SystemGenerateRootUpdateRequest struct for SystemGenerateRootUpdateRequest
 type SystemGenerateRootUpdateRequest struct {
 	// Specifies a single unseal key share.
-	Key *string `json:"key,omitempty"`
+	Key string `json:"key"`
 	// Specifies the nonce of the attempt.
-	Nonce *string `json:"nonce,omitempty"`
+	Nonce string `json:"nonce"`
 }
 
 // NewSystemGenerateRootUpdateRequestWithDefaults instantiates a new SystemGenerateRootUpdateRequest object
@@ -14122,17 +11730,16 @@ type SystemGenerateRootUpdateRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemGenerateRootUpdateRequestWithDefaults() *SystemGenerateRootUpdateRequest {
 	this := SystemGenerateRootUpdateRequest{}
+
 	return &this
 }
 
 func (o SystemGenerateRootUpdateRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Key != nil {
-		toSerialize["key"] = o.Key
-	}
-	if o.Nonce != nil {
-		toSerialize["nonce"] = o.Nonce
-	}
+
+	toSerialize["key"] = o.Key
+	toSerialize["nonce"] = o.Nonce
+
 	return json.Marshal(toSerialize)
 }
 
@@ -14149,21 +11756,21 @@ API version: 1.12.0
 // SystemInitRequest struct for SystemInitRequest
 type SystemInitRequest struct {
 	// Specifies an array of PGP public keys used to encrypt the output unseal keys. Ordering is preserved. The keys must be base64-encoded from their original binary representation. The size of this array must be the same as `secret_shares`.
-	PgpKeys []string `json:"pgp_keys,omitempty"`
+	PgpKeys []string `json:"pgp_keys"`
 	// Specifies an array of PGP public keys used to encrypt the output recovery keys. Ordering is preserved. The keys must be base64-encoded from their original binary representation. The size of this array must be the same as `recovery_shares`.
-	RecoveryPgpKeys []string `json:"recovery_pgp_keys,omitempty"`
+	RecoveryPgpKeys []string `json:"recovery_pgp_keys"`
 	// Specifies the number of shares to split the recovery key into.
-	RecoveryShares *int32 `json:"recovery_shares,omitempty"`
+	RecoveryShares int32 `json:"recovery_shares"`
 	// Specifies the number of shares required to reconstruct the recovery key. This must be less than or equal to `recovery_shares`.
-	RecoveryThreshold *int32 `json:"recovery_threshold,omitempty"`
+	RecoveryThreshold int32 `json:"recovery_threshold"`
 	// Specifies a PGP public key used to encrypt the initial root token. The key must be base64-encoded from its original binary representation.
-	RootTokenPgpKey *string `json:"root_token_pgp_key,omitempty"`
+	RootTokenPgpKey string `json:"root_token_pgp_key"`
 	// Specifies the number of shares to split the unseal key into.
-	SecretShares *int32 `json:"secret_shares,omitempty"`
+	SecretShares int32 `json:"secret_shares"`
 	// Specifies the number of shares required to reconstruct the unseal key. This must be less than or equal secret_shares. If using Vault HSM with auto-unsealing, this value must be the same as `secret_shares`.
-	SecretThreshold *int32 `json:"secret_threshold,omitempty"`
+	SecretThreshold int32 `json:"secret_threshold"`
 	// Specifies the number of shares that should be encrypted by the HSM and stored for auto-unsealing. Currently must be the same as `secret_shares`.
-	StoredShares *int32 `json:"stored_shares,omitempty"`
+	StoredShares int32 `json:"stored_shares"`
 }
 
 // NewSystemInitRequestWithDefaults instantiates a new SystemInitRequest object
@@ -14171,35 +11778,22 @@ type SystemInitRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemInitRequestWithDefaults() *SystemInitRequest {
 	this := SystemInitRequest{}
+
 	return &this
 }
 
 func (o SystemInitRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.PgpKeys != nil {
-		toSerialize["pgp_keys"] = o.PgpKeys
-	}
-	if o.RecoveryPgpKeys != nil {
-		toSerialize["recovery_pgp_keys"] = o.RecoveryPgpKeys
-	}
-	if o.RecoveryShares != nil {
-		toSerialize["recovery_shares"] = o.RecoveryShares
-	}
-	if o.RecoveryThreshold != nil {
-		toSerialize["recovery_threshold"] = o.RecoveryThreshold
-	}
-	if o.RootTokenPgpKey != nil {
-		toSerialize["root_token_pgp_key"] = o.RootTokenPgpKey
-	}
-	if o.SecretShares != nil {
-		toSerialize["secret_shares"] = o.SecretShares
-	}
-	if o.SecretThreshold != nil {
-		toSerialize["secret_threshold"] = o.SecretThreshold
-	}
-	if o.StoredShares != nil {
-		toSerialize["stored_shares"] = o.StoredShares
-	}
+
+	toSerialize["pgp_keys"] = o.PgpKeys
+	toSerialize["recovery_pgp_keys"] = o.RecoveryPgpKeys
+	toSerialize["recovery_shares"] = o.RecoveryShares
+	toSerialize["recovery_threshold"] = o.RecoveryThreshold
+	toSerialize["root_token_pgp_key"] = o.RootTokenPgpKey
+	toSerialize["secret_shares"] = o.SecretShares
+	toSerialize["secret_threshold"] = o.SecretThreshold
+	toSerialize["stored_shares"] = o.StoredShares
+
 	return json.Marshal(toSerialize)
 }
 
@@ -14216,11 +11810,11 @@ API version: 1.12.0
 // SystemInternalCountersConfigRequest struct for SystemInternalCountersConfigRequest
 type SystemInternalCountersConfigRequest struct {
 	// Number of months to report if no start date specified.
-	DefaultReportMonths *int32 `json:"default_report_months,omitempty"`
+	DefaultReportMonths int32 `json:"default_report_months"`
 	// Enable or disable collection of client count: enable, disable, or default.
-	Enabled *string `json:"enabled,omitempty"`
+	Enabled string `json:"enabled"`
 	// Number of months of client data to retain. Setting to 0 will clear all existing data.
-	RetentionMonths *int32 `json:"retention_months,omitempty"`
+	RetentionMonths int32 `json:"retention_months"`
 }
 
 // NewSystemInternalCountersConfigRequestWithDefaults instantiates a new SystemInternalCountersConfigRequest object
@@ -14228,26 +11822,21 @@ type SystemInternalCountersConfigRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemInternalCountersConfigRequestWithDefaults() *SystemInternalCountersConfigRequest {
 	this := SystemInternalCountersConfigRequest{}
-	var defaultReportMonths int32 = 12
-	this.DefaultReportMonths = &defaultReportMonths
-	var enabled string = "default"
-	this.Enabled = &enabled
-	var retentionMonths int32 = 24
-	this.RetentionMonths = &retentionMonths
+
+	this.DefaultReportMonths = 12
+	this.Enabled = "default"
+	this.RetentionMonths = 24
+
 	return &this
 }
 
 func (o SystemInternalCountersConfigRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.DefaultReportMonths != nil {
-		toSerialize["default_report_months"] = o.DefaultReportMonths
-	}
-	if o.Enabled != nil {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if o.RetentionMonths != nil {
-		toSerialize["retention_months"] = o.RetentionMonths
-	}
+
+	toSerialize["default_report_months"] = o.DefaultReportMonths
+	toSerialize["enabled"] = o.Enabled
+	toSerialize["retention_months"] = o.RetentionMonths
+
 	return json.Marshal(toSerialize)
 }
 
@@ -14264,7 +11853,7 @@ API version: 1.12.0
 // SystemInternalSpecsOpenapiRequest struct for SystemInternalSpecsOpenapiRequest
 type SystemInternalSpecsOpenapiRequest struct {
 	// Context string appended to every operationId
-	Context *string `json:"context,omitempty"`
+	Context string `json:"context"`
 }
 
 // NewSystemInternalSpecsOpenapiRequestWithDefaults instantiates a new SystemInternalSpecsOpenapiRequest object
@@ -14272,14 +11861,15 @@ type SystemInternalSpecsOpenapiRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemInternalSpecsOpenapiRequestWithDefaults() *SystemInternalSpecsOpenapiRequest {
 	this := SystemInternalSpecsOpenapiRequest{}
+
 	return &this
 }
 
 func (o SystemInternalSpecsOpenapiRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Context != nil {
-		toSerialize["context"] = o.Context
-	}
+
+	toSerialize["context"] = o.Context
+
 	return json.Marshal(toSerialize)
 }
 
@@ -14296,7 +11886,7 @@ API version: 1.12.0
 // SystemLeasesLookupRequest struct for SystemLeasesLookupRequest
 type SystemLeasesLookupRequest struct {
 	// The lease identifier to renew. This is included with a lease.
-	LeaseId *string `json:"lease_id,omitempty"`
+	LeaseId string `json:"lease_id"`
 }
 
 // NewSystemLeasesLookupRequestWithDefaults instantiates a new SystemLeasesLookupRequest object
@@ -14304,14 +11894,15 @@ type SystemLeasesLookupRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemLeasesLookupRequestWithDefaults() *SystemLeasesLookupRequest {
 	this := SystemLeasesLookupRequest{}
+
 	return &this
 }
 
 func (o SystemLeasesLookupRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.LeaseId != nil {
-		toSerialize["lease_id"] = o.LeaseId
-	}
+
+	toSerialize["lease_id"] = o.LeaseId
+
 	return json.Marshal(toSerialize)
 }
 
@@ -14328,9 +11919,9 @@ API version: 1.12.0
 // SystemLeasesRenewLeaseRequest struct for SystemLeasesRenewLeaseRequest
 type SystemLeasesRenewLeaseRequest struct {
 	// The desired increment in seconds to the lease
-	Increment *int32 `json:"increment,omitempty"`
+	Increment int32 `json:"increment"`
 	// The lease identifier to renew. This is included with a lease.
-	LeaseId *string `json:"lease_id,omitempty"`
+	LeaseId string `json:"lease_id"`
 }
 
 // NewSystemLeasesRenewLeaseRequestWithDefaults instantiates a new SystemLeasesRenewLeaseRequest object
@@ -14338,17 +11929,16 @@ type SystemLeasesRenewLeaseRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemLeasesRenewLeaseRequestWithDefaults() *SystemLeasesRenewLeaseRequest {
 	this := SystemLeasesRenewLeaseRequest{}
+
 	return &this
 }
 
 func (o SystemLeasesRenewLeaseRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Increment != nil {
-		toSerialize["increment"] = o.Increment
-	}
-	if o.LeaseId != nil {
-		toSerialize["lease_id"] = o.LeaseId
-	}
+
+	toSerialize["increment"] = o.Increment
+	toSerialize["lease_id"] = o.LeaseId
+
 	return json.Marshal(toSerialize)
 }
 
@@ -14365,11 +11955,11 @@ API version: 1.12.0
 // SystemLeasesRenewRequest struct for SystemLeasesRenewRequest
 type SystemLeasesRenewRequest struct {
 	// The desired increment in seconds to the lease
-	Increment *int32 `json:"increment,omitempty"`
+	Increment int32 `json:"increment"`
 	// The lease identifier to renew. This is included with a lease.
-	LeaseId *string `json:"lease_id,omitempty"`
+	LeaseId string `json:"lease_id"`
 	// The lease identifier to renew. This is included with a lease.
-	UrlLeaseId *string `json:"url_lease_id,omitempty"`
+	UrlLeaseId string `json:"url_lease_id"`
 }
 
 // NewSystemLeasesRenewRequestWithDefaults instantiates a new SystemLeasesRenewRequest object
@@ -14377,20 +11967,17 @@ type SystemLeasesRenewRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemLeasesRenewRequestWithDefaults() *SystemLeasesRenewRequest {
 	this := SystemLeasesRenewRequest{}
+
 	return &this
 }
 
 func (o SystemLeasesRenewRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Increment != nil {
-		toSerialize["increment"] = o.Increment
-	}
-	if o.LeaseId != nil {
-		toSerialize["lease_id"] = o.LeaseId
-	}
-	if o.UrlLeaseId != nil {
-		toSerialize["url_lease_id"] = o.UrlLeaseId
-	}
+
+	toSerialize["increment"] = o.Increment
+	toSerialize["lease_id"] = o.LeaseId
+	toSerialize["url_lease_id"] = o.UrlLeaseId
+
 	return json.Marshal(toSerialize)
 }
 
@@ -14407,9 +11994,9 @@ API version: 1.12.0
 // SystemLeasesRevokeLeaseRequest struct for SystemLeasesRevokeLeaseRequest
 type SystemLeasesRevokeLeaseRequest struct {
 	// The lease identifier to renew. This is included with a lease.
-	LeaseId *string `json:"lease_id,omitempty"`
+	LeaseId string `json:"lease_id"`
 	// Whether or not to perform the revocation synchronously
-	Sync *bool `json:"sync,omitempty"`
+	Sync bool `json:"sync"`
 }
 
 // NewSystemLeasesRevokeLeaseRequestWithDefaults instantiates a new SystemLeasesRevokeLeaseRequest object
@@ -14417,19 +12004,18 @@ type SystemLeasesRevokeLeaseRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemLeasesRevokeLeaseRequestWithDefaults() *SystemLeasesRevokeLeaseRequest {
 	this := SystemLeasesRevokeLeaseRequest{}
-	var sync bool = true
-	this.Sync = &sync
+
+	this.Sync = true
+
 	return &this
 }
 
 func (o SystemLeasesRevokeLeaseRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.LeaseId != nil {
-		toSerialize["lease_id"] = o.LeaseId
-	}
-	if o.Sync != nil {
-		toSerialize["sync"] = o.Sync
-	}
+
+	toSerialize["lease_id"] = o.LeaseId
+	toSerialize["sync"] = o.Sync
+
 	return json.Marshal(toSerialize)
 }
 
@@ -14446,7 +12032,7 @@ API version: 1.12.0
 // SystemLeasesRevokePrefixRequest struct for SystemLeasesRevokePrefixRequest
 type SystemLeasesRevokePrefixRequest struct {
 	// Whether or not to perform the revocation synchronously
-	Sync *bool `json:"sync,omitempty"`
+	Sync bool `json:"sync"`
 }
 
 // NewSystemLeasesRevokePrefixRequestWithDefaults instantiates a new SystemLeasesRevokePrefixRequest object
@@ -14454,16 +12040,17 @@ type SystemLeasesRevokePrefixRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemLeasesRevokePrefixRequestWithDefaults() *SystemLeasesRevokePrefixRequest {
 	this := SystemLeasesRevokePrefixRequest{}
-	var sync bool = true
-	this.Sync = &sync
+
+	this.Sync = true
+
 	return &this
 }
 
 func (o SystemLeasesRevokePrefixRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Sync != nil {
-		toSerialize["sync"] = o.Sync
-	}
+
+	toSerialize["sync"] = o.Sync
+
 	return json.Marshal(toSerialize)
 }
 
@@ -14480,11 +12067,11 @@ API version: 1.12.0
 // SystemLeasesRevokeRequest struct for SystemLeasesRevokeRequest
 type SystemLeasesRevokeRequest struct {
 	// The lease identifier to renew. This is included with a lease.
-	LeaseId *string `json:"lease_id,omitempty"`
+	LeaseId string `json:"lease_id"`
 	// Whether or not to perform the revocation synchronously
-	Sync *bool `json:"sync,omitempty"`
+	Sync bool `json:"sync"`
 	// The lease identifier to renew. This is included with a lease.
-	UrlLeaseId *string `json:"url_lease_id,omitempty"`
+	UrlLeaseId string `json:"url_lease_id"`
 }
 
 // NewSystemLeasesRevokeRequestWithDefaults instantiates a new SystemLeasesRevokeRequest object
@@ -14492,22 +12079,19 @@ type SystemLeasesRevokeRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemLeasesRevokeRequestWithDefaults() *SystemLeasesRevokeRequest {
 	this := SystemLeasesRevokeRequest{}
-	var sync bool = true
-	this.Sync = &sync
+
+	this.Sync = true
+
 	return &this
 }
 
 func (o SystemLeasesRevokeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.LeaseId != nil {
-		toSerialize["lease_id"] = o.LeaseId
-	}
-	if o.Sync != nil {
-		toSerialize["sync"] = o.Sync
-	}
-	if o.UrlLeaseId != nil {
-		toSerialize["url_lease_id"] = o.UrlLeaseId
-	}
+
+	toSerialize["lease_id"] = o.LeaseId
+	toSerialize["sync"] = o.Sync
+	toSerialize["url_lease_id"] = o.UrlLeaseId
+
 	return json.Marshal(toSerialize)
 }
 
@@ -14534,17 +12118,16 @@ type SystemMfaValidateRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemMfaValidateRequestWithDefaults() *SystemMfaValidateRequest {
 	this := SystemMfaValidateRequest{}
+
 	return &this
 }
 
 func (o SystemMfaValidateRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["mfa_payload"] = o.MfaPayload
-	}
-	if true {
-		toSerialize["mfa_request_id"] = o.MfaRequestId
-	}
+
+	toSerialize["mfa_payload"] = o.MfaPayload
+	toSerialize["mfa_request_id"] = o.MfaRequestId
+
 	return json.Marshal(toSerialize)
 }
 
@@ -14561,21 +12144,21 @@ API version: 1.12.0
 // SystemMountsRequest struct for SystemMountsRequest
 type SystemMountsRequest struct {
 	// Configuration for this mount, such as default_lease_ttl and max_lease_ttl.
-	Config map[string]interface{} `json:"config,omitempty"`
+	Config map[string]interface{} `json:"config"`
 	// User-friendly description for this mount.
-	Description *string `json:"description,omitempty"`
+	Description string `json:"description"`
 	// Whether to give the mount access to Vault's external entropy.
-	ExternalEntropyAccess *bool `json:"external_entropy_access,omitempty"`
+	ExternalEntropyAccess bool `json:"external_entropy_access"`
 	// Mark the mount as a local mount, which is not replicated and is unaffected by replication.
-	Local *bool `json:"local,omitempty"`
+	Local bool `json:"local"`
 	// The options to pass into the backend. Should be a json object with string keys and values.
-	Options map[string]interface{} `json:"options,omitempty"`
+	Options map[string]interface{} `json:"options"`
 	// Name of the plugin to mount based from the name registered in the plugin catalog.
-	PluginName *string `json:"plugin_name,omitempty"`
+	PluginName string `json:"plugin_name"`
 	// Whether to turn on seal wrapping for the mount.
-	SealWrap *bool `json:"seal_wrap,omitempty"`
+	SealWrap bool `json:"seal_wrap"`
 	// The type of the backend. Example: \"passthrough\"
-	Type *string `json:"type,omitempty"`
+	Type string `json:"type"`
 }
 
 // NewSystemMountsRequestWithDefaults instantiates a new SystemMountsRequest object
@@ -14583,41 +12166,26 @@ type SystemMountsRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemMountsRequestWithDefaults() *SystemMountsRequest {
 	this := SystemMountsRequest{}
-	var externalEntropyAccess bool = false
-	this.ExternalEntropyAccess = &externalEntropyAccess
-	var local bool = false
-	this.Local = &local
-	var sealWrap bool = false
-	this.SealWrap = &sealWrap
+
+	this.ExternalEntropyAccess = false
+	this.Local = false
+	this.SealWrap = false
+
 	return &this
 }
 
 func (o SystemMountsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Config != nil {
-		toSerialize["config"] = o.Config
-	}
-	if o.Description != nil {
-		toSerialize["description"] = o.Description
-	}
-	if o.ExternalEntropyAccess != nil {
-		toSerialize["external_entropy_access"] = o.ExternalEntropyAccess
-	}
-	if o.Local != nil {
-		toSerialize["local"] = o.Local
-	}
-	if o.Options != nil {
-		toSerialize["options"] = o.Options
-	}
-	if o.PluginName != nil {
-		toSerialize["plugin_name"] = o.PluginName
-	}
-	if o.SealWrap != nil {
-		toSerialize["seal_wrap"] = o.SealWrap
-	}
-	if o.Type != nil {
-		toSerialize["type"] = o.Type
-	}
+
+	toSerialize["config"] = o.Config
+	toSerialize["description"] = o.Description
+	toSerialize["external_entropy_access"] = o.ExternalEntropyAccess
+	toSerialize["local"] = o.Local
+	toSerialize["options"] = o.Options
+	toSerialize["plugin_name"] = o.PluginName
+	toSerialize["seal_wrap"] = o.SealWrap
+	toSerialize["type"] = o.Type
+
 	return json.Marshal(toSerialize)
 }
 
@@ -14633,27 +12201,27 @@ API version: 1.12.0
 
 // SystemMountsTuneRequest struct for SystemMountsTuneRequest
 type SystemMountsTuneRequest struct {
-	AllowedManagedKeys []string `json:"allowed_managed_keys,omitempty"`
+	AllowedManagedKeys []string `json:"allowed_managed_keys"`
 	// A list of headers to whitelist and allow a plugin to set on responses.
-	AllowedResponseHeaders []string `json:"allowed_response_headers,omitempty"`
+	AllowedResponseHeaders []string `json:"allowed_response_headers"`
 	// The list of keys in the request data object that will not be HMAC'ed by audit devices.
-	AuditNonHmacRequestKeys []string `json:"audit_non_hmac_request_keys,omitempty"`
+	AuditNonHmacRequestKeys []string `json:"audit_non_hmac_request_keys"`
 	// The list of keys in the response data object that will not be HMAC'ed by audit devices.
-	AuditNonHmacResponseKeys []string `json:"audit_non_hmac_response_keys,omitempty"`
+	AuditNonHmacResponseKeys []string `json:"audit_non_hmac_response_keys"`
 	// The default lease TTL for this mount.
-	DefaultLeaseTtl *string `json:"default_lease_ttl,omitempty"`
+	DefaultLeaseTtl string `json:"default_lease_ttl"`
 	// User-friendly description for this credential backend.
-	Description *string `json:"description,omitempty"`
+	Description string `json:"description"`
 	// Determines the visibility of the mount in the UI-specific listing endpoint. Accepted value are 'unauth' and ''.
-	ListingVisibility *string `json:"listing_visibility,omitempty"`
+	ListingVisibility string `json:"listing_visibility"`
 	// The max lease TTL for this mount.
-	MaxLeaseTtl *string `json:"max_lease_ttl,omitempty"`
+	MaxLeaseTtl string `json:"max_lease_ttl"`
 	// The options to pass into the backend. Should be a json object with string keys and values.
-	Options map[string]interface{} `json:"options,omitempty"`
+	Options map[string]interface{} `json:"options"`
 	// A list of headers to whitelist and pass from the request to the plugin.
-	PassthroughRequestHeaders []string `json:"passthrough_request_headers,omitempty"`
+	PassthroughRequestHeaders []string `json:"passthrough_request_headers"`
 	// The type of token to issue (service or batch).
-	TokenType *string `json:"token_type,omitempty"`
+	TokenType string `json:"token_type"`
 }
 
 // NewSystemMountsTuneRequestWithDefaults instantiates a new SystemMountsTuneRequest object
@@ -14661,44 +12229,25 @@ type SystemMountsTuneRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemMountsTuneRequestWithDefaults() *SystemMountsTuneRequest {
 	this := SystemMountsTuneRequest{}
+
 	return &this
 }
 
 func (o SystemMountsTuneRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AllowedManagedKeys != nil {
-		toSerialize["allowed_managed_keys"] = o.AllowedManagedKeys
-	}
-	if o.AllowedResponseHeaders != nil {
-		toSerialize["allowed_response_headers"] = o.AllowedResponseHeaders
-	}
-	if o.AuditNonHmacRequestKeys != nil {
-		toSerialize["audit_non_hmac_request_keys"] = o.AuditNonHmacRequestKeys
-	}
-	if o.AuditNonHmacResponseKeys != nil {
-		toSerialize["audit_non_hmac_response_keys"] = o.AuditNonHmacResponseKeys
-	}
-	if o.DefaultLeaseTtl != nil {
-		toSerialize["default_lease_ttl"] = o.DefaultLeaseTtl
-	}
-	if o.Description != nil {
-		toSerialize["description"] = o.Description
-	}
-	if o.ListingVisibility != nil {
-		toSerialize["listing_visibility"] = o.ListingVisibility
-	}
-	if o.MaxLeaseTtl != nil {
-		toSerialize["max_lease_ttl"] = o.MaxLeaseTtl
-	}
-	if o.Options != nil {
-		toSerialize["options"] = o.Options
-	}
-	if o.PassthroughRequestHeaders != nil {
-		toSerialize["passthrough_request_headers"] = o.PassthroughRequestHeaders
-	}
-	if o.TokenType != nil {
-		toSerialize["token_type"] = o.TokenType
-	}
+
+	toSerialize["allowed_managed_keys"] = o.AllowedManagedKeys
+	toSerialize["allowed_response_headers"] = o.AllowedResponseHeaders
+	toSerialize["audit_non_hmac_request_keys"] = o.AuditNonHmacRequestKeys
+	toSerialize["audit_non_hmac_response_keys"] = o.AuditNonHmacResponseKeys
+	toSerialize["default_lease_ttl"] = o.DefaultLeaseTtl
+	toSerialize["description"] = o.Description
+	toSerialize["listing_visibility"] = o.ListingVisibility
+	toSerialize["max_lease_ttl"] = o.MaxLeaseTtl
+	toSerialize["options"] = o.Options
+	toSerialize["passthrough_request_headers"] = o.PassthroughRequestHeaders
+	toSerialize["token_type"] = o.TokenType
+
 	return json.Marshal(toSerialize)
 }
 
@@ -14715,15 +12264,15 @@ API version: 1.12.0
 // SystemPluginsCatalogRequest struct for SystemPluginsCatalogRequest
 type SystemPluginsCatalogRequest struct {
 	// The args passed to plugin command.
-	Args []string `json:"args,omitempty"`
+	Args []string `json:"args"`
 	// The command used to start the plugin. The executable defined in this command must exist in vault's plugin directory.
-	Command *string `json:"command,omitempty"`
+	Command string `json:"command"`
 	// The environment variables passed to plugin command. Each entry is of the form \"key=value\".
-	Env []string `json:"env,omitempty"`
+	Env []string `json:"env"`
 	// The SHA256 sum of the executable used in the command field. This should be HEX encoded.
-	Sha256 *string `json:"sha256,omitempty"`
+	Sha256 string `json:"sha256"`
 	// The type of the plugin, may be auth, secret, or database
-	Type *string `json:"type,omitempty"`
+	Type string `json:"type"`
 }
 
 // NewSystemPluginsCatalogRequestWithDefaults instantiates a new SystemPluginsCatalogRequest object
@@ -14731,26 +12280,19 @@ type SystemPluginsCatalogRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemPluginsCatalogRequestWithDefaults() *SystemPluginsCatalogRequest {
 	this := SystemPluginsCatalogRequest{}
+
 	return &this
 }
 
 func (o SystemPluginsCatalogRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Args != nil {
-		toSerialize["args"] = o.Args
-	}
-	if o.Command != nil {
-		toSerialize["command"] = o.Command
-	}
-	if o.Env != nil {
-		toSerialize["env"] = o.Env
-	}
-	if o.Sha256 != nil {
-		toSerialize["sha256"] = o.Sha256
-	}
-	if o.Type != nil {
-		toSerialize["type"] = o.Type
-	}
+
+	toSerialize["args"] = o.Args
+	toSerialize["command"] = o.Command
+	toSerialize["env"] = o.Env
+	toSerialize["sha256"] = o.Sha256
+	toSerialize["type"] = o.Type
+
 	return json.Marshal(toSerialize)
 }
 
@@ -14767,10 +12309,10 @@ API version: 1.12.0
 // SystemPluginsReloadBackendRequest struct for SystemPluginsReloadBackendRequest
 type SystemPluginsReloadBackendRequest struct {
 	// The mount paths of the plugin backends to reload.
-	Mounts []string `json:"mounts,omitempty"`
+	Mounts []string `json:"mounts"`
 	// The name of the plugin to reload, as registered in the plugin catalog.
-	Plugin *string `json:"plugin,omitempty"`
-	Scope  *string `json:"scope,omitempty"`
+	Plugin string `json:"plugin"`
+	Scope  string `json:"scope"`
 }
 
 // NewSystemPluginsReloadBackendRequestWithDefaults instantiates a new SystemPluginsReloadBackendRequest object
@@ -14778,20 +12320,17 @@ type SystemPluginsReloadBackendRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemPluginsReloadBackendRequestWithDefaults() *SystemPluginsReloadBackendRequest {
 	this := SystemPluginsReloadBackendRequest{}
+
 	return &this
 }
 
 func (o SystemPluginsReloadBackendRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Mounts != nil {
-		toSerialize["mounts"] = o.Mounts
-	}
-	if o.Plugin != nil {
-		toSerialize["plugin"] = o.Plugin
-	}
-	if o.Scope != nil {
-		toSerialize["scope"] = o.Scope
-	}
+
+	toSerialize["mounts"] = o.Mounts
+	toSerialize["plugin"] = o.Plugin
+	toSerialize["scope"] = o.Scope
+
 	return json.Marshal(toSerialize)
 }
 
@@ -14808,7 +12347,7 @@ API version: 1.12.0
 // SystemPoliciesAclRequest struct for SystemPoliciesAclRequest
 type SystemPoliciesAclRequest struct {
 	// The rules of the policy.
-	Policy *string `json:"policy,omitempty"`
+	Policy string `json:"policy"`
 }
 
 // NewSystemPoliciesAclRequestWithDefaults instantiates a new SystemPoliciesAclRequest object
@@ -14816,14 +12355,15 @@ type SystemPoliciesAclRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemPoliciesAclRequestWithDefaults() *SystemPoliciesAclRequest {
 	this := SystemPoliciesAclRequest{}
+
 	return &this
 }
 
 func (o SystemPoliciesAclRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Policy != nil {
-		toSerialize["policy"] = o.Policy
-	}
+
+	toSerialize["policy"] = o.Policy
+
 	return json.Marshal(toSerialize)
 }
 
@@ -14840,7 +12380,7 @@ API version: 1.12.0
 // SystemPoliciesPasswordRequest struct for SystemPoliciesPasswordRequest
 type SystemPoliciesPasswordRequest struct {
 	// The password policy
-	Policy *string `json:"policy,omitempty"`
+	Policy string `json:"policy"`
 }
 
 // NewSystemPoliciesPasswordRequestWithDefaults instantiates a new SystemPoliciesPasswordRequest object
@@ -14848,14 +12388,15 @@ type SystemPoliciesPasswordRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemPoliciesPasswordRequestWithDefaults() *SystemPoliciesPasswordRequest {
 	this := SystemPoliciesPasswordRequest{}
+
 	return &this
 }
 
 func (o SystemPoliciesPasswordRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Policy != nil {
-		toSerialize["policy"] = o.Policy
-	}
+
+	toSerialize["policy"] = o.Policy
+
 	return json.Marshal(toSerialize)
 }
 
@@ -14872,10 +12413,10 @@ API version: 1.12.0
 // SystemPolicyRequest struct for SystemPolicyRequest
 type SystemPolicyRequest struct {
 	// The rules of the policy.
-	Policy *string `json:"policy,omitempty"`
+	Policy string `json:"policy"`
 	// The rules of the policy.
 	// Deprecated
-	Rules *string `json:"rules,omitempty"`
+	Rules string `json:"rules"`
 }
 
 // NewSystemPolicyRequestWithDefaults instantiates a new SystemPolicyRequest object
@@ -14883,17 +12424,16 @@ type SystemPolicyRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemPolicyRequestWithDefaults() *SystemPolicyRequest {
 	this := SystemPolicyRequest{}
+
 	return &this
 }
 
 func (o SystemPolicyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Policy != nil {
-		toSerialize["policy"] = o.Policy
-	}
-	if o.Rules != nil {
-		toSerialize["rules"] = o.Rules
-	}
+
+	toSerialize["policy"] = o.Policy
+	toSerialize["rules"] = o.Rules
+
 	return json.Marshal(toSerialize)
 }
 
@@ -14910,11 +12450,11 @@ API version: 1.12.0
 // SystemQuotasConfigRequest struct for SystemQuotasConfigRequest
 type SystemQuotasConfigRequest struct {
 	// If set, starts audit logging of requests that get rejected due to rate limit quota rule violations.
-	EnableRateLimitAuditLogging *bool `json:"enable_rate_limit_audit_logging,omitempty"`
+	EnableRateLimitAuditLogging bool `json:"enable_rate_limit_audit_logging"`
 	// If set, additional rate limit quota HTTP headers will be added to responses.
-	EnableRateLimitResponseHeaders *bool `json:"enable_rate_limit_response_headers,omitempty"`
+	EnableRateLimitResponseHeaders bool `json:"enable_rate_limit_response_headers"`
 	// Specifies the list of exempt paths from all rate limit quotas. If empty no paths will be exempt.
-	RateLimitExemptPaths []string `json:"rate_limit_exempt_paths,omitempty"`
+	RateLimitExemptPaths []string `json:"rate_limit_exempt_paths"`
 }
 
 // NewSystemQuotasConfigRequestWithDefaults instantiates a new SystemQuotasConfigRequest object
@@ -14922,20 +12462,17 @@ type SystemQuotasConfigRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemQuotasConfigRequestWithDefaults() *SystemQuotasConfigRequest {
 	this := SystemQuotasConfigRequest{}
+
 	return &this
 }
 
 func (o SystemQuotasConfigRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.EnableRateLimitAuditLogging != nil {
-		toSerialize["enable_rate_limit_audit_logging"] = o.EnableRateLimitAuditLogging
-	}
-	if o.EnableRateLimitResponseHeaders != nil {
-		toSerialize["enable_rate_limit_response_headers"] = o.EnableRateLimitResponseHeaders
-	}
-	if o.RateLimitExemptPaths != nil {
-		toSerialize["rate_limit_exempt_paths"] = o.RateLimitExemptPaths
-	}
+
+	toSerialize["enable_rate_limit_audit_logging"] = o.EnableRateLimitAuditLogging
+	toSerialize["enable_rate_limit_response_headers"] = o.EnableRateLimitResponseHeaders
+	toSerialize["rate_limit_exempt_paths"] = o.RateLimitExemptPaths
+
 	return json.Marshal(toSerialize)
 }
 
@@ -14952,15 +12489,15 @@ API version: 1.12.0
 // SystemQuotasRateLimitRequest struct for SystemQuotasRateLimitRequest
 type SystemQuotasRateLimitRequest struct {
 	// If set, when a client reaches a rate limit threshold, the client will be prohibited from any further requests until after the 'block_interval' has elapsed.
-	BlockInterval *int32 `json:"block_interval,omitempty"`
+	BlockInterval int32 `json:"block_interval"`
 	// The duration to enforce rate limiting for (default '1s').
-	Interval *int32 `json:"interval,omitempty"`
+	Interval int32 `json:"interval"`
 	// Path of the mount or namespace to apply the quota. A blank path configures a global quota. For example namespace1/ adds a quota to a full namespace, namespace1/auth/userpass adds a quota to userpass in namespace1.
-	Path *string `json:"path,omitempty"`
+	Path string `json:"path"`
 	// The maximum number of requests in a given interval to be allowed by the quota rule. The 'rate' must be positive.
-	Rate *float32 `json:"rate,omitempty"`
+	Rate float32 `json:"rate"`
 	// Type of the quota rule.
-	Type *string `json:"type,omitempty"`
+	Type string `json:"type"`
 }
 
 // NewSystemQuotasRateLimitRequestWithDefaults instantiates a new SystemQuotasRateLimitRequest object
@@ -14968,26 +12505,19 @@ type SystemQuotasRateLimitRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemQuotasRateLimitRequestWithDefaults() *SystemQuotasRateLimitRequest {
 	this := SystemQuotasRateLimitRequest{}
+
 	return &this
 }
 
 func (o SystemQuotasRateLimitRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.BlockInterval != nil {
-		toSerialize["block_interval"] = o.BlockInterval
-	}
-	if o.Interval != nil {
-		toSerialize["interval"] = o.Interval
-	}
-	if o.Path != nil {
-		toSerialize["path"] = o.Path
-	}
-	if o.Rate != nil {
-		toSerialize["rate"] = o.Rate
-	}
-	if o.Type != nil {
-		toSerialize["type"] = o.Type
-	}
+
+	toSerialize["block_interval"] = o.BlockInterval
+	toSerialize["interval"] = o.Interval
+	toSerialize["path"] = o.Path
+	toSerialize["rate"] = o.Rate
+	toSerialize["type"] = o.Type
+
 	return json.Marshal(toSerialize)
 }
 
@@ -15003,10 +12533,10 @@ API version: 1.12.0
 
 // SystemRawRequest struct for SystemRawRequest
 type SystemRawRequest struct {
-	Compressed      *bool   `json:"compressed,omitempty"`
-	CompressionType *string `json:"compression_type,omitempty"`
-	Encoding        *string `json:"encoding,omitempty"`
-	Value           *string `json:"value,omitempty"`
+	Compressed      bool   `json:"compressed"`
+	CompressionType string `json:"compression_type"`
+	Encoding        string `json:"encoding"`
+	Value           string `json:"value"`
 }
 
 // NewSystemRawRequestWithDefaults instantiates a new SystemRawRequest object
@@ -15014,23 +12544,18 @@ type SystemRawRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemRawRequestWithDefaults() *SystemRawRequest {
 	this := SystemRawRequest{}
+
 	return &this
 }
 
 func (o SystemRawRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Compressed != nil {
-		toSerialize["compressed"] = o.Compressed
-	}
-	if o.CompressionType != nil {
-		toSerialize["compression_type"] = o.CompressionType
-	}
-	if o.Encoding != nil {
-		toSerialize["encoding"] = o.Encoding
-	}
-	if o.Value != nil {
-		toSerialize["value"] = o.Value
-	}
+
+	toSerialize["compressed"] = o.Compressed
+	toSerialize["compression_type"] = o.CompressionType
+	toSerialize["encoding"] = o.Encoding
+	toSerialize["value"] = o.Value
+
 	return json.Marshal(toSerialize)
 }
 
@@ -15047,15 +12572,15 @@ API version: 1.12.0
 // SystemRekeyInitRequest struct for SystemRekeyInitRequest
 type SystemRekeyInitRequest struct {
 	// Specifies if using PGP-encrypted keys, whether Vault should also store a plaintext backup of the PGP-encrypted keys.
-	Backup *bool `json:"backup,omitempty"`
+	Backup bool `json:"backup"`
 	// Specifies an array of PGP public keys used to encrypt the output unseal keys. Ordering is preserved. The keys must be base64-encoded from their original binary representation. The size of this array must be the same as secret_shares.
-	PgpKeys []string `json:"pgp_keys,omitempty"`
+	PgpKeys []string `json:"pgp_keys"`
 	// Turns on verification functionality
-	RequireVerification *bool `json:"require_verification,omitempty"`
+	RequireVerification bool `json:"require_verification"`
 	// Specifies the number of shares to split the unseal key into.
-	SecretShares *int32 `json:"secret_shares,omitempty"`
+	SecretShares int32 `json:"secret_shares"`
 	// Specifies the number of shares required to reconstruct the unseal key. This must be less than or equal secret_shares. If using Vault HSM with auto-unsealing, this value must be the same as secret_shares.
-	SecretThreshold *int32 `json:"secret_threshold,omitempty"`
+	SecretThreshold int32 `json:"secret_threshold"`
 }
 
 // NewSystemRekeyInitRequestWithDefaults instantiates a new SystemRekeyInitRequest object
@@ -15063,26 +12588,19 @@ type SystemRekeyInitRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemRekeyInitRequestWithDefaults() *SystemRekeyInitRequest {
 	this := SystemRekeyInitRequest{}
+
 	return &this
 }
 
 func (o SystemRekeyInitRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Backup != nil {
-		toSerialize["backup"] = o.Backup
-	}
-	if o.PgpKeys != nil {
-		toSerialize["pgp_keys"] = o.PgpKeys
-	}
-	if o.RequireVerification != nil {
-		toSerialize["require_verification"] = o.RequireVerification
-	}
-	if o.SecretShares != nil {
-		toSerialize["secret_shares"] = o.SecretShares
-	}
-	if o.SecretThreshold != nil {
-		toSerialize["secret_threshold"] = o.SecretThreshold
-	}
+
+	toSerialize["backup"] = o.Backup
+	toSerialize["pgp_keys"] = o.PgpKeys
+	toSerialize["require_verification"] = o.RequireVerification
+	toSerialize["secret_shares"] = o.SecretShares
+	toSerialize["secret_threshold"] = o.SecretThreshold
+
 	return json.Marshal(toSerialize)
 }
 
@@ -15099,9 +12617,9 @@ API version: 1.12.0
 // SystemRekeyUpdateRequest struct for SystemRekeyUpdateRequest
 type SystemRekeyUpdateRequest struct {
 	// Specifies a single unseal key share.
-	Key *string `json:"key,omitempty"`
+	Key string `json:"key"`
 	// Specifies the nonce of the rekey attempt.
-	Nonce *string `json:"nonce,omitempty"`
+	Nonce string `json:"nonce"`
 }
 
 // NewSystemRekeyUpdateRequestWithDefaults instantiates a new SystemRekeyUpdateRequest object
@@ -15109,17 +12627,16 @@ type SystemRekeyUpdateRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemRekeyUpdateRequestWithDefaults() *SystemRekeyUpdateRequest {
 	this := SystemRekeyUpdateRequest{}
+
 	return &this
 }
 
 func (o SystemRekeyUpdateRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Key != nil {
-		toSerialize["key"] = o.Key
-	}
-	if o.Nonce != nil {
-		toSerialize["nonce"] = o.Nonce
-	}
+
+	toSerialize["key"] = o.Key
+	toSerialize["nonce"] = o.Nonce
+
 	return json.Marshal(toSerialize)
 }
 
@@ -15136,9 +12653,9 @@ API version: 1.12.0
 // SystemRekeyVerifyRequest struct for SystemRekeyVerifyRequest
 type SystemRekeyVerifyRequest struct {
 	// Specifies a single unseal share key from the new set of shares.
-	Key *string `json:"key,omitempty"`
+	Key string `json:"key"`
 	// Specifies the nonce of the rekey verification operation.
-	Nonce *string `json:"nonce,omitempty"`
+	Nonce string `json:"nonce"`
 }
 
 // NewSystemRekeyVerifyRequestWithDefaults instantiates a new SystemRekeyVerifyRequest object
@@ -15146,17 +12663,16 @@ type SystemRekeyVerifyRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemRekeyVerifyRequestWithDefaults() *SystemRekeyVerifyRequest {
 	this := SystemRekeyVerifyRequest{}
+
 	return &this
 }
 
 func (o SystemRekeyVerifyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Key != nil {
-		toSerialize["key"] = o.Key
-	}
-	if o.Nonce != nil {
-		toSerialize["nonce"] = o.Nonce
-	}
+
+	toSerialize["key"] = o.Key
+	toSerialize["nonce"] = o.Nonce
+
 	return json.Marshal(toSerialize)
 }
 
@@ -15173,9 +12689,9 @@ API version: 1.12.0
 // SystemRemountRequest struct for SystemRemountRequest
 type SystemRemountRequest struct {
 	// The previous mount point.
-	From *string `json:"from,omitempty"`
+	From string `json:"from"`
 	// The new mount point.
-	To *string `json:"to,omitempty"`
+	To string `json:"to"`
 }
 
 // NewSystemRemountRequestWithDefaults instantiates a new SystemRemountRequest object
@@ -15183,17 +12699,16 @@ type SystemRemountRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemRemountRequestWithDefaults() *SystemRemountRequest {
 	this := SystemRemountRequest{}
+
 	return &this
 }
 
 func (o SystemRemountRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.From != nil {
-		toSerialize["from"] = o.From
-	}
-	if o.To != nil {
-		toSerialize["to"] = o.To
-	}
+
+	toSerialize["from"] = o.From
+	toSerialize["to"] = o.To
+
 	return json.Marshal(toSerialize)
 }
 
@@ -15210,9 +12725,9 @@ API version: 1.12.0
 // SystemRenewLeaseRequest struct for SystemRenewLeaseRequest
 type SystemRenewLeaseRequest struct {
 	// The desired increment in seconds to the lease
-	Increment *int32 `json:"increment,omitempty"`
+	Increment int32 `json:"increment"`
 	// The lease identifier to renew. This is included with a lease.
-	LeaseId *string `json:"lease_id,omitempty"`
+	LeaseId string `json:"lease_id"`
 }
 
 // NewSystemRenewLeaseRequestWithDefaults instantiates a new SystemRenewLeaseRequest object
@@ -15220,17 +12735,16 @@ type SystemRenewLeaseRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemRenewLeaseRequestWithDefaults() *SystemRenewLeaseRequest {
 	this := SystemRenewLeaseRequest{}
+
 	return &this
 }
 
 func (o SystemRenewLeaseRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Increment != nil {
-		toSerialize["increment"] = o.Increment
-	}
-	if o.LeaseId != nil {
-		toSerialize["lease_id"] = o.LeaseId
-	}
+
+	toSerialize["increment"] = o.Increment
+	toSerialize["lease_id"] = o.LeaseId
+
 	return json.Marshal(toSerialize)
 }
 
@@ -15247,11 +12761,11 @@ API version: 1.12.0
 // SystemRenewRequest struct for SystemRenewRequest
 type SystemRenewRequest struct {
 	// The desired increment in seconds to the lease
-	Increment *int32 `json:"increment,omitempty"`
+	Increment int32 `json:"increment"`
 	// The lease identifier to renew. This is included with a lease.
-	LeaseId *string `json:"lease_id,omitempty"`
+	LeaseId string `json:"lease_id"`
 	// The lease identifier to renew. This is included with a lease.
-	UrlLeaseId *string `json:"url_lease_id,omitempty"`
+	UrlLeaseId string `json:"url_lease_id"`
 }
 
 // NewSystemRenewRequestWithDefaults instantiates a new SystemRenewRequest object
@@ -15259,20 +12773,17 @@ type SystemRenewRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemRenewRequestWithDefaults() *SystemRenewRequest {
 	this := SystemRenewRequest{}
+
 	return &this
 }
 
 func (o SystemRenewRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Increment != nil {
-		toSerialize["increment"] = o.Increment
-	}
-	if o.LeaseId != nil {
-		toSerialize["lease_id"] = o.LeaseId
-	}
-	if o.UrlLeaseId != nil {
-		toSerialize["url_lease_id"] = o.UrlLeaseId
-	}
+
+	toSerialize["increment"] = o.Increment
+	toSerialize["lease_id"] = o.LeaseId
+	toSerialize["url_lease_id"] = o.UrlLeaseId
+
 	return json.Marshal(toSerialize)
 }
 
@@ -15289,9 +12800,9 @@ API version: 1.12.0
 // SystemRevokeLeaseRequest struct for SystemRevokeLeaseRequest
 type SystemRevokeLeaseRequest struct {
 	// The lease identifier to renew. This is included with a lease.
-	LeaseId *string `json:"lease_id,omitempty"`
+	LeaseId string `json:"lease_id"`
 	// Whether or not to perform the revocation synchronously
-	Sync *bool `json:"sync,omitempty"`
+	Sync bool `json:"sync"`
 }
 
 // NewSystemRevokeLeaseRequestWithDefaults instantiates a new SystemRevokeLeaseRequest object
@@ -15299,19 +12810,18 @@ type SystemRevokeLeaseRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemRevokeLeaseRequestWithDefaults() *SystemRevokeLeaseRequest {
 	this := SystemRevokeLeaseRequest{}
-	var sync bool = true
-	this.Sync = &sync
+
+	this.Sync = true
+
 	return &this
 }
 
 func (o SystemRevokeLeaseRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.LeaseId != nil {
-		toSerialize["lease_id"] = o.LeaseId
-	}
-	if o.Sync != nil {
-		toSerialize["sync"] = o.Sync
-	}
+
+	toSerialize["lease_id"] = o.LeaseId
+	toSerialize["sync"] = o.Sync
+
 	return json.Marshal(toSerialize)
 }
 
@@ -15328,7 +12838,7 @@ API version: 1.12.0
 // SystemRevokePrefixRequest struct for SystemRevokePrefixRequest
 type SystemRevokePrefixRequest struct {
 	// Whether or not to perform the revocation synchronously
-	Sync *bool `json:"sync,omitempty"`
+	Sync bool `json:"sync"`
 }
 
 // NewSystemRevokePrefixRequestWithDefaults instantiates a new SystemRevokePrefixRequest object
@@ -15336,16 +12846,17 @@ type SystemRevokePrefixRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemRevokePrefixRequestWithDefaults() *SystemRevokePrefixRequest {
 	this := SystemRevokePrefixRequest{}
-	var sync bool = true
-	this.Sync = &sync
+
+	this.Sync = true
+
 	return &this
 }
 
 func (o SystemRevokePrefixRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Sync != nil {
-		toSerialize["sync"] = o.Sync
-	}
+
+	toSerialize["sync"] = o.Sync
+
 	return json.Marshal(toSerialize)
 }
 
@@ -15362,11 +12873,11 @@ API version: 1.12.0
 // SystemRevokeRequest struct for SystemRevokeRequest
 type SystemRevokeRequest struct {
 	// The lease identifier to renew. This is included with a lease.
-	LeaseId *string `json:"lease_id,omitempty"`
+	LeaseId string `json:"lease_id"`
 	// Whether or not to perform the revocation synchronously
-	Sync *bool `json:"sync,omitempty"`
+	Sync bool `json:"sync"`
 	// The lease identifier to renew. This is included with a lease.
-	UrlLeaseId *string `json:"url_lease_id,omitempty"`
+	UrlLeaseId string `json:"url_lease_id"`
 }
 
 // NewSystemRevokeRequestWithDefaults instantiates a new SystemRevokeRequest object
@@ -15374,22 +12885,19 @@ type SystemRevokeRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemRevokeRequestWithDefaults() *SystemRevokeRequest {
 	this := SystemRevokeRequest{}
-	var sync bool = true
-	this.Sync = &sync
+
+	this.Sync = true
+
 	return &this
 }
 
 func (o SystemRevokeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.LeaseId != nil {
-		toSerialize["lease_id"] = o.LeaseId
-	}
-	if o.Sync != nil {
-		toSerialize["sync"] = o.Sync
-	}
-	if o.UrlLeaseId != nil {
-		toSerialize["url_lease_id"] = o.UrlLeaseId
-	}
+
+	toSerialize["lease_id"] = o.LeaseId
+	toSerialize["sync"] = o.Sync
+	toSerialize["url_lease_id"] = o.UrlLeaseId
+
 	return json.Marshal(toSerialize)
 }
 
@@ -15406,11 +12914,11 @@ API version: 1.12.0
 // SystemRotateConfigRequest struct for SystemRotateConfigRequest
 type SystemRotateConfigRequest struct {
 	// Whether automatic rotation is enabled.
-	Enabled *bool `json:"enabled,omitempty"`
+	Enabled bool `json:"enabled"`
 	// How long after installation of an active key term that the key will be automatically rotated.
-	Interval *int32 `json:"interval,omitempty"`
+	Interval int32 `json:"interval"`
 	// The number of encryption operations performed before the barrier key is automatically rotated.
-	MaxOperations *int64 `json:"max_operations,omitempty"`
+	MaxOperations int64 `json:"max_operations"`
 }
 
 // NewSystemRotateConfigRequestWithDefaults instantiates a new SystemRotateConfigRequest object
@@ -15418,20 +12926,17 @@ type SystemRotateConfigRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemRotateConfigRequestWithDefaults() *SystemRotateConfigRequest {
 	this := SystemRotateConfigRequest{}
+
 	return &this
 }
 
 func (o SystemRotateConfigRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Enabled != nil {
-		toSerialize["enabled"] = o.Enabled
-	}
-	if o.Interval != nil {
-		toSerialize["interval"] = o.Interval
-	}
-	if o.MaxOperations != nil {
-		toSerialize["max_operations"] = o.MaxOperations
-	}
+
+	toSerialize["enabled"] = o.Enabled
+	toSerialize["interval"] = o.Interval
+	toSerialize["max_operations"] = o.MaxOperations
+
 	return json.Marshal(toSerialize)
 }
 
@@ -15448,13 +12953,13 @@ API version: 1.12.0
 // SystemToolsHashRequest struct for SystemToolsHashRequest
 type SystemToolsHashRequest struct {
 	// Algorithm to use (POST body parameter). Valid values are: * sha2-224 * sha2-256 * sha2-384 * sha2-512 Defaults to \"sha2-256\".
-	Algorithm *string `json:"algorithm,omitempty"`
+	Algorithm string `json:"algorithm"`
 	// Encoding format to use. Can be \"hex\" or \"base64\". Defaults to \"hex\".
-	Format *string `json:"format,omitempty"`
+	Format string `json:"format"`
 	// The base64-encoded input data
-	Input *string `json:"input,omitempty"`
+	Input string `json:"input"`
 	// Algorithm to use (POST URL parameter)
-	Urlalgorithm *string `json:"urlalgorithm,omitempty"`
+	Urlalgorithm string `json:"urlalgorithm"`
 }
 
 // NewSystemToolsHashRequestWithDefaults instantiates a new SystemToolsHashRequest object
@@ -15462,27 +12967,21 @@ type SystemToolsHashRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemToolsHashRequestWithDefaults() *SystemToolsHashRequest {
 	this := SystemToolsHashRequest{}
-	var algorithm string = "sha2-256"
-	this.Algorithm = &algorithm
-	var format string = "hex"
-	this.Format = &format
+
+	this.Algorithm = "sha2-256"
+	this.Format = "hex"
+
 	return &this
 }
 
 func (o SystemToolsHashRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Algorithm != nil {
-		toSerialize["algorithm"] = o.Algorithm
-	}
-	if o.Format != nil {
-		toSerialize["format"] = o.Format
-	}
-	if o.Input != nil {
-		toSerialize["input"] = o.Input
-	}
-	if o.Urlalgorithm != nil {
-		toSerialize["urlalgorithm"] = o.Urlalgorithm
-	}
+
+	toSerialize["algorithm"] = o.Algorithm
+	toSerialize["format"] = o.Format
+	toSerialize["input"] = o.Input
+	toSerialize["urlalgorithm"] = o.Urlalgorithm
+
 	return json.Marshal(toSerialize)
 }
 
@@ -15499,13 +12998,13 @@ API version: 1.12.0
 // SystemToolsRandomRequest struct for SystemToolsRandomRequest
 type SystemToolsRandomRequest struct {
 	// The number of bytes to generate (POST body parameter). Defaults to 32 (256 bits).
-	Bytes *int32 `json:"bytes,omitempty"`
+	Bytes int32 `json:"bytes"`
 	// Encoding format to use. Can be \"hex\" or \"base64\". Defaults to \"base64\".
-	Format *string `json:"format,omitempty"`
+	Format string `json:"format"`
 	// Which system to source random data from, ether \"platform\", \"seal\", or \"all\".
-	Source *string `json:"source,omitempty"`
+	Source string `json:"source"`
 	// The number of bytes to generate (POST URL parameter)
-	Urlbytes *string `json:"urlbytes,omitempty"`
+	Urlbytes string `json:"urlbytes"`
 }
 
 // NewSystemToolsRandomRequestWithDefaults instantiates a new SystemToolsRandomRequest object
@@ -15513,29 +13012,22 @@ type SystemToolsRandomRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemToolsRandomRequestWithDefaults() *SystemToolsRandomRequest {
 	this := SystemToolsRandomRequest{}
-	var bytes int32 = 32
-	this.Bytes = &bytes
-	var format string = "base64"
-	this.Format = &format
-	var source string = "platform"
-	this.Source = &source
+
+	this.Bytes = 32
+	this.Format = "base64"
+	this.Source = "platform"
+
 	return &this
 }
 
 func (o SystemToolsRandomRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Bytes != nil {
-		toSerialize["bytes"] = o.Bytes
-	}
-	if o.Format != nil {
-		toSerialize["format"] = o.Format
-	}
-	if o.Source != nil {
-		toSerialize["source"] = o.Source
-	}
-	if o.Urlbytes != nil {
-		toSerialize["urlbytes"] = o.Urlbytes
-	}
+
+	toSerialize["bytes"] = o.Bytes
+	toSerialize["format"] = o.Format
+	toSerialize["source"] = o.Source
+	toSerialize["urlbytes"] = o.Urlbytes
+
 	return json.Marshal(toSerialize)
 }
 
@@ -15552,9 +13044,9 @@ API version: 1.12.0
 // SystemUnsealRequest struct for SystemUnsealRequest
 type SystemUnsealRequest struct {
 	// Specifies a single unseal key share. This is required unless reset is true.
-	Key *string `json:"key,omitempty"`
+	Key string `json:"key"`
 	// Specifies if previously-provided unseal keys are discarded and the unseal process is reset.
-	Reset *bool `json:"reset,omitempty"`
+	Reset bool `json:"reset"`
 }
 
 // NewSystemUnsealRequestWithDefaults instantiates a new SystemUnsealRequest object
@@ -15562,17 +13054,16 @@ type SystemUnsealRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemUnsealRequestWithDefaults() *SystemUnsealRequest {
 	this := SystemUnsealRequest{}
+
 	return &this
 }
 
 func (o SystemUnsealRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Key != nil {
-		toSerialize["key"] = o.Key
-	}
-	if o.Reset != nil {
-		toSerialize["reset"] = o.Reset
-	}
+
+	toSerialize["key"] = o.Key
+	toSerialize["reset"] = o.Reset
+
 	return json.Marshal(toSerialize)
 }
 
@@ -15588,7 +13079,7 @@ API version: 1.12.0
 
 // SystemWrappingLookupRequest struct for SystemWrappingLookupRequest
 type SystemWrappingLookupRequest struct {
-	Token *string `json:"token,omitempty"`
+	Token string `json:"token"`
 }
 
 // NewSystemWrappingLookupRequestWithDefaults instantiates a new SystemWrappingLookupRequest object
@@ -15596,14 +13087,15 @@ type SystemWrappingLookupRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemWrappingLookupRequestWithDefaults() *SystemWrappingLookupRequest {
 	this := SystemWrappingLookupRequest{}
+
 	return &this
 }
 
 func (o SystemWrappingLookupRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Token != nil {
-		toSerialize["token"] = o.Token
-	}
+
+	toSerialize["token"] = o.Token
+
 	return json.Marshal(toSerialize)
 }
 
@@ -15619,7 +13111,7 @@ API version: 1.12.0
 
 // SystemWrappingRewrapRequest struct for SystemWrappingRewrapRequest
 type SystemWrappingRewrapRequest struct {
-	Token *string `json:"token,omitempty"`
+	Token string `json:"token"`
 }
 
 // NewSystemWrappingRewrapRequestWithDefaults instantiates a new SystemWrappingRewrapRequest object
@@ -15627,14 +13119,15 @@ type SystemWrappingRewrapRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemWrappingRewrapRequestWithDefaults() *SystemWrappingRewrapRequest {
 	this := SystemWrappingRewrapRequest{}
+
 	return &this
 }
 
 func (o SystemWrappingRewrapRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Token != nil {
-		toSerialize["token"] = o.Token
-	}
+
+	toSerialize["token"] = o.Token
+
 	return json.Marshal(toSerialize)
 }
 
@@ -15650,7 +13143,7 @@ API version: 1.12.0
 
 // SystemWrappingUnwrapRequest struct for SystemWrappingUnwrapRequest
 type SystemWrappingUnwrapRequest struct {
-	Token *string `json:"token,omitempty"`
+	Token string `json:"token"`
 }
 
 // NewSystemWrappingUnwrapRequestWithDefaults instantiates a new SystemWrappingUnwrapRequest object
@@ -15658,14 +13151,15 @@ type SystemWrappingUnwrapRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewSystemWrappingUnwrapRequestWithDefaults() *SystemWrappingUnwrapRequest {
 	this := SystemWrappingUnwrapRequest{}
+
 	return &this
 }
 
 func (o SystemWrappingUnwrapRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Token != nil {
-		toSerialize["token"] = o.Token
-	}
+
+	toSerialize["token"] = o.Token
+
 	return json.Marshal(toSerialize)
 }
 
@@ -15682,9 +13176,9 @@ API version: 1.12.0
 // TerraformConfigRequest struct for TerraformConfigRequest
 type TerraformConfigRequest struct {
 	// The address to access Terraform Cloud or Enterprise. Default is \"https://app.terraform.io\".
-	Address *string `json:"address,omitempty"`
+	Address string `json:"address"`
 	// The base path for the Terraform Cloud or Enterprise API. Default is \"/api/v2/\".
-	BasePath *string `json:"base_path,omitempty"`
+	BasePath string `json:"base_path"`
 	// The token to access Terraform Cloud
 	Token string `json:"token"`
 }
@@ -15694,24 +13188,20 @@ type TerraformConfigRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTerraformConfigRequestWithDefaults() *TerraformConfigRequest {
 	this := TerraformConfigRequest{}
-	var address string = "https://app.terraform.io"
-	this.Address = &address
-	var basePath string = "/api/v2/"
-	this.BasePath = &basePath
+
+	this.Address = "https://app.terraform.io"
+	this.BasePath = "/api/v2/"
+
 	return &this
 }
 
 func (o TerraformConfigRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Address != nil {
-		toSerialize["address"] = o.Address
-	}
-	if o.BasePath != nil {
-		toSerialize["base_path"] = o.BasePath
-	}
-	if true {
-		toSerialize["token"] = o.Token
-	}
+
+	toSerialize["address"] = o.Address
+	toSerialize["base_path"] = o.BasePath
+	toSerialize["token"] = o.Token
+
 	return json.Marshal(toSerialize)
 }
 
@@ -15728,15 +13218,15 @@ API version: 1.12.0
 // TerraformRoleRequest struct for TerraformRoleRequest
 type TerraformRoleRequest struct {
 	// Maximum time for role. If not set or set to 0, will use system default.
-	MaxTtl *int32 `json:"max_ttl,omitempty"`
+	MaxTtl int32 `json:"max_ttl"`
 	// Name of the Terraform Cloud or Enterprise organization
-	Organization *string `json:"organization,omitempty"`
+	Organization string `json:"organization"`
 	// ID of the Terraform Cloud or Enterprise team under organization (e.g., settings/teams/team-xxxxxxxxxxxxx)
-	TeamId *string `json:"team_id,omitempty"`
+	TeamId string `json:"team_id"`
 	// Default lease for generated credentials. If not set or set to 0, will use system default.
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 	// ID of the Terraform Cloud or Enterprise user (e.g., user-xxxxxxxxxxxxxxxx)
-	UserId *string `json:"user_id,omitempty"`
+	UserId string `json:"user_id"`
 }
 
 // NewTerraformRoleRequestWithDefaults instantiates a new TerraformRoleRequest object
@@ -15744,26 +13234,19 @@ type TerraformRoleRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTerraformRoleRequestWithDefaults() *TerraformRoleRequest {
 	this := TerraformRoleRequest{}
+
 	return &this
 }
 
 func (o TerraformRoleRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.MaxTtl != nil {
-		toSerialize["max_ttl"] = o.MaxTtl
-	}
-	if o.Organization != nil {
-		toSerialize["organization"] = o.Organization
-	}
-	if o.TeamId != nil {
-		toSerialize["team_id"] = o.TeamId
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
-	if o.UserId != nil {
-		toSerialize["user_id"] = o.UserId
-	}
+
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["organization"] = o.Organization
+	toSerialize["team_id"] = o.TeamId
+	toSerialize["ttl"] = o.Ttl
+	toSerialize["user_id"] = o.UserId
+
 	return json.Marshal(toSerialize)
 }
 
@@ -15780,7 +13263,7 @@ API version: 1.12.0
 // TokenLookupAccessorRequest struct for TokenLookupAccessorRequest
 type TokenLookupAccessorRequest struct {
 	// Accessor of the token to look up (request body)
-	Accessor *string `json:"accessor,omitempty"`
+	Accessor string `json:"accessor"`
 }
 
 // NewTokenLookupAccessorRequestWithDefaults instantiates a new TokenLookupAccessorRequest object
@@ -15788,14 +13271,15 @@ type TokenLookupAccessorRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTokenLookupAccessorRequestWithDefaults() *TokenLookupAccessorRequest {
 	this := TokenLookupAccessorRequest{}
+
 	return &this
 }
 
 func (o TokenLookupAccessorRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Accessor != nil {
-		toSerialize["accessor"] = o.Accessor
-	}
+
+	toSerialize["accessor"] = o.Accessor
+
 	return json.Marshal(toSerialize)
 }
 
@@ -15812,7 +13296,7 @@ API version: 1.12.0
 // TokenLookupRequest struct for TokenLookupRequest
 type TokenLookupRequest struct {
 	// Token to lookup (POST request body)
-	Token *string `json:"token,omitempty"`
+	Token string `json:"token"`
 }
 
 // NewTokenLookupRequestWithDefaults instantiates a new TokenLookupRequest object
@@ -15820,14 +13304,15 @@ type TokenLookupRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTokenLookupRequestWithDefaults() *TokenLookupRequest {
 	this := TokenLookupRequest{}
+
 	return &this
 }
 
 func (o TokenLookupRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Token != nil {
-		toSerialize["token"] = o.Token
-	}
+
+	toSerialize["token"] = o.Token
+
 	return json.Marshal(toSerialize)
 }
 
@@ -15844,7 +13329,7 @@ API version: 1.12.0
 // TokenLookupSelfRequest struct for TokenLookupSelfRequest
 type TokenLookupSelfRequest struct {
 	// Token to look up (unused, does not need to be set)
-	Token *string `json:"token,omitempty"`
+	Token string `json:"token"`
 }
 
 // NewTokenLookupSelfRequestWithDefaults instantiates a new TokenLookupSelfRequest object
@@ -15852,14 +13337,15 @@ type TokenLookupSelfRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTokenLookupSelfRequestWithDefaults() *TokenLookupSelfRequest {
 	this := TokenLookupSelfRequest{}
+
 	return &this
 }
 
 func (o TokenLookupSelfRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Token != nil {
-		toSerialize["token"] = o.Token
-	}
+
+	toSerialize["token"] = o.Token
+
 	return json.Marshal(toSerialize)
 }
 
@@ -15876,9 +13362,9 @@ API version: 1.12.0
 // TokenRenewAccessorRequest struct for TokenRenewAccessorRequest
 type TokenRenewAccessorRequest struct {
 	// Accessor of the token to renew (request body)
-	Accessor *string `json:"accessor,omitempty"`
+	Accessor string `json:"accessor"`
 	// The desired increment in seconds to the token expiration
-	Increment *int32 `json:"increment,omitempty"`
+	Increment int32 `json:"increment"`
 }
 
 // NewTokenRenewAccessorRequestWithDefaults instantiates a new TokenRenewAccessorRequest object
@@ -15886,19 +13372,18 @@ type TokenRenewAccessorRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTokenRenewAccessorRequestWithDefaults() *TokenRenewAccessorRequest {
 	this := TokenRenewAccessorRequest{}
-	var increment int32 = 0
-	this.Increment = &increment
+
+	this.Increment = 0
+
 	return &this
 }
 
 func (o TokenRenewAccessorRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Accessor != nil {
-		toSerialize["accessor"] = o.Accessor
-	}
-	if o.Increment != nil {
-		toSerialize["increment"] = o.Increment
-	}
+
+	toSerialize["accessor"] = o.Accessor
+	toSerialize["increment"] = o.Increment
+
 	return json.Marshal(toSerialize)
 }
 
@@ -15915,9 +13400,9 @@ API version: 1.12.0
 // TokenRenewRequest struct for TokenRenewRequest
 type TokenRenewRequest struct {
 	// The desired increment in seconds to the token expiration
-	Increment *int32 `json:"increment,omitempty"`
+	Increment int32 `json:"increment"`
 	// Token to renew (request body)
-	Token *string `json:"token,omitempty"`
+	Token string `json:"token"`
 }
 
 // NewTokenRenewRequestWithDefaults instantiates a new TokenRenewRequest object
@@ -15925,19 +13410,18 @@ type TokenRenewRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTokenRenewRequestWithDefaults() *TokenRenewRequest {
 	this := TokenRenewRequest{}
-	var increment int32 = 0
-	this.Increment = &increment
+
+	this.Increment = 0
+
 	return &this
 }
 
 func (o TokenRenewRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Increment != nil {
-		toSerialize["increment"] = o.Increment
-	}
-	if o.Token != nil {
-		toSerialize["token"] = o.Token
-	}
+
+	toSerialize["increment"] = o.Increment
+	toSerialize["token"] = o.Token
+
 	return json.Marshal(toSerialize)
 }
 
@@ -15954,9 +13438,9 @@ API version: 1.12.0
 // TokenRenewSelfRequest struct for TokenRenewSelfRequest
 type TokenRenewSelfRequest struct {
 	// The desired increment in seconds to the token expiration
-	Increment *int32 `json:"increment,omitempty"`
+	Increment int32 `json:"increment"`
 	// Token to renew (unused, does not need to be set)
-	Token *string `json:"token,omitempty"`
+	Token string `json:"token"`
 }
 
 // NewTokenRenewSelfRequestWithDefaults instantiates a new TokenRenewSelfRequest object
@@ -15964,19 +13448,18 @@ type TokenRenewSelfRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTokenRenewSelfRequestWithDefaults() *TokenRenewSelfRequest {
 	this := TokenRenewSelfRequest{}
-	var increment int32 = 0
-	this.Increment = &increment
+
+	this.Increment = 0
+
 	return &this
 }
 
 func (o TokenRenewSelfRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Increment != nil {
-		toSerialize["increment"] = o.Increment
-	}
-	if o.Token != nil {
-		toSerialize["token"] = o.Token
-	}
+
+	toSerialize["increment"] = o.Increment
+	toSerialize["token"] = o.Token
+
 	return json.Marshal(toSerialize)
 }
 
@@ -15993,7 +13476,7 @@ API version: 1.12.0
 // TokenRevokeAccessorRequest struct for TokenRevokeAccessorRequest
 type TokenRevokeAccessorRequest struct {
 	// Accessor of the token (request body)
-	Accessor *string `json:"accessor,omitempty"`
+	Accessor string `json:"accessor"`
 }
 
 // NewTokenRevokeAccessorRequestWithDefaults instantiates a new TokenRevokeAccessorRequest object
@@ -16001,14 +13484,15 @@ type TokenRevokeAccessorRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTokenRevokeAccessorRequestWithDefaults() *TokenRevokeAccessorRequest {
 	this := TokenRevokeAccessorRequest{}
+
 	return &this
 }
 
 func (o TokenRevokeAccessorRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Accessor != nil {
-		toSerialize["accessor"] = o.Accessor
-	}
+
+	toSerialize["accessor"] = o.Accessor
+
 	return json.Marshal(toSerialize)
 }
 
@@ -16025,7 +13509,7 @@ API version: 1.12.0
 // TokenRevokeOrphanRequest struct for TokenRevokeOrphanRequest
 type TokenRevokeOrphanRequest struct {
 	// Token to revoke (request body)
-	Token *string `json:"token,omitempty"`
+	Token string `json:"token"`
 }
 
 // NewTokenRevokeOrphanRequestWithDefaults instantiates a new TokenRevokeOrphanRequest object
@@ -16033,14 +13517,15 @@ type TokenRevokeOrphanRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTokenRevokeOrphanRequestWithDefaults() *TokenRevokeOrphanRequest {
 	this := TokenRevokeOrphanRequest{}
+
 	return &this
 }
 
 func (o TokenRevokeOrphanRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Token != nil {
-		toSerialize["token"] = o.Token
-	}
+
+	toSerialize["token"] = o.Token
+
 	return json.Marshal(toSerialize)
 }
 
@@ -16057,7 +13542,7 @@ API version: 1.12.0
 // TokenRevokeRequest struct for TokenRevokeRequest
 type TokenRevokeRequest struct {
 	// Token to revoke (request body)
-	Token *string `json:"token,omitempty"`
+	Token string `json:"token"`
 }
 
 // NewTokenRevokeRequestWithDefaults instantiates a new TokenRevokeRequest object
@@ -16065,14 +13550,15 @@ type TokenRevokeRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTokenRevokeRequestWithDefaults() *TokenRevokeRequest {
 	this := TokenRevokeRequest{}
+
 	return &this
 }
 
 func (o TokenRevokeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Token != nil {
-		toSerialize["token"] = o.Token
-	}
+
+	toSerialize["token"] = o.Token
+
 	return json.Marshal(toSerialize)
 }
 
@@ -16089,42 +13575,42 @@ API version: 1.12.0
 // TokenRolesRequest struct for TokenRolesRequest
 type TokenRolesRequest struct {
 	// String or JSON list of allowed entity aliases. If set, specifies the entity aliases which are allowed to be used during token generation. This field supports globbing.
-	AllowedEntityAliases []string `json:"allowed_entity_aliases,omitempty"`
+	AllowedEntityAliases []string `json:"allowed_entity_aliases"`
 	// If set, tokens can be created with any subset of the policies in this list, rather than the normal semantics of tokens being a subset of the calling token's policies. The parameter is a comma-delimited string of policy names.
-	AllowedPolicies []string `json:"allowed_policies,omitempty"`
+	AllowedPolicies []string `json:"allowed_policies"`
 	// If set, tokens can be created with any subset of glob matched policies in this list, rather than the normal semantics of tokens being a subset of the calling token's policies. The parameter is a comma-delimited string of policy name globs.
-	AllowedPoliciesGlob []string `json:"allowed_policies_glob,omitempty"`
+	AllowedPoliciesGlob []string `json:"allowed_policies_glob"`
 	// Use 'token_bound_cidrs' instead.
 	// Deprecated
-	BoundCidrs []string `json:"bound_cidrs,omitempty"`
+	BoundCidrs []string `json:"bound_cidrs"`
 	// If set, successful token creation via this role will require that no policies in the given list are requested. The parameter is a comma-delimited string of policy names.
-	DisallowedPolicies []string `json:"disallowed_policies,omitempty"`
+	DisallowedPolicies []string `json:"disallowed_policies"`
 	// If set, successful token creation via this role will require that no requested policies glob match any of policies in this list. The parameter is a comma-delimited string of policy name globs.
-	DisallowedPoliciesGlob []string `json:"disallowed_policies_glob,omitempty"`
+	DisallowedPoliciesGlob []string `json:"disallowed_policies_glob"`
 	// Use 'token_explicit_max_ttl' instead.
 	// Deprecated
-	ExplicitMaxTtl *int32 `json:"explicit_max_ttl,omitempty"`
+	ExplicitMaxTtl int32 `json:"explicit_max_ttl"`
 	// If true, tokens created via this role will be orphan tokens (have no parent)
-	Orphan *bool `json:"orphan,omitempty"`
+	Orphan bool `json:"orphan"`
 	// If set, tokens created via this role will contain the given suffix as a part of their path. This can be used to assist use of the 'revoke-prefix' endpoint later on. The given suffix must match the regular expression.\\w[\\w-.]+\\w
-	PathSuffix *string `json:"path_suffix,omitempty"`
+	PathSuffix string `json:"path_suffix"`
 	// Use 'token_period' instead.
 	// Deprecated
-	Period *int32 `json:"period,omitempty"`
+	Period int32 `json:"period"`
 	// Tokens created via this role will be renewable or not according to this value. Defaults to \"true\".
-	Renewable *bool `json:"renewable,omitempty"`
+	Renewable bool `json:"renewable"`
 	// Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
-	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
+	TokenBoundCidrs []string `json:"token_bound_cidrs"`
 	// If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
-	TokenExplicitMaxTtl *int32 `json:"token_explicit_max_ttl,omitempty"`
+	TokenExplicitMaxTtl int32 `json:"token_explicit_max_ttl"`
 	// If true, the 'default' policy will not automatically be added to generated tokens
-	TokenNoDefaultPolicy *bool `json:"token_no_default_policy,omitempty"`
+	TokenNoDefaultPolicy bool `json:"token_no_default_policy"`
 	// The maximum number of times a token may be used, a value of zero means unlimited
-	TokenNumUses *int32 `json:"token_num_uses,omitempty"`
+	TokenNumUses int32 `json:"token_num_uses"`
 	// If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \"24h\").
-	TokenPeriod *int32 `json:"token_period,omitempty"`
+	TokenPeriod int32 `json:"token_period"`
 	// The type of token to generate, service or batch
-	TokenType *string `json:"token_type,omitempty"`
+	TokenType string `json:"token_type"`
 }
 
 // NewTokenRolesRequestWithDefaults instantiates a new TokenRolesRequest object
@@ -16132,66 +13618,34 @@ type TokenRolesRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTokenRolesRequestWithDefaults() *TokenRolesRequest {
 	this := TokenRolesRequest{}
-	var renewable bool = true
-	this.Renewable = &renewable
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
+
+	this.Renewable = true
+	this.TokenType = "default-service"
+
 	return &this
 }
 
 func (o TokenRolesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AllowedEntityAliases != nil {
-		toSerialize["allowed_entity_aliases"] = o.AllowedEntityAliases
-	}
-	if o.AllowedPolicies != nil {
-		toSerialize["allowed_policies"] = o.AllowedPolicies
-	}
-	if o.AllowedPoliciesGlob != nil {
-		toSerialize["allowed_policies_glob"] = o.AllowedPoliciesGlob
-	}
-	if o.BoundCidrs != nil {
-		toSerialize["bound_cidrs"] = o.BoundCidrs
-	}
-	if o.DisallowedPolicies != nil {
-		toSerialize["disallowed_policies"] = o.DisallowedPolicies
-	}
-	if o.DisallowedPoliciesGlob != nil {
-		toSerialize["disallowed_policies_glob"] = o.DisallowedPoliciesGlob
-	}
-	if o.ExplicitMaxTtl != nil {
-		toSerialize["explicit_max_ttl"] = o.ExplicitMaxTtl
-	}
-	if o.Orphan != nil {
-		toSerialize["orphan"] = o.Orphan
-	}
-	if o.PathSuffix != nil {
-		toSerialize["path_suffix"] = o.PathSuffix
-	}
-	if o.Period != nil {
-		toSerialize["period"] = o.Period
-	}
-	if o.Renewable != nil {
-		toSerialize["renewable"] = o.Renewable
-	}
-	if o.TokenBoundCidrs != nil {
-		toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
-	}
-	if o.TokenExplicitMaxTtl != nil {
-		toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
-	}
-	if o.TokenNoDefaultPolicy != nil {
-		toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
-	}
-	if o.TokenNumUses != nil {
-		toSerialize["token_num_uses"] = o.TokenNumUses
-	}
-	if o.TokenPeriod != nil {
-		toSerialize["token_period"] = o.TokenPeriod
-	}
-	if o.TokenType != nil {
-		toSerialize["token_type"] = o.TokenType
-	}
+
+	toSerialize["allowed_entity_aliases"] = o.AllowedEntityAliases
+	toSerialize["allowed_policies"] = o.AllowedPolicies
+	toSerialize["allowed_policies_glob"] = o.AllowedPoliciesGlob
+	toSerialize["bound_cidrs"] = o.BoundCidrs
+	toSerialize["disallowed_policies"] = o.DisallowedPolicies
+	toSerialize["disallowed_policies_glob"] = o.DisallowedPoliciesGlob
+	toSerialize["explicit_max_ttl"] = o.ExplicitMaxTtl
+	toSerialize["orphan"] = o.Orphan
+	toSerialize["path_suffix"] = o.PathSuffix
+	toSerialize["period"] = o.Period
+	toSerialize["renewable"] = o.Renewable
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_type"] = o.TokenType
+
 	return json.Marshal(toSerialize)
 }
 
@@ -16208,7 +13662,7 @@ API version: 1.12.0
 // TotpCodeRequest struct for TotpCodeRequest
 type TotpCodeRequest struct {
 	// TOTP code to be validated.
-	Code *string `json:"code,omitempty"`
+	Code string `json:"code"`
 }
 
 // NewTotpCodeRequestWithDefaults instantiates a new TotpCodeRequest object
@@ -16216,14 +13670,15 @@ type TotpCodeRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTotpCodeRequestWithDefaults() *TotpCodeRequest {
 	this := TotpCodeRequest{}
+
 	return &this
 }
 
 func (o TotpCodeRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Code != nil {
-		toSerialize["code"] = o.Code
-	}
+
+	toSerialize["code"] = o.Code
+
 	return json.Marshal(toSerialize)
 }
 
@@ -16240,29 +13695,29 @@ API version: 1.12.0
 // TotpKeysRequest struct for TotpKeysRequest
 type TotpKeysRequest struct {
 	// The name of the account associated with the key. Required if generate is true.
-	AccountName *string `json:"account_name,omitempty"`
+	AccountName string `json:"account_name"`
 	// The hashing algorithm used to generate the TOTP token. Options include SHA1, SHA256 and SHA512.
-	Algorithm *string `json:"algorithm,omitempty"`
+	Algorithm string `json:"algorithm"`
 	// The number of digits in the generated TOTP token. This value can either be 6 or 8.
-	Digits *int32 `json:"digits,omitempty"`
+	Digits int32 `json:"digits"`
 	// Determines if a QR code and url are returned upon generating a key. Only used if generate is true.
-	Exported *bool `json:"exported,omitempty"`
+	Exported bool `json:"exported"`
 	// Determines if a key should be generated by Vault or if a key is being passed from another service.
-	Generate *bool `json:"generate,omitempty"`
+	Generate bool `json:"generate"`
 	// The name of the key's issuing organization. Required if generate is true.
-	Issuer *string `json:"issuer,omitempty"`
+	Issuer string `json:"issuer"`
 	// The shared master key used to generate a TOTP token. Only used if generate is false.
-	Key *string `json:"key,omitempty"`
+	Key string `json:"key"`
 	// Determines the size in bytes of the generated key. Only used if generate is true.
-	KeySize *int32 `json:"key_size,omitempty"`
+	KeySize int32 `json:"key_size"`
 	// The length of time used to generate a counter for the TOTP token calculation.
-	Period *int32 `json:"period,omitempty"`
+	Period int32 `json:"period"`
 	// The pixel size of the generated square QR code. Only used if generate is true and exported is true. If this value is 0, a QR code will not be returned.
-	QrSize *int32 `json:"qr_size,omitempty"`
+	QrSize int32 `json:"qr_size"`
 	// The number of delay periods that are allowed when validating a TOTP token. This value can either be 0 or 1. Only used if generate is true.
-	Skew *int32 `json:"skew,omitempty"`
+	Skew int32 `json:"skew"`
 	// A TOTP url string containing all of the parameters for key setup. Only used if generate is false.
-	Url *string `json:"url,omitempty"`
+	Url string `json:"url"`
 }
 
 // NewTotpKeysRequestWithDefaults instantiates a new TotpKeysRequest object
@@ -16270,63 +13725,35 @@ type TotpKeysRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTotpKeysRequestWithDefaults() *TotpKeysRequest {
 	this := TotpKeysRequest{}
-	var algorithm string = "SHA1"
-	this.Algorithm = &algorithm
-	var digits int32 = 6
-	this.Digits = &digits
-	var exported bool = true
-	this.Exported = &exported
-	var generate bool = false
-	this.Generate = &generate
-	var keySize int32 = 20
-	this.KeySize = &keySize
-	var period int32 = 30
-	this.Period = &period
-	var qrSize int32 = 200
-	this.QrSize = &qrSize
-	var skew int32 = 1
-	this.Skew = &skew
+
+	this.Algorithm = "SHA1"
+	this.Digits = 6
+	this.Exported = true
+	this.Generate = false
+	this.KeySize = 20
+	this.Period = 30
+	this.QrSize = 200
+	this.Skew = 1
+
 	return &this
 }
 
 func (o TotpKeysRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AccountName != nil {
-		toSerialize["account_name"] = o.AccountName
-	}
-	if o.Algorithm != nil {
-		toSerialize["algorithm"] = o.Algorithm
-	}
-	if o.Digits != nil {
-		toSerialize["digits"] = o.Digits
-	}
-	if o.Exported != nil {
-		toSerialize["exported"] = o.Exported
-	}
-	if o.Generate != nil {
-		toSerialize["generate"] = o.Generate
-	}
-	if o.Issuer != nil {
-		toSerialize["issuer"] = o.Issuer
-	}
-	if o.Key != nil {
-		toSerialize["key"] = o.Key
-	}
-	if o.KeySize != nil {
-		toSerialize["key_size"] = o.KeySize
-	}
-	if o.Period != nil {
-		toSerialize["period"] = o.Period
-	}
-	if o.QrSize != nil {
-		toSerialize["qr_size"] = o.QrSize
-	}
-	if o.Skew != nil {
-		toSerialize["skew"] = o.Skew
-	}
-	if o.Url != nil {
-		toSerialize["url"] = o.Url
-	}
+
+	toSerialize["account_name"] = o.AccountName
+	toSerialize["algorithm"] = o.Algorithm
+	toSerialize["digits"] = o.Digits
+	toSerialize["exported"] = o.Exported
+	toSerialize["generate"] = o.Generate
+	toSerialize["issuer"] = o.Issuer
+	toSerialize["key"] = o.Key
+	toSerialize["key_size"] = o.KeySize
+	toSerialize["period"] = o.Period
+	toSerialize["qr_size"] = o.QrSize
+	toSerialize["skew"] = o.Skew
+	toSerialize["url"] = o.Url
+
 	return json.Marshal(toSerialize)
 }
 
@@ -16343,7 +13770,7 @@ API version: 1.12.0
 // TransitCacheConfigRequest struct for TransitCacheConfigRequest
 type TransitCacheConfigRequest struct {
 	// Size of cache, use 0 for an unlimited cache size, defaults to 0
-	Size *int32 `json:"size,omitempty"`
+	Size int32 `json:"size"`
 }
 
 // NewTransitCacheConfigRequestWithDefaults instantiates a new TransitCacheConfigRequest object
@@ -16351,16 +13778,17 @@ type TransitCacheConfigRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTransitCacheConfigRequestWithDefaults() *TransitCacheConfigRequest {
 	this := TransitCacheConfigRequest{}
-	var size int32 = 0
-	this.Size = &size
+
+	this.Size = 0
+
 	return &this
 }
 
 func (o TransitCacheConfigRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Size != nil {
-		toSerialize["size"] = o.Size
-	}
+
+	toSerialize["size"] = o.Size
+
 	return json.Marshal(toSerialize)
 }
 
@@ -16377,13 +13805,13 @@ API version: 1.12.0
 // TransitDatakeyRequest struct for TransitDatakeyRequest
 type TransitDatakeyRequest struct {
 	// Number of bits for the key; currently 128, 256, and 512 bits are supported. Defaults to 256.
-	Bits *int32 `json:"bits,omitempty"`
+	Bits int32 `json:"bits"`
 	// Context for key derivation. Required for derived keys.
-	Context *string `json:"context,omitempty"`
+	Context string `json:"context"`
 	// The version of the Vault key to use for encryption of the data key. Must be 0 (for latest) or a value greater than or equal to the min_encryption_version configured on the key.
-	KeyVersion *int32 `json:"key_version,omitempty"`
+	KeyVersion int32 `json:"key_version"`
 	// Nonce for when convergent encryption v1 is used (only in Vault 0.6.1)
-	Nonce *string `json:"nonce,omitempty"`
+	Nonce string `json:"nonce"`
 }
 
 // NewTransitDatakeyRequestWithDefaults instantiates a new TransitDatakeyRequest object
@@ -16391,25 +13819,20 @@ type TransitDatakeyRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTransitDatakeyRequestWithDefaults() *TransitDatakeyRequest {
 	this := TransitDatakeyRequest{}
-	var bits int32 = 256
-	this.Bits = &bits
+
+	this.Bits = 256
+
 	return &this
 }
 
 func (o TransitDatakeyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Bits != nil {
-		toSerialize["bits"] = o.Bits
-	}
-	if o.Context != nil {
-		toSerialize["context"] = o.Context
-	}
-	if o.KeyVersion != nil {
-		toSerialize["key_version"] = o.KeyVersion
-	}
-	if o.Nonce != nil {
-		toSerialize["nonce"] = o.Nonce
-	}
+
+	toSerialize["bits"] = o.Bits
+	toSerialize["context"] = o.Context
+	toSerialize["key_version"] = o.KeyVersion
+	toSerialize["nonce"] = o.Nonce
+
 	return json.Marshal(toSerialize)
 }
 
@@ -16426,11 +13849,11 @@ API version: 1.12.0
 // TransitDecryptRequest struct for TransitDecryptRequest
 type TransitDecryptRequest struct {
 	// The ciphertext to decrypt, provided as returned by encrypt.
-	Ciphertext *string `json:"ciphertext,omitempty"`
+	Ciphertext string `json:"ciphertext"`
 	// Base64 encoded context for key derivation. Required if key derivation is enabled.
-	Context *string `json:"context,omitempty"`
+	Context string `json:"context"`
 	// Base64 encoded nonce value used during encryption. Must be provided if convergent encryption is enabled for this key and the key was generated with Vault 0.6.1. Not required for keys created in 0.6.2+.
-	Nonce *string `json:"nonce,omitempty"`
+	Nonce string `json:"nonce"`
 }
 
 // NewTransitDecryptRequestWithDefaults instantiates a new TransitDecryptRequest object
@@ -16438,20 +13861,17 @@ type TransitDecryptRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTransitDecryptRequestWithDefaults() *TransitDecryptRequest {
 	this := TransitDecryptRequest{}
+
 	return &this
 }
 
 func (o TransitDecryptRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Ciphertext != nil {
-		toSerialize["ciphertext"] = o.Ciphertext
-	}
-	if o.Context != nil {
-		toSerialize["context"] = o.Context
-	}
-	if o.Nonce != nil {
-		toSerialize["nonce"] = o.Nonce
-	}
+
+	toSerialize["ciphertext"] = o.Ciphertext
+	toSerialize["context"] = o.Context
+	toSerialize["nonce"] = o.Nonce
+
 	return json.Marshal(toSerialize)
 }
 
@@ -16468,17 +13888,17 @@ API version: 1.12.0
 // TransitEncryptRequest struct for TransitEncryptRequest
 type TransitEncryptRequest struct {
 	// Base64 encoded context for key derivation. Required if key derivation is enabled
-	Context *string `json:"context,omitempty"`
+	Context string `json:"context"`
 	// This parameter will only be used when a key is expected to be created. Whether to support convergent encryption. This is only supported when using a key with key derivation enabled and will require all requests to carry both a context and 96-bit (12-byte) nonce. The given nonce will be used in place of a randomly generated nonce. As a result, when the same context and nonce are supplied, the same ciphertext is generated. It is *very important* when using this mode that you ensure that all nonces are unique for a given context. Failing to do so will severely impact the ciphertext's security.
-	ConvergentEncryption *bool `json:"convergent_encryption,omitempty"`
+	ConvergentEncryption bool `json:"convergent_encryption"`
 	// The version of the key to use for encryption. Must be 0 (for latest) or a value greater than or equal to the min_encryption_version configured on the key.
-	KeyVersion *int32 `json:"key_version,omitempty"`
+	KeyVersion int32 `json:"key_version"`
 	// Base64 encoded nonce value. Must be provided if convergent encryption is enabled for this key and the key was generated with Vault 0.6.1. Not required for keys created in 0.6.2+. The value must be exactly 96 bits (12 bytes) long and the user must ensure that for any given context (and thus, any given encryption key) this nonce value is **never reused**.
-	Nonce *string `json:"nonce,omitempty"`
+	Nonce string `json:"nonce"`
 	// Base64 encoded plaintext value to be encrypted
-	Plaintext *string `json:"plaintext,omitempty"`
+	Plaintext string `json:"plaintext"`
 	// This parameter is required when encryption key is expected to be created. When performing an upsert operation, the type of key to create. Currently, \"aes128-gcm96\" (symmetric) and \"aes256-gcm96\" (symmetric) are the only types supported. Defaults to \"aes256-gcm96\".
-	Type *string `json:"type,omitempty"`
+	Type string `json:"type"`
 }
 
 // NewTransitEncryptRequestWithDefaults instantiates a new TransitEncryptRequest object
@@ -16486,31 +13906,22 @@ type TransitEncryptRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTransitEncryptRequestWithDefaults() *TransitEncryptRequest {
 	this := TransitEncryptRequest{}
-	var type_ string = "aes256-gcm96"
-	this.Type = &type_
+
+	this.Type = "aes256-gcm96"
+
 	return &this
 }
 
 func (o TransitEncryptRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Context != nil {
-		toSerialize["context"] = o.Context
-	}
-	if o.ConvergentEncryption != nil {
-		toSerialize["convergent_encryption"] = o.ConvergentEncryption
-	}
-	if o.KeyVersion != nil {
-		toSerialize["key_version"] = o.KeyVersion
-	}
-	if o.Nonce != nil {
-		toSerialize["nonce"] = o.Nonce
-	}
-	if o.Plaintext != nil {
-		toSerialize["plaintext"] = o.Plaintext
-	}
-	if o.Type != nil {
-		toSerialize["type"] = o.Type
-	}
+
+	toSerialize["context"] = o.Context
+	toSerialize["convergent_encryption"] = o.ConvergentEncryption
+	toSerialize["key_version"] = o.KeyVersion
+	toSerialize["nonce"] = o.Nonce
+	toSerialize["plaintext"] = o.Plaintext
+	toSerialize["type"] = o.Type
+
 	return json.Marshal(toSerialize)
 }
 
@@ -16527,13 +13938,13 @@ API version: 1.12.0
 // TransitHashRequest struct for TransitHashRequest
 type TransitHashRequest struct {
 	// Algorithm to use (POST body parameter). Valid values are: * sha2-224 * sha2-256 * sha2-384 * sha2-512 * sha3-224 * sha3-256 * sha3-384 * sha3-512 Defaults to \"sha2-256\".
-	Algorithm *string `json:"algorithm,omitempty"`
+	Algorithm string `json:"algorithm"`
 	// Encoding format to use. Can be \"hex\" or \"base64\". Defaults to \"hex\".
-	Format *string `json:"format,omitempty"`
+	Format string `json:"format"`
 	// The base64-encoded input data
-	Input *string `json:"input,omitempty"`
+	Input string `json:"input"`
 	// Algorithm to use (POST URL parameter)
-	Urlalgorithm *string `json:"urlalgorithm,omitempty"`
+	Urlalgorithm string `json:"urlalgorithm"`
 }
 
 // NewTransitHashRequestWithDefaults instantiates a new TransitHashRequest object
@@ -16541,27 +13952,21 @@ type TransitHashRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTransitHashRequestWithDefaults() *TransitHashRequest {
 	this := TransitHashRequest{}
-	var algorithm string = "sha2-256"
-	this.Algorithm = &algorithm
-	var format string = "hex"
-	this.Format = &format
+
+	this.Algorithm = "sha2-256"
+	this.Format = "hex"
+
 	return &this
 }
 
 func (o TransitHashRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Algorithm != nil {
-		toSerialize["algorithm"] = o.Algorithm
-	}
-	if o.Format != nil {
-		toSerialize["format"] = o.Format
-	}
-	if o.Input != nil {
-		toSerialize["input"] = o.Input
-	}
-	if o.Urlalgorithm != nil {
-		toSerialize["urlalgorithm"] = o.Urlalgorithm
-	}
+
+	toSerialize["algorithm"] = o.Algorithm
+	toSerialize["format"] = o.Format
+	toSerialize["input"] = o.Input
+	toSerialize["urlalgorithm"] = o.Urlalgorithm
+
 	return json.Marshal(toSerialize)
 }
 
@@ -16578,13 +13983,13 @@ API version: 1.12.0
 // TransitHmacRequest struct for TransitHmacRequest
 type TransitHmacRequest struct {
 	// Algorithm to use (POST body parameter). Valid values are: * sha2-224 * sha2-256 * sha2-384 * sha2-512 * sha3-224 * sha3-256 * sha3-384 * sha3-512 Defaults to \"sha2-256\".
-	Algorithm *string `json:"algorithm,omitempty"`
+	Algorithm string `json:"algorithm"`
 	// The base64-encoded input data
-	Input *string `json:"input,omitempty"`
+	Input string `json:"input"`
 	// The version of the key to use for generating the HMAC. Must be 0 (for latest) or a value greater than or equal to the min_encryption_version configured on the key.
-	KeyVersion *int32 `json:"key_version,omitempty"`
+	KeyVersion int32 `json:"key_version"`
 	// Algorithm to use (POST URL parameter)
-	Urlalgorithm *string `json:"urlalgorithm,omitempty"`
+	Urlalgorithm string `json:"urlalgorithm"`
 }
 
 // NewTransitHmacRequestWithDefaults instantiates a new TransitHmacRequest object
@@ -16592,25 +13997,20 @@ type TransitHmacRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTransitHmacRequestWithDefaults() *TransitHmacRequest {
 	this := TransitHmacRequest{}
-	var algorithm string = "sha2-256"
-	this.Algorithm = &algorithm
+
+	this.Algorithm = "sha2-256"
+
 	return &this
 }
 
 func (o TransitHmacRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Algorithm != nil {
-		toSerialize["algorithm"] = o.Algorithm
-	}
-	if o.Input != nil {
-		toSerialize["input"] = o.Input
-	}
-	if o.KeyVersion != nil {
-		toSerialize["key_version"] = o.KeyVersion
-	}
-	if o.Urlalgorithm != nil {
-		toSerialize["urlalgorithm"] = o.Urlalgorithm
-	}
+
+	toSerialize["algorithm"] = o.Algorithm
+	toSerialize["input"] = o.Input
+	toSerialize["key_version"] = o.KeyVersion
+	toSerialize["urlalgorithm"] = o.Urlalgorithm
+
 	return json.Marshal(toSerialize)
 }
 
@@ -16627,17 +14027,17 @@ API version: 1.12.0
 // TransitKeysConfigRequest struct for TransitKeysConfigRequest
 type TransitKeysConfigRequest struct {
 	// Enables taking a backup of the named key in plaintext format. Once set, this cannot be disabled.
-	AllowPlaintextBackup *bool `json:"allow_plaintext_backup,omitempty"`
+	AllowPlaintextBackup bool `json:"allow_plaintext_backup"`
 	// Amount of time the key should live before being automatically rotated. A value of 0 disables automatic rotation for the key.
-	AutoRotatePeriod *int32 `json:"auto_rotate_period,omitempty"`
+	AutoRotatePeriod int32 `json:"auto_rotate_period"`
 	// Whether to allow deletion of the key
-	DeletionAllowed *bool `json:"deletion_allowed,omitempty"`
+	DeletionAllowed bool `json:"deletion_allowed"`
 	// Enables export of the key. Once set, this cannot be disabled.
-	Exportable *bool `json:"exportable,omitempty"`
+	Exportable bool `json:"exportable"`
 	// If set, the minimum version of the key allowed to be decrypted. For signing keys, the minimum version allowed to be used for verification.
-	MinDecryptionVersion *int32 `json:"min_decryption_version,omitempty"`
+	MinDecryptionVersion int32 `json:"min_decryption_version"`
 	// If set, the minimum version of the key allowed to be used for encryption; or for signing keys, to be used for signing. If set to zero, only the latest version of the key is allowed.
-	MinEncryptionVersion *int32 `json:"min_encryption_version,omitempty"`
+	MinEncryptionVersion int32 `json:"min_encryption_version"`
 }
 
 // NewTransitKeysConfigRequestWithDefaults instantiates a new TransitKeysConfigRequest object
@@ -16645,29 +14045,20 @@ type TransitKeysConfigRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTransitKeysConfigRequestWithDefaults() *TransitKeysConfigRequest {
 	this := TransitKeysConfigRequest{}
+
 	return &this
 }
 
 func (o TransitKeysConfigRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AllowPlaintextBackup != nil {
-		toSerialize["allow_plaintext_backup"] = o.AllowPlaintextBackup
-	}
-	if o.AutoRotatePeriod != nil {
-		toSerialize["auto_rotate_period"] = o.AutoRotatePeriod
-	}
-	if o.DeletionAllowed != nil {
-		toSerialize["deletion_allowed"] = o.DeletionAllowed
-	}
-	if o.Exportable != nil {
-		toSerialize["exportable"] = o.Exportable
-	}
-	if o.MinDecryptionVersion != nil {
-		toSerialize["min_decryption_version"] = o.MinDecryptionVersion
-	}
-	if o.MinEncryptionVersion != nil {
-		toSerialize["min_encryption_version"] = o.MinEncryptionVersion
-	}
+
+	toSerialize["allow_plaintext_backup"] = o.AllowPlaintextBackup
+	toSerialize["auto_rotate_period"] = o.AutoRotatePeriod
+	toSerialize["deletion_allowed"] = o.DeletionAllowed
+	toSerialize["exportable"] = o.Exportable
+	toSerialize["min_decryption_version"] = o.MinDecryptionVersion
+	toSerialize["min_encryption_version"] = o.MinEncryptionVersion
+
 	return json.Marshal(toSerialize)
 }
 
@@ -16684,23 +14075,23 @@ API version: 1.12.0
 // TransitKeysImportRequest struct for TransitKeysImportRequest
 type TransitKeysImportRequest struct {
 	// Enables taking a backup of the named key in plaintext format. Once set, this cannot be disabled.
-	AllowPlaintextBackup *bool `json:"allow_plaintext_backup,omitempty"`
+	AllowPlaintextBackup bool `json:"allow_plaintext_backup"`
 	// True if the imported key may be rotated within Vault; false otherwise.
-	AllowRotation *bool `json:"allow_rotation,omitempty"`
+	AllowRotation bool `json:"allow_rotation"`
 	// Amount of time the key should live before being automatically rotated. A value of 0 (default) disables automatic rotation for the key.
-	AutoRotatePeriod *int32 `json:"auto_rotate_period,omitempty"`
+	AutoRotatePeriod int32 `json:"auto_rotate_period"`
 	// The base64-encoded ciphertext of the keys. The AES key should be encrypted using OAEP with the wrapping key and then concatenated with the import key, wrapped by the AES key.
-	Ciphertext *string `json:"ciphertext,omitempty"`
+	Ciphertext string `json:"ciphertext"`
 	// Base64 encoded context for key derivation. When reading a key with key derivation enabled, if the key type supports public keys, this will return the public key for the given context.
-	Context *string `json:"context,omitempty"`
+	Context string `json:"context"`
 	// Enables key derivation mode. This allows for per-transaction unique keys for encryption operations.
-	Derived *bool `json:"derived,omitempty"`
+	Derived bool `json:"derived"`
 	// Enables keys to be exportable. This allows for all the valid keys in the key ring to be exported.
-	Exportable *bool `json:"exportable,omitempty"`
+	Exportable bool `json:"exportable"`
 	// The hash function used as a random oracle in the OAEP wrapping of the user-generated, ephemeral AES key. Can be one of \"SHA1\", \"SHA224\", \"SHA256\" (default), \"SHA384\", or \"SHA512\"
-	HashFunction *string `json:"hash_function,omitempty"`
+	HashFunction string `json:"hash_function"`
 	// The type of key being imported. Currently, \"aes128-gcm96\" (symmetric), \"aes256-gcm96\" (symmetric), \"ecdsa-p256\" (asymmetric), \"ecdsa-p384\" (asymmetric), \"ecdsa-p521\" (asymmetric), \"ed25519\" (asymmetric), \"rsa-2048\" (asymmetric), \"rsa-3072\" (asymmetric), \"rsa-4096\" (asymmetric) are supported. Defaults to \"aes256-gcm96\".
-	Type *string `json:"type,omitempty"`
+	Type string `json:"type"`
 }
 
 // NewTransitKeysImportRequestWithDefaults instantiates a new TransitKeysImportRequest object
@@ -16708,44 +14099,27 @@ type TransitKeysImportRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTransitKeysImportRequestWithDefaults() *TransitKeysImportRequest {
 	this := TransitKeysImportRequest{}
-	var autoRotatePeriod int32 = 0
-	this.AutoRotatePeriod = &autoRotatePeriod
-	var hashFunction string = "SHA256"
-	this.HashFunction = &hashFunction
-	var type_ string = "aes256-gcm96"
-	this.Type = &type_
+
+	this.AutoRotatePeriod = 0
+	this.HashFunction = "SHA256"
+	this.Type = "aes256-gcm96"
+
 	return &this
 }
 
 func (o TransitKeysImportRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AllowPlaintextBackup != nil {
-		toSerialize["allow_plaintext_backup"] = o.AllowPlaintextBackup
-	}
-	if o.AllowRotation != nil {
-		toSerialize["allow_rotation"] = o.AllowRotation
-	}
-	if o.AutoRotatePeriod != nil {
-		toSerialize["auto_rotate_period"] = o.AutoRotatePeriod
-	}
-	if o.Ciphertext != nil {
-		toSerialize["ciphertext"] = o.Ciphertext
-	}
-	if o.Context != nil {
-		toSerialize["context"] = o.Context
-	}
-	if o.Derived != nil {
-		toSerialize["derived"] = o.Derived
-	}
-	if o.Exportable != nil {
-		toSerialize["exportable"] = o.Exportable
-	}
-	if o.HashFunction != nil {
-		toSerialize["hash_function"] = o.HashFunction
-	}
-	if o.Type != nil {
-		toSerialize["type"] = o.Type
-	}
+
+	toSerialize["allow_plaintext_backup"] = o.AllowPlaintextBackup
+	toSerialize["allow_rotation"] = o.AllowRotation
+	toSerialize["auto_rotate_period"] = o.AutoRotatePeriod
+	toSerialize["ciphertext"] = o.Ciphertext
+	toSerialize["context"] = o.Context
+	toSerialize["derived"] = o.Derived
+	toSerialize["exportable"] = o.Exportable
+	toSerialize["hash_function"] = o.HashFunction
+	toSerialize["type"] = o.Type
+
 	return json.Marshal(toSerialize)
 }
 
@@ -16762,9 +14136,9 @@ API version: 1.12.0
 // TransitKeysImportVersionRequest struct for TransitKeysImportVersionRequest
 type TransitKeysImportVersionRequest struct {
 	// The base64-encoded ciphertext of the keys. The AES key should be encrypted using OAEP with the wrapping key and then concatenated with the import key, wrapped by the AES key.
-	Ciphertext *string `json:"ciphertext,omitempty"`
+	Ciphertext string `json:"ciphertext"`
 	// The hash function used as a random oracle in the OAEP wrapping of the user-generated, ephemeral AES key. Can be one of \"SHA1\", \"SHA224\", \"SHA256\" (default), \"SHA384\", or \"SHA512\"
-	HashFunction *string `json:"hash_function,omitempty"`
+	HashFunction string `json:"hash_function"`
 }
 
 // NewTransitKeysImportVersionRequestWithDefaults instantiates a new TransitKeysImportVersionRequest object
@@ -16772,19 +14146,18 @@ type TransitKeysImportVersionRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTransitKeysImportVersionRequestWithDefaults() *TransitKeysImportVersionRequest {
 	this := TransitKeysImportVersionRequest{}
-	var hashFunction string = "SHA256"
-	this.HashFunction = &hashFunction
+
+	this.HashFunction = "SHA256"
+
 	return &this
 }
 
 func (o TransitKeysImportVersionRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Ciphertext != nil {
-		toSerialize["ciphertext"] = o.Ciphertext
-	}
-	if o.HashFunction != nil {
-		toSerialize["hash_function"] = o.HashFunction
-	}
+
+	toSerialize["ciphertext"] = o.Ciphertext
+	toSerialize["hash_function"] = o.HashFunction
+
 	return json.Marshal(toSerialize)
 }
 
@@ -16801,19 +14174,19 @@ API version: 1.12.0
 // TransitKeysRequest struct for TransitKeysRequest
 type TransitKeysRequest struct {
 	// Enables taking a backup of the named key in plaintext format. Once set, this cannot be disabled.
-	AllowPlaintextBackup *bool `json:"allow_plaintext_backup,omitempty"`
+	AllowPlaintextBackup bool `json:"allow_plaintext_backup"`
 	// Amount of time the key should live before being automatically rotated. A value of 0 (default) disables automatic rotation for the key.
-	AutoRotatePeriod *int32 `json:"auto_rotate_period,omitempty"`
+	AutoRotatePeriod int32 `json:"auto_rotate_period"`
 	// Base64 encoded context for key derivation. When reading a key with key derivation enabled, if the key type supports public keys, this will return the public key for the given context.
-	Context *string `json:"context,omitempty"`
+	Context string `json:"context"`
 	// Whether to support convergent encryption. This is only supported when using a key with key derivation enabled and will require all requests to carry both a context and 96-bit (12-byte) nonce. The given nonce will be used in place of a randomly generated nonce. As a result, when the same context and nonce are supplied, the same ciphertext is generated. It is *very important* when using this mode that you ensure that all nonces are unique for a given context. Failing to do so will severely impact the ciphertext's security.
-	ConvergentEncryption *bool `json:"convergent_encryption,omitempty"`
+	ConvergentEncryption bool `json:"convergent_encryption"`
 	// Enables key derivation mode. This allows for per-transaction unique keys for encryption operations.
-	Derived *bool `json:"derived,omitempty"`
+	Derived bool `json:"derived"`
 	// Enables keys to be exportable. This allows for all the valid keys in the key ring to be exported.
-	Exportable *bool `json:"exportable,omitempty"`
+	Exportable bool `json:"exportable"`
 	// The type of key to create. Currently, \"aes128-gcm96\" (symmetric), \"aes256-gcm96\" (symmetric), \"ecdsa-p256\" (asymmetric), \"ecdsa-p384\" (asymmetric), \"ecdsa-p521\" (asymmetric), \"ed25519\" (asymmetric), \"rsa-2048\" (asymmetric), \"rsa-3072\" (asymmetric), \"rsa-4096\" (asymmetric) are supported. Defaults to \"aes256-gcm96\".
-	Type *string `json:"type,omitempty"`
+	Type string `json:"type"`
 }
 
 // NewTransitKeysRequestWithDefaults instantiates a new TransitKeysRequest object
@@ -16821,36 +14194,24 @@ type TransitKeysRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTransitKeysRequestWithDefaults() *TransitKeysRequest {
 	this := TransitKeysRequest{}
-	var autoRotatePeriod int32 = 0
-	this.AutoRotatePeriod = &autoRotatePeriod
-	var type_ string = "aes256-gcm96"
-	this.Type = &type_
+
+	this.AutoRotatePeriod = 0
+	this.Type = "aes256-gcm96"
+
 	return &this
 }
 
 func (o TransitKeysRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AllowPlaintextBackup != nil {
-		toSerialize["allow_plaintext_backup"] = o.AllowPlaintextBackup
-	}
-	if o.AutoRotatePeriod != nil {
-		toSerialize["auto_rotate_period"] = o.AutoRotatePeriod
-	}
-	if o.Context != nil {
-		toSerialize["context"] = o.Context
-	}
-	if o.ConvergentEncryption != nil {
-		toSerialize["convergent_encryption"] = o.ConvergentEncryption
-	}
-	if o.Derived != nil {
-		toSerialize["derived"] = o.Derived
-	}
-	if o.Exportable != nil {
-		toSerialize["exportable"] = o.Exportable
-	}
-	if o.Type != nil {
-		toSerialize["type"] = o.Type
-	}
+
+	toSerialize["allow_plaintext_backup"] = o.AllowPlaintextBackup
+	toSerialize["auto_rotate_period"] = o.AutoRotatePeriod
+	toSerialize["context"] = o.Context
+	toSerialize["convergent_encryption"] = o.ConvergentEncryption
+	toSerialize["derived"] = o.Derived
+	toSerialize["exportable"] = o.Exportable
+	toSerialize["type"] = o.Type
+
 	return json.Marshal(toSerialize)
 }
 
@@ -16867,7 +14228,7 @@ API version: 1.12.0
 // TransitKeysTrimRequest struct for TransitKeysTrimRequest
 type TransitKeysTrimRequest struct {
 	// The minimum available version for the key ring. All versions before this version will be permanently deleted. This value can at most be equal to the lesser of 'min_decryption_version' and 'min_encryption_version'. This is not allowed to be set when either 'min_encryption_version' or 'min_decryption_version' is set to zero.
-	MinAvailableVersion *int32 `json:"min_available_version,omitempty"`
+	MinAvailableVersion int32 `json:"min_available_version"`
 }
 
 // NewTransitKeysTrimRequestWithDefaults instantiates a new TransitKeysTrimRequest object
@@ -16875,14 +14236,15 @@ type TransitKeysTrimRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTransitKeysTrimRequestWithDefaults() *TransitKeysTrimRequest {
 	this := TransitKeysTrimRequest{}
+
 	return &this
 }
 
 func (o TransitKeysTrimRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.MinAvailableVersion != nil {
-		toSerialize["min_available_version"] = o.MinAvailableVersion
-	}
+
+	toSerialize["min_available_version"] = o.MinAvailableVersion
+
 	return json.Marshal(toSerialize)
 }
 
@@ -16899,13 +14261,13 @@ API version: 1.12.0
 // TransitRandomRequest struct for TransitRandomRequest
 type TransitRandomRequest struct {
 	// The number of bytes to generate (POST body parameter). Defaults to 32 (256 bits).
-	Bytes *int32 `json:"bytes,omitempty"`
+	Bytes int32 `json:"bytes"`
 	// Encoding format to use. Can be \"hex\" or \"base64\". Defaults to \"base64\".
-	Format *string `json:"format,omitempty"`
+	Format string `json:"format"`
 	// Which system to source random data from, ether \"platform\", \"seal\", or \"all\".
-	Source *string `json:"source,omitempty"`
+	Source string `json:"source"`
 	// The number of bytes to generate (POST URL parameter)
-	Urlbytes *string `json:"urlbytes,omitempty"`
+	Urlbytes string `json:"urlbytes"`
 }
 
 // NewTransitRandomRequestWithDefaults instantiates a new TransitRandomRequest object
@@ -16913,29 +14275,22 @@ type TransitRandomRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTransitRandomRequestWithDefaults() *TransitRandomRequest {
 	this := TransitRandomRequest{}
-	var bytes int32 = 32
-	this.Bytes = &bytes
-	var format string = "base64"
-	this.Format = &format
-	var source string = "platform"
-	this.Source = &source
+
+	this.Bytes = 32
+	this.Format = "base64"
+	this.Source = "platform"
+
 	return &this
 }
 
 func (o TransitRandomRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Bytes != nil {
-		toSerialize["bytes"] = o.Bytes
-	}
-	if o.Format != nil {
-		toSerialize["format"] = o.Format
-	}
-	if o.Source != nil {
-		toSerialize["source"] = o.Source
-	}
-	if o.Urlbytes != nil {
-		toSerialize["urlbytes"] = o.Urlbytes
-	}
+
+	toSerialize["bytes"] = o.Bytes
+	toSerialize["format"] = o.Format
+	toSerialize["source"] = o.Source
+	toSerialize["urlbytes"] = o.Urlbytes
+
 	return json.Marshal(toSerialize)
 }
 
@@ -16952,11 +14307,11 @@ API version: 1.12.0
 // TransitRestoreRequest struct for TransitRestoreRequest
 type TransitRestoreRequest struct {
 	// Backed up key data to be restored. This should be the output from the 'backup/' endpoint.
-	Backup *string `json:"backup,omitempty"`
+	Backup string `json:"backup"`
 	// If set and a key by the given name exists, force the restore operation and override the key.
-	Force *bool `json:"force,omitempty"`
+	Force bool `json:"force"`
 	// If set, this will be the name of the restored key.
-	Name *string `json:"name,omitempty"`
+	Name string `json:"name"`
 }
 
 // NewTransitRestoreRequestWithDefaults instantiates a new TransitRestoreRequest object
@@ -16964,22 +14319,19 @@ type TransitRestoreRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTransitRestoreRequestWithDefaults() *TransitRestoreRequest {
 	this := TransitRestoreRequest{}
-	var force bool = false
-	this.Force = &force
+
+	this.Force = false
+
 	return &this
 }
 
 func (o TransitRestoreRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Backup != nil {
-		toSerialize["backup"] = o.Backup
-	}
-	if o.Force != nil {
-		toSerialize["force"] = o.Force
-	}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
-	}
+
+	toSerialize["backup"] = o.Backup
+	toSerialize["force"] = o.Force
+	toSerialize["name"] = o.Name
+
 	return json.Marshal(toSerialize)
 }
 
@@ -16996,13 +14348,13 @@ API version: 1.12.0
 // TransitRewrapRequest struct for TransitRewrapRequest
 type TransitRewrapRequest struct {
 	// Ciphertext value to rewrap
-	Ciphertext *string `json:"ciphertext,omitempty"`
+	Ciphertext string `json:"ciphertext"`
 	// Base64 encoded context for key derivation. Required for derived keys.
-	Context *string `json:"context,omitempty"`
+	Context string `json:"context"`
 	// The version of the key to use for encryption. Must be 0 (for latest) or a value greater than or equal to the min_encryption_version configured on the key.
-	KeyVersion *int32 `json:"key_version,omitempty"`
+	KeyVersion int32 `json:"key_version"`
 	// Nonce for when convergent encryption is used
-	Nonce *string `json:"nonce,omitempty"`
+	Nonce string `json:"nonce"`
 }
 
 // NewTransitRewrapRequestWithDefaults instantiates a new TransitRewrapRequest object
@@ -17010,23 +14362,18 @@ type TransitRewrapRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTransitRewrapRequestWithDefaults() *TransitRewrapRequest {
 	this := TransitRewrapRequest{}
+
 	return &this
 }
 
 func (o TransitRewrapRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Ciphertext != nil {
-		toSerialize["ciphertext"] = o.Ciphertext
-	}
-	if o.Context != nil {
-		toSerialize["context"] = o.Context
-	}
-	if o.KeyVersion != nil {
-		toSerialize["key_version"] = o.KeyVersion
-	}
-	if o.Nonce != nil {
-		toSerialize["nonce"] = o.Nonce
-	}
+
+	toSerialize["ciphertext"] = o.Ciphertext
+	toSerialize["context"] = o.Context
+	toSerialize["key_version"] = o.KeyVersion
+	toSerialize["nonce"] = o.Nonce
+
 	return json.Marshal(toSerialize)
 }
 
@@ -17043,23 +14390,23 @@ API version: 1.12.0
 // TransitSignRequest struct for TransitSignRequest
 type TransitSignRequest struct {
 	// Deprecated: use \"hash_algorithm\" instead.
-	Algorithm *string `json:"algorithm,omitempty"`
+	Algorithm string `json:"algorithm"`
 	// Base64 encoded context for key derivation. Required if key derivation is enabled; currently only available with ed25519 keys.
-	Context *string `json:"context,omitempty"`
+	Context string `json:"context"`
 	// Hash algorithm to use (POST body parameter). Valid values are: * sha1 * sha2-224 * sha2-256 * sha2-384 * sha2-512 * sha3-224 * sha3-256 * sha3-384 * sha3-512 Defaults to \"sha2-256\". Not valid for all key types, including ed25519.
-	HashAlgorithm *string `json:"hash_algorithm,omitempty"`
+	HashAlgorithm string `json:"hash_algorithm"`
 	// The base64-encoded input data
-	Input *string `json:"input,omitempty"`
+	Input string `json:"input"`
 	// The version of the key to use for signing. Must be 0 (for latest) or a value greater than or equal to the min_encryption_version configured on the key.
-	KeyVersion *int32 `json:"key_version,omitempty"`
+	KeyVersion int32 `json:"key_version"`
 	// The method by which to marshal the signature. The default is 'asn1' which is used by openssl and X.509. It can also be set to 'jws' which is used for JWT signatures; setting it to this will also cause the encoding of the signature to be url-safe base64 instead of using standard base64 encoding. Currently only valid for ECDSA P-256 key types\".
-	MarshalingAlgorithm *string `json:"marshaling_algorithm,omitempty"`
+	MarshalingAlgorithm string `json:"marshaling_algorithm"`
 	// Set to 'true' when the input is already hashed. If the key type is 'rsa-2048', 'rsa-3072' or 'rsa-4096', then the algorithm used to hash the input should be indicated by the 'algorithm' parameter.
-	Prehashed *bool `json:"prehashed,omitempty"`
+	Prehashed bool `json:"prehashed"`
 	// The signature algorithm to use for signing. Currently only applies to RSA key types. Options are 'pss' or 'pkcs1v15'. Defaults to 'pss'
-	SignatureAlgorithm *string `json:"signature_algorithm,omitempty"`
+	SignatureAlgorithm string `json:"signature_algorithm"`
 	// Hash algorithm to use (POST URL parameter)
-	Urlalgorithm *string `json:"urlalgorithm,omitempty"`
+	Urlalgorithm string `json:"urlalgorithm"`
 }
 
 // NewTransitSignRequestWithDefaults instantiates a new TransitSignRequest object
@@ -17067,44 +14414,27 @@ type TransitSignRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTransitSignRequestWithDefaults() *TransitSignRequest {
 	this := TransitSignRequest{}
-	var algorithm string = "sha2-256"
-	this.Algorithm = &algorithm
-	var hashAlgorithm string = "sha2-256"
-	this.HashAlgorithm = &hashAlgorithm
-	var marshalingAlgorithm string = "asn1"
-	this.MarshalingAlgorithm = &marshalingAlgorithm
+
+	this.Algorithm = "sha2-256"
+	this.HashAlgorithm = "sha2-256"
+	this.MarshalingAlgorithm = "asn1"
+
 	return &this
 }
 
 func (o TransitSignRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Algorithm != nil {
-		toSerialize["algorithm"] = o.Algorithm
-	}
-	if o.Context != nil {
-		toSerialize["context"] = o.Context
-	}
-	if o.HashAlgorithm != nil {
-		toSerialize["hash_algorithm"] = o.HashAlgorithm
-	}
-	if o.Input != nil {
-		toSerialize["input"] = o.Input
-	}
-	if o.KeyVersion != nil {
-		toSerialize["key_version"] = o.KeyVersion
-	}
-	if o.MarshalingAlgorithm != nil {
-		toSerialize["marshaling_algorithm"] = o.MarshalingAlgorithm
-	}
-	if o.Prehashed != nil {
-		toSerialize["prehashed"] = o.Prehashed
-	}
-	if o.SignatureAlgorithm != nil {
-		toSerialize["signature_algorithm"] = o.SignatureAlgorithm
-	}
-	if o.Urlalgorithm != nil {
-		toSerialize["urlalgorithm"] = o.Urlalgorithm
-	}
+
+	toSerialize["algorithm"] = o.Algorithm
+	toSerialize["context"] = o.Context
+	toSerialize["hash_algorithm"] = o.HashAlgorithm
+	toSerialize["input"] = o.Input
+	toSerialize["key_version"] = o.KeyVersion
+	toSerialize["marshaling_algorithm"] = o.MarshalingAlgorithm
+	toSerialize["prehashed"] = o.Prehashed
+	toSerialize["signature_algorithm"] = o.SignatureAlgorithm
+	toSerialize["urlalgorithm"] = o.Urlalgorithm
+
 	return json.Marshal(toSerialize)
 }
 
@@ -17121,25 +14451,25 @@ API version: 1.12.0
 // TransitVerifyRequest struct for TransitVerifyRequest
 type TransitVerifyRequest struct {
 	// Deprecated: use \"hash_algorithm\" instead.
-	Algorithm *string `json:"algorithm,omitempty"`
+	Algorithm string `json:"algorithm"`
 	// Base64 encoded context for key derivation. Required if key derivation is enabled; currently only available with ed25519 keys.
-	Context *string `json:"context,omitempty"`
+	Context string `json:"context"`
 	// Hash algorithm to use (POST body parameter). Valid values are: * sha1 * sha2-224 * sha2-256 * sha2-384 * sha2-512 * sha3-224 * sha3-256 * sha3-384 * sha3-512 Defaults to \"sha2-256\". Not valid for all key types.
-	HashAlgorithm *string `json:"hash_algorithm,omitempty"`
+	HashAlgorithm string `json:"hash_algorithm"`
 	// The HMAC, including vault header/key version
-	Hmac *string `json:"hmac,omitempty"`
+	Hmac string `json:"hmac"`
 	// The base64-encoded input data to verify
-	Input *string `json:"input,omitempty"`
+	Input string `json:"input"`
 	// The method by which to unmarshal the signature when verifying. The default is 'asn1' which is used by openssl and X.509; can also be set to 'jws' which is used for JWT signatures in which case the signature is also expected to be url-safe base64 encoding instead of standard base64 encoding. Currently only valid for ECDSA P-256 key types\".
-	MarshalingAlgorithm *string `json:"marshaling_algorithm,omitempty"`
+	MarshalingAlgorithm string `json:"marshaling_algorithm"`
 	// Set to 'true' when the input is already hashed. If the key type is 'rsa-2048', 'rsa-3072' or 'rsa-4096', then the algorithm used to hash the input should be indicated by the 'algorithm' parameter.
-	Prehashed *bool `json:"prehashed,omitempty"`
+	Prehashed bool `json:"prehashed"`
 	// The signature, including vault header/key version
-	Signature *string `json:"signature,omitempty"`
+	Signature string `json:"signature"`
 	// The signature algorithm to use for signature verification. Currently only applies to RSA key types. Options are 'pss' or 'pkcs1v15'. Defaults to 'pss'
-	SignatureAlgorithm *string `json:"signature_algorithm,omitempty"`
+	SignatureAlgorithm string `json:"signature_algorithm"`
 	// Hash algorithm to use (POST URL parameter)
-	Urlalgorithm *string `json:"urlalgorithm,omitempty"`
+	Urlalgorithm string `json:"urlalgorithm"`
 }
 
 // NewTransitVerifyRequestWithDefaults instantiates a new TransitVerifyRequest object
@@ -17147,47 +14477,28 @@ type TransitVerifyRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewTransitVerifyRequestWithDefaults() *TransitVerifyRequest {
 	this := TransitVerifyRequest{}
-	var algorithm string = "sha2-256"
-	this.Algorithm = &algorithm
-	var hashAlgorithm string = "sha2-256"
-	this.HashAlgorithm = &hashAlgorithm
-	var marshalingAlgorithm string = "asn1"
-	this.MarshalingAlgorithm = &marshalingAlgorithm
+
+	this.Algorithm = "sha2-256"
+	this.HashAlgorithm = "sha2-256"
+	this.MarshalingAlgorithm = "asn1"
+
 	return &this
 }
 
 func (o TransitVerifyRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Algorithm != nil {
-		toSerialize["algorithm"] = o.Algorithm
-	}
-	if o.Context != nil {
-		toSerialize["context"] = o.Context
-	}
-	if o.HashAlgorithm != nil {
-		toSerialize["hash_algorithm"] = o.HashAlgorithm
-	}
-	if o.Hmac != nil {
-		toSerialize["hmac"] = o.Hmac
-	}
-	if o.Input != nil {
-		toSerialize["input"] = o.Input
-	}
-	if o.MarshalingAlgorithm != nil {
-		toSerialize["marshaling_algorithm"] = o.MarshalingAlgorithm
-	}
-	if o.Prehashed != nil {
-		toSerialize["prehashed"] = o.Prehashed
-	}
-	if o.Signature != nil {
-		toSerialize["signature"] = o.Signature
-	}
-	if o.SignatureAlgorithm != nil {
-		toSerialize["signature_algorithm"] = o.SignatureAlgorithm
-	}
-	if o.Urlalgorithm != nil {
-		toSerialize["urlalgorithm"] = o.Urlalgorithm
-	}
+
+	toSerialize["algorithm"] = o.Algorithm
+	toSerialize["context"] = o.Context
+	toSerialize["hash_algorithm"] = o.HashAlgorithm
+	toSerialize["hmac"] = o.Hmac
+	toSerialize["input"] = o.Input
+	toSerialize["marshaling_algorithm"] = o.MarshalingAlgorithm
+	toSerialize["prehashed"] = o.Prehashed
+	toSerialize["signature"] = o.Signature
+	toSerialize["signature_algorithm"] = o.SignatureAlgorithm
+	toSerialize["urlalgorithm"] = o.Urlalgorithm
+
 	return json.Marshal(toSerialize)
 }
 
@@ -17204,7 +14515,7 @@ API version: 1.12.0
 // UserpassLoginRequest struct for UserpassLoginRequest
 type UserpassLoginRequest struct {
 	// Password for this user.
-	Password *string `json:"password,omitempty"`
+	Password string `json:"password"`
 }
 
 // NewUserpassLoginRequestWithDefaults instantiates a new UserpassLoginRequest object
@@ -17212,14 +14523,15 @@ type UserpassLoginRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewUserpassLoginRequestWithDefaults() *UserpassLoginRequest {
 	this := UserpassLoginRequest{}
+
 	return &this
 }
 
 func (o UserpassLoginRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Password != nil {
-		toSerialize["password"] = o.Password
-	}
+
+	toSerialize["password"] = o.Password
+
 	return json.Marshal(toSerialize)
 }
 
@@ -17236,7 +14548,7 @@ API version: 1.12.0
 // UserpassUsersPasswordRequest struct for UserpassUsersPasswordRequest
 type UserpassUsersPasswordRequest struct {
 	// Password for this user.
-	Password *string `json:"password,omitempty"`
+	Password string `json:"password"`
 }
 
 // NewUserpassUsersPasswordRequestWithDefaults instantiates a new UserpassUsersPasswordRequest object
@@ -17244,14 +14556,15 @@ type UserpassUsersPasswordRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewUserpassUsersPasswordRequestWithDefaults() *UserpassUsersPasswordRequest {
 	this := UserpassUsersPasswordRequest{}
+
 	return &this
 }
 
 func (o UserpassUsersPasswordRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Password != nil {
-		toSerialize["password"] = o.Password
-	}
+
+	toSerialize["password"] = o.Password
+
 	return json.Marshal(toSerialize)
 }
 
@@ -17269,9 +14582,9 @@ API version: 1.12.0
 type UserpassUsersPoliciesRequest struct {
 	// Use \"token_policies\" instead. If this and \"token_policies\" are both specified, only \"token_policies\" will be used.
 	// Deprecated
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 	// Comma-separated list of policies
-	TokenPolicies []string `json:"token_policies,omitempty"`
+	TokenPolicies []string `json:"token_policies"`
 }
 
 // NewUserpassUsersPoliciesRequestWithDefaults instantiates a new UserpassUsersPoliciesRequest object
@@ -17279,17 +14592,16 @@ type UserpassUsersPoliciesRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewUserpassUsersPoliciesRequestWithDefaults() *UserpassUsersPoliciesRequest {
 	this := UserpassUsersPoliciesRequest{}
+
 	return &this
 }
 
 func (o UserpassUsersPoliciesRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
-	if o.TokenPolicies != nil {
-		toSerialize["token_policies"] = o.TokenPolicies
-	}
+
+	toSerialize["policies"] = o.Policies
+	toSerialize["token_policies"] = o.TokenPolicies
+
 	return json.Marshal(toSerialize)
 }
 
@@ -17307,36 +14619,36 @@ API version: 1.12.0
 type UserpassUsersRequest struct {
 	// Use \"token_bound_cidrs\" instead. If this and \"token_bound_cidrs\" are both specified, only \"token_bound_cidrs\" will be used.
 	// Deprecated
-	BoundCidrs []string `json:"bound_cidrs,omitempty"`
+	BoundCidrs []string `json:"bound_cidrs"`
 	// Use \"token_max_ttl\" instead. If this and \"token_max_ttl\" are both specified, only \"token_max_ttl\" will be used.
 	// Deprecated
-	MaxTtl *int32 `json:"max_ttl,omitempty"`
+	MaxTtl int32 `json:"max_ttl"`
 	// Password for this user.
-	Password *string `json:"password,omitempty"`
+	Password string `json:"password"`
 	// Use \"token_policies\" instead. If this and \"token_policies\" are both specified, only \"token_policies\" will be used.
 	// Deprecated
-	Policies []string `json:"policies,omitempty"`
+	Policies []string `json:"policies"`
 	// Comma separated string or JSON list of CIDR blocks. If set, specifies the blocks of IP addresses which are allowed to use the generated token.
-	TokenBoundCidrs []string `json:"token_bound_cidrs,omitempty"`
+	TokenBoundCidrs []string `json:"token_bound_cidrs"`
 	// If set, tokens created via this role carry an explicit maximum TTL. During renewal, the current maximum TTL values of the role and the mount are not checked for changes, and any updates to these values will have no effect on the token being renewed.
-	TokenExplicitMaxTtl *int32 `json:"token_explicit_max_ttl,omitempty"`
+	TokenExplicitMaxTtl int32 `json:"token_explicit_max_ttl"`
 	// The maximum lifetime of the generated token
-	TokenMaxTtl *int32 `json:"token_max_ttl,omitempty"`
+	TokenMaxTtl int32 `json:"token_max_ttl"`
 	// If true, the 'default' policy will not automatically be added to generated tokens
-	TokenNoDefaultPolicy *bool `json:"token_no_default_policy,omitempty"`
+	TokenNoDefaultPolicy bool `json:"token_no_default_policy"`
 	// The maximum number of times a token may be used, a value of zero means unlimited
-	TokenNumUses *int32 `json:"token_num_uses,omitempty"`
+	TokenNumUses int32 `json:"token_num_uses"`
 	// If set, tokens created via this role will have no max lifetime; instead, their renewal period will be fixed to this value. This takes an integer number of seconds, or a string duration (e.g. \"24h\").
-	TokenPeriod *int32 `json:"token_period,omitempty"`
+	TokenPeriod int32 `json:"token_period"`
 	// Comma-separated list of policies
-	TokenPolicies []string `json:"token_policies,omitempty"`
+	TokenPolicies []string `json:"token_policies"`
 	// The initial ttl of the token to generate
-	TokenTtl *int32 `json:"token_ttl,omitempty"`
+	TokenTtl int32 `json:"token_ttl"`
 	// The type of token to generate, service or batch
-	TokenType *string `json:"token_type,omitempty"`
+	TokenType string `json:"token_type"`
 	// Use \"token_ttl\" instead. If this and \"token_ttl\" are both specified, only \"token_ttl\" will be used.
 	// Deprecated
-	Ttl *int32 `json:"ttl,omitempty"`
+	Ttl int32 `json:"ttl"`
 }
 
 // NewUserpassUsersRequestWithDefaults instantiates a new UserpassUsersRequest object
@@ -17344,54 +14656,29 @@ type UserpassUsersRequest struct {
 // but it doesn't guarantee that properties required by API are set
 func NewUserpassUsersRequestWithDefaults() *UserpassUsersRequest {
 	this := UserpassUsersRequest{}
-	var tokenType string = "default-service"
-	this.TokenType = &tokenType
+
+	this.TokenType = "default-service"
+
 	return &this
 }
 
 func (o UserpassUsersRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.BoundCidrs != nil {
-		toSerialize["bound_cidrs"] = o.BoundCidrs
-	}
-	if o.MaxTtl != nil {
-		toSerialize["max_ttl"] = o.MaxTtl
-	}
-	if o.Password != nil {
-		toSerialize["password"] = o.Password
-	}
-	if o.Policies != nil {
-		toSerialize["policies"] = o.Policies
-	}
-	if o.TokenBoundCidrs != nil {
-		toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
-	}
-	if o.TokenExplicitMaxTtl != nil {
-		toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
-	}
-	if o.TokenMaxTtl != nil {
-		toSerialize["token_max_ttl"] = o.TokenMaxTtl
-	}
-	if o.TokenNoDefaultPolicy != nil {
-		toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
-	}
-	if o.TokenNumUses != nil {
-		toSerialize["token_num_uses"] = o.TokenNumUses
-	}
-	if o.TokenPeriod != nil {
-		toSerialize["token_period"] = o.TokenPeriod
-	}
-	if o.TokenPolicies != nil {
-		toSerialize["token_policies"] = o.TokenPolicies
-	}
-	if o.TokenTtl != nil {
-		toSerialize["token_ttl"] = o.TokenTtl
-	}
-	if o.TokenType != nil {
-		toSerialize["token_type"] = o.TokenType
-	}
-	if o.Ttl != nil {
-		toSerialize["ttl"] = o.Ttl
-	}
+
+	toSerialize["bound_cidrs"] = o.BoundCidrs
+	toSerialize["max_ttl"] = o.MaxTtl
+	toSerialize["password"] = o.Password
+	toSerialize["policies"] = o.Policies
+	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
+	toSerialize["token_explicit_max_ttl"] = o.TokenExplicitMaxTtl
+	toSerialize["token_max_ttl"] = o.TokenMaxTtl
+	toSerialize["token_no_default_policy"] = o.TokenNoDefaultPolicy
+	toSerialize["token_num_uses"] = o.TokenNumUses
+	toSerialize["token_period"] = o.TokenPeriod
+	toSerialize["token_policies"] = o.TokenPolicies
+	toSerialize["token_ttl"] = o.TokenTtl
+	toSerialize["token_type"] = o.TokenType
+	toSerialize["ttl"] = o.Ttl
+
 	return json.Marshal(toSerialize)
 }

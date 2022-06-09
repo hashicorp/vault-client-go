@@ -86,7 +86,7 @@ type AdConfigRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAdConfigRequestWithDefaults() *AdConfigRequest {
-	this := AdConfigRequest{}
+	var this AdConfigRequest
 
 	this.AnonymousGroupSearch = false
 	this.DenyNullBind = true
@@ -106,7 +106,7 @@ func NewAdConfigRequestWithDefaults() *AdConfigRequest {
 }
 
 func (o AdConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["anonymous_group_search"] = o.AnonymousGroupSearch
 	toSerialize["binddn"] = o.Binddn
@@ -163,13 +163,13 @@ type AdLibraryCheckInRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAdLibraryCheckInRequestWithDefaults() *AdLibraryCheckInRequest {
-	this := AdLibraryCheckInRequest{}
+	var this AdLibraryCheckInRequest
 
 	return &this
 }
 
 func (o AdLibraryCheckInRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["service_account_names"] = o.ServiceAccountNames
 
@@ -196,13 +196,13 @@ type AdLibraryCheckOutRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAdLibraryCheckOutRequestWithDefaults() *AdLibraryCheckOutRequest {
-	this := AdLibraryCheckOutRequest{}
+	var this AdLibraryCheckOutRequest
 
 	return &this
 }
 
 func (o AdLibraryCheckOutRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["ttl"] = o.Ttl
 
@@ -229,13 +229,13 @@ type AdLibraryManageCheckInRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAdLibraryManageCheckInRequestWithDefaults() *AdLibraryManageCheckInRequest {
-	this := AdLibraryManageCheckInRequest{}
+	var this AdLibraryManageCheckInRequest
 
 	return &this
 }
 
 func (o AdLibraryManageCheckInRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["service_account_names"] = o.ServiceAccountNames
 
@@ -268,7 +268,7 @@ type AdLibraryRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAdLibraryRequestWithDefaults() *AdLibraryRequest {
-	this := AdLibraryRequest{}
+	var this AdLibraryRequest
 
 	this.DisableCheckInEnforcement = false
 	this.MaxTtl = 86400
@@ -278,7 +278,7 @@ func NewAdLibraryRequestWithDefaults() *AdLibraryRequest {
 }
 
 func (o AdLibraryRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["disable_check_in_enforcement"] = o.DisableCheckInEnforcement
 	toSerialize["max_ttl"] = o.MaxTtl
@@ -310,13 +310,13 @@ type AdRolesRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAdRolesRequestWithDefaults() *AdRolesRequest {
-	this := AdRolesRequest{}
+	var this AdRolesRequest
 
 	return &this
 }
 
 func (o AdRolesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["service_account_name"] = o.ServiceAccountName
 	toSerialize["ttl"] = o.Ttl
@@ -346,13 +346,13 @@ type AlicloudConfigRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAlicloudConfigRequestWithDefaults() *AlicloudConfigRequest {
-	this := AlicloudConfigRequest{}
+	var this AlicloudConfigRequest
 
 	return &this
 }
 
 func (o AlicloudConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["access_key"] = o.AccessKey
 	toSerialize["secret_key"] = o.SecretKey
@@ -384,13 +384,13 @@ type AlicloudLoginRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAlicloudLoginRequestWithDefaults() *AlicloudLoginRequest {
-	this := AlicloudLoginRequest{}
+	var this AlicloudLoginRequest
 
 	return &this
 }
 
 func (o AlicloudLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["identity_request_headers"] = o.IdentityRequestHeaders
 	toSerialize["identity_request_url"] = o.IdentityRequestUrl
@@ -452,7 +452,7 @@ type AlicloudRoleRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAlicloudRoleRequestWithDefaults() *AlicloudRoleRequest {
-	this := AlicloudRoleRequest{}
+	var this AlicloudRoleRequest
 
 	this.TokenType = "default-service"
 
@@ -460,7 +460,7 @@ func NewAlicloudRoleRequestWithDefaults() *AlicloudRoleRequest {
 }
 
 func (o AlicloudRoleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["arn"] = o.Arn
 	toSerialize["bound_cidrs"] = o.BoundCidrs
@@ -501,13 +501,13 @@ type AppIdLoginRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAppIdLoginRequestWithDefaults() *AppIdLoginRequest {
-	this := AppIdLoginRequest{}
+	var this AppIdLoginRequest
 
 	return &this
 }
 
 func (o AppIdLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["user_id"] = o.UserId
 
@@ -536,13 +536,13 @@ type AppIdMapAppIdRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAppIdMapAppIdRequestWithDefaults() *AppIdMapAppIdRequest {
-	this := AppIdMapAppIdRequest{}
+	var this AppIdMapAppIdRequest
 
 	return &this
 }
 
 func (o AppIdMapAppIdRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["display_name"] = o.DisplayName
 	toSerialize["value"] = o.Value
@@ -572,13 +572,13 @@ type AppIdMapUserIdRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAppIdMapUserIdRequestWithDefaults() *AppIdMapUserIdRequest {
-	this := AppIdMapUserIdRequest{}
+	var this AppIdMapUserIdRequest
 
 	return &this
 }
 
 func (o AppIdMapUserIdRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["cidr_block"] = o.CidrBlock
 	toSerialize["value"] = o.Value
@@ -608,7 +608,7 @@ type ApproleLoginRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewApproleLoginRequestWithDefaults() *ApproleLoginRequest {
-	this := ApproleLoginRequest{}
+	var this ApproleLoginRequest
 
 	this.SecretId = ""
 
@@ -616,7 +616,7 @@ func NewApproleLoginRequestWithDefaults() *ApproleLoginRequest {
 }
 
 func (o ApproleLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["role_id"] = o.RoleId
 	toSerialize["secret_id"] = o.SecretId
@@ -644,7 +644,7 @@ type ApproleRoleBindSecretIdRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleBindSecretIdRequestWithDefaults() *ApproleRoleBindSecretIdRequest {
-	this := ApproleRoleBindSecretIdRequest{}
+	var this ApproleRoleBindSecretIdRequest
 
 	this.BindSecretId = true
 
@@ -652,7 +652,7 @@ func NewApproleRoleBindSecretIdRequestWithDefaults() *ApproleRoleBindSecretIdReq
 }
 
 func (o ApproleRoleBindSecretIdRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["bind_secret_id"] = o.BindSecretId
 
@@ -679,13 +679,13 @@ type ApproleRoleBoundCidrListRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleBoundCidrListRequestWithDefaults() *ApproleRoleBoundCidrListRequest {
-	this := ApproleRoleBoundCidrListRequest{}
+	var this ApproleRoleBoundCidrListRequest
 
 	return &this
 }
 
 func (o ApproleRoleBoundCidrListRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["bound_cidr_list"] = o.BoundCidrList
 
@@ -718,13 +718,13 @@ type ApproleRoleCustomSecretIdRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleCustomSecretIdRequestWithDefaults() *ApproleRoleCustomSecretIdRequest {
-	this := ApproleRoleCustomSecretIdRequest{}
+	var this ApproleRoleCustomSecretIdRequest
 
 	return &this
 }
 
 func (o ApproleRoleCustomSecretIdRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["cidr_list"] = o.CidrList
 	toSerialize["metadata"] = o.Metadata
@@ -757,13 +757,13 @@ type ApproleRolePeriodRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRolePeriodRequestWithDefaults() *ApproleRolePeriodRequest {
-	this := ApproleRolePeriodRequest{}
+	var this ApproleRolePeriodRequest
 
 	return &this
 }
 
 func (o ApproleRolePeriodRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["period"] = o.Period
 	toSerialize["token_period"] = o.TokenPeriod
@@ -794,13 +794,13 @@ type ApproleRolePoliciesRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRolePoliciesRequestWithDefaults() *ApproleRolePoliciesRequest {
-	this := ApproleRolePoliciesRequest{}
+	var this ApproleRolePoliciesRequest
 
 	return &this
 }
 
 func (o ApproleRolePoliciesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["policies"] = o.Policies
 	toSerialize["token_policies"] = o.TokenPolicies
@@ -865,7 +865,7 @@ type ApproleRoleRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleRequestWithDefaults() *ApproleRoleRequest {
-	this := ApproleRoleRequest{}
+	var this ApproleRoleRequest
 
 	this.BindSecretId = true
 	this.TokenType = "default-service"
@@ -874,7 +874,7 @@ func NewApproleRoleRequestWithDefaults() *ApproleRoleRequest {
 }
 
 func (o ApproleRoleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["bind_secret_id"] = o.BindSecretId
 	toSerialize["bound_cidr_list"] = o.BoundCidrList
@@ -918,13 +918,13 @@ type ApproleRoleRoleIdRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleRoleIdRequestWithDefaults() *ApproleRoleRoleIdRequest {
-	this := ApproleRoleRoleIdRequest{}
+	var this ApproleRoleRoleIdRequest
 
 	return &this
 }
 
 func (o ApproleRoleRoleIdRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["role_id"] = o.RoleId
 
@@ -951,13 +951,13 @@ type ApproleRoleSecretIdAccessorDestroyRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleSecretIdAccessorDestroyRequestWithDefaults() *ApproleRoleSecretIdAccessorDestroyRequest {
-	this := ApproleRoleSecretIdAccessorDestroyRequest{}
+	var this ApproleRoleSecretIdAccessorDestroyRequest
 
 	return &this
 }
 
 func (o ApproleRoleSecretIdAccessorDestroyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["secret_id_accessor"] = o.SecretIdAccessor
 
@@ -984,13 +984,13 @@ type ApproleRoleSecretIdAccessorLookupRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleSecretIdAccessorLookupRequestWithDefaults() *ApproleRoleSecretIdAccessorLookupRequest {
-	this := ApproleRoleSecretIdAccessorLookupRequest{}
+	var this ApproleRoleSecretIdAccessorLookupRequest
 
 	return &this
 }
 
 func (o ApproleRoleSecretIdAccessorLookupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["secret_id_accessor"] = o.SecretIdAccessor
 
@@ -1017,13 +1017,13 @@ type ApproleRoleSecretIdBoundCidrsRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleSecretIdBoundCidrsRequestWithDefaults() *ApproleRoleSecretIdBoundCidrsRequest {
-	this := ApproleRoleSecretIdBoundCidrsRequest{}
+	var this ApproleRoleSecretIdBoundCidrsRequest
 
 	return &this
 }
 
 func (o ApproleRoleSecretIdBoundCidrsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["secret_id_bound_cidrs"] = o.SecretIdBoundCidrs
 
@@ -1050,13 +1050,13 @@ type ApproleRoleSecretIdDestroyRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleSecretIdDestroyRequestWithDefaults() *ApproleRoleSecretIdDestroyRequest {
-	this := ApproleRoleSecretIdDestroyRequest{}
+	var this ApproleRoleSecretIdDestroyRequest
 
 	return &this
 }
 
 func (o ApproleRoleSecretIdDestroyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["secret_id"] = o.SecretId
 
@@ -1083,13 +1083,13 @@ type ApproleRoleSecretIdLookupRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleSecretIdLookupRequestWithDefaults() *ApproleRoleSecretIdLookupRequest {
-	this := ApproleRoleSecretIdLookupRequest{}
+	var this ApproleRoleSecretIdLookupRequest
 
 	return &this
 }
 
 func (o ApproleRoleSecretIdLookupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["secret_id"] = o.SecretId
 
@@ -1116,13 +1116,13 @@ type ApproleRoleSecretIdNumUsesRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleSecretIdNumUsesRequestWithDefaults() *ApproleRoleSecretIdNumUsesRequest {
-	this := ApproleRoleSecretIdNumUsesRequest{}
+	var this ApproleRoleSecretIdNumUsesRequest
 
 	return &this
 }
 
 func (o ApproleRoleSecretIdNumUsesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["secret_id_num_uses"] = o.SecretIdNumUses
 
@@ -1153,13 +1153,13 @@ type ApproleRoleSecretIdRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleSecretIdRequestWithDefaults() *ApproleRoleSecretIdRequest {
-	this := ApproleRoleSecretIdRequest{}
+	var this ApproleRoleSecretIdRequest
 
 	return &this
 }
 
 func (o ApproleRoleSecretIdRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["cidr_list"] = o.CidrList
 	toSerialize["metadata"] = o.Metadata
@@ -1188,13 +1188,13 @@ type ApproleRoleSecretIdTtlRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleSecretIdTtlRequestWithDefaults() *ApproleRoleSecretIdTtlRequest {
-	this := ApproleRoleSecretIdTtlRequest{}
+	var this ApproleRoleSecretIdTtlRequest
 
 	return &this
 }
 
 func (o ApproleRoleSecretIdTtlRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["secret_id_ttl"] = o.SecretIdTtl
 
@@ -1221,13 +1221,13 @@ type ApproleRoleTokenBoundCidrsRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleTokenBoundCidrsRequestWithDefaults() *ApproleRoleTokenBoundCidrsRequest {
-	this := ApproleRoleTokenBoundCidrsRequest{}
+	var this ApproleRoleTokenBoundCidrsRequest
 
 	return &this
 }
 
 func (o ApproleRoleTokenBoundCidrsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
 
@@ -1254,13 +1254,13 @@ type ApproleRoleTokenMaxTtlRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleTokenMaxTtlRequestWithDefaults() *ApproleRoleTokenMaxTtlRequest {
-	this := ApproleRoleTokenMaxTtlRequest{}
+	var this ApproleRoleTokenMaxTtlRequest
 
 	return &this
 }
 
 func (o ApproleRoleTokenMaxTtlRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["token_max_ttl"] = o.TokenMaxTtl
 
@@ -1287,13 +1287,13 @@ type ApproleRoleTokenNumUsesRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleTokenNumUsesRequestWithDefaults() *ApproleRoleTokenNumUsesRequest {
-	this := ApproleRoleTokenNumUsesRequest{}
+	var this ApproleRoleTokenNumUsesRequest
 
 	return &this
 }
 
 func (o ApproleRoleTokenNumUsesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["token_num_uses"] = o.TokenNumUses
 
@@ -1320,13 +1320,13 @@ type ApproleRoleTokenTtlRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewApproleRoleTokenTtlRequestWithDefaults() *ApproleRoleTokenTtlRequest {
-	this := ApproleRoleTokenTtlRequest{}
+	var this ApproleRoleTokenTtlRequest
 
 	return &this
 }
 
 func (o ApproleRoleTokenTtlRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["token_ttl"] = o.TokenTtl
 
@@ -1355,7 +1355,7 @@ type AwsConfigCertificateRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAwsConfigCertificateRequestWithDefaults() *AwsConfigCertificateRequest {
-	this := AwsConfigCertificateRequest{}
+	var this AwsConfigCertificateRequest
 
 	this.Type = "pkcs7"
 
@@ -1363,7 +1363,7 @@ func NewAwsConfigCertificateRequestWithDefaults() *AwsConfigCertificateRequest {
 }
 
 func (o AwsConfigCertificateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["aws_public_cert"] = o.AwsPublicCert
 	toSerialize["type"] = o.Type
@@ -1407,7 +1407,7 @@ type AwsConfigClientRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAwsConfigClientRequestWithDefaults() *AwsConfigClientRequest {
-	this := AwsConfigClientRequest{}
+	var this AwsConfigClientRequest
 
 	this.AccessKey = ""
 	this.Endpoint = ""
@@ -1422,7 +1422,7 @@ func NewAwsConfigClientRequestWithDefaults() *AwsConfigClientRequest {
 }
 
 func (o AwsConfigClientRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["access_key"] = o.AccessKey
 	toSerialize["allowed_sts_header_values"] = o.AllowedStsHeaderValues
@@ -1463,7 +1463,7 @@ type AwsConfigIdentityRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAwsConfigIdentityRequestWithDefaults() *AwsConfigIdentityRequest {
-	this := AwsConfigIdentityRequest{}
+	var this AwsConfigIdentityRequest
 
 	this.Ec2Alias = "instance_id"
 	this.IamAlias = "unique_id"
@@ -1472,7 +1472,7 @@ func NewAwsConfigIdentityRequestWithDefaults() *AwsConfigIdentityRequest {
 }
 
 func (o AwsConfigIdentityRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["ec2_alias"] = o.Ec2Alias
 	toSerialize["ec2_metadata"] = o.Ec2Metadata
@@ -1504,13 +1504,13 @@ type AwsConfigLeaseRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAwsConfigLeaseRequestWithDefaults() *AwsConfigLeaseRequest {
-	this := AwsConfigLeaseRequest{}
+	var this AwsConfigLeaseRequest
 
 	return &this
 }
 
 func (o AwsConfigLeaseRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["lease"] = o.Lease
 	toSerialize["lease_max"] = o.LeaseMax
@@ -1550,7 +1550,7 @@ type AwsConfigRootRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAwsConfigRootRequestWithDefaults() *AwsConfigRootRequest {
-	this := AwsConfigRootRequest{}
+	var this AwsConfigRootRequest
 
 	this.MaxRetries = -1
 
@@ -1558,7 +1558,7 @@ func NewAwsConfigRootRequestWithDefaults() *AwsConfigRootRequest {
 }
 
 func (o AwsConfigRootRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["access_key"] = o.AccessKey
 	toSerialize["iam_endpoint"] = o.IamEndpoint
@@ -1591,13 +1591,13 @@ type AwsConfigStsRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAwsConfigStsRequestWithDefaults() *AwsConfigStsRequest {
-	this := AwsConfigStsRequest{}
+	var this AwsConfigStsRequest
 
 	return &this
 }
 
 func (o AwsConfigStsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["sts_role"] = o.StsRole
 
@@ -1626,7 +1626,7 @@ type AwsConfigTidyIdentityAccesslistRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAwsConfigTidyIdentityAccesslistRequestWithDefaults() *AwsConfigTidyIdentityAccesslistRequest {
-	this := AwsConfigTidyIdentityAccesslistRequest{}
+	var this AwsConfigTidyIdentityAccesslistRequest
 
 	this.DisablePeriodicTidy = false
 	this.SafetyBuffer = 259200
@@ -1635,7 +1635,7 @@ func NewAwsConfigTidyIdentityAccesslistRequestWithDefaults() *AwsConfigTidyIdent
 }
 
 func (o AwsConfigTidyIdentityAccesslistRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["disable_periodic_tidy"] = o.DisablePeriodicTidy
 	toSerialize["safety_buffer"] = o.SafetyBuffer
@@ -1665,7 +1665,7 @@ type AwsConfigTidyIdentityWhitelistRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAwsConfigTidyIdentityWhitelistRequestWithDefaults() *AwsConfigTidyIdentityWhitelistRequest {
-	this := AwsConfigTidyIdentityWhitelistRequest{}
+	var this AwsConfigTidyIdentityWhitelistRequest
 
 	this.DisablePeriodicTidy = false
 	this.SafetyBuffer = 259200
@@ -1674,7 +1674,7 @@ func NewAwsConfigTidyIdentityWhitelistRequestWithDefaults() *AwsConfigTidyIdenti
 }
 
 func (o AwsConfigTidyIdentityWhitelistRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["disable_periodic_tidy"] = o.DisablePeriodicTidy
 	toSerialize["safety_buffer"] = o.SafetyBuffer
@@ -1704,7 +1704,7 @@ type AwsConfigTidyRoletagBlacklistRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAwsConfigTidyRoletagBlacklistRequestWithDefaults() *AwsConfigTidyRoletagBlacklistRequest {
-	this := AwsConfigTidyRoletagBlacklistRequest{}
+	var this AwsConfigTidyRoletagBlacklistRequest
 
 	this.DisablePeriodicTidy = false
 	this.SafetyBuffer = 15552000
@@ -1713,7 +1713,7 @@ func NewAwsConfigTidyRoletagBlacklistRequestWithDefaults() *AwsConfigTidyRoletag
 }
 
 func (o AwsConfigTidyRoletagBlacklistRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["disable_periodic_tidy"] = o.DisablePeriodicTidy
 	toSerialize["safety_buffer"] = o.SafetyBuffer
@@ -1743,7 +1743,7 @@ type AwsConfigTidyRoletagDenylistRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAwsConfigTidyRoletagDenylistRequestWithDefaults() *AwsConfigTidyRoletagDenylistRequest {
-	this := AwsConfigTidyRoletagDenylistRequest{}
+	var this AwsConfigTidyRoletagDenylistRequest
 
 	this.DisablePeriodicTidy = false
 	this.SafetyBuffer = 15552000
@@ -1752,7 +1752,7 @@ func NewAwsConfigTidyRoletagDenylistRequestWithDefaults() *AwsConfigTidyRoletagD
 }
 
 func (o AwsConfigTidyRoletagDenylistRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["disable_periodic_tidy"] = o.DisablePeriodicTidy
 	toSerialize["safety_buffer"] = o.SafetyBuffer
@@ -1786,7 +1786,7 @@ type AwsCredsRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAwsCredsRequestWithDefaults() *AwsCredsRequest {
-	this := AwsCredsRequest{}
+	var this AwsCredsRequest
 
 	this.Ttl = 3600
 
@@ -1794,7 +1794,7 @@ func NewAwsCredsRequestWithDefaults() *AwsCredsRequest {
 }
 
 func (o AwsCredsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["name"] = o.Name
 	toSerialize["role_arn"] = o.RoleArn
@@ -1840,13 +1840,13 @@ type AwsLoginRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAwsLoginRequestWithDefaults() *AwsLoginRequest {
-	this := AwsLoginRequest{}
+	var this AwsLoginRequest
 
 	return &this
 }
 
 func (o AwsLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["iam_http_request_method"] = o.IamHttpRequestMethod
 	toSerialize["iam_request_body"] = o.IamRequestBody
@@ -1941,7 +1941,7 @@ type AwsRoleRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAwsRoleRequestWithDefaults() *AwsRoleRequest {
-	this := AwsRoleRequest{}
+	var this AwsRoleRequest
 
 	this.AllowInstanceMigration = false
 	this.DisallowReauthentication = false
@@ -1953,7 +1953,7 @@ func NewAwsRoleRequestWithDefaults() *AwsRoleRequest {
 }
 
 func (o AwsRoleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["allow_instance_migration"] = o.AllowInstanceMigration
 	toSerialize["auth_type"] = o.AuthType
@@ -2016,7 +2016,7 @@ type AwsRoleTagRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAwsRoleTagRequestWithDefaults() *AwsRoleTagRequest {
-	this := AwsRoleTagRequest{}
+	var this AwsRoleTagRequest
 
 	this.AllowInstanceMigration = false
 	this.DisallowReauthentication = false
@@ -2026,7 +2026,7 @@ func NewAwsRoleTagRequestWithDefaults() *AwsRoleTagRequest {
 }
 
 func (o AwsRoleTagRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["allow_instance_migration"] = o.AllowInstanceMigration
 	toSerialize["disallow_reauthentication"] = o.DisallowReauthentication
@@ -2081,7 +2081,7 @@ type AwsRolesRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAwsRolesRequestWithDefaults() *AwsRolesRequest {
-	this := AwsRolesRequest{}
+	var this AwsRolesRequest
 
 	this.UserPath = "/"
 
@@ -2089,7 +2089,7 @@ func NewAwsRolesRequestWithDefaults() *AwsRolesRequest {
 }
 
 func (o AwsRolesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["arn"] = o.Arn
 	toSerialize["credential_type"] = o.CredentialType
@@ -2131,7 +2131,7 @@ type AwsStsRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAwsStsRequestWithDefaults() *AwsStsRequest {
-	this := AwsStsRequest{}
+	var this AwsStsRequest
 
 	this.Ttl = 3600
 
@@ -2139,7 +2139,7 @@ func NewAwsStsRequestWithDefaults() *AwsStsRequest {
 }
 
 func (o AwsStsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["role_arn"] = o.RoleArn
 	toSerialize["role_session_name"] = o.RoleSessionName
@@ -2168,7 +2168,7 @@ type AwsTidyIdentityAccesslistRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAwsTidyIdentityAccesslistRequestWithDefaults() *AwsTidyIdentityAccesslistRequest {
-	this := AwsTidyIdentityAccesslistRequest{}
+	var this AwsTidyIdentityAccesslistRequest
 
 	this.SafetyBuffer = 259200
 
@@ -2176,7 +2176,7 @@ func NewAwsTidyIdentityAccesslistRequestWithDefaults() *AwsTidyIdentityAccesslis
 }
 
 func (o AwsTidyIdentityAccesslistRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["safety_buffer"] = o.SafetyBuffer
 
@@ -2203,7 +2203,7 @@ type AwsTidyIdentityWhitelistRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAwsTidyIdentityWhitelistRequestWithDefaults() *AwsTidyIdentityWhitelistRequest {
-	this := AwsTidyIdentityWhitelistRequest{}
+	var this AwsTidyIdentityWhitelistRequest
 
 	this.SafetyBuffer = 259200
 
@@ -2211,7 +2211,7 @@ func NewAwsTidyIdentityWhitelistRequestWithDefaults() *AwsTidyIdentityWhitelistR
 }
 
 func (o AwsTidyIdentityWhitelistRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["safety_buffer"] = o.SafetyBuffer
 
@@ -2238,7 +2238,7 @@ type AwsTidyRoletagBlacklistRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAwsTidyRoletagBlacklistRequestWithDefaults() *AwsTidyRoletagBlacklistRequest {
-	this := AwsTidyRoletagBlacklistRequest{}
+	var this AwsTidyRoletagBlacklistRequest
 
 	this.SafetyBuffer = 259200
 
@@ -2246,7 +2246,7 @@ func NewAwsTidyRoletagBlacklistRequestWithDefaults() *AwsTidyRoletagBlacklistReq
 }
 
 func (o AwsTidyRoletagBlacklistRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["safety_buffer"] = o.SafetyBuffer
 
@@ -2273,7 +2273,7 @@ type AwsTidyRoletagDenylistRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAwsTidyRoletagDenylistRequestWithDefaults() *AwsTidyRoletagDenylistRequest {
-	this := AwsTidyRoletagDenylistRequest{}
+	var this AwsTidyRoletagDenylistRequest
 
 	this.SafetyBuffer = 259200
 
@@ -2281,7 +2281,7 @@ func NewAwsTidyRoletagDenylistRequestWithDefaults() *AwsTidyRoletagDenylistReque
 }
 
 func (o AwsTidyRoletagDenylistRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["safety_buffer"] = o.SafetyBuffer
 
@@ -2316,13 +2316,13 @@ type AzureConfigRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAzureConfigRequestWithDefaults() *AzureConfigRequest {
-	this := AzureConfigRequest{}
+	var this AzureConfigRequest
 
 	return &this
 }
 
 func (o AzureConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["client_id"] = o.ClientId
 	toSerialize["client_secret"] = o.ClientSecret
@@ -2363,13 +2363,13 @@ type AzureLoginRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAzureLoginRequestWithDefaults() *AzureLoginRequest {
-	this := AzureLoginRequest{}
+	var this AzureLoginRequest
 
 	return &this
 }
 
 func (o AzureLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["jwt"] = o.Jwt
 	toSerialize["resource_group_name"] = o.ResourceGroupName
@@ -2444,7 +2444,7 @@ type AzureRoleRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAzureRoleRequestWithDefaults() *AzureRoleRequest {
-	this := AzureRoleRequest{}
+	var this AzureRoleRequest
 
 	this.TokenType = "default-service"
 
@@ -2452,7 +2452,7 @@ func NewAzureRoleRequestWithDefaults() *AzureRoleRequest {
 }
 
 func (o AzureRoleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["bound_group_ids"] = o.BoundGroupIds
 	toSerialize["bound_locations"] = o.BoundLocations
@@ -2506,13 +2506,13 @@ type AzureRolesRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewAzureRolesRequestWithDefaults() *AzureRolesRequest {
-	this := AzureRolesRequest{}
+	var this AzureRolesRequest
 
 	return &this
 }
 
 func (o AzureRolesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["application_object_id"] = o.ApplicationObjectId
 	toSerialize["azure_groups"] = o.AzureGroups
@@ -2566,7 +2566,7 @@ type CentrifyConfigRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCentrifyConfigRequestWithDefaults() *CentrifyConfigRequest {
-	this := CentrifyConfigRequest{}
+	var this CentrifyConfigRequest
 
 	this.AppId = "vault_io_integration"
 	this.Scope = "vault_io_integration"
@@ -2576,7 +2576,7 @@ func NewCentrifyConfigRequestWithDefaults() *CentrifyConfigRequest {
 }
 
 func (o CentrifyConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["app_id"] = o.AppId
 	toSerialize["client_id"] = o.ClientId
@@ -2618,7 +2618,7 @@ type CentrifyLoginRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCentrifyLoginRequestWithDefaults() *CentrifyLoginRequest {
-	this := CentrifyLoginRequest{}
+	var this CentrifyLoginRequest
 
 	this.Mode = "ro"
 
@@ -2626,7 +2626,7 @@ func NewCentrifyLoginRequestWithDefaults() *CentrifyLoginRequest {
 }
 
 func (o CentrifyLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["mode"] = o.Mode
 	toSerialize["password"] = o.Password
@@ -2709,7 +2709,7 @@ type CertCertsRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCertCertsRequestWithDefaults() *CertCertsRequest {
-	this := CertCertsRequest{}
+	var this CertCertsRequest
 
 	this.TokenType = "default-service"
 
@@ -2717,7 +2717,7 @@ func NewCertCertsRequestWithDefaults() *CertCertsRequest {
 }
 
 func (o CertCertsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["allowed_common_names"] = o.AllowedCommonNames
 	toSerialize["allowed_dns_sans"] = o.AllowedDnsSans
@@ -2768,7 +2768,7 @@ type CertConfigRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCertConfigRequestWithDefaults() *CertConfigRequest {
-	this := CertConfigRequest{}
+	var this CertConfigRequest
 
 	this.DisableBinding = false
 
@@ -2776,7 +2776,7 @@ func NewCertConfigRequestWithDefaults() *CertConfigRequest {
 }
 
 func (o CertConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["disable_binding"] = o.DisableBinding
 
@@ -2803,13 +2803,13 @@ type CertCrlsRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCertCrlsRequestWithDefaults() *CertCrlsRequest {
-	this := CertCrlsRequest{}
+	var this CertCrlsRequest
 
 	return &this
 }
 
 func (o CertCrlsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["crl"] = o.Crl
 
@@ -2836,13 +2836,13 @@ type CertLoginRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCertLoginRequestWithDefaults() *CertLoginRequest {
-	this := CertLoginRequest{}
+	var this CertLoginRequest
 
 	return &this
 }
 
 func (o CertLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["name"] = o.Name
 
@@ -2901,7 +2901,7 @@ type CfConfigRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCfConfigRequestWithDefaults() *CfConfigRequest {
-	this := CfConfigRequest{}
+	var this CfConfigRequest
 
 	this.LoginMaxSecondsNotAfter = 60
 	this.LoginMaxSecondsNotBefore = 300
@@ -2910,7 +2910,7 @@ func NewCfConfigRequestWithDefaults() *CfConfigRequest {
 }
 
 func (o CfConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["cf_api_addr"] = o.CfApiAddr
 	toSerialize["cf_api_mutual_tls_certificate"] = o.CfApiMutualTlsCertificate
@@ -2957,13 +2957,13 @@ type CfLoginRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCfLoginRequestWithDefaults() *CfLoginRequest {
-	this := CfLoginRequest{}
+	var this CfLoginRequest
 
 	return &this
 }
 
 func (o CfLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["cf_instance_cert"] = o.CfInstanceCert
 	toSerialize["role"] = o.Role
@@ -3034,7 +3034,7 @@ type CfRolesRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewCfRolesRequestWithDefaults() *CfRolesRequest {
-	this := CfRolesRequest{}
+	var this CfRolesRequest
 
 	this.DisableIpMatching = false
 	this.TokenType = "default-service"
@@ -3043,7 +3043,7 @@ func NewCfRolesRequestWithDefaults() *CfRolesRequest {
 }
 
 func (o CfRolesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["bound_application_ids"] = o.BoundApplicationIds
 	toSerialize["bound_cidrs"] = o.BoundCidrs
@@ -3098,7 +3098,7 @@ type ConsulConfigAccessRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewConsulConfigAccessRequestWithDefaults() *ConsulConfigAccessRequest {
-	this := ConsulConfigAccessRequest{}
+	var this ConsulConfigAccessRequest
 
 	this.Scheme = "http"
 
@@ -3106,7 +3106,7 @@ func NewConsulConfigAccessRequestWithDefaults() *ConsulConfigAccessRequest {
 }
 
 func (o ConsulConfigAccessRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["address"] = o.Address
 	toSerialize["ca_cert"] = o.CaCert
@@ -3166,7 +3166,7 @@ type ConsulRolesRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewConsulRolesRequestWithDefaults() *ConsulRolesRequest {
-	this := ConsulRolesRequest{}
+	var this ConsulRolesRequest
 
 	this.TokenType = "client"
 
@@ -3174,7 +3174,7 @@ func NewConsulRolesRequestWithDefaults() *ConsulRolesRequest {
 }
 
 func (o ConsulRolesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["consul_namespace"] = o.ConsulNamespace
 	toSerialize["consul_policies"] = o.ConsulPolicies
@@ -3226,7 +3226,7 @@ type GcpConfigRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGcpConfigRequestWithDefaults() *GcpConfigRequest {
-	this := GcpConfigRequest{}
+	var this GcpConfigRequest
 
 	this.GceAlias = "role_id"
 	this.IamAlias = "role_id"
@@ -3235,7 +3235,7 @@ func NewGcpConfigRequestWithDefaults() *GcpConfigRequest {
 }
 
 func (o GcpConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["credentials"] = o.Credentials
 	toSerialize["custom_endpoint"] = o.CustomEndpoint
@@ -3272,7 +3272,7 @@ type GcpKeyRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGcpKeyRequestWithDefaults() *GcpKeyRequest {
-	this := GcpKeyRequest{}
+	var this GcpKeyRequest
 
 	this.KeyAlgorithm = "KEY_ALG_RSA_2048"
 	this.KeyType = "TYPE_GOOGLE_CREDENTIALS_FILE"
@@ -3281,7 +3281,7 @@ func NewGcpKeyRequestWithDefaults() *GcpKeyRequest {
 }
 
 func (o GcpKeyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["key_algorithm"] = o.KeyAlgorithm
 	toSerialize["key_type"] = o.KeyType
@@ -3312,13 +3312,13 @@ type GcpLoginRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGcpLoginRequestWithDefaults() *GcpLoginRequest {
-	this := GcpLoginRequest{}
+	var this GcpLoginRequest
 
 	return &this
 }
 
 func (o GcpLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["jwt"] = o.Jwt
 	toSerialize["role"] = o.Role
@@ -3348,13 +3348,13 @@ type GcpRoleLabelsRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGcpRoleLabelsRequestWithDefaults() *GcpRoleLabelsRequest {
-	this := GcpRoleLabelsRequest{}
+	var this GcpRoleLabelsRequest
 
 	return &this
 }
 
 func (o GcpRoleLabelsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["add"] = o.Add
 	toSerialize["remove"] = o.Remove
@@ -3440,7 +3440,7 @@ type GcpRoleRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGcpRoleRequestWithDefaults() *GcpRoleRequest {
-	this := GcpRoleRequest{}
+	var this GcpRoleRequest
 
 	this.AddGroupAliases = false
 	this.AllowGceInference = true
@@ -3451,7 +3451,7 @@ func NewGcpRoleRequestWithDefaults() *GcpRoleRequest {
 }
 
 func (o GcpRoleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["add_group_aliases"] = o.AddGroupAliases
 	toSerialize["allow_gce_inference"] = o.AllowGceInference
@@ -3507,13 +3507,13 @@ type GcpRoleServiceAccountsRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGcpRoleServiceAccountsRequestWithDefaults() *GcpRoleServiceAccountsRequest {
-	this := GcpRoleServiceAccountsRequest{}
+	var this GcpRoleServiceAccountsRequest
 
 	return &this
 }
 
 func (o GcpRoleServiceAccountsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["add"] = o.Add
 	toSerialize["remove"] = o.Remove
@@ -3545,7 +3545,7 @@ type GcpRolesetKeyRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGcpRolesetKeyRequestWithDefaults() *GcpRolesetKeyRequest {
-	this := GcpRolesetKeyRequest{}
+	var this GcpRolesetKeyRequest
 
 	this.KeyAlgorithm = "KEY_ALG_RSA_2048"
 	this.KeyType = "TYPE_GOOGLE_CREDENTIALS_FILE"
@@ -3554,7 +3554,7 @@ func NewGcpRolesetKeyRequestWithDefaults() *GcpRolesetKeyRequest {
 }
 
 func (o GcpRolesetKeyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["key_algorithm"] = o.KeyAlgorithm
 	toSerialize["key_type"] = o.KeyType
@@ -3589,7 +3589,7 @@ type GcpRolesetRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGcpRolesetRequestWithDefaults() *GcpRolesetRequest {
-	this := GcpRolesetRequest{}
+	var this GcpRolesetRequest
 
 	this.SecretType = "access_token"
 
@@ -3597,7 +3597,7 @@ func NewGcpRolesetRequestWithDefaults() *GcpRolesetRequest {
 }
 
 func (o GcpRolesetRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["bindings"] = o.Bindings
 	toSerialize["project"] = o.Project
@@ -3631,7 +3631,7 @@ type GcpStaticAccountKeyRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGcpStaticAccountKeyRequestWithDefaults() *GcpStaticAccountKeyRequest {
-	this := GcpStaticAccountKeyRequest{}
+	var this GcpStaticAccountKeyRequest
 
 	this.KeyAlgorithm = "KEY_ALG_RSA_2048"
 	this.KeyType = "TYPE_GOOGLE_CREDENTIALS_FILE"
@@ -3640,7 +3640,7 @@ func NewGcpStaticAccountKeyRequestWithDefaults() *GcpStaticAccountKeyRequest {
 }
 
 func (o GcpStaticAccountKeyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["key_algorithm"] = o.KeyAlgorithm
 	toSerialize["key_type"] = o.KeyType
@@ -3675,7 +3675,7 @@ type GcpStaticAccountRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGcpStaticAccountRequestWithDefaults() *GcpStaticAccountRequest {
-	this := GcpStaticAccountRequest{}
+	var this GcpStaticAccountRequest
 
 	this.SecretType = "access_token"
 
@@ -3683,7 +3683,7 @@ func NewGcpStaticAccountRequestWithDefaults() *GcpStaticAccountRequest {
 }
 
 func (o GcpStaticAccountRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["bindings"] = o.Bindings
 	toSerialize["secret_type"] = o.SecretType
@@ -3715,13 +3715,13 @@ type GcpkmsConfigRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGcpkmsConfigRequestWithDefaults() *GcpkmsConfigRequest {
-	this := GcpkmsConfigRequest{}
+	var this GcpkmsConfigRequest
 
 	return &this
 }
 
 func (o GcpkmsConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["credentials"] = o.Credentials
 	toSerialize["scopes"] = o.Scopes
@@ -3753,13 +3753,13 @@ type GcpkmsDecryptRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGcpkmsDecryptRequestWithDefaults() *GcpkmsDecryptRequest {
-	this := GcpkmsDecryptRequest{}
+	var this GcpkmsDecryptRequest
 
 	return &this
 }
 
 func (o GcpkmsDecryptRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["additional_authenticated_data"] = o.AdditionalAuthenticatedData
 	toSerialize["ciphertext"] = o.Ciphertext
@@ -3792,13 +3792,13 @@ type GcpkmsEncryptRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGcpkmsEncryptRequestWithDefaults() *GcpkmsEncryptRequest {
-	this := GcpkmsEncryptRequest{}
+	var this GcpkmsEncryptRequest
 
 	return &this
 }
 
 func (o GcpkmsEncryptRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["additional_authenticated_data"] = o.AdditionalAuthenticatedData
 	toSerialize["key_version"] = o.KeyVersion
@@ -3829,13 +3829,13 @@ type GcpkmsKeysConfigRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGcpkmsKeysConfigRequestWithDefaults() *GcpkmsKeysConfigRequest {
-	this := GcpkmsKeysConfigRequest{}
+	var this GcpkmsKeysConfigRequest
 
 	return &this
 }
 
 func (o GcpkmsKeysConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["max_version"] = o.MaxVersion
 	toSerialize["min_version"] = o.MinVersion
@@ -3865,7 +3865,7 @@ type GcpkmsKeysRegisterRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGcpkmsKeysRegisterRequestWithDefaults() *GcpkmsKeysRegisterRequest {
-	this := GcpkmsKeysRegisterRequest{}
+	var this GcpkmsKeysRegisterRequest
 
 	this.Verify = true
 
@@ -3873,7 +3873,7 @@ func NewGcpkmsKeysRegisterRequestWithDefaults() *GcpkmsKeysRegisterRequest {
 }
 
 func (o GcpkmsKeysRegisterRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["crypto_key"] = o.CryptoKey
 	toSerialize["verify"] = o.Verify
@@ -3913,13 +3913,13 @@ type GcpkmsKeysRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGcpkmsKeysRequestWithDefaults() *GcpkmsKeysRequest {
-	this := GcpkmsKeysRequest{}
+	var this GcpkmsKeysRequest
 
 	return &this
 }
 
 func (o GcpkmsKeysRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["algorithm"] = o.Algorithm
 	toSerialize["crypto_key"] = o.CryptoKey
@@ -3956,13 +3956,13 @@ type GcpkmsReencryptRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGcpkmsReencryptRequestWithDefaults() *GcpkmsReencryptRequest {
-	this := GcpkmsReencryptRequest{}
+	var this GcpkmsReencryptRequest
 
 	return &this
 }
 
 func (o GcpkmsReencryptRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["additional_authenticated_data"] = o.AdditionalAuthenticatedData
 	toSerialize["ciphertext"] = o.Ciphertext
@@ -3993,13 +3993,13 @@ type GcpkmsSignRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGcpkmsSignRequestWithDefaults() *GcpkmsSignRequest {
-	this := GcpkmsSignRequest{}
+	var this GcpkmsSignRequest
 
 	return &this
 }
 
 func (o GcpkmsSignRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["digest"] = o.Digest
 	toSerialize["key_version"] = o.KeyVersion
@@ -4031,13 +4031,13 @@ type GcpkmsVerifyRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGcpkmsVerifyRequestWithDefaults() *GcpkmsVerifyRequest {
-	this := GcpkmsVerifyRequest{}
+	var this GcpkmsVerifyRequest
 
 	return &this
 }
 
 func (o GcpkmsVerifyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["digest"] = o.Digest
 	toSerialize["key_version"] = o.KeyVersion
@@ -4094,7 +4094,7 @@ type GithubConfigRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGithubConfigRequestWithDefaults() *GithubConfigRequest {
-	this := GithubConfigRequest{}
+	var this GithubConfigRequest
 
 	this.TokenType = "default-service"
 
@@ -4102,7 +4102,7 @@ func NewGithubConfigRequestWithDefaults() *GithubConfigRequest {
 }
 
 func (o GithubConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["base_url"] = o.BaseUrl
 	toSerialize["max_ttl"] = o.MaxTtl
@@ -4142,13 +4142,13 @@ type GithubLoginRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGithubLoginRequestWithDefaults() *GithubLoginRequest {
-	this := GithubLoginRequest{}
+	var this GithubLoginRequest
 
 	return &this
 }
 
 func (o GithubLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["token"] = o.Token
 
@@ -4175,13 +4175,13 @@ type GithubMapTeamsRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGithubMapTeamsRequestWithDefaults() *GithubMapTeamsRequest {
-	this := GithubMapTeamsRequest{}
+	var this GithubMapTeamsRequest
 
 	return &this
 }
 
 func (o GithubMapTeamsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["value"] = o.Value
 
@@ -4208,13 +4208,13 @@ type GithubMapUsersRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewGithubMapUsersRequestWithDefaults() *GithubMapUsersRequest {
-	this := GithubMapUsersRequest{}
+	var this GithubMapUsersRequest
 
 	return &this
 }
 
 func (o GithubMapUsersRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["value"] = o.Value
 
@@ -4247,13 +4247,13 @@ type IdentityAliasIdRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityAliasIdRequestWithDefaults() *IdentityAliasIdRequest {
-	this := IdentityAliasIdRequest{}
+	var this IdentityAliasIdRequest
 
 	return &this
 }
 
 func (o IdentityAliasIdRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["canonical_id"] = o.CanonicalId
 	toSerialize["entity_id"] = o.EntityId
@@ -4291,13 +4291,13 @@ type IdentityAliasRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityAliasRequestWithDefaults() *IdentityAliasRequest {
-	this := IdentityAliasRequest{}
+	var this IdentityAliasRequest
 
 	return &this
 }
 
 func (o IdentityAliasRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["canonical_id"] = o.CanonicalId
 	toSerialize["entity_id"] = o.EntityId
@@ -4336,13 +4336,13 @@ type IdentityEntityAliasIdRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityEntityAliasIdRequestWithDefaults() *IdentityEntityAliasIdRequest {
-	this := IdentityEntityAliasIdRequest{}
+	var this IdentityEntityAliasIdRequest
 
 	return &this
 }
 
 func (o IdentityEntityAliasIdRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["canonical_id"] = o.CanonicalId
 	toSerialize["custom_metadata"] = o.CustomMetadata
@@ -4383,13 +4383,13 @@ type IdentityEntityAliasRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityEntityAliasRequestWithDefaults() *IdentityEntityAliasRequest {
-	this := IdentityEntityAliasRequest{}
+	var this IdentityEntityAliasRequest
 
 	return &this
 }
 
 func (o IdentityEntityAliasRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["canonical_id"] = o.CanonicalId
 	toSerialize["custom_metadata"] = o.CustomMetadata
@@ -4421,13 +4421,13 @@ type IdentityEntityBatchDeleteRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityEntityBatchDeleteRequestWithDefaults() *IdentityEntityBatchDeleteRequest {
-	this := IdentityEntityBatchDeleteRequest{}
+	var this IdentityEntityBatchDeleteRequest
 
 	return &this
 }
 
 func (o IdentityEntityBatchDeleteRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["entity_ids"] = o.EntityIds
 
@@ -4460,13 +4460,13 @@ type IdentityEntityIdRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityEntityIdRequestWithDefaults() *IdentityEntityIdRequest {
-	this := IdentityEntityIdRequest{}
+	var this IdentityEntityIdRequest
 
 	return &this
 }
 
 func (o IdentityEntityIdRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["disabled"] = o.Disabled
 	toSerialize["metadata"] = o.Metadata
@@ -4500,13 +4500,13 @@ type IdentityEntityMergeRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityEntityMergeRequestWithDefaults() *IdentityEntityMergeRequest {
-	this := IdentityEntityMergeRequest{}
+	var this IdentityEntityMergeRequest
 
 	return &this
 }
 
 func (o IdentityEntityMergeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["force"] = o.Force
 	toSerialize["from_entity_ids"] = o.FromEntityIds
@@ -4541,13 +4541,13 @@ type IdentityEntityNameRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityEntityNameRequestWithDefaults() *IdentityEntityNameRequest {
-	this := IdentityEntityNameRequest{}
+	var this IdentityEntityNameRequest
 
 	return &this
 }
 
 func (o IdentityEntityNameRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["disabled"] = o.Disabled
 	toSerialize["id"] = o.Id
@@ -4585,13 +4585,13 @@ type IdentityEntityRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityEntityRequestWithDefaults() *IdentityEntityRequest {
-	this := IdentityEntityRequest{}
+	var this IdentityEntityRequest
 
 	return &this
 }
 
 func (o IdentityEntityRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["disabled"] = o.Disabled
 	toSerialize["id"] = o.Id
@@ -4626,13 +4626,13 @@ type IdentityGroupAliasIdRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityGroupAliasIdRequestWithDefaults() *IdentityGroupAliasIdRequest {
-	this := IdentityGroupAliasIdRequest{}
+	var this IdentityGroupAliasIdRequest
 
 	return &this
 }
 
 func (o IdentityGroupAliasIdRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["canonical_id"] = o.CanonicalId
 	toSerialize["mount_accessor"] = o.MountAccessor
@@ -4667,13 +4667,13 @@ type IdentityGroupAliasRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityGroupAliasRequestWithDefaults() *IdentityGroupAliasRequest {
-	this := IdentityGroupAliasRequest{}
+	var this IdentityGroupAliasRequest
 
 	return &this
 }
 
 func (o IdentityGroupAliasRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["canonical_id"] = o.CanonicalId
 	toSerialize["id"] = o.Id
@@ -4713,13 +4713,13 @@ type IdentityGroupIdRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityGroupIdRequestWithDefaults() *IdentityGroupIdRequest {
-	this := IdentityGroupIdRequest{}
+	var this IdentityGroupIdRequest
 
 	return &this
 }
 
 func (o IdentityGroupIdRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["member_entity_ids"] = o.MemberEntityIds
 	toSerialize["member_group_ids"] = o.MemberGroupIds
@@ -4761,13 +4761,13 @@ type IdentityGroupNameRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityGroupNameRequestWithDefaults() *IdentityGroupNameRequest {
-	this := IdentityGroupNameRequest{}
+	var this IdentityGroupNameRequest
 
 	return &this
 }
 
 func (o IdentityGroupNameRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["id"] = o.Id
 	toSerialize["member_entity_ids"] = o.MemberEntityIds
@@ -4811,13 +4811,13 @@ type IdentityGroupRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityGroupRequestWithDefaults() *IdentityGroupRequest {
-	this := IdentityGroupRequest{}
+	var this IdentityGroupRequest
 
 	return &this
 }
 
 func (o IdentityGroupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["id"] = o.Id
 	toSerialize["member_entity_ids"] = o.MemberEntityIds
@@ -4858,13 +4858,13 @@ type IdentityLookupEntityRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityLookupEntityRequestWithDefaults() *IdentityLookupEntityRequest {
-	this := IdentityLookupEntityRequest{}
+	var this IdentityLookupEntityRequest
 
 	return &this
 }
 
 func (o IdentityLookupEntityRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["alias_id"] = o.AliasId
 	toSerialize["alias_mount_accessor"] = o.AliasMountAccessor
@@ -4903,13 +4903,13 @@ type IdentityLookupGroupRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityLookupGroupRequestWithDefaults() *IdentityLookupGroupRequest {
-	this := IdentityLookupGroupRequest{}
+	var this IdentityLookupGroupRequest
 
 	return &this
 }
 
 func (o IdentityLookupGroupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["alias_id"] = o.AliasId
 	toSerialize["alias_mount_accessor"] = o.AliasMountAccessor
@@ -4948,13 +4948,13 @@ type IdentityMfaLoginEnforcementRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityMfaLoginEnforcementRequestWithDefaults() *IdentityMfaLoginEnforcementRequest {
-	this := IdentityMfaLoginEnforcementRequest{}
+	var this IdentityMfaLoginEnforcementRequest
 
 	return &this
 }
 
 func (o IdentityMfaLoginEnforcementRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["auth_method_accessors"] = o.AuthMethodAccessors
 	toSerialize["auth_method_types"] = o.AuthMethodTypes
@@ -4997,13 +4997,13 @@ type IdentityMfaMethodDuoRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityMfaMethodDuoRequestWithDefaults() *IdentityMfaMethodDuoRequest {
-	this := IdentityMfaMethodDuoRequest{}
+	var this IdentityMfaMethodDuoRequest
 
 	return &this
 }
 
 func (o IdentityMfaMethodDuoRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["api_hostname"] = o.ApiHostname
 	toSerialize["integration_key"] = o.IntegrationKey
@@ -5048,13 +5048,13 @@ type IdentityMfaMethodOktaRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityMfaMethodOktaRequestWithDefaults() *IdentityMfaMethodOktaRequest {
-	this := IdentityMfaMethodOktaRequest{}
+	var this IdentityMfaMethodOktaRequest
 
 	return &this
 }
 
 func (o IdentityMfaMethodOktaRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["api_token"] = o.ApiToken
 	toSerialize["base_url"] = o.BaseUrl
@@ -5091,13 +5091,13 @@ type IdentityMfaMethodPingidRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityMfaMethodPingidRequestWithDefaults() *IdentityMfaMethodPingidRequest {
-	this := IdentityMfaMethodPingidRequest{}
+	var this IdentityMfaMethodPingidRequest
 
 	return &this
 }
 
 func (o IdentityMfaMethodPingidRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["method_id"] = o.MethodId
 	toSerialize["settings_file_base64"] = o.SettingsFileBase64
@@ -5128,13 +5128,13 @@ type IdentityMfaMethodTotpAdminDestroyRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityMfaMethodTotpAdminDestroyRequestWithDefaults() *IdentityMfaMethodTotpAdminDestroyRequest {
-	this := IdentityMfaMethodTotpAdminDestroyRequest{}
+	var this IdentityMfaMethodTotpAdminDestroyRequest
 
 	return &this
 }
 
 func (o IdentityMfaMethodTotpAdminDestroyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["entity_id"] = o.EntityId
 	toSerialize["method_id"] = o.MethodId
@@ -5164,13 +5164,13 @@ type IdentityMfaMethodTotpAdminGenerateRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityMfaMethodTotpAdminGenerateRequestWithDefaults() *IdentityMfaMethodTotpAdminGenerateRequest {
-	this := IdentityMfaMethodTotpAdminGenerateRequest{}
+	var this IdentityMfaMethodTotpAdminGenerateRequest
 
 	return &this
 }
 
 func (o IdentityMfaMethodTotpAdminGenerateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["entity_id"] = o.EntityId
 	toSerialize["method_id"] = o.MethodId
@@ -5198,13 +5198,13 @@ type IdentityMfaMethodTotpGenerateRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityMfaMethodTotpGenerateRequestWithDefaults() *IdentityMfaMethodTotpGenerateRequest {
-	this := IdentityMfaMethodTotpGenerateRequest{}
+	var this IdentityMfaMethodTotpGenerateRequest
 
 	return &this
 }
 
 func (o IdentityMfaMethodTotpGenerateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["method_id"] = o.MethodId
 
@@ -5247,7 +5247,7 @@ type IdentityMfaMethodTotpRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityMfaMethodTotpRequestWithDefaults() *IdentityMfaMethodTotpRequest {
-	this := IdentityMfaMethodTotpRequest{}
+	var this IdentityMfaMethodTotpRequest
 
 	this.Algorithm = "SHA1"
 	this.Digits = 6
@@ -5260,7 +5260,7 @@ func NewIdentityMfaMethodTotpRequestWithDefaults() *IdentityMfaMethodTotpRequest
 }
 
 func (o IdentityMfaMethodTotpRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["algorithm"] = o.Algorithm
 	toSerialize["digits"] = o.Digits
@@ -5297,13 +5297,13 @@ type IdentityOidcAssignmentRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityOidcAssignmentRequestWithDefaults() *IdentityOidcAssignmentRequest {
-	this := IdentityOidcAssignmentRequest{}
+	var this IdentityOidcAssignmentRequest
 
 	return &this
 }
 
 func (o IdentityOidcAssignmentRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["entity_ids"] = o.EntityIds
 	toSerialize["group_ids"] = o.GroupIds
@@ -5341,7 +5341,7 @@ type IdentityOidcClientRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityOidcClientRequestWithDefaults() *IdentityOidcClientRequest {
-	this := IdentityOidcClientRequest{}
+	var this IdentityOidcClientRequest
 
 	this.ClientType = "confidential"
 	this.Key = "default"
@@ -5350,7 +5350,7 @@ func NewIdentityOidcClientRequestWithDefaults() *IdentityOidcClientRequest {
 }
 
 func (o IdentityOidcClientRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["access_token_ttl"] = o.AccessTokenTtl
 	toSerialize["assignments"] = o.Assignments
@@ -5382,13 +5382,13 @@ type IdentityOidcConfigRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityOidcConfigRequestWithDefaults() *IdentityOidcConfigRequest {
-	this := IdentityOidcConfigRequest{}
+	var this IdentityOidcConfigRequest
 
 	return &this
 }
 
 func (o IdentityOidcConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["issuer"] = o.Issuer
 
@@ -5417,13 +5417,13 @@ type IdentityOidcIntrospectRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityOidcIntrospectRequestWithDefaults() *IdentityOidcIntrospectRequest {
-	this := IdentityOidcIntrospectRequest{}
+	var this IdentityOidcIntrospectRequest
 
 	return &this
 }
 
 func (o IdentityOidcIntrospectRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["client_id"] = o.ClientId
 	toSerialize["token"] = o.Token
@@ -5457,7 +5457,7 @@ type IdentityOidcKeyRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityOidcKeyRequestWithDefaults() *IdentityOidcKeyRequest {
-	this := IdentityOidcKeyRequest{}
+	var this IdentityOidcKeyRequest
 
 	this.Algorithm = "RS256"
 
@@ -5465,7 +5465,7 @@ func NewIdentityOidcKeyRequestWithDefaults() *IdentityOidcKeyRequest {
 }
 
 func (o IdentityOidcKeyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["algorithm"] = o.Algorithm
 	toSerialize["allowed_client_ids"] = o.AllowedClientIds
@@ -5495,13 +5495,13 @@ type IdentityOidcKeyRotateRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityOidcKeyRotateRequestWithDefaults() *IdentityOidcKeyRotateRequest {
-	this := IdentityOidcKeyRotateRequest{}
+	var this IdentityOidcKeyRotateRequest
 
 	return &this
 }
 
 func (o IdentityOidcKeyRotateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["verification_ttl"] = o.VerificationTtl
 
@@ -5544,7 +5544,7 @@ type IdentityOidcProviderAuthorizeRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityOidcProviderAuthorizeRequestWithDefaults() *IdentityOidcProviderAuthorizeRequest {
-	this := IdentityOidcProviderAuthorizeRequest{}
+	var this IdentityOidcProviderAuthorizeRequest
 
 	this.CodeChallengeMethod = "plain"
 
@@ -5552,7 +5552,7 @@ func NewIdentityOidcProviderAuthorizeRequestWithDefaults() *IdentityOidcProvider
 }
 
 func (o IdentityOidcProviderAuthorizeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["client_id"] = o.ClientId
 	toSerialize["code_challenge"] = o.CodeChallenge
@@ -5591,13 +5591,13 @@ type IdentityOidcProviderRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityOidcProviderRequestWithDefaults() *IdentityOidcProviderRequest {
-	this := IdentityOidcProviderRequest{}
+	var this IdentityOidcProviderRequest
 
 	return &this
 }
 
 func (o IdentityOidcProviderRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["allowed_client_ids"] = o.AllowedClientIds
 	toSerialize["issuer"] = o.Issuer
@@ -5634,13 +5634,13 @@ type IdentityOidcProviderTokenRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityOidcProviderTokenRequestWithDefaults() *IdentityOidcProviderTokenRequest {
-	this := IdentityOidcProviderTokenRequest{}
+	var this IdentityOidcProviderTokenRequest
 
 	return &this
 }
 
 func (o IdentityOidcProviderTokenRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["client_id"] = o.ClientId
 	toSerialize["code"] = o.Code
@@ -5677,13 +5677,13 @@ type IdentityOidcRoleRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityOidcRoleRequestWithDefaults() *IdentityOidcRoleRequest {
-	this := IdentityOidcRoleRequest{}
+	var this IdentityOidcRoleRequest
 
 	return &this
 }
 
 func (o IdentityOidcRoleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["client_id"] = o.ClientId
 	toSerialize["key"] = o.Key
@@ -5715,13 +5715,13 @@ type IdentityOidcScopeRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityOidcScopeRequestWithDefaults() *IdentityOidcScopeRequest {
-	this := IdentityOidcScopeRequest{}
+	var this IdentityOidcScopeRequest
 
 	return &this
 }
 
 func (o IdentityOidcScopeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["description"] = o.Description
 	toSerialize["template"] = o.Template
@@ -5755,13 +5755,13 @@ type IdentityPersonaIdRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityPersonaIdRequestWithDefaults() *IdentityPersonaIdRequest {
-	this := IdentityPersonaIdRequest{}
+	var this IdentityPersonaIdRequest
 
 	return &this
 }
 
 func (o IdentityPersonaIdRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["entity_id"] = o.EntityId
 	toSerialize["metadata"] = o.Metadata
@@ -5799,13 +5799,13 @@ type IdentityPersonaRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewIdentityPersonaRequestWithDefaults() *IdentityPersonaRequest {
-	this := IdentityPersonaRequest{}
+	var this IdentityPersonaRequest
 
 	return &this
 }
 
 func (o IdentityPersonaRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["entity_id"] = o.EntityId
 	toSerialize["id"] = o.Id
@@ -5862,13 +5862,13 @@ type JwtConfigRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewJwtConfigRequestWithDefaults() *JwtConfigRequest {
-	this := JwtConfigRequest{}
+	var this JwtConfigRequest
 
 	return &this
 }
 
 func (o JwtConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["bound_issuer"] = o.BoundIssuer
 	toSerialize["default_role"] = o.DefaultRole
@@ -5910,13 +5910,13 @@ type JwtLoginRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewJwtLoginRequestWithDefaults() *JwtLoginRequest {
-	this := JwtLoginRequest{}
+	var this JwtLoginRequest
 
 	return &this
 }
 
 func (o JwtLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["jwt"] = o.Jwt
 	toSerialize["role"] = o.Role
@@ -5948,13 +5948,13 @@ type JwtOidcAuthUrlRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewJwtOidcAuthUrlRequestWithDefaults() *JwtOidcAuthUrlRequest {
-	this := JwtOidcAuthUrlRequest{}
+	var this JwtOidcAuthUrlRequest
 
 	return &this
 }
 
 func (o JwtOidcAuthUrlRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["client_nonce"] = o.ClientNonce
 	toSerialize["redirect_uri"] = o.RedirectUri
@@ -5985,13 +5985,13 @@ type JwtOidcCallbackRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewJwtOidcCallbackRequestWithDefaults() *JwtOidcCallbackRequest {
-	this := JwtOidcCallbackRequest{}
+	var this JwtOidcCallbackRequest
 
 	return &this
 }
 
 func (o JwtOidcCallbackRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["client_nonce"] = o.ClientNonce
 	toSerialize["code"] = o.Code
@@ -6087,7 +6087,7 @@ type JwtRoleRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewJwtRoleRequestWithDefaults() *JwtRoleRequest {
-	this := JwtRoleRequest{}
+	var this JwtRoleRequest
 
 	this.BoundClaimsType = "string"
 	this.ExpirationLeeway = 150
@@ -6098,7 +6098,7 @@ func NewJwtRoleRequestWithDefaults() *JwtRoleRequest {
 }
 
 func (o JwtRoleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["allowed_redirect_uris"] = o.AllowedRedirectUris
 	toSerialize["bound_audiences"] = o.BoundAudiences
@@ -6221,7 +6221,7 @@ type KerberosConfigLdapRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewKerberosConfigLdapRequestWithDefaults() *KerberosConfigLdapRequest {
-	this := KerberosConfigLdapRequest{}
+	var this KerberosConfigLdapRequest
 
 	this.AnonymousGroupSearch = false
 	this.DenyNullBind = true
@@ -6240,7 +6240,7 @@ func NewKerberosConfigLdapRequestWithDefaults() *KerberosConfigLdapRequest {
 }
 
 func (o KerberosConfigLdapRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["anonymous_group_search"] = o.AnonymousGroupSearch
 	toSerialize["binddn"] = o.Binddn
@@ -6302,13 +6302,13 @@ type KerberosConfigRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewKerberosConfigRequestWithDefaults() *KerberosConfigRequest {
-	this := KerberosConfigRequest{}
+	var this KerberosConfigRequest
 
 	return &this
 }
 
 func (o KerberosConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["keytab"] = o.Keytab
 	toSerialize["service_account"] = o.ServiceAccount
@@ -6336,13 +6336,13 @@ type KerberosGroupsRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewKerberosGroupsRequestWithDefaults() *KerberosGroupsRequest {
-	this := KerberosGroupsRequest{}
+	var this KerberosGroupsRequest
 
 	return &this
 }
 
 func (o KerberosGroupsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["policies"] = o.Policies
 
@@ -6369,13 +6369,13 @@ type KerberosLoginRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewKerberosLoginRequestWithDefaults() *KerberosLoginRequest {
-	this := KerberosLoginRequest{}
+	var this KerberosLoginRequest
 
 	return &this
 }
 
 func (o KerberosLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["authorization"] = o.Authorization
 
@@ -6416,7 +6416,7 @@ type KubernetesConfigRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewKubernetesConfigRequestWithDefaults() *KubernetesConfigRequest {
-	this := KubernetesConfigRequest{}
+	var this KubernetesConfigRequest
 
 	this.DisableIssValidation = true
 	this.DisableLocalCaJwt = false
@@ -6425,7 +6425,7 @@ func NewKubernetesConfigRequestWithDefaults() *KubernetesConfigRequest {
 }
 
 func (o KubernetesConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["disable_iss_validation"] = o.DisableIssValidation
 	toSerialize["disable_local_ca_jwt"] = o.DisableLocalCaJwt
@@ -6462,13 +6462,13 @@ type KubernetesCredsRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewKubernetesCredsRequestWithDefaults() *KubernetesCredsRequest {
-	this := KubernetesCredsRequest{}
+	var this KubernetesCredsRequest
 
 	return &this
 }
 
 func (o KubernetesCredsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["cluster_role_binding"] = o.ClusterRoleBinding
 	toSerialize["kubernetes_namespace"] = o.KubernetesNamespace
@@ -6499,13 +6499,13 @@ type KubernetesLoginRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewKubernetesLoginRequestWithDefaults() *KubernetesLoginRequest {
-	this := KubernetesLoginRequest{}
+	var this KubernetesLoginRequest
 
 	return &this
 }
 
 func (o KubernetesLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["jwt"] = o.Jwt
 	toSerialize["role"] = o.Role
@@ -6575,7 +6575,7 @@ type KubernetesRoleRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewKubernetesRoleRequestWithDefaults() *KubernetesRoleRequest {
-	this := KubernetesRoleRequest{}
+	var this KubernetesRoleRequest
 
 	this.AliasNameSource = "serviceaccount_uid"
 	this.TokenType = "default-service"
@@ -6584,7 +6584,7 @@ func NewKubernetesRoleRequestWithDefaults() *KubernetesRoleRequest {
 }
 
 func (o KubernetesRoleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["alias_name_source"] = o.AliasNameSource
 	toSerialize["audience"] = o.Audience
@@ -6647,7 +6647,7 @@ type KubernetesRolesRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewKubernetesRolesRequestWithDefaults() *KubernetesRolesRequest {
-	this := KubernetesRolesRequest{}
+	var this KubernetesRolesRequest
 
 	this.KubernetesRoleType = "Role"
 
@@ -6655,7 +6655,7 @@ func NewKubernetesRolesRequestWithDefaults() *KubernetesRolesRequest {
 }
 
 func (o KubernetesRolesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["allowed_kubernetes_namespaces"] = o.AllowedKubernetesNamespaces
 	toSerialize["extra_annotations"] = o.ExtraAnnotations
@@ -6695,13 +6695,13 @@ type KvConfigRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewKvConfigRequestWithDefaults() *KvConfigRequest {
-	this := KvConfigRequest{}
+	var this KvConfigRequest
 
 	return &this
 }
 
 func (o KvConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["cas_required"] = o.CasRequired
 	toSerialize["delete_version_after"] = o.DeleteVersionAfter
@@ -6734,13 +6734,13 @@ type KvDataRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewKvDataRequestWithDefaults() *KvDataRequest {
-	this := KvDataRequest{}
+	var this KvDataRequest
 
 	return &this
 }
 
 func (o KvDataRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["data"] = o.Data
 	toSerialize["options"] = o.Options
@@ -6769,13 +6769,13 @@ type KvDeleteRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewKvDeleteRequestWithDefaults() *KvDeleteRequest {
-	this := KvDeleteRequest{}
+	var this KvDeleteRequest
 
 	return &this
 }
 
 func (o KvDeleteRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["versions"] = o.Versions
 
@@ -6802,13 +6802,13 @@ type KvDestroyRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewKvDestroyRequestWithDefaults() *KvDestroyRequest {
-	this := KvDestroyRequest{}
+	var this KvDestroyRequest
 
 	return &this
 }
 
 func (o KvDestroyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["versions"] = o.Versions
 
@@ -6841,13 +6841,13 @@ type KvMetadataRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewKvMetadataRequestWithDefaults() *KvMetadataRequest {
-	this := KvMetadataRequest{}
+	var this KvMetadataRequest
 
 	return &this
 }
 
 func (o KvMetadataRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["cas_required"] = o.CasRequired
 	toSerialize["custom_metadata"] = o.CustomMetadata
@@ -6877,13 +6877,13 @@ type KvUndeleteRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewKvUndeleteRequestWithDefaults() *KvUndeleteRequest {
-	this := KvUndeleteRequest{}
+	var this KvUndeleteRequest
 
 	return &this
 }
 
 func (o KvUndeleteRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["versions"] = o.Versions
 
@@ -6976,7 +6976,7 @@ type LdapConfigRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewLdapConfigRequestWithDefaults() *LdapConfigRequest {
-	this := LdapConfigRequest{}
+	var this LdapConfigRequest
 
 	this.AnonymousGroupSearch = false
 	this.DenyNullBind = true
@@ -6995,7 +6995,7 @@ func NewLdapConfigRequestWithDefaults() *LdapConfigRequest {
 }
 
 func (o LdapConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["anonymous_group_search"] = o.AnonymousGroupSearch
 	toSerialize["binddn"] = o.Binddn
@@ -7055,13 +7055,13 @@ type LdapGroupsRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewLdapGroupsRequestWithDefaults() *LdapGroupsRequest {
-	this := LdapGroupsRequest{}
+	var this LdapGroupsRequest
 
 	return &this
 }
 
 func (o LdapGroupsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["policies"] = o.Policies
 
@@ -7088,13 +7088,13 @@ type LdapLoginRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewLdapLoginRequestWithDefaults() *LdapLoginRequest {
-	this := LdapLoginRequest{}
+	var this LdapLoginRequest
 
 	return &this
 }
 
 func (o LdapLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["password"] = o.Password
 
@@ -7123,13 +7123,13 @@ type LdapUsersRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewLdapUsersRequestWithDefaults() *LdapUsersRequest {
-	this := LdapUsersRequest{}
+	var this LdapUsersRequest
 
 	return &this
 }
 
 func (o LdapUsersRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["groups"] = o.Groups
 	toSerialize["policies"] = o.Policies
@@ -7159,13 +7159,13 @@ type MongodbatlasConfigRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewMongodbatlasConfigRequestWithDefaults() *MongodbatlasConfigRequest {
-	this := MongodbatlasConfigRequest{}
+	var this MongodbatlasConfigRequest
 
 	return &this
 }
 
 func (o MongodbatlasConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["private_key"] = o.PrivateKey
 	toSerialize["public_key"] = o.PublicKey
@@ -7207,13 +7207,13 @@ type MongodbatlasRolesRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewMongodbatlasRolesRequestWithDefaults() *MongodbatlasRolesRequest {
-	this := MongodbatlasRolesRequest{}
+	var this MongodbatlasRolesRequest
 
 	return &this
 }
 
 func (o MongodbatlasRolesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["cidr_blocks"] = o.CidrBlocks
 	toSerialize["ip_addresses"] = o.IpAddresses
@@ -7257,13 +7257,13 @@ type NomadConfigAccessRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewNomadConfigAccessRequestWithDefaults() *NomadConfigAccessRequest {
-	this := NomadConfigAccessRequest{}
+	var this NomadConfigAccessRequest
 
 	return &this
 }
 
 func (o NomadConfigAccessRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["address"] = o.Address
 	toSerialize["ca_cert"] = o.CaCert
@@ -7297,13 +7297,13 @@ type NomadConfigLeaseRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewNomadConfigLeaseRequestWithDefaults() *NomadConfigLeaseRequest {
-	this := NomadConfigLeaseRequest{}
+	var this NomadConfigLeaseRequest
 
 	return &this
 }
 
 func (o NomadConfigLeaseRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["max_ttl"] = o.MaxTtl
 	toSerialize["ttl"] = o.Ttl
@@ -7335,7 +7335,7 @@ type NomadRoleRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewNomadRoleRequestWithDefaults() *NomadRoleRequest {
-	this := NomadRoleRequest{}
+	var this NomadRoleRequest
 
 	this.Type = "client"
 
@@ -7343,7 +7343,7 @@ func NewNomadRoleRequestWithDefaults() *NomadRoleRequest {
 }
 
 func (o NomadRoleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["global"] = o.Global
 	toSerialize["policies"] = o.Policies
@@ -7372,13 +7372,13 @@ type OciConfigRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewOciConfigRequestWithDefaults() *OciConfigRequest {
-	this := OciConfigRequest{}
+	var this OciConfigRequest
 
 	return &this
 }
 
 func (o OciConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["home_tenancy_id"] = o.HomeTenancyId
 
@@ -7405,13 +7405,13 @@ type OciLoginRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewOciLoginRequestWithDefaults() *OciLoginRequest {
-	this := OciLoginRequest{}
+	var this OciLoginRequest
 
 	return &this
 }
 
 func (o OciLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["request_headers"] = o.RequestHeaders
 
@@ -7456,7 +7456,7 @@ type OciRoleRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewOciRoleRequestWithDefaults() *OciRoleRequest {
-	this := OciRoleRequest{}
+	var this OciRoleRequest
 
 	this.TokenType = "default-service"
 
@@ -7464,7 +7464,7 @@ func NewOciRoleRequestWithDefaults() *OciRoleRequest {
 }
 
 func (o OciRoleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["ocid_list"] = o.OcidList
 	toSerialize["token_bound_cidrs"] = o.TokenBoundCidrs
@@ -7526,13 +7526,13 @@ type OidcConfigRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewOidcConfigRequestWithDefaults() *OidcConfigRequest {
-	this := OidcConfigRequest{}
+	var this OidcConfigRequest
 
 	return &this
 }
 
 func (o OidcConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["bound_issuer"] = o.BoundIssuer
 	toSerialize["default_role"] = o.DefaultRole
@@ -7574,13 +7574,13 @@ type OidcLoginRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewOidcLoginRequestWithDefaults() *OidcLoginRequest {
-	this := OidcLoginRequest{}
+	var this OidcLoginRequest
 
 	return &this
 }
 
 func (o OidcLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["jwt"] = o.Jwt
 	toSerialize["role"] = o.Role
@@ -7612,13 +7612,13 @@ type OidcOidcAuthUrlRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewOidcOidcAuthUrlRequestWithDefaults() *OidcOidcAuthUrlRequest {
-	this := OidcOidcAuthUrlRequest{}
+	var this OidcOidcAuthUrlRequest
 
 	return &this
 }
 
 func (o OidcOidcAuthUrlRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["client_nonce"] = o.ClientNonce
 	toSerialize["redirect_uri"] = o.RedirectUri
@@ -7649,13 +7649,13 @@ type OidcOidcCallbackRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewOidcOidcCallbackRequestWithDefaults() *OidcOidcCallbackRequest {
-	this := OidcOidcCallbackRequest{}
+	var this OidcOidcCallbackRequest
 
 	return &this
 }
 
 func (o OidcOidcCallbackRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["client_nonce"] = o.ClientNonce
 	toSerialize["code"] = o.Code
@@ -7751,7 +7751,7 @@ type OidcRoleRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewOidcRoleRequestWithDefaults() *OidcRoleRequest {
-	this := OidcRoleRequest{}
+	var this OidcRoleRequest
 
 	this.BoundClaimsType = "string"
 	this.ExpirationLeeway = 150
@@ -7762,7 +7762,7 @@ func NewOidcRoleRequestWithDefaults() *OidcRoleRequest {
 }
 
 func (o OidcRoleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["allowed_redirect_uris"] = o.AllowedRedirectUris
 	toSerialize["bound_audiences"] = o.BoundAudiences
@@ -7858,7 +7858,7 @@ type OktaConfigRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewOktaConfigRequestWithDefaults() *OktaConfigRequest {
-	this := OktaConfigRequest{}
+	var this OktaConfigRequest
 
 	this.TokenType = "default-service"
 
@@ -7866,7 +7866,7 @@ func NewOktaConfigRequestWithDefaults() *OktaConfigRequest {
 }
 
 func (o OktaConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["api_token"] = o.ApiToken
 	toSerialize["base_url"] = o.BaseUrl
@@ -7910,13 +7910,13 @@ type OktaGroupsRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewOktaGroupsRequestWithDefaults() *OktaGroupsRequest {
-	this := OktaGroupsRequest{}
+	var this OktaGroupsRequest
 
 	return &this
 }
 
 func (o OktaGroupsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["policies"] = o.Policies
 
@@ -7949,13 +7949,13 @@ type OktaLoginRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewOktaLoginRequestWithDefaults() *OktaLoginRequest {
-	this := OktaLoginRequest{}
+	var this OktaLoginRequest
 
 	return &this
 }
 
 func (o OktaLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["nonce"] = o.Nonce
 	toSerialize["password"] = o.Password
@@ -7987,13 +7987,13 @@ type OktaUsersRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewOktaUsersRequestWithDefaults() *OktaUsersRequest {
-	this := OktaUsersRequest{}
+	var this OktaUsersRequest
 
 	return &this
 }
 
 func (o OktaUsersRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["groups"] = o.Groups
 	toSerialize["policies"] = o.Policies
@@ -8080,7 +8080,7 @@ type OpenldapConfigRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewOpenldapConfigRequestWithDefaults() *OpenldapConfigRequest {
-	this := OpenldapConfigRequest{}
+	var this OpenldapConfigRequest
 
 	this.AnonymousGroupSearch = false
 	this.DenyNullBind = true
@@ -8099,7 +8099,7 @@ func NewOpenldapConfigRequestWithDefaults() *OpenldapConfigRequest {
 }
 
 func (o OpenldapConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["anonymous_group_search"] = o.AnonymousGroupSearch
 	toSerialize["binddn"] = o.Binddn
@@ -8165,13 +8165,13 @@ type OpenldapRoleRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewOpenldapRoleRequestWithDefaults() *OpenldapRoleRequest {
-	this := OpenldapRoleRequest{}
+	var this OpenldapRoleRequest
 
 	return &this
 }
 
 func (o OpenldapRoleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["creation_ldif"] = o.CreationLdif
 	toSerialize["default_ttl"] = o.DefaultTtl
@@ -8209,13 +8209,13 @@ type OpenldapStaticRoleRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewOpenldapStaticRoleRequestWithDefaults() *OpenldapStaticRoleRequest {
-	this := OpenldapStaticRoleRequest{}
+	var this OpenldapStaticRoleRequest
 
 	return &this
 }
 
 func (o OpenldapStaticRoleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["dn"] = o.Dn
 	toSerialize["rotation_period"] = o.RotationPeriod
@@ -8245,13 +8245,13 @@ type PkiBundleRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiBundleRequestWithDefaults() *PkiBundleRequest {
-	this := PkiBundleRequest{}
+	var this PkiBundleRequest
 
 	return &this
 }
 
 func (o PkiBundleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["pem_bundle"] = o.PemBundle
 
@@ -8278,13 +8278,13 @@ type PkiCertRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiCertRequestWithDefaults() *PkiCertRequest {
-	this := PkiCertRequest{}
+	var this PkiCertRequest
 
 	return &this
 }
 
 func (o PkiCertRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["pem_bundle"] = o.PemBundle
 
@@ -8311,13 +8311,13 @@ type PkiConfigCaRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiConfigCaRequestWithDefaults() *PkiConfigCaRequest {
-	this := PkiConfigCaRequest{}
+	var this PkiConfigCaRequest
 
 	return &this
 }
 
 func (o PkiConfigCaRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["pem_bundle"] = o.PemBundle
 
@@ -8346,7 +8346,7 @@ type PkiConfigCrlRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiConfigCrlRequestWithDefaults() *PkiConfigCrlRequest {
-	this := PkiConfigCrlRequest{}
+	var this PkiConfigCrlRequest
 
 	this.Expiry = "72h"
 
@@ -8354,7 +8354,7 @@ func NewPkiConfigCrlRequestWithDefaults() *PkiConfigCrlRequest {
 }
 
 func (o PkiConfigCrlRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["disable"] = o.Disable
 	toSerialize["expiry"] = o.Expiry
@@ -8382,13 +8382,13 @@ type PkiConfigIssuersRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiConfigIssuersRequestWithDefaults() *PkiConfigIssuersRequest {
-	this := PkiConfigIssuersRequest{}
+	var this PkiConfigIssuersRequest
 
 	return &this
 }
 
 func (o PkiConfigIssuersRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["default"] = o.Default
 
@@ -8415,13 +8415,13 @@ type PkiConfigKeysRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiConfigKeysRequestWithDefaults() *PkiConfigKeysRequest {
-	this := PkiConfigKeysRequest{}
+	var this PkiConfigKeysRequest
 
 	return &this
 }
 
 func (o PkiConfigKeysRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["default"] = o.Default
 
@@ -8452,13 +8452,13 @@ type PkiConfigUrlsRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiConfigUrlsRequestWithDefaults() *PkiConfigUrlsRequest {
-	this := PkiConfigUrlsRequest{}
+	var this PkiConfigUrlsRequest
 
 	return &this
 }
 
 func (o PkiConfigUrlsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["crl_distribution_points"] = o.CrlDistributionPoints
 	toSerialize["issuing_certificates"] = o.IssuingCertificates
@@ -8493,7 +8493,7 @@ type PkiDerPemRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiDerPemRequestWithDefaults() *PkiDerPemRequest {
-	this := PkiDerPemRequest{}
+	var this PkiDerPemRequest
 
 	this.LeafNotAfterBehavior = "err"
 
@@ -8501,7 +8501,7 @@ func NewPkiDerPemRequestWithDefaults() *PkiDerPemRequest {
 }
 
 func (o PkiDerPemRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["issuer_name"] = o.IssuerName
 	toSerialize["leaf_not_after_behavior"] = o.LeafNotAfterBehavior
@@ -8583,7 +8583,7 @@ type PkiIntermediateCrossSignRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiIntermediateCrossSignRequestWithDefaults() *PkiIntermediateCrossSignRequest {
-	this := PkiIntermediateCrossSignRequest{}
+	var this PkiIntermediateCrossSignRequest
 
 	this.ExcludeCnFromSans = false
 	this.Format = "pem"
@@ -8597,7 +8597,7 @@ func NewPkiIntermediateCrossSignRequestWithDefaults() *PkiIntermediateCrossSignR
 }
 
 func (o PkiIntermediateCrossSignRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["add_basic_constraints"] = o.AddBasicConstraints
 	toSerialize["alt_names"] = o.AltNames
@@ -8700,7 +8700,7 @@ type PkiIntermediateGenerateRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiIntermediateGenerateRequestWithDefaults() *PkiIntermediateGenerateRequest {
-	this := PkiIntermediateGenerateRequest{}
+	var this PkiIntermediateGenerateRequest
 
 	this.ExcludeCnFromSans = false
 	this.Format = "pem"
@@ -8714,7 +8714,7 @@ func NewPkiIntermediateGenerateRequestWithDefaults() *PkiIntermediateGenerateReq
 }
 
 func (o PkiIntermediateGenerateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["add_basic_constraints"] = o.AddBasicConstraints
 	toSerialize["alt_names"] = o.AltNames
@@ -8766,13 +8766,13 @@ type PkiIntermediateSetSignedRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiIntermediateSetSignedRequestWithDefaults() *PkiIntermediateSetSignedRequest {
-	this := PkiIntermediateSetSignedRequest{}
+	var this PkiIntermediateSetSignedRequest
 
 	return &this
 }
 
 func (o PkiIntermediateSetSignedRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["certificate"] = o.Certificate
 
@@ -8807,7 +8807,7 @@ type PkiInternalExportedRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiInternalExportedRequestWithDefaults() *PkiInternalExportedRequest {
-	this := PkiInternalExportedRequest{}
+	var this PkiInternalExportedRequest
 
 	this.KeyBits = 0
 	this.KeyType = "rsa"
@@ -8816,7 +8816,7 @@ func NewPkiInternalExportedRequestWithDefaults() *PkiInternalExportedRequest {
 }
 
 func (o PkiInternalExportedRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["key_bits"] = o.KeyBits
 	toSerialize["key_name"] = o.KeyName
@@ -8869,7 +8869,7 @@ type PkiIssueRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiIssueRequestWithDefaults() *PkiIssueRequest {
-	this := PkiIssueRequest{}
+	var this PkiIssueRequest
 
 	this.ExcludeCnFromSans = false
 	this.Format = "pem"
@@ -8880,7 +8880,7 @@ func NewPkiIssueRequestWithDefaults() *PkiIssueRequest {
 }
 
 func (o PkiIssueRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["alt_names"] = o.AltNames
 	toSerialize["common_name"] = o.CommonName
@@ -8938,7 +8938,7 @@ type PkiIssuerIssueRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiIssuerIssueRequestWithDefaults() *PkiIssuerIssueRequest {
-	this := PkiIssuerIssueRequest{}
+	var this PkiIssuerIssueRequest
 
 	this.ExcludeCnFromSans = false
 	this.Format = "pem"
@@ -8948,7 +8948,7 @@ func NewPkiIssuerIssueRequestWithDefaults() *PkiIssuerIssueRequest {
 }
 
 func (o PkiIssuerIssueRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["alt_names"] = o.AltNames
 	toSerialize["common_name"] = o.CommonName
@@ -9031,7 +9031,7 @@ type PkiIssuerSignIntermediateRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiIssuerSignIntermediateRequestWithDefaults() *PkiIssuerSignIntermediateRequest {
-	this := PkiIssuerSignIntermediateRequest{}
+	var this PkiIssuerSignIntermediateRequest
 
 	this.Csr = ""
 	this.ExcludeCnFromSans = false
@@ -9045,7 +9045,7 @@ func NewPkiIssuerSignIntermediateRequestWithDefaults() *PkiIssuerSignIntermediat
 }
 
 func (o PkiIssuerSignIntermediateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["alt_names"] = o.AltNames
 	toSerialize["common_name"] = o.CommonName
@@ -9117,7 +9117,7 @@ type PkiIssuerSignRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiIssuerSignRequestWithDefaults() *PkiIssuerSignRequest {
-	this := PkiIssuerSignRequest{}
+	var this PkiIssuerSignRequest
 
 	this.Csr = ""
 	this.ExcludeCnFromSans = false
@@ -9128,7 +9128,7 @@ func NewPkiIssuerSignRequestWithDefaults() *PkiIssuerSignRequest {
 }
 
 func (o PkiIssuerSignRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["alt_names"] = o.AltNames
 	toSerialize["common_name"] = o.CommonName
@@ -9168,7 +9168,7 @@ type PkiIssuerSignSelfIssuedRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiIssuerSignSelfIssuedRequestWithDefaults() *PkiIssuerSignSelfIssuedRequest {
-	this := PkiIssuerSignSelfIssuedRequest{}
+	var this PkiIssuerSignSelfIssuedRequest
 
 	this.RequireMatchingCertificateAlgorithms = false
 
@@ -9176,7 +9176,7 @@ func NewPkiIssuerSignSelfIssuedRequestWithDefaults() *PkiIssuerSignSelfIssuedReq
 }
 
 func (o PkiIssuerSignSelfIssuedRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["certificate"] = o.Certificate
 	toSerialize["require_matching_certificate_algorithms"] = o.RequireMatchingCertificateAlgorithms
@@ -9234,7 +9234,7 @@ type PkiIssuerSignVerbatimRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiIssuerSignVerbatimRequestWithDefaults() *PkiIssuerSignVerbatimRequest {
-	this := PkiIssuerSignVerbatimRequest{}
+	var this PkiIssuerSignVerbatimRequest
 
 	this.Csr = ""
 	this.ExcludeCnFromSans = false
@@ -9245,7 +9245,7 @@ func NewPkiIssuerSignVerbatimRequestWithDefaults() *PkiIssuerSignVerbatimRequest
 }
 
 func (o PkiIssuerSignVerbatimRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["alt_names"] = o.AltNames
 	toSerialize["common_name"] = o.CommonName
@@ -9337,7 +9337,7 @@ type PkiIssuersGenerateIntermediateRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiIssuersGenerateIntermediateRequestWithDefaults() *PkiIssuersGenerateIntermediateRequest {
-	this := PkiIssuersGenerateIntermediateRequest{}
+	var this PkiIssuersGenerateIntermediateRequest
 
 	this.ExcludeCnFromSans = false
 	this.Format = "pem"
@@ -9351,7 +9351,7 @@ func NewPkiIssuersGenerateIntermediateRequestWithDefaults() *PkiIssuersGenerateI
 }
 
 func (o PkiIssuersGenerateIntermediateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["add_basic_constraints"] = o.AddBasicConstraints
 	toSerialize["alt_names"] = o.AltNames
@@ -9459,7 +9459,7 @@ type PkiIssuersGenerateRootRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiIssuersGenerateRootRequestWithDefaults() *PkiIssuersGenerateRootRequest {
-	this := PkiIssuersGenerateRootRequest{}
+	var this PkiIssuersGenerateRootRequest
 
 	this.ExcludeCnFromSans = false
 	this.Format = "pem"
@@ -9475,7 +9475,7 @@ func NewPkiIssuersGenerateRootRequestWithDefaults() *PkiIssuersGenerateRootReque
 }
 
 func (o PkiIssuersGenerateRootRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["alt_names"] = o.AltNames
 	toSerialize["common_name"] = o.CommonName
@@ -9538,7 +9538,7 @@ type PkiJsonRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiJsonRequestWithDefaults() *PkiJsonRequest {
-	this := PkiJsonRequest{}
+	var this PkiJsonRequest
 
 	this.IssuerRef = "default"
 	this.LeafNotAfterBehavior = "err"
@@ -9547,7 +9547,7 @@ func NewPkiJsonRequestWithDefaults() *PkiJsonRequest {
 }
 
 func (o PkiJsonRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["issuer_name"] = o.IssuerName
 	toSerialize["issuer_ref"] = o.IssuerRef
@@ -9578,13 +9578,13 @@ type PkiKeyRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiKeyRequestWithDefaults() *PkiKeyRequest {
-	this := PkiKeyRequest{}
+	var this PkiKeyRequest
 
 	return &this
 }
 
 func (o PkiKeyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["key_name"] = o.KeyName
 
@@ -9613,13 +9613,13 @@ type PkiKeysImportRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiKeysImportRequestWithDefaults() *PkiKeysImportRequest {
-	this := PkiKeysImportRequest{}
+	var this PkiKeysImportRequest
 
 	return &this
 }
 
 func (o PkiKeysImportRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["key_name"] = o.KeyName
 	toSerialize["pem_bundle"] = o.PemBundle
@@ -9655,7 +9655,7 @@ type PkiKmsRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiKmsRequestWithDefaults() *PkiKmsRequest {
-	this := PkiKmsRequest{}
+	var this PkiKmsRequest
 
 	this.KeyBits = 0
 	this.KeyType = "rsa"
@@ -9664,7 +9664,7 @@ func NewPkiKmsRequestWithDefaults() *PkiKmsRequest {
 }
 
 func (o PkiKmsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["key_bits"] = o.KeyBits
 	toSerialize["key_name"] = o.KeyName
@@ -9695,13 +9695,13 @@ type PkiRevokeRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiRevokeRequestWithDefaults() *PkiRevokeRequest {
-	this := PkiRevokeRequest{}
+	var this PkiRevokeRequest
 
 	return &this
 }
 
 func (o PkiRevokeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["serial_number"] = o.SerialNumber
 
@@ -9814,7 +9814,7 @@ type PkiRolesRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiRolesRequestWithDefaults() *PkiRolesRequest {
-	this := PkiRolesRequest{}
+	var this PkiRolesRequest
 
 	this.AllowIpSans = true
 	this.AllowLocalhost = true
@@ -9837,7 +9837,7 @@ func NewPkiRolesRequestWithDefaults() *PkiRolesRequest {
 }
 
 func (o PkiRolesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["allow_any_name"] = o.AllowAnyName
 	toSerialize["allow_bare_domains"] = o.AllowBareDomains
@@ -9963,7 +9963,7 @@ type PkiRootGenerateRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiRootGenerateRequestWithDefaults() *PkiRootGenerateRequest {
-	this := PkiRootGenerateRequest{}
+	var this PkiRootGenerateRequest
 
 	this.ExcludeCnFromSans = false
 	this.Format = "pem"
@@ -9979,7 +9979,7 @@ func NewPkiRootGenerateRequestWithDefaults() *PkiRootGenerateRequest {
 }
 
 func (o PkiRootGenerateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["alt_names"] = o.AltNames
 	toSerialize["common_name"] = o.CommonName
@@ -10034,7 +10034,7 @@ type PkiRootReplaceRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiRootReplaceRequestWithDefaults() *PkiRootReplaceRequest {
-	this := PkiRootReplaceRequest{}
+	var this PkiRootReplaceRequest
 
 	this.Default = "next"
 
@@ -10042,7 +10042,7 @@ func NewPkiRootReplaceRequestWithDefaults() *PkiRootReplaceRequest {
 }
 
 func (o PkiRootReplaceRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["default"] = o.Default
 
@@ -10125,7 +10125,7 @@ type PkiRootRotateRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiRootRotateRequestWithDefaults() *PkiRootRotateRequest {
-	this := PkiRootRotateRequest{}
+	var this PkiRootRotateRequest
 
 	this.ExcludeCnFromSans = false
 	this.Format = "pem"
@@ -10141,7 +10141,7 @@ func NewPkiRootRotateRequestWithDefaults() *PkiRootRotateRequest {
 }
 
 func (o PkiRootRotateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["alt_names"] = o.AltNames
 	toSerialize["common_name"] = o.CommonName
@@ -10244,7 +10244,7 @@ type PkiRootSignIntermediateRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiRootSignIntermediateRequestWithDefaults() *PkiRootSignIntermediateRequest {
-	this := PkiRootSignIntermediateRequest{}
+	var this PkiRootSignIntermediateRequest
 
 	this.Csr = ""
 	this.ExcludeCnFromSans = false
@@ -10259,7 +10259,7 @@ func NewPkiRootSignIntermediateRequestWithDefaults() *PkiRootSignIntermediateReq
 }
 
 func (o PkiRootSignIntermediateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["alt_names"] = o.AltNames
 	toSerialize["common_name"] = o.CommonName
@@ -10314,7 +10314,7 @@ type PkiRootSignSelfIssuedRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiRootSignSelfIssuedRequestWithDefaults() *PkiRootSignSelfIssuedRequest {
-	this := PkiRootSignSelfIssuedRequest{}
+	var this PkiRootSignSelfIssuedRequest
 
 	this.IssuerRef = "default"
 	this.RequireMatchingCertificateAlgorithms = false
@@ -10323,7 +10323,7 @@ func NewPkiRootSignSelfIssuedRequestWithDefaults() *PkiRootSignSelfIssuedRequest
 }
 
 func (o PkiRootSignSelfIssuedRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["certificate"] = o.Certificate
 	toSerialize["issuer_ref"] = o.IssuerRef
@@ -10376,7 +10376,7 @@ type PkiSignRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiSignRequestWithDefaults() *PkiSignRequest {
-	this := PkiSignRequest{}
+	var this PkiSignRequest
 
 	this.Csr = ""
 	this.ExcludeCnFromSans = false
@@ -10388,7 +10388,7 @@ func NewPkiSignRequestWithDefaults() *PkiSignRequest {
 }
 
 func (o PkiSignRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["alt_names"] = o.AltNames
 	toSerialize["common_name"] = o.CommonName
@@ -10459,7 +10459,7 @@ type PkiSignVerbatimRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiSignVerbatimRequestWithDefaults() *PkiSignVerbatimRequest {
-	this := PkiSignVerbatimRequest{}
+	var this PkiSignVerbatimRequest
 
 	this.Csr = ""
 	this.ExcludeCnFromSans = false
@@ -10471,7 +10471,7 @@ func NewPkiSignVerbatimRequestWithDefaults() *PkiSignVerbatimRequest {
 }
 
 func (o PkiSignVerbatimRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["alt_names"] = o.AltNames
 	toSerialize["common_name"] = o.CommonName
@@ -10520,7 +10520,7 @@ type PkiTidyRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewPkiTidyRequestWithDefaults() *PkiTidyRequest {
-	this := PkiTidyRequest{}
+	var this PkiTidyRequest
 
 	this.SafetyBuffer = 259200
 
@@ -10528,7 +10528,7 @@ func NewPkiTidyRequestWithDefaults() *PkiTidyRequest {
 }
 
 func (o PkiTidyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["safety_buffer"] = o.SafetyBuffer
 	toSerialize["tidy_cert_store"] = o.TidyCertStore
@@ -10568,7 +10568,7 @@ type RabbitmqConfigConnectionRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewRabbitmqConfigConnectionRequestWithDefaults() *RabbitmqConfigConnectionRequest {
-	this := RabbitmqConfigConnectionRequest{}
+	var this RabbitmqConfigConnectionRequest
 
 	this.VerifyConnection = true
 
@@ -10576,7 +10576,7 @@ func NewRabbitmqConfigConnectionRequestWithDefaults() *RabbitmqConfigConnectionR
 }
 
 func (o RabbitmqConfigConnectionRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["connection_uri"] = o.ConnectionUri
 	toSerialize["password"] = o.Password
@@ -10610,7 +10610,7 @@ type RabbitmqConfigLeaseRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewRabbitmqConfigLeaseRequestWithDefaults() *RabbitmqConfigLeaseRequest {
-	this := RabbitmqConfigLeaseRequest{}
+	var this RabbitmqConfigLeaseRequest
 
 	this.MaxTtl = 0
 	this.Ttl = 0
@@ -10619,7 +10619,7 @@ func NewRabbitmqConfigLeaseRequestWithDefaults() *RabbitmqConfigLeaseRequest {
 }
 
 func (o RabbitmqConfigLeaseRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["max_ttl"] = o.MaxTtl
 	toSerialize["ttl"] = o.Ttl
@@ -10651,13 +10651,13 @@ type RabbitmqRolesRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewRabbitmqRolesRequestWithDefaults() *RabbitmqRolesRequest {
-	this := RabbitmqRolesRequest{}
+	var this RabbitmqRolesRequest
 
 	return &this
 }
 
 func (o RabbitmqRolesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["tags"] = o.Tags
 	toSerialize["vhost_topics"] = o.VhostTopics
@@ -10718,7 +10718,7 @@ type RadiusConfigRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewRadiusConfigRequestWithDefaults() *RadiusConfigRequest {
-	this := RadiusConfigRequest{}
+	var this RadiusConfigRequest
 
 	this.DialTimeout = 10
 	this.NasIdentifier = ""
@@ -10732,7 +10732,7 @@ func NewRadiusConfigRequestWithDefaults() *RadiusConfigRequest {
 }
 
 func (o RadiusConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["dial_timeout"] = o.DialTimeout
 	toSerialize["host"] = o.Host
@@ -10779,13 +10779,13 @@ type RadiusLoginRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewRadiusLoginRequestWithDefaults() *RadiusLoginRequest {
-	this := RadiusLoginRequest{}
+	var this RadiusLoginRequest
 
 	return &this
 }
 
 func (o RadiusLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["password"] = o.Password
 	toSerialize["urlusername"] = o.Urlusername
@@ -10814,13 +10814,13 @@ type RadiusUsersRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewRadiusUsersRequestWithDefaults() *RadiusUsersRequest {
-	this := RadiusUsersRequest{}
+	var this RadiusUsersRequest
 
 	return &this
 }
 
 func (o RadiusUsersRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["policies"] = o.Policies
 
@@ -10855,7 +10855,7 @@ type SshConfigCaRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSshConfigCaRequestWithDefaults() *SshConfigCaRequest {
-	this := SshConfigCaRequest{}
+	var this SshConfigCaRequest
 
 	this.GenerateSigningKey = true
 	this.KeyBits = 0
@@ -10865,7 +10865,7 @@ func NewSshConfigCaRequestWithDefaults() *SshConfigCaRequest {
 }
 
 func (o SshConfigCaRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["generate_signing_key"] = o.GenerateSigningKey
 	toSerialize["key_bits"] = o.KeyBits
@@ -10896,13 +10896,13 @@ type SshConfigZeroaddressRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSshConfigZeroaddressRequestWithDefaults() *SshConfigZeroaddressRequest {
-	this := SshConfigZeroaddressRequest{}
+	var this SshConfigZeroaddressRequest
 
 	return &this
 }
 
 func (o SshConfigZeroaddressRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["roles"] = o.Roles
 
@@ -10931,13 +10931,13 @@ type SshCredsRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSshCredsRequestWithDefaults() *SshCredsRequest {
-	this := SshCredsRequest{}
+	var this SshCredsRequest
 
 	return &this
 }
 
 func (o SshCredsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["ip"] = o.Ip
 	toSerialize["username"] = o.Username
@@ -10965,13 +10965,13 @@ type SshKeysRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSshKeysRequestWithDefaults() *SshKeysRequest {
-	this := SshKeysRequest{}
+	var this SshKeysRequest
 
 	return &this
 }
 
 func (o SshKeysRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["key"] = o.Key
 
@@ -10998,13 +10998,13 @@ type SshLookupRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSshLookupRequestWithDefaults() *SshLookupRequest {
-	this := SshLookupRequest{}
+	var this SshLookupRequest
 
 	return &this
 }
 
 func (o SshLookupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["ip"] = o.Ip
 
@@ -11087,7 +11087,7 @@ type SshRolesRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSshRolesRequestWithDefaults() *SshRolesRequest {
-	this := SshRolesRequest{}
+	var this SshRolesRequest
 
 	this.AllowHostCertificates = false
 	this.AllowUserCertificates = false
@@ -11099,7 +11099,7 @@ func NewSshRolesRequestWithDefaults() *SshRolesRequest {
 }
 
 func (o SshRolesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["admin_user"] = o.AdminUser
 	toSerialize["algorithm_signer"] = o.AlgorithmSigner
@@ -11166,7 +11166,7 @@ type SshSignRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSshSignRequestWithDefaults() *SshSignRequest {
-	this := SshSignRequest{}
+	var this SshSignRequest
 
 	this.CertType = "user"
 
@@ -11174,7 +11174,7 @@ func NewSshSignRequestWithDefaults() *SshSignRequest {
 }
 
 func (o SshSignRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["cert_type"] = o.CertType
 	toSerialize["critical_options"] = o.CriticalOptions
@@ -11207,13 +11207,13 @@ type SshVerifyRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSshVerifyRequestWithDefaults() *SshVerifyRequest {
-	this := SshVerifyRequest{}
+	var this SshVerifyRequest
 
 	return &this
 }
 
 func (o SshVerifyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["otp"] = o.Otp
 
@@ -11239,13 +11239,13 @@ type SystemAuditHashRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemAuditHashRequestWithDefaults() *SystemAuditHashRequest {
-	this := SystemAuditHashRequest{}
+	var this SystemAuditHashRequest
 
 	return &this
 }
 
 func (o SystemAuditHashRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["input"] = o.Input
 
@@ -11278,7 +11278,7 @@ type SystemAuditRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemAuditRequestWithDefaults() *SystemAuditRequest {
-	this := SystemAuditRequest{}
+	var this SystemAuditRequest
 
 	this.Local = false
 
@@ -11286,7 +11286,7 @@ func NewSystemAuditRequestWithDefaults() *SystemAuditRequest {
 }
 
 func (o SystemAuditRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["description"] = o.Description
 	toSerialize["local"] = o.Local
@@ -11330,7 +11330,7 @@ type SystemAuthRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemAuthRequestWithDefaults() *SystemAuthRequest {
-	this := SystemAuthRequest{}
+	var this SystemAuthRequest
 
 	this.ExternalEntropyAccess = false
 	this.Local = false
@@ -11340,7 +11340,7 @@ func NewSystemAuthRequestWithDefaults() *SystemAuthRequest {
 }
 
 func (o SystemAuthRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["config"] = o.Config
 	toSerialize["description"] = o.Description
@@ -11392,13 +11392,13 @@ type SystemAuthTuneRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemAuthTuneRequestWithDefaults() *SystemAuthTuneRequest {
-	this := SystemAuthTuneRequest{}
+	var this SystemAuthTuneRequest
 
 	return &this
 }
 
 func (o SystemAuthTuneRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["allowed_response_headers"] = o.AllowedResponseHeaders
 	toSerialize["audit_non_hmac_request_keys"] = o.AuditNonHmacRequestKeys
@@ -11439,13 +11439,13 @@ type SystemCapabilitiesAccessorRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemCapabilitiesAccessorRequestWithDefaults() *SystemCapabilitiesAccessorRequest {
-	this := SystemCapabilitiesAccessorRequest{}
+	var this SystemCapabilitiesAccessorRequest
 
 	return &this
 }
 
 func (o SystemCapabilitiesAccessorRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["accessor"] = o.Accessor
 	toSerialize["path"] = o.Path
@@ -11479,13 +11479,13 @@ type SystemCapabilitiesRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemCapabilitiesRequestWithDefaults() *SystemCapabilitiesRequest {
-	this := SystemCapabilitiesRequest{}
+	var this SystemCapabilitiesRequest
 
 	return &this
 }
 
 func (o SystemCapabilitiesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["path"] = o.Path
 	toSerialize["paths"] = o.Paths
@@ -11519,13 +11519,13 @@ type SystemCapabilitiesSelfRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemCapabilitiesSelfRequestWithDefaults() *SystemCapabilitiesSelfRequest {
-	this := SystemCapabilitiesSelfRequest{}
+	var this SystemCapabilitiesSelfRequest
 
 	return &this
 }
 
 func (o SystemCapabilitiesSelfRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["path"] = o.Path
 	toSerialize["paths"] = o.Paths
@@ -11553,13 +11553,13 @@ type SystemConfigAuditingRequestHeadersRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemConfigAuditingRequestHeadersRequestWithDefaults() *SystemConfigAuditingRequestHeadersRequest {
-	this := SystemConfigAuditingRequestHeadersRequest{}
+	var this SystemConfigAuditingRequestHeadersRequest
 
 	return &this
 }
 
 func (o SystemConfigAuditingRequestHeadersRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["hmac"] = o.Hmac
 
@@ -11590,13 +11590,13 @@ type SystemConfigCorsRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemConfigCorsRequestWithDefaults() *SystemConfigCorsRequest {
-	this := SystemConfigCorsRequest{}
+	var this SystemConfigCorsRequest
 
 	return &this
 }
 
 func (o SystemConfigCorsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["allowed_headers"] = o.AllowedHeaders
 	toSerialize["allowed_origins"] = o.AllowedOrigins
@@ -11627,13 +11627,13 @@ type SystemConfigUiHeadersRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemConfigUiHeadersRequestWithDefaults() *SystemConfigUiHeadersRequest {
-	this := SystemConfigUiHeadersRequest{}
+	var this SystemConfigUiHeadersRequest
 
 	return &this
 }
 
 func (o SystemConfigUiHeadersRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["multivalue"] = o.Multivalue
 	toSerialize["values"] = o.Values
@@ -11661,13 +11661,13 @@ type SystemGenerateRootAttemptRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemGenerateRootAttemptRequestWithDefaults() *SystemGenerateRootAttemptRequest {
-	this := SystemGenerateRootAttemptRequest{}
+	var this SystemGenerateRootAttemptRequest
 
 	return &this
 }
 
 func (o SystemGenerateRootAttemptRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["pgp_key"] = o.PgpKey
 
@@ -11694,13 +11694,13 @@ type SystemGenerateRootRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemGenerateRootRequestWithDefaults() *SystemGenerateRootRequest {
-	this := SystemGenerateRootRequest{}
+	var this SystemGenerateRootRequest
 
 	return &this
 }
 
 func (o SystemGenerateRootRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["pgp_key"] = o.PgpKey
 
@@ -11729,13 +11729,13 @@ type SystemGenerateRootUpdateRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemGenerateRootUpdateRequestWithDefaults() *SystemGenerateRootUpdateRequest {
-	this := SystemGenerateRootUpdateRequest{}
+	var this SystemGenerateRootUpdateRequest
 
 	return &this
 }
 
 func (o SystemGenerateRootUpdateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["key"] = o.Key
 	toSerialize["nonce"] = o.Nonce
@@ -11777,13 +11777,13 @@ type SystemInitRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemInitRequestWithDefaults() *SystemInitRequest {
-	this := SystemInitRequest{}
+	var this SystemInitRequest
 
 	return &this
 }
 
 func (o SystemInitRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["pgp_keys"] = o.PgpKeys
 	toSerialize["recovery_pgp_keys"] = o.RecoveryPgpKeys
@@ -11821,7 +11821,7 @@ type SystemInternalCountersConfigRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemInternalCountersConfigRequestWithDefaults() *SystemInternalCountersConfigRequest {
-	this := SystemInternalCountersConfigRequest{}
+	var this SystemInternalCountersConfigRequest
 
 	this.DefaultReportMonths = 12
 	this.Enabled = "default"
@@ -11831,7 +11831,7 @@ func NewSystemInternalCountersConfigRequestWithDefaults() *SystemInternalCounter
 }
 
 func (o SystemInternalCountersConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["default_report_months"] = o.DefaultReportMonths
 	toSerialize["enabled"] = o.Enabled
@@ -11860,13 +11860,13 @@ type SystemInternalSpecsOpenapiRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemInternalSpecsOpenapiRequestWithDefaults() *SystemInternalSpecsOpenapiRequest {
-	this := SystemInternalSpecsOpenapiRequest{}
+	var this SystemInternalSpecsOpenapiRequest
 
 	return &this
 }
 
 func (o SystemInternalSpecsOpenapiRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["context"] = o.Context
 
@@ -11893,13 +11893,13 @@ type SystemLeasesLookupRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemLeasesLookupRequestWithDefaults() *SystemLeasesLookupRequest {
-	this := SystemLeasesLookupRequest{}
+	var this SystemLeasesLookupRequest
 
 	return &this
 }
 
 func (o SystemLeasesLookupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["lease_id"] = o.LeaseId
 
@@ -11928,13 +11928,13 @@ type SystemLeasesRenewLeaseRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemLeasesRenewLeaseRequestWithDefaults() *SystemLeasesRenewLeaseRequest {
-	this := SystemLeasesRenewLeaseRequest{}
+	var this SystemLeasesRenewLeaseRequest
 
 	return &this
 }
 
 func (o SystemLeasesRenewLeaseRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["increment"] = o.Increment
 	toSerialize["lease_id"] = o.LeaseId
@@ -11966,13 +11966,13 @@ type SystemLeasesRenewRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemLeasesRenewRequestWithDefaults() *SystemLeasesRenewRequest {
-	this := SystemLeasesRenewRequest{}
+	var this SystemLeasesRenewRequest
 
 	return &this
 }
 
 func (o SystemLeasesRenewRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["increment"] = o.Increment
 	toSerialize["lease_id"] = o.LeaseId
@@ -12003,7 +12003,7 @@ type SystemLeasesRevokeLeaseRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemLeasesRevokeLeaseRequestWithDefaults() *SystemLeasesRevokeLeaseRequest {
-	this := SystemLeasesRevokeLeaseRequest{}
+	var this SystemLeasesRevokeLeaseRequest
 
 	this.Sync = true
 
@@ -12011,7 +12011,7 @@ func NewSystemLeasesRevokeLeaseRequestWithDefaults() *SystemLeasesRevokeLeaseReq
 }
 
 func (o SystemLeasesRevokeLeaseRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["lease_id"] = o.LeaseId
 	toSerialize["sync"] = o.Sync
@@ -12039,7 +12039,7 @@ type SystemLeasesRevokePrefixRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemLeasesRevokePrefixRequestWithDefaults() *SystemLeasesRevokePrefixRequest {
-	this := SystemLeasesRevokePrefixRequest{}
+	var this SystemLeasesRevokePrefixRequest
 
 	this.Sync = true
 
@@ -12047,7 +12047,7 @@ func NewSystemLeasesRevokePrefixRequestWithDefaults() *SystemLeasesRevokePrefixR
 }
 
 func (o SystemLeasesRevokePrefixRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["sync"] = o.Sync
 
@@ -12078,7 +12078,7 @@ type SystemLeasesRevokeRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemLeasesRevokeRequestWithDefaults() *SystemLeasesRevokeRequest {
-	this := SystemLeasesRevokeRequest{}
+	var this SystemLeasesRevokeRequest
 
 	this.Sync = true
 
@@ -12086,7 +12086,7 @@ func NewSystemLeasesRevokeRequestWithDefaults() *SystemLeasesRevokeRequest {
 }
 
 func (o SystemLeasesRevokeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["lease_id"] = o.LeaseId
 	toSerialize["sync"] = o.Sync
@@ -12117,13 +12117,13 @@ type SystemMfaValidateRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemMfaValidateRequestWithDefaults() *SystemMfaValidateRequest {
-	this := SystemMfaValidateRequest{}
+	var this SystemMfaValidateRequest
 
 	return &this
 }
 
 func (o SystemMfaValidateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["mfa_payload"] = o.MfaPayload
 	toSerialize["mfa_request_id"] = o.MfaRequestId
@@ -12165,7 +12165,7 @@ type SystemMountsRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemMountsRequestWithDefaults() *SystemMountsRequest {
-	this := SystemMountsRequest{}
+	var this SystemMountsRequest
 
 	this.ExternalEntropyAccess = false
 	this.Local = false
@@ -12175,7 +12175,7 @@ func NewSystemMountsRequestWithDefaults() *SystemMountsRequest {
 }
 
 func (o SystemMountsRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["config"] = o.Config
 	toSerialize["description"] = o.Description
@@ -12228,13 +12228,13 @@ type SystemMountsTuneRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemMountsTuneRequestWithDefaults() *SystemMountsTuneRequest {
-	this := SystemMountsTuneRequest{}
+	var this SystemMountsTuneRequest
 
 	return &this
 }
 
 func (o SystemMountsTuneRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["allowed_managed_keys"] = o.AllowedManagedKeys
 	toSerialize["allowed_response_headers"] = o.AllowedResponseHeaders
@@ -12279,13 +12279,13 @@ type SystemPluginsCatalogRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemPluginsCatalogRequestWithDefaults() *SystemPluginsCatalogRequest {
-	this := SystemPluginsCatalogRequest{}
+	var this SystemPluginsCatalogRequest
 
 	return &this
 }
 
 func (o SystemPluginsCatalogRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["args"] = o.Args
 	toSerialize["command"] = o.Command
@@ -12319,13 +12319,13 @@ type SystemPluginsReloadBackendRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemPluginsReloadBackendRequestWithDefaults() *SystemPluginsReloadBackendRequest {
-	this := SystemPluginsReloadBackendRequest{}
+	var this SystemPluginsReloadBackendRequest
 
 	return &this
 }
 
 func (o SystemPluginsReloadBackendRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["mounts"] = o.Mounts
 	toSerialize["plugin"] = o.Plugin
@@ -12354,13 +12354,13 @@ type SystemPoliciesAclRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemPoliciesAclRequestWithDefaults() *SystemPoliciesAclRequest {
-	this := SystemPoliciesAclRequest{}
+	var this SystemPoliciesAclRequest
 
 	return &this
 }
 
 func (o SystemPoliciesAclRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["policy"] = o.Policy
 
@@ -12387,13 +12387,13 @@ type SystemPoliciesPasswordRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemPoliciesPasswordRequestWithDefaults() *SystemPoliciesPasswordRequest {
-	this := SystemPoliciesPasswordRequest{}
+	var this SystemPoliciesPasswordRequest
 
 	return &this
 }
 
 func (o SystemPoliciesPasswordRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["policy"] = o.Policy
 
@@ -12423,13 +12423,13 @@ type SystemPolicyRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemPolicyRequestWithDefaults() *SystemPolicyRequest {
-	this := SystemPolicyRequest{}
+	var this SystemPolicyRequest
 
 	return &this
 }
 
 func (o SystemPolicyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["policy"] = o.Policy
 	toSerialize["rules"] = o.Rules
@@ -12461,13 +12461,13 @@ type SystemQuotasConfigRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemQuotasConfigRequestWithDefaults() *SystemQuotasConfigRequest {
-	this := SystemQuotasConfigRequest{}
+	var this SystemQuotasConfigRequest
 
 	return &this
 }
 
 func (o SystemQuotasConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["enable_rate_limit_audit_logging"] = o.EnableRateLimitAuditLogging
 	toSerialize["enable_rate_limit_response_headers"] = o.EnableRateLimitResponseHeaders
@@ -12504,13 +12504,13 @@ type SystemQuotasRateLimitRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemQuotasRateLimitRequestWithDefaults() *SystemQuotasRateLimitRequest {
-	this := SystemQuotasRateLimitRequest{}
+	var this SystemQuotasRateLimitRequest
 
 	return &this
 }
 
 func (o SystemQuotasRateLimitRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["block_interval"] = o.BlockInterval
 	toSerialize["interval"] = o.Interval
@@ -12543,13 +12543,13 @@ type SystemRawRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemRawRequestWithDefaults() *SystemRawRequest {
-	this := SystemRawRequest{}
+	var this SystemRawRequest
 
 	return &this
 }
 
 func (o SystemRawRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["compressed"] = o.Compressed
 	toSerialize["compression_type"] = o.CompressionType
@@ -12587,13 +12587,13 @@ type SystemRekeyInitRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemRekeyInitRequestWithDefaults() *SystemRekeyInitRequest {
-	this := SystemRekeyInitRequest{}
+	var this SystemRekeyInitRequest
 
 	return &this
 }
 
 func (o SystemRekeyInitRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["backup"] = o.Backup
 	toSerialize["pgp_keys"] = o.PgpKeys
@@ -12626,13 +12626,13 @@ type SystemRekeyUpdateRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemRekeyUpdateRequestWithDefaults() *SystemRekeyUpdateRequest {
-	this := SystemRekeyUpdateRequest{}
+	var this SystemRekeyUpdateRequest
 
 	return &this
 }
 
 func (o SystemRekeyUpdateRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["key"] = o.Key
 	toSerialize["nonce"] = o.Nonce
@@ -12662,13 +12662,13 @@ type SystemRekeyVerifyRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemRekeyVerifyRequestWithDefaults() *SystemRekeyVerifyRequest {
-	this := SystemRekeyVerifyRequest{}
+	var this SystemRekeyVerifyRequest
 
 	return &this
 }
 
 func (o SystemRekeyVerifyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["key"] = o.Key
 	toSerialize["nonce"] = o.Nonce
@@ -12698,13 +12698,13 @@ type SystemRemountRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemRemountRequestWithDefaults() *SystemRemountRequest {
-	this := SystemRemountRequest{}
+	var this SystemRemountRequest
 
 	return &this
 }
 
 func (o SystemRemountRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["from"] = o.From
 	toSerialize["to"] = o.To
@@ -12734,13 +12734,13 @@ type SystemRenewLeaseRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemRenewLeaseRequestWithDefaults() *SystemRenewLeaseRequest {
-	this := SystemRenewLeaseRequest{}
+	var this SystemRenewLeaseRequest
 
 	return &this
 }
 
 func (o SystemRenewLeaseRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["increment"] = o.Increment
 	toSerialize["lease_id"] = o.LeaseId
@@ -12772,13 +12772,13 @@ type SystemRenewRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemRenewRequestWithDefaults() *SystemRenewRequest {
-	this := SystemRenewRequest{}
+	var this SystemRenewRequest
 
 	return &this
 }
 
 func (o SystemRenewRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["increment"] = o.Increment
 	toSerialize["lease_id"] = o.LeaseId
@@ -12809,7 +12809,7 @@ type SystemRevokeLeaseRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemRevokeLeaseRequestWithDefaults() *SystemRevokeLeaseRequest {
-	this := SystemRevokeLeaseRequest{}
+	var this SystemRevokeLeaseRequest
 
 	this.Sync = true
 
@@ -12817,7 +12817,7 @@ func NewSystemRevokeLeaseRequestWithDefaults() *SystemRevokeLeaseRequest {
 }
 
 func (o SystemRevokeLeaseRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["lease_id"] = o.LeaseId
 	toSerialize["sync"] = o.Sync
@@ -12845,7 +12845,7 @@ type SystemRevokePrefixRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemRevokePrefixRequestWithDefaults() *SystemRevokePrefixRequest {
-	this := SystemRevokePrefixRequest{}
+	var this SystemRevokePrefixRequest
 
 	this.Sync = true
 
@@ -12853,7 +12853,7 @@ func NewSystemRevokePrefixRequestWithDefaults() *SystemRevokePrefixRequest {
 }
 
 func (o SystemRevokePrefixRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["sync"] = o.Sync
 
@@ -12884,7 +12884,7 @@ type SystemRevokeRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemRevokeRequestWithDefaults() *SystemRevokeRequest {
-	this := SystemRevokeRequest{}
+	var this SystemRevokeRequest
 
 	this.Sync = true
 
@@ -12892,7 +12892,7 @@ func NewSystemRevokeRequestWithDefaults() *SystemRevokeRequest {
 }
 
 func (o SystemRevokeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["lease_id"] = o.LeaseId
 	toSerialize["sync"] = o.Sync
@@ -12925,13 +12925,13 @@ type SystemRotateConfigRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemRotateConfigRequestWithDefaults() *SystemRotateConfigRequest {
-	this := SystemRotateConfigRequest{}
+	var this SystemRotateConfigRequest
 
 	return &this
 }
 
 func (o SystemRotateConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["enabled"] = o.Enabled
 	toSerialize["interval"] = o.Interval
@@ -12966,7 +12966,7 @@ type SystemToolsHashRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemToolsHashRequestWithDefaults() *SystemToolsHashRequest {
-	this := SystemToolsHashRequest{}
+	var this SystemToolsHashRequest
 
 	this.Algorithm = "sha2-256"
 	this.Format = "hex"
@@ -12975,7 +12975,7 @@ func NewSystemToolsHashRequestWithDefaults() *SystemToolsHashRequest {
 }
 
 func (o SystemToolsHashRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["algorithm"] = o.Algorithm
 	toSerialize["format"] = o.Format
@@ -13011,7 +13011,7 @@ type SystemToolsRandomRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemToolsRandomRequestWithDefaults() *SystemToolsRandomRequest {
-	this := SystemToolsRandomRequest{}
+	var this SystemToolsRandomRequest
 
 	this.Bytes = 32
 	this.Format = "base64"
@@ -13021,7 +13021,7 @@ func NewSystemToolsRandomRequestWithDefaults() *SystemToolsRandomRequest {
 }
 
 func (o SystemToolsRandomRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["bytes"] = o.Bytes
 	toSerialize["format"] = o.Format
@@ -13053,13 +13053,13 @@ type SystemUnsealRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemUnsealRequestWithDefaults() *SystemUnsealRequest {
-	this := SystemUnsealRequest{}
+	var this SystemUnsealRequest
 
 	return &this
 }
 
 func (o SystemUnsealRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["key"] = o.Key
 	toSerialize["reset"] = o.Reset
@@ -13086,13 +13086,13 @@ type SystemWrappingLookupRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemWrappingLookupRequestWithDefaults() *SystemWrappingLookupRequest {
-	this := SystemWrappingLookupRequest{}
+	var this SystemWrappingLookupRequest
 
 	return &this
 }
 
 func (o SystemWrappingLookupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["token"] = o.Token
 
@@ -13118,13 +13118,13 @@ type SystemWrappingRewrapRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemWrappingRewrapRequestWithDefaults() *SystemWrappingRewrapRequest {
-	this := SystemWrappingRewrapRequest{}
+	var this SystemWrappingRewrapRequest
 
 	return &this
 }
 
 func (o SystemWrappingRewrapRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["token"] = o.Token
 
@@ -13150,13 +13150,13 @@ type SystemWrappingUnwrapRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewSystemWrappingUnwrapRequestWithDefaults() *SystemWrappingUnwrapRequest {
-	this := SystemWrappingUnwrapRequest{}
+	var this SystemWrappingUnwrapRequest
 
 	return &this
 }
 
 func (o SystemWrappingUnwrapRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["token"] = o.Token
 
@@ -13187,7 +13187,7 @@ type TerraformConfigRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTerraformConfigRequestWithDefaults() *TerraformConfigRequest {
-	this := TerraformConfigRequest{}
+	var this TerraformConfigRequest
 
 	this.Address = "https://app.terraform.io"
 	this.BasePath = "/api/v2/"
@@ -13196,7 +13196,7 @@ func NewTerraformConfigRequestWithDefaults() *TerraformConfigRequest {
 }
 
 func (o TerraformConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["address"] = o.Address
 	toSerialize["base_path"] = o.BasePath
@@ -13233,13 +13233,13 @@ type TerraformRoleRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTerraformRoleRequestWithDefaults() *TerraformRoleRequest {
-	this := TerraformRoleRequest{}
+	var this TerraformRoleRequest
 
 	return &this
 }
 
 func (o TerraformRoleRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["max_ttl"] = o.MaxTtl
 	toSerialize["organization"] = o.Organization
@@ -13270,13 +13270,13 @@ type TokenLookupAccessorRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTokenLookupAccessorRequestWithDefaults() *TokenLookupAccessorRequest {
-	this := TokenLookupAccessorRequest{}
+	var this TokenLookupAccessorRequest
 
 	return &this
 }
 
 func (o TokenLookupAccessorRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["accessor"] = o.Accessor
 
@@ -13303,13 +13303,13 @@ type TokenLookupRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTokenLookupRequestWithDefaults() *TokenLookupRequest {
-	this := TokenLookupRequest{}
+	var this TokenLookupRequest
 
 	return &this
 }
 
 func (o TokenLookupRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["token"] = o.Token
 
@@ -13336,13 +13336,13 @@ type TokenLookupSelfRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTokenLookupSelfRequestWithDefaults() *TokenLookupSelfRequest {
-	this := TokenLookupSelfRequest{}
+	var this TokenLookupSelfRequest
 
 	return &this
 }
 
 func (o TokenLookupSelfRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["token"] = o.Token
 
@@ -13371,7 +13371,7 @@ type TokenRenewAccessorRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTokenRenewAccessorRequestWithDefaults() *TokenRenewAccessorRequest {
-	this := TokenRenewAccessorRequest{}
+	var this TokenRenewAccessorRequest
 
 	this.Increment = 0
 
@@ -13379,7 +13379,7 @@ func NewTokenRenewAccessorRequestWithDefaults() *TokenRenewAccessorRequest {
 }
 
 func (o TokenRenewAccessorRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["accessor"] = o.Accessor
 	toSerialize["increment"] = o.Increment
@@ -13409,7 +13409,7 @@ type TokenRenewRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTokenRenewRequestWithDefaults() *TokenRenewRequest {
-	this := TokenRenewRequest{}
+	var this TokenRenewRequest
 
 	this.Increment = 0
 
@@ -13417,7 +13417,7 @@ func NewTokenRenewRequestWithDefaults() *TokenRenewRequest {
 }
 
 func (o TokenRenewRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["increment"] = o.Increment
 	toSerialize["token"] = o.Token
@@ -13447,7 +13447,7 @@ type TokenRenewSelfRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTokenRenewSelfRequestWithDefaults() *TokenRenewSelfRequest {
-	this := TokenRenewSelfRequest{}
+	var this TokenRenewSelfRequest
 
 	this.Increment = 0
 
@@ -13455,7 +13455,7 @@ func NewTokenRenewSelfRequestWithDefaults() *TokenRenewSelfRequest {
 }
 
 func (o TokenRenewSelfRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["increment"] = o.Increment
 	toSerialize["token"] = o.Token
@@ -13483,13 +13483,13 @@ type TokenRevokeAccessorRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTokenRevokeAccessorRequestWithDefaults() *TokenRevokeAccessorRequest {
-	this := TokenRevokeAccessorRequest{}
+	var this TokenRevokeAccessorRequest
 
 	return &this
 }
 
 func (o TokenRevokeAccessorRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["accessor"] = o.Accessor
 
@@ -13516,13 +13516,13 @@ type TokenRevokeOrphanRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTokenRevokeOrphanRequestWithDefaults() *TokenRevokeOrphanRequest {
-	this := TokenRevokeOrphanRequest{}
+	var this TokenRevokeOrphanRequest
 
 	return &this
 }
 
 func (o TokenRevokeOrphanRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["token"] = o.Token
 
@@ -13549,13 +13549,13 @@ type TokenRevokeRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTokenRevokeRequestWithDefaults() *TokenRevokeRequest {
-	this := TokenRevokeRequest{}
+	var this TokenRevokeRequest
 
 	return &this
 }
 
 func (o TokenRevokeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["token"] = o.Token
 
@@ -13617,7 +13617,7 @@ type TokenRolesRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTokenRolesRequestWithDefaults() *TokenRolesRequest {
-	this := TokenRolesRequest{}
+	var this TokenRolesRequest
 
 	this.Renewable = true
 	this.TokenType = "default-service"
@@ -13626,7 +13626,7 @@ func NewTokenRolesRequestWithDefaults() *TokenRolesRequest {
 }
 
 func (o TokenRolesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["allowed_entity_aliases"] = o.AllowedEntityAliases
 	toSerialize["allowed_policies"] = o.AllowedPolicies
@@ -13669,13 +13669,13 @@ type TotpCodeRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTotpCodeRequestWithDefaults() *TotpCodeRequest {
-	this := TotpCodeRequest{}
+	var this TotpCodeRequest
 
 	return &this
 }
 
 func (o TotpCodeRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["code"] = o.Code
 
@@ -13724,7 +13724,7 @@ type TotpKeysRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTotpKeysRequestWithDefaults() *TotpKeysRequest {
-	this := TotpKeysRequest{}
+	var this TotpKeysRequest
 
 	this.Algorithm = "SHA1"
 	this.Digits = 6
@@ -13739,7 +13739,7 @@ func NewTotpKeysRequestWithDefaults() *TotpKeysRequest {
 }
 
 func (o TotpKeysRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["account_name"] = o.AccountName
 	toSerialize["algorithm"] = o.Algorithm
@@ -13777,7 +13777,7 @@ type TransitCacheConfigRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTransitCacheConfigRequestWithDefaults() *TransitCacheConfigRequest {
-	this := TransitCacheConfigRequest{}
+	var this TransitCacheConfigRequest
 
 	this.Size = 0
 
@@ -13785,7 +13785,7 @@ func NewTransitCacheConfigRequestWithDefaults() *TransitCacheConfigRequest {
 }
 
 func (o TransitCacheConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["size"] = o.Size
 
@@ -13818,7 +13818,7 @@ type TransitDatakeyRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTransitDatakeyRequestWithDefaults() *TransitDatakeyRequest {
-	this := TransitDatakeyRequest{}
+	var this TransitDatakeyRequest
 
 	this.Bits = 256
 
@@ -13826,7 +13826,7 @@ func NewTransitDatakeyRequestWithDefaults() *TransitDatakeyRequest {
 }
 
 func (o TransitDatakeyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["bits"] = o.Bits
 	toSerialize["context"] = o.Context
@@ -13860,13 +13860,13 @@ type TransitDecryptRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTransitDecryptRequestWithDefaults() *TransitDecryptRequest {
-	this := TransitDecryptRequest{}
+	var this TransitDecryptRequest
 
 	return &this
 }
 
 func (o TransitDecryptRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["ciphertext"] = o.Ciphertext
 	toSerialize["context"] = o.Context
@@ -13905,7 +13905,7 @@ type TransitEncryptRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTransitEncryptRequestWithDefaults() *TransitEncryptRequest {
-	this := TransitEncryptRequest{}
+	var this TransitEncryptRequest
 
 	this.Type = "aes256-gcm96"
 
@@ -13913,7 +13913,7 @@ func NewTransitEncryptRequestWithDefaults() *TransitEncryptRequest {
 }
 
 func (o TransitEncryptRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["context"] = o.Context
 	toSerialize["convergent_encryption"] = o.ConvergentEncryption
@@ -13951,7 +13951,7 @@ type TransitHashRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTransitHashRequestWithDefaults() *TransitHashRequest {
-	this := TransitHashRequest{}
+	var this TransitHashRequest
 
 	this.Algorithm = "sha2-256"
 	this.Format = "hex"
@@ -13960,7 +13960,7 @@ func NewTransitHashRequestWithDefaults() *TransitHashRequest {
 }
 
 func (o TransitHashRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["algorithm"] = o.Algorithm
 	toSerialize["format"] = o.Format
@@ -13996,7 +13996,7 @@ type TransitHmacRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTransitHmacRequestWithDefaults() *TransitHmacRequest {
-	this := TransitHmacRequest{}
+	var this TransitHmacRequest
 
 	this.Algorithm = "sha2-256"
 
@@ -14004,7 +14004,7 @@ func NewTransitHmacRequestWithDefaults() *TransitHmacRequest {
 }
 
 func (o TransitHmacRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["algorithm"] = o.Algorithm
 	toSerialize["input"] = o.Input
@@ -14044,13 +14044,13 @@ type TransitKeysConfigRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTransitKeysConfigRequestWithDefaults() *TransitKeysConfigRequest {
-	this := TransitKeysConfigRequest{}
+	var this TransitKeysConfigRequest
 
 	return &this
 }
 
 func (o TransitKeysConfigRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["allow_plaintext_backup"] = o.AllowPlaintextBackup
 	toSerialize["auto_rotate_period"] = o.AutoRotatePeriod
@@ -14098,7 +14098,7 @@ type TransitKeysImportRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTransitKeysImportRequestWithDefaults() *TransitKeysImportRequest {
-	this := TransitKeysImportRequest{}
+	var this TransitKeysImportRequest
 
 	this.AutoRotatePeriod = 0
 	this.HashFunction = "SHA256"
@@ -14108,7 +14108,7 @@ func NewTransitKeysImportRequestWithDefaults() *TransitKeysImportRequest {
 }
 
 func (o TransitKeysImportRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["allow_plaintext_backup"] = o.AllowPlaintextBackup
 	toSerialize["allow_rotation"] = o.AllowRotation
@@ -14145,7 +14145,7 @@ type TransitKeysImportVersionRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTransitKeysImportVersionRequestWithDefaults() *TransitKeysImportVersionRequest {
-	this := TransitKeysImportVersionRequest{}
+	var this TransitKeysImportVersionRequest
 
 	this.HashFunction = "SHA256"
 
@@ -14153,7 +14153,7 @@ func NewTransitKeysImportVersionRequestWithDefaults() *TransitKeysImportVersionR
 }
 
 func (o TransitKeysImportVersionRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["ciphertext"] = o.Ciphertext
 	toSerialize["hash_function"] = o.HashFunction
@@ -14193,7 +14193,7 @@ type TransitKeysRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTransitKeysRequestWithDefaults() *TransitKeysRequest {
-	this := TransitKeysRequest{}
+	var this TransitKeysRequest
 
 	this.AutoRotatePeriod = 0
 	this.Type = "aes256-gcm96"
@@ -14202,7 +14202,7 @@ func NewTransitKeysRequestWithDefaults() *TransitKeysRequest {
 }
 
 func (o TransitKeysRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["allow_plaintext_backup"] = o.AllowPlaintextBackup
 	toSerialize["auto_rotate_period"] = o.AutoRotatePeriod
@@ -14235,13 +14235,13 @@ type TransitKeysTrimRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTransitKeysTrimRequestWithDefaults() *TransitKeysTrimRequest {
-	this := TransitKeysTrimRequest{}
+	var this TransitKeysTrimRequest
 
 	return &this
 }
 
 func (o TransitKeysTrimRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["min_available_version"] = o.MinAvailableVersion
 
@@ -14274,7 +14274,7 @@ type TransitRandomRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTransitRandomRequestWithDefaults() *TransitRandomRequest {
-	this := TransitRandomRequest{}
+	var this TransitRandomRequest
 
 	this.Bytes = 32
 	this.Format = "base64"
@@ -14284,7 +14284,7 @@ func NewTransitRandomRequestWithDefaults() *TransitRandomRequest {
 }
 
 func (o TransitRandomRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["bytes"] = o.Bytes
 	toSerialize["format"] = o.Format
@@ -14318,7 +14318,7 @@ type TransitRestoreRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTransitRestoreRequestWithDefaults() *TransitRestoreRequest {
-	this := TransitRestoreRequest{}
+	var this TransitRestoreRequest
 
 	this.Force = false
 
@@ -14326,7 +14326,7 @@ func NewTransitRestoreRequestWithDefaults() *TransitRestoreRequest {
 }
 
 func (o TransitRestoreRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["backup"] = o.Backup
 	toSerialize["force"] = o.Force
@@ -14361,13 +14361,13 @@ type TransitRewrapRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTransitRewrapRequestWithDefaults() *TransitRewrapRequest {
-	this := TransitRewrapRequest{}
+	var this TransitRewrapRequest
 
 	return &this
 }
 
 func (o TransitRewrapRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["ciphertext"] = o.Ciphertext
 	toSerialize["context"] = o.Context
@@ -14413,7 +14413,7 @@ type TransitSignRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTransitSignRequestWithDefaults() *TransitSignRequest {
-	this := TransitSignRequest{}
+	var this TransitSignRequest
 
 	this.Algorithm = "sha2-256"
 	this.HashAlgorithm = "sha2-256"
@@ -14423,7 +14423,7 @@ func NewTransitSignRequestWithDefaults() *TransitSignRequest {
 }
 
 func (o TransitSignRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["algorithm"] = o.Algorithm
 	toSerialize["context"] = o.Context
@@ -14476,7 +14476,7 @@ type TransitVerifyRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewTransitVerifyRequestWithDefaults() *TransitVerifyRequest {
-	this := TransitVerifyRequest{}
+	var this TransitVerifyRequest
 
 	this.Algorithm = "sha2-256"
 	this.HashAlgorithm = "sha2-256"
@@ -14486,7 +14486,7 @@ func NewTransitVerifyRequestWithDefaults() *TransitVerifyRequest {
 }
 
 func (o TransitVerifyRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["algorithm"] = o.Algorithm
 	toSerialize["context"] = o.Context
@@ -14522,13 +14522,13 @@ type UserpassLoginRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUserpassLoginRequestWithDefaults() *UserpassLoginRequest {
-	this := UserpassLoginRequest{}
+	var this UserpassLoginRequest
 
 	return &this
 }
 
 func (o UserpassLoginRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["password"] = o.Password
 
@@ -14555,13 +14555,13 @@ type UserpassUsersPasswordRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUserpassUsersPasswordRequestWithDefaults() *UserpassUsersPasswordRequest {
-	this := UserpassUsersPasswordRequest{}
+	var this UserpassUsersPasswordRequest
 
 	return &this
 }
 
 func (o UserpassUsersPasswordRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["password"] = o.Password
 
@@ -14591,13 +14591,13 @@ type UserpassUsersPoliciesRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUserpassUsersPoliciesRequestWithDefaults() *UserpassUsersPoliciesRequest {
-	this := UserpassUsersPoliciesRequest{}
+	var this UserpassUsersPoliciesRequest
 
 	return &this
 }
 
 func (o UserpassUsersPoliciesRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["policies"] = o.Policies
 	toSerialize["token_policies"] = o.TokenPolicies
@@ -14655,7 +14655,7 @@ type UserpassUsersRequest struct {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewUserpassUsersRequestWithDefaults() *UserpassUsersRequest {
-	this := UserpassUsersRequest{}
+	var this UserpassUsersRequest
 
 	this.TokenType = "default-service"
 
@@ -14663,7 +14663,7 @@ func NewUserpassUsersRequestWithDefaults() *UserpassUsersRequest {
 }
 
 func (o UserpassUsersRequest) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
+	toSerialize := make(map[string]interface{})
 
 	toSerialize["bound_cidrs"] = o.BoundCidrs
 	toSerialize["max_ttl"] = o.MaxTtl

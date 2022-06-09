@@ -4,9 +4,9 @@ GENERATE_CONFIG_PATH        ?= generate/config.yaml
 GENERATE_TEMPLATES_PATH     ?= generate/templates
 OUTPUT_PATH                 ?= .
 
-.PHONY: regen bootstrap generate concat format tidy
+.PHONY: regen bootstrap generate concat format tidy clean
 
-regen: bootstrap generate concat format tidy
+regen: bootstrap generate concat format tidy clean
 
 bootstrap:
 	go install mvdan.cc/gofumpt@latest
@@ -29,3 +29,9 @@ format:
 
 tidy:
 	go mod tidy
+
+clean:
+	rm -rf git_push.sh \
+	      .openapi-generator \
+	      .openapi-generator-ignore \
+	      .travis.yml

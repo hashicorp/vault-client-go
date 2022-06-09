@@ -19,7 +19,7 @@ type {{classname}} struct {
 {{#deprecated}}
 	// Deprecated
 {{/deprecated}}
-	{{name}} {{^required}}{{^isNullable}}{{^isArray}}{{^isFreeFormObject}}*{{/isFreeFormObject}}{{/isArray}}{{/isNullable}}{{/required}}{{{dataType}}} `json:"{{baseName}}{{^required}},omitempty{{/required}}"{{#withXml}} xml:"{{baseName}}{{#isXmlAttribute}},attr{{/isXmlAttribute}}"{{/withXml}}{{#vendorExtensions.x-go-custom-tag}} {{{.}}}{{/vendorExtensions.x-go-custom-tag}}`
+	{{name}} {{{dataType}}} `json:"{{baseName}}"{{#withXml}} xml:"{{baseName}}{{#isXmlAttribute}},attr{{/isXmlAttribute}}"{{/withXml}}{{#vendorExtensions.x-go-custom-tag}} {{{.}}}{{/vendorExtensions.x-go-custom-tag}}`
 {{/vars}}
 {{#isAdditionalPropertiesTrue}}
 	AdditionalProperties map[string]interface{}
@@ -35,28 +35,23 @@ type _{{{classname}}} {{{classname}}}
 // but it doesn't guarantee that properties required by API are set
 func New{{classname}}WithDefaults() *{{classname}} {
 	this := {{classname}}{}
+
 {{#vars}}
 {{#defaultValue}}
 {{^vendorExtensions.x-golang-is-container}}
 {{^isReadOnly}}
-{{#isNullable}}
-{{!we use datatypeWithEnum here, since it will represent the non-nullable name of the datatype, e.g. int64 for NullableInt64}}
-	var {{nameInCamelCase}} {{{datatypeWithEnum}}} = {{{.}}}
-	this.{{name}} = *New{{{dataType}}}(&{{nameInCamelCase}})
-{{/isNullable}}
-{{^isNullable}}
-	var {{nameInCamelCase}} {{{dataType}}} = {{{.}}}
-	this.{{name}} = {{^required}}&{{/required}}{{nameInCamelCase}}
-{{/isNullable}}
+	this.{{name}} = {{{.}}}
 {{/isReadOnly}}
 {{/vendorExtensions.x-golang-is-container}}
 {{/defaultValue}}
 {{/vars}}
+
 	return &this
 }
 
 func (o {{classname}}) MarshalJSON() ([]byte, error) {
 	toSerialize := {{#isArray}}make([]interface{}, len(o.Items)){{/isArray}}{{^isArray}}map[string]interface{}{}{{/isArray}}
+
 	{{#parent}}
 	{{^isMap}}
 	{{^isArray}}
@@ -77,34 +72,15 @@ func (o {{classname}}) MarshalJSON() ([]byte, error) {
 	{{/isArray}}
 	{{/parent}}
 	{{#vars}}
-	{{! if argument is nullable, only serialize it if it is set}}
-	{{#isNullable}}
-	{{#vendorExtensions.x-golang-is-container}}
-	{{! support for container fields is not ideal at this point because of lack of Nullable* types}}
-	if o.{{name}} != nil {
-		toSerialize["{{baseName}}"] = o.{{name}}
-	}
-	{{/vendorExtensions.x-golang-is-container}}
-	{{^vendorExtensions.x-golang-is-container}}
-	if {{#required}}true{{/required}}{{^required}}o.{{name}}.IsSet(){{/required}} {
-		toSerialize["{{baseName}}"] = o.{{name}}.Get()
-	}
-	{{/vendorExtensions.x-golang-is-container}}
-	{{/isNullable}}
-	{{! if argument is not nullable, don't set it if it is nil}}
-	{{^isNullable}}
-	if {{#required}}true{{/required}}{{^required}}o.{{name}} != nil{{/required}} {
-		toSerialize["{{baseName}}"] = o.{{name}}
-	}
-	{{/isNullable}}
+	toSerialize["{{baseName}}"] = o.{{name}}
 	{{/vars}}
 	{{#isAdditionalPropertiesTrue}}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
 	}
-
 	{{/isAdditionalPropertiesTrue}}
+
 	return json.Marshal(toSerialize)
 }
 
@@ -122,7 +98,7 @@ func (o *{{{classname}}}) UnmarshalJSON(bytes []byte) (err error) {
 	{{#deprecated}}
 		// Deprecated
 	{{/deprecated}}
-		{{name}} {{^required}}{{^isNullable}}*{{/isNullable}}{{/required}}{{{dataType}}} `json:"{{baseName}}{{^required}},omitempty{{/required}}"{{#withXml}} xml:"{{baseName}}{{#isXmlAttribute}},attr{{/isXmlAttribute}}"{{/withXml}}{{#vendorExtensions.x-go-custom-tag}} {{{.}}}{{/vendorExtensions.x-go-custom-tag}}`
+		{{name}} {{{dataType}}} `json:"{{baseName}}"{{#withXml}} xml:"{{baseName}}{{#isXmlAttribute}},attr{{/isXmlAttribute}}"{{/withXml}}{{#vendorExtensions.x-go-custom-tag}} {{{.}}}{{/vendorExtensions.x-go-custom-tag}}`
 	{{/vars}}
 	}
 

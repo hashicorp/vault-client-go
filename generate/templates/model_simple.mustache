@@ -34,7 +34,7 @@ type _{{{classname}}} {{{classname}}}
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func New{{classname}}WithDefaults() *{{classname}} {
-	this := {{classname}}{}
+	var this {{classname}}
 
 {{#vars}}
 {{#defaultValue}}
@@ -50,7 +50,7 @@ func New{{classname}}WithDefaults() *{{classname}} {
 }
 
 func (o {{classname}}) MarshalJSON() ([]byte, error) {
-	toSerialize := {{#isArray}}make([]interface{}, len(o.Items)){{/isArray}}{{^isArray}}map[string]interface{}{}{{/isArray}}
+	toSerialize := {{#isArray}}make([]interface{}, len(o.Items)){{/isArray}}{{^isArray}}make(map[string]interface{}){{/isArray}}
 
 	{{#parent}}
 	{{^isMap}}

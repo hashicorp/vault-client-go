@@ -118,7 +118,7 @@ func (a *{{{classname}}}Service) {{nickname}}Execute(ctx context.Context{{#pathP
 		{{/returnType}}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "{{{classname}}}Service.{{{nickname}}}")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "{{{classname}}}Service.{{{nickname}}}")
 	if err != nil {
 		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -304,9 +304,9 @@ func (a *{{{classname}}}Service) {{nickname}}Execute(ctx context.Context{{#pathP
 {{#authMethods}}
 {{#isApiKey}}
 {{^isKeyInCookie}}
-	if r.ctx != nil {
+	if ctx != nil {
 		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+		if auth, ok := ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			{{#vendorExtensions.x-auth-id-alias}}
 			if apiKey, ok := auth["{{.}}"]; ok {
 				var key string
@@ -337,7 +337,7 @@ func (a *{{{classname}}}Service) {{nickname}}Execute(ctx context.Context{{#pathP
 {{/isKeyInCookie}}
 {{/isApiKey}}
 {{/authMethods}}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, err
 	}

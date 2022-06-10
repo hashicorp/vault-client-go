@@ -124,56 +124,51 @@ func (a *{{{classname}}}Service) {{nickname}}Execute(ctx context.Context{{#pathP
 	}
 
 	localVarPath := localBasePath + "{{{path}}}"{{#pathParams}}
-	localVarPath = strings.Replace(localVarPath, "{"+"{{baseName}}"+"}", url.PathEscape(parameterToString(r.{{paramName}}, "{{collectionFormat}}")), -1){{/pathParams}}
+	localVarPath = strings.Replace(localVarPath, "{"+"{{baseName}}"+"}", url.PathEscape(parameterToString({{paramName}}, "{{collectionFormat}}")), -1){{/pathParams}}
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	{{#allParams}}
 	{{#required}}
-	{{^isPathParam}}
-	if r.{{paramName}} == nil {
-		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, reportError("{{paramName}} is required and must be specified")
-	}
-	{{/isPathParam}}
 	{{#minItems}}
-	if len({{^isPathParam}}*{{/isPathParam}}r.{{paramName}}) < {{minItems}} {
+	if len({{^isPathParam}}*{{/isPathParam}}{{paramName}}) < {{minItems}} {
 		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, reportError("{{paramName}} must have at least {{minItems}} elements")
 	}
 	{{/minItems}}
 	{{#maxItems}}
-	if len({{^isPathParam}}*{{/isPathParam}}r.{{paramName}}) > {{maxItems}} {
+	if len({{^isPathParam}}*{{/isPathParam}}{{paramName}}) > {{maxItems}} {
 		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, reportError("{{paramName}} must have less than {{maxItems}} elements")
 	}
 	{{/maxItems}}
 	{{#minLength}}
-	if strlen({{^isPathParam}}*{{/isPathParam}}r.{{paramName}}) < {{minLength}} {
+	if strlen({{^isPathParam}}*{{/isPathParam}}{{paramName}}) < {{minLength}} {
 		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, reportError("{{paramName}} must have at least {{minLength}} elements")
 	}
 	{{/minLength}}
 	{{#maxLength}}
-	if strlen({{^isPathParam}}*{{/isPathParam}}r.{{paramName}}) > {{maxLength}} {
+	if strlen({{^isPathParam}}*{{/isPathParam}}{{paramName}}) > {{maxLength}} {
 		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, reportError("{{paramName}} must have less than {{maxLength}} elements")
 	}
 	{{/maxLength}}
 	{{#minimum}}
 	{{#isString}}
-	{{paramName}}Txt, err := atoi({{^isPathParam}}*{{/isPathParam}}r.{{paramName}})
+	{{paramName}}Txt, err := atoi({{^isPathParam}}*{{/isPathParam}}{{paramName}})
 	if {{paramName}}Txt < {{minimum}} {
 	{{/isString}}
 	{{^isString}}
-	if {{^isPathParam}}*{{/isPathParam}}r.{{paramName}} < {{minimum}} {
+	if {{^isPathParam}}*{{/isPathParam}}{{paramName}} < {{minimum}} {
 	{{/isString}}
 		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, reportError("{{paramName}} must be greater than {{minimum}}")
 	}
 	{{/minimum}}
 	{{#maximum}}
 	{{#isString}}
-	{{paramName}}Txt, err := atoi({{^isPathParam}}*{{/isPathParam}}r.{{paramName}})
+	{{paramName}}Txt, err := atoi({{^isPathParam}}*{{/isPathParam}}{{paramName}})
 	if {{paramName}}Txt > {{maximum}} {
 	{{/isString}}
 	{{^isString}}
-	if {{^isPathParam}}*{{/isPathParam}}r.{{paramName}} > {{maximum}} {
+	if {{^isPathParam}}*{{/isPathParam}}{{paramName}} > {{maximum}} {
 	{{/isString}}
 		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, reportError("{{paramName}} must be less than {{maximum}}")
 	}
@@ -185,7 +180,7 @@ func (a *{{{classname}}}Service) {{nickname}}Execute(ctx context.Context{{#pathP
 	{{#required}}
 	{{#isCollectionFormatMulti}}
 	{
-		t := *r.{{paramName}}
+		t := *{{paramName}}
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
@@ -197,13 +192,13 @@ func (a *{{{classname}}}Service) {{nickname}}Execute(ctx context.Context{{#pathP
 	}
 	{{/isCollectionFormatMulti}}
 	{{^isCollectionFormatMulti}}
-	localVarQueryParams.Add("{{baseName}}", parameterToString(*r.{{paramName}}, "{{collectionFormat}}"))
+	localVarQueryParams.Add("{{baseName}}", parameterToString(*{{paramName}}, "{{collectionFormat}}"))
 	{{/isCollectionFormatMulti}}
 	{{/required}}
 	{{^required}}
-	if r.{{paramName}} != nil {
+	if {{paramName}} != nil {
 	{{#isCollectionFormatMulti}}
-		t := *r.{{paramName}}
+		t := *{{paramName}}
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
@@ -214,7 +209,7 @@ func (a *{{{classname}}}Service) {{nickname}}Execute(ctx context.Context{{#pathP
 		}
 	{{/isCollectionFormatMulti}}
 	{{^isCollectionFormatMulti}}
-		localVarQueryParams.Add("{{baseName}}", parameterToString(*r.{{paramName}}, "{{collectionFormat}}"))
+		localVarQueryParams.Add("{{baseName}}", parameterToString(*{{paramName}}, "{{collectionFormat}}"))
 	{{/isCollectionFormatMulti}}
 	}
 	{{/required}}
@@ -242,11 +237,11 @@ func (a *{{{classname}}}Service) {{nickname}}Execute(ctx context.Context{{#pathP
 	}
 {{#headerParams}}
 	{{#required}}
-	localVarHeaderParams["{{baseName}}"] = parameterToString(*r.{{paramName}}, "{{collectionFormat}}")
+	localVarHeaderParams["{{baseName}}"] = parameterToString(*{{paramName}}, "{{collectionFormat}}")
 	{{/required}}
 	{{^required}}
-	if r.{{paramName}} != nil {
-		localVarHeaderParams["{{baseName}}"] = parameterToString(*r.{{paramName}}, "{{collectionFormat}}")
+	if {{paramName}} != nil {
+		localVarHeaderParams["{{baseName}}"] = parameterToString(*{{paramName}}, "{{collectionFormat}}")
 	}
 	{{/required}}
 {{/headerParams}}
@@ -259,12 +254,12 @@ func (a *{{{classname}}}Service) {{nickname}}Execute(ctx context.Context{{#pathP
 	{{paramName}}LocalVarFormFileName = "{{baseName}}"
 
 {{#required}}
-	{{paramName}}LocalVarFile := *r.{{paramName}}
+	{{paramName}}LocalVarFile := *{{paramName}}
 {{/required}}
 {{^required}}
 	var {{paramName}}LocalVarFile {{dataType}}
-	if r.{{paramName}} != nil {
-		{{paramName}}LocalVarFile = *r.{{paramName}}
+	if {{paramName}} != nil {
+		{{paramName}}LocalVarFile = *{{paramName}}
 	}
 {{/required}}
 	if {{paramName}}LocalVarFile != nil {
@@ -277,12 +272,12 @@ func (a *{{{classname}}}Service) {{nickname}}Execute(ctx context.Context{{#pathP
 {{/isFile}}
 {{^isFile}}
 {{#required}}
-	localVarFormParams.Add("{{baseName}}", parameterToString(*r.{{paramName}}, "{{collectionFormat}}"))
+	localVarFormParams.Add("{{baseName}}", parameterToString(*{{paramName}}, "{{collectionFormat}}"))
 {{/required}}
 {{^required}}
 {{#isModel}}
-	if r.{{paramName}} != nil {
-		paramJson, err := parameterToJson(*r.{{paramName}})
+	if {{paramName}} != nil {
+		paramJson, err := parameterToJson(*{{paramName}})
 		if err != nil {
 			return {{#returnType}}localVarReturnValue, {{/returnType}}nil, err
 		}
@@ -290,8 +285,8 @@ func (a *{{{classname}}}Service) {{nickname}}Execute(ctx context.Context{{#pathP
 	}
 {{/isModel}}
 {{^isModel}}
-	if r.{{paramName}} != nil {
-		localVarFormParams.Add("{{baseName}}", parameterToString(*r.{{paramName}}, "{{collectionFormat}}"))
+	if {{paramName}} != nil {
+		localVarFormParams.Add("{{baseName}}", parameterToString(*{{paramName}}, "{{collectionFormat}}"))
 	}
 {{/isModel}}
 {{/required}}
@@ -299,7 +294,7 @@ func (a *{{{classname}}}Service) {{nickname}}Execute(ctx context.Context{{#pathP
 {{/formParams}}
 {{#bodyParams}}
 	// body params
-	localVarPostBody = r.{{paramName}}
+	localVarPostBody = {{paramName}}
 {{/bodyParams}}
 {{#authMethods}}
 {{#isApiKey}}

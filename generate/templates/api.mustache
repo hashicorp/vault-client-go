@@ -121,7 +121,7 @@ func (a *{{{classname}}}Service) {{nickname}}Execute(ctx context.Context{{#pathP
 	}
 	{{/isCollectionFormatMulti}}
 	{{^isCollectionFormatMulti}}
-	localVarQueryParams.Add("{{baseName}}", parameterToString(*{{paramName}}, "{{collectionFormat}}"))
+	localVarQueryParams.Add("{{baseName}}", parameterToString({{paramName}}, "{{collectionFormat}}"))
 	{{/isCollectionFormatMulti}}
 	{{/required}}
 	{{^required}}
@@ -138,7 +138,7 @@ func (a *{{{classname}}}Service) {{nickname}}Execute(ctx context.Context{{#pathP
 		}
 	{{/isCollectionFormatMulti}}
 	{{^isCollectionFormatMulti}}
-		localVarQueryParams.Add("{{baseName}}", parameterToString(*{{paramName}}, "{{collectionFormat}}"))
+		localVarQueryParams.Add("{{baseName}}", parameterToString({{paramName}}, "{{collectionFormat}}"))
 	{{/isCollectionFormatMulti}}
 	}
 	{{/required}}
@@ -166,11 +166,11 @@ func (a *{{{classname}}}Service) {{nickname}}Execute(ctx context.Context{{#pathP
 	}
 {{#headerParams}}
 	{{#required}}
-	localVarHeaderParams["{{baseName}}"] = parameterToString(*{{paramName}}, "{{collectionFormat}}")
+	localVarHeaderParams["{{baseName}}"] = parameterToString({{paramName}}, "{{collectionFormat}}")
 	{{/required}}
 	{{^required}}
 	if {{paramName}} != nil {
-		localVarHeaderParams["{{baseName}}"] = parameterToString(*{{paramName}}, "{{collectionFormat}}")
+		localVarHeaderParams["{{baseName}}"] = parameterToString({{paramName}}, "{{collectionFormat}}")
 	}
 	{{/required}}
 {{/headerParams}}
@@ -201,7 +201,7 @@ func (a *{{{classname}}}Service) {{nickname}}Execute(ctx context.Context{{#pathP
 {{/isFile}}
 {{^isFile}}
 {{#required}}
-	localVarFormParams.Add("{{baseName}}", parameterToString(*{{paramName}}, "{{collectionFormat}}"))
+	localVarFormParams.Add("{{baseName}}", parameterToString({{paramName}}, "{{collectionFormat}}"))
 {{/required}}
 {{^required}}
 {{#isModel}}
@@ -215,7 +215,7 @@ func (a *{{{classname}}}Service) {{nickname}}Execute(ctx context.Context{{#pathP
 {{/isModel}}
 {{^isModel}}
 	if {{paramName}} != nil {
-		localVarFormParams.Add("{{baseName}}", parameterToString(*{{paramName}}, "{{collectionFormat}}"))
+		localVarFormParams.Add("{{baseName}}", parameterToString({{paramName}}, "{{collectionFormat}}"))
 	}
 {{/isModel}}
 {{/required}}

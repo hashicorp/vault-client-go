@@ -19,23 +19,8 @@ import (
 	"strings"
 )
 
-// Linger please
-var (
-	_ context.Context
-)
-
 // SystemApiService SystemApi service
 type SystemApiService service
-
-type ApiDeleteSysAuditPathRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	path       string
-}
-
-func (r ApiDeleteSysAuditPathRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysAuditPathExecute(r)
-}
 
 /*
 DeleteSysAuditPath Disable the audit device at the given path.
@@ -44,14 +29,6 @@ DeleteSysAuditPath Disable the audit device at the given path.
  @param path The name of the backend. Cannot be delimited. Example: \"mysql\"
  @return ApiDeleteSysAuditPathRequest
 */
-func (a *SystemApiService) DeleteSysAuditPath(ctx context.Context, path string) ApiDeleteSysAuditPathRequest {
-	return ApiDeleteSysAuditPathRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) DeleteSysAuditPathExecute(ctx context.Context, path string) (*http.Response, error) {
 	var (
@@ -117,16 +94,6 @@ func (a *SystemApiService) DeleteSysAuditPathExecute(ctx context.Context, path s
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysAuthPathRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	path       string
-}
-
-func (r ApiDeleteSysAuthPathRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysAuthPathExecute(r)
-}
-
 /*
 DeleteSysAuthPath Disable the auth method at the given auth path
 
@@ -134,14 +101,6 @@ DeleteSysAuthPath Disable the auth method at the given auth path
  @param path The path to mount to. Cannot be delimited. Example: \"user\"
  @return ApiDeleteSysAuthPathRequest
 */
-func (a *SystemApiService) DeleteSysAuthPath(ctx context.Context, path string) ApiDeleteSysAuthPathRequest {
-	return ApiDeleteSysAuthPathRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) DeleteSysAuthPathExecute(ctx context.Context, path string) (*http.Response, error) {
 	var (
@@ -207,16 +166,6 @@ func (a *SystemApiService) DeleteSysAuthPathExecute(ctx context.Context, path st
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysConfigAuditingRequestHeadersHeaderRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	header     string
-}
-
-func (r ApiDeleteSysConfigAuditingRequestHeadersHeaderRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysConfigAuditingRequestHeadersHeaderExecute(r)
-}
-
 /*
 DeleteSysConfigAuditingRequestHeadersHeader Disable auditing of the given request header.
 
@@ -224,14 +173,6 @@ DeleteSysConfigAuditingRequestHeadersHeader Disable auditing of the given reques
  @param header
  @return ApiDeleteSysConfigAuditingRequestHeadersHeaderRequest
 */
-func (a *SystemApiService) DeleteSysConfigAuditingRequestHeadersHeader(ctx context.Context, header string) ApiDeleteSysConfigAuditingRequestHeadersHeaderRequest {
-	return ApiDeleteSysConfigAuditingRequestHeadersHeaderRequest{
-		ApiService: a,
-		ctx:        ctx,
-		header:     header,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) DeleteSysConfigAuditingRequestHeadersHeaderExecute(ctx context.Context, header string) (*http.Response, error) {
 	var (
@@ -297,28 +238,12 @@ func (a *SystemApiService) DeleteSysConfigAuditingRequestHeadersHeaderExecute(ct
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysConfigCorsRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiDeleteSysConfigCorsRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysConfigCorsExecute(r)
-}
-
 /*
 DeleteSysConfigCors Remove any CORS settings.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiDeleteSysConfigCorsRequest
 */
-func (a *SystemApiService) DeleteSysConfigCors(ctx context.Context) ApiDeleteSysConfigCorsRequest {
-	return ApiDeleteSysConfigCorsRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) DeleteSysConfigCorsExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -383,16 +308,6 @@ func (a *SystemApiService) DeleteSysConfigCorsExecute(ctx context.Context) (*htt
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysConfigUiHeadersHeaderRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	header     string
-}
-
-func (r ApiDeleteSysConfigUiHeadersHeaderRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysConfigUiHeadersHeaderExecute(r)
-}
-
 /*
 DeleteSysConfigUiHeadersHeader Remove a UI header.
 
@@ -400,14 +315,6 @@ DeleteSysConfigUiHeadersHeader Remove a UI header.
  @param header The name of the header.
  @return ApiDeleteSysConfigUiHeadersHeaderRequest
 */
-func (a *SystemApiService) DeleteSysConfigUiHeadersHeader(ctx context.Context, header string) ApiDeleteSysConfigUiHeadersHeaderRequest {
-	return ApiDeleteSysConfigUiHeadersHeaderRequest{
-		ApiService: a,
-		ctx:        ctx,
-		header:     header,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) DeleteSysConfigUiHeadersHeaderExecute(ctx context.Context, header string) (*http.Response, error) {
 	var (
@@ -473,28 +380,12 @@ func (a *SystemApiService) DeleteSysConfigUiHeadersHeaderExecute(ctx context.Con
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysGenerateRootRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiDeleteSysGenerateRootRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysGenerateRootExecute(r)
-}
-
 /*
 DeleteSysGenerateRoot Cancels any in-progress root generation attempt.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiDeleteSysGenerateRootRequest
 */
-func (a *SystemApiService) DeleteSysGenerateRoot(ctx context.Context) ApiDeleteSysGenerateRootRequest {
-	return ApiDeleteSysGenerateRootRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) DeleteSysGenerateRootExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -559,28 +450,12 @@ func (a *SystemApiService) DeleteSysGenerateRootExecute(ctx context.Context) (*h
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysGenerateRootAttemptRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiDeleteSysGenerateRootAttemptRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysGenerateRootAttemptExecute(r)
-}
-
 /*
 DeleteSysGenerateRootAttempt Cancels any in-progress root generation attempt.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiDeleteSysGenerateRootAttemptRequest
 */
-func (a *SystemApiService) DeleteSysGenerateRootAttempt(ctx context.Context) ApiDeleteSysGenerateRootAttemptRequest {
-	return ApiDeleteSysGenerateRootAttemptRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) DeleteSysGenerateRootAttemptExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -645,16 +520,6 @@ func (a *SystemApiService) DeleteSysGenerateRootAttemptExecute(ctx context.Conte
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysMountsPathRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	path       string
-}
-
-func (r ApiDeleteSysMountsPathRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysMountsPathExecute(r)
-}
-
 /*
 DeleteSysMountsPath Disable the mount point specified at the given path.
 
@@ -662,14 +527,6 @@ DeleteSysMountsPath Disable the mount point specified at the given path.
  @param path The path to mount to. Example: \"aws/east\"
  @return ApiDeleteSysMountsPathRequest
 */
-func (a *SystemApiService) DeleteSysMountsPath(ctx context.Context, path string) ApiDeleteSysMountsPathRequest {
-	return ApiDeleteSysMountsPathRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) DeleteSysMountsPathExecute(ctx context.Context, path string) (*http.Response, error) {
 	var (
@@ -735,16 +592,6 @@ func (a *SystemApiService) DeleteSysMountsPathExecute(ctx context.Context, path 
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysPluginsCatalogNameRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	name       string
-}
-
-func (r ApiDeleteSysPluginsCatalogNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysPluginsCatalogNameExecute(r)
-}
-
 /*
 DeleteSysPluginsCatalogName Remove the plugin with the given name.
 
@@ -752,14 +599,6 @@ DeleteSysPluginsCatalogName Remove the plugin with the given name.
  @param name The name of the plugin
  @return ApiDeleteSysPluginsCatalogNameRequest
 */
-func (a *SystemApiService) DeleteSysPluginsCatalogName(ctx context.Context, name string) ApiDeleteSysPluginsCatalogNameRequest {
-	return ApiDeleteSysPluginsCatalogNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) DeleteSysPluginsCatalogNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
@@ -825,17 +664,6 @@ func (a *SystemApiService) DeleteSysPluginsCatalogNameExecute(ctx context.Contex
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysPluginsCatalogTypeNameRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	name       string
-	type_      string
-}
-
-func (r ApiDeleteSysPluginsCatalogTypeNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysPluginsCatalogTypeNameExecute(r)
-}
-
 /*
 DeleteSysPluginsCatalogTypeName Remove the plugin with the given name.
 
@@ -844,15 +672,6 @@ DeleteSysPluginsCatalogTypeName Remove the plugin with the given name.
  @param type_ The type of the plugin, may be auth, secret, or database
  @return ApiDeleteSysPluginsCatalogTypeNameRequest
 */
-func (a *SystemApiService) DeleteSysPluginsCatalogTypeName(ctx context.Context, name string, type_ string) ApiDeleteSysPluginsCatalogTypeNameRequest {
-	return ApiDeleteSysPluginsCatalogTypeNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-		type_:      type_,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) DeleteSysPluginsCatalogTypeNameExecute(ctx context.Context, name string, type_ string) (*http.Response, error) {
 	var (
@@ -919,16 +738,6 @@ func (a *SystemApiService) DeleteSysPluginsCatalogTypeNameExecute(ctx context.Co
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysPoliciesAclNameRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	name       string
-}
-
-func (r ApiDeleteSysPoliciesAclNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysPoliciesAclNameExecute(r)
-}
-
 /*
 DeleteSysPoliciesAclName Delete the ACL policy with the given name.
 
@@ -936,14 +745,6 @@ DeleteSysPoliciesAclName Delete the ACL policy with the given name.
  @param name The name of the policy. Example: \"ops\"
  @return ApiDeleteSysPoliciesAclNameRequest
 */
-func (a *SystemApiService) DeleteSysPoliciesAclName(ctx context.Context, name string) ApiDeleteSysPoliciesAclNameRequest {
-	return ApiDeleteSysPoliciesAclNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) DeleteSysPoliciesAclNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
@@ -1009,16 +810,6 @@ func (a *SystemApiService) DeleteSysPoliciesAclNameExecute(ctx context.Context, 
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysPoliciesPasswordNameRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	name       string
-}
-
-func (r ApiDeleteSysPoliciesPasswordNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysPoliciesPasswordNameExecute(r)
-}
-
 /*
 DeleteSysPoliciesPasswordName Delete a password policy.
 
@@ -1026,14 +817,6 @@ DeleteSysPoliciesPasswordName Delete a password policy.
  @param name The name of the password policy.
  @return ApiDeleteSysPoliciesPasswordNameRequest
 */
-func (a *SystemApiService) DeleteSysPoliciesPasswordName(ctx context.Context, name string) ApiDeleteSysPoliciesPasswordNameRequest {
-	return ApiDeleteSysPoliciesPasswordNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) DeleteSysPoliciesPasswordNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
@@ -1099,16 +882,6 @@ func (a *SystemApiService) DeleteSysPoliciesPasswordNameExecute(ctx context.Cont
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysPolicyNameRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	name       string
-}
-
-func (r ApiDeleteSysPolicyNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysPolicyNameExecute(r)
-}
-
 /*
 DeleteSysPolicyName Delete the policy with the given name.
 
@@ -1116,14 +889,6 @@ DeleteSysPolicyName Delete the policy with the given name.
  @param name The name of the policy. Example: \"ops\"
  @return ApiDeleteSysPolicyNameRequest
 */
-func (a *SystemApiService) DeleteSysPolicyName(ctx context.Context, name string) ApiDeleteSysPolicyNameRequest {
-	return ApiDeleteSysPolicyNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) DeleteSysPolicyNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
@@ -1189,16 +954,6 @@ func (a *SystemApiService) DeleteSysPolicyNameExecute(ctx context.Context, name 
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysQuotasRateLimitNameRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	name       string
-}
-
-func (r ApiDeleteSysQuotasRateLimitNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysQuotasRateLimitNameExecute(r)
-}
-
 /*
 DeleteSysQuotasRateLimitName Method for DeleteSysQuotasRateLimitName
 
@@ -1206,14 +961,6 @@ DeleteSysQuotasRateLimitName Method for DeleteSysQuotasRateLimitName
  @param name Name of the quota rule.
  @return ApiDeleteSysQuotasRateLimitNameRequest
 */
-func (a *SystemApiService) DeleteSysQuotasRateLimitName(ctx context.Context, name string) ApiDeleteSysQuotasRateLimitNameRequest {
-	return ApiDeleteSysQuotasRateLimitNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) DeleteSysQuotasRateLimitNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
@@ -1279,28 +1026,12 @@ func (a *SystemApiService) DeleteSysQuotasRateLimitNameExecute(ctx context.Conte
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysRawRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiDeleteSysRawRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysRawExecute(r)
-}
-
 /*
 DeleteSysRaw Delete the key with given path.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiDeleteSysRawRequest
 */
-func (a *SystemApiService) DeleteSysRaw(ctx context.Context) ApiDeleteSysRawRequest {
-	return ApiDeleteSysRawRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) DeleteSysRawExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -1365,16 +1096,6 @@ func (a *SystemApiService) DeleteSysRawExecute(ctx context.Context) (*http.Respo
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysRawPathRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	path       string
-}
-
-func (r ApiDeleteSysRawPathRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysRawPathExecute(r)
-}
-
 /*
 DeleteSysRawPath Delete the key with given path.
 
@@ -1382,14 +1103,6 @@ DeleteSysRawPath Delete the key with given path.
  @param path
  @return ApiDeleteSysRawPathRequest
 */
-func (a *SystemApiService) DeleteSysRawPath(ctx context.Context, path string) ApiDeleteSysRawPathRequest {
-	return ApiDeleteSysRawPathRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) DeleteSysRawPathExecute(ctx context.Context, path string) (*http.Response, error) {
 	var (
@@ -1455,28 +1168,12 @@ func (a *SystemApiService) DeleteSysRawPathExecute(ctx context.Context, path str
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysRekeyBackupRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiDeleteSysRekeyBackupRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysRekeyBackupExecute(r)
-}
-
 /*
 DeleteSysRekeyBackup Delete the backup copy of PGP-encrypted unseal keys.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiDeleteSysRekeyBackupRequest
 */
-func (a *SystemApiService) DeleteSysRekeyBackup(ctx context.Context) ApiDeleteSysRekeyBackupRequest {
-	return ApiDeleteSysRekeyBackupRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) DeleteSysRekeyBackupExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -1541,15 +1238,6 @@ func (a *SystemApiService) DeleteSysRekeyBackupExecute(ctx context.Context) (*ht
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysRekeyInitRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiDeleteSysRekeyInitRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysRekeyInitExecute(r)
-}
-
 /*
 DeleteSysRekeyInit Cancels any in-progress rekey.
 
@@ -1558,13 +1246,6 @@ This clears the rekey settings as well as any progress made. This must be called
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiDeleteSysRekeyInitRequest
 */
-func (a *SystemApiService) DeleteSysRekeyInit(ctx context.Context) ApiDeleteSysRekeyInitRequest {
-	return ApiDeleteSysRekeyInitRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) DeleteSysRekeyInitExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -1629,28 +1310,12 @@ func (a *SystemApiService) DeleteSysRekeyInitExecute(ctx context.Context) (*http
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysRekeyRecoveryKeyBackupRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiDeleteSysRekeyRecoveryKeyBackupRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysRekeyRecoveryKeyBackupExecute(r)
-}
-
 /*
 DeleteSysRekeyRecoveryKeyBackup Allows fetching or deleting the backup of the rotated unseal keys.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiDeleteSysRekeyRecoveryKeyBackupRequest
 */
-func (a *SystemApiService) DeleteSysRekeyRecoveryKeyBackup(ctx context.Context) ApiDeleteSysRekeyRecoveryKeyBackupRequest {
-	return ApiDeleteSysRekeyRecoveryKeyBackupRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) DeleteSysRekeyRecoveryKeyBackupExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -1715,15 +1380,6 @@ func (a *SystemApiService) DeleteSysRekeyRecoveryKeyBackupExecute(ctx context.Co
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysRekeyVerifyRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiDeleteSysRekeyVerifyRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysRekeyVerifyExecute(r)
-}
-
 /*
 DeleteSysRekeyVerify Cancel any in-progress rekey verification operation.
 
@@ -1732,13 +1388,6 @@ This clears any progress made and resets the nonce. Unlike a `DELETE` against `s
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiDeleteSysRekeyVerifyRequest
 */
-func (a *SystemApiService) DeleteSysRekeyVerify(ctx context.Context) ApiDeleteSysRekeyVerifyRequest {
-	return ApiDeleteSysRekeyVerifyRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) DeleteSysRekeyVerifyExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -1803,28 +1452,12 @@ func (a *SystemApiService) DeleteSysRekeyVerifyExecute(ctx context.Context) (*ht
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysAuditRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysAuditRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysAuditExecute(r)
-}
-
 /*
 GetSysAudit List the enabled audit devices.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysAuditRequest
 */
-func (a *SystemApiService) GetSysAudit(ctx context.Context) ApiGetSysAuditRequest {
-	return ApiGetSysAuditRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysAuditExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -1889,28 +1522,12 @@ func (a *SystemApiService) GetSysAuditExecute(ctx context.Context) (*http.Respon
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysAuthRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysAuthRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysAuthExecute(r)
-}
-
 /*
 GetSysAuth List the currently enabled credential backends.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysAuthRequest
 */
-func (a *SystemApiService) GetSysAuth(ctx context.Context) ApiGetSysAuthRequest {
-	return ApiGetSysAuthRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysAuthExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -1975,16 +1592,6 @@ func (a *SystemApiService) GetSysAuthExecute(ctx context.Context) (*http.Respons
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysAuthPathRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	path       string
-}
-
-func (r ApiGetSysAuthPathRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysAuthPathExecute(r)
-}
-
 /*
 GetSysAuthPath Read the configuration of the auth engine at the given path.
 
@@ -1992,14 +1599,6 @@ GetSysAuthPath Read the configuration of the auth engine at the given path.
  @param path The path to mount to. Cannot be delimited. Example: \"user\"
  @return ApiGetSysAuthPathRequest
 */
-func (a *SystemApiService) GetSysAuthPath(ctx context.Context, path string) ApiGetSysAuthPathRequest {
-	return ApiGetSysAuthPathRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysAuthPathExecute(ctx context.Context, path string) (*http.Response, error) {
 	var (
@@ -2065,16 +1664,6 @@ func (a *SystemApiService) GetSysAuthPathExecute(ctx context.Context, path strin
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysAuthPathTuneRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	path       string
-}
-
-func (r ApiGetSysAuthPathTuneRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysAuthPathTuneExecute(r)
-}
-
 /*
 GetSysAuthPathTune Reads the given auth path's configuration.
 
@@ -2084,14 +1673,6 @@ This endpoint requires sudo capability on the final path, but the same functiona
  @param path Tune the configuration parameters for an auth path.
  @return ApiGetSysAuthPathTuneRequest
 */
-func (a *SystemApiService) GetSysAuthPathTune(ctx context.Context, path string) ApiGetSysAuthPathTuneRequest {
-	return ApiGetSysAuthPathTuneRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysAuthPathTuneExecute(ctx context.Context, path string) (*http.Response, error) {
 	var (
@@ -2157,28 +1738,12 @@ func (a *SystemApiService) GetSysAuthPathTuneExecute(ctx context.Context, path s
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysConfigAuditingRequestHeadersRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysConfigAuditingRequestHeadersRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysConfigAuditingRequestHeadersExecute(r)
-}
-
 /*
 GetSysConfigAuditingRequestHeaders List the request headers that are configured to be audited.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysConfigAuditingRequestHeadersRequest
 */
-func (a *SystemApiService) GetSysConfigAuditingRequestHeaders(ctx context.Context) ApiGetSysConfigAuditingRequestHeadersRequest {
-	return ApiGetSysConfigAuditingRequestHeadersRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysConfigAuditingRequestHeadersExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -2243,16 +1808,6 @@ func (a *SystemApiService) GetSysConfigAuditingRequestHeadersExecute(ctx context
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysConfigAuditingRequestHeadersHeaderRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	header     string
-}
-
-func (r ApiGetSysConfigAuditingRequestHeadersHeaderRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysConfigAuditingRequestHeadersHeaderExecute(r)
-}
-
 /*
 GetSysConfigAuditingRequestHeadersHeader List the information for the given request header.
 
@@ -2260,14 +1815,6 @@ GetSysConfigAuditingRequestHeadersHeader List the information for the given requ
  @param header
  @return ApiGetSysConfigAuditingRequestHeadersHeaderRequest
 */
-func (a *SystemApiService) GetSysConfigAuditingRequestHeadersHeader(ctx context.Context, header string) ApiGetSysConfigAuditingRequestHeadersHeaderRequest {
-	return ApiGetSysConfigAuditingRequestHeadersHeaderRequest{
-		ApiService: a,
-		ctx:        ctx,
-		header:     header,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysConfigAuditingRequestHeadersHeaderExecute(ctx context.Context, header string) (*http.Response, error) {
 	var (
@@ -2333,28 +1880,12 @@ func (a *SystemApiService) GetSysConfigAuditingRequestHeadersHeaderExecute(ctx c
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysConfigCorsRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysConfigCorsRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysConfigCorsExecute(r)
-}
-
 /*
 GetSysConfigCors Return the current CORS settings.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysConfigCorsRequest
 */
-func (a *SystemApiService) GetSysConfigCors(ctx context.Context) ApiGetSysConfigCorsRequest {
-	return ApiGetSysConfigCorsRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysConfigCorsExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -2419,15 +1950,6 @@ func (a *SystemApiService) GetSysConfigCorsExecute(ctx context.Context) (*http.R
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysConfigStateSanitizedRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysConfigStateSanitizedRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysConfigStateSanitizedExecute(r)
-}
-
 /*
 GetSysConfigStateSanitized Return a sanitized version of the Vault server configuration.
 
@@ -2436,13 +1958,6 @@ The sanitized output strips configuration values in the storage, HA storage, and
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysConfigStateSanitizedRequest
 */
-func (a *SystemApiService) GetSysConfigStateSanitized(ctx context.Context) ApiGetSysConfigStateSanitizedRequest {
-	return ApiGetSysConfigStateSanitizedRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysConfigStateSanitizedExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -2507,21 +2022,7 @@ func (a *SystemApiService) GetSysConfigStateSanitizedExecute(ctx context.Context
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysConfigUiHeadersRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	list       *string
-}
-
 // Must be set to &#x60;true&#x60;
-func (r ApiGetSysConfigUiHeadersRequest) List(list string) ApiGetSysConfigUiHeadersRequest {
-	r.list = &list
-	return r
-}
-
-func (r ApiGetSysConfigUiHeadersRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysConfigUiHeadersExecute(r)
-}
 
 /*
 GetSysConfigUiHeaders Return a list of configured UI headers.
@@ -2529,13 +2030,6 @@ GetSysConfigUiHeaders Return a list of configured UI headers.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysConfigUiHeadersRequest
 */
-func (a *SystemApiService) GetSysConfigUiHeaders(ctx context.Context) ApiGetSysConfigUiHeadersRequest {
-	return ApiGetSysConfigUiHeadersRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysConfigUiHeadersExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
@@ -2601,16 +2095,6 @@ func (a *SystemApiService) GetSysConfigUiHeadersExecute(ctx context.Context, lis
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysConfigUiHeadersHeaderRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	header     string
-}
-
-func (r ApiGetSysConfigUiHeadersHeaderRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysConfigUiHeadersHeaderExecute(r)
-}
-
 /*
 GetSysConfigUiHeadersHeader Return the given UI header's configuration
 
@@ -2618,14 +2102,6 @@ GetSysConfigUiHeadersHeader Return the given UI header's configuration
  @param header The name of the header.
  @return ApiGetSysConfigUiHeadersHeaderRequest
 */
-func (a *SystemApiService) GetSysConfigUiHeadersHeader(ctx context.Context, header string) ApiGetSysConfigUiHeadersHeaderRequest {
-	return ApiGetSysConfigUiHeadersHeaderRequest{
-		ApiService: a,
-		ctx:        ctx,
-		header:     header,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysConfigUiHeadersHeaderExecute(ctx context.Context, header string) (*http.Response, error) {
 	var (
@@ -2691,28 +2167,12 @@ func (a *SystemApiService) GetSysConfigUiHeadersHeaderExecute(ctx context.Contex
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysGenerateRootRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysGenerateRootRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysGenerateRootExecute(r)
-}
-
 /*
 GetSysGenerateRoot Read the configuration and progress of the current root generation attempt.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysGenerateRootRequest
 */
-func (a *SystemApiService) GetSysGenerateRoot(ctx context.Context) ApiGetSysGenerateRootRequest {
-	return ApiGetSysGenerateRootRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysGenerateRootExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -2777,28 +2237,12 @@ func (a *SystemApiService) GetSysGenerateRootExecute(ctx context.Context) (*http
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysGenerateRootAttemptRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysGenerateRootAttemptRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysGenerateRootAttemptExecute(r)
-}
-
 /*
 GetSysGenerateRootAttempt Read the configuration and progress of the current root generation attempt.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysGenerateRootAttemptRequest
 */
-func (a *SystemApiService) GetSysGenerateRootAttempt(ctx context.Context) ApiGetSysGenerateRootAttemptRequest {
-	return ApiGetSysGenerateRootAttemptRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysGenerateRootAttemptExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -2863,28 +2307,12 @@ func (a *SystemApiService) GetSysGenerateRootAttemptExecute(ctx context.Context)
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysHaStatusRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysHaStatusRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysHaStatusExecute(r)
-}
-
 /*
 GetSysHaStatus Check the HA status of a Vault cluster
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysHaStatusRequest
 */
-func (a *SystemApiService) GetSysHaStatus(ctx context.Context) ApiGetSysHaStatusRequest {
-	return ApiGetSysHaStatusRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysHaStatusExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -2949,28 +2377,12 @@ func (a *SystemApiService) GetSysHaStatusExecute(ctx context.Context) (*http.Res
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysHealthRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysHealthRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysHealthExecute(r)
-}
-
 /*
 GetSysHealth Returns the health status of Vault.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysHealthRequest
 */
-func (a *SystemApiService) GetSysHealth(ctx context.Context) ApiGetSysHealthRequest {
-	return ApiGetSysHealthRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysHealthExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -3035,15 +2447,6 @@ func (a *SystemApiService) GetSysHealthExecute(ctx context.Context) (*http.Respo
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysHostInfoRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysHostInfoRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysHostInfoExecute(r)
-}
-
 /*
 GetSysHostInfo Information about the host instance that this Vault server is running on.
 
@@ -3054,13 +2457,6 @@ Information about the host instance that this Vault server is running on.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysHostInfoRequest
 */
-func (a *SystemApiService) GetSysHostInfo(ctx context.Context) ApiGetSysHostInfoRequest {
-	return ApiGetSysHostInfoRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysHostInfoExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -3125,15 +2521,6 @@ func (a *SystemApiService) GetSysHostInfoExecute(ctx context.Context) (*http.Res
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInFlightReqRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysInFlightReqRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInFlightReqExecute(r)
-}
-
 /*
 GetSysInFlightReq reports in-flight requests
 
@@ -3144,13 +2531,6 @@ This path responds to the following HTTP methods.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysInFlightReqRequest
 */
-func (a *SystemApiService) GetSysInFlightReq(ctx context.Context) ApiGetSysInFlightReqRequest {
-	return ApiGetSysInFlightReqRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysInFlightReqExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -3215,28 +2595,12 @@ func (a *SystemApiService) GetSysInFlightReqExecute(ctx context.Context) (*http.
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInitRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysInitRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInitExecute(r)
-}
-
 /*
 GetSysInit Returns the initialization status of Vault.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysInitRequest
 */
-func (a *SystemApiService) GetSysInit(ctx context.Context) ApiGetSysInitRequest {
-	return ApiGetSysInitRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysInitExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -3301,28 +2665,12 @@ func (a *SystemApiService) GetSysInitExecute(ctx context.Context) (*http.Respons
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInternalCountersActivityRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysInternalCountersActivityRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInternalCountersActivityExecute(r)
-}
-
 /*
 GetSysInternalCountersActivity Report the client count metrics, for this namespace and all child namespaces.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysInternalCountersActivityRequest
 */
-func (a *SystemApiService) GetSysInternalCountersActivity(ctx context.Context) ApiGetSysInternalCountersActivityRequest {
-	return ApiGetSysInternalCountersActivityRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysInternalCountersActivityExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -3387,28 +2735,12 @@ func (a *SystemApiService) GetSysInternalCountersActivityExecute(ctx context.Con
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInternalCountersActivityExportRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysInternalCountersActivityExportRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInternalCountersActivityExportExecute(r)
-}
-
 /*
 GetSysInternalCountersActivityExport Report the client count metrics, for this namespace and all child namespaces.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysInternalCountersActivityExportRequest
 */
-func (a *SystemApiService) GetSysInternalCountersActivityExport(ctx context.Context) ApiGetSysInternalCountersActivityExportRequest {
-	return ApiGetSysInternalCountersActivityExportRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysInternalCountersActivityExportExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -3473,28 +2805,12 @@ func (a *SystemApiService) GetSysInternalCountersActivityExportExecute(ctx conte
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInternalCountersActivityMonthlyRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysInternalCountersActivityMonthlyRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInternalCountersActivityMonthlyExecute(r)
-}
-
 /*
 GetSysInternalCountersActivityMonthly Report the number of clients for this month, for this namespace and all child namespaces.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysInternalCountersActivityMonthlyRequest
 */
-func (a *SystemApiService) GetSysInternalCountersActivityMonthly(ctx context.Context) ApiGetSysInternalCountersActivityMonthlyRequest {
-	return ApiGetSysInternalCountersActivityMonthlyRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysInternalCountersActivityMonthlyExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -3559,28 +2875,12 @@ func (a *SystemApiService) GetSysInternalCountersActivityMonthlyExecute(ctx cont
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInternalCountersConfigRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysInternalCountersConfigRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInternalCountersConfigExecute(r)
-}
-
 /*
 GetSysInternalCountersConfig Read the client count tracking configuration.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysInternalCountersConfigRequest
 */
-func (a *SystemApiService) GetSysInternalCountersConfig(ctx context.Context) ApiGetSysInternalCountersConfigRequest {
-	return ApiGetSysInternalCountersConfigRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysInternalCountersConfigExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -3645,28 +2945,12 @@ func (a *SystemApiService) GetSysInternalCountersConfigExecute(ctx context.Conte
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInternalCountersEntitiesRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysInternalCountersEntitiesRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInternalCountersEntitiesExecute(r)
-}
-
 /*
 GetSysInternalCountersEntities Backwards compatibility is not guaranteed for this API
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysInternalCountersEntitiesRequest
 */
-func (a *SystemApiService) GetSysInternalCountersEntities(ctx context.Context) ApiGetSysInternalCountersEntitiesRequest {
-	return ApiGetSysInternalCountersEntitiesRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysInternalCountersEntitiesExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -3731,28 +3015,12 @@ func (a *SystemApiService) GetSysInternalCountersEntitiesExecute(ctx context.Con
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInternalCountersRequestsRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysInternalCountersRequestsRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInternalCountersRequestsExecute(r)
-}
-
 /*
 GetSysInternalCountersRequests Backwards compatibility is not guaranteed for this API
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysInternalCountersRequestsRequest
 */
-func (a *SystemApiService) GetSysInternalCountersRequests(ctx context.Context) ApiGetSysInternalCountersRequestsRequest {
-	return ApiGetSysInternalCountersRequestsRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysInternalCountersRequestsExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -3817,28 +3085,12 @@ func (a *SystemApiService) GetSysInternalCountersRequestsExecute(ctx context.Con
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInternalCountersTokensRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysInternalCountersTokensRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInternalCountersTokensExecute(r)
-}
-
 /*
 GetSysInternalCountersTokens Backwards compatibility is not guaranteed for this API
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysInternalCountersTokensRequest
 */
-func (a *SystemApiService) GetSysInternalCountersTokens(ctx context.Context) ApiGetSysInternalCountersTokensRequest {
-	return ApiGetSysInternalCountersTokensRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysInternalCountersTokensExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -3903,28 +3155,12 @@ func (a *SystemApiService) GetSysInternalCountersTokensExecute(ctx context.Conte
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInternalSpecsOpenapiRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysInternalSpecsOpenapiRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInternalSpecsOpenapiExecute(r)
-}
-
 /*
 GetSysInternalSpecsOpenapi Generate an OpenAPI 3 document of all mounted paths.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysInternalSpecsOpenapiRequest
 */
-func (a *SystemApiService) GetSysInternalSpecsOpenapi(ctx context.Context) ApiGetSysInternalSpecsOpenapiRequest {
-	return ApiGetSysInternalSpecsOpenapiRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysInternalSpecsOpenapiExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -3989,28 +3225,12 @@ func (a *SystemApiService) GetSysInternalSpecsOpenapiExecute(ctx context.Context
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInternalUiFeatureFlagsRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysInternalUiFeatureFlagsRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInternalUiFeatureFlagsExecute(r)
-}
-
 /*
 GetSysInternalUiFeatureFlags Lists enabled feature flags.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysInternalUiFeatureFlagsRequest
 */
-func (a *SystemApiService) GetSysInternalUiFeatureFlags(ctx context.Context) ApiGetSysInternalUiFeatureFlagsRequest {
-	return ApiGetSysInternalUiFeatureFlagsRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysInternalUiFeatureFlagsExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -4075,28 +3295,12 @@ func (a *SystemApiService) GetSysInternalUiFeatureFlagsExecute(ctx context.Conte
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInternalUiMountsRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysInternalUiMountsRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInternalUiMountsExecute(r)
-}
-
 /*
 GetSysInternalUiMounts Lists all enabled and visible auth and secrets mounts.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysInternalUiMountsRequest
 */
-func (a *SystemApiService) GetSysInternalUiMounts(ctx context.Context) ApiGetSysInternalUiMountsRequest {
-	return ApiGetSysInternalUiMountsRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysInternalUiMountsExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -4161,16 +3365,6 @@ func (a *SystemApiService) GetSysInternalUiMountsExecute(ctx context.Context) (*
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInternalUiMountsPathRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	path       string
-}
-
-func (r ApiGetSysInternalUiMountsPathRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInternalUiMountsPathExecute(r)
-}
-
 /*
 GetSysInternalUiMountsPath Return information about the given mount.
 
@@ -4178,14 +3372,6 @@ GetSysInternalUiMountsPath Return information about the given mount.
  @param path The path of the mount.
  @return ApiGetSysInternalUiMountsPathRequest
 */
-func (a *SystemApiService) GetSysInternalUiMountsPath(ctx context.Context, path string) ApiGetSysInternalUiMountsPathRequest {
-	return ApiGetSysInternalUiMountsPathRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysInternalUiMountsPathExecute(ctx context.Context, path string) (*http.Response, error) {
 	var (
@@ -4251,28 +3437,12 @@ func (a *SystemApiService) GetSysInternalUiMountsPathExecute(ctx context.Context
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInternalUiNamespacesRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysInternalUiNamespacesRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInternalUiNamespacesExecute(r)
-}
-
 /*
 GetSysInternalUiNamespaces Backwards compatibility is not guaranteed for this API
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysInternalUiNamespacesRequest
 */
-func (a *SystemApiService) GetSysInternalUiNamespaces(ctx context.Context) ApiGetSysInternalUiNamespacesRequest {
-	return ApiGetSysInternalUiNamespacesRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysInternalUiNamespacesExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -4337,28 +3507,12 @@ func (a *SystemApiService) GetSysInternalUiNamespacesExecute(ctx context.Context
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInternalUiResultantAclRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysInternalUiResultantAclRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInternalUiResultantAclExecute(r)
-}
-
 /*
 GetSysInternalUiResultantAcl Backwards compatibility is not guaranteed for this API
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysInternalUiResultantAclRequest
 */
-func (a *SystemApiService) GetSysInternalUiResultantAcl(ctx context.Context) ApiGetSysInternalUiResultantAclRequest {
-	return ApiGetSysInternalUiResultantAclRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysInternalUiResultantAclExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -4423,28 +3577,12 @@ func (a *SystemApiService) GetSysInternalUiResultantAclExecute(ctx context.Conte
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysKeyStatusRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysKeyStatusRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysKeyStatusExecute(r)
-}
-
 /*
 GetSysKeyStatus Provides information about the backend encryption key.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysKeyStatusRequest
 */
-func (a *SystemApiService) GetSysKeyStatus(ctx context.Context) ApiGetSysKeyStatusRequest {
-	return ApiGetSysKeyStatusRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysKeyStatusExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -4509,28 +3647,12 @@ func (a *SystemApiService) GetSysKeyStatusExecute(ctx context.Context) (*http.Re
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysLeaderRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysLeaderRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysLeaderExecute(r)
-}
-
 /*
 GetSysLeader Returns the high availability status and current leader instance of Vault.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysLeaderRequest
 */
-func (a *SystemApiService) GetSysLeader(ctx context.Context) ApiGetSysLeaderRequest {
-	return ApiGetSysLeaderRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysLeaderExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -4595,28 +3717,12 @@ func (a *SystemApiService) GetSysLeaderExecute(ctx context.Context) (*http.Respo
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysLeasesRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysLeasesRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysLeasesExecute(r)
-}
-
 /*
 GetSysLeases List leases associated with this Vault cluster
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysLeasesRequest
 */
-func (a *SystemApiService) GetSysLeases(ctx context.Context) ApiGetSysLeasesRequest {
-	return ApiGetSysLeasesRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysLeasesExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -4681,28 +3787,12 @@ func (a *SystemApiService) GetSysLeasesExecute(ctx context.Context) (*http.Respo
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysLeasesCountRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysLeasesCountRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysLeasesCountExecute(r)
-}
-
 /*
 GetSysLeasesCount Count of leases associated with this Vault cluster
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysLeasesCountRequest
 */
-func (a *SystemApiService) GetSysLeasesCount(ctx context.Context) ApiGetSysLeasesCountRequest {
-	return ApiGetSysLeasesCountRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysLeasesCountExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -4767,21 +3857,7 @@ func (a *SystemApiService) GetSysLeasesCountExecute(ctx context.Context) (*http.
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysLeasesLookupRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	list       *string
-}
-
 // Must be set to &#x60;true&#x60;
-func (r ApiGetSysLeasesLookupRequest) List(list string) ApiGetSysLeasesLookupRequest {
-	r.list = &list
-	return r
-}
-
-func (r ApiGetSysLeasesLookupRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysLeasesLookupExecute(r)
-}
 
 /*
 GetSysLeasesLookup Returns a list of lease ids.
@@ -4789,13 +3865,6 @@ GetSysLeasesLookup Returns a list of lease ids.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysLeasesLookupRequest
 */
-func (a *SystemApiService) GetSysLeasesLookup(ctx context.Context) ApiGetSysLeasesLookupRequest {
-	return ApiGetSysLeasesLookupRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysLeasesLookupExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
@@ -4861,22 +3930,7 @@ func (a *SystemApiService) GetSysLeasesLookupExecute(ctx context.Context, list s
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysLeasesLookupPrefixRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	prefix     string
-	list       *string
-}
-
 // Must be set to &#x60;true&#x60;
-func (r ApiGetSysLeasesLookupPrefixRequest) List(list string) ApiGetSysLeasesLookupPrefixRequest {
-	r.list = &list
-	return r
-}
-
-func (r ApiGetSysLeasesLookupPrefixRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysLeasesLookupPrefixExecute(r)
-}
 
 /*
 GetSysLeasesLookupPrefix Returns a list of lease ids.
@@ -4885,14 +3939,6 @@ GetSysLeasesLookupPrefix Returns a list of lease ids.
  @param prefix The path to list leases under. Example: \"aws/creds/deploy\"
  @return ApiGetSysLeasesLookupPrefixRequest
 */
-func (a *SystemApiService) GetSysLeasesLookupPrefix(ctx context.Context, prefix string) ApiGetSysLeasesLookupPrefixRequest {
-	return ApiGetSysLeasesLookupPrefixRequest{
-		ApiService: a,
-		ctx:        ctx,
-		prefix:     prefix,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysLeasesLookupPrefixExecute(ctx context.Context, prefix string, list string) (*http.Response, error) {
 	var (
@@ -4959,21 +4005,7 @@ func (a *SystemApiService) GetSysLeasesLookupPrefixExecute(ctx context.Context, 
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysMetricsRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	format     *string
-}
-
 // Format to export metrics into. Currently accepts only \&quot;prometheus\&quot;.
-func (r ApiGetSysMetricsRequest) Format(format string) ApiGetSysMetricsRequest {
-	r.format = &format
-	return r
-}
-
-func (r ApiGetSysMetricsRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysMetricsExecute(r)
-}
 
 /*
 GetSysMetrics Export the metrics aggregated for telemetry purpose.
@@ -4981,13 +4013,6 @@ GetSysMetrics Export the metrics aggregated for telemetry purpose.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysMetricsRequest
 */
-func (a *SystemApiService) GetSysMetrics(ctx context.Context) ApiGetSysMetricsRequest {
-	return ApiGetSysMetricsRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysMetricsExecute(ctx context.Context, format string) (*http.Response, error) {
 	var (
@@ -5055,28 +4080,9 @@ func (a *SystemApiService) GetSysMetricsExecute(ctx context.Context, format stri
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysMonitorRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	logFormat  *string
-	logLevel   *string
-}
-
 // Output format of logs. Supported values are \&quot;standard\&quot; and \&quot;json\&quot;. The default is \&quot;standard\&quot;.
-func (r ApiGetSysMonitorRequest) LogFormat(logFormat string) ApiGetSysMonitorRequest {
-	r.logFormat = &logFormat
-	return r
-}
 
 // Log level to view system logs at. Currently supported values are \&quot;trace\&quot;, \&quot;debug\&quot;, \&quot;info\&quot;, \&quot;warn\&quot;, \&quot;error\&quot;.
-func (r ApiGetSysMonitorRequest) LogLevel(logLevel string) ApiGetSysMonitorRequest {
-	r.logLevel = &logLevel
-	return r
-}
-
-func (r ApiGetSysMonitorRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysMonitorExecute(r)
-}
 
 /*
 GetSysMonitor Method for GetSysMonitor
@@ -5084,13 +4090,6 @@ GetSysMonitor Method for GetSysMonitor
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysMonitorRequest
 */
-func (a *SystemApiService) GetSysMonitor(ctx context.Context) ApiGetSysMonitorRequest {
-	return ApiGetSysMonitorRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysMonitorExecute(ctx context.Context, logFormat string, logLevel string) (*http.Response, error) {
 	var (
@@ -5161,28 +4160,12 @@ func (a *SystemApiService) GetSysMonitorExecute(ctx context.Context, logFormat s
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysMountsRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysMountsRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysMountsExecute(r)
-}
-
 /*
 GetSysMounts List the currently mounted backends.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysMountsRequest
 */
-func (a *SystemApiService) GetSysMounts(ctx context.Context) ApiGetSysMountsRequest {
-	return ApiGetSysMountsRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysMountsExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -5247,16 +4230,6 @@ func (a *SystemApiService) GetSysMountsExecute(ctx context.Context) (*http.Respo
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysMountsPathRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	path       string
-}
-
-func (r ApiGetSysMountsPathRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysMountsPathExecute(r)
-}
-
 /*
 GetSysMountsPath Read the configuration of the secret engine at the given path.
 
@@ -5264,14 +4237,6 @@ GetSysMountsPath Read the configuration of the secret engine at the given path.
  @param path The path to mount to. Example: \"aws/east\"
  @return ApiGetSysMountsPathRequest
 */
-func (a *SystemApiService) GetSysMountsPath(ctx context.Context, path string) ApiGetSysMountsPathRequest {
-	return ApiGetSysMountsPathRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysMountsPathExecute(ctx context.Context, path string) (*http.Response, error) {
 	var (
@@ -5337,16 +4302,6 @@ func (a *SystemApiService) GetSysMountsPathExecute(ctx context.Context, path str
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysMountsPathTuneRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	path       string
-}
-
-func (r ApiGetSysMountsPathTuneRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysMountsPathTuneExecute(r)
-}
-
 /*
 GetSysMountsPathTune Tune backend configuration parameters for this mount.
 
@@ -5354,14 +4309,6 @@ GetSysMountsPathTune Tune backend configuration parameters for this mount.
  @param path The path to mount to. Example: \"aws/east\"
  @return ApiGetSysMountsPathTuneRequest
 */
-func (a *SystemApiService) GetSysMountsPathTune(ctx context.Context, path string) ApiGetSysMountsPathTuneRequest {
-	return ApiGetSysMountsPathTuneRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysMountsPathTuneExecute(ctx context.Context, path string) (*http.Response, error) {
 	var (
@@ -5427,28 +4374,12 @@ func (a *SystemApiService) GetSysMountsPathTuneExecute(ctx context.Context, path
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPluginsCatalogRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysPluginsCatalogRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPluginsCatalogExecute(r)
-}
-
 /*
 GetSysPluginsCatalog Lists all the plugins known to Vault
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysPluginsCatalogRequest
 */
-func (a *SystemApiService) GetSysPluginsCatalog(ctx context.Context) ApiGetSysPluginsCatalogRequest {
-	return ApiGetSysPluginsCatalogRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysPluginsCatalogExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -5513,16 +4444,6 @@ func (a *SystemApiService) GetSysPluginsCatalogExecute(ctx context.Context) (*ht
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPluginsCatalogNameRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	name       string
-}
-
-func (r ApiGetSysPluginsCatalogNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPluginsCatalogNameExecute(r)
-}
-
 /*
 GetSysPluginsCatalogName Return the configuration data for the plugin with the given name.
 
@@ -5530,14 +4451,6 @@ GetSysPluginsCatalogName Return the configuration data for the plugin with the g
  @param name The name of the plugin
  @return ApiGetSysPluginsCatalogNameRequest
 */
-func (a *SystemApiService) GetSysPluginsCatalogName(ctx context.Context, name string) ApiGetSysPluginsCatalogNameRequest {
-	return ApiGetSysPluginsCatalogNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysPluginsCatalogNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
@@ -5603,22 +4516,7 @@ func (a *SystemApiService) GetSysPluginsCatalogNameExecute(ctx context.Context, 
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPluginsCatalogTypeRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	type_      string
-	list       *string
-}
-
 // Must be set to &#x60;true&#x60;
-func (r ApiGetSysPluginsCatalogTypeRequest) List(list string) ApiGetSysPluginsCatalogTypeRequest {
-	r.list = &list
-	return r
-}
-
-func (r ApiGetSysPluginsCatalogTypeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPluginsCatalogTypeExecute(r)
-}
 
 /*
 GetSysPluginsCatalogType List the plugins in the catalog.
@@ -5627,14 +4525,6 @@ GetSysPluginsCatalogType List the plugins in the catalog.
  @param type_ The type of the plugin, may be auth, secret, or database
  @return ApiGetSysPluginsCatalogTypeRequest
 */
-func (a *SystemApiService) GetSysPluginsCatalogType(ctx context.Context, type_ string) ApiGetSysPluginsCatalogTypeRequest {
-	return ApiGetSysPluginsCatalogTypeRequest{
-		ApiService: a,
-		ctx:        ctx,
-		type_:      type_,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysPluginsCatalogTypeExecute(ctx context.Context, type_ string, list string) (*http.Response, error) {
 	var (
@@ -5701,17 +4591,6 @@ func (a *SystemApiService) GetSysPluginsCatalogTypeExecute(ctx context.Context, 
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPluginsCatalogTypeNameRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	name       string
-	type_      string
-}
-
-func (r ApiGetSysPluginsCatalogTypeNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPluginsCatalogTypeNameExecute(r)
-}
-
 /*
 GetSysPluginsCatalogTypeName Return the configuration data for the plugin with the given name.
 
@@ -5720,15 +4599,6 @@ GetSysPluginsCatalogTypeName Return the configuration data for the plugin with t
  @param type_ The type of the plugin, may be auth, secret, or database
  @return ApiGetSysPluginsCatalogTypeNameRequest
 */
-func (a *SystemApiService) GetSysPluginsCatalogTypeName(ctx context.Context, name string, type_ string) ApiGetSysPluginsCatalogTypeNameRequest {
-	return ApiGetSysPluginsCatalogTypeNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-		type_:      type_,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysPluginsCatalogTypeNameExecute(ctx context.Context, name string, type_ string) (*http.Response, error) {
 	var (
@@ -5795,21 +4665,7 @@ func (a *SystemApiService) GetSysPluginsCatalogTypeNameExecute(ctx context.Conte
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPoliciesAclRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	list       *string
-}
-
 // Must be set to &#x60;true&#x60;
-func (r ApiGetSysPoliciesAclRequest) List(list string) ApiGetSysPoliciesAclRequest {
-	r.list = &list
-	return r
-}
-
-func (r ApiGetSysPoliciesAclRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPoliciesAclExecute(r)
-}
 
 /*
 GetSysPoliciesAcl List the configured access control policies.
@@ -5817,13 +4673,6 @@ GetSysPoliciesAcl List the configured access control policies.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysPoliciesAclRequest
 */
-func (a *SystemApiService) GetSysPoliciesAcl(ctx context.Context) ApiGetSysPoliciesAclRequest {
-	return ApiGetSysPoliciesAclRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysPoliciesAclExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
@@ -5889,16 +4738,6 @@ func (a *SystemApiService) GetSysPoliciesAclExecute(ctx context.Context, list st
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPoliciesAclNameRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	name       string
-}
-
-func (r ApiGetSysPoliciesAclNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPoliciesAclNameExecute(r)
-}
-
 /*
 GetSysPoliciesAclName Retrieve information about the named ACL policy.
 
@@ -5906,14 +4745,6 @@ GetSysPoliciesAclName Retrieve information about the named ACL policy.
  @param name The name of the policy. Example: \"ops\"
  @return ApiGetSysPoliciesAclNameRequest
 */
-func (a *SystemApiService) GetSysPoliciesAclName(ctx context.Context, name string) ApiGetSysPoliciesAclNameRequest {
-	return ApiGetSysPoliciesAclNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysPoliciesAclNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
@@ -5979,21 +4810,7 @@ func (a *SystemApiService) GetSysPoliciesAclNameExecute(ctx context.Context, nam
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPoliciesPasswordRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	list       *string
-}
-
 // Must be set to &#x60;true&#x60;
-func (r ApiGetSysPoliciesPasswordRequest) List(list string) ApiGetSysPoliciesPasswordRequest {
-	r.list = &list
-	return r
-}
-
-func (r ApiGetSysPoliciesPasswordRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPoliciesPasswordExecute(r)
-}
 
 /*
 GetSysPoliciesPassword List the existing password policies.
@@ -6001,13 +4818,6 @@ GetSysPoliciesPassword List the existing password policies.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysPoliciesPasswordRequest
 */
-func (a *SystemApiService) GetSysPoliciesPassword(ctx context.Context) ApiGetSysPoliciesPasswordRequest {
-	return ApiGetSysPoliciesPasswordRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysPoliciesPasswordExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
@@ -6073,16 +4883,6 @@ func (a *SystemApiService) GetSysPoliciesPasswordExecute(ctx context.Context, li
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPoliciesPasswordNameRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	name       string
-}
-
-func (r ApiGetSysPoliciesPasswordNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPoliciesPasswordNameExecute(r)
-}
-
 /*
 GetSysPoliciesPasswordName Retrieve an existing password policy.
 
@@ -6090,14 +4890,6 @@ GetSysPoliciesPasswordName Retrieve an existing password policy.
  @param name The name of the password policy.
  @return ApiGetSysPoliciesPasswordNameRequest
 */
-func (a *SystemApiService) GetSysPoliciesPasswordName(ctx context.Context, name string) ApiGetSysPoliciesPasswordNameRequest {
-	return ApiGetSysPoliciesPasswordNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysPoliciesPasswordNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
@@ -6163,16 +4955,6 @@ func (a *SystemApiService) GetSysPoliciesPasswordNameExecute(ctx context.Context
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPoliciesPasswordNameGenerateRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	name       string
-}
-
-func (r ApiGetSysPoliciesPasswordNameGenerateRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPoliciesPasswordNameGenerateExecute(r)
-}
-
 /*
 GetSysPoliciesPasswordNameGenerate Generate a password from an existing password policy.
 
@@ -6180,14 +4962,6 @@ GetSysPoliciesPasswordNameGenerate Generate a password from an existing password
  @param name The name of the password policy.
  @return ApiGetSysPoliciesPasswordNameGenerateRequest
 */
-func (a *SystemApiService) GetSysPoliciesPasswordNameGenerate(ctx context.Context, name string) ApiGetSysPoliciesPasswordNameGenerateRequest {
-	return ApiGetSysPoliciesPasswordNameGenerateRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysPoliciesPasswordNameGenerateExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
@@ -6253,21 +5027,7 @@ func (a *SystemApiService) GetSysPoliciesPasswordNameGenerateExecute(ctx context
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPolicyRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	list       *string
-}
-
 // Return a list if &#x60;true&#x60;
-func (r ApiGetSysPolicyRequest) List(list string) ApiGetSysPolicyRequest {
-	r.list = &list
-	return r
-}
-
-func (r ApiGetSysPolicyRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPolicyExecute(r)
-}
 
 /*
 GetSysPolicy List the configured access control policies.
@@ -6275,13 +5035,6 @@ GetSysPolicy List the configured access control policies.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysPolicyRequest
 */
-func (a *SystemApiService) GetSysPolicy(ctx context.Context) ApiGetSysPolicyRequest {
-	return ApiGetSysPolicyRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysPolicyExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
@@ -6349,16 +5102,6 @@ func (a *SystemApiService) GetSysPolicyExecute(ctx context.Context, list string)
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPolicyNameRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	name       string
-}
-
-func (r ApiGetSysPolicyNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPolicyNameExecute(r)
-}
-
 /*
 GetSysPolicyName Retrieve the policy body for the named policy.
 
@@ -6366,14 +5109,6 @@ GetSysPolicyName Retrieve the policy body for the named policy.
  @param name The name of the policy. Example: \"ops\"
  @return ApiGetSysPolicyNameRequest
 */
-func (a *SystemApiService) GetSysPolicyName(ctx context.Context, name string) ApiGetSysPolicyNameRequest {
-	return ApiGetSysPolicyNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysPolicyNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
@@ -6439,15 +5174,6 @@ func (a *SystemApiService) GetSysPolicyNameExecute(ctx context.Context, name str
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPprofRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysPprofRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPprofExecute(r)
-}
-
 /*
 GetSysPprof Returns an HTML page listing the available profiles.
 
@@ -6458,13 +5184,6 @@ render pages.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysPprofRequest
 */
-func (a *SystemApiService) GetSysPprof(ctx context.Context) ApiGetSysPprofRequest {
-	return ApiGetSysPprofRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysPprofExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -6529,15 +5248,6 @@ func (a *SystemApiService) GetSysPprofExecute(ctx context.Context) (*http.Respon
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPprofAllocsRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysPprofAllocsRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPprofAllocsExecute(r)
-}
-
 /*
 GetSysPprofAllocs Returns a sampling of all past memory allocations.
 
@@ -6546,13 +5256,6 @@ Returns a sampling of all past memory allocations.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysPprofAllocsRequest
 */
-func (a *SystemApiService) GetSysPprofAllocs(ctx context.Context) ApiGetSysPprofAllocsRequest {
-	return ApiGetSysPprofAllocsRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysPprofAllocsExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -6617,15 +5320,6 @@ func (a *SystemApiService) GetSysPprofAllocsExecute(ctx context.Context) (*http.
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPprofBlockRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysPprofBlockRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPprofBlockExecute(r)
-}
-
 /*
 GetSysPprofBlock Returns stack traces that led to blocking on synchronization primitives
 
@@ -6634,13 +5328,6 @@ Returns stack traces that led to blocking on synchronization primitives
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysPprofBlockRequest
 */
-func (a *SystemApiService) GetSysPprofBlock(ctx context.Context) ApiGetSysPprofBlockRequest {
-	return ApiGetSysPprofBlockRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysPprofBlockExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -6705,15 +5392,6 @@ func (a *SystemApiService) GetSysPprofBlockExecute(ctx context.Context) (*http.R
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPprofCmdlineRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysPprofCmdlineRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPprofCmdlineExecute(r)
-}
-
 /*
 GetSysPprofCmdline Returns the running program's command line.
 
@@ -6722,13 +5400,6 @@ Returns the running program's command line, with arguments separated by NUL byte
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysPprofCmdlineRequest
 */
-func (a *SystemApiService) GetSysPprofCmdline(ctx context.Context) ApiGetSysPprofCmdlineRequest {
-	return ApiGetSysPprofCmdlineRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysPprofCmdlineExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -6793,15 +5464,6 @@ func (a *SystemApiService) GetSysPprofCmdlineExecute(ctx context.Context) (*http
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPprofGoroutineRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysPprofGoroutineRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPprofGoroutineExecute(r)
-}
-
 /*
 GetSysPprofGoroutine Returns stack traces of all current goroutines.
 
@@ -6810,13 +5472,6 @@ Returns stack traces of all current goroutines.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysPprofGoroutineRequest
 */
-func (a *SystemApiService) GetSysPprofGoroutine(ctx context.Context) ApiGetSysPprofGoroutineRequest {
-	return ApiGetSysPprofGoroutineRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysPprofGoroutineExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -6881,15 +5536,6 @@ func (a *SystemApiService) GetSysPprofGoroutineExecute(ctx context.Context) (*ht
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPprofHeapRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysPprofHeapRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPprofHeapExecute(r)
-}
-
 /*
 GetSysPprofHeap Returns a sampling of memory allocations of live object.
 
@@ -6898,13 +5544,6 @@ Returns a sampling of memory allocations of live object.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysPprofHeapRequest
 */
-func (a *SystemApiService) GetSysPprofHeap(ctx context.Context) ApiGetSysPprofHeapRequest {
-	return ApiGetSysPprofHeapRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysPprofHeapExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -6969,15 +5608,6 @@ func (a *SystemApiService) GetSysPprofHeapExecute(ctx context.Context) (*http.Re
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPprofMutexRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysPprofMutexRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPprofMutexExecute(r)
-}
-
 /*
 GetSysPprofMutex Returns stack traces of holders of contended mutexes
 
@@ -6986,13 +5616,6 @@ Returns stack traces of holders of contended mutexes
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysPprofMutexRequest
 */
-func (a *SystemApiService) GetSysPprofMutex(ctx context.Context) ApiGetSysPprofMutexRequest {
-	return ApiGetSysPprofMutexRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysPprofMutexExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -7057,15 +5680,6 @@ func (a *SystemApiService) GetSysPprofMutexExecute(ctx context.Context) (*http.R
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPprofProfileRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysPprofProfileRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPprofProfileExecute(r)
-}
-
 /*
 GetSysPprofProfile Returns a pprof-formatted cpu profile payload.
 
@@ -7074,13 +5688,6 @@ Returns a pprof-formatted cpu profile payload. Profiling lasts for duration spec
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysPprofProfileRequest
 */
-func (a *SystemApiService) GetSysPprofProfile(ctx context.Context) ApiGetSysPprofProfileRequest {
-	return ApiGetSysPprofProfileRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysPprofProfileExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -7145,15 +5752,6 @@ func (a *SystemApiService) GetSysPprofProfileExecute(ctx context.Context) (*http
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPprofSymbolRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysPprofSymbolRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPprofSymbolExecute(r)
-}
-
 /*
 GetSysPprofSymbol Returns the program counters listed in the request.
 
@@ -7162,13 +5760,6 @@ Returns the program counters listed in the request.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysPprofSymbolRequest
 */
-func (a *SystemApiService) GetSysPprofSymbol(ctx context.Context) ApiGetSysPprofSymbolRequest {
-	return ApiGetSysPprofSymbolRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysPprofSymbolExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -7233,15 +5824,6 @@ func (a *SystemApiService) GetSysPprofSymbolExecute(ctx context.Context) (*http.
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPprofThreadcreateRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysPprofThreadcreateRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPprofThreadcreateExecute(r)
-}
-
 /*
 GetSysPprofThreadcreate Returns stack traces that led to the creation of new OS threads
 
@@ -7250,13 +5832,6 @@ Returns stack traces that led to the creation of new OS threads
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysPprofThreadcreateRequest
 */
-func (a *SystemApiService) GetSysPprofThreadcreate(ctx context.Context) ApiGetSysPprofThreadcreateRequest {
-	return ApiGetSysPprofThreadcreateRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysPprofThreadcreateExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -7321,15 +5896,6 @@ func (a *SystemApiService) GetSysPprofThreadcreateExecute(ctx context.Context) (
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPprofTraceRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysPprofTraceRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPprofTraceExecute(r)
-}
-
 /*
 GetSysPprofTrace Returns the execution trace in binary form.
 
@@ -7338,13 +5904,6 @@ Returns  the execution trace in binary form. Tracing lasts for duration specifie
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysPprofTraceRequest
 */
-func (a *SystemApiService) GetSysPprofTrace(ctx context.Context) ApiGetSysPprofTraceRequest {
-	return ApiGetSysPprofTraceRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysPprofTraceExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -7409,28 +5968,12 @@ func (a *SystemApiService) GetSysPprofTraceExecute(ctx context.Context) (*http.R
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysQuotasConfigRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysQuotasConfigRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysQuotasConfigExecute(r)
-}
-
 /*
 GetSysQuotasConfig Method for GetSysQuotasConfig
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysQuotasConfigRequest
 */
-func (a *SystemApiService) GetSysQuotasConfig(ctx context.Context) ApiGetSysQuotasConfigRequest {
-	return ApiGetSysQuotasConfigRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysQuotasConfigExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -7495,21 +6038,7 @@ func (a *SystemApiService) GetSysQuotasConfigExecute(ctx context.Context) (*http
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysQuotasRateLimitRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	list       *string
-}
-
 // Must be set to &#x60;true&#x60;
-func (r ApiGetSysQuotasRateLimitRequest) List(list string) ApiGetSysQuotasRateLimitRequest {
-	r.list = &list
-	return r
-}
-
-func (r ApiGetSysQuotasRateLimitRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysQuotasRateLimitExecute(r)
-}
 
 /*
 GetSysQuotasRateLimit Method for GetSysQuotasRateLimit
@@ -7517,13 +6046,6 @@ GetSysQuotasRateLimit Method for GetSysQuotasRateLimit
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysQuotasRateLimitRequest
 */
-func (a *SystemApiService) GetSysQuotasRateLimit(ctx context.Context) ApiGetSysQuotasRateLimitRequest {
-	return ApiGetSysQuotasRateLimitRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysQuotasRateLimitExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
@@ -7589,16 +6111,6 @@ func (a *SystemApiService) GetSysQuotasRateLimitExecute(ctx context.Context, lis
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysQuotasRateLimitNameRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	name       string
-}
-
-func (r ApiGetSysQuotasRateLimitNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysQuotasRateLimitNameExecute(r)
-}
-
 /*
 GetSysQuotasRateLimitName Method for GetSysQuotasRateLimitName
 
@@ -7606,14 +6118,6 @@ GetSysQuotasRateLimitName Method for GetSysQuotasRateLimitName
  @param name Name of the quota rule.
  @return ApiGetSysQuotasRateLimitNameRequest
 */
-func (a *SystemApiService) GetSysQuotasRateLimitName(ctx context.Context, name string) ApiGetSysQuotasRateLimitNameRequest {
-	return ApiGetSysQuotasRateLimitNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysQuotasRateLimitNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
@@ -7679,21 +6183,7 @@ func (a *SystemApiService) GetSysQuotasRateLimitNameExecute(ctx context.Context,
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysRawRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	list       *string
-}
-
 // Return a list if &#x60;true&#x60;
-func (r ApiGetSysRawRequest) List(list string) ApiGetSysRawRequest {
-	r.list = &list
-	return r
-}
-
-func (r ApiGetSysRawRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysRawExecute(r)
-}
 
 /*
 GetSysRaw Read the value of the key at the given path.
@@ -7701,13 +6191,6 @@ GetSysRaw Read the value of the key at the given path.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysRawRequest
 */
-func (a *SystemApiService) GetSysRaw(ctx context.Context) ApiGetSysRawRequest {
-	return ApiGetSysRawRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysRawExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
@@ -7775,22 +6258,7 @@ func (a *SystemApiService) GetSysRawExecute(ctx context.Context, list string) (*
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysRawPathRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	path       string
-	list       *string
-}
-
 // Return a list if &#x60;true&#x60;
-func (r ApiGetSysRawPathRequest) List(list string) ApiGetSysRawPathRequest {
-	r.list = &list
-	return r
-}
-
-func (r ApiGetSysRawPathRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysRawPathExecute(r)
-}
 
 /*
 GetSysRawPath Read the value of the key at the given path.
@@ -7799,14 +6267,6 @@ GetSysRawPath Read the value of the key at the given path.
  @param path
  @return ApiGetSysRawPathRequest
 */
-func (a *SystemApiService) GetSysRawPath(ctx context.Context, path string) ApiGetSysRawPathRequest {
-	return ApiGetSysRawPathRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysRawPathExecute(ctx context.Context, path string, list string) (*http.Response, error) {
 	var (
@@ -7875,28 +6335,12 @@ func (a *SystemApiService) GetSysRawPathExecute(ctx context.Context, path string
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysRekeyBackupRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysRekeyBackupRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysRekeyBackupExecute(r)
-}
-
 /*
 GetSysRekeyBackup Return the backup copy of PGP-encrypted unseal keys.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysRekeyBackupRequest
 */
-func (a *SystemApiService) GetSysRekeyBackup(ctx context.Context) ApiGetSysRekeyBackupRequest {
-	return ApiGetSysRekeyBackupRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysRekeyBackupExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -7961,28 +6405,12 @@ func (a *SystemApiService) GetSysRekeyBackupExecute(ctx context.Context) (*http.
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysRekeyInitRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysRekeyInitRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysRekeyInitExecute(r)
-}
-
 /*
 GetSysRekeyInit Reads the configuration and progress of the current rekey attempt.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysRekeyInitRequest
 */
-func (a *SystemApiService) GetSysRekeyInit(ctx context.Context) ApiGetSysRekeyInitRequest {
-	return ApiGetSysRekeyInitRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysRekeyInitExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -8047,28 +6475,12 @@ func (a *SystemApiService) GetSysRekeyInitExecute(ctx context.Context) (*http.Re
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysRekeyRecoveryKeyBackupRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysRekeyRecoveryKeyBackupRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysRekeyRecoveryKeyBackupExecute(r)
-}
-
 /*
 GetSysRekeyRecoveryKeyBackup Allows fetching or deleting the backup of the rotated unseal keys.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysRekeyRecoveryKeyBackupRequest
 */
-func (a *SystemApiService) GetSysRekeyRecoveryKeyBackup(ctx context.Context) ApiGetSysRekeyRecoveryKeyBackupRequest {
-	return ApiGetSysRekeyRecoveryKeyBackupRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysRekeyRecoveryKeyBackupExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -8133,28 +6545,12 @@ func (a *SystemApiService) GetSysRekeyRecoveryKeyBackupExecute(ctx context.Conte
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysRekeyVerifyRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysRekeyVerifyRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysRekeyVerifyExecute(r)
-}
-
 /*
 GetSysRekeyVerify Read the configuration and progress of the current rekey verification attempt.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysRekeyVerifyRequest
 */
-func (a *SystemApiService) GetSysRekeyVerify(ctx context.Context) ApiGetSysRekeyVerifyRequest {
-	return ApiGetSysRekeyVerifyRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysRekeyVerifyExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -8219,16 +6615,6 @@ func (a *SystemApiService) GetSysRekeyVerifyExecute(ctx context.Context) (*http.
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysRemountStatusMigrationIdRequest struct {
-	ctx         context.Context
-	ApiService  *SystemApiService
-	migrationId string
-}
-
-func (r ApiGetSysRemountStatusMigrationIdRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysRemountStatusMigrationIdExecute(r)
-}
-
 /*
 GetSysRemountStatusMigrationId Check status of a mount migration
 
@@ -8236,14 +6622,6 @@ GetSysRemountStatusMigrationId Check status of a mount migration
  @param migrationId The ID of the migration operation
  @return ApiGetSysRemountStatusMigrationIdRequest
 */
-func (a *SystemApiService) GetSysRemountStatusMigrationId(ctx context.Context, migrationId string) ApiGetSysRemountStatusMigrationIdRequest {
-	return ApiGetSysRemountStatusMigrationIdRequest{
-		ApiService:  a,
-		ctx:         ctx,
-		migrationId: migrationId,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysRemountStatusMigrationIdExecute(ctx context.Context, migrationId string) (*http.Response, error) {
 	var (
@@ -8309,28 +6687,12 @@ func (a *SystemApiService) GetSysRemountStatusMigrationIdExecute(ctx context.Con
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysReplicationStatusRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysReplicationStatusRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysReplicationStatusExecute(r)
-}
-
 /*
 GetSysReplicationStatus Method for GetSysReplicationStatus
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysReplicationStatusRequest
 */
-func (a *SystemApiService) GetSysReplicationStatus(ctx context.Context) ApiGetSysReplicationStatusRequest {
-	return ApiGetSysReplicationStatusRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysReplicationStatusExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -8395,28 +6757,12 @@ func (a *SystemApiService) GetSysReplicationStatusExecute(ctx context.Context) (
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysRotateConfigRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysRotateConfigRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysRotateConfigExecute(r)
-}
-
 /*
 GetSysRotateConfig Method for GetSysRotateConfig
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysRotateConfigRequest
 */
-func (a *SystemApiService) GetSysRotateConfig(ctx context.Context) ApiGetSysRotateConfigRequest {
-	return ApiGetSysRotateConfigRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysRotateConfigExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -8481,28 +6827,12 @@ func (a *SystemApiService) GetSysRotateConfigExecute(ctx context.Context) (*http
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysSealStatusRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysSealStatusRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysSealStatusExecute(r)
-}
-
 /*
 GetSysSealStatus Check the seal status of a Vault.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysSealStatusRequest
 */
-func (a *SystemApiService) GetSysSealStatus(ctx context.Context) ApiGetSysSealStatusRequest {
-	return ApiGetSysSealStatusRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysSealStatusExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -8567,21 +6897,7 @@ func (a *SystemApiService) GetSysSealStatusExecute(ctx context.Context) (*http.R
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysVersionHistoryRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	list       *string
-}
-
 // Must be set to &#x60;true&#x60;
-func (r ApiGetSysVersionHistoryRequest) List(list string) ApiGetSysVersionHistoryRequest {
-	r.list = &list
-	return r
-}
-
-func (r ApiGetSysVersionHistoryRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysVersionHistoryExecute(r)
-}
 
 /*
 GetSysVersionHistory Returns map of historical version change entries
@@ -8589,13 +6905,6 @@ GetSysVersionHistory Returns map of historical version change entries
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysVersionHistoryRequest
 */
-func (a *SystemApiService) GetSysVersionHistory(ctx context.Context) ApiGetSysVersionHistoryRequest {
-	return ApiGetSysVersionHistoryRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysVersionHistoryExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
@@ -8661,28 +6970,12 @@ func (a *SystemApiService) GetSysVersionHistoryExecute(ctx context.Context, list
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysWrappingLookupRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysWrappingLookupRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysWrappingLookupExecute(r)
-}
-
 /*
 GetSysWrappingLookup Look up wrapping properties for the requester's token.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetSysWrappingLookupRequest
 */
-func (a *SystemApiService) GetSysWrappingLookup(ctx context.Context) ApiGetSysWrappingLookupRequest {
-	return ApiGetSysWrappingLookupRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) GetSysWrappingLookupExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -8747,22 +7040,6 @@ func (a *SystemApiService) GetSysWrappingLookupExecute(ctx context.Context) (*ht
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysAuditHashPathRequest struct {
-	ctx                    context.Context
-	ApiService             *SystemApiService
-	path                   string
-	systemAuditHashRequest *SystemAuditHashRequest
-}
-
-func (r ApiPostSysAuditHashPathRequest) SystemAuditHashRequest(systemAuditHashRequest SystemAuditHashRequest) ApiPostSysAuditHashPathRequest {
-	r.systemAuditHashRequest = &systemAuditHashRequest
-	return r
-}
-
-func (r ApiPostSysAuditHashPathRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysAuditHashPathExecute(r)
-}
-
 /*
 PostSysAuditHashPath The hash of the given string via the given audit backend
 
@@ -8770,14 +7047,6 @@ PostSysAuditHashPath The hash of the given string via the given audit backend
  @param path The name of the backend. Cannot be delimited. Example: \"mysql\"
  @return ApiPostSysAuditHashPathRequest
 */
-func (a *SystemApiService) PostSysAuditHashPath(ctx context.Context, path string) ApiPostSysAuditHashPathRequest {
-	return ApiPostSysAuditHashPathRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysAuditHashPathExecute(ctx context.Context, path string, systemAuditHashRequest SystemAuditHashRequest) (*http.Response, error) {
 	var (
@@ -8845,22 +7114,6 @@ func (a *SystemApiService) PostSysAuditHashPathExecute(ctx context.Context, path
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysAuditPathRequest struct {
-	ctx                context.Context
-	ApiService         *SystemApiService
-	path               string
-	systemAuditRequest *SystemAuditRequest
-}
-
-func (r ApiPostSysAuditPathRequest) SystemAuditRequest(systemAuditRequest SystemAuditRequest) ApiPostSysAuditPathRequest {
-	r.systemAuditRequest = &systemAuditRequest
-	return r
-}
-
-func (r ApiPostSysAuditPathRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysAuditPathExecute(r)
-}
-
 /*
 PostSysAuditPath Enable a new audit device at the supplied path.
 
@@ -8868,14 +7121,6 @@ PostSysAuditPath Enable a new audit device at the supplied path.
  @param path The name of the backend. Cannot be delimited. Example: \"mysql\"
  @return ApiPostSysAuditPathRequest
 */
-func (a *SystemApiService) PostSysAuditPath(ctx context.Context, path string) ApiPostSysAuditPathRequest {
-	return ApiPostSysAuditPathRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysAuditPathExecute(ctx context.Context, path string, systemAuditRequest SystemAuditRequest) (*http.Response, error) {
 	var (
@@ -8943,22 +7188,6 @@ func (a *SystemApiService) PostSysAuditPathExecute(ctx context.Context, path str
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysAuthPathRequest struct {
-	ctx               context.Context
-	ApiService        *SystemApiService
-	path              string
-	systemAuthRequest *SystemAuthRequest
-}
-
-func (r ApiPostSysAuthPathRequest) SystemAuthRequest(systemAuthRequest SystemAuthRequest) ApiPostSysAuthPathRequest {
-	r.systemAuthRequest = &systemAuthRequest
-	return r
-}
-
-func (r ApiPostSysAuthPathRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysAuthPathExecute(r)
-}
-
 /*
 PostSysAuthPath Enables a new auth method.
 
@@ -8970,14 +7199,6 @@ For example, enable the "foo" auth method will make it accessible at /auth/foo.
  @param path The path to mount to. Cannot be delimited. Example: \"user\"
  @return ApiPostSysAuthPathRequest
 */
-func (a *SystemApiService) PostSysAuthPath(ctx context.Context, path string) ApiPostSysAuthPathRequest {
-	return ApiPostSysAuthPathRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysAuthPathExecute(ctx context.Context, path string, systemAuthRequest SystemAuthRequest) (*http.Response, error) {
 	var (
@@ -9045,22 +7266,6 @@ func (a *SystemApiService) PostSysAuthPathExecute(ctx context.Context, path stri
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysAuthPathTuneRequest struct {
-	ctx                   context.Context
-	ApiService            *SystemApiService
-	path                  string
-	systemAuthTuneRequest *SystemAuthTuneRequest
-}
-
-func (r ApiPostSysAuthPathTuneRequest) SystemAuthTuneRequest(systemAuthTuneRequest SystemAuthTuneRequest) ApiPostSysAuthPathTuneRequest {
-	r.systemAuthTuneRequest = &systemAuthTuneRequest
-	return r
-}
-
-func (r ApiPostSysAuthPathTuneRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysAuthPathTuneExecute(r)
-}
-
 /*
 PostSysAuthPathTune Tune configuration parameters for a given auth path.
 
@@ -9070,14 +7275,6 @@ This endpoint requires sudo capability on the final path, but the same functiona
  @param path Tune the configuration parameters for an auth path.
  @return ApiPostSysAuthPathTuneRequest
 */
-func (a *SystemApiService) PostSysAuthPathTune(ctx context.Context, path string) ApiPostSysAuthPathTuneRequest {
-	return ApiPostSysAuthPathTuneRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysAuthPathTuneExecute(ctx context.Context, path string, systemAuthTuneRequest SystemAuthTuneRequest) (*http.Response, error) {
 	var (
@@ -9145,34 +7342,12 @@ func (a *SystemApiService) PostSysAuthPathTuneExecute(ctx context.Context, path 
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysCapabilitiesRequest struct {
-	ctx                       context.Context
-	ApiService                *SystemApiService
-	systemCapabilitiesRequest *SystemCapabilitiesRequest
-}
-
-func (r ApiPostSysCapabilitiesRequest) SystemCapabilitiesRequest(systemCapabilitiesRequest SystemCapabilitiesRequest) ApiPostSysCapabilitiesRequest {
-	r.systemCapabilitiesRequest = &systemCapabilitiesRequest
-	return r
-}
-
-func (r ApiPostSysCapabilitiesRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysCapabilitiesExecute(r)
-}
-
 /*
 PostSysCapabilities Fetches the capabilities of the given token on the given path.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysCapabilitiesRequest
 */
-func (a *SystemApiService) PostSysCapabilities(ctx context.Context) ApiPostSysCapabilitiesRequest {
-	return ApiPostSysCapabilitiesRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysCapabilitiesExecute(ctx context.Context, systemCapabilitiesRequest SystemCapabilitiesRequest) (*http.Response, error) {
 	var (
@@ -9239,34 +7414,12 @@ func (a *SystemApiService) PostSysCapabilitiesExecute(ctx context.Context, syste
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysCapabilitiesAccessorRequest struct {
-	ctx                               context.Context
-	ApiService                        *SystemApiService
-	systemCapabilitiesAccessorRequest *SystemCapabilitiesAccessorRequest
-}
-
-func (r ApiPostSysCapabilitiesAccessorRequest) SystemCapabilitiesAccessorRequest(systemCapabilitiesAccessorRequest SystemCapabilitiesAccessorRequest) ApiPostSysCapabilitiesAccessorRequest {
-	r.systemCapabilitiesAccessorRequest = &systemCapabilitiesAccessorRequest
-	return r
-}
-
-func (r ApiPostSysCapabilitiesAccessorRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysCapabilitiesAccessorExecute(r)
-}
-
 /*
 PostSysCapabilitiesAccessor Fetches the capabilities of the token associated with the given token, on the given path.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysCapabilitiesAccessorRequest
 */
-func (a *SystemApiService) PostSysCapabilitiesAccessor(ctx context.Context) ApiPostSysCapabilitiesAccessorRequest {
-	return ApiPostSysCapabilitiesAccessorRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysCapabilitiesAccessorExecute(ctx context.Context, systemCapabilitiesAccessorRequest SystemCapabilitiesAccessorRequest) (*http.Response, error) {
 	var (
@@ -9333,34 +7486,12 @@ func (a *SystemApiService) PostSysCapabilitiesAccessorExecute(ctx context.Contex
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysCapabilitiesSelfRequest struct {
-	ctx                           context.Context
-	ApiService                    *SystemApiService
-	systemCapabilitiesSelfRequest *SystemCapabilitiesSelfRequest
-}
-
-func (r ApiPostSysCapabilitiesSelfRequest) SystemCapabilitiesSelfRequest(systemCapabilitiesSelfRequest SystemCapabilitiesSelfRequest) ApiPostSysCapabilitiesSelfRequest {
-	r.systemCapabilitiesSelfRequest = &systemCapabilitiesSelfRequest
-	return r
-}
-
-func (r ApiPostSysCapabilitiesSelfRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysCapabilitiesSelfExecute(r)
-}
-
 /*
 PostSysCapabilitiesSelf Fetches the capabilities of the given token on the given path.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysCapabilitiesSelfRequest
 */
-func (a *SystemApiService) PostSysCapabilitiesSelf(ctx context.Context) ApiPostSysCapabilitiesSelfRequest {
-	return ApiPostSysCapabilitiesSelfRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysCapabilitiesSelfExecute(ctx context.Context, systemCapabilitiesSelfRequest SystemCapabilitiesSelfRequest) (*http.Response, error) {
 	var (
@@ -9427,22 +7558,6 @@ func (a *SystemApiService) PostSysCapabilitiesSelfExecute(ctx context.Context, s
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysConfigAuditingRequestHeadersHeaderRequest struct {
-	ctx                                       context.Context
-	ApiService                                *SystemApiService
-	header                                    string
-	systemConfigAuditingRequestHeadersRequest *SystemConfigAuditingRequestHeadersRequest
-}
-
-func (r ApiPostSysConfigAuditingRequestHeadersHeaderRequest) SystemConfigAuditingRequestHeadersRequest(systemConfigAuditingRequestHeadersRequest SystemConfigAuditingRequestHeadersRequest) ApiPostSysConfigAuditingRequestHeadersHeaderRequest {
-	r.systemConfigAuditingRequestHeadersRequest = &systemConfigAuditingRequestHeadersRequest
-	return r
-}
-
-func (r ApiPostSysConfigAuditingRequestHeadersHeaderRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysConfigAuditingRequestHeadersHeaderExecute(r)
-}
-
 /*
 PostSysConfigAuditingRequestHeadersHeader Enable auditing of a header.
 
@@ -9450,14 +7565,6 @@ PostSysConfigAuditingRequestHeadersHeader Enable auditing of a header.
  @param header
  @return ApiPostSysConfigAuditingRequestHeadersHeaderRequest
 */
-func (a *SystemApiService) PostSysConfigAuditingRequestHeadersHeader(ctx context.Context, header string) ApiPostSysConfigAuditingRequestHeadersHeaderRequest {
-	return ApiPostSysConfigAuditingRequestHeadersHeaderRequest{
-		ApiService: a,
-		ctx:        ctx,
-		header:     header,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysConfigAuditingRequestHeadersHeaderExecute(ctx context.Context, header string, systemConfigAuditingRequestHeadersRequest SystemConfigAuditingRequestHeadersRequest) (*http.Response, error) {
 	var (
@@ -9525,34 +7632,12 @@ func (a *SystemApiService) PostSysConfigAuditingRequestHeadersHeaderExecute(ctx 
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysConfigCorsRequest struct {
-	ctx                     context.Context
-	ApiService              *SystemApiService
-	systemConfigCorsRequest *SystemConfigCorsRequest
-}
-
-func (r ApiPostSysConfigCorsRequest) SystemConfigCorsRequest(systemConfigCorsRequest SystemConfigCorsRequest) ApiPostSysConfigCorsRequest {
-	r.systemConfigCorsRequest = &systemConfigCorsRequest
-	return r
-}
-
-func (r ApiPostSysConfigCorsRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysConfigCorsExecute(r)
-}
-
 /*
 PostSysConfigCors Configure the CORS settings.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysConfigCorsRequest
 */
-func (a *SystemApiService) PostSysConfigCors(ctx context.Context) ApiPostSysConfigCorsRequest {
-	return ApiPostSysConfigCorsRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysConfigCorsExecute(ctx context.Context, systemConfigCorsRequest SystemConfigCorsRequest) (*http.Response, error) {
 	var (
@@ -9619,16 +7704,6 @@ func (a *SystemApiService) PostSysConfigCorsExecute(ctx context.Context, systemC
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysConfigReloadSubsystemRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	subsystem  string
-}
-
-func (r ApiPostSysConfigReloadSubsystemRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysConfigReloadSubsystemExecute(r)
-}
-
 /*
 PostSysConfigReloadSubsystem Reload the given subsystem
 
@@ -9636,14 +7711,6 @@ PostSysConfigReloadSubsystem Reload the given subsystem
  @param subsystem
  @return ApiPostSysConfigReloadSubsystemRequest
 */
-func (a *SystemApiService) PostSysConfigReloadSubsystem(ctx context.Context, subsystem string) ApiPostSysConfigReloadSubsystemRequest {
-	return ApiPostSysConfigReloadSubsystemRequest{
-		ApiService: a,
-		ctx:        ctx,
-		subsystem:  subsystem,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysConfigReloadSubsystemExecute(ctx context.Context, subsystem string) (*http.Response, error) {
 	var (
@@ -9709,22 +7776,6 @@ func (a *SystemApiService) PostSysConfigReloadSubsystemExecute(ctx context.Conte
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysConfigUiHeadersHeaderRequest struct {
-	ctx                          context.Context
-	ApiService                   *SystemApiService
-	header                       string
-	systemConfigUiHeadersRequest *SystemConfigUiHeadersRequest
-}
-
-func (r ApiPostSysConfigUiHeadersHeaderRequest) SystemConfigUiHeadersRequest(systemConfigUiHeadersRequest SystemConfigUiHeadersRequest) ApiPostSysConfigUiHeadersHeaderRequest {
-	r.systemConfigUiHeadersRequest = &systemConfigUiHeadersRequest
-	return r
-}
-
-func (r ApiPostSysConfigUiHeadersHeaderRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysConfigUiHeadersHeaderExecute(r)
-}
-
 /*
 PostSysConfigUiHeadersHeader Configure the values to be returned for the UI header.
 
@@ -9732,14 +7783,6 @@ PostSysConfigUiHeadersHeader Configure the values to be returned for the UI head
  @param header The name of the header.
  @return ApiPostSysConfigUiHeadersHeaderRequest
 */
-func (a *SystemApiService) PostSysConfigUiHeadersHeader(ctx context.Context, header string) ApiPostSysConfigUiHeadersHeaderRequest {
-	return ApiPostSysConfigUiHeadersHeaderRequest{
-		ApiService: a,
-		ctx:        ctx,
-		header:     header,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysConfigUiHeadersHeaderExecute(ctx context.Context, header string, systemConfigUiHeadersRequest SystemConfigUiHeadersRequest) (*http.Response, error) {
 	var (
@@ -9807,21 +7850,6 @@ func (a *SystemApiService) PostSysConfigUiHeadersHeaderExecute(ctx context.Conte
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysGenerateRootRequest struct {
-	ctx                       context.Context
-	ApiService                *SystemApiService
-	systemGenerateRootRequest *SystemGenerateRootRequest
-}
-
-func (r ApiPostSysGenerateRootRequest) SystemGenerateRootRequest(systemGenerateRootRequest SystemGenerateRootRequest) ApiPostSysGenerateRootRequest {
-	r.systemGenerateRootRequest = &systemGenerateRootRequest
-	return r
-}
-
-func (r ApiPostSysGenerateRootRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysGenerateRootExecute(r)
-}
-
 /*
 PostSysGenerateRoot Initializes a new root generation attempt.
 
@@ -9830,13 +7858,6 @@ Only a single root generation attempt can take place at a time. One (and only on
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysGenerateRootRequest
 */
-func (a *SystemApiService) PostSysGenerateRoot(ctx context.Context) ApiPostSysGenerateRootRequest {
-	return ApiPostSysGenerateRootRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysGenerateRootExecute(ctx context.Context, systemGenerateRootRequest SystemGenerateRootRequest) (*http.Response, error) {
 	var (
@@ -9903,21 +7924,6 @@ func (a *SystemApiService) PostSysGenerateRootExecute(ctx context.Context, syste
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysGenerateRootAttemptRequest struct {
-	ctx                              context.Context
-	ApiService                       *SystemApiService
-	systemGenerateRootAttemptRequest *SystemGenerateRootAttemptRequest
-}
-
-func (r ApiPostSysGenerateRootAttemptRequest) SystemGenerateRootAttemptRequest(systemGenerateRootAttemptRequest SystemGenerateRootAttemptRequest) ApiPostSysGenerateRootAttemptRequest {
-	r.systemGenerateRootAttemptRequest = &systemGenerateRootAttemptRequest
-	return r
-}
-
-func (r ApiPostSysGenerateRootAttemptRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysGenerateRootAttemptExecute(r)
-}
-
 /*
 PostSysGenerateRootAttempt Initializes a new root generation attempt.
 
@@ -9926,13 +7932,6 @@ Only a single root generation attempt can take place at a time. One (and only on
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysGenerateRootAttemptRequest
 */
-func (a *SystemApiService) PostSysGenerateRootAttempt(ctx context.Context) ApiPostSysGenerateRootAttemptRequest {
-	return ApiPostSysGenerateRootAttemptRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysGenerateRootAttemptExecute(ctx context.Context, systemGenerateRootAttemptRequest SystemGenerateRootAttemptRequest) (*http.Response, error) {
 	var (
@@ -9999,21 +7998,6 @@ func (a *SystemApiService) PostSysGenerateRootAttemptExecute(ctx context.Context
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysGenerateRootUpdateRequest struct {
-	ctx                             context.Context
-	ApiService                      *SystemApiService
-	systemGenerateRootUpdateRequest *SystemGenerateRootUpdateRequest
-}
-
-func (r ApiPostSysGenerateRootUpdateRequest) SystemGenerateRootUpdateRequest(systemGenerateRootUpdateRequest SystemGenerateRootUpdateRequest) ApiPostSysGenerateRootUpdateRequest {
-	r.systemGenerateRootUpdateRequest = &systemGenerateRootUpdateRequest
-	return r
-}
-
-func (r ApiPostSysGenerateRootUpdateRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysGenerateRootUpdateExecute(r)
-}
-
 /*
 PostSysGenerateRootUpdate Enter a single unseal key share to progress the root generation attempt.
 
@@ -10022,13 +8006,6 @@ If the threshold number of unseal key shares is reached, Vault will complete the
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysGenerateRootUpdateRequest
 */
-func (a *SystemApiService) PostSysGenerateRootUpdate(ctx context.Context) ApiPostSysGenerateRootUpdateRequest {
-	return ApiPostSysGenerateRootUpdateRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysGenerateRootUpdateExecute(ctx context.Context, systemGenerateRootUpdateRequest SystemGenerateRootUpdateRequest) (*http.Response, error) {
 	var (
@@ -10095,21 +8072,6 @@ func (a *SystemApiService) PostSysGenerateRootUpdateExecute(ctx context.Context,
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysInitRequest struct {
-	ctx               context.Context
-	ApiService        *SystemApiService
-	systemInitRequest *SystemInitRequest
-}
-
-func (r ApiPostSysInitRequest) SystemInitRequest(systemInitRequest SystemInitRequest) ApiPostSysInitRequest {
-	r.systemInitRequest = &systemInitRequest
-	return r
-}
-
-func (r ApiPostSysInitRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysInitExecute(r)
-}
-
 /*
 PostSysInit Initialize a new Vault.
 
@@ -10118,13 +8080,6 @@ The Vault must not have been previously initialized. The recovery options, as we
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysInitRequest
 */
-func (a *SystemApiService) PostSysInit(ctx context.Context) ApiPostSysInitRequest {
-	return ApiPostSysInitRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysInitExecute(ctx context.Context, systemInitRequest SystemInitRequest) (*http.Response, error) {
 	var (
@@ -10191,34 +8146,12 @@ func (a *SystemApiService) PostSysInitExecute(ctx context.Context, systemInitReq
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysInternalCountersConfigRequest struct {
-	ctx                                 context.Context
-	ApiService                          *SystemApiService
-	systemInternalCountersConfigRequest *SystemInternalCountersConfigRequest
-}
-
-func (r ApiPostSysInternalCountersConfigRequest) SystemInternalCountersConfigRequest(systemInternalCountersConfigRequest SystemInternalCountersConfigRequest) ApiPostSysInternalCountersConfigRequest {
-	r.systemInternalCountersConfigRequest = &systemInternalCountersConfigRequest
-	return r
-}
-
-func (r ApiPostSysInternalCountersConfigRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysInternalCountersConfigExecute(r)
-}
-
 /*
 PostSysInternalCountersConfig Enable or disable collection of client count, set retention period, or set default reporting period.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysInternalCountersConfigRequest
 */
-func (a *SystemApiService) PostSysInternalCountersConfig(ctx context.Context) ApiPostSysInternalCountersConfigRequest {
-	return ApiPostSysInternalCountersConfigRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysInternalCountersConfigExecute(ctx context.Context, systemInternalCountersConfigRequest SystemInternalCountersConfigRequest) (*http.Response, error) {
 	var (
@@ -10285,34 +8218,12 @@ func (a *SystemApiService) PostSysInternalCountersConfigExecute(ctx context.Cont
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysLeasesLookupRequest struct {
-	ctx                       context.Context
-	ApiService                *SystemApiService
-	systemLeasesLookupRequest *SystemLeasesLookupRequest
-}
-
-func (r ApiPostSysLeasesLookupRequest) SystemLeasesLookupRequest(systemLeasesLookupRequest SystemLeasesLookupRequest) ApiPostSysLeasesLookupRequest {
-	r.systemLeasesLookupRequest = &systemLeasesLookupRequest
-	return r
-}
-
-func (r ApiPostSysLeasesLookupRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysLeasesLookupExecute(r)
-}
-
 /*
 PostSysLeasesLookup Retrieve lease metadata.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysLeasesLookupRequest
 */
-func (a *SystemApiService) PostSysLeasesLookup(ctx context.Context) ApiPostSysLeasesLookupRequest {
-	return ApiPostSysLeasesLookupRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysLeasesLookupExecute(ctx context.Context, systemLeasesLookupRequest SystemLeasesLookupRequest) (*http.Response, error) {
 	var (
@@ -10379,34 +8290,12 @@ func (a *SystemApiService) PostSysLeasesLookupExecute(ctx context.Context, syste
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysLeasesRenewRequest struct {
-	ctx                      context.Context
-	ApiService               *SystemApiService
-	systemLeasesRenewRequest *SystemLeasesRenewRequest
-}
-
-func (r ApiPostSysLeasesRenewRequest) SystemLeasesRenewRequest(systemLeasesRenewRequest SystemLeasesRenewRequest) ApiPostSysLeasesRenewRequest {
-	r.systemLeasesRenewRequest = &systemLeasesRenewRequest
-	return r
-}
-
-func (r ApiPostSysLeasesRenewRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysLeasesRenewExecute(r)
-}
-
 /*
 PostSysLeasesRenew Renews a lease, requesting to extend the lease.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysLeasesRenewRequest
 */
-func (a *SystemApiService) PostSysLeasesRenew(ctx context.Context) ApiPostSysLeasesRenewRequest {
-	return ApiPostSysLeasesRenewRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysLeasesRenewExecute(ctx context.Context, systemLeasesRenewRequest SystemLeasesRenewRequest) (*http.Response, error) {
 	var (
@@ -10473,22 +8362,6 @@ func (a *SystemApiService) PostSysLeasesRenewExecute(ctx context.Context, system
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysLeasesRenewUrlLeaseIdRequest struct {
-	ctx                           context.Context
-	ApiService                    *SystemApiService
-	urlLeaseId                    string
-	systemLeasesRenewLeaseRequest *SystemLeasesRenewLeaseRequest
-}
-
-func (r ApiPostSysLeasesRenewUrlLeaseIdRequest) SystemLeasesRenewLeaseRequest(systemLeasesRenewLeaseRequest SystemLeasesRenewLeaseRequest) ApiPostSysLeasesRenewUrlLeaseIdRequest {
-	r.systemLeasesRenewLeaseRequest = &systemLeasesRenewLeaseRequest
-	return r
-}
-
-func (r ApiPostSysLeasesRenewUrlLeaseIdRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysLeasesRenewUrlLeaseIdExecute(r)
-}
-
 /*
 PostSysLeasesRenewUrlLeaseId Renews a lease, requesting to extend the lease.
 
@@ -10496,14 +8369,6 @@ PostSysLeasesRenewUrlLeaseId Renews a lease, requesting to extend the lease.
  @param urlLeaseId The lease identifier to renew. This is included with a lease.
  @return ApiPostSysLeasesRenewUrlLeaseIdRequest
 */
-func (a *SystemApiService) PostSysLeasesRenewUrlLeaseId(ctx context.Context, urlLeaseId string) ApiPostSysLeasesRenewUrlLeaseIdRequest {
-	return ApiPostSysLeasesRenewUrlLeaseIdRequest{
-		ApiService: a,
-		ctx:        ctx,
-		urlLeaseId: urlLeaseId,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysLeasesRenewUrlLeaseIdExecute(ctx context.Context, urlLeaseId string, systemLeasesRenewLeaseRequest SystemLeasesRenewLeaseRequest) (*http.Response, error) {
 	var (
@@ -10571,34 +8436,12 @@ func (a *SystemApiService) PostSysLeasesRenewUrlLeaseIdExecute(ctx context.Conte
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysLeasesRevokeRequest struct {
-	ctx                       context.Context
-	ApiService                *SystemApiService
-	systemLeasesRevokeRequest *SystemLeasesRevokeRequest
-}
-
-func (r ApiPostSysLeasesRevokeRequest) SystemLeasesRevokeRequest(systemLeasesRevokeRequest SystemLeasesRevokeRequest) ApiPostSysLeasesRevokeRequest {
-	r.systemLeasesRevokeRequest = &systemLeasesRevokeRequest
-	return r
-}
-
-func (r ApiPostSysLeasesRevokeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysLeasesRevokeExecute(r)
-}
-
 /*
 PostSysLeasesRevoke Revokes a lease immediately.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysLeasesRevokeRequest
 */
-func (a *SystemApiService) PostSysLeasesRevoke(ctx context.Context) ApiPostSysLeasesRevokeRequest {
-	return ApiPostSysLeasesRevokeRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysLeasesRevokeExecute(ctx context.Context, systemLeasesRevokeRequest SystemLeasesRevokeRequest) (*http.Response, error) {
 	var (
@@ -10665,16 +8508,6 @@ func (a *SystemApiService) PostSysLeasesRevokeExecute(ctx context.Context, syste
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysLeasesRevokeForcePrefixRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	prefix     string
-}
-
-func (r ApiPostSysLeasesRevokeForcePrefixRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysLeasesRevokeForcePrefixExecute(r)
-}
-
 /*
 PostSysLeasesRevokeForcePrefix Revokes all secrets or tokens generated under a given prefix immediately
 
@@ -10686,14 +8519,6 @@ By ignoring these errors, Vault abdicates responsibility for ensuring that the i
  @param prefix The path to revoke keys under. Example: \"prod/aws/ops\"
  @return ApiPostSysLeasesRevokeForcePrefixRequest
 */
-func (a *SystemApiService) PostSysLeasesRevokeForcePrefix(ctx context.Context, prefix string) ApiPostSysLeasesRevokeForcePrefixRequest {
-	return ApiPostSysLeasesRevokeForcePrefixRequest{
-		ApiService: a,
-		ctx:        ctx,
-		prefix:     prefix,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysLeasesRevokeForcePrefixExecute(ctx context.Context, prefix string) (*http.Response, error) {
 	var (
@@ -10759,22 +8584,6 @@ func (a *SystemApiService) PostSysLeasesRevokeForcePrefixExecute(ctx context.Con
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysLeasesRevokePrefixPrefixRequest struct {
-	ctx                             context.Context
-	ApiService                      *SystemApiService
-	prefix                          string
-	systemLeasesRevokePrefixRequest *SystemLeasesRevokePrefixRequest
-}
-
-func (r ApiPostSysLeasesRevokePrefixPrefixRequest) SystemLeasesRevokePrefixRequest(systemLeasesRevokePrefixRequest SystemLeasesRevokePrefixRequest) ApiPostSysLeasesRevokePrefixPrefixRequest {
-	r.systemLeasesRevokePrefixRequest = &systemLeasesRevokePrefixRequest
-	return r
-}
-
-func (r ApiPostSysLeasesRevokePrefixPrefixRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysLeasesRevokePrefixPrefixExecute(r)
-}
-
 /*
 PostSysLeasesRevokePrefixPrefix Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
 
@@ -10782,14 +8591,6 @@ PostSysLeasesRevokePrefixPrefix Revokes all secrets (via a lease ID prefix) or t
  @param prefix The path to revoke keys under. Example: \"prod/aws/ops\"
  @return ApiPostSysLeasesRevokePrefixPrefixRequest
 */
-func (a *SystemApiService) PostSysLeasesRevokePrefixPrefix(ctx context.Context, prefix string) ApiPostSysLeasesRevokePrefixPrefixRequest {
-	return ApiPostSysLeasesRevokePrefixPrefixRequest{
-		ApiService: a,
-		ctx:        ctx,
-		prefix:     prefix,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysLeasesRevokePrefixPrefixExecute(ctx context.Context, prefix string, systemLeasesRevokePrefixRequest SystemLeasesRevokePrefixRequest) (*http.Response, error) {
 	var (
@@ -10857,22 +8658,6 @@ func (a *SystemApiService) PostSysLeasesRevokePrefixPrefixExecute(ctx context.Co
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysLeasesRevokeUrlLeaseIdRequest struct {
-	ctx                            context.Context
-	ApiService                     *SystemApiService
-	urlLeaseId                     string
-	systemLeasesRevokeLeaseRequest *SystemLeasesRevokeLeaseRequest
-}
-
-func (r ApiPostSysLeasesRevokeUrlLeaseIdRequest) SystemLeasesRevokeLeaseRequest(systemLeasesRevokeLeaseRequest SystemLeasesRevokeLeaseRequest) ApiPostSysLeasesRevokeUrlLeaseIdRequest {
-	r.systemLeasesRevokeLeaseRequest = &systemLeasesRevokeLeaseRequest
-	return r
-}
-
-func (r ApiPostSysLeasesRevokeUrlLeaseIdRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysLeasesRevokeUrlLeaseIdExecute(r)
-}
-
 /*
 PostSysLeasesRevokeUrlLeaseId Revokes a lease immediately.
 
@@ -10880,14 +8665,6 @@ PostSysLeasesRevokeUrlLeaseId Revokes a lease immediately.
  @param urlLeaseId The lease identifier to renew. This is included with a lease.
  @return ApiPostSysLeasesRevokeUrlLeaseIdRequest
 */
-func (a *SystemApiService) PostSysLeasesRevokeUrlLeaseId(ctx context.Context, urlLeaseId string) ApiPostSysLeasesRevokeUrlLeaseIdRequest {
-	return ApiPostSysLeasesRevokeUrlLeaseIdRequest{
-		ApiService: a,
-		ctx:        ctx,
-		urlLeaseId: urlLeaseId,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysLeasesRevokeUrlLeaseIdExecute(ctx context.Context, urlLeaseId string, systemLeasesRevokeLeaseRequest SystemLeasesRevokeLeaseRequest) (*http.Response, error) {
 	var (
@@ -10955,28 +8732,12 @@ func (a *SystemApiService) PostSysLeasesRevokeUrlLeaseIdExecute(ctx context.Cont
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysLeasesTidyRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiPostSysLeasesTidyRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysLeasesTidyExecute(r)
-}
-
 /*
 PostSysLeasesTidy This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysLeasesTidyRequest
 */
-func (a *SystemApiService) PostSysLeasesTidy(ctx context.Context) ApiPostSysLeasesTidyRequest {
-	return ApiPostSysLeasesTidyRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysLeasesTidyExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -11041,34 +8802,12 @@ func (a *SystemApiService) PostSysLeasesTidyExecute(ctx context.Context) (*http.
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysMfaValidateRequest struct {
-	ctx                      context.Context
-	ApiService               *SystemApiService
-	systemMfaValidateRequest *SystemMfaValidateRequest
-}
-
-func (r ApiPostSysMfaValidateRequest) SystemMfaValidateRequest(systemMfaValidateRequest SystemMfaValidateRequest) ApiPostSysMfaValidateRequest {
-	r.systemMfaValidateRequest = &systemMfaValidateRequest
-	return r
-}
-
-func (r ApiPostSysMfaValidateRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysMfaValidateExecute(r)
-}
-
 /*
 PostSysMfaValidate Validates the login for the given MFA methods. Upon successful validation, it returns an auth response containing the client token
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysMfaValidateRequest
 */
-func (a *SystemApiService) PostSysMfaValidate(ctx context.Context) ApiPostSysMfaValidateRequest {
-	return ApiPostSysMfaValidateRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysMfaValidateExecute(ctx context.Context, systemMfaValidateRequest SystemMfaValidateRequest) (*http.Response, error) {
 	var (
@@ -11135,22 +8874,6 @@ func (a *SystemApiService) PostSysMfaValidateExecute(ctx context.Context, system
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysMountsPathRequest struct {
-	ctx                 context.Context
-	ApiService          *SystemApiService
-	path                string
-	systemMountsRequest *SystemMountsRequest
-}
-
-func (r ApiPostSysMountsPathRequest) SystemMountsRequest(systemMountsRequest SystemMountsRequest) ApiPostSysMountsPathRequest {
-	r.systemMountsRequest = &systemMountsRequest
-	return r
-}
-
-func (r ApiPostSysMountsPathRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysMountsPathExecute(r)
-}
-
 /*
 PostSysMountsPath Enable a new secrets engine at the given path.
 
@@ -11158,14 +8881,6 @@ PostSysMountsPath Enable a new secrets engine at the given path.
  @param path The path to mount to. Example: \"aws/east\"
  @return ApiPostSysMountsPathRequest
 */
-func (a *SystemApiService) PostSysMountsPath(ctx context.Context, path string) ApiPostSysMountsPathRequest {
-	return ApiPostSysMountsPathRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysMountsPathExecute(ctx context.Context, path string, systemMountsRequest SystemMountsRequest) (*http.Response, error) {
 	var (
@@ -11233,22 +8948,6 @@ func (a *SystemApiService) PostSysMountsPathExecute(ctx context.Context, path st
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysMountsPathTuneRequest struct {
-	ctx                     context.Context
-	ApiService              *SystemApiService
-	path                    string
-	systemMountsTuneRequest *SystemMountsTuneRequest
-}
-
-func (r ApiPostSysMountsPathTuneRequest) SystemMountsTuneRequest(systemMountsTuneRequest SystemMountsTuneRequest) ApiPostSysMountsPathTuneRequest {
-	r.systemMountsTuneRequest = &systemMountsTuneRequest
-	return r
-}
-
-func (r ApiPostSysMountsPathTuneRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysMountsPathTuneExecute(r)
-}
-
 /*
 PostSysMountsPathTune Tune backend configuration parameters for this mount.
 
@@ -11256,14 +8955,6 @@ PostSysMountsPathTune Tune backend configuration parameters for this mount.
  @param path The path to mount to. Example: \"aws/east\"
  @return ApiPostSysMountsPathTuneRequest
 */
-func (a *SystemApiService) PostSysMountsPathTune(ctx context.Context, path string) ApiPostSysMountsPathTuneRequest {
-	return ApiPostSysMountsPathTuneRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysMountsPathTuneExecute(ctx context.Context, path string, systemMountsTuneRequest SystemMountsTuneRequest) (*http.Response, error) {
 	var (
@@ -11331,22 +9022,6 @@ func (a *SystemApiService) PostSysMountsPathTuneExecute(ctx context.Context, pat
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysPluginsCatalogNameRequest struct {
-	ctx                         context.Context
-	ApiService                  *SystemApiService
-	name                        string
-	systemPluginsCatalogRequest *SystemPluginsCatalogRequest
-}
-
-func (r ApiPostSysPluginsCatalogNameRequest) SystemPluginsCatalogRequest(systemPluginsCatalogRequest SystemPluginsCatalogRequest) ApiPostSysPluginsCatalogNameRequest {
-	r.systemPluginsCatalogRequest = &systemPluginsCatalogRequest
-	return r
-}
-
-func (r ApiPostSysPluginsCatalogNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysPluginsCatalogNameExecute(r)
-}
-
 /*
 PostSysPluginsCatalogName Register a new plugin, or updates an existing one with the supplied name.
 
@@ -11354,14 +9029,6 @@ PostSysPluginsCatalogName Register a new plugin, or updates an existing one with
  @param name The name of the plugin
  @return ApiPostSysPluginsCatalogNameRequest
 */
-func (a *SystemApiService) PostSysPluginsCatalogName(ctx context.Context, name string) ApiPostSysPluginsCatalogNameRequest {
-	return ApiPostSysPluginsCatalogNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysPluginsCatalogNameExecute(ctx context.Context, name string, systemPluginsCatalogRequest SystemPluginsCatalogRequest) (*http.Response, error) {
 	var (
@@ -11429,23 +9096,6 @@ func (a *SystemApiService) PostSysPluginsCatalogNameExecute(ctx context.Context,
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysPluginsCatalogTypeNameRequest struct {
-	ctx                         context.Context
-	ApiService                  *SystemApiService
-	name                        string
-	type_                       string
-	systemPluginsCatalogRequest *SystemPluginsCatalogRequest
-}
-
-func (r ApiPostSysPluginsCatalogTypeNameRequest) SystemPluginsCatalogRequest(systemPluginsCatalogRequest SystemPluginsCatalogRequest) ApiPostSysPluginsCatalogTypeNameRequest {
-	r.systemPluginsCatalogRequest = &systemPluginsCatalogRequest
-	return r
-}
-
-func (r ApiPostSysPluginsCatalogTypeNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysPluginsCatalogTypeNameExecute(r)
-}
-
 /*
 PostSysPluginsCatalogTypeName Register a new plugin, or updates an existing one with the supplied name.
 
@@ -11454,15 +9104,6 @@ PostSysPluginsCatalogTypeName Register a new plugin, or updates an existing one 
  @param type_ The type of the plugin, may be auth, secret, or database
  @return ApiPostSysPluginsCatalogTypeNameRequest
 */
-func (a *SystemApiService) PostSysPluginsCatalogTypeName(ctx context.Context, name string, type_ string) ApiPostSysPluginsCatalogTypeNameRequest {
-	return ApiPostSysPluginsCatalogTypeNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-		type_:      type_,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysPluginsCatalogTypeNameExecute(ctx context.Context, name string, type_ string, systemPluginsCatalogRequest SystemPluginsCatalogRequest) (*http.Response, error) {
 	var (
@@ -11531,21 +9172,6 @@ func (a *SystemApiService) PostSysPluginsCatalogTypeNameExecute(ctx context.Cont
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysPluginsReloadBackendRequest struct {
-	ctx                               context.Context
-	ApiService                        *SystemApiService
-	systemPluginsReloadBackendRequest *SystemPluginsReloadBackendRequest
-}
-
-func (r ApiPostSysPluginsReloadBackendRequest) SystemPluginsReloadBackendRequest(systemPluginsReloadBackendRequest SystemPluginsReloadBackendRequest) ApiPostSysPluginsReloadBackendRequest {
-	r.systemPluginsReloadBackendRequest = &systemPluginsReloadBackendRequest
-	return r
-}
-
-func (r ApiPostSysPluginsReloadBackendRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysPluginsReloadBackendExecute(r)
-}
-
 /*
 PostSysPluginsReloadBackend Reload mounted plugin backends.
 
@@ -11554,13 +9180,6 @@ Either the plugin name (`plugin`) or the desired plugin backend mounts (`mounts`
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysPluginsReloadBackendRequest
 */
-func (a *SystemApiService) PostSysPluginsReloadBackend(ctx context.Context) ApiPostSysPluginsReloadBackendRequest {
-	return ApiPostSysPluginsReloadBackendRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysPluginsReloadBackendExecute(ctx context.Context, systemPluginsReloadBackendRequest SystemPluginsReloadBackendRequest) (*http.Response, error) {
 	var (
@@ -11627,22 +9246,6 @@ func (a *SystemApiService) PostSysPluginsReloadBackendExecute(ctx context.Contex
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysPoliciesAclNameRequest struct {
-	ctx                      context.Context
-	ApiService               *SystemApiService
-	name                     string
-	systemPoliciesAclRequest *SystemPoliciesAclRequest
-}
-
-func (r ApiPostSysPoliciesAclNameRequest) SystemPoliciesAclRequest(systemPoliciesAclRequest SystemPoliciesAclRequest) ApiPostSysPoliciesAclNameRequest {
-	r.systemPoliciesAclRequest = &systemPoliciesAclRequest
-	return r
-}
-
-func (r ApiPostSysPoliciesAclNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysPoliciesAclNameExecute(r)
-}
-
 /*
 PostSysPoliciesAclName Add a new or update an existing ACL policy.
 
@@ -11650,14 +9253,6 @@ PostSysPoliciesAclName Add a new or update an existing ACL policy.
  @param name The name of the policy. Example: \"ops\"
  @return ApiPostSysPoliciesAclNameRequest
 */
-func (a *SystemApiService) PostSysPoliciesAclName(ctx context.Context, name string) ApiPostSysPoliciesAclNameRequest {
-	return ApiPostSysPoliciesAclNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysPoliciesAclNameExecute(ctx context.Context, name string, systemPoliciesAclRequest SystemPoliciesAclRequest) (*http.Response, error) {
 	var (
@@ -11725,22 +9320,6 @@ func (a *SystemApiService) PostSysPoliciesAclNameExecute(ctx context.Context, na
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysPoliciesPasswordNameRequest struct {
-	ctx                           context.Context
-	ApiService                    *SystemApiService
-	name                          string
-	systemPoliciesPasswordRequest *SystemPoliciesPasswordRequest
-}
-
-func (r ApiPostSysPoliciesPasswordNameRequest) SystemPoliciesPasswordRequest(systemPoliciesPasswordRequest SystemPoliciesPasswordRequest) ApiPostSysPoliciesPasswordNameRequest {
-	r.systemPoliciesPasswordRequest = &systemPoliciesPasswordRequest
-	return r
-}
-
-func (r ApiPostSysPoliciesPasswordNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysPoliciesPasswordNameExecute(r)
-}
-
 /*
 PostSysPoliciesPasswordName Add a new or update an existing password policy.
 
@@ -11748,14 +9327,6 @@ PostSysPoliciesPasswordName Add a new or update an existing password policy.
  @param name The name of the password policy.
  @return ApiPostSysPoliciesPasswordNameRequest
 */
-func (a *SystemApiService) PostSysPoliciesPasswordName(ctx context.Context, name string) ApiPostSysPoliciesPasswordNameRequest {
-	return ApiPostSysPoliciesPasswordNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysPoliciesPasswordNameExecute(ctx context.Context, name string, systemPoliciesPasswordRequest SystemPoliciesPasswordRequest) (*http.Response, error) {
 	var (
@@ -11823,22 +9394,6 @@ func (a *SystemApiService) PostSysPoliciesPasswordNameExecute(ctx context.Contex
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysPolicyNameRequest struct {
-	ctx                 context.Context
-	ApiService          *SystemApiService
-	name                string
-	systemPolicyRequest *SystemPolicyRequest
-}
-
-func (r ApiPostSysPolicyNameRequest) SystemPolicyRequest(systemPolicyRequest SystemPolicyRequest) ApiPostSysPolicyNameRequest {
-	r.systemPolicyRequest = &systemPolicyRequest
-	return r
-}
-
-func (r ApiPostSysPolicyNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysPolicyNameExecute(r)
-}
-
 /*
 PostSysPolicyName Add a new or update an existing policy.
 
@@ -11846,14 +9401,6 @@ PostSysPolicyName Add a new or update an existing policy.
  @param name The name of the policy. Example: \"ops\"
  @return ApiPostSysPolicyNameRequest
 */
-func (a *SystemApiService) PostSysPolicyName(ctx context.Context, name string) ApiPostSysPolicyNameRequest {
-	return ApiPostSysPolicyNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysPolicyNameExecute(ctx context.Context, name string, systemPolicyRequest SystemPolicyRequest) (*http.Response, error) {
 	var (
@@ -11921,34 +9468,12 @@ func (a *SystemApiService) PostSysPolicyNameExecute(ctx context.Context, name st
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysQuotasConfigRequest struct {
-	ctx                       context.Context
-	ApiService                *SystemApiService
-	systemQuotasConfigRequest *SystemQuotasConfigRequest
-}
-
-func (r ApiPostSysQuotasConfigRequest) SystemQuotasConfigRequest(systemQuotasConfigRequest SystemQuotasConfigRequest) ApiPostSysQuotasConfigRequest {
-	r.systemQuotasConfigRequest = &systemQuotasConfigRequest
-	return r
-}
-
-func (r ApiPostSysQuotasConfigRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysQuotasConfigExecute(r)
-}
-
 /*
 PostSysQuotasConfig Method for PostSysQuotasConfig
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysQuotasConfigRequest
 */
-func (a *SystemApiService) PostSysQuotasConfig(ctx context.Context) ApiPostSysQuotasConfigRequest {
-	return ApiPostSysQuotasConfigRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysQuotasConfigExecute(ctx context.Context, systemQuotasConfigRequest SystemQuotasConfigRequest) (*http.Response, error) {
 	var (
@@ -12015,22 +9540,6 @@ func (a *SystemApiService) PostSysQuotasConfigExecute(ctx context.Context, syste
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysQuotasRateLimitNameRequest struct {
-	ctx                          context.Context
-	ApiService                   *SystemApiService
-	name                         string
-	systemQuotasRateLimitRequest *SystemQuotasRateLimitRequest
-}
-
-func (r ApiPostSysQuotasRateLimitNameRequest) SystemQuotasRateLimitRequest(systemQuotasRateLimitRequest SystemQuotasRateLimitRequest) ApiPostSysQuotasRateLimitNameRequest {
-	r.systemQuotasRateLimitRequest = &systemQuotasRateLimitRequest
-	return r
-}
-
-func (r ApiPostSysQuotasRateLimitNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysQuotasRateLimitNameExecute(r)
-}
-
 /*
 PostSysQuotasRateLimitName Method for PostSysQuotasRateLimitName
 
@@ -12038,14 +9547,6 @@ PostSysQuotasRateLimitName Method for PostSysQuotasRateLimitName
  @param name Name of the quota rule.
  @return ApiPostSysQuotasRateLimitNameRequest
 */
-func (a *SystemApiService) PostSysQuotasRateLimitName(ctx context.Context, name string) ApiPostSysQuotasRateLimitNameRequest {
-	return ApiPostSysQuotasRateLimitNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysQuotasRateLimitNameExecute(ctx context.Context, name string, systemQuotasRateLimitRequest SystemQuotasRateLimitRequest) (*http.Response, error) {
 	var (
@@ -12113,34 +9614,12 @@ func (a *SystemApiService) PostSysQuotasRateLimitNameExecute(ctx context.Context
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysRawRequest struct {
-	ctx              context.Context
-	ApiService       *SystemApiService
-	systemRawRequest *SystemRawRequest
-}
-
-func (r ApiPostSysRawRequest) SystemRawRequest(systemRawRequest SystemRawRequest) ApiPostSysRawRequest {
-	r.systemRawRequest = &systemRawRequest
-	return r
-}
-
-func (r ApiPostSysRawRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysRawExecute(r)
-}
-
 /*
 PostSysRaw Update the value of the key at the given path.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysRawRequest
 */
-func (a *SystemApiService) PostSysRaw(ctx context.Context) ApiPostSysRawRequest {
-	return ApiPostSysRawRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysRawExecute(ctx context.Context, systemRawRequest SystemRawRequest) (*http.Response, error) {
 	var (
@@ -12207,22 +9686,6 @@ func (a *SystemApiService) PostSysRawExecute(ctx context.Context, systemRawReque
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysRawPathRequest struct {
-	ctx              context.Context
-	ApiService       *SystemApiService
-	path             string
-	systemRawRequest *SystemRawRequest
-}
-
-func (r ApiPostSysRawPathRequest) SystemRawRequest(systemRawRequest SystemRawRequest) ApiPostSysRawPathRequest {
-	r.systemRawRequest = &systemRawRequest
-	return r
-}
-
-func (r ApiPostSysRawPathRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysRawPathExecute(r)
-}
-
 /*
 PostSysRawPath Update the value of the key at the given path.
 
@@ -12230,14 +9693,6 @@ PostSysRawPath Update the value of the key at the given path.
  @param path
  @return ApiPostSysRawPathRequest
 */
-func (a *SystemApiService) PostSysRawPath(ctx context.Context, path string) ApiPostSysRawPathRequest {
-	return ApiPostSysRawPathRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysRawPathExecute(ctx context.Context, path string, systemRawRequest SystemRawRequest) (*http.Response, error) {
 	var (
@@ -12305,21 +9760,6 @@ func (a *SystemApiService) PostSysRawPathExecute(ctx context.Context, path strin
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysRekeyInitRequest struct {
-	ctx                    context.Context
-	ApiService             *SystemApiService
-	systemRekeyInitRequest *SystemRekeyInitRequest
-}
-
-func (r ApiPostSysRekeyInitRequest) SystemRekeyInitRequest(systemRekeyInitRequest SystemRekeyInitRequest) ApiPostSysRekeyInitRequest {
-	r.systemRekeyInitRequest = &systemRekeyInitRequest
-	return r
-}
-
-func (r ApiPostSysRekeyInitRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysRekeyInitExecute(r)
-}
-
 /*
 PostSysRekeyInit Initializes a new rekey attempt.
 
@@ -12328,13 +9768,6 @@ Only a single rekey attempt can take place at a time, and changing the parameter
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysRekeyInitRequest
 */
-func (a *SystemApiService) PostSysRekeyInit(ctx context.Context) ApiPostSysRekeyInitRequest {
-	return ApiPostSysRekeyInitRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysRekeyInitExecute(ctx context.Context, systemRekeyInitRequest SystemRekeyInitRequest) (*http.Response, error) {
 	var (
@@ -12401,34 +9834,12 @@ func (a *SystemApiService) PostSysRekeyInitExecute(ctx context.Context, systemRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysRekeyUpdateRequest struct {
-	ctx                      context.Context
-	ApiService               *SystemApiService
-	systemRekeyUpdateRequest *SystemRekeyUpdateRequest
-}
-
-func (r ApiPostSysRekeyUpdateRequest) SystemRekeyUpdateRequest(systemRekeyUpdateRequest SystemRekeyUpdateRequest) ApiPostSysRekeyUpdateRequest {
-	r.systemRekeyUpdateRequest = &systemRekeyUpdateRequest
-	return r
-}
-
-func (r ApiPostSysRekeyUpdateRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysRekeyUpdateExecute(r)
-}
-
 /*
 PostSysRekeyUpdate Enter a single unseal key share to progress the rekey of the Vault.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysRekeyUpdateRequest
 */
-func (a *SystemApiService) PostSysRekeyUpdate(ctx context.Context) ApiPostSysRekeyUpdateRequest {
-	return ApiPostSysRekeyUpdateRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysRekeyUpdateExecute(ctx context.Context, systemRekeyUpdateRequest SystemRekeyUpdateRequest) (*http.Response, error) {
 	var (
@@ -12495,34 +9906,12 @@ func (a *SystemApiService) PostSysRekeyUpdateExecute(ctx context.Context, system
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysRekeyVerifyRequest struct {
-	ctx                      context.Context
-	ApiService               *SystemApiService
-	systemRekeyVerifyRequest *SystemRekeyVerifyRequest
-}
-
-func (r ApiPostSysRekeyVerifyRequest) SystemRekeyVerifyRequest(systemRekeyVerifyRequest SystemRekeyVerifyRequest) ApiPostSysRekeyVerifyRequest {
-	r.systemRekeyVerifyRequest = &systemRekeyVerifyRequest
-	return r
-}
-
-func (r ApiPostSysRekeyVerifyRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysRekeyVerifyExecute(r)
-}
-
 /*
 PostSysRekeyVerify Enter a single new key share to progress the rekey verification operation.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysRekeyVerifyRequest
 */
-func (a *SystemApiService) PostSysRekeyVerify(ctx context.Context) ApiPostSysRekeyVerifyRequest {
-	return ApiPostSysRekeyVerifyRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysRekeyVerifyExecute(ctx context.Context, systemRekeyVerifyRequest SystemRekeyVerifyRequest) (*http.Response, error) {
 	var (
@@ -12589,34 +9978,12 @@ func (a *SystemApiService) PostSysRekeyVerifyExecute(ctx context.Context, system
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysRemountRequest struct {
-	ctx                  context.Context
-	ApiService           *SystemApiService
-	systemRemountRequest *SystemRemountRequest
-}
-
-func (r ApiPostSysRemountRequest) SystemRemountRequest(systemRemountRequest SystemRemountRequest) ApiPostSysRemountRequest {
-	r.systemRemountRequest = &systemRemountRequest
-	return r
-}
-
-func (r ApiPostSysRemountRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysRemountExecute(r)
-}
-
 /*
 PostSysRemount Initiate a mount migration
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysRemountRequest
 */
-func (a *SystemApiService) PostSysRemount(ctx context.Context) ApiPostSysRemountRequest {
-	return ApiPostSysRemountRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysRemountExecute(ctx context.Context, systemRemountRequest SystemRemountRequest) (*http.Response, error) {
 	var (
@@ -12683,34 +10050,12 @@ func (a *SystemApiService) PostSysRemountExecute(ctx context.Context, systemRemo
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysRenewRequest struct {
-	ctx                context.Context
-	ApiService         *SystemApiService
-	systemRenewRequest *SystemRenewRequest
-}
-
-func (r ApiPostSysRenewRequest) SystemRenewRequest(systemRenewRequest SystemRenewRequest) ApiPostSysRenewRequest {
-	r.systemRenewRequest = &systemRenewRequest
-	return r
-}
-
-func (r ApiPostSysRenewRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysRenewExecute(r)
-}
-
 /*
 PostSysRenew Renews a lease, requesting to extend the lease.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysRenewRequest
 */
-func (a *SystemApiService) PostSysRenew(ctx context.Context) ApiPostSysRenewRequest {
-	return ApiPostSysRenewRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysRenewExecute(ctx context.Context, systemRenewRequest SystemRenewRequest) (*http.Response, error) {
 	var (
@@ -12777,22 +10122,6 @@ func (a *SystemApiService) PostSysRenewExecute(ctx context.Context, systemRenewR
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysRenewUrlLeaseIdRequest struct {
-	ctx                     context.Context
-	ApiService              *SystemApiService
-	urlLeaseId              string
-	systemRenewLeaseRequest *SystemRenewLeaseRequest
-}
-
-func (r ApiPostSysRenewUrlLeaseIdRequest) SystemRenewLeaseRequest(systemRenewLeaseRequest SystemRenewLeaseRequest) ApiPostSysRenewUrlLeaseIdRequest {
-	r.systemRenewLeaseRequest = &systemRenewLeaseRequest
-	return r
-}
-
-func (r ApiPostSysRenewUrlLeaseIdRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysRenewUrlLeaseIdExecute(r)
-}
-
 /*
 PostSysRenewUrlLeaseId Renews a lease, requesting to extend the lease.
 
@@ -12800,14 +10129,6 @@ PostSysRenewUrlLeaseId Renews a lease, requesting to extend the lease.
  @param urlLeaseId The lease identifier to renew. This is included with a lease.
  @return ApiPostSysRenewUrlLeaseIdRequest
 */
-func (a *SystemApiService) PostSysRenewUrlLeaseId(ctx context.Context, urlLeaseId string) ApiPostSysRenewUrlLeaseIdRequest {
-	return ApiPostSysRenewUrlLeaseIdRequest{
-		ApiService: a,
-		ctx:        ctx,
-		urlLeaseId: urlLeaseId,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysRenewUrlLeaseIdExecute(ctx context.Context, urlLeaseId string, systemRenewLeaseRequest SystemRenewLeaseRequest) (*http.Response, error) {
 	var (
@@ -12875,34 +10196,12 @@ func (a *SystemApiService) PostSysRenewUrlLeaseIdExecute(ctx context.Context, ur
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysRevokeRequest struct {
-	ctx                 context.Context
-	ApiService          *SystemApiService
-	systemRevokeRequest *SystemRevokeRequest
-}
-
-func (r ApiPostSysRevokeRequest) SystemRevokeRequest(systemRevokeRequest SystemRevokeRequest) ApiPostSysRevokeRequest {
-	r.systemRevokeRequest = &systemRevokeRequest
-	return r
-}
-
-func (r ApiPostSysRevokeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysRevokeExecute(r)
-}
-
 /*
 PostSysRevoke Revokes a lease immediately.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysRevokeRequest
 */
-func (a *SystemApiService) PostSysRevoke(ctx context.Context) ApiPostSysRevokeRequest {
-	return ApiPostSysRevokeRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysRevokeExecute(ctx context.Context, systemRevokeRequest SystemRevokeRequest) (*http.Response, error) {
 	var (
@@ -12969,16 +10268,6 @@ func (a *SystemApiService) PostSysRevokeExecute(ctx context.Context, systemRevok
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysRevokeForcePrefixRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	prefix     string
-}
-
-func (r ApiPostSysRevokeForcePrefixRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysRevokeForcePrefixExecute(r)
-}
-
 /*
 PostSysRevokeForcePrefix Revokes all secrets or tokens generated under a given prefix immediately
 
@@ -12990,14 +10279,6 @@ By ignoring these errors, Vault abdicates responsibility for ensuring that the i
  @param prefix The path to revoke keys under. Example: \"prod/aws/ops\"
  @return ApiPostSysRevokeForcePrefixRequest
 */
-func (a *SystemApiService) PostSysRevokeForcePrefix(ctx context.Context, prefix string) ApiPostSysRevokeForcePrefixRequest {
-	return ApiPostSysRevokeForcePrefixRequest{
-		ApiService: a,
-		ctx:        ctx,
-		prefix:     prefix,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysRevokeForcePrefixExecute(ctx context.Context, prefix string) (*http.Response, error) {
 	var (
@@ -13063,22 +10344,6 @@ func (a *SystemApiService) PostSysRevokeForcePrefixExecute(ctx context.Context, 
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysRevokePrefixPrefixRequest struct {
-	ctx                       context.Context
-	ApiService                *SystemApiService
-	prefix                    string
-	systemRevokePrefixRequest *SystemRevokePrefixRequest
-}
-
-func (r ApiPostSysRevokePrefixPrefixRequest) SystemRevokePrefixRequest(systemRevokePrefixRequest SystemRevokePrefixRequest) ApiPostSysRevokePrefixPrefixRequest {
-	r.systemRevokePrefixRequest = &systemRevokePrefixRequest
-	return r
-}
-
-func (r ApiPostSysRevokePrefixPrefixRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysRevokePrefixPrefixExecute(r)
-}
-
 /*
 PostSysRevokePrefixPrefix Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
 
@@ -13086,14 +10351,6 @@ PostSysRevokePrefixPrefix Revokes all secrets (via a lease ID prefix) or tokens 
  @param prefix The path to revoke keys under. Example: \"prod/aws/ops\"
  @return ApiPostSysRevokePrefixPrefixRequest
 */
-func (a *SystemApiService) PostSysRevokePrefixPrefix(ctx context.Context, prefix string) ApiPostSysRevokePrefixPrefixRequest {
-	return ApiPostSysRevokePrefixPrefixRequest{
-		ApiService: a,
-		ctx:        ctx,
-		prefix:     prefix,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysRevokePrefixPrefixExecute(ctx context.Context, prefix string, systemRevokePrefixRequest SystemRevokePrefixRequest) (*http.Response, error) {
 	var (
@@ -13161,22 +10418,6 @@ func (a *SystemApiService) PostSysRevokePrefixPrefixExecute(ctx context.Context,
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysRevokeUrlLeaseIdRequest struct {
-	ctx                      context.Context
-	ApiService               *SystemApiService
-	urlLeaseId               string
-	systemRevokeLeaseRequest *SystemRevokeLeaseRequest
-}
-
-func (r ApiPostSysRevokeUrlLeaseIdRequest) SystemRevokeLeaseRequest(systemRevokeLeaseRequest SystemRevokeLeaseRequest) ApiPostSysRevokeUrlLeaseIdRequest {
-	r.systemRevokeLeaseRequest = &systemRevokeLeaseRequest
-	return r
-}
-
-func (r ApiPostSysRevokeUrlLeaseIdRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysRevokeUrlLeaseIdExecute(r)
-}
-
 /*
 PostSysRevokeUrlLeaseId Revokes a lease immediately.
 
@@ -13184,14 +10425,6 @@ PostSysRevokeUrlLeaseId Revokes a lease immediately.
  @param urlLeaseId The lease identifier to renew. This is included with a lease.
  @return ApiPostSysRevokeUrlLeaseIdRequest
 */
-func (a *SystemApiService) PostSysRevokeUrlLeaseId(ctx context.Context, urlLeaseId string) ApiPostSysRevokeUrlLeaseIdRequest {
-	return ApiPostSysRevokeUrlLeaseIdRequest{
-		ApiService: a,
-		ctx:        ctx,
-		urlLeaseId: urlLeaseId,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysRevokeUrlLeaseIdExecute(ctx context.Context, urlLeaseId string, systemRevokeLeaseRequest SystemRevokeLeaseRequest) (*http.Response, error) {
 	var (
@@ -13259,28 +10492,12 @@ func (a *SystemApiService) PostSysRevokeUrlLeaseIdExecute(ctx context.Context, u
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysRotateRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiPostSysRotateRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysRotateExecute(r)
-}
-
 /*
 PostSysRotate Rotates the backend encryption key used to persist data.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysRotateRequest
 */
-func (a *SystemApiService) PostSysRotate(ctx context.Context) ApiPostSysRotateRequest {
-	return ApiPostSysRotateRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysRotateExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -13345,34 +10562,12 @@ func (a *SystemApiService) PostSysRotateExecute(ctx context.Context) (*http.Resp
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysRotateConfigRequest struct {
-	ctx                       context.Context
-	ApiService                *SystemApiService
-	systemRotateConfigRequest *SystemRotateConfigRequest
-}
-
-func (r ApiPostSysRotateConfigRequest) SystemRotateConfigRequest(systemRotateConfigRequest SystemRotateConfigRequest) ApiPostSysRotateConfigRequest {
-	r.systemRotateConfigRequest = &systemRotateConfigRequest
-	return r
-}
-
-func (r ApiPostSysRotateConfigRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysRotateConfigExecute(r)
-}
-
 /*
 PostSysRotateConfig Method for PostSysRotateConfig
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysRotateConfigRequest
 */
-func (a *SystemApiService) PostSysRotateConfig(ctx context.Context) ApiPostSysRotateConfigRequest {
-	return ApiPostSysRotateConfigRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysRotateConfigExecute(ctx context.Context, systemRotateConfigRequest SystemRotateConfigRequest) (*http.Response, error) {
 	var (
@@ -13439,28 +10634,12 @@ func (a *SystemApiService) PostSysRotateConfigExecute(ctx context.Context, syste
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysSealRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiPostSysSealRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysSealExecute(r)
-}
-
 /*
 PostSysSeal Seal the Vault.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysSealRequest
 */
-func (a *SystemApiService) PostSysSeal(ctx context.Context) ApiPostSysSealRequest {
-	return ApiPostSysSealRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysSealExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -13525,15 +10704,6 @@ func (a *SystemApiService) PostSysSealExecute(ctx context.Context) (*http.Respon
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysStepDownRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiPostSysStepDownRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysStepDownExecute(r)
-}
-
 /*
 PostSysStepDown Cause the node to give up active status.
 
@@ -13542,13 +10712,6 @@ This endpoint forces the node to give up active status. If the node does not hav
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysStepDownRequest
 */
-func (a *SystemApiService) PostSysStepDown(ctx context.Context) ApiPostSysStepDownRequest {
-	return ApiPostSysStepDownRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysStepDownExecute(ctx context.Context) (*http.Response, error) {
 	var (
@@ -13613,34 +10776,12 @@ func (a *SystemApiService) PostSysStepDownExecute(ctx context.Context) (*http.Re
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysToolsHashRequest struct {
-	ctx                    context.Context
-	ApiService             *SystemApiService
-	systemToolsHashRequest *SystemToolsHashRequest
-}
-
-func (r ApiPostSysToolsHashRequest) SystemToolsHashRequest(systemToolsHashRequest SystemToolsHashRequest) ApiPostSysToolsHashRequest {
-	r.systemToolsHashRequest = &systemToolsHashRequest
-	return r
-}
-
-func (r ApiPostSysToolsHashRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysToolsHashExecute(r)
-}
-
 /*
 PostSysToolsHash Generate a hash sum for input data
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysToolsHashRequest
 */
-func (a *SystemApiService) PostSysToolsHash(ctx context.Context) ApiPostSysToolsHashRequest {
-	return ApiPostSysToolsHashRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysToolsHashExecute(ctx context.Context, systemToolsHashRequest SystemToolsHashRequest) (*http.Response, error) {
 	var (
@@ -13707,22 +10848,6 @@ func (a *SystemApiService) PostSysToolsHashExecute(ctx context.Context, systemTo
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysToolsHashUrlalgorithmRequest struct {
-	ctx                    context.Context
-	ApiService             *SystemApiService
-	urlalgorithm           string
-	systemToolsHashRequest *SystemToolsHashRequest
-}
-
-func (r ApiPostSysToolsHashUrlalgorithmRequest) SystemToolsHashRequest(systemToolsHashRequest SystemToolsHashRequest) ApiPostSysToolsHashUrlalgorithmRequest {
-	r.systemToolsHashRequest = &systemToolsHashRequest
-	return r
-}
-
-func (r ApiPostSysToolsHashUrlalgorithmRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysToolsHashUrlalgorithmExecute(r)
-}
-
 /*
 PostSysToolsHashUrlalgorithm Generate a hash sum for input data
 
@@ -13730,14 +10855,6 @@ PostSysToolsHashUrlalgorithm Generate a hash sum for input data
  @param urlalgorithm Algorithm to use (POST URL parameter)
  @return ApiPostSysToolsHashUrlalgorithmRequest
 */
-func (a *SystemApiService) PostSysToolsHashUrlalgorithm(ctx context.Context, urlalgorithm string) ApiPostSysToolsHashUrlalgorithmRequest {
-	return ApiPostSysToolsHashUrlalgorithmRequest{
-		ApiService:   a,
-		ctx:          ctx,
-		urlalgorithm: urlalgorithm,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysToolsHashUrlalgorithmExecute(ctx context.Context, urlalgorithm string, systemToolsHashRequest SystemToolsHashRequest) (*http.Response, error) {
 	var (
@@ -13805,34 +10922,12 @@ func (a *SystemApiService) PostSysToolsHashUrlalgorithmExecute(ctx context.Conte
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysToolsRandomRequest struct {
-	ctx                      context.Context
-	ApiService               *SystemApiService
-	systemToolsRandomRequest *SystemToolsRandomRequest
-}
-
-func (r ApiPostSysToolsRandomRequest) SystemToolsRandomRequest(systemToolsRandomRequest SystemToolsRandomRequest) ApiPostSysToolsRandomRequest {
-	r.systemToolsRandomRequest = &systemToolsRandomRequest
-	return r
-}
-
-func (r ApiPostSysToolsRandomRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysToolsRandomExecute(r)
-}
-
 /*
 PostSysToolsRandom Generate random bytes
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysToolsRandomRequest
 */
-func (a *SystemApiService) PostSysToolsRandom(ctx context.Context) ApiPostSysToolsRandomRequest {
-	return ApiPostSysToolsRandomRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysToolsRandomExecute(ctx context.Context, systemToolsRandomRequest SystemToolsRandomRequest) (*http.Response, error) {
 	var (
@@ -13899,22 +10994,6 @@ func (a *SystemApiService) PostSysToolsRandomExecute(ctx context.Context, system
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysToolsRandomSourceRequest struct {
-	ctx                      context.Context
-	ApiService               *SystemApiService
-	source                   string
-	systemToolsRandomRequest *SystemToolsRandomRequest
-}
-
-func (r ApiPostSysToolsRandomSourceRequest) SystemToolsRandomRequest(systemToolsRandomRequest SystemToolsRandomRequest) ApiPostSysToolsRandomSourceRequest {
-	r.systemToolsRandomRequest = &systemToolsRandomRequest
-	return r
-}
-
-func (r ApiPostSysToolsRandomSourceRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysToolsRandomSourceExecute(r)
-}
-
 /*
 PostSysToolsRandomSource Generate random bytes
 
@@ -13922,14 +11001,6 @@ PostSysToolsRandomSource Generate random bytes
  @param source Which system to source random data from, ether \"platform\", \"seal\", or \"all\".
  @return ApiPostSysToolsRandomSourceRequest
 */
-func (a *SystemApiService) PostSysToolsRandomSource(ctx context.Context, source string) ApiPostSysToolsRandomSourceRequest {
-	return ApiPostSysToolsRandomSourceRequest{
-		ApiService: a,
-		ctx:        ctx,
-		source:     source,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysToolsRandomSourceExecute(ctx context.Context, source string, systemToolsRandomRequest SystemToolsRandomRequest) (*http.Response, error) {
 	var (
@@ -13997,23 +11068,6 @@ func (a *SystemApiService) PostSysToolsRandomSourceExecute(ctx context.Context, 
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysToolsRandomSourceUrlbytesRequest struct {
-	ctx                      context.Context
-	ApiService               *SystemApiService
-	source                   string
-	urlbytes                 string
-	systemToolsRandomRequest *SystemToolsRandomRequest
-}
-
-func (r ApiPostSysToolsRandomSourceUrlbytesRequest) SystemToolsRandomRequest(systemToolsRandomRequest SystemToolsRandomRequest) ApiPostSysToolsRandomSourceUrlbytesRequest {
-	r.systemToolsRandomRequest = &systemToolsRandomRequest
-	return r
-}
-
-func (r ApiPostSysToolsRandomSourceUrlbytesRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysToolsRandomSourceUrlbytesExecute(r)
-}
-
 /*
 PostSysToolsRandomSourceUrlbytes Generate random bytes
 
@@ -14022,15 +11076,6 @@ PostSysToolsRandomSourceUrlbytes Generate random bytes
  @param urlbytes The number of bytes to generate (POST URL parameter)
  @return ApiPostSysToolsRandomSourceUrlbytesRequest
 */
-func (a *SystemApiService) PostSysToolsRandomSourceUrlbytes(ctx context.Context, source string, urlbytes string) ApiPostSysToolsRandomSourceUrlbytesRequest {
-	return ApiPostSysToolsRandomSourceUrlbytesRequest{
-		ApiService: a,
-		ctx:        ctx,
-		source:     source,
-		urlbytes:   urlbytes,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysToolsRandomSourceUrlbytesExecute(ctx context.Context, source string, urlbytes string, systemToolsRandomRequest SystemToolsRandomRequest) (*http.Response, error) {
 	var (
@@ -14099,22 +11144,6 @@ func (a *SystemApiService) PostSysToolsRandomSourceUrlbytesExecute(ctx context.C
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysToolsRandomUrlbytesRequest struct {
-	ctx                      context.Context
-	ApiService               *SystemApiService
-	urlbytes                 string
-	systemToolsRandomRequest *SystemToolsRandomRequest
-}
-
-func (r ApiPostSysToolsRandomUrlbytesRequest) SystemToolsRandomRequest(systemToolsRandomRequest SystemToolsRandomRequest) ApiPostSysToolsRandomUrlbytesRequest {
-	r.systemToolsRandomRequest = &systemToolsRandomRequest
-	return r
-}
-
-func (r ApiPostSysToolsRandomUrlbytesRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysToolsRandomUrlbytesExecute(r)
-}
-
 /*
 PostSysToolsRandomUrlbytes Generate random bytes
 
@@ -14122,14 +11151,6 @@ PostSysToolsRandomUrlbytes Generate random bytes
  @param urlbytes The number of bytes to generate (POST URL parameter)
  @return ApiPostSysToolsRandomUrlbytesRequest
 */
-func (a *SystemApiService) PostSysToolsRandomUrlbytes(ctx context.Context, urlbytes string) ApiPostSysToolsRandomUrlbytesRequest {
-	return ApiPostSysToolsRandomUrlbytesRequest{
-		ApiService: a,
-		ctx:        ctx,
-		urlbytes:   urlbytes,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysToolsRandomUrlbytesExecute(ctx context.Context, urlbytes string, systemToolsRandomRequest SystemToolsRandomRequest) (*http.Response, error) {
 	var (
@@ -14197,34 +11218,12 @@ func (a *SystemApiService) PostSysToolsRandomUrlbytesExecute(ctx context.Context
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysUnsealRequest struct {
-	ctx                 context.Context
-	ApiService          *SystemApiService
-	systemUnsealRequest *SystemUnsealRequest
-}
-
-func (r ApiPostSysUnsealRequest) SystemUnsealRequest(systemUnsealRequest SystemUnsealRequest) ApiPostSysUnsealRequest {
-	r.systemUnsealRequest = &systemUnsealRequest
-	return r
-}
-
-func (r ApiPostSysUnsealRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysUnsealExecute(r)
-}
-
 /*
 PostSysUnseal Unseal the Vault.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysUnsealRequest
 */
-func (a *SystemApiService) PostSysUnseal(ctx context.Context) ApiPostSysUnsealRequest {
-	return ApiPostSysUnsealRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysUnsealExecute(ctx context.Context, systemUnsealRequest SystemUnsealRequest) (*http.Response, error) {
 	var (
@@ -14291,34 +11290,12 @@ func (a *SystemApiService) PostSysUnsealExecute(ctx context.Context, systemUnsea
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysWrappingLookupRequest struct {
-	ctx                         context.Context
-	ApiService                  *SystemApiService
-	systemWrappingLookupRequest *SystemWrappingLookupRequest
-}
-
-func (r ApiPostSysWrappingLookupRequest) SystemWrappingLookupRequest(systemWrappingLookupRequest SystemWrappingLookupRequest) ApiPostSysWrappingLookupRequest {
-	r.systemWrappingLookupRequest = &systemWrappingLookupRequest
-	return r
-}
-
-func (r ApiPostSysWrappingLookupRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysWrappingLookupExecute(r)
-}
-
 /*
 PostSysWrappingLookup Look up wrapping properties for the given token.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysWrappingLookupRequest
 */
-func (a *SystemApiService) PostSysWrappingLookup(ctx context.Context) ApiPostSysWrappingLookupRequest {
-	return ApiPostSysWrappingLookupRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysWrappingLookupExecute(ctx context.Context, systemWrappingLookupRequest SystemWrappingLookupRequest) (*http.Response, error) {
 	var (
@@ -14385,34 +11362,12 @@ func (a *SystemApiService) PostSysWrappingLookupExecute(ctx context.Context, sys
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysWrappingRewrapRequest struct {
-	ctx                         context.Context
-	ApiService                  *SystemApiService
-	systemWrappingRewrapRequest *SystemWrappingRewrapRequest
-}
-
-func (r ApiPostSysWrappingRewrapRequest) SystemWrappingRewrapRequest(systemWrappingRewrapRequest SystemWrappingRewrapRequest) ApiPostSysWrappingRewrapRequest {
-	r.systemWrappingRewrapRequest = &systemWrappingRewrapRequest
-	return r
-}
-
-func (r ApiPostSysWrappingRewrapRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysWrappingRewrapExecute(r)
-}
-
 /*
 PostSysWrappingRewrap Rotates a response-wrapped token.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysWrappingRewrapRequest
 */
-func (a *SystemApiService) PostSysWrappingRewrap(ctx context.Context) ApiPostSysWrappingRewrapRequest {
-	return ApiPostSysWrappingRewrapRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysWrappingRewrapExecute(ctx context.Context, systemWrappingRewrapRequest SystemWrappingRewrapRequest) (*http.Response, error) {
 	var (
@@ -14479,34 +11434,12 @@ func (a *SystemApiService) PostSysWrappingRewrapExecute(ctx context.Context, sys
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysWrappingUnwrapRequest struct {
-	ctx                         context.Context
-	ApiService                  *SystemApiService
-	systemWrappingUnwrapRequest *SystemWrappingUnwrapRequest
-}
-
-func (r ApiPostSysWrappingUnwrapRequest) SystemWrappingUnwrapRequest(systemWrappingUnwrapRequest SystemWrappingUnwrapRequest) ApiPostSysWrappingUnwrapRequest {
-	r.systemWrappingUnwrapRequest = &systemWrappingUnwrapRequest
-	return r
-}
-
-func (r ApiPostSysWrappingUnwrapRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysWrappingUnwrapExecute(r)
-}
-
 /*
 PostSysWrappingUnwrap Unwraps a response-wrapped token.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysWrappingUnwrapRequest
 */
-func (a *SystemApiService) PostSysWrappingUnwrap(ctx context.Context) ApiPostSysWrappingUnwrapRequest {
-	return ApiPostSysWrappingUnwrapRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysWrappingUnwrapExecute(ctx context.Context, systemWrappingUnwrapRequest SystemWrappingUnwrapRequest) (*http.Response, error) {
 	var (
@@ -14573,28 +11506,12 @@ func (a *SystemApiService) PostSysWrappingUnwrapExecute(ctx context.Context, sys
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysWrappingWrapRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiPostSysWrappingWrapRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysWrappingWrapExecute(r)
-}
-
 /*
 PostSysWrappingWrap Response-wraps an arbitrary JSON object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPostSysWrappingWrapRequest
 */
-func (a *SystemApiService) PostSysWrappingWrap(ctx context.Context) ApiPostSysWrappingWrapRequest {
-	return ApiPostSysWrappingWrapRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
 // Execute executes the request
 func (a *SystemApiService) PostSysWrappingWrapExecute(ctx context.Context) (*http.Response, error) {
 	var (

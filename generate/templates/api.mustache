@@ -194,7 +194,6 @@ func (a *{{{classname}}}Service) {{nickname}}(ctx context.Context{{#pathParams}}
 {{/isFile}}
 {{^isFile}}
 	localVarFormParams.Add("{{baseName}}", parameterToString({{paramName}}, "{{collectionFormat}}"))
-{{/required}}
 {{/isFile}}
 {{/formParams}}
 {{#bodyParams}}

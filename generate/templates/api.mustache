@@ -12,72 +12,14 @@ import (
 {{/imports}}
 )
 
-// Linger please
-var (
-	_ context.Context
-)
-{{#generateInterfaces}}
-
-type {{classname}} interface {
-	{{#operation}}
-
-	/*
-	{{operationId}} {{{summary}}}{{^summary}}Method for {{operationId}}{{/summary}}
-	{{#notes}}
-
-	{{{unescapedNotes}}}
-	{{/notes}}
-
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().{{#pathParams}}
-	 @param {{paramName}}{{#description}} {{{.}}}{{/description}}{{/pathParams}}
-	 @return {{#structPrefix}}{{&classname}}{{/structPrefix}}Api{{operationId}}Request
-	{{#isDeprecated}}
-
-	Deprecated
-	{{/isDeprecated}}
-	*/
-	{{{nickname}}}(ctx context.Context{{#pathParams}}, {{paramName}} {{{dataType}}}{{/pathParams}}) {{#structPrefix}}{{&classname}}{{/structPrefix}}Api{{operationId}}Request
-
-	// {{nickname}}Execute executes the request{{#returnType}}
-	//  @return {{{.}}}{{/returnType}}
-	{{#isDeprecated}}
-	// Deprecated
-	{{/isDeprecated}}
-	{{nickname}}Execute(r {{#structPrefix}}{{&classname}}{{/structPrefix}}Api{{operationId}}Request) ({{#returnType}}{{^isArray}}{{^returnTypeIsPrimitive}}*{{/returnTypeIsPrimitive}}{{/isArray}}{{{.}}}, {{/returnType}}*http.Response, error)
-	{{/operation}}
-}
-{{/generateInterfaces}}
-
 // {{classname}}Service {{classname}} service
 type {{classname}}Service service
 {{#operation}}
 
-type {{#structPrefix}}{{&classname}}{{/structPrefix}}Api{{operationId}}Request struct {
-	ctx context.Context{{#generateInterfaces}}
-	ApiService {{classname}}
-{{/generateInterfaces}}{{^generateInterfaces}}
-	ApiService *{{classname}}Service
-{{/generateInterfaces}}
-{{#allParams}}
-	{{paramName}} {{^isPathParam}}*{{/isPathParam}}{{{dataType}}}
-{{/allParams}}
-}
 {{#allParams}}{{^isPathParam}}
 {{#description}}
 // {{.}}
 {{/description}}
-{{#isDeprecated}}
-// Deprecated
-{{/isDeprecated}}
-func (r {{#structPrefix}}{{&classname}}{{/structPrefix}}Api{{operationId}}Request) {{vendorExtensions.x-export-param-name}}({{paramName}} {{{dataType}}}) {{#structPrefix}}{{&classname}}{{/structPrefix}}Api{{operationId}}Request {
-	r.{{paramName}} = &{{paramName}}
-	return r
-}{{/isPathParam}}{{/allParams}}
-
-func (r {{#structPrefix}}{{&classname}}{{/structPrefix}}Api{{operationId}}Request) Execute() ({{#returnType}}{{^isArray}}{{^returnTypeIsPrimitive}}*{{/returnTypeIsPrimitive}}{{/isArray}}{{{.}}}, {{/returnType}}*http.Response, error) {
-	return r.ApiService.{{nickname}}Execute(r)
-}
-
 /*
 {{operationId}} {{{summary}}}{{^summary}}Method for {{operationId}}{{/summary}}
 {{#notes}}
@@ -88,27 +30,13 @@ func (r {{#structPrefix}}{{&classname}}{{/structPrefix}}Api{{operationId}}Reques
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().{{#pathParams}}
  @param {{paramName}}{{#description}} {{{.}}}{{/description}}{{/pathParams}}
  @return {{#structPrefix}}{{&classname}}{{/structPrefix}}Api{{operationId}}Request
-{{#isDeprecated}}
-
-Deprecated
-{{/isDeprecated}}
 */
-func (a *{{{classname}}}Service) {{{nickname}}}(ctx context.Context{{#pathParams}}, {{paramName}} {{{dataType}}}{{/pathParams}}) {{#structPrefix}}{{&classname}}{{/structPrefix}}Api{{operationId}}Request {
-	return {{#structPrefix}}{{&classname}}{{/structPrefix}}Api{{operationId}}Request{
-		ApiService: a,
-		ctx: ctx,
-		{{#pathParams}}
-		{{paramName}}: {{paramName}},
-		{{/pathParams}}
-	}
-}
-
 // Execute executes the request{{#returnType}}
 //  @return {{{.}}}{{/returnType}}
 {{#isDeprecated}}
 // Deprecated
 {{/isDeprecated}}
-func (a *{{{classname}}}Service) {{nickname}}Execute(ctx context.Context{{#pathParams}}, {{paramName}} {{{dataType}}}{{/pathParams}}{{#allParams}}{{^isPathParam}}, {{paramName}} {{{dataType}}}{{/isPathParam}}{{/allParams}}) ({{#returnType}}{{^isArray}}{{^returnTypeIsPrimitive}}*{{/returnTypeIsPrimitive}}{{/isArray}}{{{.}}}, {{/returnType}}*http.Response, error) {
+func (a *{{{classname}}}Service) {{nickname}}(ctx context.Context{{#pathParams}}, {{paramName}} {{{dataType}}}{{/pathParams}}{{#allParams}}{{^isPathParam}}, {{paramName}} {{{dataType}}}{{/isPathParam}}{{/allParams}}) ({{#returnType}}{{^isArray}}{{^returnTypeIsPrimitive}}*{{/returnTypeIsPrimitive}}{{/isArray}}{{{.}}}, {{/returnType}}*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.Method{{httpMethod}}
 		localVarPostBody     interface{}

@@ -30,7 +30,7 @@ DeleteAuthAlicloudRoleRole Create a role and associate policies to it.
  @return ApiDeleteAuthAlicloudRoleRoleRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAlicloudRoleRoleExecute(ctx context.Context, role string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAlicloudRoleRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -102,7 +102,7 @@ DeleteAuthAppIdMapAppIdKey Read/write/delete a single app-id mapping
  @return ApiDeleteAuthAppIdMapAppIdKeyRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAppIdMapAppIdKeyExecute(ctx context.Context, key string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAppIdMapAppIdKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -174,7 +174,7 @@ DeleteAuthAppIdMapUserIdKey Read/write/delete a single user-id mapping
  @return ApiDeleteAuthAppIdMapUserIdKeyRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAppIdMapUserIdKeyExecute(ctx context.Context, key string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAppIdMapUserIdKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -246,7 +246,7 @@ DeleteAuthApproleRoleRoleName Register an role with the backend.
  @return ApiDeleteAuthApproleRoleRoleNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthApproleRoleRoleNameExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthApproleRoleRoleName(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -318,7 +318,7 @@ DeleteAuthApproleRoleRoleNameBindSecretId Impose secret_id to be presented durin
  @return ApiDeleteAuthApproleRoleRoleNameBindSecretIdRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthApproleRoleRoleNameBindSecretIdExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -390,7 +390,7 @@ DeleteAuthApproleRoleRoleNameBoundCidrList Deprecated: Comma separated list of C
  @return ApiDeleteAuthApproleRoleRoleNameBoundCidrListRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthApproleRoleRoleNameBoundCidrListExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -462,7 +462,7 @@ DeleteAuthApproleRoleRoleNamePeriod Updates the value of 'period' on the role
  @return ApiDeleteAuthApproleRoleRoleNamePeriodRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthApproleRoleRoleNamePeriodExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -534,7 +534,7 @@ DeleteAuthApproleRoleRoleNamePolicies Policies of the role.
  @return ApiDeleteAuthApproleRoleRoleNamePoliciesRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthApproleRoleRoleNamePoliciesExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -606,7 +606,7 @@ DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy Method for DeleteAuthApprol
  @return ApiDeleteAuthApproleRoleRoleNameSecretIdAccessorDestroyRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroyExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -678,7 +678,7 @@ DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs Comma separated list of CIDR blo
  @return ApiDeleteAuthApproleRoleRoleNameSecretIdBoundCidrsRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdBoundCidrsExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -750,7 +750,7 @@ DeleteAuthApproleRoleRoleNameSecretIdDestroy Invalidate an issued secret_id
  @return ApiDeleteAuthApproleRoleRoleNameSecretIdDestroyRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdDestroyExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -822,7 +822,7 @@ DeleteAuthApproleRoleRoleNameSecretIdNumUses Use limit of the SecretID generated
  @return ApiDeleteAuthApproleRoleRoleNameSecretIdNumUsesRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdNumUsesExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -894,7 +894,7 @@ DeleteAuthApproleRoleRoleNameSecretIdTtl Duration in seconds, representing the l
  @return ApiDeleteAuthApproleRoleRoleNameSecretIdTtlRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdTtlExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -966,7 +966,7 @@ DeleteAuthApproleRoleRoleNameTokenBoundCidrs Comma separated string or list of C
  @return ApiDeleteAuthApproleRoleRoleNameTokenBoundCidrsRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenBoundCidrsExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1038,7 +1038,7 @@ DeleteAuthApproleRoleRoleNameTokenMaxTtl Duration in seconds, the maximum lifeti
  @return ApiDeleteAuthApproleRoleRoleNameTokenMaxTtlRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenMaxTtlExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1110,7 +1110,7 @@ DeleteAuthApproleRoleRoleNameTokenNumUses Number of times issued tokens can be u
  @return ApiDeleteAuthApproleRoleRoleNameTokenNumUsesRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenNumUsesExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1182,7 +1182,7 @@ DeleteAuthApproleRoleRoleNameTokenTtl Duration in seconds, the lifetime of the t
  @return ApiDeleteAuthApproleRoleRoleNameTokenTtlRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenTtlExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1254,7 +1254,7 @@ DeleteAuthAwsConfigCertificateCertName Method for DeleteAuthAwsConfigCertificate
  @return ApiDeleteAuthAwsConfigCertificateCertNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAwsConfigCertificateCertNameExecute(ctx context.Context, certName string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAwsConfigCertificateCertName(ctx context.Context, certName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1325,7 +1325,7 @@ DeleteAuthAwsConfigClient Method for DeleteAuthAwsConfigClient
  @return ApiDeleteAuthAwsConfigClientRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAwsConfigClientExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAwsConfigClient(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1396,7 +1396,7 @@ DeleteAuthAwsConfigStsAccountId Method for DeleteAuthAwsConfigStsAccountId
  @return ApiDeleteAuthAwsConfigStsAccountIdRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAwsConfigStsAccountIdExecute(ctx context.Context, accountId string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAwsConfigStsAccountId(ctx context.Context, accountId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1467,7 +1467,7 @@ DeleteAuthAwsConfigTidyIdentityAccesslist Method for DeleteAuthAwsConfigTidyIden
  @return ApiDeleteAuthAwsConfigTidyIdentityAccesslistRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAwsConfigTidyIdentityAccesslistExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAwsConfigTidyIdentityAccesslist(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1537,7 +1537,7 @@ DeleteAuthAwsConfigTidyIdentityWhitelist Method for DeleteAuthAwsConfigTidyIdent
  @return ApiDeleteAuthAwsConfigTidyIdentityWhitelistRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAwsConfigTidyIdentityWhitelistExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAwsConfigTidyIdentityWhitelist(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1607,7 +1607,7 @@ DeleteAuthAwsConfigTidyRoletagBlacklist Method for DeleteAuthAwsConfigTidyRoleta
  @return ApiDeleteAuthAwsConfigTidyRoletagBlacklistRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAwsConfigTidyRoletagBlacklistExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAwsConfigTidyRoletagBlacklist(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1677,7 +1677,7 @@ DeleteAuthAwsConfigTidyRoletagDenylist Method for DeleteAuthAwsConfigTidyRoletag
  @return ApiDeleteAuthAwsConfigTidyRoletagDenylistRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAwsConfigTidyRoletagDenylistExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAwsConfigTidyRoletagDenylist(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1748,7 +1748,7 @@ DeleteAuthAwsIdentityAccesslistInstanceId Method for DeleteAuthAwsIdentityAccess
  @return ApiDeleteAuthAwsIdentityAccesslistInstanceIdRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAwsIdentityAccesslistInstanceIdExecute(ctx context.Context, instanceId string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAwsIdentityAccesslistInstanceId(ctx context.Context, instanceId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1820,7 +1820,7 @@ DeleteAuthAwsIdentityWhitelistInstanceId Method for DeleteAuthAwsIdentityWhiteli
  @return ApiDeleteAuthAwsIdentityWhitelistInstanceIdRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAwsIdentityWhitelistInstanceIdExecute(ctx context.Context, instanceId string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAwsIdentityWhitelistInstanceId(ctx context.Context, instanceId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1892,7 +1892,7 @@ DeleteAuthAwsRoleRole Method for DeleteAuthAwsRoleRole
  @return ApiDeleteAuthAwsRoleRoleRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAwsRoleRoleExecute(ctx context.Context, role string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAwsRoleRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1964,7 +1964,7 @@ DeleteAuthAwsRoletagBlacklistRoleTag Method for DeleteAuthAwsRoletagBlacklistRol
  @return ApiDeleteAuthAwsRoletagBlacklistRoleTagRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAwsRoletagBlacklistRoleTagExecute(ctx context.Context, roleTag string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2036,7 +2036,7 @@ DeleteAuthAwsRoletagDenylistRoleTag Method for DeleteAuthAwsRoletagDenylistRoleT
  @return ApiDeleteAuthAwsRoletagDenylistRoleTagRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAwsRoletagDenylistRoleTagExecute(ctx context.Context, roleTag string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2107,7 +2107,7 @@ DeleteAuthAzureConfig Method for DeleteAuthAzureConfig
  @return ApiDeleteAuthAzureConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAzureConfigExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAzureConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2178,7 +2178,7 @@ DeleteAuthAzureRoleName Method for DeleteAuthAzureRoleName
  @return ApiDeleteAuthAzureRoleNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAzureRoleNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAzureRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2250,7 +2250,7 @@ DeleteAuthCertCertsName Manage trusted certificates used for authentication.
  @return ApiDeleteAuthCertCertsNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthCertCertsNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthCertCertsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2322,7 +2322,7 @@ DeleteAuthCertCrlsName Manage Certificate Revocation Lists checked during authen
  @return ApiDeleteAuthCertCrlsNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthCertCrlsNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthCertCrlsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2393,7 +2393,7 @@ DeleteAuthCfConfig Method for DeleteAuthCfConfig
  @return ApiDeleteAuthCfConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthCfConfigExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthCfConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2464,7 +2464,7 @@ DeleteAuthCfRolesRole Method for DeleteAuthCfRolesRole
  @return ApiDeleteAuthCfRolesRoleRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthCfRolesRoleExecute(ctx context.Context, role string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthCfRolesRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2536,7 +2536,7 @@ DeleteAuthGcpRoleName Create a GCP role with associated policies and required at
  @return ApiDeleteAuthGcpRoleNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthGcpRoleNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthGcpRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2608,7 +2608,7 @@ DeleteAuthGithubMapTeamsKey Read/write/delete a single teams mapping
  @return ApiDeleteAuthGithubMapTeamsKeyRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthGithubMapTeamsKeyExecute(ctx context.Context, key string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthGithubMapTeamsKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2680,7 +2680,7 @@ DeleteAuthGithubMapUsersKey Read/write/delete a single users mapping
  @return ApiDeleteAuthGithubMapUsersKeyRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthGithubMapUsersKeyExecute(ctx context.Context, key string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthGithubMapUsersKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2752,7 +2752,7 @@ DeleteAuthJwtRoleName Delete an existing role.
  @return ApiDeleteAuthJwtRoleNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthJwtRoleNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthJwtRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2824,7 +2824,7 @@ DeleteAuthKerberosGroupsName Method for DeleteAuthKerberosGroupsName
  @return ApiDeleteAuthKerberosGroupsNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthKerberosGroupsNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthKerberosGroupsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2896,7 +2896,7 @@ DeleteAuthKubernetesRoleName Register an role with the backend.
  @return ApiDeleteAuthKubernetesRoleNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthKubernetesRoleNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthKubernetesRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2968,7 +2968,7 @@ DeleteAuthLdapGroupsName Manage additional groups for users allowed to authentic
  @return ApiDeleteAuthLdapGroupsNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthLdapGroupsNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthLdapGroupsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -3040,7 +3040,7 @@ DeleteAuthLdapUsersName Manage users allowed to authenticate.
  @return ApiDeleteAuthLdapUsersNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthLdapUsersNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthLdapUsersName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -3111,7 +3111,7 @@ DeleteAuthOciConfig Manages the configuration for the Vault Auth Plugin.
  @return ApiDeleteAuthOciConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthOciConfigExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthOciConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -3182,7 +3182,7 @@ DeleteAuthOciRoleRole Create a role and associate policies to it.
  @return ApiDeleteAuthOciRoleRoleRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthOciRoleRoleExecute(ctx context.Context, role string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthOciRoleRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -3254,7 +3254,7 @@ DeleteAuthOidcRoleName Delete an existing role.
  @return ApiDeleteAuthOidcRoleNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthOidcRoleNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthOidcRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -3326,7 +3326,7 @@ DeleteAuthOktaGroupsName Manage users allowed to authenticate.
  @return ApiDeleteAuthOktaGroupsNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthOktaGroupsNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthOktaGroupsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -3398,7 +3398,7 @@ DeleteAuthOktaUsersName Manage additional groups for users allowed to authentica
  @return ApiDeleteAuthOktaUsersNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthOktaUsersNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthOktaUsersName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -3470,7 +3470,7 @@ DeleteAuthRadiusUsersName Manage users allowed to authenticate.
  @return ApiDeleteAuthRadiusUsersNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthRadiusUsersNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthRadiusUsersName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -3542,7 +3542,7 @@ DeleteAuthTokenRolesRoleName Method for DeleteAuthTokenRolesRoleName
  @return ApiDeleteAuthTokenRolesRoleNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthTokenRolesRoleNameExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthTokenRolesRoleName(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -3614,7 +3614,7 @@ DeleteAuthUserpassUsersUsername Manage users allowed to authenticate.
  @return ApiDeleteAuthUserpassUsersUsernameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthUserpassUsersUsernameExecute(ctx context.Context, username string) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthUserpassUsersUsername(ctx context.Context, username string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -3687,7 +3687,7 @@ GetAuthAlicloudRole Lists all the roles that are registered with Vault.
  @return ApiGetAuthAlicloudRoleRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAlicloudRoleExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAlicloudRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3705,7 +3705,7 @@ func (a *AuthApiService) GetAuthAlicloudRoleExecute(ctx context.Context, list st
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -3759,7 +3759,7 @@ GetAuthAlicloudRoleRole Create a role and associate policies to it.
  @return ApiGetAuthAlicloudRoleRoleRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAlicloudRoleRoleExecute(ctx context.Context, role string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAlicloudRoleRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3832,7 +3832,7 @@ GetAuthAlicloudRoles Lists all the roles that are registered with Vault.
  @return ApiGetAuthAlicloudRolesRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAlicloudRolesExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAlicloudRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3850,7 +3850,7 @@ func (a *AuthApiService) GetAuthAlicloudRolesExecute(ctx context.Context, list s
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -3905,7 +3905,7 @@ GetAuthAppIdMapAppId Read mappings for app-id
  @return ApiGetAuthAppIdMapAppIdRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAppIdMapAppIdExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAppIdMapAppId(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3924,7 +3924,7 @@ func (a *AuthApiService) GetAuthAppIdMapAppIdExecute(ctx context.Context, list s
 	localVarFormParams := url.Values{}
 
 	if list != nil {
-		localVarQueryParams.Add("list", parameterToString(*list, ""))
+		localVarQueryParams.Add("list", parameterToString(list, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -3979,7 +3979,7 @@ GetAuthAppIdMapAppIdKey Read/write/delete a single app-id mapping
  @return ApiGetAuthAppIdMapAppIdKeyRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAppIdMapAppIdKeyExecute(ctx context.Context, key string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAppIdMapAppIdKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4052,7 +4052,7 @@ GetAuthAppIdMapUserId Read mappings for user-id
  @return ApiGetAuthAppIdMapUserIdRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAppIdMapUserIdExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAppIdMapUserId(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4071,7 +4071,7 @@ func (a *AuthApiService) GetAuthAppIdMapUserIdExecute(ctx context.Context, list 
 	localVarFormParams := url.Values{}
 
 	if list != nil {
-		localVarQueryParams.Add("list", parameterToString(*list, ""))
+		localVarQueryParams.Add("list", parameterToString(list, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -4126,7 +4126,7 @@ GetAuthAppIdMapUserIdKey Read/write/delete a single user-id mapping
  @return ApiGetAuthAppIdMapUserIdKeyRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAppIdMapUserIdKeyExecute(ctx context.Context, key string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAppIdMapUserIdKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4199,7 +4199,7 @@ GetAuthApproleRole Lists all the roles registered with the backend.
  @return ApiGetAuthApproleRoleRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4217,7 +4217,7 @@ func (a *AuthApiService) GetAuthApproleRoleExecute(ctx context.Context, list str
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -4271,7 +4271,7 @@ GetAuthApproleRoleRoleName Register an role with the backend.
  @return ApiGetAuthApproleRoleRoleNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNameExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleName(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4343,7 +4343,7 @@ GetAuthApproleRoleRoleNameBindSecretId Impose secret_id to be presented during l
  @return ApiGetAuthApproleRoleRoleNameBindSecretIdRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNameBindSecretIdExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4415,7 +4415,7 @@ GetAuthApproleRoleRoleNameBoundCidrList Deprecated: Comma separated list of CIDR
  @return ApiGetAuthApproleRoleRoleNameBoundCidrListRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNameBoundCidrListExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4487,7 +4487,7 @@ GetAuthApproleRoleRoleNameLocalSecretIds Enables cluster local secret IDs
  @return ApiGetAuthApproleRoleRoleNameLocalSecretIdsRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNameLocalSecretIdsExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNameLocalSecretIds(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4559,7 +4559,7 @@ GetAuthApproleRoleRoleNamePeriod Updates the value of 'period' on the role
  @return ApiGetAuthApproleRoleRoleNamePeriodRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNamePeriodExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4631,7 +4631,7 @@ GetAuthApproleRoleRoleNamePolicies Policies of the role.
  @return ApiGetAuthApproleRoleRoleNamePoliciesRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNamePoliciesExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4703,7 +4703,7 @@ GetAuthApproleRoleRoleNameRoleId Returns the 'role_id' of the role.
  @return ApiGetAuthApproleRoleRoleNameRoleIdRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNameRoleIdExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4777,7 +4777,7 @@ GetAuthApproleRoleRoleNameSecretId Generate a SecretID against this role.
  @return ApiGetAuthApproleRoleRoleNameSecretIdRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdExecute(ctx context.Context, roleName string, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName string, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4796,7 +4796,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdExecute(ctx context.C
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -4850,7 +4850,7 @@ GetAuthApproleRoleRoleNameSecretIdBoundCidrs Comma separated list of CIDR blocks
  @return ApiGetAuthApproleRoleRoleNameSecretIdBoundCidrsRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdBoundCidrsExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4922,7 +4922,7 @@ GetAuthApproleRoleRoleNameSecretIdNumUses Use limit of the SecretID generated ag
  @return ApiGetAuthApproleRoleRoleNameSecretIdNumUsesRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdNumUsesExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4994,7 +4994,7 @@ GetAuthApproleRoleRoleNameSecretIdTtl Duration in seconds, representing the life
  @return ApiGetAuthApproleRoleRoleNameSecretIdTtlRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdTtlExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5066,7 +5066,7 @@ GetAuthApproleRoleRoleNameTokenBoundCidrs Comma separated string or list of CIDR
  @return ApiGetAuthApproleRoleRoleNameTokenBoundCidrsRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenBoundCidrsExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5138,7 +5138,7 @@ GetAuthApproleRoleRoleNameTokenMaxTtl Duration in seconds, the maximum lifetime 
  @return ApiGetAuthApproleRoleRoleNameTokenMaxTtlRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenMaxTtlExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5210,7 +5210,7 @@ GetAuthApproleRoleRoleNameTokenNumUses Number of times issued tokens can be used
  @return ApiGetAuthApproleRoleRoleNameTokenNumUsesRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenNumUsesExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5282,7 +5282,7 @@ GetAuthApproleRoleRoleNameTokenTtl Duration in seconds, the lifetime of the toke
  @return ApiGetAuthApproleRoleRoleNameTokenTtlRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenTtlExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5354,7 +5354,7 @@ GetAuthAwsConfigCertificateCertName Method for GetAuthAwsConfigCertificateCertNa
  @return ApiGetAuthAwsConfigCertificateCertNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsConfigCertificateCertNameExecute(ctx context.Context, certName string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsConfigCertificateCertName(ctx context.Context, certName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5427,7 +5427,7 @@ GetAuthAwsConfigCertificates Method for GetAuthAwsConfigCertificates
  @return ApiGetAuthAwsConfigCertificatesRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsConfigCertificatesExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsConfigCertificates(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5445,7 +5445,7 @@ func (a *AuthApiService) GetAuthAwsConfigCertificatesExecute(ctx context.Context
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -5498,7 +5498,7 @@ GetAuthAwsConfigClient Method for GetAuthAwsConfigClient
  @return ApiGetAuthAwsConfigClientRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsConfigClientExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsConfigClient(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5568,7 +5568,7 @@ GetAuthAwsConfigIdentity Method for GetAuthAwsConfigIdentity
  @return ApiGetAuthAwsConfigIdentityRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsConfigIdentityExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsConfigIdentity(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5640,7 +5640,7 @@ GetAuthAwsConfigSts Method for GetAuthAwsConfigSts
  @return ApiGetAuthAwsConfigStsRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsConfigStsExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsConfigSts(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5658,7 +5658,7 @@ func (a *AuthApiService) GetAuthAwsConfigStsExecute(ctx context.Context, list st
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -5712,7 +5712,7 @@ GetAuthAwsConfigStsAccountId Method for GetAuthAwsConfigStsAccountId
  @return ApiGetAuthAwsConfigStsAccountIdRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsConfigStsAccountIdExecute(ctx context.Context, accountId string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsConfigStsAccountId(ctx context.Context, accountId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5783,7 +5783,7 @@ GetAuthAwsConfigTidyIdentityAccesslist Method for GetAuthAwsConfigTidyIdentityAc
  @return ApiGetAuthAwsConfigTidyIdentityAccesslistRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsConfigTidyIdentityAccesslistExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsConfigTidyIdentityAccesslist(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5853,7 +5853,7 @@ GetAuthAwsConfigTidyIdentityWhitelist Method for GetAuthAwsConfigTidyIdentityWhi
  @return ApiGetAuthAwsConfigTidyIdentityWhitelistRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsConfigTidyIdentityWhitelistExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsConfigTidyIdentityWhitelist(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5923,7 +5923,7 @@ GetAuthAwsConfigTidyRoletagBlacklist Method for GetAuthAwsConfigTidyRoletagBlack
  @return ApiGetAuthAwsConfigTidyRoletagBlacklistRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsConfigTidyRoletagBlacklistExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsConfigTidyRoletagBlacklist(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5993,7 +5993,7 @@ GetAuthAwsConfigTidyRoletagDenylist Method for GetAuthAwsConfigTidyRoletagDenyli
  @return ApiGetAuthAwsConfigTidyRoletagDenylistRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsConfigTidyRoletagDenylistExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsConfigTidyRoletagDenylist(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6065,7 +6065,7 @@ GetAuthAwsIdentityAccesslist Method for GetAuthAwsIdentityAccesslist
  @return ApiGetAuthAwsIdentityAccesslistRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsIdentityAccesslistExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsIdentityAccesslist(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6083,7 +6083,7 @@ func (a *AuthApiService) GetAuthAwsIdentityAccesslistExecute(ctx context.Context
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -6137,7 +6137,7 @@ GetAuthAwsIdentityAccesslistInstanceId Method for GetAuthAwsIdentityAccesslistIn
  @return ApiGetAuthAwsIdentityAccesslistInstanceIdRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsIdentityAccesslistInstanceIdExecute(ctx context.Context, instanceId string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsIdentityAccesslistInstanceId(ctx context.Context, instanceId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6210,7 +6210,7 @@ GetAuthAwsIdentityWhitelist Method for GetAuthAwsIdentityWhitelist
  @return ApiGetAuthAwsIdentityWhitelistRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsIdentityWhitelistExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsIdentityWhitelist(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6228,7 +6228,7 @@ func (a *AuthApiService) GetAuthAwsIdentityWhitelistExecute(ctx context.Context,
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -6282,7 +6282,7 @@ GetAuthAwsIdentityWhitelistInstanceId Method for GetAuthAwsIdentityWhitelistInst
  @return ApiGetAuthAwsIdentityWhitelistInstanceIdRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsIdentityWhitelistInstanceIdExecute(ctx context.Context, instanceId string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsIdentityWhitelistInstanceId(ctx context.Context, instanceId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6355,7 +6355,7 @@ GetAuthAwsRole Method for GetAuthAwsRole
  @return ApiGetAuthAwsRoleRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsRoleExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6373,7 +6373,7 @@ func (a *AuthApiService) GetAuthAwsRoleExecute(ctx context.Context, list string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -6427,7 +6427,7 @@ GetAuthAwsRoleRole Method for GetAuthAwsRoleRole
  @return ApiGetAuthAwsRoleRoleRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsRoleRoleExecute(ctx context.Context, role string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsRoleRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6500,7 +6500,7 @@ GetAuthAwsRoles Method for GetAuthAwsRoles
  @return ApiGetAuthAwsRolesRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsRolesExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6518,7 +6518,7 @@ func (a *AuthApiService) GetAuthAwsRolesExecute(ctx context.Context, list string
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -6573,7 +6573,7 @@ GetAuthAwsRoletagBlacklist Method for GetAuthAwsRoletagBlacklist
  @return ApiGetAuthAwsRoletagBlacklistRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsRoletagBlacklistExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsRoletagBlacklist(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6591,7 +6591,7 @@ func (a *AuthApiService) GetAuthAwsRoletagBlacklistExecute(ctx context.Context, 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -6645,7 +6645,7 @@ GetAuthAwsRoletagBlacklistRoleTag Method for GetAuthAwsRoletagBlacklistRoleTag
  @return ApiGetAuthAwsRoletagBlacklistRoleTagRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsRoletagBlacklistRoleTagExecute(ctx context.Context, roleTag string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6718,7 +6718,7 @@ GetAuthAwsRoletagDenylist Method for GetAuthAwsRoletagDenylist
  @return ApiGetAuthAwsRoletagDenylistRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsRoletagDenylistExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsRoletagDenylist(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6736,7 +6736,7 @@ func (a *AuthApiService) GetAuthAwsRoletagDenylistExecute(ctx context.Context, l
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -6790,7 +6790,7 @@ GetAuthAwsRoletagDenylistRoleTag Method for GetAuthAwsRoletagDenylistRoleTag
  @return ApiGetAuthAwsRoletagDenylistRoleTagRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsRoletagDenylistRoleTagExecute(ctx context.Context, roleTag string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6861,7 +6861,7 @@ GetAuthAzureConfig Method for GetAuthAzureConfig
  @return ApiGetAuthAzureConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAzureConfigExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAzureConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6933,7 +6933,7 @@ GetAuthAzureRole Method for GetAuthAzureRole
  @return ApiGetAuthAzureRoleRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAzureRoleExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAzureRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6951,7 +6951,7 @@ func (a *AuthApiService) GetAuthAzureRoleExecute(ctx context.Context, list strin
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -7005,7 +7005,7 @@ GetAuthAzureRoleName Method for GetAuthAzureRoleName
  @return ApiGetAuthAzureRoleNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthAzureRoleNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAzureRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7076,7 +7076,7 @@ GetAuthCentrifyConfig This path allows you to configure the centrify auth provid
  @return ApiGetAuthCentrifyConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthCentrifyConfigExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) GetAuthCentrifyConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7148,7 +7148,7 @@ GetAuthCertCerts Manage trusted certificates used for authentication.
  @return ApiGetAuthCertCertsRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthCertCertsExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthCertCerts(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7166,7 +7166,7 @@ func (a *AuthApiService) GetAuthCertCertsExecute(ctx context.Context, list strin
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -7220,7 +7220,7 @@ GetAuthCertCertsName Manage trusted certificates used for authentication.
  @return ApiGetAuthCertCertsNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthCertCertsNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthCertCertsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7292,7 +7292,7 @@ GetAuthCertCrlsName Manage Certificate Revocation Lists checked during authentic
  @return ApiGetAuthCertCrlsNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthCertCrlsNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthCertCrlsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7363,7 +7363,7 @@ GetAuthCfConfig Method for GetAuthCfConfig
  @return ApiGetAuthCfConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthCfConfigExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) GetAuthCfConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7435,7 +7435,7 @@ GetAuthCfRoles Method for GetAuthCfRoles
  @return ApiGetAuthCfRolesRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthCfRolesExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthCfRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7453,7 +7453,7 @@ func (a *AuthApiService) GetAuthCfRolesExecute(ctx context.Context, list string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -7507,7 +7507,7 @@ GetAuthCfRolesRole Method for GetAuthCfRolesRole
  @return ApiGetAuthCfRolesRoleRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthCfRolesRoleExecute(ctx context.Context, role string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthCfRolesRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7578,7 +7578,7 @@ GetAuthGcpConfig Configure credentials used to query the GCP IAM API to verify a
  @return ApiGetAuthGcpConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthGcpConfigExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) GetAuthGcpConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7650,7 +7650,7 @@ GetAuthGcpRole Lists all the roles that are registered with Vault.
  @return ApiGetAuthGcpRoleRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthGcpRoleExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthGcpRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7668,7 +7668,7 @@ func (a *AuthApiService) GetAuthGcpRoleExecute(ctx context.Context, list string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -7722,7 +7722,7 @@ GetAuthGcpRoleName Create a GCP role with associated policies and required attri
  @return ApiGetAuthGcpRoleNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthGcpRoleNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthGcpRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7795,7 +7795,7 @@ GetAuthGcpRoles Lists all the roles that are registered with Vault.
  @return ApiGetAuthGcpRolesRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthGcpRolesExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthGcpRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7813,7 +7813,7 @@ func (a *AuthApiService) GetAuthGcpRolesExecute(ctx context.Context, list string
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -7866,7 +7866,7 @@ GetAuthGithubConfig Method for GetAuthGithubConfig
  @return ApiGetAuthGithubConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthGithubConfigExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) GetAuthGithubConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7938,7 +7938,7 @@ GetAuthGithubMapTeams Read mappings for teams
  @return ApiGetAuthGithubMapTeamsRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthGithubMapTeamsExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthGithubMapTeams(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7957,7 +7957,7 @@ func (a *AuthApiService) GetAuthGithubMapTeamsExecute(ctx context.Context, list 
 	localVarFormParams := url.Values{}
 
 	if list != nil {
-		localVarQueryParams.Add("list", parameterToString(*list, ""))
+		localVarQueryParams.Add("list", parameterToString(list, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -8012,7 +8012,7 @@ GetAuthGithubMapTeamsKey Read/write/delete a single teams mapping
  @return ApiGetAuthGithubMapTeamsKeyRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthGithubMapTeamsKeyExecute(ctx context.Context, key string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthGithubMapTeamsKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8085,7 +8085,7 @@ GetAuthGithubMapUsers Read mappings for users
  @return ApiGetAuthGithubMapUsersRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthGithubMapUsersExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthGithubMapUsers(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8104,7 +8104,7 @@ func (a *AuthApiService) GetAuthGithubMapUsersExecute(ctx context.Context, list 
 	localVarFormParams := url.Values{}
 
 	if list != nil {
-		localVarQueryParams.Add("list", parameterToString(*list, ""))
+		localVarQueryParams.Add("list", parameterToString(list, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -8159,7 +8159,7 @@ GetAuthGithubMapUsersKey Read/write/delete a single users mapping
  @return ApiGetAuthGithubMapUsersKeyRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthGithubMapUsersKeyExecute(ctx context.Context, key string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthGithubMapUsersKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8230,7 +8230,7 @@ GetAuthJwtConfig Read the current JWT authentication backend configuration.
  @return ApiGetAuthJwtConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthJwtConfigExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) GetAuthJwtConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8300,7 +8300,7 @@ GetAuthJwtOidcCallback Callback endpoint to complete an OIDC login.
  @return ApiGetAuthJwtOidcCallbackRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthJwtOidcCallbackExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) GetAuthJwtOidcCallback(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8374,7 +8374,7 @@ The list will contain the names of the roles.
  @return ApiGetAuthJwtRoleRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthJwtRoleExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthJwtRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8392,7 +8392,7 @@ func (a *AuthApiService) GetAuthJwtRoleExecute(ctx context.Context, list string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -8446,7 +8446,7 @@ GetAuthJwtRoleName Read an existing role.
  @return ApiGetAuthJwtRoleNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthJwtRoleNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthJwtRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8517,7 +8517,7 @@ GetAuthKerberosConfig Method for GetAuthKerberosConfig
  @return ApiGetAuthKerberosConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthKerberosConfigExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) GetAuthKerberosConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8587,7 +8587,7 @@ GetAuthKerberosConfigLdap Method for GetAuthKerberosConfigLdap
  @return ApiGetAuthKerberosConfigLdapRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthKerberosConfigLdapExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) GetAuthKerberosConfigLdap(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8659,7 +8659,7 @@ GetAuthKerberosGroups Method for GetAuthKerberosGroups
  @return ApiGetAuthKerberosGroupsRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthKerberosGroupsExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthKerberosGroups(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8677,7 +8677,7 @@ func (a *AuthApiService) GetAuthKerberosGroupsExecute(ctx context.Context, list 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -8731,7 +8731,7 @@ GetAuthKerberosGroupsName Method for GetAuthKerberosGroupsName
  @return ApiGetAuthKerberosGroupsNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthKerberosGroupsNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthKerberosGroupsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8802,7 +8802,7 @@ GetAuthKerberosLogin Method for GetAuthKerberosLogin
  @return ApiGetAuthKerberosLoginRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthKerberosLoginExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) GetAuthKerberosLogin(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8872,7 +8872,7 @@ GetAuthKubernetesConfig Configures the JWT Public Key and Kubernetes API informa
  @return ApiGetAuthKubernetesConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthKubernetesConfigExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) GetAuthKubernetesConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8944,7 +8944,7 @@ GetAuthKubernetesRole Lists all the roles registered with the backend.
  @return ApiGetAuthKubernetesRoleRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthKubernetesRoleExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthKubernetesRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8962,7 +8962,7 @@ func (a *AuthApiService) GetAuthKubernetesRoleExecute(ctx context.Context, list 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -9016,7 +9016,7 @@ GetAuthKubernetesRoleName Register an role with the backend.
  @return ApiGetAuthKubernetesRoleNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthKubernetesRoleNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthKubernetesRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9087,7 +9087,7 @@ GetAuthLdapConfig Configure the LDAP server to connect to, along with its option
  @return ApiGetAuthLdapConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthLdapConfigExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) GetAuthLdapConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9159,7 +9159,7 @@ GetAuthLdapGroups Manage additional groups for users allowed to authenticate.
  @return ApiGetAuthLdapGroupsRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthLdapGroupsExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthLdapGroups(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9177,7 +9177,7 @@ func (a *AuthApiService) GetAuthLdapGroupsExecute(ctx context.Context, list stri
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -9231,7 +9231,7 @@ GetAuthLdapGroupsName Manage additional groups for users allowed to authenticate
  @return ApiGetAuthLdapGroupsNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthLdapGroupsNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthLdapGroupsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9304,7 +9304,7 @@ GetAuthLdapUsers Manage users allowed to authenticate.
  @return ApiGetAuthLdapUsersRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthLdapUsersExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthLdapUsers(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9322,7 +9322,7 @@ func (a *AuthApiService) GetAuthLdapUsersExecute(ctx context.Context, list strin
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -9376,7 +9376,7 @@ GetAuthLdapUsersName Manage users allowed to authenticate.
  @return ApiGetAuthLdapUsersNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthLdapUsersNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthLdapUsersName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9447,7 +9447,7 @@ GetAuthOciConfig Manages the configuration for the Vault Auth Plugin.
  @return ApiGetAuthOciConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthOciConfigExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) GetAuthOciConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9519,7 +9519,7 @@ GetAuthOciRole Lists all the roles that are registered with Vault.
  @return ApiGetAuthOciRoleRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthOciRoleExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthOciRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9537,7 +9537,7 @@ func (a *AuthApiService) GetAuthOciRoleExecute(ctx context.Context, list string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -9591,7 +9591,7 @@ GetAuthOciRoleRole Create a role and associate policies to it.
  @return ApiGetAuthOciRoleRoleRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthOciRoleRoleExecute(ctx context.Context, role string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthOciRoleRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9662,7 +9662,7 @@ GetAuthOidcConfig Read the current JWT authentication backend configuration.
  @return ApiGetAuthOidcConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthOidcConfigExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) GetAuthOidcConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9732,7 +9732,7 @@ GetAuthOidcOidcCallback Callback endpoint to complete an OIDC login.
  @return ApiGetAuthOidcOidcCallbackRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthOidcOidcCallbackExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) GetAuthOidcOidcCallback(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9806,7 +9806,7 @@ The list will contain the names of the roles.
  @return ApiGetAuthOidcRoleRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthOidcRoleExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthOidcRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9824,7 +9824,7 @@ func (a *AuthApiService) GetAuthOidcRoleExecute(ctx context.Context, list string
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -9878,7 +9878,7 @@ GetAuthOidcRoleName Read an existing role.
  @return ApiGetAuthOidcRoleNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthOidcRoleNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthOidcRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9949,7 +9949,7 @@ GetAuthOktaConfig This endpoint allows you to configure the Okta and its configu
  @return ApiGetAuthOktaConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthOktaConfigExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) GetAuthOktaConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10021,7 +10021,7 @@ GetAuthOktaGroups Manage users allowed to authenticate.
  @return ApiGetAuthOktaGroupsRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthOktaGroupsExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthOktaGroups(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10039,7 +10039,7 @@ func (a *AuthApiService) GetAuthOktaGroupsExecute(ctx context.Context, list stri
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -10093,7 +10093,7 @@ GetAuthOktaGroupsName Manage users allowed to authenticate.
  @return ApiGetAuthOktaGroupsNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthOktaGroupsNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthOktaGroupsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10166,7 +10166,7 @@ GetAuthOktaUsers Manage additional groups for users allowed to authenticate.
  @return ApiGetAuthOktaUsersRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthOktaUsersExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthOktaUsers(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10184,7 +10184,7 @@ func (a *AuthApiService) GetAuthOktaUsersExecute(ctx context.Context, list strin
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -10238,7 +10238,7 @@ GetAuthOktaUsersName Manage additional groups for users allowed to authenticate.
  @return ApiGetAuthOktaUsersNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthOktaUsersNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthOktaUsersName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10310,7 +10310,7 @@ GetAuthOktaVerifyNonce Method for GetAuthOktaVerifyNonce
  @return ApiGetAuthOktaVerifyNonceRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthOktaVerifyNonceExecute(ctx context.Context, nonce string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthOktaVerifyNonce(ctx context.Context, nonce string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10381,7 +10381,7 @@ GetAuthRadiusConfig Configure the RADIUS server to connect to, along with its op
  @return ApiGetAuthRadiusConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthRadiusConfigExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) GetAuthRadiusConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10453,7 +10453,7 @@ GetAuthRadiusUsers Manage users allowed to authenticate.
  @return ApiGetAuthRadiusUsersRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthRadiusUsersExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthRadiusUsers(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10471,7 +10471,7 @@ func (a *AuthApiService) GetAuthRadiusUsersExecute(ctx context.Context, list str
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -10525,7 +10525,7 @@ GetAuthRadiusUsersName Manage users allowed to authenticate.
  @return ApiGetAuthRadiusUsersNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthRadiusUsersNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthRadiusUsersName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10598,7 +10598,7 @@ GetAuthTokenAccessors List token accessors, which can then be be used to iterate
  @return ApiGetAuthTokenAccessorsRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthTokenAccessorsExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthTokenAccessors(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10616,7 +10616,7 @@ func (a *AuthApiService) GetAuthTokenAccessorsExecute(ctx context.Context, list 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -10669,7 +10669,7 @@ GetAuthTokenLookup This endpoint will lookup a token and its properties.
  @return ApiGetAuthTokenLookupRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthTokenLookupExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) GetAuthTokenLookup(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10739,7 +10739,7 @@ GetAuthTokenLookupSelf This endpoint will lookup a token and its properties.
  @return ApiGetAuthTokenLookupSelfRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthTokenLookupSelfExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) GetAuthTokenLookupSelf(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10811,7 +10811,7 @@ GetAuthTokenRoles This endpoint lists configured roles.
  @return ApiGetAuthTokenRolesRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthTokenRolesExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthTokenRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10829,7 +10829,7 @@ func (a *AuthApiService) GetAuthTokenRolesExecute(ctx context.Context, list stri
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -10883,7 +10883,7 @@ GetAuthTokenRolesRoleName Method for GetAuthTokenRolesRoleName
  @return ApiGetAuthTokenRolesRoleNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthTokenRolesRoleNameExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthTokenRolesRoleName(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10956,7 +10956,7 @@ GetAuthUserpassUsers Manage users allowed to authenticate.
  @return ApiGetAuthUserpassUsersRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthUserpassUsersExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthUserpassUsers(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10974,7 +10974,7 @@ func (a *AuthApiService) GetAuthUserpassUsersExecute(ctx context.Context, list s
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -11028,7 +11028,7 @@ GetAuthUserpassUsersUsername Manage users allowed to authenticate.
  @return ApiGetAuthUserpassUsersUsernameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) GetAuthUserpassUsersUsernameExecute(ctx context.Context, username string) (*http.Response, error) {
+func (a *AuthApiService) GetAuthUserpassUsersUsername(ctx context.Context, username string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -11099,7 +11099,7 @@ PostAuthAlicloudLogin Authenticates an RAM entity with Vault.
  @return ApiPostAuthAlicloudLoginRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthAlicloudLoginExecute(ctx context.Context, alicloudLoginRequest AlicloudLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAlicloudLogin(ctx context.Context, alicloudLoginRequest AlicloudLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11172,7 +11172,7 @@ PostAuthAlicloudRoleRole Create a role and associate policies to it.
  @return ApiPostAuthAlicloudRoleRoleRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthAlicloudRoleRoleExecute(ctx context.Context, role string, alicloudRoleRequest AlicloudRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAlicloudRoleRole(ctx context.Context, role string, alicloudRoleRequest AlicloudRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11245,7 +11245,7 @@ PostAuthAppIdLogin Log in with an App ID and User ID.
  @return ApiPostAuthAppIdLoginRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthAppIdLoginExecute(ctx context.Context, appIdLoginRequest AppIdLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAppIdLogin(ctx context.Context, appIdLoginRequest AppIdLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11318,7 +11318,7 @@ PostAuthAppIdLoginAppId Log in with an App ID and User ID.
  @return ApiPostAuthAppIdLoginAppIdRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthAppIdLoginAppIdExecute(ctx context.Context, appId string, appIdLoginRequest AppIdLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAppIdLoginAppId(ctx context.Context, appId string, appIdLoginRequest AppIdLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11392,7 +11392,7 @@ PostAuthAppIdMapAppIdKey Read/write/delete a single app-id mapping
  @return ApiPostAuthAppIdMapAppIdKeyRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthAppIdMapAppIdKeyExecute(ctx context.Context, key string, appIdMapAppIdRequest AppIdMapAppIdRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAppIdMapAppIdKey(ctx context.Context, key string, appIdMapAppIdRequest AppIdMapAppIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11466,7 +11466,7 @@ PostAuthAppIdMapUserIdKey Read/write/delete a single user-id mapping
  @return ApiPostAuthAppIdMapUserIdKeyRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthAppIdMapUserIdKeyExecute(ctx context.Context, key string, appIdMapUserIdRequest AppIdMapUserIdRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAppIdMapUserIdKey(ctx context.Context, key string, appIdMapUserIdRequest AppIdMapUserIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11539,7 +11539,7 @@ PostAuthApproleLogin Method for PostAuthApproleLogin
  @return ApiPostAuthApproleLoginRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleLoginExecute(ctx context.Context, approleLoginRequest ApproleLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleLogin(ctx context.Context, approleLoginRequest ApproleLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11612,7 +11612,7 @@ PostAuthApproleRoleRoleName Register an role with the backend.
  @return ApiPostAuthApproleRoleRoleNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameExecute(ctx context.Context, roleName string, approleRoleRequest ApproleRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleName(ctx context.Context, roleName string, approleRoleRequest ApproleRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11686,7 +11686,7 @@ PostAuthApproleRoleRoleNameBindSecretId Impose secret_id to be presented during 
  @return ApiPostAuthApproleRoleRoleNameBindSecretIdRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameBindSecretIdExecute(ctx context.Context, roleName string, approleRoleBindSecretIdRequest ApproleRoleBindSecretIdRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string, approleRoleBindSecretIdRequest ApproleRoleBindSecretIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11760,7 +11760,7 @@ PostAuthApproleRoleRoleNameBoundCidrList Deprecated: Comma separated list of CID
  @return ApiPostAuthApproleRoleRoleNameBoundCidrListRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameBoundCidrListExecute(ctx context.Context, roleName string, approleRoleBoundCidrListRequest ApproleRoleBoundCidrListRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string, approleRoleBoundCidrListRequest ApproleRoleBoundCidrListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11834,7 +11834,7 @@ PostAuthApproleRoleRoleNameCustomSecretId Assign a SecretID of choice against th
  @return ApiPostAuthApproleRoleRoleNameCustomSecretIdRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameCustomSecretIdExecute(ctx context.Context, roleName string, approleRoleCustomSecretIdRequest ApproleRoleCustomSecretIdRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameCustomSecretId(ctx context.Context, roleName string, approleRoleCustomSecretIdRequest ApproleRoleCustomSecretIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11908,7 +11908,7 @@ PostAuthApproleRoleRoleNamePeriod Updates the value of 'period' on the role
  @return ApiPostAuthApproleRoleRoleNamePeriodRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNamePeriodExecute(ctx context.Context, roleName string, approleRolePeriodRequest ApproleRolePeriodRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string, approleRolePeriodRequest ApproleRolePeriodRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11982,7 +11982,7 @@ PostAuthApproleRoleRoleNamePolicies Policies of the role.
  @return ApiPostAuthApproleRoleRoleNamePoliciesRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNamePoliciesExecute(ctx context.Context, roleName string, approleRolePoliciesRequest ApproleRolePoliciesRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string, approleRolePoliciesRequest ApproleRolePoliciesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12056,7 +12056,7 @@ PostAuthApproleRoleRoleNameRoleId Returns the 'role_id' of the role.
  @return ApiPostAuthApproleRoleRoleNameRoleIdRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameRoleIdExecute(ctx context.Context, roleName string, approleRoleRoleIdRequest ApproleRoleRoleIdRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName string, approleRoleRoleIdRequest ApproleRoleRoleIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12130,7 +12130,7 @@ PostAuthApproleRoleRoleNameSecretId Generate a SecretID against this role.
  @return ApiPostAuthApproleRoleRoleNameSecretIdRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdExecute(ctx context.Context, roleName string, approleRoleSecretIdRequest ApproleRoleSecretIdRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName string, approleRoleSecretIdRequest ApproleRoleSecretIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12204,7 +12204,7 @@ PostAuthApproleRoleRoleNameSecretIdAccessorDestroy Method for PostAuthApproleRol
  @return ApiPostAuthApproleRoleRoleNameSecretIdAccessorDestroyRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdAccessorDestroyExecute(ctx context.Context, roleName string, approleRoleSecretIdAccessorDestroyRequest ApproleRoleSecretIdAccessorDestroyRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.Context, roleName string, approleRoleSecretIdAccessorDestroyRequest ApproleRoleSecretIdAccessorDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12278,7 +12278,7 @@ PostAuthApproleRoleRoleNameSecretIdAccessorLookup Method for PostAuthApproleRole
  @return ApiPostAuthApproleRoleRoleNameSecretIdAccessorLookupRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdAccessorLookupExecute(ctx context.Context, roleName string, approleRoleSecretIdAccessorLookupRequest ApproleRoleSecretIdAccessorLookupRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdAccessorLookup(ctx context.Context, roleName string, approleRoleSecretIdAccessorLookupRequest ApproleRoleSecretIdAccessorLookupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12352,7 +12352,7 @@ PostAuthApproleRoleRoleNameSecretIdBoundCidrs Comma separated list of CIDR block
  @return ApiPostAuthApproleRoleRoleNameSecretIdBoundCidrsRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdBoundCidrsExecute(ctx context.Context, roleName string, approleRoleSecretIdBoundCidrsRequest ApproleRoleSecretIdBoundCidrsRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string, approleRoleSecretIdBoundCidrsRequest ApproleRoleSecretIdBoundCidrsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12426,7 +12426,7 @@ PostAuthApproleRoleRoleNameSecretIdDestroy Invalidate an issued secret_id
  @return ApiPostAuthApproleRoleRoleNameSecretIdDestroyRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdDestroyExecute(ctx context.Context, roleName string, approleRoleSecretIdDestroyRequest ApproleRoleSecretIdDestroyRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context, roleName string, approleRoleSecretIdDestroyRequest ApproleRoleSecretIdDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12500,7 +12500,7 @@ PostAuthApproleRoleRoleNameSecretIdLookup Read the properties of an issued secre
  @return ApiPostAuthApproleRoleRoleNameSecretIdLookupRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdLookupExecute(ctx context.Context, roleName string, approleRoleSecretIdLookupRequest ApproleRoleSecretIdLookupRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdLookup(ctx context.Context, roleName string, approleRoleSecretIdLookupRequest ApproleRoleSecretIdLookupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12574,7 +12574,7 @@ PostAuthApproleRoleRoleNameSecretIdNumUses Use limit of the SecretID generated a
  @return ApiPostAuthApproleRoleRoleNameSecretIdNumUsesRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdNumUsesExecute(ctx context.Context, roleName string, approleRoleSecretIdNumUsesRequest ApproleRoleSecretIdNumUsesRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string, approleRoleSecretIdNumUsesRequest ApproleRoleSecretIdNumUsesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12648,7 +12648,7 @@ PostAuthApproleRoleRoleNameSecretIdTtl Duration in seconds, representing the lif
  @return ApiPostAuthApproleRoleRoleNameSecretIdTtlRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdTtlExecute(ctx context.Context, roleName string, approleRoleSecretIdTtlRequest ApproleRoleSecretIdTtlRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string, approleRoleSecretIdTtlRequest ApproleRoleSecretIdTtlRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12722,7 +12722,7 @@ PostAuthApproleRoleRoleNameTokenBoundCidrs Comma separated string or list of CID
  @return ApiPostAuthApproleRoleRoleNameTokenBoundCidrsRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenBoundCidrsExecute(ctx context.Context, roleName string, approleRoleTokenBoundCidrsRequest ApproleRoleTokenBoundCidrsRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string, approleRoleTokenBoundCidrsRequest ApproleRoleTokenBoundCidrsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12796,7 +12796,7 @@ PostAuthApproleRoleRoleNameTokenMaxTtl Duration in seconds, the maximum lifetime
  @return ApiPostAuthApproleRoleRoleNameTokenMaxTtlRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenMaxTtlExecute(ctx context.Context, roleName string, approleRoleTokenMaxTtlRequest ApproleRoleTokenMaxTtlRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string, approleRoleTokenMaxTtlRequest ApproleRoleTokenMaxTtlRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12870,7 +12870,7 @@ PostAuthApproleRoleRoleNameTokenNumUses Number of times issued tokens can be use
  @return ApiPostAuthApproleRoleRoleNameTokenNumUsesRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenNumUsesExecute(ctx context.Context, roleName string, approleRoleTokenNumUsesRequest ApproleRoleTokenNumUsesRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string, approleRoleTokenNumUsesRequest ApproleRoleTokenNumUsesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12944,7 +12944,7 @@ PostAuthApproleRoleRoleNameTokenTtl Duration in seconds, the lifetime of the tok
  @return ApiPostAuthApproleRoleRoleNameTokenTtlRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenTtlExecute(ctx context.Context, roleName string, approleRoleTokenTtlRequest ApproleRoleTokenTtlRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string, approleRoleTokenTtlRequest ApproleRoleTokenTtlRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13017,7 +13017,7 @@ PostAuthApproleTidySecretId Trigger the clean-up of expired SecretID entries.
  @return ApiPostAuthApproleTidySecretIdRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleTidySecretIdExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleTidySecretId(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13088,7 +13088,7 @@ PostAuthAwsConfigCertificateCertName Method for PostAuthAwsConfigCertificateCert
  @return ApiPostAuthAwsConfigCertificateCertNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsConfigCertificateCertNameExecute(ctx context.Context, certName string, awsConfigCertificateRequest AwsConfigCertificateRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsConfigCertificateCertName(ctx context.Context, certName string, awsConfigCertificateRequest AwsConfigCertificateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13161,7 +13161,7 @@ PostAuthAwsConfigClient Method for PostAuthAwsConfigClient
  @return ApiPostAuthAwsConfigClientRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsConfigClientExecute(ctx context.Context, awsConfigClientRequest AwsConfigClientRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsConfigClient(ctx context.Context, awsConfigClientRequest AwsConfigClientRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13233,7 +13233,7 @@ PostAuthAwsConfigIdentity Method for PostAuthAwsConfigIdentity
  @return ApiPostAuthAwsConfigIdentityRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsConfigIdentityExecute(ctx context.Context, awsConfigIdentityRequest AwsConfigIdentityRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsConfigIdentity(ctx context.Context, awsConfigIdentityRequest AwsConfigIdentityRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13305,7 +13305,7 @@ PostAuthAwsConfigRotateRoot Method for PostAuthAwsConfigRotateRoot
  @return ApiPostAuthAwsConfigRotateRootRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsConfigRotateRootExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsConfigRotateRoot(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13376,7 +13376,7 @@ PostAuthAwsConfigStsAccountId Method for PostAuthAwsConfigStsAccountId
  @return ApiPostAuthAwsConfigStsAccountIdRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsConfigStsAccountIdExecute(ctx context.Context, accountId string, awsConfigStsRequest AwsConfigStsRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsConfigStsAccountId(ctx context.Context, accountId string, awsConfigStsRequest AwsConfigStsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13449,7 +13449,7 @@ PostAuthAwsConfigTidyIdentityAccesslist Method for PostAuthAwsConfigTidyIdentity
  @return ApiPostAuthAwsConfigTidyIdentityAccesslistRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsConfigTidyIdentityAccesslistExecute(ctx context.Context, awsConfigTidyIdentityAccesslistRequest AwsConfigTidyIdentityAccesslistRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsConfigTidyIdentityAccesslist(ctx context.Context, awsConfigTidyIdentityAccesslistRequest AwsConfigTidyIdentityAccesslistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13521,7 +13521,7 @@ PostAuthAwsConfigTidyIdentityWhitelist Method for PostAuthAwsConfigTidyIdentityW
  @return ApiPostAuthAwsConfigTidyIdentityWhitelistRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsConfigTidyIdentityWhitelistExecute(ctx context.Context, awsConfigTidyIdentityWhitelistRequest AwsConfigTidyIdentityWhitelistRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsConfigTidyIdentityWhitelist(ctx context.Context, awsConfigTidyIdentityWhitelistRequest AwsConfigTidyIdentityWhitelistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13593,7 +13593,7 @@ PostAuthAwsConfigTidyRoletagBlacklist Method for PostAuthAwsConfigTidyRoletagBla
  @return ApiPostAuthAwsConfigTidyRoletagBlacklistRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsConfigTidyRoletagBlacklistExecute(ctx context.Context, awsConfigTidyRoletagBlacklistRequest AwsConfigTidyRoletagBlacklistRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsConfigTidyRoletagBlacklist(ctx context.Context, awsConfigTidyRoletagBlacklistRequest AwsConfigTidyRoletagBlacklistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13665,7 +13665,7 @@ PostAuthAwsConfigTidyRoletagDenylist Method for PostAuthAwsConfigTidyRoletagDeny
  @return ApiPostAuthAwsConfigTidyRoletagDenylistRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsConfigTidyRoletagDenylistExecute(ctx context.Context, awsConfigTidyRoletagDenylistRequest AwsConfigTidyRoletagDenylistRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsConfigTidyRoletagDenylist(ctx context.Context, awsConfigTidyRoletagDenylistRequest AwsConfigTidyRoletagDenylistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13737,7 +13737,7 @@ PostAuthAwsLogin Method for PostAuthAwsLogin
  @return ApiPostAuthAwsLoginRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsLoginExecute(ctx context.Context, awsLoginRequest AwsLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsLogin(ctx context.Context, awsLoginRequest AwsLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13810,7 +13810,7 @@ PostAuthAwsRoleRole Method for PostAuthAwsRoleRole
  @return ApiPostAuthAwsRoleRoleRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsRoleRoleExecute(ctx context.Context, role string, awsRoleRequest AwsRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsRoleRole(ctx context.Context, role string, awsRoleRequest AwsRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13884,7 +13884,7 @@ PostAuthAwsRoleRoleTag Method for PostAuthAwsRoleRoleTag
  @return ApiPostAuthAwsRoleRoleTagRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsRoleRoleTagExecute(ctx context.Context, role string, awsRoleTagRequest AwsRoleTagRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsRoleRoleTag(ctx context.Context, role string, awsRoleTagRequest AwsRoleTagRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13958,7 +13958,7 @@ PostAuthAwsRoletagBlacklistRoleTag Method for PostAuthAwsRoletagBlacklistRoleTag
  @return ApiPostAuthAwsRoletagBlacklistRoleTagRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsRoletagBlacklistRoleTagExecute(ctx context.Context, roleTag string) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14030,7 +14030,7 @@ PostAuthAwsRoletagDenylistRoleTag Method for PostAuthAwsRoletagDenylistRoleTag
  @return ApiPostAuthAwsRoletagDenylistRoleTagRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsRoletagDenylistRoleTagExecute(ctx context.Context, roleTag string) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14101,7 +14101,7 @@ PostAuthAwsTidyIdentityAccesslist Method for PostAuthAwsTidyIdentityAccesslist
  @return ApiPostAuthAwsTidyIdentityAccesslistRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsTidyIdentityAccesslistExecute(ctx context.Context, awsTidyIdentityAccesslistRequest AwsTidyIdentityAccesslistRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsTidyIdentityAccesslist(ctx context.Context, awsTidyIdentityAccesslistRequest AwsTidyIdentityAccesslistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14173,7 +14173,7 @@ PostAuthAwsTidyIdentityWhitelist Method for PostAuthAwsTidyIdentityWhitelist
  @return ApiPostAuthAwsTidyIdentityWhitelistRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsTidyIdentityWhitelistExecute(ctx context.Context, awsTidyIdentityWhitelistRequest AwsTidyIdentityWhitelistRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsTidyIdentityWhitelist(ctx context.Context, awsTidyIdentityWhitelistRequest AwsTidyIdentityWhitelistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14245,7 +14245,7 @@ PostAuthAwsTidyRoletagBlacklist Method for PostAuthAwsTidyRoletagBlacklist
  @return ApiPostAuthAwsTidyRoletagBlacklistRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsTidyRoletagBlacklistExecute(ctx context.Context, awsTidyRoletagBlacklistRequest AwsTidyRoletagBlacklistRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsTidyRoletagBlacklist(ctx context.Context, awsTidyRoletagBlacklistRequest AwsTidyRoletagBlacklistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14317,7 +14317,7 @@ PostAuthAwsTidyRoletagDenylist Method for PostAuthAwsTidyRoletagDenylist
  @return ApiPostAuthAwsTidyRoletagDenylistRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsTidyRoletagDenylistExecute(ctx context.Context, awsTidyRoletagDenylistRequest AwsTidyRoletagDenylistRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsTidyRoletagDenylist(ctx context.Context, awsTidyRoletagDenylistRequest AwsTidyRoletagDenylistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14389,7 +14389,7 @@ PostAuthAzureConfig Method for PostAuthAzureConfig
  @return ApiPostAuthAzureConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthAzureConfigExecute(ctx context.Context, azureConfigRequest AzureConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAzureConfig(ctx context.Context, azureConfigRequest AzureConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14461,7 +14461,7 @@ PostAuthAzureLogin Method for PostAuthAzureLogin
  @return ApiPostAuthAzureLoginRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthAzureLoginExecute(ctx context.Context, azureLoginRequest AzureLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAzureLogin(ctx context.Context, azureLoginRequest AzureLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14534,7 +14534,7 @@ PostAuthAzureRoleName Method for PostAuthAzureRoleName
  @return ApiPostAuthAzureRoleNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthAzureRoleNameExecute(ctx context.Context, name string, azureRoleRequest AzureRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAzureRoleName(ctx context.Context, name string, azureRoleRequest AzureRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14607,7 +14607,7 @@ PostAuthCentrifyConfig This path allows you to configure the centrify auth provi
  @return ApiPostAuthCentrifyConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthCentrifyConfigExecute(ctx context.Context, centrifyConfigRequest CentrifyConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthCentrifyConfig(ctx context.Context, centrifyConfigRequest CentrifyConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14679,7 +14679,7 @@ PostAuthCentrifyLogin Log in with a username and password.
  @return ApiPostAuthCentrifyLoginRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthCentrifyLoginExecute(ctx context.Context, centrifyLoginRequest CentrifyLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthCentrifyLogin(ctx context.Context, centrifyLoginRequest CentrifyLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14752,7 +14752,7 @@ PostAuthCertCertsName Manage trusted certificates used for authentication.
  @return ApiPostAuthCertCertsNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthCertCertsNameExecute(ctx context.Context, name string, certCertsRequest CertCertsRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthCertCertsName(ctx context.Context, name string, certCertsRequest CertCertsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14825,7 +14825,7 @@ PostAuthCertConfig Method for PostAuthCertConfig
  @return ApiPostAuthCertConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthCertConfigExecute(ctx context.Context, certConfigRequest CertConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthCertConfig(ctx context.Context, certConfigRequest CertConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14898,7 +14898,7 @@ PostAuthCertCrlsName Manage Certificate Revocation Lists checked during authenti
  @return ApiPostAuthCertCrlsNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthCertCrlsNameExecute(ctx context.Context, name string, certCrlsRequest CertCrlsRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthCertCrlsName(ctx context.Context, name string, certCrlsRequest CertCrlsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14971,7 +14971,7 @@ PostAuthCertLogin Method for PostAuthCertLogin
  @return ApiPostAuthCertLoginRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthCertLoginExecute(ctx context.Context, certLoginRequest CertLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthCertLogin(ctx context.Context, certLoginRequest CertLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15043,7 +15043,7 @@ PostAuthCfConfig Method for PostAuthCfConfig
  @return ApiPostAuthCfConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthCfConfigExecute(ctx context.Context, cfConfigRequest CfConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthCfConfig(ctx context.Context, cfConfigRequest CfConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15115,7 +15115,7 @@ PostAuthCfLogin Method for PostAuthCfLogin
  @return ApiPostAuthCfLoginRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthCfLoginExecute(ctx context.Context, cfLoginRequest CfLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthCfLogin(ctx context.Context, cfLoginRequest CfLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15188,7 +15188,7 @@ PostAuthCfRolesRole Method for PostAuthCfRolesRole
  @return ApiPostAuthCfRolesRoleRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthCfRolesRoleExecute(ctx context.Context, role string, cfRolesRequest CfRolesRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthCfRolesRole(ctx context.Context, role string, cfRolesRequest CfRolesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15261,7 +15261,7 @@ PostAuthGcpConfig Configure credentials used to query the GCP IAM API to verify 
  @return ApiPostAuthGcpConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthGcpConfigExecute(ctx context.Context, gcpConfigRequest GcpConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthGcpConfig(ctx context.Context, gcpConfigRequest GcpConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15333,7 +15333,7 @@ PostAuthGcpLogin Method for PostAuthGcpLogin
  @return ApiPostAuthGcpLoginRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthGcpLoginExecute(ctx context.Context, gcpLoginRequest GcpLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthGcpLogin(ctx context.Context, gcpLoginRequest GcpLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15406,7 +15406,7 @@ PostAuthGcpRoleName Create a GCP role with associated policies and required attr
  @return ApiPostAuthGcpRoleNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthGcpRoleNameExecute(ctx context.Context, name string, gcpRoleRequest GcpRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthGcpRoleName(ctx context.Context, name string, gcpRoleRequest GcpRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15480,7 +15480,7 @@ PostAuthGcpRoleNameLabels Add or remove labels for an existing 'gce' role
  @return ApiPostAuthGcpRoleNameLabelsRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthGcpRoleNameLabelsExecute(ctx context.Context, name string, gcpRoleLabelsRequest GcpRoleLabelsRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthGcpRoleNameLabels(ctx context.Context, name string, gcpRoleLabelsRequest GcpRoleLabelsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15554,7 +15554,7 @@ PostAuthGcpRoleNameServiceAccounts Add or remove service accounts for an existin
  @return ApiPostAuthGcpRoleNameServiceAccountsRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthGcpRoleNameServiceAccountsExecute(ctx context.Context, name string, gcpRoleServiceAccountsRequest GcpRoleServiceAccountsRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthGcpRoleNameServiceAccounts(ctx context.Context, name string, gcpRoleServiceAccountsRequest GcpRoleServiceAccountsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15627,7 +15627,7 @@ PostAuthGithubConfig Method for PostAuthGithubConfig
  @return ApiPostAuthGithubConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthGithubConfigExecute(ctx context.Context, githubConfigRequest GithubConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthGithubConfig(ctx context.Context, githubConfigRequest GithubConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15699,7 +15699,7 @@ PostAuthGithubLogin Method for PostAuthGithubLogin
  @return ApiPostAuthGithubLoginRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthGithubLoginExecute(ctx context.Context, githubLoginRequest GithubLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthGithubLogin(ctx context.Context, githubLoginRequest GithubLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15772,7 +15772,7 @@ PostAuthGithubMapTeamsKey Read/write/delete a single teams mapping
  @return ApiPostAuthGithubMapTeamsKeyRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthGithubMapTeamsKeyExecute(ctx context.Context, key string, githubMapTeamsRequest GithubMapTeamsRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthGithubMapTeamsKey(ctx context.Context, key string, githubMapTeamsRequest GithubMapTeamsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15846,7 +15846,7 @@ PostAuthGithubMapUsersKey Read/write/delete a single users mapping
  @return ApiPostAuthGithubMapUsersKeyRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthGithubMapUsersKeyExecute(ctx context.Context, key string, githubMapUsersRequest GithubMapUsersRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthGithubMapUsersKey(ctx context.Context, key string, githubMapUsersRequest GithubMapUsersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15924,7 +15924,7 @@ validation locally, a set of public keys must be provided.
  @return ApiPostAuthJwtConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthJwtConfigExecute(ctx context.Context, jwtConfigRequest JwtConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthJwtConfig(ctx context.Context, jwtConfigRequest JwtConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15996,7 +15996,7 @@ PostAuthJwtLogin Authenticates to Vault using a JWT (or OIDC) token.
  @return ApiPostAuthJwtLoginRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthJwtLoginExecute(ctx context.Context, jwtLoginRequest JwtLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthJwtLogin(ctx context.Context, jwtLoginRequest JwtLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16068,7 +16068,7 @@ PostAuthJwtOidcAuthUrl Request an authorization URL to start an OIDC login flow.
  @return ApiPostAuthJwtOidcAuthUrlRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthJwtOidcAuthUrlExecute(ctx context.Context, jwtOidcAuthUrlRequest JwtOidcAuthUrlRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthJwtOidcAuthUrl(ctx context.Context, jwtOidcAuthUrlRequest JwtOidcAuthUrlRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16140,7 +16140,7 @@ PostAuthJwtOidcCallback Callback endpoint to handle form_posts.
  @return ApiPostAuthJwtOidcCallbackRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthJwtOidcCallbackExecute(ctx context.Context, jwtOidcCallbackRequest JwtOidcCallbackRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthJwtOidcCallback(ctx context.Context, jwtOidcCallbackRequest JwtOidcCallbackRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16218,7 +16218,7 @@ A role is required to authenticate with this backend. The role binds
  @return ApiPostAuthJwtRoleNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthJwtRoleNameExecute(ctx context.Context, name string, jwtRoleRequest JwtRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthJwtRoleName(ctx context.Context, name string, jwtRoleRequest JwtRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16291,7 +16291,7 @@ PostAuthKerberosConfig Method for PostAuthKerberosConfig
  @return ApiPostAuthKerberosConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthKerberosConfigExecute(ctx context.Context, kerberosConfigRequest KerberosConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthKerberosConfig(ctx context.Context, kerberosConfigRequest KerberosConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16363,7 +16363,7 @@ PostAuthKerberosConfigLdap Method for PostAuthKerberosConfigLdap
  @return ApiPostAuthKerberosConfigLdapRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthKerberosConfigLdapExecute(ctx context.Context, kerberosConfigLdapRequest KerberosConfigLdapRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthKerberosConfigLdap(ctx context.Context, kerberosConfigLdapRequest KerberosConfigLdapRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16436,7 +16436,7 @@ PostAuthKerberosGroupsName Method for PostAuthKerberosGroupsName
  @return ApiPostAuthKerberosGroupsNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthKerberosGroupsNameExecute(ctx context.Context, name string, kerberosGroupsRequest KerberosGroupsRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthKerberosGroupsName(ctx context.Context, name string, kerberosGroupsRequest KerberosGroupsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16509,7 +16509,7 @@ PostAuthKerberosLogin Method for PostAuthKerberosLogin
  @return ApiPostAuthKerberosLoginRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthKerberosLoginExecute(ctx context.Context, kerberosLoginRequest KerberosLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthKerberosLogin(ctx context.Context, kerberosLoginRequest KerberosLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16581,7 +16581,7 @@ PostAuthKubernetesConfig Configures the JWT Public Key and Kubernetes API inform
  @return ApiPostAuthKubernetesConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthKubernetesConfigExecute(ctx context.Context, kubernetesConfigRequest KubernetesConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthKubernetesConfig(ctx context.Context, kubernetesConfigRequest KubernetesConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16653,7 +16653,7 @@ PostAuthKubernetesLogin Authenticates Kubernetes service accounts with Vault.
  @return ApiPostAuthKubernetesLoginRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthKubernetesLoginExecute(ctx context.Context, kubernetesLoginRequest KubernetesLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthKubernetesLogin(ctx context.Context, kubernetesLoginRequest KubernetesLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16726,7 +16726,7 @@ PostAuthKubernetesRoleName Register an role with the backend.
  @return ApiPostAuthKubernetesRoleNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthKubernetesRoleNameExecute(ctx context.Context, name string, kubernetesRoleRequest KubernetesRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthKubernetesRoleName(ctx context.Context, name string, kubernetesRoleRequest KubernetesRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16799,7 +16799,7 @@ PostAuthLdapConfig Configure the LDAP server to connect to, along with its optio
  @return ApiPostAuthLdapConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthLdapConfigExecute(ctx context.Context, ldapConfigRequest LdapConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthLdapConfig(ctx context.Context, ldapConfigRequest LdapConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16872,7 +16872,7 @@ PostAuthLdapGroupsName Manage additional groups for users allowed to authenticat
  @return ApiPostAuthLdapGroupsNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthLdapGroupsNameExecute(ctx context.Context, name string, ldapGroupsRequest LdapGroupsRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthLdapGroupsName(ctx context.Context, name string, ldapGroupsRequest LdapGroupsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16946,7 +16946,7 @@ PostAuthLdapLoginUsername Log in with a username and password.
  @return ApiPostAuthLdapLoginUsernameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthLdapLoginUsernameExecute(ctx context.Context, username string, ldapLoginRequest LdapLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthLdapLoginUsername(ctx context.Context, username string, ldapLoginRequest LdapLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17020,7 +17020,7 @@ PostAuthLdapUsersName Manage users allowed to authenticate.
  @return ApiPostAuthLdapUsersNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthLdapUsersNameExecute(ctx context.Context, name string, ldapUsersRequest LdapUsersRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthLdapUsersName(ctx context.Context, name string, ldapUsersRequest LdapUsersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17093,7 +17093,7 @@ PostAuthOciConfig Manages the configuration for the Vault Auth Plugin.
  @return ApiPostAuthOciConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthOciConfigExecute(ctx context.Context, ociConfigRequest OciConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthOciConfig(ctx context.Context, ociConfigRequest OciConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17166,7 +17166,7 @@ PostAuthOciLoginRole Authenticates to Vault using OCI credentials
  @return ApiPostAuthOciLoginRoleRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthOciLoginRoleExecute(ctx context.Context, role string, ociLoginRequest OciLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthOciLoginRole(ctx context.Context, role string, ociLoginRequest OciLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17240,7 +17240,7 @@ PostAuthOciRoleRole Create a role and associate policies to it.
  @return ApiPostAuthOciRoleRoleRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthOciRoleRoleExecute(ctx context.Context, role string, ociRoleRequest OciRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthOciRoleRole(ctx context.Context, role string, ociRoleRequest OciRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17318,7 +17318,7 @@ validation locally, a set of public keys must be provided.
  @return ApiPostAuthOidcConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthOidcConfigExecute(ctx context.Context, oidcConfigRequest OidcConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthOidcConfig(ctx context.Context, oidcConfigRequest OidcConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17390,7 +17390,7 @@ PostAuthOidcLogin Authenticates to Vault using a JWT (or OIDC) token.
  @return ApiPostAuthOidcLoginRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthOidcLoginExecute(ctx context.Context, oidcLoginRequest OidcLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthOidcLogin(ctx context.Context, oidcLoginRequest OidcLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17462,7 +17462,7 @@ PostAuthOidcOidcAuthUrl Request an authorization URL to start an OIDC login flow
  @return ApiPostAuthOidcOidcAuthUrlRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthOidcOidcAuthUrlExecute(ctx context.Context, oidcOidcAuthUrlRequest OidcOidcAuthUrlRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthOidcOidcAuthUrl(ctx context.Context, oidcOidcAuthUrlRequest OidcOidcAuthUrlRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17534,7 +17534,7 @@ PostAuthOidcOidcCallback Callback endpoint to handle form_posts.
  @return ApiPostAuthOidcOidcCallbackRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthOidcOidcCallbackExecute(ctx context.Context, oidcOidcCallbackRequest OidcOidcCallbackRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthOidcOidcCallback(ctx context.Context, oidcOidcCallbackRequest OidcOidcCallbackRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17612,7 +17612,7 @@ A role is required to authenticate with this backend. The role binds
  @return ApiPostAuthOidcRoleNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthOidcRoleNameExecute(ctx context.Context, name string, oidcRoleRequest OidcRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthOidcRoleName(ctx context.Context, name string, oidcRoleRequest OidcRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17685,7 +17685,7 @@ PostAuthOktaConfig This endpoint allows you to configure the Okta and its config
  @return ApiPostAuthOktaConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthOktaConfigExecute(ctx context.Context, oktaConfigRequest OktaConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthOktaConfig(ctx context.Context, oktaConfigRequest OktaConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17758,7 +17758,7 @@ PostAuthOktaGroupsName Manage users allowed to authenticate.
  @return ApiPostAuthOktaGroupsNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthOktaGroupsNameExecute(ctx context.Context, name string, oktaGroupsRequest OktaGroupsRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthOktaGroupsName(ctx context.Context, name string, oktaGroupsRequest OktaGroupsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17832,7 +17832,7 @@ PostAuthOktaLoginUsername Log in with a username and password.
  @return ApiPostAuthOktaLoginUsernameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthOktaLoginUsernameExecute(ctx context.Context, username string, oktaLoginRequest OktaLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthOktaLoginUsername(ctx context.Context, username string, oktaLoginRequest OktaLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17906,7 +17906,7 @@ PostAuthOktaUsersName Manage additional groups for users allowed to authenticate
  @return ApiPostAuthOktaUsersNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthOktaUsersNameExecute(ctx context.Context, name string, oktaUsersRequest OktaUsersRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthOktaUsersName(ctx context.Context, name string, oktaUsersRequest OktaUsersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17979,7 +17979,7 @@ PostAuthRadiusConfig Configure the RADIUS server to connect to, along with its o
  @return ApiPostAuthRadiusConfigRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthRadiusConfigExecute(ctx context.Context, radiusConfigRequest RadiusConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthRadiusConfig(ctx context.Context, radiusConfigRequest RadiusConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18051,7 +18051,7 @@ PostAuthRadiusLogin Log in with a username and password.
  @return ApiPostAuthRadiusLoginRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthRadiusLoginExecute(ctx context.Context, radiusLoginRequest RadiusLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthRadiusLogin(ctx context.Context, radiusLoginRequest RadiusLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18124,7 +18124,7 @@ PostAuthRadiusLoginUrlusername Log in with a username and password.
  @return ApiPostAuthRadiusLoginUrlusernameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthRadiusLoginUrlusernameExecute(ctx context.Context, urlusername string, radiusLoginRequest RadiusLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthRadiusLoginUrlusername(ctx context.Context, urlusername string, radiusLoginRequest RadiusLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18198,7 +18198,7 @@ PostAuthRadiusUsersName Manage users allowed to authenticate.
  @return ApiPostAuthRadiusUsersNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthRadiusUsersNameExecute(ctx context.Context, name string, radiusUsersRequest RadiusUsersRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthRadiusUsersName(ctx context.Context, name string, radiusUsersRequest RadiusUsersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18271,7 +18271,7 @@ PostAuthTokenCreate The token create path is used to create new tokens.
  @return ApiPostAuthTokenCreateRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenCreateExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenCreate(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18341,7 +18341,7 @@ PostAuthTokenCreateOrphan The token create path is used to create new orphan tok
  @return ApiPostAuthTokenCreateOrphanRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenCreateOrphanExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenCreateOrphan(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18412,7 +18412,7 @@ PostAuthTokenCreateRoleName This token create path is used to create new tokens 
  @return ApiPostAuthTokenCreateRoleNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenCreateRoleNameExecute(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenCreateRoleName(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18483,7 +18483,7 @@ PostAuthTokenLookup This endpoint will lookup a token and its properties.
  @return ApiPostAuthTokenLookupRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenLookupExecute(ctx context.Context, tokenLookupRequest TokenLookupRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenLookup(ctx context.Context, tokenLookupRequest TokenLookupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18555,7 +18555,7 @@ PostAuthTokenLookupAccessor This endpoint will lookup a token associated with th
  @return ApiPostAuthTokenLookupAccessorRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenLookupAccessorExecute(ctx context.Context, tokenLookupAccessorRequest TokenLookupAccessorRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenLookupAccessor(ctx context.Context, tokenLookupAccessorRequest TokenLookupAccessorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18627,7 +18627,7 @@ PostAuthTokenLookupSelf This endpoint will lookup a token and its properties.
  @return ApiPostAuthTokenLookupSelfRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenLookupSelfExecute(ctx context.Context, tokenLookupSelfRequest TokenLookupSelfRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenLookupSelf(ctx context.Context, tokenLookupSelfRequest TokenLookupSelfRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18699,7 +18699,7 @@ PostAuthTokenRenew This endpoint will renew the given token and prevent expirati
  @return ApiPostAuthTokenRenewRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenRenewExecute(ctx context.Context, tokenRenewRequest TokenRenewRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenRenew(ctx context.Context, tokenRenewRequest TokenRenewRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18771,7 +18771,7 @@ PostAuthTokenRenewAccessor This endpoint will renew a token associated with the 
  @return ApiPostAuthTokenRenewAccessorRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenRenewAccessorExecute(ctx context.Context, tokenRenewAccessorRequest TokenRenewAccessorRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenRenewAccessor(ctx context.Context, tokenRenewAccessorRequest TokenRenewAccessorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18843,7 +18843,7 @@ PostAuthTokenRenewSelf This endpoint will renew the token used to call it and pr
  @return ApiPostAuthTokenRenewSelfRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenRenewSelfExecute(ctx context.Context, tokenRenewSelfRequest TokenRenewSelfRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenRenewSelf(ctx context.Context, tokenRenewSelfRequest TokenRenewSelfRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18915,7 +18915,7 @@ PostAuthTokenRevoke This endpoint will delete the given token and all of its chi
  @return ApiPostAuthTokenRevokeRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenRevokeExecute(ctx context.Context, tokenRevokeRequest TokenRevokeRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenRevoke(ctx context.Context, tokenRevokeRequest TokenRevokeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18987,7 +18987,7 @@ PostAuthTokenRevokeAccessor This endpoint will delete the token associated with 
  @return ApiPostAuthTokenRevokeAccessorRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenRevokeAccessorExecute(ctx context.Context, tokenRevokeAccessorRequest TokenRevokeAccessorRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenRevokeAccessor(ctx context.Context, tokenRevokeAccessorRequest TokenRevokeAccessorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -19059,7 +19059,7 @@ PostAuthTokenRevokeOrphan This endpoint will delete the token and orphan its chi
  @return ApiPostAuthTokenRevokeOrphanRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenRevokeOrphanExecute(ctx context.Context, tokenRevokeOrphanRequest TokenRevokeOrphanRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenRevokeOrphan(ctx context.Context, tokenRevokeOrphanRequest TokenRevokeOrphanRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -19131,7 +19131,7 @@ PostAuthTokenRevokeSelf This endpoint will delete the token used to call it and 
  @return ApiPostAuthTokenRevokeSelfRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenRevokeSelfExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenRevokeSelf(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -19202,7 +19202,7 @@ PostAuthTokenRolesRoleName Method for PostAuthTokenRolesRoleName
  @return ApiPostAuthTokenRolesRoleNameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenRolesRoleNameExecute(ctx context.Context, roleName string, tokenRolesRequest TokenRolesRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenRolesRoleName(ctx context.Context, roleName string, tokenRolesRequest TokenRolesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -19275,7 +19275,7 @@ PostAuthTokenTidy This endpoint performs cleanup tasks that can be run if certai
  @return ApiPostAuthTokenTidyRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenTidyExecute(ctx context.Context) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenTidy(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -19346,7 +19346,7 @@ PostAuthUserpassLoginUsername Log in with a username and password.
  @return ApiPostAuthUserpassLoginUsernameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthUserpassLoginUsernameExecute(ctx context.Context, username string, userpassLoginRequest UserpassLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthUserpassLoginUsername(ctx context.Context, username string, userpassLoginRequest UserpassLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -19420,7 +19420,7 @@ PostAuthUserpassUsersUsername Manage users allowed to authenticate.
  @return ApiPostAuthUserpassUsersUsernameRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthUserpassUsersUsernameExecute(ctx context.Context, username string, userpassUsersRequest UserpassUsersRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthUserpassUsersUsername(ctx context.Context, username string, userpassUsersRequest UserpassUsersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -19494,7 +19494,7 @@ PostAuthUserpassUsersUsernamePassword Reset user's password.
  @return ApiPostAuthUserpassUsersUsernamePasswordRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthUserpassUsersUsernamePasswordExecute(ctx context.Context, username string, userpassUsersPasswordRequest UserpassUsersPasswordRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthUserpassUsersUsernamePassword(ctx context.Context, username string, userpassUsersPasswordRequest UserpassUsersPasswordRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -19568,7 +19568,7 @@ PostAuthUserpassUsersUsernamePolicies Update the policies associated with the us
  @return ApiPostAuthUserpassUsersUsernamePoliciesRequest
 */
 // Execute executes the request
-func (a *AuthApiService) PostAuthUserpassUsersUsernamePoliciesExecute(ctx context.Context, username string, userpassUsersPoliciesRequest UserpassUsersPoliciesRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthUserpassUsersUsernamePolicies(ctx context.Context, username string, userpassUsersPoliciesRequest UserpassUsersPoliciesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

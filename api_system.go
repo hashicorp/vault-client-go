@@ -30,7 +30,7 @@ DeleteSysAuditPath Disable the audit device at the given path.
  @return ApiDeleteSysAuditPathRequest
 */
 // Execute executes the request
-func (a *SystemApiService) DeleteSysAuditPathExecute(ctx context.Context, path string) (*http.Response, error) {
+func (a *SystemApiService) DeleteSysAuditPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -102,7 +102,7 @@ DeleteSysAuthPath Disable the auth method at the given auth path
  @return ApiDeleteSysAuthPathRequest
 */
 // Execute executes the request
-func (a *SystemApiService) DeleteSysAuthPathExecute(ctx context.Context, path string) (*http.Response, error) {
+func (a *SystemApiService) DeleteSysAuthPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -174,7 +174,7 @@ DeleteSysConfigAuditingRequestHeadersHeader Disable auditing of the given reques
  @return ApiDeleteSysConfigAuditingRequestHeadersHeaderRequest
 */
 // Execute executes the request
-func (a *SystemApiService) DeleteSysConfigAuditingRequestHeadersHeaderExecute(ctx context.Context, header string) (*http.Response, error) {
+func (a *SystemApiService) DeleteSysConfigAuditingRequestHeadersHeader(ctx context.Context, header string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -245,7 +245,7 @@ DeleteSysConfigCors Remove any CORS settings.
  @return ApiDeleteSysConfigCorsRequest
 */
 // Execute executes the request
-func (a *SystemApiService) DeleteSysConfigCorsExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) DeleteSysConfigCors(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -316,7 +316,7 @@ DeleteSysConfigUiHeadersHeader Remove a UI header.
  @return ApiDeleteSysConfigUiHeadersHeaderRequest
 */
 // Execute executes the request
-func (a *SystemApiService) DeleteSysConfigUiHeadersHeaderExecute(ctx context.Context, header string) (*http.Response, error) {
+func (a *SystemApiService) DeleteSysConfigUiHeadersHeader(ctx context.Context, header string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -387,7 +387,7 @@ DeleteSysGenerateRoot Cancels any in-progress root generation attempt.
  @return ApiDeleteSysGenerateRootRequest
 */
 // Execute executes the request
-func (a *SystemApiService) DeleteSysGenerateRootExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) DeleteSysGenerateRoot(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -457,7 +457,7 @@ DeleteSysGenerateRootAttempt Cancels any in-progress root generation attempt.
  @return ApiDeleteSysGenerateRootAttemptRequest
 */
 // Execute executes the request
-func (a *SystemApiService) DeleteSysGenerateRootAttemptExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) DeleteSysGenerateRootAttempt(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -528,7 +528,7 @@ DeleteSysMountsPath Disable the mount point specified at the given path.
  @return ApiDeleteSysMountsPathRequest
 */
 // Execute executes the request
-func (a *SystemApiService) DeleteSysMountsPathExecute(ctx context.Context, path string) (*http.Response, error) {
+func (a *SystemApiService) DeleteSysMountsPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -600,7 +600,7 @@ DeleteSysPluginsCatalogName Remove the plugin with the given name.
  @return ApiDeleteSysPluginsCatalogNameRequest
 */
 // Execute executes the request
-func (a *SystemApiService) DeleteSysPluginsCatalogNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *SystemApiService) DeleteSysPluginsCatalogName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -673,7 +673,7 @@ DeleteSysPluginsCatalogTypeName Remove the plugin with the given name.
  @return ApiDeleteSysPluginsCatalogTypeNameRequest
 */
 // Execute executes the request
-func (a *SystemApiService) DeleteSysPluginsCatalogTypeNameExecute(ctx context.Context, name string, type_ string) (*http.Response, error) {
+func (a *SystemApiService) DeleteSysPluginsCatalogTypeName(ctx context.Context, name string, type_ string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -746,7 +746,7 @@ DeleteSysPoliciesAclName Delete the ACL policy with the given name.
  @return ApiDeleteSysPoliciesAclNameRequest
 */
 // Execute executes the request
-func (a *SystemApiService) DeleteSysPoliciesAclNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *SystemApiService) DeleteSysPoliciesAclName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -818,7 +818,7 @@ DeleteSysPoliciesPasswordName Delete a password policy.
  @return ApiDeleteSysPoliciesPasswordNameRequest
 */
 // Execute executes the request
-func (a *SystemApiService) DeleteSysPoliciesPasswordNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *SystemApiService) DeleteSysPoliciesPasswordName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -890,7 +890,7 @@ DeleteSysPolicyName Delete the policy with the given name.
  @return ApiDeleteSysPolicyNameRequest
 */
 // Execute executes the request
-func (a *SystemApiService) DeleteSysPolicyNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *SystemApiService) DeleteSysPolicyName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -962,7 +962,7 @@ DeleteSysQuotasRateLimitName Method for DeleteSysQuotasRateLimitName
  @return ApiDeleteSysQuotasRateLimitNameRequest
 */
 // Execute executes the request
-func (a *SystemApiService) DeleteSysQuotasRateLimitNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *SystemApiService) DeleteSysQuotasRateLimitName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1033,7 +1033,7 @@ DeleteSysRaw Delete the key with given path.
  @return ApiDeleteSysRawRequest
 */
 // Execute executes the request
-func (a *SystemApiService) DeleteSysRawExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) DeleteSysRaw(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1104,7 +1104,7 @@ DeleteSysRawPath Delete the key with given path.
  @return ApiDeleteSysRawPathRequest
 */
 // Execute executes the request
-func (a *SystemApiService) DeleteSysRawPathExecute(ctx context.Context, path string) (*http.Response, error) {
+func (a *SystemApiService) DeleteSysRawPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1175,7 +1175,7 @@ DeleteSysRekeyBackup Delete the backup copy of PGP-encrypted unseal keys.
  @return ApiDeleteSysRekeyBackupRequest
 */
 // Execute executes the request
-func (a *SystemApiService) DeleteSysRekeyBackupExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) DeleteSysRekeyBackup(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1247,7 +1247,7 @@ This clears the rekey settings as well as any progress made. This must be called
  @return ApiDeleteSysRekeyInitRequest
 */
 // Execute executes the request
-func (a *SystemApiService) DeleteSysRekeyInitExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) DeleteSysRekeyInit(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1317,7 +1317,7 @@ DeleteSysRekeyRecoveryKeyBackup Allows fetching or deleting the backup of the ro
  @return ApiDeleteSysRekeyRecoveryKeyBackupRequest
 */
 // Execute executes the request
-func (a *SystemApiService) DeleteSysRekeyRecoveryKeyBackupExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) DeleteSysRekeyRecoveryKeyBackup(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1389,7 +1389,7 @@ This clears any progress made and resets the nonce. Unlike a `DELETE` against `s
  @return ApiDeleteSysRekeyVerifyRequest
 */
 // Execute executes the request
-func (a *SystemApiService) DeleteSysRekeyVerifyExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) DeleteSysRekeyVerify(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1459,7 +1459,7 @@ GetSysAudit List the enabled audit devices.
  @return ApiGetSysAuditRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysAuditExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysAudit(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1529,7 +1529,7 @@ GetSysAuth List the currently enabled credential backends.
  @return ApiGetSysAuthRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysAuthExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysAuth(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1600,7 +1600,7 @@ GetSysAuthPath Read the configuration of the auth engine at the given path.
  @return ApiGetSysAuthPathRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysAuthPathExecute(ctx context.Context, path string) (*http.Response, error) {
+func (a *SystemApiService) GetSysAuthPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1674,7 +1674,7 @@ This endpoint requires sudo capability on the final path, but the same functiona
  @return ApiGetSysAuthPathTuneRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysAuthPathTuneExecute(ctx context.Context, path string) (*http.Response, error) {
+func (a *SystemApiService) GetSysAuthPathTune(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1745,7 +1745,7 @@ GetSysConfigAuditingRequestHeaders List the request headers that are configured 
  @return ApiGetSysConfigAuditingRequestHeadersRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysConfigAuditingRequestHeadersExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysConfigAuditingRequestHeaders(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1816,7 +1816,7 @@ GetSysConfigAuditingRequestHeadersHeader List the information for the given requ
  @return ApiGetSysConfigAuditingRequestHeadersHeaderRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysConfigAuditingRequestHeadersHeaderExecute(ctx context.Context, header string) (*http.Response, error) {
+func (a *SystemApiService) GetSysConfigAuditingRequestHeadersHeader(ctx context.Context, header string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1887,7 +1887,7 @@ GetSysConfigCors Return the current CORS settings.
  @return ApiGetSysConfigCorsRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysConfigCorsExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysConfigCors(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1959,7 +1959,7 @@ The sanitized output strips configuration values in the storage, HA storage, and
  @return ApiGetSysConfigStateSanitizedRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysConfigStateSanitizedExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysConfigStateSanitized(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2031,7 +2031,7 @@ GetSysConfigUiHeaders Return a list of configured UI headers.
  @return ApiGetSysConfigUiHeadersRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysConfigUiHeadersExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *SystemApiService) GetSysConfigUiHeaders(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2049,7 +2049,7 @@ func (a *SystemApiService) GetSysConfigUiHeadersExecute(ctx context.Context, lis
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -2103,7 +2103,7 @@ GetSysConfigUiHeadersHeader Return the given UI header's configuration
  @return ApiGetSysConfigUiHeadersHeaderRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysConfigUiHeadersHeaderExecute(ctx context.Context, header string) (*http.Response, error) {
+func (a *SystemApiService) GetSysConfigUiHeadersHeader(ctx context.Context, header string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2174,7 +2174,7 @@ GetSysGenerateRoot Read the configuration and progress of the current root gener
  @return ApiGetSysGenerateRootRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysGenerateRootExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysGenerateRoot(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2244,7 +2244,7 @@ GetSysGenerateRootAttempt Read the configuration and progress of the current roo
  @return ApiGetSysGenerateRootAttemptRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysGenerateRootAttemptExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysGenerateRootAttempt(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2314,7 +2314,7 @@ GetSysHaStatus Check the HA status of a Vault cluster
  @return ApiGetSysHaStatusRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysHaStatusExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysHaStatus(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2384,7 +2384,7 @@ GetSysHealth Returns the health status of Vault.
  @return ApiGetSysHealthRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysHealthExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysHealth(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2458,7 +2458,7 @@ Information about the host instance that this Vault server is running on.
  @return ApiGetSysHostInfoRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysHostInfoExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysHostInfo(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2532,7 +2532,7 @@ This path responds to the following HTTP methods.
  @return ApiGetSysInFlightReqRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysInFlightReqExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysInFlightReq(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2602,7 +2602,7 @@ GetSysInit Returns the initialization status of Vault.
  @return ApiGetSysInitRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysInitExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysInit(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2672,7 +2672,7 @@ GetSysInternalCountersActivity Report the client count metrics, for this namespa
  @return ApiGetSysInternalCountersActivityRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysInternalCountersActivityExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysInternalCountersActivity(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2742,7 +2742,7 @@ GetSysInternalCountersActivityExport Report the client count metrics, for this n
  @return ApiGetSysInternalCountersActivityExportRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysInternalCountersActivityExportExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysInternalCountersActivityExport(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2812,7 +2812,7 @@ GetSysInternalCountersActivityMonthly Report the number of clients for this mont
  @return ApiGetSysInternalCountersActivityMonthlyRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysInternalCountersActivityMonthlyExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysInternalCountersActivityMonthly(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2882,7 +2882,7 @@ GetSysInternalCountersConfig Read the client count tracking configuration.
  @return ApiGetSysInternalCountersConfigRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysInternalCountersConfigExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysInternalCountersConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2952,7 +2952,7 @@ GetSysInternalCountersEntities Backwards compatibility is not guaranteed for thi
  @return ApiGetSysInternalCountersEntitiesRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysInternalCountersEntitiesExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysInternalCountersEntities(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3022,7 +3022,7 @@ GetSysInternalCountersRequests Backwards compatibility is not guaranteed for thi
  @return ApiGetSysInternalCountersRequestsRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysInternalCountersRequestsExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysInternalCountersRequests(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3092,7 +3092,7 @@ GetSysInternalCountersTokens Backwards compatibility is not guaranteed for this 
  @return ApiGetSysInternalCountersTokensRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysInternalCountersTokensExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysInternalCountersTokens(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3162,7 +3162,7 @@ GetSysInternalSpecsOpenapi Generate an OpenAPI 3 document of all mounted paths.
  @return ApiGetSysInternalSpecsOpenapiRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysInternalSpecsOpenapiExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysInternalSpecsOpenapi(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3232,7 +3232,7 @@ GetSysInternalUiFeatureFlags Lists enabled feature flags.
  @return ApiGetSysInternalUiFeatureFlagsRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysInternalUiFeatureFlagsExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysInternalUiFeatureFlags(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3302,7 +3302,7 @@ GetSysInternalUiMounts Lists all enabled and visible auth and secrets mounts.
  @return ApiGetSysInternalUiMountsRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysInternalUiMountsExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysInternalUiMounts(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3373,7 +3373,7 @@ GetSysInternalUiMountsPath Return information about the given mount.
  @return ApiGetSysInternalUiMountsPathRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysInternalUiMountsPathExecute(ctx context.Context, path string) (*http.Response, error) {
+func (a *SystemApiService) GetSysInternalUiMountsPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3444,7 +3444,7 @@ GetSysInternalUiNamespaces Backwards compatibility is not guaranteed for this AP
  @return ApiGetSysInternalUiNamespacesRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysInternalUiNamespacesExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysInternalUiNamespaces(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3514,7 +3514,7 @@ GetSysInternalUiResultantAcl Backwards compatibility is not guaranteed for this 
  @return ApiGetSysInternalUiResultantAclRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysInternalUiResultantAclExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysInternalUiResultantAcl(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3584,7 +3584,7 @@ GetSysKeyStatus Provides information about the backend encryption key.
  @return ApiGetSysKeyStatusRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysKeyStatusExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysKeyStatus(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3654,7 +3654,7 @@ GetSysLeader Returns the high availability status and current leader instance of
  @return ApiGetSysLeaderRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysLeaderExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysLeader(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3724,7 +3724,7 @@ GetSysLeases List leases associated with this Vault cluster
  @return ApiGetSysLeasesRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysLeasesExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysLeases(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3794,7 +3794,7 @@ GetSysLeasesCount Count of leases associated with this Vault cluster
  @return ApiGetSysLeasesCountRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysLeasesCountExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysLeasesCount(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3866,7 +3866,7 @@ GetSysLeasesLookup Returns a list of lease ids.
  @return ApiGetSysLeasesLookupRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysLeasesLookupExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *SystemApiService) GetSysLeasesLookup(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3884,7 +3884,7 @@ func (a *SystemApiService) GetSysLeasesLookupExecute(ctx context.Context, list s
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -3940,7 +3940,7 @@ GetSysLeasesLookupPrefix Returns a list of lease ids.
  @return ApiGetSysLeasesLookupPrefixRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysLeasesLookupPrefixExecute(ctx context.Context, prefix string, list string) (*http.Response, error) {
+func (a *SystemApiService) GetSysLeasesLookupPrefix(ctx context.Context, prefix string, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3959,7 +3959,7 @@ func (a *SystemApiService) GetSysLeasesLookupPrefixExecute(ctx context.Context, 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -4014,7 +4014,7 @@ GetSysMetrics Export the metrics aggregated for telemetry purpose.
  @return ApiGetSysMetricsRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysMetricsExecute(ctx context.Context, format string) (*http.Response, error) {
+func (a *SystemApiService) GetSysMetrics(ctx context.Context, format string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4033,7 +4033,7 @@ func (a *SystemApiService) GetSysMetricsExecute(ctx context.Context, format stri
 	localVarFormParams := url.Values{}
 
 	if format != nil {
-		localVarQueryParams.Add("format", parameterToString(*format, ""))
+		localVarQueryParams.Add("format", parameterToString(format, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -4091,7 +4091,7 @@ GetSysMonitor Method for GetSysMonitor
  @return ApiGetSysMonitorRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysMonitorExecute(ctx context.Context, logFormat string, logLevel string) (*http.Response, error) {
+func (a *SystemApiService) GetSysMonitor(ctx context.Context, logFormat string, logLevel string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4110,10 +4110,10 @@ func (a *SystemApiService) GetSysMonitorExecute(ctx context.Context, logFormat s
 	localVarFormParams := url.Values{}
 
 	if logFormat != nil {
-		localVarQueryParams.Add("log_format", parameterToString(*logFormat, ""))
+		localVarQueryParams.Add("log_format", parameterToString(logFormat, ""))
 	}
 	if logLevel != nil {
-		localVarQueryParams.Add("log_level", parameterToString(*logLevel, ""))
+		localVarQueryParams.Add("log_level", parameterToString(logLevel, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -4167,7 +4167,7 @@ GetSysMounts List the currently mounted backends.
  @return ApiGetSysMountsRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysMountsExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysMounts(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4238,7 +4238,7 @@ GetSysMountsPath Read the configuration of the secret engine at the given path.
  @return ApiGetSysMountsPathRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysMountsPathExecute(ctx context.Context, path string) (*http.Response, error) {
+func (a *SystemApiService) GetSysMountsPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4310,7 +4310,7 @@ GetSysMountsPathTune Tune backend configuration parameters for this mount.
  @return ApiGetSysMountsPathTuneRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysMountsPathTuneExecute(ctx context.Context, path string) (*http.Response, error) {
+func (a *SystemApiService) GetSysMountsPathTune(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4381,7 +4381,7 @@ GetSysPluginsCatalog Lists all the plugins known to Vault
  @return ApiGetSysPluginsCatalogRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysPluginsCatalogExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysPluginsCatalog(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4452,7 +4452,7 @@ GetSysPluginsCatalogName Return the configuration data for the plugin with the g
  @return ApiGetSysPluginsCatalogNameRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysPluginsCatalogNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *SystemApiService) GetSysPluginsCatalogName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4526,7 +4526,7 @@ GetSysPluginsCatalogType List the plugins in the catalog.
  @return ApiGetSysPluginsCatalogTypeRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysPluginsCatalogTypeExecute(ctx context.Context, type_ string, list string) (*http.Response, error) {
+func (a *SystemApiService) GetSysPluginsCatalogType(ctx context.Context, type_ string, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4545,7 +4545,7 @@ func (a *SystemApiService) GetSysPluginsCatalogTypeExecute(ctx context.Context, 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -4600,7 +4600,7 @@ GetSysPluginsCatalogTypeName Return the configuration data for the plugin with t
  @return ApiGetSysPluginsCatalogTypeNameRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysPluginsCatalogTypeNameExecute(ctx context.Context, name string, type_ string) (*http.Response, error) {
+func (a *SystemApiService) GetSysPluginsCatalogTypeName(ctx context.Context, name string, type_ string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4674,7 +4674,7 @@ GetSysPoliciesAcl List the configured access control policies.
  @return ApiGetSysPoliciesAclRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysPoliciesAclExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *SystemApiService) GetSysPoliciesAcl(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4692,7 +4692,7 @@ func (a *SystemApiService) GetSysPoliciesAclExecute(ctx context.Context, list st
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -4746,7 +4746,7 @@ GetSysPoliciesAclName Retrieve information about the named ACL policy.
  @return ApiGetSysPoliciesAclNameRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysPoliciesAclNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *SystemApiService) GetSysPoliciesAclName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4819,7 +4819,7 @@ GetSysPoliciesPassword List the existing password policies.
  @return ApiGetSysPoliciesPasswordRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysPoliciesPasswordExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *SystemApiService) GetSysPoliciesPassword(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4837,7 +4837,7 @@ func (a *SystemApiService) GetSysPoliciesPasswordExecute(ctx context.Context, li
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -4891,7 +4891,7 @@ GetSysPoliciesPasswordName Retrieve an existing password policy.
  @return ApiGetSysPoliciesPasswordNameRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysPoliciesPasswordNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *SystemApiService) GetSysPoliciesPasswordName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4963,7 +4963,7 @@ GetSysPoliciesPasswordNameGenerate Generate a password from an existing password
  @return ApiGetSysPoliciesPasswordNameGenerateRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysPoliciesPasswordNameGenerateExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *SystemApiService) GetSysPoliciesPasswordNameGenerate(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5036,7 +5036,7 @@ GetSysPolicy List the configured access control policies.
  @return ApiGetSysPolicyRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysPolicyExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *SystemApiService) GetSysPolicy(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5055,7 +5055,7 @@ func (a *SystemApiService) GetSysPolicyExecute(ctx context.Context, list string)
 	localVarFormParams := url.Values{}
 
 	if list != nil {
-		localVarQueryParams.Add("list", parameterToString(*list, ""))
+		localVarQueryParams.Add("list", parameterToString(list, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -5110,7 +5110,7 @@ GetSysPolicyName Retrieve the policy body for the named policy.
  @return ApiGetSysPolicyNameRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysPolicyNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *SystemApiService) GetSysPolicyName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5185,7 +5185,7 @@ render pages.
  @return ApiGetSysPprofRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysPprofExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysPprof(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5257,7 +5257,7 @@ Returns a sampling of all past memory allocations.
  @return ApiGetSysPprofAllocsRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysPprofAllocsExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysPprofAllocs(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5329,7 +5329,7 @@ Returns stack traces that led to blocking on synchronization primitives
  @return ApiGetSysPprofBlockRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysPprofBlockExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysPprofBlock(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5401,7 +5401,7 @@ Returns the running program's command line, with arguments separated by NUL byte
  @return ApiGetSysPprofCmdlineRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysPprofCmdlineExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysPprofCmdline(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5473,7 +5473,7 @@ Returns stack traces of all current goroutines.
  @return ApiGetSysPprofGoroutineRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysPprofGoroutineExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysPprofGoroutine(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5545,7 +5545,7 @@ Returns a sampling of memory allocations of live object.
  @return ApiGetSysPprofHeapRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysPprofHeapExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysPprofHeap(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5617,7 +5617,7 @@ Returns stack traces of holders of contended mutexes
  @return ApiGetSysPprofMutexRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysPprofMutexExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysPprofMutex(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5689,7 +5689,7 @@ Returns a pprof-formatted cpu profile payload. Profiling lasts for duration spec
  @return ApiGetSysPprofProfileRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysPprofProfileExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysPprofProfile(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5761,7 +5761,7 @@ Returns the program counters listed in the request.
  @return ApiGetSysPprofSymbolRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysPprofSymbolExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysPprofSymbol(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5833,7 +5833,7 @@ Returns stack traces that led to the creation of new OS threads
  @return ApiGetSysPprofThreadcreateRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysPprofThreadcreateExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysPprofThreadcreate(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5905,7 +5905,7 @@ Returns  the execution trace in binary form. Tracing lasts for duration specifie
  @return ApiGetSysPprofTraceRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysPprofTraceExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysPprofTrace(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5975,7 +5975,7 @@ GetSysQuotasConfig Method for GetSysQuotasConfig
  @return ApiGetSysQuotasConfigRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysQuotasConfigExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysQuotasConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6047,7 +6047,7 @@ GetSysQuotasRateLimit Method for GetSysQuotasRateLimit
  @return ApiGetSysQuotasRateLimitRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysQuotasRateLimitExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *SystemApiService) GetSysQuotasRateLimit(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6065,7 +6065,7 @@ func (a *SystemApiService) GetSysQuotasRateLimitExecute(ctx context.Context, lis
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -6119,7 +6119,7 @@ GetSysQuotasRateLimitName Method for GetSysQuotasRateLimitName
  @return ApiGetSysQuotasRateLimitNameRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysQuotasRateLimitNameExecute(ctx context.Context, name string) (*http.Response, error) {
+func (a *SystemApiService) GetSysQuotasRateLimitName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6192,7 +6192,7 @@ GetSysRaw Read the value of the key at the given path.
  @return ApiGetSysRawRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysRawExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *SystemApiService) GetSysRaw(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6211,7 +6211,7 @@ func (a *SystemApiService) GetSysRawExecute(ctx context.Context, list string) (*
 	localVarFormParams := url.Values{}
 
 	if list != nil {
-		localVarQueryParams.Add("list", parameterToString(*list, ""))
+		localVarQueryParams.Add("list", parameterToString(list, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -6268,7 +6268,7 @@ GetSysRawPath Read the value of the key at the given path.
  @return ApiGetSysRawPathRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysRawPathExecute(ctx context.Context, path string, list string) (*http.Response, error) {
+func (a *SystemApiService) GetSysRawPath(ctx context.Context, path string, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6288,7 +6288,7 @@ func (a *SystemApiService) GetSysRawPathExecute(ctx context.Context, path string
 	localVarFormParams := url.Values{}
 
 	if list != nil {
-		localVarQueryParams.Add("list", parameterToString(*list, ""))
+		localVarQueryParams.Add("list", parameterToString(list, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -6342,7 +6342,7 @@ GetSysRekeyBackup Return the backup copy of PGP-encrypted unseal keys.
  @return ApiGetSysRekeyBackupRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysRekeyBackupExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysRekeyBackup(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6412,7 +6412,7 @@ GetSysRekeyInit Reads the configuration and progress of the current rekey attemp
  @return ApiGetSysRekeyInitRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysRekeyInitExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysRekeyInit(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6482,7 +6482,7 @@ GetSysRekeyRecoveryKeyBackup Allows fetching or deleting the backup of the rotat
  @return ApiGetSysRekeyRecoveryKeyBackupRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysRekeyRecoveryKeyBackupExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysRekeyRecoveryKeyBackup(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6552,7 +6552,7 @@ GetSysRekeyVerify Read the configuration and progress of the current rekey verif
  @return ApiGetSysRekeyVerifyRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysRekeyVerifyExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysRekeyVerify(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6623,7 +6623,7 @@ GetSysRemountStatusMigrationId Check status of a mount migration
  @return ApiGetSysRemountStatusMigrationIdRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysRemountStatusMigrationIdExecute(ctx context.Context, migrationId string) (*http.Response, error) {
+func (a *SystemApiService) GetSysRemountStatusMigrationId(ctx context.Context, migrationId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6694,7 +6694,7 @@ GetSysReplicationStatus Method for GetSysReplicationStatus
  @return ApiGetSysReplicationStatusRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysReplicationStatusExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysReplicationStatus(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6764,7 +6764,7 @@ GetSysRotateConfig Method for GetSysRotateConfig
  @return ApiGetSysRotateConfigRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysRotateConfigExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysRotateConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6834,7 +6834,7 @@ GetSysSealStatus Check the seal status of a Vault.
  @return ApiGetSysSealStatusRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysSealStatusExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysSealStatus(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6906,7 +6906,7 @@ GetSysVersionHistory Returns map of historical version change entries
  @return ApiGetSysVersionHistoryRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysVersionHistoryExecute(ctx context.Context, list string) (*http.Response, error) {
+func (a *SystemApiService) GetSysVersionHistory(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6924,7 +6924,7 @@ func (a *SystemApiService) GetSysVersionHistoryExecute(ctx context.Context, list
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("list", parameterToString(*list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -6977,7 +6977,7 @@ GetSysWrappingLookup Look up wrapping properties for the requester's token.
  @return ApiGetSysWrappingLookupRequest
 */
 // Execute executes the request
-func (a *SystemApiService) GetSysWrappingLookupExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) GetSysWrappingLookup(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7048,7 +7048,7 @@ PostSysAuditHashPath The hash of the given string via the given audit backend
  @return ApiPostSysAuditHashPathRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysAuditHashPathExecute(ctx context.Context, path string, systemAuditHashRequest SystemAuditHashRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysAuditHashPath(ctx context.Context, path string, systemAuditHashRequest SystemAuditHashRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -7122,7 +7122,7 @@ PostSysAuditPath Enable a new audit device at the supplied path.
  @return ApiPostSysAuditPathRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysAuditPathExecute(ctx context.Context, path string, systemAuditRequest SystemAuditRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysAuditPath(ctx context.Context, path string, systemAuditRequest SystemAuditRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -7200,7 +7200,7 @@ For example, enable the "foo" auth method will make it accessible at /auth/foo.
  @return ApiPostSysAuthPathRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysAuthPathExecute(ctx context.Context, path string, systemAuthRequest SystemAuthRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysAuthPath(ctx context.Context, path string, systemAuthRequest SystemAuthRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -7276,7 +7276,7 @@ This endpoint requires sudo capability on the final path, but the same functiona
  @return ApiPostSysAuthPathTuneRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysAuthPathTuneExecute(ctx context.Context, path string, systemAuthTuneRequest SystemAuthTuneRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysAuthPathTune(ctx context.Context, path string, systemAuthTuneRequest SystemAuthTuneRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -7349,7 +7349,7 @@ PostSysCapabilities Fetches the capabilities of the given token on the given pat
  @return ApiPostSysCapabilitiesRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysCapabilitiesExecute(ctx context.Context, systemCapabilitiesRequest SystemCapabilitiesRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysCapabilities(ctx context.Context, systemCapabilitiesRequest SystemCapabilitiesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -7421,7 +7421,7 @@ PostSysCapabilitiesAccessor Fetches the capabilities of the token associated wit
  @return ApiPostSysCapabilitiesAccessorRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysCapabilitiesAccessorExecute(ctx context.Context, systemCapabilitiesAccessorRequest SystemCapabilitiesAccessorRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysCapabilitiesAccessor(ctx context.Context, systemCapabilitiesAccessorRequest SystemCapabilitiesAccessorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -7493,7 +7493,7 @@ PostSysCapabilitiesSelf Fetches the capabilities of the given token on the given
  @return ApiPostSysCapabilitiesSelfRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysCapabilitiesSelfExecute(ctx context.Context, systemCapabilitiesSelfRequest SystemCapabilitiesSelfRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysCapabilitiesSelf(ctx context.Context, systemCapabilitiesSelfRequest SystemCapabilitiesSelfRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -7566,7 +7566,7 @@ PostSysConfigAuditingRequestHeadersHeader Enable auditing of a header.
  @return ApiPostSysConfigAuditingRequestHeadersHeaderRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysConfigAuditingRequestHeadersHeaderExecute(ctx context.Context, header string, systemConfigAuditingRequestHeadersRequest SystemConfigAuditingRequestHeadersRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysConfigAuditingRequestHeadersHeader(ctx context.Context, header string, systemConfigAuditingRequestHeadersRequest SystemConfigAuditingRequestHeadersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -7639,7 +7639,7 @@ PostSysConfigCors Configure the CORS settings.
  @return ApiPostSysConfigCorsRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysConfigCorsExecute(ctx context.Context, systemConfigCorsRequest SystemConfigCorsRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysConfigCors(ctx context.Context, systemConfigCorsRequest SystemConfigCorsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -7712,7 +7712,7 @@ PostSysConfigReloadSubsystem Reload the given subsystem
  @return ApiPostSysConfigReloadSubsystemRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysConfigReloadSubsystemExecute(ctx context.Context, subsystem string) (*http.Response, error) {
+func (a *SystemApiService) PostSysConfigReloadSubsystem(ctx context.Context, subsystem string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -7784,7 +7784,7 @@ PostSysConfigUiHeadersHeader Configure the values to be returned for the UI head
  @return ApiPostSysConfigUiHeadersHeaderRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysConfigUiHeadersHeaderExecute(ctx context.Context, header string, systemConfigUiHeadersRequest SystemConfigUiHeadersRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysConfigUiHeadersHeader(ctx context.Context, header string, systemConfigUiHeadersRequest SystemConfigUiHeadersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -7859,7 +7859,7 @@ Only a single root generation attempt can take place at a time. One (and only on
  @return ApiPostSysGenerateRootRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysGenerateRootExecute(ctx context.Context, systemGenerateRootRequest SystemGenerateRootRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysGenerateRoot(ctx context.Context, systemGenerateRootRequest SystemGenerateRootRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -7933,7 +7933,7 @@ Only a single root generation attempt can take place at a time. One (and only on
  @return ApiPostSysGenerateRootAttemptRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysGenerateRootAttemptExecute(ctx context.Context, systemGenerateRootAttemptRequest SystemGenerateRootAttemptRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysGenerateRootAttempt(ctx context.Context, systemGenerateRootAttemptRequest SystemGenerateRootAttemptRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -8007,7 +8007,7 @@ If the threshold number of unseal key shares is reached, Vault will complete the
  @return ApiPostSysGenerateRootUpdateRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysGenerateRootUpdateExecute(ctx context.Context, systemGenerateRootUpdateRequest SystemGenerateRootUpdateRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysGenerateRootUpdate(ctx context.Context, systemGenerateRootUpdateRequest SystemGenerateRootUpdateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -8081,7 +8081,7 @@ The Vault must not have been previously initialized. The recovery options, as we
  @return ApiPostSysInitRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysInitExecute(ctx context.Context, systemInitRequest SystemInitRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysInit(ctx context.Context, systemInitRequest SystemInitRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -8153,7 +8153,7 @@ PostSysInternalCountersConfig Enable or disable collection of client count, set 
  @return ApiPostSysInternalCountersConfigRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysInternalCountersConfigExecute(ctx context.Context, systemInternalCountersConfigRequest SystemInternalCountersConfigRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysInternalCountersConfig(ctx context.Context, systemInternalCountersConfigRequest SystemInternalCountersConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -8225,7 +8225,7 @@ PostSysLeasesLookup Retrieve lease metadata.
  @return ApiPostSysLeasesLookupRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysLeasesLookupExecute(ctx context.Context, systemLeasesLookupRequest SystemLeasesLookupRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysLeasesLookup(ctx context.Context, systemLeasesLookupRequest SystemLeasesLookupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -8297,7 +8297,7 @@ PostSysLeasesRenew Renews a lease, requesting to extend the lease.
  @return ApiPostSysLeasesRenewRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysLeasesRenewExecute(ctx context.Context, systemLeasesRenewRequest SystemLeasesRenewRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysLeasesRenew(ctx context.Context, systemLeasesRenewRequest SystemLeasesRenewRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -8370,7 +8370,7 @@ PostSysLeasesRenewUrlLeaseId Renews a lease, requesting to extend the lease.
  @return ApiPostSysLeasesRenewUrlLeaseIdRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysLeasesRenewUrlLeaseIdExecute(ctx context.Context, urlLeaseId string, systemLeasesRenewLeaseRequest SystemLeasesRenewLeaseRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysLeasesRenewUrlLeaseId(ctx context.Context, urlLeaseId string, systemLeasesRenewLeaseRequest SystemLeasesRenewLeaseRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -8443,7 +8443,7 @@ PostSysLeasesRevoke Revokes a lease immediately.
  @return ApiPostSysLeasesRevokeRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysLeasesRevokeExecute(ctx context.Context, systemLeasesRevokeRequest SystemLeasesRevokeRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysLeasesRevoke(ctx context.Context, systemLeasesRevokeRequest SystemLeasesRevokeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -8520,7 +8520,7 @@ By ignoring these errors, Vault abdicates responsibility for ensuring that the i
  @return ApiPostSysLeasesRevokeForcePrefixRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysLeasesRevokeForcePrefixExecute(ctx context.Context, prefix string) (*http.Response, error) {
+func (a *SystemApiService) PostSysLeasesRevokeForcePrefix(ctx context.Context, prefix string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -8592,7 +8592,7 @@ PostSysLeasesRevokePrefixPrefix Revokes all secrets (via a lease ID prefix) or t
  @return ApiPostSysLeasesRevokePrefixPrefixRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysLeasesRevokePrefixPrefixExecute(ctx context.Context, prefix string, systemLeasesRevokePrefixRequest SystemLeasesRevokePrefixRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysLeasesRevokePrefixPrefix(ctx context.Context, prefix string, systemLeasesRevokePrefixRequest SystemLeasesRevokePrefixRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -8666,7 +8666,7 @@ PostSysLeasesRevokeUrlLeaseId Revokes a lease immediately.
  @return ApiPostSysLeasesRevokeUrlLeaseIdRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysLeasesRevokeUrlLeaseIdExecute(ctx context.Context, urlLeaseId string, systemLeasesRevokeLeaseRequest SystemLeasesRevokeLeaseRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysLeasesRevokeUrlLeaseId(ctx context.Context, urlLeaseId string, systemLeasesRevokeLeaseRequest SystemLeasesRevokeLeaseRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -8739,7 +8739,7 @@ PostSysLeasesTidy This endpoint performs cleanup tasks that can be run if certai
  @return ApiPostSysLeasesTidyRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysLeasesTidyExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) PostSysLeasesTidy(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -8809,7 +8809,7 @@ PostSysMfaValidate Validates the login for the given MFA methods. Upon successfu
  @return ApiPostSysMfaValidateRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysMfaValidateExecute(ctx context.Context, systemMfaValidateRequest SystemMfaValidateRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysMfaValidate(ctx context.Context, systemMfaValidateRequest SystemMfaValidateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -8882,7 +8882,7 @@ PostSysMountsPath Enable a new secrets engine at the given path.
  @return ApiPostSysMountsPathRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysMountsPathExecute(ctx context.Context, path string, systemMountsRequest SystemMountsRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysMountsPath(ctx context.Context, path string, systemMountsRequest SystemMountsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -8956,7 +8956,7 @@ PostSysMountsPathTune Tune backend configuration parameters for this mount.
  @return ApiPostSysMountsPathTuneRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysMountsPathTuneExecute(ctx context.Context, path string, systemMountsTuneRequest SystemMountsTuneRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysMountsPathTune(ctx context.Context, path string, systemMountsTuneRequest SystemMountsTuneRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -9030,7 +9030,7 @@ PostSysPluginsCatalogName Register a new plugin, or updates an existing one with
  @return ApiPostSysPluginsCatalogNameRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysPluginsCatalogNameExecute(ctx context.Context, name string, systemPluginsCatalogRequest SystemPluginsCatalogRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysPluginsCatalogName(ctx context.Context, name string, systemPluginsCatalogRequest SystemPluginsCatalogRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -9105,7 +9105,7 @@ PostSysPluginsCatalogTypeName Register a new plugin, or updates an existing one 
  @return ApiPostSysPluginsCatalogTypeNameRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysPluginsCatalogTypeNameExecute(ctx context.Context, name string, type_ string, systemPluginsCatalogRequest SystemPluginsCatalogRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysPluginsCatalogTypeName(ctx context.Context, name string, type_ string, systemPluginsCatalogRequest SystemPluginsCatalogRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -9181,7 +9181,7 @@ Either the plugin name (`plugin`) or the desired plugin backend mounts (`mounts`
  @return ApiPostSysPluginsReloadBackendRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysPluginsReloadBackendExecute(ctx context.Context, systemPluginsReloadBackendRequest SystemPluginsReloadBackendRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysPluginsReloadBackend(ctx context.Context, systemPluginsReloadBackendRequest SystemPluginsReloadBackendRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -9254,7 +9254,7 @@ PostSysPoliciesAclName Add a new or update an existing ACL policy.
  @return ApiPostSysPoliciesAclNameRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysPoliciesAclNameExecute(ctx context.Context, name string, systemPoliciesAclRequest SystemPoliciesAclRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysPoliciesAclName(ctx context.Context, name string, systemPoliciesAclRequest SystemPoliciesAclRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -9328,7 +9328,7 @@ PostSysPoliciesPasswordName Add a new or update an existing password policy.
  @return ApiPostSysPoliciesPasswordNameRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysPoliciesPasswordNameExecute(ctx context.Context, name string, systemPoliciesPasswordRequest SystemPoliciesPasswordRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysPoliciesPasswordName(ctx context.Context, name string, systemPoliciesPasswordRequest SystemPoliciesPasswordRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -9402,7 +9402,7 @@ PostSysPolicyName Add a new or update an existing policy.
  @return ApiPostSysPolicyNameRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysPolicyNameExecute(ctx context.Context, name string, systemPolicyRequest SystemPolicyRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysPolicyName(ctx context.Context, name string, systemPolicyRequest SystemPolicyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -9475,7 +9475,7 @@ PostSysQuotasConfig Method for PostSysQuotasConfig
  @return ApiPostSysQuotasConfigRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysQuotasConfigExecute(ctx context.Context, systemQuotasConfigRequest SystemQuotasConfigRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysQuotasConfig(ctx context.Context, systemQuotasConfigRequest SystemQuotasConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -9548,7 +9548,7 @@ PostSysQuotasRateLimitName Method for PostSysQuotasRateLimitName
  @return ApiPostSysQuotasRateLimitNameRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysQuotasRateLimitNameExecute(ctx context.Context, name string, systemQuotasRateLimitRequest SystemQuotasRateLimitRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysQuotasRateLimitName(ctx context.Context, name string, systemQuotasRateLimitRequest SystemQuotasRateLimitRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -9621,7 +9621,7 @@ PostSysRaw Update the value of the key at the given path.
  @return ApiPostSysRawRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysRawExecute(ctx context.Context, systemRawRequest SystemRawRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysRaw(ctx context.Context, systemRawRequest SystemRawRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -9694,7 +9694,7 @@ PostSysRawPath Update the value of the key at the given path.
  @return ApiPostSysRawPathRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysRawPathExecute(ctx context.Context, path string, systemRawRequest SystemRawRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysRawPath(ctx context.Context, path string, systemRawRequest SystemRawRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -9769,7 +9769,7 @@ Only a single rekey attempt can take place at a time, and changing the parameter
  @return ApiPostSysRekeyInitRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysRekeyInitExecute(ctx context.Context, systemRekeyInitRequest SystemRekeyInitRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysRekeyInit(ctx context.Context, systemRekeyInitRequest SystemRekeyInitRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -9841,7 +9841,7 @@ PostSysRekeyUpdate Enter a single unseal key share to progress the rekey of the 
  @return ApiPostSysRekeyUpdateRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysRekeyUpdateExecute(ctx context.Context, systemRekeyUpdateRequest SystemRekeyUpdateRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysRekeyUpdate(ctx context.Context, systemRekeyUpdateRequest SystemRekeyUpdateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -9913,7 +9913,7 @@ PostSysRekeyVerify Enter a single new key share to progress the rekey verificati
  @return ApiPostSysRekeyVerifyRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysRekeyVerifyExecute(ctx context.Context, systemRekeyVerifyRequest SystemRekeyVerifyRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysRekeyVerify(ctx context.Context, systemRekeyVerifyRequest SystemRekeyVerifyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -9985,7 +9985,7 @@ PostSysRemount Initiate a mount migration
  @return ApiPostSysRemountRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysRemountExecute(ctx context.Context, systemRemountRequest SystemRemountRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysRemount(ctx context.Context, systemRemountRequest SystemRemountRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10057,7 +10057,7 @@ PostSysRenew Renews a lease, requesting to extend the lease.
  @return ApiPostSysRenewRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysRenewExecute(ctx context.Context, systemRenewRequest SystemRenewRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysRenew(ctx context.Context, systemRenewRequest SystemRenewRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10130,7 +10130,7 @@ PostSysRenewUrlLeaseId Renews a lease, requesting to extend the lease.
  @return ApiPostSysRenewUrlLeaseIdRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysRenewUrlLeaseIdExecute(ctx context.Context, urlLeaseId string, systemRenewLeaseRequest SystemRenewLeaseRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysRenewUrlLeaseId(ctx context.Context, urlLeaseId string, systemRenewLeaseRequest SystemRenewLeaseRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10203,7 +10203,7 @@ PostSysRevoke Revokes a lease immediately.
  @return ApiPostSysRevokeRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysRevokeExecute(ctx context.Context, systemRevokeRequest SystemRevokeRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysRevoke(ctx context.Context, systemRevokeRequest SystemRevokeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10280,7 +10280,7 @@ By ignoring these errors, Vault abdicates responsibility for ensuring that the i
  @return ApiPostSysRevokeForcePrefixRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysRevokeForcePrefixExecute(ctx context.Context, prefix string) (*http.Response, error) {
+func (a *SystemApiService) PostSysRevokeForcePrefix(ctx context.Context, prefix string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10352,7 +10352,7 @@ PostSysRevokePrefixPrefix Revokes all secrets (via a lease ID prefix) or tokens 
  @return ApiPostSysRevokePrefixPrefixRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysRevokePrefixPrefixExecute(ctx context.Context, prefix string, systemRevokePrefixRequest SystemRevokePrefixRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysRevokePrefixPrefix(ctx context.Context, prefix string, systemRevokePrefixRequest SystemRevokePrefixRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10426,7 +10426,7 @@ PostSysRevokeUrlLeaseId Revokes a lease immediately.
  @return ApiPostSysRevokeUrlLeaseIdRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysRevokeUrlLeaseIdExecute(ctx context.Context, urlLeaseId string, systemRevokeLeaseRequest SystemRevokeLeaseRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysRevokeUrlLeaseId(ctx context.Context, urlLeaseId string, systemRevokeLeaseRequest SystemRevokeLeaseRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10499,7 +10499,7 @@ PostSysRotate Rotates the backend encryption key used to persist data.
  @return ApiPostSysRotateRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysRotateExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) PostSysRotate(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10569,7 +10569,7 @@ PostSysRotateConfig Method for PostSysRotateConfig
  @return ApiPostSysRotateConfigRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysRotateConfigExecute(ctx context.Context, systemRotateConfigRequest SystemRotateConfigRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysRotateConfig(ctx context.Context, systemRotateConfigRequest SystemRotateConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10641,7 +10641,7 @@ PostSysSeal Seal the Vault.
  @return ApiPostSysSealRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysSealExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) PostSysSeal(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10713,7 +10713,7 @@ This endpoint forces the node to give up active status. If the node does not hav
  @return ApiPostSysStepDownRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysStepDownExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) PostSysStepDown(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10783,7 +10783,7 @@ PostSysToolsHash Generate a hash sum for input data
  @return ApiPostSysToolsHashRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysToolsHashExecute(ctx context.Context, systemToolsHashRequest SystemToolsHashRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysToolsHash(ctx context.Context, systemToolsHashRequest SystemToolsHashRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10856,7 +10856,7 @@ PostSysToolsHashUrlalgorithm Generate a hash sum for input data
  @return ApiPostSysToolsHashUrlalgorithmRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysToolsHashUrlalgorithmExecute(ctx context.Context, urlalgorithm string, systemToolsHashRequest SystemToolsHashRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysToolsHashUrlalgorithm(ctx context.Context, urlalgorithm string, systemToolsHashRequest SystemToolsHashRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10929,7 +10929,7 @@ PostSysToolsRandom Generate random bytes
  @return ApiPostSysToolsRandomRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysToolsRandomExecute(ctx context.Context, systemToolsRandomRequest SystemToolsRandomRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysToolsRandom(ctx context.Context, systemToolsRandomRequest SystemToolsRandomRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11002,7 +11002,7 @@ PostSysToolsRandomSource Generate random bytes
  @return ApiPostSysToolsRandomSourceRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysToolsRandomSourceExecute(ctx context.Context, source string, systemToolsRandomRequest SystemToolsRandomRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysToolsRandomSource(ctx context.Context, source string, systemToolsRandomRequest SystemToolsRandomRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11077,7 +11077,7 @@ PostSysToolsRandomSourceUrlbytes Generate random bytes
  @return ApiPostSysToolsRandomSourceUrlbytesRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysToolsRandomSourceUrlbytesExecute(ctx context.Context, source string, urlbytes string, systemToolsRandomRequest SystemToolsRandomRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysToolsRandomSourceUrlbytes(ctx context.Context, source string, urlbytes string, systemToolsRandomRequest SystemToolsRandomRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11152,7 +11152,7 @@ PostSysToolsRandomUrlbytes Generate random bytes
  @return ApiPostSysToolsRandomUrlbytesRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysToolsRandomUrlbytesExecute(ctx context.Context, urlbytes string, systemToolsRandomRequest SystemToolsRandomRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysToolsRandomUrlbytes(ctx context.Context, urlbytes string, systemToolsRandomRequest SystemToolsRandomRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11225,7 +11225,7 @@ PostSysUnseal Unseal the Vault.
  @return ApiPostSysUnsealRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysUnsealExecute(ctx context.Context, systemUnsealRequest SystemUnsealRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysUnseal(ctx context.Context, systemUnsealRequest SystemUnsealRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11297,7 +11297,7 @@ PostSysWrappingLookup Look up wrapping properties for the given token.
  @return ApiPostSysWrappingLookupRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysWrappingLookupExecute(ctx context.Context, systemWrappingLookupRequest SystemWrappingLookupRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysWrappingLookup(ctx context.Context, systemWrappingLookupRequest SystemWrappingLookupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11369,7 +11369,7 @@ PostSysWrappingRewrap Rotates a response-wrapped token.
  @return ApiPostSysWrappingRewrapRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysWrappingRewrapExecute(ctx context.Context, systemWrappingRewrapRequest SystemWrappingRewrapRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysWrappingRewrap(ctx context.Context, systemWrappingRewrapRequest SystemWrappingRewrapRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11441,7 +11441,7 @@ PostSysWrappingUnwrap Unwraps a response-wrapped token.
  @return ApiPostSysWrappingUnwrapRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysWrappingUnwrapExecute(ctx context.Context, systemWrappingUnwrapRequest SystemWrappingUnwrapRequest) (*http.Response, error) {
+func (a *SystemApiService) PostSysWrappingUnwrap(ctx context.Context, systemWrappingUnwrapRequest SystemWrappingUnwrapRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11513,7 +11513,7 @@ PostSysWrappingWrap Response-wraps an arbitrary JSON object.
  @return ApiPostSysWrappingWrapRequest
 */
 // Execute executes the request
-func (a *SystemApiService) PostSysWrappingWrapExecute(ctx context.Context) (*http.Response, error) {
+func (a *SystemApiService) PostSysWrappingWrap(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

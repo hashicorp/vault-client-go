@@ -165,14 +165,7 @@ func (a *{{{classname}}}Service) {{nickname}}Execute(ctx context.Context{{#pathP
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 {{#headerParams}}
-	{{#required}}
 	localVarHeaderParams["{{baseName}}"] = parameterToString({{paramName}}, "{{collectionFormat}}")
-	{{/required}}
-	{{^required}}
-	if {{paramName}} != nil {
-		localVarHeaderParams["{{baseName}}"] = parameterToString({{paramName}}, "{{collectionFormat}}")
-	}
-	{{/required}}
 {{/headerParams}}
 {{#formParams}}
 {{#isFile}}

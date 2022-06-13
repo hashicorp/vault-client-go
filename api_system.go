@@ -4032,9 +4032,7 @@ func (a *SystemApiService) GetSysMetrics(ctx context.Context, format string) (*h
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if format != nil {
-		localVarQueryParams.Add("format", parameterToString(format, ""))
-	}
+	localVarQueryParams.Add("format", parameterToString(format, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -4109,12 +4107,8 @@ func (a *SystemApiService) GetSysMonitor(ctx context.Context, logFormat string, 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if logFormat != nil {
-		localVarQueryParams.Add("log_format", parameterToString(logFormat, ""))
-	}
-	if logLevel != nil {
-		localVarQueryParams.Add("log_level", parameterToString(logLevel, ""))
-	}
+	localVarQueryParams.Add("log_format", parameterToString(logFormat, ""))
+	localVarQueryParams.Add("log_level", parameterToString(logLevel, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -5054,9 +5048,7 @@ func (a *SystemApiService) GetSysPolicy(ctx context.Context, list string) (*http
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if list != nil {
-		localVarQueryParams.Add("list", parameterToString(list, ""))
-	}
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -6210,9 +6202,7 @@ func (a *SystemApiService) GetSysRaw(ctx context.Context, list string) (*http.Re
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if list != nil {
-		localVarQueryParams.Add("list", parameterToString(list, ""))
-	}
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -6287,9 +6277,7 @@ func (a *SystemApiService) GetSysRawPath(ctx context.Context, path string, list 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if list != nil {
-		localVarQueryParams.Add("list", parameterToString(list, ""))
-	}
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

@@ -3923,9 +3923,7 @@ func (a *AuthApiService) GetAuthAppIdMapAppId(ctx context.Context, list string) 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if list != nil {
-		localVarQueryParams.Add("list", parameterToString(list, ""))
-	}
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -4070,9 +4068,7 @@ func (a *AuthApiService) GetAuthAppIdMapUserId(ctx context.Context, list string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if list != nil {
-		localVarQueryParams.Add("list", parameterToString(list, ""))
-	}
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -7956,9 +7952,7 @@ func (a *AuthApiService) GetAuthGithubMapTeams(ctx context.Context, list string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if list != nil {
-		localVarQueryParams.Add("list", parameterToString(list, ""))
-	}
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -8103,9 +8097,7 @@ func (a *AuthApiService) GetAuthGithubMapUsers(ctx context.Context, list string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if list != nil {
-		localVarQueryParams.Add("list", parameterToString(list, ""))
-	}
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

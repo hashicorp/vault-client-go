@@ -4911,9 +4911,7 @@ func (a *SecretsApiService) GetCubbyholePath(ctx context.Context, path string, l
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if list != nil {
-		localVarQueryParams.Add("list", parameterToString(list, ""))
-	}
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -6354,9 +6352,7 @@ func (a *SecretsApiService) GetKvPath(ctx context.Context, path string, list str
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if list != nil {
-		localVarQueryParams.Add("list", parameterToString(list, ""))
-	}
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -9854,9 +9850,7 @@ func (a *SecretsApiService) GetSecretMetadataPath(ctx context.Context, path stri
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if list != nil {
-		localVarQueryParams.Add("list", parameterToString(list, ""))
-	}
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

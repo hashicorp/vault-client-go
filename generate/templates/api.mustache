@@ -106,7 +106,6 @@ func (a *{{{classname}}}Service) {{nickname}}(ctx context.Context{{#pathParams}}
 	{{/allParams}}
 
 	{{#queryParams}}
-	{{#required}}
 	{{#isCollectionFormatMulti}}
 	{
 		t := *{{paramName}}
@@ -123,25 +122,6 @@ func (a *{{{classname}}}Service) {{nickname}}(ctx context.Context{{#pathParams}}
 	{{^isCollectionFormatMulti}}
 	localVarQueryParams.Add("{{baseName}}", parameterToString({{paramName}}, "{{collectionFormat}}"))
 	{{/isCollectionFormatMulti}}
-	{{/required}}
-	{{^required}}
-	if {{paramName}} != nil {
-	{{#isCollectionFormatMulti}}
-		t := *{{paramName}}
-		if reflect.TypeOf(t).Kind() == reflect.Slice {
-			s := reflect.ValueOf(t)
-			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("{{baseName}}", parameterToString(s.Index(i), "{{collectionFormat}}"))
-			}
-		} else {
-			localVarQueryParams.Add("{{baseName}}", parameterToString(t, "{{collectionFormat}}"))
-		}
-	{{/isCollectionFormatMulti}}
-	{{^isCollectionFormatMulti}}
-		localVarQueryParams.Add("{{baseName}}", parameterToString({{paramName}}, "{{collectionFormat}}"))
-	{{/isCollectionFormatMulti}}
-	}
-	{{/required}}
 	{{/queryParams}}
 	// to determine the Content-Type header
 {{=<% %>=}}

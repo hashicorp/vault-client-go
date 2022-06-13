@@ -22,14 +22,8 @@ import (
 // AuthApiService AuthApi service
 type AuthApiService service
 
-/*
-DeleteAuthAlicloudRoleRole Create a role and associate policies to it.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param role The name of the role as it should appear in Vault.
- @return ApiDeleteAuthAlicloudRoleRoleRequest
-*/
-// Execute executes the request
+// DeleteAuthAlicloudRoleRole Create a role and associate policies to it.
+// role: The name of the role as it should appear in Vault.
 func (a *AuthApiService) DeleteAuthAlicloudRoleRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -94,14 +88,8 @@ func (a *AuthApiService) DeleteAuthAlicloudRoleRole(ctx context.Context, role st
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthAppIdMapAppIdKey Read/write/delete a single app-id mapping
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Key for the app-id mapping
- @return ApiDeleteAuthAppIdMapAppIdKeyRequest
-*/
-// Execute executes the request
+// DeleteAuthAppIdMapAppIdKey Read/write/delete a single app-id mapping
+// key: Key for the app-id mapping
 func (a *AuthApiService) DeleteAuthAppIdMapAppIdKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -166,14 +154,8 @@ func (a *AuthApiService) DeleteAuthAppIdMapAppIdKey(ctx context.Context, key str
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthAppIdMapUserIdKey Read/write/delete a single user-id mapping
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Key for the user-id mapping
- @return ApiDeleteAuthAppIdMapUserIdKeyRequest
-*/
-// Execute executes the request
+// DeleteAuthAppIdMapUserIdKey Read/write/delete a single user-id mapping
+// key: Key for the user-id mapping
 func (a *AuthApiService) DeleteAuthAppIdMapUserIdKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -238,14 +220,8 @@ func (a *AuthApiService) DeleteAuthAppIdMapUserIdKey(ctx context.Context, key st
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthApproleRoleRoleName Register an role with the backend.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiDeleteAuthApproleRoleRoleNameRequest
-*/
-// Execute executes the request
+// DeleteAuthApproleRoleRoleName Register an role with the backend.
+// roleName: Name of the role.
 func (a *AuthApiService) DeleteAuthApproleRoleRoleName(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -310,14 +286,8 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleName(ctx context.Context, role
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthApproleRoleRoleNameBindSecretId Impose secret_id to be presented during login using this role.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiDeleteAuthApproleRoleRoleNameBindSecretIdRequest
-*/
-// Execute executes the request
+// DeleteAuthApproleRoleRoleNameBindSecretId Impose secret_id to be presented during login using this role.
+// roleName: Name of the role.
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -382,14 +352,8 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameBindSecretId(ctx context.C
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthApproleRoleRoleNameBoundCidrList Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiDeleteAuthApproleRoleRoleNameBoundCidrListRequest
-*/
-// Execute executes the request
+// DeleteAuthApproleRoleRoleNameBoundCidrList Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+// roleName: Name of the role.
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -454,14 +418,8 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameBoundCidrList(ctx context.
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthApproleRoleRoleNamePeriod Updates the value of 'period' on the role
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiDeleteAuthApproleRoleRoleNamePeriodRequest
-*/
-// Execute executes the request
+// DeleteAuthApproleRoleRoleNamePeriod Updates the value of 'period' on the role
+// roleName: Name of the role.
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -526,14 +484,8 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNamePeriod(ctx context.Context
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthApproleRoleRoleNamePolicies Policies of the role.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiDeleteAuthApproleRoleRoleNamePoliciesRequest
-*/
-// Execute executes the request
+// DeleteAuthApproleRoleRoleNamePolicies Policies of the role.
+// roleName: Name of the role.
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -598,14 +550,8 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNamePolicies(ctx context.Conte
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy Method for DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiDeleteAuthApproleRoleRoleNameSecretIdAccessorDestroyRequest
-*/
-// Execute executes the request
+// DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy
+// roleName: Name of the role.
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -670,14 +616,8 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(ct
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiDeleteAuthApproleRoleRoleNameSecretIdBoundCidrsRequest
-*/
-// Execute executes the request
+// DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+// roleName: Name of the role.
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -742,14 +682,8 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx con
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthApproleRoleRoleNameSecretIdDestroy Invalidate an issued secret_id
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiDeleteAuthApproleRoleRoleNameSecretIdDestroyRequest
-*/
-// Execute executes the request
+// DeleteAuthApproleRoleRoleNameSecretIdDestroy Invalidate an issued secret_id
+// roleName: Name of the role.
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -814,14 +748,8 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdDestroy(ctx contex
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthApproleRoleRoleNameSecretIdNumUses Use limit of the SecretID generated against the role.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiDeleteAuthApproleRoleRoleNameSecretIdNumUsesRequest
-*/
-// Execute executes the request
+// DeleteAuthApproleRoleRoleNameSecretIdNumUses Use limit of the SecretID generated against the role.
+// roleName: Name of the role.
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -886,14 +814,8 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdNumUses(ctx contex
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthApproleRoleRoleNameSecretIdTtl Duration in seconds, representing the lifetime of the SecretIDs that are generated against the role using 'role/<role_name>/secret-id' or 'role/<role_name>/custom-secret-id' endpoints.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiDeleteAuthApproleRoleRoleNameSecretIdTtlRequest
-*/
-// Execute executes the request
+// DeleteAuthApproleRoleRoleNameSecretIdTtl Duration in seconds, representing the lifetime of the SecretIDs that are generated against the role using 'role/<role_name>/secret-id' or 'role/<role_name>/custom-secret-id' endpoints.
+// roleName: Name of the role.
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -958,14 +880,8 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdTtl(ctx context.Co
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthApproleRoleRoleNameTokenBoundCidrs Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiDeleteAuthApproleRoleRoleNameTokenBoundCidrsRequest
-*/
-// Execute executes the request
+// DeleteAuthApproleRoleRoleNameTokenBoundCidrs Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
+// roleName: Name of the role.
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1030,14 +946,8 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenBoundCidrs(ctx contex
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthApproleRoleRoleNameTokenMaxTtl Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiDeleteAuthApproleRoleRoleNameTokenMaxTtlRequest
-*/
-// Execute executes the request
+// DeleteAuthApproleRoleRoleNameTokenMaxTtl Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
+// roleName: Name of the role.
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1102,14 +1012,8 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Co
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthApproleRoleRoleNameTokenNumUses Number of times issued tokens can be used
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiDeleteAuthApproleRoleRoleNameTokenNumUsesRequest
-*/
-// Execute executes the request
+// DeleteAuthApproleRoleRoleNameTokenNumUses Number of times issued tokens can be used
+// roleName: Name of the role.
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1174,14 +1078,8 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenNumUses(ctx context.C
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthApproleRoleRoleNameTokenTtl Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiDeleteAuthApproleRoleRoleNameTokenTtlRequest
-*/
-// Execute executes the request
+// DeleteAuthApproleRoleRoleNameTokenTtl Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
+// roleName: Name of the role.
 func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1246,14 +1144,8 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenTtl(ctx context.Conte
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthAwsConfigCertificateCertName Method for DeleteAuthAwsConfigCertificateCertName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param certName Name of the certificate.
- @return ApiDeleteAuthAwsConfigCertificateCertNameRequest
-*/
-// Execute executes the request
+// DeleteAuthAwsConfigCertificateCertName
+// certName: Name of the certificate.
 func (a *AuthApiService) DeleteAuthAwsConfigCertificateCertName(ctx context.Context, certName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1318,13 +1210,7 @@ func (a *AuthApiService) DeleteAuthAwsConfigCertificateCertName(ctx context.Cont
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthAwsConfigClient Method for DeleteAuthAwsConfigClient
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteAuthAwsConfigClientRequest
-*/
-// Execute executes the request
+// DeleteAuthAwsConfigClient
 func (a *AuthApiService) DeleteAuthAwsConfigClient(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1388,14 +1274,8 @@ func (a *AuthApiService) DeleteAuthAwsConfigClient(ctx context.Context) (*http.R
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthAwsConfigStsAccountId Method for DeleteAuthAwsConfigStsAccountId
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param accountId AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
- @return ApiDeleteAuthAwsConfigStsAccountIdRequest
-*/
-// Execute executes the request
+// DeleteAuthAwsConfigStsAccountId
+// accountId: AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
 func (a *AuthApiService) DeleteAuthAwsConfigStsAccountId(ctx context.Context, accountId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1460,13 +1340,7 @@ func (a *AuthApiService) DeleteAuthAwsConfigStsAccountId(ctx context.Context, ac
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthAwsConfigTidyIdentityAccesslist Method for DeleteAuthAwsConfigTidyIdentityAccesslist
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteAuthAwsConfigTidyIdentityAccesslistRequest
-*/
-// Execute executes the request
+// DeleteAuthAwsConfigTidyIdentityAccesslist
 func (a *AuthApiService) DeleteAuthAwsConfigTidyIdentityAccesslist(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1530,13 +1404,7 @@ func (a *AuthApiService) DeleteAuthAwsConfigTidyIdentityAccesslist(ctx context.C
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthAwsConfigTidyIdentityWhitelist Method for DeleteAuthAwsConfigTidyIdentityWhitelist
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteAuthAwsConfigTidyIdentityWhitelistRequest
-*/
-// Execute executes the request
+// DeleteAuthAwsConfigTidyIdentityWhitelist
 func (a *AuthApiService) DeleteAuthAwsConfigTidyIdentityWhitelist(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1600,13 +1468,7 @@ func (a *AuthApiService) DeleteAuthAwsConfigTidyIdentityWhitelist(ctx context.Co
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthAwsConfigTidyRoletagBlacklist Method for DeleteAuthAwsConfigTidyRoletagBlacklist
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteAuthAwsConfigTidyRoletagBlacklistRequest
-*/
-// Execute executes the request
+// DeleteAuthAwsConfigTidyRoletagBlacklist
 func (a *AuthApiService) DeleteAuthAwsConfigTidyRoletagBlacklist(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1670,13 +1532,7 @@ func (a *AuthApiService) DeleteAuthAwsConfigTidyRoletagBlacklist(ctx context.Con
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthAwsConfigTidyRoletagDenylist Method for DeleteAuthAwsConfigTidyRoletagDenylist
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteAuthAwsConfigTidyRoletagDenylistRequest
-*/
-// Execute executes the request
+// DeleteAuthAwsConfigTidyRoletagDenylist
 func (a *AuthApiService) DeleteAuthAwsConfigTidyRoletagDenylist(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1740,14 +1596,8 @@ func (a *AuthApiService) DeleteAuthAwsConfigTidyRoletagDenylist(ctx context.Cont
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthAwsIdentityAccesslistInstanceId Method for DeleteAuthAwsIdentityAccesslistInstanceId
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param instanceId EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
- @return ApiDeleteAuthAwsIdentityAccesslistInstanceIdRequest
-*/
-// Execute executes the request
+// DeleteAuthAwsIdentityAccesslistInstanceId
+// instanceId: EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 func (a *AuthApiService) DeleteAuthAwsIdentityAccesslistInstanceId(ctx context.Context, instanceId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1812,14 +1662,8 @@ func (a *AuthApiService) DeleteAuthAwsIdentityAccesslistInstanceId(ctx context.C
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthAwsIdentityWhitelistInstanceId Method for DeleteAuthAwsIdentityWhitelistInstanceId
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param instanceId EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
- @return ApiDeleteAuthAwsIdentityWhitelistInstanceIdRequest
-*/
-// Execute executes the request
+// DeleteAuthAwsIdentityWhitelistInstanceId
+// instanceId: EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 func (a *AuthApiService) DeleteAuthAwsIdentityWhitelistInstanceId(ctx context.Context, instanceId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1884,14 +1728,8 @@ func (a *AuthApiService) DeleteAuthAwsIdentityWhitelistInstanceId(ctx context.Co
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthAwsRoleRole Method for DeleteAuthAwsRoleRole
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param role Name of the role.
- @return ApiDeleteAuthAwsRoleRoleRequest
-*/
-// Execute executes the request
+// DeleteAuthAwsRoleRole
+// role: Name of the role.
 func (a *AuthApiService) DeleteAuthAwsRoleRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1956,14 +1794,8 @@ func (a *AuthApiService) DeleteAuthAwsRoleRole(ctx context.Context, role string)
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthAwsRoletagBlacklistRoleTag Method for DeleteAuthAwsRoletagBlacklistRoleTag
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleTag Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
- @return ApiDeleteAuthAwsRoletagBlacklistRoleTagRequest
-*/
-// Execute executes the request
+// DeleteAuthAwsRoletagBlacklistRoleTag
+// roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 func (a *AuthApiService) DeleteAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -2028,14 +1860,8 @@ func (a *AuthApiService) DeleteAuthAwsRoletagBlacklistRoleTag(ctx context.Contex
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthAwsRoletagDenylistRoleTag Method for DeleteAuthAwsRoletagDenylistRoleTag
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleTag Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
- @return ApiDeleteAuthAwsRoletagDenylistRoleTagRequest
-*/
-// Execute executes the request
+// DeleteAuthAwsRoletagDenylistRoleTag
+// roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 func (a *AuthApiService) DeleteAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -2100,13 +1926,7 @@ func (a *AuthApiService) DeleteAuthAwsRoletagDenylistRoleTag(ctx context.Context
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthAzureConfig Method for DeleteAuthAzureConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteAuthAzureConfigRequest
-*/
-// Execute executes the request
+// DeleteAuthAzureConfig
 func (a *AuthApiService) DeleteAuthAzureConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -2170,14 +1990,8 @@ func (a *AuthApiService) DeleteAuthAzureConfig(ctx context.Context) (*http.Respo
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthAzureRoleName Method for DeleteAuthAzureRoleName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiDeleteAuthAzureRoleNameRequest
-*/
-// Execute executes the request
+// DeleteAuthAzureRoleName
+// name: Name of the role.
 func (a *AuthApiService) DeleteAuthAzureRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -2242,14 +2056,8 @@ func (a *AuthApiService) DeleteAuthAzureRoleName(ctx context.Context, name strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthCertCertsName Manage trusted certificates used for authentication.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the certificate
- @return ApiDeleteAuthCertCertsNameRequest
-*/
-// Execute executes the request
+// DeleteAuthCertCertsName Manage trusted certificates used for authentication.
+// name: The name of the certificate
 func (a *AuthApiService) DeleteAuthCertCertsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -2314,14 +2122,8 @@ func (a *AuthApiService) DeleteAuthCertCertsName(ctx context.Context, name strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthCertCrlsName Manage Certificate Revocation Lists checked during authentication.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the certificate
- @return ApiDeleteAuthCertCrlsNameRequest
-*/
-// Execute executes the request
+// DeleteAuthCertCrlsName Manage Certificate Revocation Lists checked during authentication.
+// name: The name of the certificate
 func (a *AuthApiService) DeleteAuthCertCrlsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -2386,13 +2188,7 @@ func (a *AuthApiService) DeleteAuthCertCrlsName(ctx context.Context, name string
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthCfConfig Method for DeleteAuthCfConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteAuthCfConfigRequest
-*/
-// Execute executes the request
+// DeleteAuthCfConfig
 func (a *AuthApiService) DeleteAuthCfConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -2456,14 +2252,8 @@ func (a *AuthApiService) DeleteAuthCfConfig(ctx context.Context) (*http.Response
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthCfRolesRole Method for DeleteAuthCfRolesRole
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param role The name of the role.
- @return ApiDeleteAuthCfRolesRoleRequest
-*/
-// Execute executes the request
+// DeleteAuthCfRolesRole
+// role: The name of the role.
 func (a *AuthApiService) DeleteAuthCfRolesRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -2528,14 +2318,8 @@ func (a *AuthApiService) DeleteAuthCfRolesRole(ctx context.Context, role string)
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthGcpRoleName Create a GCP role with associated policies and required attributes.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiDeleteAuthGcpRoleNameRequest
-*/
-// Execute executes the request
+// DeleteAuthGcpRoleName Create a GCP role with associated policies and required attributes.
+// name: Name of the role.
 func (a *AuthApiService) DeleteAuthGcpRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -2600,14 +2384,8 @@ func (a *AuthApiService) DeleteAuthGcpRoleName(ctx context.Context, name string)
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthGithubMapTeamsKey Read/write/delete a single teams mapping
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Key for the teams mapping
- @return ApiDeleteAuthGithubMapTeamsKeyRequest
-*/
-// Execute executes the request
+// DeleteAuthGithubMapTeamsKey Read/write/delete a single teams mapping
+// key: Key for the teams mapping
 func (a *AuthApiService) DeleteAuthGithubMapTeamsKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -2672,14 +2450,8 @@ func (a *AuthApiService) DeleteAuthGithubMapTeamsKey(ctx context.Context, key st
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthGithubMapUsersKey Read/write/delete a single users mapping
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Key for the users mapping
- @return ApiDeleteAuthGithubMapUsersKeyRequest
-*/
-// Execute executes the request
+// DeleteAuthGithubMapUsersKey Read/write/delete a single users mapping
+// key: Key for the users mapping
 func (a *AuthApiService) DeleteAuthGithubMapUsersKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -2744,14 +2516,8 @@ func (a *AuthApiService) DeleteAuthGithubMapUsersKey(ctx context.Context, key st
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthJwtRoleName Delete an existing role.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiDeleteAuthJwtRoleNameRequest
-*/
-// Execute executes the request
+// DeleteAuthJwtRoleName Delete an existing role.
+// name: Name of the role.
 func (a *AuthApiService) DeleteAuthJwtRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -2816,14 +2582,8 @@ func (a *AuthApiService) DeleteAuthJwtRoleName(ctx context.Context, name string)
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthKerberosGroupsName Method for DeleteAuthKerberosGroupsName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the LDAP group.
- @return ApiDeleteAuthKerberosGroupsNameRequest
-*/
-// Execute executes the request
+// DeleteAuthKerberosGroupsName
+// name: Name of the LDAP group.
 func (a *AuthApiService) DeleteAuthKerberosGroupsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -2888,14 +2648,8 @@ func (a *AuthApiService) DeleteAuthKerberosGroupsName(ctx context.Context, name 
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthKubernetesRoleName Register an role with the backend.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiDeleteAuthKubernetesRoleNameRequest
-*/
-// Execute executes the request
+// DeleteAuthKubernetesRoleName Register an role with the backend.
+// name: Name of the role.
 func (a *AuthApiService) DeleteAuthKubernetesRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -2960,14 +2714,8 @@ func (a *AuthApiService) DeleteAuthKubernetesRoleName(ctx context.Context, name 
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthLdapGroupsName Manage additional groups for users allowed to authenticate.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the LDAP group.
- @return ApiDeleteAuthLdapGroupsNameRequest
-*/
-// Execute executes the request
+// DeleteAuthLdapGroupsName Manage additional groups for users allowed to authenticate.
+// name: Name of the LDAP group.
 func (a *AuthApiService) DeleteAuthLdapGroupsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -3032,14 +2780,8 @@ func (a *AuthApiService) DeleteAuthLdapGroupsName(ctx context.Context, name stri
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthLdapUsersName Manage users allowed to authenticate.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the LDAP user.
- @return ApiDeleteAuthLdapUsersNameRequest
-*/
-// Execute executes the request
+// DeleteAuthLdapUsersName Manage users allowed to authenticate.
+// name: Name of the LDAP user.
 func (a *AuthApiService) DeleteAuthLdapUsersName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -3104,13 +2846,7 @@ func (a *AuthApiService) DeleteAuthLdapUsersName(ctx context.Context, name strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthOciConfig Manages the configuration for the Vault Auth Plugin.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteAuthOciConfigRequest
-*/
-// Execute executes the request
+// DeleteAuthOciConfig Manages the configuration for the Vault Auth Plugin.
 func (a *AuthApiService) DeleteAuthOciConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -3174,14 +2910,8 @@ func (a *AuthApiService) DeleteAuthOciConfig(ctx context.Context) (*http.Respons
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthOciRoleRole Create a role and associate policies to it.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param role Name of the role.
- @return ApiDeleteAuthOciRoleRoleRequest
-*/
-// Execute executes the request
+// DeleteAuthOciRoleRole Create a role and associate policies to it.
+// role: Name of the role.
 func (a *AuthApiService) DeleteAuthOciRoleRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -3246,14 +2976,8 @@ func (a *AuthApiService) DeleteAuthOciRoleRole(ctx context.Context, role string)
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthOidcRoleName Delete an existing role.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiDeleteAuthOidcRoleNameRequest
-*/
-// Execute executes the request
+// DeleteAuthOidcRoleName Delete an existing role.
+// name: Name of the role.
 func (a *AuthApiService) DeleteAuthOidcRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -3318,14 +3042,8 @@ func (a *AuthApiService) DeleteAuthOidcRoleName(ctx context.Context, name string
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthOktaGroupsName Manage users allowed to authenticate.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the Okta group.
- @return ApiDeleteAuthOktaGroupsNameRequest
-*/
-// Execute executes the request
+// DeleteAuthOktaGroupsName Manage users allowed to authenticate.
+// name: Name of the Okta group.
 func (a *AuthApiService) DeleteAuthOktaGroupsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -3390,14 +3108,8 @@ func (a *AuthApiService) DeleteAuthOktaGroupsName(ctx context.Context, name stri
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthOktaUsersName Manage additional groups for users allowed to authenticate.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the user.
- @return ApiDeleteAuthOktaUsersNameRequest
-*/
-// Execute executes the request
+// DeleteAuthOktaUsersName Manage additional groups for users allowed to authenticate.
+// name: Name of the user.
 func (a *AuthApiService) DeleteAuthOktaUsersName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -3462,14 +3174,8 @@ func (a *AuthApiService) DeleteAuthOktaUsersName(ctx context.Context, name strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthRadiusUsersName Manage users allowed to authenticate.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the RADIUS user.
- @return ApiDeleteAuthRadiusUsersNameRequest
-*/
-// Execute executes the request
+// DeleteAuthRadiusUsersName Manage users allowed to authenticate.
+// name: Name of the RADIUS user.
 func (a *AuthApiService) DeleteAuthRadiusUsersName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -3534,14 +3240,8 @@ func (a *AuthApiService) DeleteAuthRadiusUsersName(ctx context.Context, name str
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthTokenRolesRoleName Method for DeleteAuthTokenRolesRoleName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role
- @return ApiDeleteAuthTokenRolesRoleNameRequest
-*/
-// Execute executes the request
+// DeleteAuthTokenRolesRoleName
+// roleName: Name of the role
 func (a *AuthApiService) DeleteAuthTokenRolesRoleName(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -3606,14 +3306,8 @@ func (a *AuthApiService) DeleteAuthTokenRolesRoleName(ctx context.Context, roleN
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAuthUserpassUsersUsername Manage users allowed to authenticate.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param username Username for this user.
- @return ApiDeleteAuthUserpassUsersUsernameRequest
-*/
-// Execute executes the request
+// DeleteAuthUserpassUsersUsername Manage users allowed to authenticate.
+// username: Username for this user.
 func (a *AuthApiService) DeleteAuthUserpassUsersUsername(ctx context.Context, username string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -3678,15 +3372,8 @@ func (a *AuthApiService) DeleteAuthUserpassUsersUsername(ctx context.Context, us
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthAlicloudRole Lists all the roles that are registered with Vault.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthAlicloudRoleRequest
-*/
-// Execute executes the request
+// GetAuthAlicloudRole Lists all the roles that are registered with Vault.
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthAlicloudRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3751,14 +3438,8 @@ func (a *AuthApiService) GetAuthAlicloudRole(ctx context.Context, list string) (
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthAlicloudRoleRole Create a role and associate policies to it.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param role The name of the role as it should appear in Vault.
- @return ApiGetAuthAlicloudRoleRoleRequest
-*/
-// Execute executes the request
+// GetAuthAlicloudRoleRole Create a role and associate policies to it.
+// role: The name of the role as it should appear in Vault.
 func (a *AuthApiService) GetAuthAlicloudRoleRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3823,15 +3504,8 @@ func (a *AuthApiService) GetAuthAlicloudRoleRole(ctx context.Context, role strin
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthAlicloudRoles Lists all the roles that are registered with Vault.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthAlicloudRolesRequest
-*/
-// Execute executes the request
+// GetAuthAlicloudRoles Lists all the roles that are registered with Vault.
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthAlicloudRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3896,15 +3570,8 @@ func (a *AuthApiService) GetAuthAlicloudRoles(ctx context.Context, list string) 
 	return localVarHTTPResponse, nil
 }
 
-// Return a list if &#x60;true&#x60;
-
-/*
-GetAuthAppIdMapAppId Read mappings for app-id
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthAppIdMapAppIdRequest
-*/
-// Execute executes the request
+// GetAuthAppIdMapAppId Read mappings for app-id
+// list: Return a list if &#x60;true&#x60;
 func (a *AuthApiService) GetAuthAppIdMapAppId(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3969,14 +3636,8 @@ func (a *AuthApiService) GetAuthAppIdMapAppId(ctx context.Context, list string) 
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthAppIdMapAppIdKey Read/write/delete a single app-id mapping
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Key for the app-id mapping
- @return ApiGetAuthAppIdMapAppIdKeyRequest
-*/
-// Execute executes the request
+// GetAuthAppIdMapAppIdKey Read/write/delete a single app-id mapping
+// key: Key for the app-id mapping
 func (a *AuthApiService) GetAuthAppIdMapAppIdKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4041,15 +3702,8 @@ func (a *AuthApiService) GetAuthAppIdMapAppIdKey(ctx context.Context, key string
 	return localVarHTTPResponse, nil
 }
 
-// Return a list if &#x60;true&#x60;
-
-/*
-GetAuthAppIdMapUserId Read mappings for user-id
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthAppIdMapUserIdRequest
-*/
-// Execute executes the request
+// GetAuthAppIdMapUserId Read mappings for user-id
+// list: Return a list if &#x60;true&#x60;
 func (a *AuthApiService) GetAuthAppIdMapUserId(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4114,14 +3768,8 @@ func (a *AuthApiService) GetAuthAppIdMapUserId(ctx context.Context, list string)
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthAppIdMapUserIdKey Read/write/delete a single user-id mapping
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Key for the user-id mapping
- @return ApiGetAuthAppIdMapUserIdKeyRequest
-*/
-// Execute executes the request
+// GetAuthAppIdMapUserIdKey Read/write/delete a single user-id mapping
+// key: Key for the user-id mapping
 func (a *AuthApiService) GetAuthAppIdMapUserIdKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4186,15 +3834,8 @@ func (a *AuthApiService) GetAuthAppIdMapUserIdKey(ctx context.Context, key strin
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthApproleRole Lists all the roles registered with the backend.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthApproleRoleRequest
-*/
-// Execute executes the request
+// GetAuthApproleRole Lists all the roles registered with the backend.
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthApproleRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4259,14 +3900,8 @@ func (a *AuthApiService) GetAuthApproleRole(ctx context.Context, list string) (*
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthApproleRoleRoleName Register an role with the backend.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiGetAuthApproleRoleRoleNameRequest
-*/
-// Execute executes the request
+// GetAuthApproleRoleRoleName Register an role with the backend.
+// roleName: Name of the role.
 func (a *AuthApiService) GetAuthApproleRoleRoleName(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4331,14 +3966,8 @@ func (a *AuthApiService) GetAuthApproleRoleRoleName(ctx context.Context, roleNam
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthApproleRoleRoleNameBindSecretId Impose secret_id to be presented during login using this role.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiGetAuthApproleRoleRoleNameBindSecretIdRequest
-*/
-// Execute executes the request
+// GetAuthApproleRoleRoleNameBindSecretId Impose secret_id to be presented during login using this role.
+// roleName: Name of the role.
 func (a *AuthApiService) GetAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4403,14 +4032,8 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameBindSecretId(ctx context.Cont
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthApproleRoleRoleNameBoundCidrList Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiGetAuthApproleRoleRoleNameBoundCidrListRequest
-*/
-// Execute executes the request
+// GetAuthApproleRoleRoleNameBoundCidrList Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+// roleName: Name of the role.
 func (a *AuthApiService) GetAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4475,14 +4098,8 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameBoundCidrList(ctx context.Con
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthApproleRoleRoleNameLocalSecretIds Enables cluster local secret IDs
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiGetAuthApproleRoleRoleNameLocalSecretIdsRequest
-*/
-// Execute executes the request
+// GetAuthApproleRoleRoleNameLocalSecretIds Enables cluster local secret IDs
+// roleName: Name of the role.
 func (a *AuthApiService) GetAuthApproleRoleRoleNameLocalSecretIds(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4547,14 +4164,8 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameLocalSecretIds(ctx context.Co
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthApproleRoleRoleNamePeriod Updates the value of 'period' on the role
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiGetAuthApproleRoleRoleNamePeriodRequest
-*/
-// Execute executes the request
+// GetAuthApproleRoleRoleNamePeriod Updates the value of 'period' on the role
+// roleName: Name of the role.
 func (a *AuthApiService) GetAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4619,14 +4230,8 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNamePeriod(ctx context.Context, r
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthApproleRoleRoleNamePolicies Policies of the role.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiGetAuthApproleRoleRoleNamePoliciesRequest
-*/
-// Execute executes the request
+// GetAuthApproleRoleRoleNamePolicies Policies of the role.
+// roleName: Name of the role.
 func (a *AuthApiService) GetAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4691,14 +4296,8 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNamePolicies(ctx context.Context,
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthApproleRoleRoleNameRoleId Returns the 'role_id' of the role.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiGetAuthApproleRoleRoleNameRoleIdRequest
-*/
-// Execute executes the request
+// GetAuthApproleRoleRoleNameRoleId Returns the 'role_id' of the role.
+// roleName: Name of the role.
 func (a *AuthApiService) GetAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4763,16 +4362,9 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameRoleId(ctx context.Context, r
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthApproleRoleRoleNameSecretId Generate a SecretID against this role.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiGetAuthApproleRoleRoleNameSecretIdRequest
-*/
-// Execute executes the request
+// GetAuthApproleRoleRoleNameSecretId Generate a SecretID against this role.
+// roleName: Name of the role.
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName string, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4838,14 +4430,8 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretId(ctx context.Context,
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthApproleRoleRoleNameSecretIdBoundCidrs Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiGetAuthApproleRoleRoleNameSecretIdBoundCidrsRequest
-*/
-// Execute executes the request
+// GetAuthApproleRoleRoleNameSecretIdBoundCidrs Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+// roleName: Name of the role.
 func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4910,14 +4496,8 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx contex
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthApproleRoleRoleNameSecretIdNumUses Use limit of the SecretID generated against the role.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiGetAuthApproleRoleRoleNameSecretIdNumUsesRequest
-*/
-// Execute executes the request
+// GetAuthApproleRoleRoleNameSecretIdNumUses Use limit of the SecretID generated against the role.
+// roleName: Name of the role.
 func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4982,14 +4562,8 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdNumUses(ctx context.C
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthApproleRoleRoleNameSecretIdTtl Duration in seconds, representing the lifetime of the SecretIDs that are generated against the role using 'role/<role_name>/secret-id' or 'role/<role_name>/custom-secret-id' endpoints.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiGetAuthApproleRoleRoleNameSecretIdTtlRequest
-*/
-// Execute executes the request
+// GetAuthApproleRoleRoleNameSecretIdTtl Duration in seconds, representing the lifetime of the SecretIDs that are generated against the role using 'role/<role_name>/secret-id' or 'role/<role_name>/custom-secret-id' endpoints.
+// roleName: Name of the role.
 func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5054,14 +4628,8 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdTtl(ctx context.Conte
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthApproleRoleRoleNameTokenBoundCidrs Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiGetAuthApproleRoleRoleNameTokenBoundCidrsRequest
-*/
-// Execute executes the request
+// GetAuthApproleRoleRoleNameTokenBoundCidrs Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
+// roleName: Name of the role.
 func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5126,14 +4694,8 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.C
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthApproleRoleRoleNameTokenMaxTtl Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiGetAuthApproleRoleRoleNameTokenMaxTtlRequest
-*/
-// Execute executes the request
+// GetAuthApproleRoleRoleNameTokenMaxTtl Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
+// roleName: Name of the role.
 func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5198,14 +4760,8 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Conte
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthApproleRoleRoleNameTokenNumUses Number of times issued tokens can be used
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiGetAuthApproleRoleRoleNameTokenNumUsesRequest
-*/
-// Execute executes the request
+// GetAuthApproleRoleRoleNameTokenNumUses Number of times issued tokens can be used
+// roleName: Name of the role.
 func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5270,14 +4826,8 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenNumUses(ctx context.Cont
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthApproleRoleRoleNameTokenTtl Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiGetAuthApproleRoleRoleNameTokenTtlRequest
-*/
-// Execute executes the request
+// GetAuthApproleRoleRoleNameTokenTtl Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
+// roleName: Name of the role.
 func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5342,14 +4892,8 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenTtl(ctx context.Context,
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthAwsConfigCertificateCertName Method for GetAuthAwsConfigCertificateCertName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param certName Name of the certificate.
- @return ApiGetAuthAwsConfigCertificateCertNameRequest
-*/
-// Execute executes the request
+// GetAuthAwsConfigCertificateCertName
+// certName: Name of the certificate.
 func (a *AuthApiService) GetAuthAwsConfigCertificateCertName(ctx context.Context, certName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5414,15 +4958,8 @@ func (a *AuthApiService) GetAuthAwsConfigCertificateCertName(ctx context.Context
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthAwsConfigCertificates Method for GetAuthAwsConfigCertificates
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthAwsConfigCertificatesRequest
-*/
-// Execute executes the request
+// GetAuthAwsConfigCertificates
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthAwsConfigCertificates(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5487,13 +5024,7 @@ func (a *AuthApiService) GetAuthAwsConfigCertificates(ctx context.Context, list 
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthAwsConfigClient Method for GetAuthAwsConfigClient
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthAwsConfigClientRequest
-*/
-// Execute executes the request
+// GetAuthAwsConfigClient
 func (a *AuthApiService) GetAuthAwsConfigClient(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5557,13 +5088,7 @@ func (a *AuthApiService) GetAuthAwsConfigClient(ctx context.Context) (*http.Resp
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthAwsConfigIdentity Method for GetAuthAwsConfigIdentity
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthAwsConfigIdentityRequest
-*/
-// Execute executes the request
+// GetAuthAwsConfigIdentity
 func (a *AuthApiService) GetAuthAwsConfigIdentity(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5627,15 +5152,8 @@ func (a *AuthApiService) GetAuthAwsConfigIdentity(ctx context.Context) (*http.Re
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthAwsConfigSts Method for GetAuthAwsConfigSts
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthAwsConfigStsRequest
-*/
-// Execute executes the request
+// GetAuthAwsConfigSts
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthAwsConfigSts(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5700,14 +5218,8 @@ func (a *AuthApiService) GetAuthAwsConfigSts(ctx context.Context, list string) (
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthAwsConfigStsAccountId Method for GetAuthAwsConfigStsAccountId
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param accountId AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
- @return ApiGetAuthAwsConfigStsAccountIdRequest
-*/
-// Execute executes the request
+// GetAuthAwsConfigStsAccountId
+// accountId: AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
 func (a *AuthApiService) GetAuthAwsConfigStsAccountId(ctx context.Context, accountId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5772,13 +5284,7 @@ func (a *AuthApiService) GetAuthAwsConfigStsAccountId(ctx context.Context, accou
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthAwsConfigTidyIdentityAccesslist Method for GetAuthAwsConfigTidyIdentityAccesslist
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthAwsConfigTidyIdentityAccesslistRequest
-*/
-// Execute executes the request
+// GetAuthAwsConfigTidyIdentityAccesslist
 func (a *AuthApiService) GetAuthAwsConfigTidyIdentityAccesslist(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5842,13 +5348,7 @@ func (a *AuthApiService) GetAuthAwsConfigTidyIdentityAccesslist(ctx context.Cont
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthAwsConfigTidyIdentityWhitelist Method for GetAuthAwsConfigTidyIdentityWhitelist
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthAwsConfigTidyIdentityWhitelistRequest
-*/
-// Execute executes the request
+// GetAuthAwsConfigTidyIdentityWhitelist
 func (a *AuthApiService) GetAuthAwsConfigTidyIdentityWhitelist(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5912,13 +5412,7 @@ func (a *AuthApiService) GetAuthAwsConfigTidyIdentityWhitelist(ctx context.Conte
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthAwsConfigTidyRoletagBlacklist Method for GetAuthAwsConfigTidyRoletagBlacklist
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthAwsConfigTidyRoletagBlacklistRequest
-*/
-// Execute executes the request
+// GetAuthAwsConfigTidyRoletagBlacklist
 func (a *AuthApiService) GetAuthAwsConfigTidyRoletagBlacklist(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5982,13 +5476,7 @@ func (a *AuthApiService) GetAuthAwsConfigTidyRoletagBlacklist(ctx context.Contex
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthAwsConfigTidyRoletagDenylist Method for GetAuthAwsConfigTidyRoletagDenylist
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthAwsConfigTidyRoletagDenylistRequest
-*/
-// Execute executes the request
+// GetAuthAwsConfigTidyRoletagDenylist
 func (a *AuthApiService) GetAuthAwsConfigTidyRoletagDenylist(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6052,15 +5540,8 @@ func (a *AuthApiService) GetAuthAwsConfigTidyRoletagDenylist(ctx context.Context
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthAwsIdentityAccesslist Method for GetAuthAwsIdentityAccesslist
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthAwsIdentityAccesslistRequest
-*/
-// Execute executes the request
+// GetAuthAwsIdentityAccesslist
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthAwsIdentityAccesslist(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6125,14 +5606,8 @@ func (a *AuthApiService) GetAuthAwsIdentityAccesslist(ctx context.Context, list 
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthAwsIdentityAccesslistInstanceId Method for GetAuthAwsIdentityAccesslistInstanceId
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param instanceId EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
- @return ApiGetAuthAwsIdentityAccesslistInstanceIdRequest
-*/
-// Execute executes the request
+// GetAuthAwsIdentityAccesslistInstanceId
+// instanceId: EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 func (a *AuthApiService) GetAuthAwsIdentityAccesslistInstanceId(ctx context.Context, instanceId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6197,15 +5672,8 @@ func (a *AuthApiService) GetAuthAwsIdentityAccesslistInstanceId(ctx context.Cont
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthAwsIdentityWhitelist Method for GetAuthAwsIdentityWhitelist
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthAwsIdentityWhitelistRequest
-*/
-// Execute executes the request
+// GetAuthAwsIdentityWhitelist
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthAwsIdentityWhitelist(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6270,14 +5738,8 @@ func (a *AuthApiService) GetAuthAwsIdentityWhitelist(ctx context.Context, list s
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthAwsIdentityWhitelistInstanceId Method for GetAuthAwsIdentityWhitelistInstanceId
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param instanceId EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
- @return ApiGetAuthAwsIdentityWhitelistInstanceIdRequest
-*/
-// Execute executes the request
+// GetAuthAwsIdentityWhitelistInstanceId
+// instanceId: EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 func (a *AuthApiService) GetAuthAwsIdentityWhitelistInstanceId(ctx context.Context, instanceId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6342,15 +5804,8 @@ func (a *AuthApiService) GetAuthAwsIdentityWhitelistInstanceId(ctx context.Conte
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthAwsRole Method for GetAuthAwsRole
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthAwsRoleRequest
-*/
-// Execute executes the request
+// GetAuthAwsRole
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthAwsRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6415,14 +5870,8 @@ func (a *AuthApiService) GetAuthAwsRole(ctx context.Context, list string) (*http
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthAwsRoleRole Method for GetAuthAwsRoleRole
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param role Name of the role.
- @return ApiGetAuthAwsRoleRoleRequest
-*/
-// Execute executes the request
+// GetAuthAwsRoleRole
+// role: Name of the role.
 func (a *AuthApiService) GetAuthAwsRoleRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6487,15 +5936,8 @@ func (a *AuthApiService) GetAuthAwsRoleRole(ctx context.Context, role string) (*
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthAwsRoles Method for GetAuthAwsRoles
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthAwsRolesRequest
-*/
-// Execute executes the request
+// GetAuthAwsRoles
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthAwsRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6560,15 +6002,8 @@ func (a *AuthApiService) GetAuthAwsRoles(ctx context.Context, list string) (*htt
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthAwsRoletagBlacklist Method for GetAuthAwsRoletagBlacklist
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthAwsRoletagBlacklistRequest
-*/
-// Execute executes the request
+// GetAuthAwsRoletagBlacklist
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthAwsRoletagBlacklist(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6633,14 +6068,8 @@ func (a *AuthApiService) GetAuthAwsRoletagBlacklist(ctx context.Context, list st
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthAwsRoletagBlacklistRoleTag Method for GetAuthAwsRoletagBlacklistRoleTag
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleTag Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
- @return ApiGetAuthAwsRoletagBlacklistRoleTagRequest
-*/
-// Execute executes the request
+// GetAuthAwsRoletagBlacklistRoleTag
+// roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 func (a *AuthApiService) GetAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6705,15 +6134,8 @@ func (a *AuthApiService) GetAuthAwsRoletagBlacklistRoleTag(ctx context.Context, 
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthAwsRoletagDenylist Method for GetAuthAwsRoletagDenylist
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthAwsRoletagDenylistRequest
-*/
-// Execute executes the request
+// GetAuthAwsRoletagDenylist
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthAwsRoletagDenylist(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6778,14 +6200,8 @@ func (a *AuthApiService) GetAuthAwsRoletagDenylist(ctx context.Context, list str
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthAwsRoletagDenylistRoleTag Method for GetAuthAwsRoletagDenylistRoleTag
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleTag Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
- @return ApiGetAuthAwsRoletagDenylistRoleTagRequest
-*/
-// Execute executes the request
+// GetAuthAwsRoletagDenylistRoleTag
+// roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 func (a *AuthApiService) GetAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6850,13 +6266,7 @@ func (a *AuthApiService) GetAuthAwsRoletagDenylistRoleTag(ctx context.Context, r
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthAzureConfig Method for GetAuthAzureConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthAzureConfigRequest
-*/
-// Execute executes the request
+// GetAuthAzureConfig
 func (a *AuthApiService) GetAuthAzureConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6920,15 +6330,8 @@ func (a *AuthApiService) GetAuthAzureConfig(ctx context.Context) (*http.Response
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthAzureRole Method for GetAuthAzureRole
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthAzureRoleRequest
-*/
-// Execute executes the request
+// GetAuthAzureRole
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthAzureRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6993,14 +6396,8 @@ func (a *AuthApiService) GetAuthAzureRole(ctx context.Context, list string) (*ht
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthAzureRoleName Method for GetAuthAzureRoleName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiGetAuthAzureRoleNameRequest
-*/
-// Execute executes the request
+// GetAuthAzureRoleName
+// name: Name of the role.
 func (a *AuthApiService) GetAuthAzureRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7065,13 +6462,7 @@ func (a *AuthApiService) GetAuthAzureRoleName(ctx context.Context, name string) 
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthCentrifyConfig This path allows you to configure the centrify auth provider to interact with the Centrify Identity Services Platform for authenticating users.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthCentrifyConfigRequest
-*/
-// Execute executes the request
+// GetAuthCentrifyConfig This path allows you to configure the centrify auth provider to interact with the Centrify Identity Services Platform for authenticating users.
 func (a *AuthApiService) GetAuthCentrifyConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7135,15 +6526,8 @@ func (a *AuthApiService) GetAuthCentrifyConfig(ctx context.Context) (*http.Respo
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthCertCerts Manage trusted certificates used for authentication.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthCertCertsRequest
-*/
-// Execute executes the request
+// GetAuthCertCerts Manage trusted certificates used for authentication.
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthCertCerts(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7208,14 +6592,8 @@ func (a *AuthApiService) GetAuthCertCerts(ctx context.Context, list string) (*ht
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthCertCertsName Manage trusted certificates used for authentication.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the certificate
- @return ApiGetAuthCertCertsNameRequest
-*/
-// Execute executes the request
+// GetAuthCertCertsName Manage trusted certificates used for authentication.
+// name: The name of the certificate
 func (a *AuthApiService) GetAuthCertCertsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7280,14 +6658,8 @@ func (a *AuthApiService) GetAuthCertCertsName(ctx context.Context, name string) 
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthCertCrlsName Manage Certificate Revocation Lists checked during authentication.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the certificate
- @return ApiGetAuthCertCrlsNameRequest
-*/
-// Execute executes the request
+// GetAuthCertCrlsName Manage Certificate Revocation Lists checked during authentication.
+// name: The name of the certificate
 func (a *AuthApiService) GetAuthCertCrlsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7352,13 +6724,7 @@ func (a *AuthApiService) GetAuthCertCrlsName(ctx context.Context, name string) (
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthCfConfig Method for GetAuthCfConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthCfConfigRequest
-*/
-// Execute executes the request
+// GetAuthCfConfig
 func (a *AuthApiService) GetAuthCfConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7422,15 +6788,8 @@ func (a *AuthApiService) GetAuthCfConfig(ctx context.Context) (*http.Response, e
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthCfRoles Method for GetAuthCfRoles
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthCfRolesRequest
-*/
-// Execute executes the request
+// GetAuthCfRoles
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthCfRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7495,14 +6854,8 @@ func (a *AuthApiService) GetAuthCfRoles(ctx context.Context, list string) (*http
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthCfRolesRole Method for GetAuthCfRolesRole
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param role The name of the role.
- @return ApiGetAuthCfRolesRoleRequest
-*/
-// Execute executes the request
+// GetAuthCfRolesRole
+// role: The name of the role.
 func (a *AuthApiService) GetAuthCfRolesRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7567,13 +6920,7 @@ func (a *AuthApiService) GetAuthCfRolesRole(ctx context.Context, role string) (*
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthGcpConfig Configure credentials used to query the GCP IAM API to verify authenticating service accounts
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthGcpConfigRequest
-*/
-// Execute executes the request
+// GetAuthGcpConfig Configure credentials used to query the GCP IAM API to verify authenticating service accounts
 func (a *AuthApiService) GetAuthGcpConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7637,15 +6984,8 @@ func (a *AuthApiService) GetAuthGcpConfig(ctx context.Context) (*http.Response, 
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthGcpRole Lists all the roles that are registered with Vault.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthGcpRoleRequest
-*/
-// Execute executes the request
+// GetAuthGcpRole Lists all the roles that are registered with Vault.
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthGcpRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7710,14 +7050,8 @@ func (a *AuthApiService) GetAuthGcpRole(ctx context.Context, list string) (*http
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthGcpRoleName Create a GCP role with associated policies and required attributes.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiGetAuthGcpRoleNameRequest
-*/
-// Execute executes the request
+// GetAuthGcpRoleName Create a GCP role with associated policies and required attributes.
+// name: Name of the role.
 func (a *AuthApiService) GetAuthGcpRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7782,15 +7116,8 @@ func (a *AuthApiService) GetAuthGcpRoleName(ctx context.Context, name string) (*
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthGcpRoles Lists all the roles that are registered with Vault.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthGcpRolesRequest
-*/
-// Execute executes the request
+// GetAuthGcpRoles Lists all the roles that are registered with Vault.
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthGcpRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7855,13 +7182,7 @@ func (a *AuthApiService) GetAuthGcpRoles(ctx context.Context, list string) (*htt
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthGithubConfig Method for GetAuthGithubConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthGithubConfigRequest
-*/
-// Execute executes the request
+// GetAuthGithubConfig
 func (a *AuthApiService) GetAuthGithubConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7925,15 +7246,8 @@ func (a *AuthApiService) GetAuthGithubConfig(ctx context.Context) (*http.Respons
 	return localVarHTTPResponse, nil
 }
 
-// Return a list if &#x60;true&#x60;
-
-/*
-GetAuthGithubMapTeams Read mappings for teams
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthGithubMapTeamsRequest
-*/
-// Execute executes the request
+// GetAuthGithubMapTeams Read mappings for teams
+// list: Return a list if &#x60;true&#x60;
 func (a *AuthApiService) GetAuthGithubMapTeams(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7998,14 +7312,8 @@ func (a *AuthApiService) GetAuthGithubMapTeams(ctx context.Context, list string)
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthGithubMapTeamsKey Read/write/delete a single teams mapping
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Key for the teams mapping
- @return ApiGetAuthGithubMapTeamsKeyRequest
-*/
-// Execute executes the request
+// GetAuthGithubMapTeamsKey Read/write/delete a single teams mapping
+// key: Key for the teams mapping
 func (a *AuthApiService) GetAuthGithubMapTeamsKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -8070,15 +7378,8 @@ func (a *AuthApiService) GetAuthGithubMapTeamsKey(ctx context.Context, key strin
 	return localVarHTTPResponse, nil
 }
 
-// Return a list if &#x60;true&#x60;
-
-/*
-GetAuthGithubMapUsers Read mappings for users
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthGithubMapUsersRequest
-*/
-// Execute executes the request
+// GetAuthGithubMapUsers Read mappings for users
+// list: Return a list if &#x60;true&#x60;
 func (a *AuthApiService) GetAuthGithubMapUsers(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -8143,14 +7444,8 @@ func (a *AuthApiService) GetAuthGithubMapUsers(ctx context.Context, list string)
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthGithubMapUsersKey Read/write/delete a single users mapping
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Key for the users mapping
- @return ApiGetAuthGithubMapUsersKeyRequest
-*/
-// Execute executes the request
+// GetAuthGithubMapUsersKey Read/write/delete a single users mapping
+// key: Key for the users mapping
 func (a *AuthApiService) GetAuthGithubMapUsersKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -8215,13 +7510,7 @@ func (a *AuthApiService) GetAuthGithubMapUsersKey(ctx context.Context, key strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthJwtConfig Read the current JWT authentication backend configuration.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthJwtConfigRequest
-*/
-// Execute executes the request
+// GetAuthJwtConfig Read the current JWT authentication backend configuration.
 func (a *AuthApiService) GetAuthJwtConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -8285,13 +7574,7 @@ func (a *AuthApiService) GetAuthJwtConfig(ctx context.Context) (*http.Response, 
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthJwtOidcCallback Callback endpoint to complete an OIDC login.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthJwtOidcCallbackRequest
-*/
-// Execute executes the request
+// GetAuthJwtOidcCallback Callback endpoint to complete an OIDC login.
 func (a *AuthApiService) GetAuthJwtOidcCallback(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -8355,17 +7638,9 @@ func (a *AuthApiService) GetAuthJwtOidcCallback(ctx context.Context) (*http.Resp
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthJwtRole Lists all the roles registered with the backend.
-
-The list will contain the names of the roles.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthJwtRoleRequest
-*/
-// Execute executes the request
+// GetAuthJwtRole Lists all the roles registered with the backend.
+// The list will contain the names of the roles.
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthJwtRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -8430,14 +7705,8 @@ func (a *AuthApiService) GetAuthJwtRole(ctx context.Context, list string) (*http
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthJwtRoleName Read an existing role.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiGetAuthJwtRoleNameRequest
-*/
-// Execute executes the request
+// GetAuthJwtRoleName Read an existing role.
+// name: Name of the role.
 func (a *AuthApiService) GetAuthJwtRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -8502,13 +7771,7 @@ func (a *AuthApiService) GetAuthJwtRoleName(ctx context.Context, name string) (*
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthKerberosConfig Method for GetAuthKerberosConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthKerberosConfigRequest
-*/
-// Execute executes the request
+// GetAuthKerberosConfig
 func (a *AuthApiService) GetAuthKerberosConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -8572,13 +7835,7 @@ func (a *AuthApiService) GetAuthKerberosConfig(ctx context.Context) (*http.Respo
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthKerberosConfigLdap Method for GetAuthKerberosConfigLdap
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthKerberosConfigLdapRequest
-*/
-// Execute executes the request
+// GetAuthKerberosConfigLdap
 func (a *AuthApiService) GetAuthKerberosConfigLdap(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -8642,15 +7899,8 @@ func (a *AuthApiService) GetAuthKerberosConfigLdap(ctx context.Context) (*http.R
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthKerberosGroups Method for GetAuthKerberosGroups
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthKerberosGroupsRequest
-*/
-// Execute executes the request
+// GetAuthKerberosGroups
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthKerberosGroups(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -8715,14 +7965,8 @@ func (a *AuthApiService) GetAuthKerberosGroups(ctx context.Context, list string)
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthKerberosGroupsName Method for GetAuthKerberosGroupsName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the LDAP group.
- @return ApiGetAuthKerberosGroupsNameRequest
-*/
-// Execute executes the request
+// GetAuthKerberosGroupsName
+// name: Name of the LDAP group.
 func (a *AuthApiService) GetAuthKerberosGroupsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -8787,13 +8031,7 @@ func (a *AuthApiService) GetAuthKerberosGroupsName(ctx context.Context, name str
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthKerberosLogin Method for GetAuthKerberosLogin
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthKerberosLoginRequest
-*/
-// Execute executes the request
+// GetAuthKerberosLogin
 func (a *AuthApiService) GetAuthKerberosLogin(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -8857,13 +8095,7 @@ func (a *AuthApiService) GetAuthKerberosLogin(ctx context.Context) (*http.Respon
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthKubernetesConfig Configures the JWT Public Key and Kubernetes API information.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthKubernetesConfigRequest
-*/
-// Execute executes the request
+// GetAuthKubernetesConfig Configures the JWT Public Key and Kubernetes API information.
 func (a *AuthApiService) GetAuthKubernetesConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -8927,15 +8159,8 @@ func (a *AuthApiService) GetAuthKubernetesConfig(ctx context.Context) (*http.Res
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthKubernetesRole Lists all the roles registered with the backend.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthKubernetesRoleRequest
-*/
-// Execute executes the request
+// GetAuthKubernetesRole Lists all the roles registered with the backend.
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthKubernetesRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -9000,14 +8225,8 @@ func (a *AuthApiService) GetAuthKubernetesRole(ctx context.Context, list string)
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthKubernetesRoleName Register an role with the backend.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiGetAuthKubernetesRoleNameRequest
-*/
-// Execute executes the request
+// GetAuthKubernetesRoleName Register an role with the backend.
+// name: Name of the role.
 func (a *AuthApiService) GetAuthKubernetesRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -9072,13 +8291,7 @@ func (a *AuthApiService) GetAuthKubernetesRoleName(ctx context.Context, name str
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthLdapConfig Configure the LDAP server to connect to, along with its options.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthLdapConfigRequest
-*/
-// Execute executes the request
+// GetAuthLdapConfig Configure the LDAP server to connect to, along with its options.
 func (a *AuthApiService) GetAuthLdapConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -9142,15 +8355,8 @@ func (a *AuthApiService) GetAuthLdapConfig(ctx context.Context) (*http.Response,
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthLdapGroups Manage additional groups for users allowed to authenticate.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthLdapGroupsRequest
-*/
-// Execute executes the request
+// GetAuthLdapGroups Manage additional groups for users allowed to authenticate.
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthLdapGroups(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -9215,14 +8421,8 @@ func (a *AuthApiService) GetAuthLdapGroups(ctx context.Context, list string) (*h
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthLdapGroupsName Manage additional groups for users allowed to authenticate.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the LDAP group.
- @return ApiGetAuthLdapGroupsNameRequest
-*/
-// Execute executes the request
+// GetAuthLdapGroupsName Manage additional groups for users allowed to authenticate.
+// name: Name of the LDAP group.
 func (a *AuthApiService) GetAuthLdapGroupsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -9287,15 +8487,8 @@ func (a *AuthApiService) GetAuthLdapGroupsName(ctx context.Context, name string)
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthLdapUsers Manage users allowed to authenticate.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthLdapUsersRequest
-*/
-// Execute executes the request
+// GetAuthLdapUsers Manage users allowed to authenticate.
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthLdapUsers(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -9360,14 +8553,8 @@ func (a *AuthApiService) GetAuthLdapUsers(ctx context.Context, list string) (*ht
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthLdapUsersName Manage users allowed to authenticate.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the LDAP user.
- @return ApiGetAuthLdapUsersNameRequest
-*/
-// Execute executes the request
+// GetAuthLdapUsersName Manage users allowed to authenticate.
+// name: Name of the LDAP user.
 func (a *AuthApiService) GetAuthLdapUsersName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -9432,13 +8619,7 @@ func (a *AuthApiService) GetAuthLdapUsersName(ctx context.Context, name string) 
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthOciConfig Manages the configuration for the Vault Auth Plugin.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthOciConfigRequest
-*/
-// Execute executes the request
+// GetAuthOciConfig Manages the configuration for the Vault Auth Plugin.
 func (a *AuthApiService) GetAuthOciConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -9502,15 +8683,8 @@ func (a *AuthApiService) GetAuthOciConfig(ctx context.Context) (*http.Response, 
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthOciRole Lists all the roles that are registered with Vault.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthOciRoleRequest
-*/
-// Execute executes the request
+// GetAuthOciRole Lists all the roles that are registered with Vault.
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthOciRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -9575,14 +8749,8 @@ func (a *AuthApiService) GetAuthOciRole(ctx context.Context, list string) (*http
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthOciRoleRole Create a role and associate policies to it.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param role Name of the role.
- @return ApiGetAuthOciRoleRoleRequest
-*/
-// Execute executes the request
+// GetAuthOciRoleRole Create a role and associate policies to it.
+// role: Name of the role.
 func (a *AuthApiService) GetAuthOciRoleRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -9647,13 +8815,7 @@ func (a *AuthApiService) GetAuthOciRoleRole(ctx context.Context, role string) (*
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthOidcConfig Read the current JWT authentication backend configuration.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthOidcConfigRequest
-*/
-// Execute executes the request
+// GetAuthOidcConfig Read the current JWT authentication backend configuration.
 func (a *AuthApiService) GetAuthOidcConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -9717,13 +8879,7 @@ func (a *AuthApiService) GetAuthOidcConfig(ctx context.Context) (*http.Response,
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthOidcOidcCallback Callback endpoint to complete an OIDC login.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthOidcOidcCallbackRequest
-*/
-// Execute executes the request
+// GetAuthOidcOidcCallback Callback endpoint to complete an OIDC login.
 func (a *AuthApiService) GetAuthOidcOidcCallback(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -9787,17 +8943,9 @@ func (a *AuthApiService) GetAuthOidcOidcCallback(ctx context.Context) (*http.Res
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthOidcRole Lists all the roles registered with the backend.
-
-The list will contain the names of the roles.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthOidcRoleRequest
-*/
-// Execute executes the request
+// GetAuthOidcRole Lists all the roles registered with the backend.
+// The list will contain the names of the roles.
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthOidcRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -9862,14 +9010,8 @@ func (a *AuthApiService) GetAuthOidcRole(ctx context.Context, list string) (*htt
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthOidcRoleName Read an existing role.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiGetAuthOidcRoleNameRequest
-*/
-// Execute executes the request
+// GetAuthOidcRoleName Read an existing role.
+// name: Name of the role.
 func (a *AuthApiService) GetAuthOidcRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -9934,13 +9076,7 @@ func (a *AuthApiService) GetAuthOidcRoleName(ctx context.Context, name string) (
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthOktaConfig This endpoint allows you to configure the Okta and its configuration options.  The Okta organization are the characters at the front of the URL for Okta. Example https://ORG.okta.com
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthOktaConfigRequest
-*/
-// Execute executes the request
+// GetAuthOktaConfig This endpoint allows you to configure the Okta and its configuration options.  The Okta organization are the characters at the front of the URL for Okta. Example https://ORG.okta.com
 func (a *AuthApiService) GetAuthOktaConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -10004,15 +9140,8 @@ func (a *AuthApiService) GetAuthOktaConfig(ctx context.Context) (*http.Response,
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthOktaGroups Manage users allowed to authenticate.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthOktaGroupsRequest
-*/
-// Execute executes the request
+// GetAuthOktaGroups Manage users allowed to authenticate.
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthOktaGroups(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -10077,14 +9206,8 @@ func (a *AuthApiService) GetAuthOktaGroups(ctx context.Context, list string) (*h
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthOktaGroupsName Manage users allowed to authenticate.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the Okta group.
- @return ApiGetAuthOktaGroupsNameRequest
-*/
-// Execute executes the request
+// GetAuthOktaGroupsName Manage users allowed to authenticate.
+// name: Name of the Okta group.
 func (a *AuthApiService) GetAuthOktaGroupsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -10149,15 +9272,8 @@ func (a *AuthApiService) GetAuthOktaGroupsName(ctx context.Context, name string)
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthOktaUsers Manage additional groups for users allowed to authenticate.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthOktaUsersRequest
-*/
-// Execute executes the request
+// GetAuthOktaUsers Manage additional groups for users allowed to authenticate.
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthOktaUsers(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -10222,14 +9338,8 @@ func (a *AuthApiService) GetAuthOktaUsers(ctx context.Context, list string) (*ht
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthOktaUsersName Manage additional groups for users allowed to authenticate.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the user.
- @return ApiGetAuthOktaUsersNameRequest
-*/
-// Execute executes the request
+// GetAuthOktaUsersName Manage additional groups for users allowed to authenticate.
+// name: Name of the user.
 func (a *AuthApiService) GetAuthOktaUsersName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -10294,14 +9404,8 @@ func (a *AuthApiService) GetAuthOktaUsersName(ctx context.Context, name string) 
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthOktaVerifyNonce Method for GetAuthOktaVerifyNonce
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param nonce Nonce provided during a login request to retrieve the number verification challenge for the matching request.
- @return ApiGetAuthOktaVerifyNonceRequest
-*/
-// Execute executes the request
+// GetAuthOktaVerifyNonce
+// nonce: Nonce provided during a login request to retrieve the number verification challenge for the matching request.
 func (a *AuthApiService) GetAuthOktaVerifyNonce(ctx context.Context, nonce string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -10366,13 +9470,7 @@ func (a *AuthApiService) GetAuthOktaVerifyNonce(ctx context.Context, nonce strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthRadiusConfig Configure the RADIUS server to connect to, along with its options.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthRadiusConfigRequest
-*/
-// Execute executes the request
+// GetAuthRadiusConfig Configure the RADIUS server to connect to, along with its options.
 func (a *AuthApiService) GetAuthRadiusConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -10436,15 +9534,8 @@ func (a *AuthApiService) GetAuthRadiusConfig(ctx context.Context) (*http.Respons
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthRadiusUsers Manage users allowed to authenticate.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthRadiusUsersRequest
-*/
-// Execute executes the request
+// GetAuthRadiusUsers Manage users allowed to authenticate.
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthRadiusUsers(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -10509,14 +9600,8 @@ func (a *AuthApiService) GetAuthRadiusUsers(ctx context.Context, list string) (*
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthRadiusUsersName Manage users allowed to authenticate.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the RADIUS user.
- @return ApiGetAuthRadiusUsersNameRequest
-*/
-// Execute executes the request
+// GetAuthRadiusUsersName Manage users allowed to authenticate.
+// name: Name of the RADIUS user.
 func (a *AuthApiService) GetAuthRadiusUsersName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -10581,15 +9666,8 @@ func (a *AuthApiService) GetAuthRadiusUsersName(ctx context.Context, name string
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthTokenAccessors List token accessors, which can then be be used to iterate and discover their properties or revoke them. Because this can be used to cause a denial of service, this endpoint requires 'sudo' capability in addition to 'list'.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthTokenAccessorsRequest
-*/
-// Execute executes the request
+// GetAuthTokenAccessors List token accessors, which can then be be used to iterate and discover their properties or revoke them. Because this can be used to cause a denial of service, this endpoint requires 'sudo' capability in addition to 'list'.
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthTokenAccessors(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -10654,13 +9732,7 @@ func (a *AuthApiService) GetAuthTokenAccessors(ctx context.Context, list string)
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthTokenLookup This endpoint will lookup a token and its properties.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthTokenLookupRequest
-*/
-// Execute executes the request
+// GetAuthTokenLookup This endpoint will lookup a token and its properties.
 func (a *AuthApiService) GetAuthTokenLookup(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -10724,13 +9796,7 @@ func (a *AuthApiService) GetAuthTokenLookup(ctx context.Context) (*http.Response
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthTokenLookupSelf This endpoint will lookup a token and its properties.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthTokenLookupSelfRequest
-*/
-// Execute executes the request
+// GetAuthTokenLookupSelf This endpoint will lookup a token and its properties.
 func (a *AuthApiService) GetAuthTokenLookupSelf(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -10794,15 +9860,8 @@ func (a *AuthApiService) GetAuthTokenLookupSelf(ctx context.Context) (*http.Resp
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthTokenRoles This endpoint lists configured roles.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthTokenRolesRequest
-*/
-// Execute executes the request
+// GetAuthTokenRoles This endpoint lists configured roles.
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthTokenRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -10867,14 +9926,8 @@ func (a *AuthApiService) GetAuthTokenRoles(ctx context.Context, list string) (*h
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthTokenRolesRoleName Method for GetAuthTokenRolesRoleName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role
- @return ApiGetAuthTokenRolesRoleNameRequest
-*/
-// Execute executes the request
+// GetAuthTokenRolesRoleName
+// roleName: Name of the role
 func (a *AuthApiService) GetAuthTokenRolesRoleName(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -10939,15 +9992,8 @@ func (a *AuthApiService) GetAuthTokenRolesRoleName(ctx context.Context, roleName
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAuthUserpassUsers Manage users allowed to authenticate.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAuthUserpassUsersRequest
-*/
-// Execute executes the request
+// GetAuthUserpassUsers Manage users allowed to authenticate.
+// list: Must be set to &#x60;true&#x60;
 func (a *AuthApiService) GetAuthUserpassUsers(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -11012,14 +10058,8 @@ func (a *AuthApiService) GetAuthUserpassUsers(ctx context.Context, list string) 
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAuthUserpassUsersUsername Manage users allowed to authenticate.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param username Username for this user.
- @return ApiGetAuthUserpassUsersUsernameRequest
-*/
-// Execute executes the request
+// GetAuthUserpassUsersUsername Manage users allowed to authenticate.
+// username: Username for this user.
 func (a *AuthApiService) GetAuthUserpassUsersUsername(ctx context.Context, username string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -11084,13 +10124,7 @@ func (a *AuthApiService) GetAuthUserpassUsersUsername(ctx context.Context, usern
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthAlicloudLogin Authenticates an RAM entity with Vault.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthAlicloudLoginRequest
-*/
-// Execute executes the request
+// PostAuthAlicloudLogin Authenticates an RAM entity with Vault.
 func (a *AuthApiService) PostAuthAlicloudLogin(ctx context.Context, alicloudLoginRequest AlicloudLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -11156,14 +10190,8 @@ func (a *AuthApiService) PostAuthAlicloudLogin(ctx context.Context, alicloudLogi
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthAlicloudRoleRole Create a role and associate policies to it.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param role The name of the role as it should appear in Vault.
- @return ApiPostAuthAlicloudRoleRoleRequest
-*/
-// Execute executes the request
+// PostAuthAlicloudRoleRole Create a role and associate policies to it.
+// role: The name of the role as it should appear in Vault.
 func (a *AuthApiService) PostAuthAlicloudRoleRole(ctx context.Context, role string, alicloudRoleRequest AlicloudRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -11230,13 +10258,7 @@ func (a *AuthApiService) PostAuthAlicloudRoleRole(ctx context.Context, role stri
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthAppIdLogin Log in with an App ID and User ID.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthAppIdLoginRequest
-*/
-// Execute executes the request
+// PostAuthAppIdLogin Log in with an App ID and User ID.
 func (a *AuthApiService) PostAuthAppIdLogin(ctx context.Context, appIdLoginRequest AppIdLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -11302,14 +10324,8 @@ func (a *AuthApiService) PostAuthAppIdLogin(ctx context.Context, appIdLoginReque
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthAppIdLoginAppId Log in with an App ID and User ID.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param appId The unique app ID
- @return ApiPostAuthAppIdLoginAppIdRequest
-*/
-// Execute executes the request
+// PostAuthAppIdLoginAppId Log in with an App ID and User ID.
+// appId: The unique app ID
 func (a *AuthApiService) PostAuthAppIdLoginAppId(ctx context.Context, appId string, appIdLoginRequest AppIdLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -11376,14 +10392,8 @@ func (a *AuthApiService) PostAuthAppIdLoginAppId(ctx context.Context, appId stri
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthAppIdMapAppIdKey Read/write/delete a single app-id mapping
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Key for the app-id mapping
- @return ApiPostAuthAppIdMapAppIdKeyRequest
-*/
-// Execute executes the request
+// PostAuthAppIdMapAppIdKey Read/write/delete a single app-id mapping
+// key: Key for the app-id mapping
 func (a *AuthApiService) PostAuthAppIdMapAppIdKey(ctx context.Context, key string, appIdMapAppIdRequest AppIdMapAppIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -11450,14 +10460,8 @@ func (a *AuthApiService) PostAuthAppIdMapAppIdKey(ctx context.Context, key strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthAppIdMapUserIdKey Read/write/delete a single user-id mapping
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Key for the user-id mapping
- @return ApiPostAuthAppIdMapUserIdKeyRequest
-*/
-// Execute executes the request
+// PostAuthAppIdMapUserIdKey Read/write/delete a single user-id mapping
+// key: Key for the user-id mapping
 func (a *AuthApiService) PostAuthAppIdMapUserIdKey(ctx context.Context, key string, appIdMapUserIdRequest AppIdMapUserIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -11524,13 +10528,7 @@ func (a *AuthApiService) PostAuthAppIdMapUserIdKey(ctx context.Context, key stri
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthApproleLogin Method for PostAuthApproleLogin
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthApproleLoginRequest
-*/
-// Execute executes the request
+// PostAuthApproleLogin
 func (a *AuthApiService) PostAuthApproleLogin(ctx context.Context, approleLoginRequest ApproleLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -11596,14 +10594,8 @@ func (a *AuthApiService) PostAuthApproleLogin(ctx context.Context, approleLoginR
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthApproleRoleRoleName Register an role with the backend.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiPostAuthApproleRoleRoleNameRequest
-*/
-// Execute executes the request
+// PostAuthApproleRoleRoleName Register an role with the backend.
+// roleName: Name of the role.
 func (a *AuthApiService) PostAuthApproleRoleRoleName(ctx context.Context, roleName string, approleRoleRequest ApproleRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -11670,14 +10662,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleName(ctx context.Context, roleNa
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthApproleRoleRoleNameBindSecretId Impose secret_id to be presented during login using this role.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiPostAuthApproleRoleRoleNameBindSecretIdRequest
-*/
-// Execute executes the request
+// PostAuthApproleRoleRoleNameBindSecretId Impose secret_id to be presented during login using this role.
+// roleName: Name of the role.
 func (a *AuthApiService) PostAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string, approleRoleBindSecretIdRequest ApproleRoleBindSecretIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -11744,14 +10730,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameBindSecretId(ctx context.Con
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthApproleRoleRoleNameBoundCidrList Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiPostAuthApproleRoleRoleNameBoundCidrListRequest
-*/
-// Execute executes the request
+// PostAuthApproleRoleRoleNameBoundCidrList Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+// roleName: Name of the role.
 func (a *AuthApiService) PostAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string, approleRoleBoundCidrListRequest ApproleRoleBoundCidrListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -11818,14 +10798,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameBoundCidrList(ctx context.Co
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthApproleRoleRoleNameCustomSecretId Assign a SecretID of choice against the role.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiPostAuthApproleRoleRoleNameCustomSecretIdRequest
-*/
-// Execute executes the request
+// PostAuthApproleRoleRoleNameCustomSecretId Assign a SecretID of choice against the role.
+// roleName: Name of the role.
 func (a *AuthApiService) PostAuthApproleRoleRoleNameCustomSecretId(ctx context.Context, roleName string, approleRoleCustomSecretIdRequest ApproleRoleCustomSecretIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -11892,14 +10866,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameCustomSecretId(ctx context.C
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthApproleRoleRoleNamePeriod Updates the value of 'period' on the role
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiPostAuthApproleRoleRoleNamePeriodRequest
-*/
-// Execute executes the request
+// PostAuthApproleRoleRoleNamePeriod Updates the value of 'period' on the role
+// roleName: Name of the role.
 func (a *AuthApiService) PostAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string, approleRolePeriodRequest ApproleRolePeriodRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -11966,14 +10934,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNamePeriod(ctx context.Context, 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthApproleRoleRoleNamePolicies Policies of the role.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiPostAuthApproleRoleRoleNamePoliciesRequest
-*/
-// Execute executes the request
+// PostAuthApproleRoleRoleNamePolicies Policies of the role.
+// roleName: Name of the role.
 func (a *AuthApiService) PostAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string, approleRolePoliciesRequest ApproleRolePoliciesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -12040,14 +11002,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNamePolicies(ctx context.Context
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthApproleRoleRoleNameRoleId Returns the 'role_id' of the role.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiPostAuthApproleRoleRoleNameRoleIdRequest
-*/
-// Execute executes the request
+// PostAuthApproleRoleRoleNameRoleId Returns the 'role_id' of the role.
+// roleName: Name of the role.
 func (a *AuthApiService) PostAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName string, approleRoleRoleIdRequest ApproleRoleRoleIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -12114,14 +11070,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameRoleId(ctx context.Context, 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthApproleRoleRoleNameSecretId Generate a SecretID against this role.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiPostAuthApproleRoleRoleNameSecretIdRequest
-*/
-// Execute executes the request
+// PostAuthApproleRoleRoleNameSecretId Generate a SecretID against this role.
+// roleName: Name of the role.
 func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName string, approleRoleSecretIdRequest ApproleRoleSecretIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -12188,14 +11138,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretId(ctx context.Context
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthApproleRoleRoleNameSecretIdAccessorDestroy Method for PostAuthApproleRoleRoleNameSecretIdAccessorDestroy
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiPostAuthApproleRoleRoleNameSecretIdAccessorDestroyRequest
-*/
-// Execute executes the request
+// PostAuthApproleRoleRoleNameSecretIdAccessorDestroy
+// roleName: Name of the role.
 func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.Context, roleName string, approleRoleSecretIdAccessorDestroyRequest ApproleRoleSecretIdAccessorDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -12262,14 +11206,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthApproleRoleRoleNameSecretIdAccessorLookup Method for PostAuthApproleRoleRoleNameSecretIdAccessorLookup
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiPostAuthApproleRoleRoleNameSecretIdAccessorLookupRequest
-*/
-// Execute executes the request
+// PostAuthApproleRoleRoleNameSecretIdAccessorLookup
+// roleName: Name of the role.
 func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdAccessorLookup(ctx context.Context, roleName string, approleRoleSecretIdAccessorLookupRequest ApproleRoleSecretIdAccessorLookupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -12336,14 +11274,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdAccessorLookup(ctx c
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthApproleRoleRoleNameSecretIdBoundCidrs Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiPostAuthApproleRoleRoleNameSecretIdBoundCidrsRequest
-*/
-// Execute executes the request
+// PostAuthApproleRoleRoleNameSecretIdBoundCidrs Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+// roleName: Name of the role.
 func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string, approleRoleSecretIdBoundCidrsRequest ApproleRoleSecretIdBoundCidrsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -12410,14 +11342,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx conte
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthApproleRoleRoleNameSecretIdDestroy Invalidate an issued secret_id
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiPostAuthApproleRoleRoleNameSecretIdDestroyRequest
-*/
-// Execute executes the request
+// PostAuthApproleRoleRoleNameSecretIdDestroy Invalidate an issued secret_id
+// roleName: Name of the role.
 func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context, roleName string, approleRoleSecretIdDestroyRequest ApproleRoleSecretIdDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -12484,14 +11410,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdDestroy(ctx context.
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthApproleRoleRoleNameSecretIdLookup Read the properties of an issued secret_id
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiPostAuthApproleRoleRoleNameSecretIdLookupRequest
-*/
-// Execute executes the request
+// PostAuthApproleRoleRoleNameSecretIdLookup Read the properties of an issued secret_id
+// roleName: Name of the role.
 func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdLookup(ctx context.Context, roleName string, approleRoleSecretIdLookupRequest ApproleRoleSecretIdLookupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -12558,14 +11478,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdLookup(ctx context.C
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthApproleRoleRoleNameSecretIdNumUses Use limit of the SecretID generated against the role.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiPostAuthApproleRoleRoleNameSecretIdNumUsesRequest
-*/
-// Execute executes the request
+// PostAuthApproleRoleRoleNameSecretIdNumUses Use limit of the SecretID generated against the role.
+// roleName: Name of the role.
 func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string, approleRoleSecretIdNumUsesRequest ApproleRoleSecretIdNumUsesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -12632,14 +11546,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdNumUses(ctx context.
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthApproleRoleRoleNameSecretIdTtl Duration in seconds, representing the lifetime of the SecretIDs that are generated against the role using 'role/<role_name>/secret-id' or 'role/<role_name>/custom-secret-id' endpoints.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiPostAuthApproleRoleRoleNameSecretIdTtlRequest
-*/
-// Execute executes the request
+// PostAuthApproleRoleRoleNameSecretIdTtl Duration in seconds, representing the lifetime of the SecretIDs that are generated against the role using 'role/<role_name>/secret-id' or 'role/<role_name>/custom-secret-id' endpoints.
+// roleName: Name of the role.
 func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string, approleRoleSecretIdTtlRequest ApproleRoleSecretIdTtlRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -12706,14 +11614,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdTtl(ctx context.Cont
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthApproleRoleRoleNameTokenBoundCidrs Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiPostAuthApproleRoleRoleNameTokenBoundCidrsRequest
-*/
-// Execute executes the request
+// PostAuthApproleRoleRoleNameTokenBoundCidrs Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
+// roleName: Name of the role.
 func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string, approleRoleTokenBoundCidrsRequest ApproleRoleTokenBoundCidrsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -12780,14 +11682,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthApproleRoleRoleNameTokenMaxTtl Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiPostAuthApproleRoleRoleNameTokenMaxTtlRequest
-*/
-// Execute executes the request
+// PostAuthApproleRoleRoleNameTokenMaxTtl Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
+// roleName: Name of the role.
 func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string, approleRoleTokenMaxTtlRequest ApproleRoleTokenMaxTtlRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -12854,14 +11750,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Cont
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthApproleRoleRoleNameTokenNumUses Number of times issued tokens can be used
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiPostAuthApproleRoleRoleNameTokenNumUsesRequest
-*/
-// Execute executes the request
+// PostAuthApproleRoleRoleNameTokenNumUses Number of times issued tokens can be used
+// roleName: Name of the role.
 func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string, approleRoleTokenNumUsesRequest ApproleRoleTokenNumUsesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -12928,14 +11818,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenNumUses(ctx context.Con
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthApproleRoleRoleNameTokenTtl Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role.
- @return ApiPostAuthApproleRoleRoleNameTokenTtlRequest
-*/
-// Execute executes the request
+// PostAuthApproleRoleRoleNameTokenTtl Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
+// roleName: Name of the role.
 func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string, approleRoleTokenTtlRequest ApproleRoleTokenTtlRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -13002,13 +11886,7 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenTtl(ctx context.Context
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthApproleTidySecretId Trigger the clean-up of expired SecretID entries.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthApproleTidySecretIdRequest
-*/
-// Execute executes the request
+// PostAuthApproleTidySecretId Trigger the clean-up of expired SecretID entries.
 func (a *AuthApiService) PostAuthApproleTidySecretId(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -13072,14 +11950,8 @@ func (a *AuthApiService) PostAuthApproleTidySecretId(ctx context.Context) (*http
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthAwsConfigCertificateCertName Method for PostAuthAwsConfigCertificateCertName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param certName Name of the certificate.
- @return ApiPostAuthAwsConfigCertificateCertNameRequest
-*/
-// Execute executes the request
+// PostAuthAwsConfigCertificateCertName
+// certName: Name of the certificate.
 func (a *AuthApiService) PostAuthAwsConfigCertificateCertName(ctx context.Context, certName string, awsConfigCertificateRequest AwsConfigCertificateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -13146,13 +12018,7 @@ func (a *AuthApiService) PostAuthAwsConfigCertificateCertName(ctx context.Contex
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthAwsConfigClient Method for PostAuthAwsConfigClient
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthAwsConfigClientRequest
-*/
-// Execute executes the request
+// PostAuthAwsConfigClient
 func (a *AuthApiService) PostAuthAwsConfigClient(ctx context.Context, awsConfigClientRequest AwsConfigClientRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -13218,13 +12084,7 @@ func (a *AuthApiService) PostAuthAwsConfigClient(ctx context.Context, awsConfigC
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthAwsConfigIdentity Method for PostAuthAwsConfigIdentity
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthAwsConfigIdentityRequest
-*/
-// Execute executes the request
+// PostAuthAwsConfigIdentity
 func (a *AuthApiService) PostAuthAwsConfigIdentity(ctx context.Context, awsConfigIdentityRequest AwsConfigIdentityRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -13290,13 +12150,7 @@ func (a *AuthApiService) PostAuthAwsConfigIdentity(ctx context.Context, awsConfi
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthAwsConfigRotateRoot Method for PostAuthAwsConfigRotateRoot
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthAwsConfigRotateRootRequest
-*/
-// Execute executes the request
+// PostAuthAwsConfigRotateRoot
 func (a *AuthApiService) PostAuthAwsConfigRotateRoot(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -13360,14 +12214,8 @@ func (a *AuthApiService) PostAuthAwsConfigRotateRoot(ctx context.Context) (*http
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthAwsConfigStsAccountId Method for PostAuthAwsConfigStsAccountId
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param accountId AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
- @return ApiPostAuthAwsConfigStsAccountIdRequest
-*/
-// Execute executes the request
+// PostAuthAwsConfigStsAccountId
+// accountId: AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
 func (a *AuthApiService) PostAuthAwsConfigStsAccountId(ctx context.Context, accountId string, awsConfigStsRequest AwsConfigStsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -13434,13 +12282,7 @@ func (a *AuthApiService) PostAuthAwsConfigStsAccountId(ctx context.Context, acco
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthAwsConfigTidyIdentityAccesslist Method for PostAuthAwsConfigTidyIdentityAccesslist
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthAwsConfigTidyIdentityAccesslistRequest
-*/
-// Execute executes the request
+// PostAuthAwsConfigTidyIdentityAccesslist
 func (a *AuthApiService) PostAuthAwsConfigTidyIdentityAccesslist(ctx context.Context, awsConfigTidyIdentityAccesslistRequest AwsConfigTidyIdentityAccesslistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -13506,13 +12348,7 @@ func (a *AuthApiService) PostAuthAwsConfigTidyIdentityAccesslist(ctx context.Con
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthAwsConfigTidyIdentityWhitelist Method for PostAuthAwsConfigTidyIdentityWhitelist
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthAwsConfigTidyIdentityWhitelistRequest
-*/
-// Execute executes the request
+// PostAuthAwsConfigTidyIdentityWhitelist
 func (a *AuthApiService) PostAuthAwsConfigTidyIdentityWhitelist(ctx context.Context, awsConfigTidyIdentityWhitelistRequest AwsConfigTidyIdentityWhitelistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -13578,13 +12414,7 @@ func (a *AuthApiService) PostAuthAwsConfigTidyIdentityWhitelist(ctx context.Cont
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthAwsConfigTidyRoletagBlacklist Method for PostAuthAwsConfigTidyRoletagBlacklist
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthAwsConfigTidyRoletagBlacklistRequest
-*/
-// Execute executes the request
+// PostAuthAwsConfigTidyRoletagBlacklist
 func (a *AuthApiService) PostAuthAwsConfigTidyRoletagBlacklist(ctx context.Context, awsConfigTidyRoletagBlacklistRequest AwsConfigTidyRoletagBlacklistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -13650,13 +12480,7 @@ func (a *AuthApiService) PostAuthAwsConfigTidyRoletagBlacklist(ctx context.Conte
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthAwsConfigTidyRoletagDenylist Method for PostAuthAwsConfigTidyRoletagDenylist
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthAwsConfigTidyRoletagDenylistRequest
-*/
-// Execute executes the request
+// PostAuthAwsConfigTidyRoletagDenylist
 func (a *AuthApiService) PostAuthAwsConfigTidyRoletagDenylist(ctx context.Context, awsConfigTidyRoletagDenylistRequest AwsConfigTidyRoletagDenylistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -13722,13 +12546,7 @@ func (a *AuthApiService) PostAuthAwsConfigTidyRoletagDenylist(ctx context.Contex
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthAwsLogin Method for PostAuthAwsLogin
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthAwsLoginRequest
-*/
-// Execute executes the request
+// PostAuthAwsLogin
 func (a *AuthApiService) PostAuthAwsLogin(ctx context.Context, awsLoginRequest AwsLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -13794,14 +12612,8 @@ func (a *AuthApiService) PostAuthAwsLogin(ctx context.Context, awsLoginRequest A
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthAwsRoleRole Method for PostAuthAwsRoleRole
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param role Name of the role.
- @return ApiPostAuthAwsRoleRoleRequest
-*/
-// Execute executes the request
+// PostAuthAwsRoleRole
+// role: Name of the role.
 func (a *AuthApiService) PostAuthAwsRoleRole(ctx context.Context, role string, awsRoleRequest AwsRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -13868,14 +12680,8 @@ func (a *AuthApiService) PostAuthAwsRoleRole(ctx context.Context, role string, a
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthAwsRoleRoleTag Method for PostAuthAwsRoleRoleTag
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param role Name of the role.
- @return ApiPostAuthAwsRoleRoleTagRequest
-*/
-// Execute executes the request
+// PostAuthAwsRoleRoleTag
+// role: Name of the role.
 func (a *AuthApiService) PostAuthAwsRoleRoleTag(ctx context.Context, role string, awsRoleTagRequest AwsRoleTagRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -13942,14 +12748,8 @@ func (a *AuthApiService) PostAuthAwsRoleRoleTag(ctx context.Context, role string
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthAwsRoletagBlacklistRoleTag Method for PostAuthAwsRoletagBlacklistRoleTag
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleTag Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
- @return ApiPostAuthAwsRoletagBlacklistRoleTagRequest
-*/
-// Execute executes the request
+// PostAuthAwsRoletagBlacklistRoleTag
+// roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 func (a *AuthApiService) PostAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -14014,14 +12814,8 @@ func (a *AuthApiService) PostAuthAwsRoletagBlacklistRoleTag(ctx context.Context,
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthAwsRoletagDenylistRoleTag Method for PostAuthAwsRoletagDenylistRoleTag
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleTag Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
- @return ApiPostAuthAwsRoletagDenylistRoleTagRequest
-*/
-// Execute executes the request
+// PostAuthAwsRoletagDenylistRoleTag
+// roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 func (a *AuthApiService) PostAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -14086,13 +12880,7 @@ func (a *AuthApiService) PostAuthAwsRoletagDenylistRoleTag(ctx context.Context, 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthAwsTidyIdentityAccesslist Method for PostAuthAwsTidyIdentityAccesslist
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthAwsTidyIdentityAccesslistRequest
-*/
-// Execute executes the request
+// PostAuthAwsTidyIdentityAccesslist
 func (a *AuthApiService) PostAuthAwsTidyIdentityAccesslist(ctx context.Context, awsTidyIdentityAccesslistRequest AwsTidyIdentityAccesslistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -14158,13 +12946,7 @@ func (a *AuthApiService) PostAuthAwsTidyIdentityAccesslist(ctx context.Context, 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthAwsTidyIdentityWhitelist Method for PostAuthAwsTidyIdentityWhitelist
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthAwsTidyIdentityWhitelistRequest
-*/
-// Execute executes the request
+// PostAuthAwsTidyIdentityWhitelist
 func (a *AuthApiService) PostAuthAwsTidyIdentityWhitelist(ctx context.Context, awsTidyIdentityWhitelistRequest AwsTidyIdentityWhitelistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -14230,13 +13012,7 @@ func (a *AuthApiService) PostAuthAwsTidyIdentityWhitelist(ctx context.Context, a
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthAwsTidyRoletagBlacklist Method for PostAuthAwsTidyRoletagBlacklist
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthAwsTidyRoletagBlacklistRequest
-*/
-// Execute executes the request
+// PostAuthAwsTidyRoletagBlacklist
 func (a *AuthApiService) PostAuthAwsTidyRoletagBlacklist(ctx context.Context, awsTidyRoletagBlacklistRequest AwsTidyRoletagBlacklistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -14302,13 +13078,7 @@ func (a *AuthApiService) PostAuthAwsTidyRoletagBlacklist(ctx context.Context, aw
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthAwsTidyRoletagDenylist Method for PostAuthAwsTidyRoletagDenylist
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthAwsTidyRoletagDenylistRequest
-*/
-// Execute executes the request
+// PostAuthAwsTidyRoletagDenylist
 func (a *AuthApiService) PostAuthAwsTidyRoletagDenylist(ctx context.Context, awsTidyRoletagDenylistRequest AwsTidyRoletagDenylistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -14374,13 +13144,7 @@ func (a *AuthApiService) PostAuthAwsTidyRoletagDenylist(ctx context.Context, aws
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthAzureConfig Method for PostAuthAzureConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthAzureConfigRequest
-*/
-// Execute executes the request
+// PostAuthAzureConfig
 func (a *AuthApiService) PostAuthAzureConfig(ctx context.Context, azureConfigRequest AzureConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -14446,13 +13210,7 @@ func (a *AuthApiService) PostAuthAzureConfig(ctx context.Context, azureConfigReq
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthAzureLogin Method for PostAuthAzureLogin
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthAzureLoginRequest
-*/
-// Execute executes the request
+// PostAuthAzureLogin
 func (a *AuthApiService) PostAuthAzureLogin(ctx context.Context, azureLoginRequest AzureLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -14518,14 +13276,8 @@ func (a *AuthApiService) PostAuthAzureLogin(ctx context.Context, azureLoginReque
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthAzureRoleName Method for PostAuthAzureRoleName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiPostAuthAzureRoleNameRequest
-*/
-// Execute executes the request
+// PostAuthAzureRoleName
+// name: Name of the role.
 func (a *AuthApiService) PostAuthAzureRoleName(ctx context.Context, name string, azureRoleRequest AzureRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -14592,13 +13344,7 @@ func (a *AuthApiService) PostAuthAzureRoleName(ctx context.Context, name string,
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthCentrifyConfig This path allows you to configure the centrify auth provider to interact with the Centrify Identity Services Platform for authenticating users.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthCentrifyConfigRequest
-*/
-// Execute executes the request
+// PostAuthCentrifyConfig This path allows you to configure the centrify auth provider to interact with the Centrify Identity Services Platform for authenticating users.
 func (a *AuthApiService) PostAuthCentrifyConfig(ctx context.Context, centrifyConfigRequest CentrifyConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -14664,13 +13410,7 @@ func (a *AuthApiService) PostAuthCentrifyConfig(ctx context.Context, centrifyCon
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthCentrifyLogin Log in with a username and password.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthCentrifyLoginRequest
-*/
-// Execute executes the request
+// PostAuthCentrifyLogin Log in with a username and password.
 func (a *AuthApiService) PostAuthCentrifyLogin(ctx context.Context, centrifyLoginRequest CentrifyLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -14736,14 +13476,8 @@ func (a *AuthApiService) PostAuthCentrifyLogin(ctx context.Context, centrifyLogi
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthCertCertsName Manage trusted certificates used for authentication.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the certificate
- @return ApiPostAuthCertCertsNameRequest
-*/
-// Execute executes the request
+// PostAuthCertCertsName Manage trusted certificates used for authentication.
+// name: The name of the certificate
 func (a *AuthApiService) PostAuthCertCertsName(ctx context.Context, name string, certCertsRequest CertCertsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -14810,13 +13544,7 @@ func (a *AuthApiService) PostAuthCertCertsName(ctx context.Context, name string,
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthCertConfig Method for PostAuthCertConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthCertConfigRequest
-*/
-// Execute executes the request
+// PostAuthCertConfig
 func (a *AuthApiService) PostAuthCertConfig(ctx context.Context, certConfigRequest CertConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -14882,14 +13610,8 @@ func (a *AuthApiService) PostAuthCertConfig(ctx context.Context, certConfigReque
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthCertCrlsName Manage Certificate Revocation Lists checked during authentication.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the certificate
- @return ApiPostAuthCertCrlsNameRequest
-*/
-// Execute executes the request
+// PostAuthCertCrlsName Manage Certificate Revocation Lists checked during authentication.
+// name: The name of the certificate
 func (a *AuthApiService) PostAuthCertCrlsName(ctx context.Context, name string, certCrlsRequest CertCrlsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -14956,13 +13678,7 @@ func (a *AuthApiService) PostAuthCertCrlsName(ctx context.Context, name string, 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthCertLogin Method for PostAuthCertLogin
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthCertLoginRequest
-*/
-// Execute executes the request
+// PostAuthCertLogin
 func (a *AuthApiService) PostAuthCertLogin(ctx context.Context, certLoginRequest CertLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -15028,13 +13744,7 @@ func (a *AuthApiService) PostAuthCertLogin(ctx context.Context, certLoginRequest
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthCfConfig Method for PostAuthCfConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthCfConfigRequest
-*/
-// Execute executes the request
+// PostAuthCfConfig
 func (a *AuthApiService) PostAuthCfConfig(ctx context.Context, cfConfigRequest CfConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -15100,13 +13810,7 @@ func (a *AuthApiService) PostAuthCfConfig(ctx context.Context, cfConfigRequest C
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthCfLogin Method for PostAuthCfLogin
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthCfLoginRequest
-*/
-// Execute executes the request
+// PostAuthCfLogin
 func (a *AuthApiService) PostAuthCfLogin(ctx context.Context, cfLoginRequest CfLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -15172,14 +13876,8 @@ func (a *AuthApiService) PostAuthCfLogin(ctx context.Context, cfLoginRequest CfL
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthCfRolesRole Method for PostAuthCfRolesRole
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param role The name of the role.
- @return ApiPostAuthCfRolesRoleRequest
-*/
-// Execute executes the request
+// PostAuthCfRolesRole
+// role: The name of the role.
 func (a *AuthApiService) PostAuthCfRolesRole(ctx context.Context, role string, cfRolesRequest CfRolesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -15246,13 +13944,7 @@ func (a *AuthApiService) PostAuthCfRolesRole(ctx context.Context, role string, c
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthGcpConfig Configure credentials used to query the GCP IAM API to verify authenticating service accounts
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthGcpConfigRequest
-*/
-// Execute executes the request
+// PostAuthGcpConfig Configure credentials used to query the GCP IAM API to verify authenticating service accounts
 func (a *AuthApiService) PostAuthGcpConfig(ctx context.Context, gcpConfigRequest GcpConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -15318,13 +14010,7 @@ func (a *AuthApiService) PostAuthGcpConfig(ctx context.Context, gcpConfigRequest
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthGcpLogin Method for PostAuthGcpLogin
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthGcpLoginRequest
-*/
-// Execute executes the request
+// PostAuthGcpLogin
 func (a *AuthApiService) PostAuthGcpLogin(ctx context.Context, gcpLoginRequest GcpLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -15390,14 +14076,8 @@ func (a *AuthApiService) PostAuthGcpLogin(ctx context.Context, gcpLoginRequest G
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthGcpRoleName Create a GCP role with associated policies and required attributes.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiPostAuthGcpRoleNameRequest
-*/
-// Execute executes the request
+// PostAuthGcpRoleName Create a GCP role with associated policies and required attributes.
+// name: Name of the role.
 func (a *AuthApiService) PostAuthGcpRoleName(ctx context.Context, name string, gcpRoleRequest GcpRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -15464,14 +14144,8 @@ func (a *AuthApiService) PostAuthGcpRoleName(ctx context.Context, name string, g
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthGcpRoleNameLabels Add or remove labels for an existing 'gce' role
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiPostAuthGcpRoleNameLabelsRequest
-*/
-// Execute executes the request
+// PostAuthGcpRoleNameLabels Add or remove labels for an existing 'gce' role
+// name: Name of the role.
 func (a *AuthApiService) PostAuthGcpRoleNameLabels(ctx context.Context, name string, gcpRoleLabelsRequest GcpRoleLabelsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -15538,14 +14212,8 @@ func (a *AuthApiService) PostAuthGcpRoleNameLabels(ctx context.Context, name str
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthGcpRoleNameServiceAccounts Add or remove service accounts for an existing `iam` role
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiPostAuthGcpRoleNameServiceAccountsRequest
-*/
-// Execute executes the request
+// PostAuthGcpRoleNameServiceAccounts Add or remove service accounts for an existing `iam` role
+// name: Name of the role.
 func (a *AuthApiService) PostAuthGcpRoleNameServiceAccounts(ctx context.Context, name string, gcpRoleServiceAccountsRequest GcpRoleServiceAccountsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -15612,13 +14280,7 @@ func (a *AuthApiService) PostAuthGcpRoleNameServiceAccounts(ctx context.Context,
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthGithubConfig Method for PostAuthGithubConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthGithubConfigRequest
-*/
-// Execute executes the request
+// PostAuthGithubConfig
 func (a *AuthApiService) PostAuthGithubConfig(ctx context.Context, githubConfigRequest GithubConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -15684,13 +14346,7 @@ func (a *AuthApiService) PostAuthGithubConfig(ctx context.Context, githubConfigR
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthGithubLogin Method for PostAuthGithubLogin
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthGithubLoginRequest
-*/
-// Execute executes the request
+// PostAuthGithubLogin
 func (a *AuthApiService) PostAuthGithubLogin(ctx context.Context, githubLoginRequest GithubLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -15756,14 +14412,8 @@ func (a *AuthApiService) PostAuthGithubLogin(ctx context.Context, githubLoginReq
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthGithubMapTeamsKey Read/write/delete a single teams mapping
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Key for the teams mapping
- @return ApiPostAuthGithubMapTeamsKeyRequest
-*/
-// Execute executes the request
+// PostAuthGithubMapTeamsKey Read/write/delete a single teams mapping
+// key: Key for the teams mapping
 func (a *AuthApiService) PostAuthGithubMapTeamsKey(ctx context.Context, key string, githubMapTeamsRequest GithubMapTeamsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -15830,14 +14480,8 @@ func (a *AuthApiService) PostAuthGithubMapTeamsKey(ctx context.Context, key stri
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthGithubMapUsersKey Read/write/delete a single users mapping
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Key for the users mapping
- @return ApiPostAuthGithubMapUsersKeyRequest
-*/
-// Execute executes the request
+// PostAuthGithubMapUsersKey Read/write/delete a single users mapping
+// key: Key for the users mapping
 func (a *AuthApiService) PostAuthGithubMapUsersKey(ctx context.Context, key string, githubMapUsersRequest GithubMapUsersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -15904,18 +14548,8 @@ func (a *AuthApiService) PostAuthGithubMapUsersKey(ctx context.Context, key stri
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthJwtConfig Configure the JWT authentication backend.
-
-The JWT authentication backend validates JWTs (or OIDC) using the configured
-credentials. If using OIDC Discovery, the URL must be provided, along
-with (optionally) the CA cert to use for the connection. If performing JWT
-validation locally, a set of public keys must be provided.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthJwtConfigRequest
-*/
-// Execute executes the request
+// PostAuthJwtConfig Configure the JWT authentication backend.
+// The JWT authentication backend validates JWTs (or OIDC) using the configured credentials. If using OIDC Discovery, the URL must be provided, along with (optionally) the CA cert to use for the connection. If performing JWT validation locally, a set of public keys must be provided.
 func (a *AuthApiService) PostAuthJwtConfig(ctx context.Context, jwtConfigRequest JwtConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -15981,13 +14615,7 @@ func (a *AuthApiService) PostAuthJwtConfig(ctx context.Context, jwtConfigRequest
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthJwtLogin Authenticates to Vault using a JWT (or OIDC) token.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthJwtLoginRequest
-*/
-// Execute executes the request
+// PostAuthJwtLogin Authenticates to Vault using a JWT (or OIDC) token.
 func (a *AuthApiService) PostAuthJwtLogin(ctx context.Context, jwtLoginRequest JwtLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -16053,13 +14681,7 @@ func (a *AuthApiService) PostAuthJwtLogin(ctx context.Context, jwtLoginRequest J
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthJwtOidcAuthUrl Request an authorization URL to start an OIDC login flow.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthJwtOidcAuthUrlRequest
-*/
-// Execute executes the request
+// PostAuthJwtOidcAuthUrl Request an authorization URL to start an OIDC login flow.
 func (a *AuthApiService) PostAuthJwtOidcAuthUrl(ctx context.Context, jwtOidcAuthUrlRequest JwtOidcAuthUrlRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -16125,13 +14747,7 @@ func (a *AuthApiService) PostAuthJwtOidcAuthUrl(ctx context.Context, jwtOidcAuth
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthJwtOidcCallback Callback endpoint to handle form_posts.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthJwtOidcCallbackRequest
-*/
-// Execute executes the request
+// PostAuthJwtOidcCallback Callback endpoint to handle form_posts.
 func (a *AuthApiService) PostAuthJwtOidcCallback(ctx context.Context, jwtOidcCallbackRequest JwtOidcCallbackRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -16197,19 +14813,9 @@ func (a *AuthApiService) PostAuthJwtOidcCallback(ctx context.Context, jwtOidcCal
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthJwtRoleName Register an role with the backend.
-
-A role is required to authenticate with this backend. The role binds
-		JWT token information with token policies and settings.
-		The bindings, token polices and token settings can all be configured
-		using this endpoint
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiPostAuthJwtRoleNameRequest
-*/
-// Execute executes the request
+// PostAuthJwtRoleName Register an role with the backend.
+// A role is required to authenticate with this backend. The role binds   JWT token information with token policies and settings.   The bindings, token polices and token settings can all be configured   using this endpoint
+// name: Name of the role.
 func (a *AuthApiService) PostAuthJwtRoleName(ctx context.Context, name string, jwtRoleRequest JwtRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -16276,13 +14882,7 @@ func (a *AuthApiService) PostAuthJwtRoleName(ctx context.Context, name string, j
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthKerberosConfig Method for PostAuthKerberosConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthKerberosConfigRequest
-*/
-// Execute executes the request
+// PostAuthKerberosConfig
 func (a *AuthApiService) PostAuthKerberosConfig(ctx context.Context, kerberosConfigRequest KerberosConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -16348,13 +14948,7 @@ func (a *AuthApiService) PostAuthKerberosConfig(ctx context.Context, kerberosCon
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthKerberosConfigLdap Method for PostAuthKerberosConfigLdap
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthKerberosConfigLdapRequest
-*/
-// Execute executes the request
+// PostAuthKerberosConfigLdap
 func (a *AuthApiService) PostAuthKerberosConfigLdap(ctx context.Context, kerberosConfigLdapRequest KerberosConfigLdapRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -16420,14 +15014,8 @@ func (a *AuthApiService) PostAuthKerberosConfigLdap(ctx context.Context, kerbero
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthKerberosGroupsName Method for PostAuthKerberosGroupsName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the LDAP group.
- @return ApiPostAuthKerberosGroupsNameRequest
-*/
-// Execute executes the request
+// PostAuthKerberosGroupsName
+// name: Name of the LDAP group.
 func (a *AuthApiService) PostAuthKerberosGroupsName(ctx context.Context, name string, kerberosGroupsRequest KerberosGroupsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -16494,13 +15082,7 @@ func (a *AuthApiService) PostAuthKerberosGroupsName(ctx context.Context, name st
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthKerberosLogin Method for PostAuthKerberosLogin
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthKerberosLoginRequest
-*/
-// Execute executes the request
+// PostAuthKerberosLogin
 func (a *AuthApiService) PostAuthKerberosLogin(ctx context.Context, kerberosLoginRequest KerberosLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -16566,13 +15148,7 @@ func (a *AuthApiService) PostAuthKerberosLogin(ctx context.Context, kerberosLogi
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthKubernetesConfig Configures the JWT Public Key and Kubernetes API information.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthKubernetesConfigRequest
-*/
-// Execute executes the request
+// PostAuthKubernetesConfig Configures the JWT Public Key and Kubernetes API information.
 func (a *AuthApiService) PostAuthKubernetesConfig(ctx context.Context, kubernetesConfigRequest KubernetesConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -16638,13 +15214,7 @@ func (a *AuthApiService) PostAuthKubernetesConfig(ctx context.Context, kubernete
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthKubernetesLogin Authenticates Kubernetes service accounts with Vault.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthKubernetesLoginRequest
-*/
-// Execute executes the request
+// PostAuthKubernetesLogin Authenticates Kubernetes service accounts with Vault.
 func (a *AuthApiService) PostAuthKubernetesLogin(ctx context.Context, kubernetesLoginRequest KubernetesLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -16710,14 +15280,8 @@ func (a *AuthApiService) PostAuthKubernetesLogin(ctx context.Context, kubernetes
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthKubernetesRoleName Register an role with the backend.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiPostAuthKubernetesRoleNameRequest
-*/
-// Execute executes the request
+// PostAuthKubernetesRoleName Register an role with the backend.
+// name: Name of the role.
 func (a *AuthApiService) PostAuthKubernetesRoleName(ctx context.Context, name string, kubernetesRoleRequest KubernetesRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -16784,13 +15348,7 @@ func (a *AuthApiService) PostAuthKubernetesRoleName(ctx context.Context, name st
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthLdapConfig Configure the LDAP server to connect to, along with its options.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthLdapConfigRequest
-*/
-// Execute executes the request
+// PostAuthLdapConfig Configure the LDAP server to connect to, along with its options.
 func (a *AuthApiService) PostAuthLdapConfig(ctx context.Context, ldapConfigRequest LdapConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -16856,14 +15414,8 @@ func (a *AuthApiService) PostAuthLdapConfig(ctx context.Context, ldapConfigReque
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthLdapGroupsName Manage additional groups for users allowed to authenticate.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the LDAP group.
- @return ApiPostAuthLdapGroupsNameRequest
-*/
-// Execute executes the request
+// PostAuthLdapGroupsName Manage additional groups for users allowed to authenticate.
+// name: Name of the LDAP group.
 func (a *AuthApiService) PostAuthLdapGroupsName(ctx context.Context, name string, ldapGroupsRequest LdapGroupsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -16930,14 +15482,8 @@ func (a *AuthApiService) PostAuthLdapGroupsName(ctx context.Context, name string
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthLdapLoginUsername Log in with a username and password.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param username DN (distinguished name) to be used for login.
- @return ApiPostAuthLdapLoginUsernameRequest
-*/
-// Execute executes the request
+// PostAuthLdapLoginUsername Log in with a username and password.
+// username: DN (distinguished name) to be used for login.
 func (a *AuthApiService) PostAuthLdapLoginUsername(ctx context.Context, username string, ldapLoginRequest LdapLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -17004,14 +15550,8 @@ func (a *AuthApiService) PostAuthLdapLoginUsername(ctx context.Context, username
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthLdapUsersName Manage users allowed to authenticate.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the LDAP user.
- @return ApiPostAuthLdapUsersNameRequest
-*/
-// Execute executes the request
+// PostAuthLdapUsersName Manage users allowed to authenticate.
+// name: Name of the LDAP user.
 func (a *AuthApiService) PostAuthLdapUsersName(ctx context.Context, name string, ldapUsersRequest LdapUsersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -17078,13 +15618,7 @@ func (a *AuthApiService) PostAuthLdapUsersName(ctx context.Context, name string,
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthOciConfig Manages the configuration for the Vault Auth Plugin.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthOciConfigRequest
-*/
-// Execute executes the request
+// PostAuthOciConfig Manages the configuration for the Vault Auth Plugin.
 func (a *AuthApiService) PostAuthOciConfig(ctx context.Context, ociConfigRequest OciConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -17150,14 +15684,8 @@ func (a *AuthApiService) PostAuthOciConfig(ctx context.Context, ociConfigRequest
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthOciLoginRole Authenticates to Vault using OCI credentials
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param role Name of the role.
- @return ApiPostAuthOciLoginRoleRequest
-*/
-// Execute executes the request
+// PostAuthOciLoginRole Authenticates to Vault using OCI credentials
+// role: Name of the role.
 func (a *AuthApiService) PostAuthOciLoginRole(ctx context.Context, role string, ociLoginRequest OciLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -17224,14 +15752,8 @@ func (a *AuthApiService) PostAuthOciLoginRole(ctx context.Context, role string, 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthOciRoleRole Create a role and associate policies to it.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param role Name of the role.
- @return ApiPostAuthOciRoleRoleRequest
-*/
-// Execute executes the request
+// PostAuthOciRoleRole Create a role and associate policies to it.
+// role: Name of the role.
 func (a *AuthApiService) PostAuthOciRoleRole(ctx context.Context, role string, ociRoleRequest OciRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -17298,18 +15820,8 @@ func (a *AuthApiService) PostAuthOciRoleRole(ctx context.Context, role string, o
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthOidcConfig Configure the JWT authentication backend.
-
-The JWT authentication backend validates JWTs (or OIDC) using the configured
-credentials. If using OIDC Discovery, the URL must be provided, along
-with (optionally) the CA cert to use for the connection. If performing JWT
-validation locally, a set of public keys must be provided.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthOidcConfigRequest
-*/
-// Execute executes the request
+// PostAuthOidcConfig Configure the JWT authentication backend.
+// The JWT authentication backend validates JWTs (or OIDC) using the configured credentials. If using OIDC Discovery, the URL must be provided, along with (optionally) the CA cert to use for the connection. If performing JWT validation locally, a set of public keys must be provided.
 func (a *AuthApiService) PostAuthOidcConfig(ctx context.Context, oidcConfigRequest OidcConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -17375,13 +15887,7 @@ func (a *AuthApiService) PostAuthOidcConfig(ctx context.Context, oidcConfigReque
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthOidcLogin Authenticates to Vault using a JWT (or OIDC) token.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthOidcLoginRequest
-*/
-// Execute executes the request
+// PostAuthOidcLogin Authenticates to Vault using a JWT (or OIDC) token.
 func (a *AuthApiService) PostAuthOidcLogin(ctx context.Context, oidcLoginRequest OidcLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -17447,13 +15953,7 @@ func (a *AuthApiService) PostAuthOidcLogin(ctx context.Context, oidcLoginRequest
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthOidcOidcAuthUrl Request an authorization URL to start an OIDC login flow.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthOidcOidcAuthUrlRequest
-*/
-// Execute executes the request
+// PostAuthOidcOidcAuthUrl Request an authorization URL to start an OIDC login flow.
 func (a *AuthApiService) PostAuthOidcOidcAuthUrl(ctx context.Context, oidcOidcAuthUrlRequest OidcOidcAuthUrlRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -17519,13 +16019,7 @@ func (a *AuthApiService) PostAuthOidcOidcAuthUrl(ctx context.Context, oidcOidcAu
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthOidcOidcCallback Callback endpoint to handle form_posts.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthOidcOidcCallbackRequest
-*/
-// Execute executes the request
+// PostAuthOidcOidcCallback Callback endpoint to handle form_posts.
 func (a *AuthApiService) PostAuthOidcOidcCallback(ctx context.Context, oidcOidcCallbackRequest OidcOidcCallbackRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -17591,19 +16085,9 @@ func (a *AuthApiService) PostAuthOidcOidcCallback(ctx context.Context, oidcOidcC
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthOidcRoleName Register an role with the backend.
-
-A role is required to authenticate with this backend. The role binds
-		JWT token information with token policies and settings.
-		The bindings, token polices and token settings can all be configured
-		using this endpoint
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiPostAuthOidcRoleNameRequest
-*/
-// Execute executes the request
+// PostAuthOidcRoleName Register an role with the backend.
+// A role is required to authenticate with this backend. The role binds   JWT token information with token policies and settings.   The bindings, token polices and token settings can all be configured   using this endpoint
+// name: Name of the role.
 func (a *AuthApiService) PostAuthOidcRoleName(ctx context.Context, name string, oidcRoleRequest OidcRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -17670,13 +16154,7 @@ func (a *AuthApiService) PostAuthOidcRoleName(ctx context.Context, name string, 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthOktaConfig This endpoint allows you to configure the Okta and its configuration options.  The Okta organization are the characters at the front of the URL for Okta. Example https://ORG.okta.com
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthOktaConfigRequest
-*/
-// Execute executes the request
+// PostAuthOktaConfig This endpoint allows you to configure the Okta and its configuration options.  The Okta organization are the characters at the front of the URL for Okta. Example https://ORG.okta.com
 func (a *AuthApiService) PostAuthOktaConfig(ctx context.Context, oktaConfigRequest OktaConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -17742,14 +16220,8 @@ func (a *AuthApiService) PostAuthOktaConfig(ctx context.Context, oktaConfigReque
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthOktaGroupsName Manage users allowed to authenticate.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the Okta group.
- @return ApiPostAuthOktaGroupsNameRequest
-*/
-// Execute executes the request
+// PostAuthOktaGroupsName Manage users allowed to authenticate.
+// name: Name of the Okta group.
 func (a *AuthApiService) PostAuthOktaGroupsName(ctx context.Context, name string, oktaGroupsRequest OktaGroupsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -17816,14 +16288,8 @@ func (a *AuthApiService) PostAuthOktaGroupsName(ctx context.Context, name string
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthOktaLoginUsername Log in with a username and password.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param username Username to be used for login.
- @return ApiPostAuthOktaLoginUsernameRequest
-*/
-// Execute executes the request
+// PostAuthOktaLoginUsername Log in with a username and password.
+// username: Username to be used for login.
 func (a *AuthApiService) PostAuthOktaLoginUsername(ctx context.Context, username string, oktaLoginRequest OktaLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -17890,14 +16356,8 @@ func (a *AuthApiService) PostAuthOktaLoginUsername(ctx context.Context, username
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthOktaUsersName Manage additional groups for users allowed to authenticate.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the user.
- @return ApiPostAuthOktaUsersNameRequest
-*/
-// Execute executes the request
+// PostAuthOktaUsersName Manage additional groups for users allowed to authenticate.
+// name: Name of the user.
 func (a *AuthApiService) PostAuthOktaUsersName(ctx context.Context, name string, oktaUsersRequest OktaUsersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -17964,13 +16424,7 @@ func (a *AuthApiService) PostAuthOktaUsersName(ctx context.Context, name string,
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthRadiusConfig Configure the RADIUS server to connect to, along with its options.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthRadiusConfigRequest
-*/
-// Execute executes the request
+// PostAuthRadiusConfig Configure the RADIUS server to connect to, along with its options.
 func (a *AuthApiService) PostAuthRadiusConfig(ctx context.Context, radiusConfigRequest RadiusConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -18036,13 +16490,7 @@ func (a *AuthApiService) PostAuthRadiusConfig(ctx context.Context, radiusConfigR
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthRadiusLogin Log in with a username and password.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthRadiusLoginRequest
-*/
-// Execute executes the request
+// PostAuthRadiusLogin Log in with a username and password.
 func (a *AuthApiService) PostAuthRadiusLogin(ctx context.Context, radiusLoginRequest RadiusLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -18108,14 +16556,8 @@ func (a *AuthApiService) PostAuthRadiusLogin(ctx context.Context, radiusLoginReq
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthRadiusLoginUrlusername Log in with a username and password.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param urlusername Username to be used for login. (URL parameter)
- @return ApiPostAuthRadiusLoginUrlusernameRequest
-*/
-// Execute executes the request
+// PostAuthRadiusLoginUrlusername Log in with a username and password.
+// urlusername: Username to be used for login. (URL parameter)
 func (a *AuthApiService) PostAuthRadiusLoginUrlusername(ctx context.Context, urlusername string, radiusLoginRequest RadiusLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -18182,14 +16624,8 @@ func (a *AuthApiService) PostAuthRadiusLoginUrlusername(ctx context.Context, url
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthRadiusUsersName Manage users allowed to authenticate.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the RADIUS user.
- @return ApiPostAuthRadiusUsersNameRequest
-*/
-// Execute executes the request
+// PostAuthRadiusUsersName Manage users allowed to authenticate.
+// name: Name of the RADIUS user.
 func (a *AuthApiService) PostAuthRadiusUsersName(ctx context.Context, name string, radiusUsersRequest RadiusUsersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -18256,13 +16692,7 @@ func (a *AuthApiService) PostAuthRadiusUsersName(ctx context.Context, name strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthTokenCreate The token create path is used to create new tokens.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthTokenCreateRequest
-*/
-// Execute executes the request
+// PostAuthTokenCreate The token create path is used to create new tokens.
 func (a *AuthApiService) PostAuthTokenCreate(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -18326,13 +16756,7 @@ func (a *AuthApiService) PostAuthTokenCreate(ctx context.Context) (*http.Respons
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthTokenCreateOrphan The token create path is used to create new orphan tokens.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthTokenCreateOrphanRequest
-*/
-// Execute executes the request
+// PostAuthTokenCreateOrphan The token create path is used to create new orphan tokens.
 func (a *AuthApiService) PostAuthTokenCreateOrphan(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -18396,14 +16820,8 @@ func (a *AuthApiService) PostAuthTokenCreateOrphan(ctx context.Context) (*http.R
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthTokenCreateRoleName This token create path is used to create new tokens adhering to the given role.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role
- @return ApiPostAuthTokenCreateRoleNameRequest
-*/
-// Execute executes the request
+// PostAuthTokenCreateRoleName This token create path is used to create new tokens adhering to the given role.
+// roleName: Name of the role
 func (a *AuthApiService) PostAuthTokenCreateRoleName(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -18468,13 +16886,7 @@ func (a *AuthApiService) PostAuthTokenCreateRoleName(ctx context.Context, roleNa
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthTokenLookup This endpoint will lookup a token and its properties.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthTokenLookupRequest
-*/
-// Execute executes the request
+// PostAuthTokenLookup This endpoint will lookup a token and its properties.
 func (a *AuthApiService) PostAuthTokenLookup(ctx context.Context, tokenLookupRequest TokenLookupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -18540,13 +16952,7 @@ func (a *AuthApiService) PostAuthTokenLookup(ctx context.Context, tokenLookupReq
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthTokenLookupAccessor This endpoint will lookup a token associated with the given accessor and its properties. Response will not contain the token ID.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthTokenLookupAccessorRequest
-*/
-// Execute executes the request
+// PostAuthTokenLookupAccessor This endpoint will lookup a token associated with the given accessor and its properties. Response will not contain the token ID.
 func (a *AuthApiService) PostAuthTokenLookupAccessor(ctx context.Context, tokenLookupAccessorRequest TokenLookupAccessorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -18612,13 +17018,7 @@ func (a *AuthApiService) PostAuthTokenLookupAccessor(ctx context.Context, tokenL
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthTokenLookupSelf This endpoint will lookup a token and its properties.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthTokenLookupSelfRequest
-*/
-// Execute executes the request
+// PostAuthTokenLookupSelf This endpoint will lookup a token and its properties.
 func (a *AuthApiService) PostAuthTokenLookupSelf(ctx context.Context, tokenLookupSelfRequest TokenLookupSelfRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -18684,13 +17084,7 @@ func (a *AuthApiService) PostAuthTokenLookupSelf(ctx context.Context, tokenLooku
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthTokenRenew This endpoint will renew the given token and prevent expiration.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthTokenRenewRequest
-*/
-// Execute executes the request
+// PostAuthTokenRenew This endpoint will renew the given token and prevent expiration.
 func (a *AuthApiService) PostAuthTokenRenew(ctx context.Context, tokenRenewRequest TokenRenewRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -18756,13 +17150,7 @@ func (a *AuthApiService) PostAuthTokenRenew(ctx context.Context, tokenRenewReque
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthTokenRenewAccessor This endpoint will renew a token associated with the given accessor and its properties. Response will not contain the token ID.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthTokenRenewAccessorRequest
-*/
-// Execute executes the request
+// PostAuthTokenRenewAccessor This endpoint will renew a token associated with the given accessor and its properties. Response will not contain the token ID.
 func (a *AuthApiService) PostAuthTokenRenewAccessor(ctx context.Context, tokenRenewAccessorRequest TokenRenewAccessorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -18828,13 +17216,7 @@ func (a *AuthApiService) PostAuthTokenRenewAccessor(ctx context.Context, tokenRe
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthTokenRenewSelf This endpoint will renew the token used to call it and prevent expiration.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthTokenRenewSelfRequest
-*/
-// Execute executes the request
+// PostAuthTokenRenewSelf This endpoint will renew the token used to call it and prevent expiration.
 func (a *AuthApiService) PostAuthTokenRenewSelf(ctx context.Context, tokenRenewSelfRequest TokenRenewSelfRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -18900,13 +17282,7 @@ func (a *AuthApiService) PostAuthTokenRenewSelf(ctx context.Context, tokenRenewS
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthTokenRevoke This endpoint will delete the given token and all of its child tokens.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthTokenRevokeRequest
-*/
-// Execute executes the request
+// PostAuthTokenRevoke This endpoint will delete the given token and all of its child tokens.
 func (a *AuthApiService) PostAuthTokenRevoke(ctx context.Context, tokenRevokeRequest TokenRevokeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -18972,13 +17348,7 @@ func (a *AuthApiService) PostAuthTokenRevoke(ctx context.Context, tokenRevokeReq
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthTokenRevokeAccessor This endpoint will delete the token associated with the accessor and all of its child tokens.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthTokenRevokeAccessorRequest
-*/
-// Execute executes the request
+// PostAuthTokenRevokeAccessor This endpoint will delete the token associated with the accessor and all of its child tokens.
 func (a *AuthApiService) PostAuthTokenRevokeAccessor(ctx context.Context, tokenRevokeAccessorRequest TokenRevokeAccessorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -19044,13 +17414,7 @@ func (a *AuthApiService) PostAuthTokenRevokeAccessor(ctx context.Context, tokenR
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthTokenRevokeOrphan This endpoint will delete the token and orphan its child tokens.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthTokenRevokeOrphanRequest
-*/
-// Execute executes the request
+// PostAuthTokenRevokeOrphan This endpoint will delete the token and orphan its child tokens.
 func (a *AuthApiService) PostAuthTokenRevokeOrphan(ctx context.Context, tokenRevokeOrphanRequest TokenRevokeOrphanRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -19116,13 +17480,7 @@ func (a *AuthApiService) PostAuthTokenRevokeOrphan(ctx context.Context, tokenRev
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthTokenRevokeSelf This endpoint will delete the token used to call it and all of its child tokens.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthTokenRevokeSelfRequest
-*/
-// Execute executes the request
+// PostAuthTokenRevokeSelf This endpoint will delete the token used to call it and all of its child tokens.
 func (a *AuthApiService) PostAuthTokenRevokeSelf(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -19186,14 +17544,8 @@ func (a *AuthApiService) PostAuthTokenRevokeSelf(ctx context.Context) (*http.Res
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthTokenRolesRoleName Method for PostAuthTokenRolesRoleName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleName Name of the role
- @return ApiPostAuthTokenRolesRoleNameRequest
-*/
-// Execute executes the request
+// PostAuthTokenRolesRoleName
+// roleName: Name of the role
 func (a *AuthApiService) PostAuthTokenRolesRoleName(ctx context.Context, roleName string, tokenRolesRequest TokenRolesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -19260,13 +17612,7 @@ func (a *AuthApiService) PostAuthTokenRolesRoleName(ctx context.Context, roleNam
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthTokenTidy This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAuthTokenTidyRequest
-*/
-// Execute executes the request
+// PostAuthTokenTidy This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
 func (a *AuthApiService) PostAuthTokenTidy(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -19330,14 +17676,8 @@ func (a *AuthApiService) PostAuthTokenTidy(ctx context.Context) (*http.Response,
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthUserpassLoginUsername Log in with a username and password.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param username Username of the user.
- @return ApiPostAuthUserpassLoginUsernameRequest
-*/
-// Execute executes the request
+// PostAuthUserpassLoginUsername Log in with a username and password.
+// username: Username of the user.
 func (a *AuthApiService) PostAuthUserpassLoginUsername(ctx context.Context, username string, userpassLoginRequest UserpassLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -19404,14 +17744,8 @@ func (a *AuthApiService) PostAuthUserpassLoginUsername(ctx context.Context, user
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthUserpassUsersUsername Manage users allowed to authenticate.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param username Username for this user.
- @return ApiPostAuthUserpassUsersUsernameRequest
-*/
-// Execute executes the request
+// PostAuthUserpassUsersUsername Manage users allowed to authenticate.
+// username: Username for this user.
 func (a *AuthApiService) PostAuthUserpassUsersUsername(ctx context.Context, username string, userpassUsersRequest UserpassUsersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -19478,14 +17812,8 @@ func (a *AuthApiService) PostAuthUserpassUsersUsername(ctx context.Context, user
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthUserpassUsersUsernamePassword Reset user's password.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param username Username for this user.
- @return ApiPostAuthUserpassUsersUsernamePasswordRequest
-*/
-// Execute executes the request
+// PostAuthUserpassUsersUsernamePassword Reset user's password.
+// username: Username for this user.
 func (a *AuthApiService) PostAuthUserpassUsersUsernamePassword(ctx context.Context, username string, userpassUsersPasswordRequest UserpassUsersPasswordRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -19552,14 +17880,8 @@ func (a *AuthApiService) PostAuthUserpassUsersUsernamePassword(ctx context.Conte
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAuthUserpassUsersUsernamePolicies Update the policies associated with the username.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param username Username for this user.
- @return ApiPostAuthUserpassUsersUsernamePoliciesRequest
-*/
-// Execute executes the request
+// PostAuthUserpassUsersUsernamePolicies Update the policies associated with the username.
+// username: Username for this user.
 func (a *AuthApiService) PostAuthUserpassUsersUsernamePolicies(ctx context.Context, username string, userpassUsersPoliciesRequest UserpassUsersPoliciesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost

@@ -22,14 +22,8 @@ import (
 // SystemApiService SystemApi service
 type SystemApiService service
 
-/*
-DeleteSysAuditPath Disable the audit device at the given path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path The name of the backend. Cannot be delimited. Example: \"mysql\"
- @return ApiDeleteSysAuditPathRequest
-*/
-// Execute executes the request
+// DeleteSysAuditPath Disable the audit device at the given path.
+// path: The name of the backend. Cannot be delimited. Example: \&quot;mysql\&quot;
 func (a *SystemApiService) DeleteSysAuditPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -94,14 +88,8 @@ func (a *SystemApiService) DeleteSysAuditPath(ctx context.Context, path string) 
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteSysAuthPath Disable the auth method at the given auth path
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path The path to mount to. Cannot be delimited. Example: \"user\"
- @return ApiDeleteSysAuthPathRequest
-*/
-// Execute executes the request
+// DeleteSysAuthPath Disable the auth method at the given auth path
+// path: The path to mount to. Cannot be delimited. Example: \&quot;user\&quot;
 func (a *SystemApiService) DeleteSysAuthPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -166,14 +154,7 @@ func (a *SystemApiService) DeleteSysAuthPath(ctx context.Context, path string) (
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteSysConfigAuditingRequestHeadersHeader Disable auditing of the given request header.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param header
- @return ApiDeleteSysConfigAuditingRequestHeadersHeaderRequest
-*/
-// Execute executes the request
+// DeleteSysConfigAuditingRequestHeadersHeader Disable auditing of the given request header.
 func (a *SystemApiService) DeleteSysConfigAuditingRequestHeadersHeader(ctx context.Context, header string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -238,13 +219,7 @@ func (a *SystemApiService) DeleteSysConfigAuditingRequestHeadersHeader(ctx conte
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteSysConfigCors Remove any CORS settings.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteSysConfigCorsRequest
-*/
-// Execute executes the request
+// DeleteSysConfigCors Remove any CORS settings.
 func (a *SystemApiService) DeleteSysConfigCors(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -308,14 +283,8 @@ func (a *SystemApiService) DeleteSysConfigCors(ctx context.Context) (*http.Respo
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteSysConfigUiHeadersHeader Remove a UI header.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param header The name of the header.
- @return ApiDeleteSysConfigUiHeadersHeaderRequest
-*/
-// Execute executes the request
+// DeleteSysConfigUiHeadersHeader Remove a UI header.
+// header: The name of the header.
 func (a *SystemApiService) DeleteSysConfigUiHeadersHeader(ctx context.Context, header string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -380,13 +349,7 @@ func (a *SystemApiService) DeleteSysConfigUiHeadersHeader(ctx context.Context, h
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteSysGenerateRoot Cancels any in-progress root generation attempt.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteSysGenerateRootRequest
-*/
-// Execute executes the request
+// DeleteSysGenerateRoot Cancels any in-progress root generation attempt.
 func (a *SystemApiService) DeleteSysGenerateRoot(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -450,13 +413,7 @@ func (a *SystemApiService) DeleteSysGenerateRoot(ctx context.Context) (*http.Res
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteSysGenerateRootAttempt Cancels any in-progress root generation attempt.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteSysGenerateRootAttemptRequest
-*/
-// Execute executes the request
+// DeleteSysGenerateRootAttempt Cancels any in-progress root generation attempt.
 func (a *SystemApiService) DeleteSysGenerateRootAttempt(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -520,14 +477,8 @@ func (a *SystemApiService) DeleteSysGenerateRootAttempt(ctx context.Context) (*h
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteSysMountsPath Disable the mount point specified at the given path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path The path to mount to. Example: \"aws/east\"
- @return ApiDeleteSysMountsPathRequest
-*/
-// Execute executes the request
+// DeleteSysMountsPath Disable the mount point specified at the given path.
+// path: The path to mount to. Example: \&quot;aws/east\&quot;
 func (a *SystemApiService) DeleteSysMountsPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -592,14 +543,8 @@ func (a *SystemApiService) DeleteSysMountsPath(ctx context.Context, path string)
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteSysPluginsCatalogName Remove the plugin with the given name.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the plugin
- @return ApiDeleteSysPluginsCatalogNameRequest
-*/
-// Execute executes the request
+// DeleteSysPluginsCatalogName Remove the plugin with the given name.
+// name: The name of the plugin
 func (a *SystemApiService) DeleteSysPluginsCatalogName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -664,15 +609,9 @@ func (a *SystemApiService) DeleteSysPluginsCatalogName(ctx context.Context, name
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteSysPluginsCatalogTypeName Remove the plugin with the given name.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the plugin
- @param type_ The type of the plugin, may be auth, secret, or database
- @return ApiDeleteSysPluginsCatalogTypeNameRequest
-*/
-// Execute executes the request
+// DeleteSysPluginsCatalogTypeName Remove the plugin with the given name.
+// name: The name of the plugin
+// type_: The type of the plugin, may be auth, secret, or database
 func (a *SystemApiService) DeleteSysPluginsCatalogTypeName(ctx context.Context, name string, type_ string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -738,14 +677,8 @@ func (a *SystemApiService) DeleteSysPluginsCatalogTypeName(ctx context.Context, 
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteSysPoliciesAclName Delete the ACL policy with the given name.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the policy. Example: \"ops\"
- @return ApiDeleteSysPoliciesAclNameRequest
-*/
-// Execute executes the request
+// DeleteSysPoliciesAclName Delete the ACL policy with the given name.
+// name: The name of the policy. Example: \&quot;ops\&quot;
 func (a *SystemApiService) DeleteSysPoliciesAclName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -810,14 +743,8 @@ func (a *SystemApiService) DeleteSysPoliciesAclName(ctx context.Context, name st
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteSysPoliciesPasswordName Delete a password policy.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the password policy.
- @return ApiDeleteSysPoliciesPasswordNameRequest
-*/
-// Execute executes the request
+// DeleteSysPoliciesPasswordName Delete a password policy.
+// name: The name of the password policy.
 func (a *SystemApiService) DeleteSysPoliciesPasswordName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -882,14 +809,8 @@ func (a *SystemApiService) DeleteSysPoliciesPasswordName(ctx context.Context, na
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteSysPolicyName Delete the policy with the given name.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the policy. Example: \"ops\"
- @return ApiDeleteSysPolicyNameRequest
-*/
-// Execute executes the request
+// DeleteSysPolicyName Delete the policy with the given name.
+// name: The name of the policy. Example: \&quot;ops\&quot;
 func (a *SystemApiService) DeleteSysPolicyName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -954,14 +875,8 @@ func (a *SystemApiService) DeleteSysPolicyName(ctx context.Context, name string)
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteSysQuotasRateLimitName Method for DeleteSysQuotasRateLimitName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the quota rule.
- @return ApiDeleteSysQuotasRateLimitNameRequest
-*/
-// Execute executes the request
+// DeleteSysQuotasRateLimitName
+// name: Name of the quota rule.
 func (a *SystemApiService) DeleteSysQuotasRateLimitName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1026,13 +941,7 @@ func (a *SystemApiService) DeleteSysQuotasRateLimitName(ctx context.Context, nam
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteSysRaw Delete the key with given path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteSysRawRequest
-*/
-// Execute executes the request
+// DeleteSysRaw Delete the key with given path.
 func (a *SystemApiService) DeleteSysRaw(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1096,14 +1005,7 @@ func (a *SystemApiService) DeleteSysRaw(ctx context.Context) (*http.Response, er
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteSysRawPath Delete the key with given path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path
- @return ApiDeleteSysRawPathRequest
-*/
-// Execute executes the request
+// DeleteSysRawPath Delete the key with given path.
 func (a *SystemApiService) DeleteSysRawPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1168,13 +1070,7 @@ func (a *SystemApiService) DeleteSysRawPath(ctx context.Context, path string) (*
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteSysRekeyBackup Delete the backup copy of PGP-encrypted unseal keys.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteSysRekeyBackupRequest
-*/
-// Execute executes the request
+// DeleteSysRekeyBackup Delete the backup copy of PGP-encrypted unseal keys.
 func (a *SystemApiService) DeleteSysRekeyBackup(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1238,15 +1134,8 @@ func (a *SystemApiService) DeleteSysRekeyBackup(ctx context.Context) (*http.Resp
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteSysRekeyInit Cancels any in-progress rekey.
-
-This clears the rekey settings as well as any progress made. This must be called to change the parameters of the rekey. Note: verification is still a part of a rekey. If rekeying is canceled during the verification flow, the current unseal keys remain valid.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteSysRekeyInitRequest
-*/
-// Execute executes the request
+// DeleteSysRekeyInit Cancels any in-progress rekey.
+// This clears the rekey settings as well as any progress made. This must be called to change the parameters of the rekey. Note: verification is still a part of a rekey. If rekeying is canceled during the verification flow, the current unseal keys remain valid.
 func (a *SystemApiService) DeleteSysRekeyInit(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1310,13 +1199,7 @@ func (a *SystemApiService) DeleteSysRekeyInit(ctx context.Context) (*http.Respon
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteSysRekeyRecoveryKeyBackup Allows fetching or deleting the backup of the rotated unseal keys.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteSysRekeyRecoveryKeyBackupRequest
-*/
-// Execute executes the request
+// DeleteSysRekeyRecoveryKeyBackup Allows fetching or deleting the backup of the rotated unseal keys.
 func (a *SystemApiService) DeleteSysRekeyRecoveryKeyBackup(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1380,15 +1263,8 @@ func (a *SystemApiService) DeleteSysRekeyRecoveryKeyBackup(ctx context.Context) 
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteSysRekeyVerify Cancel any in-progress rekey verification operation.
-
-This clears any progress made and resets the nonce. Unlike a `DELETE` against `sys/rekey/init`, this only resets the current verification operation, not the entire rekey atttempt.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteSysRekeyVerifyRequest
-*/
-// Execute executes the request
+// DeleteSysRekeyVerify Cancel any in-progress rekey verification operation.
+// This clears any progress made and resets the nonce. Unlike a `DELETE` against `sys/rekey/init`, this only resets the current verification operation, not the entire rekey atttempt.
 func (a *SystemApiService) DeleteSysRekeyVerify(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1452,13 +1328,7 @@ func (a *SystemApiService) DeleteSysRekeyVerify(ctx context.Context) (*http.Resp
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysAudit List the enabled audit devices.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysAuditRequest
-*/
-// Execute executes the request
+// GetSysAudit List the enabled audit devices.
 func (a *SystemApiService) GetSysAudit(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -1522,13 +1392,7 @@ func (a *SystemApiService) GetSysAudit(ctx context.Context) (*http.Response, err
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysAuth List the currently enabled credential backends.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysAuthRequest
-*/
-// Execute executes the request
+// GetSysAuth List the currently enabled credential backends.
 func (a *SystemApiService) GetSysAuth(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -1592,14 +1456,8 @@ func (a *SystemApiService) GetSysAuth(ctx context.Context) (*http.Response, erro
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysAuthPath Read the configuration of the auth engine at the given path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path The path to mount to. Cannot be delimited. Example: \"user\"
- @return ApiGetSysAuthPathRequest
-*/
-// Execute executes the request
+// GetSysAuthPath Read the configuration of the auth engine at the given path.
+// path: The path to mount to. Cannot be delimited. Example: \&quot;user\&quot;
 func (a *SystemApiService) GetSysAuthPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -1664,16 +1522,9 @@ func (a *SystemApiService) GetSysAuthPath(ctx context.Context, path string) (*ht
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysAuthPathTune Reads the given auth path's configuration.
-
-This endpoint requires sudo capability on the final path, but the same functionality can be achieved without sudo via `sys/mounts/auth/[auth-path]/tune`.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path Tune the configuration parameters for an auth path.
- @return ApiGetSysAuthPathTuneRequest
-*/
-// Execute executes the request
+// GetSysAuthPathTune Reads the given auth path's configuration.
+// This endpoint requires sudo capability on the final path, but the same functionality can be achieved without sudo via `sys/mounts/auth/[auth-path]/tune`.
+// path: Tune the configuration parameters for an auth path.
 func (a *SystemApiService) GetSysAuthPathTune(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -1738,13 +1589,7 @@ func (a *SystemApiService) GetSysAuthPathTune(ctx context.Context, path string) 
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysConfigAuditingRequestHeaders List the request headers that are configured to be audited.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysConfigAuditingRequestHeadersRequest
-*/
-// Execute executes the request
+// GetSysConfigAuditingRequestHeaders List the request headers that are configured to be audited.
 func (a *SystemApiService) GetSysConfigAuditingRequestHeaders(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -1808,14 +1653,7 @@ func (a *SystemApiService) GetSysConfigAuditingRequestHeaders(ctx context.Contex
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysConfigAuditingRequestHeadersHeader List the information for the given request header.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param header
- @return ApiGetSysConfigAuditingRequestHeadersHeaderRequest
-*/
-// Execute executes the request
+// GetSysConfigAuditingRequestHeadersHeader List the information for the given request header.
 func (a *SystemApiService) GetSysConfigAuditingRequestHeadersHeader(ctx context.Context, header string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -1880,13 +1718,7 @@ func (a *SystemApiService) GetSysConfigAuditingRequestHeadersHeader(ctx context.
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysConfigCors Return the current CORS settings.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysConfigCorsRequest
-*/
-// Execute executes the request
+// GetSysConfigCors Return the current CORS settings.
 func (a *SystemApiService) GetSysConfigCors(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -1950,15 +1782,8 @@ func (a *SystemApiService) GetSysConfigCors(ctx context.Context) (*http.Response
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysConfigStateSanitized Return a sanitized version of the Vault server configuration.
-
-The sanitized output strips configuration values in the storage, HA storage, and seals stanzas, which may contain sensitive values such as API tokens. It also removes any token or secret fields in other stanzas, such as the circonus_api_token from telemetry.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysConfigStateSanitizedRequest
-*/
-// Execute executes the request
+// GetSysConfigStateSanitized Return a sanitized version of the Vault server configuration.
+// The sanitized output strips configuration values in the storage, HA storage, and seals stanzas, which may contain sensitive values such as API tokens. It also removes any token or secret fields in other stanzas, such as the circonus_api_token from telemetry.
 func (a *SystemApiService) GetSysConfigStateSanitized(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -2022,15 +1847,8 @@ func (a *SystemApiService) GetSysConfigStateSanitized(ctx context.Context) (*htt
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetSysConfigUiHeaders Return a list of configured UI headers.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysConfigUiHeadersRequest
-*/
-// Execute executes the request
+// GetSysConfigUiHeaders Return a list of configured UI headers.
+// list: Must be set to &#x60;true&#x60;
 func (a *SystemApiService) GetSysConfigUiHeaders(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -2095,14 +1913,8 @@ func (a *SystemApiService) GetSysConfigUiHeaders(ctx context.Context, list strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysConfigUiHeadersHeader Return the given UI header's configuration
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param header The name of the header.
- @return ApiGetSysConfigUiHeadersHeaderRequest
-*/
-// Execute executes the request
+// GetSysConfigUiHeadersHeader Return the given UI header's configuration
+// header: The name of the header.
 func (a *SystemApiService) GetSysConfigUiHeadersHeader(ctx context.Context, header string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -2167,13 +1979,7 @@ func (a *SystemApiService) GetSysConfigUiHeadersHeader(ctx context.Context, head
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysGenerateRoot Read the configuration and progress of the current root generation attempt.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysGenerateRootRequest
-*/
-// Execute executes the request
+// GetSysGenerateRoot Read the configuration and progress of the current root generation attempt.
 func (a *SystemApiService) GetSysGenerateRoot(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -2237,13 +2043,7 @@ func (a *SystemApiService) GetSysGenerateRoot(ctx context.Context) (*http.Respon
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysGenerateRootAttempt Read the configuration and progress of the current root generation attempt.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysGenerateRootAttemptRequest
-*/
-// Execute executes the request
+// GetSysGenerateRootAttempt Read the configuration and progress of the current root generation attempt.
 func (a *SystemApiService) GetSysGenerateRootAttempt(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -2307,13 +2107,7 @@ func (a *SystemApiService) GetSysGenerateRootAttempt(ctx context.Context) (*http
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysHaStatus Check the HA status of a Vault cluster
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysHaStatusRequest
-*/
-// Execute executes the request
+// GetSysHaStatus Check the HA status of a Vault cluster
 func (a *SystemApiService) GetSysHaStatus(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -2377,13 +2171,7 @@ func (a *SystemApiService) GetSysHaStatus(ctx context.Context) (*http.Response, 
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysHealth Returns the health status of Vault.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysHealthRequest
-*/
-// Execute executes the request
+// GetSysHealth Returns the health status of Vault.
 func (a *SystemApiService) GetSysHealth(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -2447,17 +2235,8 @@ func (a *SystemApiService) GetSysHealth(ctx context.Context) (*http.Response, er
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysHostInfo Information about the host instance that this Vault server is running on.
-
-Information about the host instance that this Vault server is running on.
-		The information that gets collected includes host hardware information, and CPU,
-		disk, and memory utilization
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysHostInfoRequest
-*/
-// Execute executes the request
+// GetSysHostInfo Information about the host instance that this Vault server is running on.
+// Information about the host instance that this Vault server is running on.   The information that gets collected includes host hardware information, and CPU,   disk, and memory utilization
 func (a *SystemApiService) GetSysHostInfo(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -2521,17 +2300,8 @@ func (a *SystemApiService) GetSysHostInfo(ctx context.Context) (*http.Response, 
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysInFlightReq reports in-flight requests
-
-This path responds to the following HTTP methods.
-		GET /
-			Returns a map of in-flight requests.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysInFlightReqRequest
-*/
-// Execute executes the request
+// GetSysInFlightReq reports in-flight requests
+// This path responds to the following HTTP methods.   GET /    Returns a map of in-flight requests.
 func (a *SystemApiService) GetSysInFlightReq(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -2595,13 +2365,7 @@ func (a *SystemApiService) GetSysInFlightReq(ctx context.Context) (*http.Respons
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysInit Returns the initialization status of Vault.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysInitRequest
-*/
-// Execute executes the request
+// GetSysInit Returns the initialization status of Vault.
 func (a *SystemApiService) GetSysInit(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -2665,13 +2429,7 @@ func (a *SystemApiService) GetSysInit(ctx context.Context) (*http.Response, erro
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysInternalCountersActivity Report the client count metrics, for this namespace and all child namespaces.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysInternalCountersActivityRequest
-*/
-// Execute executes the request
+// GetSysInternalCountersActivity Report the client count metrics, for this namespace and all child namespaces.
 func (a *SystemApiService) GetSysInternalCountersActivity(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -2735,13 +2493,7 @@ func (a *SystemApiService) GetSysInternalCountersActivity(ctx context.Context) (
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysInternalCountersActivityExport Report the client count metrics, for this namespace and all child namespaces.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysInternalCountersActivityExportRequest
-*/
-// Execute executes the request
+// GetSysInternalCountersActivityExport Report the client count metrics, for this namespace and all child namespaces.
 func (a *SystemApiService) GetSysInternalCountersActivityExport(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -2805,13 +2557,7 @@ func (a *SystemApiService) GetSysInternalCountersActivityExport(ctx context.Cont
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysInternalCountersActivityMonthly Report the number of clients for this month, for this namespace and all child namespaces.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysInternalCountersActivityMonthlyRequest
-*/
-// Execute executes the request
+// GetSysInternalCountersActivityMonthly Report the number of clients for this month, for this namespace and all child namespaces.
 func (a *SystemApiService) GetSysInternalCountersActivityMonthly(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -2875,13 +2621,7 @@ func (a *SystemApiService) GetSysInternalCountersActivityMonthly(ctx context.Con
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysInternalCountersConfig Read the client count tracking configuration.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysInternalCountersConfigRequest
-*/
-// Execute executes the request
+// GetSysInternalCountersConfig Read the client count tracking configuration.
 func (a *SystemApiService) GetSysInternalCountersConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -2945,13 +2685,7 @@ func (a *SystemApiService) GetSysInternalCountersConfig(ctx context.Context) (*h
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysInternalCountersEntities Backwards compatibility is not guaranteed for this API
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysInternalCountersEntitiesRequest
-*/
-// Execute executes the request
+// GetSysInternalCountersEntities Backwards compatibility is not guaranteed for this API
 func (a *SystemApiService) GetSysInternalCountersEntities(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3015,13 +2749,7 @@ func (a *SystemApiService) GetSysInternalCountersEntities(ctx context.Context) (
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysInternalCountersRequests Backwards compatibility is not guaranteed for this API
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysInternalCountersRequestsRequest
-*/
-// Execute executes the request
+// GetSysInternalCountersRequests Backwards compatibility is not guaranteed for this API
 func (a *SystemApiService) GetSysInternalCountersRequests(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3085,13 +2813,7 @@ func (a *SystemApiService) GetSysInternalCountersRequests(ctx context.Context) (
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysInternalCountersTokens Backwards compatibility is not guaranteed for this API
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysInternalCountersTokensRequest
-*/
-// Execute executes the request
+// GetSysInternalCountersTokens Backwards compatibility is not guaranteed for this API
 func (a *SystemApiService) GetSysInternalCountersTokens(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3155,13 +2877,7 @@ func (a *SystemApiService) GetSysInternalCountersTokens(ctx context.Context) (*h
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysInternalSpecsOpenapi Generate an OpenAPI 3 document of all mounted paths.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysInternalSpecsOpenapiRequest
-*/
-// Execute executes the request
+// GetSysInternalSpecsOpenapi Generate an OpenAPI 3 document of all mounted paths.
 func (a *SystemApiService) GetSysInternalSpecsOpenapi(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3225,13 +2941,7 @@ func (a *SystemApiService) GetSysInternalSpecsOpenapi(ctx context.Context) (*htt
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysInternalUiFeatureFlags Lists enabled feature flags.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysInternalUiFeatureFlagsRequest
-*/
-// Execute executes the request
+// GetSysInternalUiFeatureFlags Lists enabled feature flags.
 func (a *SystemApiService) GetSysInternalUiFeatureFlags(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3295,13 +3005,7 @@ func (a *SystemApiService) GetSysInternalUiFeatureFlags(ctx context.Context) (*h
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysInternalUiMounts Lists all enabled and visible auth and secrets mounts.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysInternalUiMountsRequest
-*/
-// Execute executes the request
+// GetSysInternalUiMounts Lists all enabled and visible auth and secrets mounts.
 func (a *SystemApiService) GetSysInternalUiMounts(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3365,14 +3069,8 @@ func (a *SystemApiService) GetSysInternalUiMounts(ctx context.Context) (*http.Re
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysInternalUiMountsPath Return information about the given mount.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path The path of the mount.
- @return ApiGetSysInternalUiMountsPathRequest
-*/
-// Execute executes the request
+// GetSysInternalUiMountsPath Return information about the given mount.
+// path: The path of the mount.
 func (a *SystemApiService) GetSysInternalUiMountsPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3437,13 +3135,7 @@ func (a *SystemApiService) GetSysInternalUiMountsPath(ctx context.Context, path 
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysInternalUiNamespaces Backwards compatibility is not guaranteed for this API
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysInternalUiNamespacesRequest
-*/
-// Execute executes the request
+// GetSysInternalUiNamespaces Backwards compatibility is not guaranteed for this API
 func (a *SystemApiService) GetSysInternalUiNamespaces(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3507,13 +3199,7 @@ func (a *SystemApiService) GetSysInternalUiNamespaces(ctx context.Context) (*htt
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysInternalUiResultantAcl Backwards compatibility is not guaranteed for this API
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysInternalUiResultantAclRequest
-*/
-// Execute executes the request
+// GetSysInternalUiResultantAcl Backwards compatibility is not guaranteed for this API
 func (a *SystemApiService) GetSysInternalUiResultantAcl(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3577,13 +3263,7 @@ func (a *SystemApiService) GetSysInternalUiResultantAcl(ctx context.Context) (*h
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysKeyStatus Provides information about the backend encryption key.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysKeyStatusRequest
-*/
-// Execute executes the request
+// GetSysKeyStatus Provides information about the backend encryption key.
 func (a *SystemApiService) GetSysKeyStatus(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3647,13 +3327,7 @@ func (a *SystemApiService) GetSysKeyStatus(ctx context.Context) (*http.Response,
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysLeader Returns the high availability status and current leader instance of Vault.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysLeaderRequest
-*/
-// Execute executes the request
+// GetSysLeader Returns the high availability status and current leader instance of Vault.
 func (a *SystemApiService) GetSysLeader(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3717,13 +3391,7 @@ func (a *SystemApiService) GetSysLeader(ctx context.Context) (*http.Response, er
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysLeases List leases associated with this Vault cluster
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysLeasesRequest
-*/
-// Execute executes the request
+// GetSysLeases List leases associated with this Vault cluster
 func (a *SystemApiService) GetSysLeases(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3787,13 +3455,7 @@ func (a *SystemApiService) GetSysLeases(ctx context.Context) (*http.Response, er
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysLeasesCount Count of leases associated with this Vault cluster
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysLeasesCountRequest
-*/
-// Execute executes the request
+// GetSysLeasesCount Count of leases associated with this Vault cluster
 func (a *SystemApiService) GetSysLeasesCount(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3857,15 +3519,8 @@ func (a *SystemApiService) GetSysLeasesCount(ctx context.Context) (*http.Respons
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetSysLeasesLookup Returns a list of lease ids.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysLeasesLookupRequest
-*/
-// Execute executes the request
+// GetSysLeasesLookup Returns a list of lease ids.
+// list: Must be set to &#x60;true&#x60;
 func (a *SystemApiService) GetSysLeasesLookup(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3930,16 +3585,9 @@ func (a *SystemApiService) GetSysLeasesLookup(ctx context.Context, list string) 
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetSysLeasesLookupPrefix Returns a list of lease ids.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param prefix The path to list leases under. Example: \"aws/creds/deploy\"
- @return ApiGetSysLeasesLookupPrefixRequest
-*/
-// Execute executes the request
+// GetSysLeasesLookupPrefix Returns a list of lease ids.
+// prefix: The path to list leases under. Example: \&quot;aws/creds/deploy\&quot;
+// list: Must be set to &#x60;true&#x60;
 func (a *SystemApiService) GetSysLeasesLookupPrefix(ctx context.Context, prefix string, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4005,15 +3653,8 @@ func (a *SystemApiService) GetSysLeasesLookupPrefix(ctx context.Context, prefix 
 	return localVarHTTPResponse, nil
 }
 
-// Format to export metrics into. Currently accepts only \&quot;prometheus\&quot;.
-
-/*
-GetSysMetrics Export the metrics aggregated for telemetry purpose.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysMetricsRequest
-*/
-// Execute executes the request
+// GetSysMetrics Export the metrics aggregated for telemetry purpose.
+// format: Format to export metrics into. Currently accepts only \&quot;prometheus\&quot;.
 func (a *SystemApiService) GetSysMetrics(ctx context.Context, format string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4078,17 +3719,9 @@ func (a *SystemApiService) GetSysMetrics(ctx context.Context, format string) (*h
 	return localVarHTTPResponse, nil
 }
 
-// Output format of logs. Supported values are \&quot;standard\&quot; and \&quot;json\&quot;. The default is \&quot;standard\&quot;.
-
-// Log level to view system logs at. Currently supported values are \&quot;trace\&quot;, \&quot;debug\&quot;, \&quot;info\&quot;, \&quot;warn\&quot;, \&quot;error\&quot;.
-
-/*
-GetSysMonitor Method for GetSysMonitor
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysMonitorRequest
-*/
-// Execute executes the request
+// GetSysMonitor
+// logFormat: Output format of logs. Supported values are \&quot;standard\&quot; and \&quot;json\&quot;. The default is \&quot;standard\&quot;.
+// logLevel: Log level to view system logs at. Currently supported values are \&quot;trace\&quot;, \&quot;debug\&quot;, \&quot;info\&quot;, \&quot;warn\&quot;, \&quot;error\&quot;.
 func (a *SystemApiService) GetSysMonitor(ctx context.Context, logFormat string, logLevel string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4154,13 +3787,7 @@ func (a *SystemApiService) GetSysMonitor(ctx context.Context, logFormat string, 
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysMounts List the currently mounted backends.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysMountsRequest
-*/
-// Execute executes the request
+// GetSysMounts List the currently mounted backends.
 func (a *SystemApiService) GetSysMounts(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4224,14 +3851,8 @@ func (a *SystemApiService) GetSysMounts(ctx context.Context) (*http.Response, er
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysMountsPath Read the configuration of the secret engine at the given path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path The path to mount to. Example: \"aws/east\"
- @return ApiGetSysMountsPathRequest
-*/
-// Execute executes the request
+// GetSysMountsPath Read the configuration of the secret engine at the given path.
+// path: The path to mount to. Example: \&quot;aws/east\&quot;
 func (a *SystemApiService) GetSysMountsPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4296,14 +3917,8 @@ func (a *SystemApiService) GetSysMountsPath(ctx context.Context, path string) (*
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysMountsPathTune Tune backend configuration parameters for this mount.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path The path to mount to. Example: \"aws/east\"
- @return ApiGetSysMountsPathTuneRequest
-*/
-// Execute executes the request
+// GetSysMountsPathTune Tune backend configuration parameters for this mount.
+// path: The path to mount to. Example: \&quot;aws/east\&quot;
 func (a *SystemApiService) GetSysMountsPathTune(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4368,13 +3983,7 @@ func (a *SystemApiService) GetSysMountsPathTune(ctx context.Context, path string
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysPluginsCatalog Lists all the plugins known to Vault
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPluginsCatalogRequest
-*/
-// Execute executes the request
+// GetSysPluginsCatalog Lists all the plugins known to Vault
 func (a *SystemApiService) GetSysPluginsCatalog(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4438,14 +4047,8 @@ func (a *SystemApiService) GetSysPluginsCatalog(ctx context.Context) (*http.Resp
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysPluginsCatalogName Return the configuration data for the plugin with the given name.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the plugin
- @return ApiGetSysPluginsCatalogNameRequest
-*/
-// Execute executes the request
+// GetSysPluginsCatalogName Return the configuration data for the plugin with the given name.
+// name: The name of the plugin
 func (a *SystemApiService) GetSysPluginsCatalogName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4510,16 +4113,9 @@ func (a *SystemApiService) GetSysPluginsCatalogName(ctx context.Context, name st
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetSysPluginsCatalogType List the plugins in the catalog.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param type_ The type of the plugin, may be auth, secret, or database
- @return ApiGetSysPluginsCatalogTypeRequest
-*/
-// Execute executes the request
+// GetSysPluginsCatalogType List the plugins in the catalog.
+// type_: The type of the plugin, may be auth, secret, or database
+// list: Must be set to &#x60;true&#x60;
 func (a *SystemApiService) GetSysPluginsCatalogType(ctx context.Context, type_ string, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4585,15 +4181,9 @@ func (a *SystemApiService) GetSysPluginsCatalogType(ctx context.Context, type_ s
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysPluginsCatalogTypeName Return the configuration data for the plugin with the given name.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the plugin
- @param type_ The type of the plugin, may be auth, secret, or database
- @return ApiGetSysPluginsCatalogTypeNameRequest
-*/
-// Execute executes the request
+// GetSysPluginsCatalogTypeName Return the configuration data for the plugin with the given name.
+// name: The name of the plugin
+// type_: The type of the plugin, may be auth, secret, or database
 func (a *SystemApiService) GetSysPluginsCatalogTypeName(ctx context.Context, name string, type_ string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4659,15 +4249,8 @@ func (a *SystemApiService) GetSysPluginsCatalogTypeName(ctx context.Context, nam
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetSysPoliciesAcl List the configured access control policies.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPoliciesAclRequest
-*/
-// Execute executes the request
+// GetSysPoliciesAcl List the configured access control policies.
+// list: Must be set to &#x60;true&#x60;
 func (a *SystemApiService) GetSysPoliciesAcl(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4732,14 +4315,8 @@ func (a *SystemApiService) GetSysPoliciesAcl(ctx context.Context, list string) (
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysPoliciesAclName Retrieve information about the named ACL policy.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the policy. Example: \"ops\"
- @return ApiGetSysPoliciesAclNameRequest
-*/
-// Execute executes the request
+// GetSysPoliciesAclName Retrieve information about the named ACL policy.
+// name: The name of the policy. Example: \&quot;ops\&quot;
 func (a *SystemApiService) GetSysPoliciesAclName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4804,15 +4381,8 @@ func (a *SystemApiService) GetSysPoliciesAclName(ctx context.Context, name strin
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetSysPoliciesPassword List the existing password policies.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPoliciesPasswordRequest
-*/
-// Execute executes the request
+// GetSysPoliciesPassword List the existing password policies.
+// list: Must be set to &#x60;true&#x60;
 func (a *SystemApiService) GetSysPoliciesPassword(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4877,14 +4447,8 @@ func (a *SystemApiService) GetSysPoliciesPassword(ctx context.Context, list stri
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysPoliciesPasswordName Retrieve an existing password policy.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the password policy.
- @return ApiGetSysPoliciesPasswordNameRequest
-*/
-// Execute executes the request
+// GetSysPoliciesPasswordName Retrieve an existing password policy.
+// name: The name of the password policy.
 func (a *SystemApiService) GetSysPoliciesPasswordName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4949,14 +4513,8 @@ func (a *SystemApiService) GetSysPoliciesPasswordName(ctx context.Context, name 
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysPoliciesPasswordNameGenerate Generate a password from an existing password policy.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the password policy.
- @return ApiGetSysPoliciesPasswordNameGenerateRequest
-*/
-// Execute executes the request
+// GetSysPoliciesPasswordNameGenerate Generate a password from an existing password policy.
+// name: The name of the password policy.
 func (a *SystemApiService) GetSysPoliciesPasswordNameGenerate(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5021,15 +4579,8 @@ func (a *SystemApiService) GetSysPoliciesPasswordNameGenerate(ctx context.Contex
 	return localVarHTTPResponse, nil
 }
 
-// Return a list if &#x60;true&#x60;
-
-/*
-GetSysPolicy List the configured access control policies.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPolicyRequest
-*/
-// Execute executes the request
+// GetSysPolicy List the configured access control policies.
+// list: Return a list if &#x60;true&#x60;
 func (a *SystemApiService) GetSysPolicy(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5094,14 +4645,8 @@ func (a *SystemApiService) GetSysPolicy(ctx context.Context, list string) (*http
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysPolicyName Retrieve the policy body for the named policy.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the policy. Example: \"ops\"
- @return ApiGetSysPolicyNameRequest
-*/
-// Execute executes the request
+// GetSysPolicyName Retrieve the policy body for the named policy.
+// name: The name of the policy. Example: \&quot;ops\&quot;
 func (a *SystemApiService) GetSysPolicyName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5166,17 +4711,8 @@ func (a *SystemApiService) GetSysPolicyName(ctx context.Context, name string) (*
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysPprof Returns an HTML page listing the available profiles.
-
-Returns an HTML page listing the available
-profiles. This should be mainly accessed via browsers or applications that can
-render pages.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPprofRequest
-*/
-// Execute executes the request
+// GetSysPprof Returns an HTML page listing the available profiles.
+// Returns an HTML page listing the available  profiles. This should be mainly accessed via browsers or applications that can  render pages.
 func (a *SystemApiService) GetSysPprof(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5240,15 +4776,8 @@ func (a *SystemApiService) GetSysPprof(ctx context.Context) (*http.Response, err
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysPprofAllocs Returns a sampling of all past memory allocations.
-
-Returns a sampling of all past memory allocations.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPprofAllocsRequest
-*/
-// Execute executes the request
+// GetSysPprofAllocs Returns a sampling of all past memory allocations.
+// Returns a sampling of all past memory allocations.
 func (a *SystemApiService) GetSysPprofAllocs(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5312,15 +4841,8 @@ func (a *SystemApiService) GetSysPprofAllocs(ctx context.Context) (*http.Respons
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysPprofBlock Returns stack traces that led to blocking on synchronization primitives
-
-Returns stack traces that led to blocking on synchronization primitives
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPprofBlockRequest
-*/
-// Execute executes the request
+// GetSysPprofBlock Returns stack traces that led to blocking on synchronization primitives
+// Returns stack traces that led to blocking on synchronization primitives
 func (a *SystemApiService) GetSysPprofBlock(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5384,15 +4906,8 @@ func (a *SystemApiService) GetSysPprofBlock(ctx context.Context) (*http.Response
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysPprofCmdline Returns the running program's command line.
-
-Returns the running program's command line, with arguments separated by NUL bytes.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPprofCmdlineRequest
-*/
-// Execute executes the request
+// GetSysPprofCmdline Returns the running program's command line.
+// Returns the running program's command line, with arguments separated by NUL bytes.
 func (a *SystemApiService) GetSysPprofCmdline(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5456,15 +4971,8 @@ func (a *SystemApiService) GetSysPprofCmdline(ctx context.Context) (*http.Respon
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysPprofGoroutine Returns stack traces of all current goroutines.
-
-Returns stack traces of all current goroutines.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPprofGoroutineRequest
-*/
-// Execute executes the request
+// GetSysPprofGoroutine Returns stack traces of all current goroutines.
+// Returns stack traces of all current goroutines.
 func (a *SystemApiService) GetSysPprofGoroutine(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5528,15 +5036,8 @@ func (a *SystemApiService) GetSysPprofGoroutine(ctx context.Context) (*http.Resp
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysPprofHeap Returns a sampling of memory allocations of live object.
-
-Returns a sampling of memory allocations of live object.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPprofHeapRequest
-*/
-// Execute executes the request
+// GetSysPprofHeap Returns a sampling of memory allocations of live object.
+// Returns a sampling of memory allocations of live object.
 func (a *SystemApiService) GetSysPprofHeap(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5600,15 +5101,8 @@ func (a *SystemApiService) GetSysPprofHeap(ctx context.Context) (*http.Response,
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysPprofMutex Returns stack traces of holders of contended mutexes
-
-Returns stack traces of holders of contended mutexes
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPprofMutexRequest
-*/
-// Execute executes the request
+// GetSysPprofMutex Returns stack traces of holders of contended mutexes
+// Returns stack traces of holders of contended mutexes
 func (a *SystemApiService) GetSysPprofMutex(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5672,15 +5166,8 @@ func (a *SystemApiService) GetSysPprofMutex(ctx context.Context) (*http.Response
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysPprofProfile Returns a pprof-formatted cpu profile payload.
-
-Returns a pprof-formatted cpu profile payload. Profiling lasts for duration specified in seconds GET parameter, or for 30 seconds if not specified.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPprofProfileRequest
-*/
-// Execute executes the request
+// GetSysPprofProfile Returns a pprof-formatted cpu profile payload.
+// Returns a pprof-formatted cpu profile payload. Profiling lasts for duration specified in seconds GET parameter, or for 30 seconds if not specified.
 func (a *SystemApiService) GetSysPprofProfile(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5744,15 +5231,8 @@ func (a *SystemApiService) GetSysPprofProfile(ctx context.Context) (*http.Respon
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysPprofSymbol Returns the program counters listed in the request.
-
-Returns the program counters listed in the request.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPprofSymbolRequest
-*/
-// Execute executes the request
+// GetSysPprofSymbol Returns the program counters listed in the request.
+// Returns the program counters listed in the request.
 func (a *SystemApiService) GetSysPprofSymbol(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5816,15 +5296,8 @@ func (a *SystemApiService) GetSysPprofSymbol(ctx context.Context) (*http.Respons
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysPprofThreadcreate Returns stack traces that led to the creation of new OS threads
-
-Returns stack traces that led to the creation of new OS threads
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPprofThreadcreateRequest
-*/
-// Execute executes the request
+// GetSysPprofThreadcreate Returns stack traces that led to the creation of new OS threads
+// Returns stack traces that led to the creation of new OS threads
 func (a *SystemApiService) GetSysPprofThreadcreate(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5888,15 +5361,8 @@ func (a *SystemApiService) GetSysPprofThreadcreate(ctx context.Context) (*http.R
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysPprofTrace Returns the execution trace in binary form.
-
-Returns  the execution trace in binary form. Tracing lasts for duration specified in seconds GET parameter, or for 1 second if not specified.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPprofTraceRequest
-*/
-// Execute executes the request
+// GetSysPprofTrace Returns the execution trace in binary form.
+// Returns  the execution trace in binary form. Tracing lasts for duration specified in seconds GET parameter, or for 1 second if not specified.
 func (a *SystemApiService) GetSysPprofTrace(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5960,13 +5426,7 @@ func (a *SystemApiService) GetSysPprofTrace(ctx context.Context) (*http.Response
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysQuotasConfig Method for GetSysQuotasConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysQuotasConfigRequest
-*/
-// Execute executes the request
+// GetSysQuotasConfig
 func (a *SystemApiService) GetSysQuotasConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6030,15 +5490,8 @@ func (a *SystemApiService) GetSysQuotasConfig(ctx context.Context) (*http.Respon
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetSysQuotasRateLimit Method for GetSysQuotasRateLimit
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysQuotasRateLimitRequest
-*/
-// Execute executes the request
+// GetSysQuotasRateLimit
+// list: Must be set to &#x60;true&#x60;
 func (a *SystemApiService) GetSysQuotasRateLimit(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6103,14 +5556,8 @@ func (a *SystemApiService) GetSysQuotasRateLimit(ctx context.Context, list strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysQuotasRateLimitName Method for GetSysQuotasRateLimitName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the quota rule.
- @return ApiGetSysQuotasRateLimitNameRequest
-*/
-// Execute executes the request
+// GetSysQuotasRateLimitName
+// name: Name of the quota rule.
 func (a *SystemApiService) GetSysQuotasRateLimitName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6175,15 +5622,8 @@ func (a *SystemApiService) GetSysQuotasRateLimitName(ctx context.Context, name s
 	return localVarHTTPResponse, nil
 }
 
-// Return a list if &#x60;true&#x60;
-
-/*
-GetSysRaw Read the value of the key at the given path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysRawRequest
-*/
-// Execute executes the request
+// GetSysRaw Read the value of the key at the given path.
+// list: Return a list if &#x60;true&#x60;
 func (a *SystemApiService) GetSysRaw(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6248,16 +5688,8 @@ func (a *SystemApiService) GetSysRaw(ctx context.Context, list string) (*http.Re
 	return localVarHTTPResponse, nil
 }
 
-// Return a list if &#x60;true&#x60;
-
-/*
-GetSysRawPath Read the value of the key at the given path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path
- @return ApiGetSysRawPathRequest
-*/
-// Execute executes the request
+// GetSysRawPath Read the value of the key at the given path.
+// list: Return a list if &#x60;true&#x60;
 func (a *SystemApiService) GetSysRawPath(ctx context.Context, path string, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6323,13 +5755,7 @@ func (a *SystemApiService) GetSysRawPath(ctx context.Context, path string, list 
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysRekeyBackup Return the backup copy of PGP-encrypted unseal keys.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysRekeyBackupRequest
-*/
-// Execute executes the request
+// GetSysRekeyBackup Return the backup copy of PGP-encrypted unseal keys.
 func (a *SystemApiService) GetSysRekeyBackup(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6393,13 +5819,7 @@ func (a *SystemApiService) GetSysRekeyBackup(ctx context.Context) (*http.Respons
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysRekeyInit Reads the configuration and progress of the current rekey attempt.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysRekeyInitRequest
-*/
-// Execute executes the request
+// GetSysRekeyInit Reads the configuration and progress of the current rekey attempt.
 func (a *SystemApiService) GetSysRekeyInit(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6463,13 +5883,7 @@ func (a *SystemApiService) GetSysRekeyInit(ctx context.Context) (*http.Response,
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysRekeyRecoveryKeyBackup Allows fetching or deleting the backup of the rotated unseal keys.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysRekeyRecoveryKeyBackupRequest
-*/
-// Execute executes the request
+// GetSysRekeyRecoveryKeyBackup Allows fetching or deleting the backup of the rotated unseal keys.
 func (a *SystemApiService) GetSysRekeyRecoveryKeyBackup(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6533,13 +5947,7 @@ func (a *SystemApiService) GetSysRekeyRecoveryKeyBackup(ctx context.Context) (*h
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysRekeyVerify Read the configuration and progress of the current rekey verification attempt.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysRekeyVerifyRequest
-*/
-// Execute executes the request
+// GetSysRekeyVerify Read the configuration and progress of the current rekey verification attempt.
 func (a *SystemApiService) GetSysRekeyVerify(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6603,14 +6011,8 @@ func (a *SystemApiService) GetSysRekeyVerify(ctx context.Context) (*http.Respons
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysRemountStatusMigrationId Check status of a mount migration
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param migrationId The ID of the migration operation
- @return ApiGetSysRemountStatusMigrationIdRequest
-*/
-// Execute executes the request
+// GetSysRemountStatusMigrationId Check status of a mount migration
+// migrationId: The ID of the migration operation
 func (a *SystemApiService) GetSysRemountStatusMigrationId(ctx context.Context, migrationId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6675,13 +6077,7 @@ func (a *SystemApiService) GetSysRemountStatusMigrationId(ctx context.Context, m
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysReplicationStatus Method for GetSysReplicationStatus
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysReplicationStatusRequest
-*/
-// Execute executes the request
+// GetSysReplicationStatus
 func (a *SystemApiService) GetSysReplicationStatus(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6745,13 +6141,7 @@ func (a *SystemApiService) GetSysReplicationStatus(ctx context.Context) (*http.R
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysRotateConfig Method for GetSysRotateConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysRotateConfigRequest
-*/
-// Execute executes the request
+// GetSysRotateConfig
 func (a *SystemApiService) GetSysRotateConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6815,13 +6205,7 @@ func (a *SystemApiService) GetSysRotateConfig(ctx context.Context) (*http.Respon
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysSealStatus Check the seal status of a Vault.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysSealStatusRequest
-*/
-// Execute executes the request
+// GetSysSealStatus Check the seal status of a Vault.
 func (a *SystemApiService) GetSysSealStatus(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6885,15 +6269,8 @@ func (a *SystemApiService) GetSysSealStatus(ctx context.Context) (*http.Response
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetSysVersionHistory Returns map of historical version change entries
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysVersionHistoryRequest
-*/
-// Execute executes the request
+// GetSysVersionHistory Returns map of historical version change entries
+// list: Must be set to &#x60;true&#x60;
 func (a *SystemApiService) GetSysVersionHistory(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6958,13 +6335,7 @@ func (a *SystemApiService) GetSysVersionHistory(ctx context.Context, list string
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSysWrappingLookup Look up wrapping properties for the requester's token.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysWrappingLookupRequest
-*/
-// Execute executes the request
+// GetSysWrappingLookup Look up wrapping properties for the requester's token.
 func (a *SystemApiService) GetSysWrappingLookup(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7028,14 +6399,8 @@ func (a *SystemApiService) GetSysWrappingLookup(ctx context.Context) (*http.Resp
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysAuditHashPath The hash of the given string via the given audit backend
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path The name of the backend. Cannot be delimited. Example: \"mysql\"
- @return ApiPostSysAuditHashPathRequest
-*/
-// Execute executes the request
+// PostSysAuditHashPath The hash of the given string via the given audit backend
+// path: The name of the backend. Cannot be delimited. Example: \&quot;mysql\&quot;
 func (a *SystemApiService) PostSysAuditHashPath(ctx context.Context, path string, systemAuditHashRequest SystemAuditHashRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -7102,14 +6467,8 @@ func (a *SystemApiService) PostSysAuditHashPath(ctx context.Context, path string
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysAuditPath Enable a new audit device at the supplied path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path The name of the backend. Cannot be delimited. Example: \"mysql\"
- @return ApiPostSysAuditPathRequest
-*/
-// Execute executes the request
+// PostSysAuditPath Enable a new audit device at the supplied path.
+// path: The name of the backend. Cannot be delimited. Example: \&quot;mysql\&quot;
 func (a *SystemApiService) PostSysAuditPath(ctx context.Context, path string, systemAuditRequest SystemAuditRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -7176,18 +6535,9 @@ func (a *SystemApiService) PostSysAuditPath(ctx context.Context, path string, sy
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysAuthPath Enables a new auth method.
-
-After enabling, the auth method can be accessed and configured via the auth path specified as part of the URL. This auth path will be nested under the auth prefix.
-
-For example, enable the "foo" auth method will make it accessible at /auth/foo.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path The path to mount to. Cannot be delimited. Example: \"user\"
- @return ApiPostSysAuthPathRequest
-*/
-// Execute executes the request
+// PostSysAuthPath Enables a new auth method.
+// After enabling, the auth method can be accessed and configured via the auth path specified as part of the URL. This auth path will be nested under the auth prefix.  For example, enable the \"foo\" auth method will make it accessible at /auth/foo.
+// path: The path to mount to. Cannot be delimited. Example: \&quot;user\&quot;
 func (a *SystemApiService) PostSysAuthPath(ctx context.Context, path string, systemAuthRequest SystemAuthRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -7254,16 +6604,9 @@ func (a *SystemApiService) PostSysAuthPath(ctx context.Context, path string, sys
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysAuthPathTune Tune configuration parameters for a given auth path.
-
-This endpoint requires sudo capability on the final path, but the same functionality can be achieved without sudo via `sys/mounts/auth/[auth-path]/tune`.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path Tune the configuration parameters for an auth path.
- @return ApiPostSysAuthPathTuneRequest
-*/
-// Execute executes the request
+// PostSysAuthPathTune Tune configuration parameters for a given auth path.
+// This endpoint requires sudo capability on the final path, but the same functionality can be achieved without sudo via `sys/mounts/auth/[auth-path]/tune`.
+// path: Tune the configuration parameters for an auth path.
 func (a *SystemApiService) PostSysAuthPathTune(ctx context.Context, path string, systemAuthTuneRequest SystemAuthTuneRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -7330,13 +6673,7 @@ func (a *SystemApiService) PostSysAuthPathTune(ctx context.Context, path string,
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysCapabilities Fetches the capabilities of the given token on the given path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysCapabilitiesRequest
-*/
-// Execute executes the request
+// PostSysCapabilities Fetches the capabilities of the given token on the given path.
 func (a *SystemApiService) PostSysCapabilities(ctx context.Context, systemCapabilitiesRequest SystemCapabilitiesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -7402,13 +6739,7 @@ func (a *SystemApiService) PostSysCapabilities(ctx context.Context, systemCapabi
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysCapabilitiesAccessor Fetches the capabilities of the token associated with the given token, on the given path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysCapabilitiesAccessorRequest
-*/
-// Execute executes the request
+// PostSysCapabilitiesAccessor Fetches the capabilities of the token associated with the given token, on the given path.
 func (a *SystemApiService) PostSysCapabilitiesAccessor(ctx context.Context, systemCapabilitiesAccessorRequest SystemCapabilitiesAccessorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -7474,13 +6805,7 @@ func (a *SystemApiService) PostSysCapabilitiesAccessor(ctx context.Context, syst
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysCapabilitiesSelf Fetches the capabilities of the given token on the given path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysCapabilitiesSelfRequest
-*/
-// Execute executes the request
+// PostSysCapabilitiesSelf Fetches the capabilities of the given token on the given path.
 func (a *SystemApiService) PostSysCapabilitiesSelf(ctx context.Context, systemCapabilitiesSelfRequest SystemCapabilitiesSelfRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -7546,14 +6871,7 @@ func (a *SystemApiService) PostSysCapabilitiesSelf(ctx context.Context, systemCa
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysConfigAuditingRequestHeadersHeader Enable auditing of a header.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param header
- @return ApiPostSysConfigAuditingRequestHeadersHeaderRequest
-*/
-// Execute executes the request
+// PostSysConfigAuditingRequestHeadersHeader Enable auditing of a header.
 func (a *SystemApiService) PostSysConfigAuditingRequestHeadersHeader(ctx context.Context, header string, systemConfigAuditingRequestHeadersRequest SystemConfigAuditingRequestHeadersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -7620,13 +6938,7 @@ func (a *SystemApiService) PostSysConfigAuditingRequestHeadersHeader(ctx context
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysConfigCors Configure the CORS settings.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysConfigCorsRequest
-*/
-// Execute executes the request
+// PostSysConfigCors Configure the CORS settings.
 func (a *SystemApiService) PostSysConfigCors(ctx context.Context, systemConfigCorsRequest SystemConfigCorsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -7692,14 +7004,7 @@ func (a *SystemApiService) PostSysConfigCors(ctx context.Context, systemConfigCo
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysConfigReloadSubsystem Reload the given subsystem
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subsystem
- @return ApiPostSysConfigReloadSubsystemRequest
-*/
-// Execute executes the request
+// PostSysConfigReloadSubsystem Reload the given subsystem
 func (a *SystemApiService) PostSysConfigReloadSubsystem(ctx context.Context, subsystem string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -7764,14 +7069,8 @@ func (a *SystemApiService) PostSysConfigReloadSubsystem(ctx context.Context, sub
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysConfigUiHeadersHeader Configure the values to be returned for the UI header.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param header The name of the header.
- @return ApiPostSysConfigUiHeadersHeaderRequest
-*/
-// Execute executes the request
+// PostSysConfigUiHeadersHeader Configure the values to be returned for the UI header.
+// header: The name of the header.
 func (a *SystemApiService) PostSysConfigUiHeadersHeader(ctx context.Context, header string, systemConfigUiHeadersRequest SystemConfigUiHeadersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -7838,15 +7137,8 @@ func (a *SystemApiService) PostSysConfigUiHeadersHeader(ctx context.Context, hea
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysGenerateRoot Initializes a new root generation attempt.
-
-Only a single root generation attempt can take place at a time. One (and only one) of otp or pgp_key are required.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysGenerateRootRequest
-*/
-// Execute executes the request
+// PostSysGenerateRoot Initializes a new root generation attempt.
+// Only a single root generation attempt can take place at a time. One (and only one) of otp or pgp_key are required.
 func (a *SystemApiService) PostSysGenerateRoot(ctx context.Context, systemGenerateRootRequest SystemGenerateRootRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -7912,15 +7204,8 @@ func (a *SystemApiService) PostSysGenerateRoot(ctx context.Context, systemGenera
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysGenerateRootAttempt Initializes a new root generation attempt.
-
-Only a single root generation attempt can take place at a time. One (and only one) of otp or pgp_key are required.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysGenerateRootAttemptRequest
-*/
-// Execute executes the request
+// PostSysGenerateRootAttempt Initializes a new root generation attempt.
+// Only a single root generation attempt can take place at a time. One (and only one) of otp or pgp_key are required.
 func (a *SystemApiService) PostSysGenerateRootAttempt(ctx context.Context, systemGenerateRootAttemptRequest SystemGenerateRootAttemptRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -7986,15 +7271,8 @@ func (a *SystemApiService) PostSysGenerateRootAttempt(ctx context.Context, syste
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysGenerateRootUpdate Enter a single unseal key share to progress the root generation attempt.
-
-If the threshold number of unseal key shares is reached, Vault will complete the root generation and issue the new token. Otherwise, this API must be called multiple times until that threshold is met. The attempt nonce must be provided with each call.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysGenerateRootUpdateRequest
-*/
-// Execute executes the request
+// PostSysGenerateRootUpdate Enter a single unseal key share to progress the root generation attempt.
+// If the threshold number of unseal key shares is reached, Vault will complete the root generation and issue the new token. Otherwise, this API must be called multiple times until that threshold is met. The attempt nonce must be provided with each call.
 func (a *SystemApiService) PostSysGenerateRootUpdate(ctx context.Context, systemGenerateRootUpdateRequest SystemGenerateRootUpdateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -8060,15 +7338,8 @@ func (a *SystemApiService) PostSysGenerateRootUpdate(ctx context.Context, system
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysInit Initialize a new Vault.
-
-The Vault must not have been previously initialized. The recovery options, as well as the stored shares option, are only available when using Vault HSM.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysInitRequest
-*/
-// Execute executes the request
+// PostSysInit Initialize a new Vault.
+// The Vault must not have been previously initialized. The recovery options, as well as the stored shares option, are only available when using Vault HSM.
 func (a *SystemApiService) PostSysInit(ctx context.Context, systemInitRequest SystemInitRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -8134,13 +7405,7 @@ func (a *SystemApiService) PostSysInit(ctx context.Context, systemInitRequest Sy
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysInternalCountersConfig Enable or disable collection of client count, set retention period, or set default reporting period.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysInternalCountersConfigRequest
-*/
-// Execute executes the request
+// PostSysInternalCountersConfig Enable or disable collection of client count, set retention period, or set default reporting period.
 func (a *SystemApiService) PostSysInternalCountersConfig(ctx context.Context, systemInternalCountersConfigRequest SystemInternalCountersConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -8206,13 +7471,7 @@ func (a *SystemApiService) PostSysInternalCountersConfig(ctx context.Context, sy
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysLeasesLookup Retrieve lease metadata.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysLeasesLookupRequest
-*/
-// Execute executes the request
+// PostSysLeasesLookup Retrieve lease metadata.
 func (a *SystemApiService) PostSysLeasesLookup(ctx context.Context, systemLeasesLookupRequest SystemLeasesLookupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -8278,13 +7537,7 @@ func (a *SystemApiService) PostSysLeasesLookup(ctx context.Context, systemLeases
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysLeasesRenew Renews a lease, requesting to extend the lease.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysLeasesRenewRequest
-*/
-// Execute executes the request
+// PostSysLeasesRenew Renews a lease, requesting to extend the lease.
 func (a *SystemApiService) PostSysLeasesRenew(ctx context.Context, systemLeasesRenewRequest SystemLeasesRenewRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -8350,14 +7603,8 @@ func (a *SystemApiService) PostSysLeasesRenew(ctx context.Context, systemLeasesR
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysLeasesRenewUrlLeaseId Renews a lease, requesting to extend the lease.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param urlLeaseId The lease identifier to renew. This is included with a lease.
- @return ApiPostSysLeasesRenewUrlLeaseIdRequest
-*/
-// Execute executes the request
+// PostSysLeasesRenewUrlLeaseId Renews a lease, requesting to extend the lease.
+// urlLeaseId: The lease identifier to renew. This is included with a lease.
 func (a *SystemApiService) PostSysLeasesRenewUrlLeaseId(ctx context.Context, urlLeaseId string, systemLeasesRenewLeaseRequest SystemLeasesRenewLeaseRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -8424,13 +7671,7 @@ func (a *SystemApiService) PostSysLeasesRenewUrlLeaseId(ctx context.Context, url
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysLeasesRevoke Revokes a lease immediately.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysLeasesRevokeRequest
-*/
-// Execute executes the request
+// PostSysLeasesRevoke Revokes a lease immediately.
 func (a *SystemApiService) PostSysLeasesRevoke(ctx context.Context, systemLeasesRevokeRequest SystemLeasesRevokeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -8496,18 +7737,9 @@ func (a *SystemApiService) PostSysLeasesRevoke(ctx context.Context, systemLeases
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysLeasesRevokeForcePrefix Revokes all secrets or tokens generated under a given prefix immediately
-
-Unlike `/sys/leases/revoke-prefix`, this path ignores backend errors encountered during revocation. This is potentially very dangerous and should only be used in specific emergency situations where errors in the backend or the connected backend service prevent normal revocation.
-
-By ignoring these errors, Vault abdicates responsibility for ensuring that the issued credentials or secrets are properly revoked and/or cleaned up. Access to this endpoint should be tightly controlled.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param prefix The path to revoke keys under. Example: \"prod/aws/ops\"
- @return ApiPostSysLeasesRevokeForcePrefixRequest
-*/
-// Execute executes the request
+// PostSysLeasesRevokeForcePrefix Revokes all secrets or tokens generated under a given prefix immediately
+// Unlike `/sys/leases/revoke-prefix`, this path ignores backend errors encountered during revocation. This is potentially very dangerous and should only be used in specific emergency situations where errors in the backend or the connected backend service prevent normal revocation.  By ignoring these errors, Vault abdicates responsibility for ensuring that the issued credentials or secrets are properly revoked and/or cleaned up. Access to this endpoint should be tightly controlled.
+// prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
 func (a *SystemApiService) PostSysLeasesRevokeForcePrefix(ctx context.Context, prefix string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -8572,14 +7804,8 @@ func (a *SystemApiService) PostSysLeasesRevokeForcePrefix(ctx context.Context, p
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysLeasesRevokePrefixPrefix Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param prefix The path to revoke keys under. Example: \"prod/aws/ops\"
- @return ApiPostSysLeasesRevokePrefixPrefixRequest
-*/
-// Execute executes the request
+// PostSysLeasesRevokePrefixPrefix Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
+// prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
 func (a *SystemApiService) PostSysLeasesRevokePrefixPrefix(ctx context.Context, prefix string, systemLeasesRevokePrefixRequest SystemLeasesRevokePrefixRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -8646,14 +7872,8 @@ func (a *SystemApiService) PostSysLeasesRevokePrefixPrefix(ctx context.Context, 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysLeasesRevokeUrlLeaseId Revokes a lease immediately.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param urlLeaseId The lease identifier to renew. This is included with a lease.
- @return ApiPostSysLeasesRevokeUrlLeaseIdRequest
-*/
-// Execute executes the request
+// PostSysLeasesRevokeUrlLeaseId Revokes a lease immediately.
+// urlLeaseId: The lease identifier to renew. This is included with a lease.
 func (a *SystemApiService) PostSysLeasesRevokeUrlLeaseId(ctx context.Context, urlLeaseId string, systemLeasesRevokeLeaseRequest SystemLeasesRevokeLeaseRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -8720,13 +7940,7 @@ func (a *SystemApiService) PostSysLeasesRevokeUrlLeaseId(ctx context.Context, ur
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysLeasesTidy This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysLeasesTidyRequest
-*/
-// Execute executes the request
+// PostSysLeasesTidy This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
 func (a *SystemApiService) PostSysLeasesTidy(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -8790,13 +8004,7 @@ func (a *SystemApiService) PostSysLeasesTidy(ctx context.Context) (*http.Respons
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysMfaValidate Validates the login for the given MFA methods. Upon successful validation, it returns an auth response containing the client token
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysMfaValidateRequest
-*/
-// Execute executes the request
+// PostSysMfaValidate Validates the login for the given MFA methods. Upon successful validation, it returns an auth response containing the client token
 func (a *SystemApiService) PostSysMfaValidate(ctx context.Context, systemMfaValidateRequest SystemMfaValidateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -8862,14 +8070,8 @@ func (a *SystemApiService) PostSysMfaValidate(ctx context.Context, systemMfaVali
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysMountsPath Enable a new secrets engine at the given path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path The path to mount to. Example: \"aws/east\"
- @return ApiPostSysMountsPathRequest
-*/
-// Execute executes the request
+// PostSysMountsPath Enable a new secrets engine at the given path.
+// path: The path to mount to. Example: \&quot;aws/east\&quot;
 func (a *SystemApiService) PostSysMountsPath(ctx context.Context, path string, systemMountsRequest SystemMountsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -8936,14 +8138,8 @@ func (a *SystemApiService) PostSysMountsPath(ctx context.Context, path string, s
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysMountsPathTune Tune backend configuration parameters for this mount.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path The path to mount to. Example: \"aws/east\"
- @return ApiPostSysMountsPathTuneRequest
-*/
-// Execute executes the request
+// PostSysMountsPathTune Tune backend configuration parameters for this mount.
+// path: The path to mount to. Example: \&quot;aws/east\&quot;
 func (a *SystemApiService) PostSysMountsPathTune(ctx context.Context, path string, systemMountsTuneRequest SystemMountsTuneRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -9010,14 +8206,8 @@ func (a *SystemApiService) PostSysMountsPathTune(ctx context.Context, path strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysPluginsCatalogName Register a new plugin, or updates an existing one with the supplied name.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the plugin
- @return ApiPostSysPluginsCatalogNameRequest
-*/
-// Execute executes the request
+// PostSysPluginsCatalogName Register a new plugin, or updates an existing one with the supplied name.
+// name: The name of the plugin
 func (a *SystemApiService) PostSysPluginsCatalogName(ctx context.Context, name string, systemPluginsCatalogRequest SystemPluginsCatalogRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -9084,15 +8274,9 @@ func (a *SystemApiService) PostSysPluginsCatalogName(ctx context.Context, name s
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysPluginsCatalogTypeName Register a new plugin, or updates an existing one with the supplied name.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the plugin
- @param type_ The type of the plugin, may be auth, secret, or database
- @return ApiPostSysPluginsCatalogTypeNameRequest
-*/
-// Execute executes the request
+// PostSysPluginsCatalogTypeName Register a new plugin, or updates an existing one with the supplied name.
+// name: The name of the plugin
+// type_: The type of the plugin, may be auth, secret, or database
 func (a *SystemApiService) PostSysPluginsCatalogTypeName(ctx context.Context, name string, type_ string, systemPluginsCatalogRequest SystemPluginsCatalogRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -9160,15 +8344,8 @@ func (a *SystemApiService) PostSysPluginsCatalogTypeName(ctx context.Context, na
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysPluginsReloadBackend Reload mounted plugin backends.
-
-Either the plugin name (`plugin`) or the desired plugin backend mounts (`mounts`) must be provided, but not both. In the case that the plugin name is provided, all mounted paths that use that plugin backend will be reloaded.  If (`scope`) is provided and is (`global`), the plugin(s) are reloaded globally.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysPluginsReloadBackendRequest
-*/
-// Execute executes the request
+// PostSysPluginsReloadBackend Reload mounted plugin backends.
+// Either the plugin name (`plugin`) or the desired plugin backend mounts (`mounts`) must be provided, but not both. In the case that the plugin name is provided, all mounted paths that use that plugin backend will be reloaded.  If (`scope`) is provided and is (`global`), the plugin(s) are reloaded globally.
 func (a *SystemApiService) PostSysPluginsReloadBackend(ctx context.Context, systemPluginsReloadBackendRequest SystemPluginsReloadBackendRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -9234,14 +8411,8 @@ func (a *SystemApiService) PostSysPluginsReloadBackend(ctx context.Context, syst
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysPoliciesAclName Add a new or update an existing ACL policy.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the policy. Example: \"ops\"
- @return ApiPostSysPoliciesAclNameRequest
-*/
-// Execute executes the request
+// PostSysPoliciesAclName Add a new or update an existing ACL policy.
+// name: The name of the policy. Example: \&quot;ops\&quot;
 func (a *SystemApiService) PostSysPoliciesAclName(ctx context.Context, name string, systemPoliciesAclRequest SystemPoliciesAclRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -9308,14 +8479,8 @@ func (a *SystemApiService) PostSysPoliciesAclName(ctx context.Context, name stri
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysPoliciesPasswordName Add a new or update an existing password policy.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the password policy.
- @return ApiPostSysPoliciesPasswordNameRequest
-*/
-// Execute executes the request
+// PostSysPoliciesPasswordName Add a new or update an existing password policy.
+// name: The name of the password policy.
 func (a *SystemApiService) PostSysPoliciesPasswordName(ctx context.Context, name string, systemPoliciesPasswordRequest SystemPoliciesPasswordRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -9382,14 +8547,8 @@ func (a *SystemApiService) PostSysPoliciesPasswordName(ctx context.Context, name
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysPolicyName Add a new or update an existing policy.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the policy. Example: \"ops\"
- @return ApiPostSysPolicyNameRequest
-*/
-// Execute executes the request
+// PostSysPolicyName Add a new or update an existing policy.
+// name: The name of the policy. Example: \&quot;ops\&quot;
 func (a *SystemApiService) PostSysPolicyName(ctx context.Context, name string, systemPolicyRequest SystemPolicyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -9456,13 +8615,7 @@ func (a *SystemApiService) PostSysPolicyName(ctx context.Context, name string, s
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysQuotasConfig Method for PostSysQuotasConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysQuotasConfigRequest
-*/
-// Execute executes the request
+// PostSysQuotasConfig
 func (a *SystemApiService) PostSysQuotasConfig(ctx context.Context, systemQuotasConfigRequest SystemQuotasConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -9528,14 +8681,8 @@ func (a *SystemApiService) PostSysQuotasConfig(ctx context.Context, systemQuotas
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysQuotasRateLimitName Method for PostSysQuotasRateLimitName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the quota rule.
- @return ApiPostSysQuotasRateLimitNameRequest
-*/
-// Execute executes the request
+// PostSysQuotasRateLimitName
+// name: Name of the quota rule.
 func (a *SystemApiService) PostSysQuotasRateLimitName(ctx context.Context, name string, systemQuotasRateLimitRequest SystemQuotasRateLimitRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -9602,13 +8749,7 @@ func (a *SystemApiService) PostSysQuotasRateLimitName(ctx context.Context, name 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysRaw Update the value of the key at the given path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysRawRequest
-*/
-// Execute executes the request
+// PostSysRaw Update the value of the key at the given path.
 func (a *SystemApiService) PostSysRaw(ctx context.Context, systemRawRequest SystemRawRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -9674,14 +8815,7 @@ func (a *SystemApiService) PostSysRaw(ctx context.Context, systemRawRequest Syst
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysRawPath Update the value of the key at the given path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path
- @return ApiPostSysRawPathRequest
-*/
-// Execute executes the request
+// PostSysRawPath Update the value of the key at the given path.
 func (a *SystemApiService) PostSysRawPath(ctx context.Context, path string, systemRawRequest SystemRawRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -9748,15 +8882,8 @@ func (a *SystemApiService) PostSysRawPath(ctx context.Context, path string, syst
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysRekeyInit Initializes a new rekey attempt.
-
-Only a single rekey attempt can take place at a time, and changing the parameters of a rekey requires canceling and starting a new rekey, which will also provide a new nonce.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysRekeyInitRequest
-*/
-// Execute executes the request
+// PostSysRekeyInit Initializes a new rekey attempt.
+// Only a single rekey attempt can take place at a time, and changing the parameters of a rekey requires canceling and starting a new rekey, which will also provide a new nonce.
 func (a *SystemApiService) PostSysRekeyInit(ctx context.Context, systemRekeyInitRequest SystemRekeyInitRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -9822,13 +8949,7 @@ func (a *SystemApiService) PostSysRekeyInit(ctx context.Context, systemRekeyInit
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysRekeyUpdate Enter a single unseal key share to progress the rekey of the Vault.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysRekeyUpdateRequest
-*/
-// Execute executes the request
+// PostSysRekeyUpdate Enter a single unseal key share to progress the rekey of the Vault.
 func (a *SystemApiService) PostSysRekeyUpdate(ctx context.Context, systemRekeyUpdateRequest SystemRekeyUpdateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -9894,13 +9015,7 @@ func (a *SystemApiService) PostSysRekeyUpdate(ctx context.Context, systemRekeyUp
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysRekeyVerify Enter a single new key share to progress the rekey verification operation.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysRekeyVerifyRequest
-*/
-// Execute executes the request
+// PostSysRekeyVerify Enter a single new key share to progress the rekey verification operation.
 func (a *SystemApiService) PostSysRekeyVerify(ctx context.Context, systemRekeyVerifyRequest SystemRekeyVerifyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -9966,13 +9081,7 @@ func (a *SystemApiService) PostSysRekeyVerify(ctx context.Context, systemRekeyVe
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysRemount Initiate a mount migration
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysRemountRequest
-*/
-// Execute executes the request
+// PostSysRemount Initiate a mount migration
 func (a *SystemApiService) PostSysRemount(ctx context.Context, systemRemountRequest SystemRemountRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -10038,13 +9147,7 @@ func (a *SystemApiService) PostSysRemount(ctx context.Context, systemRemountRequ
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysRenew Renews a lease, requesting to extend the lease.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysRenewRequest
-*/
-// Execute executes the request
+// PostSysRenew Renews a lease, requesting to extend the lease.
 func (a *SystemApiService) PostSysRenew(ctx context.Context, systemRenewRequest SystemRenewRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -10110,14 +9213,8 @@ func (a *SystemApiService) PostSysRenew(ctx context.Context, systemRenewRequest 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysRenewUrlLeaseId Renews a lease, requesting to extend the lease.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param urlLeaseId The lease identifier to renew. This is included with a lease.
- @return ApiPostSysRenewUrlLeaseIdRequest
-*/
-// Execute executes the request
+// PostSysRenewUrlLeaseId Renews a lease, requesting to extend the lease.
+// urlLeaseId: The lease identifier to renew. This is included with a lease.
 func (a *SystemApiService) PostSysRenewUrlLeaseId(ctx context.Context, urlLeaseId string, systemRenewLeaseRequest SystemRenewLeaseRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -10184,13 +9281,7 @@ func (a *SystemApiService) PostSysRenewUrlLeaseId(ctx context.Context, urlLeaseI
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysRevoke Revokes a lease immediately.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysRevokeRequest
-*/
-// Execute executes the request
+// PostSysRevoke Revokes a lease immediately.
 func (a *SystemApiService) PostSysRevoke(ctx context.Context, systemRevokeRequest SystemRevokeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -10256,18 +9347,9 @@ func (a *SystemApiService) PostSysRevoke(ctx context.Context, systemRevokeReques
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysRevokeForcePrefix Revokes all secrets or tokens generated under a given prefix immediately
-
-Unlike `/sys/leases/revoke-prefix`, this path ignores backend errors encountered during revocation. This is potentially very dangerous and should only be used in specific emergency situations where errors in the backend or the connected backend service prevent normal revocation.
-
-By ignoring these errors, Vault abdicates responsibility for ensuring that the issued credentials or secrets are properly revoked and/or cleaned up. Access to this endpoint should be tightly controlled.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param prefix The path to revoke keys under. Example: \"prod/aws/ops\"
- @return ApiPostSysRevokeForcePrefixRequest
-*/
-// Execute executes the request
+// PostSysRevokeForcePrefix Revokes all secrets or tokens generated under a given prefix immediately
+// Unlike `/sys/leases/revoke-prefix`, this path ignores backend errors encountered during revocation. This is potentially very dangerous and should only be used in specific emergency situations where errors in the backend or the connected backend service prevent normal revocation.  By ignoring these errors, Vault abdicates responsibility for ensuring that the issued credentials or secrets are properly revoked and/or cleaned up. Access to this endpoint should be tightly controlled.
+// prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
 func (a *SystemApiService) PostSysRevokeForcePrefix(ctx context.Context, prefix string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -10332,14 +9414,8 @@ func (a *SystemApiService) PostSysRevokeForcePrefix(ctx context.Context, prefix 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysRevokePrefixPrefix Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param prefix The path to revoke keys under. Example: \"prod/aws/ops\"
- @return ApiPostSysRevokePrefixPrefixRequest
-*/
-// Execute executes the request
+// PostSysRevokePrefixPrefix Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
+// prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
 func (a *SystemApiService) PostSysRevokePrefixPrefix(ctx context.Context, prefix string, systemRevokePrefixRequest SystemRevokePrefixRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -10406,14 +9482,8 @@ func (a *SystemApiService) PostSysRevokePrefixPrefix(ctx context.Context, prefix
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysRevokeUrlLeaseId Revokes a lease immediately.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param urlLeaseId The lease identifier to renew. This is included with a lease.
- @return ApiPostSysRevokeUrlLeaseIdRequest
-*/
-// Execute executes the request
+// PostSysRevokeUrlLeaseId Revokes a lease immediately.
+// urlLeaseId: The lease identifier to renew. This is included with a lease.
 func (a *SystemApiService) PostSysRevokeUrlLeaseId(ctx context.Context, urlLeaseId string, systemRevokeLeaseRequest SystemRevokeLeaseRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -10480,13 +9550,7 @@ func (a *SystemApiService) PostSysRevokeUrlLeaseId(ctx context.Context, urlLease
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysRotate Rotates the backend encryption key used to persist data.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysRotateRequest
-*/
-// Execute executes the request
+// PostSysRotate Rotates the backend encryption key used to persist data.
 func (a *SystemApiService) PostSysRotate(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -10550,13 +9614,7 @@ func (a *SystemApiService) PostSysRotate(ctx context.Context) (*http.Response, e
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysRotateConfig Method for PostSysRotateConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysRotateConfigRequest
-*/
-// Execute executes the request
+// PostSysRotateConfig
 func (a *SystemApiService) PostSysRotateConfig(ctx context.Context, systemRotateConfigRequest SystemRotateConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -10622,13 +9680,7 @@ func (a *SystemApiService) PostSysRotateConfig(ctx context.Context, systemRotate
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysSeal Seal the Vault.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysSealRequest
-*/
-// Execute executes the request
+// PostSysSeal Seal the Vault.
 func (a *SystemApiService) PostSysSeal(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -10692,15 +9744,8 @@ func (a *SystemApiService) PostSysSeal(ctx context.Context) (*http.Response, err
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysStepDown Cause the node to give up active status.
-
-This endpoint forces the node to give up active status. If the node does not have active status, this endpoint does nothing. Note that the node will sleep for ten seconds before attempting to grab the active lock again, but if no standby nodes grab the active lock in the interim, the same node may become the active node again.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysStepDownRequest
-*/
-// Execute executes the request
+// PostSysStepDown Cause the node to give up active status.
+// This endpoint forces the node to give up active status. If the node does not have active status, this endpoint does nothing. Note that the node will sleep for ten seconds before attempting to grab the active lock again, but if no standby nodes grab the active lock in the interim, the same node may become the active node again.
 func (a *SystemApiService) PostSysStepDown(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -10764,13 +9809,7 @@ func (a *SystemApiService) PostSysStepDown(ctx context.Context) (*http.Response,
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysToolsHash Generate a hash sum for input data
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysToolsHashRequest
-*/
-// Execute executes the request
+// PostSysToolsHash Generate a hash sum for input data
 func (a *SystemApiService) PostSysToolsHash(ctx context.Context, systemToolsHashRequest SystemToolsHashRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -10836,14 +9875,8 @@ func (a *SystemApiService) PostSysToolsHash(ctx context.Context, systemToolsHash
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysToolsHashUrlalgorithm Generate a hash sum for input data
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param urlalgorithm Algorithm to use (POST URL parameter)
- @return ApiPostSysToolsHashUrlalgorithmRequest
-*/
-// Execute executes the request
+// PostSysToolsHashUrlalgorithm Generate a hash sum for input data
+// urlalgorithm: Algorithm to use (POST URL parameter)
 func (a *SystemApiService) PostSysToolsHashUrlalgorithm(ctx context.Context, urlalgorithm string, systemToolsHashRequest SystemToolsHashRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -10910,13 +9943,7 @@ func (a *SystemApiService) PostSysToolsHashUrlalgorithm(ctx context.Context, url
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysToolsRandom Generate random bytes
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysToolsRandomRequest
-*/
-// Execute executes the request
+// PostSysToolsRandom Generate random bytes
 func (a *SystemApiService) PostSysToolsRandom(ctx context.Context, systemToolsRandomRequest SystemToolsRandomRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -10982,14 +10009,8 @@ func (a *SystemApiService) PostSysToolsRandom(ctx context.Context, systemToolsRa
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysToolsRandomSource Generate random bytes
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param source Which system to source random data from, ether \"platform\", \"seal\", or \"all\".
- @return ApiPostSysToolsRandomSourceRequest
-*/
-// Execute executes the request
+// PostSysToolsRandomSource Generate random bytes
+// source: Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;.
 func (a *SystemApiService) PostSysToolsRandomSource(ctx context.Context, source string, systemToolsRandomRequest SystemToolsRandomRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -11056,15 +10077,9 @@ func (a *SystemApiService) PostSysToolsRandomSource(ctx context.Context, source 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysToolsRandomSourceUrlbytes Generate random bytes
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param source Which system to source random data from, ether \"platform\", \"seal\", or \"all\".
- @param urlbytes The number of bytes to generate (POST URL parameter)
- @return ApiPostSysToolsRandomSourceUrlbytesRequest
-*/
-// Execute executes the request
+// PostSysToolsRandomSourceUrlbytes Generate random bytes
+// source: Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;.
+// urlbytes: The number of bytes to generate (POST URL parameter)
 func (a *SystemApiService) PostSysToolsRandomSourceUrlbytes(ctx context.Context, source string, urlbytes string, systemToolsRandomRequest SystemToolsRandomRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -11132,14 +10147,8 @@ func (a *SystemApiService) PostSysToolsRandomSourceUrlbytes(ctx context.Context,
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysToolsRandomUrlbytes Generate random bytes
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param urlbytes The number of bytes to generate (POST URL parameter)
- @return ApiPostSysToolsRandomUrlbytesRequest
-*/
-// Execute executes the request
+// PostSysToolsRandomUrlbytes Generate random bytes
+// urlbytes: The number of bytes to generate (POST URL parameter)
 func (a *SystemApiService) PostSysToolsRandomUrlbytes(ctx context.Context, urlbytes string, systemToolsRandomRequest SystemToolsRandomRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -11206,13 +10215,7 @@ func (a *SystemApiService) PostSysToolsRandomUrlbytes(ctx context.Context, urlby
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysUnseal Unseal the Vault.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysUnsealRequest
-*/
-// Execute executes the request
+// PostSysUnseal Unseal the Vault.
 func (a *SystemApiService) PostSysUnseal(ctx context.Context, systemUnsealRequest SystemUnsealRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -11278,13 +10281,7 @@ func (a *SystemApiService) PostSysUnseal(ctx context.Context, systemUnsealReques
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysWrappingLookup Look up wrapping properties for the given token.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysWrappingLookupRequest
-*/
-// Execute executes the request
+// PostSysWrappingLookup Look up wrapping properties for the given token.
 func (a *SystemApiService) PostSysWrappingLookup(ctx context.Context, systemWrappingLookupRequest SystemWrappingLookupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -11350,13 +10347,7 @@ func (a *SystemApiService) PostSysWrappingLookup(ctx context.Context, systemWrap
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysWrappingRewrap Rotates a response-wrapped token.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysWrappingRewrapRequest
-*/
-// Execute executes the request
+// PostSysWrappingRewrap Rotates a response-wrapped token.
 func (a *SystemApiService) PostSysWrappingRewrap(ctx context.Context, systemWrappingRewrapRequest SystemWrappingRewrapRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -11422,13 +10413,7 @@ func (a *SystemApiService) PostSysWrappingRewrap(ctx context.Context, systemWrap
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysWrappingUnwrap Unwraps a response-wrapped token.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysWrappingUnwrapRequest
-*/
-// Execute executes the request
+// PostSysWrappingUnwrap Unwraps a response-wrapped token.
 func (a *SystemApiService) PostSysWrappingUnwrap(ctx context.Context, systemWrappingUnwrapRequest SystemWrappingUnwrapRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -11494,13 +10479,7 @@ func (a *SystemApiService) PostSysWrappingUnwrap(ctx context.Context, systemWrap
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSysWrappingWrap Response-wraps an arbitrary JSON object.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysWrappingWrapRequest
-*/
-// Execute executes the request
+// PostSysWrappingWrap Response-wraps an arbitrary JSON object.
 func (a *SystemApiService) PostSysWrappingWrap(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost

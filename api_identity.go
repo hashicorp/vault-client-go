@@ -22,14 +22,8 @@ import (
 // IdentityApiService IdentityApi service
 type IdentityApiService service
 
-/*
-DeleteIdentityAliasIdId Update, read or delete an alias ID.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id ID of the alias
- @return ApiDeleteIdentityAliasIdIdRequest
-*/
-// Execute executes the request
+// DeleteIdentityAliasIdId Update, read or delete an alias ID.
+// id: ID of the alias
 func (a *IdentityApiService) DeleteIdentityAliasIdId(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -94,14 +88,8 @@ func (a *IdentityApiService) DeleteIdentityAliasIdId(ctx context.Context, id str
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteIdentityEntityAliasIdId Update, read or delete an alias ID.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id ID of the alias
- @return ApiDeleteIdentityEntityAliasIdIdRequest
-*/
-// Execute executes the request
+// DeleteIdentityEntityAliasIdId Update, read or delete an alias ID.
+// id: ID of the alias
 func (a *IdentityApiService) DeleteIdentityEntityAliasIdId(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -166,14 +154,8 @@ func (a *IdentityApiService) DeleteIdentityEntityAliasIdId(ctx context.Context, 
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteIdentityEntityIdId Update, read or delete an entity using entity ID
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id ID of the entity. If set, updates the corresponding existing entity.
- @return ApiDeleteIdentityEntityIdIdRequest
-*/
-// Execute executes the request
+// DeleteIdentityEntityIdId Update, read or delete an entity using entity ID
+// id: ID of the entity. If set, updates the corresponding existing entity.
 func (a *IdentityApiService) DeleteIdentityEntityIdId(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -238,14 +220,8 @@ func (a *IdentityApiService) DeleteIdentityEntityIdId(ctx context.Context, id st
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteIdentityEntityNameName Update, read or delete an entity using entity name
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the entity
- @return ApiDeleteIdentityEntityNameNameRequest
-*/
-// Execute executes the request
+// DeleteIdentityEntityNameName Update, read or delete an entity using entity name
+// name: Name of the entity
 func (a *IdentityApiService) DeleteIdentityEntityNameName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -310,14 +286,8 @@ func (a *IdentityApiService) DeleteIdentityEntityNameName(ctx context.Context, n
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteIdentityGroupAliasIdId Method for DeleteIdentityGroupAliasIdId
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id ID of the group alias.
- @return ApiDeleteIdentityGroupAliasIdIdRequest
-*/
-// Execute executes the request
+// DeleteIdentityGroupAliasIdId
+// id: ID of the group alias.
 func (a *IdentityApiService) DeleteIdentityGroupAliasIdId(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -382,14 +352,8 @@ func (a *IdentityApiService) DeleteIdentityGroupAliasIdId(ctx context.Context, i
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteIdentityGroupIdId Update or delete an existing group using its ID.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id ID of the group. If set, updates the corresponding existing group.
- @return ApiDeleteIdentityGroupIdIdRequest
-*/
-// Execute executes the request
+// DeleteIdentityGroupIdId Update or delete an existing group using its ID.
+// id: ID of the group. If set, updates the corresponding existing group.
 func (a *IdentityApiService) DeleteIdentityGroupIdId(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -454,14 +418,8 @@ func (a *IdentityApiService) DeleteIdentityGroupIdId(ctx context.Context, id str
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteIdentityGroupNameName Method for DeleteIdentityGroupNameName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the group.
- @return ApiDeleteIdentityGroupNameNameRequest
-*/
-// Execute executes the request
+// DeleteIdentityGroupNameName
+// name: Name of the group.
 func (a *IdentityApiService) DeleteIdentityGroupNameName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -526,14 +484,8 @@ func (a *IdentityApiService) DeleteIdentityGroupNameName(ctx context.Context, na
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteIdentityMfaLoginEnforcementName Delete a login enforcement
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name for this login enforcement configuration
- @return ApiDeleteIdentityMfaLoginEnforcementNameRequest
-*/
-// Execute executes the request
+// DeleteIdentityMfaLoginEnforcementName Delete a login enforcement
+// name: Name for this login enforcement configuration
 func (a *IdentityApiService) DeleteIdentityMfaLoginEnforcementName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -598,14 +550,8 @@ func (a *IdentityApiService) DeleteIdentityMfaLoginEnforcementName(ctx context.C
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteIdentityMfaMethodDuoMethodId Delete a configuration for the given MFA method
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param methodId The unique identifier for this MFA method.
- @return ApiDeleteIdentityMfaMethodDuoMethodIdRequest
-*/
-// Execute executes the request
+// DeleteIdentityMfaMethodDuoMethodId Delete a configuration for the given MFA method
+// methodId: The unique identifier for this MFA method.
 func (a *IdentityApiService) DeleteIdentityMfaMethodDuoMethodId(ctx context.Context, methodId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -670,14 +616,8 @@ func (a *IdentityApiService) DeleteIdentityMfaMethodDuoMethodId(ctx context.Cont
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteIdentityMfaMethodOktaMethodId Delete a configuration for the given MFA method
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param methodId The unique identifier for this MFA method.
- @return ApiDeleteIdentityMfaMethodOktaMethodIdRequest
-*/
-// Execute executes the request
+// DeleteIdentityMfaMethodOktaMethodId Delete a configuration for the given MFA method
+// methodId: The unique identifier for this MFA method.
 func (a *IdentityApiService) DeleteIdentityMfaMethodOktaMethodId(ctx context.Context, methodId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -742,14 +682,8 @@ func (a *IdentityApiService) DeleteIdentityMfaMethodOktaMethodId(ctx context.Con
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteIdentityMfaMethodPingidMethodId Delete a configuration for the given MFA method
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param methodId The unique identifier for this MFA method.
- @return ApiDeleteIdentityMfaMethodPingidMethodIdRequest
-*/
-// Execute executes the request
+// DeleteIdentityMfaMethodPingidMethodId Delete a configuration for the given MFA method
+// methodId: The unique identifier for this MFA method.
 func (a *IdentityApiService) DeleteIdentityMfaMethodPingidMethodId(ctx context.Context, methodId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -814,14 +748,8 @@ func (a *IdentityApiService) DeleteIdentityMfaMethodPingidMethodId(ctx context.C
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteIdentityMfaMethodTotpMethodId Delete a configuration for the given MFA method
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param methodId The unique identifier for this MFA method.
- @return ApiDeleteIdentityMfaMethodTotpMethodIdRequest
-*/
-// Execute executes the request
+// DeleteIdentityMfaMethodTotpMethodId Delete a configuration for the given MFA method
+// methodId: The unique identifier for this MFA method.
 func (a *IdentityApiService) DeleteIdentityMfaMethodTotpMethodId(ctx context.Context, methodId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -886,14 +814,8 @@ func (a *IdentityApiService) DeleteIdentityMfaMethodTotpMethodId(ctx context.Con
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteIdentityOidcAssignmentName Method for DeleteIdentityOidcAssignmentName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the assignment
- @return ApiDeleteIdentityOidcAssignmentNameRequest
-*/
-// Execute executes the request
+// DeleteIdentityOidcAssignmentName
+// name: Name of the assignment
 func (a *IdentityApiService) DeleteIdentityOidcAssignmentName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -958,14 +880,8 @@ func (a *IdentityApiService) DeleteIdentityOidcAssignmentName(ctx context.Contex
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteIdentityOidcClientName Method for DeleteIdentityOidcClientName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the client.
- @return ApiDeleteIdentityOidcClientNameRequest
-*/
-// Execute executes the request
+// DeleteIdentityOidcClientName
+// name: Name of the client.
 func (a *IdentityApiService) DeleteIdentityOidcClientName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1030,14 +946,8 @@ func (a *IdentityApiService) DeleteIdentityOidcClientName(ctx context.Context, n
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteIdentityOidcKeyName CRUD operations for OIDC keys.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the key
- @return ApiDeleteIdentityOidcKeyNameRequest
-*/
-// Execute executes the request
+// DeleteIdentityOidcKeyName CRUD operations for OIDC keys.
+// name: Name of the key
 func (a *IdentityApiService) DeleteIdentityOidcKeyName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1102,14 +1012,8 @@ func (a *IdentityApiService) DeleteIdentityOidcKeyName(ctx context.Context, name
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteIdentityOidcProviderName Method for DeleteIdentityOidcProviderName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the provider
- @return ApiDeleteIdentityOidcProviderNameRequest
-*/
-// Execute executes the request
+// DeleteIdentityOidcProviderName
+// name: Name of the provider
 func (a *IdentityApiService) DeleteIdentityOidcProviderName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1174,14 +1078,8 @@ func (a *IdentityApiService) DeleteIdentityOidcProviderName(ctx context.Context,
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteIdentityOidcRoleName CRUD operations on OIDC Roles
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiDeleteIdentityOidcRoleNameRequest
-*/
-// Execute executes the request
+// DeleteIdentityOidcRoleName CRUD operations on OIDC Roles
+// name: Name of the role
 func (a *IdentityApiService) DeleteIdentityOidcRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1246,14 +1144,8 @@ func (a *IdentityApiService) DeleteIdentityOidcRoleName(ctx context.Context, nam
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteIdentityOidcScopeName Method for DeleteIdentityOidcScopeName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the scope
- @return ApiDeleteIdentityOidcScopeNameRequest
-*/
-// Execute executes the request
+// DeleteIdentityOidcScopeName
+// name: Name of the scope
 func (a *IdentityApiService) DeleteIdentityOidcScopeName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1318,14 +1210,8 @@ func (a *IdentityApiService) DeleteIdentityOidcScopeName(ctx context.Context, na
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteIdentityPersonaIdId Update, read or delete an alias ID.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id ID of the persona
- @return ApiDeleteIdentityPersonaIdIdRequest
-*/
-// Execute executes the request
+// DeleteIdentityPersonaIdId Update, read or delete an alias ID.
+// id: ID of the persona
 func (a *IdentityApiService) DeleteIdentityPersonaIdId(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1390,15 +1276,8 @@ func (a *IdentityApiService) DeleteIdentityPersonaIdId(ctx context.Context, id s
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetIdentityAliasId List all the alias IDs.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetIdentityAliasIdRequest
-*/
-// Execute executes the request
+// GetIdentityAliasId List all the alias IDs.
+// list: Must be set to &#x60;true&#x60;
 func (a *IdentityApiService) GetIdentityAliasId(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -1463,14 +1342,8 @@ func (a *IdentityApiService) GetIdentityAliasId(ctx context.Context, list string
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetIdentityAliasIdId Update, read or delete an alias ID.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id ID of the alias
- @return ApiGetIdentityAliasIdIdRequest
-*/
-// Execute executes the request
+// GetIdentityAliasIdId Update, read or delete an alias ID.
+// id: ID of the alias
 func (a *IdentityApiService) GetIdentityAliasIdId(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -1535,15 +1408,8 @@ func (a *IdentityApiService) GetIdentityAliasIdId(ctx context.Context, id string
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetIdentityEntityAliasId List all the alias IDs.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetIdentityEntityAliasIdRequest
-*/
-// Execute executes the request
+// GetIdentityEntityAliasId List all the alias IDs.
+// list: Must be set to &#x60;true&#x60;
 func (a *IdentityApiService) GetIdentityEntityAliasId(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -1608,14 +1474,8 @@ func (a *IdentityApiService) GetIdentityEntityAliasId(ctx context.Context, list 
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetIdentityEntityAliasIdId Update, read or delete an alias ID.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id ID of the alias
- @return ApiGetIdentityEntityAliasIdIdRequest
-*/
-// Execute executes the request
+// GetIdentityEntityAliasIdId Update, read or delete an alias ID.
+// id: ID of the alias
 func (a *IdentityApiService) GetIdentityEntityAliasIdId(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -1680,15 +1540,8 @@ func (a *IdentityApiService) GetIdentityEntityAliasIdId(ctx context.Context, id 
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetIdentityEntityId List all the entity IDs
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetIdentityEntityIdRequest
-*/
-// Execute executes the request
+// GetIdentityEntityId List all the entity IDs
+// list: Must be set to &#x60;true&#x60;
 func (a *IdentityApiService) GetIdentityEntityId(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -1753,14 +1606,8 @@ func (a *IdentityApiService) GetIdentityEntityId(ctx context.Context, list strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetIdentityEntityIdId Update, read or delete an entity using entity ID
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id ID of the entity. If set, updates the corresponding existing entity.
- @return ApiGetIdentityEntityIdIdRequest
-*/
-// Execute executes the request
+// GetIdentityEntityIdId Update, read or delete an entity using entity ID
+// id: ID of the entity. If set, updates the corresponding existing entity.
 func (a *IdentityApiService) GetIdentityEntityIdId(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -1825,15 +1672,8 @@ func (a *IdentityApiService) GetIdentityEntityIdId(ctx context.Context, id strin
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetIdentityEntityName List all the entity names
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetIdentityEntityNameRequest
-*/
-// Execute executes the request
+// GetIdentityEntityName List all the entity names
+// list: Must be set to &#x60;true&#x60;
 func (a *IdentityApiService) GetIdentityEntityName(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -1898,14 +1738,8 @@ func (a *IdentityApiService) GetIdentityEntityName(ctx context.Context, list str
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetIdentityEntityNameName Update, read or delete an entity using entity name
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the entity
- @return ApiGetIdentityEntityNameNameRequest
-*/
-// Execute executes the request
+// GetIdentityEntityNameName Update, read or delete an entity using entity name
+// name: Name of the entity
 func (a *IdentityApiService) GetIdentityEntityNameName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -1970,15 +1804,8 @@ func (a *IdentityApiService) GetIdentityEntityNameName(ctx context.Context, name
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetIdentityGroupAliasId List all the group alias IDs.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetIdentityGroupAliasIdRequest
-*/
-// Execute executes the request
+// GetIdentityGroupAliasId List all the group alias IDs.
+// list: Must be set to &#x60;true&#x60;
 func (a *IdentityApiService) GetIdentityGroupAliasId(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -2043,14 +1870,8 @@ func (a *IdentityApiService) GetIdentityGroupAliasId(ctx context.Context, list s
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetIdentityGroupAliasIdId Method for GetIdentityGroupAliasIdId
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id ID of the group alias.
- @return ApiGetIdentityGroupAliasIdIdRequest
-*/
-// Execute executes the request
+// GetIdentityGroupAliasIdId
+// id: ID of the group alias.
 func (a *IdentityApiService) GetIdentityGroupAliasIdId(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -2115,15 +1936,8 @@ func (a *IdentityApiService) GetIdentityGroupAliasIdId(ctx context.Context, id s
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetIdentityGroupId List all the group IDs.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetIdentityGroupIdRequest
-*/
-// Execute executes the request
+// GetIdentityGroupId List all the group IDs.
+// list: Must be set to &#x60;true&#x60;
 func (a *IdentityApiService) GetIdentityGroupId(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -2188,14 +2002,8 @@ func (a *IdentityApiService) GetIdentityGroupId(ctx context.Context, list string
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetIdentityGroupIdId Update or delete an existing group using its ID.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id ID of the group. If set, updates the corresponding existing group.
- @return ApiGetIdentityGroupIdIdRequest
-*/
-// Execute executes the request
+// GetIdentityGroupIdId Update or delete an existing group using its ID.
+// id: ID of the group. If set, updates the corresponding existing group.
 func (a *IdentityApiService) GetIdentityGroupIdId(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -2260,15 +2068,8 @@ func (a *IdentityApiService) GetIdentityGroupIdId(ctx context.Context, id string
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetIdentityGroupName Method for GetIdentityGroupName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetIdentityGroupNameRequest
-*/
-// Execute executes the request
+// GetIdentityGroupName
+// list: Must be set to &#x60;true&#x60;
 func (a *IdentityApiService) GetIdentityGroupName(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -2333,14 +2134,8 @@ func (a *IdentityApiService) GetIdentityGroupName(ctx context.Context, list stri
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetIdentityGroupNameName Method for GetIdentityGroupNameName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the group.
- @return ApiGetIdentityGroupNameNameRequest
-*/
-// Execute executes the request
+// GetIdentityGroupNameName
+// name: Name of the group.
 func (a *IdentityApiService) GetIdentityGroupNameName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -2405,15 +2200,8 @@ func (a *IdentityApiService) GetIdentityGroupNameName(ctx context.Context, name 
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetIdentityMfaLoginEnforcement List login enforcements
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetIdentityMfaLoginEnforcementRequest
-*/
-// Execute executes the request
+// GetIdentityMfaLoginEnforcement List login enforcements
+// list: Must be set to &#x60;true&#x60;
 func (a *IdentityApiService) GetIdentityMfaLoginEnforcement(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -2478,14 +2266,8 @@ func (a *IdentityApiService) GetIdentityMfaLoginEnforcement(ctx context.Context,
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetIdentityMfaLoginEnforcementName Read the current login enforcement
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name for this login enforcement configuration
- @return ApiGetIdentityMfaLoginEnforcementNameRequest
-*/
-// Execute executes the request
+// GetIdentityMfaLoginEnforcementName Read the current login enforcement
+// name: Name for this login enforcement configuration
 func (a *IdentityApiService) GetIdentityMfaLoginEnforcementName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -2550,15 +2332,8 @@ func (a *IdentityApiService) GetIdentityMfaLoginEnforcementName(ctx context.Cont
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetIdentityMfaMethod List MFA method configurations for all MFA methods
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetIdentityMfaMethodRequest
-*/
-// Execute executes the request
+// GetIdentityMfaMethod List MFA method configurations for all MFA methods
+// list: Must be set to &#x60;true&#x60;
 func (a *IdentityApiService) GetIdentityMfaMethod(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -2623,15 +2398,8 @@ func (a *IdentityApiService) GetIdentityMfaMethod(ctx context.Context, list stri
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetIdentityMfaMethodDuo List MFA method configurations for the given MFA method
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetIdentityMfaMethodDuoRequest
-*/
-// Execute executes the request
+// GetIdentityMfaMethodDuo List MFA method configurations for the given MFA method
+// list: Must be set to &#x60;true&#x60;
 func (a *IdentityApiService) GetIdentityMfaMethodDuo(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -2696,14 +2464,8 @@ func (a *IdentityApiService) GetIdentityMfaMethodDuo(ctx context.Context, list s
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetIdentityMfaMethodDuoMethodId Read the current configuration for the given MFA method
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param methodId The unique identifier for this MFA method.
- @return ApiGetIdentityMfaMethodDuoMethodIdRequest
-*/
-// Execute executes the request
+// GetIdentityMfaMethodDuoMethodId Read the current configuration for the given MFA method
+// methodId: The unique identifier for this MFA method.
 func (a *IdentityApiService) GetIdentityMfaMethodDuoMethodId(ctx context.Context, methodId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -2768,14 +2530,8 @@ func (a *IdentityApiService) GetIdentityMfaMethodDuoMethodId(ctx context.Context
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetIdentityMfaMethodMethodId Read the current configuration for the given ID regardless of the MFA method type
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param methodId The unique identifier for this MFA method.
- @return ApiGetIdentityMfaMethodMethodIdRequest
-*/
-// Execute executes the request
+// GetIdentityMfaMethodMethodId Read the current configuration for the given ID regardless of the MFA method type
+// methodId: The unique identifier for this MFA method.
 func (a *IdentityApiService) GetIdentityMfaMethodMethodId(ctx context.Context, methodId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -2840,15 +2596,8 @@ func (a *IdentityApiService) GetIdentityMfaMethodMethodId(ctx context.Context, m
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetIdentityMfaMethodOkta List MFA method configurations for the given MFA method
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetIdentityMfaMethodOktaRequest
-*/
-// Execute executes the request
+// GetIdentityMfaMethodOkta List MFA method configurations for the given MFA method
+// list: Must be set to &#x60;true&#x60;
 func (a *IdentityApiService) GetIdentityMfaMethodOkta(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -2913,14 +2662,8 @@ func (a *IdentityApiService) GetIdentityMfaMethodOkta(ctx context.Context, list 
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetIdentityMfaMethodOktaMethodId Read the current configuration for the given MFA method
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param methodId The unique identifier for this MFA method.
- @return ApiGetIdentityMfaMethodOktaMethodIdRequest
-*/
-// Execute executes the request
+// GetIdentityMfaMethodOktaMethodId Read the current configuration for the given MFA method
+// methodId: The unique identifier for this MFA method.
 func (a *IdentityApiService) GetIdentityMfaMethodOktaMethodId(ctx context.Context, methodId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -2985,15 +2728,8 @@ func (a *IdentityApiService) GetIdentityMfaMethodOktaMethodId(ctx context.Contex
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetIdentityMfaMethodPingid List MFA method configurations for the given MFA method
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetIdentityMfaMethodPingidRequest
-*/
-// Execute executes the request
+// GetIdentityMfaMethodPingid List MFA method configurations for the given MFA method
+// list: Must be set to &#x60;true&#x60;
 func (a *IdentityApiService) GetIdentityMfaMethodPingid(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3058,14 +2794,8 @@ func (a *IdentityApiService) GetIdentityMfaMethodPingid(ctx context.Context, lis
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetIdentityMfaMethodPingidMethodId Read the current configuration for the given MFA method
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param methodId The unique identifier for this MFA method.
- @return ApiGetIdentityMfaMethodPingidMethodIdRequest
-*/
-// Execute executes the request
+// GetIdentityMfaMethodPingidMethodId Read the current configuration for the given MFA method
+// methodId: The unique identifier for this MFA method.
 func (a *IdentityApiService) GetIdentityMfaMethodPingidMethodId(ctx context.Context, methodId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3130,15 +2860,8 @@ func (a *IdentityApiService) GetIdentityMfaMethodPingidMethodId(ctx context.Cont
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetIdentityMfaMethodTotp List MFA method configurations for the given MFA method
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetIdentityMfaMethodTotpRequest
-*/
-// Execute executes the request
+// GetIdentityMfaMethodTotp List MFA method configurations for the given MFA method
+// list: Must be set to &#x60;true&#x60;
 func (a *IdentityApiService) GetIdentityMfaMethodTotp(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3203,14 +2926,8 @@ func (a *IdentityApiService) GetIdentityMfaMethodTotp(ctx context.Context, list 
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetIdentityMfaMethodTotpMethodId Read the current configuration for the given MFA method
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param methodId The unique identifier for this MFA method.
- @return ApiGetIdentityMfaMethodTotpMethodIdRequest
-*/
-// Execute executes the request
+// GetIdentityMfaMethodTotpMethodId Read the current configuration for the given MFA method
+// methodId: The unique identifier for this MFA method.
 func (a *IdentityApiService) GetIdentityMfaMethodTotpMethodId(ctx context.Context, methodId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3275,15 +2992,8 @@ func (a *IdentityApiService) GetIdentityMfaMethodTotpMethodId(ctx context.Contex
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetIdentityOidcAssignment Method for GetIdentityOidcAssignment
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetIdentityOidcAssignmentRequest
-*/
-// Execute executes the request
+// GetIdentityOidcAssignment
+// list: Must be set to &#x60;true&#x60;
 func (a *IdentityApiService) GetIdentityOidcAssignment(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3348,14 +3058,8 @@ func (a *IdentityApiService) GetIdentityOidcAssignment(ctx context.Context, list
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetIdentityOidcAssignmentName Method for GetIdentityOidcAssignmentName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the assignment
- @return ApiGetIdentityOidcAssignmentNameRequest
-*/
-// Execute executes the request
+// GetIdentityOidcAssignmentName
+// name: Name of the assignment
 func (a *IdentityApiService) GetIdentityOidcAssignmentName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3420,15 +3124,8 @@ func (a *IdentityApiService) GetIdentityOidcAssignmentName(ctx context.Context, 
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetIdentityOidcClient Method for GetIdentityOidcClient
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetIdentityOidcClientRequest
-*/
-// Execute executes the request
+// GetIdentityOidcClient
+// list: Must be set to &#x60;true&#x60;
 func (a *IdentityApiService) GetIdentityOidcClient(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3493,14 +3190,8 @@ func (a *IdentityApiService) GetIdentityOidcClient(ctx context.Context, list str
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetIdentityOidcClientName Method for GetIdentityOidcClientName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the client.
- @return ApiGetIdentityOidcClientNameRequest
-*/
-// Execute executes the request
+// GetIdentityOidcClientName
+// name: Name of the client.
 func (a *IdentityApiService) GetIdentityOidcClientName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3565,13 +3256,7 @@ func (a *IdentityApiService) GetIdentityOidcClientName(ctx context.Context, name
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetIdentityOidcConfig OIDC configuration
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetIdentityOidcConfigRequest
-*/
-// Execute executes the request
+// GetIdentityOidcConfig OIDC configuration
 func (a *IdentityApiService) GetIdentityOidcConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3635,15 +3320,8 @@ func (a *IdentityApiService) GetIdentityOidcConfig(ctx context.Context) (*http.R
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetIdentityOidcKey List OIDC keys
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetIdentityOidcKeyRequest
-*/
-// Execute executes the request
+// GetIdentityOidcKey List OIDC keys
+// list: Must be set to &#x60;true&#x60;
 func (a *IdentityApiService) GetIdentityOidcKey(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3708,14 +3386,8 @@ func (a *IdentityApiService) GetIdentityOidcKey(ctx context.Context, list string
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetIdentityOidcKeyName CRUD operations for OIDC keys.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the key
- @return ApiGetIdentityOidcKeyNameRequest
-*/
-// Execute executes the request
+// GetIdentityOidcKeyName CRUD operations for OIDC keys.
+// name: Name of the key
 func (a *IdentityApiService) GetIdentityOidcKeyName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3780,15 +3452,8 @@ func (a *IdentityApiService) GetIdentityOidcKeyName(ctx context.Context, name st
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetIdentityOidcProvider Method for GetIdentityOidcProvider
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetIdentityOidcProviderRequest
-*/
-// Execute executes the request
+// GetIdentityOidcProvider
+// list: Must be set to &#x60;true&#x60;
 func (a *IdentityApiService) GetIdentityOidcProvider(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3853,14 +3518,8 @@ func (a *IdentityApiService) GetIdentityOidcProvider(ctx context.Context, list s
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetIdentityOidcProviderName Method for GetIdentityOidcProviderName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the provider
- @return ApiGetIdentityOidcProviderNameRequest
-*/
-// Execute executes the request
+// GetIdentityOidcProviderName
+// name: Name of the provider
 func (a *IdentityApiService) GetIdentityOidcProviderName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3925,14 +3584,8 @@ func (a *IdentityApiService) GetIdentityOidcProviderName(ctx context.Context, na
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetIdentityOidcProviderNameAuthorize Method for GetIdentityOidcProviderNameAuthorize
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the provider
- @return ApiGetIdentityOidcProviderNameAuthorizeRequest
-*/
-// Execute executes the request
+// GetIdentityOidcProviderNameAuthorize
+// name: Name of the provider
 func (a *IdentityApiService) GetIdentityOidcProviderNameAuthorize(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3997,14 +3650,8 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameAuthorize(ctx context.Co
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetIdentityOidcProviderNameUserinfo Method for GetIdentityOidcProviderNameUserinfo
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the provider
- @return ApiGetIdentityOidcProviderNameUserinfoRequest
-*/
-// Execute executes the request
+// GetIdentityOidcProviderNameUserinfo
+// name: Name of the provider
 func (a *IdentityApiService) GetIdentityOidcProviderNameUserinfo(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4069,14 +3716,8 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameUserinfo(ctx context.Con
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetIdentityOidcProviderNameWellKnownKeys Method for GetIdentityOidcProviderNameWellKnownKeys
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the provider
- @return ApiGetIdentityOidcProviderNameWellKnownKeysRequest
-*/
-// Execute executes the request
+// GetIdentityOidcProviderNameWellKnownKeys
+// name: Name of the provider
 func (a *IdentityApiService) GetIdentityOidcProviderNameWellKnownKeys(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4141,14 +3782,8 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameWellKnownKeys(ctx contex
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetIdentityOidcProviderNameWellKnownOpenidConfiguration Method for GetIdentityOidcProviderNameWellKnownOpenidConfiguration
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the provider
- @return ApiGetIdentityOidcProviderNameWellKnownOpenidConfigurationRequest
-*/
-// Execute executes the request
+// GetIdentityOidcProviderNameWellKnownOpenidConfiguration
+// name: Name of the provider
 func (a *IdentityApiService) GetIdentityOidcProviderNameWellKnownOpenidConfiguration(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4213,15 +3848,8 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameWellKnownOpenidConfigura
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetIdentityOidcRole List configured OIDC roles
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetIdentityOidcRoleRequest
-*/
-// Execute executes the request
+// GetIdentityOidcRole List configured OIDC roles
+// list: Must be set to &#x60;true&#x60;
 func (a *IdentityApiService) GetIdentityOidcRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4286,14 +3914,8 @@ func (a *IdentityApiService) GetIdentityOidcRole(ctx context.Context, list strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetIdentityOidcRoleName CRUD operations on OIDC Roles
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiGetIdentityOidcRoleNameRequest
-*/
-// Execute executes the request
+// GetIdentityOidcRoleName CRUD operations on OIDC Roles
+// name: Name of the role
 func (a *IdentityApiService) GetIdentityOidcRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4358,15 +3980,8 @@ func (a *IdentityApiService) GetIdentityOidcRoleName(ctx context.Context, name s
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetIdentityOidcScope Method for GetIdentityOidcScope
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetIdentityOidcScopeRequest
-*/
-// Execute executes the request
+// GetIdentityOidcScope
+// list: Must be set to &#x60;true&#x60;
 func (a *IdentityApiService) GetIdentityOidcScope(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4431,14 +4046,8 @@ func (a *IdentityApiService) GetIdentityOidcScope(ctx context.Context, list stri
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetIdentityOidcScopeName Method for GetIdentityOidcScopeName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the scope
- @return ApiGetIdentityOidcScopeNameRequest
-*/
-// Execute executes the request
+// GetIdentityOidcScopeName
+// name: Name of the scope
 func (a *IdentityApiService) GetIdentityOidcScopeName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4503,14 +4112,8 @@ func (a *IdentityApiService) GetIdentityOidcScopeName(ctx context.Context, name 
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetIdentityOidcTokenName Generate an OIDC token
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiGetIdentityOidcTokenNameRequest
-*/
-// Execute executes the request
+// GetIdentityOidcTokenName Generate an OIDC token
+// name: Name of the role
 func (a *IdentityApiService) GetIdentityOidcTokenName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4575,13 +4178,7 @@ func (a *IdentityApiService) GetIdentityOidcTokenName(ctx context.Context, name 
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetIdentityOidcWellKnownKeys Retrieve public keys
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetIdentityOidcWellKnownKeysRequest
-*/
-// Execute executes the request
+// GetIdentityOidcWellKnownKeys Retrieve public keys
 func (a *IdentityApiService) GetIdentityOidcWellKnownKeys(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4645,13 +4242,7 @@ func (a *IdentityApiService) GetIdentityOidcWellKnownKeys(ctx context.Context) (
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetIdentityOidcWellKnownOpenidConfiguration Query OIDC configurations
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetIdentityOidcWellKnownOpenidConfigurationRequest
-*/
-// Execute executes the request
+// GetIdentityOidcWellKnownOpenidConfiguration Query OIDC configurations
 func (a *IdentityApiService) GetIdentityOidcWellKnownOpenidConfiguration(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4715,15 +4306,8 @@ func (a *IdentityApiService) GetIdentityOidcWellKnownOpenidConfiguration(ctx con
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetIdentityPersonaId List all the alias IDs.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetIdentityPersonaIdRequest
-*/
-// Execute executes the request
+// GetIdentityPersonaId List all the alias IDs.
+// list: Must be set to &#x60;true&#x60;
 func (a *IdentityApiService) GetIdentityPersonaId(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4788,14 +4372,8 @@ func (a *IdentityApiService) GetIdentityPersonaId(ctx context.Context, list stri
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetIdentityPersonaIdId Update, read or delete an alias ID.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id ID of the persona
- @return ApiGetIdentityPersonaIdIdRequest
-*/
-// Execute executes the request
+// GetIdentityPersonaIdId Update, read or delete an alias ID.
+// id: ID of the persona
 func (a *IdentityApiService) GetIdentityPersonaIdId(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4860,13 +4438,7 @@ func (a *IdentityApiService) GetIdentityPersonaIdId(ctx context.Context, id stri
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityAlias Create a new alias.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostIdentityAliasRequest
-*/
-// Execute executes the request
+// PostIdentityAlias Create a new alias.
 func (a *IdentityApiService) PostIdentityAlias(ctx context.Context, identityAliasRequest IdentityAliasRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -4932,14 +4504,8 @@ func (a *IdentityApiService) PostIdentityAlias(ctx context.Context, identityAlia
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityAliasIdId Update, read or delete an alias ID.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id ID of the alias
- @return ApiPostIdentityAliasIdIdRequest
-*/
-// Execute executes the request
+// PostIdentityAliasIdId Update, read or delete an alias ID.
+// id: ID of the alias
 func (a *IdentityApiService) PostIdentityAliasIdId(ctx context.Context, id string, identityAliasIdRequest IdentityAliasIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -5006,13 +4572,7 @@ func (a *IdentityApiService) PostIdentityAliasIdId(ctx context.Context, id strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityEntity Create a new entity
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostIdentityEntityRequest
-*/
-// Execute executes the request
+// PostIdentityEntity Create a new entity
 func (a *IdentityApiService) PostIdentityEntity(ctx context.Context, identityEntityRequest IdentityEntityRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -5078,13 +4638,7 @@ func (a *IdentityApiService) PostIdentityEntity(ctx context.Context, identityEnt
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityEntityAlias Create a new alias.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostIdentityEntityAliasRequest
-*/
-// Execute executes the request
+// PostIdentityEntityAlias Create a new alias.
 func (a *IdentityApiService) PostIdentityEntityAlias(ctx context.Context, identityEntityAliasRequest IdentityEntityAliasRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -5150,14 +4704,8 @@ func (a *IdentityApiService) PostIdentityEntityAlias(ctx context.Context, identi
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityEntityAliasIdId Update, read or delete an alias ID.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id ID of the alias
- @return ApiPostIdentityEntityAliasIdIdRequest
-*/
-// Execute executes the request
+// PostIdentityEntityAliasIdId Update, read or delete an alias ID.
+// id: ID of the alias
 func (a *IdentityApiService) PostIdentityEntityAliasIdId(ctx context.Context, id string, identityEntityAliasIdRequest IdentityEntityAliasIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -5224,13 +4772,7 @@ func (a *IdentityApiService) PostIdentityEntityAliasIdId(ctx context.Context, id
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityEntityBatchDelete Delete all of the entities provided
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostIdentityEntityBatchDeleteRequest
-*/
-// Execute executes the request
+// PostIdentityEntityBatchDelete Delete all of the entities provided
 func (a *IdentityApiService) PostIdentityEntityBatchDelete(ctx context.Context, identityEntityBatchDeleteRequest IdentityEntityBatchDeleteRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -5296,14 +4838,8 @@ func (a *IdentityApiService) PostIdentityEntityBatchDelete(ctx context.Context, 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityEntityIdId Update, read or delete an entity using entity ID
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id ID of the entity. If set, updates the corresponding existing entity.
- @return ApiPostIdentityEntityIdIdRequest
-*/
-// Execute executes the request
+// PostIdentityEntityIdId Update, read or delete an entity using entity ID
+// id: ID of the entity. If set, updates the corresponding existing entity.
 func (a *IdentityApiService) PostIdentityEntityIdId(ctx context.Context, id string, identityEntityIdRequest IdentityEntityIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -5370,13 +4906,7 @@ func (a *IdentityApiService) PostIdentityEntityIdId(ctx context.Context, id stri
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityEntityMerge Merge two or more entities together
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostIdentityEntityMergeRequest
-*/
-// Execute executes the request
+// PostIdentityEntityMerge Merge two or more entities together
 func (a *IdentityApiService) PostIdentityEntityMerge(ctx context.Context, identityEntityMergeRequest IdentityEntityMergeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -5442,14 +4972,8 @@ func (a *IdentityApiService) PostIdentityEntityMerge(ctx context.Context, identi
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityEntityNameName Update, read or delete an entity using entity name
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the entity
- @return ApiPostIdentityEntityNameNameRequest
-*/
-// Execute executes the request
+// PostIdentityEntityNameName Update, read or delete an entity using entity name
+// name: Name of the entity
 func (a *IdentityApiService) PostIdentityEntityNameName(ctx context.Context, name string, identityEntityNameRequest IdentityEntityNameRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -5516,13 +5040,7 @@ func (a *IdentityApiService) PostIdentityEntityNameName(ctx context.Context, nam
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityGroup Create a new group.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostIdentityGroupRequest
-*/
-// Execute executes the request
+// PostIdentityGroup Create a new group.
 func (a *IdentityApiService) PostIdentityGroup(ctx context.Context, identityGroupRequest IdentityGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -5588,13 +5106,7 @@ func (a *IdentityApiService) PostIdentityGroup(ctx context.Context, identityGrou
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityGroupAlias Creates a new group alias, or updates an existing one.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostIdentityGroupAliasRequest
-*/
-// Execute executes the request
+// PostIdentityGroupAlias Creates a new group alias, or updates an existing one.
 func (a *IdentityApiService) PostIdentityGroupAlias(ctx context.Context, identityGroupAliasRequest IdentityGroupAliasRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -5660,14 +5172,8 @@ func (a *IdentityApiService) PostIdentityGroupAlias(ctx context.Context, identit
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityGroupAliasIdId Method for PostIdentityGroupAliasIdId
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id ID of the group alias.
- @return ApiPostIdentityGroupAliasIdIdRequest
-*/
-// Execute executes the request
+// PostIdentityGroupAliasIdId
+// id: ID of the group alias.
 func (a *IdentityApiService) PostIdentityGroupAliasIdId(ctx context.Context, id string, identityGroupAliasIdRequest IdentityGroupAliasIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -5734,14 +5240,8 @@ func (a *IdentityApiService) PostIdentityGroupAliasIdId(ctx context.Context, id 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityGroupIdId Update or delete an existing group using its ID.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id ID of the group. If set, updates the corresponding existing group.
- @return ApiPostIdentityGroupIdIdRequest
-*/
-// Execute executes the request
+// PostIdentityGroupIdId Update or delete an existing group using its ID.
+// id: ID of the group. If set, updates the corresponding existing group.
 func (a *IdentityApiService) PostIdentityGroupIdId(ctx context.Context, id string, identityGroupIdRequest IdentityGroupIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -5808,14 +5308,8 @@ func (a *IdentityApiService) PostIdentityGroupIdId(ctx context.Context, id strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityGroupNameName Method for PostIdentityGroupNameName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the group.
- @return ApiPostIdentityGroupNameNameRequest
-*/
-// Execute executes the request
+// PostIdentityGroupNameName
+// name: Name of the group.
 func (a *IdentityApiService) PostIdentityGroupNameName(ctx context.Context, name string, identityGroupNameRequest IdentityGroupNameRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -5882,13 +5376,7 @@ func (a *IdentityApiService) PostIdentityGroupNameName(ctx context.Context, name
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityLookupEntity Query entities based on various properties.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostIdentityLookupEntityRequest
-*/
-// Execute executes the request
+// PostIdentityLookupEntity Query entities based on various properties.
 func (a *IdentityApiService) PostIdentityLookupEntity(ctx context.Context, identityLookupEntityRequest IdentityLookupEntityRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -5954,13 +5442,7 @@ func (a *IdentityApiService) PostIdentityLookupEntity(ctx context.Context, ident
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityLookupGroup Query groups based on various properties.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostIdentityLookupGroupRequest
-*/
-// Execute executes the request
+// PostIdentityLookupGroup Query groups based on various properties.
 func (a *IdentityApiService) PostIdentityLookupGroup(ctx context.Context, identityLookupGroupRequest IdentityLookupGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -6026,14 +5508,8 @@ func (a *IdentityApiService) PostIdentityLookupGroup(ctx context.Context, identi
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityMfaLoginEnforcementName Create or update a login enforcement
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name for this login enforcement configuration
- @return ApiPostIdentityMfaLoginEnforcementNameRequest
-*/
-// Execute executes the request
+// PostIdentityMfaLoginEnforcementName Create or update a login enforcement
+// name: Name for this login enforcement configuration
 func (a *IdentityApiService) PostIdentityMfaLoginEnforcementName(ctx context.Context, name string, identityMfaLoginEnforcementRequest IdentityMfaLoginEnforcementRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -6100,14 +5576,8 @@ func (a *IdentityApiService) PostIdentityMfaLoginEnforcementName(ctx context.Con
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityMfaMethodDuoMethodId Update or create a configuration for the given MFA method
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param methodId The unique identifier for this MFA method.
- @return ApiPostIdentityMfaMethodDuoMethodIdRequest
-*/
-// Execute executes the request
+// PostIdentityMfaMethodDuoMethodId Update or create a configuration for the given MFA method
+// methodId: The unique identifier for this MFA method.
 func (a *IdentityApiService) PostIdentityMfaMethodDuoMethodId(ctx context.Context, methodId string, identityMfaMethodDuoRequest IdentityMfaMethodDuoRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -6174,14 +5644,8 @@ func (a *IdentityApiService) PostIdentityMfaMethodDuoMethodId(ctx context.Contex
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityMfaMethodOktaMethodId Update or create a configuration for the given MFA method
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param methodId The unique identifier for this MFA method.
- @return ApiPostIdentityMfaMethodOktaMethodIdRequest
-*/
-// Execute executes the request
+// PostIdentityMfaMethodOktaMethodId Update or create a configuration for the given MFA method
+// methodId: The unique identifier for this MFA method.
 func (a *IdentityApiService) PostIdentityMfaMethodOktaMethodId(ctx context.Context, methodId string, identityMfaMethodOktaRequest IdentityMfaMethodOktaRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -6248,14 +5712,8 @@ func (a *IdentityApiService) PostIdentityMfaMethodOktaMethodId(ctx context.Conte
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityMfaMethodPingidMethodId Update or create a configuration for the given MFA method
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param methodId The unique identifier for this MFA method.
- @return ApiPostIdentityMfaMethodPingidMethodIdRequest
-*/
-// Execute executes the request
+// PostIdentityMfaMethodPingidMethodId Update or create a configuration for the given MFA method
+// methodId: The unique identifier for this MFA method.
 func (a *IdentityApiService) PostIdentityMfaMethodPingidMethodId(ctx context.Context, methodId string, identityMfaMethodPingidRequest IdentityMfaMethodPingidRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -6322,13 +5780,7 @@ func (a *IdentityApiService) PostIdentityMfaMethodPingidMethodId(ctx context.Con
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityMfaMethodTotpAdminDestroy Destroys a TOTP secret for the given MFA method ID on the given entity
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostIdentityMfaMethodTotpAdminDestroyRequest
-*/
-// Execute executes the request
+// PostIdentityMfaMethodTotpAdminDestroy Destroys a TOTP secret for the given MFA method ID on the given entity
 func (a *IdentityApiService) PostIdentityMfaMethodTotpAdminDestroy(ctx context.Context, identityMfaMethodTotpAdminDestroyRequest IdentityMfaMethodTotpAdminDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -6394,13 +5846,7 @@ func (a *IdentityApiService) PostIdentityMfaMethodTotpAdminDestroy(ctx context.C
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityMfaMethodTotpAdminGenerate Update or create TOTP secret for the given method ID on the given entity.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostIdentityMfaMethodTotpAdminGenerateRequest
-*/
-// Execute executes the request
+// PostIdentityMfaMethodTotpAdminGenerate Update or create TOTP secret for the given method ID on the given entity.
 func (a *IdentityApiService) PostIdentityMfaMethodTotpAdminGenerate(ctx context.Context, identityMfaMethodTotpAdminGenerateRequest IdentityMfaMethodTotpAdminGenerateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -6466,13 +5912,7 @@ func (a *IdentityApiService) PostIdentityMfaMethodTotpAdminGenerate(ctx context.
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityMfaMethodTotpGenerate Update or create TOTP secret for the given method ID on the given entity.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostIdentityMfaMethodTotpGenerateRequest
-*/
-// Execute executes the request
+// PostIdentityMfaMethodTotpGenerate Update or create TOTP secret for the given method ID on the given entity.
 func (a *IdentityApiService) PostIdentityMfaMethodTotpGenerate(ctx context.Context, identityMfaMethodTotpGenerateRequest IdentityMfaMethodTotpGenerateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -6538,14 +5978,8 @@ func (a *IdentityApiService) PostIdentityMfaMethodTotpGenerate(ctx context.Conte
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityMfaMethodTotpMethodId Update or create a configuration for the given MFA method
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param methodId The unique identifier for this MFA method.
- @return ApiPostIdentityMfaMethodTotpMethodIdRequest
-*/
-// Execute executes the request
+// PostIdentityMfaMethodTotpMethodId Update or create a configuration for the given MFA method
+// methodId: The unique identifier for this MFA method.
 func (a *IdentityApiService) PostIdentityMfaMethodTotpMethodId(ctx context.Context, methodId string, identityMfaMethodTotpRequest IdentityMfaMethodTotpRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -6612,14 +6046,8 @@ func (a *IdentityApiService) PostIdentityMfaMethodTotpMethodId(ctx context.Conte
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityOidcAssignmentName Method for PostIdentityOidcAssignmentName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the assignment
- @return ApiPostIdentityOidcAssignmentNameRequest
-*/
-// Execute executes the request
+// PostIdentityOidcAssignmentName
+// name: Name of the assignment
 func (a *IdentityApiService) PostIdentityOidcAssignmentName(ctx context.Context, name string, identityOidcAssignmentRequest IdentityOidcAssignmentRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -6686,14 +6114,8 @@ func (a *IdentityApiService) PostIdentityOidcAssignmentName(ctx context.Context,
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityOidcClientName Method for PostIdentityOidcClientName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the client.
- @return ApiPostIdentityOidcClientNameRequest
-*/
-// Execute executes the request
+// PostIdentityOidcClientName
+// name: Name of the client.
 func (a *IdentityApiService) PostIdentityOidcClientName(ctx context.Context, name string, identityOidcClientRequest IdentityOidcClientRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -6760,13 +6182,7 @@ func (a *IdentityApiService) PostIdentityOidcClientName(ctx context.Context, nam
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityOidcConfig OIDC configuration
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostIdentityOidcConfigRequest
-*/
-// Execute executes the request
+// PostIdentityOidcConfig OIDC configuration
 func (a *IdentityApiService) PostIdentityOidcConfig(ctx context.Context, identityOidcConfigRequest IdentityOidcConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -6832,13 +6248,7 @@ func (a *IdentityApiService) PostIdentityOidcConfig(ctx context.Context, identit
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityOidcIntrospect Verify the authenticity of an OIDC token
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostIdentityOidcIntrospectRequest
-*/
-// Execute executes the request
+// PostIdentityOidcIntrospect Verify the authenticity of an OIDC token
 func (a *IdentityApiService) PostIdentityOidcIntrospect(ctx context.Context, identityOidcIntrospectRequest IdentityOidcIntrospectRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -6904,14 +6314,8 @@ func (a *IdentityApiService) PostIdentityOidcIntrospect(ctx context.Context, ide
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityOidcKeyName CRUD operations for OIDC keys.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the key
- @return ApiPostIdentityOidcKeyNameRequest
-*/
-// Execute executes the request
+// PostIdentityOidcKeyName CRUD operations for OIDC keys.
+// name: Name of the key
 func (a *IdentityApiService) PostIdentityOidcKeyName(ctx context.Context, name string, identityOidcKeyRequest IdentityOidcKeyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -6978,14 +6382,8 @@ func (a *IdentityApiService) PostIdentityOidcKeyName(ctx context.Context, name s
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityOidcKeyNameRotate Rotate a named OIDC key.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the key
- @return ApiPostIdentityOidcKeyNameRotateRequest
-*/
-// Execute executes the request
+// PostIdentityOidcKeyNameRotate Rotate a named OIDC key.
+// name: Name of the key
 func (a *IdentityApiService) PostIdentityOidcKeyNameRotate(ctx context.Context, name string, identityOidcKeyRotateRequest IdentityOidcKeyRotateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -7052,14 +6450,8 @@ func (a *IdentityApiService) PostIdentityOidcKeyNameRotate(ctx context.Context, 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityOidcProviderName Method for PostIdentityOidcProviderName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the provider
- @return ApiPostIdentityOidcProviderNameRequest
-*/
-// Execute executes the request
+// PostIdentityOidcProviderName
+// name: Name of the provider
 func (a *IdentityApiService) PostIdentityOidcProviderName(ctx context.Context, name string, identityOidcProviderRequest IdentityOidcProviderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -7126,14 +6518,8 @@ func (a *IdentityApiService) PostIdentityOidcProviderName(ctx context.Context, n
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityOidcProviderNameAuthorize Method for PostIdentityOidcProviderNameAuthorize
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the provider
- @return ApiPostIdentityOidcProviderNameAuthorizeRequest
-*/
-// Execute executes the request
+// PostIdentityOidcProviderNameAuthorize
+// name: Name of the provider
 func (a *IdentityApiService) PostIdentityOidcProviderNameAuthorize(ctx context.Context, name string, identityOidcProviderAuthorizeRequest IdentityOidcProviderAuthorizeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -7200,14 +6586,8 @@ func (a *IdentityApiService) PostIdentityOidcProviderNameAuthorize(ctx context.C
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityOidcProviderNameToken Method for PostIdentityOidcProviderNameToken
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the provider
- @return ApiPostIdentityOidcProviderNameTokenRequest
-*/
-// Execute executes the request
+// PostIdentityOidcProviderNameToken
+// name: Name of the provider
 func (a *IdentityApiService) PostIdentityOidcProviderNameToken(ctx context.Context, name string, identityOidcProviderTokenRequest IdentityOidcProviderTokenRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -7274,14 +6654,8 @@ func (a *IdentityApiService) PostIdentityOidcProviderNameToken(ctx context.Conte
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityOidcProviderNameUserinfo Method for PostIdentityOidcProviderNameUserinfo
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the provider
- @return ApiPostIdentityOidcProviderNameUserinfoRequest
-*/
-// Execute executes the request
+// PostIdentityOidcProviderNameUserinfo
+// name: Name of the provider
 func (a *IdentityApiService) PostIdentityOidcProviderNameUserinfo(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -7346,14 +6720,8 @@ func (a *IdentityApiService) PostIdentityOidcProviderNameUserinfo(ctx context.Co
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityOidcRoleName CRUD operations on OIDC Roles
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiPostIdentityOidcRoleNameRequest
-*/
-// Execute executes the request
+// PostIdentityOidcRoleName CRUD operations on OIDC Roles
+// name: Name of the role
 func (a *IdentityApiService) PostIdentityOidcRoleName(ctx context.Context, name string, identityOidcRoleRequest IdentityOidcRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -7420,14 +6788,8 @@ func (a *IdentityApiService) PostIdentityOidcRoleName(ctx context.Context, name 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityOidcScopeName Method for PostIdentityOidcScopeName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the scope
- @return ApiPostIdentityOidcScopeNameRequest
-*/
-// Execute executes the request
+// PostIdentityOidcScopeName
+// name: Name of the scope
 func (a *IdentityApiService) PostIdentityOidcScopeName(ctx context.Context, name string, identityOidcScopeRequest IdentityOidcScopeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -7494,13 +6856,7 @@ func (a *IdentityApiService) PostIdentityOidcScopeName(ctx context.Context, name
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityPersona Create a new alias.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostIdentityPersonaRequest
-*/
-// Execute executes the request
+// PostIdentityPersona Create a new alias.
 func (a *IdentityApiService) PostIdentityPersona(ctx context.Context, identityPersonaRequest IdentityPersonaRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -7566,14 +6922,8 @@ func (a *IdentityApiService) PostIdentityPersona(ctx context.Context, identityPe
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostIdentityPersonaIdId Update, read or delete an alias ID.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id ID of the persona
- @return ApiPostIdentityPersonaIdIdRequest
-*/
-// Execute executes the request
+// PostIdentityPersonaIdId Update, read or delete an alias ID.
+// id: ID of the persona
 func (a *IdentityApiService) PostIdentityPersonaIdId(ctx context.Context, id string, identityPersonaIdRequest IdentityPersonaIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost

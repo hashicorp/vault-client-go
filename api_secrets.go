@@ -22,13 +22,7 @@ import (
 // SecretsApiService SecretsApi service
 type SecretsApiService service
 
-/*
-DeleteAdConfig Configure the AD server to connect to, along with password options.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteAdConfigRequest
-*/
-// Execute executes the request
+// DeleteAdConfig Configure the AD server to connect to, along with password options.
 func (a *SecretsApiService) DeleteAdConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -92,14 +86,8 @@ func (a *SecretsApiService) DeleteAdConfig(ctx context.Context) (*http.Response,
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAdLibraryName Delete a library set.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the set.
- @return ApiDeleteAdLibraryNameRequest
-*/
-// Execute executes the request
+// DeleteAdLibraryName Delete a library set.
+// name: Name of the set.
 func (a *SecretsApiService) DeleteAdLibraryName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -164,14 +152,8 @@ func (a *SecretsApiService) DeleteAdLibraryName(ctx context.Context, name string
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAdRolesName Manage roles to build links between Vault and Active Directory service accounts.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiDeleteAdRolesNameRequest
-*/
-// Execute executes the request
+// DeleteAdRolesName Manage roles to build links between Vault and Active Directory service accounts.
+// name: Name of the role
 func (a *SecretsApiService) DeleteAdRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -236,13 +218,7 @@ func (a *SecretsApiService) DeleteAdRolesName(ctx context.Context, name string) 
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAlicloudConfig Configure the access key and secret to use for RAM and STS calls.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteAlicloudConfigRequest
-*/
-// Execute executes the request
+// DeleteAlicloudConfig Configure the access key and secret to use for RAM and STS calls.
 func (a *SecretsApiService) DeleteAlicloudConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -306,14 +282,8 @@ func (a *SecretsApiService) DeleteAlicloudConfig(ctx context.Context) (*http.Res
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAlicloudRoleName Read, write and reference policies and roles that API keys or STS credentials can be made for.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the role.
- @return ApiDeleteAlicloudRoleNameRequest
-*/
-// Execute executes the request
+// DeleteAlicloudRoleName Read, write and reference policies and roles that API keys or STS credentials can be made for.
+// name: The name of the role.
 func (a *SecretsApiService) DeleteAlicloudRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -378,14 +348,8 @@ func (a *SecretsApiService) DeleteAlicloudRoleName(ctx context.Context, name str
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAwsRolesName Read, write and reference IAM policies that access keys can be made for.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the policy
- @return ApiDeleteAwsRolesNameRequest
-*/
-// Execute executes the request
+// DeleteAwsRolesName Read, write and reference IAM policies that access keys can be made for.
+// name: Name of the policy
 func (a *SecretsApiService) DeleteAwsRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -450,13 +414,7 @@ func (a *SecretsApiService) DeleteAwsRolesName(ctx context.Context, name string)
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAzureConfig Method for DeleteAzureConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteAzureConfigRequest
-*/
-// Execute executes the request
+// DeleteAzureConfig
 func (a *SecretsApiService) DeleteAzureConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -520,14 +478,8 @@ func (a *SecretsApiService) DeleteAzureConfig(ctx context.Context) (*http.Respon
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteAzureRolesName Manage the Vault roles used to generate Azure credentials.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiDeleteAzureRolesNameRequest
-*/
-// Execute executes the request
+// DeleteAzureRolesName Manage the Vault roles used to generate Azure credentials.
+// name: Name of the role.
 func (a *SecretsApiService) DeleteAzureRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -592,14 +544,8 @@ func (a *SecretsApiService) DeleteAzureRolesName(ctx context.Context, name strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteConsulRolesName Method for DeleteConsulRolesName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiDeleteConsulRolesNameRequest
-*/
-// Execute executes the request
+// DeleteConsulRolesName
+// name: Name of the role.
 func (a *SecretsApiService) DeleteConsulRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -664,14 +610,8 @@ func (a *SecretsApiService) DeleteConsulRolesName(ctx context.Context, name stri
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteCubbyholePath Deletes the secret at the specified location.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path Specifies the path of the secret.
- @return ApiDeleteCubbyholePathRequest
-*/
-// Execute executes the request
+// DeleteCubbyholePath Deletes the secret at the specified location.
+// path: Specifies the path of the secret.
 func (a *SecretsApiService) DeleteCubbyholePath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -736,14 +676,8 @@ func (a *SecretsApiService) DeleteCubbyholePath(ctx context.Context, path string
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteGcpRolesetName Method for DeleteGcpRolesetName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Required. Name of the role.
- @return ApiDeleteGcpRolesetNameRequest
-*/
-// Execute executes the request
+// DeleteGcpRolesetName
+// name: Required. Name of the role.
 func (a *SecretsApiService) DeleteGcpRolesetName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -808,14 +742,8 @@ func (a *SecretsApiService) DeleteGcpRolesetName(ctx context.Context, name strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteGcpStaticAccountName Method for DeleteGcpStaticAccountName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Required. Name to refer to this static account in Vault. Cannot be updated.
- @return ApiDeleteGcpStaticAccountNameRequest
-*/
-// Execute executes the request
+// DeleteGcpStaticAccountName
+// name: Required. Name to refer to this static account in Vault. Cannot be updated.
 func (a *SecretsApiService) DeleteGcpStaticAccountName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -880,13 +808,7 @@ func (a *SecretsApiService) DeleteGcpStaticAccountName(ctx context.Context, name
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteGcpkmsConfig Configure the GCP KMS secrets engine
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteGcpkmsConfigRequest
-*/
-// Execute executes the request
+// DeleteGcpkmsConfig Configure the GCP KMS secrets engine
 func (a *SecretsApiService) DeleteGcpkmsConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -950,14 +872,8 @@ func (a *SecretsApiService) DeleteGcpkmsConfig(ctx context.Context) (*http.Respo
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteGcpkmsKeysDeregisterKey Deregister an existing key in Vault
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
- @return ApiDeleteGcpkmsKeysDeregisterKeyRequest
-*/
-// Execute executes the request
+// DeleteGcpkmsKeysDeregisterKey Deregister an existing key in Vault
+// key: Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
 func (a *SecretsApiService) DeleteGcpkmsKeysDeregisterKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1022,14 +938,8 @@ func (a *SecretsApiService) DeleteGcpkmsKeysDeregisterKey(ctx context.Context, k
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteGcpkmsKeysKey Interact with crypto keys in Vault and Google Cloud KMS
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Name of the key in Vault.
- @return ApiDeleteGcpkmsKeysKeyRequest
-*/
-// Execute executes the request
+// DeleteGcpkmsKeysKey Interact with crypto keys in Vault and Google Cloud KMS
+// key: Name of the key in Vault.
 func (a *SecretsApiService) DeleteGcpkmsKeysKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1094,14 +1004,8 @@ func (a *SecretsApiService) DeleteGcpkmsKeysKey(ctx context.Context, key string)
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteGcpkmsKeysTrimKey Delete old crypto key versions from Google Cloud KMS
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Name of the key in Vault.
- @return ApiDeleteGcpkmsKeysTrimKeyRequest
-*/
-// Execute executes the request
+// DeleteGcpkmsKeysTrimKey Delete old crypto key versions from Google Cloud KMS
+// key: Name of the key in Vault.
 func (a *SecretsApiService) DeleteGcpkmsKeysTrimKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1166,13 +1070,7 @@ func (a *SecretsApiService) DeleteGcpkmsKeysTrimKey(ctx context.Context, key str
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteKubernetesConfig Method for DeleteKubernetesConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteKubernetesConfigRequest
-*/
-// Execute executes the request
+// DeleteKubernetesConfig
 func (a *SecretsApiService) DeleteKubernetesConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1236,14 +1134,8 @@ func (a *SecretsApiService) DeleteKubernetesConfig(ctx context.Context) (*http.R
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteKubernetesRolesName Method for DeleteKubernetesRolesName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiDeleteKubernetesRolesNameRequest
-*/
-// Execute executes the request
+// DeleteKubernetesRolesName
+// name: Name of the role
 func (a *SecretsApiService) DeleteKubernetesRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1308,14 +1200,8 @@ func (a *SecretsApiService) DeleteKubernetesRolesName(ctx context.Context, name 
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteKvPath Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path Location of the secret.
- @return ApiDeleteKvPathRequest
-*/
-// Execute executes the request
+// DeleteKvPath Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
+// path: Location of the secret.
 func (a *SecretsApiService) DeleteKvPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1380,14 +1266,8 @@ func (a *SecretsApiService) DeleteKvPath(ctx context.Context, path string) (*htt
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteMongodbatlasRolesName Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the Roles
- @return ApiDeleteMongodbatlasRolesNameRequest
-*/
-// Execute executes the request
+// DeleteMongodbatlasRolesName Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
+// name: Name of the Roles
 func (a *SecretsApiService) DeleteMongodbatlasRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1452,13 +1332,7 @@ func (a *SecretsApiService) DeleteMongodbatlasRolesName(ctx context.Context, nam
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteNomadConfigAccess Method for DeleteNomadConfigAccess
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteNomadConfigAccessRequest
-*/
-// Execute executes the request
+// DeleteNomadConfigAccess
 func (a *SecretsApiService) DeleteNomadConfigAccess(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1522,13 +1396,7 @@ func (a *SecretsApiService) DeleteNomadConfigAccess(ctx context.Context) (*http.
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteNomadConfigLease Configure the lease parameters for generated tokens
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteNomadConfigLeaseRequest
-*/
-// Execute executes the request
+// DeleteNomadConfigLease Configure the lease parameters for generated tokens
 func (a *SecretsApiService) DeleteNomadConfigLease(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1592,14 +1460,8 @@ func (a *SecretsApiService) DeleteNomadConfigLease(ctx context.Context) (*http.R
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteNomadRoleName Method for DeleteNomadRoleName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiDeleteNomadRoleNameRequest
-*/
-// Execute executes the request
+// DeleteNomadRoleName
+// name: Name of the role
 func (a *SecretsApiService) DeleteNomadRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1664,13 +1526,7 @@ func (a *SecretsApiService) DeleteNomadRoleName(ctx context.Context, name string
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteOpenldapConfig Method for DeleteOpenldapConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteOpenldapConfigRequest
-*/
-// Execute executes the request
+// DeleteOpenldapConfig
 func (a *SecretsApiService) DeleteOpenldapConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1734,14 +1590,8 @@ func (a *SecretsApiService) DeleteOpenldapConfig(ctx context.Context) (*http.Res
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteOpenldapRoleName Method for DeleteOpenldapRoleName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role (lowercase)
- @return ApiDeleteOpenldapRoleNameRequest
-*/
-// Execute executes the request
+// DeleteOpenldapRoleName
+// name: Name of the role (lowercase)
 func (a *SecretsApiService) DeleteOpenldapRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1806,14 +1656,8 @@ func (a *SecretsApiService) DeleteOpenldapRoleName(ctx context.Context, name str
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteOpenldapStaticRoleName Method for DeleteOpenldapStaticRoleName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiDeleteOpenldapStaticRoleNameRequest
-*/
-// Execute executes the request
+// DeleteOpenldapStaticRoleName
+// name: Name of the role
 func (a *SecretsApiService) DeleteOpenldapStaticRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1878,14 +1722,8 @@ func (a *SecretsApiService) DeleteOpenldapStaticRoleName(ctx context.Context, na
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeletePkiIssuerRefDerPem Method for DeletePkiIssuerRefDerPem
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param issuerRef Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.
- @return ApiDeletePkiIssuerRefDerPemRequest
-*/
-// Execute executes the request
+// DeletePkiIssuerRefDerPem
+// issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
 func (a *SecretsApiService) DeletePkiIssuerRefDerPem(ctx context.Context, issuerRef string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -1950,13 +1788,7 @@ func (a *SecretsApiService) DeletePkiIssuerRefDerPem(ctx context.Context, issuer
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeletePkiJson Method for DeletePkiJson
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeletePkiJsonRequest
-*/
-// Execute executes the request
+// DeletePkiJson
 func (a *SecretsApiService) DeletePkiJson(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -2020,14 +1852,8 @@ func (a *SecretsApiService) DeletePkiJson(ctx context.Context) (*http.Response, 
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeletePkiKeyKeyRef Method for DeletePkiKeyKeyRef
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param keyRef Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key.
- @return ApiDeletePkiKeyKeyRefRequest
-*/
-// Execute executes the request
+// DeletePkiKeyKeyRef
+// keyRef: Reference to key; either \&quot;default\&quot; for the configured default key, an identifier of a key, or the name assigned to the key.
 func (a *SecretsApiService) DeletePkiKeyKeyRef(ctx context.Context, keyRef string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -2092,14 +1918,8 @@ func (a *SecretsApiService) DeletePkiKeyKeyRef(ctx context.Context, keyRef strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeletePkiRolesName Method for DeletePkiRolesName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiDeletePkiRolesNameRequest
-*/
-// Execute executes the request
+// DeletePkiRolesName
+// name: Name of the role
 func (a *SecretsApiService) DeletePkiRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -2164,13 +1984,7 @@ func (a *SecretsApiService) DeletePkiRolesName(ctx context.Context, name string)
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeletePkiRoot Method for DeletePkiRoot
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeletePkiRootRequest
-*/
-// Execute executes the request
+// DeletePkiRoot
 func (a *SecretsApiService) DeletePkiRoot(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -2234,14 +2048,8 @@ func (a *SecretsApiService) DeletePkiRoot(ctx context.Context) (*http.Response, 
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteRabbitmqRolesName Manage the roles that can be created with this backend.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiDeleteRabbitmqRolesNameRequest
-*/
-// Execute executes the request
+// DeleteRabbitmqRolesName Manage the roles that can be created with this backend.
+// name: Name of the role.
 func (a *SecretsApiService) DeleteRabbitmqRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -2306,14 +2114,8 @@ func (a *SecretsApiService) DeleteRabbitmqRolesName(ctx context.Context, name st
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteSecretDataPath Write, Patch, Read, and Delete data in the Key-Value Store.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path Location of the secret.
- @return ApiDeleteSecretDataPathRequest
-*/
-// Execute executes the request
+// DeleteSecretDataPath Write, Patch, Read, and Delete data in the Key-Value Store.
+// path: Location of the secret.
 func (a *SecretsApiService) DeleteSecretDataPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -2378,14 +2180,8 @@ func (a *SecretsApiService) DeleteSecretDataPath(ctx context.Context, path strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteSecretMetadataPath Configures settings for the KV store
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path Location of the secret.
- @return ApiDeleteSecretMetadataPathRequest
-*/
-// Execute executes the request
+// DeleteSecretMetadataPath Configures settings for the KV store
+// path: Location of the secret.
 func (a *SecretsApiService) DeleteSecretMetadataPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -2450,13 +2246,7 @@ func (a *SecretsApiService) DeleteSecretMetadataPath(ctx context.Context, path s
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteSshConfigCa Set the SSH private key used for signing certificates.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteSshConfigCaRequest
-*/
-// Execute executes the request
+// DeleteSshConfigCa Set the SSH private key used for signing certificates.
 func (a *SecretsApiService) DeleteSshConfigCa(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -2520,13 +2310,7 @@ func (a *SecretsApiService) DeleteSshConfigCa(ctx context.Context) (*http.Respon
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteSshConfigZeroaddress Assign zero address as default CIDR block for select roles.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteSshConfigZeroaddressRequest
-*/
-// Execute executes the request
+// DeleteSshConfigZeroaddress Assign zero address as default CIDR block for select roles.
 func (a *SecretsApiService) DeleteSshConfigZeroaddress(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -2590,14 +2374,8 @@ func (a *SecretsApiService) DeleteSshConfigZeroaddress(ctx context.Context) (*ht
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteSshKeysKeyName Register a shared private key with Vault.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param keyName [Required] Name of the key
- @return ApiDeleteSshKeysKeyNameRequest
-*/
-// Execute executes the request
+// DeleteSshKeysKeyName Register a shared private key with Vault.
+// keyName: [Required] Name of the key
 func (a *SecretsApiService) DeleteSshKeysKeyName(ctx context.Context, keyName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -2662,14 +2440,8 @@ func (a *SecretsApiService) DeleteSshKeysKeyName(ctx context.Context, keyName st
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteSshRolesRole Manage the 'roles' that can be created with this backend.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param role [Required for all types] Name of the role being created.
- @return ApiDeleteSshRolesRoleRequest
-*/
-// Execute executes the request
+// DeleteSshRolesRole Manage the 'roles' that can be created with this backend.
+// role: [Required for all types] Name of the role being created.
 func (a *SecretsApiService) DeleteSshRolesRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -2734,13 +2506,7 @@ func (a *SecretsApiService) DeleteSshRolesRole(ctx context.Context, role string)
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteTerraformConfig Method for DeleteTerraformConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteTerraformConfigRequest
-*/
-// Execute executes the request
+// DeleteTerraformConfig
 func (a *SecretsApiService) DeleteTerraformConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -2804,14 +2570,8 @@ func (a *SecretsApiService) DeleteTerraformConfig(ctx context.Context) (*http.Re
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteTerraformRoleName Method for DeleteTerraformRoleName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiDeleteTerraformRoleNameRequest
-*/
-// Execute executes the request
+// DeleteTerraformRoleName
+// name: Name of the role
 func (a *SecretsApiService) DeleteTerraformRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -2876,14 +2636,8 @@ func (a *SecretsApiService) DeleteTerraformRoleName(ctx context.Context, name st
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteTotpKeysName Manage the keys that can be created with this backend.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the key.
- @return ApiDeleteTotpKeysNameRequest
-*/
-// Execute executes the request
+// DeleteTotpKeysName Manage the keys that can be created with this backend.
+// name: Name of the key.
 func (a *SecretsApiService) DeleteTotpKeysName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -2948,14 +2702,8 @@ func (a *SecretsApiService) DeleteTotpKeysName(ctx context.Context, name string)
 	return localVarHTTPResponse, nil
 }
 
-/*
-DeleteTransitKeysName Managed named encryption keys
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the key
- @return ApiDeleteTransitKeysNameRequest
-*/
-// Execute executes the request
+// DeleteTransitKeysName Managed named encryption keys
+// name: Name of the key
 func (a *SecretsApiService) DeleteTransitKeysName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
@@ -3020,13 +2768,7 @@ func (a *SecretsApiService) DeleteTransitKeysName(ctx context.Context, name stri
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAdConfig Configure the AD server to connect to, along with password options.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAdConfigRequest
-*/
-// Execute executes the request
+// GetAdConfig Configure the AD server to connect to, along with password options.
 func (a *SecretsApiService) GetAdConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3090,14 +2832,8 @@ func (a *SecretsApiService) GetAdConfig(ctx context.Context) (*http.Response, er
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAdCredsName Method for GetAdCredsName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiGetAdCredsNameRequest
-*/
-// Execute executes the request
+// GetAdCredsName
+// name: Name of the role
 func (a *SecretsApiService) GetAdCredsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3162,15 +2898,8 @@ func (a *SecretsApiService) GetAdCredsName(ctx context.Context, name string) (*h
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAdLibrary Method for GetAdLibrary
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAdLibraryRequest
-*/
-// Execute executes the request
+// GetAdLibrary
+// list: Must be set to &#x60;true&#x60;
 func (a *SecretsApiService) GetAdLibrary(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3235,14 +2964,8 @@ func (a *SecretsApiService) GetAdLibrary(ctx context.Context, list string) (*htt
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAdLibraryName Read a library set.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the set.
- @return ApiGetAdLibraryNameRequest
-*/
-// Execute executes the request
+// GetAdLibraryName Read a library set.
+// name: Name of the set.
 func (a *SecretsApiService) GetAdLibraryName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3307,14 +3030,8 @@ func (a *SecretsApiService) GetAdLibraryName(ctx context.Context, name string) (
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAdLibraryNameStatus Check the status of the service accounts in a library set.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the set.
- @return ApiGetAdLibraryNameStatusRequest
-*/
-// Execute executes the request
+// GetAdLibraryNameStatus Check the status of the service accounts in a library set.
+// name: Name of the set.
 func (a *SecretsApiService) GetAdLibraryNameStatus(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3379,15 +3096,8 @@ func (a *SecretsApiService) GetAdLibraryNameStatus(ctx context.Context, name str
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAdRoles List the name of each role currently stored.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAdRolesRequest
-*/
-// Execute executes the request
+// GetAdRoles List the name of each role currently stored.
+// list: Must be set to &#x60;true&#x60;
 func (a *SecretsApiService) GetAdRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3452,14 +3162,8 @@ func (a *SecretsApiService) GetAdRoles(ctx context.Context, list string) (*http.
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAdRolesName Manage roles to build links between Vault and Active Directory service accounts.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiGetAdRolesNameRequest
-*/
-// Execute executes the request
+// GetAdRolesName Manage roles to build links between Vault and Active Directory service accounts.
+// name: Name of the role
 func (a *SecretsApiService) GetAdRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3524,13 +3228,7 @@ func (a *SecretsApiService) GetAdRolesName(ctx context.Context, name string) (*h
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAdRotateRoot Method for GetAdRotateRoot
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAdRotateRootRequest
-*/
-// Execute executes the request
+// GetAdRotateRoot
 func (a *SecretsApiService) GetAdRotateRoot(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3594,13 +3292,7 @@ func (a *SecretsApiService) GetAdRotateRoot(ctx context.Context) (*http.Response
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAlicloudConfig Configure the access key and secret to use for RAM and STS calls.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAlicloudConfigRequest
-*/
-// Execute executes the request
+// GetAlicloudConfig Configure the access key and secret to use for RAM and STS calls.
 func (a *SecretsApiService) GetAlicloudConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3664,14 +3356,8 @@ func (a *SecretsApiService) GetAlicloudConfig(ctx context.Context) (*http.Respon
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAlicloudCredsName Generate an API key or STS credential using the given role's configuration.'
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the role.
- @return ApiGetAlicloudCredsNameRequest
-*/
-// Execute executes the request
+// GetAlicloudCredsName Generate an API key or STS credential using the given role's configuration.'
+// name: The name of the role.
 func (a *SecretsApiService) GetAlicloudCredsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3736,15 +3422,8 @@ func (a *SecretsApiService) GetAlicloudCredsName(ctx context.Context, name strin
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAlicloudRole List the existing roles in this backend.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAlicloudRoleRequest
-*/
-// Execute executes the request
+// GetAlicloudRole List the existing roles in this backend.
+// list: Must be set to &#x60;true&#x60;
 func (a *SecretsApiService) GetAlicloudRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3809,14 +3488,8 @@ func (a *SecretsApiService) GetAlicloudRole(ctx context.Context, list string) (*
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAlicloudRoleName Read, write and reference policies and roles that API keys or STS credentials can be made for.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the role.
- @return ApiGetAlicloudRoleNameRequest
-*/
-// Execute executes the request
+// GetAlicloudRoleName Read, write and reference policies and roles that API keys or STS credentials can be made for.
+// name: The name of the role.
 func (a *SecretsApiService) GetAlicloudRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3881,13 +3554,7 @@ func (a *SecretsApiService) GetAlicloudRoleName(ctx context.Context, name string
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAwsConfigLease Configure the default lease information for generated credentials.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAwsConfigLeaseRequest
-*/
-// Execute executes the request
+// GetAwsConfigLease Configure the default lease information for generated credentials.
 func (a *SecretsApiService) GetAwsConfigLease(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -3951,13 +3618,7 @@ func (a *SecretsApiService) GetAwsConfigLease(ctx context.Context) (*http.Respon
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAwsConfigRoot Configure the root credentials that are used to manage IAM.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAwsConfigRootRequest
-*/
-// Execute executes the request
+// GetAwsConfigRoot Configure the root credentials that are used to manage IAM.
 func (a *SecretsApiService) GetAwsConfigRoot(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4021,13 +3682,7 @@ func (a *SecretsApiService) GetAwsConfigRoot(ctx context.Context) (*http.Respons
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAwsCreds Generate AWS credentials from a specific Vault role.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAwsCredsRequest
-*/
-// Execute executes the request
+// GetAwsCreds Generate AWS credentials from a specific Vault role.
 func (a *SecretsApiService) GetAwsCreds(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4091,15 +3746,8 @@ func (a *SecretsApiService) GetAwsCreds(ctx context.Context) (*http.Response, er
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAwsRoles List the existing roles in this backend
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAwsRolesRequest
-*/
-// Execute executes the request
+// GetAwsRoles List the existing roles in this backend
+// list: Must be set to &#x60;true&#x60;
 func (a *SecretsApiService) GetAwsRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4164,14 +3812,8 @@ func (a *SecretsApiService) GetAwsRoles(ctx context.Context, list string) (*http
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAwsRolesName Read, write and reference IAM policies that access keys can be made for.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the policy
- @return ApiGetAwsRolesNameRequest
-*/
-// Execute executes the request
+// GetAwsRolesName Read, write and reference IAM policies that access keys can be made for.
+// name: Name of the policy
 func (a *SecretsApiService) GetAwsRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4236,14 +3878,8 @@ func (a *SecretsApiService) GetAwsRolesName(ctx context.Context, name string) (*
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAwsStsName Generate AWS credentials from a specific Vault role.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiGetAwsStsNameRequest
-*/
-// Execute executes the request
+// GetAwsStsName Generate AWS credentials from a specific Vault role.
+// name: Name of the role
 func (a *SecretsApiService) GetAwsStsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4308,13 +3944,7 @@ func (a *SecretsApiService) GetAwsStsName(ctx context.Context, name string) (*ht
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAzureConfig Method for GetAzureConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAzureConfigRequest
-*/
-// Execute executes the request
+// GetAzureConfig
 func (a *SecretsApiService) GetAzureConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4378,14 +4008,8 @@ func (a *SecretsApiService) GetAzureConfig(ctx context.Context) (*http.Response,
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAzureCredsRole Method for GetAzureCredsRole
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param role Name of the Vault role
- @return ApiGetAzureCredsRoleRequest
-*/
-// Execute executes the request
+// GetAzureCredsRole
+// role: Name of the Vault role
 func (a *SecretsApiService) GetAzureCredsRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4450,15 +4074,8 @@ func (a *SecretsApiService) GetAzureCredsRole(ctx context.Context, role string) 
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetAzureRoles List existing roles.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetAzureRolesRequest
-*/
-// Execute executes the request
+// GetAzureRoles List existing roles.
+// list: Must be set to &#x60;true&#x60;
 func (a *SecretsApiService) GetAzureRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4523,14 +4140,8 @@ func (a *SecretsApiService) GetAzureRoles(ctx context.Context, list string) (*ht
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetAzureRolesName Manage the Vault roles used to generate Azure credentials.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiGetAzureRolesNameRequest
-*/
-// Execute executes the request
+// GetAzureRolesName Manage the Vault roles used to generate Azure credentials.
+// name: Name of the role.
 func (a *SecretsApiService) GetAzureRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4595,13 +4206,7 @@ func (a *SecretsApiService) GetAzureRolesName(ctx context.Context, name string) 
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetConsulConfigAccess Method for GetConsulConfigAccess
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetConsulConfigAccessRequest
-*/
-// Execute executes the request
+// GetConsulConfigAccess
 func (a *SecretsApiService) GetConsulConfigAccess(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4665,14 +4270,8 @@ func (a *SecretsApiService) GetConsulConfigAccess(ctx context.Context) (*http.Re
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetConsulCredsRole Method for GetConsulCredsRole
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param role Name of the role.
- @return ApiGetConsulCredsRoleRequest
-*/
-// Execute executes the request
+// GetConsulCredsRole
+// role: Name of the role.
 func (a *SecretsApiService) GetConsulCredsRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4737,15 +4336,8 @@ func (a *SecretsApiService) GetConsulCredsRole(ctx context.Context, role string)
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetConsulRoles Method for GetConsulRoles
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetConsulRolesRequest
-*/
-// Execute executes the request
+// GetConsulRoles
+// list: Must be set to &#x60;true&#x60;
 func (a *SecretsApiService) GetConsulRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4810,14 +4402,8 @@ func (a *SecretsApiService) GetConsulRoles(ctx context.Context, list string) (*h
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetConsulRolesName Method for GetConsulRolesName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiGetConsulRolesNameRequest
-*/
-// Execute executes the request
+// GetConsulRolesName
+// name: Name of the role.
 func (a *SecretsApiService) GetConsulRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4882,16 +4468,9 @@ func (a *SecretsApiService) GetConsulRolesName(ctx context.Context, name string)
 	return localVarHTTPResponse, nil
 }
 
-// Return a list if &#x60;true&#x60;
-
-/*
-GetCubbyholePath Retrieve the secret at the specified location.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path Specifies the path of the secret.
- @return ApiGetCubbyholePathRequest
-*/
-// Execute executes the request
+// GetCubbyholePath Retrieve the secret at the specified location.
+// path: Specifies the path of the secret.
+// list: Return a list if &#x60;true&#x60;
 func (a *SecretsApiService) GetCubbyholePath(ctx context.Context, path string, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -4957,13 +4536,7 @@ func (a *SecretsApiService) GetCubbyholePath(ctx context.Context, path string, l
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetGcpConfig Method for GetGcpConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetGcpConfigRequest
-*/
-// Execute executes the request
+// GetGcpConfig
 func (a *SecretsApiService) GetGcpConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5027,14 +4600,8 @@ func (a *SecretsApiService) GetGcpConfig(ctx context.Context) (*http.Response, e
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetGcpKeyRoleset Method for GetGcpKeyRoleset
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleset Required. Name of the role set.
- @return ApiGetGcpKeyRolesetRequest
-*/
-// Execute executes the request
+// GetGcpKeyRoleset
+// roleset: Required. Name of the role set.
 func (a *SecretsApiService) GetGcpKeyRoleset(ctx context.Context, roleset string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5099,14 +4666,8 @@ func (a *SecretsApiService) GetGcpKeyRoleset(ctx context.Context, roleset string
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetGcpRolesetName Method for GetGcpRolesetName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Required. Name of the role.
- @return ApiGetGcpRolesetNameRequest
-*/
-// Execute executes the request
+// GetGcpRolesetName
+// name: Required. Name of the role.
 func (a *SecretsApiService) GetGcpRolesetName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5171,14 +4732,8 @@ func (a *SecretsApiService) GetGcpRolesetName(ctx context.Context, name string) 
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetGcpRolesetRolesetKey Method for GetGcpRolesetRolesetKey
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleset Required. Name of the role set.
- @return ApiGetGcpRolesetRolesetKeyRequest
-*/
-// Execute executes the request
+// GetGcpRolesetRolesetKey
+// roleset: Required. Name of the role set.
 func (a *SecretsApiService) GetGcpRolesetRolesetKey(ctx context.Context, roleset string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5243,14 +4798,8 @@ func (a *SecretsApiService) GetGcpRolesetRolesetKey(ctx context.Context, roleset
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetGcpRolesetRolesetToken Method for GetGcpRolesetRolesetToken
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleset Required. Name of the role set.
- @return ApiGetGcpRolesetRolesetTokenRequest
-*/
-// Execute executes the request
+// GetGcpRolesetRolesetToken
+// roleset: Required. Name of the role set.
 func (a *SecretsApiService) GetGcpRolesetRolesetToken(ctx context.Context, roleset string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5315,15 +4864,8 @@ func (a *SecretsApiService) GetGcpRolesetRolesetToken(ctx context.Context, roles
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetGcpRolesets Method for GetGcpRolesets
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetGcpRolesetsRequest
-*/
-// Execute executes the request
+// GetGcpRolesets
+// list: Must be set to &#x60;true&#x60;
 func (a *SecretsApiService) GetGcpRolesets(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5388,14 +4930,8 @@ func (a *SecretsApiService) GetGcpRolesets(ctx context.Context, list string) (*h
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetGcpStaticAccountName Method for GetGcpStaticAccountName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Required. Name to refer to this static account in Vault. Cannot be updated.
- @return ApiGetGcpStaticAccountNameRequest
-*/
-// Execute executes the request
+// GetGcpStaticAccountName
+// name: Required. Name to refer to this static account in Vault. Cannot be updated.
 func (a *SecretsApiService) GetGcpStaticAccountName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5460,14 +4996,8 @@ func (a *SecretsApiService) GetGcpStaticAccountName(ctx context.Context, name st
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetGcpStaticAccountNameKey Method for GetGcpStaticAccountNameKey
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Required. Name of the static account.
- @return ApiGetGcpStaticAccountNameKeyRequest
-*/
-// Execute executes the request
+// GetGcpStaticAccountNameKey
+// name: Required. Name of the static account.
 func (a *SecretsApiService) GetGcpStaticAccountNameKey(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5532,14 +5062,8 @@ func (a *SecretsApiService) GetGcpStaticAccountNameKey(ctx context.Context, name
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetGcpStaticAccountNameToken Method for GetGcpStaticAccountNameToken
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Required. Name of the static account.
- @return ApiGetGcpStaticAccountNameTokenRequest
-*/
-// Execute executes the request
+// GetGcpStaticAccountNameToken
+// name: Required. Name of the static account.
 func (a *SecretsApiService) GetGcpStaticAccountNameToken(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5604,15 +5128,8 @@ func (a *SecretsApiService) GetGcpStaticAccountNameToken(ctx context.Context, na
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetGcpStaticAccounts Method for GetGcpStaticAccounts
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetGcpStaticAccountsRequest
-*/
-// Execute executes the request
+// GetGcpStaticAccounts
+// list: Must be set to &#x60;true&#x60;
 func (a *SecretsApiService) GetGcpStaticAccounts(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5677,14 +5194,8 @@ func (a *SecretsApiService) GetGcpStaticAccounts(ctx context.Context, list strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetGcpTokenRoleset Method for GetGcpTokenRoleset
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleset Required. Name of the role set.
- @return ApiGetGcpTokenRolesetRequest
-*/
-// Execute executes the request
+// GetGcpTokenRoleset
+// roleset: Required. Name of the role set.
 func (a *SecretsApiService) GetGcpTokenRoleset(ctx context.Context, roleset string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5749,13 +5260,7 @@ func (a *SecretsApiService) GetGcpTokenRoleset(ctx context.Context, roleset stri
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetGcpkmsConfig Configure the GCP KMS secrets engine
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetGcpkmsConfigRequest
-*/
-// Execute executes the request
+// GetGcpkmsConfig Configure the GCP KMS secrets engine
 func (a *SecretsApiService) GetGcpkmsConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5819,15 +5324,8 @@ func (a *SecretsApiService) GetGcpkmsConfig(ctx context.Context) (*http.Response
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetGcpkmsKeys List named keys
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetGcpkmsKeysRequest
-*/
-// Execute executes the request
+// GetGcpkmsKeys List named keys
+// list: Must be set to &#x60;true&#x60;
 func (a *SecretsApiService) GetGcpkmsKeys(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5892,14 +5390,8 @@ func (a *SecretsApiService) GetGcpkmsKeys(ctx context.Context, list string) (*ht
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetGcpkmsKeysConfigKey Configure the key in Vault
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Name of the key in Vault.
- @return ApiGetGcpkmsKeysConfigKeyRequest
-*/
-// Execute executes the request
+// GetGcpkmsKeysConfigKey Configure the key in Vault
+// key: Name of the key in Vault.
 func (a *SecretsApiService) GetGcpkmsKeysConfigKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -5964,14 +5456,8 @@ func (a *SecretsApiService) GetGcpkmsKeysConfigKey(ctx context.Context, key stri
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetGcpkmsKeysKey Interact with crypto keys in Vault and Google Cloud KMS
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Name of the key in Vault.
- @return ApiGetGcpkmsKeysKeyRequest
-*/
-// Execute executes the request
+// GetGcpkmsKeysKey Interact with crypto keys in Vault and Google Cloud KMS
+// key: Name of the key in Vault.
 func (a *SecretsApiService) GetGcpkmsKeysKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6036,14 +5522,8 @@ func (a *SecretsApiService) GetGcpkmsKeysKey(ctx context.Context, key string) (*
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetGcpkmsPubkeyKey Retrieve the public key associated with the named key
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Name of the key for which to get the public key. This key must already exist in Vault and Google Cloud KMS.
- @return ApiGetGcpkmsPubkeyKeyRequest
-*/
-// Execute executes the request
+// GetGcpkmsPubkeyKey Retrieve the public key associated with the named key
+// key: Name of the key for which to get the public key. This key must already exist in Vault and Google Cloud KMS.
 func (a *SecretsApiService) GetGcpkmsPubkeyKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6108,13 +5588,7 @@ func (a *SecretsApiService) GetGcpkmsPubkeyKey(ctx context.Context, key string) 
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetKubernetesConfig Method for GetKubernetesConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetKubernetesConfigRequest
-*/
-// Execute executes the request
+// GetKubernetesConfig
 func (a *SecretsApiService) GetKubernetesConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6178,15 +5652,8 @@ func (a *SecretsApiService) GetKubernetesConfig(ctx context.Context) (*http.Resp
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetKubernetesRoles Method for GetKubernetesRoles
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetKubernetesRolesRequest
-*/
-// Execute executes the request
+// GetKubernetesRoles
+// list: Must be set to &#x60;true&#x60;
 func (a *SecretsApiService) GetKubernetesRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6251,14 +5718,8 @@ func (a *SecretsApiService) GetKubernetesRoles(ctx context.Context, list string)
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetKubernetesRolesName Method for GetKubernetesRolesName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiGetKubernetesRolesNameRequest
-*/
-// Execute executes the request
+// GetKubernetesRolesName
+// name: Name of the role
 func (a *SecretsApiService) GetKubernetesRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6323,16 +5784,9 @@ func (a *SecretsApiService) GetKubernetesRolesName(ctx context.Context, name str
 	return localVarHTTPResponse, nil
 }
 
-// Return a list if &#x60;true&#x60;
-
-/*
-GetKvPath Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path Location of the secret.
- @return ApiGetKvPathRequest
-*/
-// Execute executes the request
+// GetKvPath Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
+// path: Location of the secret.
+// list: Return a list if &#x60;true&#x60;
 func (a *SecretsApiService) GetKvPath(ctx context.Context, path string, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6398,13 +5852,7 @@ func (a *SecretsApiService) GetKvPath(ctx context.Context, path string, list str
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetMongodbatlasConfig Configure the  credentials that are used to manage Database Users.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetMongodbatlasConfigRequest
-*/
-// Execute executes the request
+// GetMongodbatlasConfig Configure the  credentials that are used to manage Database Users.
 func (a *SecretsApiService) GetMongodbatlasConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6468,14 +5916,8 @@ func (a *SecretsApiService) GetMongodbatlasConfig(ctx context.Context) (*http.Re
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetMongodbatlasCredsName Generate MongoDB Atlas Programmatic API from a specific Vault role.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiGetMongodbatlasCredsNameRequest
-*/
-// Execute executes the request
+// GetMongodbatlasCredsName Generate MongoDB Atlas Programmatic API from a specific Vault role.
+// name: Name of the role
 func (a *SecretsApiService) GetMongodbatlasCredsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6540,15 +5982,8 @@ func (a *SecretsApiService) GetMongodbatlasCredsName(ctx context.Context, name s
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetMongodbatlasRoles List the existing roles in this backend
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetMongodbatlasRolesRequest
-*/
-// Execute executes the request
+// GetMongodbatlasRoles List the existing roles in this backend
+// list: Must be set to &#x60;true&#x60;
 func (a *SecretsApiService) GetMongodbatlasRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6613,14 +6048,8 @@ func (a *SecretsApiService) GetMongodbatlasRoles(ctx context.Context, list strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetMongodbatlasRolesName Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the Roles
- @return ApiGetMongodbatlasRolesNameRequest
-*/
-// Execute executes the request
+// GetMongodbatlasRolesName Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
+// name: Name of the Roles
 func (a *SecretsApiService) GetMongodbatlasRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6685,13 +6114,7 @@ func (a *SecretsApiService) GetMongodbatlasRolesName(ctx context.Context, name s
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetNomadConfigAccess Method for GetNomadConfigAccess
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetNomadConfigAccessRequest
-*/
-// Execute executes the request
+// GetNomadConfigAccess
 func (a *SecretsApiService) GetNomadConfigAccess(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6755,13 +6178,7 @@ func (a *SecretsApiService) GetNomadConfigAccess(ctx context.Context) (*http.Res
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetNomadConfigLease Configure the lease parameters for generated tokens
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetNomadConfigLeaseRequest
-*/
-// Execute executes the request
+// GetNomadConfigLease Configure the lease parameters for generated tokens
 func (a *SecretsApiService) GetNomadConfigLease(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6825,14 +6242,8 @@ func (a *SecretsApiService) GetNomadConfigLease(ctx context.Context) (*http.Resp
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetNomadCredsName Method for GetNomadCredsName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiGetNomadCredsNameRequest
-*/
-// Execute executes the request
+// GetNomadCredsName
+// name: Name of the role
 func (a *SecretsApiService) GetNomadCredsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6897,15 +6308,8 @@ func (a *SecretsApiService) GetNomadCredsName(ctx context.Context, name string) 
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetNomadRole Method for GetNomadRole
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetNomadRoleRequest
-*/
-// Execute executes the request
+// GetNomadRole
+// list: Must be set to &#x60;true&#x60;
 func (a *SecretsApiService) GetNomadRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -6970,14 +6374,8 @@ func (a *SecretsApiService) GetNomadRole(ctx context.Context, list string) (*htt
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetNomadRoleName Method for GetNomadRoleName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiGetNomadRoleNameRequest
-*/
-// Execute executes the request
+// GetNomadRoleName
+// name: Name of the role
 func (a *SecretsApiService) GetNomadRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7042,13 +6440,7 @@ func (a *SecretsApiService) GetNomadRoleName(ctx context.Context, name string) (
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetOpenldapConfig Method for GetOpenldapConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetOpenldapConfigRequest
-*/
-// Execute executes the request
+// GetOpenldapConfig
 func (a *SecretsApiService) GetOpenldapConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7112,14 +6504,8 @@ func (a *SecretsApiService) GetOpenldapConfig(ctx context.Context) (*http.Respon
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetOpenldapCredsName Method for GetOpenldapCredsName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the dynamic role.
- @return ApiGetOpenldapCredsNameRequest
-*/
-// Execute executes the request
+// GetOpenldapCredsName
+// name: Name of the dynamic role.
 func (a *SecretsApiService) GetOpenldapCredsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7184,15 +6570,8 @@ func (a *SecretsApiService) GetOpenldapCredsName(ctx context.Context, name strin
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetOpenldapRole Method for GetOpenldapRole
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetOpenldapRoleRequest
-*/
-// Execute executes the request
+// GetOpenldapRole
+// list: Must be set to &#x60;true&#x60;
 func (a *SecretsApiService) GetOpenldapRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7257,14 +6636,8 @@ func (a *SecretsApiService) GetOpenldapRole(ctx context.Context, list string) (*
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetOpenldapRoleName Method for GetOpenldapRoleName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role (lowercase)
- @return ApiGetOpenldapRoleNameRequest
-*/
-// Execute executes the request
+// GetOpenldapRoleName
+// name: Name of the role (lowercase)
 func (a *SecretsApiService) GetOpenldapRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7329,14 +6702,8 @@ func (a *SecretsApiService) GetOpenldapRoleName(ctx context.Context, name string
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetOpenldapStaticCredName Method for GetOpenldapStaticCredName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the static role.
- @return ApiGetOpenldapStaticCredNameRequest
-*/
-// Execute executes the request
+// GetOpenldapStaticCredName
+// name: Name of the static role.
 func (a *SecretsApiService) GetOpenldapStaticCredName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7401,15 +6768,8 @@ func (a *SecretsApiService) GetOpenldapStaticCredName(ctx context.Context, name 
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetOpenldapStaticRole Method for GetOpenldapStaticRole
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetOpenldapStaticRoleRequest
-*/
-// Execute executes the request
+// GetOpenldapStaticRole
+// list: Must be set to &#x60;true&#x60;
 func (a *SecretsApiService) GetOpenldapStaticRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7474,14 +6834,8 @@ func (a *SecretsApiService) GetOpenldapStaticRole(ctx context.Context, list stri
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetOpenldapStaticRoleName Method for GetOpenldapStaticRoleName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiGetOpenldapStaticRoleNameRequest
-*/
-// Execute executes the request
+// GetOpenldapStaticRoleName
+// name: Name of the role
 func (a *SecretsApiService) GetOpenldapStaticRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7546,13 +6900,7 @@ func (a *SecretsApiService) GetOpenldapStaticRoleName(ctx context.Context, name 
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetPkiCa Method for GetPkiCa
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPkiCaRequest
-*/
-// Execute executes the request
+// GetPkiCa
 func (a *SecretsApiService) GetPkiCa(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7616,13 +6964,7 @@ func (a *SecretsApiService) GetPkiCa(ctx context.Context) (*http.Response, error
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetPkiCaChain Method for GetPkiCaChain
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPkiCaChainRequest
-*/
-// Execute executes the request
+// GetPkiCaChain
 func (a *SecretsApiService) GetPkiCaChain(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7686,13 +7028,7 @@ func (a *SecretsApiService) GetPkiCaChain(ctx context.Context) (*http.Response, 
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetPkiCaPem Method for GetPkiCaPem
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPkiCaPemRequest
-*/
-// Execute executes the request
+// GetPkiCaPem
 func (a *SecretsApiService) GetPkiCaPem(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7756,13 +7092,7 @@ func (a *SecretsApiService) GetPkiCaPem(ctx context.Context) (*http.Response, er
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetPkiCertCaChain Method for GetPkiCertCaChain
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPkiCertCaChainRequest
-*/
-// Execute executes the request
+// GetPkiCertCaChain
 func (a *SecretsApiService) GetPkiCertCaChain(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7826,13 +7156,7 @@ func (a *SecretsApiService) GetPkiCertCaChain(ctx context.Context) (*http.Respon
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetPkiCertCrl Method for GetPkiCertCrl
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPkiCertCrlRequest
-*/
-// Execute executes the request
+// GetPkiCertCrl
 func (a *SecretsApiService) GetPkiCertCrl(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7896,14 +7220,8 @@ func (a *SecretsApiService) GetPkiCertCrl(ctx context.Context) (*http.Response, 
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetPkiCertSerial Method for GetPkiCertSerial
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serial Certificate serial number, in colon- or hyphen-separated octal
- @return ApiGetPkiCertSerialRequest
-*/
-// Execute executes the request
+// GetPkiCertSerial
+// serial: Certificate serial number, in colon- or hyphen-separated octal
 func (a *SecretsApiService) GetPkiCertSerial(ctx context.Context, serial string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -7968,14 +7286,8 @@ func (a *SecretsApiService) GetPkiCertSerial(ctx context.Context, serial string)
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetPkiCertSerialRaw Method for GetPkiCertSerialRaw
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serial Certificate serial number, in colon- or hyphen-separated octal
- @return ApiGetPkiCertSerialRawRequest
-*/
-// Execute executes the request
+// GetPkiCertSerialRaw
+// serial: Certificate serial number, in colon- or hyphen-separated octal
 func (a *SecretsApiService) GetPkiCertSerialRaw(ctx context.Context, serial string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -8040,14 +7352,8 @@ func (a *SecretsApiService) GetPkiCertSerialRaw(ctx context.Context, serial stri
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetPkiCertSerialRawPem Method for GetPkiCertSerialRawPem
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serial Certificate serial number, in colon- or hyphen-separated octal
- @return ApiGetPkiCertSerialRawPemRequest
-*/
-// Execute executes the request
+// GetPkiCertSerialRawPem
+// serial: Certificate serial number, in colon- or hyphen-separated octal
 func (a *SecretsApiService) GetPkiCertSerialRawPem(ctx context.Context, serial string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -8112,15 +7418,8 @@ func (a *SecretsApiService) GetPkiCertSerialRawPem(ctx context.Context, serial s
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetPkiCerts Method for GetPkiCerts
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPkiCertsRequest
-*/
-// Execute executes the request
+// GetPkiCerts
+// list: Must be set to &#x60;true&#x60;
 func (a *SecretsApiService) GetPkiCerts(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -8185,13 +7484,7 @@ func (a *SecretsApiService) GetPkiCerts(ctx context.Context, list string) (*http
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetPkiConfigCrl Method for GetPkiConfigCrl
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPkiConfigCrlRequest
-*/
-// Execute executes the request
+// GetPkiConfigCrl
 func (a *SecretsApiService) GetPkiConfigCrl(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -8255,13 +7548,7 @@ func (a *SecretsApiService) GetPkiConfigCrl(ctx context.Context) (*http.Response
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetPkiConfigIssuers Method for GetPkiConfigIssuers
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPkiConfigIssuersRequest
-*/
-// Execute executes the request
+// GetPkiConfigIssuers
 func (a *SecretsApiService) GetPkiConfigIssuers(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -8325,13 +7612,7 @@ func (a *SecretsApiService) GetPkiConfigIssuers(ctx context.Context) (*http.Resp
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetPkiConfigKeys Method for GetPkiConfigKeys
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPkiConfigKeysRequest
-*/
-// Execute executes the request
+// GetPkiConfigKeys
 func (a *SecretsApiService) GetPkiConfigKeys(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -8395,13 +7676,7 @@ func (a *SecretsApiService) GetPkiConfigKeys(ctx context.Context) (*http.Respons
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetPkiConfigUrls Method for GetPkiConfigUrls
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPkiConfigUrlsRequest
-*/
-// Execute executes the request
+// GetPkiConfigUrls
 func (a *SecretsApiService) GetPkiConfigUrls(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -8465,13 +7740,7 @@ func (a *SecretsApiService) GetPkiConfigUrls(ctx context.Context) (*http.Respons
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetPkiCrl Method for GetPkiCrl
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPkiCrlRequest
-*/
-// Execute executes the request
+// GetPkiCrl
 func (a *SecretsApiService) GetPkiCrl(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -8535,13 +7804,7 @@ func (a *SecretsApiService) GetPkiCrl(ctx context.Context) (*http.Response, erro
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetPkiCrlPem Method for GetPkiCrlPem
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPkiCrlPemRequest
-*/
-// Execute executes the request
+// GetPkiCrlPem
 func (a *SecretsApiService) GetPkiCrlPem(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -8605,13 +7868,7 @@ func (a *SecretsApiService) GetPkiCrlPem(ctx context.Context) (*http.Response, e
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetPkiCrlRotate Method for GetPkiCrlRotate
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPkiCrlRotateRequest
-*/
-// Execute executes the request
+// GetPkiCrlRotate
 func (a *SecretsApiService) GetPkiCrlRotate(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -8675,13 +7932,7 @@ func (a *SecretsApiService) GetPkiCrlRotate(ctx context.Context) (*http.Response
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetPkiDer Method for GetPkiDer
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPkiDerRequest
-*/
-// Execute executes the request
+// GetPkiDer
 func (a *SecretsApiService) GetPkiDer(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -8745,14 +7996,8 @@ func (a *SecretsApiService) GetPkiDer(ctx context.Context) (*http.Response, erro
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetPkiIssuerRefCrlPem Method for GetPkiIssuerRefCrlPem
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param issuerRef Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.
- @return ApiGetPkiIssuerRefCrlPemRequest
-*/
-// Execute executes the request
+// GetPkiIssuerRefCrlPem
+// issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
 func (a *SecretsApiService) GetPkiIssuerRefCrlPem(ctx context.Context, issuerRef string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -8817,14 +8062,8 @@ func (a *SecretsApiService) GetPkiIssuerRefCrlPem(ctx context.Context, issuerRef
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetPkiIssuerRefDerPem Method for GetPkiIssuerRefDerPem
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param issuerRef Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.
- @return ApiGetPkiIssuerRefDerPemRequest
-*/
-// Execute executes the request
+// GetPkiIssuerRefDerPem
+// issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
 func (a *SecretsApiService) GetPkiIssuerRefDerPem(ctx context.Context, issuerRef string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -8889,15 +8128,8 @@ func (a *SecretsApiService) GetPkiIssuerRefDerPem(ctx context.Context, issuerRef
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetPkiIssuers Method for GetPkiIssuers
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPkiIssuersRequest
-*/
-// Execute executes the request
+// GetPkiIssuers
+// list: Must be set to &#x60;true&#x60;
 func (a *SecretsApiService) GetPkiIssuers(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -8962,13 +8194,7 @@ func (a *SecretsApiService) GetPkiIssuers(ctx context.Context, list string) (*ht
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetPkiJson Method for GetPkiJson
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPkiJsonRequest
-*/
-// Execute executes the request
+// GetPkiJson
 func (a *SecretsApiService) GetPkiJson(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -9032,14 +8258,8 @@ func (a *SecretsApiService) GetPkiJson(ctx context.Context) (*http.Response, err
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetPkiKeyKeyRef Method for GetPkiKeyKeyRef
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param keyRef Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key.
- @return ApiGetPkiKeyKeyRefRequest
-*/
-// Execute executes the request
+// GetPkiKeyKeyRef
+// keyRef: Reference to key; either \&quot;default\&quot; for the configured default key, an identifier of a key, or the name assigned to the key.
 func (a *SecretsApiService) GetPkiKeyKeyRef(ctx context.Context, keyRef string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -9104,15 +8324,8 @@ func (a *SecretsApiService) GetPkiKeyKeyRef(ctx context.Context, keyRef string) 
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetPkiKeys Method for GetPkiKeys
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPkiKeysRequest
-*/
-// Execute executes the request
+// GetPkiKeys
+// list: Must be set to &#x60;true&#x60;
 func (a *SecretsApiService) GetPkiKeys(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -9177,15 +8390,8 @@ func (a *SecretsApiService) GetPkiKeys(ctx context.Context, list string) (*http.
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetPkiRoles Method for GetPkiRoles
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPkiRolesRequest
-*/
-// Execute executes the request
+// GetPkiRoles
+// list: Must be set to &#x60;true&#x60;
 func (a *SecretsApiService) GetPkiRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -9250,14 +8456,8 @@ func (a *SecretsApiService) GetPkiRoles(ctx context.Context, list string) (*http
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetPkiRolesName Method for GetPkiRolesName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiGetPkiRolesNameRequest
-*/
-// Execute executes the request
+// GetPkiRolesName
+// name: Name of the role
 func (a *SecretsApiService) GetPkiRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -9322,13 +8522,7 @@ func (a *SecretsApiService) GetPkiRolesName(ctx context.Context, name string) (*
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetPkiTidyStatus Method for GetPkiTidyStatus
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPkiTidyStatusRequest
-*/
-// Execute executes the request
+// GetPkiTidyStatus
 func (a *SecretsApiService) GetPkiTidyStatus(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -9392,13 +8586,7 @@ func (a *SecretsApiService) GetPkiTidyStatus(ctx context.Context) (*http.Respons
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetRabbitmqConfigLease Configure the lease parameters for generated credentials
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetRabbitmqConfigLeaseRequest
-*/
-// Execute executes the request
+// GetRabbitmqConfigLease Configure the lease parameters for generated credentials
 func (a *SecretsApiService) GetRabbitmqConfigLease(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -9462,14 +8650,8 @@ func (a *SecretsApiService) GetRabbitmqConfigLease(ctx context.Context) (*http.R
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetRabbitmqCredsName Request RabbitMQ credentials for a certain role.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiGetRabbitmqCredsNameRequest
-*/
-// Execute executes the request
+// GetRabbitmqCredsName Request RabbitMQ credentials for a certain role.
+// name: Name of the role.
 func (a *SecretsApiService) GetRabbitmqCredsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -9534,15 +8716,8 @@ func (a *SecretsApiService) GetRabbitmqCredsName(ctx context.Context, name strin
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetRabbitmqRoles Manage the roles that can be created with this backend.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetRabbitmqRolesRequest
-*/
-// Execute executes the request
+// GetRabbitmqRoles Manage the roles that can be created with this backend.
+// list: Must be set to &#x60;true&#x60;
 func (a *SecretsApiService) GetRabbitmqRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -9607,14 +8782,8 @@ func (a *SecretsApiService) GetRabbitmqRoles(ctx context.Context, list string) (
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetRabbitmqRolesName Manage the roles that can be created with this backend.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiGetRabbitmqRolesNameRequest
-*/
-// Execute executes the request
+// GetRabbitmqRolesName Manage the roles that can be created with this backend.
+// name: Name of the role.
 func (a *SecretsApiService) GetRabbitmqRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -9679,13 +8848,7 @@ func (a *SecretsApiService) GetRabbitmqRolesName(ctx context.Context, name strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSecretConfig Read the backend level settings.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSecretConfigRequest
-*/
-// Execute executes the request
+// GetSecretConfig Read the backend level settings.
 func (a *SecretsApiService) GetSecretConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -9749,14 +8912,8 @@ func (a *SecretsApiService) GetSecretConfig(ctx context.Context) (*http.Response
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSecretDataPath Write, Patch, Read, and Delete data in the Key-Value Store.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path Location of the secret.
- @return ApiGetSecretDataPathRequest
-*/
-// Execute executes the request
+// GetSecretDataPath Write, Patch, Read, and Delete data in the Key-Value Store.
+// path: Location of the secret.
 func (a *SecretsApiService) GetSecretDataPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -9821,16 +8978,9 @@ func (a *SecretsApiService) GetSecretDataPath(ctx context.Context, path string) 
 	return localVarHTTPResponse, nil
 }
 
-// Return a list if &#x60;true&#x60;
-
-/*
-GetSecretMetadataPath Configures settings for the KV store
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path Location of the secret.
- @return ApiGetSecretMetadataPathRequest
-*/
-// Execute executes the request
+// GetSecretMetadataPath Configures settings for the KV store
+// path: Location of the secret.
+// list: Return a list if &#x60;true&#x60;
 func (a *SecretsApiService) GetSecretMetadataPath(ctx context.Context, path string, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -9896,14 +9046,8 @@ func (a *SecretsApiService) GetSecretMetadataPath(ctx context.Context, path stri
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSecretSubkeysPath Read the structure of a secret entry from the Key-Value store with the values removed.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path Location of the secret.
- @return ApiGetSecretSubkeysPathRequest
-*/
-// Execute executes the request
+// GetSecretSubkeysPath Read the structure of a secret entry from the Key-Value store with the values removed.
+// path: Location of the secret.
 func (a *SecretsApiService) GetSecretSubkeysPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -9968,13 +9112,7 @@ func (a *SecretsApiService) GetSecretSubkeysPath(ctx context.Context, path strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSshConfigCa Set the SSH private key used for signing certificates.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSshConfigCaRequest
-*/
-// Execute executes the request
+// GetSshConfigCa Set the SSH private key used for signing certificates.
 func (a *SecretsApiService) GetSshConfigCa(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -10038,13 +9176,7 @@ func (a *SecretsApiService) GetSshConfigCa(ctx context.Context) (*http.Response,
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSshConfigZeroaddress Assign zero address as default CIDR block for select roles.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSshConfigZeroaddressRequest
-*/
-// Execute executes the request
+// GetSshConfigZeroaddress Assign zero address as default CIDR block for select roles.
 func (a *SecretsApiService) GetSshConfigZeroaddress(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -10108,13 +9240,7 @@ func (a *SecretsApiService) GetSshConfigZeroaddress(ctx context.Context) (*http.
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSshPublicKey Retrieve the public key.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSshPublicKeyRequest
-*/
-// Execute executes the request
+// GetSshPublicKey Retrieve the public key.
 func (a *SecretsApiService) GetSshPublicKey(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -10178,15 +9304,8 @@ func (a *SecretsApiService) GetSshPublicKey(ctx context.Context) (*http.Response
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetSshRoles Manage the 'roles' that can be created with this backend.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSshRolesRequest
-*/
-// Execute executes the request
+// GetSshRoles Manage the 'roles' that can be created with this backend.
+// list: Must be set to &#x60;true&#x60;
 func (a *SecretsApiService) GetSshRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -10251,14 +9370,8 @@ func (a *SecretsApiService) GetSshRoles(ctx context.Context, list string) (*http
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetSshRolesRole Manage the 'roles' that can be created with this backend.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param role [Required for all types] Name of the role being created.
- @return ApiGetSshRolesRoleRequest
-*/
-// Execute executes the request
+// GetSshRolesRole Manage the 'roles' that can be created with this backend.
+// role: [Required for all types] Name of the role being created.
 func (a *SecretsApiService) GetSshRolesRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -10323,13 +9436,7 @@ func (a *SecretsApiService) GetSshRolesRole(ctx context.Context, role string) (*
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetTerraformConfig Method for GetTerraformConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetTerraformConfigRequest
-*/
-// Execute executes the request
+// GetTerraformConfig
 func (a *SecretsApiService) GetTerraformConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -10393,14 +9500,8 @@ func (a *SecretsApiService) GetTerraformConfig(ctx context.Context) (*http.Respo
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetTerraformCredsName Generate a Terraform Cloud or Enterprise API token from a specific Vault role.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiGetTerraformCredsNameRequest
-*/
-// Execute executes the request
+// GetTerraformCredsName Generate a Terraform Cloud or Enterprise API token from a specific Vault role.
+// name: Name of the role
 func (a *SecretsApiService) GetTerraformCredsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -10465,15 +9566,8 @@ func (a *SecretsApiService) GetTerraformCredsName(ctx context.Context, name stri
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetTerraformRole Method for GetTerraformRole
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetTerraformRoleRequest
-*/
-// Execute executes the request
+// GetTerraformRole
+// list: Must be set to &#x60;true&#x60;
 func (a *SecretsApiService) GetTerraformRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -10538,14 +9632,8 @@ func (a *SecretsApiService) GetTerraformRole(ctx context.Context, list string) (
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetTerraformRoleName Method for GetTerraformRoleName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiGetTerraformRoleNameRequest
-*/
-// Execute executes the request
+// GetTerraformRoleName
+// name: Name of the role
 func (a *SecretsApiService) GetTerraformRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -10610,14 +9698,8 @@ func (a *SecretsApiService) GetTerraformRoleName(ctx context.Context, name strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetTotpCodeName Request time-based one-time use password or validate a password for a certain key .
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the key.
- @return ApiGetTotpCodeNameRequest
-*/
-// Execute executes the request
+// GetTotpCodeName Request time-based one-time use password or validate a password for a certain key .
+// name: Name of the key.
 func (a *SecretsApiService) GetTotpCodeName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -10682,15 +9764,8 @@ func (a *SecretsApiService) GetTotpCodeName(ctx context.Context, name string) (*
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetTotpKeys Manage the keys that can be created with this backend.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetTotpKeysRequest
-*/
-// Execute executes the request
+// GetTotpKeys Manage the keys that can be created with this backend.
+// list: Must be set to &#x60;true&#x60;
 func (a *SecretsApiService) GetTotpKeys(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -10755,14 +9830,8 @@ func (a *SecretsApiService) GetTotpKeys(ctx context.Context, list string) (*http
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetTotpKeysName Manage the keys that can be created with this backend.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the key.
- @return ApiGetTotpKeysNameRequest
-*/
-// Execute executes the request
+// GetTotpKeysName Manage the keys that can be created with this backend.
+// name: Name of the key.
 func (a *SecretsApiService) GetTotpKeysName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -10827,14 +9896,8 @@ func (a *SecretsApiService) GetTotpKeysName(ctx context.Context, name string) (*
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetTransitBackupName Backup the named key
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the key
- @return ApiGetTransitBackupNameRequest
-*/
-// Execute executes the request
+// GetTransitBackupName Backup the named key
+// name: Name of the key
 func (a *SecretsApiService) GetTransitBackupName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -10899,13 +9962,7 @@ func (a *SecretsApiService) GetTransitBackupName(ctx context.Context, name strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetTransitCacheConfig Returns the size of the active cache
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetTransitCacheConfigRequest
-*/
-// Execute executes the request
+// GetTransitCacheConfig Returns the size of the active cache
 func (a *SecretsApiService) GetTransitCacheConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -10969,15 +10026,9 @@ func (a *SecretsApiService) GetTransitCacheConfig(ctx context.Context) (*http.Re
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetTransitExportTypeName Export named encryption or signing key
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the key
- @param type_ Type of key to export (encryption-key, signing-key, hmac-key)
- @return ApiGetTransitExportTypeNameRequest
-*/
-// Execute executes the request
+// GetTransitExportTypeName Export named encryption or signing key
+// name: Name of the key
+// type_: Type of key to export (encryption-key, signing-key, hmac-key)
 func (a *SecretsApiService) GetTransitExportTypeName(ctx context.Context, name string, type_ string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -11043,16 +10094,10 @@ func (a *SecretsApiService) GetTransitExportTypeName(ctx context.Context, name s
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetTransitExportTypeNameVersion Export named encryption or signing key
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the key
- @param type_ Type of key to export (encryption-key, signing-key, hmac-key)
- @param version Version of the key
- @return ApiGetTransitExportTypeNameVersionRequest
-*/
-// Execute executes the request
+// GetTransitExportTypeNameVersion Export named encryption or signing key
+// name: Name of the key
+// type_: Type of key to export (encryption-key, signing-key, hmac-key)
+// version: Version of the key
 func (a *SecretsApiService) GetTransitExportTypeNameVersion(ctx context.Context, name string, type_ string, version string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -11119,15 +10164,8 @@ func (a *SecretsApiService) GetTransitExportTypeNameVersion(ctx context.Context,
 	return localVarHTTPResponse, nil
 }
 
-// Must be set to &#x60;true&#x60;
-
-/*
-GetTransitKeys Managed named encryption keys
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetTransitKeysRequest
-*/
-// Execute executes the request
+// GetTransitKeys Managed named encryption keys
+// list: Must be set to &#x60;true&#x60;
 func (a *SecretsApiService) GetTransitKeys(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -11192,14 +10230,8 @@ func (a *SecretsApiService) GetTransitKeys(ctx context.Context, list string) (*h
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetTransitKeysName Managed named encryption keys
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the key
- @return ApiGetTransitKeysNameRequest
-*/
-// Execute executes the request
+// GetTransitKeysName Managed named encryption keys
+// name: Name of the key
 func (a *SecretsApiService) GetTransitKeysName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -11264,13 +10296,7 @@ func (a *SecretsApiService) GetTransitKeysName(ctx context.Context, name string)
 	return localVarHTTPResponse, nil
 }
 
-/*
-GetTransitWrappingKey Returns the public key to use for wrapping imported keys
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetTransitWrappingKeyRequest
-*/
-// Execute executes the request
+// GetTransitWrappingKey Returns the public key to use for wrapping imported keys
 func (a *SecretsApiService) GetTransitWrappingKey(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
@@ -11334,13 +10360,7 @@ func (a *SecretsApiService) GetTransitWrappingKey(ctx context.Context) (*http.Re
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAdConfig Configure the AD server to connect to, along with password options.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAdConfigRequest
-*/
-// Execute executes the request
+// PostAdConfig Configure the AD server to connect to, along with password options.
 func (a *SecretsApiService) PostAdConfig(ctx context.Context, adConfigRequest AdConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -11406,14 +10426,8 @@ func (a *SecretsApiService) PostAdConfig(ctx context.Context, adConfigRequest Ad
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAdLibraryManageNameCheckIn Check service accounts in to the library.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the set.
- @return ApiPostAdLibraryManageNameCheckInRequest
-*/
-// Execute executes the request
+// PostAdLibraryManageNameCheckIn Check service accounts in to the library.
+// name: Name of the set.
 func (a *SecretsApiService) PostAdLibraryManageNameCheckIn(ctx context.Context, name string, adLibraryManageCheckInRequest AdLibraryManageCheckInRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -11480,14 +10494,8 @@ func (a *SecretsApiService) PostAdLibraryManageNameCheckIn(ctx context.Context, 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAdLibraryName Update a library set.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the set.
- @return ApiPostAdLibraryNameRequest
-*/
-// Execute executes the request
+// PostAdLibraryName Update a library set.
+// name: Name of the set.
 func (a *SecretsApiService) PostAdLibraryName(ctx context.Context, name string, adLibraryRequest AdLibraryRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -11554,14 +10562,8 @@ func (a *SecretsApiService) PostAdLibraryName(ctx context.Context, name string, 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAdLibraryNameCheckIn Check service accounts in to the library.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the set.
- @return ApiPostAdLibraryNameCheckInRequest
-*/
-// Execute executes the request
+// PostAdLibraryNameCheckIn Check service accounts in to the library.
+// name: Name of the set.
 func (a *SecretsApiService) PostAdLibraryNameCheckIn(ctx context.Context, name string, adLibraryCheckInRequest AdLibraryCheckInRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -11628,14 +10630,8 @@ func (a *SecretsApiService) PostAdLibraryNameCheckIn(ctx context.Context, name s
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAdLibraryNameCheckOut Check a service account out from the library.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the set
- @return ApiPostAdLibraryNameCheckOutRequest
-*/
-// Execute executes the request
+// PostAdLibraryNameCheckOut Check a service account out from the library.
+// name: Name of the set
 func (a *SecretsApiService) PostAdLibraryNameCheckOut(ctx context.Context, name string, adLibraryCheckOutRequest AdLibraryCheckOutRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -11702,14 +10698,8 @@ func (a *SecretsApiService) PostAdLibraryNameCheckOut(ctx context.Context, name 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAdRolesName Manage roles to build links between Vault and Active Directory service accounts.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiPostAdRolesNameRequest
-*/
-// Execute executes the request
+// PostAdRolesName Manage roles to build links between Vault and Active Directory service accounts.
+// name: Name of the role
 func (a *SecretsApiService) PostAdRolesName(ctx context.Context, name string, adRolesRequest AdRolesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -11776,14 +10766,8 @@ func (a *SecretsApiService) PostAdRolesName(ctx context.Context, name string, ad
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAdRotateRoleName Method for PostAdRotateRoleName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the static role
- @return ApiPostAdRotateRoleNameRequest
-*/
-// Execute executes the request
+// PostAdRotateRoleName
+// name: Name of the static role
 func (a *SecretsApiService) PostAdRotateRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -11848,13 +10832,7 @@ func (a *SecretsApiService) PostAdRotateRoleName(ctx context.Context, name strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAdRotateRoot Method for PostAdRotateRoot
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAdRotateRootRequest
-*/
-// Execute executes the request
+// PostAdRotateRoot
 func (a *SecretsApiService) PostAdRotateRoot(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -11918,13 +10896,7 @@ func (a *SecretsApiService) PostAdRotateRoot(ctx context.Context) (*http.Respons
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAlicloudConfig Configure the access key and secret to use for RAM and STS calls.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAlicloudConfigRequest
-*/
-// Execute executes the request
+// PostAlicloudConfig Configure the access key and secret to use for RAM and STS calls.
 func (a *SecretsApiService) PostAlicloudConfig(ctx context.Context, alicloudConfigRequest AlicloudConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -11990,14 +10962,8 @@ func (a *SecretsApiService) PostAlicloudConfig(ctx context.Context, alicloudConf
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAlicloudRoleName Read, write and reference policies and roles that API keys or STS credentials can be made for.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the role.
- @return ApiPostAlicloudRoleNameRequest
-*/
-// Execute executes the request
+// PostAlicloudRoleName Read, write and reference policies and roles that API keys or STS credentials can be made for.
+// name: The name of the role.
 func (a *SecretsApiService) PostAlicloudRoleName(ctx context.Context, name string, alicloudRoleRequest AlicloudRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -12064,13 +11030,7 @@ func (a *SecretsApiService) PostAlicloudRoleName(ctx context.Context, name strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAwsConfigLease Configure the default lease information for generated credentials.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAwsConfigLeaseRequest
-*/
-// Execute executes the request
+// PostAwsConfigLease Configure the default lease information for generated credentials.
 func (a *SecretsApiService) PostAwsConfigLease(ctx context.Context, awsConfigLeaseRequest AwsConfigLeaseRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -12136,13 +11096,7 @@ func (a *SecretsApiService) PostAwsConfigLease(ctx context.Context, awsConfigLea
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAwsConfigRoot Configure the root credentials that are used to manage IAM.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAwsConfigRootRequest
-*/
-// Execute executes the request
+// PostAwsConfigRoot Configure the root credentials that are used to manage IAM.
 func (a *SecretsApiService) PostAwsConfigRoot(ctx context.Context, awsConfigRootRequest AwsConfigRootRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -12208,13 +11162,7 @@ func (a *SecretsApiService) PostAwsConfigRoot(ctx context.Context, awsConfigRoot
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAwsConfigRotateRoot Method for PostAwsConfigRotateRoot
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAwsConfigRotateRootRequest
-*/
-// Execute executes the request
+// PostAwsConfigRotateRoot
 func (a *SecretsApiService) PostAwsConfigRotateRoot(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -12278,13 +11226,7 @@ func (a *SecretsApiService) PostAwsConfigRotateRoot(ctx context.Context) (*http.
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAwsCreds Generate AWS credentials from a specific Vault role.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAwsCredsRequest
-*/
-// Execute executes the request
+// PostAwsCreds Generate AWS credentials from a specific Vault role.
 func (a *SecretsApiService) PostAwsCreds(ctx context.Context, awsCredsRequest AwsCredsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -12350,14 +11292,8 @@ func (a *SecretsApiService) PostAwsCreds(ctx context.Context, awsCredsRequest Aw
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAwsRolesName Read, write and reference IAM policies that access keys can be made for.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the policy
- @return ApiPostAwsRolesNameRequest
-*/
-// Execute executes the request
+// PostAwsRolesName Read, write and reference IAM policies that access keys can be made for.
+// name: Name of the policy
 func (a *SecretsApiService) PostAwsRolesName(ctx context.Context, name string, awsRolesRequest AwsRolesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -12424,14 +11360,8 @@ func (a *SecretsApiService) PostAwsRolesName(ctx context.Context, name string, a
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAwsStsName Generate AWS credentials from a specific Vault role.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiPostAwsStsNameRequest
-*/
-// Execute executes the request
+// PostAwsStsName Generate AWS credentials from a specific Vault role.
+// name: Name of the role
 func (a *SecretsApiService) PostAwsStsName(ctx context.Context, name string, awsStsRequest AwsStsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -12498,13 +11428,7 @@ func (a *SecretsApiService) PostAwsStsName(ctx context.Context, name string, aws
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAzureConfig Method for PostAzureConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAzureConfigRequest
-*/
-// Execute executes the request
+// PostAzureConfig
 func (a *SecretsApiService) PostAzureConfig(ctx context.Context, azureConfigRequest AzureConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -12570,14 +11494,8 @@ func (a *SecretsApiService) PostAzureConfig(ctx context.Context, azureConfigRequ
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAzureRolesName Manage the Vault roles used to generate Azure credentials.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiPostAzureRolesNameRequest
-*/
-// Execute executes the request
+// PostAzureRolesName Manage the Vault roles used to generate Azure credentials.
+// name: Name of the role.
 func (a *SecretsApiService) PostAzureRolesName(ctx context.Context, name string, azureRolesRequest AzureRolesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -12644,13 +11562,7 @@ func (a *SecretsApiService) PostAzureRolesName(ctx context.Context, name string,
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostAzureRotateRoot Method for PostAzureRotateRoot
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostAzureRotateRootRequest
-*/
-// Execute executes the request
+// PostAzureRotateRoot
 func (a *SecretsApiService) PostAzureRotateRoot(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -12714,13 +11626,7 @@ func (a *SecretsApiService) PostAzureRotateRoot(ctx context.Context) (*http.Resp
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostConsulConfigAccess Method for PostConsulConfigAccess
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostConsulConfigAccessRequest
-*/
-// Execute executes the request
+// PostConsulConfigAccess
 func (a *SecretsApiService) PostConsulConfigAccess(ctx context.Context, consulConfigAccessRequest ConsulConfigAccessRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -12786,14 +11692,8 @@ func (a *SecretsApiService) PostConsulConfigAccess(ctx context.Context, consulCo
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostConsulRolesName Method for PostConsulRolesName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiPostConsulRolesNameRequest
-*/
-// Execute executes the request
+// PostConsulRolesName
+// name: Name of the role.
 func (a *SecretsApiService) PostConsulRolesName(ctx context.Context, name string, consulRolesRequest ConsulRolesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -12860,14 +11760,8 @@ func (a *SecretsApiService) PostConsulRolesName(ctx context.Context, name string
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostCubbyholePath Store a secret at the specified location.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path Specifies the path of the secret.
- @return ApiPostCubbyholePathRequest
-*/
-// Execute executes the request
+// PostCubbyholePath Store a secret at the specified location.
+// path: Specifies the path of the secret.
 func (a *SecretsApiService) PostCubbyholePath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -12932,13 +11826,7 @@ func (a *SecretsApiService) PostCubbyholePath(ctx context.Context, path string) 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostGcpConfig Method for PostGcpConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostGcpConfigRequest
-*/
-// Execute executes the request
+// PostGcpConfig
 func (a *SecretsApiService) PostGcpConfig(ctx context.Context, gcpConfigRequest GcpConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -13004,13 +11892,7 @@ func (a *SecretsApiService) PostGcpConfig(ctx context.Context, gcpConfigRequest 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostGcpConfigRotateRoot Method for PostGcpConfigRotateRoot
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostGcpConfigRotateRootRequest
-*/
-// Execute executes the request
+// PostGcpConfigRotateRoot
 func (a *SecretsApiService) PostGcpConfigRotateRoot(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -13074,14 +11956,8 @@ func (a *SecretsApiService) PostGcpConfigRotateRoot(ctx context.Context) (*http.
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostGcpKeyRoleset Method for PostGcpKeyRoleset
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleset Required. Name of the role set.
- @return ApiPostGcpKeyRolesetRequest
-*/
-// Execute executes the request
+// PostGcpKeyRoleset
+// roleset: Required. Name of the role set.
 func (a *SecretsApiService) PostGcpKeyRoleset(ctx context.Context, roleset string, gcpKeyRequest GcpKeyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -13148,14 +12024,8 @@ func (a *SecretsApiService) PostGcpKeyRoleset(ctx context.Context, roleset strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostGcpRolesetName Method for PostGcpRolesetName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Required. Name of the role.
- @return ApiPostGcpRolesetNameRequest
-*/
-// Execute executes the request
+// PostGcpRolesetName
+// name: Required. Name of the role.
 func (a *SecretsApiService) PostGcpRolesetName(ctx context.Context, name string, gcpRolesetRequest GcpRolesetRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -13222,14 +12092,8 @@ func (a *SecretsApiService) PostGcpRolesetName(ctx context.Context, name string,
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostGcpRolesetNameRotate Method for PostGcpRolesetNameRotate
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiPostGcpRolesetNameRotateRequest
-*/
-// Execute executes the request
+// PostGcpRolesetNameRotate
+// name: Name of the role.
 func (a *SecretsApiService) PostGcpRolesetNameRotate(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -13294,14 +12158,8 @@ func (a *SecretsApiService) PostGcpRolesetNameRotate(ctx context.Context, name s
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostGcpRolesetNameRotateKey Method for PostGcpRolesetNameRotateKey
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiPostGcpRolesetNameRotateKeyRequest
-*/
-// Execute executes the request
+// PostGcpRolesetNameRotateKey
+// name: Name of the role.
 func (a *SecretsApiService) PostGcpRolesetNameRotateKey(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -13366,14 +12224,8 @@ func (a *SecretsApiService) PostGcpRolesetNameRotateKey(ctx context.Context, nam
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostGcpRolesetRolesetKey Method for PostGcpRolesetRolesetKey
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleset Required. Name of the role set.
- @return ApiPostGcpRolesetRolesetKeyRequest
-*/
-// Execute executes the request
+// PostGcpRolesetRolesetKey
+// roleset: Required. Name of the role set.
 func (a *SecretsApiService) PostGcpRolesetRolesetKey(ctx context.Context, roleset string, gcpRolesetKeyRequest GcpRolesetKeyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -13440,14 +12292,8 @@ func (a *SecretsApiService) PostGcpRolesetRolesetKey(ctx context.Context, rolese
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostGcpRolesetRolesetToken Method for PostGcpRolesetRolesetToken
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleset Required. Name of the role set.
- @return ApiPostGcpRolesetRolesetTokenRequest
-*/
-// Execute executes the request
+// PostGcpRolesetRolesetToken
+// roleset: Required. Name of the role set.
 func (a *SecretsApiService) PostGcpRolesetRolesetToken(ctx context.Context, roleset string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -13512,14 +12358,8 @@ func (a *SecretsApiService) PostGcpRolesetRolesetToken(ctx context.Context, role
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostGcpStaticAccountName Method for PostGcpStaticAccountName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Required. Name to refer to this static account in Vault. Cannot be updated.
- @return ApiPostGcpStaticAccountNameRequest
-*/
-// Execute executes the request
+// PostGcpStaticAccountName
+// name: Required. Name to refer to this static account in Vault. Cannot be updated.
 func (a *SecretsApiService) PostGcpStaticAccountName(ctx context.Context, name string, gcpStaticAccountRequest GcpStaticAccountRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -13586,14 +12426,8 @@ func (a *SecretsApiService) PostGcpStaticAccountName(ctx context.Context, name s
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostGcpStaticAccountNameKey Method for PostGcpStaticAccountNameKey
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Required. Name of the static account.
- @return ApiPostGcpStaticAccountNameKeyRequest
-*/
-// Execute executes the request
+// PostGcpStaticAccountNameKey
+// name: Required. Name of the static account.
 func (a *SecretsApiService) PostGcpStaticAccountNameKey(ctx context.Context, name string, gcpStaticAccountKeyRequest GcpStaticAccountKeyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -13660,14 +12494,8 @@ func (a *SecretsApiService) PostGcpStaticAccountNameKey(ctx context.Context, nam
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostGcpStaticAccountNameRotateKey Method for PostGcpStaticAccountNameRotateKey
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the account.
- @return ApiPostGcpStaticAccountNameRotateKeyRequest
-*/
-// Execute executes the request
+// PostGcpStaticAccountNameRotateKey
+// name: Name of the account.
 func (a *SecretsApiService) PostGcpStaticAccountNameRotateKey(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -13732,14 +12560,8 @@ func (a *SecretsApiService) PostGcpStaticAccountNameRotateKey(ctx context.Contex
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostGcpStaticAccountNameToken Method for PostGcpStaticAccountNameToken
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Required. Name of the static account.
- @return ApiPostGcpStaticAccountNameTokenRequest
-*/
-// Execute executes the request
+// PostGcpStaticAccountNameToken
+// name: Required. Name of the static account.
 func (a *SecretsApiService) PostGcpStaticAccountNameToken(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -13804,14 +12626,8 @@ func (a *SecretsApiService) PostGcpStaticAccountNameToken(ctx context.Context, n
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostGcpTokenRoleset Method for PostGcpTokenRoleset
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param roleset Required. Name of the role set.
- @return ApiPostGcpTokenRolesetRequest
-*/
-// Execute executes the request
+// PostGcpTokenRoleset
+// roleset: Required. Name of the role set.
 func (a *SecretsApiService) PostGcpTokenRoleset(ctx context.Context, roleset string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -13876,13 +12692,7 @@ func (a *SecretsApiService) PostGcpTokenRoleset(ctx context.Context, roleset str
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostGcpkmsConfig Configure the GCP KMS secrets engine
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostGcpkmsConfigRequest
-*/
-// Execute executes the request
+// PostGcpkmsConfig Configure the GCP KMS secrets engine
 func (a *SecretsApiService) PostGcpkmsConfig(ctx context.Context, gcpkmsConfigRequest GcpkmsConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -13948,14 +12758,8 @@ func (a *SecretsApiService) PostGcpkmsConfig(ctx context.Context, gcpkmsConfigRe
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostGcpkmsDecryptKey Decrypt a ciphertext value using a named key
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Name of the key in Vault to use for decryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
- @return ApiPostGcpkmsDecryptKeyRequest
-*/
-// Execute executes the request
+// PostGcpkmsDecryptKey Decrypt a ciphertext value using a named key
+// key: Name of the key in Vault to use for decryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
 func (a *SecretsApiService) PostGcpkmsDecryptKey(ctx context.Context, key string, gcpkmsDecryptRequest GcpkmsDecryptRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -14022,14 +12826,8 @@ func (a *SecretsApiService) PostGcpkmsDecryptKey(ctx context.Context, key string
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostGcpkmsEncryptKey Encrypt a plaintext value using a named key
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Name of the key in Vault to use for encryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
- @return ApiPostGcpkmsEncryptKeyRequest
-*/
-// Execute executes the request
+// PostGcpkmsEncryptKey Encrypt a plaintext value using a named key
+// key: Name of the key in Vault to use for encryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
 func (a *SecretsApiService) PostGcpkmsEncryptKey(ctx context.Context, key string, gcpkmsEncryptRequest GcpkmsEncryptRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -14096,14 +12894,8 @@ func (a *SecretsApiService) PostGcpkmsEncryptKey(ctx context.Context, key string
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostGcpkmsKeysConfigKey Configure the key in Vault
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Name of the key in Vault.
- @return ApiPostGcpkmsKeysConfigKeyRequest
-*/
-// Execute executes the request
+// PostGcpkmsKeysConfigKey Configure the key in Vault
+// key: Name of the key in Vault.
 func (a *SecretsApiService) PostGcpkmsKeysConfigKey(ctx context.Context, key string, gcpkmsKeysConfigRequest GcpkmsKeysConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -14170,14 +12962,8 @@ func (a *SecretsApiService) PostGcpkmsKeysConfigKey(ctx context.Context, key str
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostGcpkmsKeysDeregisterKey Deregister an existing key in Vault
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
- @return ApiPostGcpkmsKeysDeregisterKeyRequest
-*/
-// Execute executes the request
+// PostGcpkmsKeysDeregisterKey Deregister an existing key in Vault
+// key: Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
 func (a *SecretsApiService) PostGcpkmsKeysDeregisterKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -14242,14 +13028,8 @@ func (a *SecretsApiService) PostGcpkmsKeysDeregisterKey(ctx context.Context, key
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostGcpkmsKeysKey Interact with crypto keys in Vault and Google Cloud KMS
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Name of the key in Vault.
- @return ApiPostGcpkmsKeysKeyRequest
-*/
-// Execute executes the request
+// PostGcpkmsKeysKey Interact with crypto keys in Vault and Google Cloud KMS
+// key: Name of the key in Vault.
 func (a *SecretsApiService) PostGcpkmsKeysKey(ctx context.Context, key string, gcpkmsKeysRequest GcpkmsKeysRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -14316,14 +13096,8 @@ func (a *SecretsApiService) PostGcpkmsKeysKey(ctx context.Context, key string, g
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostGcpkmsKeysRegisterKey Register an existing crypto key in Google Cloud KMS
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Name of the key to register in Vault. This will be the named used to refer to the underlying crypto key when encrypting or decrypting data.
- @return ApiPostGcpkmsKeysRegisterKeyRequest
-*/
-// Execute executes the request
+// PostGcpkmsKeysRegisterKey Register an existing crypto key in Google Cloud KMS
+// key: Name of the key to register in Vault. This will be the named used to refer to the underlying crypto key when encrypting or decrypting data.
 func (a *SecretsApiService) PostGcpkmsKeysRegisterKey(ctx context.Context, key string, gcpkmsKeysRegisterRequest GcpkmsKeysRegisterRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -14390,14 +13164,8 @@ func (a *SecretsApiService) PostGcpkmsKeysRegisterKey(ctx context.Context, key s
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostGcpkmsKeysRotateKey Rotate a crypto key to a new primary version
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Name of the key to rotate. This key must already be registered with Vault and point to a valid Google Cloud KMS crypto key.
- @return ApiPostGcpkmsKeysRotateKeyRequest
-*/
-// Execute executes the request
+// PostGcpkmsKeysRotateKey Rotate a crypto key to a new primary version
+// key: Name of the key to rotate. This key must already be registered with Vault and point to a valid Google Cloud KMS crypto key.
 func (a *SecretsApiService) PostGcpkmsKeysRotateKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -14462,14 +13230,8 @@ func (a *SecretsApiService) PostGcpkmsKeysRotateKey(ctx context.Context, key str
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostGcpkmsKeysTrimKey Delete old crypto key versions from Google Cloud KMS
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Name of the key in Vault.
- @return ApiPostGcpkmsKeysTrimKeyRequest
-*/
-// Execute executes the request
+// PostGcpkmsKeysTrimKey Delete old crypto key versions from Google Cloud KMS
+// key: Name of the key in Vault.
 func (a *SecretsApiService) PostGcpkmsKeysTrimKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -14534,14 +13296,8 @@ func (a *SecretsApiService) PostGcpkmsKeysTrimKey(ctx context.Context, key strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostGcpkmsReencryptKey Re-encrypt existing ciphertext data to a new version
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Name of the key to use for encryption. This key must already exist in Vault and Google Cloud KMS.
- @return ApiPostGcpkmsReencryptKeyRequest
-*/
-// Execute executes the request
+// PostGcpkmsReencryptKey Re-encrypt existing ciphertext data to a new version
+// key: Name of the key to use for encryption. This key must already exist in Vault and Google Cloud KMS.
 func (a *SecretsApiService) PostGcpkmsReencryptKey(ctx context.Context, key string, gcpkmsReencryptRequest GcpkmsReencryptRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -14608,14 +13364,8 @@ func (a *SecretsApiService) PostGcpkmsReencryptKey(ctx context.Context, key stri
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostGcpkmsSignKey Signs a message or digest using a named key
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Name of the key in Vault to use for signing. This key must already exist in Vault and must map back to a Google Cloud KMS key.
- @return ApiPostGcpkmsSignKeyRequest
-*/
-// Execute executes the request
+// PostGcpkmsSignKey Signs a message or digest using a named key
+// key: Name of the key in Vault to use for signing. This key must already exist in Vault and must map back to a Google Cloud KMS key.
 func (a *SecretsApiService) PostGcpkmsSignKey(ctx context.Context, key string, gcpkmsSignRequest GcpkmsSignRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -14682,14 +13432,8 @@ func (a *SecretsApiService) PostGcpkmsSignKey(ctx context.Context, key string, g
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostGcpkmsVerifyKey Verify a signature using a named key
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param key Name of the key in Vault to use for verification. This key must already exist in Vault and must map back to a Google Cloud KMS key.
- @return ApiPostGcpkmsVerifyKeyRequest
-*/
-// Execute executes the request
+// PostGcpkmsVerifyKey Verify a signature using a named key
+// key: Name of the key in Vault to use for verification. This key must already exist in Vault and must map back to a Google Cloud KMS key.
 func (a *SecretsApiService) PostGcpkmsVerifyKey(ctx context.Context, key string, gcpkmsVerifyRequest GcpkmsVerifyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -14756,13 +13500,7 @@ func (a *SecretsApiService) PostGcpkmsVerifyKey(ctx context.Context, key string,
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostKubernetesConfig Method for PostKubernetesConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostKubernetesConfigRequest
-*/
-// Execute executes the request
+// PostKubernetesConfig
 func (a *SecretsApiService) PostKubernetesConfig(ctx context.Context, kubernetesConfigRequest KubernetesConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -14828,14 +13566,8 @@ func (a *SecretsApiService) PostKubernetesConfig(ctx context.Context, kubernetes
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostKubernetesCredsName Method for PostKubernetesCredsName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the Vault role
- @return ApiPostKubernetesCredsNameRequest
-*/
-// Execute executes the request
+// PostKubernetesCredsName
+// name: Name of the Vault role
 func (a *SecretsApiService) PostKubernetesCredsName(ctx context.Context, name string, kubernetesCredsRequest KubernetesCredsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -14902,14 +13634,8 @@ func (a *SecretsApiService) PostKubernetesCredsName(ctx context.Context, name st
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostKubernetesRolesName Method for PostKubernetesRolesName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiPostKubernetesRolesNameRequest
-*/
-// Execute executes the request
+// PostKubernetesRolesName
+// name: Name of the role
 func (a *SecretsApiService) PostKubernetesRolesName(ctx context.Context, name string, kubernetesRolesRequest KubernetesRolesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -14976,14 +13702,8 @@ func (a *SecretsApiService) PostKubernetesRolesName(ctx context.Context, name st
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostKvPath Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path Location of the secret.
- @return ApiPostKvPathRequest
-*/
-// Execute executes the request
+// PostKvPath Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
+// path: Location of the secret.
 func (a *SecretsApiService) PostKvPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -15048,13 +13768,7 @@ func (a *SecretsApiService) PostKvPath(ctx context.Context, path string) (*http.
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostMongodbatlasConfig Configure the  credentials that are used to manage Database Users.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostMongodbatlasConfigRequest
-*/
-// Execute executes the request
+// PostMongodbatlasConfig Configure the  credentials that are used to manage Database Users.
 func (a *SecretsApiService) PostMongodbatlasConfig(ctx context.Context, mongodbatlasConfigRequest MongodbatlasConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -15120,14 +13834,8 @@ func (a *SecretsApiService) PostMongodbatlasConfig(ctx context.Context, mongodba
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostMongodbatlasCredsName Generate MongoDB Atlas Programmatic API from a specific Vault role.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiPostMongodbatlasCredsNameRequest
-*/
-// Execute executes the request
+// PostMongodbatlasCredsName Generate MongoDB Atlas Programmatic API from a specific Vault role.
+// name: Name of the role
 func (a *SecretsApiService) PostMongodbatlasCredsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -15192,14 +13900,8 @@ func (a *SecretsApiService) PostMongodbatlasCredsName(ctx context.Context, name 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostMongodbatlasRolesName Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the Roles
- @return ApiPostMongodbatlasRolesNameRequest
-*/
-// Execute executes the request
+// PostMongodbatlasRolesName Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
+// name: Name of the Roles
 func (a *SecretsApiService) PostMongodbatlasRolesName(ctx context.Context, name string, mongodbatlasRolesRequest MongodbatlasRolesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -15266,13 +13968,7 @@ func (a *SecretsApiService) PostMongodbatlasRolesName(ctx context.Context, name 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostNomadConfigAccess Method for PostNomadConfigAccess
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostNomadConfigAccessRequest
-*/
-// Execute executes the request
+// PostNomadConfigAccess
 func (a *SecretsApiService) PostNomadConfigAccess(ctx context.Context, nomadConfigAccessRequest NomadConfigAccessRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -15338,13 +14034,7 @@ func (a *SecretsApiService) PostNomadConfigAccess(ctx context.Context, nomadConf
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostNomadConfigLease Configure the lease parameters for generated tokens
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostNomadConfigLeaseRequest
-*/
-// Execute executes the request
+// PostNomadConfigLease Configure the lease parameters for generated tokens
 func (a *SecretsApiService) PostNomadConfigLease(ctx context.Context, nomadConfigLeaseRequest NomadConfigLeaseRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -15410,14 +14100,8 @@ func (a *SecretsApiService) PostNomadConfigLease(ctx context.Context, nomadConfi
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostNomadRoleName Method for PostNomadRoleName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiPostNomadRoleNameRequest
-*/
-// Execute executes the request
+// PostNomadRoleName
+// name: Name of the role
 func (a *SecretsApiService) PostNomadRoleName(ctx context.Context, name string, nomadRoleRequest NomadRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -15484,13 +14168,7 @@ func (a *SecretsApiService) PostNomadRoleName(ctx context.Context, name string, 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostOpenldapConfig Method for PostOpenldapConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostOpenldapConfigRequest
-*/
-// Execute executes the request
+// PostOpenldapConfig
 func (a *SecretsApiService) PostOpenldapConfig(ctx context.Context, openldapConfigRequest OpenldapConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -15556,14 +14234,8 @@ func (a *SecretsApiService) PostOpenldapConfig(ctx context.Context, openldapConf
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostOpenldapRoleName Method for PostOpenldapRoleName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role (lowercase)
- @return ApiPostOpenldapRoleNameRequest
-*/
-// Execute executes the request
+// PostOpenldapRoleName
+// name: Name of the role (lowercase)
 func (a *SecretsApiService) PostOpenldapRoleName(ctx context.Context, name string, openldapRoleRequest OpenldapRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -15630,14 +14302,8 @@ func (a *SecretsApiService) PostOpenldapRoleName(ctx context.Context, name strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostOpenldapRotateRoleName Method for PostOpenldapRotateRoleName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the static role
- @return ApiPostOpenldapRotateRoleNameRequest
-*/
-// Execute executes the request
+// PostOpenldapRotateRoleName
+// name: Name of the static role
 func (a *SecretsApiService) PostOpenldapRotateRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -15702,13 +14368,7 @@ func (a *SecretsApiService) PostOpenldapRotateRoleName(ctx context.Context, name
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostOpenldapRotateRoot Method for PostOpenldapRotateRoot
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostOpenldapRotateRootRequest
-*/
-// Execute executes the request
+// PostOpenldapRotateRoot
 func (a *SecretsApiService) PostOpenldapRotateRoot(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -15772,14 +14432,8 @@ func (a *SecretsApiService) PostOpenldapRotateRoot(ctx context.Context) (*http.R
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostOpenldapStaticRoleName Method for PostOpenldapStaticRoleName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiPostOpenldapStaticRoleNameRequest
-*/
-// Execute executes the request
+// PostOpenldapStaticRoleName
+// name: Name of the role
 func (a *SecretsApiService) PostOpenldapStaticRoleName(ctx context.Context, name string, openldapStaticRoleRequest OpenldapStaticRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -15846,13 +14500,7 @@ func (a *SecretsApiService) PostOpenldapStaticRoleName(ctx context.Context, name
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiBundle Method for PostPkiBundle
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostPkiBundleRequest
-*/
-// Execute executes the request
+// PostPkiBundle
 func (a *SecretsApiService) PostPkiBundle(ctx context.Context, pkiBundleRequest PkiBundleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -15918,13 +14566,7 @@ func (a *SecretsApiService) PostPkiBundle(ctx context.Context, pkiBundleRequest 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiCert Method for PostPkiCert
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostPkiCertRequest
-*/
-// Execute executes the request
+// PostPkiCert
 func (a *SecretsApiService) PostPkiCert(ctx context.Context, pkiCertRequest PkiCertRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -15990,13 +14632,7 @@ func (a *SecretsApiService) PostPkiCert(ctx context.Context, pkiCertRequest PkiC
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiConfigCa Method for PostPkiConfigCa
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostPkiConfigCaRequest
-*/
-// Execute executes the request
+// PostPkiConfigCa
 func (a *SecretsApiService) PostPkiConfigCa(ctx context.Context, pkiConfigCaRequest PkiConfigCaRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -16062,13 +14698,7 @@ func (a *SecretsApiService) PostPkiConfigCa(ctx context.Context, pkiConfigCaRequ
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiConfigCrl Method for PostPkiConfigCrl
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostPkiConfigCrlRequest
-*/
-// Execute executes the request
+// PostPkiConfigCrl
 func (a *SecretsApiService) PostPkiConfigCrl(ctx context.Context, pkiConfigCrlRequest PkiConfigCrlRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -16134,13 +14764,7 @@ func (a *SecretsApiService) PostPkiConfigCrl(ctx context.Context, pkiConfigCrlRe
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiConfigIssuers Method for PostPkiConfigIssuers
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostPkiConfigIssuersRequest
-*/
-// Execute executes the request
+// PostPkiConfigIssuers
 func (a *SecretsApiService) PostPkiConfigIssuers(ctx context.Context, pkiConfigIssuersRequest PkiConfigIssuersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -16206,13 +14830,7 @@ func (a *SecretsApiService) PostPkiConfigIssuers(ctx context.Context, pkiConfigI
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiConfigKeys Method for PostPkiConfigKeys
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostPkiConfigKeysRequest
-*/
-// Execute executes the request
+// PostPkiConfigKeys
 func (a *SecretsApiService) PostPkiConfigKeys(ctx context.Context, pkiConfigKeysRequest PkiConfigKeysRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -16278,13 +14896,7 @@ func (a *SecretsApiService) PostPkiConfigKeys(ctx context.Context, pkiConfigKeys
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiConfigUrls Method for PostPkiConfigUrls
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostPkiConfigUrlsRequest
-*/
-// Execute executes the request
+// PostPkiConfigUrls
 func (a *SecretsApiService) PostPkiConfigUrls(ctx context.Context, pkiConfigUrlsRequest PkiConfigUrlsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -16350,13 +14962,7 @@ func (a *SecretsApiService) PostPkiConfigUrls(ctx context.Context, pkiConfigUrls
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiIntermediateCrossSign Method for PostPkiIntermediateCrossSign
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostPkiIntermediateCrossSignRequest
-*/
-// Execute executes the request
+// PostPkiIntermediateCrossSign
 func (a *SecretsApiService) PostPkiIntermediateCrossSign(ctx context.Context, pkiIntermediateCrossSignRequest PkiIntermediateCrossSignRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -16422,14 +15028,8 @@ func (a *SecretsApiService) PostPkiIntermediateCrossSign(ctx context.Context, pk
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiIntermediateGenerateExported Method for PostPkiIntermediateGenerateExported
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param exported Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
- @return ApiPostPkiIntermediateGenerateExportedRequest
-*/
-// Execute executes the request
+// PostPkiIntermediateGenerateExported
+// exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
 func (a *SecretsApiService) PostPkiIntermediateGenerateExported(ctx context.Context, exported string, pkiIntermediateGenerateRequest PkiIntermediateGenerateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -16496,13 +15096,7 @@ func (a *SecretsApiService) PostPkiIntermediateGenerateExported(ctx context.Cont
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiIntermediateSetSigned Method for PostPkiIntermediateSetSigned
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostPkiIntermediateSetSignedRequest
-*/
-// Execute executes the request
+// PostPkiIntermediateSetSigned
 func (a *SecretsApiService) PostPkiIntermediateSetSigned(ctx context.Context, pkiIntermediateSetSignedRequest PkiIntermediateSetSignedRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -16568,13 +15162,7 @@ func (a *SecretsApiService) PostPkiIntermediateSetSigned(ctx context.Context, pk
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiInternalExported Method for PostPkiInternalExported
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostPkiInternalExportedRequest
-*/
-// Execute executes the request
+// PostPkiInternalExported
 func (a *SecretsApiService) PostPkiInternalExported(ctx context.Context, pkiInternalExportedRequest PkiInternalExportedRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -16640,14 +15228,8 @@ func (a *SecretsApiService) PostPkiInternalExported(ctx context.Context, pkiInte
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiIssueRole Method for PostPkiIssueRole
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param role The desired role with configuration for this request
- @return ApiPostPkiIssueRoleRequest
-*/
-// Execute executes the request
+// PostPkiIssueRole
+// role: The desired role with configuration for this request
 func (a *SecretsApiService) PostPkiIssueRole(ctx context.Context, role string, pkiIssueRequest PkiIssueRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -16714,15 +15296,9 @@ func (a *SecretsApiService) PostPkiIssueRole(ctx context.Context, role string, p
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiIssuerIssuerRefIssueRole Method for PostPkiIssuerIssuerRefIssueRole
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param issuerRef Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.
- @param role The desired role with configuration for this request
- @return ApiPostPkiIssuerIssuerRefIssueRoleRequest
-*/
-// Execute executes the request
+// PostPkiIssuerIssuerRefIssueRole
+// issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
+// role: The desired role with configuration for this request
 func (a *SecretsApiService) PostPkiIssuerIssuerRefIssueRole(ctx context.Context, issuerRef string, role string, pkiIssuerIssueRequest PkiIssuerIssueRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -16790,14 +15366,8 @@ func (a *SecretsApiService) PostPkiIssuerIssuerRefIssueRole(ctx context.Context,
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiIssuerIssuerRefSignIntermediate Method for PostPkiIssuerIssuerRefSignIntermediate
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param issuerRef Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.
- @return ApiPostPkiIssuerIssuerRefSignIntermediateRequest
-*/
-// Execute executes the request
+// PostPkiIssuerIssuerRefSignIntermediate
+// issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
 func (a *SecretsApiService) PostPkiIssuerIssuerRefSignIntermediate(ctx context.Context, issuerRef string, pkiIssuerSignIntermediateRequest PkiIssuerSignIntermediateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -16864,15 +15434,9 @@ func (a *SecretsApiService) PostPkiIssuerIssuerRefSignIntermediate(ctx context.C
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiIssuerIssuerRefSignRole Method for PostPkiIssuerIssuerRefSignRole
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param issuerRef Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.
- @param role The desired role with configuration for this request
- @return ApiPostPkiIssuerIssuerRefSignRoleRequest
-*/
-// Execute executes the request
+// PostPkiIssuerIssuerRefSignRole
+// issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
+// role: The desired role with configuration for this request
 func (a *SecretsApiService) PostPkiIssuerIssuerRefSignRole(ctx context.Context, issuerRef string, role string, pkiIssuerSignRequest PkiIssuerSignRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -16940,14 +15504,8 @@ func (a *SecretsApiService) PostPkiIssuerIssuerRefSignRole(ctx context.Context, 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiIssuerIssuerRefSignSelfIssued Method for PostPkiIssuerIssuerRefSignSelfIssued
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param issuerRef Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.
- @return ApiPostPkiIssuerIssuerRefSignSelfIssuedRequest
-*/
-// Execute executes the request
+// PostPkiIssuerIssuerRefSignSelfIssued
+// issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
 func (a *SecretsApiService) PostPkiIssuerIssuerRefSignSelfIssued(ctx context.Context, issuerRef string, pkiIssuerSignSelfIssuedRequest PkiIssuerSignSelfIssuedRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -17014,14 +15572,8 @@ func (a *SecretsApiService) PostPkiIssuerIssuerRefSignSelfIssued(ctx context.Con
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiIssuerIssuerRefSignVerbatim Method for PostPkiIssuerIssuerRefSignVerbatim
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param issuerRef Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.
- @return ApiPostPkiIssuerIssuerRefSignVerbatimRequest
-*/
-// Execute executes the request
+// PostPkiIssuerIssuerRefSignVerbatim
+// issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
 func (a *SecretsApiService) PostPkiIssuerIssuerRefSignVerbatim(ctx context.Context, issuerRef string, pkiIssuerSignVerbatimRequest PkiIssuerSignVerbatimRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -17088,15 +15640,9 @@ func (a *SecretsApiService) PostPkiIssuerIssuerRefSignVerbatim(ctx context.Conte
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiIssuerIssuerRefSignVerbatimRole Method for PostPkiIssuerIssuerRefSignVerbatimRole
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param issuerRef Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.
- @param role The desired role with configuration for this request
- @return ApiPostPkiIssuerIssuerRefSignVerbatimRoleRequest
-*/
-// Execute executes the request
+// PostPkiIssuerIssuerRefSignVerbatimRole
+// issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
+// role: The desired role with configuration for this request
 func (a *SecretsApiService) PostPkiIssuerIssuerRefSignVerbatimRole(ctx context.Context, issuerRef string, role string, pkiIssuerSignVerbatimRequest PkiIssuerSignVerbatimRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -17164,14 +15710,8 @@ func (a *SecretsApiService) PostPkiIssuerIssuerRefSignVerbatimRole(ctx context.C
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiIssuerRefDerPem Method for PostPkiIssuerRefDerPem
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param issuerRef Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer.
- @return ApiPostPkiIssuerRefDerPemRequest
-*/
-// Execute executes the request
+// PostPkiIssuerRefDerPem
+// issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
 func (a *SecretsApiService) PostPkiIssuerRefDerPem(ctx context.Context, issuerRef string, pkiDerPemRequest PkiDerPemRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -17238,14 +15778,8 @@ func (a *SecretsApiService) PostPkiIssuerRefDerPem(ctx context.Context, issuerRe
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiIssuersGenerateIntermediateExported Method for PostPkiIssuersGenerateIntermediateExported
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param exported Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
- @return ApiPostPkiIssuersGenerateIntermediateExportedRequest
-*/
-// Execute executes the request
+// PostPkiIssuersGenerateIntermediateExported
+// exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
 func (a *SecretsApiService) PostPkiIssuersGenerateIntermediateExported(ctx context.Context, exported string, pkiIssuersGenerateIntermediateRequest PkiIssuersGenerateIntermediateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -17312,14 +15846,8 @@ func (a *SecretsApiService) PostPkiIssuersGenerateIntermediateExported(ctx conte
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiIssuersGenerateRootExported Method for PostPkiIssuersGenerateRootExported
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param exported Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
- @return ApiPostPkiIssuersGenerateRootExportedRequest
-*/
-// Execute executes the request
+// PostPkiIssuersGenerateRootExported
+// exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
 func (a *SecretsApiService) PostPkiIssuersGenerateRootExported(ctx context.Context, exported string, pkiIssuersGenerateRootRequest PkiIssuersGenerateRootRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -17386,13 +15914,7 @@ func (a *SecretsApiService) PostPkiIssuersGenerateRootExported(ctx context.Conte
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiJson Method for PostPkiJson
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostPkiJsonRequest
-*/
-// Execute executes the request
+// PostPkiJson
 func (a *SecretsApiService) PostPkiJson(ctx context.Context, pkiJsonRequest PkiJsonRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -17458,14 +15980,8 @@ func (a *SecretsApiService) PostPkiJson(ctx context.Context, pkiJsonRequest PkiJ
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiKeyKeyRef Method for PostPkiKeyKeyRef
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param keyRef Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key.
- @return ApiPostPkiKeyKeyRefRequest
-*/
-// Execute executes the request
+// PostPkiKeyKeyRef
+// keyRef: Reference to key; either \&quot;default\&quot; for the configured default key, an identifier of a key, or the name assigned to the key.
 func (a *SecretsApiService) PostPkiKeyKeyRef(ctx context.Context, keyRef string, pkiKeyRequest PkiKeyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -17532,13 +16048,7 @@ func (a *SecretsApiService) PostPkiKeyKeyRef(ctx context.Context, keyRef string,
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiKeysImport Method for PostPkiKeysImport
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostPkiKeysImportRequest
-*/
-// Execute executes the request
+// PostPkiKeysImport
 func (a *SecretsApiService) PostPkiKeysImport(ctx context.Context, pkiKeysImportRequest PkiKeysImportRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -17604,13 +16114,7 @@ func (a *SecretsApiService) PostPkiKeysImport(ctx context.Context, pkiKeysImport
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiKms Method for PostPkiKms
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostPkiKmsRequest
-*/
-// Execute executes the request
+// PostPkiKms
 func (a *SecretsApiService) PostPkiKms(ctx context.Context, pkiKmsRequest PkiKmsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -17676,13 +16180,7 @@ func (a *SecretsApiService) PostPkiKms(ctx context.Context, pkiKmsRequest PkiKms
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiRevoke Method for PostPkiRevoke
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostPkiRevokeRequest
-*/
-// Execute executes the request
+// PostPkiRevoke
 func (a *SecretsApiService) PostPkiRevoke(ctx context.Context, pkiRevokeRequest PkiRevokeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -17748,14 +16246,8 @@ func (a *SecretsApiService) PostPkiRevoke(ctx context.Context, pkiRevokeRequest 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiRolesName Method for PostPkiRolesName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiPostPkiRolesNameRequest
-*/
-// Execute executes the request
+// PostPkiRolesName
+// name: Name of the role
 func (a *SecretsApiService) PostPkiRolesName(ctx context.Context, name string, pkiRolesRequest PkiRolesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -17822,14 +16314,8 @@ func (a *SecretsApiService) PostPkiRolesName(ctx context.Context, name string, p
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiRootGenerateExported Method for PostPkiRootGenerateExported
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param exported Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
- @return ApiPostPkiRootGenerateExportedRequest
-*/
-// Execute executes the request
+// PostPkiRootGenerateExported
+// exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
 func (a *SecretsApiService) PostPkiRootGenerateExported(ctx context.Context, exported string, pkiRootGenerateRequest PkiRootGenerateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -17896,13 +16382,7 @@ func (a *SecretsApiService) PostPkiRootGenerateExported(ctx context.Context, exp
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiRootReplace Method for PostPkiRootReplace
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostPkiRootReplaceRequest
-*/
-// Execute executes the request
+// PostPkiRootReplace
 func (a *SecretsApiService) PostPkiRootReplace(ctx context.Context, pkiRootReplaceRequest PkiRootReplaceRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -17968,14 +16448,8 @@ func (a *SecretsApiService) PostPkiRootReplace(ctx context.Context, pkiRootRepla
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiRootRotateExported Method for PostPkiRootRotateExported
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param exported Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
- @return ApiPostPkiRootRotateExportedRequest
-*/
-// Execute executes the request
+// PostPkiRootRotateExported
+// exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
 func (a *SecretsApiService) PostPkiRootRotateExported(ctx context.Context, exported string, pkiRootRotateRequest PkiRootRotateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -18042,13 +16516,7 @@ func (a *SecretsApiService) PostPkiRootRotateExported(ctx context.Context, expor
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiRootSignIntermediate Method for PostPkiRootSignIntermediate
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostPkiRootSignIntermediateRequest
-*/
-// Execute executes the request
+// PostPkiRootSignIntermediate
 func (a *SecretsApiService) PostPkiRootSignIntermediate(ctx context.Context, pkiRootSignIntermediateRequest PkiRootSignIntermediateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -18114,13 +16582,7 @@ func (a *SecretsApiService) PostPkiRootSignIntermediate(ctx context.Context, pki
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiRootSignSelfIssued Method for PostPkiRootSignSelfIssued
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostPkiRootSignSelfIssuedRequest
-*/
-// Execute executes the request
+// PostPkiRootSignSelfIssued
 func (a *SecretsApiService) PostPkiRootSignSelfIssued(ctx context.Context, pkiRootSignSelfIssuedRequest PkiRootSignSelfIssuedRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -18186,14 +16648,8 @@ func (a *SecretsApiService) PostPkiRootSignSelfIssued(ctx context.Context, pkiRo
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiSignRole Method for PostPkiSignRole
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param role The desired role with configuration for this request
- @return ApiPostPkiSignRoleRequest
-*/
-// Execute executes the request
+// PostPkiSignRole
+// role: The desired role with configuration for this request
 func (a *SecretsApiService) PostPkiSignRole(ctx context.Context, role string, pkiSignRequest PkiSignRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -18260,13 +16716,7 @@ func (a *SecretsApiService) PostPkiSignRole(ctx context.Context, role string, pk
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiSignVerbatim Method for PostPkiSignVerbatim
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostPkiSignVerbatimRequest
-*/
-// Execute executes the request
+// PostPkiSignVerbatim
 func (a *SecretsApiService) PostPkiSignVerbatim(ctx context.Context, pkiSignVerbatimRequest PkiSignVerbatimRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -18332,14 +16782,8 @@ func (a *SecretsApiService) PostPkiSignVerbatim(ctx context.Context, pkiSignVerb
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiSignVerbatimRole Method for PostPkiSignVerbatimRole
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param role The desired role with configuration for this request
- @return ApiPostPkiSignVerbatimRoleRequest
-*/
-// Execute executes the request
+// PostPkiSignVerbatimRole
+// role: The desired role with configuration for this request
 func (a *SecretsApiService) PostPkiSignVerbatimRole(ctx context.Context, role string, pkiSignVerbatimRequest PkiSignVerbatimRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -18406,13 +16850,7 @@ func (a *SecretsApiService) PostPkiSignVerbatimRole(ctx context.Context, role st
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostPkiTidy Method for PostPkiTidy
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostPkiTidyRequest
-*/
-// Execute executes the request
+// PostPkiTidy
 func (a *SecretsApiService) PostPkiTidy(ctx context.Context, pkiTidyRequest PkiTidyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -18478,13 +16916,7 @@ func (a *SecretsApiService) PostPkiTidy(ctx context.Context, pkiTidyRequest PkiT
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostRabbitmqConfigConnection Configure the connection URI, username, and password to talk to RabbitMQ management HTTP API.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostRabbitmqConfigConnectionRequest
-*/
-// Execute executes the request
+// PostRabbitmqConfigConnection Configure the connection URI, username, and password to talk to RabbitMQ management HTTP API.
 func (a *SecretsApiService) PostRabbitmqConfigConnection(ctx context.Context, rabbitmqConfigConnectionRequest RabbitmqConfigConnectionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -18550,13 +16982,7 @@ func (a *SecretsApiService) PostRabbitmqConfigConnection(ctx context.Context, ra
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostRabbitmqConfigLease Configure the lease parameters for generated credentials
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostRabbitmqConfigLeaseRequest
-*/
-// Execute executes the request
+// PostRabbitmqConfigLease Configure the lease parameters for generated credentials
 func (a *SecretsApiService) PostRabbitmqConfigLease(ctx context.Context, rabbitmqConfigLeaseRequest RabbitmqConfigLeaseRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -18622,14 +17048,8 @@ func (a *SecretsApiService) PostRabbitmqConfigLease(ctx context.Context, rabbitm
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostRabbitmqRolesName Manage the roles that can be created with this backend.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role.
- @return ApiPostRabbitmqRolesNameRequest
-*/
-// Execute executes the request
+// PostRabbitmqRolesName Manage the roles that can be created with this backend.
+// name: Name of the role.
 func (a *SecretsApiService) PostRabbitmqRolesName(ctx context.Context, name string, rabbitmqRolesRequest RabbitmqRolesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -18696,13 +17116,7 @@ func (a *SecretsApiService) PostRabbitmqRolesName(ctx context.Context, name stri
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSecretConfig Configure backend level settings that are applied to every key in the key-value store.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSecretConfigRequest
-*/
-// Execute executes the request
+// PostSecretConfig Configure backend level settings that are applied to every key in the key-value store.
 func (a *SecretsApiService) PostSecretConfig(ctx context.Context, kvConfigRequest KvConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -18768,14 +17182,8 @@ func (a *SecretsApiService) PostSecretConfig(ctx context.Context, kvConfigReques
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSecretDataPath Write, Patch, Read, and Delete data in the Key-Value Store.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path Location of the secret.
- @return ApiPostSecretDataPathRequest
-*/
-// Execute executes the request
+// PostSecretDataPath Write, Patch, Read, and Delete data in the Key-Value Store.
+// path: Location of the secret.
 func (a *SecretsApiService) PostSecretDataPath(ctx context.Context, path string, kvDataRequest KvDataRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -18842,14 +17250,8 @@ func (a *SecretsApiService) PostSecretDataPath(ctx context.Context, path string,
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSecretDeletePath Marks one or more versions as deleted in the KV store.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path Location of the secret.
- @return ApiPostSecretDeletePathRequest
-*/
-// Execute executes the request
+// PostSecretDeletePath Marks one or more versions as deleted in the KV store.
+// path: Location of the secret.
 func (a *SecretsApiService) PostSecretDeletePath(ctx context.Context, path string, kvDeleteRequest KvDeleteRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -18916,14 +17318,8 @@ func (a *SecretsApiService) PostSecretDeletePath(ctx context.Context, path strin
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSecretDestroyPath Permanently removes one or more versions in the KV store
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path Location of the secret.
- @return ApiPostSecretDestroyPathRequest
-*/
-// Execute executes the request
+// PostSecretDestroyPath Permanently removes one or more versions in the KV store
+// path: Location of the secret.
 func (a *SecretsApiService) PostSecretDestroyPath(ctx context.Context, path string, kvDestroyRequest KvDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -18990,14 +17386,8 @@ func (a *SecretsApiService) PostSecretDestroyPath(ctx context.Context, path stri
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSecretMetadataPath Configures settings for the KV store
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path Location of the secret.
- @return ApiPostSecretMetadataPathRequest
-*/
-// Execute executes the request
+// PostSecretMetadataPath Configures settings for the KV store
+// path: Location of the secret.
 func (a *SecretsApiService) PostSecretMetadataPath(ctx context.Context, path string, kvMetadataRequest KvMetadataRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -19064,14 +17454,8 @@ func (a *SecretsApiService) PostSecretMetadataPath(ctx context.Context, path str
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSecretUndeletePath Undeletes one or more versions from the KV store.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path Location of the secret.
- @return ApiPostSecretUndeletePathRequest
-*/
-// Execute executes the request
+// PostSecretUndeletePath Undeletes one or more versions from the KV store.
+// path: Location of the secret.
 func (a *SecretsApiService) PostSecretUndeletePath(ctx context.Context, path string, kvUndeleteRequest KvUndeleteRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -19138,13 +17522,7 @@ func (a *SecretsApiService) PostSecretUndeletePath(ctx context.Context, path str
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSshConfigCa Set the SSH private key used for signing certificates.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSshConfigCaRequest
-*/
-// Execute executes the request
+// PostSshConfigCa Set the SSH private key used for signing certificates.
 func (a *SecretsApiService) PostSshConfigCa(ctx context.Context, sshConfigCaRequest SshConfigCaRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -19210,13 +17588,7 @@ func (a *SecretsApiService) PostSshConfigCa(ctx context.Context, sshConfigCaRequ
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSshConfigZeroaddress Assign zero address as default CIDR block for select roles.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSshConfigZeroaddressRequest
-*/
-// Execute executes the request
+// PostSshConfigZeroaddress Assign zero address as default CIDR block for select roles.
 func (a *SecretsApiService) PostSshConfigZeroaddress(ctx context.Context, sshConfigZeroaddressRequest SshConfigZeroaddressRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -19282,14 +17654,8 @@ func (a *SecretsApiService) PostSshConfigZeroaddress(ctx context.Context, sshCon
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSshCredsRole Creates a credential for establishing SSH connection with the remote host.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param role [Required] Name of the role
- @return ApiPostSshCredsRoleRequest
-*/
-// Execute executes the request
+// PostSshCredsRole Creates a credential for establishing SSH connection with the remote host.
+// role: [Required] Name of the role
 func (a *SecretsApiService) PostSshCredsRole(ctx context.Context, role string, sshCredsRequest SshCredsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -19356,14 +17722,8 @@ func (a *SecretsApiService) PostSshCredsRole(ctx context.Context, role string, s
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSshKeysKeyName Register a shared private key with Vault.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param keyName [Required] Name of the key
- @return ApiPostSshKeysKeyNameRequest
-*/
-// Execute executes the request
+// PostSshKeysKeyName Register a shared private key with Vault.
+// keyName: [Required] Name of the key
 func (a *SecretsApiService) PostSshKeysKeyName(ctx context.Context, keyName string, sshKeysRequest SshKeysRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -19430,13 +17790,7 @@ func (a *SecretsApiService) PostSshKeysKeyName(ctx context.Context, keyName stri
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSshLookup List all the roles associated with the given IP address.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSshLookupRequest
-*/
-// Execute executes the request
+// PostSshLookup List all the roles associated with the given IP address.
 func (a *SecretsApiService) PostSshLookup(ctx context.Context, sshLookupRequest SshLookupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -19502,14 +17856,8 @@ func (a *SecretsApiService) PostSshLookup(ctx context.Context, sshLookupRequest 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSshRolesRole Manage the 'roles' that can be created with this backend.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param role [Required for all types] Name of the role being created.
- @return ApiPostSshRolesRoleRequest
-*/
-// Execute executes the request
+// PostSshRolesRole Manage the 'roles' that can be created with this backend.
+// role: [Required for all types] Name of the role being created.
 func (a *SecretsApiService) PostSshRolesRole(ctx context.Context, role string, sshRolesRequest SshRolesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -19576,14 +17924,8 @@ func (a *SecretsApiService) PostSshRolesRole(ctx context.Context, role string, s
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSshSignRole Request signing an SSH key using a certain role with the provided details.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param role The desired role with configuration for this request.
- @return ApiPostSshSignRoleRequest
-*/
-// Execute executes the request
+// PostSshSignRole Request signing an SSH key using a certain role with the provided details.
+// role: The desired role with configuration for this request.
 func (a *SecretsApiService) PostSshSignRole(ctx context.Context, role string, sshSignRequest SshSignRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -19650,13 +17992,7 @@ func (a *SecretsApiService) PostSshSignRole(ctx context.Context, role string, ss
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostSshVerify Validate the OTP provided by Vault SSH Agent.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSshVerifyRequest
-*/
-// Execute executes the request
+// PostSshVerify Validate the OTP provided by Vault SSH Agent.
 func (a *SecretsApiService) PostSshVerify(ctx context.Context, sshVerifyRequest SshVerifyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -19722,13 +18058,7 @@ func (a *SecretsApiService) PostSshVerify(ctx context.Context, sshVerifyRequest 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTerraformConfig Method for PostTerraformConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostTerraformConfigRequest
-*/
-// Execute executes the request
+// PostTerraformConfig
 func (a *SecretsApiService) PostTerraformConfig(ctx context.Context, terraformConfigRequest TerraformConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -19794,14 +18124,8 @@ func (a *SecretsApiService) PostTerraformConfig(ctx context.Context, terraformCo
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTerraformCredsName Generate a Terraform Cloud or Enterprise API token from a specific Vault role.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiPostTerraformCredsNameRequest
-*/
-// Execute executes the request
+// PostTerraformCredsName Generate a Terraform Cloud or Enterprise API token from a specific Vault role.
+// name: Name of the role
 func (a *SecretsApiService) PostTerraformCredsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -19866,14 +18190,8 @@ func (a *SecretsApiService) PostTerraformCredsName(ctx context.Context, name str
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTerraformRoleName Method for PostTerraformRoleName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the role
- @return ApiPostTerraformRoleNameRequest
-*/
-// Execute executes the request
+// PostTerraformRoleName
+// name: Name of the role
 func (a *SecretsApiService) PostTerraformRoleName(ctx context.Context, name string, terraformRoleRequest TerraformRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -19940,14 +18258,8 @@ func (a *SecretsApiService) PostTerraformRoleName(ctx context.Context, name stri
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTerraformRotateRoleName Method for PostTerraformRotateRoleName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the team or organization role
- @return ApiPostTerraformRotateRoleNameRequest
-*/
-// Execute executes the request
+// PostTerraformRotateRoleName
+// name: Name of the team or organization role
 func (a *SecretsApiService) PostTerraformRotateRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -20012,14 +18324,8 @@ func (a *SecretsApiService) PostTerraformRotateRoleName(ctx context.Context, nam
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTotpCodeName Request time-based one-time use password or validate a password for a certain key .
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the key.
- @return ApiPostTotpCodeNameRequest
-*/
-// Execute executes the request
+// PostTotpCodeName Request time-based one-time use password or validate a password for a certain key .
+// name: Name of the key.
 func (a *SecretsApiService) PostTotpCodeName(ctx context.Context, name string, totpCodeRequest TotpCodeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -20086,14 +18392,8 @@ func (a *SecretsApiService) PostTotpCodeName(ctx context.Context, name string, t
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTotpKeysName Manage the keys that can be created with this backend.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the key.
- @return ApiPostTotpKeysNameRequest
-*/
-// Execute executes the request
+// PostTotpKeysName Manage the keys that can be created with this backend.
+// name: Name of the key.
 func (a *SecretsApiService) PostTotpKeysName(ctx context.Context, name string, totpKeysRequest TotpKeysRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -20160,13 +18460,7 @@ func (a *SecretsApiService) PostTotpKeysName(ctx context.Context, name string, t
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTransitCacheConfig Configures a new cache of the specified size
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostTransitCacheConfigRequest
-*/
-// Execute executes the request
+// PostTransitCacheConfig Configures a new cache of the specified size
 func (a *SecretsApiService) PostTransitCacheConfig(ctx context.Context, transitCacheConfigRequest TransitCacheConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -20232,15 +18526,9 @@ func (a *SecretsApiService) PostTransitCacheConfig(ctx context.Context, transitC
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTransitDatakeyPlaintextName Generate a data key
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The backend key used for encrypting the data key
- @param plaintext \"plaintext\" will return the key in both plaintext and ciphertext; \"wrapped\" will return the ciphertext only.
- @return ApiPostTransitDatakeyPlaintextNameRequest
-*/
-// Execute executes the request
+// PostTransitDatakeyPlaintextName Generate a data key
+// name: The backend key used for encrypting the data key
+// plaintext: \&quot;plaintext\&quot; will return the key in both plaintext and ciphertext; \&quot;wrapped\&quot; will return the ciphertext only.
 func (a *SecretsApiService) PostTransitDatakeyPlaintextName(ctx context.Context, name string, plaintext string, transitDatakeyRequest TransitDatakeyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -20308,14 +18596,8 @@ func (a *SecretsApiService) PostTransitDatakeyPlaintextName(ctx context.Context,
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTransitDecryptName Decrypt a ciphertext value using a named key
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the policy
- @return ApiPostTransitDecryptNameRequest
-*/
-// Execute executes the request
+// PostTransitDecryptName Decrypt a ciphertext value using a named key
+// name: Name of the policy
 func (a *SecretsApiService) PostTransitDecryptName(ctx context.Context, name string, transitDecryptRequest TransitDecryptRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -20382,14 +18664,8 @@ func (a *SecretsApiService) PostTransitDecryptName(ctx context.Context, name str
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTransitEncryptName Encrypt a plaintext value or a batch of plaintext blocks using a named key
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the policy
- @return ApiPostTransitEncryptNameRequest
-*/
-// Execute executes the request
+// PostTransitEncryptName Encrypt a plaintext value or a batch of plaintext blocks using a named key
+// name: Name of the policy
 func (a *SecretsApiService) PostTransitEncryptName(ctx context.Context, name string, transitEncryptRequest TransitEncryptRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -20456,13 +18732,7 @@ func (a *SecretsApiService) PostTransitEncryptName(ctx context.Context, name str
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTransitHash Generate a hash sum for input data
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostTransitHashRequest
-*/
-// Execute executes the request
+// PostTransitHash Generate a hash sum for input data
 func (a *SecretsApiService) PostTransitHash(ctx context.Context, transitHashRequest TransitHashRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -20528,14 +18798,8 @@ func (a *SecretsApiService) PostTransitHash(ctx context.Context, transitHashRequ
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTransitHashUrlalgorithm Generate a hash sum for input data
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param urlalgorithm Algorithm to use (POST URL parameter)
- @return ApiPostTransitHashUrlalgorithmRequest
-*/
-// Execute executes the request
+// PostTransitHashUrlalgorithm Generate a hash sum for input data
+// urlalgorithm: Algorithm to use (POST URL parameter)
 func (a *SecretsApiService) PostTransitHashUrlalgorithm(ctx context.Context, urlalgorithm string, transitHashRequest TransitHashRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -20602,14 +18866,8 @@ func (a *SecretsApiService) PostTransitHashUrlalgorithm(ctx context.Context, url
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTransitHmacName Generate an HMAC for input data using the named key
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The key to use for the HMAC function
- @return ApiPostTransitHmacNameRequest
-*/
-// Execute executes the request
+// PostTransitHmacName Generate an HMAC for input data using the named key
+// name: The key to use for the HMAC function
 func (a *SecretsApiService) PostTransitHmacName(ctx context.Context, name string, transitHmacRequest TransitHmacRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -20676,15 +18934,9 @@ func (a *SecretsApiService) PostTransitHmacName(ctx context.Context, name string
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTransitHmacNameUrlalgorithm Generate an HMAC for input data using the named key
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The key to use for the HMAC function
- @param urlalgorithm Algorithm to use (POST URL parameter)
- @return ApiPostTransitHmacNameUrlalgorithmRequest
-*/
-// Execute executes the request
+// PostTransitHmacNameUrlalgorithm Generate an HMAC for input data using the named key
+// name: The key to use for the HMAC function
+// urlalgorithm: Algorithm to use (POST URL parameter)
 func (a *SecretsApiService) PostTransitHmacNameUrlalgorithm(ctx context.Context, name string, urlalgorithm string, transitHmacRequest TransitHmacRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -20752,14 +19004,8 @@ func (a *SecretsApiService) PostTransitHmacNameUrlalgorithm(ctx context.Context,
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTransitKeysName Managed named encryption keys
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the key
- @return ApiPostTransitKeysNameRequest
-*/
-// Execute executes the request
+// PostTransitKeysName Managed named encryption keys
+// name: Name of the key
 func (a *SecretsApiService) PostTransitKeysName(ctx context.Context, name string, transitKeysRequest TransitKeysRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -20826,14 +19072,8 @@ func (a *SecretsApiService) PostTransitKeysName(ctx context.Context, name string
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTransitKeysNameConfig Configure a named encryption key
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the key
- @return ApiPostTransitKeysNameConfigRequest
-*/
-// Execute executes the request
+// PostTransitKeysNameConfig Configure a named encryption key
+// name: Name of the key
 func (a *SecretsApiService) PostTransitKeysNameConfig(ctx context.Context, name string, transitKeysConfigRequest TransitKeysConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -20900,14 +19140,8 @@ func (a *SecretsApiService) PostTransitKeysNameConfig(ctx context.Context, name 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTransitKeysNameImport Imports an externally-generated key into a new transit key
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the key
- @return ApiPostTransitKeysNameImportRequest
-*/
-// Execute executes the request
+// PostTransitKeysNameImport Imports an externally-generated key into a new transit key
+// name: The name of the key
 func (a *SecretsApiService) PostTransitKeysNameImport(ctx context.Context, name string, transitKeysImportRequest TransitKeysImportRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -20974,14 +19208,8 @@ func (a *SecretsApiService) PostTransitKeysNameImport(ctx context.Context, name 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTransitKeysNameImportVersion Imports an externally-generated key into an existing imported key
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the key
- @return ApiPostTransitKeysNameImportVersionRequest
-*/
-// Execute executes the request
+// PostTransitKeysNameImportVersion Imports an externally-generated key into an existing imported key
+// name: The name of the key
 func (a *SecretsApiService) PostTransitKeysNameImportVersion(ctx context.Context, name string, transitKeysImportVersionRequest TransitKeysImportVersionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -21048,14 +19276,8 @@ func (a *SecretsApiService) PostTransitKeysNameImportVersion(ctx context.Context
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTransitKeysNameRotate Rotate named encryption key
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the key
- @return ApiPostTransitKeysNameRotateRequest
-*/
-// Execute executes the request
+// PostTransitKeysNameRotate Rotate named encryption key
+// name: Name of the key
 func (a *SecretsApiService) PostTransitKeysNameRotate(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -21120,14 +19342,8 @@ func (a *SecretsApiService) PostTransitKeysNameRotate(ctx context.Context, name 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTransitKeysNameTrim Trim key versions of a named key
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the key
- @return ApiPostTransitKeysNameTrimRequest
-*/
-// Execute executes the request
+// PostTransitKeysNameTrim Trim key versions of a named key
+// name: Name of the key
 func (a *SecretsApiService) PostTransitKeysNameTrim(ctx context.Context, name string, transitKeysTrimRequest TransitKeysTrimRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -21194,13 +19410,7 @@ func (a *SecretsApiService) PostTransitKeysNameTrim(ctx context.Context, name st
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTransitRandom Generate random bytes
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostTransitRandomRequest
-*/
-// Execute executes the request
+// PostTransitRandom Generate random bytes
 func (a *SecretsApiService) PostTransitRandom(ctx context.Context, transitRandomRequest TransitRandomRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -21266,14 +19476,8 @@ func (a *SecretsApiService) PostTransitRandom(ctx context.Context, transitRandom
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTransitRandomSource Generate random bytes
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param source Which system to source random data from, ether \"platform\", \"seal\", or \"all\".
- @return ApiPostTransitRandomSourceRequest
-*/
-// Execute executes the request
+// PostTransitRandomSource Generate random bytes
+// source: Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;.
 func (a *SecretsApiService) PostTransitRandomSource(ctx context.Context, source string, transitRandomRequest TransitRandomRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -21340,15 +19544,9 @@ func (a *SecretsApiService) PostTransitRandomSource(ctx context.Context, source 
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTransitRandomSourceUrlbytes Generate random bytes
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param source Which system to source random data from, ether \"platform\", \"seal\", or \"all\".
- @param urlbytes The number of bytes to generate (POST URL parameter)
- @return ApiPostTransitRandomSourceUrlbytesRequest
-*/
-// Execute executes the request
+// PostTransitRandomSourceUrlbytes Generate random bytes
+// source: Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;.
+// urlbytes: The number of bytes to generate (POST URL parameter)
 func (a *SecretsApiService) PostTransitRandomSourceUrlbytes(ctx context.Context, source string, urlbytes string, transitRandomRequest TransitRandomRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -21416,14 +19614,8 @@ func (a *SecretsApiService) PostTransitRandomSourceUrlbytes(ctx context.Context,
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTransitRandomUrlbytes Generate random bytes
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param urlbytes The number of bytes to generate (POST URL parameter)
- @return ApiPostTransitRandomUrlbytesRequest
-*/
-// Execute executes the request
+// PostTransitRandomUrlbytes Generate random bytes
+// urlbytes: The number of bytes to generate (POST URL parameter)
 func (a *SecretsApiService) PostTransitRandomUrlbytes(ctx context.Context, urlbytes string, transitRandomRequest TransitRandomRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -21490,13 +19682,7 @@ func (a *SecretsApiService) PostTransitRandomUrlbytes(ctx context.Context, urlby
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTransitRestore Restore the named key
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostTransitRestoreRequest
-*/
-// Execute executes the request
+// PostTransitRestore Restore the named key
 func (a *SecretsApiService) PostTransitRestore(ctx context.Context, transitRestoreRequest TransitRestoreRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -21562,14 +19748,8 @@ func (a *SecretsApiService) PostTransitRestore(ctx context.Context, transitResto
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTransitRestoreName Restore the named key
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name If set, this will be the name of the restored key.
- @return ApiPostTransitRestoreNameRequest
-*/
-// Execute executes the request
+// PostTransitRestoreName Restore the named key
+// name: If set, this will be the name of the restored key.
 func (a *SecretsApiService) PostTransitRestoreName(ctx context.Context, name string, transitRestoreRequest TransitRestoreRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -21636,14 +19816,8 @@ func (a *SecretsApiService) PostTransitRestoreName(ctx context.Context, name str
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTransitRewrapName Rewrap ciphertext
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the key
- @return ApiPostTransitRewrapNameRequest
-*/
-// Execute executes the request
+// PostTransitRewrapName Rewrap ciphertext
+// name: Name of the key
 func (a *SecretsApiService) PostTransitRewrapName(ctx context.Context, name string, transitRewrapRequest TransitRewrapRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -21710,14 +19884,8 @@ func (a *SecretsApiService) PostTransitRewrapName(ctx context.Context, name stri
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTransitSignName Generate a signature for input data using the named key
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The key to use
- @return ApiPostTransitSignNameRequest
-*/
-// Execute executes the request
+// PostTransitSignName Generate a signature for input data using the named key
+// name: The key to use
 func (a *SecretsApiService) PostTransitSignName(ctx context.Context, name string, transitSignRequest TransitSignRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -21784,15 +19952,9 @@ func (a *SecretsApiService) PostTransitSignName(ctx context.Context, name string
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTransitSignNameUrlalgorithm Generate a signature for input data using the named key
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The key to use
- @param urlalgorithm Hash algorithm to use (POST URL parameter)
- @return ApiPostTransitSignNameUrlalgorithmRequest
-*/
-// Execute executes the request
+// PostTransitSignNameUrlalgorithm Generate a signature for input data using the named key
+// name: The key to use
+// urlalgorithm: Hash algorithm to use (POST URL parameter)
 func (a *SecretsApiService) PostTransitSignNameUrlalgorithm(ctx context.Context, name string, urlalgorithm string, transitSignRequest TransitSignRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -21860,14 +20022,8 @@ func (a *SecretsApiService) PostTransitSignNameUrlalgorithm(ctx context.Context,
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTransitVerifyName Verify a signature or HMAC for input data created using the named key
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The key to use
- @return ApiPostTransitVerifyNameRequest
-*/
-// Execute executes the request
+// PostTransitVerifyName Verify a signature or HMAC for input data created using the named key
+// name: The key to use
 func (a *SecretsApiService) PostTransitVerifyName(ctx context.Context, name string, transitVerifyRequest TransitVerifyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
@@ -21934,15 +20090,9 @@ func (a *SecretsApiService) PostTransitVerifyName(ctx context.Context, name stri
 	return localVarHTTPResponse, nil
 }
 
-/*
-PostTransitVerifyNameUrlalgorithm Verify a signature or HMAC for input data created using the named key
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The key to use
- @param urlalgorithm Hash algorithm to use (POST URL parameter)
- @return ApiPostTransitVerifyNameUrlalgorithmRequest
-*/
-// Execute executes the request
+// PostTransitVerifyNameUrlalgorithm Verify a signature or HMAC for input data created using the named key
+// name: The key to use
+// urlalgorithm: Hash algorithm to use (POST URL parameter)
 func (a *SecretsApiService) PostTransitVerifyNameUrlalgorithm(ctx context.Context, name string, urlalgorithm string, transitVerifyRequest TransitVerifyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost

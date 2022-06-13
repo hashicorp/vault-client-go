@@ -16,27 +16,18 @@ import (
 type {{classname}}Service service
 {{#operation}}
 
-{{#allParams}}{{^isPathParam}}
-{{#description}}
-// {{.}}
-{{/description}}
-{{/isPathParam}}{{/allParams}}
-/*
-{{operationId}} {{{summary}}}{{^summary}}Method for {{operationId}}{{/summary}}
-{{#notes}}
-
-{{{unescapedNotes}}}
-{{/notes}}
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().{{#pathParams}}
- @param {{paramName}}{{#description}} {{{.}}}{{/description}}{{/pathParams}}
- @return {{#structPrefix}}{{&classname}}{{/structPrefix}}Api{{operationId}}Request
-*/
-// Execute executes the request{{#returnType}}
-//  @return {{{.}}}{{/returnType}}
 {{#isDeprecated}}
 // Deprecated
 {{/isDeprecated}}
+// {{operationId}} {{{summary}}}
+{{#notes}}
+// {{{notes}}}
+{{/notes}}
+{{#allParams}}
+{{#description}}
+// {{paramName}}: {{.}}
+{{/description}}
+{{/allParams}}
 func (a *{{{classname}}}Service) {{nickname}}(ctx context.Context{{#pathParams}}, {{paramName}} {{{dataType}}}{{/pathParams}}{{#allParams}}{{^isPathParam}}, {{paramName}} {{{dataType}}}{{/isPathParam}}{{/allParams}}) ({{#returnType}}{{^isArray}}{{^returnTypeIsPrimitive}}*{{/returnTypeIsPrimitive}}{{/isArray}}{{{.}}}, {{/returnType}}*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.Method{{httpMethod}}

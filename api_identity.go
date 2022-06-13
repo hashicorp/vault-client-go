@@ -53,20 +53,20 @@ func (a *IdentityApiService) DeleteIdentityAliasIdId(ctx context.Context, id str
 }
 
 // Execute executes the request
-func (a *IdentityApiService) DeleteIdentityAliasIdIdExecute(r ApiDeleteIdentityAliasIdIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) DeleteIdentityAliasIdIdExecute(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityAliasIdId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.DeleteIdentityAliasIdId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/alias/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -89,7 +89,7 @@ func (a *IdentityApiService) DeleteIdentityAliasIdIdExecute(r ApiDeleteIdentityA
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -143,20 +143,20 @@ func (a *IdentityApiService) DeleteIdentityEntityAliasIdId(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *IdentityApiService) DeleteIdentityEntityAliasIdIdExecute(r ApiDeleteIdentityEntityAliasIdIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) DeleteIdentityEntityAliasIdIdExecute(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityEntityAliasIdId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.DeleteIdentityEntityAliasIdId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/entity-alias/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -179,7 +179,7 @@ func (a *IdentityApiService) DeleteIdentityEntityAliasIdIdExecute(r ApiDeleteIde
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -233,20 +233,20 @@ func (a *IdentityApiService) DeleteIdentityEntityIdId(ctx context.Context, id st
 }
 
 // Execute executes the request
-func (a *IdentityApiService) DeleteIdentityEntityIdIdExecute(r ApiDeleteIdentityEntityIdIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) DeleteIdentityEntityIdIdExecute(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityEntityIdId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.DeleteIdentityEntityIdId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/entity/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -269,7 +269,7 @@ func (a *IdentityApiService) DeleteIdentityEntityIdIdExecute(r ApiDeleteIdentity
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -323,20 +323,20 @@ func (a *IdentityApiService) DeleteIdentityEntityNameName(ctx context.Context, n
 }
 
 // Execute executes the request
-func (a *IdentityApiService) DeleteIdentityEntityNameNameExecute(r ApiDeleteIdentityEntityNameNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) DeleteIdentityEntityNameNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityEntityNameName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.DeleteIdentityEntityNameName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/entity/name/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -359,7 +359,7 @@ func (a *IdentityApiService) DeleteIdentityEntityNameNameExecute(r ApiDeleteIden
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -413,20 +413,20 @@ func (a *IdentityApiService) DeleteIdentityGroupAliasIdId(ctx context.Context, i
 }
 
 // Execute executes the request
-func (a *IdentityApiService) DeleteIdentityGroupAliasIdIdExecute(r ApiDeleteIdentityGroupAliasIdIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) DeleteIdentityGroupAliasIdIdExecute(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityGroupAliasIdId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.DeleteIdentityGroupAliasIdId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/group-alias/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -449,7 +449,7 @@ func (a *IdentityApiService) DeleteIdentityGroupAliasIdIdExecute(r ApiDeleteIden
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -503,20 +503,20 @@ func (a *IdentityApiService) DeleteIdentityGroupIdId(ctx context.Context, id str
 }
 
 // Execute executes the request
-func (a *IdentityApiService) DeleteIdentityGroupIdIdExecute(r ApiDeleteIdentityGroupIdIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) DeleteIdentityGroupIdIdExecute(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityGroupIdId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.DeleteIdentityGroupIdId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/group/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -539,7 +539,7 @@ func (a *IdentityApiService) DeleteIdentityGroupIdIdExecute(r ApiDeleteIdentityG
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -593,20 +593,20 @@ func (a *IdentityApiService) DeleteIdentityGroupNameName(ctx context.Context, na
 }
 
 // Execute executes the request
-func (a *IdentityApiService) DeleteIdentityGroupNameNameExecute(r ApiDeleteIdentityGroupNameNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) DeleteIdentityGroupNameNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityGroupNameName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.DeleteIdentityGroupNameName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/group/name/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -629,7 +629,7 @@ func (a *IdentityApiService) DeleteIdentityGroupNameNameExecute(r ApiDeleteIdent
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -683,20 +683,20 @@ func (a *IdentityApiService) DeleteIdentityMfaLoginEnforcementName(ctx context.C
 }
 
 // Execute executes the request
-func (a *IdentityApiService) DeleteIdentityMfaLoginEnforcementNameExecute(r ApiDeleteIdentityMfaLoginEnforcementNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) DeleteIdentityMfaLoginEnforcementNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityMfaLoginEnforcementName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.DeleteIdentityMfaLoginEnforcementName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/mfa/login-enforcement/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -719,7 +719,7 @@ func (a *IdentityApiService) DeleteIdentityMfaLoginEnforcementNameExecute(r ApiD
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -773,20 +773,20 @@ func (a *IdentityApiService) DeleteIdentityMfaMethodDuoMethodId(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *IdentityApiService) DeleteIdentityMfaMethodDuoMethodIdExecute(r ApiDeleteIdentityMfaMethodDuoMethodIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) DeleteIdentityMfaMethodDuoMethodIdExecute(ctx context.Context, methodId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityMfaMethodDuoMethodId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.DeleteIdentityMfaMethodDuoMethodId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/mfa/method/duo/{method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(r.methodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -809,7 +809,7 @@ func (a *IdentityApiService) DeleteIdentityMfaMethodDuoMethodIdExecute(r ApiDele
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -863,20 +863,20 @@ func (a *IdentityApiService) DeleteIdentityMfaMethodOktaMethodId(ctx context.Con
 }
 
 // Execute executes the request
-func (a *IdentityApiService) DeleteIdentityMfaMethodOktaMethodIdExecute(r ApiDeleteIdentityMfaMethodOktaMethodIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) DeleteIdentityMfaMethodOktaMethodIdExecute(ctx context.Context, methodId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityMfaMethodOktaMethodId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.DeleteIdentityMfaMethodOktaMethodId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/mfa/method/okta/{method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(r.methodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -899,7 +899,7 @@ func (a *IdentityApiService) DeleteIdentityMfaMethodOktaMethodIdExecute(r ApiDel
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -953,20 +953,20 @@ func (a *IdentityApiService) DeleteIdentityMfaMethodPingidMethodId(ctx context.C
 }
 
 // Execute executes the request
-func (a *IdentityApiService) DeleteIdentityMfaMethodPingidMethodIdExecute(r ApiDeleteIdentityMfaMethodPingidMethodIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) DeleteIdentityMfaMethodPingidMethodIdExecute(ctx context.Context, methodId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityMfaMethodPingidMethodId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.DeleteIdentityMfaMethodPingidMethodId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/mfa/method/pingid/{method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(r.methodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -989,7 +989,7 @@ func (a *IdentityApiService) DeleteIdentityMfaMethodPingidMethodIdExecute(r ApiD
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1043,20 +1043,20 @@ func (a *IdentityApiService) DeleteIdentityMfaMethodTotpMethodId(ctx context.Con
 }
 
 // Execute executes the request
-func (a *IdentityApiService) DeleteIdentityMfaMethodTotpMethodIdExecute(r ApiDeleteIdentityMfaMethodTotpMethodIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) DeleteIdentityMfaMethodTotpMethodIdExecute(ctx context.Context, methodId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityMfaMethodTotpMethodId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.DeleteIdentityMfaMethodTotpMethodId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/mfa/method/totp/{method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(r.methodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1079,7 +1079,7 @@ func (a *IdentityApiService) DeleteIdentityMfaMethodTotpMethodIdExecute(r ApiDel
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1133,20 +1133,20 @@ func (a *IdentityApiService) DeleteIdentityOidcAssignmentName(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *IdentityApiService) DeleteIdentityOidcAssignmentNameExecute(r ApiDeleteIdentityOidcAssignmentNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) DeleteIdentityOidcAssignmentNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityOidcAssignmentName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.DeleteIdentityOidcAssignmentName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/oidc/assignment/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1169,7 +1169,7 @@ func (a *IdentityApiService) DeleteIdentityOidcAssignmentNameExecute(r ApiDelete
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1223,20 +1223,20 @@ func (a *IdentityApiService) DeleteIdentityOidcClientName(ctx context.Context, n
 }
 
 // Execute executes the request
-func (a *IdentityApiService) DeleteIdentityOidcClientNameExecute(r ApiDeleteIdentityOidcClientNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) DeleteIdentityOidcClientNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityOidcClientName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.DeleteIdentityOidcClientName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/oidc/client/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1259,7 +1259,7 @@ func (a *IdentityApiService) DeleteIdentityOidcClientNameExecute(r ApiDeleteIden
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1313,20 +1313,20 @@ func (a *IdentityApiService) DeleteIdentityOidcKeyName(ctx context.Context, name
 }
 
 // Execute executes the request
-func (a *IdentityApiService) DeleteIdentityOidcKeyNameExecute(r ApiDeleteIdentityOidcKeyNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) DeleteIdentityOidcKeyNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityOidcKeyName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.DeleteIdentityOidcKeyName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/oidc/key/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1349,7 +1349,7 @@ func (a *IdentityApiService) DeleteIdentityOidcKeyNameExecute(r ApiDeleteIdentit
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1403,20 +1403,20 @@ func (a *IdentityApiService) DeleteIdentityOidcProviderName(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *IdentityApiService) DeleteIdentityOidcProviderNameExecute(r ApiDeleteIdentityOidcProviderNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) DeleteIdentityOidcProviderNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityOidcProviderName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.DeleteIdentityOidcProviderName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/oidc/provider/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1439,7 +1439,7 @@ func (a *IdentityApiService) DeleteIdentityOidcProviderNameExecute(r ApiDeleteId
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1493,20 +1493,20 @@ func (a *IdentityApiService) DeleteIdentityOidcRoleName(ctx context.Context, nam
 }
 
 // Execute executes the request
-func (a *IdentityApiService) DeleteIdentityOidcRoleNameExecute(r ApiDeleteIdentityOidcRoleNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) DeleteIdentityOidcRoleNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityOidcRoleName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.DeleteIdentityOidcRoleName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/oidc/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1529,7 +1529,7 @@ func (a *IdentityApiService) DeleteIdentityOidcRoleNameExecute(r ApiDeleteIdenti
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1583,20 +1583,20 @@ func (a *IdentityApiService) DeleteIdentityOidcScopeName(ctx context.Context, na
 }
 
 // Execute executes the request
-func (a *IdentityApiService) DeleteIdentityOidcScopeNameExecute(r ApiDeleteIdentityOidcScopeNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) DeleteIdentityOidcScopeNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityOidcScopeName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.DeleteIdentityOidcScopeName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/oidc/scope/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1619,7 +1619,7 @@ func (a *IdentityApiService) DeleteIdentityOidcScopeNameExecute(r ApiDeleteIdent
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1673,20 +1673,20 @@ func (a *IdentityApiService) DeleteIdentityPersonaIdId(ctx context.Context, id s
 }
 
 // Execute executes the request
-func (a *IdentityApiService) DeleteIdentityPersonaIdIdExecute(r ApiDeleteIdentityPersonaIdIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) DeleteIdentityPersonaIdIdExecute(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.DeleteIdentityPersonaIdId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.DeleteIdentityPersonaIdId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/persona/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1709,7 +1709,7 @@ func (a *IdentityApiService) DeleteIdentityPersonaIdIdExecute(r ApiDeleteIdentit
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1767,14 +1767,14 @@ func (a *IdentityApiService) GetIdentityAliasId(ctx context.Context) ApiGetIdent
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityAliasIdExecute(r ApiGetIdentityAliasIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityAliasIdExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityAliasId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityAliasId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1784,11 +1784,8 @@ func (a *IdentityApiService) GetIdentityAliasIdExecute(r ApiGetIdentityAliasIdRe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -1806,7 +1803,7 @@ func (a *IdentityApiService) GetIdentityAliasIdExecute(r ApiGetIdentityAliasIdRe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1860,20 +1857,20 @@ func (a *IdentityApiService) GetIdentityAliasIdId(ctx context.Context, id string
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityAliasIdIdExecute(r ApiGetIdentityAliasIdIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityAliasIdIdExecute(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityAliasIdId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityAliasIdId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/alias/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1896,7 +1893,7 @@ func (a *IdentityApiService) GetIdentityAliasIdIdExecute(r ApiGetIdentityAliasId
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1954,14 +1951,14 @@ func (a *IdentityApiService) GetIdentityEntityAliasId(ctx context.Context) ApiGe
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityEntityAliasIdExecute(r ApiGetIdentityEntityAliasIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityEntityAliasIdExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityEntityAliasId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityEntityAliasId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1971,11 +1968,8 @@ func (a *IdentityApiService) GetIdentityEntityAliasIdExecute(r ApiGetIdentityEnt
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -1993,7 +1987,7 @@ func (a *IdentityApiService) GetIdentityEntityAliasIdExecute(r ApiGetIdentityEnt
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2047,20 +2041,20 @@ func (a *IdentityApiService) GetIdentityEntityAliasIdId(ctx context.Context, id 
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityEntityAliasIdIdExecute(r ApiGetIdentityEntityAliasIdIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityEntityAliasIdIdExecute(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityEntityAliasIdId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityEntityAliasIdId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/entity-alias/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2083,7 +2077,7 @@ func (a *IdentityApiService) GetIdentityEntityAliasIdIdExecute(r ApiGetIdentityE
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2141,14 +2135,14 @@ func (a *IdentityApiService) GetIdentityEntityId(ctx context.Context) ApiGetIden
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityEntityIdExecute(r ApiGetIdentityEntityIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityEntityIdExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityEntityId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityEntityId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2158,11 +2152,8 @@ func (a *IdentityApiService) GetIdentityEntityIdExecute(r ApiGetIdentityEntityId
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -2180,7 +2171,7 @@ func (a *IdentityApiService) GetIdentityEntityIdExecute(r ApiGetIdentityEntityId
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2234,20 +2225,20 @@ func (a *IdentityApiService) GetIdentityEntityIdId(ctx context.Context, id strin
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityEntityIdIdExecute(r ApiGetIdentityEntityIdIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityEntityIdIdExecute(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityEntityIdId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityEntityIdId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/entity/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2270,7 +2261,7 @@ func (a *IdentityApiService) GetIdentityEntityIdIdExecute(r ApiGetIdentityEntity
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2328,14 +2319,14 @@ func (a *IdentityApiService) GetIdentityEntityName(ctx context.Context) ApiGetId
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityEntityNameExecute(r ApiGetIdentityEntityNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityEntityNameExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityEntityName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityEntityName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2345,11 +2336,8 @@ func (a *IdentityApiService) GetIdentityEntityNameExecute(r ApiGetIdentityEntity
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -2367,7 +2355,7 @@ func (a *IdentityApiService) GetIdentityEntityNameExecute(r ApiGetIdentityEntity
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2421,20 +2409,20 @@ func (a *IdentityApiService) GetIdentityEntityNameName(ctx context.Context, name
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityEntityNameNameExecute(r ApiGetIdentityEntityNameNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityEntityNameNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityEntityNameName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityEntityNameName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/entity/name/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2457,7 +2445,7 @@ func (a *IdentityApiService) GetIdentityEntityNameNameExecute(r ApiGetIdentityEn
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2515,14 +2503,14 @@ func (a *IdentityApiService) GetIdentityGroupAliasId(ctx context.Context) ApiGet
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityGroupAliasIdExecute(r ApiGetIdentityGroupAliasIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityGroupAliasIdExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityGroupAliasId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityGroupAliasId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2532,11 +2520,8 @@ func (a *IdentityApiService) GetIdentityGroupAliasIdExecute(r ApiGetIdentityGrou
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -2554,7 +2539,7 @@ func (a *IdentityApiService) GetIdentityGroupAliasIdExecute(r ApiGetIdentityGrou
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2608,20 +2593,20 @@ func (a *IdentityApiService) GetIdentityGroupAliasIdId(ctx context.Context, id s
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityGroupAliasIdIdExecute(r ApiGetIdentityGroupAliasIdIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityGroupAliasIdIdExecute(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityGroupAliasIdId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityGroupAliasIdId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/group-alias/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2644,7 +2629,7 @@ func (a *IdentityApiService) GetIdentityGroupAliasIdIdExecute(r ApiGetIdentityGr
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2702,14 +2687,14 @@ func (a *IdentityApiService) GetIdentityGroupId(ctx context.Context) ApiGetIdent
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityGroupIdExecute(r ApiGetIdentityGroupIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityGroupIdExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityGroupId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityGroupId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2719,11 +2704,8 @@ func (a *IdentityApiService) GetIdentityGroupIdExecute(r ApiGetIdentityGroupIdRe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -2741,7 +2723,7 @@ func (a *IdentityApiService) GetIdentityGroupIdExecute(r ApiGetIdentityGroupIdRe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2795,20 +2777,20 @@ func (a *IdentityApiService) GetIdentityGroupIdId(ctx context.Context, id string
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityGroupIdIdExecute(r ApiGetIdentityGroupIdIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityGroupIdIdExecute(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityGroupIdId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityGroupIdId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/group/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2831,7 +2813,7 @@ func (a *IdentityApiService) GetIdentityGroupIdIdExecute(r ApiGetIdentityGroupId
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2889,14 +2871,14 @@ func (a *IdentityApiService) GetIdentityGroupName(ctx context.Context) ApiGetIde
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityGroupNameExecute(r ApiGetIdentityGroupNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityGroupNameExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityGroupName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityGroupName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2906,11 +2888,8 @@ func (a *IdentityApiService) GetIdentityGroupNameExecute(r ApiGetIdentityGroupNa
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -2928,7 +2907,7 @@ func (a *IdentityApiService) GetIdentityGroupNameExecute(r ApiGetIdentityGroupNa
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2982,20 +2961,20 @@ func (a *IdentityApiService) GetIdentityGroupNameName(ctx context.Context, name 
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityGroupNameNameExecute(r ApiGetIdentityGroupNameNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityGroupNameNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityGroupNameName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityGroupNameName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/group/name/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3018,7 +2997,7 @@ func (a *IdentityApiService) GetIdentityGroupNameNameExecute(r ApiGetIdentityGro
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3076,14 +3055,14 @@ func (a *IdentityApiService) GetIdentityMfaLoginEnforcement(ctx context.Context)
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityMfaLoginEnforcementExecute(r ApiGetIdentityMfaLoginEnforcementRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityMfaLoginEnforcementExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityMfaLoginEnforcement")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityMfaLoginEnforcement")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3093,11 +3072,8 @@ func (a *IdentityApiService) GetIdentityMfaLoginEnforcementExecute(r ApiGetIdent
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -3115,7 +3091,7 @@ func (a *IdentityApiService) GetIdentityMfaLoginEnforcementExecute(r ApiGetIdent
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3169,20 +3145,20 @@ func (a *IdentityApiService) GetIdentityMfaLoginEnforcementName(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityMfaLoginEnforcementNameExecute(r ApiGetIdentityMfaLoginEnforcementNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityMfaLoginEnforcementNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityMfaLoginEnforcementName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityMfaLoginEnforcementName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/mfa/login-enforcement/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3205,7 +3181,7 @@ func (a *IdentityApiService) GetIdentityMfaLoginEnforcementNameExecute(r ApiGetI
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3263,14 +3239,14 @@ func (a *IdentityApiService) GetIdentityMfaMethod(ctx context.Context) ApiGetIde
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityMfaMethodExecute(r ApiGetIdentityMfaMethodRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityMfaMethodExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityMfaMethod")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityMfaMethod")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3280,11 +3256,8 @@ func (a *IdentityApiService) GetIdentityMfaMethodExecute(r ApiGetIdentityMfaMeth
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -3302,7 +3275,7 @@ func (a *IdentityApiService) GetIdentityMfaMethodExecute(r ApiGetIdentityMfaMeth
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3360,14 +3333,14 @@ func (a *IdentityApiService) GetIdentityMfaMethodDuo(ctx context.Context) ApiGet
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityMfaMethodDuoExecute(r ApiGetIdentityMfaMethodDuoRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityMfaMethodDuoExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityMfaMethodDuo")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityMfaMethodDuo")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3377,11 +3350,8 @@ func (a *IdentityApiService) GetIdentityMfaMethodDuoExecute(r ApiGetIdentityMfaM
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -3399,7 +3369,7 @@ func (a *IdentityApiService) GetIdentityMfaMethodDuoExecute(r ApiGetIdentityMfaM
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3453,20 +3423,20 @@ func (a *IdentityApiService) GetIdentityMfaMethodDuoMethodId(ctx context.Context
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityMfaMethodDuoMethodIdExecute(r ApiGetIdentityMfaMethodDuoMethodIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityMfaMethodDuoMethodIdExecute(ctx context.Context, methodId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityMfaMethodDuoMethodId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityMfaMethodDuoMethodId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/mfa/method/duo/{method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(r.methodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3489,7 +3459,7 @@ func (a *IdentityApiService) GetIdentityMfaMethodDuoMethodIdExecute(r ApiGetIden
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3543,20 +3513,20 @@ func (a *IdentityApiService) GetIdentityMfaMethodMethodId(ctx context.Context, m
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityMfaMethodMethodIdExecute(r ApiGetIdentityMfaMethodMethodIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityMfaMethodMethodIdExecute(ctx context.Context, methodId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityMfaMethodMethodId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityMfaMethodMethodId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/mfa/method/{method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(r.methodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3579,7 +3549,7 @@ func (a *IdentityApiService) GetIdentityMfaMethodMethodIdExecute(r ApiGetIdentit
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3637,14 +3607,14 @@ func (a *IdentityApiService) GetIdentityMfaMethodOkta(ctx context.Context) ApiGe
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityMfaMethodOktaExecute(r ApiGetIdentityMfaMethodOktaRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityMfaMethodOktaExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityMfaMethodOkta")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityMfaMethodOkta")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3654,11 +3624,8 @@ func (a *IdentityApiService) GetIdentityMfaMethodOktaExecute(r ApiGetIdentityMfa
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -3676,7 +3643,7 @@ func (a *IdentityApiService) GetIdentityMfaMethodOktaExecute(r ApiGetIdentityMfa
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3730,20 +3697,20 @@ func (a *IdentityApiService) GetIdentityMfaMethodOktaMethodId(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityMfaMethodOktaMethodIdExecute(r ApiGetIdentityMfaMethodOktaMethodIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityMfaMethodOktaMethodIdExecute(ctx context.Context, methodId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityMfaMethodOktaMethodId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityMfaMethodOktaMethodId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/mfa/method/okta/{method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(r.methodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3766,7 +3733,7 @@ func (a *IdentityApiService) GetIdentityMfaMethodOktaMethodIdExecute(r ApiGetIde
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3824,14 +3791,14 @@ func (a *IdentityApiService) GetIdentityMfaMethodPingid(ctx context.Context) Api
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityMfaMethodPingidExecute(r ApiGetIdentityMfaMethodPingidRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityMfaMethodPingidExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityMfaMethodPingid")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityMfaMethodPingid")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3841,11 +3808,8 @@ func (a *IdentityApiService) GetIdentityMfaMethodPingidExecute(r ApiGetIdentityM
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -3863,7 +3827,7 @@ func (a *IdentityApiService) GetIdentityMfaMethodPingidExecute(r ApiGetIdentityM
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3917,20 +3881,20 @@ func (a *IdentityApiService) GetIdentityMfaMethodPingidMethodId(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityMfaMethodPingidMethodIdExecute(r ApiGetIdentityMfaMethodPingidMethodIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityMfaMethodPingidMethodIdExecute(ctx context.Context, methodId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityMfaMethodPingidMethodId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityMfaMethodPingidMethodId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/mfa/method/pingid/{method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(r.methodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3953,7 +3917,7 @@ func (a *IdentityApiService) GetIdentityMfaMethodPingidMethodIdExecute(r ApiGetI
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4011,14 +3975,14 @@ func (a *IdentityApiService) GetIdentityMfaMethodTotp(ctx context.Context) ApiGe
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityMfaMethodTotpExecute(r ApiGetIdentityMfaMethodTotpRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityMfaMethodTotpExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityMfaMethodTotp")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityMfaMethodTotp")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4028,11 +3992,8 @@ func (a *IdentityApiService) GetIdentityMfaMethodTotpExecute(r ApiGetIdentityMfa
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -4050,7 +4011,7 @@ func (a *IdentityApiService) GetIdentityMfaMethodTotpExecute(r ApiGetIdentityMfa
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4104,20 +4065,20 @@ func (a *IdentityApiService) GetIdentityMfaMethodTotpMethodId(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityMfaMethodTotpMethodIdExecute(r ApiGetIdentityMfaMethodTotpMethodIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityMfaMethodTotpMethodIdExecute(ctx context.Context, methodId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityMfaMethodTotpMethodId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityMfaMethodTotpMethodId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/mfa/method/totp/{method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(r.methodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4140,7 +4101,7 @@ func (a *IdentityApiService) GetIdentityMfaMethodTotpMethodIdExecute(r ApiGetIde
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4198,14 +4159,14 @@ func (a *IdentityApiService) GetIdentityOidcAssignment(ctx context.Context) ApiG
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityOidcAssignmentExecute(r ApiGetIdentityOidcAssignmentRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityOidcAssignmentExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcAssignment")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityOidcAssignment")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4215,11 +4176,8 @@ func (a *IdentityApiService) GetIdentityOidcAssignmentExecute(r ApiGetIdentityOi
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -4237,7 +4195,7 @@ func (a *IdentityApiService) GetIdentityOidcAssignmentExecute(r ApiGetIdentityOi
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4291,20 +4249,20 @@ func (a *IdentityApiService) GetIdentityOidcAssignmentName(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityOidcAssignmentNameExecute(r ApiGetIdentityOidcAssignmentNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityOidcAssignmentNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcAssignmentName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityOidcAssignmentName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/oidc/assignment/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4327,7 +4285,7 @@ func (a *IdentityApiService) GetIdentityOidcAssignmentNameExecute(r ApiGetIdenti
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4385,14 +4343,14 @@ func (a *IdentityApiService) GetIdentityOidcClient(ctx context.Context) ApiGetId
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityOidcClientExecute(r ApiGetIdentityOidcClientRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityOidcClientExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcClient")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityOidcClient")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4402,11 +4360,8 @@ func (a *IdentityApiService) GetIdentityOidcClientExecute(r ApiGetIdentityOidcCl
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -4424,7 +4379,7 @@ func (a *IdentityApiService) GetIdentityOidcClientExecute(r ApiGetIdentityOidcCl
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4478,20 +4433,20 @@ func (a *IdentityApiService) GetIdentityOidcClientName(ctx context.Context, name
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityOidcClientNameExecute(r ApiGetIdentityOidcClientNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityOidcClientNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcClientName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityOidcClientName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/oidc/client/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4514,7 +4469,7 @@ func (a *IdentityApiService) GetIdentityOidcClientNameExecute(r ApiGetIdentityOi
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4565,14 +4520,14 @@ func (a *IdentityApiService) GetIdentityOidcConfig(ctx context.Context) ApiGetId
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityOidcConfigExecute(r ApiGetIdentityOidcConfigRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityOidcConfigExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityOidcConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4600,7 +4555,7 @@ func (a *IdentityApiService) GetIdentityOidcConfigExecute(r ApiGetIdentityOidcCo
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4658,14 +4613,14 @@ func (a *IdentityApiService) GetIdentityOidcKey(ctx context.Context) ApiGetIdent
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityOidcKeyExecute(r ApiGetIdentityOidcKeyRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityOidcKeyExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityOidcKey")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4675,11 +4630,8 @@ func (a *IdentityApiService) GetIdentityOidcKeyExecute(r ApiGetIdentityOidcKeyRe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -4697,7 +4649,7 @@ func (a *IdentityApiService) GetIdentityOidcKeyExecute(r ApiGetIdentityOidcKeyRe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4751,20 +4703,20 @@ func (a *IdentityApiService) GetIdentityOidcKeyName(ctx context.Context, name st
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityOidcKeyNameExecute(r ApiGetIdentityOidcKeyNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityOidcKeyNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcKeyName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityOidcKeyName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/oidc/key/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4787,7 +4739,7 @@ func (a *IdentityApiService) GetIdentityOidcKeyNameExecute(r ApiGetIdentityOidcK
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4845,14 +4797,14 @@ func (a *IdentityApiService) GetIdentityOidcProvider(ctx context.Context) ApiGet
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityOidcProviderExecute(r ApiGetIdentityOidcProviderRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityOidcProviderExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcProvider")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityOidcProvider")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4862,11 +4814,8 @@ func (a *IdentityApiService) GetIdentityOidcProviderExecute(r ApiGetIdentityOidc
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -4884,7 +4833,7 @@ func (a *IdentityApiService) GetIdentityOidcProviderExecute(r ApiGetIdentityOidc
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4938,20 +4887,20 @@ func (a *IdentityApiService) GetIdentityOidcProviderName(ctx context.Context, na
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityOidcProviderNameExecute(r ApiGetIdentityOidcProviderNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityOidcProviderNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcProviderName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityOidcProviderName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/oidc/provider/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4974,7 +4923,7 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameExecute(r ApiGetIdentity
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5028,20 +4977,20 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameAuthorize(ctx context.Co
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityOidcProviderNameAuthorizeExecute(r ApiGetIdentityOidcProviderNameAuthorizeRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityOidcProviderNameAuthorizeExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcProviderNameAuthorize")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityOidcProviderNameAuthorize")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/oidc/provider/{name}/authorize"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5064,7 +5013,7 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameAuthorizeExecute(r ApiGe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5118,20 +5067,20 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameUserinfo(ctx context.Con
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityOidcProviderNameUserinfoExecute(r ApiGetIdentityOidcProviderNameUserinfoRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityOidcProviderNameUserinfoExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcProviderNameUserinfo")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityOidcProviderNameUserinfo")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/oidc/provider/{name}/userinfo"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5154,7 +5103,7 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameUserinfoExecute(r ApiGet
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5208,20 +5157,20 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameWellKnownKeys(ctx contex
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityOidcProviderNameWellKnownKeysExecute(r ApiGetIdentityOidcProviderNameWellKnownKeysRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityOidcProviderNameWellKnownKeysExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcProviderNameWellKnownKeys")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityOidcProviderNameWellKnownKeys")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/oidc/provider/{name}/.well-known/keys"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5244,7 +5193,7 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameWellKnownKeysExecute(r A
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5298,20 +5247,20 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameWellKnownOpenidConfigura
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityOidcProviderNameWellKnownOpenidConfigurationExecute(r ApiGetIdentityOidcProviderNameWellKnownOpenidConfigurationRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityOidcProviderNameWellKnownOpenidConfigurationExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcProviderNameWellKnownOpenidConfiguration")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityOidcProviderNameWellKnownOpenidConfiguration")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/oidc/provider/{name}/.well-known/openid-configuration"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5334,7 +5283,7 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameWellKnownOpenidConfigura
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5392,14 +5341,14 @@ func (a *IdentityApiService) GetIdentityOidcRole(ctx context.Context) ApiGetIden
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityOidcRoleExecute(r ApiGetIdentityOidcRoleRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityOidcRoleExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityOidcRole")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5409,11 +5358,8 @@ func (a *IdentityApiService) GetIdentityOidcRoleExecute(r ApiGetIdentityOidcRole
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -5431,7 +5377,7 @@ func (a *IdentityApiService) GetIdentityOidcRoleExecute(r ApiGetIdentityOidcRole
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5485,20 +5431,20 @@ func (a *IdentityApiService) GetIdentityOidcRoleName(ctx context.Context, name s
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityOidcRoleNameExecute(r ApiGetIdentityOidcRoleNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityOidcRoleNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcRoleName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityOidcRoleName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/oidc/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5521,7 +5467,7 @@ func (a *IdentityApiService) GetIdentityOidcRoleNameExecute(r ApiGetIdentityOidc
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5579,14 +5525,14 @@ func (a *IdentityApiService) GetIdentityOidcScope(ctx context.Context) ApiGetIde
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityOidcScopeExecute(r ApiGetIdentityOidcScopeRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityOidcScopeExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcScope")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityOidcScope")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5596,11 +5542,8 @@ func (a *IdentityApiService) GetIdentityOidcScopeExecute(r ApiGetIdentityOidcSco
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -5618,7 +5561,7 @@ func (a *IdentityApiService) GetIdentityOidcScopeExecute(r ApiGetIdentityOidcSco
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5672,20 +5615,20 @@ func (a *IdentityApiService) GetIdentityOidcScopeName(ctx context.Context, name 
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityOidcScopeNameExecute(r ApiGetIdentityOidcScopeNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityOidcScopeNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcScopeName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityOidcScopeName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/oidc/scope/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5708,7 +5651,7 @@ func (a *IdentityApiService) GetIdentityOidcScopeNameExecute(r ApiGetIdentityOid
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5762,20 +5705,20 @@ func (a *IdentityApiService) GetIdentityOidcTokenName(ctx context.Context, name 
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityOidcTokenNameExecute(r ApiGetIdentityOidcTokenNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityOidcTokenNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcTokenName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityOidcTokenName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/oidc/token/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5798,7 +5741,7 @@ func (a *IdentityApiService) GetIdentityOidcTokenNameExecute(r ApiGetIdentityOid
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5849,14 +5792,14 @@ func (a *IdentityApiService) GetIdentityOidcWellKnownKeys(ctx context.Context) A
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityOidcWellKnownKeysExecute(r ApiGetIdentityOidcWellKnownKeysRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityOidcWellKnownKeysExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcWellKnownKeys")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityOidcWellKnownKeys")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5884,7 +5827,7 @@ func (a *IdentityApiService) GetIdentityOidcWellKnownKeysExecute(r ApiGetIdentit
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5935,14 +5878,14 @@ func (a *IdentityApiService) GetIdentityOidcWellKnownOpenidConfiguration(ctx con
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityOidcWellKnownOpenidConfigurationExecute(r ApiGetIdentityOidcWellKnownOpenidConfigurationRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityOidcWellKnownOpenidConfigurationExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityOidcWellKnownOpenidConfiguration")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityOidcWellKnownOpenidConfiguration")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5970,7 +5913,7 @@ func (a *IdentityApiService) GetIdentityOidcWellKnownOpenidConfigurationExecute(
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6028,14 +5971,14 @@ func (a *IdentityApiService) GetIdentityPersonaId(ctx context.Context) ApiGetIde
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityPersonaIdExecute(r ApiGetIdentityPersonaIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityPersonaIdExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityPersonaId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityPersonaId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6045,11 +5988,8 @@ func (a *IdentityApiService) GetIdentityPersonaIdExecute(r ApiGetIdentityPersona
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -6067,7 +6007,7 @@ func (a *IdentityApiService) GetIdentityPersonaIdExecute(r ApiGetIdentityPersona
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6121,20 +6061,20 @@ func (a *IdentityApiService) GetIdentityPersonaIdId(ctx context.Context, id stri
 }
 
 // Execute executes the request
-func (a *IdentityApiService) GetIdentityPersonaIdIdExecute(r ApiGetIdentityPersonaIdIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) GetIdentityPersonaIdIdExecute(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.GetIdentityPersonaIdId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.GetIdentityPersonaIdId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/persona/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6157,7 +6097,7 @@ func (a *IdentityApiService) GetIdentityPersonaIdIdExecute(r ApiGetIdentityPerso
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6214,14 +6154,14 @@ func (a *IdentityApiService) PostIdentityAlias(ctx context.Context) ApiPostIdent
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityAliasExecute(r ApiPostIdentityAliasRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityAliasExecute(ctx context.Context, identityAliasRequest IdentityAliasRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityAlias")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityAlias")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6250,8 +6190,8 @@ func (a *IdentityApiService) PostIdentityAliasExecute(r ApiPostIdentityAliasRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityAliasRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityAliasRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6311,20 +6251,20 @@ func (a *IdentityApiService) PostIdentityAliasIdId(ctx context.Context, id strin
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityAliasIdIdExecute(r ApiPostIdentityAliasIdIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityAliasIdIdExecute(ctx context.Context, id string, identityAliasIdRequest IdentityAliasIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityAliasIdId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityAliasIdId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/alias/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6348,8 +6288,8 @@ func (a *IdentityApiService) PostIdentityAliasIdIdExecute(r ApiPostIdentityAlias
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityAliasIdRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityAliasIdRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6406,14 +6346,14 @@ func (a *IdentityApiService) PostIdentityEntity(ctx context.Context) ApiPostIden
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityEntityExecute(r ApiPostIdentityEntityRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityEntityExecute(ctx context.Context, identityEntityRequest IdentityEntityRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityEntity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityEntity")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6442,8 +6382,8 @@ func (a *IdentityApiService) PostIdentityEntityExecute(r ApiPostIdentityEntityRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityEntityRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityEntityRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6500,14 +6440,14 @@ func (a *IdentityApiService) PostIdentityEntityAlias(ctx context.Context) ApiPos
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityEntityAliasExecute(r ApiPostIdentityEntityAliasRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityEntityAliasExecute(ctx context.Context, identityEntityAliasRequest IdentityEntityAliasRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityEntityAlias")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityEntityAlias")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6536,8 +6476,8 @@ func (a *IdentityApiService) PostIdentityEntityAliasExecute(r ApiPostIdentityEnt
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityEntityAliasRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityEntityAliasRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6597,20 +6537,20 @@ func (a *IdentityApiService) PostIdentityEntityAliasIdId(ctx context.Context, id
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityEntityAliasIdIdExecute(r ApiPostIdentityEntityAliasIdIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityEntityAliasIdIdExecute(ctx context.Context, id string, identityEntityAliasIdRequest IdentityEntityAliasIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityEntityAliasIdId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityEntityAliasIdId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/entity-alias/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6634,8 +6574,8 @@ func (a *IdentityApiService) PostIdentityEntityAliasIdIdExecute(r ApiPostIdentit
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityEntityAliasIdRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityEntityAliasIdRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6692,14 +6632,14 @@ func (a *IdentityApiService) PostIdentityEntityBatchDelete(ctx context.Context) 
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityEntityBatchDeleteExecute(r ApiPostIdentityEntityBatchDeleteRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityEntityBatchDeleteExecute(ctx context.Context, identityEntityBatchDeleteRequest IdentityEntityBatchDeleteRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityEntityBatchDelete")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityEntityBatchDelete")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6728,8 +6668,8 @@ func (a *IdentityApiService) PostIdentityEntityBatchDeleteExecute(r ApiPostIdent
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityEntityBatchDeleteRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityEntityBatchDeleteRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6789,20 +6729,20 @@ func (a *IdentityApiService) PostIdentityEntityIdId(ctx context.Context, id stri
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityEntityIdIdExecute(r ApiPostIdentityEntityIdIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityEntityIdIdExecute(ctx context.Context, id string, identityEntityIdRequest IdentityEntityIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityEntityIdId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityEntityIdId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/entity/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6826,8 +6766,8 @@ func (a *IdentityApiService) PostIdentityEntityIdIdExecute(r ApiPostIdentityEnti
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityEntityIdRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityEntityIdRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6884,14 +6824,14 @@ func (a *IdentityApiService) PostIdentityEntityMerge(ctx context.Context) ApiPos
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityEntityMergeExecute(r ApiPostIdentityEntityMergeRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityEntityMergeExecute(ctx context.Context, identityEntityMergeRequest IdentityEntityMergeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityEntityMerge")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityEntityMerge")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6920,8 +6860,8 @@ func (a *IdentityApiService) PostIdentityEntityMergeExecute(r ApiPostIdentityEnt
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityEntityMergeRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityEntityMergeRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6981,20 +6921,20 @@ func (a *IdentityApiService) PostIdentityEntityNameName(ctx context.Context, nam
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityEntityNameNameExecute(r ApiPostIdentityEntityNameNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityEntityNameNameExecute(ctx context.Context, name string, identityEntityNameRequest IdentityEntityNameRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityEntityNameName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityEntityNameName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/entity/name/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7018,8 +6958,8 @@ func (a *IdentityApiService) PostIdentityEntityNameNameExecute(r ApiPostIdentity
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityEntityNameRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityEntityNameRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7076,14 +7016,14 @@ func (a *IdentityApiService) PostIdentityGroup(ctx context.Context) ApiPostIdent
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityGroupExecute(r ApiPostIdentityGroupRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityGroupExecute(ctx context.Context, identityGroupRequest IdentityGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityGroup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7112,8 +7052,8 @@ func (a *IdentityApiService) PostIdentityGroupExecute(r ApiPostIdentityGroupRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityGroupRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityGroupRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7170,14 +7110,14 @@ func (a *IdentityApiService) PostIdentityGroupAlias(ctx context.Context) ApiPost
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityGroupAliasExecute(r ApiPostIdentityGroupAliasRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityGroupAliasExecute(ctx context.Context, identityGroupAliasRequest IdentityGroupAliasRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityGroupAlias")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityGroupAlias")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7206,8 +7146,8 @@ func (a *IdentityApiService) PostIdentityGroupAliasExecute(r ApiPostIdentityGrou
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityGroupAliasRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityGroupAliasRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7267,20 +7207,20 @@ func (a *IdentityApiService) PostIdentityGroupAliasIdId(ctx context.Context, id 
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityGroupAliasIdIdExecute(r ApiPostIdentityGroupAliasIdIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityGroupAliasIdIdExecute(ctx context.Context, id string, identityGroupAliasIdRequest IdentityGroupAliasIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityGroupAliasIdId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityGroupAliasIdId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/group-alias/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7304,8 +7244,8 @@ func (a *IdentityApiService) PostIdentityGroupAliasIdIdExecute(r ApiPostIdentity
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityGroupAliasIdRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityGroupAliasIdRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7365,20 +7305,20 @@ func (a *IdentityApiService) PostIdentityGroupIdId(ctx context.Context, id strin
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityGroupIdIdExecute(r ApiPostIdentityGroupIdIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityGroupIdIdExecute(ctx context.Context, id string, identityGroupIdRequest IdentityGroupIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityGroupIdId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityGroupIdId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/group/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7402,8 +7342,8 @@ func (a *IdentityApiService) PostIdentityGroupIdIdExecute(r ApiPostIdentityGroup
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityGroupIdRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityGroupIdRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7463,20 +7403,20 @@ func (a *IdentityApiService) PostIdentityGroupNameName(ctx context.Context, name
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityGroupNameNameExecute(r ApiPostIdentityGroupNameNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityGroupNameNameExecute(ctx context.Context, name string, identityGroupNameRequest IdentityGroupNameRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityGroupNameName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityGroupNameName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/group/name/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7500,8 +7440,8 @@ func (a *IdentityApiService) PostIdentityGroupNameNameExecute(r ApiPostIdentityG
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityGroupNameRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityGroupNameRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7558,14 +7498,14 @@ func (a *IdentityApiService) PostIdentityLookupEntity(ctx context.Context) ApiPo
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityLookupEntityExecute(r ApiPostIdentityLookupEntityRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityLookupEntityExecute(ctx context.Context, identityLookupEntityRequest IdentityLookupEntityRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityLookupEntity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityLookupEntity")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7594,8 +7534,8 @@ func (a *IdentityApiService) PostIdentityLookupEntityExecute(r ApiPostIdentityLo
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityLookupEntityRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityLookupEntityRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7652,14 +7592,14 @@ func (a *IdentityApiService) PostIdentityLookupGroup(ctx context.Context) ApiPos
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityLookupGroupExecute(r ApiPostIdentityLookupGroupRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityLookupGroupExecute(ctx context.Context, identityLookupGroupRequest IdentityLookupGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityLookupGroup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityLookupGroup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7688,8 +7628,8 @@ func (a *IdentityApiService) PostIdentityLookupGroupExecute(r ApiPostIdentityLoo
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityLookupGroupRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityLookupGroupRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7749,20 +7689,20 @@ func (a *IdentityApiService) PostIdentityMfaLoginEnforcementName(ctx context.Con
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityMfaLoginEnforcementNameExecute(r ApiPostIdentityMfaLoginEnforcementNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityMfaLoginEnforcementNameExecute(ctx context.Context, name string, identityMfaLoginEnforcementRequest IdentityMfaLoginEnforcementRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityMfaLoginEnforcementName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityMfaLoginEnforcementName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/mfa/login-enforcement/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7786,8 +7726,8 @@ func (a *IdentityApiService) PostIdentityMfaLoginEnforcementNameExecute(r ApiPos
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityMfaLoginEnforcementRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityMfaLoginEnforcementRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7847,20 +7787,20 @@ func (a *IdentityApiService) PostIdentityMfaMethodDuoMethodId(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityMfaMethodDuoMethodIdExecute(r ApiPostIdentityMfaMethodDuoMethodIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityMfaMethodDuoMethodIdExecute(ctx context.Context, methodId string, identityMfaMethodDuoRequest IdentityMfaMethodDuoRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityMfaMethodDuoMethodId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityMfaMethodDuoMethodId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/mfa/method/duo/{method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(r.methodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7884,8 +7824,8 @@ func (a *IdentityApiService) PostIdentityMfaMethodDuoMethodIdExecute(r ApiPostId
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityMfaMethodDuoRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityMfaMethodDuoRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7945,20 +7885,20 @@ func (a *IdentityApiService) PostIdentityMfaMethodOktaMethodId(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityMfaMethodOktaMethodIdExecute(r ApiPostIdentityMfaMethodOktaMethodIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityMfaMethodOktaMethodIdExecute(ctx context.Context, methodId string, identityMfaMethodOktaRequest IdentityMfaMethodOktaRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityMfaMethodOktaMethodId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityMfaMethodOktaMethodId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/mfa/method/okta/{method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(r.methodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7982,8 +7922,8 @@ func (a *IdentityApiService) PostIdentityMfaMethodOktaMethodIdExecute(r ApiPostI
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityMfaMethodOktaRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityMfaMethodOktaRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8043,20 +7983,20 @@ func (a *IdentityApiService) PostIdentityMfaMethodPingidMethodId(ctx context.Con
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityMfaMethodPingidMethodIdExecute(r ApiPostIdentityMfaMethodPingidMethodIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityMfaMethodPingidMethodIdExecute(ctx context.Context, methodId string, identityMfaMethodPingidRequest IdentityMfaMethodPingidRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityMfaMethodPingidMethodId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityMfaMethodPingidMethodId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/mfa/method/pingid/{method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(r.methodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8080,8 +8020,8 @@ func (a *IdentityApiService) PostIdentityMfaMethodPingidMethodIdExecute(r ApiPos
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityMfaMethodPingidRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityMfaMethodPingidRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8138,14 +8078,14 @@ func (a *IdentityApiService) PostIdentityMfaMethodTotpAdminDestroy(ctx context.C
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityMfaMethodTotpAdminDestroyExecute(r ApiPostIdentityMfaMethodTotpAdminDestroyRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityMfaMethodTotpAdminDestroyExecute(ctx context.Context, identityMfaMethodTotpAdminDestroyRequest IdentityMfaMethodTotpAdminDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityMfaMethodTotpAdminDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityMfaMethodTotpAdminDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8174,8 +8114,8 @@ func (a *IdentityApiService) PostIdentityMfaMethodTotpAdminDestroyExecute(r ApiP
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityMfaMethodTotpAdminDestroyRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityMfaMethodTotpAdminDestroyRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8232,14 +8172,14 @@ func (a *IdentityApiService) PostIdentityMfaMethodTotpAdminGenerate(ctx context.
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityMfaMethodTotpAdminGenerateExecute(r ApiPostIdentityMfaMethodTotpAdminGenerateRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityMfaMethodTotpAdminGenerateExecute(ctx context.Context, identityMfaMethodTotpAdminGenerateRequest IdentityMfaMethodTotpAdminGenerateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityMfaMethodTotpAdminGenerate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityMfaMethodTotpAdminGenerate")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8268,8 +8208,8 @@ func (a *IdentityApiService) PostIdentityMfaMethodTotpAdminGenerateExecute(r Api
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityMfaMethodTotpAdminGenerateRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityMfaMethodTotpAdminGenerateRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8326,14 +8266,14 @@ func (a *IdentityApiService) PostIdentityMfaMethodTotpGenerate(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityMfaMethodTotpGenerateExecute(r ApiPostIdentityMfaMethodTotpGenerateRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityMfaMethodTotpGenerateExecute(ctx context.Context, identityMfaMethodTotpGenerateRequest IdentityMfaMethodTotpGenerateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityMfaMethodTotpGenerate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityMfaMethodTotpGenerate")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8362,8 +8302,8 @@ func (a *IdentityApiService) PostIdentityMfaMethodTotpGenerateExecute(r ApiPostI
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityMfaMethodTotpGenerateRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityMfaMethodTotpGenerateRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8423,20 +8363,20 @@ func (a *IdentityApiService) PostIdentityMfaMethodTotpMethodId(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityMfaMethodTotpMethodIdExecute(r ApiPostIdentityMfaMethodTotpMethodIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityMfaMethodTotpMethodIdExecute(ctx context.Context, methodId string, identityMfaMethodTotpRequest IdentityMfaMethodTotpRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityMfaMethodTotpMethodId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityMfaMethodTotpMethodId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/mfa/method/totp/{method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(r.methodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8460,8 +8400,8 @@ func (a *IdentityApiService) PostIdentityMfaMethodTotpMethodIdExecute(r ApiPostI
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityMfaMethodTotpRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityMfaMethodTotpRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8521,20 +8461,20 @@ func (a *IdentityApiService) PostIdentityOidcAssignmentName(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityOidcAssignmentNameExecute(r ApiPostIdentityOidcAssignmentNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityOidcAssignmentNameExecute(ctx context.Context, name string, identityOidcAssignmentRequest IdentityOidcAssignmentRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityOidcAssignmentName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityOidcAssignmentName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/oidc/assignment/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8558,8 +8498,8 @@ func (a *IdentityApiService) PostIdentityOidcAssignmentNameExecute(r ApiPostIden
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityOidcAssignmentRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityOidcAssignmentRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8619,20 +8559,20 @@ func (a *IdentityApiService) PostIdentityOidcClientName(ctx context.Context, nam
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityOidcClientNameExecute(r ApiPostIdentityOidcClientNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityOidcClientNameExecute(ctx context.Context, name string, identityOidcClientRequest IdentityOidcClientRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityOidcClientName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityOidcClientName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/oidc/client/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8656,8 +8596,8 @@ func (a *IdentityApiService) PostIdentityOidcClientNameExecute(r ApiPostIdentity
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityOidcClientRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityOidcClientRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8714,14 +8654,14 @@ func (a *IdentityApiService) PostIdentityOidcConfig(ctx context.Context) ApiPost
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityOidcConfigExecute(r ApiPostIdentityOidcConfigRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityOidcConfigExecute(ctx context.Context, identityOidcConfigRequest IdentityOidcConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityOidcConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityOidcConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8750,8 +8690,8 @@ func (a *IdentityApiService) PostIdentityOidcConfigExecute(r ApiPostIdentityOidc
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityOidcConfigRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityOidcConfigRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8808,14 +8748,14 @@ func (a *IdentityApiService) PostIdentityOidcIntrospect(ctx context.Context) Api
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityOidcIntrospectExecute(r ApiPostIdentityOidcIntrospectRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityOidcIntrospectExecute(ctx context.Context, identityOidcIntrospectRequest IdentityOidcIntrospectRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityOidcIntrospect")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityOidcIntrospect")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8844,8 +8784,8 @@ func (a *IdentityApiService) PostIdentityOidcIntrospectExecute(r ApiPostIdentity
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityOidcIntrospectRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityOidcIntrospectRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8905,20 +8845,20 @@ func (a *IdentityApiService) PostIdentityOidcKeyName(ctx context.Context, name s
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityOidcKeyNameExecute(r ApiPostIdentityOidcKeyNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityOidcKeyNameExecute(ctx context.Context, name string, identityOidcKeyRequest IdentityOidcKeyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityOidcKeyName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityOidcKeyName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/oidc/key/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8942,8 +8882,8 @@ func (a *IdentityApiService) PostIdentityOidcKeyNameExecute(r ApiPostIdentityOid
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityOidcKeyRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityOidcKeyRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9003,20 +8943,20 @@ func (a *IdentityApiService) PostIdentityOidcKeyNameRotate(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityOidcKeyNameRotateExecute(r ApiPostIdentityOidcKeyNameRotateRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityOidcKeyNameRotateExecute(ctx context.Context, name string, identityOidcKeyRotateRequest IdentityOidcKeyRotateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityOidcKeyNameRotate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityOidcKeyNameRotate")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/oidc/key/{name}/rotate"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9040,8 +8980,8 @@ func (a *IdentityApiService) PostIdentityOidcKeyNameRotateExecute(r ApiPostIdent
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityOidcKeyRotateRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityOidcKeyRotateRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9101,20 +9041,20 @@ func (a *IdentityApiService) PostIdentityOidcProviderName(ctx context.Context, n
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityOidcProviderNameExecute(r ApiPostIdentityOidcProviderNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityOidcProviderNameExecute(ctx context.Context, name string, identityOidcProviderRequest IdentityOidcProviderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityOidcProviderName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityOidcProviderName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/oidc/provider/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9138,8 +9078,8 @@ func (a *IdentityApiService) PostIdentityOidcProviderNameExecute(r ApiPostIdenti
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityOidcProviderRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityOidcProviderRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9199,20 +9139,20 @@ func (a *IdentityApiService) PostIdentityOidcProviderNameAuthorize(ctx context.C
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityOidcProviderNameAuthorizeExecute(r ApiPostIdentityOidcProviderNameAuthorizeRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityOidcProviderNameAuthorizeExecute(ctx context.Context, name string, identityOidcProviderAuthorizeRequest IdentityOidcProviderAuthorizeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityOidcProviderNameAuthorize")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityOidcProviderNameAuthorize")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/oidc/provider/{name}/authorize"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9236,8 +9176,8 @@ func (a *IdentityApiService) PostIdentityOidcProviderNameAuthorizeExecute(r ApiP
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityOidcProviderAuthorizeRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityOidcProviderAuthorizeRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9297,20 +9237,20 @@ func (a *IdentityApiService) PostIdentityOidcProviderNameToken(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityOidcProviderNameTokenExecute(r ApiPostIdentityOidcProviderNameTokenRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityOidcProviderNameTokenExecute(ctx context.Context, name string, identityOidcProviderTokenRequest IdentityOidcProviderTokenRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityOidcProviderNameToken")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityOidcProviderNameToken")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/oidc/provider/{name}/token"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9334,8 +9274,8 @@ func (a *IdentityApiService) PostIdentityOidcProviderNameTokenExecute(r ApiPostI
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityOidcProviderTokenRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityOidcProviderTokenRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9389,20 +9329,20 @@ func (a *IdentityApiService) PostIdentityOidcProviderNameUserinfo(ctx context.Co
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityOidcProviderNameUserinfoExecute(r ApiPostIdentityOidcProviderNameUserinfoRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityOidcProviderNameUserinfoExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityOidcProviderNameUserinfo")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityOidcProviderNameUserinfo")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/oidc/provider/{name}/userinfo"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9425,7 +9365,7 @@ func (a *IdentityApiService) PostIdentityOidcProviderNameUserinfoExecute(r ApiPo
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9485,20 +9425,20 @@ func (a *IdentityApiService) PostIdentityOidcRoleName(ctx context.Context, name 
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityOidcRoleNameExecute(r ApiPostIdentityOidcRoleNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityOidcRoleNameExecute(ctx context.Context, name string, identityOidcRoleRequest IdentityOidcRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityOidcRoleName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityOidcRoleName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/oidc/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9522,8 +9462,8 @@ func (a *IdentityApiService) PostIdentityOidcRoleNameExecute(r ApiPostIdentityOi
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityOidcRoleRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityOidcRoleRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9583,20 +9523,20 @@ func (a *IdentityApiService) PostIdentityOidcScopeName(ctx context.Context, name
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityOidcScopeNameExecute(r ApiPostIdentityOidcScopeNameRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityOidcScopeNameExecute(ctx context.Context, name string, identityOidcScopeRequest IdentityOidcScopeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityOidcScopeName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityOidcScopeName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/oidc/scope/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9620,8 +9560,8 @@ func (a *IdentityApiService) PostIdentityOidcScopeNameExecute(r ApiPostIdentityO
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityOidcScopeRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityOidcScopeRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9678,14 +9618,14 @@ func (a *IdentityApiService) PostIdentityPersona(ctx context.Context) ApiPostIde
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityPersonaExecute(r ApiPostIdentityPersonaRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityPersonaExecute(ctx context.Context, identityPersonaRequest IdentityPersonaRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityPersona")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityPersona")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9714,8 +9654,8 @@ func (a *IdentityApiService) PostIdentityPersonaExecute(r ApiPostIdentityPersona
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityPersonaRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityPersonaRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9775,20 +9715,20 @@ func (a *IdentityApiService) PostIdentityPersonaIdId(ctx context.Context, id str
 }
 
 // Execute executes the request
-func (a *IdentityApiService) PostIdentityPersonaIdIdExecute(r ApiPostIdentityPersonaIdIdRequest) (*http.Response, error) {
+func (a *IdentityApiService) PostIdentityPersonaIdIdExecute(ctx context.Context, id string, identityPersonaIdRequest IdentityPersonaIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IdentityApiService.PostIdentityPersonaIdId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "IdentityApiService.PostIdentityPersonaIdId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/identity/persona/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9812,8 +9752,8 @@ func (a *IdentityApiService) PostIdentityPersonaIdIdExecute(r ApiPostIdentityPer
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.identityPersonaIdRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = identityPersonaIdRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}

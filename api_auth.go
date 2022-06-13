@@ -53,20 +53,20 @@ func (a *AuthApiService) DeleteAuthAlicloudRoleRole(ctx context.Context, role st
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAlicloudRoleRoleExecute(r ApiDeleteAuthAlicloudRoleRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAlicloudRoleRoleExecute(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAlicloudRoleRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthAlicloudRoleRole")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/alicloud/role/{role}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(r.role, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -89,7 +89,7 @@ func (a *AuthApiService) DeleteAuthAlicloudRoleRoleExecute(r ApiDeleteAuthAliclo
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -143,20 +143,20 @@ func (a *AuthApiService) DeleteAuthAppIdMapAppIdKey(ctx context.Context, key str
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAppIdMapAppIdKeyExecute(r ApiDeleteAuthAppIdMapAppIdKeyRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAppIdMapAppIdKeyExecute(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAppIdMapAppIdKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthAppIdMapAppIdKey")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/app-id/map/app-id/{key}"
-	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(r.key, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -179,7 +179,7 @@ func (a *AuthApiService) DeleteAuthAppIdMapAppIdKeyExecute(r ApiDeleteAuthAppIdM
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -233,20 +233,20 @@ func (a *AuthApiService) DeleteAuthAppIdMapUserIdKey(ctx context.Context, key st
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAppIdMapUserIdKeyExecute(r ApiDeleteAuthAppIdMapUserIdKeyRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAppIdMapUserIdKeyExecute(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAppIdMapUserIdKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthAppIdMapUserIdKey")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/app-id/map/user-id/{key}"
-	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(r.key, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -269,7 +269,7 @@ func (a *AuthApiService) DeleteAuthAppIdMapUserIdKeyExecute(r ApiDeleteAuthAppId
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -323,20 +323,20 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleName(ctx context.Context, role
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthApproleRoleRoleNameExecute(r ApiDeleteAuthApproleRoleRoleNameRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthApproleRoleRoleNameExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthApproleRoleRoleName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthApproleRoleRoleName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -359,7 +359,7 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameExecute(r ApiDeleteAuthApp
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -413,20 +413,20 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameBindSecretId(ctx context.C
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthApproleRoleRoleNameBindSecretIdExecute(r ApiDeleteAuthApproleRoleRoleNameBindSecretIdRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthApproleRoleRoleNameBindSecretIdExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameBindSecretId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameBindSecretId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/bind-secret-id"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -449,7 +449,7 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameBindSecretIdExecute(r ApiD
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -503,20 +503,20 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameBoundCidrList(ctx context.
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthApproleRoleRoleNameBoundCidrListExecute(r ApiDeleteAuthApproleRoleRoleNameBoundCidrListRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthApproleRoleRoleNameBoundCidrListExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameBoundCidrList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameBoundCidrList")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/bound-cidr-list"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -539,7 +539,7 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameBoundCidrListExecute(r Api
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -593,20 +593,20 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNamePeriod(ctx context.Context
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthApproleRoleRoleNamePeriodExecute(r ApiDeleteAuthApproleRoleRoleNamePeriodRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthApproleRoleRoleNamePeriodExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthApproleRoleRoleNamePeriod")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthApproleRoleRoleNamePeriod")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/period"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -629,7 +629,7 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNamePeriodExecute(r ApiDeleteA
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -683,20 +683,20 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNamePolicies(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthApproleRoleRoleNamePoliciesExecute(r ApiDeleteAuthApproleRoleRoleNamePoliciesRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthApproleRoleRoleNamePoliciesExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthApproleRoleRoleNamePolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthApproleRoleRoleNamePolicies")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/policies"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -719,7 +719,7 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNamePoliciesExecute(r ApiDelet
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -773,20 +773,20 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(ct
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroyExecute(r ApiDeleteAuthApproleRoleRoleNameSecretIdAccessorDestroyRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroyExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/secret-id-accessor/destroy"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -809,7 +809,7 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroyExe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -863,20 +863,20 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx con
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdBoundCidrsExecute(r ApiDeleteAuthApproleRoleRoleNameSecretIdBoundCidrsRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdBoundCidrsExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/secret-id-bound-cidrs"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -899,7 +899,7 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdBoundCidrsExecute(
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -953,20 +953,20 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdDestroy(ctx contex
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdDestroyExecute(r ApiDeleteAuthApproleRoleRoleNameSecretIdDestroyRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdDestroyExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameSecretIdDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameSecretIdDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/secret-id/destroy"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -989,7 +989,7 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdDestroyExecute(r A
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1043,20 +1043,20 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdNumUses(ctx contex
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdNumUsesExecute(r ApiDeleteAuthApproleRoleRoleNameSecretIdNumUsesRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdNumUsesExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameSecretIdNumUses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameSecretIdNumUses")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/secret-id-num-uses"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1079,7 +1079,7 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdNumUsesExecute(r A
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1133,20 +1133,20 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdTtl(ctx context.Co
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdTtlExecute(r ApiDeleteAuthApproleRoleRoleNameSecretIdTtlRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdTtlExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameSecretIdTtl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameSecretIdTtl")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/secret-id-ttl"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1169,7 +1169,7 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdTtlExecute(r ApiDe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1223,20 +1223,20 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenBoundCidrs(ctx contex
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenBoundCidrsExecute(r ApiDeleteAuthApproleRoleRoleNameTokenBoundCidrsRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenBoundCidrsExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameTokenBoundCidrs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameTokenBoundCidrs")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/token-bound-cidrs"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1259,7 +1259,7 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenBoundCidrsExecute(r A
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1313,20 +1313,20 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Co
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenMaxTtlExecute(r ApiDeleteAuthApproleRoleRoleNameTokenMaxTtlRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenMaxTtlExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameTokenMaxTtl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameTokenMaxTtl")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/token-max-ttl"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1349,7 +1349,7 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenMaxTtlExecute(r ApiDe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1403,20 +1403,20 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenNumUses(ctx context.C
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenNumUsesExecute(r ApiDeleteAuthApproleRoleRoleNameTokenNumUsesRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenNumUsesExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameTokenNumUses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameTokenNumUses")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/token-num-uses"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1439,7 +1439,7 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenNumUsesExecute(r ApiD
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1493,20 +1493,20 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenTtl(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenTtlExecute(r ApiDeleteAuthApproleRoleRoleNameTokenTtlRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenTtlExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameTokenTtl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthApproleRoleRoleNameTokenTtl")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/token-ttl"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1529,7 +1529,7 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenTtlExecute(r ApiDelet
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1583,20 +1583,20 @@ func (a *AuthApiService) DeleteAuthAwsConfigCertificateCertName(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAwsConfigCertificateCertNameExecute(r ApiDeleteAuthAwsConfigCertificateCertNameRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAwsConfigCertificateCertNameExecute(ctx context.Context, certName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAwsConfigCertificateCertName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthAwsConfigCertificateCertName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/aws/config/certificate/{cert_name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"cert_name"+"}", url.PathEscape(parameterToString(r.certName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"cert_name"+"}", url.PathEscape(parameterToString(certName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1619,7 +1619,7 @@ func (a *AuthApiService) DeleteAuthAwsConfigCertificateCertNameExecute(r ApiDele
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1670,14 +1670,14 @@ func (a *AuthApiService) DeleteAuthAwsConfigClient(ctx context.Context) ApiDelet
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAwsConfigClientExecute(r ApiDeleteAuthAwsConfigClientRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAwsConfigClientExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAwsConfigClient")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthAwsConfigClient")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1705,7 +1705,7 @@ func (a *AuthApiService) DeleteAuthAwsConfigClientExecute(r ApiDeleteAuthAwsConf
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1759,20 +1759,20 @@ func (a *AuthApiService) DeleteAuthAwsConfigStsAccountId(ctx context.Context, ac
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAwsConfigStsAccountIdExecute(r ApiDeleteAuthAwsConfigStsAccountIdRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAwsConfigStsAccountIdExecute(ctx context.Context, accountId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAwsConfigStsAccountId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthAwsConfigStsAccountId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/aws/config/sts/{account_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", url.PathEscape(parameterToString(r.accountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", url.PathEscape(parameterToString(accountId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1795,7 +1795,7 @@ func (a *AuthApiService) DeleteAuthAwsConfigStsAccountIdExecute(r ApiDeleteAuthA
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1846,14 +1846,14 @@ func (a *AuthApiService) DeleteAuthAwsConfigTidyIdentityAccesslist(ctx context.C
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAwsConfigTidyIdentityAccesslistExecute(r ApiDeleteAuthAwsConfigTidyIdentityAccesslistRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAwsConfigTidyIdentityAccesslistExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAwsConfigTidyIdentityAccesslist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthAwsConfigTidyIdentityAccesslist")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1881,7 +1881,7 @@ func (a *AuthApiService) DeleteAuthAwsConfigTidyIdentityAccesslistExecute(r ApiD
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1932,14 +1932,14 @@ func (a *AuthApiService) DeleteAuthAwsConfigTidyIdentityWhitelist(ctx context.Co
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAwsConfigTidyIdentityWhitelistExecute(r ApiDeleteAuthAwsConfigTidyIdentityWhitelistRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAwsConfigTidyIdentityWhitelistExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAwsConfigTidyIdentityWhitelist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthAwsConfigTidyIdentityWhitelist")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1967,7 +1967,7 @@ func (a *AuthApiService) DeleteAuthAwsConfigTidyIdentityWhitelistExecute(r ApiDe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2018,14 +2018,14 @@ func (a *AuthApiService) DeleteAuthAwsConfigTidyRoletagBlacklist(ctx context.Con
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAwsConfigTidyRoletagBlacklistExecute(r ApiDeleteAuthAwsConfigTidyRoletagBlacklistRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAwsConfigTidyRoletagBlacklistExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAwsConfigTidyRoletagBlacklist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthAwsConfigTidyRoletagBlacklist")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2053,7 +2053,7 @@ func (a *AuthApiService) DeleteAuthAwsConfigTidyRoletagBlacklistExecute(r ApiDel
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2104,14 +2104,14 @@ func (a *AuthApiService) DeleteAuthAwsConfigTidyRoletagDenylist(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAwsConfigTidyRoletagDenylistExecute(r ApiDeleteAuthAwsConfigTidyRoletagDenylistRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAwsConfigTidyRoletagDenylistExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAwsConfigTidyRoletagDenylist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthAwsConfigTidyRoletagDenylist")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2139,7 +2139,7 @@ func (a *AuthApiService) DeleteAuthAwsConfigTidyRoletagDenylistExecute(r ApiDele
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2193,20 +2193,20 @@ func (a *AuthApiService) DeleteAuthAwsIdentityAccesslistInstanceId(ctx context.C
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAwsIdentityAccesslistInstanceIdExecute(r ApiDeleteAuthAwsIdentityAccesslistInstanceIdRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAwsIdentityAccesslistInstanceIdExecute(ctx context.Context, instanceId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAwsIdentityAccesslistInstanceId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthAwsIdentityAccesslistInstanceId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/aws/identity-accesslist/{instance_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"instance_id"+"}", url.PathEscape(parameterToString(r.instanceId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"instance_id"+"}", url.PathEscape(parameterToString(instanceId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2229,7 +2229,7 @@ func (a *AuthApiService) DeleteAuthAwsIdentityAccesslistInstanceIdExecute(r ApiD
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2283,20 +2283,20 @@ func (a *AuthApiService) DeleteAuthAwsIdentityWhitelistInstanceId(ctx context.Co
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAwsIdentityWhitelistInstanceIdExecute(r ApiDeleteAuthAwsIdentityWhitelistInstanceIdRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAwsIdentityWhitelistInstanceIdExecute(ctx context.Context, instanceId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAwsIdentityWhitelistInstanceId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthAwsIdentityWhitelistInstanceId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/aws/identity-whitelist/{instance_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"instance_id"+"}", url.PathEscape(parameterToString(r.instanceId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"instance_id"+"}", url.PathEscape(parameterToString(instanceId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2319,7 +2319,7 @@ func (a *AuthApiService) DeleteAuthAwsIdentityWhitelistInstanceIdExecute(r ApiDe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2373,20 +2373,20 @@ func (a *AuthApiService) DeleteAuthAwsRoleRole(ctx context.Context, role string)
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAwsRoleRoleExecute(r ApiDeleteAuthAwsRoleRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAwsRoleRoleExecute(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAwsRoleRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthAwsRoleRole")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/aws/role/{role}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(r.role, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2409,7 +2409,7 @@ func (a *AuthApiService) DeleteAuthAwsRoleRoleExecute(r ApiDeleteAuthAwsRoleRole
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2463,20 +2463,20 @@ func (a *AuthApiService) DeleteAuthAwsRoletagBlacklistRoleTag(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAwsRoletagBlacklistRoleTagExecute(r ApiDeleteAuthAwsRoletagBlacklistRoleTagRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAwsRoletagBlacklistRoleTagExecute(ctx context.Context, roleTag string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAwsRoletagBlacklistRoleTag")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthAwsRoletagBlacklistRoleTag")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/aws/roletag-blacklist/{role_tag}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(r.roleTag, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(roleTag, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2499,7 +2499,7 @@ func (a *AuthApiService) DeleteAuthAwsRoletagBlacklistRoleTagExecute(r ApiDelete
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2553,20 +2553,20 @@ func (a *AuthApiService) DeleteAuthAwsRoletagDenylistRoleTag(ctx context.Context
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAwsRoletagDenylistRoleTagExecute(r ApiDeleteAuthAwsRoletagDenylistRoleTagRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAwsRoletagDenylistRoleTagExecute(ctx context.Context, roleTag string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAwsRoletagDenylistRoleTag")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthAwsRoletagDenylistRoleTag")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/aws/roletag-denylist/{role_tag}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(r.roleTag, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(roleTag, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2589,7 +2589,7 @@ func (a *AuthApiService) DeleteAuthAwsRoletagDenylistRoleTagExecute(r ApiDeleteA
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2640,14 +2640,14 @@ func (a *AuthApiService) DeleteAuthAzureConfig(ctx context.Context) ApiDeleteAut
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAzureConfigExecute(r ApiDeleteAuthAzureConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAzureConfigExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAzureConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthAzureConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2675,7 +2675,7 @@ func (a *AuthApiService) DeleteAuthAzureConfigExecute(r ApiDeleteAuthAzureConfig
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2729,20 +2729,20 @@ func (a *AuthApiService) DeleteAuthAzureRoleName(ctx context.Context, name strin
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthAzureRoleNameExecute(r ApiDeleteAuthAzureRoleNameRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthAzureRoleNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthAzureRoleName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthAzureRoleName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/azure/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2765,7 +2765,7 @@ func (a *AuthApiService) DeleteAuthAzureRoleNameExecute(r ApiDeleteAuthAzureRole
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2819,20 +2819,20 @@ func (a *AuthApiService) DeleteAuthCertCertsName(ctx context.Context, name strin
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthCertCertsNameExecute(r ApiDeleteAuthCertCertsNameRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthCertCertsNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthCertCertsName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthCertCertsName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/cert/certs/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2855,7 +2855,7 @@ func (a *AuthApiService) DeleteAuthCertCertsNameExecute(r ApiDeleteAuthCertCerts
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2909,20 +2909,20 @@ func (a *AuthApiService) DeleteAuthCertCrlsName(ctx context.Context, name string
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthCertCrlsNameExecute(r ApiDeleteAuthCertCrlsNameRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthCertCrlsNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthCertCrlsName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthCertCrlsName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/cert/crls/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2945,7 +2945,7 @@ func (a *AuthApiService) DeleteAuthCertCrlsNameExecute(r ApiDeleteAuthCertCrlsNa
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2996,14 +2996,14 @@ func (a *AuthApiService) DeleteAuthCfConfig(ctx context.Context) ApiDeleteAuthCf
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthCfConfigExecute(r ApiDeleteAuthCfConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthCfConfigExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthCfConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthCfConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3031,7 +3031,7 @@ func (a *AuthApiService) DeleteAuthCfConfigExecute(r ApiDeleteAuthCfConfigReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3085,20 +3085,20 @@ func (a *AuthApiService) DeleteAuthCfRolesRole(ctx context.Context, role string)
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthCfRolesRoleExecute(r ApiDeleteAuthCfRolesRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthCfRolesRoleExecute(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthCfRolesRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthCfRolesRole")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/cf/roles/{role}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(r.role, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3121,7 +3121,7 @@ func (a *AuthApiService) DeleteAuthCfRolesRoleExecute(r ApiDeleteAuthCfRolesRole
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3175,20 +3175,20 @@ func (a *AuthApiService) DeleteAuthGcpRoleName(ctx context.Context, name string)
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthGcpRoleNameExecute(r ApiDeleteAuthGcpRoleNameRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthGcpRoleNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthGcpRoleName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthGcpRoleName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/gcp/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3211,7 +3211,7 @@ func (a *AuthApiService) DeleteAuthGcpRoleNameExecute(r ApiDeleteAuthGcpRoleName
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3265,20 +3265,20 @@ func (a *AuthApiService) DeleteAuthGithubMapTeamsKey(ctx context.Context, key st
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthGithubMapTeamsKeyExecute(r ApiDeleteAuthGithubMapTeamsKeyRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthGithubMapTeamsKeyExecute(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthGithubMapTeamsKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthGithubMapTeamsKey")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/github/map/teams/{key}"
-	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(r.key, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3301,7 +3301,7 @@ func (a *AuthApiService) DeleteAuthGithubMapTeamsKeyExecute(r ApiDeleteAuthGithu
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3355,20 +3355,20 @@ func (a *AuthApiService) DeleteAuthGithubMapUsersKey(ctx context.Context, key st
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthGithubMapUsersKeyExecute(r ApiDeleteAuthGithubMapUsersKeyRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthGithubMapUsersKeyExecute(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthGithubMapUsersKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthGithubMapUsersKey")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/github/map/users/{key}"
-	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(r.key, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3391,7 +3391,7 @@ func (a *AuthApiService) DeleteAuthGithubMapUsersKeyExecute(r ApiDeleteAuthGithu
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3445,20 +3445,20 @@ func (a *AuthApiService) DeleteAuthJwtRoleName(ctx context.Context, name string)
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthJwtRoleNameExecute(r ApiDeleteAuthJwtRoleNameRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthJwtRoleNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthJwtRoleName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthJwtRoleName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/jwt/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3481,7 +3481,7 @@ func (a *AuthApiService) DeleteAuthJwtRoleNameExecute(r ApiDeleteAuthJwtRoleName
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3535,20 +3535,20 @@ func (a *AuthApiService) DeleteAuthKerberosGroupsName(ctx context.Context, name 
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthKerberosGroupsNameExecute(r ApiDeleteAuthKerberosGroupsNameRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthKerberosGroupsNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthKerberosGroupsName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthKerberosGroupsName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/kerberos/groups/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3571,7 +3571,7 @@ func (a *AuthApiService) DeleteAuthKerberosGroupsNameExecute(r ApiDeleteAuthKerb
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3625,20 +3625,20 @@ func (a *AuthApiService) DeleteAuthKubernetesRoleName(ctx context.Context, name 
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthKubernetesRoleNameExecute(r ApiDeleteAuthKubernetesRoleNameRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthKubernetesRoleNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthKubernetesRoleName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthKubernetesRoleName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/kubernetes/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3661,7 +3661,7 @@ func (a *AuthApiService) DeleteAuthKubernetesRoleNameExecute(r ApiDeleteAuthKube
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3715,20 +3715,20 @@ func (a *AuthApiService) DeleteAuthLdapGroupsName(ctx context.Context, name stri
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthLdapGroupsNameExecute(r ApiDeleteAuthLdapGroupsNameRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthLdapGroupsNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthLdapGroupsName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthLdapGroupsName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/ldap/groups/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3751,7 +3751,7 @@ func (a *AuthApiService) DeleteAuthLdapGroupsNameExecute(r ApiDeleteAuthLdapGrou
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3805,20 +3805,20 @@ func (a *AuthApiService) DeleteAuthLdapUsersName(ctx context.Context, name strin
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthLdapUsersNameExecute(r ApiDeleteAuthLdapUsersNameRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthLdapUsersNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthLdapUsersName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthLdapUsersName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/ldap/users/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3841,7 +3841,7 @@ func (a *AuthApiService) DeleteAuthLdapUsersNameExecute(r ApiDeleteAuthLdapUsers
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3892,14 +3892,14 @@ func (a *AuthApiService) DeleteAuthOciConfig(ctx context.Context) ApiDeleteAuthO
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthOciConfigExecute(r ApiDeleteAuthOciConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthOciConfigExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthOciConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthOciConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3927,7 +3927,7 @@ func (a *AuthApiService) DeleteAuthOciConfigExecute(r ApiDeleteAuthOciConfigRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3981,20 +3981,20 @@ func (a *AuthApiService) DeleteAuthOciRoleRole(ctx context.Context, role string)
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthOciRoleRoleExecute(r ApiDeleteAuthOciRoleRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthOciRoleRoleExecute(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthOciRoleRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthOciRoleRole")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/oci/role/{role}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(r.role, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4017,7 +4017,7 @@ func (a *AuthApiService) DeleteAuthOciRoleRoleExecute(r ApiDeleteAuthOciRoleRole
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4071,20 +4071,20 @@ func (a *AuthApiService) DeleteAuthOidcRoleName(ctx context.Context, name string
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthOidcRoleNameExecute(r ApiDeleteAuthOidcRoleNameRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthOidcRoleNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthOidcRoleName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthOidcRoleName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/oidc/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4107,7 +4107,7 @@ func (a *AuthApiService) DeleteAuthOidcRoleNameExecute(r ApiDeleteAuthOidcRoleNa
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4161,20 +4161,20 @@ func (a *AuthApiService) DeleteAuthOktaGroupsName(ctx context.Context, name stri
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthOktaGroupsNameExecute(r ApiDeleteAuthOktaGroupsNameRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthOktaGroupsNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthOktaGroupsName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthOktaGroupsName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/okta/groups/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4197,7 +4197,7 @@ func (a *AuthApiService) DeleteAuthOktaGroupsNameExecute(r ApiDeleteAuthOktaGrou
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4251,20 +4251,20 @@ func (a *AuthApiService) DeleteAuthOktaUsersName(ctx context.Context, name strin
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthOktaUsersNameExecute(r ApiDeleteAuthOktaUsersNameRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthOktaUsersNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthOktaUsersName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthOktaUsersName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/okta/users/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4287,7 +4287,7 @@ func (a *AuthApiService) DeleteAuthOktaUsersNameExecute(r ApiDeleteAuthOktaUsers
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4341,20 +4341,20 @@ func (a *AuthApiService) DeleteAuthRadiusUsersName(ctx context.Context, name str
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthRadiusUsersNameExecute(r ApiDeleteAuthRadiusUsersNameRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthRadiusUsersNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthRadiusUsersName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthRadiusUsersName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/radius/users/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4377,7 +4377,7 @@ func (a *AuthApiService) DeleteAuthRadiusUsersNameExecute(r ApiDeleteAuthRadiusU
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4431,20 +4431,20 @@ func (a *AuthApiService) DeleteAuthTokenRolesRoleName(ctx context.Context, roleN
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthTokenRolesRoleNameExecute(r ApiDeleteAuthTokenRolesRoleNameRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthTokenRolesRoleNameExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthTokenRolesRoleName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthTokenRolesRoleName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/token/roles/{role_name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4467,7 +4467,7 @@ func (a *AuthApiService) DeleteAuthTokenRolesRoleNameExecute(r ApiDeleteAuthToke
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4521,20 +4521,20 @@ func (a *AuthApiService) DeleteAuthUserpassUsersUsername(ctx context.Context, us
 }
 
 // Execute executes the request
-func (a *AuthApiService) DeleteAuthUserpassUsersUsernameExecute(r ApiDeleteAuthUserpassUsersUsernameRequest) (*http.Response, error) {
+func (a *AuthApiService) DeleteAuthUserpassUsersUsernameExecute(ctx context.Context, username string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.DeleteAuthUserpassUsersUsername")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.DeleteAuthUserpassUsersUsername")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/userpass/users/{username}"
-	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(r.username, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(username, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4557,7 +4557,7 @@ func (a *AuthApiService) DeleteAuthUserpassUsersUsernameExecute(r ApiDeleteAuthU
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4615,14 +4615,14 @@ func (a *AuthApiService) GetAuthAlicloudRole(ctx context.Context) ApiGetAuthAlic
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAlicloudRoleExecute(r ApiGetAuthAlicloudRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAlicloudRoleExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAlicloudRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAlicloudRole")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4632,11 +4632,8 @@ func (a *AuthApiService) GetAuthAlicloudRoleExecute(r ApiGetAuthAlicloudRoleRequ
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -4654,7 +4651,7 @@ func (a *AuthApiService) GetAuthAlicloudRoleExecute(r ApiGetAuthAlicloudRoleRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4708,20 +4705,20 @@ func (a *AuthApiService) GetAuthAlicloudRoleRole(ctx context.Context, role strin
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAlicloudRoleRoleExecute(r ApiGetAuthAlicloudRoleRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAlicloudRoleRoleExecute(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAlicloudRoleRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAlicloudRoleRole")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/alicloud/role/{role}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(r.role, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4744,7 +4741,7 @@ func (a *AuthApiService) GetAuthAlicloudRoleRoleExecute(r ApiGetAuthAlicloudRole
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4802,14 +4799,14 @@ func (a *AuthApiService) GetAuthAlicloudRoles(ctx context.Context) ApiGetAuthAli
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAlicloudRolesExecute(r ApiGetAuthAlicloudRolesRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAlicloudRolesExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAlicloudRoles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAlicloudRoles")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4819,11 +4816,8 @@ func (a *AuthApiService) GetAuthAlicloudRolesExecute(r ApiGetAuthAlicloudRolesRe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -4841,7 +4835,7 @@ func (a *AuthApiService) GetAuthAlicloudRolesExecute(r ApiGetAuthAlicloudRolesRe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4899,14 +4893,14 @@ func (a *AuthApiService) GetAuthAppIdMapAppId(ctx context.Context) ApiGetAuthApp
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAppIdMapAppIdExecute(r ApiGetAuthAppIdMapAppIdRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAppIdMapAppIdExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAppIdMapAppId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAppIdMapAppId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4917,8 +4911,8 @@ func (a *AuthApiService) GetAuthAppIdMapAppIdExecute(r ApiGetAuthAppIdMapAppIdRe
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.list != nil {
-		localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	if list != nil {
+		localVarQueryParams.Add("list", parameterToString(*list, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -4937,7 +4931,7 @@ func (a *AuthApiService) GetAuthAppIdMapAppIdExecute(r ApiGetAuthAppIdMapAppIdRe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4991,20 +4985,20 @@ func (a *AuthApiService) GetAuthAppIdMapAppIdKey(ctx context.Context, key string
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAppIdMapAppIdKeyExecute(r ApiGetAuthAppIdMapAppIdKeyRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAppIdMapAppIdKeyExecute(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAppIdMapAppIdKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAppIdMapAppIdKey")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/app-id/map/app-id/{key}"
-	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(r.key, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5027,7 +5021,7 @@ func (a *AuthApiService) GetAuthAppIdMapAppIdKeyExecute(r ApiGetAuthAppIdMapAppI
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5085,14 +5079,14 @@ func (a *AuthApiService) GetAuthAppIdMapUserId(ctx context.Context) ApiGetAuthAp
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAppIdMapUserIdExecute(r ApiGetAuthAppIdMapUserIdRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAppIdMapUserIdExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAppIdMapUserId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAppIdMapUserId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5103,8 +5097,8 @@ func (a *AuthApiService) GetAuthAppIdMapUserIdExecute(r ApiGetAuthAppIdMapUserId
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.list != nil {
-		localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	if list != nil {
+		localVarQueryParams.Add("list", parameterToString(*list, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -5123,7 +5117,7 @@ func (a *AuthApiService) GetAuthAppIdMapUserIdExecute(r ApiGetAuthAppIdMapUserId
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5177,20 +5171,20 @@ func (a *AuthApiService) GetAuthAppIdMapUserIdKey(ctx context.Context, key strin
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAppIdMapUserIdKeyExecute(r ApiGetAuthAppIdMapUserIdKeyRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAppIdMapUserIdKeyExecute(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAppIdMapUserIdKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAppIdMapUserIdKey")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/app-id/map/user-id/{key}"
-	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(r.key, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5213,7 +5207,7 @@ func (a *AuthApiService) GetAuthAppIdMapUserIdKeyExecute(r ApiGetAuthAppIdMapUse
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5271,14 +5265,14 @@ func (a *AuthApiService) GetAuthApproleRole(ctx context.Context) ApiGetAuthAppro
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleExecute(r ApiGetAuthApproleRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthApproleRole")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5288,11 +5282,8 @@ func (a *AuthApiService) GetAuthApproleRoleExecute(r ApiGetAuthApproleRoleReques
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -5310,7 +5301,7 @@ func (a *AuthApiService) GetAuthApproleRoleExecute(r ApiGetAuthApproleRoleReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5364,20 +5355,20 @@ func (a *AuthApiService) GetAuthApproleRoleRoleName(ctx context.Context, roleNam
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNameExecute(r ApiGetAuthApproleRoleRoleNameRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNameExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthApproleRoleRoleName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5400,7 +5391,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameExecute(r ApiGetAuthApproleRo
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5454,20 +5445,20 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameBindSecretId(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNameBindSecretIdExecute(r ApiGetAuthApproleRoleRoleNameBindSecretIdRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNameBindSecretIdExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleNameBindSecretId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthApproleRoleRoleNameBindSecretId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/bind-secret-id"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5490,7 +5481,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameBindSecretIdExecute(r ApiGetA
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5544,20 +5535,20 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameBoundCidrList(ctx context.Con
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNameBoundCidrListExecute(r ApiGetAuthApproleRoleRoleNameBoundCidrListRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNameBoundCidrListExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleNameBoundCidrList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthApproleRoleRoleNameBoundCidrList")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/bound-cidr-list"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5580,7 +5571,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameBoundCidrListExecute(r ApiGet
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5634,20 +5625,20 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameLocalSecretIds(ctx context.Co
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNameLocalSecretIdsExecute(r ApiGetAuthApproleRoleRoleNameLocalSecretIdsRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNameLocalSecretIdsExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleNameLocalSecretIds")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthApproleRoleRoleNameLocalSecretIds")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/local-secret-ids"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5670,7 +5661,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameLocalSecretIdsExecute(r ApiGe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5724,20 +5715,20 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNamePeriod(ctx context.Context, r
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNamePeriodExecute(r ApiGetAuthApproleRoleRoleNamePeriodRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNamePeriodExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleNamePeriod")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthApproleRoleRoleNamePeriod")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/period"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5760,7 +5751,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNamePeriodExecute(r ApiGetAuthApp
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5814,20 +5805,20 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNamePolicies(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNamePoliciesExecute(r ApiGetAuthApproleRoleRoleNamePoliciesRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNamePoliciesExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleNamePolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthApproleRoleRoleNamePolicies")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/policies"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5850,7 +5841,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNamePoliciesExecute(r ApiGetAuthA
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5904,20 +5895,20 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameRoleId(ctx context.Context, r
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNameRoleIdExecute(r ApiGetAuthApproleRoleRoleNameRoleIdRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNameRoleIdExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleNameRoleId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthApproleRoleRoleNameRoleId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/role-id"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5940,7 +5931,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameRoleIdExecute(r ApiGetAuthApp
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6001,29 +5992,26 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretId(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdExecute(r ApiGetAuthApproleRoleRoleNameSecretIdRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdExecute(ctx context.Context, roleName string, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleNameSecretId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthApproleRoleRoleNameSecretId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/secret-id"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -6041,7 +6029,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdExecute(r ApiGetAuthA
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6095,20 +6083,20 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx contex
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdBoundCidrsExecute(r ApiGetAuthApproleRoleRoleNameSecretIdBoundCidrsRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdBoundCidrsExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleNameSecretIdBoundCidrs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthApproleRoleRoleNameSecretIdBoundCidrs")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/secret-id-bound-cidrs"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6131,7 +6119,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdBoundCidrsExecute(r A
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6185,20 +6173,20 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdNumUses(ctx context.C
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdNumUsesExecute(r ApiGetAuthApproleRoleRoleNameSecretIdNumUsesRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdNumUsesExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleNameSecretIdNumUses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthApproleRoleRoleNameSecretIdNumUses")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/secret-id-num-uses"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6221,7 +6209,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdNumUsesExecute(r ApiG
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6275,20 +6263,20 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdTtl(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdTtlExecute(r ApiGetAuthApproleRoleRoleNameSecretIdTtlRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdTtlExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleNameSecretIdTtl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthApproleRoleRoleNameSecretIdTtl")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/secret-id-ttl"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6311,7 +6299,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdTtlExecute(r ApiGetAu
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6365,20 +6353,20 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.C
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenBoundCidrsExecute(r ApiGetAuthApproleRoleRoleNameTokenBoundCidrsRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenBoundCidrsExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleNameTokenBoundCidrs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthApproleRoleRoleNameTokenBoundCidrs")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/token-bound-cidrs"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6401,7 +6389,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenBoundCidrsExecute(r ApiG
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6455,20 +6443,20 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenMaxTtlExecute(r ApiGetAuthApproleRoleRoleNameTokenMaxTtlRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenMaxTtlExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleNameTokenMaxTtl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthApproleRoleRoleNameTokenMaxTtl")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/token-max-ttl"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6491,7 +6479,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenMaxTtlExecute(r ApiGetAu
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6545,20 +6533,20 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenNumUses(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenNumUsesExecute(r ApiGetAuthApproleRoleRoleNameTokenNumUsesRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenNumUsesExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleNameTokenNumUses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthApproleRoleRoleNameTokenNumUses")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/token-num-uses"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6581,7 +6569,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenNumUsesExecute(r ApiGetA
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6635,20 +6623,20 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenTtl(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenTtlExecute(r ApiGetAuthApproleRoleRoleNameTokenTtlRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenTtlExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthApproleRoleRoleNameTokenTtl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthApproleRoleRoleNameTokenTtl")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/token-ttl"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6671,7 +6659,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenTtlExecute(r ApiGetAuthA
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6725,20 +6713,20 @@ func (a *AuthApiService) GetAuthAwsConfigCertificateCertName(ctx context.Context
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsConfigCertificateCertNameExecute(r ApiGetAuthAwsConfigCertificateCertNameRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsConfigCertificateCertNameExecute(ctx context.Context, certName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsConfigCertificateCertName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAwsConfigCertificateCertName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/aws/config/certificate/{cert_name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"cert_name"+"}", url.PathEscape(parameterToString(r.certName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"cert_name"+"}", url.PathEscape(parameterToString(certName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6761,7 +6749,7 @@ func (a *AuthApiService) GetAuthAwsConfigCertificateCertNameExecute(r ApiGetAuth
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6819,14 +6807,14 @@ func (a *AuthApiService) GetAuthAwsConfigCertificates(ctx context.Context) ApiGe
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsConfigCertificatesExecute(r ApiGetAuthAwsConfigCertificatesRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsConfigCertificatesExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsConfigCertificates")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAwsConfigCertificates")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6836,11 +6824,8 @@ func (a *AuthApiService) GetAuthAwsConfigCertificatesExecute(r ApiGetAuthAwsConf
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -6858,7 +6843,7 @@ func (a *AuthApiService) GetAuthAwsConfigCertificatesExecute(r ApiGetAuthAwsConf
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6909,14 +6894,14 @@ func (a *AuthApiService) GetAuthAwsConfigClient(ctx context.Context) ApiGetAuthA
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsConfigClientExecute(r ApiGetAuthAwsConfigClientRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsConfigClientExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsConfigClient")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAwsConfigClient")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6944,7 +6929,7 @@ func (a *AuthApiService) GetAuthAwsConfigClientExecute(r ApiGetAuthAwsConfigClie
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6995,14 +6980,14 @@ func (a *AuthApiService) GetAuthAwsConfigIdentity(ctx context.Context) ApiGetAut
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsConfigIdentityExecute(r ApiGetAuthAwsConfigIdentityRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsConfigIdentityExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsConfigIdentity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAwsConfigIdentity")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7030,7 +7015,7 @@ func (a *AuthApiService) GetAuthAwsConfigIdentityExecute(r ApiGetAuthAwsConfigId
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7088,14 +7073,14 @@ func (a *AuthApiService) GetAuthAwsConfigSts(ctx context.Context) ApiGetAuthAwsC
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsConfigStsExecute(r ApiGetAuthAwsConfigStsRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsConfigStsExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsConfigSts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAwsConfigSts")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7105,11 +7090,8 @@ func (a *AuthApiService) GetAuthAwsConfigStsExecute(r ApiGetAuthAwsConfigStsRequ
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -7127,7 +7109,7 @@ func (a *AuthApiService) GetAuthAwsConfigStsExecute(r ApiGetAuthAwsConfigStsRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7181,20 +7163,20 @@ func (a *AuthApiService) GetAuthAwsConfigStsAccountId(ctx context.Context, accou
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsConfigStsAccountIdExecute(r ApiGetAuthAwsConfigStsAccountIdRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsConfigStsAccountIdExecute(ctx context.Context, accountId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsConfigStsAccountId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAwsConfigStsAccountId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/aws/config/sts/{account_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", url.PathEscape(parameterToString(r.accountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", url.PathEscape(parameterToString(accountId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7217,7 +7199,7 @@ func (a *AuthApiService) GetAuthAwsConfigStsAccountIdExecute(r ApiGetAuthAwsConf
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7268,14 +7250,14 @@ func (a *AuthApiService) GetAuthAwsConfigTidyIdentityAccesslist(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsConfigTidyIdentityAccesslistExecute(r ApiGetAuthAwsConfigTidyIdentityAccesslistRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsConfigTidyIdentityAccesslistExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsConfigTidyIdentityAccesslist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAwsConfigTidyIdentityAccesslist")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7303,7 +7285,7 @@ func (a *AuthApiService) GetAuthAwsConfigTidyIdentityAccesslistExecute(r ApiGetA
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7354,14 +7336,14 @@ func (a *AuthApiService) GetAuthAwsConfigTidyIdentityWhitelist(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsConfigTidyIdentityWhitelistExecute(r ApiGetAuthAwsConfigTidyIdentityWhitelistRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsConfigTidyIdentityWhitelistExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsConfigTidyIdentityWhitelist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAwsConfigTidyIdentityWhitelist")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7389,7 +7371,7 @@ func (a *AuthApiService) GetAuthAwsConfigTidyIdentityWhitelistExecute(r ApiGetAu
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7440,14 +7422,14 @@ func (a *AuthApiService) GetAuthAwsConfigTidyRoletagBlacklist(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsConfigTidyRoletagBlacklistExecute(r ApiGetAuthAwsConfigTidyRoletagBlacklistRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsConfigTidyRoletagBlacklistExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsConfigTidyRoletagBlacklist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAwsConfigTidyRoletagBlacklist")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7475,7 +7457,7 @@ func (a *AuthApiService) GetAuthAwsConfigTidyRoletagBlacklistExecute(r ApiGetAut
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7526,14 +7508,14 @@ func (a *AuthApiService) GetAuthAwsConfigTidyRoletagDenylist(ctx context.Context
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsConfigTidyRoletagDenylistExecute(r ApiGetAuthAwsConfigTidyRoletagDenylistRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsConfigTidyRoletagDenylistExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsConfigTidyRoletagDenylist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAwsConfigTidyRoletagDenylist")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7561,7 +7543,7 @@ func (a *AuthApiService) GetAuthAwsConfigTidyRoletagDenylistExecute(r ApiGetAuth
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7619,14 +7601,14 @@ func (a *AuthApiService) GetAuthAwsIdentityAccesslist(ctx context.Context) ApiGe
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsIdentityAccesslistExecute(r ApiGetAuthAwsIdentityAccesslistRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsIdentityAccesslistExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsIdentityAccesslist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAwsIdentityAccesslist")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7636,11 +7618,8 @@ func (a *AuthApiService) GetAuthAwsIdentityAccesslistExecute(r ApiGetAuthAwsIden
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -7658,7 +7637,7 @@ func (a *AuthApiService) GetAuthAwsIdentityAccesslistExecute(r ApiGetAuthAwsIden
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7712,20 +7691,20 @@ func (a *AuthApiService) GetAuthAwsIdentityAccesslistInstanceId(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsIdentityAccesslistInstanceIdExecute(r ApiGetAuthAwsIdentityAccesslistInstanceIdRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsIdentityAccesslistInstanceIdExecute(ctx context.Context, instanceId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsIdentityAccesslistInstanceId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAwsIdentityAccesslistInstanceId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/aws/identity-accesslist/{instance_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"instance_id"+"}", url.PathEscape(parameterToString(r.instanceId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"instance_id"+"}", url.PathEscape(parameterToString(instanceId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7748,7 +7727,7 @@ func (a *AuthApiService) GetAuthAwsIdentityAccesslistInstanceIdExecute(r ApiGetA
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7806,14 +7785,14 @@ func (a *AuthApiService) GetAuthAwsIdentityWhitelist(ctx context.Context) ApiGet
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsIdentityWhitelistExecute(r ApiGetAuthAwsIdentityWhitelistRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsIdentityWhitelistExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsIdentityWhitelist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAwsIdentityWhitelist")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7823,11 +7802,8 @@ func (a *AuthApiService) GetAuthAwsIdentityWhitelistExecute(r ApiGetAuthAwsIdent
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -7845,7 +7821,7 @@ func (a *AuthApiService) GetAuthAwsIdentityWhitelistExecute(r ApiGetAuthAwsIdent
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7899,20 +7875,20 @@ func (a *AuthApiService) GetAuthAwsIdentityWhitelistInstanceId(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsIdentityWhitelistInstanceIdExecute(r ApiGetAuthAwsIdentityWhitelistInstanceIdRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsIdentityWhitelistInstanceIdExecute(ctx context.Context, instanceId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsIdentityWhitelistInstanceId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAwsIdentityWhitelistInstanceId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/aws/identity-whitelist/{instance_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"instance_id"+"}", url.PathEscape(parameterToString(r.instanceId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"instance_id"+"}", url.PathEscape(parameterToString(instanceId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7935,7 +7911,7 @@ func (a *AuthApiService) GetAuthAwsIdentityWhitelistInstanceIdExecute(r ApiGetAu
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7993,14 +7969,14 @@ func (a *AuthApiService) GetAuthAwsRole(ctx context.Context) ApiGetAuthAwsRoleRe
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsRoleExecute(r ApiGetAuthAwsRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsRoleExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAwsRole")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8010,11 +7986,8 @@ func (a *AuthApiService) GetAuthAwsRoleExecute(r ApiGetAuthAwsRoleRequest) (*htt
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -8032,7 +8005,7 @@ func (a *AuthApiService) GetAuthAwsRoleExecute(r ApiGetAuthAwsRoleRequest) (*htt
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8086,20 +8059,20 @@ func (a *AuthApiService) GetAuthAwsRoleRole(ctx context.Context, role string) Ap
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsRoleRoleExecute(r ApiGetAuthAwsRoleRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsRoleRoleExecute(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsRoleRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAwsRoleRole")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/aws/role/{role}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(r.role, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8122,7 +8095,7 @@ func (a *AuthApiService) GetAuthAwsRoleRoleExecute(r ApiGetAuthAwsRoleRoleReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8180,14 +8153,14 @@ func (a *AuthApiService) GetAuthAwsRoles(ctx context.Context) ApiGetAuthAwsRoles
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsRolesExecute(r ApiGetAuthAwsRolesRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsRolesExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsRoles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAwsRoles")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8197,11 +8170,8 @@ func (a *AuthApiService) GetAuthAwsRolesExecute(r ApiGetAuthAwsRolesRequest) (*h
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -8219,7 +8189,7 @@ func (a *AuthApiService) GetAuthAwsRolesExecute(r ApiGetAuthAwsRolesRequest) (*h
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8277,14 +8247,14 @@ func (a *AuthApiService) GetAuthAwsRoletagBlacklist(ctx context.Context) ApiGetA
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsRoletagBlacklistExecute(r ApiGetAuthAwsRoletagBlacklistRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsRoletagBlacklistExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsRoletagBlacklist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAwsRoletagBlacklist")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8294,11 +8264,8 @@ func (a *AuthApiService) GetAuthAwsRoletagBlacklistExecute(r ApiGetAuthAwsRoleta
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -8316,7 +8283,7 @@ func (a *AuthApiService) GetAuthAwsRoletagBlacklistExecute(r ApiGetAuthAwsRoleta
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8370,20 +8337,20 @@ func (a *AuthApiService) GetAuthAwsRoletagBlacklistRoleTag(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsRoletagBlacklistRoleTagExecute(r ApiGetAuthAwsRoletagBlacklistRoleTagRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsRoletagBlacklistRoleTagExecute(ctx context.Context, roleTag string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsRoletagBlacklistRoleTag")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAwsRoletagBlacklistRoleTag")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/aws/roletag-blacklist/{role_tag}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(r.roleTag, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(roleTag, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8406,7 +8373,7 @@ func (a *AuthApiService) GetAuthAwsRoletagBlacklistRoleTagExecute(r ApiGetAuthAw
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8464,14 +8431,14 @@ func (a *AuthApiService) GetAuthAwsRoletagDenylist(ctx context.Context) ApiGetAu
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsRoletagDenylistExecute(r ApiGetAuthAwsRoletagDenylistRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsRoletagDenylistExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsRoletagDenylist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAwsRoletagDenylist")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8481,11 +8448,8 @@ func (a *AuthApiService) GetAuthAwsRoletagDenylistExecute(r ApiGetAuthAwsRoletag
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -8503,7 +8467,7 @@ func (a *AuthApiService) GetAuthAwsRoletagDenylistExecute(r ApiGetAuthAwsRoletag
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8557,20 +8521,20 @@ func (a *AuthApiService) GetAuthAwsRoletagDenylistRoleTag(ctx context.Context, r
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAwsRoletagDenylistRoleTagExecute(r ApiGetAuthAwsRoletagDenylistRoleTagRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAwsRoletagDenylistRoleTagExecute(ctx context.Context, roleTag string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAwsRoletagDenylistRoleTag")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAwsRoletagDenylistRoleTag")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/aws/roletag-denylist/{role_tag}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(r.roleTag, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(roleTag, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8593,7 +8557,7 @@ func (a *AuthApiService) GetAuthAwsRoletagDenylistRoleTagExecute(r ApiGetAuthAws
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8644,14 +8608,14 @@ func (a *AuthApiService) GetAuthAzureConfig(ctx context.Context) ApiGetAuthAzure
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAzureConfigExecute(r ApiGetAuthAzureConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAzureConfigExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAzureConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAzureConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8679,7 +8643,7 @@ func (a *AuthApiService) GetAuthAzureConfigExecute(r ApiGetAuthAzureConfigReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8737,14 +8701,14 @@ func (a *AuthApiService) GetAuthAzureRole(ctx context.Context) ApiGetAuthAzureRo
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAzureRoleExecute(r ApiGetAuthAzureRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAzureRoleExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAzureRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAzureRole")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8754,11 +8718,8 @@ func (a *AuthApiService) GetAuthAzureRoleExecute(r ApiGetAuthAzureRoleRequest) (
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -8776,7 +8737,7 @@ func (a *AuthApiService) GetAuthAzureRoleExecute(r ApiGetAuthAzureRoleRequest) (
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8830,20 +8791,20 @@ func (a *AuthApiService) GetAuthAzureRoleName(ctx context.Context, name string) 
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthAzureRoleNameExecute(r ApiGetAuthAzureRoleNameRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthAzureRoleNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthAzureRoleName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthAzureRoleName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/azure/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8866,7 +8827,7 @@ func (a *AuthApiService) GetAuthAzureRoleNameExecute(r ApiGetAuthAzureRoleNameRe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8917,14 +8878,14 @@ func (a *AuthApiService) GetAuthCentrifyConfig(ctx context.Context) ApiGetAuthCe
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthCentrifyConfigExecute(r ApiGetAuthCentrifyConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthCentrifyConfigExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthCentrifyConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthCentrifyConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8952,7 +8913,7 @@ func (a *AuthApiService) GetAuthCentrifyConfigExecute(r ApiGetAuthCentrifyConfig
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9010,14 +8971,14 @@ func (a *AuthApiService) GetAuthCertCerts(ctx context.Context) ApiGetAuthCertCer
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthCertCertsExecute(r ApiGetAuthCertCertsRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthCertCertsExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthCertCerts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthCertCerts")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9027,11 +8988,8 @@ func (a *AuthApiService) GetAuthCertCertsExecute(r ApiGetAuthCertCertsRequest) (
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -9049,7 +9007,7 @@ func (a *AuthApiService) GetAuthCertCertsExecute(r ApiGetAuthCertCertsRequest) (
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9103,20 +9061,20 @@ func (a *AuthApiService) GetAuthCertCertsName(ctx context.Context, name string) 
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthCertCertsNameExecute(r ApiGetAuthCertCertsNameRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthCertCertsNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthCertCertsName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthCertCertsName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/cert/certs/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9139,7 +9097,7 @@ func (a *AuthApiService) GetAuthCertCertsNameExecute(r ApiGetAuthCertCertsNameRe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9193,20 +9151,20 @@ func (a *AuthApiService) GetAuthCertCrlsName(ctx context.Context, name string) A
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthCertCrlsNameExecute(r ApiGetAuthCertCrlsNameRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthCertCrlsNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthCertCrlsName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthCertCrlsName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/cert/crls/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9229,7 +9187,7 @@ func (a *AuthApiService) GetAuthCertCrlsNameExecute(r ApiGetAuthCertCrlsNameRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9280,14 +9238,14 @@ func (a *AuthApiService) GetAuthCfConfig(ctx context.Context) ApiGetAuthCfConfig
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthCfConfigExecute(r ApiGetAuthCfConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthCfConfigExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthCfConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthCfConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9315,7 +9273,7 @@ func (a *AuthApiService) GetAuthCfConfigExecute(r ApiGetAuthCfConfigRequest) (*h
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9373,14 +9331,14 @@ func (a *AuthApiService) GetAuthCfRoles(ctx context.Context) ApiGetAuthCfRolesRe
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthCfRolesExecute(r ApiGetAuthCfRolesRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthCfRolesExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthCfRoles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthCfRoles")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9390,11 +9348,8 @@ func (a *AuthApiService) GetAuthCfRolesExecute(r ApiGetAuthCfRolesRequest) (*htt
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -9412,7 +9367,7 @@ func (a *AuthApiService) GetAuthCfRolesExecute(r ApiGetAuthCfRolesRequest) (*htt
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9466,20 +9421,20 @@ func (a *AuthApiService) GetAuthCfRolesRole(ctx context.Context, role string) Ap
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthCfRolesRoleExecute(r ApiGetAuthCfRolesRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthCfRolesRoleExecute(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthCfRolesRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthCfRolesRole")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/cf/roles/{role}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(r.role, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9502,7 +9457,7 @@ func (a *AuthApiService) GetAuthCfRolesRoleExecute(r ApiGetAuthCfRolesRoleReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9553,14 +9508,14 @@ func (a *AuthApiService) GetAuthGcpConfig(ctx context.Context) ApiGetAuthGcpConf
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthGcpConfigExecute(r ApiGetAuthGcpConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthGcpConfigExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthGcpConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthGcpConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9588,7 +9543,7 @@ func (a *AuthApiService) GetAuthGcpConfigExecute(r ApiGetAuthGcpConfigRequest) (
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9646,14 +9601,14 @@ func (a *AuthApiService) GetAuthGcpRole(ctx context.Context) ApiGetAuthGcpRoleRe
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthGcpRoleExecute(r ApiGetAuthGcpRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthGcpRoleExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthGcpRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthGcpRole")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9663,11 +9618,8 @@ func (a *AuthApiService) GetAuthGcpRoleExecute(r ApiGetAuthGcpRoleRequest) (*htt
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -9685,7 +9637,7 @@ func (a *AuthApiService) GetAuthGcpRoleExecute(r ApiGetAuthGcpRoleRequest) (*htt
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9739,20 +9691,20 @@ func (a *AuthApiService) GetAuthGcpRoleName(ctx context.Context, name string) Ap
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthGcpRoleNameExecute(r ApiGetAuthGcpRoleNameRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthGcpRoleNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthGcpRoleName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthGcpRoleName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/gcp/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9775,7 +9727,7 @@ func (a *AuthApiService) GetAuthGcpRoleNameExecute(r ApiGetAuthGcpRoleNameReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9833,14 +9785,14 @@ func (a *AuthApiService) GetAuthGcpRoles(ctx context.Context) ApiGetAuthGcpRoles
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthGcpRolesExecute(r ApiGetAuthGcpRolesRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthGcpRolesExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthGcpRoles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthGcpRoles")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9850,11 +9802,8 @@ func (a *AuthApiService) GetAuthGcpRolesExecute(r ApiGetAuthGcpRolesRequest) (*h
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -9872,7 +9821,7 @@ func (a *AuthApiService) GetAuthGcpRolesExecute(r ApiGetAuthGcpRolesRequest) (*h
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9923,14 +9872,14 @@ func (a *AuthApiService) GetAuthGithubConfig(ctx context.Context) ApiGetAuthGith
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthGithubConfigExecute(r ApiGetAuthGithubConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthGithubConfigExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthGithubConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthGithubConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9958,7 +9907,7 @@ func (a *AuthApiService) GetAuthGithubConfigExecute(r ApiGetAuthGithubConfigRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -10016,14 +9965,14 @@ func (a *AuthApiService) GetAuthGithubMapTeams(ctx context.Context) ApiGetAuthGi
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthGithubMapTeamsExecute(r ApiGetAuthGithubMapTeamsRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthGithubMapTeamsExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthGithubMapTeams")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthGithubMapTeams")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10034,8 +9983,8 @@ func (a *AuthApiService) GetAuthGithubMapTeamsExecute(r ApiGetAuthGithubMapTeams
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.list != nil {
-		localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	if list != nil {
+		localVarQueryParams.Add("list", parameterToString(*list, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -10054,7 +10003,7 @@ func (a *AuthApiService) GetAuthGithubMapTeamsExecute(r ApiGetAuthGithubMapTeams
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -10108,20 +10057,20 @@ func (a *AuthApiService) GetAuthGithubMapTeamsKey(ctx context.Context, key strin
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthGithubMapTeamsKeyExecute(r ApiGetAuthGithubMapTeamsKeyRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthGithubMapTeamsKeyExecute(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthGithubMapTeamsKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthGithubMapTeamsKey")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/github/map/teams/{key}"
-	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(r.key, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10144,7 +10093,7 @@ func (a *AuthApiService) GetAuthGithubMapTeamsKeyExecute(r ApiGetAuthGithubMapTe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -10202,14 +10151,14 @@ func (a *AuthApiService) GetAuthGithubMapUsers(ctx context.Context) ApiGetAuthGi
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthGithubMapUsersExecute(r ApiGetAuthGithubMapUsersRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthGithubMapUsersExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthGithubMapUsers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthGithubMapUsers")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10220,8 +10169,8 @@ func (a *AuthApiService) GetAuthGithubMapUsersExecute(r ApiGetAuthGithubMapUsers
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.list != nil {
-		localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	if list != nil {
+		localVarQueryParams.Add("list", parameterToString(*list, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -10240,7 +10189,7 @@ func (a *AuthApiService) GetAuthGithubMapUsersExecute(r ApiGetAuthGithubMapUsers
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -10294,20 +10243,20 @@ func (a *AuthApiService) GetAuthGithubMapUsersKey(ctx context.Context, key strin
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthGithubMapUsersKeyExecute(r ApiGetAuthGithubMapUsersKeyRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthGithubMapUsersKeyExecute(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthGithubMapUsersKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthGithubMapUsersKey")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/github/map/users/{key}"
-	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(r.key, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10330,7 +10279,7 @@ func (a *AuthApiService) GetAuthGithubMapUsersKeyExecute(r ApiGetAuthGithubMapUs
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -10381,14 +10330,14 @@ func (a *AuthApiService) GetAuthJwtConfig(ctx context.Context) ApiGetAuthJwtConf
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthJwtConfigExecute(r ApiGetAuthJwtConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthJwtConfigExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthJwtConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthJwtConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10416,7 +10365,7 @@ func (a *AuthApiService) GetAuthJwtConfigExecute(r ApiGetAuthJwtConfigRequest) (
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -10467,14 +10416,14 @@ func (a *AuthApiService) GetAuthJwtOidcCallback(ctx context.Context) ApiGetAuthJ
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthJwtOidcCallbackExecute(r ApiGetAuthJwtOidcCallbackRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthJwtOidcCallbackExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthJwtOidcCallback")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthJwtOidcCallback")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10502,7 +10451,7 @@ func (a *AuthApiService) GetAuthJwtOidcCallbackExecute(r ApiGetAuthJwtOidcCallba
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -10562,14 +10511,14 @@ func (a *AuthApiService) GetAuthJwtRole(ctx context.Context) ApiGetAuthJwtRoleRe
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthJwtRoleExecute(r ApiGetAuthJwtRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthJwtRoleExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthJwtRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthJwtRole")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10579,11 +10528,8 @@ func (a *AuthApiService) GetAuthJwtRoleExecute(r ApiGetAuthJwtRoleRequest) (*htt
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -10601,7 +10547,7 @@ func (a *AuthApiService) GetAuthJwtRoleExecute(r ApiGetAuthJwtRoleRequest) (*htt
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -10655,20 +10601,20 @@ func (a *AuthApiService) GetAuthJwtRoleName(ctx context.Context, name string) Ap
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthJwtRoleNameExecute(r ApiGetAuthJwtRoleNameRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthJwtRoleNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthJwtRoleName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthJwtRoleName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/jwt/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10691,7 +10637,7 @@ func (a *AuthApiService) GetAuthJwtRoleNameExecute(r ApiGetAuthJwtRoleNameReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -10742,14 +10688,14 @@ func (a *AuthApiService) GetAuthKerberosConfig(ctx context.Context) ApiGetAuthKe
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthKerberosConfigExecute(r ApiGetAuthKerberosConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthKerberosConfigExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthKerberosConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthKerberosConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10777,7 +10723,7 @@ func (a *AuthApiService) GetAuthKerberosConfigExecute(r ApiGetAuthKerberosConfig
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -10828,14 +10774,14 @@ func (a *AuthApiService) GetAuthKerberosConfigLdap(ctx context.Context) ApiGetAu
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthKerberosConfigLdapExecute(r ApiGetAuthKerberosConfigLdapRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthKerberosConfigLdapExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthKerberosConfigLdap")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthKerberosConfigLdap")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10863,7 +10809,7 @@ func (a *AuthApiService) GetAuthKerberosConfigLdapExecute(r ApiGetAuthKerberosCo
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -10921,14 +10867,14 @@ func (a *AuthApiService) GetAuthKerberosGroups(ctx context.Context) ApiGetAuthKe
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthKerberosGroupsExecute(r ApiGetAuthKerberosGroupsRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthKerberosGroupsExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthKerberosGroups")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthKerberosGroups")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10938,11 +10884,8 @@ func (a *AuthApiService) GetAuthKerberosGroupsExecute(r ApiGetAuthKerberosGroups
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -10960,7 +10903,7 @@ func (a *AuthApiService) GetAuthKerberosGroupsExecute(r ApiGetAuthKerberosGroups
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -11014,20 +10957,20 @@ func (a *AuthApiService) GetAuthKerberosGroupsName(ctx context.Context, name str
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthKerberosGroupsNameExecute(r ApiGetAuthKerberosGroupsNameRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthKerberosGroupsNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthKerberosGroupsName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthKerberosGroupsName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/kerberos/groups/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11050,7 +10993,7 @@ func (a *AuthApiService) GetAuthKerberosGroupsNameExecute(r ApiGetAuthKerberosGr
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -11101,14 +11044,14 @@ func (a *AuthApiService) GetAuthKerberosLogin(ctx context.Context) ApiGetAuthKer
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthKerberosLoginExecute(r ApiGetAuthKerberosLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthKerberosLoginExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthKerberosLogin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthKerberosLogin")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11136,7 +11079,7 @@ func (a *AuthApiService) GetAuthKerberosLoginExecute(r ApiGetAuthKerberosLoginRe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -11187,14 +11130,14 @@ func (a *AuthApiService) GetAuthKubernetesConfig(ctx context.Context) ApiGetAuth
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthKubernetesConfigExecute(r ApiGetAuthKubernetesConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthKubernetesConfigExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthKubernetesConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthKubernetesConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11222,7 +11165,7 @@ func (a *AuthApiService) GetAuthKubernetesConfigExecute(r ApiGetAuthKubernetesCo
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -11280,14 +11223,14 @@ func (a *AuthApiService) GetAuthKubernetesRole(ctx context.Context) ApiGetAuthKu
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthKubernetesRoleExecute(r ApiGetAuthKubernetesRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthKubernetesRoleExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthKubernetesRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthKubernetesRole")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11297,11 +11240,8 @@ func (a *AuthApiService) GetAuthKubernetesRoleExecute(r ApiGetAuthKubernetesRole
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -11319,7 +11259,7 @@ func (a *AuthApiService) GetAuthKubernetesRoleExecute(r ApiGetAuthKubernetesRole
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -11373,20 +11313,20 @@ func (a *AuthApiService) GetAuthKubernetesRoleName(ctx context.Context, name str
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthKubernetesRoleNameExecute(r ApiGetAuthKubernetesRoleNameRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthKubernetesRoleNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthKubernetesRoleName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthKubernetesRoleName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/kubernetes/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11409,7 +11349,7 @@ func (a *AuthApiService) GetAuthKubernetesRoleNameExecute(r ApiGetAuthKubernetes
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -11460,14 +11400,14 @@ func (a *AuthApiService) GetAuthLdapConfig(ctx context.Context) ApiGetAuthLdapCo
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthLdapConfigExecute(r ApiGetAuthLdapConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthLdapConfigExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthLdapConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthLdapConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11495,7 +11435,7 @@ func (a *AuthApiService) GetAuthLdapConfigExecute(r ApiGetAuthLdapConfigRequest)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -11553,14 +11493,14 @@ func (a *AuthApiService) GetAuthLdapGroups(ctx context.Context) ApiGetAuthLdapGr
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthLdapGroupsExecute(r ApiGetAuthLdapGroupsRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthLdapGroupsExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthLdapGroups")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthLdapGroups")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11570,11 +11510,8 @@ func (a *AuthApiService) GetAuthLdapGroupsExecute(r ApiGetAuthLdapGroupsRequest)
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -11592,7 +11529,7 @@ func (a *AuthApiService) GetAuthLdapGroupsExecute(r ApiGetAuthLdapGroupsRequest)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -11646,20 +11583,20 @@ func (a *AuthApiService) GetAuthLdapGroupsName(ctx context.Context, name string)
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthLdapGroupsNameExecute(r ApiGetAuthLdapGroupsNameRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthLdapGroupsNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthLdapGroupsName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthLdapGroupsName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/ldap/groups/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11682,7 +11619,7 @@ func (a *AuthApiService) GetAuthLdapGroupsNameExecute(r ApiGetAuthLdapGroupsName
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -11740,14 +11677,14 @@ func (a *AuthApiService) GetAuthLdapUsers(ctx context.Context) ApiGetAuthLdapUse
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthLdapUsersExecute(r ApiGetAuthLdapUsersRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthLdapUsersExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthLdapUsers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthLdapUsers")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11757,11 +11694,8 @@ func (a *AuthApiService) GetAuthLdapUsersExecute(r ApiGetAuthLdapUsersRequest) (
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -11779,7 +11713,7 @@ func (a *AuthApiService) GetAuthLdapUsersExecute(r ApiGetAuthLdapUsersRequest) (
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -11833,20 +11767,20 @@ func (a *AuthApiService) GetAuthLdapUsersName(ctx context.Context, name string) 
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthLdapUsersNameExecute(r ApiGetAuthLdapUsersNameRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthLdapUsersNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthLdapUsersName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthLdapUsersName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/ldap/users/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11869,7 +11803,7 @@ func (a *AuthApiService) GetAuthLdapUsersNameExecute(r ApiGetAuthLdapUsersNameRe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -11920,14 +11854,14 @@ func (a *AuthApiService) GetAuthOciConfig(ctx context.Context) ApiGetAuthOciConf
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthOciConfigExecute(r ApiGetAuthOciConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthOciConfigExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthOciConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthOciConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11955,7 +11889,7 @@ func (a *AuthApiService) GetAuthOciConfigExecute(r ApiGetAuthOciConfigRequest) (
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -12013,14 +11947,14 @@ func (a *AuthApiService) GetAuthOciRole(ctx context.Context) ApiGetAuthOciRoleRe
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthOciRoleExecute(r ApiGetAuthOciRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthOciRoleExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthOciRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthOciRole")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12030,11 +11964,8 @@ func (a *AuthApiService) GetAuthOciRoleExecute(r ApiGetAuthOciRoleRequest) (*htt
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -12052,7 +11983,7 @@ func (a *AuthApiService) GetAuthOciRoleExecute(r ApiGetAuthOciRoleRequest) (*htt
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -12106,20 +12037,20 @@ func (a *AuthApiService) GetAuthOciRoleRole(ctx context.Context, role string) Ap
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthOciRoleRoleExecute(r ApiGetAuthOciRoleRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthOciRoleRoleExecute(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthOciRoleRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthOciRoleRole")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/oci/role/{role}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(r.role, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12142,7 +12073,7 @@ func (a *AuthApiService) GetAuthOciRoleRoleExecute(r ApiGetAuthOciRoleRoleReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -12193,14 +12124,14 @@ func (a *AuthApiService) GetAuthOidcConfig(ctx context.Context) ApiGetAuthOidcCo
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthOidcConfigExecute(r ApiGetAuthOidcConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthOidcConfigExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthOidcConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthOidcConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12228,7 +12159,7 @@ func (a *AuthApiService) GetAuthOidcConfigExecute(r ApiGetAuthOidcConfigRequest)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -12279,14 +12210,14 @@ func (a *AuthApiService) GetAuthOidcOidcCallback(ctx context.Context) ApiGetAuth
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthOidcOidcCallbackExecute(r ApiGetAuthOidcOidcCallbackRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthOidcOidcCallbackExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthOidcOidcCallback")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthOidcOidcCallback")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12314,7 +12245,7 @@ func (a *AuthApiService) GetAuthOidcOidcCallbackExecute(r ApiGetAuthOidcOidcCall
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -12374,14 +12305,14 @@ func (a *AuthApiService) GetAuthOidcRole(ctx context.Context) ApiGetAuthOidcRole
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthOidcRoleExecute(r ApiGetAuthOidcRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthOidcRoleExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthOidcRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthOidcRole")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12391,11 +12322,8 @@ func (a *AuthApiService) GetAuthOidcRoleExecute(r ApiGetAuthOidcRoleRequest) (*h
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -12413,7 +12341,7 @@ func (a *AuthApiService) GetAuthOidcRoleExecute(r ApiGetAuthOidcRoleRequest) (*h
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -12467,20 +12395,20 @@ func (a *AuthApiService) GetAuthOidcRoleName(ctx context.Context, name string) A
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthOidcRoleNameExecute(r ApiGetAuthOidcRoleNameRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthOidcRoleNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthOidcRoleName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthOidcRoleName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/oidc/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12503,7 +12431,7 @@ func (a *AuthApiService) GetAuthOidcRoleNameExecute(r ApiGetAuthOidcRoleNameRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -12554,14 +12482,14 @@ func (a *AuthApiService) GetAuthOktaConfig(ctx context.Context) ApiGetAuthOktaCo
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthOktaConfigExecute(r ApiGetAuthOktaConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthOktaConfigExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthOktaConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthOktaConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12589,7 +12517,7 @@ func (a *AuthApiService) GetAuthOktaConfigExecute(r ApiGetAuthOktaConfigRequest)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -12647,14 +12575,14 @@ func (a *AuthApiService) GetAuthOktaGroups(ctx context.Context) ApiGetAuthOktaGr
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthOktaGroupsExecute(r ApiGetAuthOktaGroupsRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthOktaGroupsExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthOktaGroups")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthOktaGroups")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12664,11 +12592,8 @@ func (a *AuthApiService) GetAuthOktaGroupsExecute(r ApiGetAuthOktaGroupsRequest)
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -12686,7 +12611,7 @@ func (a *AuthApiService) GetAuthOktaGroupsExecute(r ApiGetAuthOktaGroupsRequest)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -12740,20 +12665,20 @@ func (a *AuthApiService) GetAuthOktaGroupsName(ctx context.Context, name string)
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthOktaGroupsNameExecute(r ApiGetAuthOktaGroupsNameRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthOktaGroupsNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthOktaGroupsName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthOktaGroupsName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/okta/groups/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12776,7 +12701,7 @@ func (a *AuthApiService) GetAuthOktaGroupsNameExecute(r ApiGetAuthOktaGroupsName
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -12834,14 +12759,14 @@ func (a *AuthApiService) GetAuthOktaUsers(ctx context.Context) ApiGetAuthOktaUse
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthOktaUsersExecute(r ApiGetAuthOktaUsersRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthOktaUsersExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthOktaUsers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthOktaUsers")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12851,11 +12776,8 @@ func (a *AuthApiService) GetAuthOktaUsersExecute(r ApiGetAuthOktaUsersRequest) (
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -12873,7 +12795,7 @@ func (a *AuthApiService) GetAuthOktaUsersExecute(r ApiGetAuthOktaUsersRequest) (
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -12927,20 +12849,20 @@ func (a *AuthApiService) GetAuthOktaUsersName(ctx context.Context, name string) 
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthOktaUsersNameExecute(r ApiGetAuthOktaUsersNameRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthOktaUsersNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthOktaUsersName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthOktaUsersName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/okta/users/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12963,7 +12885,7 @@ func (a *AuthApiService) GetAuthOktaUsersNameExecute(r ApiGetAuthOktaUsersNameRe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -13017,20 +12939,20 @@ func (a *AuthApiService) GetAuthOktaVerifyNonce(ctx context.Context, nonce strin
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthOktaVerifyNonceExecute(r ApiGetAuthOktaVerifyNonceRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthOktaVerifyNonceExecute(ctx context.Context, nonce string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthOktaVerifyNonce")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthOktaVerifyNonce")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/okta/verify/{nonce}"
-	localVarPath = strings.Replace(localVarPath, "{"+"nonce"+"}", url.PathEscape(parameterToString(r.nonce, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"nonce"+"}", url.PathEscape(parameterToString(nonce, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13053,7 +12975,7 @@ func (a *AuthApiService) GetAuthOktaVerifyNonceExecute(r ApiGetAuthOktaVerifyNon
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -13104,14 +13026,14 @@ func (a *AuthApiService) GetAuthRadiusConfig(ctx context.Context) ApiGetAuthRadi
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthRadiusConfigExecute(r ApiGetAuthRadiusConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthRadiusConfigExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthRadiusConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthRadiusConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13139,7 +13061,7 @@ func (a *AuthApiService) GetAuthRadiusConfigExecute(r ApiGetAuthRadiusConfigRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -13197,14 +13119,14 @@ func (a *AuthApiService) GetAuthRadiusUsers(ctx context.Context) ApiGetAuthRadiu
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthRadiusUsersExecute(r ApiGetAuthRadiusUsersRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthRadiusUsersExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthRadiusUsers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthRadiusUsers")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13214,11 +13136,8 @@ func (a *AuthApiService) GetAuthRadiusUsersExecute(r ApiGetAuthRadiusUsersReques
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -13236,7 +13155,7 @@ func (a *AuthApiService) GetAuthRadiusUsersExecute(r ApiGetAuthRadiusUsersReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -13290,20 +13209,20 @@ func (a *AuthApiService) GetAuthRadiusUsersName(ctx context.Context, name string
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthRadiusUsersNameExecute(r ApiGetAuthRadiusUsersNameRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthRadiusUsersNameExecute(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthRadiusUsersName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthRadiusUsersName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/radius/users/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13326,7 +13245,7 @@ func (a *AuthApiService) GetAuthRadiusUsersNameExecute(r ApiGetAuthRadiusUsersNa
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -13384,14 +13303,14 @@ func (a *AuthApiService) GetAuthTokenAccessors(ctx context.Context) ApiGetAuthTo
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthTokenAccessorsExecute(r ApiGetAuthTokenAccessorsRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthTokenAccessorsExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthTokenAccessors")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthTokenAccessors")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13401,11 +13320,8 @@ func (a *AuthApiService) GetAuthTokenAccessorsExecute(r ApiGetAuthTokenAccessors
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -13423,7 +13339,7 @@ func (a *AuthApiService) GetAuthTokenAccessorsExecute(r ApiGetAuthTokenAccessors
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -13474,14 +13390,14 @@ func (a *AuthApiService) GetAuthTokenLookup(ctx context.Context) ApiGetAuthToken
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthTokenLookupExecute(r ApiGetAuthTokenLookupRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthTokenLookupExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthTokenLookup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthTokenLookup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13509,7 +13425,7 @@ func (a *AuthApiService) GetAuthTokenLookupExecute(r ApiGetAuthTokenLookupReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -13560,14 +13476,14 @@ func (a *AuthApiService) GetAuthTokenLookupSelf(ctx context.Context) ApiGetAuthT
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthTokenLookupSelfExecute(r ApiGetAuthTokenLookupSelfRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthTokenLookupSelfExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthTokenLookupSelf")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthTokenLookupSelf")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13595,7 +13511,7 @@ func (a *AuthApiService) GetAuthTokenLookupSelfExecute(r ApiGetAuthTokenLookupSe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -13653,14 +13569,14 @@ func (a *AuthApiService) GetAuthTokenRoles(ctx context.Context) ApiGetAuthTokenR
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthTokenRolesExecute(r ApiGetAuthTokenRolesRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthTokenRolesExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthTokenRoles")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthTokenRoles")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13670,11 +13586,8 @@ func (a *AuthApiService) GetAuthTokenRolesExecute(r ApiGetAuthTokenRolesRequest)
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -13692,7 +13605,7 @@ func (a *AuthApiService) GetAuthTokenRolesExecute(r ApiGetAuthTokenRolesRequest)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -13746,20 +13659,20 @@ func (a *AuthApiService) GetAuthTokenRolesRoleName(ctx context.Context, roleName
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthTokenRolesRoleNameExecute(r ApiGetAuthTokenRolesRoleNameRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthTokenRolesRoleNameExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthTokenRolesRoleName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthTokenRolesRoleName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/token/roles/{role_name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13782,7 +13695,7 @@ func (a *AuthApiService) GetAuthTokenRolesRoleNameExecute(r ApiGetAuthTokenRoles
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -13840,14 +13753,14 @@ func (a *AuthApiService) GetAuthUserpassUsers(ctx context.Context) ApiGetAuthUse
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthUserpassUsersExecute(r ApiGetAuthUserpassUsersRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthUserpassUsersExecute(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthUserpassUsers")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthUserpassUsers")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13857,11 +13770,8 @@ func (a *AuthApiService) GetAuthUserpassUsersExecute(r ApiGetAuthUserpassUsersRe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(*list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -13879,7 +13789,7 @@ func (a *AuthApiService) GetAuthUserpassUsersExecute(r ApiGetAuthUserpassUsersRe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -13933,20 +13843,20 @@ func (a *AuthApiService) GetAuthUserpassUsersUsername(ctx context.Context, usern
 }
 
 // Execute executes the request
-func (a *AuthApiService) GetAuthUserpassUsersUsernameExecute(r ApiGetAuthUserpassUsersUsernameRequest) (*http.Response, error) {
+func (a *AuthApiService) GetAuthUserpassUsersUsernameExecute(ctx context.Context, username string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.GetAuthUserpassUsersUsername")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.GetAuthUserpassUsersUsername")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/userpass/users/{username}"
-	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(r.username, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(username, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13969,7 +13879,7 @@ func (a *AuthApiService) GetAuthUserpassUsersUsernameExecute(r ApiGetAuthUserpas
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -14026,14 +13936,14 @@ func (a *AuthApiService) PostAuthAlicloudLogin(ctx context.Context) ApiPostAuthA
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthAlicloudLoginExecute(r ApiPostAuthAlicloudLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAlicloudLoginExecute(ctx context.Context, alicloudLoginRequest AlicloudLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAlicloudLogin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthAlicloudLogin")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14062,8 +13972,8 @@ func (a *AuthApiService) PostAuthAlicloudLoginExecute(r ApiPostAuthAlicloudLogin
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.alicloudLoginRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = alicloudLoginRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -14123,20 +14033,20 @@ func (a *AuthApiService) PostAuthAlicloudRoleRole(ctx context.Context, role stri
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthAlicloudRoleRoleExecute(r ApiPostAuthAlicloudRoleRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAlicloudRoleRoleExecute(ctx context.Context, role string, alicloudRoleRequest AlicloudRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAlicloudRoleRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthAlicloudRoleRole")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/alicloud/role/{role}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(r.role, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14160,8 +14070,8 @@ func (a *AuthApiService) PostAuthAlicloudRoleRoleExecute(r ApiPostAuthAlicloudRo
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.alicloudRoleRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = alicloudRoleRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -14218,14 +14128,14 @@ func (a *AuthApiService) PostAuthAppIdLogin(ctx context.Context) ApiPostAuthAppI
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthAppIdLoginExecute(r ApiPostAuthAppIdLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAppIdLoginExecute(ctx context.Context, appIdLoginRequest AppIdLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAppIdLogin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthAppIdLogin")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14254,8 +14164,8 @@ func (a *AuthApiService) PostAuthAppIdLoginExecute(r ApiPostAuthAppIdLoginReques
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.appIdLoginRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = appIdLoginRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -14315,20 +14225,20 @@ func (a *AuthApiService) PostAuthAppIdLoginAppId(ctx context.Context, appId stri
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthAppIdLoginAppIdExecute(r ApiPostAuthAppIdLoginAppIdRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAppIdLoginAppIdExecute(ctx context.Context, appId string, appIdLoginRequest AppIdLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAppIdLoginAppId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthAppIdLoginAppId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/app-id/login/{app_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", url.PathEscape(parameterToString(r.appId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", url.PathEscape(parameterToString(appId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14352,8 +14262,8 @@ func (a *AuthApiService) PostAuthAppIdLoginAppIdExecute(r ApiPostAuthAppIdLoginA
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.appIdLoginRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = appIdLoginRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -14413,20 +14323,20 @@ func (a *AuthApiService) PostAuthAppIdMapAppIdKey(ctx context.Context, key strin
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthAppIdMapAppIdKeyExecute(r ApiPostAuthAppIdMapAppIdKeyRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAppIdMapAppIdKeyExecute(ctx context.Context, key string, appIdMapAppIdRequest AppIdMapAppIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAppIdMapAppIdKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthAppIdMapAppIdKey")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/app-id/map/app-id/{key}"
-	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(r.key, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14450,8 +14360,8 @@ func (a *AuthApiService) PostAuthAppIdMapAppIdKeyExecute(r ApiPostAuthAppIdMapAp
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.appIdMapAppIdRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = appIdMapAppIdRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -14511,20 +14421,20 @@ func (a *AuthApiService) PostAuthAppIdMapUserIdKey(ctx context.Context, key stri
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthAppIdMapUserIdKeyExecute(r ApiPostAuthAppIdMapUserIdKeyRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAppIdMapUserIdKeyExecute(ctx context.Context, key string, appIdMapUserIdRequest AppIdMapUserIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAppIdMapUserIdKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthAppIdMapUserIdKey")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/app-id/map/user-id/{key}"
-	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(r.key, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14548,8 +14458,8 @@ func (a *AuthApiService) PostAuthAppIdMapUserIdKeyExecute(r ApiPostAuthAppIdMapU
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.appIdMapUserIdRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = appIdMapUserIdRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -14606,14 +14516,14 @@ func (a *AuthApiService) PostAuthApproleLogin(ctx context.Context) ApiPostAuthAp
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleLoginExecute(r ApiPostAuthApproleLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleLoginExecute(ctx context.Context, approleLoginRequest ApproleLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleLogin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthApproleLogin")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14642,8 +14552,8 @@ func (a *AuthApiService) PostAuthApproleLoginExecute(r ApiPostAuthApproleLoginRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.approleLoginRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = approleLoginRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -14703,20 +14613,20 @@ func (a *AuthApiService) PostAuthApproleRoleRoleName(ctx context.Context, roleNa
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameExecute(r ApiPostAuthApproleRoleRoleNameRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameExecute(ctx context.Context, roleName string, approleRoleRequest ApproleRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthApproleRoleRoleName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14740,8 +14650,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameExecute(r ApiPostAuthApprole
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.approleRoleRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = approleRoleRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -14801,20 +14711,20 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameBindSecretId(ctx context.Con
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameBindSecretIdExecute(r ApiPostAuthApproleRoleRoleNameBindSecretIdRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameBindSecretIdExecute(ctx context.Context, roleName string, approleRoleBindSecretIdRequest ApproleRoleBindSecretIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameBindSecretId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthApproleRoleRoleNameBindSecretId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/bind-secret-id"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14838,8 +14748,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameBindSecretIdExecute(r ApiPos
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.approleRoleBindSecretIdRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = approleRoleBindSecretIdRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -14899,20 +14809,20 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameBoundCidrList(ctx context.Co
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameBoundCidrListExecute(r ApiPostAuthApproleRoleRoleNameBoundCidrListRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameBoundCidrListExecute(ctx context.Context, roleName string, approleRoleBoundCidrListRequest ApproleRoleBoundCidrListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameBoundCidrList")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthApproleRoleRoleNameBoundCidrList")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/bound-cidr-list"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14936,8 +14846,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameBoundCidrListExecute(r ApiPo
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.approleRoleBoundCidrListRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = approleRoleBoundCidrListRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -14997,20 +14907,20 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameCustomSecretId(ctx context.C
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameCustomSecretIdExecute(r ApiPostAuthApproleRoleRoleNameCustomSecretIdRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameCustomSecretIdExecute(ctx context.Context, roleName string, approleRoleCustomSecretIdRequest ApproleRoleCustomSecretIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameCustomSecretId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthApproleRoleRoleNameCustomSecretId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/custom-secret-id"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15034,8 +14944,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameCustomSecretIdExecute(r ApiP
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.approleRoleCustomSecretIdRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = approleRoleCustomSecretIdRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -15095,20 +15005,20 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNamePeriod(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNamePeriodExecute(r ApiPostAuthApproleRoleRoleNamePeriodRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNamePeriodExecute(ctx context.Context, roleName string, approleRolePeriodRequest ApproleRolePeriodRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNamePeriod")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthApproleRoleRoleNamePeriod")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/period"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15132,8 +15042,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNamePeriodExecute(r ApiPostAuthA
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.approleRolePeriodRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = approleRolePeriodRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -15193,20 +15103,20 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNamePolicies(ctx context.Context
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNamePoliciesExecute(r ApiPostAuthApproleRoleRoleNamePoliciesRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNamePoliciesExecute(ctx context.Context, roleName string, approleRolePoliciesRequest ApproleRolePoliciesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNamePolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthApproleRoleRoleNamePolicies")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/policies"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15230,8 +15140,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNamePoliciesExecute(r ApiPostAut
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.approleRolePoliciesRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = approleRolePoliciesRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -15291,20 +15201,20 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameRoleId(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameRoleIdExecute(r ApiPostAuthApproleRoleRoleNameRoleIdRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameRoleIdExecute(ctx context.Context, roleName string, approleRoleRoleIdRequest ApproleRoleRoleIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameRoleId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthApproleRoleRoleNameRoleId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/role-id"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15328,8 +15238,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameRoleIdExecute(r ApiPostAuthA
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.approleRoleRoleIdRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = approleRoleRoleIdRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -15389,20 +15299,20 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretId(ctx context.Context
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdExecute(r ApiPostAuthApproleRoleRoleNameSecretIdRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdExecute(ctx context.Context, roleName string, approleRoleSecretIdRequest ApproleRoleSecretIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameSecretId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthApproleRoleRoleNameSecretId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/secret-id"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15426,8 +15336,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdExecute(r ApiPostAut
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.approleRoleSecretIdRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = approleRoleSecretIdRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -15487,20 +15397,20 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx 
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdAccessorDestroyExecute(r ApiPostAuthApproleRoleRoleNameSecretIdAccessorDestroyRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdAccessorDestroyExecute(ctx context.Context, roleName string, approleRoleSecretIdAccessorDestroyRequest ApproleRoleSecretIdAccessorDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameSecretIdAccessorDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthApproleRoleRoleNameSecretIdAccessorDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/secret-id-accessor/destroy"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15524,8 +15434,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdAccessorDestroyExecu
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.approleRoleSecretIdAccessorDestroyRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = approleRoleSecretIdAccessorDestroyRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -15585,20 +15495,20 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdAccessorLookup(ctx c
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdAccessorLookupExecute(r ApiPostAuthApproleRoleRoleNameSecretIdAccessorLookupRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdAccessorLookupExecute(ctx context.Context, roleName string, approleRoleSecretIdAccessorLookupRequest ApproleRoleSecretIdAccessorLookupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameSecretIdAccessorLookup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthApproleRoleRoleNameSecretIdAccessorLookup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/secret-id-accessor/lookup"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15622,8 +15532,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdAccessorLookupExecut
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.approleRoleSecretIdAccessorLookupRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = approleRoleSecretIdAccessorLookupRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -15683,20 +15593,20 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx conte
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdBoundCidrsExecute(r ApiPostAuthApproleRoleRoleNameSecretIdBoundCidrsRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdBoundCidrsExecute(ctx context.Context, roleName string, approleRoleSecretIdBoundCidrsRequest ApproleRoleSecretIdBoundCidrsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameSecretIdBoundCidrs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthApproleRoleRoleNameSecretIdBoundCidrs")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/secret-id-bound-cidrs"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15720,8 +15630,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdBoundCidrsExecute(r 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.approleRoleSecretIdBoundCidrsRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = approleRoleSecretIdBoundCidrsRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -15781,20 +15691,20 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdDestroy(ctx context.
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdDestroyExecute(r ApiPostAuthApproleRoleRoleNameSecretIdDestroyRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdDestroyExecute(ctx context.Context, roleName string, approleRoleSecretIdDestroyRequest ApproleRoleSecretIdDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameSecretIdDestroy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthApproleRoleRoleNameSecretIdDestroy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/secret-id/destroy"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15818,8 +15728,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdDestroyExecute(r Api
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.approleRoleSecretIdDestroyRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = approleRoleSecretIdDestroyRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -15879,20 +15789,20 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdLookup(ctx context.C
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdLookupExecute(r ApiPostAuthApproleRoleRoleNameSecretIdLookupRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdLookupExecute(ctx context.Context, roleName string, approleRoleSecretIdLookupRequest ApproleRoleSecretIdLookupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameSecretIdLookup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthApproleRoleRoleNameSecretIdLookup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/secret-id/lookup"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15916,8 +15826,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdLookupExecute(r ApiP
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.approleRoleSecretIdLookupRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = approleRoleSecretIdLookupRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -15977,20 +15887,20 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdNumUses(ctx context.
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdNumUsesExecute(r ApiPostAuthApproleRoleRoleNameSecretIdNumUsesRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdNumUsesExecute(ctx context.Context, roleName string, approleRoleSecretIdNumUsesRequest ApproleRoleSecretIdNumUsesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameSecretIdNumUses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthApproleRoleRoleNameSecretIdNumUses")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/secret-id-num-uses"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -16014,8 +15924,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdNumUsesExecute(r Api
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.approleRoleSecretIdNumUsesRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = approleRoleSecretIdNumUsesRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -16075,20 +15985,20 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdTtl(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdTtlExecute(r ApiPostAuthApproleRoleRoleNameSecretIdTtlRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdTtlExecute(ctx context.Context, roleName string, approleRoleSecretIdTtlRequest ApproleRoleSecretIdTtlRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameSecretIdTtl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthApproleRoleRoleNameSecretIdTtl")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/secret-id-ttl"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -16112,8 +16022,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdTtlExecute(r ApiPost
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.approleRoleSecretIdTtlRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = approleRoleSecretIdTtlRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -16173,20 +16083,20 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenBoundCidrsExecute(r ApiPostAuthApproleRoleRoleNameTokenBoundCidrsRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenBoundCidrsExecute(ctx context.Context, roleName string, approleRoleTokenBoundCidrsRequest ApproleRoleTokenBoundCidrsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameTokenBoundCidrs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthApproleRoleRoleNameTokenBoundCidrs")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/token-bound-cidrs"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -16210,8 +16120,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenBoundCidrsExecute(r Api
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.approleRoleTokenBoundCidrsRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = approleRoleTokenBoundCidrsRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -16271,20 +16181,20 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenMaxTtlExecute(r ApiPostAuthApproleRoleRoleNameTokenMaxTtlRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenMaxTtlExecute(ctx context.Context, roleName string, approleRoleTokenMaxTtlRequest ApproleRoleTokenMaxTtlRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameTokenMaxTtl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthApproleRoleRoleNameTokenMaxTtl")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/token-max-ttl"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -16308,8 +16218,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenMaxTtlExecute(r ApiPost
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.approleRoleTokenMaxTtlRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = approleRoleTokenMaxTtlRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -16369,20 +16279,20 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenNumUses(ctx context.Con
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenNumUsesExecute(r ApiPostAuthApproleRoleRoleNameTokenNumUsesRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenNumUsesExecute(ctx context.Context, roleName string, approleRoleTokenNumUsesRequest ApproleRoleTokenNumUsesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameTokenNumUses")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthApproleRoleRoleNameTokenNumUses")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/token-num-uses"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -16406,8 +16316,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenNumUsesExecute(r ApiPos
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.approleRoleTokenNumUsesRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = approleRoleTokenNumUsesRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -16467,20 +16377,20 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenTtl(ctx context.Context
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenTtlExecute(r ApiPostAuthApproleRoleRoleNameTokenTtlRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenTtlExecute(ctx context.Context, roleName string, approleRoleTokenTtlRequest ApproleRoleTokenTtlRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleRoleRoleNameTokenTtl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthApproleRoleRoleNameTokenTtl")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/approle/role/{role_name}/token-ttl"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -16504,8 +16414,8 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenTtlExecute(r ApiPostAut
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.approleRoleTokenTtlRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = approleRoleTokenTtlRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -16556,14 +16466,14 @@ func (a *AuthApiService) PostAuthApproleTidySecretId(ctx context.Context) ApiPos
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthApproleTidySecretIdExecute(r ApiPostAuthApproleTidySecretIdRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthApproleTidySecretIdExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthApproleTidySecretId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthApproleTidySecretId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16591,7 +16501,7 @@ func (a *AuthApiService) PostAuthApproleTidySecretIdExecute(r ApiPostAuthApprole
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -16651,20 +16561,20 @@ func (a *AuthApiService) PostAuthAwsConfigCertificateCertName(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsConfigCertificateCertNameExecute(r ApiPostAuthAwsConfigCertificateCertNameRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsConfigCertificateCertNameExecute(ctx context.Context, certName string, awsConfigCertificateRequest AwsConfigCertificateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsConfigCertificateCertName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthAwsConfigCertificateCertName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/aws/config/certificate/{cert_name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"cert_name"+"}", url.PathEscape(parameterToString(r.certName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"cert_name"+"}", url.PathEscape(parameterToString(certName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -16688,8 +16598,8 @@ func (a *AuthApiService) PostAuthAwsConfigCertificateCertNameExecute(r ApiPostAu
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.awsConfigCertificateRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = awsConfigCertificateRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -16746,14 +16656,14 @@ func (a *AuthApiService) PostAuthAwsConfigClient(ctx context.Context) ApiPostAut
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsConfigClientExecute(r ApiPostAuthAwsConfigClientRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsConfigClientExecute(ctx context.Context, awsConfigClientRequest AwsConfigClientRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsConfigClient")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthAwsConfigClient")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16782,8 +16692,8 @@ func (a *AuthApiService) PostAuthAwsConfigClientExecute(r ApiPostAuthAwsConfigCl
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.awsConfigClientRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = awsConfigClientRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -16840,14 +16750,14 @@ func (a *AuthApiService) PostAuthAwsConfigIdentity(ctx context.Context) ApiPostA
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsConfigIdentityExecute(r ApiPostAuthAwsConfigIdentityRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsConfigIdentityExecute(ctx context.Context, awsConfigIdentityRequest AwsConfigIdentityRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsConfigIdentity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthAwsConfigIdentity")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16876,8 +16786,8 @@ func (a *AuthApiService) PostAuthAwsConfigIdentityExecute(r ApiPostAuthAwsConfig
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.awsConfigIdentityRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = awsConfigIdentityRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -16928,14 +16838,14 @@ func (a *AuthApiService) PostAuthAwsConfigRotateRoot(ctx context.Context) ApiPos
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsConfigRotateRootExecute(r ApiPostAuthAwsConfigRotateRootRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsConfigRotateRootExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsConfigRotateRoot")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthAwsConfigRotateRoot")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -16963,7 +16873,7 @@ func (a *AuthApiService) PostAuthAwsConfigRotateRootExecute(r ApiPostAuthAwsConf
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -17023,20 +16933,20 @@ func (a *AuthApiService) PostAuthAwsConfigStsAccountId(ctx context.Context, acco
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsConfigStsAccountIdExecute(r ApiPostAuthAwsConfigStsAccountIdRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsConfigStsAccountIdExecute(ctx context.Context, accountId string, awsConfigStsRequest AwsConfigStsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsConfigStsAccountId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthAwsConfigStsAccountId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/aws/config/sts/{account_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", url.PathEscape(parameterToString(r.accountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", url.PathEscape(parameterToString(accountId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -17060,8 +16970,8 @@ func (a *AuthApiService) PostAuthAwsConfigStsAccountIdExecute(r ApiPostAuthAwsCo
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.awsConfigStsRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = awsConfigStsRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -17118,14 +17028,14 @@ func (a *AuthApiService) PostAuthAwsConfigTidyIdentityAccesslist(ctx context.Con
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsConfigTidyIdentityAccesslistExecute(r ApiPostAuthAwsConfigTidyIdentityAccesslistRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsConfigTidyIdentityAccesslistExecute(ctx context.Context, awsConfigTidyIdentityAccesslistRequest AwsConfigTidyIdentityAccesslistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsConfigTidyIdentityAccesslist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthAwsConfigTidyIdentityAccesslist")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17154,8 +17064,8 @@ func (a *AuthApiService) PostAuthAwsConfigTidyIdentityAccesslistExecute(r ApiPos
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.awsConfigTidyIdentityAccesslistRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = awsConfigTidyIdentityAccesslistRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -17212,14 +17122,14 @@ func (a *AuthApiService) PostAuthAwsConfigTidyIdentityWhitelist(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsConfigTidyIdentityWhitelistExecute(r ApiPostAuthAwsConfigTidyIdentityWhitelistRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsConfigTidyIdentityWhitelistExecute(ctx context.Context, awsConfigTidyIdentityWhitelistRequest AwsConfigTidyIdentityWhitelistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsConfigTidyIdentityWhitelist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthAwsConfigTidyIdentityWhitelist")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17248,8 +17158,8 @@ func (a *AuthApiService) PostAuthAwsConfigTidyIdentityWhitelistExecute(r ApiPost
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.awsConfigTidyIdentityWhitelistRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = awsConfigTidyIdentityWhitelistRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -17306,14 +17216,14 @@ func (a *AuthApiService) PostAuthAwsConfigTidyRoletagBlacklist(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsConfigTidyRoletagBlacklistExecute(r ApiPostAuthAwsConfigTidyRoletagBlacklistRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsConfigTidyRoletagBlacklistExecute(ctx context.Context, awsConfigTidyRoletagBlacklistRequest AwsConfigTidyRoletagBlacklistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsConfigTidyRoletagBlacklist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthAwsConfigTidyRoletagBlacklist")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17342,8 +17252,8 @@ func (a *AuthApiService) PostAuthAwsConfigTidyRoletagBlacklistExecute(r ApiPostA
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.awsConfigTidyRoletagBlacklistRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = awsConfigTidyRoletagBlacklistRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -17400,14 +17310,14 @@ func (a *AuthApiService) PostAuthAwsConfigTidyRoletagDenylist(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsConfigTidyRoletagDenylistExecute(r ApiPostAuthAwsConfigTidyRoletagDenylistRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsConfigTidyRoletagDenylistExecute(ctx context.Context, awsConfigTidyRoletagDenylistRequest AwsConfigTidyRoletagDenylistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsConfigTidyRoletagDenylist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthAwsConfigTidyRoletagDenylist")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17436,8 +17346,8 @@ func (a *AuthApiService) PostAuthAwsConfigTidyRoletagDenylistExecute(r ApiPostAu
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.awsConfigTidyRoletagDenylistRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = awsConfigTidyRoletagDenylistRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -17494,14 +17404,14 @@ func (a *AuthApiService) PostAuthAwsLogin(ctx context.Context) ApiPostAuthAwsLog
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsLoginExecute(r ApiPostAuthAwsLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsLoginExecute(ctx context.Context, awsLoginRequest AwsLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsLogin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthAwsLogin")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -17530,8 +17440,8 @@ func (a *AuthApiService) PostAuthAwsLoginExecute(r ApiPostAuthAwsLoginRequest) (
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.awsLoginRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = awsLoginRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -17591,20 +17501,20 @@ func (a *AuthApiService) PostAuthAwsRoleRole(ctx context.Context, role string) A
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsRoleRoleExecute(r ApiPostAuthAwsRoleRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsRoleRoleExecute(ctx context.Context, role string, awsRoleRequest AwsRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsRoleRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthAwsRoleRole")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/aws/role/{role}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(r.role, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -17628,8 +17538,8 @@ func (a *AuthApiService) PostAuthAwsRoleRoleExecute(r ApiPostAuthAwsRoleRoleRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.awsRoleRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = awsRoleRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -17689,20 +17599,20 @@ func (a *AuthApiService) PostAuthAwsRoleRoleTag(ctx context.Context, role string
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsRoleRoleTagExecute(r ApiPostAuthAwsRoleRoleTagRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsRoleRoleTagExecute(ctx context.Context, role string, awsRoleTagRequest AwsRoleTagRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsRoleRoleTag")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthAwsRoleRoleTag")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/aws/role/{role}/tag"
-	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(r.role, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -17726,8 +17636,8 @@ func (a *AuthApiService) PostAuthAwsRoleRoleTagExecute(r ApiPostAuthAwsRoleRoleT
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.awsRoleTagRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = awsRoleTagRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -17781,20 +17691,20 @@ func (a *AuthApiService) PostAuthAwsRoletagBlacklistRoleTag(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsRoletagBlacklistRoleTagExecute(r ApiPostAuthAwsRoletagBlacklistRoleTagRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsRoletagBlacklistRoleTagExecute(ctx context.Context, roleTag string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsRoletagBlacklistRoleTag")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthAwsRoletagBlacklistRoleTag")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/aws/roletag-blacklist/{role_tag}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(r.roleTag, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(roleTag, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -17817,7 +17727,7 @@ func (a *AuthApiService) PostAuthAwsRoletagBlacklistRoleTagExecute(r ApiPostAuth
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -17871,20 +17781,20 @@ func (a *AuthApiService) PostAuthAwsRoletagDenylistRoleTag(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsRoletagDenylistRoleTagExecute(r ApiPostAuthAwsRoletagDenylistRoleTagRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsRoletagDenylistRoleTagExecute(ctx context.Context, roleTag string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsRoletagDenylistRoleTag")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthAwsRoletagDenylistRoleTag")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/aws/roletag-denylist/{role_tag}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(r.roleTag, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(roleTag, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -17907,7 +17817,7 @@ func (a *AuthApiService) PostAuthAwsRoletagDenylistRoleTagExecute(r ApiPostAuthA
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -17964,14 +17874,14 @@ func (a *AuthApiService) PostAuthAwsTidyIdentityAccesslist(ctx context.Context) 
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsTidyIdentityAccesslistExecute(r ApiPostAuthAwsTidyIdentityAccesslistRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsTidyIdentityAccesslistExecute(ctx context.Context, awsTidyIdentityAccesslistRequest AwsTidyIdentityAccesslistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsTidyIdentityAccesslist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthAwsTidyIdentityAccesslist")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -18000,8 +17910,8 @@ func (a *AuthApiService) PostAuthAwsTidyIdentityAccesslistExecute(r ApiPostAuthA
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.awsTidyIdentityAccesslistRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = awsTidyIdentityAccesslistRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -18058,14 +17968,14 @@ func (a *AuthApiService) PostAuthAwsTidyIdentityWhitelist(ctx context.Context) A
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsTidyIdentityWhitelistExecute(r ApiPostAuthAwsTidyIdentityWhitelistRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsTidyIdentityWhitelistExecute(ctx context.Context, awsTidyIdentityWhitelistRequest AwsTidyIdentityWhitelistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsTidyIdentityWhitelist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthAwsTidyIdentityWhitelist")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -18094,8 +18004,8 @@ func (a *AuthApiService) PostAuthAwsTidyIdentityWhitelistExecute(r ApiPostAuthAw
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.awsTidyIdentityWhitelistRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = awsTidyIdentityWhitelistRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -18152,14 +18062,14 @@ func (a *AuthApiService) PostAuthAwsTidyRoletagBlacklist(ctx context.Context) Ap
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsTidyRoletagBlacklistExecute(r ApiPostAuthAwsTidyRoletagBlacklistRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsTidyRoletagBlacklistExecute(ctx context.Context, awsTidyRoletagBlacklistRequest AwsTidyRoletagBlacklistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsTidyRoletagBlacklist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthAwsTidyRoletagBlacklist")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -18188,8 +18098,8 @@ func (a *AuthApiService) PostAuthAwsTidyRoletagBlacklistExecute(r ApiPostAuthAws
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.awsTidyRoletagBlacklistRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = awsTidyRoletagBlacklistRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -18246,14 +18156,14 @@ func (a *AuthApiService) PostAuthAwsTidyRoletagDenylist(ctx context.Context) Api
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthAwsTidyRoletagDenylistExecute(r ApiPostAuthAwsTidyRoletagDenylistRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAwsTidyRoletagDenylistExecute(ctx context.Context, awsTidyRoletagDenylistRequest AwsTidyRoletagDenylistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAwsTidyRoletagDenylist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthAwsTidyRoletagDenylist")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -18282,8 +18192,8 @@ func (a *AuthApiService) PostAuthAwsTidyRoletagDenylistExecute(r ApiPostAuthAwsT
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.awsTidyRoletagDenylistRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = awsTidyRoletagDenylistRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -18340,14 +18250,14 @@ func (a *AuthApiService) PostAuthAzureConfig(ctx context.Context) ApiPostAuthAzu
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthAzureConfigExecute(r ApiPostAuthAzureConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAzureConfigExecute(ctx context.Context, azureConfigRequest AzureConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAzureConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthAzureConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -18376,8 +18286,8 @@ func (a *AuthApiService) PostAuthAzureConfigExecute(r ApiPostAuthAzureConfigRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.azureConfigRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = azureConfigRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -18434,14 +18344,14 @@ func (a *AuthApiService) PostAuthAzureLogin(ctx context.Context) ApiPostAuthAzur
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthAzureLoginExecute(r ApiPostAuthAzureLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAzureLoginExecute(ctx context.Context, azureLoginRequest AzureLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAzureLogin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthAzureLogin")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -18470,8 +18380,8 @@ func (a *AuthApiService) PostAuthAzureLoginExecute(r ApiPostAuthAzureLoginReques
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.azureLoginRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = azureLoginRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -18531,20 +18441,20 @@ func (a *AuthApiService) PostAuthAzureRoleName(ctx context.Context, name string)
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthAzureRoleNameExecute(r ApiPostAuthAzureRoleNameRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthAzureRoleNameExecute(ctx context.Context, name string, azureRoleRequest AzureRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthAzureRoleName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthAzureRoleName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/azure/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -18568,8 +18478,8 @@ func (a *AuthApiService) PostAuthAzureRoleNameExecute(r ApiPostAuthAzureRoleName
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.azureRoleRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = azureRoleRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -18626,14 +18536,14 @@ func (a *AuthApiService) PostAuthCentrifyConfig(ctx context.Context) ApiPostAuth
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthCentrifyConfigExecute(r ApiPostAuthCentrifyConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthCentrifyConfigExecute(ctx context.Context, centrifyConfigRequest CentrifyConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthCentrifyConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthCentrifyConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -18662,8 +18572,8 @@ func (a *AuthApiService) PostAuthCentrifyConfigExecute(r ApiPostAuthCentrifyConf
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.centrifyConfigRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = centrifyConfigRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -18720,14 +18630,14 @@ func (a *AuthApiService) PostAuthCentrifyLogin(ctx context.Context) ApiPostAuthC
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthCentrifyLoginExecute(r ApiPostAuthCentrifyLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthCentrifyLoginExecute(ctx context.Context, centrifyLoginRequest CentrifyLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthCentrifyLogin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthCentrifyLogin")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -18756,8 +18666,8 @@ func (a *AuthApiService) PostAuthCentrifyLoginExecute(r ApiPostAuthCentrifyLogin
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.centrifyLoginRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = centrifyLoginRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -18817,20 +18727,20 @@ func (a *AuthApiService) PostAuthCertCertsName(ctx context.Context, name string)
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthCertCertsNameExecute(r ApiPostAuthCertCertsNameRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthCertCertsNameExecute(ctx context.Context, name string, certCertsRequest CertCertsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthCertCertsName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthCertCertsName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/cert/certs/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -18854,8 +18764,8 @@ func (a *AuthApiService) PostAuthCertCertsNameExecute(r ApiPostAuthCertCertsName
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.certCertsRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = certCertsRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -18912,14 +18822,14 @@ func (a *AuthApiService) PostAuthCertConfig(ctx context.Context) ApiPostAuthCert
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthCertConfigExecute(r ApiPostAuthCertConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthCertConfigExecute(ctx context.Context, certConfigRequest CertConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthCertConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthCertConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -18948,8 +18858,8 @@ func (a *AuthApiService) PostAuthCertConfigExecute(r ApiPostAuthCertConfigReques
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.certConfigRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = certConfigRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -19009,20 +18919,20 @@ func (a *AuthApiService) PostAuthCertCrlsName(ctx context.Context, name string) 
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthCertCrlsNameExecute(r ApiPostAuthCertCrlsNameRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthCertCrlsNameExecute(ctx context.Context, name string, certCrlsRequest CertCrlsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthCertCrlsName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthCertCrlsName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/cert/crls/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -19046,8 +18956,8 @@ func (a *AuthApiService) PostAuthCertCrlsNameExecute(r ApiPostAuthCertCrlsNameRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.certCrlsRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = certCrlsRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -19104,14 +19014,14 @@ func (a *AuthApiService) PostAuthCertLogin(ctx context.Context) ApiPostAuthCertL
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthCertLoginExecute(r ApiPostAuthCertLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthCertLoginExecute(ctx context.Context, certLoginRequest CertLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthCertLogin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthCertLogin")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -19140,8 +19050,8 @@ func (a *AuthApiService) PostAuthCertLoginExecute(r ApiPostAuthCertLoginRequest)
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.certLoginRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = certLoginRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -19198,14 +19108,14 @@ func (a *AuthApiService) PostAuthCfConfig(ctx context.Context) ApiPostAuthCfConf
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthCfConfigExecute(r ApiPostAuthCfConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthCfConfigExecute(ctx context.Context, cfConfigRequest CfConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthCfConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthCfConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -19234,8 +19144,8 @@ func (a *AuthApiService) PostAuthCfConfigExecute(r ApiPostAuthCfConfigRequest) (
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.cfConfigRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = cfConfigRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -19292,14 +19202,14 @@ func (a *AuthApiService) PostAuthCfLogin(ctx context.Context) ApiPostAuthCfLogin
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthCfLoginExecute(r ApiPostAuthCfLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthCfLoginExecute(ctx context.Context, cfLoginRequest CfLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthCfLogin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthCfLogin")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -19328,8 +19238,8 @@ func (a *AuthApiService) PostAuthCfLoginExecute(r ApiPostAuthCfLoginRequest) (*h
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.cfLoginRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = cfLoginRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -19389,20 +19299,20 @@ func (a *AuthApiService) PostAuthCfRolesRole(ctx context.Context, role string) A
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthCfRolesRoleExecute(r ApiPostAuthCfRolesRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthCfRolesRoleExecute(ctx context.Context, role string, cfRolesRequest CfRolesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthCfRolesRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthCfRolesRole")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/cf/roles/{role}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(r.role, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -19426,8 +19336,8 @@ func (a *AuthApiService) PostAuthCfRolesRoleExecute(r ApiPostAuthCfRolesRoleRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.cfRolesRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = cfRolesRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -19484,14 +19394,14 @@ func (a *AuthApiService) PostAuthGcpConfig(ctx context.Context) ApiPostAuthGcpCo
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthGcpConfigExecute(r ApiPostAuthGcpConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthGcpConfigExecute(ctx context.Context, gcpConfigRequest GcpConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthGcpConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthGcpConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -19520,8 +19430,8 @@ func (a *AuthApiService) PostAuthGcpConfigExecute(r ApiPostAuthGcpConfigRequest)
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.gcpConfigRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = gcpConfigRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -19578,14 +19488,14 @@ func (a *AuthApiService) PostAuthGcpLogin(ctx context.Context) ApiPostAuthGcpLog
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthGcpLoginExecute(r ApiPostAuthGcpLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthGcpLoginExecute(ctx context.Context, gcpLoginRequest GcpLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthGcpLogin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthGcpLogin")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -19614,8 +19524,8 @@ func (a *AuthApiService) PostAuthGcpLoginExecute(r ApiPostAuthGcpLoginRequest) (
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.gcpLoginRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = gcpLoginRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -19675,20 +19585,20 @@ func (a *AuthApiService) PostAuthGcpRoleName(ctx context.Context, name string) A
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthGcpRoleNameExecute(r ApiPostAuthGcpRoleNameRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthGcpRoleNameExecute(ctx context.Context, name string, gcpRoleRequest GcpRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthGcpRoleName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthGcpRoleName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/gcp/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -19712,8 +19622,8 @@ func (a *AuthApiService) PostAuthGcpRoleNameExecute(r ApiPostAuthGcpRoleNameRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.gcpRoleRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = gcpRoleRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -19773,20 +19683,20 @@ func (a *AuthApiService) PostAuthGcpRoleNameLabels(ctx context.Context, name str
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthGcpRoleNameLabelsExecute(r ApiPostAuthGcpRoleNameLabelsRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthGcpRoleNameLabelsExecute(ctx context.Context, name string, gcpRoleLabelsRequest GcpRoleLabelsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthGcpRoleNameLabels")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthGcpRoleNameLabels")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/gcp/role/{name}/labels"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -19810,8 +19720,8 @@ func (a *AuthApiService) PostAuthGcpRoleNameLabelsExecute(r ApiPostAuthGcpRoleNa
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.gcpRoleLabelsRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = gcpRoleLabelsRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -19871,20 +19781,20 @@ func (a *AuthApiService) PostAuthGcpRoleNameServiceAccounts(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthGcpRoleNameServiceAccountsExecute(r ApiPostAuthGcpRoleNameServiceAccountsRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthGcpRoleNameServiceAccountsExecute(ctx context.Context, name string, gcpRoleServiceAccountsRequest GcpRoleServiceAccountsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthGcpRoleNameServiceAccounts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthGcpRoleNameServiceAccounts")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/gcp/role/{name}/service-accounts"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -19908,8 +19818,8 @@ func (a *AuthApiService) PostAuthGcpRoleNameServiceAccountsExecute(r ApiPostAuth
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.gcpRoleServiceAccountsRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = gcpRoleServiceAccountsRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -19966,14 +19876,14 @@ func (a *AuthApiService) PostAuthGithubConfig(ctx context.Context) ApiPostAuthGi
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthGithubConfigExecute(r ApiPostAuthGithubConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthGithubConfigExecute(ctx context.Context, githubConfigRequest GithubConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthGithubConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthGithubConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20002,8 +19912,8 @@ func (a *AuthApiService) PostAuthGithubConfigExecute(r ApiPostAuthGithubConfigRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.githubConfigRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = githubConfigRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -20060,14 +19970,14 @@ func (a *AuthApiService) PostAuthGithubLogin(ctx context.Context) ApiPostAuthGit
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthGithubLoginExecute(r ApiPostAuthGithubLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthGithubLoginExecute(ctx context.Context, githubLoginRequest GithubLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthGithubLogin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthGithubLogin")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20096,8 +20006,8 @@ func (a *AuthApiService) PostAuthGithubLoginExecute(r ApiPostAuthGithubLoginRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.githubLoginRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = githubLoginRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -20157,20 +20067,20 @@ func (a *AuthApiService) PostAuthGithubMapTeamsKey(ctx context.Context, key stri
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthGithubMapTeamsKeyExecute(r ApiPostAuthGithubMapTeamsKeyRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthGithubMapTeamsKeyExecute(ctx context.Context, key string, githubMapTeamsRequest GithubMapTeamsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthGithubMapTeamsKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthGithubMapTeamsKey")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/github/map/teams/{key}"
-	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(r.key, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -20194,8 +20104,8 @@ func (a *AuthApiService) PostAuthGithubMapTeamsKeyExecute(r ApiPostAuthGithubMap
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.githubMapTeamsRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = githubMapTeamsRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -20255,20 +20165,20 @@ func (a *AuthApiService) PostAuthGithubMapUsersKey(ctx context.Context, key stri
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthGithubMapUsersKeyExecute(r ApiPostAuthGithubMapUsersKeyRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthGithubMapUsersKeyExecute(ctx context.Context, key string, githubMapUsersRequest GithubMapUsersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthGithubMapUsersKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthGithubMapUsersKey")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/github/map/users/{key}"
-	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(r.key, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -20292,8 +20202,8 @@ func (a *AuthApiService) PostAuthGithubMapUsersKeyExecute(r ApiPostAuthGithubMap
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.githubMapUsersRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = githubMapUsersRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -20355,14 +20265,14 @@ func (a *AuthApiService) PostAuthJwtConfig(ctx context.Context) ApiPostAuthJwtCo
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthJwtConfigExecute(r ApiPostAuthJwtConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthJwtConfigExecute(ctx context.Context, jwtConfigRequest JwtConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthJwtConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthJwtConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20391,8 +20301,8 @@ func (a *AuthApiService) PostAuthJwtConfigExecute(r ApiPostAuthJwtConfigRequest)
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.jwtConfigRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = jwtConfigRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -20449,14 +20359,14 @@ func (a *AuthApiService) PostAuthJwtLogin(ctx context.Context) ApiPostAuthJwtLog
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthJwtLoginExecute(r ApiPostAuthJwtLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthJwtLoginExecute(ctx context.Context, jwtLoginRequest JwtLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthJwtLogin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthJwtLogin")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20485,8 +20395,8 @@ func (a *AuthApiService) PostAuthJwtLoginExecute(r ApiPostAuthJwtLoginRequest) (
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.jwtLoginRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = jwtLoginRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -20543,14 +20453,14 @@ func (a *AuthApiService) PostAuthJwtOidcAuthUrl(ctx context.Context) ApiPostAuth
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthJwtOidcAuthUrlExecute(r ApiPostAuthJwtOidcAuthUrlRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthJwtOidcAuthUrlExecute(ctx context.Context, jwtOidcAuthUrlRequest JwtOidcAuthUrlRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthJwtOidcAuthUrl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthJwtOidcAuthUrl")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20579,8 +20489,8 @@ func (a *AuthApiService) PostAuthJwtOidcAuthUrlExecute(r ApiPostAuthJwtOidcAuthU
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.jwtOidcAuthUrlRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = jwtOidcAuthUrlRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -20637,14 +20547,14 @@ func (a *AuthApiService) PostAuthJwtOidcCallback(ctx context.Context) ApiPostAut
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthJwtOidcCallbackExecute(r ApiPostAuthJwtOidcCallbackRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthJwtOidcCallbackExecute(ctx context.Context, jwtOidcCallbackRequest JwtOidcCallbackRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthJwtOidcCallback")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthJwtOidcCallback")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20673,8 +20583,8 @@ func (a *AuthApiService) PostAuthJwtOidcCallbackExecute(r ApiPostAuthJwtOidcCall
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.jwtOidcCallbackRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = jwtOidcCallbackRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -20739,20 +20649,20 @@ func (a *AuthApiService) PostAuthJwtRoleName(ctx context.Context, name string) A
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthJwtRoleNameExecute(r ApiPostAuthJwtRoleNameRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthJwtRoleNameExecute(ctx context.Context, name string, jwtRoleRequest JwtRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthJwtRoleName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthJwtRoleName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/jwt/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -20776,8 +20686,8 @@ func (a *AuthApiService) PostAuthJwtRoleNameExecute(r ApiPostAuthJwtRoleNameRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.jwtRoleRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = jwtRoleRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -20834,14 +20744,14 @@ func (a *AuthApiService) PostAuthKerberosConfig(ctx context.Context) ApiPostAuth
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthKerberosConfigExecute(r ApiPostAuthKerberosConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthKerberosConfigExecute(ctx context.Context, kerberosConfigRequest KerberosConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthKerberosConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthKerberosConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20870,8 +20780,8 @@ func (a *AuthApiService) PostAuthKerberosConfigExecute(r ApiPostAuthKerberosConf
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.kerberosConfigRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = kerberosConfigRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -20928,14 +20838,14 @@ func (a *AuthApiService) PostAuthKerberosConfigLdap(ctx context.Context) ApiPost
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthKerberosConfigLdapExecute(r ApiPostAuthKerberosConfigLdapRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthKerberosConfigLdapExecute(ctx context.Context, kerberosConfigLdapRequest KerberosConfigLdapRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthKerberosConfigLdap")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthKerberosConfigLdap")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -20964,8 +20874,8 @@ func (a *AuthApiService) PostAuthKerberosConfigLdapExecute(r ApiPostAuthKerberos
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.kerberosConfigLdapRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = kerberosConfigLdapRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -21025,20 +20935,20 @@ func (a *AuthApiService) PostAuthKerberosGroupsName(ctx context.Context, name st
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthKerberosGroupsNameExecute(r ApiPostAuthKerberosGroupsNameRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthKerberosGroupsNameExecute(ctx context.Context, name string, kerberosGroupsRequest KerberosGroupsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthKerberosGroupsName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthKerberosGroupsName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/kerberos/groups/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -21062,8 +20972,8 @@ func (a *AuthApiService) PostAuthKerberosGroupsNameExecute(r ApiPostAuthKerberos
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.kerberosGroupsRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = kerberosGroupsRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -21120,14 +21030,14 @@ func (a *AuthApiService) PostAuthKerberosLogin(ctx context.Context) ApiPostAuthK
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthKerberosLoginExecute(r ApiPostAuthKerberosLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthKerberosLoginExecute(ctx context.Context, kerberosLoginRequest KerberosLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthKerberosLogin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthKerberosLogin")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -21156,8 +21066,8 @@ func (a *AuthApiService) PostAuthKerberosLoginExecute(r ApiPostAuthKerberosLogin
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.kerberosLoginRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = kerberosLoginRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -21214,14 +21124,14 @@ func (a *AuthApiService) PostAuthKubernetesConfig(ctx context.Context) ApiPostAu
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthKubernetesConfigExecute(r ApiPostAuthKubernetesConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthKubernetesConfigExecute(ctx context.Context, kubernetesConfigRequest KubernetesConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthKubernetesConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthKubernetesConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -21250,8 +21160,8 @@ func (a *AuthApiService) PostAuthKubernetesConfigExecute(r ApiPostAuthKubernetes
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.kubernetesConfigRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = kubernetesConfigRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -21308,14 +21218,14 @@ func (a *AuthApiService) PostAuthKubernetesLogin(ctx context.Context) ApiPostAut
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthKubernetesLoginExecute(r ApiPostAuthKubernetesLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthKubernetesLoginExecute(ctx context.Context, kubernetesLoginRequest KubernetesLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthKubernetesLogin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthKubernetesLogin")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -21344,8 +21254,8 @@ func (a *AuthApiService) PostAuthKubernetesLoginExecute(r ApiPostAuthKubernetesL
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.kubernetesLoginRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = kubernetesLoginRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -21405,20 +21315,20 @@ func (a *AuthApiService) PostAuthKubernetesRoleName(ctx context.Context, name st
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthKubernetesRoleNameExecute(r ApiPostAuthKubernetesRoleNameRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthKubernetesRoleNameExecute(ctx context.Context, name string, kubernetesRoleRequest KubernetesRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthKubernetesRoleName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthKubernetesRoleName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/kubernetes/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -21442,8 +21352,8 @@ func (a *AuthApiService) PostAuthKubernetesRoleNameExecute(r ApiPostAuthKubernet
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.kubernetesRoleRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = kubernetesRoleRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -21500,14 +21410,14 @@ func (a *AuthApiService) PostAuthLdapConfig(ctx context.Context) ApiPostAuthLdap
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthLdapConfigExecute(r ApiPostAuthLdapConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthLdapConfigExecute(ctx context.Context, ldapConfigRequest LdapConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthLdapConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthLdapConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -21536,8 +21446,8 @@ func (a *AuthApiService) PostAuthLdapConfigExecute(r ApiPostAuthLdapConfigReques
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.ldapConfigRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = ldapConfigRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -21597,20 +21507,20 @@ func (a *AuthApiService) PostAuthLdapGroupsName(ctx context.Context, name string
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthLdapGroupsNameExecute(r ApiPostAuthLdapGroupsNameRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthLdapGroupsNameExecute(ctx context.Context, name string, ldapGroupsRequest LdapGroupsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthLdapGroupsName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthLdapGroupsName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/ldap/groups/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -21634,8 +21544,8 @@ func (a *AuthApiService) PostAuthLdapGroupsNameExecute(r ApiPostAuthLdapGroupsNa
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.ldapGroupsRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = ldapGroupsRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -21695,20 +21605,20 @@ func (a *AuthApiService) PostAuthLdapLoginUsername(ctx context.Context, username
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthLdapLoginUsernameExecute(r ApiPostAuthLdapLoginUsernameRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthLdapLoginUsernameExecute(ctx context.Context, username string, ldapLoginRequest LdapLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthLdapLoginUsername")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthLdapLoginUsername")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/ldap/login/{username}"
-	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(r.username, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(username, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -21732,8 +21642,8 @@ func (a *AuthApiService) PostAuthLdapLoginUsernameExecute(r ApiPostAuthLdapLogin
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.ldapLoginRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = ldapLoginRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -21793,20 +21703,20 @@ func (a *AuthApiService) PostAuthLdapUsersName(ctx context.Context, name string)
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthLdapUsersNameExecute(r ApiPostAuthLdapUsersNameRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthLdapUsersNameExecute(ctx context.Context, name string, ldapUsersRequest LdapUsersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthLdapUsersName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthLdapUsersName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/ldap/users/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -21830,8 +21740,8 @@ func (a *AuthApiService) PostAuthLdapUsersNameExecute(r ApiPostAuthLdapUsersName
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.ldapUsersRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = ldapUsersRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -21888,14 +21798,14 @@ func (a *AuthApiService) PostAuthOciConfig(ctx context.Context) ApiPostAuthOciCo
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthOciConfigExecute(r ApiPostAuthOciConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthOciConfigExecute(ctx context.Context, ociConfigRequest OciConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthOciConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthOciConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -21924,8 +21834,8 @@ func (a *AuthApiService) PostAuthOciConfigExecute(r ApiPostAuthOciConfigRequest)
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.ociConfigRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = ociConfigRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -21985,20 +21895,20 @@ func (a *AuthApiService) PostAuthOciLoginRole(ctx context.Context, role string) 
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthOciLoginRoleExecute(r ApiPostAuthOciLoginRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthOciLoginRoleExecute(ctx context.Context, role string, ociLoginRequest OciLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthOciLoginRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthOciLoginRole")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/oci/login/{role}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(r.role, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -22022,8 +21932,8 @@ func (a *AuthApiService) PostAuthOciLoginRoleExecute(r ApiPostAuthOciLoginRoleRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.ociLoginRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = ociLoginRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -22083,20 +21993,20 @@ func (a *AuthApiService) PostAuthOciRoleRole(ctx context.Context, role string) A
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthOciRoleRoleExecute(r ApiPostAuthOciRoleRoleRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthOciRoleRoleExecute(ctx context.Context, role string, ociRoleRequest OciRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthOciRoleRole")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthOciRoleRole")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/oci/role/{role}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(r.role, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -22120,8 +22030,8 @@ func (a *AuthApiService) PostAuthOciRoleRoleExecute(r ApiPostAuthOciRoleRoleRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.ociRoleRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = ociRoleRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -22183,14 +22093,14 @@ func (a *AuthApiService) PostAuthOidcConfig(ctx context.Context) ApiPostAuthOidc
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthOidcConfigExecute(r ApiPostAuthOidcConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthOidcConfigExecute(ctx context.Context, oidcConfigRequest OidcConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthOidcConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthOidcConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -22219,8 +22129,8 @@ func (a *AuthApiService) PostAuthOidcConfigExecute(r ApiPostAuthOidcConfigReques
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oidcConfigRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = oidcConfigRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -22277,14 +22187,14 @@ func (a *AuthApiService) PostAuthOidcLogin(ctx context.Context) ApiPostAuthOidcL
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthOidcLoginExecute(r ApiPostAuthOidcLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthOidcLoginExecute(ctx context.Context, oidcLoginRequest OidcLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthOidcLogin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthOidcLogin")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -22313,8 +22223,8 @@ func (a *AuthApiService) PostAuthOidcLoginExecute(r ApiPostAuthOidcLoginRequest)
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oidcLoginRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = oidcLoginRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -22371,14 +22281,14 @@ func (a *AuthApiService) PostAuthOidcOidcAuthUrl(ctx context.Context) ApiPostAut
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthOidcOidcAuthUrlExecute(r ApiPostAuthOidcOidcAuthUrlRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthOidcOidcAuthUrlExecute(ctx context.Context, oidcOidcAuthUrlRequest OidcOidcAuthUrlRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthOidcOidcAuthUrl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthOidcOidcAuthUrl")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -22407,8 +22317,8 @@ func (a *AuthApiService) PostAuthOidcOidcAuthUrlExecute(r ApiPostAuthOidcOidcAut
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oidcOidcAuthUrlRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = oidcOidcAuthUrlRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -22465,14 +22375,14 @@ func (a *AuthApiService) PostAuthOidcOidcCallback(ctx context.Context) ApiPostAu
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthOidcOidcCallbackExecute(r ApiPostAuthOidcOidcCallbackRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthOidcOidcCallbackExecute(ctx context.Context, oidcOidcCallbackRequest OidcOidcCallbackRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthOidcOidcCallback")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthOidcOidcCallback")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -22501,8 +22411,8 @@ func (a *AuthApiService) PostAuthOidcOidcCallbackExecute(r ApiPostAuthOidcOidcCa
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oidcOidcCallbackRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = oidcOidcCallbackRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -22567,20 +22477,20 @@ func (a *AuthApiService) PostAuthOidcRoleName(ctx context.Context, name string) 
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthOidcRoleNameExecute(r ApiPostAuthOidcRoleNameRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthOidcRoleNameExecute(ctx context.Context, name string, oidcRoleRequest OidcRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthOidcRoleName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthOidcRoleName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/oidc/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -22604,8 +22514,8 @@ func (a *AuthApiService) PostAuthOidcRoleNameExecute(r ApiPostAuthOidcRoleNameRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oidcRoleRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = oidcRoleRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -22662,14 +22572,14 @@ func (a *AuthApiService) PostAuthOktaConfig(ctx context.Context) ApiPostAuthOkta
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthOktaConfigExecute(r ApiPostAuthOktaConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthOktaConfigExecute(ctx context.Context, oktaConfigRequest OktaConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthOktaConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthOktaConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -22698,8 +22608,8 @@ func (a *AuthApiService) PostAuthOktaConfigExecute(r ApiPostAuthOktaConfigReques
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oktaConfigRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = oktaConfigRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -22759,20 +22669,20 @@ func (a *AuthApiService) PostAuthOktaGroupsName(ctx context.Context, name string
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthOktaGroupsNameExecute(r ApiPostAuthOktaGroupsNameRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthOktaGroupsNameExecute(ctx context.Context, name string, oktaGroupsRequest OktaGroupsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthOktaGroupsName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthOktaGroupsName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/okta/groups/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -22796,8 +22706,8 @@ func (a *AuthApiService) PostAuthOktaGroupsNameExecute(r ApiPostAuthOktaGroupsNa
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oktaGroupsRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = oktaGroupsRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -22857,20 +22767,20 @@ func (a *AuthApiService) PostAuthOktaLoginUsername(ctx context.Context, username
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthOktaLoginUsernameExecute(r ApiPostAuthOktaLoginUsernameRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthOktaLoginUsernameExecute(ctx context.Context, username string, oktaLoginRequest OktaLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthOktaLoginUsername")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthOktaLoginUsername")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/okta/login/{username}"
-	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(r.username, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(username, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -22894,8 +22804,8 @@ func (a *AuthApiService) PostAuthOktaLoginUsernameExecute(r ApiPostAuthOktaLogin
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oktaLoginRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = oktaLoginRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -22955,20 +22865,20 @@ func (a *AuthApiService) PostAuthOktaUsersName(ctx context.Context, name string)
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthOktaUsersNameExecute(r ApiPostAuthOktaUsersNameRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthOktaUsersNameExecute(ctx context.Context, name string, oktaUsersRequest OktaUsersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthOktaUsersName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthOktaUsersName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/okta/users/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -22992,8 +22902,8 @@ func (a *AuthApiService) PostAuthOktaUsersNameExecute(r ApiPostAuthOktaUsersName
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.oktaUsersRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = oktaUsersRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -23050,14 +22960,14 @@ func (a *AuthApiService) PostAuthRadiusConfig(ctx context.Context) ApiPostAuthRa
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthRadiusConfigExecute(r ApiPostAuthRadiusConfigRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthRadiusConfigExecute(ctx context.Context, radiusConfigRequest RadiusConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthRadiusConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthRadiusConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -23086,8 +22996,8 @@ func (a *AuthApiService) PostAuthRadiusConfigExecute(r ApiPostAuthRadiusConfigRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.radiusConfigRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = radiusConfigRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -23144,14 +23054,14 @@ func (a *AuthApiService) PostAuthRadiusLogin(ctx context.Context) ApiPostAuthRad
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthRadiusLoginExecute(r ApiPostAuthRadiusLoginRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthRadiusLoginExecute(ctx context.Context, radiusLoginRequest RadiusLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthRadiusLogin")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthRadiusLogin")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -23180,8 +23090,8 @@ func (a *AuthApiService) PostAuthRadiusLoginExecute(r ApiPostAuthRadiusLoginRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.radiusLoginRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = radiusLoginRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -23241,20 +23151,20 @@ func (a *AuthApiService) PostAuthRadiusLoginUrlusername(ctx context.Context, url
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthRadiusLoginUrlusernameExecute(r ApiPostAuthRadiusLoginUrlusernameRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthRadiusLoginUrlusernameExecute(ctx context.Context, urlusername string, radiusLoginRequest RadiusLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthRadiusLoginUrlusername")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthRadiusLoginUrlusername")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/radius/login/{urlusername}"
-	localVarPath = strings.Replace(localVarPath, "{"+"urlusername"+"}", url.PathEscape(parameterToString(r.urlusername, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"urlusername"+"}", url.PathEscape(parameterToString(urlusername, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -23278,8 +23188,8 @@ func (a *AuthApiService) PostAuthRadiusLoginUrlusernameExecute(r ApiPostAuthRadi
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.radiusLoginRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = radiusLoginRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -23339,20 +23249,20 @@ func (a *AuthApiService) PostAuthRadiusUsersName(ctx context.Context, name strin
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthRadiusUsersNameExecute(r ApiPostAuthRadiusUsersNameRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthRadiusUsersNameExecute(ctx context.Context, name string, radiusUsersRequest RadiusUsersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthRadiusUsersName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthRadiusUsersName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/radius/users/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -23376,8 +23286,8 @@ func (a *AuthApiService) PostAuthRadiusUsersNameExecute(r ApiPostAuthRadiusUsers
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.radiusUsersRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = radiusUsersRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -23428,14 +23338,14 @@ func (a *AuthApiService) PostAuthTokenCreate(ctx context.Context) ApiPostAuthTok
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenCreateExecute(r ApiPostAuthTokenCreateRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenCreateExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenCreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthTokenCreate")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -23463,7 +23373,7 @@ func (a *AuthApiService) PostAuthTokenCreateExecute(r ApiPostAuthTokenCreateRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -23514,14 +23424,14 @@ func (a *AuthApiService) PostAuthTokenCreateOrphan(ctx context.Context) ApiPostA
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenCreateOrphanExecute(r ApiPostAuthTokenCreateOrphanRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenCreateOrphanExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenCreateOrphan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthTokenCreateOrphan")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -23549,7 +23459,7 @@ func (a *AuthApiService) PostAuthTokenCreateOrphanExecute(r ApiPostAuthTokenCrea
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -23603,20 +23513,20 @@ func (a *AuthApiService) PostAuthTokenCreateRoleName(ctx context.Context, roleNa
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenCreateRoleNameExecute(r ApiPostAuthTokenCreateRoleNameRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenCreateRoleNameExecute(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenCreateRoleName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthTokenCreateRoleName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/token/create/{role_name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -23639,7 +23549,7 @@ func (a *AuthApiService) PostAuthTokenCreateRoleNameExecute(r ApiPostAuthTokenCr
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -23696,14 +23606,14 @@ func (a *AuthApiService) PostAuthTokenLookup(ctx context.Context) ApiPostAuthTok
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenLookupExecute(r ApiPostAuthTokenLookupRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenLookupExecute(ctx context.Context, tokenLookupRequest TokenLookupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenLookup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthTokenLookup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -23732,8 +23642,8 @@ func (a *AuthApiService) PostAuthTokenLookupExecute(r ApiPostAuthTokenLookupRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.tokenLookupRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = tokenLookupRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -23790,14 +23700,14 @@ func (a *AuthApiService) PostAuthTokenLookupAccessor(ctx context.Context) ApiPos
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenLookupAccessorExecute(r ApiPostAuthTokenLookupAccessorRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenLookupAccessorExecute(ctx context.Context, tokenLookupAccessorRequest TokenLookupAccessorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenLookupAccessor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthTokenLookupAccessor")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -23826,8 +23736,8 @@ func (a *AuthApiService) PostAuthTokenLookupAccessorExecute(r ApiPostAuthTokenLo
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.tokenLookupAccessorRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = tokenLookupAccessorRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -23884,14 +23794,14 @@ func (a *AuthApiService) PostAuthTokenLookupSelf(ctx context.Context) ApiPostAut
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenLookupSelfExecute(r ApiPostAuthTokenLookupSelfRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenLookupSelfExecute(ctx context.Context, tokenLookupSelfRequest TokenLookupSelfRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenLookupSelf")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthTokenLookupSelf")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -23920,8 +23830,8 @@ func (a *AuthApiService) PostAuthTokenLookupSelfExecute(r ApiPostAuthTokenLookup
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.tokenLookupSelfRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = tokenLookupSelfRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -23978,14 +23888,14 @@ func (a *AuthApiService) PostAuthTokenRenew(ctx context.Context) ApiPostAuthToke
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenRenewExecute(r ApiPostAuthTokenRenewRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenRenewExecute(ctx context.Context, tokenRenewRequest TokenRenewRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenRenew")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthTokenRenew")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -24014,8 +23924,8 @@ func (a *AuthApiService) PostAuthTokenRenewExecute(r ApiPostAuthTokenRenewReques
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.tokenRenewRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = tokenRenewRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -24072,14 +23982,14 @@ func (a *AuthApiService) PostAuthTokenRenewAccessor(ctx context.Context) ApiPost
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenRenewAccessorExecute(r ApiPostAuthTokenRenewAccessorRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenRenewAccessorExecute(ctx context.Context, tokenRenewAccessorRequest TokenRenewAccessorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenRenewAccessor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthTokenRenewAccessor")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -24108,8 +24018,8 @@ func (a *AuthApiService) PostAuthTokenRenewAccessorExecute(r ApiPostAuthTokenRen
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.tokenRenewAccessorRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = tokenRenewAccessorRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -24166,14 +24076,14 @@ func (a *AuthApiService) PostAuthTokenRenewSelf(ctx context.Context) ApiPostAuth
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenRenewSelfExecute(r ApiPostAuthTokenRenewSelfRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenRenewSelfExecute(ctx context.Context, tokenRenewSelfRequest TokenRenewSelfRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenRenewSelf")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthTokenRenewSelf")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -24202,8 +24112,8 @@ func (a *AuthApiService) PostAuthTokenRenewSelfExecute(r ApiPostAuthTokenRenewSe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.tokenRenewSelfRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = tokenRenewSelfRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -24260,14 +24170,14 @@ func (a *AuthApiService) PostAuthTokenRevoke(ctx context.Context) ApiPostAuthTok
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenRevokeExecute(r ApiPostAuthTokenRevokeRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenRevokeExecute(ctx context.Context, tokenRevokeRequest TokenRevokeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenRevoke")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthTokenRevoke")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -24296,8 +24206,8 @@ func (a *AuthApiService) PostAuthTokenRevokeExecute(r ApiPostAuthTokenRevokeRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.tokenRevokeRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = tokenRevokeRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -24354,14 +24264,14 @@ func (a *AuthApiService) PostAuthTokenRevokeAccessor(ctx context.Context) ApiPos
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenRevokeAccessorExecute(r ApiPostAuthTokenRevokeAccessorRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenRevokeAccessorExecute(ctx context.Context, tokenRevokeAccessorRequest TokenRevokeAccessorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenRevokeAccessor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthTokenRevokeAccessor")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -24390,8 +24300,8 @@ func (a *AuthApiService) PostAuthTokenRevokeAccessorExecute(r ApiPostAuthTokenRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.tokenRevokeAccessorRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = tokenRevokeAccessorRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -24448,14 +24358,14 @@ func (a *AuthApiService) PostAuthTokenRevokeOrphan(ctx context.Context) ApiPostA
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenRevokeOrphanExecute(r ApiPostAuthTokenRevokeOrphanRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenRevokeOrphanExecute(ctx context.Context, tokenRevokeOrphanRequest TokenRevokeOrphanRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenRevokeOrphan")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthTokenRevokeOrphan")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -24484,8 +24394,8 @@ func (a *AuthApiService) PostAuthTokenRevokeOrphanExecute(r ApiPostAuthTokenRevo
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.tokenRevokeOrphanRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = tokenRevokeOrphanRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -24536,14 +24446,14 @@ func (a *AuthApiService) PostAuthTokenRevokeSelf(ctx context.Context) ApiPostAut
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenRevokeSelfExecute(r ApiPostAuthTokenRevokeSelfRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenRevokeSelfExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenRevokeSelf")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthTokenRevokeSelf")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -24571,7 +24481,7 @@ func (a *AuthApiService) PostAuthTokenRevokeSelfExecute(r ApiPostAuthTokenRevoke
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -24631,20 +24541,20 @@ func (a *AuthApiService) PostAuthTokenRolesRoleName(ctx context.Context, roleNam
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenRolesRoleNameExecute(r ApiPostAuthTokenRolesRoleNameRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenRolesRoleNameExecute(ctx context.Context, roleName string, tokenRolesRequest TokenRolesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenRolesRoleName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthTokenRolesRoleName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/token/roles/{role_name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(r.roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -24668,8 +24578,8 @@ func (a *AuthApiService) PostAuthTokenRolesRoleNameExecute(r ApiPostAuthTokenRol
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.tokenRolesRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = tokenRolesRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -24720,14 +24630,14 @@ func (a *AuthApiService) PostAuthTokenTidy(ctx context.Context) ApiPostAuthToken
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthTokenTidyExecute(r ApiPostAuthTokenTidyRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthTokenTidyExecute(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthTokenTidy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthTokenTidy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -24755,7 +24665,7 @@ func (a *AuthApiService) PostAuthTokenTidyExecute(r ApiPostAuthTokenTidyRequest)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -24815,20 +24725,20 @@ func (a *AuthApiService) PostAuthUserpassLoginUsername(ctx context.Context, user
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthUserpassLoginUsernameExecute(r ApiPostAuthUserpassLoginUsernameRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthUserpassLoginUsernameExecute(ctx context.Context, username string, userpassLoginRequest UserpassLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthUserpassLoginUsername")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthUserpassLoginUsername")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/userpass/login/{username}"
-	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(r.username, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(username, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -24852,8 +24762,8 @@ func (a *AuthApiService) PostAuthUserpassLoginUsernameExecute(r ApiPostAuthUserp
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.userpassLoginRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = userpassLoginRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -24913,20 +24823,20 @@ func (a *AuthApiService) PostAuthUserpassUsersUsername(ctx context.Context, user
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthUserpassUsersUsernameExecute(r ApiPostAuthUserpassUsersUsernameRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthUserpassUsersUsernameExecute(ctx context.Context, username string, userpassUsersRequest UserpassUsersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthUserpassUsersUsername")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthUserpassUsersUsername")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/userpass/users/{username}"
-	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(r.username, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(username, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -24950,8 +24860,8 @@ func (a *AuthApiService) PostAuthUserpassUsersUsernameExecute(r ApiPostAuthUserp
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.userpassUsersRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = userpassUsersRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -25011,20 +24921,20 @@ func (a *AuthApiService) PostAuthUserpassUsersUsernamePassword(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthUserpassUsersUsernamePasswordExecute(r ApiPostAuthUserpassUsersUsernamePasswordRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthUserpassUsersUsernamePasswordExecute(ctx context.Context, username string, userpassUsersPasswordRequest UserpassUsersPasswordRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthUserpassUsersUsernamePassword")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthUserpassUsersUsernamePassword")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/userpass/users/{username}/password"
-	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(r.username, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(username, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -25048,8 +24958,8 @@ func (a *AuthApiService) PostAuthUserpassUsersUsernamePasswordExecute(r ApiPostA
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.userpassUsersPasswordRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = userpassUsersPasswordRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -25109,20 +25019,20 @@ func (a *AuthApiService) PostAuthUserpassUsersUsernamePolicies(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *AuthApiService) PostAuthUserpassUsersUsernamePoliciesExecute(r ApiPostAuthUserpassUsersUsernamePoliciesRequest) (*http.Response, error) {
+func (a *AuthApiService) PostAuthUserpassUsersUsernamePoliciesExecute(ctx context.Context, username string, userpassUsersPoliciesRequest UserpassUsersPoliciesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthApiService.PostAuthUserpassUsersUsernamePolicies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "AuthApiService.PostAuthUserpassUsersUsernamePolicies")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/auth/userpass/users/{username}/policies"
-	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(r.username, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(username, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -25146,8 +25056,8 @@ func (a *AuthApiService) PostAuthUserpassUsersUsernamePoliciesExecute(r ApiPostA
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.userpassUsersPoliciesRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = userpassUsersPoliciesRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}

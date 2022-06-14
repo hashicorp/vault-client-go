@@ -19,54 +19,25 @@ import (
 	"strings"
 )
 
-// Linger please
-var (
-	_ context.Context
-)
-
 // SystemApiService SystemApi service
 type SystemApiService service
 
-type ApiDeleteSysAuditPathRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	path       string
-}
-
-func (r ApiDeleteSysAuditPathRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysAuditPathExecute(r)
-}
-
-/*
-DeleteSysAuditPath Disable the audit device at the given path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path The name of the backend. Cannot be delimited. Example: \"mysql\"
- @return ApiDeleteSysAuditPathRequest
-*/
-func (a *SystemApiService) DeleteSysAuditPath(ctx context.Context, path string) ApiDeleteSysAuditPathRequest {
-	return ApiDeleteSysAuditPathRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) DeleteSysAuditPathExecute(r ApiDeleteSysAuditPathRequest) (*http.Response, error) {
+// DeleteSysAuditPath Disable the audit device at the given path.
+// path: The name of the backend. Cannot be delimited. Example: \&quot;mysql\&quot;
+func (a *SystemApiService) DeleteSysAuditPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysAuditPath")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysAuditPath")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/audit/{path}"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(r.path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -89,7 +60,7 @@ func (a *SystemApiService) DeleteSysAuditPathExecute(r ApiDeleteSysAuditPathRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -117,46 +88,22 @@ func (a *SystemApiService) DeleteSysAuditPathExecute(r ApiDeleteSysAuditPathRequ
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysAuthPathRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	path       string
-}
-
-func (r ApiDeleteSysAuthPathRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysAuthPathExecute(r)
-}
-
-/*
-DeleteSysAuthPath Disable the auth method at the given auth path
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path The path to mount to. Cannot be delimited. Example: \"user\"
- @return ApiDeleteSysAuthPathRequest
-*/
-func (a *SystemApiService) DeleteSysAuthPath(ctx context.Context, path string) ApiDeleteSysAuthPathRequest {
-	return ApiDeleteSysAuthPathRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) DeleteSysAuthPathExecute(r ApiDeleteSysAuthPathRequest) (*http.Response, error) {
+// DeleteSysAuthPath Disable the auth method at the given auth path
+// path: The path to mount to. Cannot be delimited. Example: \&quot;user\&quot;
+func (a *SystemApiService) DeleteSysAuthPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysAuthPath")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysAuthPath")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/auth/{path}"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(r.path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -179,7 +126,7 @@ func (a *SystemApiService) DeleteSysAuthPathExecute(r ApiDeleteSysAuthPathReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -207,46 +154,21 @@ func (a *SystemApiService) DeleteSysAuthPathExecute(r ApiDeleteSysAuthPathReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysConfigAuditingRequestHeadersHeaderRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	header     string
-}
-
-func (r ApiDeleteSysConfigAuditingRequestHeadersHeaderRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysConfigAuditingRequestHeadersHeaderExecute(r)
-}
-
-/*
-DeleteSysConfigAuditingRequestHeadersHeader Disable auditing of the given request header.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param header
- @return ApiDeleteSysConfigAuditingRequestHeadersHeaderRequest
-*/
-func (a *SystemApiService) DeleteSysConfigAuditingRequestHeadersHeader(ctx context.Context, header string) ApiDeleteSysConfigAuditingRequestHeadersHeaderRequest {
-	return ApiDeleteSysConfigAuditingRequestHeadersHeaderRequest{
-		ApiService: a,
-		ctx:        ctx,
-		header:     header,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) DeleteSysConfigAuditingRequestHeadersHeaderExecute(r ApiDeleteSysConfigAuditingRequestHeadersHeaderRequest) (*http.Response, error) {
+// DeleteSysConfigAuditingRequestHeadersHeader Disable auditing of the given request header.
+func (a *SystemApiService) DeleteSysConfigAuditingRequestHeadersHeader(ctx context.Context, header string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysConfigAuditingRequestHeadersHeader")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysConfigAuditingRequestHeadersHeader")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/config/auditing/request-headers/{header}"
-	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(r.header, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -269,7 +191,7 @@ func (a *SystemApiService) DeleteSysConfigAuditingRequestHeadersHeaderExecute(r 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -297,37 +219,15 @@ func (a *SystemApiService) DeleteSysConfigAuditingRequestHeadersHeaderExecute(r 
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysConfigCorsRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiDeleteSysConfigCorsRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysConfigCorsExecute(r)
-}
-
-/*
-DeleteSysConfigCors Remove any CORS settings.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteSysConfigCorsRequest
-*/
-func (a *SystemApiService) DeleteSysConfigCors(ctx context.Context) ApiDeleteSysConfigCorsRequest {
-	return ApiDeleteSysConfigCorsRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) DeleteSysConfigCorsExecute(r ApiDeleteSysConfigCorsRequest) (*http.Response, error) {
+// DeleteSysConfigCors Remove any CORS settings.
+func (a *SystemApiService) DeleteSysConfigCors(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysConfigCors")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysConfigCors")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -355,7 +255,7 @@ func (a *SystemApiService) DeleteSysConfigCorsExecute(r ApiDeleteSysConfigCorsRe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -383,46 +283,22 @@ func (a *SystemApiService) DeleteSysConfigCorsExecute(r ApiDeleteSysConfigCorsRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysConfigUiHeadersHeaderRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	header     string
-}
-
-func (r ApiDeleteSysConfigUiHeadersHeaderRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysConfigUiHeadersHeaderExecute(r)
-}
-
-/*
-DeleteSysConfigUiHeadersHeader Remove a UI header.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param header The name of the header.
- @return ApiDeleteSysConfigUiHeadersHeaderRequest
-*/
-func (a *SystemApiService) DeleteSysConfigUiHeadersHeader(ctx context.Context, header string) ApiDeleteSysConfigUiHeadersHeaderRequest {
-	return ApiDeleteSysConfigUiHeadersHeaderRequest{
-		ApiService: a,
-		ctx:        ctx,
-		header:     header,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) DeleteSysConfigUiHeadersHeaderExecute(r ApiDeleteSysConfigUiHeadersHeaderRequest) (*http.Response, error) {
+// DeleteSysConfigUiHeadersHeader Remove a UI header.
+// header: The name of the header.
+func (a *SystemApiService) DeleteSysConfigUiHeadersHeader(ctx context.Context, header string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysConfigUiHeadersHeader")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysConfigUiHeadersHeader")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/config/ui/headers/{header}"
-	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(r.header, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -445,7 +321,7 @@ func (a *SystemApiService) DeleteSysConfigUiHeadersHeaderExecute(r ApiDeleteSysC
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -473,37 +349,15 @@ func (a *SystemApiService) DeleteSysConfigUiHeadersHeaderExecute(r ApiDeleteSysC
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysGenerateRootRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiDeleteSysGenerateRootRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysGenerateRootExecute(r)
-}
-
-/*
-DeleteSysGenerateRoot Cancels any in-progress root generation attempt.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteSysGenerateRootRequest
-*/
-func (a *SystemApiService) DeleteSysGenerateRoot(ctx context.Context) ApiDeleteSysGenerateRootRequest {
-	return ApiDeleteSysGenerateRootRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) DeleteSysGenerateRootExecute(r ApiDeleteSysGenerateRootRequest) (*http.Response, error) {
+// DeleteSysGenerateRoot Cancels any in-progress root generation attempt.
+func (a *SystemApiService) DeleteSysGenerateRoot(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysGenerateRoot")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysGenerateRoot")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -531,7 +385,7 @@ func (a *SystemApiService) DeleteSysGenerateRootExecute(r ApiDeleteSysGenerateRo
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -559,37 +413,15 @@ func (a *SystemApiService) DeleteSysGenerateRootExecute(r ApiDeleteSysGenerateRo
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysGenerateRootAttemptRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiDeleteSysGenerateRootAttemptRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysGenerateRootAttemptExecute(r)
-}
-
-/*
-DeleteSysGenerateRootAttempt Cancels any in-progress root generation attempt.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteSysGenerateRootAttemptRequest
-*/
-func (a *SystemApiService) DeleteSysGenerateRootAttempt(ctx context.Context) ApiDeleteSysGenerateRootAttemptRequest {
-	return ApiDeleteSysGenerateRootAttemptRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) DeleteSysGenerateRootAttemptExecute(r ApiDeleteSysGenerateRootAttemptRequest) (*http.Response, error) {
+// DeleteSysGenerateRootAttempt Cancels any in-progress root generation attempt.
+func (a *SystemApiService) DeleteSysGenerateRootAttempt(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysGenerateRootAttempt")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysGenerateRootAttempt")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -617,7 +449,7 @@ func (a *SystemApiService) DeleteSysGenerateRootAttemptExecute(r ApiDeleteSysGen
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -645,46 +477,22 @@ func (a *SystemApiService) DeleteSysGenerateRootAttemptExecute(r ApiDeleteSysGen
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysMountsPathRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	path       string
-}
-
-func (r ApiDeleteSysMountsPathRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysMountsPathExecute(r)
-}
-
-/*
-DeleteSysMountsPath Disable the mount point specified at the given path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path The path to mount to. Example: \"aws/east\"
- @return ApiDeleteSysMountsPathRequest
-*/
-func (a *SystemApiService) DeleteSysMountsPath(ctx context.Context, path string) ApiDeleteSysMountsPathRequest {
-	return ApiDeleteSysMountsPathRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) DeleteSysMountsPathExecute(r ApiDeleteSysMountsPathRequest) (*http.Response, error) {
+// DeleteSysMountsPath Disable the mount point specified at the given path.
+// path: The path to mount to. Example: \&quot;aws/east\&quot;
+func (a *SystemApiService) DeleteSysMountsPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysMountsPath")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysMountsPath")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/mounts/{path}"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(r.path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -707,7 +515,7 @@ func (a *SystemApiService) DeleteSysMountsPathExecute(r ApiDeleteSysMountsPathRe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -735,46 +543,22 @@ func (a *SystemApiService) DeleteSysMountsPathExecute(r ApiDeleteSysMountsPathRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysPluginsCatalogNameRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	name       string
-}
-
-func (r ApiDeleteSysPluginsCatalogNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysPluginsCatalogNameExecute(r)
-}
-
-/*
-DeleteSysPluginsCatalogName Remove the plugin with the given name.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the plugin
- @return ApiDeleteSysPluginsCatalogNameRequest
-*/
-func (a *SystemApiService) DeleteSysPluginsCatalogName(ctx context.Context, name string) ApiDeleteSysPluginsCatalogNameRequest {
-	return ApiDeleteSysPluginsCatalogNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) DeleteSysPluginsCatalogNameExecute(r ApiDeleteSysPluginsCatalogNameRequest) (*http.Response, error) {
+// DeleteSysPluginsCatalogName Remove the plugin with the given name.
+// name: The name of the plugin
+func (a *SystemApiService) DeleteSysPluginsCatalogName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysPluginsCatalogName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysPluginsCatalogName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/plugins/catalog/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -797,7 +581,7 @@ func (a *SystemApiService) DeleteSysPluginsCatalogNameExecute(r ApiDeleteSysPlug
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -825,50 +609,24 @@ func (a *SystemApiService) DeleteSysPluginsCatalogNameExecute(r ApiDeleteSysPlug
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysPluginsCatalogTypeNameRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	name       string
-	type_      string
-}
-
-func (r ApiDeleteSysPluginsCatalogTypeNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysPluginsCatalogTypeNameExecute(r)
-}
-
-/*
-DeleteSysPluginsCatalogTypeName Remove the plugin with the given name.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the plugin
- @param type_ The type of the plugin, may be auth, secret, or database
- @return ApiDeleteSysPluginsCatalogTypeNameRequest
-*/
-func (a *SystemApiService) DeleteSysPluginsCatalogTypeName(ctx context.Context, name string, type_ string) ApiDeleteSysPluginsCatalogTypeNameRequest {
-	return ApiDeleteSysPluginsCatalogTypeNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-		type_:      type_,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) DeleteSysPluginsCatalogTypeNameExecute(r ApiDeleteSysPluginsCatalogTypeNameRequest) (*http.Response, error) {
+// DeleteSysPluginsCatalogTypeName Remove the plugin with the given name.
+// name: The name of the plugin
+// type_: The type of the plugin, may be auth, secret, or database
+func (a *SystemApiService) DeleteSysPluginsCatalogTypeName(ctx context.Context, name string, type_ string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysPluginsCatalogTypeName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysPluginsCatalogTypeName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/plugins/catalog/{type}/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(r.type_, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(type_, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -891,7 +649,7 @@ func (a *SystemApiService) DeleteSysPluginsCatalogTypeNameExecute(r ApiDeleteSys
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -919,46 +677,22 @@ func (a *SystemApiService) DeleteSysPluginsCatalogTypeNameExecute(r ApiDeleteSys
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysPoliciesAclNameRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	name       string
-}
-
-func (r ApiDeleteSysPoliciesAclNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysPoliciesAclNameExecute(r)
-}
-
-/*
-DeleteSysPoliciesAclName Delete the ACL policy with the given name.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the policy. Example: \"ops\"
- @return ApiDeleteSysPoliciesAclNameRequest
-*/
-func (a *SystemApiService) DeleteSysPoliciesAclName(ctx context.Context, name string) ApiDeleteSysPoliciesAclNameRequest {
-	return ApiDeleteSysPoliciesAclNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) DeleteSysPoliciesAclNameExecute(r ApiDeleteSysPoliciesAclNameRequest) (*http.Response, error) {
+// DeleteSysPoliciesAclName Delete the ACL policy with the given name.
+// name: The name of the policy. Example: \&quot;ops\&quot;
+func (a *SystemApiService) DeleteSysPoliciesAclName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysPoliciesAclName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysPoliciesAclName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/policies/acl/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -981,7 +715,7 @@ func (a *SystemApiService) DeleteSysPoliciesAclNameExecute(r ApiDeleteSysPolicie
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1009,46 +743,22 @@ func (a *SystemApiService) DeleteSysPoliciesAclNameExecute(r ApiDeleteSysPolicie
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysPoliciesPasswordNameRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	name       string
-}
-
-func (r ApiDeleteSysPoliciesPasswordNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysPoliciesPasswordNameExecute(r)
-}
-
-/*
-DeleteSysPoliciesPasswordName Delete a password policy.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the password policy.
- @return ApiDeleteSysPoliciesPasswordNameRequest
-*/
-func (a *SystemApiService) DeleteSysPoliciesPasswordName(ctx context.Context, name string) ApiDeleteSysPoliciesPasswordNameRequest {
-	return ApiDeleteSysPoliciesPasswordNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) DeleteSysPoliciesPasswordNameExecute(r ApiDeleteSysPoliciesPasswordNameRequest) (*http.Response, error) {
+// DeleteSysPoliciesPasswordName Delete a password policy.
+// name: The name of the password policy.
+func (a *SystemApiService) DeleteSysPoliciesPasswordName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysPoliciesPasswordName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysPoliciesPasswordName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/policies/password/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1071,7 +781,7 @@ func (a *SystemApiService) DeleteSysPoliciesPasswordNameExecute(r ApiDeleteSysPo
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1099,46 +809,22 @@ func (a *SystemApiService) DeleteSysPoliciesPasswordNameExecute(r ApiDeleteSysPo
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysPolicyNameRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	name       string
-}
-
-func (r ApiDeleteSysPolicyNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysPolicyNameExecute(r)
-}
-
-/*
-DeleteSysPolicyName Delete the policy with the given name.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the policy. Example: \"ops\"
- @return ApiDeleteSysPolicyNameRequest
-*/
-func (a *SystemApiService) DeleteSysPolicyName(ctx context.Context, name string) ApiDeleteSysPolicyNameRequest {
-	return ApiDeleteSysPolicyNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) DeleteSysPolicyNameExecute(r ApiDeleteSysPolicyNameRequest) (*http.Response, error) {
+// DeleteSysPolicyName Delete the policy with the given name.
+// name: The name of the policy. Example: \&quot;ops\&quot;
+func (a *SystemApiService) DeleteSysPolicyName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysPolicyName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysPolicyName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/policy/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1161,7 +847,7 @@ func (a *SystemApiService) DeleteSysPolicyNameExecute(r ApiDeleteSysPolicyNameRe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1189,46 +875,22 @@ func (a *SystemApiService) DeleteSysPolicyNameExecute(r ApiDeleteSysPolicyNameRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysQuotasRateLimitNameRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	name       string
-}
-
-func (r ApiDeleteSysQuotasRateLimitNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysQuotasRateLimitNameExecute(r)
-}
-
-/*
-DeleteSysQuotasRateLimitName Method for DeleteSysQuotasRateLimitName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the quota rule.
- @return ApiDeleteSysQuotasRateLimitNameRequest
-*/
-func (a *SystemApiService) DeleteSysQuotasRateLimitName(ctx context.Context, name string) ApiDeleteSysQuotasRateLimitNameRequest {
-	return ApiDeleteSysQuotasRateLimitNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) DeleteSysQuotasRateLimitNameExecute(r ApiDeleteSysQuotasRateLimitNameRequest) (*http.Response, error) {
+// DeleteSysQuotasRateLimitName
+// name: Name of the quota rule.
+func (a *SystemApiService) DeleteSysQuotasRateLimitName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysQuotasRateLimitName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysQuotasRateLimitName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/quotas/rate-limit/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1251,7 +913,7 @@ func (a *SystemApiService) DeleteSysQuotasRateLimitNameExecute(r ApiDeleteSysQuo
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1279,37 +941,15 @@ func (a *SystemApiService) DeleteSysQuotasRateLimitNameExecute(r ApiDeleteSysQuo
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysRawRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiDeleteSysRawRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysRawExecute(r)
-}
-
-/*
-DeleteSysRaw Delete the key with given path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteSysRawRequest
-*/
-func (a *SystemApiService) DeleteSysRaw(ctx context.Context) ApiDeleteSysRawRequest {
-	return ApiDeleteSysRawRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) DeleteSysRawExecute(r ApiDeleteSysRawRequest) (*http.Response, error) {
+// DeleteSysRaw Delete the key with given path.
+func (a *SystemApiService) DeleteSysRaw(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysRaw")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysRaw")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1337,7 +977,7 @@ func (a *SystemApiService) DeleteSysRawExecute(r ApiDeleteSysRawRequest) (*http.
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1365,46 +1005,21 @@ func (a *SystemApiService) DeleteSysRawExecute(r ApiDeleteSysRawRequest) (*http.
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysRawPathRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	path       string
-}
-
-func (r ApiDeleteSysRawPathRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysRawPathExecute(r)
-}
-
-/*
-DeleteSysRawPath Delete the key with given path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path
- @return ApiDeleteSysRawPathRequest
-*/
-func (a *SystemApiService) DeleteSysRawPath(ctx context.Context, path string) ApiDeleteSysRawPathRequest {
-	return ApiDeleteSysRawPathRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) DeleteSysRawPathExecute(r ApiDeleteSysRawPathRequest) (*http.Response, error) {
+// DeleteSysRawPath Delete the key with given path.
+func (a *SystemApiService) DeleteSysRawPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysRawPath")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysRawPath")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/raw/{path}"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(r.path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1427,7 +1042,7 @@ func (a *SystemApiService) DeleteSysRawPathExecute(r ApiDeleteSysRawPathRequest)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1455,37 +1070,15 @@ func (a *SystemApiService) DeleteSysRawPathExecute(r ApiDeleteSysRawPathRequest)
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysRekeyBackupRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiDeleteSysRekeyBackupRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysRekeyBackupExecute(r)
-}
-
-/*
-DeleteSysRekeyBackup Delete the backup copy of PGP-encrypted unseal keys.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteSysRekeyBackupRequest
-*/
-func (a *SystemApiService) DeleteSysRekeyBackup(ctx context.Context) ApiDeleteSysRekeyBackupRequest {
-	return ApiDeleteSysRekeyBackupRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) DeleteSysRekeyBackupExecute(r ApiDeleteSysRekeyBackupRequest) (*http.Response, error) {
+// DeleteSysRekeyBackup Delete the backup copy of PGP-encrypted unseal keys.
+func (a *SystemApiService) DeleteSysRekeyBackup(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysRekeyBackup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysRekeyBackup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1513,7 +1106,7 @@ func (a *SystemApiService) DeleteSysRekeyBackupExecute(r ApiDeleteSysRekeyBackup
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1541,39 +1134,16 @@ func (a *SystemApiService) DeleteSysRekeyBackupExecute(r ApiDeleteSysRekeyBackup
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysRekeyInitRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiDeleteSysRekeyInitRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysRekeyInitExecute(r)
-}
-
-/*
-DeleteSysRekeyInit Cancels any in-progress rekey.
-
-This clears the rekey settings as well as any progress made. This must be called to change the parameters of the rekey. Note: verification is still a part of a rekey. If rekeying is canceled during the verification flow, the current unseal keys remain valid.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteSysRekeyInitRequest
-*/
-func (a *SystemApiService) DeleteSysRekeyInit(ctx context.Context) ApiDeleteSysRekeyInitRequest {
-	return ApiDeleteSysRekeyInitRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) DeleteSysRekeyInitExecute(r ApiDeleteSysRekeyInitRequest) (*http.Response, error) {
+// DeleteSysRekeyInit Cancels any in-progress rekey.
+// This clears the rekey settings as well as any progress made. This must be called to change the parameters of the rekey. Note: verification is still a part of a rekey. If rekeying is canceled during the verification flow, the current unseal keys remain valid.
+func (a *SystemApiService) DeleteSysRekeyInit(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysRekeyInit")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysRekeyInit")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1601,7 +1171,7 @@ func (a *SystemApiService) DeleteSysRekeyInitExecute(r ApiDeleteSysRekeyInitRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1629,37 +1199,15 @@ func (a *SystemApiService) DeleteSysRekeyInitExecute(r ApiDeleteSysRekeyInitRequ
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysRekeyRecoveryKeyBackupRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiDeleteSysRekeyRecoveryKeyBackupRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysRekeyRecoveryKeyBackupExecute(r)
-}
-
-/*
-DeleteSysRekeyRecoveryKeyBackup Allows fetching or deleting the backup of the rotated unseal keys.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteSysRekeyRecoveryKeyBackupRequest
-*/
-func (a *SystemApiService) DeleteSysRekeyRecoveryKeyBackup(ctx context.Context) ApiDeleteSysRekeyRecoveryKeyBackupRequest {
-	return ApiDeleteSysRekeyRecoveryKeyBackupRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) DeleteSysRekeyRecoveryKeyBackupExecute(r ApiDeleteSysRekeyRecoveryKeyBackupRequest) (*http.Response, error) {
+// DeleteSysRekeyRecoveryKeyBackup Allows fetching or deleting the backup of the rotated unseal keys.
+func (a *SystemApiService) DeleteSysRekeyRecoveryKeyBackup(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysRekeyRecoveryKeyBackup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysRekeyRecoveryKeyBackup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1687,7 +1235,7 @@ func (a *SystemApiService) DeleteSysRekeyRecoveryKeyBackupExecute(r ApiDeleteSys
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1715,39 +1263,16 @@ func (a *SystemApiService) DeleteSysRekeyRecoveryKeyBackupExecute(r ApiDeleteSys
 	return localVarHTTPResponse, nil
 }
 
-type ApiDeleteSysRekeyVerifyRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiDeleteSysRekeyVerifyRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteSysRekeyVerifyExecute(r)
-}
-
-/*
-DeleteSysRekeyVerify Cancel any in-progress rekey verification operation.
-
-This clears any progress made and resets the nonce. Unlike a `DELETE` against `sys/rekey/init`, this only resets the current verification operation, not the entire rekey atttempt.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDeleteSysRekeyVerifyRequest
-*/
-func (a *SystemApiService) DeleteSysRekeyVerify(ctx context.Context) ApiDeleteSysRekeyVerifyRequest {
-	return ApiDeleteSysRekeyVerifyRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) DeleteSysRekeyVerifyExecute(r ApiDeleteSysRekeyVerifyRequest) (*http.Response, error) {
+// DeleteSysRekeyVerify Cancel any in-progress rekey verification operation.
+// This clears any progress made and resets the nonce. Unlike a `DELETE` against `sys/rekey/init`, this only resets the current verification operation, not the entire rekey atttempt.
+func (a *SystemApiService) DeleteSysRekeyVerify(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.DeleteSysRekeyVerify")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysRekeyVerify")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1775,7 +1300,7 @@ func (a *SystemApiService) DeleteSysRekeyVerifyExecute(r ApiDeleteSysRekeyVerify
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1803,37 +1328,15 @@ func (a *SystemApiService) DeleteSysRekeyVerifyExecute(r ApiDeleteSysRekeyVerify
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysAuditRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysAuditRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysAuditExecute(r)
-}
-
-/*
-GetSysAudit List the enabled audit devices.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysAuditRequest
-*/
-func (a *SystemApiService) GetSysAudit(ctx context.Context) ApiGetSysAuditRequest {
-	return ApiGetSysAuditRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysAuditExecute(r ApiGetSysAuditRequest) (*http.Response, error) {
+// GetSysAudit List the enabled audit devices.
+func (a *SystemApiService) GetSysAudit(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysAudit")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysAudit")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1861,7 +1364,7 @@ func (a *SystemApiService) GetSysAuditExecute(r ApiGetSysAuditRequest) (*http.Re
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1889,37 +1392,15 @@ func (a *SystemApiService) GetSysAuditExecute(r ApiGetSysAuditRequest) (*http.Re
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysAuthRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysAuthRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysAuthExecute(r)
-}
-
-/*
-GetSysAuth List the currently enabled credential backends.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysAuthRequest
-*/
-func (a *SystemApiService) GetSysAuth(ctx context.Context) ApiGetSysAuthRequest {
-	return ApiGetSysAuthRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysAuthExecute(r ApiGetSysAuthRequest) (*http.Response, error) {
+// GetSysAuth List the currently enabled credential backends.
+func (a *SystemApiService) GetSysAuth(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysAuth")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysAuth")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1947,7 +1428,7 @@ func (a *SystemApiService) GetSysAuthExecute(r ApiGetSysAuthRequest) (*http.Resp
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -1975,46 +1456,22 @@ func (a *SystemApiService) GetSysAuthExecute(r ApiGetSysAuthRequest) (*http.Resp
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysAuthPathRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	path       string
-}
-
-func (r ApiGetSysAuthPathRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysAuthPathExecute(r)
-}
-
-/*
-GetSysAuthPath Read the configuration of the auth engine at the given path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path The path to mount to. Cannot be delimited. Example: \"user\"
- @return ApiGetSysAuthPathRequest
-*/
-func (a *SystemApiService) GetSysAuthPath(ctx context.Context, path string) ApiGetSysAuthPathRequest {
-	return ApiGetSysAuthPathRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysAuthPathExecute(r ApiGetSysAuthPathRequest) (*http.Response, error) {
+// GetSysAuthPath Read the configuration of the auth engine at the given path.
+// path: The path to mount to. Cannot be delimited. Example: \&quot;user\&quot;
+func (a *SystemApiService) GetSysAuthPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysAuthPath")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysAuthPath")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/auth/{path}"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(r.path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2037,7 +1494,7 @@ func (a *SystemApiService) GetSysAuthPathExecute(r ApiGetSysAuthPathRequest) (*h
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2065,48 +1522,23 @@ func (a *SystemApiService) GetSysAuthPathExecute(r ApiGetSysAuthPathRequest) (*h
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysAuthPathTuneRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	path       string
-}
-
-func (r ApiGetSysAuthPathTuneRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysAuthPathTuneExecute(r)
-}
-
-/*
-GetSysAuthPathTune Reads the given auth path's configuration.
-
-This endpoint requires sudo capability on the final path, but the same functionality can be achieved without sudo via `sys/mounts/auth/[auth-path]/tune`.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path Tune the configuration parameters for an auth path.
- @return ApiGetSysAuthPathTuneRequest
-*/
-func (a *SystemApiService) GetSysAuthPathTune(ctx context.Context, path string) ApiGetSysAuthPathTuneRequest {
-	return ApiGetSysAuthPathTuneRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysAuthPathTuneExecute(r ApiGetSysAuthPathTuneRequest) (*http.Response, error) {
+// GetSysAuthPathTune Reads the given auth path's configuration.
+// This endpoint requires sudo capability on the final path, but the same functionality can be achieved without sudo via `sys/mounts/auth/[auth-path]/tune`.
+// path: Tune the configuration parameters for an auth path.
+func (a *SystemApiService) GetSysAuthPathTune(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysAuthPathTune")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysAuthPathTune")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/auth/{path}/tune"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(r.path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2129,7 +1561,7 @@ func (a *SystemApiService) GetSysAuthPathTuneExecute(r ApiGetSysAuthPathTuneRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2157,37 +1589,15 @@ func (a *SystemApiService) GetSysAuthPathTuneExecute(r ApiGetSysAuthPathTuneRequ
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysConfigAuditingRequestHeadersRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysConfigAuditingRequestHeadersRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysConfigAuditingRequestHeadersExecute(r)
-}
-
-/*
-GetSysConfigAuditingRequestHeaders List the request headers that are configured to be audited.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysConfigAuditingRequestHeadersRequest
-*/
-func (a *SystemApiService) GetSysConfigAuditingRequestHeaders(ctx context.Context) ApiGetSysConfigAuditingRequestHeadersRequest {
-	return ApiGetSysConfigAuditingRequestHeadersRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysConfigAuditingRequestHeadersExecute(r ApiGetSysConfigAuditingRequestHeadersRequest) (*http.Response, error) {
+// GetSysConfigAuditingRequestHeaders List the request headers that are configured to be audited.
+func (a *SystemApiService) GetSysConfigAuditingRequestHeaders(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysConfigAuditingRequestHeaders")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysConfigAuditingRequestHeaders")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2215,7 +1625,7 @@ func (a *SystemApiService) GetSysConfigAuditingRequestHeadersExecute(r ApiGetSys
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2243,46 +1653,21 @@ func (a *SystemApiService) GetSysConfigAuditingRequestHeadersExecute(r ApiGetSys
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysConfigAuditingRequestHeadersHeaderRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	header     string
-}
-
-func (r ApiGetSysConfigAuditingRequestHeadersHeaderRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysConfigAuditingRequestHeadersHeaderExecute(r)
-}
-
-/*
-GetSysConfigAuditingRequestHeadersHeader List the information for the given request header.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param header
- @return ApiGetSysConfigAuditingRequestHeadersHeaderRequest
-*/
-func (a *SystemApiService) GetSysConfigAuditingRequestHeadersHeader(ctx context.Context, header string) ApiGetSysConfigAuditingRequestHeadersHeaderRequest {
-	return ApiGetSysConfigAuditingRequestHeadersHeaderRequest{
-		ApiService: a,
-		ctx:        ctx,
-		header:     header,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysConfigAuditingRequestHeadersHeaderExecute(r ApiGetSysConfigAuditingRequestHeadersHeaderRequest) (*http.Response, error) {
+// GetSysConfigAuditingRequestHeadersHeader List the information for the given request header.
+func (a *SystemApiService) GetSysConfigAuditingRequestHeadersHeader(ctx context.Context, header string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysConfigAuditingRequestHeadersHeader")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysConfigAuditingRequestHeadersHeader")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/config/auditing/request-headers/{header}"
-	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(r.header, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2305,7 +1690,7 @@ func (a *SystemApiService) GetSysConfigAuditingRequestHeadersHeaderExecute(r Api
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2333,37 +1718,15 @@ func (a *SystemApiService) GetSysConfigAuditingRequestHeadersHeaderExecute(r Api
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysConfigCorsRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysConfigCorsRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysConfigCorsExecute(r)
-}
-
-/*
-GetSysConfigCors Return the current CORS settings.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysConfigCorsRequest
-*/
-func (a *SystemApiService) GetSysConfigCors(ctx context.Context) ApiGetSysConfigCorsRequest {
-	return ApiGetSysConfigCorsRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysConfigCorsExecute(r ApiGetSysConfigCorsRequest) (*http.Response, error) {
+// GetSysConfigCors Return the current CORS settings.
+func (a *SystemApiService) GetSysConfigCors(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysConfigCors")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysConfigCors")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2391,7 +1754,7 @@ func (a *SystemApiService) GetSysConfigCorsExecute(r ApiGetSysConfigCorsRequest)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2419,39 +1782,16 @@ func (a *SystemApiService) GetSysConfigCorsExecute(r ApiGetSysConfigCorsRequest)
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysConfigStateSanitizedRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysConfigStateSanitizedRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysConfigStateSanitizedExecute(r)
-}
-
-/*
-GetSysConfigStateSanitized Return a sanitized version of the Vault server configuration.
-
-The sanitized output strips configuration values in the storage, HA storage, and seals stanzas, which may contain sensitive values such as API tokens. It also removes any token or secret fields in other stanzas, such as the circonus_api_token from telemetry.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysConfigStateSanitizedRequest
-*/
-func (a *SystemApiService) GetSysConfigStateSanitized(ctx context.Context) ApiGetSysConfigStateSanitizedRequest {
-	return ApiGetSysConfigStateSanitizedRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysConfigStateSanitizedExecute(r ApiGetSysConfigStateSanitizedRequest) (*http.Response, error) {
+// GetSysConfigStateSanitized Return a sanitized version of the Vault server configuration.
+// The sanitized output strips configuration values in the storage, HA storage, and seals stanzas, which may contain sensitive values such as API tokens. It also removes any token or secret fields in other stanzas, such as the circonus_api_token from telemetry.
+func (a *SystemApiService) GetSysConfigStateSanitized(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysConfigStateSanitized")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysConfigStateSanitized")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2479,7 +1819,7 @@ func (a *SystemApiService) GetSysConfigStateSanitizedExecute(r ApiGetSysConfigSt
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2507,44 +1847,16 @@ func (a *SystemApiService) GetSysConfigStateSanitizedExecute(r ApiGetSysConfigSt
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysConfigUiHeadersRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	list       *string
-}
-
-// Must be set to &#x60;true&#x60;
-func (r ApiGetSysConfigUiHeadersRequest) List(list string) ApiGetSysConfigUiHeadersRequest {
-	r.list = &list
-	return r
-}
-
-func (r ApiGetSysConfigUiHeadersRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysConfigUiHeadersExecute(r)
-}
-
-/*
-GetSysConfigUiHeaders Return a list of configured UI headers.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysConfigUiHeadersRequest
-*/
-func (a *SystemApiService) GetSysConfigUiHeaders(ctx context.Context) ApiGetSysConfigUiHeadersRequest {
-	return ApiGetSysConfigUiHeadersRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysConfigUiHeadersExecute(r ApiGetSysConfigUiHeadersRequest) (*http.Response, error) {
+// GetSysConfigUiHeaders Return a list of configured UI headers.
+// list: Must be set to &#x60;true&#x60;
+func (a *SystemApiService) GetSysConfigUiHeaders(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysConfigUiHeaders")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysConfigUiHeaders")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2554,11 +1866,8 @@ func (a *SystemApiService) GetSysConfigUiHeadersExecute(r ApiGetSysConfigUiHeade
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -2576,7 +1885,7 @@ func (a *SystemApiService) GetSysConfigUiHeadersExecute(r ApiGetSysConfigUiHeade
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2604,46 +1913,22 @@ func (a *SystemApiService) GetSysConfigUiHeadersExecute(r ApiGetSysConfigUiHeade
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysConfigUiHeadersHeaderRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	header     string
-}
-
-func (r ApiGetSysConfigUiHeadersHeaderRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysConfigUiHeadersHeaderExecute(r)
-}
-
-/*
-GetSysConfigUiHeadersHeader Return the given UI header's configuration
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param header The name of the header.
- @return ApiGetSysConfigUiHeadersHeaderRequest
-*/
-func (a *SystemApiService) GetSysConfigUiHeadersHeader(ctx context.Context, header string) ApiGetSysConfigUiHeadersHeaderRequest {
-	return ApiGetSysConfigUiHeadersHeaderRequest{
-		ApiService: a,
-		ctx:        ctx,
-		header:     header,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysConfigUiHeadersHeaderExecute(r ApiGetSysConfigUiHeadersHeaderRequest) (*http.Response, error) {
+// GetSysConfigUiHeadersHeader Return the given UI header's configuration
+// header: The name of the header.
+func (a *SystemApiService) GetSysConfigUiHeadersHeader(ctx context.Context, header string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysConfigUiHeadersHeader")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysConfigUiHeadersHeader")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/config/ui/headers/{header}"
-	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(r.header, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2666,7 +1951,7 @@ func (a *SystemApiService) GetSysConfigUiHeadersHeaderExecute(r ApiGetSysConfigU
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2694,37 +1979,15 @@ func (a *SystemApiService) GetSysConfigUiHeadersHeaderExecute(r ApiGetSysConfigU
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysGenerateRootRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysGenerateRootRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysGenerateRootExecute(r)
-}
-
-/*
-GetSysGenerateRoot Read the configuration and progress of the current root generation attempt.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysGenerateRootRequest
-*/
-func (a *SystemApiService) GetSysGenerateRoot(ctx context.Context) ApiGetSysGenerateRootRequest {
-	return ApiGetSysGenerateRootRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysGenerateRootExecute(r ApiGetSysGenerateRootRequest) (*http.Response, error) {
+// GetSysGenerateRoot Read the configuration and progress of the current root generation attempt.
+func (a *SystemApiService) GetSysGenerateRoot(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysGenerateRoot")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysGenerateRoot")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2752,7 +2015,7 @@ func (a *SystemApiService) GetSysGenerateRootExecute(r ApiGetSysGenerateRootRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2780,37 +2043,15 @@ func (a *SystemApiService) GetSysGenerateRootExecute(r ApiGetSysGenerateRootRequ
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysGenerateRootAttemptRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysGenerateRootAttemptRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysGenerateRootAttemptExecute(r)
-}
-
-/*
-GetSysGenerateRootAttempt Read the configuration and progress of the current root generation attempt.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysGenerateRootAttemptRequest
-*/
-func (a *SystemApiService) GetSysGenerateRootAttempt(ctx context.Context) ApiGetSysGenerateRootAttemptRequest {
-	return ApiGetSysGenerateRootAttemptRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysGenerateRootAttemptExecute(r ApiGetSysGenerateRootAttemptRequest) (*http.Response, error) {
+// GetSysGenerateRootAttempt Read the configuration and progress of the current root generation attempt.
+func (a *SystemApiService) GetSysGenerateRootAttempt(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysGenerateRootAttempt")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysGenerateRootAttempt")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2838,7 +2079,7 @@ func (a *SystemApiService) GetSysGenerateRootAttemptExecute(r ApiGetSysGenerateR
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2866,37 +2107,15 @@ func (a *SystemApiService) GetSysGenerateRootAttemptExecute(r ApiGetSysGenerateR
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysHaStatusRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysHaStatusRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysHaStatusExecute(r)
-}
-
-/*
-GetSysHaStatus Check the HA status of a Vault cluster
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysHaStatusRequest
-*/
-func (a *SystemApiService) GetSysHaStatus(ctx context.Context) ApiGetSysHaStatusRequest {
-	return ApiGetSysHaStatusRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysHaStatusExecute(r ApiGetSysHaStatusRequest) (*http.Response, error) {
+// GetSysHaStatus Check the HA status of a Vault cluster
+func (a *SystemApiService) GetSysHaStatus(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysHaStatus")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysHaStatus")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -2924,7 +2143,7 @@ func (a *SystemApiService) GetSysHaStatusExecute(r ApiGetSysHaStatusRequest) (*h
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -2952,37 +2171,15 @@ func (a *SystemApiService) GetSysHaStatusExecute(r ApiGetSysHaStatusRequest) (*h
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysHealthRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysHealthRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysHealthExecute(r)
-}
-
-/*
-GetSysHealth Returns the health status of Vault.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysHealthRequest
-*/
-func (a *SystemApiService) GetSysHealth(ctx context.Context) ApiGetSysHealthRequest {
-	return ApiGetSysHealthRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysHealthExecute(r ApiGetSysHealthRequest) (*http.Response, error) {
+// GetSysHealth Returns the health status of Vault.
+func (a *SystemApiService) GetSysHealth(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysHealth")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysHealth")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3010,7 +2207,7 @@ func (a *SystemApiService) GetSysHealthExecute(r ApiGetSysHealthRequest) (*http.
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3038,41 +2235,16 @@ func (a *SystemApiService) GetSysHealthExecute(r ApiGetSysHealthRequest) (*http.
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysHostInfoRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysHostInfoRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysHostInfoExecute(r)
-}
-
-/*
-GetSysHostInfo Information about the host instance that this Vault server is running on.
-
-Information about the host instance that this Vault server is running on.
-		The information that gets collected includes host hardware information, and CPU,
-		disk, and memory utilization
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysHostInfoRequest
-*/
-func (a *SystemApiService) GetSysHostInfo(ctx context.Context) ApiGetSysHostInfoRequest {
-	return ApiGetSysHostInfoRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysHostInfoExecute(r ApiGetSysHostInfoRequest) (*http.Response, error) {
+// GetSysHostInfo Information about the host instance that this Vault server is running on.
+// Information about the host instance that this Vault server is running on.   The information that gets collected includes host hardware information, and CPU,   disk, and memory utilization
+func (a *SystemApiService) GetSysHostInfo(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysHostInfo")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysHostInfo")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3100,7 +2272,7 @@ func (a *SystemApiService) GetSysHostInfoExecute(r ApiGetSysHostInfoRequest) (*h
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3128,41 +2300,16 @@ func (a *SystemApiService) GetSysHostInfoExecute(r ApiGetSysHostInfoRequest) (*h
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInFlightReqRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysInFlightReqRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInFlightReqExecute(r)
-}
-
-/*
-GetSysInFlightReq reports in-flight requests
-
-This path responds to the following HTTP methods.
-		GET /
-			Returns a map of in-flight requests.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysInFlightReqRequest
-*/
-func (a *SystemApiService) GetSysInFlightReq(ctx context.Context) ApiGetSysInFlightReqRequest {
-	return ApiGetSysInFlightReqRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysInFlightReqExecute(r ApiGetSysInFlightReqRequest) (*http.Response, error) {
+// GetSysInFlightReq reports in-flight requests
+// This path responds to the following HTTP methods.   GET /    Returns a map of in-flight requests.
+func (a *SystemApiService) GetSysInFlightReq(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInFlightReq")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInFlightReq")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3190,7 +2337,7 @@ func (a *SystemApiService) GetSysInFlightReqExecute(r ApiGetSysInFlightReqReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3218,37 +2365,15 @@ func (a *SystemApiService) GetSysInFlightReqExecute(r ApiGetSysInFlightReqReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInitRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysInitRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInitExecute(r)
-}
-
-/*
-GetSysInit Returns the initialization status of Vault.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysInitRequest
-*/
-func (a *SystemApiService) GetSysInit(ctx context.Context) ApiGetSysInitRequest {
-	return ApiGetSysInitRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysInitExecute(r ApiGetSysInitRequest) (*http.Response, error) {
+// GetSysInit Returns the initialization status of Vault.
+func (a *SystemApiService) GetSysInit(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInit")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInit")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3276,7 +2401,7 @@ func (a *SystemApiService) GetSysInitExecute(r ApiGetSysInitRequest) (*http.Resp
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3304,37 +2429,15 @@ func (a *SystemApiService) GetSysInitExecute(r ApiGetSysInitRequest) (*http.Resp
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInternalCountersActivityRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysInternalCountersActivityRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInternalCountersActivityExecute(r)
-}
-
-/*
-GetSysInternalCountersActivity Report the client count metrics, for this namespace and all child namespaces.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysInternalCountersActivityRequest
-*/
-func (a *SystemApiService) GetSysInternalCountersActivity(ctx context.Context) ApiGetSysInternalCountersActivityRequest {
-	return ApiGetSysInternalCountersActivityRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysInternalCountersActivityExecute(r ApiGetSysInternalCountersActivityRequest) (*http.Response, error) {
+// GetSysInternalCountersActivity Report the client count metrics, for this namespace and all child namespaces.
+func (a *SystemApiService) GetSysInternalCountersActivity(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInternalCountersActivity")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInternalCountersActivity")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3362,7 +2465,7 @@ func (a *SystemApiService) GetSysInternalCountersActivityExecute(r ApiGetSysInte
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3390,37 +2493,15 @@ func (a *SystemApiService) GetSysInternalCountersActivityExecute(r ApiGetSysInte
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInternalCountersActivityExportRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysInternalCountersActivityExportRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInternalCountersActivityExportExecute(r)
-}
-
-/*
-GetSysInternalCountersActivityExport Report the client count metrics, for this namespace and all child namespaces.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysInternalCountersActivityExportRequest
-*/
-func (a *SystemApiService) GetSysInternalCountersActivityExport(ctx context.Context) ApiGetSysInternalCountersActivityExportRequest {
-	return ApiGetSysInternalCountersActivityExportRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysInternalCountersActivityExportExecute(r ApiGetSysInternalCountersActivityExportRequest) (*http.Response, error) {
+// GetSysInternalCountersActivityExport Report the client count metrics, for this namespace and all child namespaces.
+func (a *SystemApiService) GetSysInternalCountersActivityExport(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInternalCountersActivityExport")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInternalCountersActivityExport")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3448,7 +2529,7 @@ func (a *SystemApiService) GetSysInternalCountersActivityExportExecute(r ApiGetS
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3476,37 +2557,15 @@ func (a *SystemApiService) GetSysInternalCountersActivityExportExecute(r ApiGetS
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInternalCountersActivityMonthlyRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysInternalCountersActivityMonthlyRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInternalCountersActivityMonthlyExecute(r)
-}
-
-/*
-GetSysInternalCountersActivityMonthly Report the number of clients for this month, for this namespace and all child namespaces.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysInternalCountersActivityMonthlyRequest
-*/
-func (a *SystemApiService) GetSysInternalCountersActivityMonthly(ctx context.Context) ApiGetSysInternalCountersActivityMonthlyRequest {
-	return ApiGetSysInternalCountersActivityMonthlyRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysInternalCountersActivityMonthlyExecute(r ApiGetSysInternalCountersActivityMonthlyRequest) (*http.Response, error) {
+// GetSysInternalCountersActivityMonthly Report the number of clients for this month, for this namespace and all child namespaces.
+func (a *SystemApiService) GetSysInternalCountersActivityMonthly(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInternalCountersActivityMonthly")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInternalCountersActivityMonthly")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3534,7 +2593,7 @@ func (a *SystemApiService) GetSysInternalCountersActivityMonthlyExecute(r ApiGet
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3562,37 +2621,15 @@ func (a *SystemApiService) GetSysInternalCountersActivityMonthlyExecute(r ApiGet
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInternalCountersConfigRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysInternalCountersConfigRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInternalCountersConfigExecute(r)
-}
-
-/*
-GetSysInternalCountersConfig Read the client count tracking configuration.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysInternalCountersConfigRequest
-*/
-func (a *SystemApiService) GetSysInternalCountersConfig(ctx context.Context) ApiGetSysInternalCountersConfigRequest {
-	return ApiGetSysInternalCountersConfigRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysInternalCountersConfigExecute(r ApiGetSysInternalCountersConfigRequest) (*http.Response, error) {
+// GetSysInternalCountersConfig Read the client count tracking configuration.
+func (a *SystemApiService) GetSysInternalCountersConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInternalCountersConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInternalCountersConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3620,7 +2657,7 @@ func (a *SystemApiService) GetSysInternalCountersConfigExecute(r ApiGetSysIntern
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3648,37 +2685,15 @@ func (a *SystemApiService) GetSysInternalCountersConfigExecute(r ApiGetSysIntern
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInternalCountersEntitiesRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysInternalCountersEntitiesRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInternalCountersEntitiesExecute(r)
-}
-
-/*
-GetSysInternalCountersEntities Backwards compatibility is not guaranteed for this API
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysInternalCountersEntitiesRequest
-*/
-func (a *SystemApiService) GetSysInternalCountersEntities(ctx context.Context) ApiGetSysInternalCountersEntitiesRequest {
-	return ApiGetSysInternalCountersEntitiesRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysInternalCountersEntitiesExecute(r ApiGetSysInternalCountersEntitiesRequest) (*http.Response, error) {
+// GetSysInternalCountersEntities Backwards compatibility is not guaranteed for this API
+func (a *SystemApiService) GetSysInternalCountersEntities(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInternalCountersEntities")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInternalCountersEntities")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3706,7 +2721,7 @@ func (a *SystemApiService) GetSysInternalCountersEntitiesExecute(r ApiGetSysInte
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3734,37 +2749,15 @@ func (a *SystemApiService) GetSysInternalCountersEntitiesExecute(r ApiGetSysInte
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInternalCountersRequestsRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysInternalCountersRequestsRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInternalCountersRequestsExecute(r)
-}
-
-/*
-GetSysInternalCountersRequests Backwards compatibility is not guaranteed for this API
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysInternalCountersRequestsRequest
-*/
-func (a *SystemApiService) GetSysInternalCountersRequests(ctx context.Context) ApiGetSysInternalCountersRequestsRequest {
-	return ApiGetSysInternalCountersRequestsRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysInternalCountersRequestsExecute(r ApiGetSysInternalCountersRequestsRequest) (*http.Response, error) {
+// GetSysInternalCountersRequests Backwards compatibility is not guaranteed for this API
+func (a *SystemApiService) GetSysInternalCountersRequests(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInternalCountersRequests")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInternalCountersRequests")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3792,7 +2785,7 @@ func (a *SystemApiService) GetSysInternalCountersRequestsExecute(r ApiGetSysInte
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3820,37 +2813,15 @@ func (a *SystemApiService) GetSysInternalCountersRequestsExecute(r ApiGetSysInte
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInternalCountersTokensRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysInternalCountersTokensRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInternalCountersTokensExecute(r)
-}
-
-/*
-GetSysInternalCountersTokens Backwards compatibility is not guaranteed for this API
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysInternalCountersTokensRequest
-*/
-func (a *SystemApiService) GetSysInternalCountersTokens(ctx context.Context) ApiGetSysInternalCountersTokensRequest {
-	return ApiGetSysInternalCountersTokensRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysInternalCountersTokensExecute(r ApiGetSysInternalCountersTokensRequest) (*http.Response, error) {
+// GetSysInternalCountersTokens Backwards compatibility is not guaranteed for this API
+func (a *SystemApiService) GetSysInternalCountersTokens(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInternalCountersTokens")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInternalCountersTokens")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3878,7 +2849,7 @@ func (a *SystemApiService) GetSysInternalCountersTokensExecute(r ApiGetSysIntern
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3906,37 +2877,15 @@ func (a *SystemApiService) GetSysInternalCountersTokensExecute(r ApiGetSysIntern
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInternalSpecsOpenapiRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysInternalSpecsOpenapiRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInternalSpecsOpenapiExecute(r)
-}
-
-/*
-GetSysInternalSpecsOpenapi Generate an OpenAPI 3 document of all mounted paths.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysInternalSpecsOpenapiRequest
-*/
-func (a *SystemApiService) GetSysInternalSpecsOpenapi(ctx context.Context) ApiGetSysInternalSpecsOpenapiRequest {
-	return ApiGetSysInternalSpecsOpenapiRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysInternalSpecsOpenapiExecute(r ApiGetSysInternalSpecsOpenapiRequest) (*http.Response, error) {
+// GetSysInternalSpecsOpenapi Generate an OpenAPI 3 document of all mounted paths.
+func (a *SystemApiService) GetSysInternalSpecsOpenapi(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInternalSpecsOpenapi")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInternalSpecsOpenapi")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -3964,7 +2913,7 @@ func (a *SystemApiService) GetSysInternalSpecsOpenapiExecute(r ApiGetSysInternal
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -3992,37 +2941,15 @@ func (a *SystemApiService) GetSysInternalSpecsOpenapiExecute(r ApiGetSysInternal
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInternalUiFeatureFlagsRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysInternalUiFeatureFlagsRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInternalUiFeatureFlagsExecute(r)
-}
-
-/*
-GetSysInternalUiFeatureFlags Lists enabled feature flags.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysInternalUiFeatureFlagsRequest
-*/
-func (a *SystemApiService) GetSysInternalUiFeatureFlags(ctx context.Context) ApiGetSysInternalUiFeatureFlagsRequest {
-	return ApiGetSysInternalUiFeatureFlagsRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysInternalUiFeatureFlagsExecute(r ApiGetSysInternalUiFeatureFlagsRequest) (*http.Response, error) {
+// GetSysInternalUiFeatureFlags Lists enabled feature flags.
+func (a *SystemApiService) GetSysInternalUiFeatureFlags(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInternalUiFeatureFlags")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInternalUiFeatureFlags")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4050,7 +2977,7 @@ func (a *SystemApiService) GetSysInternalUiFeatureFlagsExecute(r ApiGetSysIntern
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4078,37 +3005,15 @@ func (a *SystemApiService) GetSysInternalUiFeatureFlagsExecute(r ApiGetSysIntern
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInternalUiMountsRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysInternalUiMountsRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInternalUiMountsExecute(r)
-}
-
-/*
-GetSysInternalUiMounts Lists all enabled and visible auth and secrets mounts.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysInternalUiMountsRequest
-*/
-func (a *SystemApiService) GetSysInternalUiMounts(ctx context.Context) ApiGetSysInternalUiMountsRequest {
-	return ApiGetSysInternalUiMountsRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysInternalUiMountsExecute(r ApiGetSysInternalUiMountsRequest) (*http.Response, error) {
+// GetSysInternalUiMounts Lists all enabled and visible auth and secrets mounts.
+func (a *SystemApiService) GetSysInternalUiMounts(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInternalUiMounts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInternalUiMounts")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4136,7 +3041,7 @@ func (a *SystemApiService) GetSysInternalUiMountsExecute(r ApiGetSysInternalUiMo
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4164,46 +3069,22 @@ func (a *SystemApiService) GetSysInternalUiMountsExecute(r ApiGetSysInternalUiMo
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInternalUiMountsPathRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	path       string
-}
-
-func (r ApiGetSysInternalUiMountsPathRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInternalUiMountsPathExecute(r)
-}
-
-/*
-GetSysInternalUiMountsPath Return information about the given mount.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path The path of the mount.
- @return ApiGetSysInternalUiMountsPathRequest
-*/
-func (a *SystemApiService) GetSysInternalUiMountsPath(ctx context.Context, path string) ApiGetSysInternalUiMountsPathRequest {
-	return ApiGetSysInternalUiMountsPathRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysInternalUiMountsPathExecute(r ApiGetSysInternalUiMountsPathRequest) (*http.Response, error) {
+// GetSysInternalUiMountsPath Return information about the given mount.
+// path: The path of the mount.
+func (a *SystemApiService) GetSysInternalUiMountsPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInternalUiMountsPath")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInternalUiMountsPath")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/internal/ui/mounts/{path}"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(r.path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4226,7 +3107,7 @@ func (a *SystemApiService) GetSysInternalUiMountsPathExecute(r ApiGetSysInternal
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4254,37 +3135,15 @@ func (a *SystemApiService) GetSysInternalUiMountsPathExecute(r ApiGetSysInternal
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInternalUiNamespacesRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysInternalUiNamespacesRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInternalUiNamespacesExecute(r)
-}
-
-/*
-GetSysInternalUiNamespaces Backwards compatibility is not guaranteed for this API
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysInternalUiNamespacesRequest
-*/
-func (a *SystemApiService) GetSysInternalUiNamespaces(ctx context.Context) ApiGetSysInternalUiNamespacesRequest {
-	return ApiGetSysInternalUiNamespacesRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysInternalUiNamespacesExecute(r ApiGetSysInternalUiNamespacesRequest) (*http.Response, error) {
+// GetSysInternalUiNamespaces Backwards compatibility is not guaranteed for this API
+func (a *SystemApiService) GetSysInternalUiNamespaces(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInternalUiNamespaces")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInternalUiNamespaces")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4312,7 +3171,7 @@ func (a *SystemApiService) GetSysInternalUiNamespacesExecute(r ApiGetSysInternal
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4340,37 +3199,15 @@ func (a *SystemApiService) GetSysInternalUiNamespacesExecute(r ApiGetSysInternal
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysInternalUiResultantAclRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysInternalUiResultantAclRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysInternalUiResultantAclExecute(r)
-}
-
-/*
-GetSysInternalUiResultantAcl Backwards compatibility is not guaranteed for this API
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysInternalUiResultantAclRequest
-*/
-func (a *SystemApiService) GetSysInternalUiResultantAcl(ctx context.Context) ApiGetSysInternalUiResultantAclRequest {
-	return ApiGetSysInternalUiResultantAclRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysInternalUiResultantAclExecute(r ApiGetSysInternalUiResultantAclRequest) (*http.Response, error) {
+// GetSysInternalUiResultantAcl Backwards compatibility is not guaranteed for this API
+func (a *SystemApiService) GetSysInternalUiResultantAcl(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysInternalUiResultantAcl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInternalUiResultantAcl")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4398,7 +3235,7 @@ func (a *SystemApiService) GetSysInternalUiResultantAclExecute(r ApiGetSysIntern
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4426,37 +3263,15 @@ func (a *SystemApiService) GetSysInternalUiResultantAclExecute(r ApiGetSysIntern
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysKeyStatusRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysKeyStatusRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysKeyStatusExecute(r)
-}
-
-/*
-GetSysKeyStatus Provides information about the backend encryption key.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysKeyStatusRequest
-*/
-func (a *SystemApiService) GetSysKeyStatus(ctx context.Context) ApiGetSysKeyStatusRequest {
-	return ApiGetSysKeyStatusRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysKeyStatusExecute(r ApiGetSysKeyStatusRequest) (*http.Response, error) {
+// GetSysKeyStatus Provides information about the backend encryption key.
+func (a *SystemApiService) GetSysKeyStatus(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysKeyStatus")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysKeyStatus")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4484,7 +3299,7 @@ func (a *SystemApiService) GetSysKeyStatusExecute(r ApiGetSysKeyStatusRequest) (
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4512,37 +3327,15 @@ func (a *SystemApiService) GetSysKeyStatusExecute(r ApiGetSysKeyStatusRequest) (
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysLeaderRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysLeaderRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysLeaderExecute(r)
-}
-
-/*
-GetSysLeader Returns the high availability status and current leader instance of Vault.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysLeaderRequest
-*/
-func (a *SystemApiService) GetSysLeader(ctx context.Context) ApiGetSysLeaderRequest {
-	return ApiGetSysLeaderRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysLeaderExecute(r ApiGetSysLeaderRequest) (*http.Response, error) {
+// GetSysLeader Returns the high availability status and current leader instance of Vault.
+func (a *SystemApiService) GetSysLeader(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysLeader")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysLeader")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4570,7 +3363,7 @@ func (a *SystemApiService) GetSysLeaderExecute(r ApiGetSysLeaderRequest) (*http.
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4598,37 +3391,15 @@ func (a *SystemApiService) GetSysLeaderExecute(r ApiGetSysLeaderRequest) (*http.
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysLeasesRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysLeasesRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysLeasesExecute(r)
-}
-
-/*
-GetSysLeases List leases associated with this Vault cluster
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysLeasesRequest
-*/
-func (a *SystemApiService) GetSysLeases(ctx context.Context) ApiGetSysLeasesRequest {
-	return ApiGetSysLeasesRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysLeasesExecute(r ApiGetSysLeasesRequest) (*http.Response, error) {
+// GetSysLeases List leases associated with this Vault cluster
+func (a *SystemApiService) GetSysLeases(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysLeases")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysLeases")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4656,7 +3427,7 @@ func (a *SystemApiService) GetSysLeasesExecute(r ApiGetSysLeasesRequest) (*http.
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4684,37 +3455,15 @@ func (a *SystemApiService) GetSysLeasesExecute(r ApiGetSysLeasesRequest) (*http.
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysLeasesCountRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysLeasesCountRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysLeasesCountExecute(r)
-}
-
-/*
-GetSysLeasesCount Count of leases associated with this Vault cluster
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysLeasesCountRequest
-*/
-func (a *SystemApiService) GetSysLeasesCount(ctx context.Context) ApiGetSysLeasesCountRequest {
-	return ApiGetSysLeasesCountRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysLeasesCountExecute(r ApiGetSysLeasesCountRequest) (*http.Response, error) {
+// GetSysLeasesCount Count of leases associated with this Vault cluster
+func (a *SystemApiService) GetSysLeasesCount(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysLeasesCount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysLeasesCount")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4742,7 +3491,7 @@ func (a *SystemApiService) GetSysLeasesCountExecute(r ApiGetSysLeasesCountReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4770,44 +3519,16 @@ func (a *SystemApiService) GetSysLeasesCountExecute(r ApiGetSysLeasesCountReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysLeasesLookupRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	list       *string
-}
-
-// Must be set to &#x60;true&#x60;
-func (r ApiGetSysLeasesLookupRequest) List(list string) ApiGetSysLeasesLookupRequest {
-	r.list = &list
-	return r
-}
-
-func (r ApiGetSysLeasesLookupRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysLeasesLookupExecute(r)
-}
-
-/*
-GetSysLeasesLookup Returns a list of lease ids.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysLeasesLookupRequest
-*/
-func (a *SystemApiService) GetSysLeasesLookup(ctx context.Context) ApiGetSysLeasesLookupRequest {
-	return ApiGetSysLeasesLookupRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysLeasesLookupExecute(r ApiGetSysLeasesLookupRequest) (*http.Response, error) {
+// GetSysLeasesLookup Returns a list of lease ids.
+// list: Must be set to &#x60;true&#x60;
+func (a *SystemApiService) GetSysLeasesLookup(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysLeasesLookup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysLeasesLookup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -4817,11 +3538,8 @@ func (a *SystemApiService) GetSysLeasesLookupExecute(r ApiGetSysLeasesLookupRequ
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -4839,7 +3557,7 @@ func (a *SystemApiService) GetSysLeasesLookupExecute(r ApiGetSysLeasesLookupRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4867,62 +3585,29 @@ func (a *SystemApiService) GetSysLeasesLookupExecute(r ApiGetSysLeasesLookupRequ
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysLeasesLookupPrefixRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	prefix     string
-	list       *string
-}
-
-// Must be set to &#x60;true&#x60;
-func (r ApiGetSysLeasesLookupPrefixRequest) List(list string) ApiGetSysLeasesLookupPrefixRequest {
-	r.list = &list
-	return r
-}
-
-func (r ApiGetSysLeasesLookupPrefixRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysLeasesLookupPrefixExecute(r)
-}
-
-/*
-GetSysLeasesLookupPrefix Returns a list of lease ids.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param prefix The path to list leases under. Example: \"aws/creds/deploy\"
- @return ApiGetSysLeasesLookupPrefixRequest
-*/
-func (a *SystemApiService) GetSysLeasesLookupPrefix(ctx context.Context, prefix string) ApiGetSysLeasesLookupPrefixRequest {
-	return ApiGetSysLeasesLookupPrefixRequest{
-		ApiService: a,
-		ctx:        ctx,
-		prefix:     prefix,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysLeasesLookupPrefixExecute(r ApiGetSysLeasesLookupPrefixRequest) (*http.Response, error) {
+// GetSysLeasesLookupPrefix Returns a list of lease ids.
+// prefix: The path to list leases under. Example: \&quot;aws/creds/deploy\&quot;
+// list: Must be set to &#x60;true&#x60;
+func (a *SystemApiService) GetSysLeasesLookupPrefix(ctx context.Context, prefix string, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysLeasesLookupPrefix")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysLeasesLookupPrefix")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/leases/lookup/{prefix}"
-	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(r.prefix, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(prefix, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -4940,7 +3625,7 @@ func (a *SystemApiService) GetSysLeasesLookupPrefixExecute(r ApiGetSysLeasesLook
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -4968,44 +3653,16 @@ func (a *SystemApiService) GetSysLeasesLookupPrefixExecute(r ApiGetSysLeasesLook
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysMetricsRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	format     *string
-}
-
-// Format to export metrics into. Currently accepts only \&quot;prometheus\&quot;.
-func (r ApiGetSysMetricsRequest) Format(format string) ApiGetSysMetricsRequest {
-	r.format = &format
-	return r
-}
-
-func (r ApiGetSysMetricsRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysMetricsExecute(r)
-}
-
-/*
-GetSysMetrics Export the metrics aggregated for telemetry purpose.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysMetricsRequest
-*/
-func (a *SystemApiService) GetSysMetrics(ctx context.Context) ApiGetSysMetricsRequest {
-	return ApiGetSysMetricsRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysMetricsExecute(r ApiGetSysMetricsRequest) (*http.Response, error) {
+// GetSysMetrics Export the metrics aggregated for telemetry purpose.
+// format: Format to export metrics into. Currently accepts only \&quot;prometheus\&quot;.
+func (a *SystemApiService) GetSysMetrics(ctx context.Context, format string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysMetrics")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysMetrics")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5016,9 +3673,7 @@ func (a *SystemApiService) GetSysMetricsExecute(r ApiGetSysMetricsRequest) (*htt
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.format != nil {
-		localVarQueryParams.Add("format", parameterToString(*r.format, ""))
-	}
+	localVarQueryParams.Add("format", parameterToString(format, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -5036,7 +3691,7 @@ func (a *SystemApiService) GetSysMetricsExecute(r ApiGetSysMetricsRequest) (*htt
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5064,51 +3719,17 @@ func (a *SystemApiService) GetSysMetricsExecute(r ApiGetSysMetricsRequest) (*htt
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysMonitorRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	logFormat  *string
-	logLevel   *string
-}
-
-// Output format of logs. Supported values are \&quot;standard\&quot; and \&quot;json\&quot;. The default is \&quot;standard\&quot;.
-func (r ApiGetSysMonitorRequest) LogFormat(logFormat string) ApiGetSysMonitorRequest {
-	r.logFormat = &logFormat
-	return r
-}
-
-// Log level to view system logs at. Currently supported values are \&quot;trace\&quot;, \&quot;debug\&quot;, \&quot;info\&quot;, \&quot;warn\&quot;, \&quot;error\&quot;.
-func (r ApiGetSysMonitorRequest) LogLevel(logLevel string) ApiGetSysMonitorRequest {
-	r.logLevel = &logLevel
-	return r
-}
-
-func (r ApiGetSysMonitorRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysMonitorExecute(r)
-}
-
-/*
-GetSysMonitor Method for GetSysMonitor
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysMonitorRequest
-*/
-func (a *SystemApiService) GetSysMonitor(ctx context.Context) ApiGetSysMonitorRequest {
-	return ApiGetSysMonitorRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysMonitorExecute(r ApiGetSysMonitorRequest) (*http.Response, error) {
+// GetSysMonitor
+// logFormat: Output format of logs. Supported values are \&quot;standard\&quot; and \&quot;json\&quot;. The default is \&quot;standard\&quot;.
+// logLevel: Log level to view system logs at. Currently supported values are \&quot;trace\&quot;, \&quot;debug\&quot;, \&quot;info\&quot;, \&quot;warn\&quot;, \&quot;error\&quot;.
+func (a *SystemApiService) GetSysMonitor(ctx context.Context, logFormat string, logLevel string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysMonitor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysMonitor")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5119,12 +3740,8 @@ func (a *SystemApiService) GetSysMonitorExecute(r ApiGetSysMonitorRequest) (*htt
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.logFormat != nil {
-		localVarQueryParams.Add("log_format", parameterToString(*r.logFormat, ""))
-	}
-	if r.logLevel != nil {
-		localVarQueryParams.Add("log_level", parameterToString(*r.logLevel, ""))
-	}
+	localVarQueryParams.Add("log_format", parameterToString(logFormat, ""))
+	localVarQueryParams.Add("log_level", parameterToString(logLevel, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -5142,7 +3759,7 @@ func (a *SystemApiService) GetSysMonitorExecute(r ApiGetSysMonitorRequest) (*htt
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5170,37 +3787,15 @@ func (a *SystemApiService) GetSysMonitorExecute(r ApiGetSysMonitorRequest) (*htt
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysMountsRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysMountsRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysMountsExecute(r)
-}
-
-/*
-GetSysMounts List the currently mounted backends.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysMountsRequest
-*/
-func (a *SystemApiService) GetSysMounts(ctx context.Context) ApiGetSysMountsRequest {
-	return ApiGetSysMountsRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysMountsExecute(r ApiGetSysMountsRequest) (*http.Response, error) {
+// GetSysMounts List the currently mounted backends.
+func (a *SystemApiService) GetSysMounts(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysMounts")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysMounts")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5228,7 +3823,7 @@ func (a *SystemApiService) GetSysMountsExecute(r ApiGetSysMountsRequest) (*http.
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5256,46 +3851,22 @@ func (a *SystemApiService) GetSysMountsExecute(r ApiGetSysMountsRequest) (*http.
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysMountsPathRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	path       string
-}
-
-func (r ApiGetSysMountsPathRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysMountsPathExecute(r)
-}
-
-/*
-GetSysMountsPath Read the configuration of the secret engine at the given path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path The path to mount to. Example: \"aws/east\"
- @return ApiGetSysMountsPathRequest
-*/
-func (a *SystemApiService) GetSysMountsPath(ctx context.Context, path string) ApiGetSysMountsPathRequest {
-	return ApiGetSysMountsPathRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysMountsPathExecute(r ApiGetSysMountsPathRequest) (*http.Response, error) {
+// GetSysMountsPath Read the configuration of the secret engine at the given path.
+// path: The path to mount to. Example: \&quot;aws/east\&quot;
+func (a *SystemApiService) GetSysMountsPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysMountsPath")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysMountsPath")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/mounts/{path}"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(r.path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5318,7 +3889,7 @@ func (a *SystemApiService) GetSysMountsPathExecute(r ApiGetSysMountsPathRequest)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5346,46 +3917,22 @@ func (a *SystemApiService) GetSysMountsPathExecute(r ApiGetSysMountsPathRequest)
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysMountsPathTuneRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	path       string
-}
-
-func (r ApiGetSysMountsPathTuneRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysMountsPathTuneExecute(r)
-}
-
-/*
-GetSysMountsPathTune Tune backend configuration parameters for this mount.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path The path to mount to. Example: \"aws/east\"
- @return ApiGetSysMountsPathTuneRequest
-*/
-func (a *SystemApiService) GetSysMountsPathTune(ctx context.Context, path string) ApiGetSysMountsPathTuneRequest {
-	return ApiGetSysMountsPathTuneRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysMountsPathTuneExecute(r ApiGetSysMountsPathTuneRequest) (*http.Response, error) {
+// GetSysMountsPathTune Tune backend configuration parameters for this mount.
+// path: The path to mount to. Example: \&quot;aws/east\&quot;
+func (a *SystemApiService) GetSysMountsPathTune(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysMountsPathTune")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysMountsPathTune")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/mounts/{path}/tune"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(r.path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5408,7 +3955,7 @@ func (a *SystemApiService) GetSysMountsPathTuneExecute(r ApiGetSysMountsPathTune
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5436,37 +3983,15 @@ func (a *SystemApiService) GetSysMountsPathTuneExecute(r ApiGetSysMountsPathTune
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPluginsCatalogRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysPluginsCatalogRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPluginsCatalogExecute(r)
-}
-
-/*
-GetSysPluginsCatalog Lists all the plugins known to Vault
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPluginsCatalogRequest
-*/
-func (a *SystemApiService) GetSysPluginsCatalog(ctx context.Context) ApiGetSysPluginsCatalogRequest {
-	return ApiGetSysPluginsCatalogRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysPluginsCatalogExecute(r ApiGetSysPluginsCatalogRequest) (*http.Response, error) {
+// GetSysPluginsCatalog Lists all the plugins known to Vault
+func (a *SystemApiService) GetSysPluginsCatalog(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPluginsCatalog")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPluginsCatalog")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5494,7 +4019,7 @@ func (a *SystemApiService) GetSysPluginsCatalogExecute(r ApiGetSysPluginsCatalog
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5522,46 +4047,22 @@ func (a *SystemApiService) GetSysPluginsCatalogExecute(r ApiGetSysPluginsCatalog
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPluginsCatalogNameRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	name       string
-}
-
-func (r ApiGetSysPluginsCatalogNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPluginsCatalogNameExecute(r)
-}
-
-/*
-GetSysPluginsCatalogName Return the configuration data for the plugin with the given name.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the plugin
- @return ApiGetSysPluginsCatalogNameRequest
-*/
-func (a *SystemApiService) GetSysPluginsCatalogName(ctx context.Context, name string) ApiGetSysPluginsCatalogNameRequest {
-	return ApiGetSysPluginsCatalogNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysPluginsCatalogNameExecute(r ApiGetSysPluginsCatalogNameRequest) (*http.Response, error) {
+// GetSysPluginsCatalogName Return the configuration data for the plugin with the given name.
+// name: The name of the plugin
+func (a *SystemApiService) GetSysPluginsCatalogName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPluginsCatalogName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPluginsCatalogName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/plugins/catalog/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5584,7 +4085,7 @@ func (a *SystemApiService) GetSysPluginsCatalogNameExecute(r ApiGetSysPluginsCat
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5612,62 +4113,29 @@ func (a *SystemApiService) GetSysPluginsCatalogNameExecute(r ApiGetSysPluginsCat
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPluginsCatalogTypeRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	type_      string
-	list       *string
-}
-
-// Must be set to &#x60;true&#x60;
-func (r ApiGetSysPluginsCatalogTypeRequest) List(list string) ApiGetSysPluginsCatalogTypeRequest {
-	r.list = &list
-	return r
-}
-
-func (r ApiGetSysPluginsCatalogTypeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPluginsCatalogTypeExecute(r)
-}
-
-/*
-GetSysPluginsCatalogType List the plugins in the catalog.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param type_ The type of the plugin, may be auth, secret, or database
- @return ApiGetSysPluginsCatalogTypeRequest
-*/
-func (a *SystemApiService) GetSysPluginsCatalogType(ctx context.Context, type_ string) ApiGetSysPluginsCatalogTypeRequest {
-	return ApiGetSysPluginsCatalogTypeRequest{
-		ApiService: a,
-		ctx:        ctx,
-		type_:      type_,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysPluginsCatalogTypeExecute(r ApiGetSysPluginsCatalogTypeRequest) (*http.Response, error) {
+// GetSysPluginsCatalogType List the plugins in the catalog.
+// type_: The type of the plugin, may be auth, secret, or database
+// list: Must be set to &#x60;true&#x60;
+func (a *SystemApiService) GetSysPluginsCatalogType(ctx context.Context, type_ string, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPluginsCatalogType")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPluginsCatalogType")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/plugins/catalog/{type}"
-	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(r.type_, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(type_, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -5685,7 +4153,7 @@ func (a *SystemApiService) GetSysPluginsCatalogTypeExecute(r ApiGetSysPluginsCat
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5713,50 +4181,24 @@ func (a *SystemApiService) GetSysPluginsCatalogTypeExecute(r ApiGetSysPluginsCat
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPluginsCatalogTypeNameRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	name       string
-	type_      string
-}
-
-func (r ApiGetSysPluginsCatalogTypeNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPluginsCatalogTypeNameExecute(r)
-}
-
-/*
-GetSysPluginsCatalogTypeName Return the configuration data for the plugin with the given name.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the plugin
- @param type_ The type of the plugin, may be auth, secret, or database
- @return ApiGetSysPluginsCatalogTypeNameRequest
-*/
-func (a *SystemApiService) GetSysPluginsCatalogTypeName(ctx context.Context, name string, type_ string) ApiGetSysPluginsCatalogTypeNameRequest {
-	return ApiGetSysPluginsCatalogTypeNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-		type_:      type_,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysPluginsCatalogTypeNameExecute(r ApiGetSysPluginsCatalogTypeNameRequest) (*http.Response, error) {
+// GetSysPluginsCatalogTypeName Return the configuration data for the plugin with the given name.
+// name: The name of the plugin
+// type_: The type of the plugin, may be auth, secret, or database
+func (a *SystemApiService) GetSysPluginsCatalogTypeName(ctx context.Context, name string, type_ string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPluginsCatalogTypeName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPluginsCatalogTypeName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/plugins/catalog/{type}/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(r.type_, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(type_, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5779,7 +4221,7 @@ func (a *SystemApiService) GetSysPluginsCatalogTypeNameExecute(r ApiGetSysPlugin
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5807,44 +4249,16 @@ func (a *SystemApiService) GetSysPluginsCatalogTypeNameExecute(r ApiGetSysPlugin
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPoliciesAclRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	list       *string
-}
-
-// Must be set to &#x60;true&#x60;
-func (r ApiGetSysPoliciesAclRequest) List(list string) ApiGetSysPoliciesAclRequest {
-	r.list = &list
-	return r
-}
-
-func (r ApiGetSysPoliciesAclRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPoliciesAclExecute(r)
-}
-
-/*
-GetSysPoliciesAcl List the configured access control policies.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPoliciesAclRequest
-*/
-func (a *SystemApiService) GetSysPoliciesAcl(ctx context.Context) ApiGetSysPoliciesAclRequest {
-	return ApiGetSysPoliciesAclRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysPoliciesAclExecute(r ApiGetSysPoliciesAclRequest) (*http.Response, error) {
+// GetSysPoliciesAcl List the configured access control policies.
+// list: Must be set to &#x60;true&#x60;
+func (a *SystemApiService) GetSysPoliciesAcl(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPoliciesAcl")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPoliciesAcl")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -5854,11 +4268,8 @@ func (a *SystemApiService) GetSysPoliciesAclExecute(r ApiGetSysPoliciesAclReques
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -5876,7 +4287,7 @@ func (a *SystemApiService) GetSysPoliciesAclExecute(r ApiGetSysPoliciesAclReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5904,46 +4315,22 @@ func (a *SystemApiService) GetSysPoliciesAclExecute(r ApiGetSysPoliciesAclReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPoliciesAclNameRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	name       string
-}
-
-func (r ApiGetSysPoliciesAclNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPoliciesAclNameExecute(r)
-}
-
-/*
-GetSysPoliciesAclName Retrieve information about the named ACL policy.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the policy. Example: \"ops\"
- @return ApiGetSysPoliciesAclNameRequest
-*/
-func (a *SystemApiService) GetSysPoliciesAclName(ctx context.Context, name string) ApiGetSysPoliciesAclNameRequest {
-	return ApiGetSysPoliciesAclNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysPoliciesAclNameExecute(r ApiGetSysPoliciesAclNameRequest) (*http.Response, error) {
+// GetSysPoliciesAclName Retrieve information about the named ACL policy.
+// name: The name of the policy. Example: \&quot;ops\&quot;
+func (a *SystemApiService) GetSysPoliciesAclName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPoliciesAclName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPoliciesAclName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/policies/acl/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5966,7 +4353,7 @@ func (a *SystemApiService) GetSysPoliciesAclNameExecute(r ApiGetSysPoliciesAclNa
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -5994,44 +4381,16 @@ func (a *SystemApiService) GetSysPoliciesAclNameExecute(r ApiGetSysPoliciesAclNa
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPoliciesPasswordRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	list       *string
-}
-
-// Must be set to &#x60;true&#x60;
-func (r ApiGetSysPoliciesPasswordRequest) List(list string) ApiGetSysPoliciesPasswordRequest {
-	r.list = &list
-	return r
-}
-
-func (r ApiGetSysPoliciesPasswordRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPoliciesPasswordExecute(r)
-}
-
-/*
-GetSysPoliciesPassword List the existing password policies.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPoliciesPasswordRequest
-*/
-func (a *SystemApiService) GetSysPoliciesPassword(ctx context.Context) ApiGetSysPoliciesPasswordRequest {
-	return ApiGetSysPoliciesPasswordRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysPoliciesPasswordExecute(r ApiGetSysPoliciesPasswordRequest) (*http.Response, error) {
+// GetSysPoliciesPassword List the existing password policies.
+// list: Must be set to &#x60;true&#x60;
+func (a *SystemApiService) GetSysPoliciesPassword(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPoliciesPassword")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPoliciesPassword")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6041,11 +4400,8 @@ func (a *SystemApiService) GetSysPoliciesPasswordExecute(r ApiGetSysPoliciesPass
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -6063,7 +4419,7 @@ func (a *SystemApiService) GetSysPoliciesPasswordExecute(r ApiGetSysPoliciesPass
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6091,46 +4447,22 @@ func (a *SystemApiService) GetSysPoliciesPasswordExecute(r ApiGetSysPoliciesPass
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPoliciesPasswordNameRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	name       string
-}
-
-func (r ApiGetSysPoliciesPasswordNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPoliciesPasswordNameExecute(r)
-}
-
-/*
-GetSysPoliciesPasswordName Retrieve an existing password policy.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the password policy.
- @return ApiGetSysPoliciesPasswordNameRequest
-*/
-func (a *SystemApiService) GetSysPoliciesPasswordName(ctx context.Context, name string) ApiGetSysPoliciesPasswordNameRequest {
-	return ApiGetSysPoliciesPasswordNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysPoliciesPasswordNameExecute(r ApiGetSysPoliciesPasswordNameRequest) (*http.Response, error) {
+// GetSysPoliciesPasswordName Retrieve an existing password policy.
+// name: The name of the password policy.
+func (a *SystemApiService) GetSysPoliciesPasswordName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPoliciesPasswordName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPoliciesPasswordName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/policies/password/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6153,7 +4485,7 @@ func (a *SystemApiService) GetSysPoliciesPasswordNameExecute(r ApiGetSysPolicies
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6181,46 +4513,22 @@ func (a *SystemApiService) GetSysPoliciesPasswordNameExecute(r ApiGetSysPolicies
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPoliciesPasswordNameGenerateRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	name       string
-}
-
-func (r ApiGetSysPoliciesPasswordNameGenerateRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPoliciesPasswordNameGenerateExecute(r)
-}
-
-/*
-GetSysPoliciesPasswordNameGenerate Generate a password from an existing password policy.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the password policy.
- @return ApiGetSysPoliciesPasswordNameGenerateRequest
-*/
-func (a *SystemApiService) GetSysPoliciesPasswordNameGenerate(ctx context.Context, name string) ApiGetSysPoliciesPasswordNameGenerateRequest {
-	return ApiGetSysPoliciesPasswordNameGenerateRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysPoliciesPasswordNameGenerateExecute(r ApiGetSysPoliciesPasswordNameGenerateRequest) (*http.Response, error) {
+// GetSysPoliciesPasswordNameGenerate Generate a password from an existing password policy.
+// name: The name of the password policy.
+func (a *SystemApiService) GetSysPoliciesPasswordNameGenerate(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPoliciesPasswordNameGenerate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPoliciesPasswordNameGenerate")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/policies/password/{name}/generate"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6243,7 +4551,7 @@ func (a *SystemApiService) GetSysPoliciesPasswordNameGenerateExecute(r ApiGetSys
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6271,44 +4579,16 @@ func (a *SystemApiService) GetSysPoliciesPasswordNameGenerateExecute(r ApiGetSys
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPolicyRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	list       *string
-}
-
-// Return a list if &#x60;true&#x60;
-func (r ApiGetSysPolicyRequest) List(list string) ApiGetSysPolicyRequest {
-	r.list = &list
-	return r
-}
-
-func (r ApiGetSysPolicyRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPolicyExecute(r)
-}
-
-/*
-GetSysPolicy List the configured access control policies.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPolicyRequest
-*/
-func (a *SystemApiService) GetSysPolicy(ctx context.Context) ApiGetSysPolicyRequest {
-	return ApiGetSysPolicyRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysPolicyExecute(r ApiGetSysPolicyRequest) (*http.Response, error) {
+// GetSysPolicy List the configured access control policies.
+// list: Return a list if &#x60;true&#x60;
+func (a *SystemApiService) GetSysPolicy(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPolicy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPolicy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6319,9 +4599,7 @@ func (a *SystemApiService) GetSysPolicyExecute(r ApiGetSysPolicyRequest) (*http.
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.list != nil {
-		localVarQueryParams.Add("list", parameterToString(*r.list, ""))
-	}
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -6339,7 +4617,7 @@ func (a *SystemApiService) GetSysPolicyExecute(r ApiGetSysPolicyRequest) (*http.
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6367,46 +4645,22 @@ func (a *SystemApiService) GetSysPolicyExecute(r ApiGetSysPolicyRequest) (*http.
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPolicyNameRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	name       string
-}
-
-func (r ApiGetSysPolicyNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPolicyNameExecute(r)
-}
-
-/*
-GetSysPolicyName Retrieve the policy body for the named policy.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the policy. Example: \"ops\"
- @return ApiGetSysPolicyNameRequest
-*/
-func (a *SystemApiService) GetSysPolicyName(ctx context.Context, name string) ApiGetSysPolicyNameRequest {
-	return ApiGetSysPolicyNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysPolicyNameExecute(r ApiGetSysPolicyNameRequest) (*http.Response, error) {
+// GetSysPolicyName Retrieve the policy body for the named policy.
+// name: The name of the policy. Example: \&quot;ops\&quot;
+func (a *SystemApiService) GetSysPolicyName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPolicyName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPolicyName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/policy/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6429,7 +4683,7 @@ func (a *SystemApiService) GetSysPolicyNameExecute(r ApiGetSysPolicyNameRequest)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6457,41 +4711,16 @@ func (a *SystemApiService) GetSysPolicyNameExecute(r ApiGetSysPolicyNameRequest)
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPprofRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysPprofRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPprofExecute(r)
-}
-
-/*
-GetSysPprof Returns an HTML page listing the available profiles.
-
-Returns an HTML page listing the available
-profiles. This should be mainly accessed via browsers or applications that can
-render pages.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPprofRequest
-*/
-func (a *SystemApiService) GetSysPprof(ctx context.Context) ApiGetSysPprofRequest {
-	return ApiGetSysPprofRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysPprofExecute(r ApiGetSysPprofRequest) (*http.Response, error) {
+// GetSysPprof Returns an HTML page listing the available profiles.
+// Returns an HTML page listing the available  profiles. This should be mainly accessed via browsers or applications that can  render pages.
+func (a *SystemApiService) GetSysPprof(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPprof")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPprof")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6519,7 +4748,7 @@ func (a *SystemApiService) GetSysPprofExecute(r ApiGetSysPprofRequest) (*http.Re
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6547,39 +4776,16 @@ func (a *SystemApiService) GetSysPprofExecute(r ApiGetSysPprofRequest) (*http.Re
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPprofAllocsRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysPprofAllocsRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPprofAllocsExecute(r)
-}
-
-/*
-GetSysPprofAllocs Returns a sampling of all past memory allocations.
-
-Returns a sampling of all past memory allocations.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPprofAllocsRequest
-*/
-func (a *SystemApiService) GetSysPprofAllocs(ctx context.Context) ApiGetSysPprofAllocsRequest {
-	return ApiGetSysPprofAllocsRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysPprofAllocsExecute(r ApiGetSysPprofAllocsRequest) (*http.Response, error) {
+// GetSysPprofAllocs Returns a sampling of all past memory allocations.
+// Returns a sampling of all past memory allocations.
+func (a *SystemApiService) GetSysPprofAllocs(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPprofAllocs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPprofAllocs")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6607,7 +4813,7 @@ func (a *SystemApiService) GetSysPprofAllocsExecute(r ApiGetSysPprofAllocsReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6635,39 +4841,16 @@ func (a *SystemApiService) GetSysPprofAllocsExecute(r ApiGetSysPprofAllocsReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPprofBlockRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysPprofBlockRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPprofBlockExecute(r)
-}
-
-/*
-GetSysPprofBlock Returns stack traces that led to blocking on synchronization primitives
-
-Returns stack traces that led to blocking on synchronization primitives
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPprofBlockRequest
-*/
-func (a *SystemApiService) GetSysPprofBlock(ctx context.Context) ApiGetSysPprofBlockRequest {
-	return ApiGetSysPprofBlockRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysPprofBlockExecute(r ApiGetSysPprofBlockRequest) (*http.Response, error) {
+// GetSysPprofBlock Returns stack traces that led to blocking on synchronization primitives
+// Returns stack traces that led to blocking on synchronization primitives
+func (a *SystemApiService) GetSysPprofBlock(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPprofBlock")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPprofBlock")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6695,7 +4878,7 @@ func (a *SystemApiService) GetSysPprofBlockExecute(r ApiGetSysPprofBlockRequest)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6723,39 +4906,16 @@ func (a *SystemApiService) GetSysPprofBlockExecute(r ApiGetSysPprofBlockRequest)
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPprofCmdlineRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysPprofCmdlineRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPprofCmdlineExecute(r)
-}
-
-/*
-GetSysPprofCmdline Returns the running program's command line.
-
-Returns the running program's command line, with arguments separated by NUL bytes.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPprofCmdlineRequest
-*/
-func (a *SystemApiService) GetSysPprofCmdline(ctx context.Context) ApiGetSysPprofCmdlineRequest {
-	return ApiGetSysPprofCmdlineRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysPprofCmdlineExecute(r ApiGetSysPprofCmdlineRequest) (*http.Response, error) {
+// GetSysPprofCmdline Returns the running program's command line.
+// Returns the running program's command line, with arguments separated by NUL bytes.
+func (a *SystemApiService) GetSysPprofCmdline(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPprofCmdline")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPprofCmdline")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6783,7 +4943,7 @@ func (a *SystemApiService) GetSysPprofCmdlineExecute(r ApiGetSysPprofCmdlineRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6811,39 +4971,16 @@ func (a *SystemApiService) GetSysPprofCmdlineExecute(r ApiGetSysPprofCmdlineRequ
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPprofGoroutineRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysPprofGoroutineRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPprofGoroutineExecute(r)
-}
-
-/*
-GetSysPprofGoroutine Returns stack traces of all current goroutines.
-
-Returns stack traces of all current goroutines.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPprofGoroutineRequest
-*/
-func (a *SystemApiService) GetSysPprofGoroutine(ctx context.Context) ApiGetSysPprofGoroutineRequest {
-	return ApiGetSysPprofGoroutineRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysPprofGoroutineExecute(r ApiGetSysPprofGoroutineRequest) (*http.Response, error) {
+// GetSysPprofGoroutine Returns stack traces of all current goroutines.
+// Returns stack traces of all current goroutines.
+func (a *SystemApiService) GetSysPprofGoroutine(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPprofGoroutine")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPprofGoroutine")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6871,7 +5008,7 @@ func (a *SystemApiService) GetSysPprofGoroutineExecute(r ApiGetSysPprofGoroutine
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6899,39 +5036,16 @@ func (a *SystemApiService) GetSysPprofGoroutineExecute(r ApiGetSysPprofGoroutine
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPprofHeapRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysPprofHeapRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPprofHeapExecute(r)
-}
-
-/*
-GetSysPprofHeap Returns a sampling of memory allocations of live object.
-
-Returns a sampling of memory allocations of live object.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPprofHeapRequest
-*/
-func (a *SystemApiService) GetSysPprofHeap(ctx context.Context) ApiGetSysPprofHeapRequest {
-	return ApiGetSysPprofHeapRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysPprofHeapExecute(r ApiGetSysPprofHeapRequest) (*http.Response, error) {
+// GetSysPprofHeap Returns a sampling of memory allocations of live object.
+// Returns a sampling of memory allocations of live object.
+func (a *SystemApiService) GetSysPprofHeap(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPprofHeap")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPprofHeap")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -6959,7 +5073,7 @@ func (a *SystemApiService) GetSysPprofHeapExecute(r ApiGetSysPprofHeapRequest) (
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -6987,39 +5101,16 @@ func (a *SystemApiService) GetSysPprofHeapExecute(r ApiGetSysPprofHeapRequest) (
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPprofMutexRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysPprofMutexRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPprofMutexExecute(r)
-}
-
-/*
-GetSysPprofMutex Returns stack traces of holders of contended mutexes
-
-Returns stack traces of holders of contended mutexes
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPprofMutexRequest
-*/
-func (a *SystemApiService) GetSysPprofMutex(ctx context.Context) ApiGetSysPprofMutexRequest {
-	return ApiGetSysPprofMutexRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysPprofMutexExecute(r ApiGetSysPprofMutexRequest) (*http.Response, error) {
+// GetSysPprofMutex Returns stack traces of holders of contended mutexes
+// Returns stack traces of holders of contended mutexes
+func (a *SystemApiService) GetSysPprofMutex(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPprofMutex")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPprofMutex")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7047,7 +5138,7 @@ func (a *SystemApiService) GetSysPprofMutexExecute(r ApiGetSysPprofMutexRequest)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7075,39 +5166,16 @@ func (a *SystemApiService) GetSysPprofMutexExecute(r ApiGetSysPprofMutexRequest)
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPprofProfileRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysPprofProfileRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPprofProfileExecute(r)
-}
-
-/*
-GetSysPprofProfile Returns a pprof-formatted cpu profile payload.
-
-Returns a pprof-formatted cpu profile payload. Profiling lasts for duration specified in seconds GET parameter, or for 30 seconds if not specified.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPprofProfileRequest
-*/
-func (a *SystemApiService) GetSysPprofProfile(ctx context.Context) ApiGetSysPprofProfileRequest {
-	return ApiGetSysPprofProfileRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysPprofProfileExecute(r ApiGetSysPprofProfileRequest) (*http.Response, error) {
+// GetSysPprofProfile Returns a pprof-formatted cpu profile payload.
+// Returns a pprof-formatted cpu profile payload. Profiling lasts for duration specified in seconds GET parameter, or for 30 seconds if not specified.
+func (a *SystemApiService) GetSysPprofProfile(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPprofProfile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPprofProfile")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7135,7 +5203,7 @@ func (a *SystemApiService) GetSysPprofProfileExecute(r ApiGetSysPprofProfileRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7163,39 +5231,16 @@ func (a *SystemApiService) GetSysPprofProfileExecute(r ApiGetSysPprofProfileRequ
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPprofSymbolRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysPprofSymbolRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPprofSymbolExecute(r)
-}
-
-/*
-GetSysPprofSymbol Returns the program counters listed in the request.
-
-Returns the program counters listed in the request.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPprofSymbolRequest
-*/
-func (a *SystemApiService) GetSysPprofSymbol(ctx context.Context) ApiGetSysPprofSymbolRequest {
-	return ApiGetSysPprofSymbolRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysPprofSymbolExecute(r ApiGetSysPprofSymbolRequest) (*http.Response, error) {
+// GetSysPprofSymbol Returns the program counters listed in the request.
+// Returns the program counters listed in the request.
+func (a *SystemApiService) GetSysPprofSymbol(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPprofSymbol")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPprofSymbol")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7223,7 +5268,7 @@ func (a *SystemApiService) GetSysPprofSymbolExecute(r ApiGetSysPprofSymbolReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7251,39 +5296,16 @@ func (a *SystemApiService) GetSysPprofSymbolExecute(r ApiGetSysPprofSymbolReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPprofThreadcreateRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysPprofThreadcreateRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPprofThreadcreateExecute(r)
-}
-
-/*
-GetSysPprofThreadcreate Returns stack traces that led to the creation of new OS threads
-
-Returns stack traces that led to the creation of new OS threads
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPprofThreadcreateRequest
-*/
-func (a *SystemApiService) GetSysPprofThreadcreate(ctx context.Context) ApiGetSysPprofThreadcreateRequest {
-	return ApiGetSysPprofThreadcreateRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysPprofThreadcreateExecute(r ApiGetSysPprofThreadcreateRequest) (*http.Response, error) {
+// GetSysPprofThreadcreate Returns stack traces that led to the creation of new OS threads
+// Returns stack traces that led to the creation of new OS threads
+func (a *SystemApiService) GetSysPprofThreadcreate(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPprofThreadcreate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPprofThreadcreate")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7311,7 +5333,7 @@ func (a *SystemApiService) GetSysPprofThreadcreateExecute(r ApiGetSysPprofThread
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7339,39 +5361,16 @@ func (a *SystemApiService) GetSysPprofThreadcreateExecute(r ApiGetSysPprofThread
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysPprofTraceRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysPprofTraceRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysPprofTraceExecute(r)
-}
-
-/*
-GetSysPprofTrace Returns the execution trace in binary form.
-
-Returns  the execution trace in binary form. Tracing lasts for duration specified in seconds GET parameter, or for 1 second if not specified.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysPprofTraceRequest
-*/
-func (a *SystemApiService) GetSysPprofTrace(ctx context.Context) ApiGetSysPprofTraceRequest {
-	return ApiGetSysPprofTraceRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysPprofTraceExecute(r ApiGetSysPprofTraceRequest) (*http.Response, error) {
+// GetSysPprofTrace Returns the execution trace in binary form.
+// Returns  the execution trace in binary form. Tracing lasts for duration specified in seconds GET parameter, or for 1 second if not specified.
+func (a *SystemApiService) GetSysPprofTrace(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysPprofTrace")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPprofTrace")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7399,7 +5398,7 @@ func (a *SystemApiService) GetSysPprofTraceExecute(r ApiGetSysPprofTraceRequest)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7427,37 +5426,15 @@ func (a *SystemApiService) GetSysPprofTraceExecute(r ApiGetSysPprofTraceRequest)
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysQuotasConfigRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysQuotasConfigRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysQuotasConfigExecute(r)
-}
-
-/*
-GetSysQuotasConfig Method for GetSysQuotasConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysQuotasConfigRequest
-*/
-func (a *SystemApiService) GetSysQuotasConfig(ctx context.Context) ApiGetSysQuotasConfigRequest {
-	return ApiGetSysQuotasConfigRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysQuotasConfigExecute(r ApiGetSysQuotasConfigRequest) (*http.Response, error) {
+// GetSysQuotasConfig
+func (a *SystemApiService) GetSysQuotasConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysQuotasConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysQuotasConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7485,7 +5462,7 @@ func (a *SystemApiService) GetSysQuotasConfigExecute(r ApiGetSysQuotasConfigRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7513,44 +5490,16 @@ func (a *SystemApiService) GetSysQuotasConfigExecute(r ApiGetSysQuotasConfigRequ
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysQuotasRateLimitRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	list       *string
-}
-
-// Must be set to &#x60;true&#x60;
-func (r ApiGetSysQuotasRateLimitRequest) List(list string) ApiGetSysQuotasRateLimitRequest {
-	r.list = &list
-	return r
-}
-
-func (r ApiGetSysQuotasRateLimitRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysQuotasRateLimitExecute(r)
-}
-
-/*
-GetSysQuotasRateLimit Method for GetSysQuotasRateLimit
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysQuotasRateLimitRequest
-*/
-func (a *SystemApiService) GetSysQuotasRateLimit(ctx context.Context) ApiGetSysQuotasRateLimitRequest {
-	return ApiGetSysQuotasRateLimitRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysQuotasRateLimitExecute(r ApiGetSysQuotasRateLimitRequest) (*http.Response, error) {
+// GetSysQuotasRateLimit
+// list: Must be set to &#x60;true&#x60;
+func (a *SystemApiService) GetSysQuotasRateLimit(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysQuotasRateLimit")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysQuotasRateLimit")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7560,11 +5509,8 @@ func (a *SystemApiService) GetSysQuotasRateLimitExecute(r ApiGetSysQuotasRateLim
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -7582,7 +5528,7 @@ func (a *SystemApiService) GetSysQuotasRateLimitExecute(r ApiGetSysQuotasRateLim
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7610,46 +5556,22 @@ func (a *SystemApiService) GetSysQuotasRateLimitExecute(r ApiGetSysQuotasRateLim
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysQuotasRateLimitNameRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	name       string
-}
-
-func (r ApiGetSysQuotasRateLimitNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysQuotasRateLimitNameExecute(r)
-}
-
-/*
-GetSysQuotasRateLimitName Method for GetSysQuotasRateLimitName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the quota rule.
- @return ApiGetSysQuotasRateLimitNameRequest
-*/
-func (a *SystemApiService) GetSysQuotasRateLimitName(ctx context.Context, name string) ApiGetSysQuotasRateLimitNameRequest {
-	return ApiGetSysQuotasRateLimitNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysQuotasRateLimitNameExecute(r ApiGetSysQuotasRateLimitNameRequest) (*http.Response, error) {
+// GetSysQuotasRateLimitName
+// name: Name of the quota rule.
+func (a *SystemApiService) GetSysQuotasRateLimitName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysQuotasRateLimitName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysQuotasRateLimitName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/quotas/rate-limit/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7672,7 +5594,7 @@ func (a *SystemApiService) GetSysQuotasRateLimitNameExecute(r ApiGetSysQuotasRat
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7700,44 +5622,16 @@ func (a *SystemApiService) GetSysQuotasRateLimitNameExecute(r ApiGetSysQuotasRat
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysRawRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	list       *string
-}
-
-// Return a list if &#x60;true&#x60;
-func (r ApiGetSysRawRequest) List(list string) ApiGetSysRawRequest {
-	r.list = &list
-	return r
-}
-
-func (r ApiGetSysRawRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysRawExecute(r)
-}
-
-/*
-GetSysRaw Read the value of the key at the given path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysRawRequest
-*/
-func (a *SystemApiService) GetSysRaw(ctx context.Context) ApiGetSysRawRequest {
-	return ApiGetSysRawRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysRawExecute(r ApiGetSysRawRequest) (*http.Response, error) {
+// GetSysRaw Read the value of the key at the given path.
+// list: Return a list if &#x60;true&#x60;
+func (a *SystemApiService) GetSysRaw(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysRaw")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysRaw")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7748,9 +5642,7 @@ func (a *SystemApiService) GetSysRawExecute(r ApiGetSysRawRequest) (*http.Respon
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.list != nil {
-		localVarQueryParams.Add("list", parameterToString(*r.list, ""))
-	}
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -7768,7 +5660,7 @@ func (a *SystemApiService) GetSysRawExecute(r ApiGetSysRawRequest) (*http.Respon
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7796,61 +5688,28 @@ func (a *SystemApiService) GetSysRawExecute(r ApiGetSysRawRequest) (*http.Respon
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysRawPathRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	path       string
-	list       *string
-}
-
-// Return a list if &#x60;true&#x60;
-func (r ApiGetSysRawPathRequest) List(list string) ApiGetSysRawPathRequest {
-	r.list = &list
-	return r
-}
-
-func (r ApiGetSysRawPathRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysRawPathExecute(r)
-}
-
-/*
-GetSysRawPath Read the value of the key at the given path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path
- @return ApiGetSysRawPathRequest
-*/
-func (a *SystemApiService) GetSysRawPath(ctx context.Context, path string) ApiGetSysRawPathRequest {
-	return ApiGetSysRawPathRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysRawPathExecute(r ApiGetSysRawPathRequest) (*http.Response, error) {
+// GetSysRawPath Read the value of the key at the given path.
+// list: Return a list if &#x60;true&#x60;
+func (a *SystemApiService) GetSysRawPath(ctx context.Context, path string, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysRawPath")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysRawPath")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/raw/{path}"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(r.path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.list != nil {
-		localVarQueryParams.Add("list", parameterToString(*r.list, ""))
-	}
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -7868,7 +5727,7 @@ func (a *SystemApiService) GetSysRawPathExecute(r ApiGetSysRawPathRequest) (*htt
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7896,37 +5755,15 @@ func (a *SystemApiService) GetSysRawPathExecute(r ApiGetSysRawPathRequest) (*htt
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysRekeyBackupRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysRekeyBackupRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysRekeyBackupExecute(r)
-}
-
-/*
-GetSysRekeyBackup Return the backup copy of PGP-encrypted unseal keys.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysRekeyBackupRequest
-*/
-func (a *SystemApiService) GetSysRekeyBackup(ctx context.Context) ApiGetSysRekeyBackupRequest {
-	return ApiGetSysRekeyBackupRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysRekeyBackupExecute(r ApiGetSysRekeyBackupRequest) (*http.Response, error) {
+// GetSysRekeyBackup Return the backup copy of PGP-encrypted unseal keys.
+func (a *SystemApiService) GetSysRekeyBackup(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysRekeyBackup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysRekeyBackup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -7954,7 +5791,7 @@ func (a *SystemApiService) GetSysRekeyBackupExecute(r ApiGetSysRekeyBackupReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -7982,37 +5819,15 @@ func (a *SystemApiService) GetSysRekeyBackupExecute(r ApiGetSysRekeyBackupReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysRekeyInitRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysRekeyInitRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysRekeyInitExecute(r)
-}
-
-/*
-GetSysRekeyInit Reads the configuration and progress of the current rekey attempt.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysRekeyInitRequest
-*/
-func (a *SystemApiService) GetSysRekeyInit(ctx context.Context) ApiGetSysRekeyInitRequest {
-	return ApiGetSysRekeyInitRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysRekeyInitExecute(r ApiGetSysRekeyInitRequest) (*http.Response, error) {
+// GetSysRekeyInit Reads the configuration and progress of the current rekey attempt.
+func (a *SystemApiService) GetSysRekeyInit(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysRekeyInit")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysRekeyInit")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8040,7 +5855,7 @@ func (a *SystemApiService) GetSysRekeyInitExecute(r ApiGetSysRekeyInitRequest) (
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8068,37 +5883,15 @@ func (a *SystemApiService) GetSysRekeyInitExecute(r ApiGetSysRekeyInitRequest) (
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysRekeyRecoveryKeyBackupRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysRekeyRecoveryKeyBackupRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysRekeyRecoveryKeyBackupExecute(r)
-}
-
-/*
-GetSysRekeyRecoveryKeyBackup Allows fetching or deleting the backup of the rotated unseal keys.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysRekeyRecoveryKeyBackupRequest
-*/
-func (a *SystemApiService) GetSysRekeyRecoveryKeyBackup(ctx context.Context) ApiGetSysRekeyRecoveryKeyBackupRequest {
-	return ApiGetSysRekeyRecoveryKeyBackupRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysRekeyRecoveryKeyBackupExecute(r ApiGetSysRekeyRecoveryKeyBackupRequest) (*http.Response, error) {
+// GetSysRekeyRecoveryKeyBackup Allows fetching or deleting the backup of the rotated unseal keys.
+func (a *SystemApiService) GetSysRekeyRecoveryKeyBackup(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysRekeyRecoveryKeyBackup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysRekeyRecoveryKeyBackup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8126,7 +5919,7 @@ func (a *SystemApiService) GetSysRekeyRecoveryKeyBackupExecute(r ApiGetSysRekeyR
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8154,37 +5947,15 @@ func (a *SystemApiService) GetSysRekeyRecoveryKeyBackupExecute(r ApiGetSysRekeyR
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysRekeyVerifyRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysRekeyVerifyRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysRekeyVerifyExecute(r)
-}
-
-/*
-GetSysRekeyVerify Read the configuration and progress of the current rekey verification attempt.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysRekeyVerifyRequest
-*/
-func (a *SystemApiService) GetSysRekeyVerify(ctx context.Context) ApiGetSysRekeyVerifyRequest {
-	return ApiGetSysRekeyVerifyRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysRekeyVerifyExecute(r ApiGetSysRekeyVerifyRequest) (*http.Response, error) {
+// GetSysRekeyVerify Read the configuration and progress of the current rekey verification attempt.
+func (a *SystemApiService) GetSysRekeyVerify(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysRekeyVerify")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysRekeyVerify")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8212,7 +5983,7 @@ func (a *SystemApiService) GetSysRekeyVerifyExecute(r ApiGetSysRekeyVerifyReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8240,46 +6011,22 @@ func (a *SystemApiService) GetSysRekeyVerifyExecute(r ApiGetSysRekeyVerifyReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysRemountStatusMigrationIdRequest struct {
-	ctx         context.Context
-	ApiService  *SystemApiService
-	migrationId string
-}
-
-func (r ApiGetSysRemountStatusMigrationIdRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysRemountStatusMigrationIdExecute(r)
-}
-
-/*
-GetSysRemountStatusMigrationId Check status of a mount migration
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param migrationId The ID of the migration operation
- @return ApiGetSysRemountStatusMigrationIdRequest
-*/
-func (a *SystemApiService) GetSysRemountStatusMigrationId(ctx context.Context, migrationId string) ApiGetSysRemountStatusMigrationIdRequest {
-	return ApiGetSysRemountStatusMigrationIdRequest{
-		ApiService:  a,
-		ctx:         ctx,
-		migrationId: migrationId,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysRemountStatusMigrationIdExecute(r ApiGetSysRemountStatusMigrationIdRequest) (*http.Response, error) {
+// GetSysRemountStatusMigrationId Check status of a mount migration
+// migrationId: The ID of the migration operation
+func (a *SystemApiService) GetSysRemountStatusMigrationId(ctx context.Context, migrationId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysRemountStatusMigrationId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysRemountStatusMigrationId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/remount/status/{migration_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"migration_id"+"}", url.PathEscape(parameterToString(r.migrationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"migration_id"+"}", url.PathEscape(parameterToString(migrationId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8302,7 +6049,7 @@ func (a *SystemApiService) GetSysRemountStatusMigrationIdExecute(r ApiGetSysRemo
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8330,37 +6077,15 @@ func (a *SystemApiService) GetSysRemountStatusMigrationIdExecute(r ApiGetSysRemo
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysReplicationStatusRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysReplicationStatusRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysReplicationStatusExecute(r)
-}
-
-/*
-GetSysReplicationStatus Method for GetSysReplicationStatus
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysReplicationStatusRequest
-*/
-func (a *SystemApiService) GetSysReplicationStatus(ctx context.Context) ApiGetSysReplicationStatusRequest {
-	return ApiGetSysReplicationStatusRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysReplicationStatusExecute(r ApiGetSysReplicationStatusRequest) (*http.Response, error) {
+// GetSysReplicationStatus
+func (a *SystemApiService) GetSysReplicationStatus(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysReplicationStatus")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysReplicationStatus")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8388,7 +6113,7 @@ func (a *SystemApiService) GetSysReplicationStatusExecute(r ApiGetSysReplication
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8416,37 +6141,15 @@ func (a *SystemApiService) GetSysReplicationStatusExecute(r ApiGetSysReplication
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysRotateConfigRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysRotateConfigRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysRotateConfigExecute(r)
-}
-
-/*
-GetSysRotateConfig Method for GetSysRotateConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysRotateConfigRequest
-*/
-func (a *SystemApiService) GetSysRotateConfig(ctx context.Context) ApiGetSysRotateConfigRequest {
-	return ApiGetSysRotateConfigRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysRotateConfigExecute(r ApiGetSysRotateConfigRequest) (*http.Response, error) {
+// GetSysRotateConfig
+func (a *SystemApiService) GetSysRotateConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysRotateConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysRotateConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8474,7 +6177,7 @@ func (a *SystemApiService) GetSysRotateConfigExecute(r ApiGetSysRotateConfigRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8502,37 +6205,15 @@ func (a *SystemApiService) GetSysRotateConfigExecute(r ApiGetSysRotateConfigRequ
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysSealStatusRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysSealStatusRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysSealStatusExecute(r)
-}
-
-/*
-GetSysSealStatus Check the seal status of a Vault.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysSealStatusRequest
-*/
-func (a *SystemApiService) GetSysSealStatus(ctx context.Context) ApiGetSysSealStatusRequest {
-	return ApiGetSysSealStatusRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysSealStatusExecute(r ApiGetSysSealStatusRequest) (*http.Response, error) {
+// GetSysSealStatus Check the seal status of a Vault.
+func (a *SystemApiService) GetSysSealStatus(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysSealStatus")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysSealStatus")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8560,7 +6241,7 @@ func (a *SystemApiService) GetSysSealStatusExecute(r ApiGetSysSealStatusRequest)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8588,44 +6269,16 @@ func (a *SystemApiService) GetSysSealStatusExecute(r ApiGetSysSealStatusRequest)
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysVersionHistoryRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	list       *string
-}
-
-// Must be set to &#x60;true&#x60;
-func (r ApiGetSysVersionHistoryRequest) List(list string) ApiGetSysVersionHistoryRequest {
-	r.list = &list
-	return r
-}
-
-func (r ApiGetSysVersionHistoryRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysVersionHistoryExecute(r)
-}
-
-/*
-GetSysVersionHistory Returns map of historical version change entries
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysVersionHistoryRequest
-*/
-func (a *SystemApiService) GetSysVersionHistory(ctx context.Context) ApiGetSysVersionHistoryRequest {
-	return ApiGetSysVersionHistoryRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysVersionHistoryExecute(r ApiGetSysVersionHistoryRequest) (*http.Response, error) {
+// GetSysVersionHistory Returns map of historical version change entries
+// list: Must be set to &#x60;true&#x60;
+func (a *SystemApiService) GetSysVersionHistory(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysVersionHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysVersionHistory")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8635,11 +6288,8 @@ func (a *SystemApiService) GetSysVersionHistoryExecute(r ApiGetSysVersionHistory
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.list == nil {
-		return nil, reportError("list is required and must be specified")
-	}
 
-	localVarQueryParams.Add("list", parameterToString(*r.list, ""))
+	localVarQueryParams.Add("list", parameterToString(list, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -8657,7 +6307,7 @@ func (a *SystemApiService) GetSysVersionHistoryExecute(r ApiGetSysVersionHistory
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8685,37 +6335,15 @@ func (a *SystemApiService) GetSysVersionHistoryExecute(r ApiGetSysVersionHistory
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetSysWrappingLookupRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiGetSysWrappingLookupRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetSysWrappingLookupExecute(r)
-}
-
-/*
-GetSysWrappingLookup Look up wrapping properties for the requester's token.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSysWrappingLookupRequest
-*/
-func (a *SystemApiService) GetSysWrappingLookup(ctx context.Context) ApiGetSysWrappingLookupRequest {
-	return ApiGetSysWrappingLookupRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) GetSysWrappingLookupExecute(r ApiGetSysWrappingLookupRequest) (*http.Response, error) {
+// GetSysWrappingLookup Look up wrapping properties for the requester's token.
+func (a *SystemApiService) GetSysWrappingLookup(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.GetSysWrappingLookup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysWrappingLookup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -8743,7 +6371,7 @@ func (a *SystemApiService) GetSysWrappingLookupExecute(r ApiGetSysWrappingLookup
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8771,52 +6399,22 @@ func (a *SystemApiService) GetSysWrappingLookupExecute(r ApiGetSysWrappingLookup
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysAuditHashPathRequest struct {
-	ctx                    context.Context
-	ApiService             *SystemApiService
-	path                   string
-	systemAuditHashRequest *SystemAuditHashRequest
-}
-
-func (r ApiPostSysAuditHashPathRequest) SystemAuditHashRequest(systemAuditHashRequest SystemAuditHashRequest) ApiPostSysAuditHashPathRequest {
-	r.systemAuditHashRequest = &systemAuditHashRequest
-	return r
-}
-
-func (r ApiPostSysAuditHashPathRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysAuditHashPathExecute(r)
-}
-
-/*
-PostSysAuditHashPath The hash of the given string via the given audit backend
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path The name of the backend. Cannot be delimited. Example: \"mysql\"
- @return ApiPostSysAuditHashPathRequest
-*/
-func (a *SystemApiService) PostSysAuditHashPath(ctx context.Context, path string) ApiPostSysAuditHashPathRequest {
-	return ApiPostSysAuditHashPathRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysAuditHashPathExecute(r ApiPostSysAuditHashPathRequest) (*http.Response, error) {
+// PostSysAuditHashPath The hash of the given string via the given audit backend
+// path: The name of the backend. Cannot be delimited. Example: \&quot;mysql\&quot;
+func (a *SystemApiService) PostSysAuditHashPath(ctx context.Context, path string, systemAuditHashRequest SystemAuditHashRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysAuditHashPath")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysAuditHashPath")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/audit-hash/{path}"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(r.path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8840,8 +6438,8 @@ func (a *SystemApiService) PostSysAuditHashPathExecute(r ApiPostSysAuditHashPath
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemAuditHashRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemAuditHashRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8869,52 +6467,22 @@ func (a *SystemApiService) PostSysAuditHashPathExecute(r ApiPostSysAuditHashPath
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysAuditPathRequest struct {
-	ctx                context.Context
-	ApiService         *SystemApiService
-	path               string
-	systemAuditRequest *SystemAuditRequest
-}
-
-func (r ApiPostSysAuditPathRequest) SystemAuditRequest(systemAuditRequest SystemAuditRequest) ApiPostSysAuditPathRequest {
-	r.systemAuditRequest = &systemAuditRequest
-	return r
-}
-
-func (r ApiPostSysAuditPathRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysAuditPathExecute(r)
-}
-
-/*
-PostSysAuditPath Enable a new audit device at the supplied path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path The name of the backend. Cannot be delimited. Example: \"mysql\"
- @return ApiPostSysAuditPathRequest
-*/
-func (a *SystemApiService) PostSysAuditPath(ctx context.Context, path string) ApiPostSysAuditPathRequest {
-	return ApiPostSysAuditPathRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysAuditPathExecute(r ApiPostSysAuditPathRequest) (*http.Response, error) {
+// PostSysAuditPath Enable a new audit device at the supplied path.
+// path: The name of the backend. Cannot be delimited. Example: \&quot;mysql\&quot;
+func (a *SystemApiService) PostSysAuditPath(ctx context.Context, path string, systemAuditRequest SystemAuditRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysAuditPath")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysAuditPath")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/audit/{path}"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(r.path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8938,8 +6506,8 @@ func (a *SystemApiService) PostSysAuditPathExecute(r ApiPostSysAuditPathRequest)
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemAuditRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemAuditRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -8967,56 +6535,23 @@ func (a *SystemApiService) PostSysAuditPathExecute(r ApiPostSysAuditPathRequest)
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysAuthPathRequest struct {
-	ctx               context.Context
-	ApiService        *SystemApiService
-	path              string
-	systemAuthRequest *SystemAuthRequest
-}
-
-func (r ApiPostSysAuthPathRequest) SystemAuthRequest(systemAuthRequest SystemAuthRequest) ApiPostSysAuthPathRequest {
-	r.systemAuthRequest = &systemAuthRequest
-	return r
-}
-
-func (r ApiPostSysAuthPathRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysAuthPathExecute(r)
-}
-
-/*
-PostSysAuthPath Enables a new auth method.
-
-After enabling, the auth method can be accessed and configured via the auth path specified as part of the URL. This auth path will be nested under the auth prefix.
-
-For example, enable the "foo" auth method will make it accessible at /auth/foo.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path The path to mount to. Cannot be delimited. Example: \"user\"
- @return ApiPostSysAuthPathRequest
-*/
-func (a *SystemApiService) PostSysAuthPath(ctx context.Context, path string) ApiPostSysAuthPathRequest {
-	return ApiPostSysAuthPathRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysAuthPathExecute(r ApiPostSysAuthPathRequest) (*http.Response, error) {
+// PostSysAuthPath Enables a new auth method.
+// After enabling, the auth method can be accessed and configured via the auth path specified as part of the URL. This auth path will be nested under the auth prefix.  For example, enable the \"foo\" auth method will make it accessible at /auth/foo.
+// path: The path to mount to. Cannot be delimited. Example: \&quot;user\&quot;
+func (a *SystemApiService) PostSysAuthPath(ctx context.Context, path string, systemAuthRequest SystemAuthRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysAuthPath")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysAuthPath")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/auth/{path}"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(r.path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9040,8 +6575,8 @@ func (a *SystemApiService) PostSysAuthPathExecute(r ApiPostSysAuthPathRequest) (
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemAuthRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemAuthRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9069,54 +6604,23 @@ func (a *SystemApiService) PostSysAuthPathExecute(r ApiPostSysAuthPathRequest) (
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysAuthPathTuneRequest struct {
-	ctx                   context.Context
-	ApiService            *SystemApiService
-	path                  string
-	systemAuthTuneRequest *SystemAuthTuneRequest
-}
-
-func (r ApiPostSysAuthPathTuneRequest) SystemAuthTuneRequest(systemAuthTuneRequest SystemAuthTuneRequest) ApiPostSysAuthPathTuneRequest {
-	r.systemAuthTuneRequest = &systemAuthTuneRequest
-	return r
-}
-
-func (r ApiPostSysAuthPathTuneRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysAuthPathTuneExecute(r)
-}
-
-/*
-PostSysAuthPathTune Tune configuration parameters for a given auth path.
-
-This endpoint requires sudo capability on the final path, but the same functionality can be achieved without sudo via `sys/mounts/auth/[auth-path]/tune`.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path Tune the configuration parameters for an auth path.
- @return ApiPostSysAuthPathTuneRequest
-*/
-func (a *SystemApiService) PostSysAuthPathTune(ctx context.Context, path string) ApiPostSysAuthPathTuneRequest {
-	return ApiPostSysAuthPathTuneRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysAuthPathTuneExecute(r ApiPostSysAuthPathTuneRequest) (*http.Response, error) {
+// PostSysAuthPathTune Tune configuration parameters for a given auth path.
+// This endpoint requires sudo capability on the final path, but the same functionality can be achieved without sudo via `sys/mounts/auth/[auth-path]/tune`.
+// path: Tune the configuration parameters for an auth path.
+func (a *SystemApiService) PostSysAuthPathTune(ctx context.Context, path string, systemAuthTuneRequest SystemAuthTuneRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysAuthPathTune")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysAuthPathTune")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/auth/{path}/tune"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(r.path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9140,8 +6644,8 @@ func (a *SystemApiService) PostSysAuthPathTuneExecute(r ApiPostSysAuthPathTuneRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemAuthTuneRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemAuthTuneRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9169,43 +6673,15 @@ func (a *SystemApiService) PostSysAuthPathTuneExecute(r ApiPostSysAuthPathTuneRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysCapabilitiesRequest struct {
-	ctx                       context.Context
-	ApiService                *SystemApiService
-	systemCapabilitiesRequest *SystemCapabilitiesRequest
-}
-
-func (r ApiPostSysCapabilitiesRequest) SystemCapabilitiesRequest(systemCapabilitiesRequest SystemCapabilitiesRequest) ApiPostSysCapabilitiesRequest {
-	r.systemCapabilitiesRequest = &systemCapabilitiesRequest
-	return r
-}
-
-func (r ApiPostSysCapabilitiesRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysCapabilitiesExecute(r)
-}
-
-/*
-PostSysCapabilities Fetches the capabilities of the given token on the given path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysCapabilitiesRequest
-*/
-func (a *SystemApiService) PostSysCapabilities(ctx context.Context) ApiPostSysCapabilitiesRequest {
-	return ApiPostSysCapabilitiesRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysCapabilitiesExecute(r ApiPostSysCapabilitiesRequest) (*http.Response, error) {
+// PostSysCapabilities Fetches the capabilities of the given token on the given path.
+func (a *SystemApiService) PostSysCapabilities(ctx context.Context, systemCapabilitiesRequest SystemCapabilitiesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysCapabilities")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysCapabilities")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9234,8 +6710,8 @@ func (a *SystemApiService) PostSysCapabilitiesExecute(r ApiPostSysCapabilitiesRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemCapabilitiesRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemCapabilitiesRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9263,43 +6739,15 @@ func (a *SystemApiService) PostSysCapabilitiesExecute(r ApiPostSysCapabilitiesRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysCapabilitiesAccessorRequest struct {
-	ctx                               context.Context
-	ApiService                        *SystemApiService
-	systemCapabilitiesAccessorRequest *SystemCapabilitiesAccessorRequest
-}
-
-func (r ApiPostSysCapabilitiesAccessorRequest) SystemCapabilitiesAccessorRequest(systemCapabilitiesAccessorRequest SystemCapabilitiesAccessorRequest) ApiPostSysCapabilitiesAccessorRequest {
-	r.systemCapabilitiesAccessorRequest = &systemCapabilitiesAccessorRequest
-	return r
-}
-
-func (r ApiPostSysCapabilitiesAccessorRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysCapabilitiesAccessorExecute(r)
-}
-
-/*
-PostSysCapabilitiesAccessor Fetches the capabilities of the token associated with the given token, on the given path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysCapabilitiesAccessorRequest
-*/
-func (a *SystemApiService) PostSysCapabilitiesAccessor(ctx context.Context) ApiPostSysCapabilitiesAccessorRequest {
-	return ApiPostSysCapabilitiesAccessorRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysCapabilitiesAccessorExecute(r ApiPostSysCapabilitiesAccessorRequest) (*http.Response, error) {
+// PostSysCapabilitiesAccessor Fetches the capabilities of the token associated with the given token, on the given path.
+func (a *SystemApiService) PostSysCapabilitiesAccessor(ctx context.Context, systemCapabilitiesAccessorRequest SystemCapabilitiesAccessorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysCapabilitiesAccessor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysCapabilitiesAccessor")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9328,8 +6776,8 @@ func (a *SystemApiService) PostSysCapabilitiesAccessorExecute(r ApiPostSysCapabi
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemCapabilitiesAccessorRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemCapabilitiesAccessorRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9357,43 +6805,15 @@ func (a *SystemApiService) PostSysCapabilitiesAccessorExecute(r ApiPostSysCapabi
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysCapabilitiesSelfRequest struct {
-	ctx                           context.Context
-	ApiService                    *SystemApiService
-	systemCapabilitiesSelfRequest *SystemCapabilitiesSelfRequest
-}
-
-func (r ApiPostSysCapabilitiesSelfRequest) SystemCapabilitiesSelfRequest(systemCapabilitiesSelfRequest SystemCapabilitiesSelfRequest) ApiPostSysCapabilitiesSelfRequest {
-	r.systemCapabilitiesSelfRequest = &systemCapabilitiesSelfRequest
-	return r
-}
-
-func (r ApiPostSysCapabilitiesSelfRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysCapabilitiesSelfExecute(r)
-}
-
-/*
-PostSysCapabilitiesSelf Fetches the capabilities of the given token on the given path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysCapabilitiesSelfRequest
-*/
-func (a *SystemApiService) PostSysCapabilitiesSelf(ctx context.Context) ApiPostSysCapabilitiesSelfRequest {
-	return ApiPostSysCapabilitiesSelfRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysCapabilitiesSelfExecute(r ApiPostSysCapabilitiesSelfRequest) (*http.Response, error) {
+// PostSysCapabilitiesSelf Fetches the capabilities of the given token on the given path.
+func (a *SystemApiService) PostSysCapabilitiesSelf(ctx context.Context, systemCapabilitiesSelfRequest SystemCapabilitiesSelfRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysCapabilitiesSelf")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysCapabilitiesSelf")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9422,8 +6842,8 @@ func (a *SystemApiService) PostSysCapabilitiesSelfExecute(r ApiPostSysCapabiliti
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemCapabilitiesSelfRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemCapabilitiesSelfRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9451,52 +6871,21 @@ func (a *SystemApiService) PostSysCapabilitiesSelfExecute(r ApiPostSysCapabiliti
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysConfigAuditingRequestHeadersHeaderRequest struct {
-	ctx                                       context.Context
-	ApiService                                *SystemApiService
-	header                                    string
-	systemConfigAuditingRequestHeadersRequest *SystemConfigAuditingRequestHeadersRequest
-}
-
-func (r ApiPostSysConfigAuditingRequestHeadersHeaderRequest) SystemConfigAuditingRequestHeadersRequest(systemConfigAuditingRequestHeadersRequest SystemConfigAuditingRequestHeadersRequest) ApiPostSysConfigAuditingRequestHeadersHeaderRequest {
-	r.systemConfigAuditingRequestHeadersRequest = &systemConfigAuditingRequestHeadersRequest
-	return r
-}
-
-func (r ApiPostSysConfigAuditingRequestHeadersHeaderRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysConfigAuditingRequestHeadersHeaderExecute(r)
-}
-
-/*
-PostSysConfigAuditingRequestHeadersHeader Enable auditing of a header.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param header
- @return ApiPostSysConfigAuditingRequestHeadersHeaderRequest
-*/
-func (a *SystemApiService) PostSysConfigAuditingRequestHeadersHeader(ctx context.Context, header string) ApiPostSysConfigAuditingRequestHeadersHeaderRequest {
-	return ApiPostSysConfigAuditingRequestHeadersHeaderRequest{
-		ApiService: a,
-		ctx:        ctx,
-		header:     header,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysConfigAuditingRequestHeadersHeaderExecute(r ApiPostSysConfigAuditingRequestHeadersHeaderRequest) (*http.Response, error) {
+// PostSysConfigAuditingRequestHeadersHeader Enable auditing of a header.
+func (a *SystemApiService) PostSysConfigAuditingRequestHeadersHeader(ctx context.Context, header string, systemConfigAuditingRequestHeadersRequest SystemConfigAuditingRequestHeadersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysConfigAuditingRequestHeadersHeader")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysConfigAuditingRequestHeadersHeader")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/config/auditing/request-headers/{header}"
-	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(r.header, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9520,8 +6909,8 @@ func (a *SystemApiService) PostSysConfigAuditingRequestHeadersHeaderExecute(r Ap
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemConfigAuditingRequestHeadersRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemConfigAuditingRequestHeadersRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9549,43 +6938,15 @@ func (a *SystemApiService) PostSysConfigAuditingRequestHeadersHeaderExecute(r Ap
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysConfigCorsRequest struct {
-	ctx                     context.Context
-	ApiService              *SystemApiService
-	systemConfigCorsRequest *SystemConfigCorsRequest
-}
-
-func (r ApiPostSysConfigCorsRequest) SystemConfigCorsRequest(systemConfigCorsRequest SystemConfigCorsRequest) ApiPostSysConfigCorsRequest {
-	r.systemConfigCorsRequest = &systemConfigCorsRequest
-	return r
-}
-
-func (r ApiPostSysConfigCorsRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysConfigCorsExecute(r)
-}
-
-/*
-PostSysConfigCors Configure the CORS settings.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysConfigCorsRequest
-*/
-func (a *SystemApiService) PostSysConfigCors(ctx context.Context) ApiPostSysConfigCorsRequest {
-	return ApiPostSysConfigCorsRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysConfigCorsExecute(r ApiPostSysConfigCorsRequest) (*http.Response, error) {
+// PostSysConfigCors Configure the CORS settings.
+func (a *SystemApiService) PostSysConfigCors(ctx context.Context, systemConfigCorsRequest SystemConfigCorsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysConfigCors")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysConfigCors")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9614,8 +6975,8 @@ func (a *SystemApiService) PostSysConfigCorsExecute(r ApiPostSysConfigCorsReques
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemConfigCorsRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemConfigCorsRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9643,46 +7004,21 @@ func (a *SystemApiService) PostSysConfigCorsExecute(r ApiPostSysConfigCorsReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysConfigReloadSubsystemRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	subsystem  string
-}
-
-func (r ApiPostSysConfigReloadSubsystemRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysConfigReloadSubsystemExecute(r)
-}
-
-/*
-PostSysConfigReloadSubsystem Reload the given subsystem
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param subsystem
- @return ApiPostSysConfigReloadSubsystemRequest
-*/
-func (a *SystemApiService) PostSysConfigReloadSubsystem(ctx context.Context, subsystem string) ApiPostSysConfigReloadSubsystemRequest {
-	return ApiPostSysConfigReloadSubsystemRequest{
-		ApiService: a,
-		ctx:        ctx,
-		subsystem:  subsystem,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysConfigReloadSubsystemExecute(r ApiPostSysConfigReloadSubsystemRequest) (*http.Response, error) {
+// PostSysConfigReloadSubsystem Reload the given subsystem
+func (a *SystemApiService) PostSysConfigReloadSubsystem(ctx context.Context, subsystem string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysConfigReloadSubsystem")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysConfigReloadSubsystem")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/config/reload/{subsystem}"
-	localVarPath = strings.Replace(localVarPath, "{"+"subsystem"+"}", url.PathEscape(parameterToString(r.subsystem, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"subsystem"+"}", url.PathEscape(parameterToString(subsystem, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9705,7 +7041,7 @@ func (a *SystemApiService) PostSysConfigReloadSubsystemExecute(r ApiPostSysConfi
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9733,52 +7069,22 @@ func (a *SystemApiService) PostSysConfigReloadSubsystemExecute(r ApiPostSysConfi
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysConfigUiHeadersHeaderRequest struct {
-	ctx                          context.Context
-	ApiService                   *SystemApiService
-	header                       string
-	systemConfigUiHeadersRequest *SystemConfigUiHeadersRequest
-}
-
-func (r ApiPostSysConfigUiHeadersHeaderRequest) SystemConfigUiHeadersRequest(systemConfigUiHeadersRequest SystemConfigUiHeadersRequest) ApiPostSysConfigUiHeadersHeaderRequest {
-	r.systemConfigUiHeadersRequest = &systemConfigUiHeadersRequest
-	return r
-}
-
-func (r ApiPostSysConfigUiHeadersHeaderRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysConfigUiHeadersHeaderExecute(r)
-}
-
-/*
-PostSysConfigUiHeadersHeader Configure the values to be returned for the UI header.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param header The name of the header.
- @return ApiPostSysConfigUiHeadersHeaderRequest
-*/
-func (a *SystemApiService) PostSysConfigUiHeadersHeader(ctx context.Context, header string) ApiPostSysConfigUiHeadersHeaderRequest {
-	return ApiPostSysConfigUiHeadersHeaderRequest{
-		ApiService: a,
-		ctx:        ctx,
-		header:     header,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysConfigUiHeadersHeaderExecute(r ApiPostSysConfigUiHeadersHeaderRequest) (*http.Response, error) {
+// PostSysConfigUiHeadersHeader Configure the values to be returned for the UI header.
+// header: The name of the header.
+func (a *SystemApiService) PostSysConfigUiHeadersHeader(ctx context.Context, header string, systemConfigUiHeadersRequest SystemConfigUiHeadersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysConfigUiHeadersHeader")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysConfigUiHeadersHeader")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/config/ui/headers/{header}"
-	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(r.header, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9802,8 +7108,8 @@ func (a *SystemApiService) PostSysConfigUiHeadersHeaderExecute(r ApiPostSysConfi
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemConfigUiHeadersRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemConfigUiHeadersRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9831,45 +7137,16 @@ func (a *SystemApiService) PostSysConfigUiHeadersHeaderExecute(r ApiPostSysConfi
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysGenerateRootRequest struct {
-	ctx                       context.Context
-	ApiService                *SystemApiService
-	systemGenerateRootRequest *SystemGenerateRootRequest
-}
-
-func (r ApiPostSysGenerateRootRequest) SystemGenerateRootRequest(systemGenerateRootRequest SystemGenerateRootRequest) ApiPostSysGenerateRootRequest {
-	r.systemGenerateRootRequest = &systemGenerateRootRequest
-	return r
-}
-
-func (r ApiPostSysGenerateRootRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysGenerateRootExecute(r)
-}
-
-/*
-PostSysGenerateRoot Initializes a new root generation attempt.
-
-Only a single root generation attempt can take place at a time. One (and only one) of otp or pgp_key are required.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysGenerateRootRequest
-*/
-func (a *SystemApiService) PostSysGenerateRoot(ctx context.Context) ApiPostSysGenerateRootRequest {
-	return ApiPostSysGenerateRootRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysGenerateRootExecute(r ApiPostSysGenerateRootRequest) (*http.Response, error) {
+// PostSysGenerateRoot Initializes a new root generation attempt.
+// Only a single root generation attempt can take place at a time. One (and only one) of otp or pgp_key are required.
+func (a *SystemApiService) PostSysGenerateRoot(ctx context.Context, systemGenerateRootRequest SystemGenerateRootRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysGenerateRoot")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysGenerateRoot")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9898,8 +7175,8 @@ func (a *SystemApiService) PostSysGenerateRootExecute(r ApiPostSysGenerateRootRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemGenerateRootRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemGenerateRootRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -9927,45 +7204,16 @@ func (a *SystemApiService) PostSysGenerateRootExecute(r ApiPostSysGenerateRootRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysGenerateRootAttemptRequest struct {
-	ctx                              context.Context
-	ApiService                       *SystemApiService
-	systemGenerateRootAttemptRequest *SystemGenerateRootAttemptRequest
-}
-
-func (r ApiPostSysGenerateRootAttemptRequest) SystemGenerateRootAttemptRequest(systemGenerateRootAttemptRequest SystemGenerateRootAttemptRequest) ApiPostSysGenerateRootAttemptRequest {
-	r.systemGenerateRootAttemptRequest = &systemGenerateRootAttemptRequest
-	return r
-}
-
-func (r ApiPostSysGenerateRootAttemptRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysGenerateRootAttemptExecute(r)
-}
-
-/*
-PostSysGenerateRootAttempt Initializes a new root generation attempt.
-
-Only a single root generation attempt can take place at a time. One (and only one) of otp or pgp_key are required.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysGenerateRootAttemptRequest
-*/
-func (a *SystemApiService) PostSysGenerateRootAttempt(ctx context.Context) ApiPostSysGenerateRootAttemptRequest {
-	return ApiPostSysGenerateRootAttemptRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysGenerateRootAttemptExecute(r ApiPostSysGenerateRootAttemptRequest) (*http.Response, error) {
+// PostSysGenerateRootAttempt Initializes a new root generation attempt.
+// Only a single root generation attempt can take place at a time. One (and only one) of otp or pgp_key are required.
+func (a *SystemApiService) PostSysGenerateRootAttempt(ctx context.Context, systemGenerateRootAttemptRequest SystemGenerateRootAttemptRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysGenerateRootAttempt")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysGenerateRootAttempt")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -9994,8 +7242,8 @@ func (a *SystemApiService) PostSysGenerateRootAttemptExecute(r ApiPostSysGenerat
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemGenerateRootAttemptRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemGenerateRootAttemptRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -10023,45 +7271,16 @@ func (a *SystemApiService) PostSysGenerateRootAttemptExecute(r ApiPostSysGenerat
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysGenerateRootUpdateRequest struct {
-	ctx                             context.Context
-	ApiService                      *SystemApiService
-	systemGenerateRootUpdateRequest *SystemGenerateRootUpdateRequest
-}
-
-func (r ApiPostSysGenerateRootUpdateRequest) SystemGenerateRootUpdateRequest(systemGenerateRootUpdateRequest SystemGenerateRootUpdateRequest) ApiPostSysGenerateRootUpdateRequest {
-	r.systemGenerateRootUpdateRequest = &systemGenerateRootUpdateRequest
-	return r
-}
-
-func (r ApiPostSysGenerateRootUpdateRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysGenerateRootUpdateExecute(r)
-}
-
-/*
-PostSysGenerateRootUpdate Enter a single unseal key share to progress the root generation attempt.
-
-If the threshold number of unseal key shares is reached, Vault will complete the root generation and issue the new token. Otherwise, this API must be called multiple times until that threshold is met. The attempt nonce must be provided with each call.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysGenerateRootUpdateRequest
-*/
-func (a *SystemApiService) PostSysGenerateRootUpdate(ctx context.Context) ApiPostSysGenerateRootUpdateRequest {
-	return ApiPostSysGenerateRootUpdateRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysGenerateRootUpdateExecute(r ApiPostSysGenerateRootUpdateRequest) (*http.Response, error) {
+// PostSysGenerateRootUpdate Enter a single unseal key share to progress the root generation attempt.
+// If the threshold number of unseal key shares is reached, Vault will complete the root generation and issue the new token. Otherwise, this API must be called multiple times until that threshold is met. The attempt nonce must be provided with each call.
+func (a *SystemApiService) PostSysGenerateRootUpdate(ctx context.Context, systemGenerateRootUpdateRequest SystemGenerateRootUpdateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysGenerateRootUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysGenerateRootUpdate")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10090,8 +7309,8 @@ func (a *SystemApiService) PostSysGenerateRootUpdateExecute(r ApiPostSysGenerate
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemGenerateRootUpdateRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemGenerateRootUpdateRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -10119,45 +7338,16 @@ func (a *SystemApiService) PostSysGenerateRootUpdateExecute(r ApiPostSysGenerate
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysInitRequest struct {
-	ctx               context.Context
-	ApiService        *SystemApiService
-	systemInitRequest *SystemInitRequest
-}
-
-func (r ApiPostSysInitRequest) SystemInitRequest(systemInitRequest SystemInitRequest) ApiPostSysInitRequest {
-	r.systemInitRequest = &systemInitRequest
-	return r
-}
-
-func (r ApiPostSysInitRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysInitExecute(r)
-}
-
-/*
-PostSysInit Initialize a new Vault.
-
-The Vault must not have been previously initialized. The recovery options, as well as the stored shares option, are only available when using Vault HSM.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysInitRequest
-*/
-func (a *SystemApiService) PostSysInit(ctx context.Context) ApiPostSysInitRequest {
-	return ApiPostSysInitRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysInitExecute(r ApiPostSysInitRequest) (*http.Response, error) {
+// PostSysInit Initialize a new Vault.
+// The Vault must not have been previously initialized. The recovery options, as well as the stored shares option, are only available when using Vault HSM.
+func (a *SystemApiService) PostSysInit(ctx context.Context, systemInitRequest SystemInitRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysInit")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysInit")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10186,8 +7376,8 @@ func (a *SystemApiService) PostSysInitExecute(r ApiPostSysInitRequest) (*http.Re
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemInitRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemInitRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -10215,43 +7405,15 @@ func (a *SystemApiService) PostSysInitExecute(r ApiPostSysInitRequest) (*http.Re
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysInternalCountersConfigRequest struct {
-	ctx                                 context.Context
-	ApiService                          *SystemApiService
-	systemInternalCountersConfigRequest *SystemInternalCountersConfigRequest
-}
-
-func (r ApiPostSysInternalCountersConfigRequest) SystemInternalCountersConfigRequest(systemInternalCountersConfigRequest SystemInternalCountersConfigRequest) ApiPostSysInternalCountersConfigRequest {
-	r.systemInternalCountersConfigRequest = &systemInternalCountersConfigRequest
-	return r
-}
-
-func (r ApiPostSysInternalCountersConfigRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysInternalCountersConfigExecute(r)
-}
-
-/*
-PostSysInternalCountersConfig Enable or disable collection of client count, set retention period, or set default reporting period.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysInternalCountersConfigRequest
-*/
-func (a *SystemApiService) PostSysInternalCountersConfig(ctx context.Context) ApiPostSysInternalCountersConfigRequest {
-	return ApiPostSysInternalCountersConfigRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysInternalCountersConfigExecute(r ApiPostSysInternalCountersConfigRequest) (*http.Response, error) {
+// PostSysInternalCountersConfig Enable or disable collection of client count, set retention period, or set default reporting period.
+func (a *SystemApiService) PostSysInternalCountersConfig(ctx context.Context, systemInternalCountersConfigRequest SystemInternalCountersConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysInternalCountersConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysInternalCountersConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10280,8 +7442,8 @@ func (a *SystemApiService) PostSysInternalCountersConfigExecute(r ApiPostSysInte
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemInternalCountersConfigRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemInternalCountersConfigRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -10309,43 +7471,15 @@ func (a *SystemApiService) PostSysInternalCountersConfigExecute(r ApiPostSysInte
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysLeasesLookupRequest struct {
-	ctx                       context.Context
-	ApiService                *SystemApiService
-	systemLeasesLookupRequest *SystemLeasesLookupRequest
-}
-
-func (r ApiPostSysLeasesLookupRequest) SystemLeasesLookupRequest(systemLeasesLookupRequest SystemLeasesLookupRequest) ApiPostSysLeasesLookupRequest {
-	r.systemLeasesLookupRequest = &systemLeasesLookupRequest
-	return r
-}
-
-func (r ApiPostSysLeasesLookupRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysLeasesLookupExecute(r)
-}
-
-/*
-PostSysLeasesLookup Retrieve lease metadata.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysLeasesLookupRequest
-*/
-func (a *SystemApiService) PostSysLeasesLookup(ctx context.Context) ApiPostSysLeasesLookupRequest {
-	return ApiPostSysLeasesLookupRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysLeasesLookupExecute(r ApiPostSysLeasesLookupRequest) (*http.Response, error) {
+// PostSysLeasesLookup Retrieve lease metadata.
+func (a *SystemApiService) PostSysLeasesLookup(ctx context.Context, systemLeasesLookupRequest SystemLeasesLookupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysLeasesLookup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysLeasesLookup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10374,8 +7508,8 @@ func (a *SystemApiService) PostSysLeasesLookupExecute(r ApiPostSysLeasesLookupRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemLeasesLookupRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemLeasesLookupRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -10403,43 +7537,15 @@ func (a *SystemApiService) PostSysLeasesLookupExecute(r ApiPostSysLeasesLookupRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysLeasesRenewRequest struct {
-	ctx                      context.Context
-	ApiService               *SystemApiService
-	systemLeasesRenewRequest *SystemLeasesRenewRequest
-}
-
-func (r ApiPostSysLeasesRenewRequest) SystemLeasesRenewRequest(systemLeasesRenewRequest SystemLeasesRenewRequest) ApiPostSysLeasesRenewRequest {
-	r.systemLeasesRenewRequest = &systemLeasesRenewRequest
-	return r
-}
-
-func (r ApiPostSysLeasesRenewRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysLeasesRenewExecute(r)
-}
-
-/*
-PostSysLeasesRenew Renews a lease, requesting to extend the lease.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysLeasesRenewRequest
-*/
-func (a *SystemApiService) PostSysLeasesRenew(ctx context.Context) ApiPostSysLeasesRenewRequest {
-	return ApiPostSysLeasesRenewRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysLeasesRenewExecute(r ApiPostSysLeasesRenewRequest) (*http.Response, error) {
+// PostSysLeasesRenew Renews a lease, requesting to extend the lease.
+func (a *SystemApiService) PostSysLeasesRenew(ctx context.Context, systemLeasesRenewRequest SystemLeasesRenewRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysLeasesRenew")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysLeasesRenew")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10468,8 +7574,8 @@ func (a *SystemApiService) PostSysLeasesRenewExecute(r ApiPostSysLeasesRenewRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemLeasesRenewRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemLeasesRenewRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -10497,52 +7603,22 @@ func (a *SystemApiService) PostSysLeasesRenewExecute(r ApiPostSysLeasesRenewRequ
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysLeasesRenewUrlLeaseIdRequest struct {
-	ctx                           context.Context
-	ApiService                    *SystemApiService
-	urlLeaseId                    string
-	systemLeasesRenewLeaseRequest *SystemLeasesRenewLeaseRequest
-}
-
-func (r ApiPostSysLeasesRenewUrlLeaseIdRequest) SystemLeasesRenewLeaseRequest(systemLeasesRenewLeaseRequest SystemLeasesRenewLeaseRequest) ApiPostSysLeasesRenewUrlLeaseIdRequest {
-	r.systemLeasesRenewLeaseRequest = &systemLeasesRenewLeaseRequest
-	return r
-}
-
-func (r ApiPostSysLeasesRenewUrlLeaseIdRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysLeasesRenewUrlLeaseIdExecute(r)
-}
-
-/*
-PostSysLeasesRenewUrlLeaseId Renews a lease, requesting to extend the lease.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param urlLeaseId The lease identifier to renew. This is included with a lease.
- @return ApiPostSysLeasesRenewUrlLeaseIdRequest
-*/
-func (a *SystemApiService) PostSysLeasesRenewUrlLeaseId(ctx context.Context, urlLeaseId string) ApiPostSysLeasesRenewUrlLeaseIdRequest {
-	return ApiPostSysLeasesRenewUrlLeaseIdRequest{
-		ApiService: a,
-		ctx:        ctx,
-		urlLeaseId: urlLeaseId,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysLeasesRenewUrlLeaseIdExecute(r ApiPostSysLeasesRenewUrlLeaseIdRequest) (*http.Response, error) {
+// PostSysLeasesRenewUrlLeaseId Renews a lease, requesting to extend the lease.
+// urlLeaseId: The lease identifier to renew. This is included with a lease.
+func (a *SystemApiService) PostSysLeasesRenewUrlLeaseId(ctx context.Context, urlLeaseId string, systemLeasesRenewLeaseRequest SystemLeasesRenewLeaseRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysLeasesRenewUrlLeaseId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysLeasesRenewUrlLeaseId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/leases/renew/{url_lease_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"url_lease_id"+"}", url.PathEscape(parameterToString(r.urlLeaseId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"url_lease_id"+"}", url.PathEscape(parameterToString(urlLeaseId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10566,8 +7642,8 @@ func (a *SystemApiService) PostSysLeasesRenewUrlLeaseIdExecute(r ApiPostSysLease
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemLeasesRenewLeaseRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemLeasesRenewLeaseRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -10595,43 +7671,15 @@ func (a *SystemApiService) PostSysLeasesRenewUrlLeaseIdExecute(r ApiPostSysLease
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysLeasesRevokeRequest struct {
-	ctx                       context.Context
-	ApiService                *SystemApiService
-	systemLeasesRevokeRequest *SystemLeasesRevokeRequest
-}
-
-func (r ApiPostSysLeasesRevokeRequest) SystemLeasesRevokeRequest(systemLeasesRevokeRequest SystemLeasesRevokeRequest) ApiPostSysLeasesRevokeRequest {
-	r.systemLeasesRevokeRequest = &systemLeasesRevokeRequest
-	return r
-}
-
-func (r ApiPostSysLeasesRevokeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysLeasesRevokeExecute(r)
-}
-
-/*
-PostSysLeasesRevoke Revokes a lease immediately.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysLeasesRevokeRequest
-*/
-func (a *SystemApiService) PostSysLeasesRevoke(ctx context.Context) ApiPostSysLeasesRevokeRequest {
-	return ApiPostSysLeasesRevokeRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysLeasesRevokeExecute(r ApiPostSysLeasesRevokeRequest) (*http.Response, error) {
+// PostSysLeasesRevoke Revokes a lease immediately.
+func (a *SystemApiService) PostSysLeasesRevoke(ctx context.Context, systemLeasesRevokeRequest SystemLeasesRevokeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysLeasesRevoke")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysLeasesRevoke")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -10660,8 +7708,8 @@ func (a *SystemApiService) PostSysLeasesRevokeExecute(r ApiPostSysLeasesRevokeRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemLeasesRevokeRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemLeasesRevokeRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -10689,50 +7737,23 @@ func (a *SystemApiService) PostSysLeasesRevokeExecute(r ApiPostSysLeasesRevokeRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysLeasesRevokeForcePrefixRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	prefix     string
-}
-
-func (r ApiPostSysLeasesRevokeForcePrefixRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysLeasesRevokeForcePrefixExecute(r)
-}
-
-/*
-PostSysLeasesRevokeForcePrefix Revokes all secrets or tokens generated under a given prefix immediately
-
-Unlike `/sys/leases/revoke-prefix`, this path ignores backend errors encountered during revocation. This is potentially very dangerous and should only be used in specific emergency situations where errors in the backend or the connected backend service prevent normal revocation.
-
-By ignoring these errors, Vault abdicates responsibility for ensuring that the issued credentials or secrets are properly revoked and/or cleaned up. Access to this endpoint should be tightly controlled.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param prefix The path to revoke keys under. Example: \"prod/aws/ops\"
- @return ApiPostSysLeasesRevokeForcePrefixRequest
-*/
-func (a *SystemApiService) PostSysLeasesRevokeForcePrefix(ctx context.Context, prefix string) ApiPostSysLeasesRevokeForcePrefixRequest {
-	return ApiPostSysLeasesRevokeForcePrefixRequest{
-		ApiService: a,
-		ctx:        ctx,
-		prefix:     prefix,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysLeasesRevokeForcePrefixExecute(r ApiPostSysLeasesRevokeForcePrefixRequest) (*http.Response, error) {
+// PostSysLeasesRevokeForcePrefix Revokes all secrets or tokens generated under a given prefix immediately
+// Unlike `/sys/leases/revoke-prefix`, this path ignores backend errors encountered during revocation. This is potentially very dangerous and should only be used in specific emergency situations where errors in the backend or the connected backend service prevent normal revocation.  By ignoring these errors, Vault abdicates responsibility for ensuring that the issued credentials or secrets are properly revoked and/or cleaned up. Access to this endpoint should be tightly controlled.
+// prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
+func (a *SystemApiService) PostSysLeasesRevokeForcePrefix(ctx context.Context, prefix string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysLeasesRevokeForcePrefix")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysLeasesRevokeForcePrefix")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/leases/revoke-force/{prefix}"
-	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(r.prefix, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(prefix, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10755,7 +7776,7 @@ func (a *SystemApiService) PostSysLeasesRevokeForcePrefixExecute(r ApiPostSysLea
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -10783,52 +7804,22 @@ func (a *SystemApiService) PostSysLeasesRevokeForcePrefixExecute(r ApiPostSysLea
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysLeasesRevokePrefixPrefixRequest struct {
-	ctx                             context.Context
-	ApiService                      *SystemApiService
-	prefix                          string
-	systemLeasesRevokePrefixRequest *SystemLeasesRevokePrefixRequest
-}
-
-func (r ApiPostSysLeasesRevokePrefixPrefixRequest) SystemLeasesRevokePrefixRequest(systemLeasesRevokePrefixRequest SystemLeasesRevokePrefixRequest) ApiPostSysLeasesRevokePrefixPrefixRequest {
-	r.systemLeasesRevokePrefixRequest = &systemLeasesRevokePrefixRequest
-	return r
-}
-
-func (r ApiPostSysLeasesRevokePrefixPrefixRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysLeasesRevokePrefixPrefixExecute(r)
-}
-
-/*
-PostSysLeasesRevokePrefixPrefix Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param prefix The path to revoke keys under. Example: \"prod/aws/ops\"
- @return ApiPostSysLeasesRevokePrefixPrefixRequest
-*/
-func (a *SystemApiService) PostSysLeasesRevokePrefixPrefix(ctx context.Context, prefix string) ApiPostSysLeasesRevokePrefixPrefixRequest {
-	return ApiPostSysLeasesRevokePrefixPrefixRequest{
-		ApiService: a,
-		ctx:        ctx,
-		prefix:     prefix,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysLeasesRevokePrefixPrefixExecute(r ApiPostSysLeasesRevokePrefixPrefixRequest) (*http.Response, error) {
+// PostSysLeasesRevokePrefixPrefix Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
+// prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
+func (a *SystemApiService) PostSysLeasesRevokePrefixPrefix(ctx context.Context, prefix string, systemLeasesRevokePrefixRequest SystemLeasesRevokePrefixRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysLeasesRevokePrefixPrefix")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysLeasesRevokePrefixPrefix")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/leases/revoke-prefix/{prefix}"
-	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(r.prefix, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(prefix, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10852,8 +7843,8 @@ func (a *SystemApiService) PostSysLeasesRevokePrefixPrefixExecute(r ApiPostSysLe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemLeasesRevokePrefixRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemLeasesRevokePrefixRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -10881,52 +7872,22 @@ func (a *SystemApiService) PostSysLeasesRevokePrefixPrefixExecute(r ApiPostSysLe
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysLeasesRevokeUrlLeaseIdRequest struct {
-	ctx                            context.Context
-	ApiService                     *SystemApiService
-	urlLeaseId                     string
-	systemLeasesRevokeLeaseRequest *SystemLeasesRevokeLeaseRequest
-}
-
-func (r ApiPostSysLeasesRevokeUrlLeaseIdRequest) SystemLeasesRevokeLeaseRequest(systemLeasesRevokeLeaseRequest SystemLeasesRevokeLeaseRequest) ApiPostSysLeasesRevokeUrlLeaseIdRequest {
-	r.systemLeasesRevokeLeaseRequest = &systemLeasesRevokeLeaseRequest
-	return r
-}
-
-func (r ApiPostSysLeasesRevokeUrlLeaseIdRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysLeasesRevokeUrlLeaseIdExecute(r)
-}
-
-/*
-PostSysLeasesRevokeUrlLeaseId Revokes a lease immediately.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param urlLeaseId The lease identifier to renew. This is included with a lease.
- @return ApiPostSysLeasesRevokeUrlLeaseIdRequest
-*/
-func (a *SystemApiService) PostSysLeasesRevokeUrlLeaseId(ctx context.Context, urlLeaseId string) ApiPostSysLeasesRevokeUrlLeaseIdRequest {
-	return ApiPostSysLeasesRevokeUrlLeaseIdRequest{
-		ApiService: a,
-		ctx:        ctx,
-		urlLeaseId: urlLeaseId,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysLeasesRevokeUrlLeaseIdExecute(r ApiPostSysLeasesRevokeUrlLeaseIdRequest) (*http.Response, error) {
+// PostSysLeasesRevokeUrlLeaseId Revokes a lease immediately.
+// urlLeaseId: The lease identifier to renew. This is included with a lease.
+func (a *SystemApiService) PostSysLeasesRevokeUrlLeaseId(ctx context.Context, urlLeaseId string, systemLeasesRevokeLeaseRequest SystemLeasesRevokeLeaseRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysLeasesRevokeUrlLeaseId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysLeasesRevokeUrlLeaseId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/leases/revoke/{url_lease_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"url_lease_id"+"}", url.PathEscape(parameterToString(r.urlLeaseId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"url_lease_id"+"}", url.PathEscape(parameterToString(urlLeaseId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10950,8 +7911,8 @@ func (a *SystemApiService) PostSysLeasesRevokeUrlLeaseIdExecute(r ApiPostSysLeas
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemLeasesRevokeLeaseRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemLeasesRevokeLeaseRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -10979,37 +7940,15 @@ func (a *SystemApiService) PostSysLeasesRevokeUrlLeaseIdExecute(r ApiPostSysLeas
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysLeasesTidyRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiPostSysLeasesTidyRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysLeasesTidyExecute(r)
-}
-
-/*
-PostSysLeasesTidy This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysLeasesTidyRequest
-*/
-func (a *SystemApiService) PostSysLeasesTidy(ctx context.Context) ApiPostSysLeasesTidyRequest {
-	return ApiPostSysLeasesTidyRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysLeasesTidyExecute(r ApiPostSysLeasesTidyRequest) (*http.Response, error) {
+// PostSysLeasesTidy This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
+func (a *SystemApiService) PostSysLeasesTidy(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysLeasesTidy")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysLeasesTidy")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11037,7 +7976,7 @@ func (a *SystemApiService) PostSysLeasesTidyExecute(r ApiPostSysLeasesTidyReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -11065,43 +8004,15 @@ func (a *SystemApiService) PostSysLeasesTidyExecute(r ApiPostSysLeasesTidyReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysMfaValidateRequest struct {
-	ctx                      context.Context
-	ApiService               *SystemApiService
-	systemMfaValidateRequest *SystemMfaValidateRequest
-}
-
-func (r ApiPostSysMfaValidateRequest) SystemMfaValidateRequest(systemMfaValidateRequest SystemMfaValidateRequest) ApiPostSysMfaValidateRequest {
-	r.systemMfaValidateRequest = &systemMfaValidateRequest
-	return r
-}
-
-func (r ApiPostSysMfaValidateRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysMfaValidateExecute(r)
-}
-
-/*
-PostSysMfaValidate Validates the login for the given MFA methods. Upon successful validation, it returns an auth response containing the client token
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysMfaValidateRequest
-*/
-func (a *SystemApiService) PostSysMfaValidate(ctx context.Context) ApiPostSysMfaValidateRequest {
-	return ApiPostSysMfaValidateRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysMfaValidateExecute(r ApiPostSysMfaValidateRequest) (*http.Response, error) {
+// PostSysMfaValidate Validates the login for the given MFA methods. Upon successful validation, it returns an auth response containing the client token
+func (a *SystemApiService) PostSysMfaValidate(ctx context.Context, systemMfaValidateRequest SystemMfaValidateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysMfaValidate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysMfaValidate")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11130,8 +8041,8 @@ func (a *SystemApiService) PostSysMfaValidateExecute(r ApiPostSysMfaValidateRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemMfaValidateRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemMfaValidateRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -11159,52 +8070,22 @@ func (a *SystemApiService) PostSysMfaValidateExecute(r ApiPostSysMfaValidateRequ
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysMountsPathRequest struct {
-	ctx                 context.Context
-	ApiService          *SystemApiService
-	path                string
-	systemMountsRequest *SystemMountsRequest
-}
-
-func (r ApiPostSysMountsPathRequest) SystemMountsRequest(systemMountsRequest SystemMountsRequest) ApiPostSysMountsPathRequest {
-	r.systemMountsRequest = &systemMountsRequest
-	return r
-}
-
-func (r ApiPostSysMountsPathRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysMountsPathExecute(r)
-}
-
-/*
-PostSysMountsPath Enable a new secrets engine at the given path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path The path to mount to. Example: \"aws/east\"
- @return ApiPostSysMountsPathRequest
-*/
-func (a *SystemApiService) PostSysMountsPath(ctx context.Context, path string) ApiPostSysMountsPathRequest {
-	return ApiPostSysMountsPathRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysMountsPathExecute(r ApiPostSysMountsPathRequest) (*http.Response, error) {
+// PostSysMountsPath Enable a new secrets engine at the given path.
+// path: The path to mount to. Example: \&quot;aws/east\&quot;
+func (a *SystemApiService) PostSysMountsPath(ctx context.Context, path string, systemMountsRequest SystemMountsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysMountsPath")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysMountsPath")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/mounts/{path}"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(r.path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11228,8 +8109,8 @@ func (a *SystemApiService) PostSysMountsPathExecute(r ApiPostSysMountsPathReques
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemMountsRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemMountsRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -11257,52 +8138,22 @@ func (a *SystemApiService) PostSysMountsPathExecute(r ApiPostSysMountsPathReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysMountsPathTuneRequest struct {
-	ctx                     context.Context
-	ApiService              *SystemApiService
-	path                    string
-	systemMountsTuneRequest *SystemMountsTuneRequest
-}
-
-func (r ApiPostSysMountsPathTuneRequest) SystemMountsTuneRequest(systemMountsTuneRequest SystemMountsTuneRequest) ApiPostSysMountsPathTuneRequest {
-	r.systemMountsTuneRequest = &systemMountsTuneRequest
-	return r
-}
-
-func (r ApiPostSysMountsPathTuneRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysMountsPathTuneExecute(r)
-}
-
-/*
-PostSysMountsPathTune Tune backend configuration parameters for this mount.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path The path to mount to. Example: \"aws/east\"
- @return ApiPostSysMountsPathTuneRequest
-*/
-func (a *SystemApiService) PostSysMountsPathTune(ctx context.Context, path string) ApiPostSysMountsPathTuneRequest {
-	return ApiPostSysMountsPathTuneRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysMountsPathTuneExecute(r ApiPostSysMountsPathTuneRequest) (*http.Response, error) {
+// PostSysMountsPathTune Tune backend configuration parameters for this mount.
+// path: The path to mount to. Example: \&quot;aws/east\&quot;
+func (a *SystemApiService) PostSysMountsPathTune(ctx context.Context, path string, systemMountsTuneRequest SystemMountsTuneRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysMountsPathTune")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysMountsPathTune")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/mounts/{path}/tune"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(r.path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11326,8 +8177,8 @@ func (a *SystemApiService) PostSysMountsPathTuneExecute(r ApiPostSysMountsPathTu
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemMountsTuneRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemMountsTuneRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -11355,52 +8206,22 @@ func (a *SystemApiService) PostSysMountsPathTuneExecute(r ApiPostSysMountsPathTu
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysPluginsCatalogNameRequest struct {
-	ctx                         context.Context
-	ApiService                  *SystemApiService
-	name                        string
-	systemPluginsCatalogRequest *SystemPluginsCatalogRequest
-}
-
-func (r ApiPostSysPluginsCatalogNameRequest) SystemPluginsCatalogRequest(systemPluginsCatalogRequest SystemPluginsCatalogRequest) ApiPostSysPluginsCatalogNameRequest {
-	r.systemPluginsCatalogRequest = &systemPluginsCatalogRequest
-	return r
-}
-
-func (r ApiPostSysPluginsCatalogNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysPluginsCatalogNameExecute(r)
-}
-
-/*
-PostSysPluginsCatalogName Register a new plugin, or updates an existing one with the supplied name.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the plugin
- @return ApiPostSysPluginsCatalogNameRequest
-*/
-func (a *SystemApiService) PostSysPluginsCatalogName(ctx context.Context, name string) ApiPostSysPluginsCatalogNameRequest {
-	return ApiPostSysPluginsCatalogNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysPluginsCatalogNameExecute(r ApiPostSysPluginsCatalogNameRequest) (*http.Response, error) {
+// PostSysPluginsCatalogName Register a new plugin, or updates an existing one with the supplied name.
+// name: The name of the plugin
+func (a *SystemApiService) PostSysPluginsCatalogName(ctx context.Context, name string, systemPluginsCatalogRequest SystemPluginsCatalogRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysPluginsCatalogName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysPluginsCatalogName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/plugins/catalog/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11424,8 +8245,8 @@ func (a *SystemApiService) PostSysPluginsCatalogNameExecute(r ApiPostSysPluginsC
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemPluginsCatalogRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemPluginsCatalogRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -11453,56 +8274,24 @@ func (a *SystemApiService) PostSysPluginsCatalogNameExecute(r ApiPostSysPluginsC
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysPluginsCatalogTypeNameRequest struct {
-	ctx                         context.Context
-	ApiService                  *SystemApiService
-	name                        string
-	type_                       string
-	systemPluginsCatalogRequest *SystemPluginsCatalogRequest
-}
-
-func (r ApiPostSysPluginsCatalogTypeNameRequest) SystemPluginsCatalogRequest(systemPluginsCatalogRequest SystemPluginsCatalogRequest) ApiPostSysPluginsCatalogTypeNameRequest {
-	r.systemPluginsCatalogRequest = &systemPluginsCatalogRequest
-	return r
-}
-
-func (r ApiPostSysPluginsCatalogTypeNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysPluginsCatalogTypeNameExecute(r)
-}
-
-/*
-PostSysPluginsCatalogTypeName Register a new plugin, or updates an existing one with the supplied name.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the plugin
- @param type_ The type of the plugin, may be auth, secret, or database
- @return ApiPostSysPluginsCatalogTypeNameRequest
-*/
-func (a *SystemApiService) PostSysPluginsCatalogTypeName(ctx context.Context, name string, type_ string) ApiPostSysPluginsCatalogTypeNameRequest {
-	return ApiPostSysPluginsCatalogTypeNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-		type_:      type_,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysPluginsCatalogTypeNameExecute(r ApiPostSysPluginsCatalogTypeNameRequest) (*http.Response, error) {
+// PostSysPluginsCatalogTypeName Register a new plugin, or updates an existing one with the supplied name.
+// name: The name of the plugin
+// type_: The type of the plugin, may be auth, secret, or database
+func (a *SystemApiService) PostSysPluginsCatalogTypeName(ctx context.Context, name string, type_ string, systemPluginsCatalogRequest SystemPluginsCatalogRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysPluginsCatalogTypeName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysPluginsCatalogTypeName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/plugins/catalog/{type}/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(r.type_, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(type_, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11526,8 +8315,8 @@ func (a *SystemApiService) PostSysPluginsCatalogTypeNameExecute(r ApiPostSysPlug
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemPluginsCatalogRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemPluginsCatalogRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -11555,45 +8344,16 @@ func (a *SystemApiService) PostSysPluginsCatalogTypeNameExecute(r ApiPostSysPlug
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysPluginsReloadBackendRequest struct {
-	ctx                               context.Context
-	ApiService                        *SystemApiService
-	systemPluginsReloadBackendRequest *SystemPluginsReloadBackendRequest
-}
-
-func (r ApiPostSysPluginsReloadBackendRequest) SystemPluginsReloadBackendRequest(systemPluginsReloadBackendRequest SystemPluginsReloadBackendRequest) ApiPostSysPluginsReloadBackendRequest {
-	r.systemPluginsReloadBackendRequest = &systemPluginsReloadBackendRequest
-	return r
-}
-
-func (r ApiPostSysPluginsReloadBackendRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysPluginsReloadBackendExecute(r)
-}
-
-/*
-PostSysPluginsReloadBackend Reload mounted plugin backends.
-
-Either the plugin name (`plugin`) or the desired plugin backend mounts (`mounts`) must be provided, but not both. In the case that the plugin name is provided, all mounted paths that use that plugin backend will be reloaded.  If (`scope`) is provided and is (`global`), the plugin(s) are reloaded globally.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysPluginsReloadBackendRequest
-*/
-func (a *SystemApiService) PostSysPluginsReloadBackend(ctx context.Context) ApiPostSysPluginsReloadBackendRequest {
-	return ApiPostSysPluginsReloadBackendRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysPluginsReloadBackendExecute(r ApiPostSysPluginsReloadBackendRequest) (*http.Response, error) {
+// PostSysPluginsReloadBackend Reload mounted plugin backends.
+// Either the plugin name (`plugin`) or the desired plugin backend mounts (`mounts`) must be provided, but not both. In the case that the plugin name is provided, all mounted paths that use that plugin backend will be reloaded.  If (`scope`) is provided and is (`global`), the plugin(s) are reloaded globally.
+func (a *SystemApiService) PostSysPluginsReloadBackend(ctx context.Context, systemPluginsReloadBackendRequest SystemPluginsReloadBackendRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysPluginsReloadBackend")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysPluginsReloadBackend")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -11622,8 +8382,8 @@ func (a *SystemApiService) PostSysPluginsReloadBackendExecute(r ApiPostSysPlugin
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemPluginsReloadBackendRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemPluginsReloadBackendRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -11651,52 +8411,22 @@ func (a *SystemApiService) PostSysPluginsReloadBackendExecute(r ApiPostSysPlugin
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysPoliciesAclNameRequest struct {
-	ctx                      context.Context
-	ApiService               *SystemApiService
-	name                     string
-	systemPoliciesAclRequest *SystemPoliciesAclRequest
-}
-
-func (r ApiPostSysPoliciesAclNameRequest) SystemPoliciesAclRequest(systemPoliciesAclRequest SystemPoliciesAclRequest) ApiPostSysPoliciesAclNameRequest {
-	r.systemPoliciesAclRequest = &systemPoliciesAclRequest
-	return r
-}
-
-func (r ApiPostSysPoliciesAclNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysPoliciesAclNameExecute(r)
-}
-
-/*
-PostSysPoliciesAclName Add a new or update an existing ACL policy.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the policy. Example: \"ops\"
- @return ApiPostSysPoliciesAclNameRequest
-*/
-func (a *SystemApiService) PostSysPoliciesAclName(ctx context.Context, name string) ApiPostSysPoliciesAclNameRequest {
-	return ApiPostSysPoliciesAclNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysPoliciesAclNameExecute(r ApiPostSysPoliciesAclNameRequest) (*http.Response, error) {
+// PostSysPoliciesAclName Add a new or update an existing ACL policy.
+// name: The name of the policy. Example: \&quot;ops\&quot;
+func (a *SystemApiService) PostSysPoliciesAclName(ctx context.Context, name string, systemPoliciesAclRequest SystemPoliciesAclRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysPoliciesAclName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysPoliciesAclName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/policies/acl/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11720,8 +8450,8 @@ func (a *SystemApiService) PostSysPoliciesAclNameExecute(r ApiPostSysPoliciesAcl
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemPoliciesAclRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemPoliciesAclRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -11749,52 +8479,22 @@ func (a *SystemApiService) PostSysPoliciesAclNameExecute(r ApiPostSysPoliciesAcl
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysPoliciesPasswordNameRequest struct {
-	ctx                           context.Context
-	ApiService                    *SystemApiService
-	name                          string
-	systemPoliciesPasswordRequest *SystemPoliciesPasswordRequest
-}
-
-func (r ApiPostSysPoliciesPasswordNameRequest) SystemPoliciesPasswordRequest(systemPoliciesPasswordRequest SystemPoliciesPasswordRequest) ApiPostSysPoliciesPasswordNameRequest {
-	r.systemPoliciesPasswordRequest = &systemPoliciesPasswordRequest
-	return r
-}
-
-func (r ApiPostSysPoliciesPasswordNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysPoliciesPasswordNameExecute(r)
-}
-
-/*
-PostSysPoliciesPasswordName Add a new or update an existing password policy.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the password policy.
- @return ApiPostSysPoliciesPasswordNameRequest
-*/
-func (a *SystemApiService) PostSysPoliciesPasswordName(ctx context.Context, name string) ApiPostSysPoliciesPasswordNameRequest {
-	return ApiPostSysPoliciesPasswordNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysPoliciesPasswordNameExecute(r ApiPostSysPoliciesPasswordNameRequest) (*http.Response, error) {
+// PostSysPoliciesPasswordName Add a new or update an existing password policy.
+// name: The name of the password policy.
+func (a *SystemApiService) PostSysPoliciesPasswordName(ctx context.Context, name string, systemPoliciesPasswordRequest SystemPoliciesPasswordRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysPoliciesPasswordName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysPoliciesPasswordName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/policies/password/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11818,8 +8518,8 @@ func (a *SystemApiService) PostSysPoliciesPasswordNameExecute(r ApiPostSysPolici
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemPoliciesPasswordRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemPoliciesPasswordRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -11847,52 +8547,22 @@ func (a *SystemApiService) PostSysPoliciesPasswordNameExecute(r ApiPostSysPolici
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysPolicyNameRequest struct {
-	ctx                 context.Context
-	ApiService          *SystemApiService
-	name                string
-	systemPolicyRequest *SystemPolicyRequest
-}
-
-func (r ApiPostSysPolicyNameRequest) SystemPolicyRequest(systemPolicyRequest SystemPolicyRequest) ApiPostSysPolicyNameRequest {
-	r.systemPolicyRequest = &systemPolicyRequest
-	return r
-}
-
-func (r ApiPostSysPolicyNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysPolicyNameExecute(r)
-}
-
-/*
-PostSysPolicyName Add a new or update an existing policy.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name The name of the policy. Example: \"ops\"
- @return ApiPostSysPolicyNameRequest
-*/
-func (a *SystemApiService) PostSysPolicyName(ctx context.Context, name string) ApiPostSysPolicyNameRequest {
-	return ApiPostSysPolicyNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysPolicyNameExecute(r ApiPostSysPolicyNameRequest) (*http.Response, error) {
+// PostSysPolicyName Add a new or update an existing policy.
+// name: The name of the policy. Example: \&quot;ops\&quot;
+func (a *SystemApiService) PostSysPolicyName(ctx context.Context, name string, systemPolicyRequest SystemPolicyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysPolicyName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysPolicyName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/policy/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11916,8 +8586,8 @@ func (a *SystemApiService) PostSysPolicyNameExecute(r ApiPostSysPolicyNameReques
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemPolicyRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemPolicyRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -11945,43 +8615,15 @@ func (a *SystemApiService) PostSysPolicyNameExecute(r ApiPostSysPolicyNameReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysQuotasConfigRequest struct {
-	ctx                       context.Context
-	ApiService                *SystemApiService
-	systemQuotasConfigRequest *SystemQuotasConfigRequest
-}
-
-func (r ApiPostSysQuotasConfigRequest) SystemQuotasConfigRequest(systemQuotasConfigRequest SystemQuotasConfigRequest) ApiPostSysQuotasConfigRequest {
-	r.systemQuotasConfigRequest = &systemQuotasConfigRequest
-	return r
-}
-
-func (r ApiPostSysQuotasConfigRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysQuotasConfigExecute(r)
-}
-
-/*
-PostSysQuotasConfig Method for PostSysQuotasConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysQuotasConfigRequest
-*/
-func (a *SystemApiService) PostSysQuotasConfig(ctx context.Context) ApiPostSysQuotasConfigRequest {
-	return ApiPostSysQuotasConfigRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysQuotasConfigExecute(r ApiPostSysQuotasConfigRequest) (*http.Response, error) {
+// PostSysQuotasConfig
+func (a *SystemApiService) PostSysQuotasConfig(ctx context.Context, systemQuotasConfigRequest SystemQuotasConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysQuotasConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysQuotasConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12010,8 +8652,8 @@ func (a *SystemApiService) PostSysQuotasConfigExecute(r ApiPostSysQuotasConfigRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemQuotasConfigRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemQuotasConfigRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -12039,52 +8681,22 @@ func (a *SystemApiService) PostSysQuotasConfigExecute(r ApiPostSysQuotasConfigRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysQuotasRateLimitNameRequest struct {
-	ctx                          context.Context
-	ApiService                   *SystemApiService
-	name                         string
-	systemQuotasRateLimitRequest *SystemQuotasRateLimitRequest
-}
-
-func (r ApiPostSysQuotasRateLimitNameRequest) SystemQuotasRateLimitRequest(systemQuotasRateLimitRequest SystemQuotasRateLimitRequest) ApiPostSysQuotasRateLimitNameRequest {
-	r.systemQuotasRateLimitRequest = &systemQuotasRateLimitRequest
-	return r
-}
-
-func (r ApiPostSysQuotasRateLimitNameRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysQuotasRateLimitNameExecute(r)
-}
-
-/*
-PostSysQuotasRateLimitName Method for PostSysQuotasRateLimitName
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param name Name of the quota rule.
- @return ApiPostSysQuotasRateLimitNameRequest
-*/
-func (a *SystemApiService) PostSysQuotasRateLimitName(ctx context.Context, name string) ApiPostSysQuotasRateLimitNameRequest {
-	return ApiPostSysQuotasRateLimitNameRequest{
-		ApiService: a,
-		ctx:        ctx,
-		name:       name,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysQuotasRateLimitNameExecute(r ApiPostSysQuotasRateLimitNameRequest) (*http.Response, error) {
+// PostSysQuotasRateLimitName
+// name: Name of the quota rule.
+func (a *SystemApiService) PostSysQuotasRateLimitName(ctx context.Context, name string, systemQuotasRateLimitRequest SystemQuotasRateLimitRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysQuotasRateLimitName")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysQuotasRateLimitName")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/quotas/rate-limit/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(r.name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12108,8 +8720,8 @@ func (a *SystemApiService) PostSysQuotasRateLimitNameExecute(r ApiPostSysQuotasR
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemQuotasRateLimitRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemQuotasRateLimitRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -12137,43 +8749,15 @@ func (a *SystemApiService) PostSysQuotasRateLimitNameExecute(r ApiPostSysQuotasR
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysRawRequest struct {
-	ctx              context.Context
-	ApiService       *SystemApiService
-	systemRawRequest *SystemRawRequest
-}
-
-func (r ApiPostSysRawRequest) SystemRawRequest(systemRawRequest SystemRawRequest) ApiPostSysRawRequest {
-	r.systemRawRequest = &systemRawRequest
-	return r
-}
-
-func (r ApiPostSysRawRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysRawExecute(r)
-}
-
-/*
-PostSysRaw Update the value of the key at the given path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysRawRequest
-*/
-func (a *SystemApiService) PostSysRaw(ctx context.Context) ApiPostSysRawRequest {
-	return ApiPostSysRawRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysRawExecute(r ApiPostSysRawRequest) (*http.Response, error) {
+// PostSysRaw Update the value of the key at the given path.
+func (a *SystemApiService) PostSysRaw(ctx context.Context, systemRawRequest SystemRawRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysRaw")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysRaw")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12202,8 +8786,8 @@ func (a *SystemApiService) PostSysRawExecute(r ApiPostSysRawRequest) (*http.Resp
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemRawRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemRawRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -12231,52 +8815,21 @@ func (a *SystemApiService) PostSysRawExecute(r ApiPostSysRawRequest) (*http.Resp
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysRawPathRequest struct {
-	ctx              context.Context
-	ApiService       *SystemApiService
-	path             string
-	systemRawRequest *SystemRawRequest
-}
-
-func (r ApiPostSysRawPathRequest) SystemRawRequest(systemRawRequest SystemRawRequest) ApiPostSysRawPathRequest {
-	r.systemRawRequest = &systemRawRequest
-	return r
-}
-
-func (r ApiPostSysRawPathRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysRawPathExecute(r)
-}
-
-/*
-PostSysRawPath Update the value of the key at the given path.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param path
- @return ApiPostSysRawPathRequest
-*/
-func (a *SystemApiService) PostSysRawPath(ctx context.Context, path string) ApiPostSysRawPathRequest {
-	return ApiPostSysRawPathRequest{
-		ApiService: a,
-		ctx:        ctx,
-		path:       path,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysRawPathExecute(r ApiPostSysRawPathRequest) (*http.Response, error) {
+// PostSysRawPath Update the value of the key at the given path.
+func (a *SystemApiService) PostSysRawPath(ctx context.Context, path string, systemRawRequest SystemRawRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysRawPath")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysRawPath")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/raw/{path}"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(r.path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12300,8 +8853,8 @@ func (a *SystemApiService) PostSysRawPathExecute(r ApiPostSysRawPathRequest) (*h
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemRawRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemRawRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -12329,45 +8882,16 @@ func (a *SystemApiService) PostSysRawPathExecute(r ApiPostSysRawPathRequest) (*h
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysRekeyInitRequest struct {
-	ctx                    context.Context
-	ApiService             *SystemApiService
-	systemRekeyInitRequest *SystemRekeyInitRequest
-}
-
-func (r ApiPostSysRekeyInitRequest) SystemRekeyInitRequest(systemRekeyInitRequest SystemRekeyInitRequest) ApiPostSysRekeyInitRequest {
-	r.systemRekeyInitRequest = &systemRekeyInitRequest
-	return r
-}
-
-func (r ApiPostSysRekeyInitRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysRekeyInitExecute(r)
-}
-
-/*
-PostSysRekeyInit Initializes a new rekey attempt.
-
-Only a single rekey attempt can take place at a time, and changing the parameters of a rekey requires canceling and starting a new rekey, which will also provide a new nonce.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysRekeyInitRequest
-*/
-func (a *SystemApiService) PostSysRekeyInit(ctx context.Context) ApiPostSysRekeyInitRequest {
-	return ApiPostSysRekeyInitRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysRekeyInitExecute(r ApiPostSysRekeyInitRequest) (*http.Response, error) {
+// PostSysRekeyInit Initializes a new rekey attempt.
+// Only a single rekey attempt can take place at a time, and changing the parameters of a rekey requires canceling and starting a new rekey, which will also provide a new nonce.
+func (a *SystemApiService) PostSysRekeyInit(ctx context.Context, systemRekeyInitRequest SystemRekeyInitRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysRekeyInit")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysRekeyInit")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12396,8 +8920,8 @@ func (a *SystemApiService) PostSysRekeyInitExecute(r ApiPostSysRekeyInitRequest)
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemRekeyInitRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemRekeyInitRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -12425,43 +8949,15 @@ func (a *SystemApiService) PostSysRekeyInitExecute(r ApiPostSysRekeyInitRequest)
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysRekeyUpdateRequest struct {
-	ctx                      context.Context
-	ApiService               *SystemApiService
-	systemRekeyUpdateRequest *SystemRekeyUpdateRequest
-}
-
-func (r ApiPostSysRekeyUpdateRequest) SystemRekeyUpdateRequest(systemRekeyUpdateRequest SystemRekeyUpdateRequest) ApiPostSysRekeyUpdateRequest {
-	r.systemRekeyUpdateRequest = &systemRekeyUpdateRequest
-	return r
-}
-
-func (r ApiPostSysRekeyUpdateRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysRekeyUpdateExecute(r)
-}
-
-/*
-PostSysRekeyUpdate Enter a single unseal key share to progress the rekey of the Vault.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysRekeyUpdateRequest
-*/
-func (a *SystemApiService) PostSysRekeyUpdate(ctx context.Context) ApiPostSysRekeyUpdateRequest {
-	return ApiPostSysRekeyUpdateRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysRekeyUpdateExecute(r ApiPostSysRekeyUpdateRequest) (*http.Response, error) {
+// PostSysRekeyUpdate Enter a single unseal key share to progress the rekey of the Vault.
+func (a *SystemApiService) PostSysRekeyUpdate(ctx context.Context, systemRekeyUpdateRequest SystemRekeyUpdateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysRekeyUpdate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysRekeyUpdate")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12490,8 +8986,8 @@ func (a *SystemApiService) PostSysRekeyUpdateExecute(r ApiPostSysRekeyUpdateRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemRekeyUpdateRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemRekeyUpdateRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -12519,43 +9015,15 @@ func (a *SystemApiService) PostSysRekeyUpdateExecute(r ApiPostSysRekeyUpdateRequ
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysRekeyVerifyRequest struct {
-	ctx                      context.Context
-	ApiService               *SystemApiService
-	systemRekeyVerifyRequest *SystemRekeyVerifyRequest
-}
-
-func (r ApiPostSysRekeyVerifyRequest) SystemRekeyVerifyRequest(systemRekeyVerifyRequest SystemRekeyVerifyRequest) ApiPostSysRekeyVerifyRequest {
-	r.systemRekeyVerifyRequest = &systemRekeyVerifyRequest
-	return r
-}
-
-func (r ApiPostSysRekeyVerifyRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysRekeyVerifyExecute(r)
-}
-
-/*
-PostSysRekeyVerify Enter a single new key share to progress the rekey verification operation.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysRekeyVerifyRequest
-*/
-func (a *SystemApiService) PostSysRekeyVerify(ctx context.Context) ApiPostSysRekeyVerifyRequest {
-	return ApiPostSysRekeyVerifyRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysRekeyVerifyExecute(r ApiPostSysRekeyVerifyRequest) (*http.Response, error) {
+// PostSysRekeyVerify Enter a single new key share to progress the rekey verification operation.
+func (a *SystemApiService) PostSysRekeyVerify(ctx context.Context, systemRekeyVerifyRequest SystemRekeyVerifyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysRekeyVerify")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysRekeyVerify")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12584,8 +9052,8 @@ func (a *SystemApiService) PostSysRekeyVerifyExecute(r ApiPostSysRekeyVerifyRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemRekeyVerifyRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemRekeyVerifyRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -12613,43 +9081,15 @@ func (a *SystemApiService) PostSysRekeyVerifyExecute(r ApiPostSysRekeyVerifyRequ
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysRemountRequest struct {
-	ctx                  context.Context
-	ApiService           *SystemApiService
-	systemRemountRequest *SystemRemountRequest
-}
-
-func (r ApiPostSysRemountRequest) SystemRemountRequest(systemRemountRequest SystemRemountRequest) ApiPostSysRemountRequest {
-	r.systemRemountRequest = &systemRemountRequest
-	return r
-}
-
-func (r ApiPostSysRemountRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysRemountExecute(r)
-}
-
-/*
-PostSysRemount Initiate a mount migration
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysRemountRequest
-*/
-func (a *SystemApiService) PostSysRemount(ctx context.Context) ApiPostSysRemountRequest {
-	return ApiPostSysRemountRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysRemountExecute(r ApiPostSysRemountRequest) (*http.Response, error) {
+// PostSysRemount Initiate a mount migration
+func (a *SystemApiService) PostSysRemount(ctx context.Context, systemRemountRequest SystemRemountRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysRemount")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysRemount")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12678,8 +9118,8 @@ func (a *SystemApiService) PostSysRemountExecute(r ApiPostSysRemountRequest) (*h
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemRemountRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemRemountRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -12707,43 +9147,15 @@ func (a *SystemApiService) PostSysRemountExecute(r ApiPostSysRemountRequest) (*h
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysRenewRequest struct {
-	ctx                context.Context
-	ApiService         *SystemApiService
-	systemRenewRequest *SystemRenewRequest
-}
-
-func (r ApiPostSysRenewRequest) SystemRenewRequest(systemRenewRequest SystemRenewRequest) ApiPostSysRenewRequest {
-	r.systemRenewRequest = &systemRenewRequest
-	return r
-}
-
-func (r ApiPostSysRenewRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysRenewExecute(r)
-}
-
-/*
-PostSysRenew Renews a lease, requesting to extend the lease.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysRenewRequest
-*/
-func (a *SystemApiService) PostSysRenew(ctx context.Context) ApiPostSysRenewRequest {
-	return ApiPostSysRenewRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysRenewExecute(r ApiPostSysRenewRequest) (*http.Response, error) {
+// PostSysRenew Renews a lease, requesting to extend the lease.
+func (a *SystemApiService) PostSysRenew(ctx context.Context, systemRenewRequest SystemRenewRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysRenew")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysRenew")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12772,8 +9184,8 @@ func (a *SystemApiService) PostSysRenewExecute(r ApiPostSysRenewRequest) (*http.
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemRenewRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemRenewRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -12801,52 +9213,22 @@ func (a *SystemApiService) PostSysRenewExecute(r ApiPostSysRenewRequest) (*http.
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysRenewUrlLeaseIdRequest struct {
-	ctx                     context.Context
-	ApiService              *SystemApiService
-	urlLeaseId              string
-	systemRenewLeaseRequest *SystemRenewLeaseRequest
-}
-
-func (r ApiPostSysRenewUrlLeaseIdRequest) SystemRenewLeaseRequest(systemRenewLeaseRequest SystemRenewLeaseRequest) ApiPostSysRenewUrlLeaseIdRequest {
-	r.systemRenewLeaseRequest = &systemRenewLeaseRequest
-	return r
-}
-
-func (r ApiPostSysRenewUrlLeaseIdRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysRenewUrlLeaseIdExecute(r)
-}
-
-/*
-PostSysRenewUrlLeaseId Renews a lease, requesting to extend the lease.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param urlLeaseId The lease identifier to renew. This is included with a lease.
- @return ApiPostSysRenewUrlLeaseIdRequest
-*/
-func (a *SystemApiService) PostSysRenewUrlLeaseId(ctx context.Context, urlLeaseId string) ApiPostSysRenewUrlLeaseIdRequest {
-	return ApiPostSysRenewUrlLeaseIdRequest{
-		ApiService: a,
-		ctx:        ctx,
-		urlLeaseId: urlLeaseId,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysRenewUrlLeaseIdExecute(r ApiPostSysRenewUrlLeaseIdRequest) (*http.Response, error) {
+// PostSysRenewUrlLeaseId Renews a lease, requesting to extend the lease.
+// urlLeaseId: The lease identifier to renew. This is included with a lease.
+func (a *SystemApiService) PostSysRenewUrlLeaseId(ctx context.Context, urlLeaseId string, systemRenewLeaseRequest SystemRenewLeaseRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysRenewUrlLeaseId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysRenewUrlLeaseId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/renew/{url_lease_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"url_lease_id"+"}", url.PathEscape(parameterToString(r.urlLeaseId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"url_lease_id"+"}", url.PathEscape(parameterToString(urlLeaseId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12870,8 +9252,8 @@ func (a *SystemApiService) PostSysRenewUrlLeaseIdExecute(r ApiPostSysRenewUrlLea
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemRenewLeaseRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemRenewLeaseRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -12899,43 +9281,15 @@ func (a *SystemApiService) PostSysRenewUrlLeaseIdExecute(r ApiPostSysRenewUrlLea
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysRevokeRequest struct {
-	ctx                 context.Context
-	ApiService          *SystemApiService
-	systemRevokeRequest *SystemRevokeRequest
-}
-
-func (r ApiPostSysRevokeRequest) SystemRevokeRequest(systemRevokeRequest SystemRevokeRequest) ApiPostSysRevokeRequest {
-	r.systemRevokeRequest = &systemRevokeRequest
-	return r
-}
-
-func (r ApiPostSysRevokeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysRevokeExecute(r)
-}
-
-/*
-PostSysRevoke Revokes a lease immediately.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysRevokeRequest
-*/
-func (a *SystemApiService) PostSysRevoke(ctx context.Context) ApiPostSysRevokeRequest {
-	return ApiPostSysRevokeRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysRevokeExecute(r ApiPostSysRevokeRequest) (*http.Response, error) {
+// PostSysRevoke Revokes a lease immediately.
+func (a *SystemApiService) PostSysRevoke(ctx context.Context, systemRevokeRequest SystemRevokeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysRevoke")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysRevoke")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -12964,8 +9318,8 @@ func (a *SystemApiService) PostSysRevokeExecute(r ApiPostSysRevokeRequest) (*htt
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemRevokeRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemRevokeRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -12993,50 +9347,23 @@ func (a *SystemApiService) PostSysRevokeExecute(r ApiPostSysRevokeRequest) (*htt
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysRevokeForcePrefixRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-	prefix     string
-}
-
-func (r ApiPostSysRevokeForcePrefixRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysRevokeForcePrefixExecute(r)
-}
-
-/*
-PostSysRevokeForcePrefix Revokes all secrets or tokens generated under a given prefix immediately
-
-Unlike `/sys/leases/revoke-prefix`, this path ignores backend errors encountered during revocation. This is potentially very dangerous and should only be used in specific emergency situations where errors in the backend or the connected backend service prevent normal revocation.
-
-By ignoring these errors, Vault abdicates responsibility for ensuring that the issued credentials or secrets are properly revoked and/or cleaned up. Access to this endpoint should be tightly controlled.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param prefix The path to revoke keys under. Example: \"prod/aws/ops\"
- @return ApiPostSysRevokeForcePrefixRequest
-*/
-func (a *SystemApiService) PostSysRevokeForcePrefix(ctx context.Context, prefix string) ApiPostSysRevokeForcePrefixRequest {
-	return ApiPostSysRevokeForcePrefixRequest{
-		ApiService: a,
-		ctx:        ctx,
-		prefix:     prefix,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysRevokeForcePrefixExecute(r ApiPostSysRevokeForcePrefixRequest) (*http.Response, error) {
+// PostSysRevokeForcePrefix Revokes all secrets or tokens generated under a given prefix immediately
+// Unlike `/sys/leases/revoke-prefix`, this path ignores backend errors encountered during revocation. This is potentially very dangerous and should only be used in specific emergency situations where errors in the backend or the connected backend service prevent normal revocation.  By ignoring these errors, Vault abdicates responsibility for ensuring that the issued credentials or secrets are properly revoked and/or cleaned up. Access to this endpoint should be tightly controlled.
+// prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
+func (a *SystemApiService) PostSysRevokeForcePrefix(ctx context.Context, prefix string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysRevokeForcePrefix")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysRevokeForcePrefix")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/revoke-force/{prefix}"
-	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(r.prefix, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(prefix, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13059,7 +9386,7 @@ func (a *SystemApiService) PostSysRevokeForcePrefixExecute(r ApiPostSysRevokeFor
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -13087,52 +9414,22 @@ func (a *SystemApiService) PostSysRevokeForcePrefixExecute(r ApiPostSysRevokeFor
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysRevokePrefixPrefixRequest struct {
-	ctx                       context.Context
-	ApiService                *SystemApiService
-	prefix                    string
-	systemRevokePrefixRequest *SystemRevokePrefixRequest
-}
-
-func (r ApiPostSysRevokePrefixPrefixRequest) SystemRevokePrefixRequest(systemRevokePrefixRequest SystemRevokePrefixRequest) ApiPostSysRevokePrefixPrefixRequest {
-	r.systemRevokePrefixRequest = &systemRevokePrefixRequest
-	return r
-}
-
-func (r ApiPostSysRevokePrefixPrefixRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysRevokePrefixPrefixExecute(r)
-}
-
-/*
-PostSysRevokePrefixPrefix Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param prefix The path to revoke keys under. Example: \"prod/aws/ops\"
- @return ApiPostSysRevokePrefixPrefixRequest
-*/
-func (a *SystemApiService) PostSysRevokePrefixPrefix(ctx context.Context, prefix string) ApiPostSysRevokePrefixPrefixRequest {
-	return ApiPostSysRevokePrefixPrefixRequest{
-		ApiService: a,
-		ctx:        ctx,
-		prefix:     prefix,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysRevokePrefixPrefixExecute(r ApiPostSysRevokePrefixPrefixRequest) (*http.Response, error) {
+// PostSysRevokePrefixPrefix Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
+// prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
+func (a *SystemApiService) PostSysRevokePrefixPrefix(ctx context.Context, prefix string, systemRevokePrefixRequest SystemRevokePrefixRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysRevokePrefixPrefix")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysRevokePrefixPrefix")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/revoke-prefix/{prefix}"
-	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(r.prefix, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(prefix, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13156,8 +9453,8 @@ func (a *SystemApiService) PostSysRevokePrefixPrefixExecute(r ApiPostSysRevokePr
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemRevokePrefixRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemRevokePrefixRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -13185,52 +9482,22 @@ func (a *SystemApiService) PostSysRevokePrefixPrefixExecute(r ApiPostSysRevokePr
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysRevokeUrlLeaseIdRequest struct {
-	ctx                      context.Context
-	ApiService               *SystemApiService
-	urlLeaseId               string
-	systemRevokeLeaseRequest *SystemRevokeLeaseRequest
-}
-
-func (r ApiPostSysRevokeUrlLeaseIdRequest) SystemRevokeLeaseRequest(systemRevokeLeaseRequest SystemRevokeLeaseRequest) ApiPostSysRevokeUrlLeaseIdRequest {
-	r.systemRevokeLeaseRequest = &systemRevokeLeaseRequest
-	return r
-}
-
-func (r ApiPostSysRevokeUrlLeaseIdRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysRevokeUrlLeaseIdExecute(r)
-}
-
-/*
-PostSysRevokeUrlLeaseId Revokes a lease immediately.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param urlLeaseId The lease identifier to renew. This is included with a lease.
- @return ApiPostSysRevokeUrlLeaseIdRequest
-*/
-func (a *SystemApiService) PostSysRevokeUrlLeaseId(ctx context.Context, urlLeaseId string) ApiPostSysRevokeUrlLeaseIdRequest {
-	return ApiPostSysRevokeUrlLeaseIdRequest{
-		ApiService: a,
-		ctx:        ctx,
-		urlLeaseId: urlLeaseId,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysRevokeUrlLeaseIdExecute(r ApiPostSysRevokeUrlLeaseIdRequest) (*http.Response, error) {
+// PostSysRevokeUrlLeaseId Revokes a lease immediately.
+// urlLeaseId: The lease identifier to renew. This is included with a lease.
+func (a *SystemApiService) PostSysRevokeUrlLeaseId(ctx context.Context, urlLeaseId string, systemRevokeLeaseRequest SystemRevokeLeaseRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysRevokeUrlLeaseId")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysRevokeUrlLeaseId")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/revoke/{url_lease_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"url_lease_id"+"}", url.PathEscape(parameterToString(r.urlLeaseId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"url_lease_id"+"}", url.PathEscape(parameterToString(urlLeaseId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13254,8 +9521,8 @@ func (a *SystemApiService) PostSysRevokeUrlLeaseIdExecute(r ApiPostSysRevokeUrlL
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemRevokeLeaseRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemRevokeLeaseRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -13283,37 +9550,15 @@ func (a *SystemApiService) PostSysRevokeUrlLeaseIdExecute(r ApiPostSysRevokeUrlL
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysRotateRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiPostSysRotateRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysRotateExecute(r)
-}
-
-/*
-PostSysRotate Rotates the backend encryption key used to persist data.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysRotateRequest
-*/
-func (a *SystemApiService) PostSysRotate(ctx context.Context) ApiPostSysRotateRequest {
-	return ApiPostSysRotateRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysRotateExecute(r ApiPostSysRotateRequest) (*http.Response, error) {
+// PostSysRotate Rotates the backend encryption key used to persist data.
+func (a *SystemApiService) PostSysRotate(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysRotate")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysRotate")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13341,7 +9586,7 @@ func (a *SystemApiService) PostSysRotateExecute(r ApiPostSysRotateRequest) (*htt
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -13369,43 +9614,15 @@ func (a *SystemApiService) PostSysRotateExecute(r ApiPostSysRotateRequest) (*htt
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysRotateConfigRequest struct {
-	ctx                       context.Context
-	ApiService                *SystemApiService
-	systemRotateConfigRequest *SystemRotateConfigRequest
-}
-
-func (r ApiPostSysRotateConfigRequest) SystemRotateConfigRequest(systemRotateConfigRequest SystemRotateConfigRequest) ApiPostSysRotateConfigRequest {
-	r.systemRotateConfigRequest = &systemRotateConfigRequest
-	return r
-}
-
-func (r ApiPostSysRotateConfigRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysRotateConfigExecute(r)
-}
-
-/*
-PostSysRotateConfig Method for PostSysRotateConfig
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysRotateConfigRequest
-*/
-func (a *SystemApiService) PostSysRotateConfig(ctx context.Context) ApiPostSysRotateConfigRequest {
-	return ApiPostSysRotateConfigRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysRotateConfigExecute(r ApiPostSysRotateConfigRequest) (*http.Response, error) {
+// PostSysRotateConfig
+func (a *SystemApiService) PostSysRotateConfig(ctx context.Context, systemRotateConfigRequest SystemRotateConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysRotateConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysRotateConfig")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13434,8 +9651,8 @@ func (a *SystemApiService) PostSysRotateConfigExecute(r ApiPostSysRotateConfigRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemRotateConfigRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemRotateConfigRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -13463,37 +9680,15 @@ func (a *SystemApiService) PostSysRotateConfigExecute(r ApiPostSysRotateConfigRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysSealRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiPostSysSealRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysSealExecute(r)
-}
-
-/*
-PostSysSeal Seal the Vault.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysSealRequest
-*/
-func (a *SystemApiService) PostSysSeal(ctx context.Context) ApiPostSysSealRequest {
-	return ApiPostSysSealRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysSealExecute(r ApiPostSysSealRequest) (*http.Response, error) {
+// PostSysSeal Seal the Vault.
+func (a *SystemApiService) PostSysSeal(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysSeal")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysSeal")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13521,7 +9716,7 @@ func (a *SystemApiService) PostSysSealExecute(r ApiPostSysSealRequest) (*http.Re
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -13549,39 +9744,16 @@ func (a *SystemApiService) PostSysSealExecute(r ApiPostSysSealRequest) (*http.Re
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysStepDownRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiPostSysStepDownRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysStepDownExecute(r)
-}
-
-/*
-PostSysStepDown Cause the node to give up active status.
-
-This endpoint forces the node to give up active status. If the node does not have active status, this endpoint does nothing. Note that the node will sleep for ten seconds before attempting to grab the active lock again, but if no standby nodes grab the active lock in the interim, the same node may become the active node again.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysStepDownRequest
-*/
-func (a *SystemApiService) PostSysStepDown(ctx context.Context) ApiPostSysStepDownRequest {
-	return ApiPostSysStepDownRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysStepDownExecute(r ApiPostSysStepDownRequest) (*http.Response, error) {
+// PostSysStepDown Cause the node to give up active status.
+// This endpoint forces the node to give up active status. If the node does not have active status, this endpoint does nothing. Note that the node will sleep for ten seconds before attempting to grab the active lock again, but if no standby nodes grab the active lock in the interim, the same node may become the active node again.
+func (a *SystemApiService) PostSysStepDown(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysStepDown")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysStepDown")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13609,7 +9781,7 @@ func (a *SystemApiService) PostSysStepDownExecute(r ApiPostSysStepDownRequest) (
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -13637,43 +9809,15 @@ func (a *SystemApiService) PostSysStepDownExecute(r ApiPostSysStepDownRequest) (
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysToolsHashRequest struct {
-	ctx                    context.Context
-	ApiService             *SystemApiService
-	systemToolsHashRequest *SystemToolsHashRequest
-}
-
-func (r ApiPostSysToolsHashRequest) SystemToolsHashRequest(systemToolsHashRequest SystemToolsHashRequest) ApiPostSysToolsHashRequest {
-	r.systemToolsHashRequest = &systemToolsHashRequest
-	return r
-}
-
-func (r ApiPostSysToolsHashRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysToolsHashExecute(r)
-}
-
-/*
-PostSysToolsHash Generate a hash sum for input data
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysToolsHashRequest
-*/
-func (a *SystemApiService) PostSysToolsHash(ctx context.Context) ApiPostSysToolsHashRequest {
-	return ApiPostSysToolsHashRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysToolsHashExecute(r ApiPostSysToolsHashRequest) (*http.Response, error) {
+// PostSysToolsHash Generate a hash sum for input data
+func (a *SystemApiService) PostSysToolsHash(ctx context.Context, systemToolsHashRequest SystemToolsHashRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysToolsHash")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysToolsHash")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13702,8 +9846,8 @@ func (a *SystemApiService) PostSysToolsHashExecute(r ApiPostSysToolsHashRequest)
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemToolsHashRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemToolsHashRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -13731,52 +9875,22 @@ func (a *SystemApiService) PostSysToolsHashExecute(r ApiPostSysToolsHashRequest)
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysToolsHashUrlalgorithmRequest struct {
-	ctx                    context.Context
-	ApiService             *SystemApiService
-	urlalgorithm           string
-	systemToolsHashRequest *SystemToolsHashRequest
-}
-
-func (r ApiPostSysToolsHashUrlalgorithmRequest) SystemToolsHashRequest(systemToolsHashRequest SystemToolsHashRequest) ApiPostSysToolsHashUrlalgorithmRequest {
-	r.systemToolsHashRequest = &systemToolsHashRequest
-	return r
-}
-
-func (r ApiPostSysToolsHashUrlalgorithmRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysToolsHashUrlalgorithmExecute(r)
-}
-
-/*
-PostSysToolsHashUrlalgorithm Generate a hash sum for input data
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param urlalgorithm Algorithm to use (POST URL parameter)
- @return ApiPostSysToolsHashUrlalgorithmRequest
-*/
-func (a *SystemApiService) PostSysToolsHashUrlalgorithm(ctx context.Context, urlalgorithm string) ApiPostSysToolsHashUrlalgorithmRequest {
-	return ApiPostSysToolsHashUrlalgorithmRequest{
-		ApiService:   a,
-		ctx:          ctx,
-		urlalgorithm: urlalgorithm,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysToolsHashUrlalgorithmExecute(r ApiPostSysToolsHashUrlalgorithmRequest) (*http.Response, error) {
+// PostSysToolsHashUrlalgorithm Generate a hash sum for input data
+// urlalgorithm: Algorithm to use (POST URL parameter)
+func (a *SystemApiService) PostSysToolsHashUrlalgorithm(ctx context.Context, urlalgorithm string, systemToolsHashRequest SystemToolsHashRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysToolsHashUrlalgorithm")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysToolsHashUrlalgorithm")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/tools/hash/{urlalgorithm}"
-	localVarPath = strings.Replace(localVarPath, "{"+"urlalgorithm"+"}", url.PathEscape(parameterToString(r.urlalgorithm, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"urlalgorithm"+"}", url.PathEscape(parameterToString(urlalgorithm, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13800,8 +9914,8 @@ func (a *SystemApiService) PostSysToolsHashUrlalgorithmExecute(r ApiPostSysTools
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemToolsHashRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemToolsHashRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -13829,43 +9943,15 @@ func (a *SystemApiService) PostSysToolsHashUrlalgorithmExecute(r ApiPostSysTools
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysToolsRandomRequest struct {
-	ctx                      context.Context
-	ApiService               *SystemApiService
-	systemToolsRandomRequest *SystemToolsRandomRequest
-}
-
-func (r ApiPostSysToolsRandomRequest) SystemToolsRandomRequest(systemToolsRandomRequest SystemToolsRandomRequest) ApiPostSysToolsRandomRequest {
-	r.systemToolsRandomRequest = &systemToolsRandomRequest
-	return r
-}
-
-func (r ApiPostSysToolsRandomRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysToolsRandomExecute(r)
-}
-
-/*
-PostSysToolsRandom Generate random bytes
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysToolsRandomRequest
-*/
-func (a *SystemApiService) PostSysToolsRandom(ctx context.Context) ApiPostSysToolsRandomRequest {
-	return ApiPostSysToolsRandomRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysToolsRandomExecute(r ApiPostSysToolsRandomRequest) (*http.Response, error) {
+// PostSysToolsRandom Generate random bytes
+func (a *SystemApiService) PostSysToolsRandom(ctx context.Context, systemToolsRandomRequest SystemToolsRandomRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysToolsRandom")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysToolsRandom")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -13894,8 +9980,8 @@ func (a *SystemApiService) PostSysToolsRandomExecute(r ApiPostSysToolsRandomRequ
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemToolsRandomRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemToolsRandomRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -13923,52 +10009,22 @@ func (a *SystemApiService) PostSysToolsRandomExecute(r ApiPostSysToolsRandomRequ
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysToolsRandomSourceRequest struct {
-	ctx                      context.Context
-	ApiService               *SystemApiService
-	source                   string
-	systemToolsRandomRequest *SystemToolsRandomRequest
-}
-
-func (r ApiPostSysToolsRandomSourceRequest) SystemToolsRandomRequest(systemToolsRandomRequest SystemToolsRandomRequest) ApiPostSysToolsRandomSourceRequest {
-	r.systemToolsRandomRequest = &systemToolsRandomRequest
-	return r
-}
-
-func (r ApiPostSysToolsRandomSourceRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysToolsRandomSourceExecute(r)
-}
-
-/*
-PostSysToolsRandomSource Generate random bytes
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param source Which system to source random data from, ether \"platform\", \"seal\", or \"all\".
- @return ApiPostSysToolsRandomSourceRequest
-*/
-func (a *SystemApiService) PostSysToolsRandomSource(ctx context.Context, source string) ApiPostSysToolsRandomSourceRequest {
-	return ApiPostSysToolsRandomSourceRequest{
-		ApiService: a,
-		ctx:        ctx,
-		source:     source,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysToolsRandomSourceExecute(r ApiPostSysToolsRandomSourceRequest) (*http.Response, error) {
+// PostSysToolsRandomSource Generate random bytes
+// source: Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;.
+func (a *SystemApiService) PostSysToolsRandomSource(ctx context.Context, source string, systemToolsRandomRequest SystemToolsRandomRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysToolsRandomSource")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysToolsRandomSource")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/tools/random/{source}"
-	localVarPath = strings.Replace(localVarPath, "{"+"source"+"}", url.PathEscape(parameterToString(r.source, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"source"+"}", url.PathEscape(parameterToString(source, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13992,8 +10048,8 @@ func (a *SystemApiService) PostSysToolsRandomSourceExecute(r ApiPostSysToolsRand
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemToolsRandomRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemToolsRandomRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -14021,56 +10077,24 @@ func (a *SystemApiService) PostSysToolsRandomSourceExecute(r ApiPostSysToolsRand
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysToolsRandomSourceUrlbytesRequest struct {
-	ctx                      context.Context
-	ApiService               *SystemApiService
-	source                   string
-	urlbytes                 string
-	systemToolsRandomRequest *SystemToolsRandomRequest
-}
-
-func (r ApiPostSysToolsRandomSourceUrlbytesRequest) SystemToolsRandomRequest(systemToolsRandomRequest SystemToolsRandomRequest) ApiPostSysToolsRandomSourceUrlbytesRequest {
-	r.systemToolsRandomRequest = &systemToolsRandomRequest
-	return r
-}
-
-func (r ApiPostSysToolsRandomSourceUrlbytesRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysToolsRandomSourceUrlbytesExecute(r)
-}
-
-/*
-PostSysToolsRandomSourceUrlbytes Generate random bytes
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param source Which system to source random data from, ether \"platform\", \"seal\", or \"all\".
- @param urlbytes The number of bytes to generate (POST URL parameter)
- @return ApiPostSysToolsRandomSourceUrlbytesRequest
-*/
-func (a *SystemApiService) PostSysToolsRandomSourceUrlbytes(ctx context.Context, source string, urlbytes string) ApiPostSysToolsRandomSourceUrlbytesRequest {
-	return ApiPostSysToolsRandomSourceUrlbytesRequest{
-		ApiService: a,
-		ctx:        ctx,
-		source:     source,
-		urlbytes:   urlbytes,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysToolsRandomSourceUrlbytesExecute(r ApiPostSysToolsRandomSourceUrlbytesRequest) (*http.Response, error) {
+// PostSysToolsRandomSourceUrlbytes Generate random bytes
+// source: Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;.
+// urlbytes: The number of bytes to generate (POST URL parameter)
+func (a *SystemApiService) PostSysToolsRandomSourceUrlbytes(ctx context.Context, source string, urlbytes string, systemToolsRandomRequest SystemToolsRandomRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysToolsRandomSourceUrlbytes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysToolsRandomSourceUrlbytes")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/tools/random/{source}/{urlbytes}"
-	localVarPath = strings.Replace(localVarPath, "{"+"source"+"}", url.PathEscape(parameterToString(r.source, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"urlbytes"+"}", url.PathEscape(parameterToString(r.urlbytes, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"source"+"}", url.PathEscape(parameterToString(source, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"urlbytes"+"}", url.PathEscape(parameterToString(urlbytes, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14094,8 +10118,8 @@ func (a *SystemApiService) PostSysToolsRandomSourceUrlbytesExecute(r ApiPostSysT
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemToolsRandomRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemToolsRandomRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -14123,52 +10147,22 @@ func (a *SystemApiService) PostSysToolsRandomSourceUrlbytesExecute(r ApiPostSysT
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysToolsRandomUrlbytesRequest struct {
-	ctx                      context.Context
-	ApiService               *SystemApiService
-	urlbytes                 string
-	systemToolsRandomRequest *SystemToolsRandomRequest
-}
-
-func (r ApiPostSysToolsRandomUrlbytesRequest) SystemToolsRandomRequest(systemToolsRandomRequest SystemToolsRandomRequest) ApiPostSysToolsRandomUrlbytesRequest {
-	r.systemToolsRandomRequest = &systemToolsRandomRequest
-	return r
-}
-
-func (r ApiPostSysToolsRandomUrlbytesRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysToolsRandomUrlbytesExecute(r)
-}
-
-/*
-PostSysToolsRandomUrlbytes Generate random bytes
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param urlbytes The number of bytes to generate (POST URL parameter)
- @return ApiPostSysToolsRandomUrlbytesRequest
-*/
-func (a *SystemApiService) PostSysToolsRandomUrlbytes(ctx context.Context, urlbytes string) ApiPostSysToolsRandomUrlbytesRequest {
-	return ApiPostSysToolsRandomUrlbytesRequest{
-		ApiService: a,
-		ctx:        ctx,
-		urlbytes:   urlbytes,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysToolsRandomUrlbytesExecute(r ApiPostSysToolsRandomUrlbytesRequest) (*http.Response, error) {
+// PostSysToolsRandomUrlbytes Generate random bytes
+// urlbytes: The number of bytes to generate (POST URL parameter)
+func (a *SystemApiService) PostSysToolsRandomUrlbytes(ctx context.Context, urlbytes string, systemToolsRandomRequest SystemToolsRandomRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysToolsRandomUrlbytes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysToolsRandomUrlbytes")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sys/tools/random/{urlbytes}"
-	localVarPath = strings.Replace(localVarPath, "{"+"urlbytes"+"}", url.PathEscape(parameterToString(r.urlbytes, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"urlbytes"+"}", url.PathEscape(parameterToString(urlbytes, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14192,8 +10186,8 @@ func (a *SystemApiService) PostSysToolsRandomUrlbytesExecute(r ApiPostSysToolsRa
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemToolsRandomRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemToolsRandomRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -14221,43 +10215,15 @@ func (a *SystemApiService) PostSysToolsRandomUrlbytesExecute(r ApiPostSysToolsRa
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysUnsealRequest struct {
-	ctx                 context.Context
-	ApiService          *SystemApiService
-	systemUnsealRequest *SystemUnsealRequest
-}
-
-func (r ApiPostSysUnsealRequest) SystemUnsealRequest(systemUnsealRequest SystemUnsealRequest) ApiPostSysUnsealRequest {
-	r.systemUnsealRequest = &systemUnsealRequest
-	return r
-}
-
-func (r ApiPostSysUnsealRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysUnsealExecute(r)
-}
-
-/*
-PostSysUnseal Unseal the Vault.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysUnsealRequest
-*/
-func (a *SystemApiService) PostSysUnseal(ctx context.Context) ApiPostSysUnsealRequest {
-	return ApiPostSysUnsealRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysUnsealExecute(r ApiPostSysUnsealRequest) (*http.Response, error) {
+// PostSysUnseal Unseal the Vault.
+func (a *SystemApiService) PostSysUnseal(ctx context.Context, systemUnsealRequest SystemUnsealRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysUnseal")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysUnseal")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14286,8 +10252,8 @@ func (a *SystemApiService) PostSysUnsealExecute(r ApiPostSysUnsealRequest) (*htt
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemUnsealRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemUnsealRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -14315,43 +10281,15 @@ func (a *SystemApiService) PostSysUnsealExecute(r ApiPostSysUnsealRequest) (*htt
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysWrappingLookupRequest struct {
-	ctx                         context.Context
-	ApiService                  *SystemApiService
-	systemWrappingLookupRequest *SystemWrappingLookupRequest
-}
-
-func (r ApiPostSysWrappingLookupRequest) SystemWrappingLookupRequest(systemWrappingLookupRequest SystemWrappingLookupRequest) ApiPostSysWrappingLookupRequest {
-	r.systemWrappingLookupRequest = &systemWrappingLookupRequest
-	return r
-}
-
-func (r ApiPostSysWrappingLookupRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysWrappingLookupExecute(r)
-}
-
-/*
-PostSysWrappingLookup Look up wrapping properties for the given token.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysWrappingLookupRequest
-*/
-func (a *SystemApiService) PostSysWrappingLookup(ctx context.Context) ApiPostSysWrappingLookupRequest {
-	return ApiPostSysWrappingLookupRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysWrappingLookupExecute(r ApiPostSysWrappingLookupRequest) (*http.Response, error) {
+// PostSysWrappingLookup Look up wrapping properties for the given token.
+func (a *SystemApiService) PostSysWrappingLookup(ctx context.Context, systemWrappingLookupRequest SystemWrappingLookupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysWrappingLookup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysWrappingLookup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14380,8 +10318,8 @@ func (a *SystemApiService) PostSysWrappingLookupExecute(r ApiPostSysWrappingLook
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemWrappingLookupRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemWrappingLookupRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -14409,43 +10347,15 @@ func (a *SystemApiService) PostSysWrappingLookupExecute(r ApiPostSysWrappingLook
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysWrappingRewrapRequest struct {
-	ctx                         context.Context
-	ApiService                  *SystemApiService
-	systemWrappingRewrapRequest *SystemWrappingRewrapRequest
-}
-
-func (r ApiPostSysWrappingRewrapRequest) SystemWrappingRewrapRequest(systemWrappingRewrapRequest SystemWrappingRewrapRequest) ApiPostSysWrappingRewrapRequest {
-	r.systemWrappingRewrapRequest = &systemWrappingRewrapRequest
-	return r
-}
-
-func (r ApiPostSysWrappingRewrapRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysWrappingRewrapExecute(r)
-}
-
-/*
-PostSysWrappingRewrap Rotates a response-wrapped token.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysWrappingRewrapRequest
-*/
-func (a *SystemApiService) PostSysWrappingRewrap(ctx context.Context) ApiPostSysWrappingRewrapRequest {
-	return ApiPostSysWrappingRewrapRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysWrappingRewrapExecute(r ApiPostSysWrappingRewrapRequest) (*http.Response, error) {
+// PostSysWrappingRewrap Rotates a response-wrapped token.
+func (a *SystemApiService) PostSysWrappingRewrap(ctx context.Context, systemWrappingRewrapRequest SystemWrappingRewrapRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysWrappingRewrap")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysWrappingRewrap")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14474,8 +10384,8 @@ func (a *SystemApiService) PostSysWrappingRewrapExecute(r ApiPostSysWrappingRewr
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemWrappingRewrapRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemWrappingRewrapRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -14503,43 +10413,15 @@ func (a *SystemApiService) PostSysWrappingRewrapExecute(r ApiPostSysWrappingRewr
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysWrappingUnwrapRequest struct {
-	ctx                         context.Context
-	ApiService                  *SystemApiService
-	systemWrappingUnwrapRequest *SystemWrappingUnwrapRequest
-}
-
-func (r ApiPostSysWrappingUnwrapRequest) SystemWrappingUnwrapRequest(systemWrappingUnwrapRequest SystemWrappingUnwrapRequest) ApiPostSysWrappingUnwrapRequest {
-	r.systemWrappingUnwrapRequest = &systemWrappingUnwrapRequest
-	return r
-}
-
-func (r ApiPostSysWrappingUnwrapRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysWrappingUnwrapExecute(r)
-}
-
-/*
-PostSysWrappingUnwrap Unwraps a response-wrapped token.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysWrappingUnwrapRequest
-*/
-func (a *SystemApiService) PostSysWrappingUnwrap(ctx context.Context) ApiPostSysWrappingUnwrapRequest {
-	return ApiPostSysWrappingUnwrapRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysWrappingUnwrapExecute(r ApiPostSysWrappingUnwrapRequest) (*http.Response, error) {
+// PostSysWrappingUnwrap Unwraps a response-wrapped token.
+func (a *SystemApiService) PostSysWrappingUnwrap(ctx context.Context, systemWrappingUnwrapRequest SystemWrappingUnwrapRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysWrappingUnwrap")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysWrappingUnwrap")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14568,8 +10450,8 @@ func (a *SystemApiService) PostSysWrappingUnwrapExecute(r ApiPostSysWrappingUnwr
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.systemWrappingUnwrapRequest
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	localVarPostBody = systemWrappingUnwrapRequest
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}
@@ -14597,37 +10479,15 @@ func (a *SystemApiService) PostSysWrappingUnwrapExecute(r ApiPostSysWrappingUnwr
 	return localVarHTTPResponse, nil
 }
 
-type ApiPostSysWrappingWrapRequest struct {
-	ctx        context.Context
-	ApiService *SystemApiService
-}
-
-func (r ApiPostSysWrappingWrapRequest) Execute() (*http.Response, error) {
-	return r.ApiService.PostSysWrappingWrapExecute(r)
-}
-
-/*
-PostSysWrappingWrap Response-wraps an arbitrary JSON object.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostSysWrappingWrapRequest
-*/
-func (a *SystemApiService) PostSysWrappingWrap(ctx context.Context) ApiPostSysWrappingWrapRequest {
-	return ApiPostSysWrappingWrapRequest{
-		ApiService: a,
-		ctx:        ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SystemApiService) PostSysWrappingWrapExecute(r ApiPostSysWrappingWrapRequest) (*http.Response, error) {
+// PostSysWrappingWrap Response-wraps an arbitrary JSON object.
+func (a *SystemApiService) PostSysWrappingWrap(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SystemApiService.PostSysWrappingWrap")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysWrappingWrap")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -14655,7 +10515,7 @@ func (a *SystemApiService) PostSysWrappingWrapExecute(r ApiPostSysWrappingWrapRe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
 	}

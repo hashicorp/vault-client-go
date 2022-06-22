@@ -52,5 +52,5 @@ func DefaultConfiguration() (*Configuration, error) {
 		Address:    "https://127.0.0.1:8200",
 		HTTPClient: client,
 		Timeout:    60 * time.Second,
-	}
+	}, nil
 }

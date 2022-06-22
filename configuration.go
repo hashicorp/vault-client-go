@@ -22,19 +22,19 @@ import (
 
 // Configuration is used to configure the creation of the client
 type Configuration struct {
-	// Address is the Vault server address in the form scheme://host:port
+	// Address specifies the Vault server URL in the form of scheme://host:port
 	// Default: https://127.0.0.1:8200
 	Address string
 
-	// HTTPClient is the HTTP client to use for requests.
+	// HTTPClient is the HTTP client to use for all API requests.
 	// DefaultConfiguration() sets reasonable defaults for the HTTPClient and
 	// its associated http.Transport. If you must modify Vault's defaults, it
 	// is suggested that you start with that client and modify it as needed
-	// rather than starting with an empty client (or http.DefaultClient).
+	// rather than starting with an empty client or http.DefaultClient.
 	HTTPClient *http.Client
 
 	// Timeout is the global request timeout. Specifying this value is the
-	// equivalent of using context.WithTimeout(timeout) for every request.
+	// equivalent of using context.WithTimeout(timeout) for every API request.
 	// Default: 60 seconds
 	Timeout time.Duration
 }

@@ -31,7 +31,7 @@ func (a *SystemApiService) DeleteSysAuditPath(ctx context.Context, path string) 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/audit/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/audit/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -98,7 +98,7 @@ func (a *SystemApiService) DeleteSysAuthPath(ctx context.Context, path string) (
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/auth/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/auth/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -164,7 +164,7 @@ func (a *SystemApiService) DeleteSysConfigAuditingRequestHeadersHeader(ctx conte
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/config/auditing/request-headers/{header}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/config/auditing/request-headers/{header}"
 	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -230,7 +230,7 @@ func (a *SystemApiService) DeleteSysConfigCors(ctx context.Context) (*http.Respo
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/config/cors"
+	localVarPath := a.client.cfg.Address + "/v1/sys/config/cors"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -296,7 +296,7 @@ func (a *SystemApiService) DeleteSysConfigUiHeadersHeader(ctx context.Context, h
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/config/ui/headers/{header}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/config/ui/headers/{header}"
 	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -362,7 +362,7 @@ func (a *SystemApiService) DeleteSysGenerateRoot(ctx context.Context) (*http.Res
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/generate-root"
+	localVarPath := a.client.cfg.Address + "/v1/sys/generate-root"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -427,7 +427,7 @@ func (a *SystemApiService) DeleteSysGenerateRootAttempt(ctx context.Context) (*h
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/generate-root/attempt"
+	localVarPath := a.client.cfg.Address + "/v1/sys/generate-root/attempt"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -493,7 +493,7 @@ func (a *SystemApiService) DeleteSysMountsPath(ctx context.Context, path string)
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/mounts/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/mounts/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -560,7 +560,7 @@ func (a *SystemApiService) DeleteSysPluginsCatalogName(ctx context.Context, name
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/plugins/catalog/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/plugins/catalog/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -628,7 +628,7 @@ func (a *SystemApiService) DeleteSysPluginsCatalogTypeName(ctx context.Context, 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/plugins/catalog/{type}/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/plugins/catalog/{type}/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(type_, "")), -1)
 
@@ -696,7 +696,7 @@ func (a *SystemApiService) DeleteSysPoliciesAclName(ctx context.Context, name st
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/policies/acl/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/policies/acl/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -763,7 +763,7 @@ func (a *SystemApiService) DeleteSysPoliciesPasswordName(ctx context.Context, na
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/policies/password/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/policies/password/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -830,7 +830,7 @@ func (a *SystemApiService) DeleteSysPolicyName(ctx context.Context, name string)
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/policy/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/policy/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -897,7 +897,7 @@ func (a *SystemApiService) DeleteSysQuotasRateLimitName(ctx context.Context, nam
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/quotas/rate-limit/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/quotas/rate-limit/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -963,7 +963,7 @@ func (a *SystemApiService) DeleteSysRaw(ctx context.Context) (*http.Response, er
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/raw"
+	localVarPath := a.client.cfg.Address + "/v1/sys/raw"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1028,7 +1028,7 @@ func (a *SystemApiService) DeleteSysRawPath(ctx context.Context, path string) (*
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/raw/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/raw/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1094,7 +1094,7 @@ func (a *SystemApiService) DeleteSysRekeyBackup(ctx context.Context) (*http.Resp
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/rekey/backup"
+	localVarPath := a.client.cfg.Address + "/v1/sys/rekey/backup"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1160,7 +1160,7 @@ func (a *SystemApiService) DeleteSysRekeyInit(ctx context.Context) (*http.Respon
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/rekey/init"
+	localVarPath := a.client.cfg.Address + "/v1/sys/rekey/init"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1225,7 +1225,7 @@ func (a *SystemApiService) DeleteSysRekeyRecoveryKeyBackup(ctx context.Context) 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/rekey/recovery-key-backup"
+	localVarPath := a.client.cfg.Address + "/v1/sys/rekey/recovery-key-backup"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1291,7 +1291,7 @@ func (a *SystemApiService) DeleteSysRekeyVerify(ctx context.Context) (*http.Resp
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/rekey/verify"
+	localVarPath := a.client.cfg.Address + "/v1/sys/rekey/verify"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1356,7 +1356,7 @@ func (a *SystemApiService) GetSysAudit(ctx context.Context) (*http.Response, err
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/audit"
+	localVarPath := a.client.cfg.Address + "/v1/sys/audit"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1421,7 +1421,7 @@ func (a *SystemApiService) GetSysAuth(ctx context.Context) (*http.Response, erro
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/auth"
+	localVarPath := a.client.cfg.Address + "/v1/sys/auth"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1487,7 +1487,7 @@ func (a *SystemApiService) GetSysAuthPath(ctx context.Context, path string) (*ht
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/auth/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/auth/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1555,7 +1555,7 @@ func (a *SystemApiService) GetSysAuthPathTune(ctx context.Context, path string) 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/auth/{path}/tune"
+	localVarPath := a.client.cfg.Address + "/v1/sys/auth/{path}/tune"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1621,7 +1621,7 @@ func (a *SystemApiService) GetSysConfigAuditingRequestHeaders(ctx context.Contex
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/config/auditing/request-headers"
+	localVarPath := a.client.cfg.Address + "/v1/sys/config/auditing/request-headers"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1686,7 +1686,7 @@ func (a *SystemApiService) GetSysConfigAuditingRequestHeadersHeader(ctx context.
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/config/auditing/request-headers/{header}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/config/auditing/request-headers/{header}"
 	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1752,7 +1752,7 @@ func (a *SystemApiService) GetSysConfigCors(ctx context.Context) (*http.Response
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/config/cors"
+	localVarPath := a.client.cfg.Address + "/v1/sys/config/cors"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1818,7 +1818,7 @@ func (a *SystemApiService) GetSysConfigStateSanitized(ctx context.Context) (*htt
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/config/state/sanitized"
+	localVarPath := a.client.cfg.Address + "/v1/sys/config/state/sanitized"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1884,7 +1884,7 @@ func (a *SystemApiService) GetSysConfigUiHeaders(ctx context.Context, list strin
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/config/ui/headers/"
+	localVarPath := a.client.cfg.Address + "/v1/sys/config/ui/headers/"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1951,7 +1951,7 @@ func (a *SystemApiService) GetSysConfigUiHeadersHeader(ctx context.Context, head
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/config/ui/headers/{header}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/config/ui/headers/{header}"
 	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2017,7 +2017,7 @@ func (a *SystemApiService) GetSysGenerateRoot(ctx context.Context) (*http.Respon
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/generate-root"
+	localVarPath := a.client.cfg.Address + "/v1/sys/generate-root"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2082,7 +2082,7 @@ func (a *SystemApiService) GetSysGenerateRootAttempt(ctx context.Context) (*http
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/generate-root/attempt"
+	localVarPath := a.client.cfg.Address + "/v1/sys/generate-root/attempt"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2147,7 +2147,7 @@ func (a *SystemApiService) GetSysHaStatus(ctx context.Context) (*http.Response, 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/ha-status"
+	localVarPath := a.client.cfg.Address + "/v1/sys/ha-status"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2212,7 +2212,7 @@ func (a *SystemApiService) GetSysHealth(ctx context.Context) (*http.Response, er
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/health"
+	localVarPath := a.client.cfg.Address + "/v1/sys/health"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2278,7 +2278,7 @@ func (a *SystemApiService) GetSysHostInfo(ctx context.Context) (*http.Response, 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/host-info"
+	localVarPath := a.client.cfg.Address + "/v1/sys/host-info"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2344,7 +2344,7 @@ func (a *SystemApiService) GetSysInFlightReq(ctx context.Context) (*http.Respons
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/in-flight-req"
+	localVarPath := a.client.cfg.Address + "/v1/sys/in-flight-req"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2409,7 +2409,7 @@ func (a *SystemApiService) GetSysInit(ctx context.Context) (*http.Response, erro
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/init"
+	localVarPath := a.client.cfg.Address + "/v1/sys/init"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2474,7 +2474,7 @@ func (a *SystemApiService) GetSysInternalCountersActivity(ctx context.Context) (
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/internal/counters/activity"
+	localVarPath := a.client.cfg.Address + "/v1/sys/internal/counters/activity"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2539,7 +2539,7 @@ func (a *SystemApiService) GetSysInternalCountersActivityExport(ctx context.Cont
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/internal/counters/activity/export"
+	localVarPath := a.client.cfg.Address + "/v1/sys/internal/counters/activity/export"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2604,7 +2604,7 @@ func (a *SystemApiService) GetSysInternalCountersActivityMonthly(ctx context.Con
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/internal/counters/activity/monthly"
+	localVarPath := a.client.cfg.Address + "/v1/sys/internal/counters/activity/monthly"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2669,7 +2669,7 @@ func (a *SystemApiService) GetSysInternalCountersConfig(ctx context.Context) (*h
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/internal/counters/config"
+	localVarPath := a.client.cfg.Address + "/v1/sys/internal/counters/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2734,7 +2734,7 @@ func (a *SystemApiService) GetSysInternalCountersEntities(ctx context.Context) (
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/internal/counters/entities"
+	localVarPath := a.client.cfg.Address + "/v1/sys/internal/counters/entities"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2799,7 +2799,7 @@ func (a *SystemApiService) GetSysInternalCountersRequests(ctx context.Context) (
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/internal/counters/requests"
+	localVarPath := a.client.cfg.Address + "/v1/sys/internal/counters/requests"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2864,7 +2864,7 @@ func (a *SystemApiService) GetSysInternalCountersTokens(ctx context.Context) (*h
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/internal/counters/tokens"
+	localVarPath := a.client.cfg.Address + "/v1/sys/internal/counters/tokens"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2929,7 +2929,7 @@ func (a *SystemApiService) GetSysInternalSpecsOpenapi(ctx context.Context) (*htt
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/internal/specs/openapi"
+	localVarPath := a.client.cfg.Address + "/v1/sys/internal/specs/openapi"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2994,7 +2994,7 @@ func (a *SystemApiService) GetSysInternalUiFeatureFlags(ctx context.Context) (*h
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/internal/ui/feature-flags"
+	localVarPath := a.client.cfg.Address + "/v1/sys/internal/ui/feature-flags"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3059,7 +3059,7 @@ func (a *SystemApiService) GetSysInternalUiMounts(ctx context.Context) (*http.Re
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/internal/ui/mounts"
+	localVarPath := a.client.cfg.Address + "/v1/sys/internal/ui/mounts"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3125,7 +3125,7 @@ func (a *SystemApiService) GetSysInternalUiMountsPath(ctx context.Context, path 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/internal/ui/mounts/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/internal/ui/mounts/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3191,7 +3191,7 @@ func (a *SystemApiService) GetSysInternalUiNamespaces(ctx context.Context) (*htt
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/internal/ui/namespaces"
+	localVarPath := a.client.cfg.Address + "/v1/sys/internal/ui/namespaces"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3256,7 +3256,7 @@ func (a *SystemApiService) GetSysInternalUiResultantAcl(ctx context.Context) (*h
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/internal/ui/resultant-acl"
+	localVarPath := a.client.cfg.Address + "/v1/sys/internal/ui/resultant-acl"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3321,7 +3321,7 @@ func (a *SystemApiService) GetSysKeyStatus(ctx context.Context) (*http.Response,
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/key-status"
+	localVarPath := a.client.cfg.Address + "/v1/sys/key-status"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3386,7 +3386,7 @@ func (a *SystemApiService) GetSysLeader(ctx context.Context) (*http.Response, er
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/leader"
+	localVarPath := a.client.cfg.Address + "/v1/sys/leader"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3451,7 +3451,7 @@ func (a *SystemApiService) GetSysLeases(ctx context.Context) (*http.Response, er
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/leases"
+	localVarPath := a.client.cfg.Address + "/v1/sys/leases"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3516,7 +3516,7 @@ func (a *SystemApiService) GetSysLeasesCount(ctx context.Context) (*http.Respons
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/leases/count"
+	localVarPath := a.client.cfg.Address + "/v1/sys/leases/count"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3582,7 +3582,7 @@ func (a *SystemApiService) GetSysLeasesLookup(ctx context.Context, list string) 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/leases/lookup/"
+	localVarPath := a.client.cfg.Address + "/v1/sys/leases/lookup/"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3650,7 +3650,7 @@ func (a *SystemApiService) GetSysLeasesLookupPrefix(ctx context.Context, prefix 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/leases/lookup/{prefix}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/leases/lookup/{prefix}"
 	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(prefix, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3718,7 +3718,7 @@ func (a *SystemApiService) GetSysMetrics(ctx context.Context, format string) (*h
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/metrics"
+	localVarPath := a.client.cfg.Address + "/v1/sys/metrics"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3786,7 +3786,7 @@ func (a *SystemApiService) GetSysMonitor(ctx context.Context, logFormat string, 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/monitor"
+	localVarPath := a.client.cfg.Address + "/v1/sys/monitor"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3853,7 +3853,7 @@ func (a *SystemApiService) GetSysMounts(ctx context.Context) (*http.Response, er
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/mounts"
+	localVarPath := a.client.cfg.Address + "/v1/sys/mounts"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3919,7 +3919,7 @@ func (a *SystemApiService) GetSysMountsPath(ctx context.Context, path string) (*
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/mounts/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/mounts/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3986,7 +3986,7 @@ func (a *SystemApiService) GetSysMountsPathTune(ctx context.Context, path string
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/mounts/{path}/tune"
+	localVarPath := a.client.cfg.Address + "/v1/sys/mounts/{path}/tune"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4052,7 +4052,7 @@ func (a *SystemApiService) GetSysPluginsCatalog(ctx context.Context) (*http.Resp
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/plugins/catalog"
+	localVarPath := a.client.cfg.Address + "/v1/sys/plugins/catalog"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4118,7 +4118,7 @@ func (a *SystemApiService) GetSysPluginsCatalogName(ctx context.Context, name st
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/plugins/catalog/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/plugins/catalog/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4186,7 +4186,7 @@ func (a *SystemApiService) GetSysPluginsCatalogType(ctx context.Context, type_ s
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/plugins/catalog/{type}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/plugins/catalog/{type}"
 	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(type_, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4255,7 +4255,7 @@ func (a *SystemApiService) GetSysPluginsCatalogTypeName(ctx context.Context, nam
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/plugins/catalog/{type}/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/plugins/catalog/{type}/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(type_, "")), -1)
 
@@ -4323,7 +4323,7 @@ func (a *SystemApiService) GetSysPoliciesAcl(ctx context.Context, list string) (
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/policies/acl"
+	localVarPath := a.client.cfg.Address + "/v1/sys/policies/acl"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4390,7 +4390,7 @@ func (a *SystemApiService) GetSysPoliciesAclName(ctx context.Context, name strin
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/policies/acl/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/policies/acl/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4457,7 +4457,7 @@ func (a *SystemApiService) GetSysPoliciesPassword(ctx context.Context, list stri
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/policies/password"
+	localVarPath := a.client.cfg.Address + "/v1/sys/policies/password"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4524,7 +4524,7 @@ func (a *SystemApiService) GetSysPoliciesPasswordName(ctx context.Context, name 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/policies/password/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/policies/password/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4591,7 +4591,7 @@ func (a *SystemApiService) GetSysPoliciesPasswordNameGenerate(ctx context.Contex
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/policies/password/{name}/generate"
+	localVarPath := a.client.cfg.Address + "/v1/sys/policies/password/{name}/generate"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4658,7 +4658,7 @@ func (a *SystemApiService) GetSysPolicy(ctx context.Context, list string) (*http
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/policy"
+	localVarPath := a.client.cfg.Address + "/v1/sys/policy"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4725,7 +4725,7 @@ func (a *SystemApiService) GetSysPolicyName(ctx context.Context, name string) (*
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/policy/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/policy/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4792,7 +4792,7 @@ func (a *SystemApiService) GetSysPprof(ctx context.Context) (*http.Response, err
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/pprof/"
+	localVarPath := a.client.cfg.Address + "/v1/sys/pprof/"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4858,7 +4858,7 @@ func (a *SystemApiService) GetSysPprofAllocs(ctx context.Context) (*http.Respons
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/pprof/allocs"
+	localVarPath := a.client.cfg.Address + "/v1/sys/pprof/allocs"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4924,7 +4924,7 @@ func (a *SystemApiService) GetSysPprofBlock(ctx context.Context) (*http.Response
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/pprof/block"
+	localVarPath := a.client.cfg.Address + "/v1/sys/pprof/block"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4990,7 +4990,7 @@ func (a *SystemApiService) GetSysPprofCmdline(ctx context.Context) (*http.Respon
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/pprof/cmdline"
+	localVarPath := a.client.cfg.Address + "/v1/sys/pprof/cmdline"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5056,7 +5056,7 @@ func (a *SystemApiService) GetSysPprofGoroutine(ctx context.Context) (*http.Resp
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/pprof/goroutine"
+	localVarPath := a.client.cfg.Address + "/v1/sys/pprof/goroutine"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5122,7 +5122,7 @@ func (a *SystemApiService) GetSysPprofHeap(ctx context.Context) (*http.Response,
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/pprof/heap"
+	localVarPath := a.client.cfg.Address + "/v1/sys/pprof/heap"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5188,7 +5188,7 @@ func (a *SystemApiService) GetSysPprofMutex(ctx context.Context) (*http.Response
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/pprof/mutex"
+	localVarPath := a.client.cfg.Address + "/v1/sys/pprof/mutex"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5254,7 +5254,7 @@ func (a *SystemApiService) GetSysPprofProfile(ctx context.Context) (*http.Respon
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/pprof/profile"
+	localVarPath := a.client.cfg.Address + "/v1/sys/pprof/profile"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5320,7 +5320,7 @@ func (a *SystemApiService) GetSysPprofSymbol(ctx context.Context) (*http.Respons
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/pprof/symbol"
+	localVarPath := a.client.cfg.Address + "/v1/sys/pprof/symbol"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5386,7 +5386,7 @@ func (a *SystemApiService) GetSysPprofThreadcreate(ctx context.Context) (*http.R
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/pprof/threadcreate"
+	localVarPath := a.client.cfg.Address + "/v1/sys/pprof/threadcreate"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5452,7 +5452,7 @@ func (a *SystemApiService) GetSysPprofTrace(ctx context.Context) (*http.Response
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/pprof/trace"
+	localVarPath := a.client.cfg.Address + "/v1/sys/pprof/trace"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5517,7 +5517,7 @@ func (a *SystemApiService) GetSysQuotasConfig(ctx context.Context) (*http.Respon
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/quotas/config"
+	localVarPath := a.client.cfg.Address + "/v1/sys/quotas/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5583,7 +5583,7 @@ func (a *SystemApiService) GetSysQuotasRateLimit(ctx context.Context, list strin
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/quotas/rate-limit"
+	localVarPath := a.client.cfg.Address + "/v1/sys/quotas/rate-limit"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5650,7 +5650,7 @@ func (a *SystemApiService) GetSysQuotasRateLimitName(ctx context.Context, name s
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/quotas/rate-limit/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/quotas/rate-limit/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5717,7 +5717,7 @@ func (a *SystemApiService) GetSysRaw(ctx context.Context, list string) (*http.Re
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/raw"
+	localVarPath := a.client.cfg.Address + "/v1/sys/raw"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5784,7 +5784,7 @@ func (a *SystemApiService) GetSysRawPath(ctx context.Context, path string, list 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/raw/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/raw/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5851,7 +5851,7 @@ func (a *SystemApiService) GetSysRekeyBackup(ctx context.Context) (*http.Respons
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/rekey/backup"
+	localVarPath := a.client.cfg.Address + "/v1/sys/rekey/backup"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5916,7 +5916,7 @@ func (a *SystemApiService) GetSysRekeyInit(ctx context.Context) (*http.Response,
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/rekey/init"
+	localVarPath := a.client.cfg.Address + "/v1/sys/rekey/init"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5981,7 +5981,7 @@ func (a *SystemApiService) GetSysRekeyRecoveryKeyBackup(ctx context.Context) (*h
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/rekey/recovery-key-backup"
+	localVarPath := a.client.cfg.Address + "/v1/sys/rekey/recovery-key-backup"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6046,7 +6046,7 @@ func (a *SystemApiService) GetSysRekeyVerify(ctx context.Context) (*http.Respons
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/rekey/verify"
+	localVarPath := a.client.cfg.Address + "/v1/sys/rekey/verify"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6112,7 +6112,7 @@ func (a *SystemApiService) GetSysRemountStatusMigrationId(ctx context.Context, m
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/remount/status/{migration_id}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/remount/status/{migration_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"migration_id"+"}", url.PathEscape(parameterToString(migrationId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6178,7 +6178,7 @@ func (a *SystemApiService) GetSysReplicationStatus(ctx context.Context) (*http.R
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/replication/status"
+	localVarPath := a.client.cfg.Address + "/v1/sys/replication/status"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6243,7 +6243,7 @@ func (a *SystemApiService) GetSysRotateConfig(ctx context.Context) (*http.Respon
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/rotate/config"
+	localVarPath := a.client.cfg.Address + "/v1/sys/rotate/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6308,7 +6308,7 @@ func (a *SystemApiService) GetSysSealStatus(ctx context.Context) (*http.Response
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/seal-status"
+	localVarPath := a.client.cfg.Address + "/v1/sys/seal-status"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6374,7 +6374,7 @@ func (a *SystemApiService) GetSysVersionHistory(ctx context.Context, list string
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/version-history/"
+	localVarPath := a.client.cfg.Address + "/v1/sys/version-history/"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6440,7 +6440,7 @@ func (a *SystemApiService) GetSysWrappingLookup(ctx context.Context) (*http.Resp
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/wrapping/lookup"
+	localVarPath := a.client.cfg.Address + "/v1/sys/wrapping/lookup"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6506,7 +6506,7 @@ func (a *SystemApiService) PostSysAuditHashPath(ctx context.Context, path string
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/audit-hash/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/audit-hash/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6575,7 +6575,7 @@ func (a *SystemApiService) PostSysAuditPath(ctx context.Context, path string, sy
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/audit/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/audit/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6645,7 +6645,7 @@ func (a *SystemApiService) PostSysAuthPath(ctx context.Context, path string, sys
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/auth/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/auth/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6715,7 +6715,7 @@ func (a *SystemApiService) PostSysAuthPathTune(ctx context.Context, path string,
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/auth/{path}/tune"
+	localVarPath := a.client.cfg.Address + "/v1/sys/auth/{path}/tune"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6783,7 +6783,7 @@ func (a *SystemApiService) PostSysCapabilities(ctx context.Context, systemCapabi
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/capabilities"
+	localVarPath := a.client.cfg.Address + "/v1/sys/capabilities"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6850,7 +6850,7 @@ func (a *SystemApiService) PostSysCapabilitiesAccessor(ctx context.Context, syst
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/capabilities-accessor"
+	localVarPath := a.client.cfg.Address + "/v1/sys/capabilities-accessor"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6917,7 +6917,7 @@ func (a *SystemApiService) PostSysCapabilitiesSelf(ctx context.Context, systemCa
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/capabilities-self"
+	localVarPath := a.client.cfg.Address + "/v1/sys/capabilities-self"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6984,7 +6984,7 @@ func (a *SystemApiService) PostSysConfigAuditingRequestHeadersHeader(ctx context
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/config/auditing/request-headers/{header}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/config/auditing/request-headers/{header}"
 	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -7052,7 +7052,7 @@ func (a *SystemApiService) PostSysConfigCors(ctx context.Context, systemConfigCo
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/config/cors"
+	localVarPath := a.client.cfg.Address + "/v1/sys/config/cors"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7119,7 +7119,7 @@ func (a *SystemApiService) PostSysConfigReloadSubsystem(ctx context.Context, sub
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/config/reload/{subsystem}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/config/reload/{subsystem}"
 	localVarPath = strings.Replace(localVarPath, "{"+"subsystem"+"}", url.PathEscape(parameterToString(subsystem, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -7186,7 +7186,7 @@ func (a *SystemApiService) PostSysConfigUiHeadersHeader(ctx context.Context, hea
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/config/ui/headers/{header}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/config/ui/headers/{header}"
 	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -7255,7 +7255,7 @@ func (a *SystemApiService) PostSysGenerateRoot(ctx context.Context, systemGenera
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/generate-root"
+	localVarPath := a.client.cfg.Address + "/v1/sys/generate-root"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7323,7 +7323,7 @@ func (a *SystemApiService) PostSysGenerateRootAttempt(ctx context.Context, syste
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/generate-root/attempt"
+	localVarPath := a.client.cfg.Address + "/v1/sys/generate-root/attempt"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7391,7 +7391,7 @@ func (a *SystemApiService) PostSysGenerateRootUpdate(ctx context.Context, system
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/generate-root/update"
+	localVarPath := a.client.cfg.Address + "/v1/sys/generate-root/update"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7459,7 +7459,7 @@ func (a *SystemApiService) PostSysInit(ctx context.Context, systemInitRequest Sy
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/init"
+	localVarPath := a.client.cfg.Address + "/v1/sys/init"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7526,7 +7526,7 @@ func (a *SystemApiService) PostSysInternalCountersConfig(ctx context.Context, sy
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/internal/counters/config"
+	localVarPath := a.client.cfg.Address + "/v1/sys/internal/counters/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7593,7 +7593,7 @@ func (a *SystemApiService) PostSysLeasesLookup(ctx context.Context, systemLeases
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/leases/lookup"
+	localVarPath := a.client.cfg.Address + "/v1/sys/leases/lookup"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7660,7 +7660,7 @@ func (a *SystemApiService) PostSysLeasesRenew(ctx context.Context, systemLeasesR
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/leases/renew"
+	localVarPath := a.client.cfg.Address + "/v1/sys/leases/renew"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7728,7 +7728,7 @@ func (a *SystemApiService) PostSysLeasesRenewUrlLeaseId(ctx context.Context, url
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/leases/renew/{url_lease_id}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/leases/renew/{url_lease_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"url_lease_id"+"}", url.PathEscape(parameterToString(urlLeaseId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -7796,7 +7796,7 @@ func (a *SystemApiService) PostSysLeasesRevoke(ctx context.Context, systemLeases
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/leases/revoke"
+	localVarPath := a.client.cfg.Address + "/v1/sys/leases/revoke"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7865,7 +7865,7 @@ func (a *SystemApiService) PostSysLeasesRevokeForcePrefix(ctx context.Context, p
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/leases/revoke-force/{prefix}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/leases/revoke-force/{prefix}"
 	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(prefix, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -7932,7 +7932,7 @@ func (a *SystemApiService) PostSysLeasesRevokePrefixPrefix(ctx context.Context, 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/leases/revoke-prefix/{prefix}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/leases/revoke-prefix/{prefix}"
 	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(prefix, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8001,7 +8001,7 @@ func (a *SystemApiService) PostSysLeasesRevokeUrlLeaseId(ctx context.Context, ur
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/leases/revoke/{url_lease_id}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/leases/revoke/{url_lease_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"url_lease_id"+"}", url.PathEscape(parameterToString(urlLeaseId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8069,7 +8069,7 @@ func (a *SystemApiService) PostSysLeasesTidy(ctx context.Context) (*http.Respons
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/leases/tidy"
+	localVarPath := a.client.cfg.Address + "/v1/sys/leases/tidy"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8134,7 +8134,7 @@ func (a *SystemApiService) PostSysMfaValidate(ctx context.Context, systemMfaVali
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/mfa/validate"
+	localVarPath := a.client.cfg.Address + "/v1/sys/mfa/validate"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8202,7 +8202,7 @@ func (a *SystemApiService) PostSysMountsPath(ctx context.Context, path string, s
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/mounts/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/mounts/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8271,7 +8271,7 @@ func (a *SystemApiService) PostSysMountsPathTune(ctx context.Context, path strin
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/mounts/{path}/tune"
+	localVarPath := a.client.cfg.Address + "/v1/sys/mounts/{path}/tune"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8340,7 +8340,7 @@ func (a *SystemApiService) PostSysPluginsCatalogName(ctx context.Context, name s
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/plugins/catalog/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/plugins/catalog/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8410,7 +8410,7 @@ func (a *SystemApiService) PostSysPluginsCatalogTypeName(ctx context.Context, na
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/plugins/catalog/{type}/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/plugins/catalog/{type}/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(type_, "")), -1)
 
@@ -8480,7 +8480,7 @@ func (a *SystemApiService) PostSysPluginsReloadBackend(ctx context.Context, syst
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/plugins/reload/backend"
+	localVarPath := a.client.cfg.Address + "/v1/sys/plugins/reload/backend"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8548,7 +8548,7 @@ func (a *SystemApiService) PostSysPoliciesAclName(ctx context.Context, name stri
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/policies/acl/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/policies/acl/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8617,7 +8617,7 @@ func (a *SystemApiService) PostSysPoliciesPasswordName(ctx context.Context, name
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/policies/password/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/policies/password/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8686,7 +8686,7 @@ func (a *SystemApiService) PostSysPolicyName(ctx context.Context, name string, s
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/policy/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/policy/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8754,7 +8754,7 @@ func (a *SystemApiService) PostSysQuotasConfig(ctx context.Context, systemQuotas
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/quotas/config"
+	localVarPath := a.client.cfg.Address + "/v1/sys/quotas/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8822,7 +8822,7 @@ func (a *SystemApiService) PostSysQuotasRateLimitName(ctx context.Context, name 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/quotas/rate-limit/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/quotas/rate-limit/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8890,7 +8890,7 @@ func (a *SystemApiService) PostSysRaw(ctx context.Context, systemRawRequest Syst
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/raw"
+	localVarPath := a.client.cfg.Address + "/v1/sys/raw"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8957,7 +8957,7 @@ func (a *SystemApiService) PostSysRawPath(ctx context.Context, path string, syst
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/raw/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/raw/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -9026,7 +9026,7 @@ func (a *SystemApiService) PostSysRekeyInit(ctx context.Context, systemRekeyInit
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/rekey/init"
+	localVarPath := a.client.cfg.Address + "/v1/sys/rekey/init"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9093,7 +9093,7 @@ func (a *SystemApiService) PostSysRekeyUpdate(ctx context.Context, systemRekeyUp
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/rekey/update"
+	localVarPath := a.client.cfg.Address + "/v1/sys/rekey/update"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9160,7 +9160,7 @@ func (a *SystemApiService) PostSysRekeyVerify(ctx context.Context, systemRekeyVe
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/rekey/verify"
+	localVarPath := a.client.cfg.Address + "/v1/sys/rekey/verify"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9227,7 +9227,7 @@ func (a *SystemApiService) PostSysRemount(ctx context.Context, systemRemountRequ
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/remount"
+	localVarPath := a.client.cfg.Address + "/v1/sys/remount"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9294,7 +9294,7 @@ func (a *SystemApiService) PostSysRenew(ctx context.Context, systemRenewRequest 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/renew"
+	localVarPath := a.client.cfg.Address + "/v1/sys/renew"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9362,7 +9362,7 @@ func (a *SystemApiService) PostSysRenewUrlLeaseId(ctx context.Context, urlLeaseI
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/renew/{url_lease_id}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/renew/{url_lease_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"url_lease_id"+"}", url.PathEscape(parameterToString(urlLeaseId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -9430,7 +9430,7 @@ func (a *SystemApiService) PostSysRevoke(ctx context.Context, systemRevokeReques
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/revoke"
+	localVarPath := a.client.cfg.Address + "/v1/sys/revoke"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9499,7 +9499,7 @@ func (a *SystemApiService) PostSysRevokeForcePrefix(ctx context.Context, prefix 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/revoke-force/{prefix}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/revoke-force/{prefix}"
 	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(prefix, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -9566,7 +9566,7 @@ func (a *SystemApiService) PostSysRevokePrefixPrefix(ctx context.Context, prefix
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/revoke-prefix/{prefix}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/revoke-prefix/{prefix}"
 	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(prefix, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -9635,7 +9635,7 @@ func (a *SystemApiService) PostSysRevokeUrlLeaseId(ctx context.Context, urlLease
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/revoke/{url_lease_id}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/revoke/{url_lease_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"url_lease_id"+"}", url.PathEscape(parameterToString(urlLeaseId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -9703,7 +9703,7 @@ func (a *SystemApiService) PostSysRotate(ctx context.Context) (*http.Response, e
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/rotate"
+	localVarPath := a.client.cfg.Address + "/v1/sys/rotate"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9768,7 +9768,7 @@ func (a *SystemApiService) PostSysRotateConfig(ctx context.Context, systemRotate
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/rotate/config"
+	localVarPath := a.client.cfg.Address + "/v1/sys/rotate/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9835,7 +9835,7 @@ func (a *SystemApiService) PostSysSeal(ctx context.Context) (*http.Response, err
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/seal"
+	localVarPath := a.client.cfg.Address + "/v1/sys/seal"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9901,7 +9901,7 @@ func (a *SystemApiService) PostSysStepDown(ctx context.Context) (*http.Response,
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/step-down"
+	localVarPath := a.client.cfg.Address + "/v1/sys/step-down"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9966,7 +9966,7 @@ func (a *SystemApiService) PostSysToolsHash(ctx context.Context, systemToolsHash
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/tools/hash"
+	localVarPath := a.client.cfg.Address + "/v1/sys/tools/hash"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10034,7 +10034,7 @@ func (a *SystemApiService) PostSysToolsHashUrlalgorithm(ctx context.Context, url
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/tools/hash/{urlalgorithm}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/tools/hash/{urlalgorithm}"
 	localVarPath = strings.Replace(localVarPath, "{"+"urlalgorithm"+"}", url.PathEscape(parameterToString(urlalgorithm, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -10102,7 +10102,7 @@ func (a *SystemApiService) PostSysToolsRandom(ctx context.Context, systemToolsRa
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/tools/random"
+	localVarPath := a.client.cfg.Address + "/v1/sys/tools/random"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10170,7 +10170,7 @@ func (a *SystemApiService) PostSysToolsRandomSource(ctx context.Context, source 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/tools/random/{source}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/tools/random/{source}"
 	localVarPath = strings.Replace(localVarPath, "{"+"source"+"}", url.PathEscape(parameterToString(source, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -10240,7 +10240,7 @@ func (a *SystemApiService) PostSysToolsRandomSourceUrlbytes(ctx context.Context,
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/tools/random/{source}/{urlbytes}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/tools/random/{source}/{urlbytes}"
 	localVarPath = strings.Replace(localVarPath, "{"+"source"+"}", url.PathEscape(parameterToString(source, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"urlbytes"+"}", url.PathEscape(parameterToString(urlbytes, "")), -1)
 
@@ -10310,7 +10310,7 @@ func (a *SystemApiService) PostSysToolsRandomUrlbytes(ctx context.Context, urlby
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/tools/random/{urlbytes}"
+	localVarPath := a.client.cfg.Address + "/v1/sys/tools/random/{urlbytes}"
 	localVarPath = strings.Replace(localVarPath, "{"+"urlbytes"+"}", url.PathEscape(parameterToString(urlbytes, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -10378,7 +10378,7 @@ func (a *SystemApiService) PostSysUnseal(ctx context.Context, systemUnsealReques
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/unseal"
+	localVarPath := a.client.cfg.Address + "/v1/sys/unseal"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10445,7 +10445,7 @@ func (a *SystemApiService) PostSysWrappingLookup(ctx context.Context, systemWrap
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/wrapping/lookup"
+	localVarPath := a.client.cfg.Address + "/v1/sys/wrapping/lookup"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10512,7 +10512,7 @@ func (a *SystemApiService) PostSysWrappingRewrap(ctx context.Context, systemWrap
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/wrapping/rewrap"
+	localVarPath := a.client.cfg.Address + "/v1/sys/wrapping/rewrap"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10579,7 +10579,7 @@ func (a *SystemApiService) PostSysWrappingUnwrap(ctx context.Context, systemWrap
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/wrapping/unwrap"
+	localVarPath := a.client.cfg.Address + "/v1/sys/wrapping/unwrap"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10646,7 +10646,7 @@ func (a *SystemApiService) PostSysWrappingWrap(ctx context.Context) (*http.Respo
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//sys/wrapping/wrap"
+	localVarPath := a.client.cfg.Address + "/v1/sys/wrapping/wrap"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

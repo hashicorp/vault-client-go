@@ -31,7 +31,7 @@ func (a *IdentityApiService) DeleteIdentityAliasIdId(ctx context.Context, id str
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/alias/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/alias/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -98,7 +98,7 @@ func (a *IdentityApiService) DeleteIdentityEntityAliasIdId(ctx context.Context, 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/entity-alias/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/entity-alias/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -165,7 +165,7 @@ func (a *IdentityApiService) DeleteIdentityEntityIdId(ctx context.Context, id st
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/entity/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/entity/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -232,7 +232,7 @@ func (a *IdentityApiService) DeleteIdentityEntityNameName(ctx context.Context, n
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/entity/name/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/entity/name/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -299,7 +299,7 @@ func (a *IdentityApiService) DeleteIdentityGroupAliasIdId(ctx context.Context, i
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/group-alias/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/group-alias/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -366,7 +366,7 @@ func (a *IdentityApiService) DeleteIdentityGroupIdId(ctx context.Context, id str
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/group/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/group/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -433,7 +433,7 @@ func (a *IdentityApiService) DeleteIdentityGroupNameName(ctx context.Context, na
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/group/name/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/group/name/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -500,7 +500,7 @@ func (a *IdentityApiService) DeleteIdentityMfaLoginEnforcementName(ctx context.C
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/login-enforcement/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/mfa/login-enforcement/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -567,7 +567,7 @@ func (a *IdentityApiService) DeleteIdentityMfaMethodDuoMethodId(ctx context.Cont
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/duo/{method_id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/mfa/method/duo/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -634,7 +634,7 @@ func (a *IdentityApiService) DeleteIdentityMfaMethodOktaMethodId(ctx context.Con
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/okta/{method_id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/mfa/method/okta/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -701,7 +701,7 @@ func (a *IdentityApiService) DeleteIdentityMfaMethodPingidMethodId(ctx context.C
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/pingid/{method_id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/mfa/method/pingid/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -768,7 +768,7 @@ func (a *IdentityApiService) DeleteIdentityMfaMethodTotpMethodId(ctx context.Con
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/totp/{method_id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/mfa/method/totp/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -835,7 +835,7 @@ func (a *IdentityApiService) DeleteIdentityOidcAssignmentName(ctx context.Contex
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/assignment/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/assignment/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -902,7 +902,7 @@ func (a *IdentityApiService) DeleteIdentityOidcClientName(ctx context.Context, n
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/client/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/client/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -969,7 +969,7 @@ func (a *IdentityApiService) DeleteIdentityOidcKeyName(ctx context.Context, name
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/key/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/key/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1036,7 +1036,7 @@ func (a *IdentityApiService) DeleteIdentityOidcProviderName(ctx context.Context,
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/provider/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/provider/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1103,7 +1103,7 @@ func (a *IdentityApiService) DeleteIdentityOidcRoleName(ctx context.Context, nam
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1170,7 +1170,7 @@ func (a *IdentityApiService) DeleteIdentityOidcScopeName(ctx context.Context, na
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/scope/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/scope/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1237,7 +1237,7 @@ func (a *IdentityApiService) DeleteIdentityPersonaIdId(ctx context.Context, id s
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/persona/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/persona/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1304,7 +1304,7 @@ func (a *IdentityApiService) GetIdentityAliasId(ctx context.Context, list string
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/alias/id"
+	localVarPath := a.client.cfg.Address + "/v1/identity/alias/id"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1371,7 +1371,7 @@ func (a *IdentityApiService) GetIdentityAliasIdId(ctx context.Context, id string
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/alias/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/alias/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1438,7 +1438,7 @@ func (a *IdentityApiService) GetIdentityEntityAliasId(ctx context.Context, list 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/entity-alias/id"
+	localVarPath := a.client.cfg.Address + "/v1/identity/entity-alias/id"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1505,7 +1505,7 @@ func (a *IdentityApiService) GetIdentityEntityAliasIdId(ctx context.Context, id 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/entity-alias/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/entity-alias/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1572,7 +1572,7 @@ func (a *IdentityApiService) GetIdentityEntityId(ctx context.Context, list strin
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/entity/id"
+	localVarPath := a.client.cfg.Address + "/v1/identity/entity/id"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1639,7 +1639,7 @@ func (a *IdentityApiService) GetIdentityEntityIdId(ctx context.Context, id strin
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/entity/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/entity/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1706,7 +1706,7 @@ func (a *IdentityApiService) GetIdentityEntityName(ctx context.Context, list str
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/entity/name"
+	localVarPath := a.client.cfg.Address + "/v1/identity/entity/name"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1773,7 +1773,7 @@ func (a *IdentityApiService) GetIdentityEntityNameName(ctx context.Context, name
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/entity/name/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/entity/name/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1840,7 +1840,7 @@ func (a *IdentityApiService) GetIdentityGroupAliasId(ctx context.Context, list s
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/group-alias/id"
+	localVarPath := a.client.cfg.Address + "/v1/identity/group-alias/id"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1907,7 +1907,7 @@ func (a *IdentityApiService) GetIdentityGroupAliasIdId(ctx context.Context, id s
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/group-alias/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/group-alias/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1974,7 +1974,7 @@ func (a *IdentityApiService) GetIdentityGroupId(ctx context.Context, list string
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/group/id"
+	localVarPath := a.client.cfg.Address + "/v1/identity/group/id"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2041,7 +2041,7 @@ func (a *IdentityApiService) GetIdentityGroupIdId(ctx context.Context, id string
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/group/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/group/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2108,7 +2108,7 @@ func (a *IdentityApiService) GetIdentityGroupName(ctx context.Context, list stri
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/group/name"
+	localVarPath := a.client.cfg.Address + "/v1/identity/group/name"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2175,7 +2175,7 @@ func (a *IdentityApiService) GetIdentityGroupNameName(ctx context.Context, name 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/group/name/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/group/name/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2242,7 +2242,7 @@ func (a *IdentityApiService) GetIdentityMfaLoginEnforcement(ctx context.Context,
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/login-enforcement"
+	localVarPath := a.client.cfg.Address + "/v1/identity/mfa/login-enforcement"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2309,7 +2309,7 @@ func (a *IdentityApiService) GetIdentityMfaLoginEnforcementName(ctx context.Cont
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/login-enforcement/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/mfa/login-enforcement/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2376,7 +2376,7 @@ func (a *IdentityApiService) GetIdentityMfaMethod(ctx context.Context, list stri
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method"
+	localVarPath := a.client.cfg.Address + "/v1/identity/mfa/method"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2443,7 +2443,7 @@ func (a *IdentityApiService) GetIdentityMfaMethodDuo(ctx context.Context, list s
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/duo"
+	localVarPath := a.client.cfg.Address + "/v1/identity/mfa/method/duo"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2510,7 +2510,7 @@ func (a *IdentityApiService) GetIdentityMfaMethodDuoMethodId(ctx context.Context
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/duo/{method_id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/mfa/method/duo/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2577,7 +2577,7 @@ func (a *IdentityApiService) GetIdentityMfaMethodMethodId(ctx context.Context, m
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/{method_id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/mfa/method/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2644,7 +2644,7 @@ func (a *IdentityApiService) GetIdentityMfaMethodOkta(ctx context.Context, list 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/okta"
+	localVarPath := a.client.cfg.Address + "/v1/identity/mfa/method/okta"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2711,7 +2711,7 @@ func (a *IdentityApiService) GetIdentityMfaMethodOktaMethodId(ctx context.Contex
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/okta/{method_id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/mfa/method/okta/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2778,7 +2778,7 @@ func (a *IdentityApiService) GetIdentityMfaMethodPingid(ctx context.Context, lis
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/pingid"
+	localVarPath := a.client.cfg.Address + "/v1/identity/mfa/method/pingid"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2845,7 +2845,7 @@ func (a *IdentityApiService) GetIdentityMfaMethodPingidMethodId(ctx context.Cont
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/pingid/{method_id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/mfa/method/pingid/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2912,7 +2912,7 @@ func (a *IdentityApiService) GetIdentityMfaMethodTotp(ctx context.Context, list 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/totp"
+	localVarPath := a.client.cfg.Address + "/v1/identity/mfa/method/totp"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2979,7 +2979,7 @@ func (a *IdentityApiService) GetIdentityMfaMethodTotpMethodId(ctx context.Contex
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/totp/{method_id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/mfa/method/totp/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3046,7 +3046,7 @@ func (a *IdentityApiService) GetIdentityOidcAssignment(ctx context.Context, list
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/assignment"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/assignment"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3113,7 +3113,7 @@ func (a *IdentityApiService) GetIdentityOidcAssignmentName(ctx context.Context, 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/assignment/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/assignment/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3180,7 +3180,7 @@ func (a *IdentityApiService) GetIdentityOidcClient(ctx context.Context, list str
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/client"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/client"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3247,7 +3247,7 @@ func (a *IdentityApiService) GetIdentityOidcClientName(ctx context.Context, name
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/client/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/client/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3313,7 +3313,7 @@ func (a *IdentityApiService) GetIdentityOidcConfig(ctx context.Context) (*http.R
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/config"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3379,7 +3379,7 @@ func (a *IdentityApiService) GetIdentityOidcKey(ctx context.Context, list string
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/key"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/key"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3446,7 +3446,7 @@ func (a *IdentityApiService) GetIdentityOidcKeyName(ctx context.Context, name st
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/key/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/key/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3513,7 +3513,7 @@ func (a *IdentityApiService) GetIdentityOidcProvider(ctx context.Context, list s
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/provider"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/provider"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3580,7 +3580,7 @@ func (a *IdentityApiService) GetIdentityOidcProviderName(ctx context.Context, na
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/provider/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/provider/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3647,7 +3647,7 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameAuthorize(ctx context.Co
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/provider/{name}/authorize"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/provider/{name}/authorize"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3714,7 +3714,7 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameUserinfo(ctx context.Con
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/provider/{name}/userinfo"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/provider/{name}/userinfo"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3781,7 +3781,7 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameWellKnownKeys(ctx contex
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/provider/{name}/.well-known/keys"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/provider/{name}/.well-known/keys"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3848,7 +3848,7 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameWellKnownOpenidConfigura
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/provider/{name}/.well-known/openid-configuration"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/provider/{name}/.well-known/openid-configuration"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3915,7 +3915,7 @@ func (a *IdentityApiService) GetIdentityOidcRole(ctx context.Context, list strin
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/role"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/role"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3982,7 +3982,7 @@ func (a *IdentityApiService) GetIdentityOidcRoleName(ctx context.Context, name s
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4049,7 +4049,7 @@ func (a *IdentityApiService) GetIdentityOidcScope(ctx context.Context, list stri
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/scope"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/scope"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4116,7 +4116,7 @@ func (a *IdentityApiService) GetIdentityOidcScopeName(ctx context.Context, name 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/scope/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/scope/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4183,7 +4183,7 @@ func (a *IdentityApiService) GetIdentityOidcTokenName(ctx context.Context, name 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/token/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/token/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4249,7 +4249,7 @@ func (a *IdentityApiService) GetIdentityOidcWellKnownKeys(ctx context.Context) (
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/.well-known/keys"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/.well-known/keys"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4314,7 +4314,7 @@ func (a *IdentityApiService) GetIdentityOidcWellKnownOpenidConfiguration(ctx con
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/.well-known/openid-configuration"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/.well-known/openid-configuration"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4380,7 +4380,7 @@ func (a *IdentityApiService) GetIdentityPersonaId(ctx context.Context, list stri
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/persona/id"
+	localVarPath := a.client.cfg.Address + "/v1/identity/persona/id"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4447,7 +4447,7 @@ func (a *IdentityApiService) GetIdentityPersonaIdId(ctx context.Context, id stri
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/persona/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/persona/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4513,7 +4513,7 @@ func (a *IdentityApiService) PostIdentityAlias(ctx context.Context, identityAlia
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/alias"
+	localVarPath := a.client.cfg.Address + "/v1/identity/alias"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4581,7 +4581,7 @@ func (a *IdentityApiService) PostIdentityAliasIdId(ctx context.Context, id strin
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/alias/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/alias/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4649,7 +4649,7 @@ func (a *IdentityApiService) PostIdentityEntity(ctx context.Context, identityEnt
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/entity"
+	localVarPath := a.client.cfg.Address + "/v1/identity/entity"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4716,7 +4716,7 @@ func (a *IdentityApiService) PostIdentityEntityAlias(ctx context.Context, identi
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/entity-alias"
+	localVarPath := a.client.cfg.Address + "/v1/identity/entity-alias"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4784,7 +4784,7 @@ func (a *IdentityApiService) PostIdentityEntityAliasIdId(ctx context.Context, id
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/entity-alias/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/entity-alias/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4852,7 +4852,7 @@ func (a *IdentityApiService) PostIdentityEntityBatchDelete(ctx context.Context, 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/entity/batch-delete"
+	localVarPath := a.client.cfg.Address + "/v1/identity/entity/batch-delete"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4920,7 +4920,7 @@ func (a *IdentityApiService) PostIdentityEntityIdId(ctx context.Context, id stri
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/entity/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/entity/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4988,7 +4988,7 @@ func (a *IdentityApiService) PostIdentityEntityMerge(ctx context.Context, identi
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/entity/merge"
+	localVarPath := a.client.cfg.Address + "/v1/identity/entity/merge"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5056,7 +5056,7 @@ func (a *IdentityApiService) PostIdentityEntityNameName(ctx context.Context, nam
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/entity/name/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/entity/name/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5124,7 +5124,7 @@ func (a *IdentityApiService) PostIdentityGroup(ctx context.Context, identityGrou
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/group"
+	localVarPath := a.client.cfg.Address + "/v1/identity/group"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5191,7 +5191,7 @@ func (a *IdentityApiService) PostIdentityGroupAlias(ctx context.Context, identit
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/group-alias"
+	localVarPath := a.client.cfg.Address + "/v1/identity/group-alias"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5259,7 +5259,7 @@ func (a *IdentityApiService) PostIdentityGroupAliasIdId(ctx context.Context, id 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/group-alias/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/group-alias/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5328,7 +5328,7 @@ func (a *IdentityApiService) PostIdentityGroupIdId(ctx context.Context, id strin
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/group/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/group/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5397,7 +5397,7 @@ func (a *IdentityApiService) PostIdentityGroupNameName(ctx context.Context, name
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/group/name/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/group/name/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5465,7 +5465,7 @@ func (a *IdentityApiService) PostIdentityLookupEntity(ctx context.Context, ident
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/lookup/entity"
+	localVarPath := a.client.cfg.Address + "/v1/identity/lookup/entity"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5532,7 +5532,7 @@ func (a *IdentityApiService) PostIdentityLookupGroup(ctx context.Context, identi
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/lookup/group"
+	localVarPath := a.client.cfg.Address + "/v1/identity/lookup/group"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5600,7 +5600,7 @@ func (a *IdentityApiService) PostIdentityMfaLoginEnforcementName(ctx context.Con
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/login-enforcement/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/mfa/login-enforcement/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5669,7 +5669,7 @@ func (a *IdentityApiService) PostIdentityMfaMethodDuoMethodId(ctx context.Contex
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/duo/{method_id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/mfa/method/duo/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5738,7 +5738,7 @@ func (a *IdentityApiService) PostIdentityMfaMethodOktaMethodId(ctx context.Conte
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/okta/{method_id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/mfa/method/okta/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5807,7 +5807,7 @@ func (a *IdentityApiService) PostIdentityMfaMethodPingidMethodId(ctx context.Con
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/pingid/{method_id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/mfa/method/pingid/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5875,7 +5875,7 @@ func (a *IdentityApiService) PostIdentityMfaMethodTotpAdminDestroy(ctx context.C
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/totp/admin-destroy"
+	localVarPath := a.client.cfg.Address + "/v1/identity/mfa/method/totp/admin-destroy"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5942,7 +5942,7 @@ func (a *IdentityApiService) PostIdentityMfaMethodTotpAdminGenerate(ctx context.
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/totp/admin-generate"
+	localVarPath := a.client.cfg.Address + "/v1/identity/mfa/method/totp/admin-generate"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6009,7 +6009,7 @@ func (a *IdentityApiService) PostIdentityMfaMethodTotpGenerate(ctx context.Conte
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/totp/generate"
+	localVarPath := a.client.cfg.Address + "/v1/identity/mfa/method/totp/generate"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6077,7 +6077,7 @@ func (a *IdentityApiService) PostIdentityMfaMethodTotpMethodId(ctx context.Conte
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/totp/{method_id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/mfa/method/totp/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6146,7 +6146,7 @@ func (a *IdentityApiService) PostIdentityOidcAssignmentName(ctx context.Context,
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/assignment/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/assignment/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6215,7 +6215,7 @@ func (a *IdentityApiService) PostIdentityOidcClientName(ctx context.Context, nam
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/client/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/client/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6283,7 +6283,7 @@ func (a *IdentityApiService) PostIdentityOidcConfig(ctx context.Context, identit
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/config"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6350,7 +6350,7 @@ func (a *IdentityApiService) PostIdentityOidcIntrospect(ctx context.Context, ide
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/introspect"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/introspect"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6418,7 +6418,7 @@ func (a *IdentityApiService) PostIdentityOidcKeyName(ctx context.Context, name s
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/key/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/key/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6487,7 +6487,7 @@ func (a *IdentityApiService) PostIdentityOidcKeyNameRotate(ctx context.Context, 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/key/{name}/rotate"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/key/{name}/rotate"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6556,7 +6556,7 @@ func (a *IdentityApiService) PostIdentityOidcProviderName(ctx context.Context, n
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/provider/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/provider/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6625,7 +6625,7 @@ func (a *IdentityApiService) PostIdentityOidcProviderNameAuthorize(ctx context.C
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/provider/{name}/authorize"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/provider/{name}/authorize"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6694,7 +6694,7 @@ func (a *IdentityApiService) PostIdentityOidcProviderNameToken(ctx context.Conte
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/provider/{name}/token"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/provider/{name}/token"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6763,7 +6763,7 @@ func (a *IdentityApiService) PostIdentityOidcProviderNameUserinfo(ctx context.Co
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/provider/{name}/userinfo"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/provider/{name}/userinfo"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6830,7 +6830,7 @@ func (a *IdentityApiService) PostIdentityOidcRoleName(ctx context.Context, name 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6899,7 +6899,7 @@ func (a *IdentityApiService) PostIdentityOidcScopeName(ctx context.Context, name
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/scope/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/oidc/scope/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6967,7 +6967,7 @@ func (a *IdentityApiService) PostIdentityPersona(ctx context.Context, identityPe
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/persona"
+	localVarPath := a.client.cfg.Address + "/v1/identity/persona"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7035,7 +7035,7 @@ func (a *IdentityApiService) PostIdentityPersonaIdId(ctx context.Context, id str
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//identity/persona/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1/identity/persona/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)

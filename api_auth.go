@@ -31,7 +31,7 @@ func (a *AuthApiService) DeleteAuthAlicloudRoleRole(ctx context.Context, role st
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/alicloud/role/{role}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/alicloud/role/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -98,7 +98,7 @@ func (a *AuthApiService) DeleteAuthAppIdMapAppIdKey(ctx context.Context, key str
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/app-id/map/app-id/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/app-id/map/app-id/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -165,7 +165,7 @@ func (a *AuthApiService) DeleteAuthAppIdMapUserIdKey(ctx context.Context, key st
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/app-id/map/user-id/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/app-id/map/user-id/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -232,7 +232,7 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleName(ctx context.Context, role
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -299,7 +299,7 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameBindSecretId(ctx context.C
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/bind-secret-id"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/bind-secret-id"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -366,7 +366,7 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameBoundCidrList(ctx context.
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/bound-cidr-list"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/bound-cidr-list"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -433,7 +433,7 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNamePeriod(ctx context.Context
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/period"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/period"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -500,7 +500,7 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNamePolicies(ctx context.Conte
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/policies"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/policies"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -567,7 +567,7 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(ct
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/secret-id-accessor/destroy"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/secret-id-accessor/destroy"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -634,7 +634,7 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx con
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/secret-id-bound-cidrs"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/secret-id-bound-cidrs"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -701,7 +701,7 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdDestroy(ctx contex
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/secret-id/destroy"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/secret-id/destroy"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -768,7 +768,7 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdNumUses(ctx contex
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/secret-id-num-uses"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/secret-id-num-uses"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -835,7 +835,7 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameSecretIdTtl(ctx context.Co
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/secret-id-ttl"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/secret-id-ttl"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -902,7 +902,7 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenBoundCidrs(ctx contex
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/token-bound-cidrs"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/token-bound-cidrs"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -969,7 +969,7 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Co
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/token-max-ttl"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/token-max-ttl"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1036,7 +1036,7 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenNumUses(ctx context.C
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/token-num-uses"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/token-num-uses"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1103,7 +1103,7 @@ func (a *AuthApiService) DeleteAuthApproleRoleRoleNameTokenTtl(ctx context.Conte
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/token-ttl"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/token-ttl"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1170,7 +1170,7 @@ func (a *AuthApiService) DeleteAuthAwsConfigCertificateCertName(ctx context.Cont
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/config/certificate/{cert_name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/config/certificate/{cert_name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"cert_name"+"}", url.PathEscape(parameterToString(certName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1236,7 +1236,7 @@ func (a *AuthApiService) DeleteAuthAwsConfigClient(ctx context.Context) (*http.R
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/config/client"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/config/client"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1302,7 +1302,7 @@ func (a *AuthApiService) DeleteAuthAwsConfigStsAccountId(ctx context.Context, ac
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/config/sts/{account_id}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/config/sts/{account_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", url.PathEscape(parameterToString(accountId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1368,7 +1368,7 @@ func (a *AuthApiService) DeleteAuthAwsConfigTidyIdentityAccesslist(ctx context.C
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/config/tidy/identity-accesslist"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/config/tidy/identity-accesslist"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1433,7 +1433,7 @@ func (a *AuthApiService) DeleteAuthAwsConfigTidyIdentityWhitelist(ctx context.Co
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/config/tidy/identity-whitelist"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/config/tidy/identity-whitelist"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1498,7 +1498,7 @@ func (a *AuthApiService) DeleteAuthAwsConfigTidyRoletagBlacklist(ctx context.Con
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/config/tidy/roletag-blacklist"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/config/tidy/roletag-blacklist"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1563,7 +1563,7 @@ func (a *AuthApiService) DeleteAuthAwsConfigTidyRoletagDenylist(ctx context.Cont
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/config/tidy/roletag-denylist"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/config/tidy/roletag-denylist"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1629,7 +1629,7 @@ func (a *AuthApiService) DeleteAuthAwsIdentityAccesslistInstanceId(ctx context.C
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/identity-accesslist/{instance_id}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/identity-accesslist/{instance_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"instance_id"+"}", url.PathEscape(parameterToString(instanceId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1696,7 +1696,7 @@ func (a *AuthApiService) DeleteAuthAwsIdentityWhitelistInstanceId(ctx context.Co
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/identity-whitelist/{instance_id}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/identity-whitelist/{instance_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"instance_id"+"}", url.PathEscape(parameterToString(instanceId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1763,7 +1763,7 @@ func (a *AuthApiService) DeleteAuthAwsRoleRole(ctx context.Context, role string)
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/role/{role}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/role/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1830,7 +1830,7 @@ func (a *AuthApiService) DeleteAuthAwsRoletagBlacklistRoleTag(ctx context.Contex
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/roletag-blacklist/{role_tag}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/roletag-blacklist/{role_tag}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(roleTag, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1897,7 +1897,7 @@ func (a *AuthApiService) DeleteAuthAwsRoletagDenylistRoleTag(ctx context.Context
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/roletag-denylist/{role_tag}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/roletag-denylist/{role_tag}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(roleTag, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1963,7 +1963,7 @@ func (a *AuthApiService) DeleteAuthAzureConfig(ctx context.Context) (*http.Respo
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/azure/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/azure/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2029,7 +2029,7 @@ func (a *AuthApiService) DeleteAuthAzureRoleName(ctx context.Context, name strin
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/azure/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/azure/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2096,7 +2096,7 @@ func (a *AuthApiService) DeleteAuthCertCertsName(ctx context.Context, name strin
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/cert/certs/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/cert/certs/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2163,7 +2163,7 @@ func (a *AuthApiService) DeleteAuthCertCrlsName(ctx context.Context, name string
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/cert/crls/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/cert/crls/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2229,7 +2229,7 @@ func (a *AuthApiService) DeleteAuthCfConfig(ctx context.Context) (*http.Response
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/cf/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/cf/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2295,7 +2295,7 @@ func (a *AuthApiService) DeleteAuthCfRolesRole(ctx context.Context, role string)
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/cf/roles/{role}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/cf/roles/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2362,7 +2362,7 @@ func (a *AuthApiService) DeleteAuthGcpRoleName(ctx context.Context, name string)
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/gcp/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/gcp/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2429,7 +2429,7 @@ func (a *AuthApiService) DeleteAuthGithubMapTeamsKey(ctx context.Context, key st
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/github/map/teams/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/github/map/teams/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2496,7 +2496,7 @@ func (a *AuthApiService) DeleteAuthGithubMapUsersKey(ctx context.Context, key st
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/github/map/users/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/github/map/users/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2563,7 +2563,7 @@ func (a *AuthApiService) DeleteAuthJwtRoleName(ctx context.Context, name string)
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/jwt/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/jwt/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2630,7 +2630,7 @@ func (a *AuthApiService) DeleteAuthKerberosGroupsName(ctx context.Context, name 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/kerberos/groups/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/kerberos/groups/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2697,7 +2697,7 @@ func (a *AuthApiService) DeleteAuthKubernetesRoleName(ctx context.Context, name 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/kubernetes/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/kubernetes/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2764,7 +2764,7 @@ func (a *AuthApiService) DeleteAuthLdapGroupsName(ctx context.Context, name stri
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/ldap/groups/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/ldap/groups/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2831,7 +2831,7 @@ func (a *AuthApiService) DeleteAuthLdapUsersName(ctx context.Context, name strin
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/ldap/users/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/ldap/users/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2897,7 +2897,7 @@ func (a *AuthApiService) DeleteAuthOciConfig(ctx context.Context) (*http.Respons
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/oci/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/oci/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2963,7 +2963,7 @@ func (a *AuthApiService) DeleteAuthOciRoleRole(ctx context.Context, role string)
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/oci/role/{role}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/oci/role/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3030,7 +3030,7 @@ func (a *AuthApiService) DeleteAuthOidcRoleName(ctx context.Context, name string
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/oidc/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/oidc/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3097,7 +3097,7 @@ func (a *AuthApiService) DeleteAuthOktaGroupsName(ctx context.Context, name stri
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/okta/groups/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/okta/groups/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3164,7 +3164,7 @@ func (a *AuthApiService) DeleteAuthOktaUsersName(ctx context.Context, name strin
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/okta/users/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/okta/users/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3231,7 +3231,7 @@ func (a *AuthApiService) DeleteAuthRadiusUsersName(ctx context.Context, name str
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/radius/users/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/radius/users/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3298,7 +3298,7 @@ func (a *AuthApiService) DeleteAuthTokenRolesRoleName(ctx context.Context, roleN
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/token/roles/{role_name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/token/roles/{role_name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3365,7 +3365,7 @@ func (a *AuthApiService) DeleteAuthUserpassUsersUsername(ctx context.Context, us
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/userpass/users/{username}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/userpass/users/{username}"
 	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(username, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3432,7 +3432,7 @@ func (a *AuthApiService) GetAuthAlicloudRole(ctx context.Context, list string) (
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/alicloud/role"
+	localVarPath := a.client.cfg.Address + "/v1/auth/alicloud/role"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3499,7 +3499,7 @@ func (a *AuthApiService) GetAuthAlicloudRoleRole(ctx context.Context, role strin
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/alicloud/role/{role}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/alicloud/role/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3566,7 +3566,7 @@ func (a *AuthApiService) GetAuthAlicloudRoles(ctx context.Context, list string) 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/alicloud/roles"
+	localVarPath := a.client.cfg.Address + "/v1/auth/alicloud/roles"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3633,7 +3633,7 @@ func (a *AuthApiService) GetAuthAppIdMapAppId(ctx context.Context, list string) 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/app-id/map/app-id"
+	localVarPath := a.client.cfg.Address + "/v1/auth/app-id/map/app-id"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3700,7 +3700,7 @@ func (a *AuthApiService) GetAuthAppIdMapAppIdKey(ctx context.Context, key string
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/app-id/map/app-id/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/app-id/map/app-id/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3767,7 +3767,7 @@ func (a *AuthApiService) GetAuthAppIdMapUserId(ctx context.Context, list string)
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/app-id/map/user-id"
+	localVarPath := a.client.cfg.Address + "/v1/auth/app-id/map/user-id"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3834,7 +3834,7 @@ func (a *AuthApiService) GetAuthAppIdMapUserIdKey(ctx context.Context, key strin
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/app-id/map/user-id/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/app-id/map/user-id/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3901,7 +3901,7 @@ func (a *AuthApiService) GetAuthApproleRole(ctx context.Context, list string) (*
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3968,7 +3968,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleName(ctx context.Context, roleNam
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4035,7 +4035,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameBindSecretId(ctx context.Cont
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/bind-secret-id"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/bind-secret-id"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4102,7 +4102,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameBoundCidrList(ctx context.Con
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/bound-cidr-list"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/bound-cidr-list"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4169,7 +4169,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameLocalSecretIds(ctx context.Co
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/local-secret-ids"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/local-secret-ids"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4236,7 +4236,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNamePeriod(ctx context.Context, r
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/period"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/period"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4303,7 +4303,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNamePolicies(ctx context.Context,
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/policies"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/policies"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4370,7 +4370,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameRoleId(ctx context.Context, r
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/role-id"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/role-id"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4438,7 +4438,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretId(ctx context.Context,
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/secret-id"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/secret-id"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4506,7 +4506,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx contex
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/secret-id-bound-cidrs"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/secret-id-bound-cidrs"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4573,7 +4573,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdNumUses(ctx context.C
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/secret-id-num-uses"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/secret-id-num-uses"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4640,7 +4640,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameSecretIdTtl(ctx context.Conte
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/secret-id-ttl"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/secret-id-ttl"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4707,7 +4707,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.C
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/token-bound-cidrs"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/token-bound-cidrs"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4774,7 +4774,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Conte
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/token-max-ttl"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/token-max-ttl"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4841,7 +4841,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenNumUses(ctx context.Cont
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/token-num-uses"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/token-num-uses"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4908,7 +4908,7 @@ func (a *AuthApiService) GetAuthApproleRoleRoleNameTokenTtl(ctx context.Context,
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/token-ttl"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/token-ttl"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4975,7 +4975,7 @@ func (a *AuthApiService) GetAuthAwsConfigCertificateCertName(ctx context.Context
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/config/certificate/{cert_name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/config/certificate/{cert_name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"cert_name"+"}", url.PathEscape(parameterToString(certName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5042,7 +5042,7 @@ func (a *AuthApiService) GetAuthAwsConfigCertificates(ctx context.Context, list 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/config/certificates"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/config/certificates"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5108,7 +5108,7 @@ func (a *AuthApiService) GetAuthAwsConfigClient(ctx context.Context) (*http.Resp
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/config/client"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/config/client"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5173,7 +5173,7 @@ func (a *AuthApiService) GetAuthAwsConfigIdentity(ctx context.Context) (*http.Re
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/config/identity"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/config/identity"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5239,7 +5239,7 @@ func (a *AuthApiService) GetAuthAwsConfigSts(ctx context.Context, list string) (
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/config/sts"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/config/sts"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5306,7 +5306,7 @@ func (a *AuthApiService) GetAuthAwsConfigStsAccountId(ctx context.Context, accou
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/config/sts/{account_id}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/config/sts/{account_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", url.PathEscape(parameterToString(accountId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5372,7 +5372,7 @@ func (a *AuthApiService) GetAuthAwsConfigTidyIdentityAccesslist(ctx context.Cont
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/config/tidy/identity-accesslist"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/config/tidy/identity-accesslist"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5437,7 +5437,7 @@ func (a *AuthApiService) GetAuthAwsConfigTidyIdentityWhitelist(ctx context.Conte
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/config/tidy/identity-whitelist"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/config/tidy/identity-whitelist"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5502,7 +5502,7 @@ func (a *AuthApiService) GetAuthAwsConfigTidyRoletagBlacklist(ctx context.Contex
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/config/tidy/roletag-blacklist"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/config/tidy/roletag-blacklist"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5567,7 +5567,7 @@ func (a *AuthApiService) GetAuthAwsConfigTidyRoletagDenylist(ctx context.Context
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/config/tidy/roletag-denylist"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/config/tidy/roletag-denylist"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5633,7 +5633,7 @@ func (a *AuthApiService) GetAuthAwsIdentityAccesslist(ctx context.Context, list 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/identity-accesslist"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/identity-accesslist"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5700,7 +5700,7 @@ func (a *AuthApiService) GetAuthAwsIdentityAccesslistInstanceId(ctx context.Cont
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/identity-accesslist/{instance_id}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/identity-accesslist/{instance_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"instance_id"+"}", url.PathEscape(parameterToString(instanceId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5767,7 +5767,7 @@ func (a *AuthApiService) GetAuthAwsIdentityWhitelist(ctx context.Context, list s
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/identity-whitelist"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/identity-whitelist"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5834,7 +5834,7 @@ func (a *AuthApiService) GetAuthAwsIdentityWhitelistInstanceId(ctx context.Conte
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/identity-whitelist/{instance_id}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/identity-whitelist/{instance_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"instance_id"+"}", url.PathEscape(parameterToString(instanceId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5901,7 +5901,7 @@ func (a *AuthApiService) GetAuthAwsRole(ctx context.Context, list string) (*http
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/role"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/role"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5968,7 +5968,7 @@ func (a *AuthApiService) GetAuthAwsRoleRole(ctx context.Context, role string) (*
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/role/{role}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/role/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6035,7 +6035,7 @@ func (a *AuthApiService) GetAuthAwsRoles(ctx context.Context, list string) (*htt
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/roles"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/roles"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6102,7 +6102,7 @@ func (a *AuthApiService) GetAuthAwsRoletagBlacklist(ctx context.Context, list st
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/roletag-blacklist"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/roletag-blacklist"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6169,7 +6169,7 @@ func (a *AuthApiService) GetAuthAwsRoletagBlacklistRoleTag(ctx context.Context, 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/roletag-blacklist/{role_tag}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/roletag-blacklist/{role_tag}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(roleTag, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6236,7 +6236,7 @@ func (a *AuthApiService) GetAuthAwsRoletagDenylist(ctx context.Context, list str
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/roletag-denylist"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/roletag-denylist"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6303,7 +6303,7 @@ func (a *AuthApiService) GetAuthAwsRoletagDenylistRoleTag(ctx context.Context, r
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/roletag-denylist/{role_tag}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/roletag-denylist/{role_tag}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(roleTag, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6369,7 +6369,7 @@ func (a *AuthApiService) GetAuthAzureConfig(ctx context.Context) (*http.Response
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/azure/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/azure/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6435,7 +6435,7 @@ func (a *AuthApiService) GetAuthAzureRole(ctx context.Context, list string) (*ht
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/azure/role"
+	localVarPath := a.client.cfg.Address + "/v1/auth/azure/role"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6502,7 +6502,7 @@ func (a *AuthApiService) GetAuthAzureRoleName(ctx context.Context, name string) 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/azure/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/azure/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6568,7 +6568,7 @@ func (a *AuthApiService) GetAuthCentrifyConfig(ctx context.Context) (*http.Respo
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/centrify/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/centrify/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6634,7 +6634,7 @@ func (a *AuthApiService) GetAuthCertCerts(ctx context.Context, list string) (*ht
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/cert/certs"
+	localVarPath := a.client.cfg.Address + "/v1/auth/cert/certs"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6701,7 +6701,7 @@ func (a *AuthApiService) GetAuthCertCertsName(ctx context.Context, name string) 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/cert/certs/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/cert/certs/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6768,7 +6768,7 @@ func (a *AuthApiService) GetAuthCertCrlsName(ctx context.Context, name string) (
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/cert/crls/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/cert/crls/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6834,7 +6834,7 @@ func (a *AuthApiService) GetAuthCfConfig(ctx context.Context) (*http.Response, e
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/cf/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/cf/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6900,7 +6900,7 @@ func (a *AuthApiService) GetAuthCfRoles(ctx context.Context, list string) (*http
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/cf/roles"
+	localVarPath := a.client.cfg.Address + "/v1/auth/cf/roles"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6967,7 +6967,7 @@ func (a *AuthApiService) GetAuthCfRolesRole(ctx context.Context, role string) (*
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/cf/roles/{role}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/cf/roles/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -7033,7 +7033,7 @@ func (a *AuthApiService) GetAuthGcpConfig(ctx context.Context) (*http.Response, 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/gcp/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/gcp/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7099,7 +7099,7 @@ func (a *AuthApiService) GetAuthGcpRole(ctx context.Context, list string) (*http
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/gcp/role"
+	localVarPath := a.client.cfg.Address + "/v1/auth/gcp/role"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7166,7 +7166,7 @@ func (a *AuthApiService) GetAuthGcpRoleName(ctx context.Context, name string) (*
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/gcp/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/gcp/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -7233,7 +7233,7 @@ func (a *AuthApiService) GetAuthGcpRoles(ctx context.Context, list string) (*htt
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/gcp/roles"
+	localVarPath := a.client.cfg.Address + "/v1/auth/gcp/roles"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7299,7 +7299,7 @@ func (a *AuthApiService) GetAuthGithubConfig(ctx context.Context) (*http.Respons
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/github/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/github/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7365,7 +7365,7 @@ func (a *AuthApiService) GetAuthGithubMapTeams(ctx context.Context, list string)
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/github/map/teams"
+	localVarPath := a.client.cfg.Address + "/v1/auth/github/map/teams"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7432,7 +7432,7 @@ func (a *AuthApiService) GetAuthGithubMapTeamsKey(ctx context.Context, key strin
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/github/map/teams/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/github/map/teams/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -7499,7 +7499,7 @@ func (a *AuthApiService) GetAuthGithubMapUsers(ctx context.Context, list string)
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/github/map/users"
+	localVarPath := a.client.cfg.Address + "/v1/auth/github/map/users"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7566,7 +7566,7 @@ func (a *AuthApiService) GetAuthGithubMapUsersKey(ctx context.Context, key strin
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/github/map/users/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/github/map/users/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -7632,7 +7632,7 @@ func (a *AuthApiService) GetAuthJwtConfig(ctx context.Context) (*http.Response, 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/jwt/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/jwt/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7697,7 +7697,7 @@ func (a *AuthApiService) GetAuthJwtOidcCallback(ctx context.Context) (*http.Resp
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/jwt/oidc/callback"
+	localVarPath := a.client.cfg.Address + "/v1/auth/jwt/oidc/callback"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7764,7 +7764,7 @@ func (a *AuthApiService) GetAuthJwtRole(ctx context.Context, list string) (*http
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/jwt/role"
+	localVarPath := a.client.cfg.Address + "/v1/auth/jwt/role"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7831,7 +7831,7 @@ func (a *AuthApiService) GetAuthJwtRoleName(ctx context.Context, name string) (*
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/jwt/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/jwt/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -7897,7 +7897,7 @@ func (a *AuthApiService) GetAuthKerberosConfig(ctx context.Context) (*http.Respo
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/kerberos/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/kerberos/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7962,7 +7962,7 @@ func (a *AuthApiService) GetAuthKerberosConfigLdap(ctx context.Context) (*http.R
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/kerberos/config/ldap"
+	localVarPath := a.client.cfg.Address + "/v1/auth/kerberos/config/ldap"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8028,7 +8028,7 @@ func (a *AuthApiService) GetAuthKerberosGroups(ctx context.Context, list string)
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/kerberos/groups"
+	localVarPath := a.client.cfg.Address + "/v1/auth/kerberos/groups"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8095,7 +8095,7 @@ func (a *AuthApiService) GetAuthKerberosGroupsName(ctx context.Context, name str
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/kerberos/groups/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/kerberos/groups/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8161,7 +8161,7 @@ func (a *AuthApiService) GetAuthKerberosLogin(ctx context.Context) (*http.Respon
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/kerberos/login"
+	localVarPath := a.client.cfg.Address + "/v1/auth/kerberos/login"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8226,7 +8226,7 @@ func (a *AuthApiService) GetAuthKubernetesConfig(ctx context.Context) (*http.Res
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/kubernetes/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/kubernetes/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8292,7 +8292,7 @@ func (a *AuthApiService) GetAuthKubernetesRole(ctx context.Context, list string)
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/kubernetes/role"
+	localVarPath := a.client.cfg.Address + "/v1/auth/kubernetes/role"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8359,7 +8359,7 @@ func (a *AuthApiService) GetAuthKubernetesRoleName(ctx context.Context, name str
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/kubernetes/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/kubernetes/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8425,7 +8425,7 @@ func (a *AuthApiService) GetAuthLdapConfig(ctx context.Context) (*http.Response,
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/ldap/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/ldap/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8491,7 +8491,7 @@ func (a *AuthApiService) GetAuthLdapGroups(ctx context.Context, list string) (*h
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/ldap/groups"
+	localVarPath := a.client.cfg.Address + "/v1/auth/ldap/groups"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8558,7 +8558,7 @@ func (a *AuthApiService) GetAuthLdapGroupsName(ctx context.Context, name string)
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/ldap/groups/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/ldap/groups/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8625,7 +8625,7 @@ func (a *AuthApiService) GetAuthLdapUsers(ctx context.Context, list string) (*ht
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/ldap/users"
+	localVarPath := a.client.cfg.Address + "/v1/auth/ldap/users"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8692,7 +8692,7 @@ func (a *AuthApiService) GetAuthLdapUsersName(ctx context.Context, name string) 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/ldap/users/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/ldap/users/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8758,7 +8758,7 @@ func (a *AuthApiService) GetAuthOciConfig(ctx context.Context) (*http.Response, 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/oci/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/oci/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8824,7 +8824,7 @@ func (a *AuthApiService) GetAuthOciRole(ctx context.Context, list string) (*http
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/oci/role"
+	localVarPath := a.client.cfg.Address + "/v1/auth/oci/role"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8891,7 +8891,7 @@ func (a *AuthApiService) GetAuthOciRoleRole(ctx context.Context, role string) (*
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/oci/role/{role}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/oci/role/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8957,7 +8957,7 @@ func (a *AuthApiService) GetAuthOidcConfig(ctx context.Context) (*http.Response,
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/oidc/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/oidc/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9022,7 +9022,7 @@ func (a *AuthApiService) GetAuthOidcOidcCallback(ctx context.Context) (*http.Res
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/oidc/oidc/callback"
+	localVarPath := a.client.cfg.Address + "/v1/auth/oidc/oidc/callback"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9089,7 +9089,7 @@ func (a *AuthApiService) GetAuthOidcRole(ctx context.Context, list string) (*htt
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/oidc/role"
+	localVarPath := a.client.cfg.Address + "/v1/auth/oidc/role"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9156,7 +9156,7 @@ func (a *AuthApiService) GetAuthOidcRoleName(ctx context.Context, name string) (
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/oidc/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/oidc/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -9222,7 +9222,7 @@ func (a *AuthApiService) GetAuthOktaConfig(ctx context.Context) (*http.Response,
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/okta/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/okta/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9288,7 +9288,7 @@ func (a *AuthApiService) GetAuthOktaGroups(ctx context.Context, list string) (*h
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/okta/groups"
+	localVarPath := a.client.cfg.Address + "/v1/auth/okta/groups"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9355,7 +9355,7 @@ func (a *AuthApiService) GetAuthOktaGroupsName(ctx context.Context, name string)
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/okta/groups/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/okta/groups/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -9422,7 +9422,7 @@ func (a *AuthApiService) GetAuthOktaUsers(ctx context.Context, list string) (*ht
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/okta/users"
+	localVarPath := a.client.cfg.Address + "/v1/auth/okta/users"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9489,7 +9489,7 @@ func (a *AuthApiService) GetAuthOktaUsersName(ctx context.Context, name string) 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/okta/users/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/okta/users/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -9556,7 +9556,7 @@ func (a *AuthApiService) GetAuthOktaVerifyNonce(ctx context.Context, nonce strin
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/okta/verify/{nonce}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/okta/verify/{nonce}"
 	localVarPath = strings.Replace(localVarPath, "{"+"nonce"+"}", url.PathEscape(parameterToString(nonce, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -9622,7 +9622,7 @@ func (a *AuthApiService) GetAuthRadiusConfig(ctx context.Context) (*http.Respons
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/radius/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/radius/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9688,7 +9688,7 @@ func (a *AuthApiService) GetAuthRadiusUsers(ctx context.Context, list string) (*
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/radius/users"
+	localVarPath := a.client.cfg.Address + "/v1/auth/radius/users"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9755,7 +9755,7 @@ func (a *AuthApiService) GetAuthRadiusUsersName(ctx context.Context, name string
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/radius/users/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/radius/users/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -9822,7 +9822,7 @@ func (a *AuthApiService) GetAuthTokenAccessors(ctx context.Context, list string)
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/token/accessors/"
+	localVarPath := a.client.cfg.Address + "/v1/auth/token/accessors/"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9888,7 +9888,7 @@ func (a *AuthApiService) GetAuthTokenLookup(ctx context.Context) (*http.Response
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/token/lookup"
+	localVarPath := a.client.cfg.Address + "/v1/auth/token/lookup"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9953,7 +9953,7 @@ func (a *AuthApiService) GetAuthTokenLookupSelf(ctx context.Context) (*http.Resp
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/token/lookup-self"
+	localVarPath := a.client.cfg.Address + "/v1/auth/token/lookup-self"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10019,7 +10019,7 @@ func (a *AuthApiService) GetAuthTokenRoles(ctx context.Context, list string) (*h
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/token/roles"
+	localVarPath := a.client.cfg.Address + "/v1/auth/token/roles"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10086,7 +10086,7 @@ func (a *AuthApiService) GetAuthTokenRolesRoleName(ctx context.Context, roleName
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/token/roles/{role_name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/token/roles/{role_name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -10153,7 +10153,7 @@ func (a *AuthApiService) GetAuthUserpassUsers(ctx context.Context, list string) 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/userpass/users"
+	localVarPath := a.client.cfg.Address + "/v1/auth/userpass/users"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10220,7 +10220,7 @@ func (a *AuthApiService) GetAuthUserpassUsersUsername(ctx context.Context, usern
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/userpass/users/{username}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/userpass/users/{username}"
 	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(username, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -10286,7 +10286,7 @@ func (a *AuthApiService) PostAuthAlicloudLogin(ctx context.Context, alicloudLogi
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/alicloud/login"
+	localVarPath := a.client.cfg.Address + "/v1/auth/alicloud/login"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10354,7 +10354,7 @@ func (a *AuthApiService) PostAuthAlicloudRoleRole(ctx context.Context, role stri
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/alicloud/role/{role}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/alicloud/role/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -10422,7 +10422,7 @@ func (a *AuthApiService) PostAuthAppIdLogin(ctx context.Context, appIdLoginReque
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/app-id/login"
+	localVarPath := a.client.cfg.Address + "/v1/auth/app-id/login"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10490,7 +10490,7 @@ func (a *AuthApiService) PostAuthAppIdLoginAppId(ctx context.Context, appId stri
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/app-id/login/{app_id}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/app-id/login/{app_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", url.PathEscape(parameterToString(appId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -10559,7 +10559,7 @@ func (a *AuthApiService) PostAuthAppIdMapAppIdKey(ctx context.Context, key strin
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/app-id/map/app-id/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/app-id/map/app-id/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -10628,7 +10628,7 @@ func (a *AuthApiService) PostAuthAppIdMapUserIdKey(ctx context.Context, key stri
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/app-id/map/user-id/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/app-id/map/user-id/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -10696,7 +10696,7 @@ func (a *AuthApiService) PostAuthApproleLogin(ctx context.Context, approleLoginR
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/login"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/login"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10764,7 +10764,7 @@ func (a *AuthApiService) PostAuthApproleRoleRoleName(ctx context.Context, roleNa
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -10833,7 +10833,7 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameBindSecretId(ctx context.Con
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/bind-secret-id"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/bind-secret-id"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -10902,7 +10902,7 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameBoundCidrList(ctx context.Co
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/bound-cidr-list"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/bound-cidr-list"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -10971,7 +10971,7 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameCustomSecretId(ctx context.C
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/custom-secret-id"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/custom-secret-id"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -11040,7 +11040,7 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNamePeriod(ctx context.Context, 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/period"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/period"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -11109,7 +11109,7 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNamePolicies(ctx context.Context
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/policies"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/policies"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -11178,7 +11178,7 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameRoleId(ctx context.Context, 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/role-id"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/role-id"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -11247,7 +11247,7 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretId(ctx context.Context
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/secret-id"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/secret-id"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -11316,7 +11316,7 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/secret-id-accessor/destroy"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/secret-id-accessor/destroy"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -11385,7 +11385,7 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdAccessorLookup(ctx c
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/secret-id-accessor/lookup"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/secret-id-accessor/lookup"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -11454,7 +11454,7 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx conte
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/secret-id-bound-cidrs"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/secret-id-bound-cidrs"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -11523,7 +11523,7 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdDestroy(ctx context.
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/secret-id/destroy"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/secret-id/destroy"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -11592,7 +11592,7 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdLookup(ctx context.C
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/secret-id/lookup"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/secret-id/lookup"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -11661,7 +11661,7 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdNumUses(ctx context.
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/secret-id-num-uses"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/secret-id-num-uses"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -11730,7 +11730,7 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameSecretIdTtl(ctx context.Cont
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/secret-id-ttl"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/secret-id-ttl"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -11799,7 +11799,7 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/token-bound-cidrs"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/token-bound-cidrs"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -11868,7 +11868,7 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Cont
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/token-max-ttl"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/token-max-ttl"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -11937,7 +11937,7 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenNumUses(ctx context.Con
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/token-num-uses"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/token-num-uses"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -12006,7 +12006,7 @@ func (a *AuthApiService) PostAuthApproleRoleRoleNameTokenTtl(ctx context.Context
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/role/{role_name}/token-ttl"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/role/{role_name}/token-ttl"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -12074,7 +12074,7 @@ func (a *AuthApiService) PostAuthApproleTidySecretId(ctx context.Context) (*http
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/approle/tidy/secret-id"
+	localVarPath := a.client.cfg.Address + "/v1/auth/approle/tidy/secret-id"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12140,7 +12140,7 @@ func (a *AuthApiService) PostAuthAwsConfigCertificateCertName(ctx context.Contex
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/config/certificate/{cert_name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/config/certificate/{cert_name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"cert_name"+"}", url.PathEscape(parameterToString(certName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -12208,7 +12208,7 @@ func (a *AuthApiService) PostAuthAwsConfigClient(ctx context.Context, awsConfigC
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/config/client"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/config/client"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12275,7 +12275,7 @@ func (a *AuthApiService) PostAuthAwsConfigIdentity(ctx context.Context, awsConfi
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/config/identity"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/config/identity"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12342,7 +12342,7 @@ func (a *AuthApiService) PostAuthAwsConfigRotateRoot(ctx context.Context) (*http
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/config/rotate-root"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/config/rotate-root"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12408,7 +12408,7 @@ func (a *AuthApiService) PostAuthAwsConfigStsAccountId(ctx context.Context, acco
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/config/sts/{account_id}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/config/sts/{account_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", url.PathEscape(parameterToString(accountId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -12476,7 +12476,7 @@ func (a *AuthApiService) PostAuthAwsConfigTidyIdentityAccesslist(ctx context.Con
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/config/tidy/identity-accesslist"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/config/tidy/identity-accesslist"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12543,7 +12543,7 @@ func (a *AuthApiService) PostAuthAwsConfigTidyIdentityWhitelist(ctx context.Cont
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/config/tidy/identity-whitelist"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/config/tidy/identity-whitelist"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12610,7 +12610,7 @@ func (a *AuthApiService) PostAuthAwsConfigTidyRoletagBlacklist(ctx context.Conte
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/config/tidy/roletag-blacklist"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/config/tidy/roletag-blacklist"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12677,7 +12677,7 @@ func (a *AuthApiService) PostAuthAwsConfigTidyRoletagDenylist(ctx context.Contex
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/config/tidy/roletag-denylist"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/config/tidy/roletag-denylist"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12744,7 +12744,7 @@ func (a *AuthApiService) PostAuthAwsLogin(ctx context.Context, awsLoginRequest A
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/login"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/login"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12812,7 +12812,7 @@ func (a *AuthApiService) PostAuthAwsRoleRole(ctx context.Context, role string, a
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/role/{role}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/role/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -12881,7 +12881,7 @@ func (a *AuthApiService) PostAuthAwsRoleRoleTag(ctx context.Context, role string
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/role/{role}/tag"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/role/{role}/tag"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -12950,7 +12950,7 @@ func (a *AuthApiService) PostAuthAwsRoletagBlacklistRoleTag(ctx context.Context,
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/roletag-blacklist/{role_tag}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/roletag-blacklist/{role_tag}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(roleTag, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -13017,7 +13017,7 @@ func (a *AuthApiService) PostAuthAwsRoletagDenylistRoleTag(ctx context.Context, 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/roletag-denylist/{role_tag}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/roletag-denylist/{role_tag}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(roleTag, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -13083,7 +13083,7 @@ func (a *AuthApiService) PostAuthAwsTidyIdentityAccesslist(ctx context.Context, 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/tidy/identity-accesslist"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/tidy/identity-accesslist"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13150,7 +13150,7 @@ func (a *AuthApiService) PostAuthAwsTidyIdentityWhitelist(ctx context.Context, a
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/tidy/identity-whitelist"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/tidy/identity-whitelist"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13217,7 +13217,7 @@ func (a *AuthApiService) PostAuthAwsTidyRoletagBlacklist(ctx context.Context, aw
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/tidy/roletag-blacklist"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/tidy/roletag-blacklist"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13284,7 +13284,7 @@ func (a *AuthApiService) PostAuthAwsTidyRoletagDenylist(ctx context.Context, aws
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/aws/tidy/roletag-denylist"
+	localVarPath := a.client.cfg.Address + "/v1/auth/aws/tidy/roletag-denylist"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13351,7 +13351,7 @@ func (a *AuthApiService) PostAuthAzureConfig(ctx context.Context, azureConfigReq
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/azure/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/azure/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13418,7 +13418,7 @@ func (a *AuthApiService) PostAuthAzureLogin(ctx context.Context, azureLoginReque
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/azure/login"
+	localVarPath := a.client.cfg.Address + "/v1/auth/azure/login"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13486,7 +13486,7 @@ func (a *AuthApiService) PostAuthAzureRoleName(ctx context.Context, name string,
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/azure/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/azure/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -13554,7 +13554,7 @@ func (a *AuthApiService) PostAuthCentrifyConfig(ctx context.Context, centrifyCon
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/centrify/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/centrify/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13621,7 +13621,7 @@ func (a *AuthApiService) PostAuthCentrifyLogin(ctx context.Context, centrifyLogi
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/centrify/login"
+	localVarPath := a.client.cfg.Address + "/v1/auth/centrify/login"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13689,7 +13689,7 @@ func (a *AuthApiService) PostAuthCertCertsName(ctx context.Context, name string,
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/cert/certs/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/cert/certs/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -13757,7 +13757,7 @@ func (a *AuthApiService) PostAuthCertConfig(ctx context.Context, certConfigReque
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/cert/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/cert/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13825,7 +13825,7 @@ func (a *AuthApiService) PostAuthCertCrlsName(ctx context.Context, name string, 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/cert/crls/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/cert/crls/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -13893,7 +13893,7 @@ func (a *AuthApiService) PostAuthCertLogin(ctx context.Context, certLoginRequest
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/cert/login"
+	localVarPath := a.client.cfg.Address + "/v1/auth/cert/login"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13960,7 +13960,7 @@ func (a *AuthApiService) PostAuthCfConfig(ctx context.Context, cfConfigRequest C
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/cf/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/cf/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14027,7 +14027,7 @@ func (a *AuthApiService) PostAuthCfLogin(ctx context.Context, cfLoginRequest CfL
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/cf/login"
+	localVarPath := a.client.cfg.Address + "/v1/auth/cf/login"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14095,7 +14095,7 @@ func (a *AuthApiService) PostAuthCfRolesRole(ctx context.Context, role string, c
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/cf/roles/{role}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/cf/roles/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -14163,7 +14163,7 @@ func (a *AuthApiService) PostAuthGcpConfig(ctx context.Context, gcpConfigRequest
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/gcp/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/gcp/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14230,7 +14230,7 @@ func (a *AuthApiService) PostAuthGcpLogin(ctx context.Context, gcpLoginRequest G
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/gcp/login"
+	localVarPath := a.client.cfg.Address + "/v1/auth/gcp/login"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14298,7 +14298,7 @@ func (a *AuthApiService) PostAuthGcpRoleName(ctx context.Context, name string, g
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/gcp/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/gcp/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -14367,7 +14367,7 @@ func (a *AuthApiService) PostAuthGcpRoleNameLabels(ctx context.Context, name str
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/gcp/role/{name}/labels"
+	localVarPath := a.client.cfg.Address + "/v1/auth/gcp/role/{name}/labels"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -14436,7 +14436,7 @@ func (a *AuthApiService) PostAuthGcpRoleNameServiceAccounts(ctx context.Context,
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/gcp/role/{name}/service-accounts"
+	localVarPath := a.client.cfg.Address + "/v1/auth/gcp/role/{name}/service-accounts"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -14504,7 +14504,7 @@ func (a *AuthApiService) PostAuthGithubConfig(ctx context.Context, githubConfigR
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/github/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/github/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14571,7 +14571,7 @@ func (a *AuthApiService) PostAuthGithubLogin(ctx context.Context, githubLoginReq
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/github/login"
+	localVarPath := a.client.cfg.Address + "/v1/auth/github/login"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14639,7 +14639,7 @@ func (a *AuthApiService) PostAuthGithubMapTeamsKey(ctx context.Context, key stri
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/github/map/teams/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/github/map/teams/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -14708,7 +14708,7 @@ func (a *AuthApiService) PostAuthGithubMapUsersKey(ctx context.Context, key stri
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/github/map/users/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/github/map/users/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -14777,7 +14777,7 @@ func (a *AuthApiService) PostAuthJwtConfig(ctx context.Context, jwtConfigRequest
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/jwt/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/jwt/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14844,7 +14844,7 @@ func (a *AuthApiService) PostAuthJwtLogin(ctx context.Context, jwtLoginRequest J
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/jwt/login"
+	localVarPath := a.client.cfg.Address + "/v1/auth/jwt/login"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14911,7 +14911,7 @@ func (a *AuthApiService) PostAuthJwtOidcAuthUrl(ctx context.Context, jwtOidcAuth
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/jwt/oidc/auth_url"
+	localVarPath := a.client.cfg.Address + "/v1/auth/jwt/oidc/auth_url"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14978,7 +14978,7 @@ func (a *AuthApiService) PostAuthJwtOidcCallback(ctx context.Context, jwtOidcCal
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/jwt/oidc/callback"
+	localVarPath := a.client.cfg.Address + "/v1/auth/jwt/oidc/callback"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15047,7 +15047,7 @@ func (a *AuthApiService) PostAuthJwtRoleName(ctx context.Context, name string, j
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/jwt/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/jwt/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -15115,7 +15115,7 @@ func (a *AuthApiService) PostAuthKerberosConfig(ctx context.Context, kerberosCon
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/kerberos/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/kerberos/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15182,7 +15182,7 @@ func (a *AuthApiService) PostAuthKerberosConfigLdap(ctx context.Context, kerbero
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/kerberos/config/ldap"
+	localVarPath := a.client.cfg.Address + "/v1/auth/kerberos/config/ldap"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15250,7 +15250,7 @@ func (a *AuthApiService) PostAuthKerberosGroupsName(ctx context.Context, name st
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/kerberos/groups/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/kerberos/groups/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -15318,7 +15318,7 @@ func (a *AuthApiService) PostAuthKerberosLogin(ctx context.Context, kerberosLogi
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/kerberos/login"
+	localVarPath := a.client.cfg.Address + "/v1/auth/kerberos/login"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15385,7 +15385,7 @@ func (a *AuthApiService) PostAuthKubernetesConfig(ctx context.Context, kubernete
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/kubernetes/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/kubernetes/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15452,7 +15452,7 @@ func (a *AuthApiService) PostAuthKubernetesLogin(ctx context.Context, kubernetes
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/kubernetes/login"
+	localVarPath := a.client.cfg.Address + "/v1/auth/kubernetes/login"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15520,7 +15520,7 @@ func (a *AuthApiService) PostAuthKubernetesRoleName(ctx context.Context, name st
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/kubernetes/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/kubernetes/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -15588,7 +15588,7 @@ func (a *AuthApiService) PostAuthLdapConfig(ctx context.Context, ldapConfigReque
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/ldap/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/ldap/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15656,7 +15656,7 @@ func (a *AuthApiService) PostAuthLdapGroupsName(ctx context.Context, name string
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/ldap/groups/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/ldap/groups/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -15725,7 +15725,7 @@ func (a *AuthApiService) PostAuthLdapLoginUsername(ctx context.Context, username
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/ldap/login/{username}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/ldap/login/{username}"
 	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(username, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -15794,7 +15794,7 @@ func (a *AuthApiService) PostAuthLdapUsersName(ctx context.Context, name string,
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/ldap/users/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/ldap/users/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -15862,7 +15862,7 @@ func (a *AuthApiService) PostAuthOciConfig(ctx context.Context, ociConfigRequest
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/oci/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/oci/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15930,7 +15930,7 @@ func (a *AuthApiService) PostAuthOciLoginRole(ctx context.Context, role string, 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/oci/login/{role}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/oci/login/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -15999,7 +15999,7 @@ func (a *AuthApiService) PostAuthOciRoleRole(ctx context.Context, role string, o
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/oci/role/{role}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/oci/role/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -16068,7 +16068,7 @@ func (a *AuthApiService) PostAuthOidcConfig(ctx context.Context, oidcConfigReque
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/oidc/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/oidc/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -16135,7 +16135,7 @@ func (a *AuthApiService) PostAuthOidcLogin(ctx context.Context, oidcLoginRequest
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/oidc/login"
+	localVarPath := a.client.cfg.Address + "/v1/auth/oidc/login"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -16202,7 +16202,7 @@ func (a *AuthApiService) PostAuthOidcOidcAuthUrl(ctx context.Context, oidcOidcAu
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/oidc/oidc/auth_url"
+	localVarPath := a.client.cfg.Address + "/v1/auth/oidc/oidc/auth_url"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -16269,7 +16269,7 @@ func (a *AuthApiService) PostAuthOidcOidcCallback(ctx context.Context, oidcOidcC
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/oidc/oidc/callback"
+	localVarPath := a.client.cfg.Address + "/v1/auth/oidc/oidc/callback"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -16338,7 +16338,7 @@ func (a *AuthApiService) PostAuthOidcRoleName(ctx context.Context, name string, 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/oidc/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/oidc/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -16406,7 +16406,7 @@ func (a *AuthApiService) PostAuthOktaConfig(ctx context.Context, oktaConfigReque
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/okta/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/okta/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -16474,7 +16474,7 @@ func (a *AuthApiService) PostAuthOktaGroupsName(ctx context.Context, name string
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/okta/groups/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/okta/groups/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -16543,7 +16543,7 @@ func (a *AuthApiService) PostAuthOktaLoginUsername(ctx context.Context, username
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/okta/login/{username}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/okta/login/{username}"
 	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(username, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -16612,7 +16612,7 @@ func (a *AuthApiService) PostAuthOktaUsersName(ctx context.Context, name string,
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/okta/users/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/okta/users/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -16680,7 +16680,7 @@ func (a *AuthApiService) PostAuthRadiusConfig(ctx context.Context, radiusConfigR
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/radius/config"
+	localVarPath := a.client.cfg.Address + "/v1/auth/radius/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -16747,7 +16747,7 @@ func (a *AuthApiService) PostAuthRadiusLogin(ctx context.Context, radiusLoginReq
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/radius/login"
+	localVarPath := a.client.cfg.Address + "/v1/auth/radius/login"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -16815,7 +16815,7 @@ func (a *AuthApiService) PostAuthRadiusLoginUrlusername(ctx context.Context, url
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/radius/login/{urlusername}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/radius/login/{urlusername}"
 	localVarPath = strings.Replace(localVarPath, "{"+"urlusername"+"}", url.PathEscape(parameterToString(urlusername, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -16884,7 +16884,7 @@ func (a *AuthApiService) PostAuthRadiusUsersName(ctx context.Context, name strin
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/radius/users/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/radius/users/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -16952,7 +16952,7 @@ func (a *AuthApiService) PostAuthTokenCreate(ctx context.Context) (*http.Respons
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/token/create"
+	localVarPath := a.client.cfg.Address + "/v1/auth/token/create"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -17017,7 +17017,7 @@ func (a *AuthApiService) PostAuthTokenCreateOrphan(ctx context.Context) (*http.R
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/token/create-orphan"
+	localVarPath := a.client.cfg.Address + "/v1/auth/token/create-orphan"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -17083,7 +17083,7 @@ func (a *AuthApiService) PostAuthTokenCreateRoleName(ctx context.Context, roleNa
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/token/create/{role_name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/token/create/{role_name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -17149,7 +17149,7 @@ func (a *AuthApiService) PostAuthTokenLookup(ctx context.Context, tokenLookupReq
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/token/lookup"
+	localVarPath := a.client.cfg.Address + "/v1/auth/token/lookup"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -17216,7 +17216,7 @@ func (a *AuthApiService) PostAuthTokenLookupAccessor(ctx context.Context, tokenL
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/token/lookup-accessor"
+	localVarPath := a.client.cfg.Address + "/v1/auth/token/lookup-accessor"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -17283,7 +17283,7 @@ func (a *AuthApiService) PostAuthTokenLookupSelf(ctx context.Context, tokenLooku
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/token/lookup-self"
+	localVarPath := a.client.cfg.Address + "/v1/auth/token/lookup-self"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -17350,7 +17350,7 @@ func (a *AuthApiService) PostAuthTokenRenew(ctx context.Context, tokenRenewReque
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/token/renew"
+	localVarPath := a.client.cfg.Address + "/v1/auth/token/renew"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -17417,7 +17417,7 @@ func (a *AuthApiService) PostAuthTokenRenewAccessor(ctx context.Context, tokenRe
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/token/renew-accessor"
+	localVarPath := a.client.cfg.Address + "/v1/auth/token/renew-accessor"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -17484,7 +17484,7 @@ func (a *AuthApiService) PostAuthTokenRenewSelf(ctx context.Context, tokenRenewS
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/token/renew-self"
+	localVarPath := a.client.cfg.Address + "/v1/auth/token/renew-self"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -17551,7 +17551,7 @@ func (a *AuthApiService) PostAuthTokenRevoke(ctx context.Context, tokenRevokeReq
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/token/revoke"
+	localVarPath := a.client.cfg.Address + "/v1/auth/token/revoke"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -17618,7 +17618,7 @@ func (a *AuthApiService) PostAuthTokenRevokeAccessor(ctx context.Context, tokenR
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/token/revoke-accessor"
+	localVarPath := a.client.cfg.Address + "/v1/auth/token/revoke-accessor"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -17685,7 +17685,7 @@ func (a *AuthApiService) PostAuthTokenRevokeOrphan(ctx context.Context, tokenRev
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/token/revoke-orphan"
+	localVarPath := a.client.cfg.Address + "/v1/auth/token/revoke-orphan"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -17752,7 +17752,7 @@ func (a *AuthApiService) PostAuthTokenRevokeSelf(ctx context.Context) (*http.Res
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/token/revoke-self"
+	localVarPath := a.client.cfg.Address + "/v1/auth/token/revoke-self"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -17818,7 +17818,7 @@ func (a *AuthApiService) PostAuthTokenRolesRoleName(ctx context.Context, roleNam
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/token/roles/{role_name}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/token/roles/{role_name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -17886,7 +17886,7 @@ func (a *AuthApiService) PostAuthTokenTidy(ctx context.Context) (*http.Response,
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/token/tidy"
+	localVarPath := a.client.cfg.Address + "/v1/auth/token/tidy"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -17952,7 +17952,7 @@ func (a *AuthApiService) PostAuthUserpassLoginUsername(ctx context.Context, user
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/userpass/login/{username}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/userpass/login/{username}"
 	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(username, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -18021,7 +18021,7 @@ func (a *AuthApiService) PostAuthUserpassUsersUsername(ctx context.Context, user
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/userpass/users/{username}"
+	localVarPath := a.client.cfg.Address + "/v1/auth/userpass/users/{username}"
 	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(username, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -18090,7 +18090,7 @@ func (a *AuthApiService) PostAuthUserpassUsersUsernamePassword(ctx context.Conte
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/userpass/users/{username}/password"
+	localVarPath := a.client.cfg.Address + "/v1/auth/userpass/users/{username}/password"
 	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(username, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -18159,7 +18159,7 @@ func (a *AuthApiService) PostAuthUserpassUsersUsernamePolicies(ctx context.Conte
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/v1//auth/userpass/users/{username}/policies"
+	localVarPath := a.client.cfg.Address + "/v1/auth/userpass/users/{username}/policies"
 	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(username, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)

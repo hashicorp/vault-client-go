@@ -3,11 +3,15 @@ package {{packageName}}
 
 import (
 	"context"
+	"crypto/tls"
 	"fmt"
 	"net/http"
 	"strings"
+	"time"
 
 	"github.com/hashicorp/go-cleanhttp"
+
+	"golang.org/x/net/http2"
 )
 
 // Configuration is used to configure the creation of the client

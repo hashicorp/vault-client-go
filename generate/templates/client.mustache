@@ -10,10 +10,8 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
-	"log"
 	"mime/multipart"
 	"net/http"
-	"net/http/httputil"
 	"net/url"
 	"os"
 	"path/filepath"
@@ -305,75 +303,9 @@ func (c *Client) prepareRequest(
 	// localVarRequest.Header.Add("User-Agent", c.cfg.UserAgent)
 
 	if ctx != nil {
-		// add context to the request
 		localVarRequest = localVarRequest.WithContext(ctx)
-
-		// Walk through any authentication.
-
-		// OAuth2 authentication
-		if tok, ok := ctx.Value(ContextOAuth2).(oauth2.TokenSource); ok {
-			// We were able to grab an oauth2 token from the context
-			var latestToken *oauth2.Token
-			if latestToken, err = tok.Token(); err != nil {
-				return nil, err
-			}
-
-			latestToken.SetAuthHeader(localVarRequest)
-		}
-
-		// Basic HTTP Authentication
-		if auth, ok := ctx.Value(ContextBasicAuth).(BasicAuth); ok {
-			localVarRequest.SetBasicAuth(auth.UserName, auth.Password)
-		}
-
-		// AccessToken Authentication
-		if auth, ok := ctx.Value(ContextAccessToken).(string); ok {
-			localVarRequest.Header.Add("Authorization", "Bearer "+auth)
-		}
-
-		{{#withAWSV4Signature}}
-		// AWS Signature v4 Authentication
-		if auth, ok := ctx.Value(ContextAWSv4).(AWSv4); ok {
-			creds := awscredentials.NewStaticCredentials(auth.AccessKey, auth.SecretKey, auth.SessionToken)
-			signer := awsv4.NewSigner(creds)
-			var reader *strings.Reader
-			if body == nil {
-				reader = strings.NewReader("")
-			} else {
-				reader = strings.NewReader(body.String())
-			}
-
-			// Define default values for region and service to maintain backward compatibility
-			region := auth.Region
-			if region == "" {
-				region = "eu-west-2"
-			}
-			service := auth.Service
-			if service == "" {
-				service = "oapi"
-			}
-
-			timestamp := time.Now()
-			_, err := signer.Sign(localVarRequest, reader, service, region, timestamp)
-			if err != nil {
-				return nil, err
-			}
-		}
-		{{/withAWSV4Signature}}
 	}
 
-{{#hasHttpSignatureMethods}}
-	if ctx != nil {
-		// HTTP Signature Authentication. All request headers must be set (including default headers)
-		// because the headers may be included in the signature.
-		if auth, ok := ctx.Value(ContextHttpSignatureAuth).(HttpSignatureAuth); ok {
-			err = SignRequest(ctx, localVarRequest, auth)
-			if err != nil {
-				return nil, err
-			}
-		}
-	}
-{{/hasHttpSignatureMethods}}
 	return localVarRequest, nil
 }
 

@@ -167,26 +167,11 @@ func parameterToJson(obj interface{}) (string, error) {
 
 // callAPI do the request.
 func (c *Client) callAPI(request *http.Request) (*http.Response, error) {
-	if c.cfg.Debug {
-		dump, err := httputil.DumpRequestOut(request, true)
-		if err != nil {
-			return nil, err
-		}
-		log.Printf("\n%s\n", string(dump))
-	}
-
 	resp, err := c.cfg.HTTPClient.Do(request)
 	if err != nil {
 		return resp, err
 	}
 
-	if c.cfg.Debug {
-		dump, err := httputil.DumpResponse(resp, true)
-		if err != nil {
-			return resp, err
-		}
-		log.Printf("\n%s\n", string(dump))
-	}
 	return resp, err
 }
 
@@ -286,16 +271,6 @@ func (c *Client) prepareRequest(
 		return nil, err
 	}
 
-	// Override request host, if applicable
-	if c.cfg.Host != "" {
-		url.Host = c.cfg.Host
-	}
-
-	// Override request scheme, if applicable
-	if c.cfg.Scheme != "" {
-		url.Scheme = c.cfg.Scheme
-	}
-
 	// Adding Query Param
 	query := url.Query()
 	for k, v := range queryParams {
@@ -327,7 +302,7 @@ func (c *Client) prepareRequest(
 	}
 
 	// Add the user agent to the request.
-	localVarRequest.Header.Add("User-Agent", c.cfg.UserAgent)
+	// localVarRequest.Header.Add("User-Agent", c.cfg.UserAgent)
 
 	if ctx != nil {
 		// add context to the request
@@ -387,16 +362,6 @@ func (c *Client) prepareRequest(
 		{{/withAWSV4Signature}}
 	}
 
-	for header, value := range c.cfg.DefaultHeader {
-		localVarRequest.Header.Add(header, value)
-	}
-{{#withCustomMiddlewareFunction}}
-
-	if c.cfg.Middleware != nil {
-		c.cfg.Middleware(localVarRequest)
-	}
-
-{{/withCustomMiddlewareFunction}}
 {{#hasHttpSignatureMethods}}
 	if ctx != nil {
 		// HTTP Signature Authentication. All request headers must be set (including default headers)

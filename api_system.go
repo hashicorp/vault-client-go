@@ -31,12 +31,7 @@ func (a *SystemApiService) DeleteSysAuditPath(ctx context.Context, path string) 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysAuditPath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/audit/{path}"
+	localVarPath := a.client.cfg.Address + "/sys/audit/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -97,12 +92,7 @@ func (a *SystemApiService) DeleteSysAuthPath(ctx context.Context, path string) (
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysAuthPath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/auth/{path}"
+	localVarPath := a.client.cfg.Address + "/sys/auth/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -162,12 +152,7 @@ func (a *SystemApiService) DeleteSysConfigAuditingRequestHeadersHeader(ctx conte
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysConfigAuditingRequestHeadersHeader")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/config/auditing/request-headers/{header}"
+	localVarPath := a.client.cfg.Address + "/sys/config/auditing/request-headers/{header}"
 	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -227,12 +212,7 @@ func (a *SystemApiService) DeleteSysConfigCors(ctx context.Context) (*http.Respo
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysConfigCors")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/config/cors"
+	localVarPath := a.client.cfg.Address + "/sys/config/cors"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,12 +272,7 @@ func (a *SystemApiService) DeleteSysConfigUiHeadersHeader(ctx context.Context, h
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysConfigUiHeadersHeader")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/config/ui/headers/{header}"
+	localVarPath := a.client.cfg.Address + "/sys/config/ui/headers/{header}"
 	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -357,12 +332,7 @@ func (a *SystemApiService) DeleteSysGenerateRoot(ctx context.Context) (*http.Res
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysGenerateRoot")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/generate-root"
+	localVarPath := a.client.cfg.Address + "/sys/generate-root"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -421,12 +391,7 @@ func (a *SystemApiService) DeleteSysGenerateRootAttempt(ctx context.Context) (*h
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysGenerateRootAttempt")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/generate-root/attempt"
+	localVarPath := a.client.cfg.Address + "/sys/generate-root/attempt"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -486,12 +451,7 @@ func (a *SystemApiService) DeleteSysMountsPath(ctx context.Context, path string)
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysMountsPath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/mounts/{path}"
+	localVarPath := a.client.cfg.Address + "/sys/mounts/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -552,12 +512,7 @@ func (a *SystemApiService) DeleteSysPluginsCatalogName(ctx context.Context, name
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysPluginsCatalogName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/plugins/catalog/{name}"
+	localVarPath := a.client.cfg.Address + "/sys/plugins/catalog/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -619,12 +574,7 @@ func (a *SystemApiService) DeleteSysPluginsCatalogTypeName(ctx context.Context, 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysPluginsCatalogTypeName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/plugins/catalog/{type}/{name}"
+	localVarPath := a.client.cfg.Address + "/sys/plugins/catalog/{type}/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(type_, "")), -1)
 
@@ -686,12 +636,7 @@ func (a *SystemApiService) DeleteSysPoliciesAclName(ctx context.Context, name st
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysPoliciesAclName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/policies/acl/{name}"
+	localVarPath := a.client.cfg.Address + "/sys/policies/acl/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -752,12 +697,7 @@ func (a *SystemApiService) DeleteSysPoliciesPasswordName(ctx context.Context, na
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysPoliciesPasswordName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/policies/password/{name}"
+	localVarPath := a.client.cfg.Address + "/sys/policies/password/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -818,12 +758,7 @@ func (a *SystemApiService) DeleteSysPolicyName(ctx context.Context, name string)
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysPolicyName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/policy/{name}"
+	localVarPath := a.client.cfg.Address + "/sys/policy/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -884,12 +819,7 @@ func (a *SystemApiService) DeleteSysQuotasRateLimitName(ctx context.Context, nam
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysQuotasRateLimitName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/quotas/rate-limit/{name}"
+	localVarPath := a.client.cfg.Address + "/sys/quotas/rate-limit/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -949,12 +879,7 @@ func (a *SystemApiService) DeleteSysRaw(ctx context.Context) (*http.Response, er
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysRaw")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/raw"
+	localVarPath := a.client.cfg.Address + "/sys/raw"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1013,12 +938,7 @@ func (a *SystemApiService) DeleteSysRawPath(ctx context.Context, path string) (*
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysRawPath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/raw/{path}"
+	localVarPath := a.client.cfg.Address + "/sys/raw/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1078,12 +998,7 @@ func (a *SystemApiService) DeleteSysRekeyBackup(ctx context.Context) (*http.Resp
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysRekeyBackup")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/rekey/backup"
+	localVarPath := a.client.cfg.Address + "/sys/rekey/backup"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1143,12 +1058,7 @@ func (a *SystemApiService) DeleteSysRekeyInit(ctx context.Context) (*http.Respon
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysRekeyInit")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/rekey/init"
+	localVarPath := a.client.cfg.Address + "/sys/rekey/init"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1207,12 +1117,7 @@ func (a *SystemApiService) DeleteSysRekeyRecoveryKeyBackup(ctx context.Context) 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysRekeyRecoveryKeyBackup")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/rekey/recovery-key-backup"
+	localVarPath := a.client.cfg.Address + "/sys/rekey/recovery-key-backup"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1272,12 +1177,7 @@ func (a *SystemApiService) DeleteSysRekeyVerify(ctx context.Context) (*http.Resp
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.DeleteSysRekeyVerify")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/rekey/verify"
+	localVarPath := a.client.cfg.Address + "/sys/rekey/verify"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1336,12 +1236,7 @@ func (a *SystemApiService) GetSysAudit(ctx context.Context) (*http.Response, err
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysAudit")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/audit"
+	localVarPath := a.client.cfg.Address + "/sys/audit"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1400,12 +1295,7 @@ func (a *SystemApiService) GetSysAuth(ctx context.Context) (*http.Response, erro
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysAuth")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/auth"
+	localVarPath := a.client.cfg.Address + "/sys/auth"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1465,12 +1355,7 @@ func (a *SystemApiService) GetSysAuthPath(ctx context.Context, path string) (*ht
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysAuthPath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/auth/{path}"
+	localVarPath := a.client.cfg.Address + "/sys/auth/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1532,12 +1417,7 @@ func (a *SystemApiService) GetSysAuthPathTune(ctx context.Context, path string) 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysAuthPathTune")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/auth/{path}/tune"
+	localVarPath := a.client.cfg.Address + "/sys/auth/{path}/tune"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1597,12 +1477,7 @@ func (a *SystemApiService) GetSysConfigAuditingRequestHeaders(ctx context.Contex
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysConfigAuditingRequestHeaders")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/config/auditing/request-headers"
+	localVarPath := a.client.cfg.Address + "/sys/config/auditing/request-headers"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1661,12 +1536,7 @@ func (a *SystemApiService) GetSysConfigAuditingRequestHeadersHeader(ctx context.
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysConfigAuditingRequestHeadersHeader")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/config/auditing/request-headers/{header}"
+	localVarPath := a.client.cfg.Address + "/sys/config/auditing/request-headers/{header}"
 	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1726,12 +1596,7 @@ func (a *SystemApiService) GetSysConfigCors(ctx context.Context) (*http.Response
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysConfigCors")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/config/cors"
+	localVarPath := a.client.cfg.Address + "/sys/config/cors"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1791,12 +1656,7 @@ func (a *SystemApiService) GetSysConfigStateSanitized(ctx context.Context) (*htt
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysConfigStateSanitized")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/config/state/sanitized"
+	localVarPath := a.client.cfg.Address + "/sys/config/state/sanitized"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1856,12 +1716,7 @@ func (a *SystemApiService) GetSysConfigUiHeaders(ctx context.Context, list strin
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysConfigUiHeaders")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/config/ui/headers/"
+	localVarPath := a.client.cfg.Address + "/sys/config/ui/headers/"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1922,12 +1777,7 @@ func (a *SystemApiService) GetSysConfigUiHeadersHeader(ctx context.Context, head
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysConfigUiHeadersHeader")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/config/ui/headers/{header}"
+	localVarPath := a.client.cfg.Address + "/sys/config/ui/headers/{header}"
 	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1987,12 +1837,7 @@ func (a *SystemApiService) GetSysGenerateRoot(ctx context.Context) (*http.Respon
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysGenerateRoot")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/generate-root"
+	localVarPath := a.client.cfg.Address + "/sys/generate-root"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2051,12 +1896,7 @@ func (a *SystemApiService) GetSysGenerateRootAttempt(ctx context.Context) (*http
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysGenerateRootAttempt")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/generate-root/attempt"
+	localVarPath := a.client.cfg.Address + "/sys/generate-root/attempt"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2115,12 +1955,7 @@ func (a *SystemApiService) GetSysHaStatus(ctx context.Context) (*http.Response, 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysHaStatus")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/ha-status"
+	localVarPath := a.client.cfg.Address + "/sys/ha-status"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2179,12 +2014,7 @@ func (a *SystemApiService) GetSysHealth(ctx context.Context) (*http.Response, er
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysHealth")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/health"
+	localVarPath := a.client.cfg.Address + "/sys/health"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2244,12 +2074,7 @@ func (a *SystemApiService) GetSysHostInfo(ctx context.Context) (*http.Response, 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysHostInfo")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/host-info"
+	localVarPath := a.client.cfg.Address + "/sys/host-info"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2309,12 +2134,7 @@ func (a *SystemApiService) GetSysInFlightReq(ctx context.Context) (*http.Respons
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInFlightReq")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/in-flight-req"
+	localVarPath := a.client.cfg.Address + "/sys/in-flight-req"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2373,12 +2193,7 @@ func (a *SystemApiService) GetSysInit(ctx context.Context) (*http.Response, erro
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInit")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/init"
+	localVarPath := a.client.cfg.Address + "/sys/init"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2437,12 +2252,7 @@ func (a *SystemApiService) GetSysInternalCountersActivity(ctx context.Context) (
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInternalCountersActivity")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/internal/counters/activity"
+	localVarPath := a.client.cfg.Address + "/sys/internal/counters/activity"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2501,12 +2311,7 @@ func (a *SystemApiService) GetSysInternalCountersActivityExport(ctx context.Cont
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInternalCountersActivityExport")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/internal/counters/activity/export"
+	localVarPath := a.client.cfg.Address + "/sys/internal/counters/activity/export"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2565,12 +2370,7 @@ func (a *SystemApiService) GetSysInternalCountersActivityMonthly(ctx context.Con
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInternalCountersActivityMonthly")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/internal/counters/activity/monthly"
+	localVarPath := a.client.cfg.Address + "/sys/internal/counters/activity/monthly"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2629,12 +2429,7 @@ func (a *SystemApiService) GetSysInternalCountersConfig(ctx context.Context) (*h
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInternalCountersConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/internal/counters/config"
+	localVarPath := a.client.cfg.Address + "/sys/internal/counters/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2693,12 +2488,7 @@ func (a *SystemApiService) GetSysInternalCountersEntities(ctx context.Context) (
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInternalCountersEntities")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/internal/counters/entities"
+	localVarPath := a.client.cfg.Address + "/sys/internal/counters/entities"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2757,12 +2547,7 @@ func (a *SystemApiService) GetSysInternalCountersRequests(ctx context.Context) (
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInternalCountersRequests")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/internal/counters/requests"
+	localVarPath := a.client.cfg.Address + "/sys/internal/counters/requests"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2821,12 +2606,7 @@ func (a *SystemApiService) GetSysInternalCountersTokens(ctx context.Context) (*h
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInternalCountersTokens")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/internal/counters/tokens"
+	localVarPath := a.client.cfg.Address + "/sys/internal/counters/tokens"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2885,12 +2665,7 @@ func (a *SystemApiService) GetSysInternalSpecsOpenapi(ctx context.Context) (*htt
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInternalSpecsOpenapi")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/internal/specs/openapi"
+	localVarPath := a.client.cfg.Address + "/sys/internal/specs/openapi"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2949,12 +2724,7 @@ func (a *SystemApiService) GetSysInternalUiFeatureFlags(ctx context.Context) (*h
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInternalUiFeatureFlags")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/internal/ui/feature-flags"
+	localVarPath := a.client.cfg.Address + "/sys/internal/ui/feature-flags"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3013,12 +2783,7 @@ func (a *SystemApiService) GetSysInternalUiMounts(ctx context.Context) (*http.Re
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInternalUiMounts")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/internal/ui/mounts"
+	localVarPath := a.client.cfg.Address + "/sys/internal/ui/mounts"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3078,12 +2843,7 @@ func (a *SystemApiService) GetSysInternalUiMountsPath(ctx context.Context, path 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInternalUiMountsPath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/internal/ui/mounts/{path}"
+	localVarPath := a.client.cfg.Address + "/sys/internal/ui/mounts/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3143,12 +2903,7 @@ func (a *SystemApiService) GetSysInternalUiNamespaces(ctx context.Context) (*htt
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInternalUiNamespaces")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/internal/ui/namespaces"
+	localVarPath := a.client.cfg.Address + "/sys/internal/ui/namespaces"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3207,12 +2962,7 @@ func (a *SystemApiService) GetSysInternalUiResultantAcl(ctx context.Context) (*h
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysInternalUiResultantAcl")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/internal/ui/resultant-acl"
+	localVarPath := a.client.cfg.Address + "/sys/internal/ui/resultant-acl"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3271,12 +3021,7 @@ func (a *SystemApiService) GetSysKeyStatus(ctx context.Context) (*http.Response,
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysKeyStatus")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/key-status"
+	localVarPath := a.client.cfg.Address + "/sys/key-status"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3335,12 +3080,7 @@ func (a *SystemApiService) GetSysLeader(ctx context.Context) (*http.Response, er
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysLeader")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/leader"
+	localVarPath := a.client.cfg.Address + "/sys/leader"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3399,12 +3139,7 @@ func (a *SystemApiService) GetSysLeases(ctx context.Context) (*http.Response, er
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysLeases")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/leases"
+	localVarPath := a.client.cfg.Address + "/sys/leases"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3463,12 +3198,7 @@ func (a *SystemApiService) GetSysLeasesCount(ctx context.Context) (*http.Respons
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysLeasesCount")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/leases/count"
+	localVarPath := a.client.cfg.Address + "/sys/leases/count"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3528,12 +3258,7 @@ func (a *SystemApiService) GetSysLeasesLookup(ctx context.Context, list string) 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysLeasesLookup")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/leases/lookup/"
+	localVarPath := a.client.cfg.Address + "/sys/leases/lookup/"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3595,12 +3320,7 @@ func (a *SystemApiService) GetSysLeasesLookupPrefix(ctx context.Context, prefix 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysLeasesLookupPrefix")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/leases/lookup/{prefix}"
+	localVarPath := a.client.cfg.Address + "/sys/leases/lookup/{prefix}"
 	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(prefix, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3662,12 +3382,7 @@ func (a *SystemApiService) GetSysMetrics(ctx context.Context, format string) (*h
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysMetrics")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/metrics"
+	localVarPath := a.client.cfg.Address + "/sys/metrics"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3729,12 +3444,7 @@ func (a *SystemApiService) GetSysMonitor(ctx context.Context, logFormat string, 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysMonitor")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/monitor"
+	localVarPath := a.client.cfg.Address + "/sys/monitor"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3795,12 +3505,7 @@ func (a *SystemApiService) GetSysMounts(ctx context.Context) (*http.Response, er
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysMounts")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/mounts"
+	localVarPath := a.client.cfg.Address + "/sys/mounts"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3860,12 +3565,7 @@ func (a *SystemApiService) GetSysMountsPath(ctx context.Context, path string) (*
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysMountsPath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/mounts/{path}"
+	localVarPath := a.client.cfg.Address + "/sys/mounts/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3926,12 +3626,7 @@ func (a *SystemApiService) GetSysMountsPathTune(ctx context.Context, path string
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysMountsPathTune")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/mounts/{path}/tune"
+	localVarPath := a.client.cfg.Address + "/sys/mounts/{path}/tune"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3991,12 +3686,7 @@ func (a *SystemApiService) GetSysPluginsCatalog(ctx context.Context) (*http.Resp
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPluginsCatalog")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/plugins/catalog"
+	localVarPath := a.client.cfg.Address + "/sys/plugins/catalog"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4056,12 +3746,7 @@ func (a *SystemApiService) GetSysPluginsCatalogName(ctx context.Context, name st
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPluginsCatalogName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/plugins/catalog/{name}"
+	localVarPath := a.client.cfg.Address + "/sys/plugins/catalog/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4123,12 +3808,7 @@ func (a *SystemApiService) GetSysPluginsCatalogType(ctx context.Context, type_ s
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPluginsCatalogType")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/plugins/catalog/{type}"
+	localVarPath := a.client.cfg.Address + "/sys/plugins/catalog/{type}"
 	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(type_, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4191,12 +3871,7 @@ func (a *SystemApiService) GetSysPluginsCatalogTypeName(ctx context.Context, nam
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPluginsCatalogTypeName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/plugins/catalog/{type}/{name}"
+	localVarPath := a.client.cfg.Address + "/sys/plugins/catalog/{type}/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(type_, "")), -1)
 
@@ -4258,12 +3933,7 @@ func (a *SystemApiService) GetSysPoliciesAcl(ctx context.Context, list string) (
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPoliciesAcl")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/policies/acl"
+	localVarPath := a.client.cfg.Address + "/sys/policies/acl"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4324,12 +3994,7 @@ func (a *SystemApiService) GetSysPoliciesAclName(ctx context.Context, name strin
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPoliciesAclName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/policies/acl/{name}"
+	localVarPath := a.client.cfg.Address + "/sys/policies/acl/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4390,12 +4055,7 @@ func (a *SystemApiService) GetSysPoliciesPassword(ctx context.Context, list stri
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPoliciesPassword")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/policies/password"
+	localVarPath := a.client.cfg.Address + "/sys/policies/password"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4456,12 +4116,7 @@ func (a *SystemApiService) GetSysPoliciesPasswordName(ctx context.Context, name 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPoliciesPasswordName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/policies/password/{name}"
+	localVarPath := a.client.cfg.Address + "/sys/policies/password/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4522,12 +4177,7 @@ func (a *SystemApiService) GetSysPoliciesPasswordNameGenerate(ctx context.Contex
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPoliciesPasswordNameGenerate")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/policies/password/{name}/generate"
+	localVarPath := a.client.cfg.Address + "/sys/policies/password/{name}/generate"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4588,12 +4238,7 @@ func (a *SystemApiService) GetSysPolicy(ctx context.Context, list string) (*http
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPolicy")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/policy"
+	localVarPath := a.client.cfg.Address + "/sys/policy"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4654,12 +4299,7 @@ func (a *SystemApiService) GetSysPolicyName(ctx context.Context, name string) (*
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPolicyName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/policy/{name}"
+	localVarPath := a.client.cfg.Address + "/sys/policy/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4720,12 +4360,7 @@ func (a *SystemApiService) GetSysPprof(ctx context.Context) (*http.Response, err
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPprof")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/pprof/"
+	localVarPath := a.client.cfg.Address + "/sys/pprof/"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4785,12 +4420,7 @@ func (a *SystemApiService) GetSysPprofAllocs(ctx context.Context) (*http.Respons
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPprofAllocs")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/pprof/allocs"
+	localVarPath := a.client.cfg.Address + "/sys/pprof/allocs"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4850,12 +4480,7 @@ func (a *SystemApiService) GetSysPprofBlock(ctx context.Context) (*http.Response
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPprofBlock")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/pprof/block"
+	localVarPath := a.client.cfg.Address + "/sys/pprof/block"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4915,12 +4540,7 @@ func (a *SystemApiService) GetSysPprofCmdline(ctx context.Context) (*http.Respon
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPprofCmdline")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/pprof/cmdline"
+	localVarPath := a.client.cfg.Address + "/sys/pprof/cmdline"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4980,12 +4600,7 @@ func (a *SystemApiService) GetSysPprofGoroutine(ctx context.Context) (*http.Resp
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPprofGoroutine")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/pprof/goroutine"
+	localVarPath := a.client.cfg.Address + "/sys/pprof/goroutine"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5045,12 +4660,7 @@ func (a *SystemApiService) GetSysPprofHeap(ctx context.Context) (*http.Response,
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPprofHeap")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/pprof/heap"
+	localVarPath := a.client.cfg.Address + "/sys/pprof/heap"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5110,12 +4720,7 @@ func (a *SystemApiService) GetSysPprofMutex(ctx context.Context) (*http.Response
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPprofMutex")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/pprof/mutex"
+	localVarPath := a.client.cfg.Address + "/sys/pprof/mutex"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5175,12 +4780,7 @@ func (a *SystemApiService) GetSysPprofProfile(ctx context.Context) (*http.Respon
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPprofProfile")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/pprof/profile"
+	localVarPath := a.client.cfg.Address + "/sys/pprof/profile"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5240,12 +4840,7 @@ func (a *SystemApiService) GetSysPprofSymbol(ctx context.Context) (*http.Respons
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPprofSymbol")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/pprof/symbol"
+	localVarPath := a.client.cfg.Address + "/sys/pprof/symbol"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5305,12 +4900,7 @@ func (a *SystemApiService) GetSysPprofThreadcreate(ctx context.Context) (*http.R
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPprofThreadcreate")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/pprof/threadcreate"
+	localVarPath := a.client.cfg.Address + "/sys/pprof/threadcreate"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5370,12 +4960,7 @@ func (a *SystemApiService) GetSysPprofTrace(ctx context.Context) (*http.Response
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysPprofTrace")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/pprof/trace"
+	localVarPath := a.client.cfg.Address + "/sys/pprof/trace"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5434,12 +5019,7 @@ func (a *SystemApiService) GetSysQuotasConfig(ctx context.Context) (*http.Respon
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysQuotasConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/quotas/config"
+	localVarPath := a.client.cfg.Address + "/sys/quotas/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5499,12 +5079,7 @@ func (a *SystemApiService) GetSysQuotasRateLimit(ctx context.Context, list strin
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysQuotasRateLimit")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/quotas/rate-limit"
+	localVarPath := a.client.cfg.Address + "/sys/quotas/rate-limit"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5565,12 +5140,7 @@ func (a *SystemApiService) GetSysQuotasRateLimitName(ctx context.Context, name s
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysQuotasRateLimitName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/quotas/rate-limit/{name}"
+	localVarPath := a.client.cfg.Address + "/sys/quotas/rate-limit/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5631,12 +5201,7 @@ func (a *SystemApiService) GetSysRaw(ctx context.Context, list string) (*http.Re
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysRaw")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/raw"
+	localVarPath := a.client.cfg.Address + "/sys/raw"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5697,12 +5262,7 @@ func (a *SystemApiService) GetSysRawPath(ctx context.Context, path string, list 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysRawPath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/raw/{path}"
+	localVarPath := a.client.cfg.Address + "/sys/raw/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5763,12 +5323,7 @@ func (a *SystemApiService) GetSysRekeyBackup(ctx context.Context) (*http.Respons
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysRekeyBackup")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/rekey/backup"
+	localVarPath := a.client.cfg.Address + "/sys/rekey/backup"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5827,12 +5382,7 @@ func (a *SystemApiService) GetSysRekeyInit(ctx context.Context) (*http.Response,
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysRekeyInit")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/rekey/init"
+	localVarPath := a.client.cfg.Address + "/sys/rekey/init"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5891,12 +5441,7 @@ func (a *SystemApiService) GetSysRekeyRecoveryKeyBackup(ctx context.Context) (*h
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysRekeyRecoveryKeyBackup")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/rekey/recovery-key-backup"
+	localVarPath := a.client.cfg.Address + "/sys/rekey/recovery-key-backup"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5955,12 +5500,7 @@ func (a *SystemApiService) GetSysRekeyVerify(ctx context.Context) (*http.Respons
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysRekeyVerify")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/rekey/verify"
+	localVarPath := a.client.cfg.Address + "/sys/rekey/verify"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6020,12 +5560,7 @@ func (a *SystemApiService) GetSysRemountStatusMigrationId(ctx context.Context, m
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysRemountStatusMigrationId")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/remount/status/{migration_id}"
+	localVarPath := a.client.cfg.Address + "/sys/remount/status/{migration_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"migration_id"+"}", url.PathEscape(parameterToString(migrationId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6085,12 +5620,7 @@ func (a *SystemApiService) GetSysReplicationStatus(ctx context.Context) (*http.R
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysReplicationStatus")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/replication/status"
+	localVarPath := a.client.cfg.Address + "/sys/replication/status"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6149,12 +5679,7 @@ func (a *SystemApiService) GetSysRotateConfig(ctx context.Context) (*http.Respon
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysRotateConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/rotate/config"
+	localVarPath := a.client.cfg.Address + "/sys/rotate/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6213,12 +5738,7 @@ func (a *SystemApiService) GetSysSealStatus(ctx context.Context) (*http.Response
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysSealStatus")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/seal-status"
+	localVarPath := a.client.cfg.Address + "/sys/seal-status"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6278,12 +5798,7 @@ func (a *SystemApiService) GetSysVersionHistory(ctx context.Context, list string
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysVersionHistory")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/version-history/"
+	localVarPath := a.client.cfg.Address + "/sys/version-history/"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6343,12 +5858,7 @@ func (a *SystemApiService) GetSysWrappingLookup(ctx context.Context) (*http.Resp
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.GetSysWrappingLookup")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/wrapping/lookup"
+	localVarPath := a.client.cfg.Address + "/sys/wrapping/lookup"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6408,12 +5918,7 @@ func (a *SystemApiService) PostSysAuditHashPath(ctx context.Context, path string
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysAuditHashPath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/audit-hash/{path}"
+	localVarPath := a.client.cfg.Address + "/sys/audit-hash/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6476,12 +5981,7 @@ func (a *SystemApiService) PostSysAuditPath(ctx context.Context, path string, sy
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysAuditPath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/audit/{path}"
+	localVarPath := a.client.cfg.Address + "/sys/audit/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6545,12 +6045,7 @@ func (a *SystemApiService) PostSysAuthPath(ctx context.Context, path string, sys
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysAuthPath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/auth/{path}"
+	localVarPath := a.client.cfg.Address + "/sys/auth/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6614,12 +6109,7 @@ func (a *SystemApiService) PostSysAuthPathTune(ctx context.Context, path string,
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysAuthPathTune")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/auth/{path}/tune"
+	localVarPath := a.client.cfg.Address + "/sys/auth/{path}/tune"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6681,12 +6171,7 @@ func (a *SystemApiService) PostSysCapabilities(ctx context.Context, systemCapabi
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysCapabilities")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/capabilities"
+	localVarPath := a.client.cfg.Address + "/sys/capabilities"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6747,12 +6232,7 @@ func (a *SystemApiService) PostSysCapabilitiesAccessor(ctx context.Context, syst
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysCapabilitiesAccessor")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/capabilities-accessor"
+	localVarPath := a.client.cfg.Address + "/sys/capabilities-accessor"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6813,12 +6293,7 @@ func (a *SystemApiService) PostSysCapabilitiesSelf(ctx context.Context, systemCa
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysCapabilitiesSelf")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/capabilities-self"
+	localVarPath := a.client.cfg.Address + "/sys/capabilities-self"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6879,12 +6354,7 @@ func (a *SystemApiService) PostSysConfigAuditingRequestHeadersHeader(ctx context
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysConfigAuditingRequestHeadersHeader")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/config/auditing/request-headers/{header}"
+	localVarPath := a.client.cfg.Address + "/sys/config/auditing/request-headers/{header}"
 	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6946,12 +6416,7 @@ func (a *SystemApiService) PostSysConfigCors(ctx context.Context, systemConfigCo
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysConfigCors")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/config/cors"
+	localVarPath := a.client.cfg.Address + "/sys/config/cors"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7012,12 +6477,7 @@ func (a *SystemApiService) PostSysConfigReloadSubsystem(ctx context.Context, sub
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysConfigReloadSubsystem")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/config/reload/{subsystem}"
+	localVarPath := a.client.cfg.Address + "/sys/config/reload/{subsystem}"
 	localVarPath = strings.Replace(localVarPath, "{"+"subsystem"+"}", url.PathEscape(parameterToString(subsystem, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -7078,12 +6538,7 @@ func (a *SystemApiService) PostSysConfigUiHeadersHeader(ctx context.Context, hea
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysConfigUiHeadersHeader")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/config/ui/headers/{header}"
+	localVarPath := a.client.cfg.Address + "/sys/config/ui/headers/{header}"
 	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -7146,12 +6601,7 @@ func (a *SystemApiService) PostSysGenerateRoot(ctx context.Context, systemGenera
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysGenerateRoot")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/generate-root"
+	localVarPath := a.client.cfg.Address + "/sys/generate-root"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7213,12 +6663,7 @@ func (a *SystemApiService) PostSysGenerateRootAttempt(ctx context.Context, syste
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysGenerateRootAttempt")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/generate-root/attempt"
+	localVarPath := a.client.cfg.Address + "/sys/generate-root/attempt"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7280,12 +6725,7 @@ func (a *SystemApiService) PostSysGenerateRootUpdate(ctx context.Context, system
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysGenerateRootUpdate")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/generate-root/update"
+	localVarPath := a.client.cfg.Address + "/sys/generate-root/update"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7347,12 +6787,7 @@ func (a *SystemApiService) PostSysInit(ctx context.Context, systemInitRequest Sy
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysInit")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/init"
+	localVarPath := a.client.cfg.Address + "/sys/init"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7413,12 +6848,7 @@ func (a *SystemApiService) PostSysInternalCountersConfig(ctx context.Context, sy
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysInternalCountersConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/internal/counters/config"
+	localVarPath := a.client.cfg.Address + "/sys/internal/counters/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7479,12 +6909,7 @@ func (a *SystemApiService) PostSysLeasesLookup(ctx context.Context, systemLeases
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysLeasesLookup")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/leases/lookup"
+	localVarPath := a.client.cfg.Address + "/sys/leases/lookup"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7545,12 +6970,7 @@ func (a *SystemApiService) PostSysLeasesRenew(ctx context.Context, systemLeasesR
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysLeasesRenew")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/leases/renew"
+	localVarPath := a.client.cfg.Address + "/sys/leases/renew"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7612,12 +7032,7 @@ func (a *SystemApiService) PostSysLeasesRenewUrlLeaseId(ctx context.Context, url
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysLeasesRenewUrlLeaseId")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/leases/renew/{url_lease_id}"
+	localVarPath := a.client.cfg.Address + "/sys/leases/renew/{url_lease_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"url_lease_id"+"}", url.PathEscape(parameterToString(urlLeaseId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -7679,12 +7094,7 @@ func (a *SystemApiService) PostSysLeasesRevoke(ctx context.Context, systemLeases
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysLeasesRevoke")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/leases/revoke"
+	localVarPath := a.client.cfg.Address + "/sys/leases/revoke"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7747,12 +7157,7 @@ func (a *SystemApiService) PostSysLeasesRevokeForcePrefix(ctx context.Context, p
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysLeasesRevokeForcePrefix")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/leases/revoke-force/{prefix}"
+	localVarPath := a.client.cfg.Address + "/sys/leases/revoke-force/{prefix}"
 	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(prefix, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -7813,12 +7218,7 @@ func (a *SystemApiService) PostSysLeasesRevokePrefixPrefix(ctx context.Context, 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysLeasesRevokePrefixPrefix")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/leases/revoke-prefix/{prefix}"
+	localVarPath := a.client.cfg.Address + "/sys/leases/revoke-prefix/{prefix}"
 	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(prefix, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -7881,12 +7281,7 @@ func (a *SystemApiService) PostSysLeasesRevokeUrlLeaseId(ctx context.Context, ur
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysLeasesRevokeUrlLeaseId")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/leases/revoke/{url_lease_id}"
+	localVarPath := a.client.cfg.Address + "/sys/leases/revoke/{url_lease_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"url_lease_id"+"}", url.PathEscape(parameterToString(urlLeaseId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -7948,12 +7343,7 @@ func (a *SystemApiService) PostSysLeasesTidy(ctx context.Context) (*http.Respons
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysLeasesTidy")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/leases/tidy"
+	localVarPath := a.client.cfg.Address + "/sys/leases/tidy"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8012,12 +7402,7 @@ func (a *SystemApiService) PostSysMfaValidate(ctx context.Context, systemMfaVali
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysMfaValidate")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/mfa/validate"
+	localVarPath := a.client.cfg.Address + "/sys/mfa/validate"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8079,12 +7464,7 @@ func (a *SystemApiService) PostSysMountsPath(ctx context.Context, path string, s
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysMountsPath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/mounts/{path}"
+	localVarPath := a.client.cfg.Address + "/sys/mounts/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8147,12 +7527,7 @@ func (a *SystemApiService) PostSysMountsPathTune(ctx context.Context, path strin
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysMountsPathTune")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/mounts/{path}/tune"
+	localVarPath := a.client.cfg.Address + "/sys/mounts/{path}/tune"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8215,12 +7590,7 @@ func (a *SystemApiService) PostSysPluginsCatalogName(ctx context.Context, name s
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysPluginsCatalogName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/plugins/catalog/{name}"
+	localVarPath := a.client.cfg.Address + "/sys/plugins/catalog/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8284,12 +7654,7 @@ func (a *SystemApiService) PostSysPluginsCatalogTypeName(ctx context.Context, na
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysPluginsCatalogTypeName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/plugins/catalog/{type}/{name}"
+	localVarPath := a.client.cfg.Address + "/sys/plugins/catalog/{type}/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(type_, "")), -1)
 
@@ -8353,12 +7718,7 @@ func (a *SystemApiService) PostSysPluginsReloadBackend(ctx context.Context, syst
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysPluginsReloadBackend")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/plugins/reload/backend"
+	localVarPath := a.client.cfg.Address + "/sys/plugins/reload/backend"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8420,12 +7780,7 @@ func (a *SystemApiService) PostSysPoliciesAclName(ctx context.Context, name stri
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysPoliciesAclName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/policies/acl/{name}"
+	localVarPath := a.client.cfg.Address + "/sys/policies/acl/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8488,12 +7843,7 @@ func (a *SystemApiService) PostSysPoliciesPasswordName(ctx context.Context, name
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysPoliciesPasswordName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/policies/password/{name}"
+	localVarPath := a.client.cfg.Address + "/sys/policies/password/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8556,12 +7906,7 @@ func (a *SystemApiService) PostSysPolicyName(ctx context.Context, name string, s
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysPolicyName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/policy/{name}"
+	localVarPath := a.client.cfg.Address + "/sys/policy/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8623,12 +7968,7 @@ func (a *SystemApiService) PostSysQuotasConfig(ctx context.Context, systemQuotas
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysQuotasConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/quotas/config"
+	localVarPath := a.client.cfg.Address + "/sys/quotas/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8690,12 +8030,7 @@ func (a *SystemApiService) PostSysQuotasRateLimitName(ctx context.Context, name 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysQuotasRateLimitName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/quotas/rate-limit/{name}"
+	localVarPath := a.client.cfg.Address + "/sys/quotas/rate-limit/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8757,12 +8092,7 @@ func (a *SystemApiService) PostSysRaw(ctx context.Context, systemRawRequest Syst
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysRaw")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/raw"
+	localVarPath := a.client.cfg.Address + "/sys/raw"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8823,12 +8153,7 @@ func (a *SystemApiService) PostSysRawPath(ctx context.Context, path string, syst
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysRawPath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/raw/{path}"
+	localVarPath := a.client.cfg.Address + "/sys/raw/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8891,12 +8216,7 @@ func (a *SystemApiService) PostSysRekeyInit(ctx context.Context, systemRekeyInit
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysRekeyInit")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/rekey/init"
+	localVarPath := a.client.cfg.Address + "/sys/rekey/init"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8957,12 +8277,7 @@ func (a *SystemApiService) PostSysRekeyUpdate(ctx context.Context, systemRekeyUp
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysRekeyUpdate")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/rekey/update"
+	localVarPath := a.client.cfg.Address + "/sys/rekey/update"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9023,12 +8338,7 @@ func (a *SystemApiService) PostSysRekeyVerify(ctx context.Context, systemRekeyVe
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysRekeyVerify")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/rekey/verify"
+	localVarPath := a.client.cfg.Address + "/sys/rekey/verify"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9089,12 +8399,7 @@ func (a *SystemApiService) PostSysRemount(ctx context.Context, systemRemountRequ
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysRemount")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/remount"
+	localVarPath := a.client.cfg.Address + "/sys/remount"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9155,12 +8460,7 @@ func (a *SystemApiService) PostSysRenew(ctx context.Context, systemRenewRequest 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysRenew")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/renew"
+	localVarPath := a.client.cfg.Address + "/sys/renew"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9222,12 +8522,7 @@ func (a *SystemApiService) PostSysRenewUrlLeaseId(ctx context.Context, urlLeaseI
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysRenewUrlLeaseId")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/renew/{url_lease_id}"
+	localVarPath := a.client.cfg.Address + "/sys/renew/{url_lease_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"url_lease_id"+"}", url.PathEscape(parameterToString(urlLeaseId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -9289,12 +8584,7 @@ func (a *SystemApiService) PostSysRevoke(ctx context.Context, systemRevokeReques
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysRevoke")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/revoke"
+	localVarPath := a.client.cfg.Address + "/sys/revoke"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9357,12 +8647,7 @@ func (a *SystemApiService) PostSysRevokeForcePrefix(ctx context.Context, prefix 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysRevokeForcePrefix")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/revoke-force/{prefix}"
+	localVarPath := a.client.cfg.Address + "/sys/revoke-force/{prefix}"
 	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(prefix, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -9423,12 +8708,7 @@ func (a *SystemApiService) PostSysRevokePrefixPrefix(ctx context.Context, prefix
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysRevokePrefixPrefix")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/revoke-prefix/{prefix}"
+	localVarPath := a.client.cfg.Address + "/sys/revoke-prefix/{prefix}"
 	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(prefix, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -9491,12 +8771,7 @@ func (a *SystemApiService) PostSysRevokeUrlLeaseId(ctx context.Context, urlLease
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysRevokeUrlLeaseId")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/revoke/{url_lease_id}"
+	localVarPath := a.client.cfg.Address + "/sys/revoke/{url_lease_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"url_lease_id"+"}", url.PathEscape(parameterToString(urlLeaseId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -9558,12 +8833,7 @@ func (a *SystemApiService) PostSysRotate(ctx context.Context) (*http.Response, e
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysRotate")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/rotate"
+	localVarPath := a.client.cfg.Address + "/sys/rotate"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9622,12 +8892,7 @@ func (a *SystemApiService) PostSysRotateConfig(ctx context.Context, systemRotate
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysRotateConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/rotate/config"
+	localVarPath := a.client.cfg.Address + "/sys/rotate/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9688,12 +8953,7 @@ func (a *SystemApiService) PostSysSeal(ctx context.Context) (*http.Response, err
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysSeal")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/seal"
+	localVarPath := a.client.cfg.Address + "/sys/seal"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9753,12 +9013,7 @@ func (a *SystemApiService) PostSysStepDown(ctx context.Context) (*http.Response,
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysStepDown")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/step-down"
+	localVarPath := a.client.cfg.Address + "/sys/step-down"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9817,12 +9072,7 @@ func (a *SystemApiService) PostSysToolsHash(ctx context.Context, systemToolsHash
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysToolsHash")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/tools/hash"
+	localVarPath := a.client.cfg.Address + "/sys/tools/hash"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9884,12 +9134,7 @@ func (a *SystemApiService) PostSysToolsHashUrlalgorithm(ctx context.Context, url
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysToolsHashUrlalgorithm")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/tools/hash/{urlalgorithm}"
+	localVarPath := a.client.cfg.Address + "/sys/tools/hash/{urlalgorithm}"
 	localVarPath = strings.Replace(localVarPath, "{"+"urlalgorithm"+"}", url.PathEscape(parameterToString(urlalgorithm, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -9951,12 +9196,7 @@ func (a *SystemApiService) PostSysToolsRandom(ctx context.Context, systemToolsRa
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysToolsRandom")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/tools/random"
+	localVarPath := a.client.cfg.Address + "/sys/tools/random"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10018,12 +9258,7 @@ func (a *SystemApiService) PostSysToolsRandomSource(ctx context.Context, source 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysToolsRandomSource")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/tools/random/{source}"
+	localVarPath := a.client.cfg.Address + "/sys/tools/random/{source}"
 	localVarPath = strings.Replace(localVarPath, "{"+"source"+"}", url.PathEscape(parameterToString(source, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -10087,12 +9322,7 @@ func (a *SystemApiService) PostSysToolsRandomSourceUrlbytes(ctx context.Context,
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysToolsRandomSourceUrlbytes")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/tools/random/{source}/{urlbytes}"
+	localVarPath := a.client.cfg.Address + "/sys/tools/random/{source}/{urlbytes}"
 	localVarPath = strings.Replace(localVarPath, "{"+"source"+"}", url.PathEscape(parameterToString(source, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"urlbytes"+"}", url.PathEscape(parameterToString(urlbytes, "")), -1)
 
@@ -10156,12 +9386,7 @@ func (a *SystemApiService) PostSysToolsRandomUrlbytes(ctx context.Context, urlby
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysToolsRandomUrlbytes")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/tools/random/{urlbytes}"
+	localVarPath := a.client.cfg.Address + "/sys/tools/random/{urlbytes}"
 	localVarPath = strings.Replace(localVarPath, "{"+"urlbytes"+"}", url.PathEscape(parameterToString(urlbytes, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -10223,12 +9448,7 @@ func (a *SystemApiService) PostSysUnseal(ctx context.Context, systemUnsealReques
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysUnseal")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/unseal"
+	localVarPath := a.client.cfg.Address + "/sys/unseal"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10289,12 +9509,7 @@ func (a *SystemApiService) PostSysWrappingLookup(ctx context.Context, systemWrap
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysWrappingLookup")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/wrapping/lookup"
+	localVarPath := a.client.cfg.Address + "/sys/wrapping/lookup"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10355,12 +9570,7 @@ func (a *SystemApiService) PostSysWrappingRewrap(ctx context.Context, systemWrap
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysWrappingRewrap")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/wrapping/rewrap"
+	localVarPath := a.client.cfg.Address + "/sys/wrapping/rewrap"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10421,12 +9631,7 @@ func (a *SystemApiService) PostSysWrappingUnwrap(ctx context.Context, systemWrap
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysWrappingUnwrap")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/wrapping/unwrap"
+	localVarPath := a.client.cfg.Address + "/sys/wrapping/unwrap"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10487,12 +9692,7 @@ func (a *SystemApiService) PostSysWrappingWrap(ctx context.Context) (*http.Respo
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SystemApiService.PostSysWrappingWrap")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/sys/wrapping/wrap"
+	localVarPath := a.client.cfg.Address + "/sys/wrapping/wrap"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

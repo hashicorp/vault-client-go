@@ -3,11 +3,9 @@ package {{packageName}}
 
 import (
 	"bytes"
-	"context"
 	"encoding/json"
 	"encoding/xml"
 	"errors"
-	"fmt"
 	"io"
 	"io/ioutil"
 	"mime/multipart"
@@ -18,15 +16,8 @@ import (
 	"reflect"
 	"regexp"
 	"strconv"
-	"strings"
 	"time"
 	"unicode/utf8"
-
-	"golang.org/x/oauth2"
-	{{#withAWSV4Signature}}
-	awsv4 "github.com/aws/aws-sdk-go/aws/signer/v4"
-	awscredentials "github.com/aws/aws-sdk-go/aws/credentials"
-	{{/withAWSV4Signature}}
 )
 
 var (

@@ -31,7 +31,7 @@ func (a *IdentityApiService) DeleteIdentityAliasIdId(ctx context.Context, id str
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/alias/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/alias/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -55,6 +55,12 @@ func (a *IdentityApiService) DeleteIdentityAliasIdId(ctx context.Context, id str
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -92,7 +98,7 @@ func (a *IdentityApiService) DeleteIdentityEntityAliasIdId(ctx context.Context, 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/entity-alias/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/entity-alias/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -116,6 +122,12 @@ func (a *IdentityApiService) DeleteIdentityEntityAliasIdId(ctx context.Context, 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -153,7 +165,7 @@ func (a *IdentityApiService) DeleteIdentityEntityIdId(ctx context.Context, id st
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/entity/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/entity/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -177,6 +189,12 @@ func (a *IdentityApiService) DeleteIdentityEntityIdId(ctx context.Context, id st
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -214,7 +232,7 @@ func (a *IdentityApiService) DeleteIdentityEntityNameName(ctx context.Context, n
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/entity/name/{name}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/entity/name/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -238,6 +256,12 @@ func (a *IdentityApiService) DeleteIdentityEntityNameName(ctx context.Context, n
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -275,7 +299,7 @@ func (a *IdentityApiService) DeleteIdentityGroupAliasIdId(ctx context.Context, i
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/group-alias/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/group-alias/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -299,6 +323,12 @@ func (a *IdentityApiService) DeleteIdentityGroupAliasIdId(ctx context.Context, i
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -336,7 +366,7 @@ func (a *IdentityApiService) DeleteIdentityGroupIdId(ctx context.Context, id str
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/group/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/group/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -360,6 +390,12 @@ func (a *IdentityApiService) DeleteIdentityGroupIdId(ctx context.Context, id str
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -397,7 +433,7 @@ func (a *IdentityApiService) DeleteIdentityGroupNameName(ctx context.Context, na
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/group/name/{name}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/group/name/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -421,6 +457,12 @@ func (a *IdentityApiService) DeleteIdentityGroupNameName(ctx context.Context, na
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -458,7 +500,7 @@ func (a *IdentityApiService) DeleteIdentityMfaLoginEnforcementName(ctx context.C
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/mfa/login-enforcement/{name}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/login-enforcement/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -482,6 +524,12 @@ func (a *IdentityApiService) DeleteIdentityMfaLoginEnforcementName(ctx context.C
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -519,7 +567,7 @@ func (a *IdentityApiService) DeleteIdentityMfaMethodDuoMethodId(ctx context.Cont
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/mfa/method/duo/{method_id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/duo/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -543,6 +591,12 @@ func (a *IdentityApiService) DeleteIdentityMfaMethodDuoMethodId(ctx context.Cont
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -580,7 +634,7 @@ func (a *IdentityApiService) DeleteIdentityMfaMethodOktaMethodId(ctx context.Con
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/mfa/method/okta/{method_id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/okta/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -604,6 +658,12 @@ func (a *IdentityApiService) DeleteIdentityMfaMethodOktaMethodId(ctx context.Con
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -641,7 +701,7 @@ func (a *IdentityApiService) DeleteIdentityMfaMethodPingidMethodId(ctx context.C
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/mfa/method/pingid/{method_id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/pingid/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -665,6 +725,12 @@ func (a *IdentityApiService) DeleteIdentityMfaMethodPingidMethodId(ctx context.C
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -702,7 +768,7 @@ func (a *IdentityApiService) DeleteIdentityMfaMethodTotpMethodId(ctx context.Con
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/mfa/method/totp/{method_id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/totp/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -726,6 +792,12 @@ func (a *IdentityApiService) DeleteIdentityMfaMethodTotpMethodId(ctx context.Con
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -763,7 +835,7 @@ func (a *IdentityApiService) DeleteIdentityOidcAssignmentName(ctx context.Contex
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/assignment/{name}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/assignment/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -787,6 +859,12 @@ func (a *IdentityApiService) DeleteIdentityOidcAssignmentName(ctx context.Contex
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -824,7 +902,7 @@ func (a *IdentityApiService) DeleteIdentityOidcClientName(ctx context.Context, n
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/client/{name}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/client/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -848,6 +926,12 @@ func (a *IdentityApiService) DeleteIdentityOidcClientName(ctx context.Context, n
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -885,7 +969,7 @@ func (a *IdentityApiService) DeleteIdentityOidcKeyName(ctx context.Context, name
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/key/{name}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/key/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -909,6 +993,12 @@ func (a *IdentityApiService) DeleteIdentityOidcKeyName(ctx context.Context, name
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -946,7 +1036,7 @@ func (a *IdentityApiService) DeleteIdentityOidcProviderName(ctx context.Context,
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/provider/{name}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/provider/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -970,6 +1060,12 @@ func (a *IdentityApiService) DeleteIdentityOidcProviderName(ctx context.Context,
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1007,7 +1103,7 @@ func (a *IdentityApiService) DeleteIdentityOidcRoleName(ctx context.Context, nam
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1031,6 +1127,12 @@ func (a *IdentityApiService) DeleteIdentityOidcRoleName(ctx context.Context, nam
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1068,7 +1170,7 @@ func (a *IdentityApiService) DeleteIdentityOidcScopeName(ctx context.Context, na
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/scope/{name}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/scope/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1092,6 +1194,12 @@ func (a *IdentityApiService) DeleteIdentityOidcScopeName(ctx context.Context, na
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1129,7 +1237,7 @@ func (a *IdentityApiService) DeleteIdentityPersonaIdId(ctx context.Context, id s
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/persona/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/persona/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1153,6 +1261,12 @@ func (a *IdentityApiService) DeleteIdentityPersonaIdId(ctx context.Context, id s
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1190,7 +1304,7 @@ func (a *IdentityApiService) GetIdentityAliasId(ctx context.Context, list string
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/alias/id"
+	localVarPath := a.client.cfg.Address + "/v1//identity/alias/id"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1214,6 +1328,12 @@ func (a *IdentityApiService) GetIdentityAliasId(ctx context.Context, list string
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1251,7 +1371,7 @@ func (a *IdentityApiService) GetIdentityAliasIdId(ctx context.Context, id string
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/alias/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/alias/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1275,6 +1395,12 @@ func (a *IdentityApiService) GetIdentityAliasIdId(ctx context.Context, id string
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1312,7 +1438,7 @@ func (a *IdentityApiService) GetIdentityEntityAliasId(ctx context.Context, list 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/entity-alias/id"
+	localVarPath := a.client.cfg.Address + "/v1//identity/entity-alias/id"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1336,6 +1462,12 @@ func (a *IdentityApiService) GetIdentityEntityAliasId(ctx context.Context, list 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1373,7 +1505,7 @@ func (a *IdentityApiService) GetIdentityEntityAliasIdId(ctx context.Context, id 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/entity-alias/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/entity-alias/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1397,6 +1529,12 @@ func (a *IdentityApiService) GetIdentityEntityAliasIdId(ctx context.Context, id 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1434,7 +1572,7 @@ func (a *IdentityApiService) GetIdentityEntityId(ctx context.Context, list strin
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/entity/id"
+	localVarPath := a.client.cfg.Address + "/v1//identity/entity/id"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1458,6 +1596,12 @@ func (a *IdentityApiService) GetIdentityEntityId(ctx context.Context, list strin
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1495,7 +1639,7 @@ func (a *IdentityApiService) GetIdentityEntityIdId(ctx context.Context, id strin
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/entity/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/entity/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1519,6 +1663,12 @@ func (a *IdentityApiService) GetIdentityEntityIdId(ctx context.Context, id strin
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1556,7 +1706,7 @@ func (a *IdentityApiService) GetIdentityEntityName(ctx context.Context, list str
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/entity/name"
+	localVarPath := a.client.cfg.Address + "/v1//identity/entity/name"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1580,6 +1730,12 @@ func (a *IdentityApiService) GetIdentityEntityName(ctx context.Context, list str
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1617,7 +1773,7 @@ func (a *IdentityApiService) GetIdentityEntityNameName(ctx context.Context, name
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/entity/name/{name}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/entity/name/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1641,6 +1797,12 @@ func (a *IdentityApiService) GetIdentityEntityNameName(ctx context.Context, name
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1678,7 +1840,7 @@ func (a *IdentityApiService) GetIdentityGroupAliasId(ctx context.Context, list s
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/group-alias/id"
+	localVarPath := a.client.cfg.Address + "/v1//identity/group-alias/id"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1702,6 +1864,12 @@ func (a *IdentityApiService) GetIdentityGroupAliasId(ctx context.Context, list s
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1739,7 +1907,7 @@ func (a *IdentityApiService) GetIdentityGroupAliasIdId(ctx context.Context, id s
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/group-alias/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/group-alias/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1763,6 +1931,12 @@ func (a *IdentityApiService) GetIdentityGroupAliasIdId(ctx context.Context, id s
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1800,7 +1974,7 @@ func (a *IdentityApiService) GetIdentityGroupId(ctx context.Context, list string
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/group/id"
+	localVarPath := a.client.cfg.Address + "/v1//identity/group/id"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1824,6 +1998,12 @@ func (a *IdentityApiService) GetIdentityGroupId(ctx context.Context, list string
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1861,7 +2041,7 @@ func (a *IdentityApiService) GetIdentityGroupIdId(ctx context.Context, id string
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/group/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/group/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1885,6 +2065,12 @@ func (a *IdentityApiService) GetIdentityGroupIdId(ctx context.Context, id string
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1922,7 +2108,7 @@ func (a *IdentityApiService) GetIdentityGroupName(ctx context.Context, list stri
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/group/name"
+	localVarPath := a.client.cfg.Address + "/v1//identity/group/name"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1946,6 +2132,12 @@ func (a *IdentityApiService) GetIdentityGroupName(ctx context.Context, list stri
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1983,7 +2175,7 @@ func (a *IdentityApiService) GetIdentityGroupNameName(ctx context.Context, name 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/group/name/{name}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/group/name/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2007,6 +2199,12 @@ func (a *IdentityApiService) GetIdentityGroupNameName(ctx context.Context, name 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2044,7 +2242,7 @@ func (a *IdentityApiService) GetIdentityMfaLoginEnforcement(ctx context.Context,
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/mfa/login-enforcement"
+	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/login-enforcement"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2068,6 +2266,12 @@ func (a *IdentityApiService) GetIdentityMfaLoginEnforcement(ctx context.Context,
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2105,7 +2309,7 @@ func (a *IdentityApiService) GetIdentityMfaLoginEnforcementName(ctx context.Cont
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/mfa/login-enforcement/{name}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/login-enforcement/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2129,6 +2333,12 @@ func (a *IdentityApiService) GetIdentityMfaLoginEnforcementName(ctx context.Cont
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2166,7 +2376,7 @@ func (a *IdentityApiService) GetIdentityMfaMethod(ctx context.Context, list stri
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/mfa/method"
+	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2190,6 +2400,12 @@ func (a *IdentityApiService) GetIdentityMfaMethod(ctx context.Context, list stri
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2227,7 +2443,7 @@ func (a *IdentityApiService) GetIdentityMfaMethodDuo(ctx context.Context, list s
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/mfa/method/duo"
+	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/duo"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2251,6 +2467,12 @@ func (a *IdentityApiService) GetIdentityMfaMethodDuo(ctx context.Context, list s
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2288,7 +2510,7 @@ func (a *IdentityApiService) GetIdentityMfaMethodDuoMethodId(ctx context.Context
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/mfa/method/duo/{method_id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/duo/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2312,6 +2534,12 @@ func (a *IdentityApiService) GetIdentityMfaMethodDuoMethodId(ctx context.Context
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2349,7 +2577,7 @@ func (a *IdentityApiService) GetIdentityMfaMethodMethodId(ctx context.Context, m
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/mfa/method/{method_id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2373,6 +2601,12 @@ func (a *IdentityApiService) GetIdentityMfaMethodMethodId(ctx context.Context, m
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2410,7 +2644,7 @@ func (a *IdentityApiService) GetIdentityMfaMethodOkta(ctx context.Context, list 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/mfa/method/okta"
+	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/okta"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2434,6 +2668,12 @@ func (a *IdentityApiService) GetIdentityMfaMethodOkta(ctx context.Context, list 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2471,7 +2711,7 @@ func (a *IdentityApiService) GetIdentityMfaMethodOktaMethodId(ctx context.Contex
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/mfa/method/okta/{method_id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/okta/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2495,6 +2735,12 @@ func (a *IdentityApiService) GetIdentityMfaMethodOktaMethodId(ctx context.Contex
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2532,7 +2778,7 @@ func (a *IdentityApiService) GetIdentityMfaMethodPingid(ctx context.Context, lis
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/mfa/method/pingid"
+	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/pingid"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2556,6 +2802,12 @@ func (a *IdentityApiService) GetIdentityMfaMethodPingid(ctx context.Context, lis
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2593,7 +2845,7 @@ func (a *IdentityApiService) GetIdentityMfaMethodPingidMethodId(ctx context.Cont
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/mfa/method/pingid/{method_id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/pingid/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2617,6 +2869,12 @@ func (a *IdentityApiService) GetIdentityMfaMethodPingidMethodId(ctx context.Cont
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2654,7 +2912,7 @@ func (a *IdentityApiService) GetIdentityMfaMethodTotp(ctx context.Context, list 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/mfa/method/totp"
+	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/totp"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2678,6 +2936,12 @@ func (a *IdentityApiService) GetIdentityMfaMethodTotp(ctx context.Context, list 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2715,7 +2979,7 @@ func (a *IdentityApiService) GetIdentityMfaMethodTotpMethodId(ctx context.Contex
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/mfa/method/totp/{method_id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/totp/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2739,6 +3003,12 @@ func (a *IdentityApiService) GetIdentityMfaMethodTotpMethodId(ctx context.Contex
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2776,7 +3046,7 @@ func (a *IdentityApiService) GetIdentityOidcAssignment(ctx context.Context, list
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/assignment"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/assignment"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2800,6 +3070,12 @@ func (a *IdentityApiService) GetIdentityOidcAssignment(ctx context.Context, list
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2837,7 +3113,7 @@ func (a *IdentityApiService) GetIdentityOidcAssignmentName(ctx context.Context, 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/assignment/{name}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/assignment/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2861,6 +3137,12 @@ func (a *IdentityApiService) GetIdentityOidcAssignmentName(ctx context.Context, 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2898,7 +3180,7 @@ func (a *IdentityApiService) GetIdentityOidcClient(ctx context.Context, list str
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/client"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/client"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2922,6 +3204,12 @@ func (a *IdentityApiService) GetIdentityOidcClient(ctx context.Context, list str
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2959,7 +3247,7 @@ func (a *IdentityApiService) GetIdentityOidcClientName(ctx context.Context, name
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/client/{name}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/client/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2983,6 +3271,12 @@ func (a *IdentityApiService) GetIdentityOidcClientName(ctx context.Context, name
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3019,7 +3313,7 @@ func (a *IdentityApiService) GetIdentityOidcConfig(ctx context.Context) (*http.R
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/config"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3042,6 +3336,12 @@ func (a *IdentityApiService) GetIdentityOidcConfig(ctx context.Context) (*http.R
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3079,7 +3379,7 @@ func (a *IdentityApiService) GetIdentityOidcKey(ctx context.Context, list string
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/key"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/key"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3103,6 +3403,12 @@ func (a *IdentityApiService) GetIdentityOidcKey(ctx context.Context, list string
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3140,7 +3446,7 @@ func (a *IdentityApiService) GetIdentityOidcKeyName(ctx context.Context, name st
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/key/{name}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/key/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3164,6 +3470,12 @@ func (a *IdentityApiService) GetIdentityOidcKeyName(ctx context.Context, name st
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3201,7 +3513,7 @@ func (a *IdentityApiService) GetIdentityOidcProvider(ctx context.Context, list s
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/provider"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/provider"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3225,6 +3537,12 @@ func (a *IdentityApiService) GetIdentityOidcProvider(ctx context.Context, list s
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3262,7 +3580,7 @@ func (a *IdentityApiService) GetIdentityOidcProviderName(ctx context.Context, na
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/provider/{name}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/provider/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3286,6 +3604,12 @@ func (a *IdentityApiService) GetIdentityOidcProviderName(ctx context.Context, na
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3323,7 +3647,7 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameAuthorize(ctx context.Co
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/provider/{name}/authorize"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/provider/{name}/authorize"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3347,6 +3671,12 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameAuthorize(ctx context.Co
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3384,7 +3714,7 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameUserinfo(ctx context.Con
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/provider/{name}/userinfo"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/provider/{name}/userinfo"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3408,6 +3738,12 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameUserinfo(ctx context.Con
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3445,7 +3781,7 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameWellKnownKeys(ctx contex
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/provider/{name}/.well-known/keys"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/provider/{name}/.well-known/keys"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3469,6 +3805,12 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameWellKnownKeys(ctx contex
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3506,7 +3848,7 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameWellKnownOpenidConfigura
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/provider/{name}/.well-known/openid-configuration"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/provider/{name}/.well-known/openid-configuration"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3530,6 +3872,12 @@ func (a *IdentityApiService) GetIdentityOidcProviderNameWellKnownOpenidConfigura
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3567,7 +3915,7 @@ func (a *IdentityApiService) GetIdentityOidcRole(ctx context.Context, list strin
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/role"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/role"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3591,6 +3939,12 @@ func (a *IdentityApiService) GetIdentityOidcRole(ctx context.Context, list strin
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3628,7 +3982,7 @@ func (a *IdentityApiService) GetIdentityOidcRoleName(ctx context.Context, name s
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3652,6 +4006,12 @@ func (a *IdentityApiService) GetIdentityOidcRoleName(ctx context.Context, name s
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3689,7 +4049,7 @@ func (a *IdentityApiService) GetIdentityOidcScope(ctx context.Context, list stri
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/scope"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/scope"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3713,6 +4073,12 @@ func (a *IdentityApiService) GetIdentityOidcScope(ctx context.Context, list stri
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3750,7 +4116,7 @@ func (a *IdentityApiService) GetIdentityOidcScopeName(ctx context.Context, name 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/scope/{name}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/scope/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3774,6 +4140,12 @@ func (a *IdentityApiService) GetIdentityOidcScopeName(ctx context.Context, name 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3811,7 +4183,7 @@ func (a *IdentityApiService) GetIdentityOidcTokenName(ctx context.Context, name 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/token/{name}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/token/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3835,6 +4207,12 @@ func (a *IdentityApiService) GetIdentityOidcTokenName(ctx context.Context, name 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3871,7 +4249,7 @@ func (a *IdentityApiService) GetIdentityOidcWellKnownKeys(ctx context.Context) (
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/.well-known/keys"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/.well-known/keys"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3894,6 +4272,12 @@ func (a *IdentityApiService) GetIdentityOidcWellKnownKeys(ctx context.Context) (
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3930,7 +4314,7 @@ func (a *IdentityApiService) GetIdentityOidcWellKnownOpenidConfiguration(ctx con
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/.well-known/openid-configuration"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/.well-known/openid-configuration"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3953,6 +4337,12 @@ func (a *IdentityApiService) GetIdentityOidcWellKnownOpenidConfiguration(ctx con
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3990,7 +4380,7 @@ func (a *IdentityApiService) GetIdentityPersonaId(ctx context.Context, list stri
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/persona/id"
+	localVarPath := a.client.cfg.Address + "/v1//identity/persona/id"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4014,6 +4404,12 @@ func (a *IdentityApiService) GetIdentityPersonaId(ctx context.Context, list stri
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -4051,7 +4447,7 @@ func (a *IdentityApiService) GetIdentityPersonaIdId(ctx context.Context, id stri
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/persona/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/persona/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4075,6 +4471,12 @@ func (a *IdentityApiService) GetIdentityPersonaIdId(ctx context.Context, id stri
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -4111,7 +4513,7 @@ func (a *IdentityApiService) PostIdentityAlias(ctx context.Context, identityAlia
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/alias"
+	localVarPath := a.client.cfg.Address + "/v1//identity/alias"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4134,6 +4536,12 @@ func (a *IdentityApiService) PostIdentityAlias(ctx context.Context, identityAlia
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityAliasRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -4173,7 +4581,7 @@ func (a *IdentityApiService) PostIdentityAliasIdId(ctx context.Context, id strin
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/alias/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/alias/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4197,6 +4605,12 @@ func (a *IdentityApiService) PostIdentityAliasIdId(ctx context.Context, id strin
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityAliasIdRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -4235,7 +4649,7 @@ func (a *IdentityApiService) PostIdentityEntity(ctx context.Context, identityEnt
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/entity"
+	localVarPath := a.client.cfg.Address + "/v1//identity/entity"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4258,6 +4672,12 @@ func (a *IdentityApiService) PostIdentityEntity(ctx context.Context, identityEnt
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityEntityRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -4296,7 +4716,7 @@ func (a *IdentityApiService) PostIdentityEntityAlias(ctx context.Context, identi
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/entity-alias"
+	localVarPath := a.client.cfg.Address + "/v1//identity/entity-alias"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4319,6 +4739,12 @@ func (a *IdentityApiService) PostIdentityEntityAlias(ctx context.Context, identi
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityEntityAliasRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -4358,7 +4784,7 @@ func (a *IdentityApiService) PostIdentityEntityAliasIdId(ctx context.Context, id
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/entity-alias/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/entity-alias/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4382,6 +4808,12 @@ func (a *IdentityApiService) PostIdentityEntityAliasIdId(ctx context.Context, id
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityEntityAliasIdRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -4420,7 +4852,7 @@ func (a *IdentityApiService) PostIdentityEntityBatchDelete(ctx context.Context, 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/entity/batch-delete"
+	localVarPath := a.client.cfg.Address + "/v1//identity/entity/batch-delete"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4443,6 +4875,12 @@ func (a *IdentityApiService) PostIdentityEntityBatchDelete(ctx context.Context, 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityEntityBatchDeleteRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -4482,7 +4920,7 @@ func (a *IdentityApiService) PostIdentityEntityIdId(ctx context.Context, id stri
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/entity/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/entity/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4506,6 +4944,12 @@ func (a *IdentityApiService) PostIdentityEntityIdId(ctx context.Context, id stri
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityEntityIdRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -4544,7 +4988,7 @@ func (a *IdentityApiService) PostIdentityEntityMerge(ctx context.Context, identi
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/entity/merge"
+	localVarPath := a.client.cfg.Address + "/v1//identity/entity/merge"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4567,6 +5011,12 @@ func (a *IdentityApiService) PostIdentityEntityMerge(ctx context.Context, identi
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityEntityMergeRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -4606,7 +5056,7 @@ func (a *IdentityApiService) PostIdentityEntityNameName(ctx context.Context, nam
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/entity/name/{name}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/entity/name/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4630,6 +5080,12 @@ func (a *IdentityApiService) PostIdentityEntityNameName(ctx context.Context, nam
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityEntityNameRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -4668,7 +5124,7 @@ func (a *IdentityApiService) PostIdentityGroup(ctx context.Context, identityGrou
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/group"
+	localVarPath := a.client.cfg.Address + "/v1//identity/group"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4691,6 +5147,12 @@ func (a *IdentityApiService) PostIdentityGroup(ctx context.Context, identityGrou
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityGroupRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -4729,7 +5191,7 @@ func (a *IdentityApiService) PostIdentityGroupAlias(ctx context.Context, identit
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/group-alias"
+	localVarPath := a.client.cfg.Address + "/v1//identity/group-alias"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4752,6 +5214,12 @@ func (a *IdentityApiService) PostIdentityGroupAlias(ctx context.Context, identit
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityGroupAliasRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -4791,7 +5259,7 @@ func (a *IdentityApiService) PostIdentityGroupAliasIdId(ctx context.Context, id 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/group-alias/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/group-alias/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4815,6 +5283,12 @@ func (a *IdentityApiService) PostIdentityGroupAliasIdId(ctx context.Context, id 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityGroupAliasIdRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -4854,7 +5328,7 @@ func (a *IdentityApiService) PostIdentityGroupIdId(ctx context.Context, id strin
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/group/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/group/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4878,6 +5352,12 @@ func (a *IdentityApiService) PostIdentityGroupIdId(ctx context.Context, id strin
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityGroupIdRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -4917,7 +5397,7 @@ func (a *IdentityApiService) PostIdentityGroupNameName(ctx context.Context, name
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/group/name/{name}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/group/name/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4941,6 +5421,12 @@ func (a *IdentityApiService) PostIdentityGroupNameName(ctx context.Context, name
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityGroupNameRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -4979,7 +5465,7 @@ func (a *IdentityApiService) PostIdentityLookupEntity(ctx context.Context, ident
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/lookup/entity"
+	localVarPath := a.client.cfg.Address + "/v1//identity/lookup/entity"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5002,6 +5488,12 @@ func (a *IdentityApiService) PostIdentityLookupEntity(ctx context.Context, ident
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityLookupEntityRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -5040,7 +5532,7 @@ func (a *IdentityApiService) PostIdentityLookupGroup(ctx context.Context, identi
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/lookup/group"
+	localVarPath := a.client.cfg.Address + "/v1//identity/lookup/group"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5063,6 +5555,12 @@ func (a *IdentityApiService) PostIdentityLookupGroup(ctx context.Context, identi
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityLookupGroupRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -5102,7 +5600,7 @@ func (a *IdentityApiService) PostIdentityMfaLoginEnforcementName(ctx context.Con
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/mfa/login-enforcement/{name}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/login-enforcement/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5126,6 +5624,12 @@ func (a *IdentityApiService) PostIdentityMfaLoginEnforcementName(ctx context.Con
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityMfaLoginEnforcementRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -5165,7 +5669,7 @@ func (a *IdentityApiService) PostIdentityMfaMethodDuoMethodId(ctx context.Contex
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/mfa/method/duo/{method_id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/duo/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5189,6 +5693,12 @@ func (a *IdentityApiService) PostIdentityMfaMethodDuoMethodId(ctx context.Contex
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityMfaMethodDuoRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -5228,7 +5738,7 @@ func (a *IdentityApiService) PostIdentityMfaMethodOktaMethodId(ctx context.Conte
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/mfa/method/okta/{method_id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/okta/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5252,6 +5762,12 @@ func (a *IdentityApiService) PostIdentityMfaMethodOktaMethodId(ctx context.Conte
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityMfaMethodOktaRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -5291,7 +5807,7 @@ func (a *IdentityApiService) PostIdentityMfaMethodPingidMethodId(ctx context.Con
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/mfa/method/pingid/{method_id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/pingid/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5315,6 +5831,12 @@ func (a *IdentityApiService) PostIdentityMfaMethodPingidMethodId(ctx context.Con
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityMfaMethodPingidRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -5353,7 +5875,7 @@ func (a *IdentityApiService) PostIdentityMfaMethodTotpAdminDestroy(ctx context.C
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/mfa/method/totp/admin-destroy"
+	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/totp/admin-destroy"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5376,6 +5898,12 @@ func (a *IdentityApiService) PostIdentityMfaMethodTotpAdminDestroy(ctx context.C
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityMfaMethodTotpAdminDestroyRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -5414,7 +5942,7 @@ func (a *IdentityApiService) PostIdentityMfaMethodTotpAdminGenerate(ctx context.
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/mfa/method/totp/admin-generate"
+	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/totp/admin-generate"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5437,6 +5965,12 @@ func (a *IdentityApiService) PostIdentityMfaMethodTotpAdminGenerate(ctx context.
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityMfaMethodTotpAdminGenerateRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -5475,7 +6009,7 @@ func (a *IdentityApiService) PostIdentityMfaMethodTotpGenerate(ctx context.Conte
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/mfa/method/totp/generate"
+	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/totp/generate"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5498,6 +6032,12 @@ func (a *IdentityApiService) PostIdentityMfaMethodTotpGenerate(ctx context.Conte
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityMfaMethodTotpGenerateRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -5537,7 +6077,7 @@ func (a *IdentityApiService) PostIdentityMfaMethodTotpMethodId(ctx context.Conte
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/mfa/method/totp/{method_id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/mfa/method/totp/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5561,6 +6101,12 @@ func (a *IdentityApiService) PostIdentityMfaMethodTotpMethodId(ctx context.Conte
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityMfaMethodTotpRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -5600,7 +6146,7 @@ func (a *IdentityApiService) PostIdentityOidcAssignmentName(ctx context.Context,
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/assignment/{name}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/assignment/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5624,6 +6170,12 @@ func (a *IdentityApiService) PostIdentityOidcAssignmentName(ctx context.Context,
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityOidcAssignmentRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -5663,7 +6215,7 @@ func (a *IdentityApiService) PostIdentityOidcClientName(ctx context.Context, nam
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/client/{name}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/client/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5687,6 +6239,12 @@ func (a *IdentityApiService) PostIdentityOidcClientName(ctx context.Context, nam
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityOidcClientRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -5725,7 +6283,7 @@ func (a *IdentityApiService) PostIdentityOidcConfig(ctx context.Context, identit
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/config"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5748,6 +6306,12 @@ func (a *IdentityApiService) PostIdentityOidcConfig(ctx context.Context, identit
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityOidcConfigRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -5786,7 +6350,7 @@ func (a *IdentityApiService) PostIdentityOidcIntrospect(ctx context.Context, ide
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/introspect"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/introspect"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5809,6 +6373,12 @@ func (a *IdentityApiService) PostIdentityOidcIntrospect(ctx context.Context, ide
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityOidcIntrospectRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -5848,7 +6418,7 @@ func (a *IdentityApiService) PostIdentityOidcKeyName(ctx context.Context, name s
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/key/{name}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/key/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5872,6 +6442,12 @@ func (a *IdentityApiService) PostIdentityOidcKeyName(ctx context.Context, name s
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityOidcKeyRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -5911,7 +6487,7 @@ func (a *IdentityApiService) PostIdentityOidcKeyNameRotate(ctx context.Context, 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/key/{name}/rotate"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/key/{name}/rotate"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5935,6 +6511,12 @@ func (a *IdentityApiService) PostIdentityOidcKeyNameRotate(ctx context.Context, 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityOidcKeyRotateRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -5974,7 +6556,7 @@ func (a *IdentityApiService) PostIdentityOidcProviderName(ctx context.Context, n
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/provider/{name}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/provider/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5998,6 +6580,12 @@ func (a *IdentityApiService) PostIdentityOidcProviderName(ctx context.Context, n
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityOidcProviderRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -6037,7 +6625,7 @@ func (a *IdentityApiService) PostIdentityOidcProviderNameAuthorize(ctx context.C
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/provider/{name}/authorize"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/provider/{name}/authorize"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6061,6 +6649,12 @@ func (a *IdentityApiService) PostIdentityOidcProviderNameAuthorize(ctx context.C
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityOidcProviderAuthorizeRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -6100,7 +6694,7 @@ func (a *IdentityApiService) PostIdentityOidcProviderNameToken(ctx context.Conte
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/provider/{name}/token"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/provider/{name}/token"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6124,6 +6718,12 @@ func (a *IdentityApiService) PostIdentityOidcProviderNameToken(ctx context.Conte
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityOidcProviderTokenRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -6163,7 +6763,7 @@ func (a *IdentityApiService) PostIdentityOidcProviderNameUserinfo(ctx context.Co
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/provider/{name}/userinfo"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/provider/{name}/userinfo"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6187,6 +6787,12 @@ func (a *IdentityApiService) PostIdentityOidcProviderNameUserinfo(ctx context.Co
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -6224,7 +6830,7 @@ func (a *IdentityApiService) PostIdentityOidcRoleName(ctx context.Context, name 
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6248,6 +6854,12 @@ func (a *IdentityApiService) PostIdentityOidcRoleName(ctx context.Context, name 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityOidcRoleRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -6287,7 +6899,7 @@ func (a *IdentityApiService) PostIdentityOidcScopeName(ctx context.Context, name
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/oidc/scope/{name}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/oidc/scope/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6311,6 +6923,12 @@ func (a *IdentityApiService) PostIdentityOidcScopeName(ctx context.Context, name
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityOidcScopeRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -6349,7 +6967,7 @@ func (a *IdentityApiService) PostIdentityPersona(ctx context.Context, identityPe
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/persona"
+	localVarPath := a.client.cfg.Address + "/v1//identity/persona"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6372,6 +6990,12 @@ func (a *IdentityApiService) PostIdentityPersona(ctx context.Context, identityPe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityPersonaRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -6411,7 +7035,7 @@ func (a *IdentityApiService) PostIdentityPersonaIdId(ctx context.Context, id str
 		formFiles          []formFile
 	)
 
-	localVarPath := a.client.cfg.Address + "/identity/persona/id/{id}"
+	localVarPath := a.client.cfg.Address + "/v1//identity/persona/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6435,6 +7059,12 @@ func (a *IdentityApiService) PostIdentityPersonaIdId(ctx context.Context, id str
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = identityPersonaIdRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)

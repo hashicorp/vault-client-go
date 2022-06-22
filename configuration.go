@@ -11,11 +11,8 @@ API version: 1.12.0
 package vault
 
 import (
-	"context"
 	"crypto/tls"
-	"fmt"
 	"net/http"
-	"strings"
 	"time"
 
 	"github.com/hashicorp/go-cleanhttp"
@@ -61,5 +58,5 @@ func DefaultConfiguration() (*Configuration, error) {
 		Address:    "https://127.0.0.1:8200",
 		HTTPClient: client,
 		Timeout:    60 * time.Second,
-	}
+	}, nil
 }

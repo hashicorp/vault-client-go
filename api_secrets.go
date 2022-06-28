@@ -30,12 +30,7 @@ func (a *SecretsApiService) DeleteAdConfig(ctx context.Context) (*http.Response,
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteAdConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ad/config"
+	localVarPath := a.client.cfg.Address + "/v1/ad/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -58,6 +53,12 @@ func (a *SecretsApiService) DeleteAdConfig(ctx context.Context) (*http.Response,
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -95,12 +96,7 @@ func (a *SecretsApiService) DeleteAdLibraryName(ctx context.Context, name string
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteAdLibraryName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ad/library/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/ad/library/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -124,6 +120,12 @@ func (a *SecretsApiService) DeleteAdLibraryName(ctx context.Context, name string
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -161,12 +163,7 @@ func (a *SecretsApiService) DeleteAdRolesName(ctx context.Context, name string) 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteAdRolesName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ad/roles/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/ad/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -190,6 +187,12 @@ func (a *SecretsApiService) DeleteAdRolesName(ctx context.Context, name string) 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -226,12 +229,7 @@ func (a *SecretsApiService) DeleteAlicloudConfig(ctx context.Context) (*http.Res
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteAlicloudConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/alicloud/config"
+	localVarPath := a.client.cfg.Address + "/v1/alicloud/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -254,6 +252,12 @@ func (a *SecretsApiService) DeleteAlicloudConfig(ctx context.Context) (*http.Res
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -291,12 +295,7 @@ func (a *SecretsApiService) DeleteAlicloudRoleName(ctx context.Context, name str
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteAlicloudRoleName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/alicloud/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/alicloud/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -320,6 +319,12 @@ func (a *SecretsApiService) DeleteAlicloudRoleName(ctx context.Context, name str
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -357,12 +362,7 @@ func (a *SecretsApiService) DeleteAwsRolesName(ctx context.Context, name string)
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteAwsRolesName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/aws/roles/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/aws/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -386,6 +386,12 @@ func (a *SecretsApiService) DeleteAwsRolesName(ctx context.Context, name string)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -422,12 +428,7 @@ func (a *SecretsApiService) DeleteAzureConfig(ctx context.Context) (*http.Respon
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteAzureConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/azure/config"
+	localVarPath := a.client.cfg.Address + "/v1/azure/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -450,6 +451,12 @@ func (a *SecretsApiService) DeleteAzureConfig(ctx context.Context) (*http.Respon
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -487,12 +494,7 @@ func (a *SecretsApiService) DeleteAzureRolesName(ctx context.Context, name strin
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteAzureRolesName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/azure/roles/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/azure/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -516,6 +518,12 @@ func (a *SecretsApiService) DeleteAzureRolesName(ctx context.Context, name strin
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -553,12 +561,7 @@ func (a *SecretsApiService) DeleteConsulRolesName(ctx context.Context, name stri
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteConsulRolesName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/consul/roles/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/consul/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -582,6 +585,12 @@ func (a *SecretsApiService) DeleteConsulRolesName(ctx context.Context, name stri
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -619,12 +628,7 @@ func (a *SecretsApiService) DeleteCubbyholePath(ctx context.Context, path string
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteCubbyholePath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/cubbyhole/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/cubbyhole/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -648,6 +652,12 @@ func (a *SecretsApiService) DeleteCubbyholePath(ctx context.Context, path string
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -685,12 +695,7 @@ func (a *SecretsApiService) DeleteGcpRolesetName(ctx context.Context, name strin
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteGcpRolesetName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcp/roleset/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/gcp/roleset/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -714,6 +719,12 @@ func (a *SecretsApiService) DeleteGcpRolesetName(ctx context.Context, name strin
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -751,12 +762,7 @@ func (a *SecretsApiService) DeleteGcpStaticAccountName(ctx context.Context, name
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteGcpStaticAccountName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcp/static-account/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/gcp/static-account/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -780,6 +786,12 @@ func (a *SecretsApiService) DeleteGcpStaticAccountName(ctx context.Context, name
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -816,12 +828,7 @@ func (a *SecretsApiService) DeleteGcpkmsConfig(ctx context.Context) (*http.Respo
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteGcpkmsConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcpkms/config"
+	localVarPath := a.client.cfg.Address + "/v1/gcpkms/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -844,6 +851,12 @@ func (a *SecretsApiService) DeleteGcpkmsConfig(ctx context.Context) (*http.Respo
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -881,12 +894,7 @@ func (a *SecretsApiService) DeleteGcpkmsKeysDeregisterKey(ctx context.Context, k
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteGcpkmsKeysDeregisterKey")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcpkms/keys/deregister/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/gcpkms/keys/deregister/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -910,6 +918,12 @@ func (a *SecretsApiService) DeleteGcpkmsKeysDeregisterKey(ctx context.Context, k
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -947,12 +961,7 @@ func (a *SecretsApiService) DeleteGcpkmsKeysKey(ctx context.Context, key string)
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteGcpkmsKeysKey")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcpkms/keys/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/gcpkms/keys/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -976,6 +985,12 @@ func (a *SecretsApiService) DeleteGcpkmsKeysKey(ctx context.Context, key string)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1013,12 +1028,7 @@ func (a *SecretsApiService) DeleteGcpkmsKeysTrimKey(ctx context.Context, key str
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteGcpkmsKeysTrimKey")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcpkms/keys/trim/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/gcpkms/keys/trim/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1042,6 +1052,12 @@ func (a *SecretsApiService) DeleteGcpkmsKeysTrimKey(ctx context.Context, key str
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1078,12 +1094,7 @@ func (a *SecretsApiService) DeleteKubernetesConfig(ctx context.Context) (*http.R
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteKubernetesConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/kubernetes/config"
+	localVarPath := a.client.cfg.Address + "/v1/kubernetes/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1106,6 +1117,12 @@ func (a *SecretsApiService) DeleteKubernetesConfig(ctx context.Context) (*http.R
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1143,12 +1160,7 @@ func (a *SecretsApiService) DeleteKubernetesRolesName(ctx context.Context, name 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteKubernetesRolesName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/kubernetes/roles/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/kubernetes/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1172,6 +1184,12 @@ func (a *SecretsApiService) DeleteKubernetesRolesName(ctx context.Context, name 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1209,12 +1227,7 @@ func (a *SecretsApiService) DeleteKvPath(ctx context.Context, path string) (*htt
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteKvPath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/kv/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/kv/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1238,6 +1251,12 @@ func (a *SecretsApiService) DeleteKvPath(ctx context.Context, path string) (*htt
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1275,12 +1294,7 @@ func (a *SecretsApiService) DeleteMongodbatlasRolesName(ctx context.Context, nam
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteMongodbatlasRolesName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/mongodbatlas/roles/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/mongodbatlas/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1304,6 +1318,12 @@ func (a *SecretsApiService) DeleteMongodbatlasRolesName(ctx context.Context, nam
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1340,12 +1360,7 @@ func (a *SecretsApiService) DeleteNomadConfigAccess(ctx context.Context) (*http.
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteNomadConfigAccess")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/nomad/config/access"
+	localVarPath := a.client.cfg.Address + "/v1/nomad/config/access"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1368,6 +1383,12 @@ func (a *SecretsApiService) DeleteNomadConfigAccess(ctx context.Context) (*http.
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1404,12 +1425,7 @@ func (a *SecretsApiService) DeleteNomadConfigLease(ctx context.Context) (*http.R
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteNomadConfigLease")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/nomad/config/lease"
+	localVarPath := a.client.cfg.Address + "/v1/nomad/config/lease"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1432,6 +1448,12 @@ func (a *SecretsApiService) DeleteNomadConfigLease(ctx context.Context) (*http.R
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1469,12 +1491,7 @@ func (a *SecretsApiService) DeleteNomadRoleName(ctx context.Context, name string
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteNomadRoleName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/nomad/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/nomad/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1498,6 +1515,12 @@ func (a *SecretsApiService) DeleteNomadRoleName(ctx context.Context, name string
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1534,12 +1557,7 @@ func (a *SecretsApiService) DeleteOpenldapConfig(ctx context.Context) (*http.Res
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteOpenldapConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openldap/config"
+	localVarPath := a.client.cfg.Address + "/v1/openldap/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1562,6 +1580,12 @@ func (a *SecretsApiService) DeleteOpenldapConfig(ctx context.Context) (*http.Res
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1599,12 +1623,7 @@ func (a *SecretsApiService) DeleteOpenldapRoleName(ctx context.Context, name str
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteOpenldapRoleName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openldap/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/openldap/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1628,6 +1647,12 @@ func (a *SecretsApiService) DeleteOpenldapRoleName(ctx context.Context, name str
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1665,12 +1690,7 @@ func (a *SecretsApiService) DeleteOpenldapStaticRoleName(ctx context.Context, na
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteOpenldapStaticRoleName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openldap/static-role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/openldap/static-role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1694,6 +1714,12 @@ func (a *SecretsApiService) DeleteOpenldapStaticRoleName(ctx context.Context, na
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1731,12 +1757,7 @@ func (a *SecretsApiService) DeletePkiIssuerRefDerPem(ctx context.Context, issuer
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeletePkiIssuerRefDerPem")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/{issuer_ref}/der|/pem"
+	localVarPath := a.client.cfg.Address + "/v1/pki/{issuer_ref}/der|/pem"
 	localVarPath = strings.Replace(localVarPath, "{"+"issuer_ref"+"}", url.PathEscape(parameterToString(issuerRef, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1760,6 +1781,12 @@ func (a *SecretsApiService) DeletePkiIssuerRefDerPem(ctx context.Context, issuer
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1796,12 +1823,7 @@ func (a *SecretsApiService) DeletePkiJson(ctx context.Context) (*http.Response, 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeletePkiJson")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki//json"
+	localVarPath := a.client.cfg.Address + "/v1/pki//json"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1824,6 +1846,12 @@ func (a *SecretsApiService) DeletePkiJson(ctx context.Context) (*http.Response, 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1861,12 +1889,7 @@ func (a *SecretsApiService) DeletePkiKeyKeyRef(ctx context.Context, keyRef strin
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeletePkiKeyKeyRef")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/key/{key_ref}"
+	localVarPath := a.client.cfg.Address + "/v1/pki/key/{key_ref}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key_ref"+"}", url.PathEscape(parameterToString(keyRef, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1890,6 +1913,12 @@ func (a *SecretsApiService) DeletePkiKeyKeyRef(ctx context.Context, keyRef strin
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1927,12 +1956,7 @@ func (a *SecretsApiService) DeletePkiRolesName(ctx context.Context, name string)
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeletePkiRolesName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/roles/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/pki/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1956,6 +1980,12 @@ func (a *SecretsApiService) DeletePkiRolesName(ctx context.Context, name string)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1992,12 +2022,7 @@ func (a *SecretsApiService) DeletePkiRoot(ctx context.Context) (*http.Response, 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeletePkiRoot")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/root"
+	localVarPath := a.client.cfg.Address + "/v1/pki/root"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2020,6 +2045,12 @@ func (a *SecretsApiService) DeletePkiRoot(ctx context.Context) (*http.Response, 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2057,12 +2088,7 @@ func (a *SecretsApiService) DeleteRabbitmqRolesName(ctx context.Context, name st
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteRabbitmqRolesName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/rabbitmq/roles/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/rabbitmq/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2086,6 +2112,12 @@ func (a *SecretsApiService) DeleteRabbitmqRolesName(ctx context.Context, name st
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2123,12 +2155,7 @@ func (a *SecretsApiService) DeleteSecretDataPath(ctx context.Context, path strin
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteSecretDataPath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/secret/data/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/secret/data/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2152,6 +2179,12 @@ func (a *SecretsApiService) DeleteSecretDataPath(ctx context.Context, path strin
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2189,12 +2222,7 @@ func (a *SecretsApiService) DeleteSecretMetadataPath(ctx context.Context, path s
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteSecretMetadataPath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/secret/metadata/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/secret/metadata/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2218,6 +2246,12 @@ func (a *SecretsApiService) DeleteSecretMetadataPath(ctx context.Context, path s
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2254,12 +2288,7 @@ func (a *SecretsApiService) DeleteSshConfigCa(ctx context.Context) (*http.Respon
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteSshConfigCa")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ssh/config/ca"
+	localVarPath := a.client.cfg.Address + "/v1/ssh/config/ca"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2282,6 +2311,12 @@ func (a *SecretsApiService) DeleteSshConfigCa(ctx context.Context) (*http.Respon
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2318,12 +2353,7 @@ func (a *SecretsApiService) DeleteSshConfigZeroaddress(ctx context.Context) (*ht
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteSshConfigZeroaddress")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ssh/config/zeroaddress"
+	localVarPath := a.client.cfg.Address + "/v1/ssh/config/zeroaddress"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2346,6 +2376,12 @@ func (a *SecretsApiService) DeleteSshConfigZeroaddress(ctx context.Context) (*ht
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2383,12 +2419,7 @@ func (a *SecretsApiService) DeleteSshKeysKeyName(ctx context.Context, keyName st
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteSshKeysKeyName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ssh/keys/{key_name}"
+	localVarPath := a.client.cfg.Address + "/v1/ssh/keys/{key_name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key_name"+"}", url.PathEscape(parameterToString(keyName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2412,6 +2443,12 @@ func (a *SecretsApiService) DeleteSshKeysKeyName(ctx context.Context, keyName st
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2449,12 +2486,7 @@ func (a *SecretsApiService) DeleteSshRolesRole(ctx context.Context, role string)
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteSshRolesRole")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ssh/roles/{role}"
+	localVarPath := a.client.cfg.Address + "/v1/ssh/roles/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2478,6 +2510,12 @@ func (a *SecretsApiService) DeleteSshRolesRole(ctx context.Context, role string)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2514,12 +2552,7 @@ func (a *SecretsApiService) DeleteTerraformConfig(ctx context.Context) (*http.Re
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteTerraformConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/terraform/config"
+	localVarPath := a.client.cfg.Address + "/v1/terraform/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2542,6 +2575,12 @@ func (a *SecretsApiService) DeleteTerraformConfig(ctx context.Context) (*http.Re
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2579,12 +2618,7 @@ func (a *SecretsApiService) DeleteTerraformRoleName(ctx context.Context, name st
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteTerraformRoleName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/terraform/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/terraform/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2608,6 +2642,12 @@ func (a *SecretsApiService) DeleteTerraformRoleName(ctx context.Context, name st
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2645,12 +2685,7 @@ func (a *SecretsApiService) DeleteTotpKeysName(ctx context.Context, name string)
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteTotpKeysName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/totp/keys/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/totp/keys/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2674,6 +2709,12 @@ func (a *SecretsApiService) DeleteTotpKeysName(ctx context.Context, name string)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2711,12 +2752,7 @@ func (a *SecretsApiService) DeleteTransitKeysName(ctx context.Context, name stri
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.DeleteTransitKeysName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/keys/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/transit/keys/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2740,6 +2776,12 @@ func (a *SecretsApiService) DeleteTransitKeysName(ctx context.Context, name stri
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2776,12 +2818,7 @@ func (a *SecretsApiService) GetAdConfig(ctx context.Context) (*http.Response, er
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetAdConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ad/config"
+	localVarPath := a.client.cfg.Address + "/v1/ad/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2804,6 +2841,12 @@ func (a *SecretsApiService) GetAdConfig(ctx context.Context) (*http.Response, er
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2841,12 +2884,7 @@ func (a *SecretsApiService) GetAdCredsName(ctx context.Context, name string) (*h
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetAdCredsName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ad/creds/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/ad/creds/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -2870,6 +2908,12 @@ func (a *SecretsApiService) GetAdCredsName(ctx context.Context, name string) (*h
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2907,12 +2951,7 @@ func (a *SecretsApiService) GetAdLibrary(ctx context.Context, list string) (*htt
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetAdLibrary")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ad/library"
+	localVarPath := a.client.cfg.Address + "/v1/ad/library"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2936,6 +2975,12 @@ func (a *SecretsApiService) GetAdLibrary(ctx context.Context, list string) (*htt
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2973,12 +3018,7 @@ func (a *SecretsApiService) GetAdLibraryName(ctx context.Context, name string) (
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetAdLibraryName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ad/library/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/ad/library/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3002,6 +3042,12 @@ func (a *SecretsApiService) GetAdLibraryName(ctx context.Context, name string) (
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3039,12 +3085,7 @@ func (a *SecretsApiService) GetAdLibraryNameStatus(ctx context.Context, name str
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetAdLibraryNameStatus")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ad/library/{name}/status"
+	localVarPath := a.client.cfg.Address + "/v1/ad/library/{name}/status"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3068,6 +3109,12 @@ func (a *SecretsApiService) GetAdLibraryNameStatus(ctx context.Context, name str
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3105,12 +3152,7 @@ func (a *SecretsApiService) GetAdRoles(ctx context.Context, list string) (*http.
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetAdRoles")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ad/roles"
+	localVarPath := a.client.cfg.Address + "/v1/ad/roles"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3134,6 +3176,12 @@ func (a *SecretsApiService) GetAdRoles(ctx context.Context, list string) (*http.
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3171,12 +3219,7 @@ func (a *SecretsApiService) GetAdRolesName(ctx context.Context, name string) (*h
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetAdRolesName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ad/roles/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/ad/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3200,6 +3243,12 @@ func (a *SecretsApiService) GetAdRolesName(ctx context.Context, name string) (*h
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3236,12 +3285,7 @@ func (a *SecretsApiService) GetAdRotateRoot(ctx context.Context) (*http.Response
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetAdRotateRoot")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ad/rotate-root"
+	localVarPath := a.client.cfg.Address + "/v1/ad/rotate-root"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3264,6 +3308,12 @@ func (a *SecretsApiService) GetAdRotateRoot(ctx context.Context) (*http.Response
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3300,12 +3350,7 @@ func (a *SecretsApiService) GetAlicloudConfig(ctx context.Context) (*http.Respon
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetAlicloudConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/alicloud/config"
+	localVarPath := a.client.cfg.Address + "/v1/alicloud/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3328,6 +3373,12 @@ func (a *SecretsApiService) GetAlicloudConfig(ctx context.Context) (*http.Respon
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3365,12 +3416,7 @@ func (a *SecretsApiService) GetAlicloudCredsName(ctx context.Context, name strin
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetAlicloudCredsName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/alicloud/creds/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/alicloud/creds/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3394,6 +3440,12 @@ func (a *SecretsApiService) GetAlicloudCredsName(ctx context.Context, name strin
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3431,12 +3483,7 @@ func (a *SecretsApiService) GetAlicloudRole(ctx context.Context, list string) (*
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetAlicloudRole")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/alicloud/role"
+	localVarPath := a.client.cfg.Address + "/v1/alicloud/role"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3460,6 +3507,12 @@ func (a *SecretsApiService) GetAlicloudRole(ctx context.Context, list string) (*
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3497,12 +3550,7 @@ func (a *SecretsApiService) GetAlicloudRoleName(ctx context.Context, name string
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetAlicloudRoleName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/alicloud/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/alicloud/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3526,6 +3574,12 @@ func (a *SecretsApiService) GetAlicloudRoleName(ctx context.Context, name string
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3562,12 +3616,7 @@ func (a *SecretsApiService) GetAwsConfigLease(ctx context.Context) (*http.Respon
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetAwsConfigLease")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/aws/config/lease"
+	localVarPath := a.client.cfg.Address + "/v1/aws/config/lease"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3590,6 +3639,12 @@ func (a *SecretsApiService) GetAwsConfigLease(ctx context.Context) (*http.Respon
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3626,12 +3681,7 @@ func (a *SecretsApiService) GetAwsConfigRoot(ctx context.Context) (*http.Respons
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetAwsConfigRoot")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/aws/config/root"
+	localVarPath := a.client.cfg.Address + "/v1/aws/config/root"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3654,6 +3704,12 @@ func (a *SecretsApiService) GetAwsConfigRoot(ctx context.Context) (*http.Respons
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3690,12 +3746,7 @@ func (a *SecretsApiService) GetAwsCreds(ctx context.Context) (*http.Response, er
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetAwsCreds")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/aws/creds"
+	localVarPath := a.client.cfg.Address + "/v1/aws/creds"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3718,6 +3769,12 @@ func (a *SecretsApiService) GetAwsCreds(ctx context.Context) (*http.Response, er
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3755,12 +3812,7 @@ func (a *SecretsApiService) GetAwsRoles(ctx context.Context, list string) (*http
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetAwsRoles")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/aws/roles"
+	localVarPath := a.client.cfg.Address + "/v1/aws/roles"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3784,6 +3836,12 @@ func (a *SecretsApiService) GetAwsRoles(ctx context.Context, list string) (*http
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3821,12 +3879,7 @@ func (a *SecretsApiService) GetAwsRolesName(ctx context.Context, name string) (*
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetAwsRolesName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/aws/roles/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/aws/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3850,6 +3903,12 @@ func (a *SecretsApiService) GetAwsRolesName(ctx context.Context, name string) (*
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3887,12 +3946,7 @@ func (a *SecretsApiService) GetAwsStsName(ctx context.Context, name string) (*ht
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetAwsStsName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/aws/sts/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/aws/sts/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -3916,6 +3970,12 @@ func (a *SecretsApiService) GetAwsStsName(ctx context.Context, name string) (*ht
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3952,12 +4012,7 @@ func (a *SecretsApiService) GetAzureConfig(ctx context.Context) (*http.Response,
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetAzureConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/azure/config"
+	localVarPath := a.client.cfg.Address + "/v1/azure/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3980,6 +4035,12 @@ func (a *SecretsApiService) GetAzureConfig(ctx context.Context) (*http.Response,
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -4017,12 +4078,7 @@ func (a *SecretsApiService) GetAzureCredsRole(ctx context.Context, role string) 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetAzureCredsRole")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/azure/creds/{role}"
+	localVarPath := a.client.cfg.Address + "/v1/azure/creds/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4046,6 +4102,12 @@ func (a *SecretsApiService) GetAzureCredsRole(ctx context.Context, role string) 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -4083,12 +4145,7 @@ func (a *SecretsApiService) GetAzureRoles(ctx context.Context, list string) (*ht
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetAzureRoles")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/azure/roles"
+	localVarPath := a.client.cfg.Address + "/v1/azure/roles"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4112,6 +4169,12 @@ func (a *SecretsApiService) GetAzureRoles(ctx context.Context, list string) (*ht
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -4149,12 +4212,7 @@ func (a *SecretsApiService) GetAzureRolesName(ctx context.Context, name string) 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetAzureRolesName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/azure/roles/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/azure/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4178,6 +4236,12 @@ func (a *SecretsApiService) GetAzureRolesName(ctx context.Context, name string) 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -4214,12 +4278,7 @@ func (a *SecretsApiService) GetConsulConfigAccess(ctx context.Context) (*http.Re
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetConsulConfigAccess")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/consul/config/access"
+	localVarPath := a.client.cfg.Address + "/v1/consul/config/access"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4242,6 +4301,12 @@ func (a *SecretsApiService) GetConsulConfigAccess(ctx context.Context) (*http.Re
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -4279,12 +4344,7 @@ func (a *SecretsApiService) GetConsulCredsRole(ctx context.Context, role string)
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetConsulCredsRole")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/consul/creds/{role}"
+	localVarPath := a.client.cfg.Address + "/v1/consul/creds/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4308,6 +4368,12 @@ func (a *SecretsApiService) GetConsulCredsRole(ctx context.Context, role string)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -4345,12 +4411,7 @@ func (a *SecretsApiService) GetConsulRoles(ctx context.Context, list string) (*h
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetConsulRoles")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/consul/roles"
+	localVarPath := a.client.cfg.Address + "/v1/consul/roles"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4374,6 +4435,12 @@ func (a *SecretsApiService) GetConsulRoles(ctx context.Context, list string) (*h
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -4411,12 +4478,7 @@ func (a *SecretsApiService) GetConsulRolesName(ctx context.Context, name string)
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetConsulRolesName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/consul/roles/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/consul/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4440,6 +4502,12 @@ func (a *SecretsApiService) GetConsulRolesName(ctx context.Context, name string)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -4478,12 +4546,7 @@ func (a *SecretsApiService) GetCubbyholePath(ctx context.Context, path string, l
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetCubbyholePath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/cubbyhole/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/cubbyhole/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4508,6 +4571,12 @@ func (a *SecretsApiService) GetCubbyholePath(ctx context.Context, path string, l
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -4544,12 +4613,7 @@ func (a *SecretsApiService) GetGcpConfig(ctx context.Context) (*http.Response, e
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetGcpConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcp/config"
+	localVarPath := a.client.cfg.Address + "/v1/gcp/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4572,6 +4636,12 @@ func (a *SecretsApiService) GetGcpConfig(ctx context.Context) (*http.Response, e
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -4609,12 +4679,7 @@ func (a *SecretsApiService) GetGcpKeyRoleset(ctx context.Context, roleset string
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetGcpKeyRoleset")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcp/key/{roleset}"
+	localVarPath := a.client.cfg.Address + "/v1/gcp/key/{roleset}"
 	localVarPath = strings.Replace(localVarPath, "{"+"roleset"+"}", url.PathEscape(parameterToString(roleset, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4638,6 +4703,12 @@ func (a *SecretsApiService) GetGcpKeyRoleset(ctx context.Context, roleset string
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -4675,12 +4746,7 @@ func (a *SecretsApiService) GetGcpRolesetName(ctx context.Context, name string) 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetGcpRolesetName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcp/roleset/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/gcp/roleset/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4704,6 +4770,12 @@ func (a *SecretsApiService) GetGcpRolesetName(ctx context.Context, name string) 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -4741,12 +4813,7 @@ func (a *SecretsApiService) GetGcpRolesetRolesetKey(ctx context.Context, roleset
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetGcpRolesetRolesetKey")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcp/roleset/{roleset}/key"
+	localVarPath := a.client.cfg.Address + "/v1/gcp/roleset/{roleset}/key"
 	localVarPath = strings.Replace(localVarPath, "{"+"roleset"+"}", url.PathEscape(parameterToString(roleset, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4770,6 +4837,12 @@ func (a *SecretsApiService) GetGcpRolesetRolesetKey(ctx context.Context, roleset
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -4807,12 +4880,7 @@ func (a *SecretsApiService) GetGcpRolesetRolesetToken(ctx context.Context, roles
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetGcpRolesetRolesetToken")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcp/roleset/{roleset}/token"
+	localVarPath := a.client.cfg.Address + "/v1/gcp/roleset/{roleset}/token"
 	localVarPath = strings.Replace(localVarPath, "{"+"roleset"+"}", url.PathEscape(parameterToString(roleset, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4836,6 +4904,12 @@ func (a *SecretsApiService) GetGcpRolesetRolesetToken(ctx context.Context, roles
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -4873,12 +4947,7 @@ func (a *SecretsApiService) GetGcpRolesets(ctx context.Context, list string) (*h
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetGcpRolesets")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcp/rolesets"
+	localVarPath := a.client.cfg.Address + "/v1/gcp/rolesets"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4902,6 +4971,12 @@ func (a *SecretsApiService) GetGcpRolesets(ctx context.Context, list string) (*h
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -4939,12 +5014,7 @@ func (a *SecretsApiService) GetGcpStaticAccountName(ctx context.Context, name st
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetGcpStaticAccountName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcp/static-account/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/gcp/static-account/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -4968,6 +5038,12 @@ func (a *SecretsApiService) GetGcpStaticAccountName(ctx context.Context, name st
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -5005,12 +5081,7 @@ func (a *SecretsApiService) GetGcpStaticAccountNameKey(ctx context.Context, name
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetGcpStaticAccountNameKey")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcp/static-account/{name}/key"
+	localVarPath := a.client.cfg.Address + "/v1/gcp/static-account/{name}/key"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5034,6 +5105,12 @@ func (a *SecretsApiService) GetGcpStaticAccountNameKey(ctx context.Context, name
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -5071,12 +5148,7 @@ func (a *SecretsApiService) GetGcpStaticAccountNameToken(ctx context.Context, na
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetGcpStaticAccountNameToken")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcp/static-account/{name}/token"
+	localVarPath := a.client.cfg.Address + "/v1/gcp/static-account/{name}/token"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5100,6 +5172,12 @@ func (a *SecretsApiService) GetGcpStaticAccountNameToken(ctx context.Context, na
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -5137,12 +5215,7 @@ func (a *SecretsApiService) GetGcpStaticAccounts(ctx context.Context, list strin
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetGcpStaticAccounts")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcp/static-accounts"
+	localVarPath := a.client.cfg.Address + "/v1/gcp/static-accounts"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5166,6 +5239,12 @@ func (a *SecretsApiService) GetGcpStaticAccounts(ctx context.Context, list strin
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -5203,12 +5282,7 @@ func (a *SecretsApiService) GetGcpTokenRoleset(ctx context.Context, roleset stri
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetGcpTokenRoleset")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcp/token/{roleset}"
+	localVarPath := a.client.cfg.Address + "/v1/gcp/token/{roleset}"
 	localVarPath = strings.Replace(localVarPath, "{"+"roleset"+"}", url.PathEscape(parameterToString(roleset, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5232,6 +5306,12 @@ func (a *SecretsApiService) GetGcpTokenRoleset(ctx context.Context, roleset stri
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -5268,12 +5348,7 @@ func (a *SecretsApiService) GetGcpkmsConfig(ctx context.Context) (*http.Response
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetGcpkmsConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcpkms/config"
+	localVarPath := a.client.cfg.Address + "/v1/gcpkms/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5296,6 +5371,12 @@ func (a *SecretsApiService) GetGcpkmsConfig(ctx context.Context) (*http.Response
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -5333,12 +5414,7 @@ func (a *SecretsApiService) GetGcpkmsKeys(ctx context.Context, list string) (*ht
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetGcpkmsKeys")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcpkms/keys"
+	localVarPath := a.client.cfg.Address + "/v1/gcpkms/keys"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5362,6 +5438,12 @@ func (a *SecretsApiService) GetGcpkmsKeys(ctx context.Context, list string) (*ht
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -5399,12 +5481,7 @@ func (a *SecretsApiService) GetGcpkmsKeysConfigKey(ctx context.Context, key stri
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetGcpkmsKeysConfigKey")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcpkms/keys/config/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/gcpkms/keys/config/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5428,6 +5505,12 @@ func (a *SecretsApiService) GetGcpkmsKeysConfigKey(ctx context.Context, key stri
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -5465,12 +5548,7 @@ func (a *SecretsApiService) GetGcpkmsKeysKey(ctx context.Context, key string) (*
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetGcpkmsKeysKey")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcpkms/keys/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/gcpkms/keys/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5494,6 +5572,12 @@ func (a *SecretsApiService) GetGcpkmsKeysKey(ctx context.Context, key string) (*
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -5531,12 +5615,7 @@ func (a *SecretsApiService) GetGcpkmsPubkeyKey(ctx context.Context, key string) 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetGcpkmsPubkeyKey")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcpkms/pubkey/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/gcpkms/pubkey/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5560,6 +5639,12 @@ func (a *SecretsApiService) GetGcpkmsPubkeyKey(ctx context.Context, key string) 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -5596,12 +5681,7 @@ func (a *SecretsApiService) GetKubernetesConfig(ctx context.Context) (*http.Resp
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetKubernetesConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/kubernetes/config"
+	localVarPath := a.client.cfg.Address + "/v1/kubernetes/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5624,6 +5704,12 @@ func (a *SecretsApiService) GetKubernetesConfig(ctx context.Context) (*http.Resp
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -5661,12 +5747,7 @@ func (a *SecretsApiService) GetKubernetesRoles(ctx context.Context, list string)
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetKubernetesRoles")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/kubernetes/roles"
+	localVarPath := a.client.cfg.Address + "/v1/kubernetes/roles"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5690,6 +5771,12 @@ func (a *SecretsApiService) GetKubernetesRoles(ctx context.Context, list string)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -5727,12 +5814,7 @@ func (a *SecretsApiService) GetKubernetesRolesName(ctx context.Context, name str
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetKubernetesRolesName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/kubernetes/roles/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/kubernetes/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5756,6 +5838,12 @@ func (a *SecretsApiService) GetKubernetesRolesName(ctx context.Context, name str
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -5794,12 +5882,7 @@ func (a *SecretsApiService) GetKvPath(ctx context.Context, path string, list str
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetKvPath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/kv/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/kv/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5824,6 +5907,12 @@ func (a *SecretsApiService) GetKvPath(ctx context.Context, path string, list str
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -5860,12 +5949,7 @@ func (a *SecretsApiService) GetMongodbatlasConfig(ctx context.Context) (*http.Re
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetMongodbatlasConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/mongodbatlas/config"
+	localVarPath := a.client.cfg.Address + "/v1/mongodbatlas/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5888,6 +5972,12 @@ func (a *SecretsApiService) GetMongodbatlasConfig(ctx context.Context) (*http.Re
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -5925,12 +6015,7 @@ func (a *SecretsApiService) GetMongodbatlasCredsName(ctx context.Context, name s
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetMongodbatlasCredsName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/mongodbatlas/creds/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/mongodbatlas/creds/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -5954,6 +6039,12 @@ func (a *SecretsApiService) GetMongodbatlasCredsName(ctx context.Context, name s
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -5991,12 +6082,7 @@ func (a *SecretsApiService) GetMongodbatlasRoles(ctx context.Context, list strin
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetMongodbatlasRoles")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/mongodbatlas/roles"
+	localVarPath := a.client.cfg.Address + "/v1/mongodbatlas/roles"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6020,6 +6106,12 @@ func (a *SecretsApiService) GetMongodbatlasRoles(ctx context.Context, list strin
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -6057,12 +6149,7 @@ func (a *SecretsApiService) GetMongodbatlasRolesName(ctx context.Context, name s
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetMongodbatlasRolesName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/mongodbatlas/roles/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/mongodbatlas/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6086,6 +6173,12 @@ func (a *SecretsApiService) GetMongodbatlasRolesName(ctx context.Context, name s
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -6122,12 +6215,7 @@ func (a *SecretsApiService) GetNomadConfigAccess(ctx context.Context) (*http.Res
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetNomadConfigAccess")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/nomad/config/access"
+	localVarPath := a.client.cfg.Address + "/v1/nomad/config/access"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6150,6 +6238,12 @@ func (a *SecretsApiService) GetNomadConfigAccess(ctx context.Context) (*http.Res
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -6186,12 +6280,7 @@ func (a *SecretsApiService) GetNomadConfigLease(ctx context.Context) (*http.Resp
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetNomadConfigLease")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/nomad/config/lease"
+	localVarPath := a.client.cfg.Address + "/v1/nomad/config/lease"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6214,6 +6303,12 @@ func (a *SecretsApiService) GetNomadConfigLease(ctx context.Context) (*http.Resp
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -6251,12 +6346,7 @@ func (a *SecretsApiService) GetNomadCredsName(ctx context.Context, name string) 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetNomadCredsName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/nomad/creds/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/nomad/creds/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6280,6 +6370,12 @@ func (a *SecretsApiService) GetNomadCredsName(ctx context.Context, name string) 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -6317,12 +6413,7 @@ func (a *SecretsApiService) GetNomadRole(ctx context.Context, list string) (*htt
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetNomadRole")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/nomad/role"
+	localVarPath := a.client.cfg.Address + "/v1/nomad/role"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6346,6 +6437,12 @@ func (a *SecretsApiService) GetNomadRole(ctx context.Context, list string) (*htt
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -6383,12 +6480,7 @@ func (a *SecretsApiService) GetNomadRoleName(ctx context.Context, name string) (
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetNomadRoleName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/nomad/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/nomad/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6412,6 +6504,12 @@ func (a *SecretsApiService) GetNomadRoleName(ctx context.Context, name string) (
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -6448,12 +6546,7 @@ func (a *SecretsApiService) GetOpenldapConfig(ctx context.Context) (*http.Respon
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetOpenldapConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openldap/config"
+	localVarPath := a.client.cfg.Address + "/v1/openldap/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6476,6 +6569,12 @@ func (a *SecretsApiService) GetOpenldapConfig(ctx context.Context) (*http.Respon
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -6513,12 +6612,7 @@ func (a *SecretsApiService) GetOpenldapCredsName(ctx context.Context, name strin
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetOpenldapCredsName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openldap/creds/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/openldap/creds/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6542,6 +6636,12 @@ func (a *SecretsApiService) GetOpenldapCredsName(ctx context.Context, name strin
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -6579,12 +6679,7 @@ func (a *SecretsApiService) GetOpenldapRole(ctx context.Context, list string) (*
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetOpenldapRole")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openldap/role"
+	localVarPath := a.client.cfg.Address + "/v1/openldap/role"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6608,6 +6703,12 @@ func (a *SecretsApiService) GetOpenldapRole(ctx context.Context, list string) (*
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -6645,12 +6746,7 @@ func (a *SecretsApiService) GetOpenldapRoleName(ctx context.Context, name string
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetOpenldapRoleName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openldap/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/openldap/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6674,6 +6770,12 @@ func (a *SecretsApiService) GetOpenldapRoleName(ctx context.Context, name string
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -6711,12 +6813,7 @@ func (a *SecretsApiService) GetOpenldapStaticCredName(ctx context.Context, name 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetOpenldapStaticCredName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openldap/static-cred/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/openldap/static-cred/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6740,6 +6837,12 @@ func (a *SecretsApiService) GetOpenldapStaticCredName(ctx context.Context, name 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -6777,12 +6880,7 @@ func (a *SecretsApiService) GetOpenldapStaticRole(ctx context.Context, list stri
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetOpenldapStaticRole")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openldap/static-role"
+	localVarPath := a.client.cfg.Address + "/v1/openldap/static-role"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6806,6 +6904,12 @@ func (a *SecretsApiService) GetOpenldapStaticRole(ctx context.Context, list stri
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -6843,12 +6947,7 @@ func (a *SecretsApiService) GetOpenldapStaticRoleName(ctx context.Context, name 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetOpenldapStaticRoleName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openldap/static-role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/openldap/static-role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -6872,6 +6971,12 @@ func (a *SecretsApiService) GetOpenldapStaticRoleName(ctx context.Context, name 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -6908,12 +7013,7 @@ func (a *SecretsApiService) GetPkiCa(ctx context.Context) (*http.Response, error
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetPkiCa")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/ca"
+	localVarPath := a.client.cfg.Address + "/v1/pki/ca"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6936,6 +7036,12 @@ func (a *SecretsApiService) GetPkiCa(ctx context.Context) (*http.Response, error
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -6972,12 +7078,7 @@ func (a *SecretsApiService) GetPkiCaChain(ctx context.Context) (*http.Response, 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetPkiCaChain")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/ca_chain"
+	localVarPath := a.client.cfg.Address + "/v1/pki/ca_chain"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7000,6 +7101,12 @@ func (a *SecretsApiService) GetPkiCaChain(ctx context.Context) (*http.Response, 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -7036,12 +7143,7 @@ func (a *SecretsApiService) GetPkiCaPem(ctx context.Context) (*http.Response, er
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetPkiCaPem")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/ca/pem"
+	localVarPath := a.client.cfg.Address + "/v1/pki/ca/pem"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7064,6 +7166,12 @@ func (a *SecretsApiService) GetPkiCaPem(ctx context.Context) (*http.Response, er
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -7100,12 +7208,7 @@ func (a *SecretsApiService) GetPkiCertCaChain(ctx context.Context) (*http.Respon
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetPkiCertCaChain")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/cert/ca_chain"
+	localVarPath := a.client.cfg.Address + "/v1/pki/cert/ca_chain"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7128,6 +7231,12 @@ func (a *SecretsApiService) GetPkiCertCaChain(ctx context.Context) (*http.Respon
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -7164,12 +7273,7 @@ func (a *SecretsApiService) GetPkiCertCrl(ctx context.Context) (*http.Response, 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetPkiCertCrl")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/cert/crl"
+	localVarPath := a.client.cfg.Address + "/v1/pki/cert/crl"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7192,6 +7296,12 @@ func (a *SecretsApiService) GetPkiCertCrl(ctx context.Context) (*http.Response, 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -7229,12 +7339,7 @@ func (a *SecretsApiService) GetPkiCertSerial(ctx context.Context, serial string)
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetPkiCertSerial")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/cert/{serial}"
+	localVarPath := a.client.cfg.Address + "/v1/pki/cert/{serial}"
 	localVarPath = strings.Replace(localVarPath, "{"+"serial"+"}", url.PathEscape(parameterToString(serial, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -7258,6 +7363,12 @@ func (a *SecretsApiService) GetPkiCertSerial(ctx context.Context, serial string)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -7295,12 +7406,7 @@ func (a *SecretsApiService) GetPkiCertSerialRaw(ctx context.Context, serial stri
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetPkiCertSerialRaw")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/cert/{serial}/raw"
+	localVarPath := a.client.cfg.Address + "/v1/pki/cert/{serial}/raw"
 	localVarPath = strings.Replace(localVarPath, "{"+"serial"+"}", url.PathEscape(parameterToString(serial, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -7324,6 +7430,12 @@ func (a *SecretsApiService) GetPkiCertSerialRaw(ctx context.Context, serial stri
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -7361,12 +7473,7 @@ func (a *SecretsApiService) GetPkiCertSerialRawPem(ctx context.Context, serial s
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetPkiCertSerialRawPem")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/cert/{serial}/raw/pem"
+	localVarPath := a.client.cfg.Address + "/v1/pki/cert/{serial}/raw/pem"
 	localVarPath = strings.Replace(localVarPath, "{"+"serial"+"}", url.PathEscape(parameterToString(serial, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -7390,6 +7497,12 @@ func (a *SecretsApiService) GetPkiCertSerialRawPem(ctx context.Context, serial s
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -7427,12 +7540,7 @@ func (a *SecretsApiService) GetPkiCerts(ctx context.Context, list string) (*http
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetPkiCerts")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/certs"
+	localVarPath := a.client.cfg.Address + "/v1/pki/certs"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7456,6 +7564,12 @@ func (a *SecretsApiService) GetPkiCerts(ctx context.Context, list string) (*http
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -7492,12 +7606,7 @@ func (a *SecretsApiService) GetPkiConfigCrl(ctx context.Context) (*http.Response
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetPkiConfigCrl")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/config/crl"
+	localVarPath := a.client.cfg.Address + "/v1/pki/config/crl"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7520,6 +7629,12 @@ func (a *SecretsApiService) GetPkiConfigCrl(ctx context.Context) (*http.Response
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -7556,12 +7671,7 @@ func (a *SecretsApiService) GetPkiConfigIssuers(ctx context.Context) (*http.Resp
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetPkiConfigIssuers")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/config/issuers"
+	localVarPath := a.client.cfg.Address + "/v1/pki/config/issuers"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7584,6 +7694,12 @@ func (a *SecretsApiService) GetPkiConfigIssuers(ctx context.Context) (*http.Resp
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -7620,12 +7736,7 @@ func (a *SecretsApiService) GetPkiConfigKeys(ctx context.Context) (*http.Respons
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetPkiConfigKeys")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/config/keys"
+	localVarPath := a.client.cfg.Address + "/v1/pki/config/keys"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7648,6 +7759,12 @@ func (a *SecretsApiService) GetPkiConfigKeys(ctx context.Context) (*http.Respons
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -7684,12 +7801,7 @@ func (a *SecretsApiService) GetPkiConfigUrls(ctx context.Context) (*http.Respons
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetPkiConfigUrls")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/config/urls"
+	localVarPath := a.client.cfg.Address + "/v1/pki/config/urls"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7712,6 +7824,12 @@ func (a *SecretsApiService) GetPkiConfigUrls(ctx context.Context) (*http.Respons
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -7748,12 +7866,7 @@ func (a *SecretsApiService) GetPkiCrl(ctx context.Context) (*http.Response, erro
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetPkiCrl")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/crl"
+	localVarPath := a.client.cfg.Address + "/v1/pki/crl"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7776,6 +7889,12 @@ func (a *SecretsApiService) GetPkiCrl(ctx context.Context) (*http.Response, erro
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -7812,12 +7931,7 @@ func (a *SecretsApiService) GetPkiCrlPem(ctx context.Context) (*http.Response, e
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetPkiCrlPem")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/crl/pem"
+	localVarPath := a.client.cfg.Address + "/v1/pki/crl/pem"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7840,6 +7954,12 @@ func (a *SecretsApiService) GetPkiCrlPem(ctx context.Context) (*http.Response, e
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -7876,12 +7996,7 @@ func (a *SecretsApiService) GetPkiCrlRotate(ctx context.Context) (*http.Response
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetPkiCrlRotate")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/crl/rotate"
+	localVarPath := a.client.cfg.Address + "/v1/pki/crl/rotate"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7904,6 +8019,12 @@ func (a *SecretsApiService) GetPkiCrlRotate(ctx context.Context) (*http.Response
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -7940,12 +8061,7 @@ func (a *SecretsApiService) GetPkiDer(ctx context.Context) (*http.Response, erro
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetPkiDer")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki//der"
+	localVarPath := a.client.cfg.Address + "/v1/pki//der"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7968,6 +8084,12 @@ func (a *SecretsApiService) GetPkiDer(ctx context.Context) (*http.Response, erro
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -8005,12 +8127,7 @@ func (a *SecretsApiService) GetPkiIssuerRefCrlPem(ctx context.Context, issuerRef
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetPkiIssuerRefCrlPem")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/{issuer_ref}/crl/pem"
+	localVarPath := a.client.cfg.Address + "/v1/pki/{issuer_ref}/crl/pem"
 	localVarPath = strings.Replace(localVarPath, "{"+"issuer_ref"+"}", url.PathEscape(parameterToString(issuerRef, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8034,6 +8151,12 @@ func (a *SecretsApiService) GetPkiIssuerRefCrlPem(ctx context.Context, issuerRef
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -8071,12 +8194,7 @@ func (a *SecretsApiService) GetPkiIssuerRefDerPem(ctx context.Context, issuerRef
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetPkiIssuerRefDerPem")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/{issuer_ref}/der|/pem"
+	localVarPath := a.client.cfg.Address + "/v1/pki/{issuer_ref}/der|/pem"
 	localVarPath = strings.Replace(localVarPath, "{"+"issuer_ref"+"}", url.PathEscape(parameterToString(issuerRef, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8100,6 +8218,12 @@ func (a *SecretsApiService) GetPkiIssuerRefDerPem(ctx context.Context, issuerRef
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -8137,12 +8261,7 @@ func (a *SecretsApiService) GetPkiIssuers(ctx context.Context, list string) (*ht
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetPkiIssuers")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/issuers"
+	localVarPath := a.client.cfg.Address + "/v1/pki/issuers"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8166,6 +8285,12 @@ func (a *SecretsApiService) GetPkiIssuers(ctx context.Context, list string) (*ht
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -8202,12 +8327,7 @@ func (a *SecretsApiService) GetPkiJson(ctx context.Context) (*http.Response, err
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetPkiJson")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki//json"
+	localVarPath := a.client.cfg.Address + "/v1/pki//json"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8230,6 +8350,12 @@ func (a *SecretsApiService) GetPkiJson(ctx context.Context) (*http.Response, err
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -8267,12 +8393,7 @@ func (a *SecretsApiService) GetPkiKeyKeyRef(ctx context.Context, keyRef string) 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetPkiKeyKeyRef")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/key/{key_ref}"
+	localVarPath := a.client.cfg.Address + "/v1/pki/key/{key_ref}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key_ref"+"}", url.PathEscape(parameterToString(keyRef, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8296,6 +8417,12 @@ func (a *SecretsApiService) GetPkiKeyKeyRef(ctx context.Context, keyRef string) 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -8333,12 +8460,7 @@ func (a *SecretsApiService) GetPkiKeys(ctx context.Context, list string) (*http.
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetPkiKeys")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/keys"
+	localVarPath := a.client.cfg.Address + "/v1/pki/keys"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8362,6 +8484,12 @@ func (a *SecretsApiService) GetPkiKeys(ctx context.Context, list string) (*http.
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -8399,12 +8527,7 @@ func (a *SecretsApiService) GetPkiRoles(ctx context.Context, list string) (*http
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetPkiRoles")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/roles"
+	localVarPath := a.client.cfg.Address + "/v1/pki/roles"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8428,6 +8551,12 @@ func (a *SecretsApiService) GetPkiRoles(ctx context.Context, list string) (*http
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -8465,12 +8594,7 @@ func (a *SecretsApiService) GetPkiRolesName(ctx context.Context, name string) (*
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetPkiRolesName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/roles/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/pki/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8494,6 +8618,12 @@ func (a *SecretsApiService) GetPkiRolesName(ctx context.Context, name string) (*
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -8530,12 +8660,7 @@ func (a *SecretsApiService) GetPkiTidyStatus(ctx context.Context) (*http.Respons
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetPkiTidyStatus")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/tidy-status"
+	localVarPath := a.client.cfg.Address + "/v1/pki/tidy-status"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8558,6 +8683,12 @@ func (a *SecretsApiService) GetPkiTidyStatus(ctx context.Context) (*http.Respons
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -8594,12 +8725,7 @@ func (a *SecretsApiService) GetRabbitmqConfigLease(ctx context.Context) (*http.R
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetRabbitmqConfigLease")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/rabbitmq/config/lease"
+	localVarPath := a.client.cfg.Address + "/v1/rabbitmq/config/lease"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8622,6 +8748,12 @@ func (a *SecretsApiService) GetRabbitmqConfigLease(ctx context.Context) (*http.R
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -8659,12 +8791,7 @@ func (a *SecretsApiService) GetRabbitmqCredsName(ctx context.Context, name strin
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetRabbitmqCredsName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/rabbitmq/creds/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/rabbitmq/creds/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8688,6 +8815,12 @@ func (a *SecretsApiService) GetRabbitmqCredsName(ctx context.Context, name strin
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -8725,12 +8858,7 @@ func (a *SecretsApiService) GetRabbitmqRoles(ctx context.Context, list string) (
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetRabbitmqRoles")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/rabbitmq/roles"
+	localVarPath := a.client.cfg.Address + "/v1/rabbitmq/roles"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8754,6 +8882,12 @@ func (a *SecretsApiService) GetRabbitmqRoles(ctx context.Context, list string) (
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -8791,12 +8925,7 @@ func (a *SecretsApiService) GetRabbitmqRolesName(ctx context.Context, name strin
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetRabbitmqRolesName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/rabbitmq/roles/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/rabbitmq/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8820,6 +8949,12 @@ func (a *SecretsApiService) GetRabbitmqRolesName(ctx context.Context, name strin
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -8856,12 +8991,7 @@ func (a *SecretsApiService) GetSecretConfig(ctx context.Context) (*http.Response
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetSecretConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/secret/config"
+	localVarPath := a.client.cfg.Address + "/v1/secret/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8884,6 +9014,12 @@ func (a *SecretsApiService) GetSecretConfig(ctx context.Context) (*http.Response
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -8921,12 +9057,7 @@ func (a *SecretsApiService) GetSecretDataPath(ctx context.Context, path string) 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetSecretDataPath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/secret/data/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/secret/data/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -8950,6 +9081,12 @@ func (a *SecretsApiService) GetSecretDataPath(ctx context.Context, path string) 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -8988,12 +9125,7 @@ func (a *SecretsApiService) GetSecretMetadataPath(ctx context.Context, path stri
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetSecretMetadataPath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/secret/metadata/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/secret/metadata/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -9018,6 +9150,12 @@ func (a *SecretsApiService) GetSecretMetadataPath(ctx context.Context, path stri
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -9055,12 +9193,7 @@ func (a *SecretsApiService) GetSecretSubkeysPath(ctx context.Context, path strin
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetSecretSubkeysPath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/secret/subkeys/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/secret/subkeys/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -9084,6 +9217,12 @@ func (a *SecretsApiService) GetSecretSubkeysPath(ctx context.Context, path strin
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -9120,12 +9259,7 @@ func (a *SecretsApiService) GetSshConfigCa(ctx context.Context) (*http.Response,
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetSshConfigCa")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ssh/config/ca"
+	localVarPath := a.client.cfg.Address + "/v1/ssh/config/ca"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9148,6 +9282,12 @@ func (a *SecretsApiService) GetSshConfigCa(ctx context.Context) (*http.Response,
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -9184,12 +9324,7 @@ func (a *SecretsApiService) GetSshConfigZeroaddress(ctx context.Context) (*http.
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetSshConfigZeroaddress")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ssh/config/zeroaddress"
+	localVarPath := a.client.cfg.Address + "/v1/ssh/config/zeroaddress"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9212,6 +9347,12 @@ func (a *SecretsApiService) GetSshConfigZeroaddress(ctx context.Context) (*http.
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -9248,12 +9389,7 @@ func (a *SecretsApiService) GetSshPublicKey(ctx context.Context) (*http.Response
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetSshPublicKey")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ssh/public_key"
+	localVarPath := a.client.cfg.Address + "/v1/ssh/public_key"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9276,6 +9412,12 @@ func (a *SecretsApiService) GetSshPublicKey(ctx context.Context) (*http.Response
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -9313,12 +9455,7 @@ func (a *SecretsApiService) GetSshRoles(ctx context.Context, list string) (*http
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetSshRoles")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ssh/roles"
+	localVarPath := a.client.cfg.Address + "/v1/ssh/roles"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9342,6 +9479,12 @@ func (a *SecretsApiService) GetSshRoles(ctx context.Context, list string) (*http
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -9379,12 +9522,7 @@ func (a *SecretsApiService) GetSshRolesRole(ctx context.Context, role string) (*
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetSshRolesRole")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ssh/roles/{role}"
+	localVarPath := a.client.cfg.Address + "/v1/ssh/roles/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -9408,6 +9546,12 @@ func (a *SecretsApiService) GetSshRolesRole(ctx context.Context, role string) (*
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -9444,12 +9588,7 @@ func (a *SecretsApiService) GetTerraformConfig(ctx context.Context) (*http.Respo
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetTerraformConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/terraform/config"
+	localVarPath := a.client.cfg.Address + "/v1/terraform/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9472,6 +9611,12 @@ func (a *SecretsApiService) GetTerraformConfig(ctx context.Context) (*http.Respo
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -9509,12 +9654,7 @@ func (a *SecretsApiService) GetTerraformCredsName(ctx context.Context, name stri
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetTerraformCredsName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/terraform/creds/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/terraform/creds/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -9538,6 +9678,12 @@ func (a *SecretsApiService) GetTerraformCredsName(ctx context.Context, name stri
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -9575,12 +9721,7 @@ func (a *SecretsApiService) GetTerraformRole(ctx context.Context, list string) (
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetTerraformRole")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/terraform/role"
+	localVarPath := a.client.cfg.Address + "/v1/terraform/role"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9604,6 +9745,12 @@ func (a *SecretsApiService) GetTerraformRole(ctx context.Context, list string) (
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -9641,12 +9788,7 @@ func (a *SecretsApiService) GetTerraformRoleName(ctx context.Context, name strin
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetTerraformRoleName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/terraform/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/terraform/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -9670,6 +9812,12 @@ func (a *SecretsApiService) GetTerraformRoleName(ctx context.Context, name strin
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -9707,12 +9855,7 @@ func (a *SecretsApiService) GetTotpCodeName(ctx context.Context, name string) (*
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetTotpCodeName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/totp/code/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/totp/code/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -9736,6 +9879,12 @@ func (a *SecretsApiService) GetTotpCodeName(ctx context.Context, name string) (*
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -9773,12 +9922,7 @@ func (a *SecretsApiService) GetTotpKeys(ctx context.Context, list string) (*http
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetTotpKeys")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/totp/keys"
+	localVarPath := a.client.cfg.Address + "/v1/totp/keys"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9802,6 +9946,12 @@ func (a *SecretsApiService) GetTotpKeys(ctx context.Context, list string) (*http
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -9839,12 +9989,7 @@ func (a *SecretsApiService) GetTotpKeysName(ctx context.Context, name string) (*
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetTotpKeysName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/totp/keys/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/totp/keys/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -9868,6 +10013,12 @@ func (a *SecretsApiService) GetTotpKeysName(ctx context.Context, name string) (*
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -9905,12 +10056,7 @@ func (a *SecretsApiService) GetTransitBackupName(ctx context.Context, name strin
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetTransitBackupName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/backup/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/transit/backup/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -9934,6 +10080,12 @@ func (a *SecretsApiService) GetTransitBackupName(ctx context.Context, name strin
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -9970,12 +10122,7 @@ func (a *SecretsApiService) GetTransitCacheConfig(ctx context.Context) (*http.Re
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetTransitCacheConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/cache-config"
+	localVarPath := a.client.cfg.Address + "/v1/transit/cache-config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9998,6 +10145,12 @@ func (a *SecretsApiService) GetTransitCacheConfig(ctx context.Context) (*http.Re
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -10036,12 +10189,7 @@ func (a *SecretsApiService) GetTransitExportTypeName(ctx context.Context, name s
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetTransitExportTypeName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/export/{type}/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/transit/export/{type}/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(type_, "")), -1)
 
@@ -10066,6 +10214,12 @@ func (a *SecretsApiService) GetTransitExportTypeName(ctx context.Context, name s
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -10105,12 +10259,7 @@ func (a *SecretsApiService) GetTransitExportTypeNameVersion(ctx context.Context,
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetTransitExportTypeNameVersion")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/export/{type}/{name}/{version}"
+	localVarPath := a.client.cfg.Address + "/v1/transit/export/{type}/{name}/{version}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(type_, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(version, "")), -1)
@@ -10136,6 +10285,12 @@ func (a *SecretsApiService) GetTransitExportTypeNameVersion(ctx context.Context,
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -10173,12 +10328,7 @@ func (a *SecretsApiService) GetTransitKeys(ctx context.Context, list string) (*h
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetTransitKeys")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/keys"
+	localVarPath := a.client.cfg.Address + "/v1/transit/keys"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10202,6 +10352,12 @@ func (a *SecretsApiService) GetTransitKeys(ctx context.Context, list string) (*h
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -10239,12 +10395,7 @@ func (a *SecretsApiService) GetTransitKeysName(ctx context.Context, name string)
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetTransitKeysName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/keys/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/transit/keys/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -10268,6 +10419,12 @@ func (a *SecretsApiService) GetTransitKeysName(ctx context.Context, name string)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -10304,12 +10461,7 @@ func (a *SecretsApiService) GetTransitWrappingKey(ctx context.Context) (*http.Re
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.GetTransitWrappingKey")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/wrapping_key"
+	localVarPath := a.client.cfg.Address + "/v1/transit/wrapping_key"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10332,6 +10484,12 @@ func (a *SecretsApiService) GetTransitWrappingKey(ctx context.Context) (*http.Re
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -10368,12 +10526,7 @@ func (a *SecretsApiService) PostAdConfig(ctx context.Context, adConfigRequest Ad
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostAdConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ad/config"
+	localVarPath := a.client.cfg.Address + "/v1/ad/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10396,6 +10549,12 @@ func (a *SecretsApiService) PostAdConfig(ctx context.Context, adConfigRequest Ad
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = adConfigRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -10435,12 +10594,7 @@ func (a *SecretsApiService) PostAdLibraryManageNameCheckIn(ctx context.Context, 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostAdLibraryManageNameCheckIn")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ad/library/manage/{name}/check-in"
+	localVarPath := a.client.cfg.Address + "/v1/ad/library/manage/{name}/check-in"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -10464,6 +10618,12 @@ func (a *SecretsApiService) PostAdLibraryManageNameCheckIn(ctx context.Context, 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = adLibraryManageCheckInRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -10503,12 +10663,7 @@ func (a *SecretsApiService) PostAdLibraryName(ctx context.Context, name string, 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostAdLibraryName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ad/library/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/ad/library/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -10532,6 +10687,12 @@ func (a *SecretsApiService) PostAdLibraryName(ctx context.Context, name string, 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = adLibraryRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -10571,12 +10732,7 @@ func (a *SecretsApiService) PostAdLibraryNameCheckIn(ctx context.Context, name s
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostAdLibraryNameCheckIn")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ad/library/{name}/check-in"
+	localVarPath := a.client.cfg.Address + "/v1/ad/library/{name}/check-in"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -10600,6 +10756,12 @@ func (a *SecretsApiService) PostAdLibraryNameCheckIn(ctx context.Context, name s
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = adLibraryCheckInRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -10639,12 +10801,7 @@ func (a *SecretsApiService) PostAdLibraryNameCheckOut(ctx context.Context, name 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostAdLibraryNameCheckOut")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ad/library/{name}/check-out"
+	localVarPath := a.client.cfg.Address + "/v1/ad/library/{name}/check-out"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -10668,6 +10825,12 @@ func (a *SecretsApiService) PostAdLibraryNameCheckOut(ctx context.Context, name 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = adLibraryCheckOutRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -10707,12 +10870,7 @@ func (a *SecretsApiService) PostAdRolesName(ctx context.Context, name string, ad
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostAdRolesName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ad/roles/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/ad/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -10736,6 +10894,12 @@ func (a *SecretsApiService) PostAdRolesName(ctx context.Context, name string, ad
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = adRolesRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -10775,12 +10939,7 @@ func (a *SecretsApiService) PostAdRotateRoleName(ctx context.Context, name strin
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostAdRotateRoleName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ad/rotate-role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/ad/rotate-role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -10804,6 +10963,12 @@ func (a *SecretsApiService) PostAdRotateRoleName(ctx context.Context, name strin
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -10840,12 +11005,7 @@ func (a *SecretsApiService) PostAdRotateRoot(ctx context.Context) (*http.Respons
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostAdRotateRoot")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ad/rotate-root"
+	localVarPath := a.client.cfg.Address + "/v1/ad/rotate-root"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10868,6 +11028,12 @@ func (a *SecretsApiService) PostAdRotateRoot(ctx context.Context) (*http.Respons
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -10904,12 +11070,7 @@ func (a *SecretsApiService) PostAlicloudConfig(ctx context.Context, alicloudConf
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostAlicloudConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/alicloud/config"
+	localVarPath := a.client.cfg.Address + "/v1/alicloud/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10932,6 +11093,12 @@ func (a *SecretsApiService) PostAlicloudConfig(ctx context.Context, alicloudConf
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = alicloudConfigRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -10971,12 +11138,7 @@ func (a *SecretsApiService) PostAlicloudRoleName(ctx context.Context, name strin
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostAlicloudRoleName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/alicloud/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/alicloud/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -11000,6 +11162,12 @@ func (a *SecretsApiService) PostAlicloudRoleName(ctx context.Context, name strin
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = alicloudRoleRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -11038,12 +11206,7 @@ func (a *SecretsApiService) PostAwsConfigLease(ctx context.Context, awsConfigLea
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostAwsConfigLease")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/aws/config/lease"
+	localVarPath := a.client.cfg.Address + "/v1/aws/config/lease"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11066,6 +11229,12 @@ func (a *SecretsApiService) PostAwsConfigLease(ctx context.Context, awsConfigLea
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = awsConfigLeaseRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -11104,12 +11273,7 @@ func (a *SecretsApiService) PostAwsConfigRoot(ctx context.Context, awsConfigRoot
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostAwsConfigRoot")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/aws/config/root"
+	localVarPath := a.client.cfg.Address + "/v1/aws/config/root"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11132,6 +11296,12 @@ func (a *SecretsApiService) PostAwsConfigRoot(ctx context.Context, awsConfigRoot
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = awsConfigRootRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -11170,12 +11340,7 @@ func (a *SecretsApiService) PostAwsConfigRotateRoot(ctx context.Context) (*http.
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostAwsConfigRotateRoot")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/aws/config/rotate-root"
+	localVarPath := a.client.cfg.Address + "/v1/aws/config/rotate-root"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11198,6 +11363,12 @@ func (a *SecretsApiService) PostAwsConfigRotateRoot(ctx context.Context) (*http.
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -11234,12 +11405,7 @@ func (a *SecretsApiService) PostAwsCreds(ctx context.Context, awsCredsRequest Aw
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostAwsCreds")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/aws/creds"
+	localVarPath := a.client.cfg.Address + "/v1/aws/creds"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11262,6 +11428,12 @@ func (a *SecretsApiService) PostAwsCreds(ctx context.Context, awsCredsRequest Aw
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = awsCredsRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -11301,12 +11473,7 @@ func (a *SecretsApiService) PostAwsRolesName(ctx context.Context, name string, a
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostAwsRolesName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/aws/roles/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/aws/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -11330,6 +11497,12 @@ func (a *SecretsApiService) PostAwsRolesName(ctx context.Context, name string, a
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = awsRolesRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -11369,12 +11542,7 @@ func (a *SecretsApiService) PostAwsStsName(ctx context.Context, name string, aws
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostAwsStsName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/aws/sts/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/aws/sts/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -11398,6 +11566,12 @@ func (a *SecretsApiService) PostAwsStsName(ctx context.Context, name string, aws
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = awsStsRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -11436,12 +11610,7 @@ func (a *SecretsApiService) PostAzureConfig(ctx context.Context, azureConfigRequ
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostAzureConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/azure/config"
+	localVarPath := a.client.cfg.Address + "/v1/azure/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11464,6 +11633,12 @@ func (a *SecretsApiService) PostAzureConfig(ctx context.Context, azureConfigRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = azureConfigRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -11503,12 +11678,7 @@ func (a *SecretsApiService) PostAzureRolesName(ctx context.Context, name string,
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostAzureRolesName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/azure/roles/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/azure/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -11532,6 +11702,12 @@ func (a *SecretsApiService) PostAzureRolesName(ctx context.Context, name string,
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = azureRolesRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -11570,12 +11746,7 @@ func (a *SecretsApiService) PostAzureRotateRoot(ctx context.Context) (*http.Resp
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostAzureRotateRoot")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/azure/rotate-root"
+	localVarPath := a.client.cfg.Address + "/v1/azure/rotate-root"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11598,6 +11769,12 @@ func (a *SecretsApiService) PostAzureRotateRoot(ctx context.Context) (*http.Resp
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -11634,12 +11811,7 @@ func (a *SecretsApiService) PostConsulConfigAccess(ctx context.Context, consulCo
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostConsulConfigAccess")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/consul/config/access"
+	localVarPath := a.client.cfg.Address + "/v1/consul/config/access"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11662,6 +11834,12 @@ func (a *SecretsApiService) PostConsulConfigAccess(ctx context.Context, consulCo
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = consulConfigAccessRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -11701,12 +11879,7 @@ func (a *SecretsApiService) PostConsulRolesName(ctx context.Context, name string
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostConsulRolesName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/consul/roles/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/consul/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -11730,6 +11903,12 @@ func (a *SecretsApiService) PostConsulRolesName(ctx context.Context, name string
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = consulRolesRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -11769,12 +11948,7 @@ func (a *SecretsApiService) PostCubbyholePath(ctx context.Context, path string) 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostCubbyholePath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/cubbyhole/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/cubbyhole/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -11798,6 +11972,12 @@ func (a *SecretsApiService) PostCubbyholePath(ctx context.Context, path string) 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -11834,12 +12014,7 @@ func (a *SecretsApiService) PostGcpConfig(ctx context.Context, gcpConfigRequest 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostGcpConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcp/config"
+	localVarPath := a.client.cfg.Address + "/v1/gcp/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11862,6 +12037,12 @@ func (a *SecretsApiService) PostGcpConfig(ctx context.Context, gcpConfigRequest 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = gcpConfigRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -11900,12 +12081,7 @@ func (a *SecretsApiService) PostGcpConfigRotateRoot(ctx context.Context) (*http.
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostGcpConfigRotateRoot")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcp/config/rotate-root"
+	localVarPath := a.client.cfg.Address + "/v1/gcp/config/rotate-root"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11928,6 +12104,12 @@ func (a *SecretsApiService) PostGcpConfigRotateRoot(ctx context.Context) (*http.
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -11965,12 +12147,7 @@ func (a *SecretsApiService) PostGcpKeyRoleset(ctx context.Context, roleset strin
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostGcpKeyRoleset")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcp/key/{roleset}"
+	localVarPath := a.client.cfg.Address + "/v1/gcp/key/{roleset}"
 	localVarPath = strings.Replace(localVarPath, "{"+"roleset"+"}", url.PathEscape(parameterToString(roleset, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -11994,6 +12171,12 @@ func (a *SecretsApiService) PostGcpKeyRoleset(ctx context.Context, roleset strin
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = gcpKeyRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -12033,12 +12216,7 @@ func (a *SecretsApiService) PostGcpRolesetName(ctx context.Context, name string,
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostGcpRolesetName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcp/roleset/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/gcp/roleset/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -12062,6 +12240,12 @@ func (a *SecretsApiService) PostGcpRolesetName(ctx context.Context, name string,
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = gcpRolesetRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -12101,12 +12285,7 @@ func (a *SecretsApiService) PostGcpRolesetNameRotate(ctx context.Context, name s
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostGcpRolesetNameRotate")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcp/roleset/{name}/rotate"
+	localVarPath := a.client.cfg.Address + "/v1/gcp/roleset/{name}/rotate"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -12130,6 +12309,12 @@ func (a *SecretsApiService) PostGcpRolesetNameRotate(ctx context.Context, name s
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -12167,12 +12352,7 @@ func (a *SecretsApiService) PostGcpRolesetNameRotateKey(ctx context.Context, nam
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostGcpRolesetNameRotateKey")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcp/roleset/{name}/rotate-key"
+	localVarPath := a.client.cfg.Address + "/v1/gcp/roleset/{name}/rotate-key"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -12196,6 +12376,12 @@ func (a *SecretsApiService) PostGcpRolesetNameRotateKey(ctx context.Context, nam
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -12233,12 +12419,7 @@ func (a *SecretsApiService) PostGcpRolesetRolesetKey(ctx context.Context, rolese
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostGcpRolesetRolesetKey")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcp/roleset/{roleset}/key"
+	localVarPath := a.client.cfg.Address + "/v1/gcp/roleset/{roleset}/key"
 	localVarPath = strings.Replace(localVarPath, "{"+"roleset"+"}", url.PathEscape(parameterToString(roleset, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -12262,6 +12443,12 @@ func (a *SecretsApiService) PostGcpRolesetRolesetKey(ctx context.Context, rolese
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = gcpRolesetKeyRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -12301,12 +12488,7 @@ func (a *SecretsApiService) PostGcpRolesetRolesetToken(ctx context.Context, role
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostGcpRolesetRolesetToken")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcp/roleset/{roleset}/token"
+	localVarPath := a.client.cfg.Address + "/v1/gcp/roleset/{roleset}/token"
 	localVarPath = strings.Replace(localVarPath, "{"+"roleset"+"}", url.PathEscape(parameterToString(roleset, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -12330,6 +12512,12 @@ func (a *SecretsApiService) PostGcpRolesetRolesetToken(ctx context.Context, role
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -12367,12 +12555,7 @@ func (a *SecretsApiService) PostGcpStaticAccountName(ctx context.Context, name s
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostGcpStaticAccountName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcp/static-account/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/gcp/static-account/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -12396,6 +12579,12 @@ func (a *SecretsApiService) PostGcpStaticAccountName(ctx context.Context, name s
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = gcpStaticAccountRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -12435,12 +12624,7 @@ func (a *SecretsApiService) PostGcpStaticAccountNameKey(ctx context.Context, nam
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostGcpStaticAccountNameKey")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcp/static-account/{name}/key"
+	localVarPath := a.client.cfg.Address + "/v1/gcp/static-account/{name}/key"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -12464,6 +12648,12 @@ func (a *SecretsApiService) PostGcpStaticAccountNameKey(ctx context.Context, nam
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = gcpStaticAccountKeyRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -12503,12 +12693,7 @@ func (a *SecretsApiService) PostGcpStaticAccountNameRotateKey(ctx context.Contex
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostGcpStaticAccountNameRotateKey")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcp/static-account/{name}/rotate-key"
+	localVarPath := a.client.cfg.Address + "/v1/gcp/static-account/{name}/rotate-key"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -12532,6 +12717,12 @@ func (a *SecretsApiService) PostGcpStaticAccountNameRotateKey(ctx context.Contex
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -12569,12 +12760,7 @@ func (a *SecretsApiService) PostGcpStaticAccountNameToken(ctx context.Context, n
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostGcpStaticAccountNameToken")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcp/static-account/{name}/token"
+	localVarPath := a.client.cfg.Address + "/v1/gcp/static-account/{name}/token"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -12598,6 +12784,12 @@ func (a *SecretsApiService) PostGcpStaticAccountNameToken(ctx context.Context, n
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -12635,12 +12827,7 @@ func (a *SecretsApiService) PostGcpTokenRoleset(ctx context.Context, roleset str
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostGcpTokenRoleset")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcp/token/{roleset}"
+	localVarPath := a.client.cfg.Address + "/v1/gcp/token/{roleset}"
 	localVarPath = strings.Replace(localVarPath, "{"+"roleset"+"}", url.PathEscape(parameterToString(roleset, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -12664,6 +12851,12 @@ func (a *SecretsApiService) PostGcpTokenRoleset(ctx context.Context, roleset str
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -12700,12 +12893,7 @@ func (a *SecretsApiService) PostGcpkmsConfig(ctx context.Context, gcpkmsConfigRe
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostGcpkmsConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcpkms/config"
+	localVarPath := a.client.cfg.Address + "/v1/gcpkms/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12728,6 +12916,12 @@ func (a *SecretsApiService) PostGcpkmsConfig(ctx context.Context, gcpkmsConfigRe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = gcpkmsConfigRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -12767,12 +12961,7 @@ func (a *SecretsApiService) PostGcpkmsDecryptKey(ctx context.Context, key string
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostGcpkmsDecryptKey")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcpkms/decrypt/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/gcpkms/decrypt/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -12796,6 +12985,12 @@ func (a *SecretsApiService) PostGcpkmsDecryptKey(ctx context.Context, key string
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = gcpkmsDecryptRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -12835,12 +13030,7 @@ func (a *SecretsApiService) PostGcpkmsEncryptKey(ctx context.Context, key string
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostGcpkmsEncryptKey")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcpkms/encrypt/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/gcpkms/encrypt/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -12864,6 +13054,12 @@ func (a *SecretsApiService) PostGcpkmsEncryptKey(ctx context.Context, key string
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = gcpkmsEncryptRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -12903,12 +13099,7 @@ func (a *SecretsApiService) PostGcpkmsKeysConfigKey(ctx context.Context, key str
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostGcpkmsKeysConfigKey")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcpkms/keys/config/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/gcpkms/keys/config/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -12932,6 +13123,12 @@ func (a *SecretsApiService) PostGcpkmsKeysConfigKey(ctx context.Context, key str
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = gcpkmsKeysConfigRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -12971,12 +13168,7 @@ func (a *SecretsApiService) PostGcpkmsKeysDeregisterKey(ctx context.Context, key
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostGcpkmsKeysDeregisterKey")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcpkms/keys/deregister/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/gcpkms/keys/deregister/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -13000,6 +13192,12 @@ func (a *SecretsApiService) PostGcpkmsKeysDeregisterKey(ctx context.Context, key
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -13037,12 +13235,7 @@ func (a *SecretsApiService) PostGcpkmsKeysKey(ctx context.Context, key string, g
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostGcpkmsKeysKey")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcpkms/keys/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/gcpkms/keys/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -13066,6 +13259,12 @@ func (a *SecretsApiService) PostGcpkmsKeysKey(ctx context.Context, key string, g
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = gcpkmsKeysRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -13105,12 +13304,7 @@ func (a *SecretsApiService) PostGcpkmsKeysRegisterKey(ctx context.Context, key s
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostGcpkmsKeysRegisterKey")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcpkms/keys/register/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/gcpkms/keys/register/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -13134,6 +13328,12 @@ func (a *SecretsApiService) PostGcpkmsKeysRegisterKey(ctx context.Context, key s
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = gcpkmsKeysRegisterRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -13173,12 +13373,7 @@ func (a *SecretsApiService) PostGcpkmsKeysRotateKey(ctx context.Context, key str
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostGcpkmsKeysRotateKey")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcpkms/keys/rotate/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/gcpkms/keys/rotate/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -13202,6 +13397,12 @@ func (a *SecretsApiService) PostGcpkmsKeysRotateKey(ctx context.Context, key str
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -13239,12 +13440,7 @@ func (a *SecretsApiService) PostGcpkmsKeysTrimKey(ctx context.Context, key strin
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostGcpkmsKeysTrimKey")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcpkms/keys/trim/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/gcpkms/keys/trim/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -13268,6 +13464,12 @@ func (a *SecretsApiService) PostGcpkmsKeysTrimKey(ctx context.Context, key strin
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -13305,12 +13507,7 @@ func (a *SecretsApiService) PostGcpkmsReencryptKey(ctx context.Context, key stri
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostGcpkmsReencryptKey")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcpkms/reencrypt/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/gcpkms/reencrypt/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -13334,6 +13531,12 @@ func (a *SecretsApiService) PostGcpkmsReencryptKey(ctx context.Context, key stri
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = gcpkmsReencryptRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -13373,12 +13576,7 @@ func (a *SecretsApiService) PostGcpkmsSignKey(ctx context.Context, key string, g
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostGcpkmsSignKey")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcpkms/sign/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/gcpkms/sign/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -13402,6 +13600,12 @@ func (a *SecretsApiService) PostGcpkmsSignKey(ctx context.Context, key string, g
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = gcpkmsSignRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -13441,12 +13645,7 @@ func (a *SecretsApiService) PostGcpkmsVerifyKey(ctx context.Context, key string,
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostGcpkmsVerifyKey")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/gcpkms/verify/{key}"
+	localVarPath := a.client.cfg.Address + "/v1/gcpkms/verify/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -13470,6 +13669,12 @@ func (a *SecretsApiService) PostGcpkmsVerifyKey(ctx context.Context, key string,
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = gcpkmsVerifyRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -13508,12 +13713,7 @@ func (a *SecretsApiService) PostKubernetesConfig(ctx context.Context, kubernetes
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostKubernetesConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/kubernetes/config"
+	localVarPath := a.client.cfg.Address + "/v1/kubernetes/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13536,6 +13736,12 @@ func (a *SecretsApiService) PostKubernetesConfig(ctx context.Context, kubernetes
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = kubernetesConfigRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -13575,12 +13781,7 @@ func (a *SecretsApiService) PostKubernetesCredsName(ctx context.Context, name st
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostKubernetesCredsName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/kubernetes/creds/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/kubernetes/creds/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -13604,6 +13805,12 @@ func (a *SecretsApiService) PostKubernetesCredsName(ctx context.Context, name st
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = kubernetesCredsRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -13643,12 +13850,7 @@ func (a *SecretsApiService) PostKubernetesRolesName(ctx context.Context, name st
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostKubernetesRolesName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/kubernetes/roles/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/kubernetes/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -13672,6 +13874,12 @@ func (a *SecretsApiService) PostKubernetesRolesName(ctx context.Context, name st
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = kubernetesRolesRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -13711,12 +13919,7 @@ func (a *SecretsApiService) PostKvPath(ctx context.Context, path string) (*http.
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostKvPath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/kv/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/kv/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -13740,6 +13943,12 @@ func (a *SecretsApiService) PostKvPath(ctx context.Context, path string) (*http.
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -13776,12 +13985,7 @@ func (a *SecretsApiService) PostMongodbatlasConfig(ctx context.Context, mongodba
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostMongodbatlasConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/mongodbatlas/config"
+	localVarPath := a.client.cfg.Address + "/v1/mongodbatlas/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13804,6 +14008,12 @@ func (a *SecretsApiService) PostMongodbatlasConfig(ctx context.Context, mongodba
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = mongodbatlasConfigRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -13843,12 +14053,7 @@ func (a *SecretsApiService) PostMongodbatlasCredsName(ctx context.Context, name 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostMongodbatlasCredsName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/mongodbatlas/creds/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/mongodbatlas/creds/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -13872,6 +14077,12 @@ func (a *SecretsApiService) PostMongodbatlasCredsName(ctx context.Context, name 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -13909,12 +14120,7 @@ func (a *SecretsApiService) PostMongodbatlasRolesName(ctx context.Context, name 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostMongodbatlasRolesName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/mongodbatlas/roles/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/mongodbatlas/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -13938,6 +14144,12 @@ func (a *SecretsApiService) PostMongodbatlasRolesName(ctx context.Context, name 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = mongodbatlasRolesRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -13976,12 +14188,7 @@ func (a *SecretsApiService) PostNomadConfigAccess(ctx context.Context, nomadConf
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostNomadConfigAccess")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/nomad/config/access"
+	localVarPath := a.client.cfg.Address + "/v1/nomad/config/access"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14004,6 +14211,12 @@ func (a *SecretsApiService) PostNomadConfigAccess(ctx context.Context, nomadConf
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = nomadConfigAccessRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -14042,12 +14255,7 @@ func (a *SecretsApiService) PostNomadConfigLease(ctx context.Context, nomadConfi
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostNomadConfigLease")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/nomad/config/lease"
+	localVarPath := a.client.cfg.Address + "/v1/nomad/config/lease"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14070,6 +14278,12 @@ func (a *SecretsApiService) PostNomadConfigLease(ctx context.Context, nomadConfi
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = nomadConfigLeaseRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -14109,12 +14323,7 @@ func (a *SecretsApiService) PostNomadRoleName(ctx context.Context, name string, 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostNomadRoleName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/nomad/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/nomad/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -14138,6 +14347,12 @@ func (a *SecretsApiService) PostNomadRoleName(ctx context.Context, name string, 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = nomadRoleRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -14176,12 +14391,7 @@ func (a *SecretsApiService) PostOpenldapConfig(ctx context.Context, openldapConf
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostOpenldapConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openldap/config"
+	localVarPath := a.client.cfg.Address + "/v1/openldap/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14204,6 +14414,12 @@ func (a *SecretsApiService) PostOpenldapConfig(ctx context.Context, openldapConf
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = openldapConfigRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -14243,12 +14459,7 @@ func (a *SecretsApiService) PostOpenldapRoleName(ctx context.Context, name strin
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostOpenldapRoleName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openldap/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/openldap/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -14272,6 +14483,12 @@ func (a *SecretsApiService) PostOpenldapRoleName(ctx context.Context, name strin
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = openldapRoleRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -14311,12 +14528,7 @@ func (a *SecretsApiService) PostOpenldapRotateRoleName(ctx context.Context, name
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostOpenldapRotateRoleName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openldap/rotate-role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/openldap/rotate-role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -14340,6 +14552,12 @@ func (a *SecretsApiService) PostOpenldapRotateRoleName(ctx context.Context, name
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -14376,12 +14594,7 @@ func (a *SecretsApiService) PostOpenldapRotateRoot(ctx context.Context) (*http.R
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostOpenldapRotateRoot")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openldap/rotate-root"
+	localVarPath := a.client.cfg.Address + "/v1/openldap/rotate-root"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14404,6 +14617,12 @@ func (a *SecretsApiService) PostOpenldapRotateRoot(ctx context.Context) (*http.R
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -14441,12 +14660,7 @@ func (a *SecretsApiService) PostOpenldapStaticRoleName(ctx context.Context, name
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostOpenldapStaticRoleName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/openldap/static-role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/openldap/static-role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -14470,6 +14684,12 @@ func (a *SecretsApiService) PostOpenldapStaticRoleName(ctx context.Context, name
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = openldapStaticRoleRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -14508,12 +14728,7 @@ func (a *SecretsApiService) PostPkiBundle(ctx context.Context, pkiBundleRequest 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiBundle")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/bundle"
+	localVarPath := a.client.cfg.Address + "/v1/pki/bundle"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14536,6 +14751,12 @@ func (a *SecretsApiService) PostPkiBundle(ctx context.Context, pkiBundleRequest 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiBundleRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -14574,12 +14795,7 @@ func (a *SecretsApiService) PostPkiCert(ctx context.Context, pkiCertRequest PkiC
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiCert")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/cert"
+	localVarPath := a.client.cfg.Address + "/v1/pki/cert"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14602,6 +14818,12 @@ func (a *SecretsApiService) PostPkiCert(ctx context.Context, pkiCertRequest PkiC
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiCertRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -14640,12 +14862,7 @@ func (a *SecretsApiService) PostPkiConfigCa(ctx context.Context, pkiConfigCaRequ
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiConfigCa")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/config/ca"
+	localVarPath := a.client.cfg.Address + "/v1/pki/config/ca"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14668,6 +14885,12 @@ func (a *SecretsApiService) PostPkiConfigCa(ctx context.Context, pkiConfigCaRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiConfigCaRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -14706,12 +14929,7 @@ func (a *SecretsApiService) PostPkiConfigCrl(ctx context.Context, pkiConfigCrlRe
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiConfigCrl")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/config/crl"
+	localVarPath := a.client.cfg.Address + "/v1/pki/config/crl"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14734,6 +14952,12 @@ func (a *SecretsApiService) PostPkiConfigCrl(ctx context.Context, pkiConfigCrlRe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiConfigCrlRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -14772,12 +14996,7 @@ func (a *SecretsApiService) PostPkiConfigIssuers(ctx context.Context, pkiConfigI
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiConfigIssuers")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/config/issuers"
+	localVarPath := a.client.cfg.Address + "/v1/pki/config/issuers"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14800,6 +15019,12 @@ func (a *SecretsApiService) PostPkiConfigIssuers(ctx context.Context, pkiConfigI
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiConfigIssuersRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -14838,12 +15063,7 @@ func (a *SecretsApiService) PostPkiConfigKeys(ctx context.Context, pkiConfigKeys
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiConfigKeys")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/config/keys"
+	localVarPath := a.client.cfg.Address + "/v1/pki/config/keys"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14866,6 +15086,12 @@ func (a *SecretsApiService) PostPkiConfigKeys(ctx context.Context, pkiConfigKeys
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiConfigKeysRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -14904,12 +15130,7 @@ func (a *SecretsApiService) PostPkiConfigUrls(ctx context.Context, pkiConfigUrls
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiConfigUrls")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/config/urls"
+	localVarPath := a.client.cfg.Address + "/v1/pki/config/urls"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14932,6 +15153,12 @@ func (a *SecretsApiService) PostPkiConfigUrls(ctx context.Context, pkiConfigUrls
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiConfigUrlsRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -14970,12 +15197,7 @@ func (a *SecretsApiService) PostPkiIntermediateCrossSign(ctx context.Context, pk
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiIntermediateCrossSign")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/intermediate/cross-sign"
+	localVarPath := a.client.cfg.Address + "/v1/pki/intermediate/cross-sign"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14998,6 +15220,12 @@ func (a *SecretsApiService) PostPkiIntermediateCrossSign(ctx context.Context, pk
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiIntermediateCrossSignRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -15037,12 +15265,7 @@ func (a *SecretsApiService) PostPkiIntermediateGenerateExported(ctx context.Cont
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiIntermediateGenerateExported")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/intermediate/generate/{exported}"
+	localVarPath := a.client.cfg.Address + "/v1/pki/intermediate/generate/{exported}"
 	localVarPath = strings.Replace(localVarPath, "{"+"exported"+"}", url.PathEscape(parameterToString(exported, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -15066,6 +15289,12 @@ func (a *SecretsApiService) PostPkiIntermediateGenerateExported(ctx context.Cont
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiIntermediateGenerateRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -15104,12 +15333,7 @@ func (a *SecretsApiService) PostPkiIntermediateSetSigned(ctx context.Context, pk
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiIntermediateSetSigned")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/intermediate/set-signed"
+	localVarPath := a.client.cfg.Address + "/v1/pki/intermediate/set-signed"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15132,6 +15356,12 @@ func (a *SecretsApiService) PostPkiIntermediateSetSigned(ctx context.Context, pk
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiIntermediateSetSignedRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -15170,12 +15400,7 @@ func (a *SecretsApiService) PostPkiInternalExported(ctx context.Context, pkiInte
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiInternalExported")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/internal|exported"
+	localVarPath := a.client.cfg.Address + "/v1/pki/internal|exported"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15198,6 +15423,12 @@ func (a *SecretsApiService) PostPkiInternalExported(ctx context.Context, pkiInte
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiInternalExportedRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -15237,12 +15468,7 @@ func (a *SecretsApiService) PostPkiIssueRole(ctx context.Context, role string, p
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiIssueRole")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/issue/{role}"
+	localVarPath := a.client.cfg.Address + "/v1/pki/issue/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -15266,6 +15492,12 @@ func (a *SecretsApiService) PostPkiIssueRole(ctx context.Context, role string, p
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiIssueRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -15306,12 +15538,7 @@ func (a *SecretsApiService) PostPkiIssuerIssuerRefIssueRole(ctx context.Context,
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiIssuerIssuerRefIssueRole")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/issuer/{issuer_ref}/issue/{role}"
+	localVarPath := a.client.cfg.Address + "/v1/pki/issuer/{issuer_ref}/issue/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"issuer_ref"+"}", url.PathEscape(parameterToString(issuerRef, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
@@ -15336,6 +15563,12 @@ func (a *SecretsApiService) PostPkiIssuerIssuerRefIssueRole(ctx context.Context,
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiIssuerIssueRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -15375,12 +15608,7 @@ func (a *SecretsApiService) PostPkiIssuerIssuerRefSignIntermediate(ctx context.C
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiIssuerIssuerRefSignIntermediate")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/issuer/{issuer_ref}/sign-intermediate"
+	localVarPath := a.client.cfg.Address + "/v1/pki/issuer/{issuer_ref}/sign-intermediate"
 	localVarPath = strings.Replace(localVarPath, "{"+"issuer_ref"+"}", url.PathEscape(parameterToString(issuerRef, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -15404,6 +15632,12 @@ func (a *SecretsApiService) PostPkiIssuerIssuerRefSignIntermediate(ctx context.C
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiIssuerSignIntermediateRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -15444,12 +15678,7 @@ func (a *SecretsApiService) PostPkiIssuerIssuerRefSignRole(ctx context.Context, 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiIssuerIssuerRefSignRole")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/issuer/{issuer_ref}/sign/{role}"
+	localVarPath := a.client.cfg.Address + "/v1/pki/issuer/{issuer_ref}/sign/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"issuer_ref"+"}", url.PathEscape(parameterToString(issuerRef, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
@@ -15474,6 +15703,12 @@ func (a *SecretsApiService) PostPkiIssuerIssuerRefSignRole(ctx context.Context, 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiIssuerSignRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -15513,12 +15748,7 @@ func (a *SecretsApiService) PostPkiIssuerIssuerRefSignSelfIssued(ctx context.Con
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiIssuerIssuerRefSignSelfIssued")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/issuer/{issuer_ref}/sign-self-issued"
+	localVarPath := a.client.cfg.Address + "/v1/pki/issuer/{issuer_ref}/sign-self-issued"
 	localVarPath = strings.Replace(localVarPath, "{"+"issuer_ref"+"}", url.PathEscape(parameterToString(issuerRef, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -15542,6 +15772,12 @@ func (a *SecretsApiService) PostPkiIssuerIssuerRefSignSelfIssued(ctx context.Con
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiIssuerSignSelfIssuedRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -15581,12 +15817,7 @@ func (a *SecretsApiService) PostPkiIssuerIssuerRefSignVerbatim(ctx context.Conte
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiIssuerIssuerRefSignVerbatim")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/issuer/{issuer_ref}/sign-verbatim"
+	localVarPath := a.client.cfg.Address + "/v1/pki/issuer/{issuer_ref}/sign-verbatim"
 	localVarPath = strings.Replace(localVarPath, "{"+"issuer_ref"+"}", url.PathEscape(parameterToString(issuerRef, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -15610,6 +15841,12 @@ func (a *SecretsApiService) PostPkiIssuerIssuerRefSignVerbatim(ctx context.Conte
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiIssuerSignVerbatimRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -15650,12 +15887,7 @@ func (a *SecretsApiService) PostPkiIssuerIssuerRefSignVerbatimRole(ctx context.C
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiIssuerIssuerRefSignVerbatimRole")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/issuer/{issuer_ref}/sign-verbatim/{role}"
+	localVarPath := a.client.cfg.Address + "/v1/pki/issuer/{issuer_ref}/sign-verbatim/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"issuer_ref"+"}", url.PathEscape(parameterToString(issuerRef, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
@@ -15680,6 +15912,12 @@ func (a *SecretsApiService) PostPkiIssuerIssuerRefSignVerbatimRole(ctx context.C
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiIssuerSignVerbatimRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -15719,12 +15957,7 @@ func (a *SecretsApiService) PostPkiIssuerRefDerPem(ctx context.Context, issuerRe
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiIssuerRefDerPem")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/{issuer_ref}/der|/pem"
+	localVarPath := a.client.cfg.Address + "/v1/pki/{issuer_ref}/der|/pem"
 	localVarPath = strings.Replace(localVarPath, "{"+"issuer_ref"+"}", url.PathEscape(parameterToString(issuerRef, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -15748,6 +15981,12 @@ func (a *SecretsApiService) PostPkiIssuerRefDerPem(ctx context.Context, issuerRe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiDerPemRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -15787,12 +16026,7 @@ func (a *SecretsApiService) PostPkiIssuersGenerateIntermediateExported(ctx conte
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiIssuersGenerateIntermediateExported")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/issuers/generate/intermediate/{exported}"
+	localVarPath := a.client.cfg.Address + "/v1/pki/issuers/generate/intermediate/{exported}"
 	localVarPath = strings.Replace(localVarPath, "{"+"exported"+"}", url.PathEscape(parameterToString(exported, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -15816,6 +16050,12 @@ func (a *SecretsApiService) PostPkiIssuersGenerateIntermediateExported(ctx conte
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiIssuersGenerateIntermediateRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -15855,12 +16095,7 @@ func (a *SecretsApiService) PostPkiIssuersGenerateRootExported(ctx context.Conte
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiIssuersGenerateRootExported")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/issuers/generate/root/{exported}"
+	localVarPath := a.client.cfg.Address + "/v1/pki/issuers/generate/root/{exported}"
 	localVarPath = strings.Replace(localVarPath, "{"+"exported"+"}", url.PathEscape(parameterToString(exported, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -15884,6 +16119,12 @@ func (a *SecretsApiService) PostPkiIssuersGenerateRootExported(ctx context.Conte
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiIssuersGenerateRootRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -15922,12 +16163,7 @@ func (a *SecretsApiService) PostPkiJson(ctx context.Context, pkiJsonRequest PkiJ
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiJson")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki//json"
+	localVarPath := a.client.cfg.Address + "/v1/pki//json"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15950,6 +16186,12 @@ func (a *SecretsApiService) PostPkiJson(ctx context.Context, pkiJsonRequest PkiJ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiJsonRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -15989,12 +16231,7 @@ func (a *SecretsApiService) PostPkiKeyKeyRef(ctx context.Context, keyRef string,
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiKeyKeyRef")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/key/{key_ref}"
+	localVarPath := a.client.cfg.Address + "/v1/pki/key/{key_ref}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key_ref"+"}", url.PathEscape(parameterToString(keyRef, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -16018,6 +16255,12 @@ func (a *SecretsApiService) PostPkiKeyKeyRef(ctx context.Context, keyRef string,
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiKeyRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -16056,12 +16299,7 @@ func (a *SecretsApiService) PostPkiKeysImport(ctx context.Context, pkiKeysImport
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiKeysImport")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/keys/import"
+	localVarPath := a.client.cfg.Address + "/v1/pki/keys/import"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -16084,6 +16322,12 @@ func (a *SecretsApiService) PostPkiKeysImport(ctx context.Context, pkiKeysImport
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiKeysImportRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -16122,12 +16366,7 @@ func (a *SecretsApiService) PostPkiKms(ctx context.Context, pkiKmsRequest PkiKms
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiKms")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/kms"
+	localVarPath := a.client.cfg.Address + "/v1/pki/kms"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -16150,6 +16389,12 @@ func (a *SecretsApiService) PostPkiKms(ctx context.Context, pkiKmsRequest PkiKms
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiKmsRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -16188,12 +16433,7 @@ func (a *SecretsApiService) PostPkiRevoke(ctx context.Context, pkiRevokeRequest 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiRevoke")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/revoke"
+	localVarPath := a.client.cfg.Address + "/v1/pki/revoke"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -16216,6 +16456,12 @@ func (a *SecretsApiService) PostPkiRevoke(ctx context.Context, pkiRevokeRequest 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiRevokeRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -16255,12 +16501,7 @@ func (a *SecretsApiService) PostPkiRolesName(ctx context.Context, name string, p
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiRolesName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/roles/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/pki/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -16284,6 +16525,12 @@ func (a *SecretsApiService) PostPkiRolesName(ctx context.Context, name string, p
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiRolesRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -16323,12 +16570,7 @@ func (a *SecretsApiService) PostPkiRootGenerateExported(ctx context.Context, exp
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiRootGenerateExported")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/root/generate/{exported}"
+	localVarPath := a.client.cfg.Address + "/v1/pki/root/generate/{exported}"
 	localVarPath = strings.Replace(localVarPath, "{"+"exported"+"}", url.PathEscape(parameterToString(exported, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -16352,6 +16594,12 @@ func (a *SecretsApiService) PostPkiRootGenerateExported(ctx context.Context, exp
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiRootGenerateRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -16390,12 +16638,7 @@ func (a *SecretsApiService) PostPkiRootReplace(ctx context.Context, pkiRootRepla
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiRootReplace")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/root/replace"
+	localVarPath := a.client.cfg.Address + "/v1/pki/root/replace"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -16418,6 +16661,12 @@ func (a *SecretsApiService) PostPkiRootReplace(ctx context.Context, pkiRootRepla
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiRootReplaceRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -16457,12 +16706,7 @@ func (a *SecretsApiService) PostPkiRootRotateExported(ctx context.Context, expor
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiRootRotateExported")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/root/rotate/{exported}"
+	localVarPath := a.client.cfg.Address + "/v1/pki/root/rotate/{exported}"
 	localVarPath = strings.Replace(localVarPath, "{"+"exported"+"}", url.PathEscape(parameterToString(exported, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -16486,6 +16730,12 @@ func (a *SecretsApiService) PostPkiRootRotateExported(ctx context.Context, expor
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiRootRotateRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -16524,12 +16774,7 @@ func (a *SecretsApiService) PostPkiRootSignIntermediate(ctx context.Context, pki
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiRootSignIntermediate")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/root/sign-intermediate"
+	localVarPath := a.client.cfg.Address + "/v1/pki/root/sign-intermediate"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -16552,6 +16797,12 @@ func (a *SecretsApiService) PostPkiRootSignIntermediate(ctx context.Context, pki
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiRootSignIntermediateRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -16590,12 +16841,7 @@ func (a *SecretsApiService) PostPkiRootSignSelfIssued(ctx context.Context, pkiRo
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiRootSignSelfIssued")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/root/sign-self-issued"
+	localVarPath := a.client.cfg.Address + "/v1/pki/root/sign-self-issued"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -16618,6 +16864,12 @@ func (a *SecretsApiService) PostPkiRootSignSelfIssued(ctx context.Context, pkiRo
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiRootSignSelfIssuedRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -16657,12 +16909,7 @@ func (a *SecretsApiService) PostPkiSignRole(ctx context.Context, role string, pk
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiSignRole")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/sign/{role}"
+	localVarPath := a.client.cfg.Address + "/v1/pki/sign/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -16686,6 +16933,12 @@ func (a *SecretsApiService) PostPkiSignRole(ctx context.Context, role string, pk
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiSignRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -16724,12 +16977,7 @@ func (a *SecretsApiService) PostPkiSignVerbatim(ctx context.Context, pkiSignVerb
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiSignVerbatim")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/sign-verbatim"
+	localVarPath := a.client.cfg.Address + "/v1/pki/sign-verbatim"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -16752,6 +17000,12 @@ func (a *SecretsApiService) PostPkiSignVerbatim(ctx context.Context, pkiSignVerb
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiSignVerbatimRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -16791,12 +17045,7 @@ func (a *SecretsApiService) PostPkiSignVerbatimRole(ctx context.Context, role st
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiSignVerbatimRole")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/sign-verbatim/{role}"
+	localVarPath := a.client.cfg.Address + "/v1/pki/sign-verbatim/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -16820,6 +17069,12 @@ func (a *SecretsApiService) PostPkiSignVerbatimRole(ctx context.Context, role st
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiSignVerbatimRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -16858,12 +17113,7 @@ func (a *SecretsApiService) PostPkiTidy(ctx context.Context, pkiTidyRequest PkiT
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostPkiTidy")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/pki/tidy"
+	localVarPath := a.client.cfg.Address + "/v1/pki/tidy"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -16886,6 +17136,12 @@ func (a *SecretsApiService) PostPkiTidy(ctx context.Context, pkiTidyRequest PkiT
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = pkiTidyRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -16924,12 +17180,7 @@ func (a *SecretsApiService) PostRabbitmqConfigConnection(ctx context.Context, ra
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostRabbitmqConfigConnection")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/rabbitmq/config/connection"
+	localVarPath := a.client.cfg.Address + "/v1/rabbitmq/config/connection"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -16952,6 +17203,12 @@ func (a *SecretsApiService) PostRabbitmqConfigConnection(ctx context.Context, ra
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = rabbitmqConfigConnectionRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -16990,12 +17247,7 @@ func (a *SecretsApiService) PostRabbitmqConfigLease(ctx context.Context, rabbitm
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostRabbitmqConfigLease")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/rabbitmq/config/lease"
+	localVarPath := a.client.cfg.Address + "/v1/rabbitmq/config/lease"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -17018,6 +17270,12 @@ func (a *SecretsApiService) PostRabbitmqConfigLease(ctx context.Context, rabbitm
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = rabbitmqConfigLeaseRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -17057,12 +17315,7 @@ func (a *SecretsApiService) PostRabbitmqRolesName(ctx context.Context, name stri
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostRabbitmqRolesName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/rabbitmq/roles/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/rabbitmq/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -17086,6 +17339,12 @@ func (a *SecretsApiService) PostRabbitmqRolesName(ctx context.Context, name stri
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = rabbitmqRolesRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -17124,12 +17383,7 @@ func (a *SecretsApiService) PostSecretConfig(ctx context.Context, kvConfigReques
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostSecretConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/secret/config"
+	localVarPath := a.client.cfg.Address + "/v1/secret/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -17152,6 +17406,12 @@ func (a *SecretsApiService) PostSecretConfig(ctx context.Context, kvConfigReques
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = kvConfigRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -17191,12 +17451,7 @@ func (a *SecretsApiService) PostSecretDataPath(ctx context.Context, path string,
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostSecretDataPath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/secret/data/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/secret/data/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -17220,6 +17475,12 @@ func (a *SecretsApiService) PostSecretDataPath(ctx context.Context, path string,
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = kvDataRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -17259,12 +17520,7 @@ func (a *SecretsApiService) PostSecretDeletePath(ctx context.Context, path strin
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostSecretDeletePath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/secret/delete/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/secret/delete/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -17288,6 +17544,12 @@ func (a *SecretsApiService) PostSecretDeletePath(ctx context.Context, path strin
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = kvDeleteRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -17327,12 +17589,7 @@ func (a *SecretsApiService) PostSecretDestroyPath(ctx context.Context, path stri
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostSecretDestroyPath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/secret/destroy/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/secret/destroy/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -17356,6 +17613,12 @@ func (a *SecretsApiService) PostSecretDestroyPath(ctx context.Context, path stri
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = kvDestroyRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -17395,12 +17658,7 @@ func (a *SecretsApiService) PostSecretMetadataPath(ctx context.Context, path str
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostSecretMetadataPath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/secret/metadata/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/secret/metadata/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -17424,6 +17682,12 @@ func (a *SecretsApiService) PostSecretMetadataPath(ctx context.Context, path str
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = kvMetadataRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -17463,12 +17727,7 @@ func (a *SecretsApiService) PostSecretUndeletePath(ctx context.Context, path str
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostSecretUndeletePath")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/secret/undelete/{path}"
+	localVarPath := a.client.cfg.Address + "/v1/secret/undelete/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -17492,6 +17751,12 @@ func (a *SecretsApiService) PostSecretUndeletePath(ctx context.Context, path str
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = kvUndeleteRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -17530,12 +17795,7 @@ func (a *SecretsApiService) PostSshConfigCa(ctx context.Context, sshConfigCaRequ
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostSshConfigCa")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ssh/config/ca"
+	localVarPath := a.client.cfg.Address + "/v1/ssh/config/ca"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -17558,6 +17818,12 @@ func (a *SecretsApiService) PostSshConfigCa(ctx context.Context, sshConfigCaRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = sshConfigCaRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -17596,12 +17862,7 @@ func (a *SecretsApiService) PostSshConfigZeroaddress(ctx context.Context, sshCon
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostSshConfigZeroaddress")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ssh/config/zeroaddress"
+	localVarPath := a.client.cfg.Address + "/v1/ssh/config/zeroaddress"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -17624,6 +17885,12 @@ func (a *SecretsApiService) PostSshConfigZeroaddress(ctx context.Context, sshCon
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = sshConfigZeroaddressRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -17663,12 +17930,7 @@ func (a *SecretsApiService) PostSshCredsRole(ctx context.Context, role string, s
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostSshCredsRole")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ssh/creds/{role}"
+	localVarPath := a.client.cfg.Address + "/v1/ssh/creds/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -17692,6 +17954,12 @@ func (a *SecretsApiService) PostSshCredsRole(ctx context.Context, role string, s
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = sshCredsRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -17731,12 +17999,7 @@ func (a *SecretsApiService) PostSshKeysKeyName(ctx context.Context, keyName stri
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostSshKeysKeyName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ssh/keys/{key_name}"
+	localVarPath := a.client.cfg.Address + "/v1/ssh/keys/{key_name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key_name"+"}", url.PathEscape(parameterToString(keyName, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -17760,6 +18023,12 @@ func (a *SecretsApiService) PostSshKeysKeyName(ctx context.Context, keyName stri
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = sshKeysRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -17798,12 +18067,7 @@ func (a *SecretsApiService) PostSshLookup(ctx context.Context, sshLookupRequest 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostSshLookup")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ssh/lookup"
+	localVarPath := a.client.cfg.Address + "/v1/ssh/lookup"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -17826,6 +18090,12 @@ func (a *SecretsApiService) PostSshLookup(ctx context.Context, sshLookupRequest 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = sshLookupRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -17865,12 +18135,7 @@ func (a *SecretsApiService) PostSshRolesRole(ctx context.Context, role string, s
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostSshRolesRole")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ssh/roles/{role}"
+	localVarPath := a.client.cfg.Address + "/v1/ssh/roles/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -17894,6 +18159,12 @@ func (a *SecretsApiService) PostSshRolesRole(ctx context.Context, role string, s
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = sshRolesRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -17933,12 +18204,7 @@ func (a *SecretsApiService) PostSshSignRole(ctx context.Context, role string, ss
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostSshSignRole")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ssh/sign/{role}"
+	localVarPath := a.client.cfg.Address + "/v1/ssh/sign/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -17962,6 +18228,12 @@ func (a *SecretsApiService) PostSshSignRole(ctx context.Context, role string, ss
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = sshSignRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -18000,12 +18272,7 @@ func (a *SecretsApiService) PostSshVerify(ctx context.Context, sshVerifyRequest 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostSshVerify")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/ssh/verify"
+	localVarPath := a.client.cfg.Address + "/v1/ssh/verify"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -18028,6 +18295,12 @@ func (a *SecretsApiService) PostSshVerify(ctx context.Context, sshVerifyRequest 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = sshVerifyRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -18066,12 +18339,7 @@ func (a *SecretsApiService) PostTerraformConfig(ctx context.Context, terraformCo
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTerraformConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/terraform/config"
+	localVarPath := a.client.cfg.Address + "/v1/terraform/config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -18094,6 +18362,12 @@ func (a *SecretsApiService) PostTerraformConfig(ctx context.Context, terraformCo
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = terraformConfigRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -18133,12 +18407,7 @@ func (a *SecretsApiService) PostTerraformCredsName(ctx context.Context, name str
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTerraformCredsName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/terraform/creds/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/terraform/creds/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -18162,6 +18431,12 @@ func (a *SecretsApiService) PostTerraformCredsName(ctx context.Context, name str
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -18199,12 +18474,7 @@ func (a *SecretsApiService) PostTerraformRoleName(ctx context.Context, name stri
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTerraformRoleName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/terraform/role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/terraform/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -18228,6 +18498,12 @@ func (a *SecretsApiService) PostTerraformRoleName(ctx context.Context, name stri
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = terraformRoleRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -18267,12 +18543,7 @@ func (a *SecretsApiService) PostTerraformRotateRoleName(ctx context.Context, nam
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTerraformRotateRoleName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/terraform/rotate-role/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/terraform/rotate-role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -18296,6 +18567,12 @@ func (a *SecretsApiService) PostTerraformRotateRoleName(ctx context.Context, nam
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -18333,12 +18610,7 @@ func (a *SecretsApiService) PostTotpCodeName(ctx context.Context, name string, t
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTotpCodeName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/totp/code/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/totp/code/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -18362,6 +18634,12 @@ func (a *SecretsApiService) PostTotpCodeName(ctx context.Context, name string, t
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = totpCodeRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -18401,12 +18679,7 @@ func (a *SecretsApiService) PostTotpKeysName(ctx context.Context, name string, t
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTotpKeysName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/totp/keys/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/totp/keys/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -18430,6 +18703,12 @@ func (a *SecretsApiService) PostTotpKeysName(ctx context.Context, name string, t
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = totpKeysRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -18468,12 +18747,7 @@ func (a *SecretsApiService) PostTransitCacheConfig(ctx context.Context, transitC
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTransitCacheConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/cache-config"
+	localVarPath := a.client.cfg.Address + "/v1/transit/cache-config"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -18496,6 +18770,12 @@ func (a *SecretsApiService) PostTransitCacheConfig(ctx context.Context, transitC
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = transitCacheConfigRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -18536,12 +18816,7 @@ func (a *SecretsApiService) PostTransitDatakeyPlaintextName(ctx context.Context,
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTransitDatakeyPlaintextName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/datakey/{plaintext}/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/transit/datakey/{plaintext}/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"plaintext"+"}", url.PathEscape(parameterToString(plaintext, "")), -1)
 
@@ -18566,6 +18841,12 @@ func (a *SecretsApiService) PostTransitDatakeyPlaintextName(ctx context.Context,
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = transitDatakeyRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -18605,12 +18886,7 @@ func (a *SecretsApiService) PostTransitDecryptName(ctx context.Context, name str
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTransitDecryptName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/decrypt/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/transit/decrypt/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -18634,6 +18910,12 @@ func (a *SecretsApiService) PostTransitDecryptName(ctx context.Context, name str
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = transitDecryptRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -18673,12 +18955,7 @@ func (a *SecretsApiService) PostTransitEncryptName(ctx context.Context, name str
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTransitEncryptName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/encrypt/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/transit/encrypt/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -18702,6 +18979,12 @@ func (a *SecretsApiService) PostTransitEncryptName(ctx context.Context, name str
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = transitEncryptRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -18740,12 +19023,7 @@ func (a *SecretsApiService) PostTransitHash(ctx context.Context, transitHashRequ
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTransitHash")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/hash"
+	localVarPath := a.client.cfg.Address + "/v1/transit/hash"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -18768,6 +19046,12 @@ func (a *SecretsApiService) PostTransitHash(ctx context.Context, transitHashRequ
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = transitHashRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -18807,12 +19091,7 @@ func (a *SecretsApiService) PostTransitHashUrlalgorithm(ctx context.Context, url
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTransitHashUrlalgorithm")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/hash/{urlalgorithm}"
+	localVarPath := a.client.cfg.Address + "/v1/transit/hash/{urlalgorithm}"
 	localVarPath = strings.Replace(localVarPath, "{"+"urlalgorithm"+"}", url.PathEscape(parameterToString(urlalgorithm, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -18836,6 +19115,12 @@ func (a *SecretsApiService) PostTransitHashUrlalgorithm(ctx context.Context, url
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = transitHashRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -18875,12 +19160,7 @@ func (a *SecretsApiService) PostTransitHmacName(ctx context.Context, name string
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTransitHmacName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/hmac/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/transit/hmac/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -18904,6 +19184,12 @@ func (a *SecretsApiService) PostTransitHmacName(ctx context.Context, name string
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = transitHmacRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -18944,12 +19230,7 @@ func (a *SecretsApiService) PostTransitHmacNameUrlalgorithm(ctx context.Context,
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTransitHmacNameUrlalgorithm")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/hmac/{name}/{urlalgorithm}"
+	localVarPath := a.client.cfg.Address + "/v1/transit/hmac/{name}/{urlalgorithm}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"urlalgorithm"+"}", url.PathEscape(parameterToString(urlalgorithm, "")), -1)
 
@@ -18974,6 +19255,12 @@ func (a *SecretsApiService) PostTransitHmacNameUrlalgorithm(ctx context.Context,
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = transitHmacRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -19013,12 +19300,7 @@ func (a *SecretsApiService) PostTransitKeysName(ctx context.Context, name string
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTransitKeysName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/keys/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/transit/keys/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -19042,6 +19324,12 @@ func (a *SecretsApiService) PostTransitKeysName(ctx context.Context, name string
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = transitKeysRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -19081,12 +19369,7 @@ func (a *SecretsApiService) PostTransitKeysNameConfig(ctx context.Context, name 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTransitKeysNameConfig")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/keys/{name}/config"
+	localVarPath := a.client.cfg.Address + "/v1/transit/keys/{name}/config"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -19110,6 +19393,12 @@ func (a *SecretsApiService) PostTransitKeysNameConfig(ctx context.Context, name 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = transitKeysConfigRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -19149,12 +19438,7 @@ func (a *SecretsApiService) PostTransitKeysNameImport(ctx context.Context, name 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTransitKeysNameImport")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/keys/{name}/import"
+	localVarPath := a.client.cfg.Address + "/v1/transit/keys/{name}/import"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -19178,6 +19462,12 @@ func (a *SecretsApiService) PostTransitKeysNameImport(ctx context.Context, name 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = transitKeysImportRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -19217,12 +19507,7 @@ func (a *SecretsApiService) PostTransitKeysNameImportVersion(ctx context.Context
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTransitKeysNameImportVersion")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/keys/{name}/import_version"
+	localVarPath := a.client.cfg.Address + "/v1/transit/keys/{name}/import_version"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -19246,6 +19531,12 @@ func (a *SecretsApiService) PostTransitKeysNameImportVersion(ctx context.Context
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = transitKeysImportVersionRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -19285,12 +19576,7 @@ func (a *SecretsApiService) PostTransitKeysNameRotate(ctx context.Context, name 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTransitKeysNameRotate")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/keys/{name}/rotate"
+	localVarPath := a.client.cfg.Address + "/v1/transit/keys/{name}/rotate"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -19314,6 +19600,12 @@ func (a *SecretsApiService) PostTransitKeysNameRotate(ctx context.Context, name 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -19351,12 +19643,7 @@ func (a *SecretsApiService) PostTransitKeysNameTrim(ctx context.Context, name st
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTransitKeysNameTrim")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/keys/{name}/trim"
+	localVarPath := a.client.cfg.Address + "/v1/transit/keys/{name}/trim"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -19380,6 +19667,12 @@ func (a *SecretsApiService) PostTransitKeysNameTrim(ctx context.Context, name st
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = transitKeysTrimRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -19418,12 +19711,7 @@ func (a *SecretsApiService) PostTransitRandom(ctx context.Context, transitRandom
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTransitRandom")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/random"
+	localVarPath := a.client.cfg.Address + "/v1/transit/random"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -19446,6 +19734,12 @@ func (a *SecretsApiService) PostTransitRandom(ctx context.Context, transitRandom
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = transitRandomRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -19485,12 +19779,7 @@ func (a *SecretsApiService) PostTransitRandomSource(ctx context.Context, source 
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTransitRandomSource")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/random/{source}"
+	localVarPath := a.client.cfg.Address + "/v1/transit/random/{source}"
 	localVarPath = strings.Replace(localVarPath, "{"+"source"+"}", url.PathEscape(parameterToString(source, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -19514,6 +19803,12 @@ func (a *SecretsApiService) PostTransitRandomSource(ctx context.Context, source 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = transitRandomRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -19554,12 +19849,7 @@ func (a *SecretsApiService) PostTransitRandomSourceUrlbytes(ctx context.Context,
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTransitRandomSourceUrlbytes")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/random/{source}/{urlbytes}"
+	localVarPath := a.client.cfg.Address + "/v1/transit/random/{source}/{urlbytes}"
 	localVarPath = strings.Replace(localVarPath, "{"+"source"+"}", url.PathEscape(parameterToString(source, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"urlbytes"+"}", url.PathEscape(parameterToString(urlbytes, "")), -1)
 
@@ -19584,6 +19874,12 @@ func (a *SecretsApiService) PostTransitRandomSourceUrlbytes(ctx context.Context,
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = transitRandomRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -19623,12 +19919,7 @@ func (a *SecretsApiService) PostTransitRandomUrlbytes(ctx context.Context, urlby
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTransitRandomUrlbytes")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/random/{urlbytes}"
+	localVarPath := a.client.cfg.Address + "/v1/transit/random/{urlbytes}"
 	localVarPath = strings.Replace(localVarPath, "{"+"urlbytes"+"}", url.PathEscape(parameterToString(urlbytes, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -19652,6 +19943,12 @@ func (a *SecretsApiService) PostTransitRandomUrlbytes(ctx context.Context, urlby
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = transitRandomRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -19690,12 +19987,7 @@ func (a *SecretsApiService) PostTransitRestore(ctx context.Context, transitResto
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTransitRestore")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/restore"
+	localVarPath := a.client.cfg.Address + "/v1/transit/restore"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -19718,6 +20010,12 @@ func (a *SecretsApiService) PostTransitRestore(ctx context.Context, transitResto
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = transitRestoreRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -19757,12 +20055,7 @@ func (a *SecretsApiService) PostTransitRestoreName(ctx context.Context, name str
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTransitRestoreName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/restore/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/transit/restore/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -19786,6 +20079,12 @@ func (a *SecretsApiService) PostTransitRestoreName(ctx context.Context, name str
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = transitRestoreRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -19825,12 +20124,7 @@ func (a *SecretsApiService) PostTransitRewrapName(ctx context.Context, name stri
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTransitRewrapName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/rewrap/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/transit/rewrap/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -19854,6 +20148,12 @@ func (a *SecretsApiService) PostTransitRewrapName(ctx context.Context, name stri
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = transitRewrapRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -19893,12 +20193,7 @@ func (a *SecretsApiService) PostTransitSignName(ctx context.Context, name string
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTransitSignName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/sign/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/transit/sign/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -19922,6 +20217,12 @@ func (a *SecretsApiService) PostTransitSignName(ctx context.Context, name string
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = transitSignRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -19962,12 +20263,7 @@ func (a *SecretsApiService) PostTransitSignNameUrlalgorithm(ctx context.Context,
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTransitSignNameUrlalgorithm")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/sign/{name}/{urlalgorithm}"
+	localVarPath := a.client.cfg.Address + "/v1/transit/sign/{name}/{urlalgorithm}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"urlalgorithm"+"}", url.PathEscape(parameterToString(urlalgorithm, "")), -1)
 
@@ -19992,6 +20288,12 @@ func (a *SecretsApiService) PostTransitSignNameUrlalgorithm(ctx context.Context,
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = transitSignRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -20031,12 +20333,7 @@ func (a *SecretsApiService) PostTransitVerifyName(ctx context.Context, name stri
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTransitVerifyName")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/verify/{name}"
+	localVarPath := a.client.cfg.Address + "/v1/transit/verify/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -20060,6 +20357,12 @@ func (a *SecretsApiService) PostTransitVerifyName(ctx context.Context, name stri
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = transitVerifyRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -20100,12 +20403,7 @@ func (a *SecretsApiService) PostTransitVerifyNameUrlalgorithm(ctx context.Contex
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(ctx, "SecretsApiService.PostTransitVerifyNameUrlalgorithm")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/transit/verify/{name}/{urlalgorithm}"
+	localVarPath := a.client.cfg.Address + "/v1/transit/verify/{name}/{urlalgorithm}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"urlalgorithm"+"}", url.PathEscape(parameterToString(urlalgorithm, "")), -1)
 
@@ -20130,6 +20428,12 @@ func (a *SecretsApiService) PostTransitVerifyNameUrlalgorithm(ctx context.Contex
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+
+	// TODO: remove this hack!
+	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
+	localVarHeaderParams["X-Vault-Request"] = "true"
+	// TODO: remove this hack!
+
 	// body params
 	localVarPostBody = transitVerifyRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)

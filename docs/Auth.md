@@ -1,280 +1,280 @@
-# \AuthApi
+# \Auth
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteAuthAlicloudRoleRole**](AuthApi.md#DeleteAuthAlicloudRoleRole) | **Delete** /auth/alicloud/role/{role} | Create a role and associate policies to it.
-[**DeleteAuthAppIdMapAppIdKey**](AuthApi.md#DeleteAuthAppIdMapAppIdKey) | **Delete** /auth/app-id/map/app-id/{key} | Read/write/delete a single app-id mapping
-[**DeleteAuthAppIdMapUserIdKey**](AuthApi.md#DeleteAuthAppIdMapUserIdKey) | **Delete** /auth/app-id/map/user-id/{key} | Read/write/delete a single user-id mapping
-[**DeleteAuthApproleRoleRoleName**](AuthApi.md#DeleteAuthApproleRoleRoleName) | **Delete** /auth/approle/role/{role_name} | Register an role with the backend.
-[**DeleteAuthApproleRoleRoleNameBindSecretId**](AuthApi.md#DeleteAuthApproleRoleRoleNameBindSecretId) | **Delete** /auth/approle/role/{role_name}/bind-secret-id | Impose secret_id to be presented during login using this role.
-[**DeleteAuthApproleRoleRoleNameBoundCidrList**](AuthApi.md#DeleteAuthApproleRoleRoleNameBoundCidrList) | **Delete** /auth/approle/role/{role_name}/bound-cidr-list | Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
-[**DeleteAuthApproleRoleRoleNamePeriod**](AuthApi.md#DeleteAuthApproleRoleRoleNamePeriod) | **Delete** /auth/approle/role/{role_name}/period | Updates the value of &#39;period&#39; on the role
-[**DeleteAuthApproleRoleRoleNamePolicies**](AuthApi.md#DeleteAuthApproleRoleRoleNamePolicies) | **Delete** /auth/approle/role/{role_name}/policies | Policies of the role.
-[**DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy**](AuthApi.md#DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy) | **Delete** /auth/approle/role/{role_name}/secret-id-accessor/destroy | 
-[**DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs**](AuthApi.md#DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs) | **Delete** /auth/approle/role/{role_name}/secret-id-bound-cidrs | Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
-[**DeleteAuthApproleRoleRoleNameSecretIdDestroy**](AuthApi.md#DeleteAuthApproleRoleRoleNameSecretIdDestroy) | **Delete** /auth/approle/role/{role_name}/secret-id/destroy | Invalidate an issued secret_id
-[**DeleteAuthApproleRoleRoleNameSecretIdNumUses**](AuthApi.md#DeleteAuthApproleRoleRoleNameSecretIdNumUses) | **Delete** /auth/approle/role/{role_name}/secret-id-num-uses | Use limit of the SecretID generated against the role.
-[**DeleteAuthApproleRoleRoleNameSecretIdTtl**](AuthApi.md#DeleteAuthApproleRoleRoleNameSecretIdTtl) | **Delete** /auth/approle/role/{role_name}/secret-id-ttl | Duration in seconds, representing the lifetime of the SecretIDs that are generated against the role using &#39;role/&lt;role_name&gt;/secret-id&#39; or &#39;role/&lt;role_name&gt;/custom-secret-id&#39; endpoints.
-[**DeleteAuthApproleRoleRoleNameTokenBoundCidrs**](AuthApi.md#DeleteAuthApproleRoleRoleNameTokenBoundCidrs) | **Delete** /auth/approle/role/{role_name}/token-bound-cidrs | Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
-[**DeleteAuthApproleRoleRoleNameTokenMaxTtl**](AuthApi.md#DeleteAuthApproleRoleRoleNameTokenMaxTtl) | **Delete** /auth/approle/role/{role_name}/token-max-ttl | Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
-[**DeleteAuthApproleRoleRoleNameTokenNumUses**](AuthApi.md#DeleteAuthApproleRoleRoleNameTokenNumUses) | **Delete** /auth/approle/role/{role_name}/token-num-uses | Number of times issued tokens can be used
-[**DeleteAuthApproleRoleRoleNameTokenTtl**](AuthApi.md#DeleteAuthApproleRoleRoleNameTokenTtl) | **Delete** /auth/approle/role/{role_name}/token-ttl | Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
-[**DeleteAuthAwsConfigCertificateCertName**](AuthApi.md#DeleteAuthAwsConfigCertificateCertName) | **Delete** /auth/aws/config/certificate/{cert_name} | 
-[**DeleteAuthAwsConfigClient**](AuthApi.md#DeleteAuthAwsConfigClient) | **Delete** /auth/aws/config/client | 
-[**DeleteAuthAwsConfigStsAccountId**](AuthApi.md#DeleteAuthAwsConfigStsAccountId) | **Delete** /auth/aws/config/sts/{account_id} | 
-[**DeleteAuthAwsConfigTidyIdentityAccesslist**](AuthApi.md#DeleteAuthAwsConfigTidyIdentityAccesslist) | **Delete** /auth/aws/config/tidy/identity-accesslist | 
-[**DeleteAuthAwsConfigTidyIdentityWhitelist**](AuthApi.md#DeleteAuthAwsConfigTidyIdentityWhitelist) | **Delete** /auth/aws/config/tidy/identity-whitelist | 
-[**DeleteAuthAwsConfigTidyRoletagBlacklist**](AuthApi.md#DeleteAuthAwsConfigTidyRoletagBlacklist) | **Delete** /auth/aws/config/tidy/roletag-blacklist | 
-[**DeleteAuthAwsConfigTidyRoletagDenylist**](AuthApi.md#DeleteAuthAwsConfigTidyRoletagDenylist) | **Delete** /auth/aws/config/tidy/roletag-denylist | 
-[**DeleteAuthAwsIdentityAccesslistInstanceId**](AuthApi.md#DeleteAuthAwsIdentityAccesslistInstanceId) | **Delete** /auth/aws/identity-accesslist/{instance_id} | 
-[**DeleteAuthAwsIdentityWhitelistInstanceId**](AuthApi.md#DeleteAuthAwsIdentityWhitelistInstanceId) | **Delete** /auth/aws/identity-whitelist/{instance_id} | 
-[**DeleteAuthAwsRoleRole**](AuthApi.md#DeleteAuthAwsRoleRole) | **Delete** /auth/aws/role/{role} | 
-[**DeleteAuthAwsRoletagBlacklistRoleTag**](AuthApi.md#DeleteAuthAwsRoletagBlacklistRoleTag) | **Delete** /auth/aws/roletag-blacklist/{role_tag} | 
-[**DeleteAuthAwsRoletagDenylistRoleTag**](AuthApi.md#DeleteAuthAwsRoletagDenylistRoleTag) | **Delete** /auth/aws/roletag-denylist/{role_tag} | 
-[**DeleteAuthAzureConfig**](AuthApi.md#DeleteAuthAzureConfig) | **Delete** /auth/azure/config | 
-[**DeleteAuthAzureRoleName**](AuthApi.md#DeleteAuthAzureRoleName) | **Delete** /auth/azure/role/{name} | 
-[**DeleteAuthCertCertsName**](AuthApi.md#DeleteAuthCertCertsName) | **Delete** /auth/cert/certs/{name} | Manage trusted certificates used for authentication.
-[**DeleteAuthCertCrlsName**](AuthApi.md#DeleteAuthCertCrlsName) | **Delete** /auth/cert/crls/{name} | Manage Certificate Revocation Lists checked during authentication.
-[**DeleteAuthCfConfig**](AuthApi.md#DeleteAuthCfConfig) | **Delete** /auth/cf/config | 
-[**DeleteAuthCfRolesRole**](AuthApi.md#DeleteAuthCfRolesRole) | **Delete** /auth/cf/roles/{role} | 
-[**DeleteAuthGcpRoleName**](AuthApi.md#DeleteAuthGcpRoleName) | **Delete** /auth/gcp/role/{name} | Create a GCP role with associated policies and required attributes.
-[**DeleteAuthGithubMapTeamsKey**](AuthApi.md#DeleteAuthGithubMapTeamsKey) | **Delete** /auth/github/map/teams/{key} | Read/write/delete a single teams mapping
-[**DeleteAuthGithubMapUsersKey**](AuthApi.md#DeleteAuthGithubMapUsersKey) | **Delete** /auth/github/map/users/{key} | Read/write/delete a single users mapping
-[**DeleteAuthJwtRoleName**](AuthApi.md#DeleteAuthJwtRoleName) | **Delete** /auth/jwt/role/{name} | Delete an existing role.
-[**DeleteAuthKerberosGroupsName**](AuthApi.md#DeleteAuthKerberosGroupsName) | **Delete** /auth/kerberos/groups/{name} | 
-[**DeleteAuthKubernetesRoleName**](AuthApi.md#DeleteAuthKubernetesRoleName) | **Delete** /auth/kubernetes/role/{name} | Register an role with the backend.
-[**DeleteAuthLdapGroupsName**](AuthApi.md#DeleteAuthLdapGroupsName) | **Delete** /auth/ldap/groups/{name} | Manage additional groups for users allowed to authenticate.
-[**DeleteAuthLdapUsersName**](AuthApi.md#DeleteAuthLdapUsersName) | **Delete** /auth/ldap/users/{name} | Manage users allowed to authenticate.
-[**DeleteAuthOciConfig**](AuthApi.md#DeleteAuthOciConfig) | **Delete** /auth/oci/config | Manages the configuration for the Vault Auth Plugin.
-[**DeleteAuthOciRoleRole**](AuthApi.md#DeleteAuthOciRoleRole) | **Delete** /auth/oci/role/{role} | Create a role and associate policies to it.
-[**DeleteAuthOidcRoleName**](AuthApi.md#DeleteAuthOidcRoleName) | **Delete** /auth/oidc/role/{name} | Delete an existing role.
-[**DeleteAuthOktaGroupsName**](AuthApi.md#DeleteAuthOktaGroupsName) | **Delete** /auth/okta/groups/{name} | Manage users allowed to authenticate.
-[**DeleteAuthOktaUsersName**](AuthApi.md#DeleteAuthOktaUsersName) | **Delete** /auth/okta/users/{name} | Manage additional groups for users allowed to authenticate.
-[**DeleteAuthRadiusUsersName**](AuthApi.md#DeleteAuthRadiusUsersName) | **Delete** /auth/radius/users/{name} | Manage users allowed to authenticate.
-[**DeleteAuthTokenRolesRoleName**](AuthApi.md#DeleteAuthTokenRolesRoleName) | **Delete** /auth/token/roles/{role_name} | 
-[**DeleteAuthUserpassUsersUsername**](AuthApi.md#DeleteAuthUserpassUsersUsername) | **Delete** /auth/userpass/users/{username} | Manage users allowed to authenticate.
-[**GetAuthAlicloudRole**](AuthApi.md#GetAuthAlicloudRole) | **Get** /auth/alicloud/role | Lists all the roles that are registered with Vault.
-[**GetAuthAlicloudRoleRole**](AuthApi.md#GetAuthAlicloudRoleRole) | **Get** /auth/alicloud/role/{role} | Create a role and associate policies to it.
-[**GetAuthAlicloudRoles**](AuthApi.md#GetAuthAlicloudRoles) | **Get** /auth/alicloud/roles | Lists all the roles that are registered with Vault.
-[**GetAuthAppIdMapAppId**](AuthApi.md#GetAuthAppIdMapAppId) | **Get** /auth/app-id/map/app-id | Read mappings for app-id
-[**GetAuthAppIdMapAppIdKey**](AuthApi.md#GetAuthAppIdMapAppIdKey) | **Get** /auth/app-id/map/app-id/{key} | Read/write/delete a single app-id mapping
-[**GetAuthAppIdMapUserId**](AuthApi.md#GetAuthAppIdMapUserId) | **Get** /auth/app-id/map/user-id | Read mappings for user-id
-[**GetAuthAppIdMapUserIdKey**](AuthApi.md#GetAuthAppIdMapUserIdKey) | **Get** /auth/app-id/map/user-id/{key} | Read/write/delete a single user-id mapping
-[**GetAuthApproleRole**](AuthApi.md#GetAuthApproleRole) | **Get** /auth/approle/role | Lists all the roles registered with the backend.
-[**GetAuthApproleRoleRoleName**](AuthApi.md#GetAuthApproleRoleRoleName) | **Get** /auth/approle/role/{role_name} | Register an role with the backend.
-[**GetAuthApproleRoleRoleNameBindSecretId**](AuthApi.md#GetAuthApproleRoleRoleNameBindSecretId) | **Get** /auth/approle/role/{role_name}/bind-secret-id | Impose secret_id to be presented during login using this role.
-[**GetAuthApproleRoleRoleNameBoundCidrList**](AuthApi.md#GetAuthApproleRoleRoleNameBoundCidrList) | **Get** /auth/approle/role/{role_name}/bound-cidr-list | Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
-[**GetAuthApproleRoleRoleNameLocalSecretIds**](AuthApi.md#GetAuthApproleRoleRoleNameLocalSecretIds) | **Get** /auth/approle/role/{role_name}/local-secret-ids | Enables cluster local secret IDs
-[**GetAuthApproleRoleRoleNamePeriod**](AuthApi.md#GetAuthApproleRoleRoleNamePeriod) | **Get** /auth/approle/role/{role_name}/period | Updates the value of &#39;period&#39; on the role
-[**GetAuthApproleRoleRoleNamePolicies**](AuthApi.md#GetAuthApproleRoleRoleNamePolicies) | **Get** /auth/approle/role/{role_name}/policies | Policies of the role.
-[**GetAuthApproleRoleRoleNameRoleId**](AuthApi.md#GetAuthApproleRoleRoleNameRoleId) | **Get** /auth/approle/role/{role_name}/role-id | Returns the &#39;role_id&#39; of the role.
-[**GetAuthApproleRoleRoleNameSecretId**](AuthApi.md#GetAuthApproleRoleRoleNameSecretId) | **Get** /auth/approle/role/{role_name}/secret-id | Generate a SecretID against this role.
-[**GetAuthApproleRoleRoleNameSecretIdBoundCidrs**](AuthApi.md#GetAuthApproleRoleRoleNameSecretIdBoundCidrs) | **Get** /auth/approle/role/{role_name}/secret-id-bound-cidrs | Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
-[**GetAuthApproleRoleRoleNameSecretIdNumUses**](AuthApi.md#GetAuthApproleRoleRoleNameSecretIdNumUses) | **Get** /auth/approle/role/{role_name}/secret-id-num-uses | Use limit of the SecretID generated against the role.
-[**GetAuthApproleRoleRoleNameSecretIdTtl**](AuthApi.md#GetAuthApproleRoleRoleNameSecretIdTtl) | **Get** /auth/approle/role/{role_name}/secret-id-ttl | Duration in seconds, representing the lifetime of the SecretIDs that are generated against the role using &#39;role/&lt;role_name&gt;/secret-id&#39; or &#39;role/&lt;role_name&gt;/custom-secret-id&#39; endpoints.
-[**GetAuthApproleRoleRoleNameTokenBoundCidrs**](AuthApi.md#GetAuthApproleRoleRoleNameTokenBoundCidrs) | **Get** /auth/approle/role/{role_name}/token-bound-cidrs | Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
-[**GetAuthApproleRoleRoleNameTokenMaxTtl**](AuthApi.md#GetAuthApproleRoleRoleNameTokenMaxTtl) | **Get** /auth/approle/role/{role_name}/token-max-ttl | Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
-[**GetAuthApproleRoleRoleNameTokenNumUses**](AuthApi.md#GetAuthApproleRoleRoleNameTokenNumUses) | **Get** /auth/approle/role/{role_name}/token-num-uses | Number of times issued tokens can be used
-[**GetAuthApproleRoleRoleNameTokenTtl**](AuthApi.md#GetAuthApproleRoleRoleNameTokenTtl) | **Get** /auth/approle/role/{role_name}/token-ttl | Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
-[**GetAuthAwsConfigCertificateCertName**](AuthApi.md#GetAuthAwsConfigCertificateCertName) | **Get** /auth/aws/config/certificate/{cert_name} | 
-[**GetAuthAwsConfigCertificates**](AuthApi.md#GetAuthAwsConfigCertificates) | **Get** /auth/aws/config/certificates | 
-[**GetAuthAwsConfigClient**](AuthApi.md#GetAuthAwsConfigClient) | **Get** /auth/aws/config/client | 
-[**GetAuthAwsConfigIdentity**](AuthApi.md#GetAuthAwsConfigIdentity) | **Get** /auth/aws/config/identity | 
-[**GetAuthAwsConfigSts**](AuthApi.md#GetAuthAwsConfigSts) | **Get** /auth/aws/config/sts | 
-[**GetAuthAwsConfigStsAccountId**](AuthApi.md#GetAuthAwsConfigStsAccountId) | **Get** /auth/aws/config/sts/{account_id} | 
-[**GetAuthAwsConfigTidyIdentityAccesslist**](AuthApi.md#GetAuthAwsConfigTidyIdentityAccesslist) | **Get** /auth/aws/config/tidy/identity-accesslist | 
-[**GetAuthAwsConfigTidyIdentityWhitelist**](AuthApi.md#GetAuthAwsConfigTidyIdentityWhitelist) | **Get** /auth/aws/config/tidy/identity-whitelist | 
-[**GetAuthAwsConfigTidyRoletagBlacklist**](AuthApi.md#GetAuthAwsConfigTidyRoletagBlacklist) | **Get** /auth/aws/config/tidy/roletag-blacklist | 
-[**GetAuthAwsConfigTidyRoletagDenylist**](AuthApi.md#GetAuthAwsConfigTidyRoletagDenylist) | **Get** /auth/aws/config/tidy/roletag-denylist | 
-[**GetAuthAwsIdentityAccesslist**](AuthApi.md#GetAuthAwsIdentityAccesslist) | **Get** /auth/aws/identity-accesslist | 
-[**GetAuthAwsIdentityAccesslistInstanceId**](AuthApi.md#GetAuthAwsIdentityAccesslistInstanceId) | **Get** /auth/aws/identity-accesslist/{instance_id} | 
-[**GetAuthAwsIdentityWhitelist**](AuthApi.md#GetAuthAwsIdentityWhitelist) | **Get** /auth/aws/identity-whitelist | 
-[**GetAuthAwsIdentityWhitelistInstanceId**](AuthApi.md#GetAuthAwsIdentityWhitelistInstanceId) | **Get** /auth/aws/identity-whitelist/{instance_id} | 
-[**GetAuthAwsRole**](AuthApi.md#GetAuthAwsRole) | **Get** /auth/aws/role | 
-[**GetAuthAwsRoleRole**](AuthApi.md#GetAuthAwsRoleRole) | **Get** /auth/aws/role/{role} | 
-[**GetAuthAwsRoles**](AuthApi.md#GetAuthAwsRoles) | **Get** /auth/aws/roles | 
-[**GetAuthAwsRoletagBlacklist**](AuthApi.md#GetAuthAwsRoletagBlacklist) | **Get** /auth/aws/roletag-blacklist | 
-[**GetAuthAwsRoletagBlacklistRoleTag**](AuthApi.md#GetAuthAwsRoletagBlacklistRoleTag) | **Get** /auth/aws/roletag-blacklist/{role_tag} | 
-[**GetAuthAwsRoletagDenylist**](AuthApi.md#GetAuthAwsRoletagDenylist) | **Get** /auth/aws/roletag-denylist | 
-[**GetAuthAwsRoletagDenylistRoleTag**](AuthApi.md#GetAuthAwsRoletagDenylistRoleTag) | **Get** /auth/aws/roletag-denylist/{role_tag} | 
-[**GetAuthAzureConfig**](AuthApi.md#GetAuthAzureConfig) | **Get** /auth/azure/config | 
-[**GetAuthAzureRole**](AuthApi.md#GetAuthAzureRole) | **Get** /auth/azure/role | 
-[**GetAuthAzureRoleName**](AuthApi.md#GetAuthAzureRoleName) | **Get** /auth/azure/role/{name} | 
-[**GetAuthCentrifyConfig**](AuthApi.md#GetAuthCentrifyConfig) | **Get** /auth/centrify/config | This path allows you to configure the centrify auth provider to interact with the Centrify Identity Services Platform for authenticating users.
-[**GetAuthCertCerts**](AuthApi.md#GetAuthCertCerts) | **Get** /auth/cert/certs | Manage trusted certificates used for authentication.
-[**GetAuthCertCertsName**](AuthApi.md#GetAuthCertCertsName) | **Get** /auth/cert/certs/{name} | Manage trusted certificates used for authentication.
-[**GetAuthCertCrlsName**](AuthApi.md#GetAuthCertCrlsName) | **Get** /auth/cert/crls/{name} | Manage Certificate Revocation Lists checked during authentication.
-[**GetAuthCfConfig**](AuthApi.md#GetAuthCfConfig) | **Get** /auth/cf/config | 
-[**GetAuthCfRoles**](AuthApi.md#GetAuthCfRoles) | **Get** /auth/cf/roles | 
-[**GetAuthCfRolesRole**](AuthApi.md#GetAuthCfRolesRole) | **Get** /auth/cf/roles/{role} | 
-[**GetAuthGcpConfig**](AuthApi.md#GetAuthGcpConfig) | **Get** /auth/gcp/config | Configure credentials used to query the GCP IAM API to verify authenticating service accounts
-[**GetAuthGcpRole**](AuthApi.md#GetAuthGcpRole) | **Get** /auth/gcp/role | Lists all the roles that are registered with Vault.
-[**GetAuthGcpRoleName**](AuthApi.md#GetAuthGcpRoleName) | **Get** /auth/gcp/role/{name} | Create a GCP role with associated policies and required attributes.
-[**GetAuthGcpRoles**](AuthApi.md#GetAuthGcpRoles) | **Get** /auth/gcp/roles | Lists all the roles that are registered with Vault.
-[**GetAuthGithubConfig**](AuthApi.md#GetAuthGithubConfig) | **Get** /auth/github/config | 
-[**GetAuthGithubMapTeams**](AuthApi.md#GetAuthGithubMapTeams) | **Get** /auth/github/map/teams | Read mappings for teams
-[**GetAuthGithubMapTeamsKey**](AuthApi.md#GetAuthGithubMapTeamsKey) | **Get** /auth/github/map/teams/{key} | Read/write/delete a single teams mapping
-[**GetAuthGithubMapUsers**](AuthApi.md#GetAuthGithubMapUsers) | **Get** /auth/github/map/users | Read mappings for users
-[**GetAuthGithubMapUsersKey**](AuthApi.md#GetAuthGithubMapUsersKey) | **Get** /auth/github/map/users/{key} | Read/write/delete a single users mapping
-[**GetAuthJwtConfig**](AuthApi.md#GetAuthJwtConfig) | **Get** /auth/jwt/config | Read the current JWT authentication backend configuration.
-[**GetAuthJwtOidcCallback**](AuthApi.md#GetAuthJwtOidcCallback) | **Get** /auth/jwt/oidc/callback | Callback endpoint to complete an OIDC login.
-[**GetAuthJwtRole**](AuthApi.md#GetAuthJwtRole) | **Get** /auth/jwt/role | Lists all the roles registered with the backend.
-[**GetAuthJwtRoleName**](AuthApi.md#GetAuthJwtRoleName) | **Get** /auth/jwt/role/{name} | Read an existing role.
-[**GetAuthKerberosConfig**](AuthApi.md#GetAuthKerberosConfig) | **Get** /auth/kerberos/config | 
-[**GetAuthKerberosConfigLdap**](AuthApi.md#GetAuthKerberosConfigLdap) | **Get** /auth/kerberos/config/ldap | 
-[**GetAuthKerberosGroups**](AuthApi.md#GetAuthKerberosGroups) | **Get** /auth/kerberos/groups | 
-[**GetAuthKerberosGroupsName**](AuthApi.md#GetAuthKerberosGroupsName) | **Get** /auth/kerberos/groups/{name} | 
-[**GetAuthKerberosLogin**](AuthApi.md#GetAuthKerberosLogin) | **Get** /auth/kerberos/login | 
-[**GetAuthKubernetesConfig**](AuthApi.md#GetAuthKubernetesConfig) | **Get** /auth/kubernetes/config | Configures the JWT Public Key and Kubernetes API information.
-[**GetAuthKubernetesRole**](AuthApi.md#GetAuthKubernetesRole) | **Get** /auth/kubernetes/role | Lists all the roles registered with the backend.
-[**GetAuthKubernetesRoleName**](AuthApi.md#GetAuthKubernetesRoleName) | **Get** /auth/kubernetes/role/{name} | Register an role with the backend.
-[**GetAuthLdapConfig**](AuthApi.md#GetAuthLdapConfig) | **Get** /auth/ldap/config | Configure the LDAP server to connect to, along with its options.
-[**GetAuthLdapGroups**](AuthApi.md#GetAuthLdapGroups) | **Get** /auth/ldap/groups | Manage additional groups for users allowed to authenticate.
-[**GetAuthLdapGroupsName**](AuthApi.md#GetAuthLdapGroupsName) | **Get** /auth/ldap/groups/{name} | Manage additional groups for users allowed to authenticate.
-[**GetAuthLdapUsers**](AuthApi.md#GetAuthLdapUsers) | **Get** /auth/ldap/users | Manage users allowed to authenticate.
-[**GetAuthLdapUsersName**](AuthApi.md#GetAuthLdapUsersName) | **Get** /auth/ldap/users/{name} | Manage users allowed to authenticate.
-[**GetAuthOciConfig**](AuthApi.md#GetAuthOciConfig) | **Get** /auth/oci/config | Manages the configuration for the Vault Auth Plugin.
-[**GetAuthOciRole**](AuthApi.md#GetAuthOciRole) | **Get** /auth/oci/role | Lists all the roles that are registered with Vault.
-[**GetAuthOciRoleRole**](AuthApi.md#GetAuthOciRoleRole) | **Get** /auth/oci/role/{role} | Create a role and associate policies to it.
-[**GetAuthOidcConfig**](AuthApi.md#GetAuthOidcConfig) | **Get** /auth/oidc/config | Read the current JWT authentication backend configuration.
-[**GetAuthOidcOidcCallback**](AuthApi.md#GetAuthOidcOidcCallback) | **Get** /auth/oidc/oidc/callback | Callback endpoint to complete an OIDC login.
-[**GetAuthOidcRole**](AuthApi.md#GetAuthOidcRole) | **Get** /auth/oidc/role | Lists all the roles registered with the backend.
-[**GetAuthOidcRoleName**](AuthApi.md#GetAuthOidcRoleName) | **Get** /auth/oidc/role/{name} | Read an existing role.
-[**GetAuthOktaConfig**](AuthApi.md#GetAuthOktaConfig) | **Get** /auth/okta/config | This endpoint allows you to configure the Okta and its configuration options.  The Okta organization are the characters at the front of the URL for Okta. Example https://ORG.okta.com
-[**GetAuthOktaGroups**](AuthApi.md#GetAuthOktaGroups) | **Get** /auth/okta/groups | Manage users allowed to authenticate.
-[**GetAuthOktaGroupsName**](AuthApi.md#GetAuthOktaGroupsName) | **Get** /auth/okta/groups/{name} | Manage users allowed to authenticate.
-[**GetAuthOktaUsers**](AuthApi.md#GetAuthOktaUsers) | **Get** /auth/okta/users | Manage additional groups for users allowed to authenticate.
-[**GetAuthOktaUsersName**](AuthApi.md#GetAuthOktaUsersName) | **Get** /auth/okta/users/{name} | Manage additional groups for users allowed to authenticate.
-[**GetAuthOktaVerifyNonce**](AuthApi.md#GetAuthOktaVerifyNonce) | **Get** /auth/okta/verify/{nonce} | 
-[**GetAuthRadiusConfig**](AuthApi.md#GetAuthRadiusConfig) | **Get** /auth/radius/config | Configure the RADIUS server to connect to, along with its options.
-[**GetAuthRadiusUsers**](AuthApi.md#GetAuthRadiusUsers) | **Get** /auth/radius/users | Manage users allowed to authenticate.
-[**GetAuthRadiusUsersName**](AuthApi.md#GetAuthRadiusUsersName) | **Get** /auth/radius/users/{name} | Manage users allowed to authenticate.
-[**GetAuthTokenAccessors**](AuthApi.md#GetAuthTokenAccessors) | **Get** /auth/token/accessors/ | List token accessors, which can then be be used to iterate and discover their properties or revoke them. Because this can be used to cause a denial of service, this endpoint requires &#39;sudo&#39; capability in addition to &#39;list&#39;.
-[**GetAuthTokenLookup**](AuthApi.md#GetAuthTokenLookup) | **Get** /auth/token/lookup | This endpoint will lookup a token and its properties.
-[**GetAuthTokenLookupSelf**](AuthApi.md#GetAuthTokenLookupSelf) | **Get** /auth/token/lookup-self | This endpoint will lookup a token and its properties.
-[**GetAuthTokenRoles**](AuthApi.md#GetAuthTokenRoles) | **Get** /auth/token/roles | This endpoint lists configured roles.
-[**GetAuthTokenRolesRoleName**](AuthApi.md#GetAuthTokenRolesRoleName) | **Get** /auth/token/roles/{role_name} | 
-[**GetAuthUserpassUsers**](AuthApi.md#GetAuthUserpassUsers) | **Get** /auth/userpass/users | Manage users allowed to authenticate.
-[**GetAuthUserpassUsersUsername**](AuthApi.md#GetAuthUserpassUsersUsername) | **Get** /auth/userpass/users/{username} | Manage users allowed to authenticate.
-[**PostAuthAlicloudLogin**](AuthApi.md#PostAuthAlicloudLogin) | **Post** /auth/alicloud/login | Authenticates an RAM entity with Vault.
-[**PostAuthAlicloudRoleRole**](AuthApi.md#PostAuthAlicloudRoleRole) | **Post** /auth/alicloud/role/{role} | Create a role and associate policies to it.
-[**PostAuthAppIdLogin**](AuthApi.md#PostAuthAppIdLogin) | **Post** /auth/app-id/login | Log in with an App ID and User ID.
-[**PostAuthAppIdLoginAppId**](AuthApi.md#PostAuthAppIdLoginAppId) | **Post** /auth/app-id/login/{app_id} | Log in with an App ID and User ID.
-[**PostAuthAppIdMapAppIdKey**](AuthApi.md#PostAuthAppIdMapAppIdKey) | **Post** /auth/app-id/map/app-id/{key} | Read/write/delete a single app-id mapping
-[**PostAuthAppIdMapUserIdKey**](AuthApi.md#PostAuthAppIdMapUserIdKey) | **Post** /auth/app-id/map/user-id/{key} | Read/write/delete a single user-id mapping
-[**PostAuthApproleLogin**](AuthApi.md#PostAuthApproleLogin) | **Post** /auth/approle/login | 
-[**PostAuthApproleRoleRoleName**](AuthApi.md#PostAuthApproleRoleRoleName) | **Post** /auth/approle/role/{role_name} | Register an role with the backend.
-[**PostAuthApproleRoleRoleNameBindSecretId**](AuthApi.md#PostAuthApproleRoleRoleNameBindSecretId) | **Post** /auth/approle/role/{role_name}/bind-secret-id | Impose secret_id to be presented during login using this role.
-[**PostAuthApproleRoleRoleNameBoundCidrList**](AuthApi.md#PostAuthApproleRoleRoleNameBoundCidrList) | **Post** /auth/approle/role/{role_name}/bound-cidr-list | Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
-[**PostAuthApproleRoleRoleNameCustomSecretId**](AuthApi.md#PostAuthApproleRoleRoleNameCustomSecretId) | **Post** /auth/approle/role/{role_name}/custom-secret-id | Assign a SecretID of choice against the role.
-[**PostAuthApproleRoleRoleNamePeriod**](AuthApi.md#PostAuthApproleRoleRoleNamePeriod) | **Post** /auth/approle/role/{role_name}/period | Updates the value of &#39;period&#39; on the role
-[**PostAuthApproleRoleRoleNamePolicies**](AuthApi.md#PostAuthApproleRoleRoleNamePolicies) | **Post** /auth/approle/role/{role_name}/policies | Policies of the role.
-[**PostAuthApproleRoleRoleNameRoleId**](AuthApi.md#PostAuthApproleRoleRoleNameRoleId) | **Post** /auth/approle/role/{role_name}/role-id | Returns the &#39;role_id&#39; of the role.
-[**PostAuthApproleRoleRoleNameSecretId**](AuthApi.md#PostAuthApproleRoleRoleNameSecretId) | **Post** /auth/approle/role/{role_name}/secret-id | Generate a SecretID against this role.
-[**PostAuthApproleRoleRoleNameSecretIdAccessorDestroy**](AuthApi.md#PostAuthApproleRoleRoleNameSecretIdAccessorDestroy) | **Post** /auth/approle/role/{role_name}/secret-id-accessor/destroy | 
-[**PostAuthApproleRoleRoleNameSecretIdAccessorLookup**](AuthApi.md#PostAuthApproleRoleRoleNameSecretIdAccessorLookup) | **Post** /auth/approle/role/{role_name}/secret-id-accessor/lookup | 
-[**PostAuthApproleRoleRoleNameSecretIdBoundCidrs**](AuthApi.md#PostAuthApproleRoleRoleNameSecretIdBoundCidrs) | **Post** /auth/approle/role/{role_name}/secret-id-bound-cidrs | Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
-[**PostAuthApproleRoleRoleNameSecretIdDestroy**](AuthApi.md#PostAuthApproleRoleRoleNameSecretIdDestroy) | **Post** /auth/approle/role/{role_name}/secret-id/destroy | Invalidate an issued secret_id
-[**PostAuthApproleRoleRoleNameSecretIdLookup**](AuthApi.md#PostAuthApproleRoleRoleNameSecretIdLookup) | **Post** /auth/approle/role/{role_name}/secret-id/lookup | Read the properties of an issued secret_id
-[**PostAuthApproleRoleRoleNameSecretIdNumUses**](AuthApi.md#PostAuthApproleRoleRoleNameSecretIdNumUses) | **Post** /auth/approle/role/{role_name}/secret-id-num-uses | Use limit of the SecretID generated against the role.
-[**PostAuthApproleRoleRoleNameSecretIdTtl**](AuthApi.md#PostAuthApproleRoleRoleNameSecretIdTtl) | **Post** /auth/approle/role/{role_name}/secret-id-ttl | Duration in seconds, representing the lifetime of the SecretIDs that are generated against the role using &#39;role/&lt;role_name&gt;/secret-id&#39; or &#39;role/&lt;role_name&gt;/custom-secret-id&#39; endpoints.
-[**PostAuthApproleRoleRoleNameTokenBoundCidrs**](AuthApi.md#PostAuthApproleRoleRoleNameTokenBoundCidrs) | **Post** /auth/approle/role/{role_name}/token-bound-cidrs | Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
-[**PostAuthApproleRoleRoleNameTokenMaxTtl**](AuthApi.md#PostAuthApproleRoleRoleNameTokenMaxTtl) | **Post** /auth/approle/role/{role_name}/token-max-ttl | Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
-[**PostAuthApproleRoleRoleNameTokenNumUses**](AuthApi.md#PostAuthApproleRoleRoleNameTokenNumUses) | **Post** /auth/approle/role/{role_name}/token-num-uses | Number of times issued tokens can be used
-[**PostAuthApproleRoleRoleNameTokenTtl**](AuthApi.md#PostAuthApproleRoleRoleNameTokenTtl) | **Post** /auth/approle/role/{role_name}/token-ttl | Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
-[**PostAuthApproleTidySecretId**](AuthApi.md#PostAuthApproleTidySecretId) | **Post** /auth/approle/tidy/secret-id | Trigger the clean-up of expired SecretID entries.
-[**PostAuthAwsConfigCertificateCertName**](AuthApi.md#PostAuthAwsConfigCertificateCertName) | **Post** /auth/aws/config/certificate/{cert_name} | 
-[**PostAuthAwsConfigClient**](AuthApi.md#PostAuthAwsConfigClient) | **Post** /auth/aws/config/client | 
-[**PostAuthAwsConfigIdentity**](AuthApi.md#PostAuthAwsConfigIdentity) | **Post** /auth/aws/config/identity | 
-[**PostAuthAwsConfigRotateRoot**](AuthApi.md#PostAuthAwsConfigRotateRoot) | **Post** /auth/aws/config/rotate-root | 
-[**PostAuthAwsConfigStsAccountId**](AuthApi.md#PostAuthAwsConfigStsAccountId) | **Post** /auth/aws/config/sts/{account_id} | 
-[**PostAuthAwsConfigTidyIdentityAccesslist**](AuthApi.md#PostAuthAwsConfigTidyIdentityAccesslist) | **Post** /auth/aws/config/tidy/identity-accesslist | 
-[**PostAuthAwsConfigTidyIdentityWhitelist**](AuthApi.md#PostAuthAwsConfigTidyIdentityWhitelist) | **Post** /auth/aws/config/tidy/identity-whitelist | 
-[**PostAuthAwsConfigTidyRoletagBlacklist**](AuthApi.md#PostAuthAwsConfigTidyRoletagBlacklist) | **Post** /auth/aws/config/tidy/roletag-blacklist | 
-[**PostAuthAwsConfigTidyRoletagDenylist**](AuthApi.md#PostAuthAwsConfigTidyRoletagDenylist) | **Post** /auth/aws/config/tidy/roletag-denylist | 
-[**PostAuthAwsLogin**](AuthApi.md#PostAuthAwsLogin) | **Post** /auth/aws/login | 
-[**PostAuthAwsRoleRole**](AuthApi.md#PostAuthAwsRoleRole) | **Post** /auth/aws/role/{role} | 
-[**PostAuthAwsRoleRoleTag**](AuthApi.md#PostAuthAwsRoleRoleTag) | **Post** /auth/aws/role/{role}/tag | 
-[**PostAuthAwsRoletagBlacklistRoleTag**](AuthApi.md#PostAuthAwsRoletagBlacklistRoleTag) | **Post** /auth/aws/roletag-blacklist/{role_tag} | 
-[**PostAuthAwsRoletagDenylistRoleTag**](AuthApi.md#PostAuthAwsRoletagDenylistRoleTag) | **Post** /auth/aws/roletag-denylist/{role_tag} | 
-[**PostAuthAwsTidyIdentityAccesslist**](AuthApi.md#PostAuthAwsTidyIdentityAccesslist) | **Post** /auth/aws/tidy/identity-accesslist | 
-[**PostAuthAwsTidyIdentityWhitelist**](AuthApi.md#PostAuthAwsTidyIdentityWhitelist) | **Post** /auth/aws/tidy/identity-whitelist | 
-[**PostAuthAwsTidyRoletagBlacklist**](AuthApi.md#PostAuthAwsTidyRoletagBlacklist) | **Post** /auth/aws/tidy/roletag-blacklist | 
-[**PostAuthAwsTidyRoletagDenylist**](AuthApi.md#PostAuthAwsTidyRoletagDenylist) | **Post** /auth/aws/tidy/roletag-denylist | 
-[**PostAuthAzureConfig**](AuthApi.md#PostAuthAzureConfig) | **Post** /auth/azure/config | 
-[**PostAuthAzureLogin**](AuthApi.md#PostAuthAzureLogin) | **Post** /auth/azure/login | 
-[**PostAuthAzureRoleName**](AuthApi.md#PostAuthAzureRoleName) | **Post** /auth/azure/role/{name} | 
-[**PostAuthCentrifyConfig**](AuthApi.md#PostAuthCentrifyConfig) | **Post** /auth/centrify/config | This path allows you to configure the centrify auth provider to interact with the Centrify Identity Services Platform for authenticating users.
-[**PostAuthCentrifyLogin**](AuthApi.md#PostAuthCentrifyLogin) | **Post** /auth/centrify/login | Log in with a username and password.
-[**PostAuthCertCertsName**](AuthApi.md#PostAuthCertCertsName) | **Post** /auth/cert/certs/{name} | Manage trusted certificates used for authentication.
-[**PostAuthCertConfig**](AuthApi.md#PostAuthCertConfig) | **Post** /auth/cert/config | 
-[**PostAuthCertCrlsName**](AuthApi.md#PostAuthCertCrlsName) | **Post** /auth/cert/crls/{name} | Manage Certificate Revocation Lists checked during authentication.
-[**PostAuthCertLogin**](AuthApi.md#PostAuthCertLogin) | **Post** /auth/cert/login | 
-[**PostAuthCfConfig**](AuthApi.md#PostAuthCfConfig) | **Post** /auth/cf/config | 
-[**PostAuthCfLogin**](AuthApi.md#PostAuthCfLogin) | **Post** /auth/cf/login | 
-[**PostAuthCfRolesRole**](AuthApi.md#PostAuthCfRolesRole) | **Post** /auth/cf/roles/{role} | 
-[**PostAuthGcpConfig**](AuthApi.md#PostAuthGcpConfig) | **Post** /auth/gcp/config | Configure credentials used to query the GCP IAM API to verify authenticating service accounts
-[**PostAuthGcpLogin**](AuthApi.md#PostAuthGcpLogin) | **Post** /auth/gcp/login | 
-[**PostAuthGcpRoleName**](AuthApi.md#PostAuthGcpRoleName) | **Post** /auth/gcp/role/{name} | Create a GCP role with associated policies and required attributes.
-[**PostAuthGcpRoleNameLabels**](AuthApi.md#PostAuthGcpRoleNameLabels) | **Post** /auth/gcp/role/{name}/labels | Add or remove labels for an existing &#39;gce&#39; role
-[**PostAuthGcpRoleNameServiceAccounts**](AuthApi.md#PostAuthGcpRoleNameServiceAccounts) | **Post** /auth/gcp/role/{name}/service-accounts | Add or remove service accounts for an existing &#x60;iam&#x60; role
-[**PostAuthGithubConfig**](AuthApi.md#PostAuthGithubConfig) | **Post** /auth/github/config | 
-[**PostAuthGithubLogin**](AuthApi.md#PostAuthGithubLogin) | **Post** /auth/github/login | 
-[**PostAuthGithubMapTeamsKey**](AuthApi.md#PostAuthGithubMapTeamsKey) | **Post** /auth/github/map/teams/{key} | Read/write/delete a single teams mapping
-[**PostAuthGithubMapUsersKey**](AuthApi.md#PostAuthGithubMapUsersKey) | **Post** /auth/github/map/users/{key} | Read/write/delete a single users mapping
-[**PostAuthJwtConfig**](AuthApi.md#PostAuthJwtConfig) | **Post** /auth/jwt/config | Configure the JWT authentication backend.
-[**PostAuthJwtLogin**](AuthApi.md#PostAuthJwtLogin) | **Post** /auth/jwt/login | Authenticates to Vault using a JWT (or OIDC) token.
-[**PostAuthJwtOidcAuthUrl**](AuthApi.md#PostAuthJwtOidcAuthUrl) | **Post** /auth/jwt/oidc/auth_url | Request an authorization URL to start an OIDC login flow.
-[**PostAuthJwtOidcCallback**](AuthApi.md#PostAuthJwtOidcCallback) | **Post** /auth/jwt/oidc/callback | Callback endpoint to handle form_posts.
-[**PostAuthJwtRoleName**](AuthApi.md#PostAuthJwtRoleName) | **Post** /auth/jwt/role/{name} | Register an role with the backend.
-[**PostAuthKerberosConfig**](AuthApi.md#PostAuthKerberosConfig) | **Post** /auth/kerberos/config | 
-[**PostAuthKerberosConfigLdap**](AuthApi.md#PostAuthKerberosConfigLdap) | **Post** /auth/kerberos/config/ldap | 
-[**PostAuthKerberosGroupsName**](AuthApi.md#PostAuthKerberosGroupsName) | **Post** /auth/kerberos/groups/{name} | 
-[**PostAuthKerberosLogin**](AuthApi.md#PostAuthKerberosLogin) | **Post** /auth/kerberos/login | 
-[**PostAuthKubernetesConfig**](AuthApi.md#PostAuthKubernetesConfig) | **Post** /auth/kubernetes/config | Configures the JWT Public Key and Kubernetes API information.
-[**PostAuthKubernetesLogin**](AuthApi.md#PostAuthKubernetesLogin) | **Post** /auth/kubernetes/login | Authenticates Kubernetes service accounts with Vault.
-[**PostAuthKubernetesRoleName**](AuthApi.md#PostAuthKubernetesRoleName) | **Post** /auth/kubernetes/role/{name} | Register an role with the backend.
-[**PostAuthLdapConfig**](AuthApi.md#PostAuthLdapConfig) | **Post** /auth/ldap/config | Configure the LDAP server to connect to, along with its options.
-[**PostAuthLdapGroupsName**](AuthApi.md#PostAuthLdapGroupsName) | **Post** /auth/ldap/groups/{name} | Manage additional groups for users allowed to authenticate.
-[**PostAuthLdapLoginUsername**](AuthApi.md#PostAuthLdapLoginUsername) | **Post** /auth/ldap/login/{username} | Log in with a username and password.
-[**PostAuthLdapUsersName**](AuthApi.md#PostAuthLdapUsersName) | **Post** /auth/ldap/users/{name} | Manage users allowed to authenticate.
-[**PostAuthOciConfig**](AuthApi.md#PostAuthOciConfig) | **Post** /auth/oci/config | Manages the configuration for the Vault Auth Plugin.
-[**PostAuthOciLoginRole**](AuthApi.md#PostAuthOciLoginRole) | **Post** /auth/oci/login/{role} | Authenticates to Vault using OCI credentials
-[**PostAuthOciRoleRole**](AuthApi.md#PostAuthOciRoleRole) | **Post** /auth/oci/role/{role} | Create a role and associate policies to it.
-[**PostAuthOidcConfig**](AuthApi.md#PostAuthOidcConfig) | **Post** /auth/oidc/config | Configure the JWT authentication backend.
-[**PostAuthOidcLogin**](AuthApi.md#PostAuthOidcLogin) | **Post** /auth/oidc/login | Authenticates to Vault using a JWT (or OIDC) token.
-[**PostAuthOidcOidcAuthUrl**](AuthApi.md#PostAuthOidcOidcAuthUrl) | **Post** /auth/oidc/oidc/auth_url | Request an authorization URL to start an OIDC login flow.
-[**PostAuthOidcOidcCallback**](AuthApi.md#PostAuthOidcOidcCallback) | **Post** /auth/oidc/oidc/callback | Callback endpoint to handle form_posts.
-[**PostAuthOidcRoleName**](AuthApi.md#PostAuthOidcRoleName) | **Post** /auth/oidc/role/{name} | Register an role with the backend.
-[**PostAuthOktaConfig**](AuthApi.md#PostAuthOktaConfig) | **Post** /auth/okta/config | This endpoint allows you to configure the Okta and its configuration options.  The Okta organization are the characters at the front of the URL for Okta. Example https://ORG.okta.com
-[**PostAuthOktaGroupsName**](AuthApi.md#PostAuthOktaGroupsName) | **Post** /auth/okta/groups/{name} | Manage users allowed to authenticate.
-[**PostAuthOktaLoginUsername**](AuthApi.md#PostAuthOktaLoginUsername) | **Post** /auth/okta/login/{username} | Log in with a username and password.
-[**PostAuthOktaUsersName**](AuthApi.md#PostAuthOktaUsersName) | **Post** /auth/okta/users/{name} | Manage additional groups for users allowed to authenticate.
-[**PostAuthRadiusConfig**](AuthApi.md#PostAuthRadiusConfig) | **Post** /auth/radius/config | Configure the RADIUS server to connect to, along with its options.
-[**PostAuthRadiusLogin**](AuthApi.md#PostAuthRadiusLogin) | **Post** /auth/radius/login | Log in with a username and password.
-[**PostAuthRadiusLoginUrlusername**](AuthApi.md#PostAuthRadiusLoginUrlusername) | **Post** /auth/radius/login/{urlusername} | Log in with a username and password.
-[**PostAuthRadiusUsersName**](AuthApi.md#PostAuthRadiusUsersName) | **Post** /auth/radius/users/{name} | Manage users allowed to authenticate.
-[**PostAuthTokenCreate**](AuthApi.md#PostAuthTokenCreate) | **Post** /auth/token/create | The token create path is used to create new tokens.
-[**PostAuthTokenCreateOrphan**](AuthApi.md#PostAuthTokenCreateOrphan) | **Post** /auth/token/create-orphan | The token create path is used to create new orphan tokens.
-[**PostAuthTokenCreateRoleName**](AuthApi.md#PostAuthTokenCreateRoleName) | **Post** /auth/token/create/{role_name} | This token create path is used to create new tokens adhering to the given role.
-[**PostAuthTokenLookup**](AuthApi.md#PostAuthTokenLookup) | **Post** /auth/token/lookup | This endpoint will lookup a token and its properties.
-[**PostAuthTokenLookupAccessor**](AuthApi.md#PostAuthTokenLookupAccessor) | **Post** /auth/token/lookup-accessor | This endpoint will lookup a token associated with the given accessor and its properties. Response will not contain the token ID.
-[**PostAuthTokenLookupSelf**](AuthApi.md#PostAuthTokenLookupSelf) | **Post** /auth/token/lookup-self | This endpoint will lookup a token and its properties.
-[**PostAuthTokenRenew**](AuthApi.md#PostAuthTokenRenew) | **Post** /auth/token/renew | This endpoint will renew the given token and prevent expiration.
-[**PostAuthTokenRenewAccessor**](AuthApi.md#PostAuthTokenRenewAccessor) | **Post** /auth/token/renew-accessor | This endpoint will renew a token associated with the given accessor and its properties. Response will not contain the token ID.
-[**PostAuthTokenRenewSelf**](AuthApi.md#PostAuthTokenRenewSelf) | **Post** /auth/token/renew-self | This endpoint will renew the token used to call it and prevent expiration.
-[**PostAuthTokenRevoke**](AuthApi.md#PostAuthTokenRevoke) | **Post** /auth/token/revoke | This endpoint will delete the given token and all of its child tokens.
-[**PostAuthTokenRevokeAccessor**](AuthApi.md#PostAuthTokenRevokeAccessor) | **Post** /auth/token/revoke-accessor | This endpoint will delete the token associated with the accessor and all of its child tokens.
-[**PostAuthTokenRevokeOrphan**](AuthApi.md#PostAuthTokenRevokeOrphan) | **Post** /auth/token/revoke-orphan | This endpoint will delete the token and orphan its child tokens.
-[**PostAuthTokenRevokeSelf**](AuthApi.md#PostAuthTokenRevokeSelf) | **Post** /auth/token/revoke-self | This endpoint will delete the token used to call it and all of its child tokens.
-[**PostAuthTokenRolesRoleName**](AuthApi.md#PostAuthTokenRolesRoleName) | **Post** /auth/token/roles/{role_name} | 
-[**PostAuthTokenTidy**](AuthApi.md#PostAuthTokenTidy) | **Post** /auth/token/tidy | This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
-[**PostAuthUserpassLoginUsername**](AuthApi.md#PostAuthUserpassLoginUsername) | **Post** /auth/userpass/login/{username} | Log in with a username and password.
-[**PostAuthUserpassUsersUsername**](AuthApi.md#PostAuthUserpassUsersUsername) | **Post** /auth/userpass/users/{username} | Manage users allowed to authenticate.
-[**PostAuthUserpassUsersUsernamePassword**](AuthApi.md#PostAuthUserpassUsersUsernamePassword) | **Post** /auth/userpass/users/{username}/password | Reset user&#39;s password.
-[**PostAuthUserpassUsersUsernamePolicies**](AuthApi.md#PostAuthUserpassUsersUsernamePolicies) | **Post** /auth/userpass/users/{username}/policies | Update the policies associated with the username.
+[**DeleteAuthAlicloudRoleRole**](Auth.md#DeleteAuthAlicloudRoleRole) | **Delete** /auth/alicloud/role/{role} | Create a role and associate policies to it.
+[**DeleteAuthAppIdMapAppIdKey**](Auth.md#DeleteAuthAppIdMapAppIdKey) | **Delete** /auth/app-id/map/app-id/{key} | Read/write/delete a single app-id mapping
+[**DeleteAuthAppIdMapUserIdKey**](Auth.md#DeleteAuthAppIdMapUserIdKey) | **Delete** /auth/app-id/map/user-id/{key} | Read/write/delete a single user-id mapping
+[**DeleteAuthApproleRoleRoleName**](Auth.md#DeleteAuthApproleRoleRoleName) | **Delete** /auth/approle/role/{role_name} | Register an role with the backend.
+[**DeleteAuthApproleRoleRoleNameBindSecretId**](Auth.md#DeleteAuthApproleRoleRoleNameBindSecretId) | **Delete** /auth/approle/role/{role_name}/bind-secret-id | Impose secret_id to be presented during login using this role.
+[**DeleteAuthApproleRoleRoleNameBoundCidrList**](Auth.md#DeleteAuthApproleRoleRoleNameBoundCidrList) | **Delete** /auth/approle/role/{role_name}/bound-cidr-list | Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+[**DeleteAuthApproleRoleRoleNamePeriod**](Auth.md#DeleteAuthApproleRoleRoleNamePeriod) | **Delete** /auth/approle/role/{role_name}/period | Updates the value of &#39;period&#39; on the role
+[**DeleteAuthApproleRoleRoleNamePolicies**](Auth.md#DeleteAuthApproleRoleRoleNamePolicies) | **Delete** /auth/approle/role/{role_name}/policies | Policies of the role.
+[**DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy**](Auth.md#DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy) | **Delete** /auth/approle/role/{role_name}/secret-id-accessor/destroy | 
+[**DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs**](Auth.md#DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs) | **Delete** /auth/approle/role/{role_name}/secret-id-bound-cidrs | Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+[**DeleteAuthApproleRoleRoleNameSecretIdDestroy**](Auth.md#DeleteAuthApproleRoleRoleNameSecretIdDestroy) | **Delete** /auth/approle/role/{role_name}/secret-id/destroy | Invalidate an issued secret_id
+[**DeleteAuthApproleRoleRoleNameSecretIdNumUses**](Auth.md#DeleteAuthApproleRoleRoleNameSecretIdNumUses) | **Delete** /auth/approle/role/{role_name}/secret-id-num-uses | Use limit of the SecretID generated against the role.
+[**DeleteAuthApproleRoleRoleNameSecretIdTtl**](Auth.md#DeleteAuthApproleRoleRoleNameSecretIdTtl) | **Delete** /auth/approle/role/{role_name}/secret-id-ttl | Duration in seconds, representing the lifetime of the SecretIDs that are generated against the role using &#39;role/&lt;role_name&gt;/secret-id&#39; or &#39;role/&lt;role_name&gt;/custom-secret-id&#39; endpoints.
+[**DeleteAuthApproleRoleRoleNameTokenBoundCidrs**](Auth.md#DeleteAuthApproleRoleRoleNameTokenBoundCidrs) | **Delete** /auth/approle/role/{role_name}/token-bound-cidrs | Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
+[**DeleteAuthApproleRoleRoleNameTokenMaxTtl**](Auth.md#DeleteAuthApproleRoleRoleNameTokenMaxTtl) | **Delete** /auth/approle/role/{role_name}/token-max-ttl | Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
+[**DeleteAuthApproleRoleRoleNameTokenNumUses**](Auth.md#DeleteAuthApproleRoleRoleNameTokenNumUses) | **Delete** /auth/approle/role/{role_name}/token-num-uses | Number of times issued tokens can be used
+[**DeleteAuthApproleRoleRoleNameTokenTtl**](Auth.md#DeleteAuthApproleRoleRoleNameTokenTtl) | **Delete** /auth/approle/role/{role_name}/token-ttl | Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
+[**DeleteAuthAwsConfigCertificateCertName**](Auth.md#DeleteAuthAwsConfigCertificateCertName) | **Delete** /auth/aws/config/certificate/{cert_name} | 
+[**DeleteAuthAwsConfigClient**](Auth.md#DeleteAuthAwsConfigClient) | **Delete** /auth/aws/config/client | 
+[**DeleteAuthAwsConfigStsAccountId**](Auth.md#DeleteAuthAwsConfigStsAccountId) | **Delete** /auth/aws/config/sts/{account_id} | 
+[**DeleteAuthAwsConfigTidyIdentityAccesslist**](Auth.md#DeleteAuthAwsConfigTidyIdentityAccesslist) | **Delete** /auth/aws/config/tidy/identity-accesslist | 
+[**DeleteAuthAwsConfigTidyIdentityWhitelist**](Auth.md#DeleteAuthAwsConfigTidyIdentityWhitelist) | **Delete** /auth/aws/config/tidy/identity-whitelist | 
+[**DeleteAuthAwsConfigTidyRoletagBlacklist**](Auth.md#DeleteAuthAwsConfigTidyRoletagBlacklist) | **Delete** /auth/aws/config/tidy/roletag-blacklist | 
+[**DeleteAuthAwsConfigTidyRoletagDenylist**](Auth.md#DeleteAuthAwsConfigTidyRoletagDenylist) | **Delete** /auth/aws/config/tidy/roletag-denylist | 
+[**DeleteAuthAwsIdentityAccesslistInstanceId**](Auth.md#DeleteAuthAwsIdentityAccesslistInstanceId) | **Delete** /auth/aws/identity-accesslist/{instance_id} | 
+[**DeleteAuthAwsIdentityWhitelistInstanceId**](Auth.md#DeleteAuthAwsIdentityWhitelistInstanceId) | **Delete** /auth/aws/identity-whitelist/{instance_id} | 
+[**DeleteAuthAwsRoleRole**](Auth.md#DeleteAuthAwsRoleRole) | **Delete** /auth/aws/role/{role} | 
+[**DeleteAuthAwsRoletagBlacklistRoleTag**](Auth.md#DeleteAuthAwsRoletagBlacklistRoleTag) | **Delete** /auth/aws/roletag-blacklist/{role_tag} | 
+[**DeleteAuthAwsRoletagDenylistRoleTag**](Auth.md#DeleteAuthAwsRoletagDenylistRoleTag) | **Delete** /auth/aws/roletag-denylist/{role_tag} | 
+[**DeleteAuthAzureConfig**](Auth.md#DeleteAuthAzureConfig) | **Delete** /auth/azure/config | 
+[**DeleteAuthAzureRoleName**](Auth.md#DeleteAuthAzureRoleName) | **Delete** /auth/azure/role/{name} | 
+[**DeleteAuthCertCertsName**](Auth.md#DeleteAuthCertCertsName) | **Delete** /auth/cert/certs/{name} | Manage trusted certificates used for authentication.
+[**DeleteAuthCertCrlsName**](Auth.md#DeleteAuthCertCrlsName) | **Delete** /auth/cert/crls/{name} | Manage Certificate Revocation Lists checked during authentication.
+[**DeleteAuthCfConfig**](Auth.md#DeleteAuthCfConfig) | **Delete** /auth/cf/config | 
+[**DeleteAuthCfRolesRole**](Auth.md#DeleteAuthCfRolesRole) | **Delete** /auth/cf/roles/{role} | 
+[**DeleteAuthGcpRoleName**](Auth.md#DeleteAuthGcpRoleName) | **Delete** /auth/gcp/role/{name} | Create a GCP role with associated policies and required attributes.
+[**DeleteAuthGithubMapTeamsKey**](Auth.md#DeleteAuthGithubMapTeamsKey) | **Delete** /auth/github/map/teams/{key} | Read/write/delete a single teams mapping
+[**DeleteAuthGithubMapUsersKey**](Auth.md#DeleteAuthGithubMapUsersKey) | **Delete** /auth/github/map/users/{key} | Read/write/delete a single users mapping
+[**DeleteAuthJwtRoleName**](Auth.md#DeleteAuthJwtRoleName) | **Delete** /auth/jwt/role/{name} | Delete an existing role.
+[**DeleteAuthKerberosGroupsName**](Auth.md#DeleteAuthKerberosGroupsName) | **Delete** /auth/kerberos/groups/{name} | 
+[**DeleteAuthKubernetesRoleName**](Auth.md#DeleteAuthKubernetesRoleName) | **Delete** /auth/kubernetes/role/{name} | Register an role with the backend.
+[**DeleteAuthLdapGroupsName**](Auth.md#DeleteAuthLdapGroupsName) | **Delete** /auth/ldap/groups/{name} | Manage additional groups for users allowed to authenticate.
+[**DeleteAuthLdapUsersName**](Auth.md#DeleteAuthLdapUsersName) | **Delete** /auth/ldap/users/{name} | Manage users allowed to authenticate.
+[**DeleteAuthOciConfig**](Auth.md#DeleteAuthOciConfig) | **Delete** /auth/oci/config | Manages the configuration for the Vault Auth Plugin.
+[**DeleteAuthOciRoleRole**](Auth.md#DeleteAuthOciRoleRole) | **Delete** /auth/oci/role/{role} | Create a role and associate policies to it.
+[**DeleteAuthOidcRoleName**](Auth.md#DeleteAuthOidcRoleName) | **Delete** /auth/oidc/role/{name} | Delete an existing role.
+[**DeleteAuthOktaGroupsName**](Auth.md#DeleteAuthOktaGroupsName) | **Delete** /auth/okta/groups/{name} | Manage users allowed to authenticate.
+[**DeleteAuthOktaUsersName**](Auth.md#DeleteAuthOktaUsersName) | **Delete** /auth/okta/users/{name} | Manage additional groups for users allowed to authenticate.
+[**DeleteAuthRadiusUsersName**](Auth.md#DeleteAuthRadiusUsersName) | **Delete** /auth/radius/users/{name} | Manage users allowed to authenticate.
+[**DeleteAuthTokenRolesRoleName**](Auth.md#DeleteAuthTokenRolesRoleName) | **Delete** /auth/token/roles/{role_name} | 
+[**DeleteAuthUserpassUsersUsername**](Auth.md#DeleteAuthUserpassUsersUsername) | **Delete** /auth/userpass/users/{username} | Manage users allowed to authenticate.
+[**GetAuthAlicloudRole**](Auth.md#GetAuthAlicloudRole) | **Get** /auth/alicloud/role | Lists all the roles that are registered with Vault.
+[**GetAuthAlicloudRoleRole**](Auth.md#GetAuthAlicloudRoleRole) | **Get** /auth/alicloud/role/{role} | Create a role and associate policies to it.
+[**GetAuthAlicloudRoles**](Auth.md#GetAuthAlicloudRoles) | **Get** /auth/alicloud/roles | Lists all the roles that are registered with Vault.
+[**GetAuthAppIdMapAppId**](Auth.md#GetAuthAppIdMapAppId) | **Get** /auth/app-id/map/app-id | Read mappings for app-id
+[**GetAuthAppIdMapAppIdKey**](Auth.md#GetAuthAppIdMapAppIdKey) | **Get** /auth/app-id/map/app-id/{key} | Read/write/delete a single app-id mapping
+[**GetAuthAppIdMapUserId**](Auth.md#GetAuthAppIdMapUserId) | **Get** /auth/app-id/map/user-id | Read mappings for user-id
+[**GetAuthAppIdMapUserIdKey**](Auth.md#GetAuthAppIdMapUserIdKey) | **Get** /auth/app-id/map/user-id/{key} | Read/write/delete a single user-id mapping
+[**GetAuthApproleRole**](Auth.md#GetAuthApproleRole) | **Get** /auth/approle/role | Lists all the roles registered with the backend.
+[**GetAuthApproleRoleRoleName**](Auth.md#GetAuthApproleRoleRoleName) | **Get** /auth/approle/role/{role_name} | Register an role with the backend.
+[**GetAuthApproleRoleRoleNameBindSecretId**](Auth.md#GetAuthApproleRoleRoleNameBindSecretId) | **Get** /auth/approle/role/{role_name}/bind-secret-id | Impose secret_id to be presented during login using this role.
+[**GetAuthApproleRoleRoleNameBoundCidrList**](Auth.md#GetAuthApproleRoleRoleNameBoundCidrList) | **Get** /auth/approle/role/{role_name}/bound-cidr-list | Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+[**GetAuthApproleRoleRoleNameLocalSecretIds**](Auth.md#GetAuthApproleRoleRoleNameLocalSecretIds) | **Get** /auth/approle/role/{role_name}/local-secret-ids | Enables cluster local secret IDs
+[**GetAuthApproleRoleRoleNamePeriod**](Auth.md#GetAuthApproleRoleRoleNamePeriod) | **Get** /auth/approle/role/{role_name}/period | Updates the value of &#39;period&#39; on the role
+[**GetAuthApproleRoleRoleNamePolicies**](Auth.md#GetAuthApproleRoleRoleNamePolicies) | **Get** /auth/approle/role/{role_name}/policies | Policies of the role.
+[**GetAuthApproleRoleRoleNameRoleId**](Auth.md#GetAuthApproleRoleRoleNameRoleId) | **Get** /auth/approle/role/{role_name}/role-id | Returns the &#39;role_id&#39; of the role.
+[**GetAuthApproleRoleRoleNameSecretId**](Auth.md#GetAuthApproleRoleRoleNameSecretId) | **Get** /auth/approle/role/{role_name}/secret-id | Generate a SecretID against this role.
+[**GetAuthApproleRoleRoleNameSecretIdBoundCidrs**](Auth.md#GetAuthApproleRoleRoleNameSecretIdBoundCidrs) | **Get** /auth/approle/role/{role_name}/secret-id-bound-cidrs | Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+[**GetAuthApproleRoleRoleNameSecretIdNumUses**](Auth.md#GetAuthApproleRoleRoleNameSecretIdNumUses) | **Get** /auth/approle/role/{role_name}/secret-id-num-uses | Use limit of the SecretID generated against the role.
+[**GetAuthApproleRoleRoleNameSecretIdTtl**](Auth.md#GetAuthApproleRoleRoleNameSecretIdTtl) | **Get** /auth/approle/role/{role_name}/secret-id-ttl | Duration in seconds, representing the lifetime of the SecretIDs that are generated against the role using &#39;role/&lt;role_name&gt;/secret-id&#39; or &#39;role/&lt;role_name&gt;/custom-secret-id&#39; endpoints.
+[**GetAuthApproleRoleRoleNameTokenBoundCidrs**](Auth.md#GetAuthApproleRoleRoleNameTokenBoundCidrs) | **Get** /auth/approle/role/{role_name}/token-bound-cidrs | Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
+[**GetAuthApproleRoleRoleNameTokenMaxTtl**](Auth.md#GetAuthApproleRoleRoleNameTokenMaxTtl) | **Get** /auth/approle/role/{role_name}/token-max-ttl | Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
+[**GetAuthApproleRoleRoleNameTokenNumUses**](Auth.md#GetAuthApproleRoleRoleNameTokenNumUses) | **Get** /auth/approle/role/{role_name}/token-num-uses | Number of times issued tokens can be used
+[**GetAuthApproleRoleRoleNameTokenTtl**](Auth.md#GetAuthApproleRoleRoleNameTokenTtl) | **Get** /auth/approle/role/{role_name}/token-ttl | Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
+[**GetAuthAwsConfigCertificateCertName**](Auth.md#GetAuthAwsConfigCertificateCertName) | **Get** /auth/aws/config/certificate/{cert_name} | 
+[**GetAuthAwsConfigCertificates**](Auth.md#GetAuthAwsConfigCertificates) | **Get** /auth/aws/config/certificates | 
+[**GetAuthAwsConfigClient**](Auth.md#GetAuthAwsConfigClient) | **Get** /auth/aws/config/client | 
+[**GetAuthAwsConfigIdentity**](Auth.md#GetAuthAwsConfigIdentity) | **Get** /auth/aws/config/identity | 
+[**GetAuthAwsConfigSts**](Auth.md#GetAuthAwsConfigSts) | **Get** /auth/aws/config/sts | 
+[**GetAuthAwsConfigStsAccountId**](Auth.md#GetAuthAwsConfigStsAccountId) | **Get** /auth/aws/config/sts/{account_id} | 
+[**GetAuthAwsConfigTidyIdentityAccesslist**](Auth.md#GetAuthAwsConfigTidyIdentityAccesslist) | **Get** /auth/aws/config/tidy/identity-accesslist | 
+[**GetAuthAwsConfigTidyIdentityWhitelist**](Auth.md#GetAuthAwsConfigTidyIdentityWhitelist) | **Get** /auth/aws/config/tidy/identity-whitelist | 
+[**GetAuthAwsConfigTidyRoletagBlacklist**](Auth.md#GetAuthAwsConfigTidyRoletagBlacklist) | **Get** /auth/aws/config/tidy/roletag-blacklist | 
+[**GetAuthAwsConfigTidyRoletagDenylist**](Auth.md#GetAuthAwsConfigTidyRoletagDenylist) | **Get** /auth/aws/config/tidy/roletag-denylist | 
+[**GetAuthAwsIdentityAccesslist**](Auth.md#GetAuthAwsIdentityAccesslist) | **Get** /auth/aws/identity-accesslist | 
+[**GetAuthAwsIdentityAccesslistInstanceId**](Auth.md#GetAuthAwsIdentityAccesslistInstanceId) | **Get** /auth/aws/identity-accesslist/{instance_id} | 
+[**GetAuthAwsIdentityWhitelist**](Auth.md#GetAuthAwsIdentityWhitelist) | **Get** /auth/aws/identity-whitelist | 
+[**GetAuthAwsIdentityWhitelistInstanceId**](Auth.md#GetAuthAwsIdentityWhitelistInstanceId) | **Get** /auth/aws/identity-whitelist/{instance_id} | 
+[**GetAuthAwsRole**](Auth.md#GetAuthAwsRole) | **Get** /auth/aws/role | 
+[**GetAuthAwsRoleRole**](Auth.md#GetAuthAwsRoleRole) | **Get** /auth/aws/role/{role} | 
+[**GetAuthAwsRoles**](Auth.md#GetAuthAwsRoles) | **Get** /auth/aws/roles | 
+[**GetAuthAwsRoletagBlacklist**](Auth.md#GetAuthAwsRoletagBlacklist) | **Get** /auth/aws/roletag-blacklist | 
+[**GetAuthAwsRoletagBlacklistRoleTag**](Auth.md#GetAuthAwsRoletagBlacklistRoleTag) | **Get** /auth/aws/roletag-blacklist/{role_tag} | 
+[**GetAuthAwsRoletagDenylist**](Auth.md#GetAuthAwsRoletagDenylist) | **Get** /auth/aws/roletag-denylist | 
+[**GetAuthAwsRoletagDenylistRoleTag**](Auth.md#GetAuthAwsRoletagDenylistRoleTag) | **Get** /auth/aws/roletag-denylist/{role_tag} | 
+[**GetAuthAzureConfig**](Auth.md#GetAuthAzureConfig) | **Get** /auth/azure/config | 
+[**GetAuthAzureRole**](Auth.md#GetAuthAzureRole) | **Get** /auth/azure/role | 
+[**GetAuthAzureRoleName**](Auth.md#GetAuthAzureRoleName) | **Get** /auth/azure/role/{name} | 
+[**GetAuthCentrifyConfig**](Auth.md#GetAuthCentrifyConfig) | **Get** /auth/centrify/config | This path allows you to configure the centrify auth provider to interact with the Centrify Identity Services Platform for authenticating users.
+[**GetAuthCertCerts**](Auth.md#GetAuthCertCerts) | **Get** /auth/cert/certs | Manage trusted certificates used for authentication.
+[**GetAuthCertCertsName**](Auth.md#GetAuthCertCertsName) | **Get** /auth/cert/certs/{name} | Manage trusted certificates used for authentication.
+[**GetAuthCertCrlsName**](Auth.md#GetAuthCertCrlsName) | **Get** /auth/cert/crls/{name} | Manage Certificate Revocation Lists checked during authentication.
+[**GetAuthCfConfig**](Auth.md#GetAuthCfConfig) | **Get** /auth/cf/config | 
+[**GetAuthCfRoles**](Auth.md#GetAuthCfRoles) | **Get** /auth/cf/roles | 
+[**GetAuthCfRolesRole**](Auth.md#GetAuthCfRolesRole) | **Get** /auth/cf/roles/{role} | 
+[**GetAuthGcpConfig**](Auth.md#GetAuthGcpConfig) | **Get** /auth/gcp/config | Configure credentials used to query the GCP IAM API to verify authenticating service accounts
+[**GetAuthGcpRole**](Auth.md#GetAuthGcpRole) | **Get** /auth/gcp/role | Lists all the roles that are registered with Vault.
+[**GetAuthGcpRoleName**](Auth.md#GetAuthGcpRoleName) | **Get** /auth/gcp/role/{name} | Create a GCP role with associated policies and required attributes.
+[**GetAuthGcpRoles**](Auth.md#GetAuthGcpRoles) | **Get** /auth/gcp/roles | Lists all the roles that are registered with Vault.
+[**GetAuthGithubConfig**](Auth.md#GetAuthGithubConfig) | **Get** /auth/github/config | 
+[**GetAuthGithubMapTeams**](Auth.md#GetAuthGithubMapTeams) | **Get** /auth/github/map/teams | Read mappings for teams
+[**GetAuthGithubMapTeamsKey**](Auth.md#GetAuthGithubMapTeamsKey) | **Get** /auth/github/map/teams/{key} | Read/write/delete a single teams mapping
+[**GetAuthGithubMapUsers**](Auth.md#GetAuthGithubMapUsers) | **Get** /auth/github/map/users | Read mappings for users
+[**GetAuthGithubMapUsersKey**](Auth.md#GetAuthGithubMapUsersKey) | **Get** /auth/github/map/users/{key} | Read/write/delete a single users mapping
+[**GetAuthJwtConfig**](Auth.md#GetAuthJwtConfig) | **Get** /auth/jwt/config | Read the current JWT authentication backend configuration.
+[**GetAuthJwtOidcCallback**](Auth.md#GetAuthJwtOidcCallback) | **Get** /auth/jwt/oidc/callback | Callback endpoint to complete an OIDC login.
+[**GetAuthJwtRole**](Auth.md#GetAuthJwtRole) | **Get** /auth/jwt/role | Lists all the roles registered with the backend.
+[**GetAuthJwtRoleName**](Auth.md#GetAuthJwtRoleName) | **Get** /auth/jwt/role/{name} | Read an existing role.
+[**GetAuthKerberosConfig**](Auth.md#GetAuthKerberosConfig) | **Get** /auth/kerberos/config | 
+[**GetAuthKerberosConfigLdap**](Auth.md#GetAuthKerberosConfigLdap) | **Get** /auth/kerberos/config/ldap | 
+[**GetAuthKerberosGroups**](Auth.md#GetAuthKerberosGroups) | **Get** /auth/kerberos/groups | 
+[**GetAuthKerberosGroupsName**](Auth.md#GetAuthKerberosGroupsName) | **Get** /auth/kerberos/groups/{name} | 
+[**GetAuthKerberosLogin**](Auth.md#GetAuthKerberosLogin) | **Get** /auth/kerberos/login | 
+[**GetAuthKubernetesConfig**](Auth.md#GetAuthKubernetesConfig) | **Get** /auth/kubernetes/config | Configures the JWT Public Key and Kubernetes API information.
+[**GetAuthKubernetesRole**](Auth.md#GetAuthKubernetesRole) | **Get** /auth/kubernetes/role | Lists all the roles registered with the backend.
+[**GetAuthKubernetesRoleName**](Auth.md#GetAuthKubernetesRoleName) | **Get** /auth/kubernetes/role/{name} | Register an role with the backend.
+[**GetAuthLdapConfig**](Auth.md#GetAuthLdapConfig) | **Get** /auth/ldap/config | Configure the LDAP server to connect to, along with its options.
+[**GetAuthLdapGroups**](Auth.md#GetAuthLdapGroups) | **Get** /auth/ldap/groups | Manage additional groups for users allowed to authenticate.
+[**GetAuthLdapGroupsName**](Auth.md#GetAuthLdapGroupsName) | **Get** /auth/ldap/groups/{name} | Manage additional groups for users allowed to authenticate.
+[**GetAuthLdapUsers**](Auth.md#GetAuthLdapUsers) | **Get** /auth/ldap/users | Manage users allowed to authenticate.
+[**GetAuthLdapUsersName**](Auth.md#GetAuthLdapUsersName) | **Get** /auth/ldap/users/{name} | Manage users allowed to authenticate.
+[**GetAuthOciConfig**](Auth.md#GetAuthOciConfig) | **Get** /auth/oci/config | Manages the configuration for the Vault Auth Plugin.
+[**GetAuthOciRole**](Auth.md#GetAuthOciRole) | **Get** /auth/oci/role | Lists all the roles that are registered with Vault.
+[**GetAuthOciRoleRole**](Auth.md#GetAuthOciRoleRole) | **Get** /auth/oci/role/{role} | Create a role and associate policies to it.
+[**GetAuthOidcConfig**](Auth.md#GetAuthOidcConfig) | **Get** /auth/oidc/config | Read the current JWT authentication backend configuration.
+[**GetAuthOidcOidcCallback**](Auth.md#GetAuthOidcOidcCallback) | **Get** /auth/oidc/oidc/callback | Callback endpoint to complete an OIDC login.
+[**GetAuthOidcRole**](Auth.md#GetAuthOidcRole) | **Get** /auth/oidc/role | Lists all the roles registered with the backend.
+[**GetAuthOidcRoleName**](Auth.md#GetAuthOidcRoleName) | **Get** /auth/oidc/role/{name} | Read an existing role.
+[**GetAuthOktaConfig**](Auth.md#GetAuthOktaConfig) | **Get** /auth/okta/config | This endpoint allows you to configure the Okta and its configuration options.  The Okta organization are the characters at the front of the URL for Okta. Example https://ORG.okta.com
+[**GetAuthOktaGroups**](Auth.md#GetAuthOktaGroups) | **Get** /auth/okta/groups | Manage users allowed to authenticate.
+[**GetAuthOktaGroupsName**](Auth.md#GetAuthOktaGroupsName) | **Get** /auth/okta/groups/{name} | Manage users allowed to authenticate.
+[**GetAuthOktaUsers**](Auth.md#GetAuthOktaUsers) | **Get** /auth/okta/users | Manage additional groups for users allowed to authenticate.
+[**GetAuthOktaUsersName**](Auth.md#GetAuthOktaUsersName) | **Get** /auth/okta/users/{name} | Manage additional groups for users allowed to authenticate.
+[**GetAuthOktaVerifyNonce**](Auth.md#GetAuthOktaVerifyNonce) | **Get** /auth/okta/verify/{nonce} | 
+[**GetAuthRadiusConfig**](Auth.md#GetAuthRadiusConfig) | **Get** /auth/radius/config | Configure the RADIUS server to connect to, along with its options.
+[**GetAuthRadiusUsers**](Auth.md#GetAuthRadiusUsers) | **Get** /auth/radius/users | Manage users allowed to authenticate.
+[**GetAuthRadiusUsersName**](Auth.md#GetAuthRadiusUsersName) | **Get** /auth/radius/users/{name} | Manage users allowed to authenticate.
+[**GetAuthTokenAccessors**](Auth.md#GetAuthTokenAccessors) | **Get** /auth/token/accessors/ | List token accessors, which can then be be used to iterate and discover their properties or revoke them. Because this can be used to cause a denial of service, this endpoint requires &#39;sudo&#39; capability in addition to &#39;list&#39;.
+[**GetAuthTokenLookup**](Auth.md#GetAuthTokenLookup) | **Get** /auth/token/lookup | This endpoint will lookup a token and its properties.
+[**GetAuthTokenLookupSelf**](Auth.md#GetAuthTokenLookupSelf) | **Get** /auth/token/lookup-self | This endpoint will lookup a token and its properties.
+[**GetAuthTokenRoles**](Auth.md#GetAuthTokenRoles) | **Get** /auth/token/roles | This endpoint lists configured roles.
+[**GetAuthTokenRolesRoleName**](Auth.md#GetAuthTokenRolesRoleName) | **Get** /auth/token/roles/{role_name} | 
+[**GetAuthUserpassUsers**](Auth.md#GetAuthUserpassUsers) | **Get** /auth/userpass/users | Manage users allowed to authenticate.
+[**GetAuthUserpassUsersUsername**](Auth.md#GetAuthUserpassUsersUsername) | **Get** /auth/userpass/users/{username} | Manage users allowed to authenticate.
+[**PostAuthAlicloudLogin**](Auth.md#PostAuthAlicloudLogin) | **Post** /auth/alicloud/login | Authenticates an RAM entity with Vault.
+[**PostAuthAlicloudRoleRole**](Auth.md#PostAuthAlicloudRoleRole) | **Post** /auth/alicloud/role/{role} | Create a role and associate policies to it.
+[**PostAuthAppIdLogin**](Auth.md#PostAuthAppIdLogin) | **Post** /auth/app-id/login | Log in with an App ID and User ID.
+[**PostAuthAppIdLoginAppId**](Auth.md#PostAuthAppIdLoginAppId) | **Post** /auth/app-id/login/{app_id} | Log in with an App ID and User ID.
+[**PostAuthAppIdMapAppIdKey**](Auth.md#PostAuthAppIdMapAppIdKey) | **Post** /auth/app-id/map/app-id/{key} | Read/write/delete a single app-id mapping
+[**PostAuthAppIdMapUserIdKey**](Auth.md#PostAuthAppIdMapUserIdKey) | **Post** /auth/app-id/map/user-id/{key} | Read/write/delete a single user-id mapping
+[**PostAuthApproleLogin**](Auth.md#PostAuthApproleLogin) | **Post** /auth/approle/login | 
+[**PostAuthApproleRoleRoleName**](Auth.md#PostAuthApproleRoleRoleName) | **Post** /auth/approle/role/{role_name} | Register an role with the backend.
+[**PostAuthApproleRoleRoleNameBindSecretId**](Auth.md#PostAuthApproleRoleRoleNameBindSecretId) | **Post** /auth/approle/role/{role_name}/bind-secret-id | Impose secret_id to be presented during login using this role.
+[**PostAuthApproleRoleRoleNameBoundCidrList**](Auth.md#PostAuthApproleRoleRoleNameBoundCidrList) | **Post** /auth/approle/role/{role_name}/bound-cidr-list | Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+[**PostAuthApproleRoleRoleNameCustomSecretId**](Auth.md#PostAuthApproleRoleRoleNameCustomSecretId) | **Post** /auth/approle/role/{role_name}/custom-secret-id | Assign a SecretID of choice against the role.
+[**PostAuthApproleRoleRoleNamePeriod**](Auth.md#PostAuthApproleRoleRoleNamePeriod) | **Post** /auth/approle/role/{role_name}/period | Updates the value of &#39;period&#39; on the role
+[**PostAuthApproleRoleRoleNamePolicies**](Auth.md#PostAuthApproleRoleRoleNamePolicies) | **Post** /auth/approle/role/{role_name}/policies | Policies of the role.
+[**PostAuthApproleRoleRoleNameRoleId**](Auth.md#PostAuthApproleRoleRoleNameRoleId) | **Post** /auth/approle/role/{role_name}/role-id | Returns the &#39;role_id&#39; of the role.
+[**PostAuthApproleRoleRoleNameSecretId**](Auth.md#PostAuthApproleRoleRoleNameSecretId) | **Post** /auth/approle/role/{role_name}/secret-id | Generate a SecretID against this role.
+[**PostAuthApproleRoleRoleNameSecretIdAccessorDestroy**](Auth.md#PostAuthApproleRoleRoleNameSecretIdAccessorDestroy) | **Post** /auth/approle/role/{role_name}/secret-id-accessor/destroy | 
+[**PostAuthApproleRoleRoleNameSecretIdAccessorLookup**](Auth.md#PostAuthApproleRoleRoleNameSecretIdAccessorLookup) | **Post** /auth/approle/role/{role_name}/secret-id-accessor/lookup | 
+[**PostAuthApproleRoleRoleNameSecretIdBoundCidrs**](Auth.md#PostAuthApproleRoleRoleNameSecretIdBoundCidrs) | **Post** /auth/approle/role/{role_name}/secret-id-bound-cidrs | Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
+[**PostAuthApproleRoleRoleNameSecretIdDestroy**](Auth.md#PostAuthApproleRoleRoleNameSecretIdDestroy) | **Post** /auth/approle/role/{role_name}/secret-id/destroy | Invalidate an issued secret_id
+[**PostAuthApproleRoleRoleNameSecretIdLookup**](Auth.md#PostAuthApproleRoleRoleNameSecretIdLookup) | **Post** /auth/approle/role/{role_name}/secret-id/lookup | Read the properties of an issued secret_id
+[**PostAuthApproleRoleRoleNameSecretIdNumUses**](Auth.md#PostAuthApproleRoleRoleNameSecretIdNumUses) | **Post** /auth/approle/role/{role_name}/secret-id-num-uses | Use limit of the SecretID generated against the role.
+[**PostAuthApproleRoleRoleNameSecretIdTtl**](Auth.md#PostAuthApproleRoleRoleNameSecretIdTtl) | **Post** /auth/approle/role/{role_name}/secret-id-ttl | Duration in seconds, representing the lifetime of the SecretIDs that are generated against the role using &#39;role/&lt;role_name&gt;/secret-id&#39; or &#39;role/&lt;role_name&gt;/custom-secret-id&#39; endpoints.
+[**PostAuthApproleRoleRoleNameTokenBoundCidrs**](Auth.md#PostAuthApproleRoleRoleNameTokenBoundCidrs) | **Post** /auth/approle/role/{role_name}/token-bound-cidrs | Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
+[**PostAuthApproleRoleRoleNameTokenMaxTtl**](Auth.md#PostAuthApproleRoleRoleNameTokenMaxTtl) | **Post** /auth/approle/role/{role_name}/token-max-ttl | Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
+[**PostAuthApproleRoleRoleNameTokenNumUses**](Auth.md#PostAuthApproleRoleRoleNameTokenNumUses) | **Post** /auth/approle/role/{role_name}/token-num-uses | Number of times issued tokens can be used
+[**PostAuthApproleRoleRoleNameTokenTtl**](Auth.md#PostAuthApproleRoleRoleNameTokenTtl) | **Post** /auth/approle/role/{role_name}/token-ttl | Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
+[**PostAuthApproleTidySecretId**](Auth.md#PostAuthApproleTidySecretId) | **Post** /auth/approle/tidy/secret-id | Trigger the clean-up of expired SecretID entries.
+[**PostAuthAwsConfigCertificateCertName**](Auth.md#PostAuthAwsConfigCertificateCertName) | **Post** /auth/aws/config/certificate/{cert_name} | 
+[**PostAuthAwsConfigClient**](Auth.md#PostAuthAwsConfigClient) | **Post** /auth/aws/config/client | 
+[**PostAuthAwsConfigIdentity**](Auth.md#PostAuthAwsConfigIdentity) | **Post** /auth/aws/config/identity | 
+[**PostAuthAwsConfigRotateRoot**](Auth.md#PostAuthAwsConfigRotateRoot) | **Post** /auth/aws/config/rotate-root | 
+[**PostAuthAwsConfigStsAccountId**](Auth.md#PostAuthAwsConfigStsAccountId) | **Post** /auth/aws/config/sts/{account_id} | 
+[**PostAuthAwsConfigTidyIdentityAccesslist**](Auth.md#PostAuthAwsConfigTidyIdentityAccesslist) | **Post** /auth/aws/config/tidy/identity-accesslist | 
+[**PostAuthAwsConfigTidyIdentityWhitelist**](Auth.md#PostAuthAwsConfigTidyIdentityWhitelist) | **Post** /auth/aws/config/tidy/identity-whitelist | 
+[**PostAuthAwsConfigTidyRoletagBlacklist**](Auth.md#PostAuthAwsConfigTidyRoletagBlacklist) | **Post** /auth/aws/config/tidy/roletag-blacklist | 
+[**PostAuthAwsConfigTidyRoletagDenylist**](Auth.md#PostAuthAwsConfigTidyRoletagDenylist) | **Post** /auth/aws/config/tidy/roletag-denylist | 
+[**PostAuthAwsLogin**](Auth.md#PostAuthAwsLogin) | **Post** /auth/aws/login | 
+[**PostAuthAwsRoleRole**](Auth.md#PostAuthAwsRoleRole) | **Post** /auth/aws/role/{role} | 
+[**PostAuthAwsRoleRoleTag**](Auth.md#PostAuthAwsRoleRoleTag) | **Post** /auth/aws/role/{role}/tag | 
+[**PostAuthAwsRoletagBlacklistRoleTag**](Auth.md#PostAuthAwsRoletagBlacklistRoleTag) | **Post** /auth/aws/roletag-blacklist/{role_tag} | 
+[**PostAuthAwsRoletagDenylistRoleTag**](Auth.md#PostAuthAwsRoletagDenylistRoleTag) | **Post** /auth/aws/roletag-denylist/{role_tag} | 
+[**PostAuthAwsTidyIdentityAccesslist**](Auth.md#PostAuthAwsTidyIdentityAccesslist) | **Post** /auth/aws/tidy/identity-accesslist | 
+[**PostAuthAwsTidyIdentityWhitelist**](Auth.md#PostAuthAwsTidyIdentityWhitelist) | **Post** /auth/aws/tidy/identity-whitelist | 
+[**PostAuthAwsTidyRoletagBlacklist**](Auth.md#PostAuthAwsTidyRoletagBlacklist) | **Post** /auth/aws/tidy/roletag-blacklist | 
+[**PostAuthAwsTidyRoletagDenylist**](Auth.md#PostAuthAwsTidyRoletagDenylist) | **Post** /auth/aws/tidy/roletag-denylist | 
+[**PostAuthAzureConfig**](Auth.md#PostAuthAzureConfig) | **Post** /auth/azure/config | 
+[**PostAuthAzureLogin**](Auth.md#PostAuthAzureLogin) | **Post** /auth/azure/login | 
+[**PostAuthAzureRoleName**](Auth.md#PostAuthAzureRoleName) | **Post** /auth/azure/role/{name} | 
+[**PostAuthCentrifyConfig**](Auth.md#PostAuthCentrifyConfig) | **Post** /auth/centrify/config | This path allows you to configure the centrify auth provider to interact with the Centrify Identity Services Platform for authenticating users.
+[**PostAuthCentrifyLogin**](Auth.md#PostAuthCentrifyLogin) | **Post** /auth/centrify/login | Log in with a username and password.
+[**PostAuthCertCertsName**](Auth.md#PostAuthCertCertsName) | **Post** /auth/cert/certs/{name} | Manage trusted certificates used for authentication.
+[**PostAuthCertConfig**](Auth.md#PostAuthCertConfig) | **Post** /auth/cert/config | 
+[**PostAuthCertCrlsName**](Auth.md#PostAuthCertCrlsName) | **Post** /auth/cert/crls/{name} | Manage Certificate Revocation Lists checked during authentication.
+[**PostAuthCertLogin**](Auth.md#PostAuthCertLogin) | **Post** /auth/cert/login | 
+[**PostAuthCfConfig**](Auth.md#PostAuthCfConfig) | **Post** /auth/cf/config | 
+[**PostAuthCfLogin**](Auth.md#PostAuthCfLogin) | **Post** /auth/cf/login | 
+[**PostAuthCfRolesRole**](Auth.md#PostAuthCfRolesRole) | **Post** /auth/cf/roles/{role} | 
+[**PostAuthGcpConfig**](Auth.md#PostAuthGcpConfig) | **Post** /auth/gcp/config | Configure credentials used to query the GCP IAM API to verify authenticating service accounts
+[**PostAuthGcpLogin**](Auth.md#PostAuthGcpLogin) | **Post** /auth/gcp/login | 
+[**PostAuthGcpRoleName**](Auth.md#PostAuthGcpRoleName) | **Post** /auth/gcp/role/{name} | Create a GCP role with associated policies and required attributes.
+[**PostAuthGcpRoleNameLabels**](Auth.md#PostAuthGcpRoleNameLabels) | **Post** /auth/gcp/role/{name}/labels | Add or remove labels for an existing &#39;gce&#39; role
+[**PostAuthGcpRoleNameServiceAccounts**](Auth.md#PostAuthGcpRoleNameServiceAccounts) | **Post** /auth/gcp/role/{name}/service-accounts | Add or remove service accounts for an existing &#x60;iam&#x60; role
+[**PostAuthGithubConfig**](Auth.md#PostAuthGithubConfig) | **Post** /auth/github/config | 
+[**PostAuthGithubLogin**](Auth.md#PostAuthGithubLogin) | **Post** /auth/github/login | 
+[**PostAuthGithubMapTeamsKey**](Auth.md#PostAuthGithubMapTeamsKey) | **Post** /auth/github/map/teams/{key} | Read/write/delete a single teams mapping
+[**PostAuthGithubMapUsersKey**](Auth.md#PostAuthGithubMapUsersKey) | **Post** /auth/github/map/users/{key} | Read/write/delete a single users mapping
+[**PostAuthJwtConfig**](Auth.md#PostAuthJwtConfig) | **Post** /auth/jwt/config | Configure the JWT authentication backend.
+[**PostAuthJwtLogin**](Auth.md#PostAuthJwtLogin) | **Post** /auth/jwt/login | Authenticates to Vault using a JWT (or OIDC) token.
+[**PostAuthJwtOidcAuthUrl**](Auth.md#PostAuthJwtOidcAuthUrl) | **Post** /auth/jwt/oidc/auth_url | Request an authorization URL to start an OIDC login flow.
+[**PostAuthJwtOidcCallback**](Auth.md#PostAuthJwtOidcCallback) | **Post** /auth/jwt/oidc/callback | Callback endpoint to handle form_posts.
+[**PostAuthJwtRoleName**](Auth.md#PostAuthJwtRoleName) | **Post** /auth/jwt/role/{name} | Register an role with the backend.
+[**PostAuthKerberosConfig**](Auth.md#PostAuthKerberosConfig) | **Post** /auth/kerberos/config | 
+[**PostAuthKerberosConfigLdap**](Auth.md#PostAuthKerberosConfigLdap) | **Post** /auth/kerberos/config/ldap | 
+[**PostAuthKerberosGroupsName**](Auth.md#PostAuthKerberosGroupsName) | **Post** /auth/kerberos/groups/{name} | 
+[**PostAuthKerberosLogin**](Auth.md#PostAuthKerberosLogin) | **Post** /auth/kerberos/login | 
+[**PostAuthKubernetesConfig**](Auth.md#PostAuthKubernetesConfig) | **Post** /auth/kubernetes/config | Configures the JWT Public Key and Kubernetes API information.
+[**PostAuthKubernetesLogin**](Auth.md#PostAuthKubernetesLogin) | **Post** /auth/kubernetes/login | Authenticates Kubernetes service accounts with Vault.
+[**PostAuthKubernetesRoleName**](Auth.md#PostAuthKubernetesRoleName) | **Post** /auth/kubernetes/role/{name} | Register an role with the backend.
+[**PostAuthLdapConfig**](Auth.md#PostAuthLdapConfig) | **Post** /auth/ldap/config | Configure the LDAP server to connect to, along with its options.
+[**PostAuthLdapGroupsName**](Auth.md#PostAuthLdapGroupsName) | **Post** /auth/ldap/groups/{name} | Manage additional groups for users allowed to authenticate.
+[**PostAuthLdapLoginUsername**](Auth.md#PostAuthLdapLoginUsername) | **Post** /auth/ldap/login/{username} | Log in with a username and password.
+[**PostAuthLdapUsersName**](Auth.md#PostAuthLdapUsersName) | **Post** /auth/ldap/users/{name} | Manage users allowed to authenticate.
+[**PostAuthOciConfig**](Auth.md#PostAuthOciConfig) | **Post** /auth/oci/config | Manages the configuration for the Vault Auth Plugin.
+[**PostAuthOciLoginRole**](Auth.md#PostAuthOciLoginRole) | **Post** /auth/oci/login/{role} | Authenticates to Vault using OCI credentials
+[**PostAuthOciRoleRole**](Auth.md#PostAuthOciRoleRole) | **Post** /auth/oci/role/{role} | Create a role and associate policies to it.
+[**PostAuthOidcConfig**](Auth.md#PostAuthOidcConfig) | **Post** /auth/oidc/config | Configure the JWT authentication backend.
+[**PostAuthOidcLogin**](Auth.md#PostAuthOidcLogin) | **Post** /auth/oidc/login | Authenticates to Vault using a JWT (or OIDC) token.
+[**PostAuthOidcOidcAuthUrl**](Auth.md#PostAuthOidcOidcAuthUrl) | **Post** /auth/oidc/oidc/auth_url | Request an authorization URL to start an OIDC login flow.
+[**PostAuthOidcOidcCallback**](Auth.md#PostAuthOidcOidcCallback) | **Post** /auth/oidc/oidc/callback | Callback endpoint to handle form_posts.
+[**PostAuthOidcRoleName**](Auth.md#PostAuthOidcRoleName) | **Post** /auth/oidc/role/{name} | Register an role with the backend.
+[**PostAuthOktaConfig**](Auth.md#PostAuthOktaConfig) | **Post** /auth/okta/config | This endpoint allows you to configure the Okta and its configuration options.  The Okta organization are the characters at the front of the URL for Okta. Example https://ORG.okta.com
+[**PostAuthOktaGroupsName**](Auth.md#PostAuthOktaGroupsName) | **Post** /auth/okta/groups/{name} | Manage users allowed to authenticate.
+[**PostAuthOktaLoginUsername**](Auth.md#PostAuthOktaLoginUsername) | **Post** /auth/okta/login/{username} | Log in with a username and password.
+[**PostAuthOktaUsersName**](Auth.md#PostAuthOktaUsersName) | **Post** /auth/okta/users/{name} | Manage additional groups for users allowed to authenticate.
+[**PostAuthRadiusConfig**](Auth.md#PostAuthRadiusConfig) | **Post** /auth/radius/config | Configure the RADIUS server to connect to, along with its options.
+[**PostAuthRadiusLogin**](Auth.md#PostAuthRadiusLogin) | **Post** /auth/radius/login | Log in with a username and password.
+[**PostAuthRadiusLoginUrlusername**](Auth.md#PostAuthRadiusLoginUrlusername) | **Post** /auth/radius/login/{urlusername} | Log in with a username and password.
+[**PostAuthRadiusUsersName**](Auth.md#PostAuthRadiusUsersName) | **Post** /auth/radius/users/{name} | Manage users allowed to authenticate.
+[**PostAuthTokenCreate**](Auth.md#PostAuthTokenCreate) | **Post** /auth/token/create | The token create path is used to create new tokens.
+[**PostAuthTokenCreateOrphan**](Auth.md#PostAuthTokenCreateOrphan) | **Post** /auth/token/create-orphan | The token create path is used to create new orphan tokens.
+[**PostAuthTokenCreateRoleName**](Auth.md#PostAuthTokenCreateRoleName) | **Post** /auth/token/create/{role_name} | This token create path is used to create new tokens adhering to the given role.
+[**PostAuthTokenLookup**](Auth.md#PostAuthTokenLookup) | **Post** /auth/token/lookup | This endpoint will lookup a token and its properties.
+[**PostAuthTokenLookupAccessor**](Auth.md#PostAuthTokenLookupAccessor) | **Post** /auth/token/lookup-accessor | This endpoint will lookup a token associated with the given accessor and its properties. Response will not contain the token ID.
+[**PostAuthTokenLookupSelf**](Auth.md#PostAuthTokenLookupSelf) | **Post** /auth/token/lookup-self | This endpoint will lookup a token and its properties.
+[**PostAuthTokenRenew**](Auth.md#PostAuthTokenRenew) | **Post** /auth/token/renew | This endpoint will renew the given token and prevent expiration.
+[**PostAuthTokenRenewAccessor**](Auth.md#PostAuthTokenRenewAccessor) | **Post** /auth/token/renew-accessor | This endpoint will renew a token associated with the given accessor and its properties. Response will not contain the token ID.
+[**PostAuthTokenRenewSelf**](Auth.md#PostAuthTokenRenewSelf) | **Post** /auth/token/renew-self | This endpoint will renew the token used to call it and prevent expiration.
+[**PostAuthTokenRevoke**](Auth.md#PostAuthTokenRevoke) | **Post** /auth/token/revoke | This endpoint will delete the given token and all of its child tokens.
+[**PostAuthTokenRevokeAccessor**](Auth.md#PostAuthTokenRevokeAccessor) | **Post** /auth/token/revoke-accessor | This endpoint will delete the token associated with the accessor and all of its child tokens.
+[**PostAuthTokenRevokeOrphan**](Auth.md#PostAuthTokenRevokeOrphan) | **Post** /auth/token/revoke-orphan | This endpoint will delete the token and orphan its child tokens.
+[**PostAuthTokenRevokeSelf**](Auth.md#PostAuthTokenRevokeSelf) | **Post** /auth/token/revoke-self | This endpoint will delete the token used to call it and all of its child tokens.
+[**PostAuthTokenRolesRoleName**](Auth.md#PostAuthTokenRolesRoleName) | **Post** /auth/token/roles/{role_name} | 
+[**PostAuthTokenTidy**](Auth.md#PostAuthTokenTidy) | **Post** /auth/token/tidy | This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
+[**PostAuthUserpassLoginUsername**](Auth.md#PostAuthUserpassLoginUsername) | **Post** /auth/userpass/login/{username} | Log in with a username and password.
+[**PostAuthUserpassUsersUsername**](Auth.md#PostAuthUserpassUsersUsername) | **Post** /auth/userpass/users/{username} | Manage users allowed to authenticate.
+[**PostAuthUserpassUsersUsernamePassword**](Auth.md#PostAuthUserpassUsersUsernamePassword) | **Post** /auth/userpass/users/{username}/password | Reset user&#39;s password.
+[**PostAuthUserpassUsersUsernamePolicies**](Auth.md#PostAuthUserpassUsersUsernamePolicies) | **Post** /auth/userpass/users/{username}/policies | Update the policies associated with the username.
 
 
 
@@ -301,9 +301,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthAlicloudRoleRole(context.Background(), role).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthAlicloudRoleRole(context.Background(), role).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthAlicloudRoleRole``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAlicloudRoleRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -367,9 +367,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthAppIdMapAppIdKey(context.Background(), key).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthAppIdMapAppIdKey(context.Background(), key).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthAppIdMapAppIdKey``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAppIdMapAppIdKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -433,9 +433,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthAppIdMapUserIdKey(context.Background(), key).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthAppIdMapUserIdKey(context.Background(), key).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthAppIdMapUserIdKey``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAppIdMapUserIdKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -499,9 +499,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthApproleRoleRoleName(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleName(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthApproleRoleRoleName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -565,9 +565,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthApproleRoleRoleNameBindSecretId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameBindSecretId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -631,9 +631,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthApproleRoleRoleNameBoundCidrList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameBoundCidrList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -697,9 +697,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthApproleRoleRoleNamePeriod(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNamePeriod(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthApproleRoleRoleNamePeriod``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNamePeriod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -763,9 +763,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthApproleRoleRoleNamePolicies(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNamePolicies(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthApproleRoleRoleNamePolicies``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNamePolicies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -829,9 +829,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -895,9 +895,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -961,9 +961,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthApproleRoleRoleNameSecretIdDestroy(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameSecretIdDestroy(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthApproleRoleRoleNameSecretIdDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameSecretIdDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1027,9 +1027,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthApproleRoleRoleNameSecretIdNumUses``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameSecretIdNumUses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1093,9 +1093,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthApproleRoleRoleNameSecretIdTtl``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameSecretIdTtl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1159,9 +1159,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthApproleRoleRoleNameTokenBoundCidrs``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameTokenBoundCidrs``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1225,9 +1225,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthApproleRoleRoleNameTokenMaxTtl``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameTokenMaxTtl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1291,9 +1291,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthApproleRoleRoleNameTokenNumUses``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameTokenNumUses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1357,9 +1357,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthApproleRoleRoleNameTokenTtl``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameTokenTtl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1423,9 +1423,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthAwsConfigCertificateCertName(context.Background(), certName).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthAwsConfigCertificateCertName(context.Background(), certName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthAwsConfigCertificateCertName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsConfigCertificateCertName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1488,9 +1488,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthAwsConfigClient(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthAwsConfigClient(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthAwsConfigClient``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsConfigClient``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1546,9 +1546,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthAwsConfigStsAccountId(context.Background(), accountId).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthAwsConfigStsAccountId(context.Background(), accountId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthAwsConfigStsAccountId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsConfigStsAccountId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1611,9 +1611,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthAwsConfigTidyIdentityAccesslist(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthAwsConfigTidyIdentityAccesslist(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthAwsConfigTidyIdentityAccesslist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsConfigTidyIdentityAccesslist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1668,9 +1668,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthAwsConfigTidyIdentityWhitelist(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthAwsConfigTidyIdentityWhitelist(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthAwsConfigTidyIdentityWhitelist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsConfigTidyIdentityWhitelist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1725,9 +1725,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthAwsConfigTidyRoletagBlacklist(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthAwsConfigTidyRoletagBlacklist(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthAwsConfigTidyRoletagBlacklist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsConfigTidyRoletagBlacklist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1782,9 +1782,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthAwsConfigTidyRoletagDenylist(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthAwsConfigTidyRoletagDenylist(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthAwsConfigTidyRoletagDenylist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsConfigTidyRoletagDenylist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1840,9 +1840,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthAwsIdentityAccesslistInstanceId(context.Background(), instanceId).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthAwsIdentityAccesslistInstanceId(context.Background(), instanceId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthAwsIdentityAccesslistInstanceId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsIdentityAccesslistInstanceId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1906,9 +1906,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthAwsIdentityWhitelistInstanceId(context.Background(), instanceId).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthAwsIdentityWhitelistInstanceId(context.Background(), instanceId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthAwsIdentityWhitelistInstanceId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsIdentityWhitelistInstanceId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1972,9 +1972,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthAwsRoleRole(context.Background(), role).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthAwsRoleRole(context.Background(), role).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthAwsRoleRole``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsRoleRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2038,9 +2038,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthAwsRoletagBlacklistRoleTag``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsRoletagBlacklistRoleTag``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2104,9 +2104,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthAwsRoletagDenylistRoleTag``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsRoletagDenylistRoleTag``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2169,9 +2169,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthAzureConfig(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthAzureConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthAzureConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAzureConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2227,9 +2227,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthAzureRoleName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthAzureRoleName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthAzureRoleName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAzureRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2293,9 +2293,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthCertCertsName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthCertCertsName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthCertCertsName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthCertCertsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2359,9 +2359,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthCertCrlsName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthCertCrlsName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthCertCrlsName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthCertCrlsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2424,9 +2424,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthCfConfig(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthCfConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthCfConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthCfConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2482,9 +2482,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthCfRolesRole(context.Background(), role).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthCfRolesRole(context.Background(), role).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthCfRolesRole``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthCfRolesRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2548,9 +2548,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthGcpRoleName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthGcpRoleName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthGcpRoleName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthGcpRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2614,9 +2614,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthGithubMapTeamsKey(context.Background(), key).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthGithubMapTeamsKey(context.Background(), key).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthGithubMapTeamsKey``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthGithubMapTeamsKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2680,9 +2680,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthGithubMapUsersKey(context.Background(), key).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthGithubMapUsersKey(context.Background(), key).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthGithubMapUsersKey``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthGithubMapUsersKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2746,9 +2746,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthJwtRoleName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthJwtRoleName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthJwtRoleName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthJwtRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2812,9 +2812,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthKerberosGroupsName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthKerberosGroupsName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthKerberosGroupsName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthKerberosGroupsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2878,9 +2878,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthKubernetesRoleName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthKubernetesRoleName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthKubernetesRoleName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthKubernetesRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2944,9 +2944,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthLdapGroupsName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthLdapGroupsName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthLdapGroupsName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthLdapGroupsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3010,9 +3010,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthLdapUsersName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthLdapUsersName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthLdapUsersName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthLdapUsersName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3075,9 +3075,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthOciConfig(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthOciConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthOciConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthOciConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3133,9 +3133,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthOciRoleRole(context.Background(), role).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthOciRoleRole(context.Background(), role).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthOciRoleRole``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthOciRoleRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3199,9 +3199,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthOidcRoleName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthOidcRoleName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthOidcRoleName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthOidcRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3265,9 +3265,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthOktaGroupsName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthOktaGroupsName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthOktaGroupsName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthOktaGroupsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3331,9 +3331,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthOktaUsersName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthOktaUsersName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthOktaUsersName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthOktaUsersName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3397,9 +3397,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthRadiusUsersName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthRadiusUsersName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthRadiusUsersName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthRadiusUsersName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3463,9 +3463,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthTokenRolesRoleName(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthTokenRolesRoleName(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthTokenRolesRoleName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthTokenRolesRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3529,9 +3529,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.DeleteAuthUserpassUsersUsername(context.Background(), username).Execute()
+    resp, r, err := apiClient.Auth.DeleteAuthUserpassUsersUsername(context.Background(), username).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.DeleteAuthUserpassUsersUsername``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthUserpassUsersUsername``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3595,9 +3595,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAlicloudRole(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAlicloudRole(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAlicloudRole``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAlicloudRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3657,9 +3657,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAlicloudRoleRole(context.Background(), role).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAlicloudRoleRole(context.Background(), role).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAlicloudRoleRole``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAlicloudRoleRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3723,9 +3723,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAlicloudRoles(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAlicloudRoles(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAlicloudRoles``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAlicloudRoles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3785,9 +3785,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAppIdMapAppId(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAppIdMapAppId(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAppIdMapAppId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAppIdMapAppId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3847,9 +3847,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAppIdMapAppIdKey(context.Background(), key).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAppIdMapAppIdKey(context.Background(), key).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAppIdMapAppIdKey``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAppIdMapAppIdKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3913,9 +3913,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAppIdMapUserId(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAppIdMapUserId(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAppIdMapUserId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAppIdMapUserId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3975,9 +3975,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAppIdMapUserIdKey(context.Background(), key).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAppIdMapUserIdKey(context.Background(), key).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAppIdMapUserIdKey``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAppIdMapUserIdKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4041,9 +4041,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthApproleRole(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthApproleRole(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthApproleRole``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4103,9 +4103,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthApproleRoleRoleName(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleName(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthApproleRoleRoleName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4169,9 +4169,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthApproleRoleRoleNameBindSecretId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameBindSecretId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4235,9 +4235,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthApproleRoleRoleNameBoundCidrList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameBoundCidrList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4301,9 +4301,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthApproleRoleRoleNameLocalSecretIds(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameLocalSecretIds(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthApproleRoleRoleNameLocalSecretIds``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameLocalSecretIds``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4367,9 +4367,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthApproleRoleRoleNamePeriod(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNamePeriod(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthApproleRoleRoleNamePeriod``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNamePeriod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4433,9 +4433,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthApproleRoleRoleNamePolicies(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNamePolicies(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthApproleRoleRoleNamePolicies``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNamePolicies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4499,9 +4499,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthApproleRoleRoleNameRoleId(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameRoleId(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthApproleRoleRoleNameRoleId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameRoleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4566,9 +4566,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthApproleRoleRoleNameSecretId(context.Background(), roleName).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameSecretId(context.Background(), roleName).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthApproleRoleRoleNameSecretId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameSecretId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4633,9 +4633,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthApproleRoleRoleNameSecretIdBoundCidrs``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameSecretIdBoundCidrs``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4699,9 +4699,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthApproleRoleRoleNameSecretIdNumUses``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameSecretIdNumUses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4765,9 +4765,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthApproleRoleRoleNameSecretIdTtl``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameSecretIdTtl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4831,9 +4831,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthApproleRoleRoleNameTokenBoundCidrs``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameTokenBoundCidrs``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4897,9 +4897,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthApproleRoleRoleNameTokenMaxTtl``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameTokenMaxTtl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4963,9 +4963,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthApproleRoleRoleNameTokenNumUses``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameTokenNumUses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5029,9 +5029,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthApproleRoleRoleNameTokenTtl``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameTokenTtl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5095,9 +5095,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAwsConfigCertificateCertName(context.Background(), certName).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAwsConfigCertificateCertName(context.Background(), certName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAwsConfigCertificateCertName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigCertificateCertName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5161,9 +5161,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAwsConfigCertificates(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAwsConfigCertificates(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAwsConfigCertificates``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigCertificates``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5222,9 +5222,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAwsConfigClient(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAwsConfigClient(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAwsConfigClient``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigClient``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5279,9 +5279,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAwsConfigIdentity(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAwsConfigIdentity(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAwsConfigIdentity``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigIdentity``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5337,9 +5337,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAwsConfigSts(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAwsConfigSts(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAwsConfigSts``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigSts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5399,9 +5399,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAwsConfigStsAccountId(context.Background(), accountId).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAwsConfigStsAccountId(context.Background(), accountId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAwsConfigStsAccountId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigStsAccountId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5464,9 +5464,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAwsConfigTidyIdentityAccesslist(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAwsConfigTidyIdentityAccesslist(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAwsConfigTidyIdentityAccesslist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigTidyIdentityAccesslist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5521,9 +5521,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAwsConfigTidyIdentityWhitelist(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAwsConfigTidyIdentityWhitelist(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAwsConfigTidyIdentityWhitelist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigTidyIdentityWhitelist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5578,9 +5578,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAwsConfigTidyRoletagBlacklist(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAwsConfigTidyRoletagBlacklist(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAwsConfigTidyRoletagBlacklist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigTidyRoletagBlacklist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5635,9 +5635,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAwsConfigTidyRoletagDenylist(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAwsConfigTidyRoletagDenylist(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAwsConfigTidyRoletagDenylist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigTidyRoletagDenylist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5693,9 +5693,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAwsIdentityAccesslist(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAwsIdentityAccesslist(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAwsIdentityAccesslist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsIdentityAccesslist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5755,9 +5755,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAwsIdentityAccesslistInstanceId(context.Background(), instanceId).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAwsIdentityAccesslistInstanceId(context.Background(), instanceId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAwsIdentityAccesslistInstanceId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsIdentityAccesslistInstanceId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5821,9 +5821,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAwsIdentityWhitelist(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAwsIdentityWhitelist(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAwsIdentityWhitelist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsIdentityWhitelist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5883,9 +5883,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAwsIdentityWhitelistInstanceId(context.Background(), instanceId).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAwsIdentityWhitelistInstanceId(context.Background(), instanceId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAwsIdentityWhitelistInstanceId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsIdentityWhitelistInstanceId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5949,9 +5949,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAwsRole(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAwsRole(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAwsRole``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6011,9 +6011,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAwsRoleRole(context.Background(), role).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAwsRoleRole(context.Background(), role).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAwsRoleRole``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsRoleRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6077,9 +6077,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAwsRoles(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAwsRoles(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAwsRoles``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsRoles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6139,9 +6139,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAwsRoletagBlacklist(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAwsRoletagBlacklist(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAwsRoletagBlacklist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsRoletagBlacklist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6201,9 +6201,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAwsRoletagBlacklistRoleTag``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsRoletagBlacklistRoleTag``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6267,9 +6267,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAwsRoletagDenylist(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAwsRoletagDenylist(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAwsRoletagDenylist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsRoletagDenylist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6329,9 +6329,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAwsRoletagDenylistRoleTag``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsRoletagDenylistRoleTag``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6394,9 +6394,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAzureConfig(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAzureConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAzureConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAzureConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6452,9 +6452,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAzureRole(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAzureRole(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAzureRole``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAzureRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6514,9 +6514,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthAzureRoleName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Auth.GetAuthAzureRoleName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthAzureRoleName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAzureRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6579,9 +6579,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthCentrifyConfig(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.GetAuthCentrifyConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthCentrifyConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthCentrifyConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6637,9 +6637,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthCertCerts(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthCertCerts(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthCertCerts``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthCertCerts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6699,9 +6699,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthCertCertsName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Auth.GetAuthCertCertsName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthCertCertsName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthCertCertsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6765,9 +6765,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthCertCrlsName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Auth.GetAuthCertCrlsName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthCertCrlsName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthCertCrlsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6830,9 +6830,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthCfConfig(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.GetAuthCfConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthCfConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthCfConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6888,9 +6888,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthCfRoles(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthCfRoles(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthCfRoles``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthCfRoles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6950,9 +6950,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthCfRolesRole(context.Background(), role).Execute()
+    resp, r, err := apiClient.Auth.GetAuthCfRolesRole(context.Background(), role).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthCfRolesRole``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthCfRolesRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -7015,9 +7015,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthGcpConfig(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.GetAuthGcpConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthGcpConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGcpConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -7073,9 +7073,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthGcpRole(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthGcpRole(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthGcpRole``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGcpRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -7135,9 +7135,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthGcpRoleName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Auth.GetAuthGcpRoleName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthGcpRoleName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGcpRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -7201,9 +7201,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthGcpRoles(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthGcpRoles(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthGcpRoles``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGcpRoles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -7262,9 +7262,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthGithubConfig(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.GetAuthGithubConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthGithubConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGithubConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -7320,9 +7320,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthGithubMapTeams(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthGithubMapTeams(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthGithubMapTeams``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGithubMapTeams``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -7382,9 +7382,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthGithubMapTeamsKey(context.Background(), key).Execute()
+    resp, r, err := apiClient.Auth.GetAuthGithubMapTeamsKey(context.Background(), key).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthGithubMapTeamsKey``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGithubMapTeamsKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -7448,9 +7448,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthGithubMapUsers(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthGithubMapUsers(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthGithubMapUsers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGithubMapUsers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -7510,9 +7510,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthGithubMapUsersKey(context.Background(), key).Execute()
+    resp, r, err := apiClient.Auth.GetAuthGithubMapUsersKey(context.Background(), key).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthGithubMapUsersKey``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGithubMapUsersKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -7575,9 +7575,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthJwtConfig(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.GetAuthJwtConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthJwtConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthJwtConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -7632,9 +7632,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthJwtOidcCallback(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.GetAuthJwtOidcCallback(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthJwtOidcCallback``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthJwtOidcCallback``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -7692,9 +7692,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthJwtRole(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthJwtRole(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthJwtRole``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthJwtRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -7754,9 +7754,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthJwtRoleName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Auth.GetAuthJwtRoleName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthJwtRoleName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthJwtRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -7819,9 +7819,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthKerberosConfig(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.GetAuthKerberosConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthKerberosConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKerberosConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -7876,9 +7876,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthKerberosConfigLdap(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.GetAuthKerberosConfigLdap(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthKerberosConfigLdap``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKerberosConfigLdap``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -7934,9 +7934,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthKerberosGroups(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthKerberosGroups(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthKerberosGroups``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKerberosGroups``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -7996,9 +7996,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthKerberosGroupsName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Auth.GetAuthKerberosGroupsName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthKerberosGroupsName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKerberosGroupsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -8061,9 +8061,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthKerberosLogin(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.GetAuthKerberosLogin(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthKerberosLogin``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKerberosLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -8118,9 +8118,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthKubernetesConfig(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.GetAuthKubernetesConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthKubernetesConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKubernetesConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -8176,9 +8176,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthKubernetesRole(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthKubernetesRole(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthKubernetesRole``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKubernetesRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -8238,9 +8238,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthKubernetesRoleName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Auth.GetAuthKubernetesRoleName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthKubernetesRoleName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKubernetesRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -8303,9 +8303,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthLdapConfig(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.GetAuthLdapConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthLdapConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthLdapConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -8361,9 +8361,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthLdapGroups(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthLdapGroups(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthLdapGroups``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthLdapGroups``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -8423,9 +8423,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthLdapGroupsName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Auth.GetAuthLdapGroupsName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthLdapGroupsName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthLdapGroupsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -8489,9 +8489,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthLdapUsers(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthLdapUsers(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthLdapUsers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthLdapUsers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -8551,9 +8551,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthLdapUsersName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Auth.GetAuthLdapUsersName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthLdapUsersName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthLdapUsersName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -8616,9 +8616,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthOciConfig(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.GetAuthOciConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthOciConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOciConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -8674,9 +8674,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthOciRole(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthOciRole(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthOciRole``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOciRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -8736,9 +8736,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthOciRoleRole(context.Background(), role).Execute()
+    resp, r, err := apiClient.Auth.GetAuthOciRoleRole(context.Background(), role).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthOciRoleRole``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOciRoleRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -8801,9 +8801,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthOidcConfig(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.GetAuthOidcConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthOidcConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOidcConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -8858,9 +8858,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthOidcOidcCallback(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.GetAuthOidcOidcCallback(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthOidcOidcCallback``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOidcOidcCallback``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -8918,9 +8918,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthOidcRole(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthOidcRole(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthOidcRole``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOidcRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -8980,9 +8980,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthOidcRoleName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Auth.GetAuthOidcRoleName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthOidcRoleName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOidcRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -9045,9 +9045,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthOktaConfig(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.GetAuthOktaConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthOktaConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOktaConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -9103,9 +9103,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthOktaGroups(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthOktaGroups(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthOktaGroups``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOktaGroups``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -9165,9 +9165,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthOktaGroupsName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Auth.GetAuthOktaGroupsName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthOktaGroupsName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOktaGroupsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -9231,9 +9231,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthOktaUsers(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthOktaUsers(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthOktaUsers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOktaUsers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -9293,9 +9293,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthOktaUsersName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Auth.GetAuthOktaUsersName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthOktaUsersName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOktaUsersName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -9359,9 +9359,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthOktaVerifyNonce(context.Background(), nonce).Execute()
+    resp, r, err := apiClient.Auth.GetAuthOktaVerifyNonce(context.Background(), nonce).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthOktaVerifyNonce``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOktaVerifyNonce``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -9424,9 +9424,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthRadiusConfig(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.GetAuthRadiusConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthRadiusConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthRadiusConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -9482,9 +9482,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthRadiusUsers(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthRadiusUsers(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthRadiusUsers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthRadiusUsers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -9544,9 +9544,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthRadiusUsersName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Auth.GetAuthRadiusUsersName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthRadiusUsersName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthRadiusUsersName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -9610,9 +9610,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthTokenAccessors(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthTokenAccessors(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthTokenAccessors``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthTokenAccessors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -9671,9 +9671,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthTokenLookup(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.GetAuthTokenLookup(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthTokenLookup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthTokenLookup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -9728,9 +9728,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthTokenLookupSelf(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.GetAuthTokenLookupSelf(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthTokenLookupSelf``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthTokenLookupSelf``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -9786,9 +9786,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthTokenRoles(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthTokenRoles(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthTokenRoles``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthTokenRoles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -9848,9 +9848,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthTokenRolesRoleName(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.GetAuthTokenRolesRoleName(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthTokenRolesRoleName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthTokenRolesRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -9914,9 +9914,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthUserpassUsers(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Auth.GetAuthUserpassUsers(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthUserpassUsers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthUserpassUsers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -9976,9 +9976,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.GetAuthUserpassUsersUsername(context.Background(), username).Execute()
+    resp, r, err := apiClient.Auth.GetAuthUserpassUsersUsername(context.Background(), username).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.GetAuthUserpassUsersUsername``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthUserpassUsersUsername``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -10042,9 +10042,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthAlicloudLogin(context.Background()).AlicloudLoginRequest(alicloudLoginRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthAlicloudLogin(context.Background()).AlicloudLoginRequest(alicloudLoginRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthAlicloudLogin``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAlicloudLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -10105,9 +10105,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthAlicloudRoleRole(context.Background(), role).AlicloudRoleRequest(alicloudRoleRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthAlicloudRoleRole(context.Background(), role).AlicloudRoleRequest(alicloudRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthAlicloudRoleRole``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAlicloudRoleRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -10172,9 +10172,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthAppIdLogin(context.Background()).AppIdLoginRequest(appIdLoginRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthAppIdLogin(context.Background()).AppIdLoginRequest(appIdLoginRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthAppIdLogin``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAppIdLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -10235,9 +10235,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthAppIdLoginAppId(context.Background(), appId).AppIdLoginRequest(appIdLoginRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthAppIdLoginAppId(context.Background(), appId).AppIdLoginRequest(appIdLoginRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthAppIdLoginAppId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAppIdLoginAppId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -10303,9 +10303,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthAppIdMapAppIdKey(context.Background(), key).AppIdMapAppIdRequest(appIdMapAppIdRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthAppIdMapAppIdKey(context.Background(), key).AppIdMapAppIdRequest(appIdMapAppIdRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthAppIdMapAppIdKey``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAppIdMapAppIdKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -10371,9 +10371,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthAppIdMapUserIdKey(context.Background(), key).AppIdMapUserIdRequest(appIdMapUserIdRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthAppIdMapUserIdKey(context.Background(), key).AppIdMapUserIdRequest(appIdMapUserIdRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthAppIdMapUserIdKey``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAppIdMapUserIdKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -10438,9 +10438,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthApproleLogin(context.Background()).ApproleLoginRequest(approleLoginRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthApproleLogin(context.Background()).ApproleLoginRequest(approleLoginRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthApproleLogin``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -10501,9 +10501,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthApproleRoleRoleName(context.Background(), roleName).ApproleRoleRequest(approleRoleRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleName(context.Background(), roleName).ApproleRoleRequest(approleRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthApproleRoleRoleName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -10569,9 +10569,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName).ApproleRoleBindSecretIdRequest(approleRoleBindSecretIdRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName).ApproleRoleBindSecretIdRequest(approleRoleBindSecretIdRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthApproleRoleRoleNameBindSecretId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameBindSecretId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -10637,9 +10637,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName).ApproleRoleBoundCidrListRequest(approleRoleBoundCidrListRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName).ApproleRoleBoundCidrListRequest(approleRoleBoundCidrListRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthApproleRoleRoleNameBoundCidrList``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameBoundCidrList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -10705,9 +10705,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthApproleRoleRoleNameCustomSecretId(context.Background(), roleName).ApproleRoleCustomSecretIdRequest(approleRoleCustomSecretIdRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameCustomSecretId(context.Background(), roleName).ApproleRoleCustomSecretIdRequest(approleRoleCustomSecretIdRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthApproleRoleRoleNameCustomSecretId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameCustomSecretId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -10773,9 +10773,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthApproleRoleRoleNamePeriod(context.Background(), roleName).ApproleRolePeriodRequest(approleRolePeriodRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNamePeriod(context.Background(), roleName).ApproleRolePeriodRequest(approleRolePeriodRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthApproleRoleRoleNamePeriod``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNamePeriod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -10841,9 +10841,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthApproleRoleRoleNamePolicies(context.Background(), roleName).ApproleRolePoliciesRequest(approleRolePoliciesRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNamePolicies(context.Background(), roleName).ApproleRolePoliciesRequest(approleRolePoliciesRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthApproleRoleRoleNamePolicies``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNamePolicies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -10909,9 +10909,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthApproleRoleRoleNameRoleId(context.Background(), roleName).ApproleRoleRoleIdRequest(approleRoleRoleIdRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameRoleId(context.Background(), roleName).ApproleRoleRoleIdRequest(approleRoleRoleIdRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthApproleRoleRoleNameRoleId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameRoleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -10977,9 +10977,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthApproleRoleRoleNameSecretId(context.Background(), roleName).ApproleRoleSecretIdRequest(approleRoleSecretIdRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameSecretId(context.Background(), roleName).ApproleRoleSecretIdRequest(approleRoleSecretIdRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthApproleRoleRoleNameSecretId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -11045,9 +11045,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(context.Background(), roleName).ApproleRoleSecretIdAccessorDestroyRequest(approleRoleSecretIdAccessorDestroyRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(context.Background(), roleName).ApproleRoleSecretIdAccessorDestroyRequest(approleRoleSecretIdAccessorDestroyRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthApproleRoleRoleNameSecretIdAccessorDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretIdAccessorDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -11113,9 +11113,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthApproleRoleRoleNameSecretIdAccessorLookup(context.Background(), roleName).ApproleRoleSecretIdAccessorLookupRequest(approleRoleSecretIdAccessorLookupRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameSecretIdAccessorLookup(context.Background(), roleName).ApproleRoleSecretIdAccessorLookupRequest(approleRoleSecretIdAccessorLookupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthApproleRoleRoleNameSecretIdAccessorLookup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretIdAccessorLookup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -11181,9 +11181,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName).ApproleRoleSecretIdBoundCidrsRequest(approleRoleSecretIdBoundCidrsRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName).ApproleRoleSecretIdBoundCidrsRequest(approleRoleSecretIdBoundCidrsRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthApproleRoleRoleNameSecretIdBoundCidrs``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretIdBoundCidrs``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -11249,9 +11249,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthApproleRoleRoleNameSecretIdDestroy(context.Background(), roleName).ApproleRoleSecretIdDestroyRequest(approleRoleSecretIdDestroyRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameSecretIdDestroy(context.Background(), roleName).ApproleRoleSecretIdDestroyRequest(approleRoleSecretIdDestroyRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthApproleRoleRoleNameSecretIdDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretIdDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -11317,9 +11317,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthApproleRoleRoleNameSecretIdLookup(context.Background(), roleName).ApproleRoleSecretIdLookupRequest(approleRoleSecretIdLookupRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameSecretIdLookup(context.Background(), roleName).ApproleRoleSecretIdLookupRequest(approleRoleSecretIdLookupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthApproleRoleRoleNameSecretIdLookup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretIdLookup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -11385,9 +11385,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName).ApproleRoleSecretIdNumUsesRequest(approleRoleSecretIdNumUsesRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName).ApproleRoleSecretIdNumUsesRequest(approleRoleSecretIdNumUsesRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthApproleRoleRoleNameSecretIdNumUses``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretIdNumUses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -11453,9 +11453,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName).ApproleRoleSecretIdTtlRequest(approleRoleSecretIdTtlRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName).ApproleRoleSecretIdTtlRequest(approleRoleSecretIdTtlRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthApproleRoleRoleNameSecretIdTtl``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretIdTtl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -11521,9 +11521,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName).ApproleRoleTokenBoundCidrsRequest(approleRoleTokenBoundCidrsRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName).ApproleRoleTokenBoundCidrsRequest(approleRoleTokenBoundCidrsRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthApproleRoleRoleNameTokenBoundCidrs``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameTokenBoundCidrs``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -11589,9 +11589,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName).ApproleRoleTokenMaxTtlRequest(approleRoleTokenMaxTtlRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName).ApproleRoleTokenMaxTtlRequest(approleRoleTokenMaxTtlRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthApproleRoleRoleNameTokenMaxTtl``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameTokenMaxTtl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -11657,9 +11657,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName).ApproleRoleTokenNumUsesRequest(approleRoleTokenNumUsesRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName).ApproleRoleTokenNumUsesRequest(approleRoleTokenNumUsesRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthApproleRoleRoleNameTokenNumUses``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameTokenNumUses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -11725,9 +11725,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName).ApproleRoleTokenTtlRequest(approleRoleTokenTtlRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName).ApproleRoleTokenTtlRequest(approleRoleTokenTtlRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthApproleRoleRoleNameTokenTtl``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameTokenTtl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -11791,9 +11791,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthApproleTidySecretId(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.PostAuthApproleTidySecretId(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthApproleTidySecretId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleTidySecretId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -11850,9 +11850,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthAwsConfigCertificateCertName(context.Background(), certName).AwsConfigCertificateRequest(awsConfigCertificateRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthAwsConfigCertificateCertName(context.Background(), certName).AwsConfigCertificateRequest(awsConfigCertificateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthAwsConfigCertificateCertName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigCertificateCertName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -11917,9 +11917,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthAwsConfigClient(context.Background()).AwsConfigClientRequest(awsConfigClientRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthAwsConfigClient(context.Background()).AwsConfigClientRequest(awsConfigClientRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthAwsConfigClient``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigClient``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -11979,9 +11979,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthAwsConfigIdentity(context.Background()).AwsConfigIdentityRequest(awsConfigIdentityRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthAwsConfigIdentity(context.Background()).AwsConfigIdentityRequest(awsConfigIdentityRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthAwsConfigIdentity``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigIdentity``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -12040,9 +12040,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthAwsConfigRotateRoot(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.PostAuthAwsConfigRotateRoot(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthAwsConfigRotateRoot``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigRotateRoot``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -12099,9 +12099,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthAwsConfigStsAccountId(context.Background(), accountId).AwsConfigStsRequest(awsConfigStsRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthAwsConfigStsAccountId(context.Background(), accountId).AwsConfigStsRequest(awsConfigStsRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthAwsConfigStsAccountId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigStsAccountId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -12166,9 +12166,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthAwsConfigTidyIdentityAccesslist(context.Background()).AwsConfigTidyIdentityAccesslistRequest(awsConfigTidyIdentityAccesslistRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthAwsConfigTidyIdentityAccesslist(context.Background()).AwsConfigTidyIdentityAccesslistRequest(awsConfigTidyIdentityAccesslistRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthAwsConfigTidyIdentityAccesslist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigTidyIdentityAccesslist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -12228,9 +12228,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthAwsConfigTidyIdentityWhitelist(context.Background()).AwsConfigTidyIdentityWhitelistRequest(awsConfigTidyIdentityWhitelistRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthAwsConfigTidyIdentityWhitelist(context.Background()).AwsConfigTidyIdentityWhitelistRequest(awsConfigTidyIdentityWhitelistRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthAwsConfigTidyIdentityWhitelist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigTidyIdentityWhitelist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -12290,9 +12290,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthAwsConfigTidyRoletagBlacklist(context.Background()).AwsConfigTidyRoletagBlacklistRequest(awsConfigTidyRoletagBlacklistRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthAwsConfigTidyRoletagBlacklist(context.Background()).AwsConfigTidyRoletagBlacklistRequest(awsConfigTidyRoletagBlacklistRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthAwsConfigTidyRoletagBlacklist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigTidyRoletagBlacklist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -12352,9 +12352,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthAwsConfigTidyRoletagDenylist(context.Background()).AwsConfigTidyRoletagDenylistRequest(awsConfigTidyRoletagDenylistRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthAwsConfigTidyRoletagDenylist(context.Background()).AwsConfigTidyRoletagDenylistRequest(awsConfigTidyRoletagDenylistRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthAwsConfigTidyRoletagDenylist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigTidyRoletagDenylist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -12414,9 +12414,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthAwsLogin(context.Background()).AwsLoginRequest(awsLoginRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthAwsLogin(context.Background()).AwsLoginRequest(awsLoginRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthAwsLogin``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -12477,9 +12477,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthAwsRoleRole(context.Background(), role).AwsRoleRequest(awsRoleRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthAwsRoleRole(context.Background(), role).AwsRoleRequest(awsRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthAwsRoleRole``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsRoleRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -12545,9 +12545,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthAwsRoleRoleTag(context.Background(), role).AwsRoleTagRequest(awsRoleTagRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthAwsRoleRoleTag(context.Background(), role).AwsRoleTagRequest(awsRoleTagRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthAwsRoleRoleTag``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsRoleRoleTag``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -12612,9 +12612,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag).Execute()
+    resp, r, err := apiClient.Auth.PostAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthAwsRoletagBlacklistRoleTag``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsRoletagBlacklistRoleTag``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -12678,9 +12678,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag).Execute()
+    resp, r, err := apiClient.Auth.PostAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthAwsRoletagDenylistRoleTag``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsRoletagDenylistRoleTag``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -12744,9 +12744,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthAwsTidyIdentityAccesslist(context.Background()).AwsTidyIdentityAccesslistRequest(awsTidyIdentityAccesslistRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthAwsTidyIdentityAccesslist(context.Background()).AwsTidyIdentityAccesslistRequest(awsTidyIdentityAccesslistRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthAwsTidyIdentityAccesslist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsTidyIdentityAccesslist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -12806,9 +12806,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthAwsTidyIdentityWhitelist(context.Background()).AwsTidyIdentityWhitelistRequest(awsTidyIdentityWhitelistRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthAwsTidyIdentityWhitelist(context.Background()).AwsTidyIdentityWhitelistRequest(awsTidyIdentityWhitelistRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthAwsTidyIdentityWhitelist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsTidyIdentityWhitelist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -12868,9 +12868,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthAwsTidyRoletagBlacklist(context.Background()).AwsTidyRoletagBlacklistRequest(awsTidyRoletagBlacklistRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthAwsTidyRoletagBlacklist(context.Background()).AwsTidyRoletagBlacklistRequest(awsTidyRoletagBlacklistRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthAwsTidyRoletagBlacklist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsTidyRoletagBlacklist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -12930,9 +12930,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthAwsTidyRoletagDenylist(context.Background()).AwsTidyRoletagDenylistRequest(awsTidyRoletagDenylistRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthAwsTidyRoletagDenylist(context.Background()).AwsTidyRoletagDenylistRequest(awsTidyRoletagDenylistRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthAwsTidyRoletagDenylist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsTidyRoletagDenylist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -12992,9 +12992,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthAzureConfig(context.Background()).AzureConfigRequest(azureConfigRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthAzureConfig(context.Background()).AzureConfigRequest(azureConfigRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthAzureConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAzureConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -13054,9 +13054,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthAzureLogin(context.Background()).AzureLoginRequest(azureLoginRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthAzureLogin(context.Background()).AzureLoginRequest(azureLoginRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthAzureLogin``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAzureLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -13117,9 +13117,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthAzureRoleName(context.Background(), name).AzureRoleRequest(azureRoleRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthAzureRoleName(context.Background(), name).AzureRoleRequest(azureRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthAzureRoleName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAzureRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -13184,9 +13184,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthCentrifyConfig(context.Background()).CentrifyConfigRequest(centrifyConfigRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthCentrifyConfig(context.Background()).CentrifyConfigRequest(centrifyConfigRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthCentrifyConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCentrifyConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -13246,9 +13246,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthCentrifyLogin(context.Background()).CentrifyLoginRequest(centrifyLoginRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthCentrifyLogin(context.Background()).CentrifyLoginRequest(centrifyLoginRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthCentrifyLogin``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCentrifyLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -13309,9 +13309,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthCertCertsName(context.Background(), name).CertCertsRequest(certCertsRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthCertCertsName(context.Background(), name).CertCertsRequest(certCertsRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthCertCertsName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCertCertsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -13376,9 +13376,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthCertConfig(context.Background()).CertConfigRequest(certConfigRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthCertConfig(context.Background()).CertConfigRequest(certConfigRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthCertConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCertConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -13439,9 +13439,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthCertCrlsName(context.Background(), name).CertCrlsRequest(certCrlsRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthCertCrlsName(context.Background(), name).CertCrlsRequest(certCrlsRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthCertCrlsName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCertCrlsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -13506,9 +13506,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthCertLogin(context.Background()).CertLoginRequest(certLoginRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthCertLogin(context.Background()).CertLoginRequest(certLoginRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthCertLogin``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCertLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -13568,9 +13568,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthCfConfig(context.Background()).CfConfigRequest(cfConfigRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthCfConfig(context.Background()).CfConfigRequest(cfConfigRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthCfConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCfConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -13630,9 +13630,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthCfLogin(context.Background()).CfLoginRequest(cfLoginRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthCfLogin(context.Background()).CfLoginRequest(cfLoginRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthCfLogin``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCfLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -13693,9 +13693,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthCfRolesRole(context.Background(), role).CfRolesRequest(cfRolesRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthCfRolesRole(context.Background(), role).CfRolesRequest(cfRolesRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthCfRolesRole``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCfRolesRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -13760,9 +13760,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthGcpConfig(context.Background()).GcpConfigRequest(gcpConfigRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthGcpConfig(context.Background()).GcpConfigRequest(gcpConfigRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthGcpConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGcpConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -13822,9 +13822,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthGcpLogin(context.Background()).GcpLoginRequest(gcpLoginRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthGcpLogin(context.Background()).GcpLoginRequest(gcpLoginRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthGcpLogin``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGcpLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -13885,9 +13885,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthGcpRoleName(context.Background(), name).GcpRoleRequest(gcpRoleRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthGcpRoleName(context.Background(), name).GcpRoleRequest(gcpRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthGcpRoleName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGcpRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -13953,9 +13953,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthGcpRoleNameLabels(context.Background(), name).GcpRoleLabelsRequest(gcpRoleLabelsRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthGcpRoleNameLabels(context.Background(), name).GcpRoleLabelsRequest(gcpRoleLabelsRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthGcpRoleNameLabels``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGcpRoleNameLabels``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -14021,9 +14021,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthGcpRoleNameServiceAccounts(context.Background(), name).GcpRoleServiceAccountsRequest(gcpRoleServiceAccountsRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthGcpRoleNameServiceAccounts(context.Background(), name).GcpRoleServiceAccountsRequest(gcpRoleServiceAccountsRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthGcpRoleNameServiceAccounts``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGcpRoleNameServiceAccounts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -14088,9 +14088,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthGithubConfig(context.Background()).GithubConfigRequest(githubConfigRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthGithubConfig(context.Background()).GithubConfigRequest(githubConfigRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthGithubConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGithubConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -14150,9 +14150,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthGithubLogin(context.Background()).GithubLoginRequest(githubLoginRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthGithubLogin(context.Background()).GithubLoginRequest(githubLoginRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthGithubLogin``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGithubLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -14213,9 +14213,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthGithubMapTeamsKey(context.Background(), key).GithubMapTeamsRequest(githubMapTeamsRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthGithubMapTeamsKey(context.Background(), key).GithubMapTeamsRequest(githubMapTeamsRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthGithubMapTeamsKey``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGithubMapTeamsKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -14281,9 +14281,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthGithubMapUsersKey(context.Background(), key).GithubMapUsersRequest(githubMapUsersRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthGithubMapUsersKey(context.Background(), key).GithubMapUsersRequest(githubMapUsersRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthGithubMapUsersKey``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGithubMapUsersKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -14350,9 +14350,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthJwtConfig(context.Background()).JwtConfigRequest(jwtConfigRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthJwtConfig(context.Background()).JwtConfigRequest(jwtConfigRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthJwtConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthJwtConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -14412,9 +14412,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthJwtLogin(context.Background()).JwtLoginRequest(jwtLoginRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthJwtLogin(context.Background()).JwtLoginRequest(jwtLoginRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthJwtLogin``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthJwtLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -14474,9 +14474,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthJwtOidcAuthUrl(context.Background()).JwtOidcAuthUrlRequest(jwtOidcAuthUrlRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthJwtOidcAuthUrl(context.Background()).JwtOidcAuthUrlRequest(jwtOidcAuthUrlRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthJwtOidcAuthUrl``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthJwtOidcAuthUrl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -14536,9 +14536,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthJwtOidcCallback(context.Background()).JwtOidcCallbackRequest(jwtOidcCallbackRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthJwtOidcCallback(context.Background()).JwtOidcCallbackRequest(jwtOidcCallbackRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthJwtOidcCallback``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthJwtOidcCallback``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -14601,9 +14601,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthJwtRoleName(context.Background(), name).JwtRoleRequest(jwtRoleRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthJwtRoleName(context.Background(), name).JwtRoleRequest(jwtRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthJwtRoleName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthJwtRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -14668,9 +14668,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthKerberosConfig(context.Background()).KerberosConfigRequest(kerberosConfigRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthKerberosConfig(context.Background()).KerberosConfigRequest(kerberosConfigRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthKerberosConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthKerberosConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -14730,9 +14730,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthKerberosConfigLdap(context.Background()).KerberosConfigLdapRequest(kerberosConfigLdapRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthKerberosConfigLdap(context.Background()).KerberosConfigLdapRequest(kerberosConfigLdapRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthKerberosConfigLdap``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthKerberosConfigLdap``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -14793,9 +14793,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthKerberosGroupsName(context.Background(), name).KerberosGroupsRequest(kerberosGroupsRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthKerberosGroupsName(context.Background(), name).KerberosGroupsRequest(kerberosGroupsRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthKerberosGroupsName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthKerberosGroupsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -14860,9 +14860,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthKerberosLogin(context.Background()).KerberosLoginRequest(kerberosLoginRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthKerberosLogin(context.Background()).KerberosLoginRequest(kerberosLoginRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthKerberosLogin``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthKerberosLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -14922,9 +14922,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthKubernetesConfig(context.Background()).KubernetesConfigRequest(kubernetesConfigRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthKubernetesConfig(context.Background()).KubernetesConfigRequest(kubernetesConfigRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthKubernetesConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthKubernetesConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -14984,9 +14984,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthKubernetesLogin(context.Background()).KubernetesLoginRequest(kubernetesLoginRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthKubernetesLogin(context.Background()).KubernetesLoginRequest(kubernetesLoginRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthKubernetesLogin``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthKubernetesLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -15047,9 +15047,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthKubernetesRoleName(context.Background(), name).KubernetesRoleRequest(kubernetesRoleRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthKubernetesRoleName(context.Background(), name).KubernetesRoleRequest(kubernetesRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthKubernetesRoleName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthKubernetesRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -15114,9 +15114,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthLdapConfig(context.Background()).LdapConfigRequest(ldapConfigRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthLdapConfig(context.Background()).LdapConfigRequest(ldapConfigRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthLdapConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthLdapConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -15177,9 +15177,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthLdapGroupsName(context.Background(), name).LdapGroupsRequest(ldapGroupsRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthLdapGroupsName(context.Background(), name).LdapGroupsRequest(ldapGroupsRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthLdapGroupsName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthLdapGroupsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -15245,9 +15245,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthLdapLoginUsername(context.Background(), username).LdapLoginRequest(ldapLoginRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthLdapLoginUsername(context.Background(), username).LdapLoginRequest(ldapLoginRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthLdapLoginUsername``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthLdapLoginUsername``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -15313,9 +15313,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthLdapUsersName(context.Background(), name).LdapUsersRequest(ldapUsersRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthLdapUsersName(context.Background(), name).LdapUsersRequest(ldapUsersRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthLdapUsersName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthLdapUsersName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -15380,9 +15380,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthOciConfig(context.Background()).OciConfigRequest(ociConfigRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthOciConfig(context.Background()).OciConfigRequest(ociConfigRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthOciConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOciConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -15443,9 +15443,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthOciLoginRole(context.Background(), role).OciLoginRequest(ociLoginRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthOciLoginRole(context.Background(), role).OciLoginRequest(ociLoginRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthOciLoginRole``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOciLoginRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -15511,9 +15511,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthOciRoleRole(context.Background(), role).OciRoleRequest(ociRoleRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthOciRoleRole(context.Background(), role).OciRoleRequest(ociRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthOciRoleRole``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOciRoleRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -15580,9 +15580,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthOidcConfig(context.Background()).OidcConfigRequest(oidcConfigRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthOidcConfig(context.Background()).OidcConfigRequest(oidcConfigRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthOidcConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOidcConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -15642,9 +15642,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthOidcLogin(context.Background()).OidcLoginRequest(oidcLoginRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthOidcLogin(context.Background()).OidcLoginRequest(oidcLoginRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthOidcLogin``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOidcLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -15704,9 +15704,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthOidcOidcAuthUrl(context.Background()).OidcOidcAuthUrlRequest(oidcOidcAuthUrlRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthOidcOidcAuthUrl(context.Background()).OidcOidcAuthUrlRequest(oidcOidcAuthUrlRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthOidcOidcAuthUrl``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOidcOidcAuthUrl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -15766,9 +15766,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthOidcOidcCallback(context.Background()).OidcOidcCallbackRequest(oidcOidcCallbackRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthOidcOidcCallback(context.Background()).OidcOidcCallbackRequest(oidcOidcCallbackRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthOidcOidcCallback``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOidcOidcCallback``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -15831,9 +15831,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthOidcRoleName(context.Background(), name).OidcRoleRequest(oidcRoleRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthOidcRoleName(context.Background(), name).OidcRoleRequest(oidcRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthOidcRoleName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOidcRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -15898,9 +15898,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthOktaConfig(context.Background()).OktaConfigRequest(oktaConfigRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthOktaConfig(context.Background()).OktaConfigRequest(oktaConfigRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthOktaConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOktaConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -15961,9 +15961,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthOktaGroupsName(context.Background(), name).OktaGroupsRequest(oktaGroupsRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthOktaGroupsName(context.Background(), name).OktaGroupsRequest(oktaGroupsRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthOktaGroupsName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOktaGroupsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -16029,9 +16029,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthOktaLoginUsername(context.Background(), username).OktaLoginRequest(oktaLoginRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthOktaLoginUsername(context.Background(), username).OktaLoginRequest(oktaLoginRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthOktaLoginUsername``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOktaLoginUsername``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -16097,9 +16097,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthOktaUsersName(context.Background(), name).OktaUsersRequest(oktaUsersRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthOktaUsersName(context.Background(), name).OktaUsersRequest(oktaUsersRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthOktaUsersName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOktaUsersName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -16164,9 +16164,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthRadiusConfig(context.Background()).RadiusConfigRequest(radiusConfigRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthRadiusConfig(context.Background()).RadiusConfigRequest(radiusConfigRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthRadiusConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthRadiusConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -16226,9 +16226,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthRadiusLogin(context.Background()).RadiusLoginRequest(radiusLoginRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthRadiusLogin(context.Background()).RadiusLoginRequest(radiusLoginRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthRadiusLogin``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthRadiusLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -16289,9 +16289,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthRadiusLoginUrlusername(context.Background(), urlusername).RadiusLoginRequest(radiusLoginRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthRadiusLoginUrlusername(context.Background(), urlusername).RadiusLoginRequest(radiusLoginRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthRadiusLoginUrlusername``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthRadiusLoginUrlusername``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -16357,9 +16357,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthRadiusUsersName(context.Background(), name).RadiusUsersRequest(radiusUsersRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthRadiusUsersName(context.Background(), name).RadiusUsersRequest(radiusUsersRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthRadiusUsersName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthRadiusUsersName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -16423,9 +16423,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthTokenCreate(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.PostAuthTokenCreate(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthTokenCreate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -16480,9 +16480,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthTokenCreateOrphan(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.PostAuthTokenCreateOrphan(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthTokenCreateOrphan``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenCreateOrphan``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -16538,9 +16538,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthTokenCreateRoleName(context.Background(), roleName).Execute()
+    resp, r, err := apiClient.Auth.PostAuthTokenCreateRoleName(context.Background(), roleName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthTokenCreateRoleName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenCreateRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -16604,9 +16604,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthTokenLookup(context.Background()).TokenLookupRequest(tokenLookupRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthTokenLookup(context.Background()).TokenLookupRequest(tokenLookupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthTokenLookup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenLookup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -16666,9 +16666,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthTokenLookupAccessor(context.Background()).TokenLookupAccessorRequest(tokenLookupAccessorRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthTokenLookupAccessor(context.Background()).TokenLookupAccessorRequest(tokenLookupAccessorRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthTokenLookupAccessor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenLookupAccessor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -16728,9 +16728,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthTokenLookupSelf(context.Background()).TokenLookupSelfRequest(tokenLookupSelfRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthTokenLookupSelf(context.Background()).TokenLookupSelfRequest(tokenLookupSelfRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthTokenLookupSelf``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenLookupSelf``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -16790,9 +16790,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthTokenRenew(context.Background()).TokenRenewRequest(tokenRenewRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthTokenRenew(context.Background()).TokenRenewRequest(tokenRenewRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthTokenRenew``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRenew``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -16852,9 +16852,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthTokenRenewAccessor(context.Background()).TokenRenewAccessorRequest(tokenRenewAccessorRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthTokenRenewAccessor(context.Background()).TokenRenewAccessorRequest(tokenRenewAccessorRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthTokenRenewAccessor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRenewAccessor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -16914,9 +16914,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthTokenRenewSelf(context.Background()).TokenRenewSelfRequest(tokenRenewSelfRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthTokenRenewSelf(context.Background()).TokenRenewSelfRequest(tokenRenewSelfRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthTokenRenewSelf``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRenewSelf``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -16976,9 +16976,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthTokenRevoke(context.Background()).TokenRevokeRequest(tokenRevokeRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthTokenRevoke(context.Background()).TokenRevokeRequest(tokenRevokeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthTokenRevoke``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRevoke``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -17038,9 +17038,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthTokenRevokeAccessor(context.Background()).TokenRevokeAccessorRequest(tokenRevokeAccessorRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthTokenRevokeAccessor(context.Background()).TokenRevokeAccessorRequest(tokenRevokeAccessorRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthTokenRevokeAccessor``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRevokeAccessor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -17100,9 +17100,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthTokenRevokeOrphan(context.Background()).TokenRevokeOrphanRequest(tokenRevokeOrphanRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthTokenRevokeOrphan(context.Background()).TokenRevokeOrphanRequest(tokenRevokeOrphanRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthTokenRevokeOrphan``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRevokeOrphan``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -17161,9 +17161,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthTokenRevokeSelf(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.PostAuthTokenRevokeSelf(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthTokenRevokeSelf``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRevokeSelf``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -17220,9 +17220,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthTokenRolesRoleName(context.Background(), roleName).TokenRolesRequest(tokenRolesRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthTokenRolesRoleName(context.Background(), roleName).TokenRolesRequest(tokenRolesRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthTokenRolesRoleName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRolesRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -17286,9 +17286,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthTokenTidy(context.Background()).Execute()
+    resp, r, err := apiClient.Auth.PostAuthTokenTidy(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthTokenTidy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenTidy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -17345,9 +17345,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthUserpassLoginUsername(context.Background(), username).UserpassLoginRequest(userpassLoginRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthUserpassLoginUsername(context.Background(), username).UserpassLoginRequest(userpassLoginRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthUserpassLoginUsername``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthUserpassLoginUsername``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -17413,9 +17413,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthUserpassUsersUsername(context.Background(), username).UserpassUsersRequest(userpassUsersRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthUserpassUsersUsername(context.Background(), username).UserpassUsersRequest(userpassUsersRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthUserpassUsersUsername``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthUserpassUsersUsername``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -17481,9 +17481,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthUserpassUsersUsernamePassword(context.Background(), username).UserpassUsersPasswordRequest(userpassUsersPasswordRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthUserpassUsersUsernamePassword(context.Background(), username).UserpassUsersPasswordRequest(userpassUsersPasswordRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthUserpassUsersUsernamePassword``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthUserpassUsersUsernamePassword``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -17549,9 +17549,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.PostAuthUserpassUsersUsernamePolicies(context.Background(), username).UserpassUsersPoliciesRequest(userpassUsersPoliciesRequest).Execute()
+    resp, r, err := apiClient.Auth.PostAuthUserpassUsersUsernamePolicies(context.Background(), username).UserpassUsersPoliciesRequest(userpassUsersPoliciesRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.PostAuthUserpassUsersUsernamePolicies``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthUserpassUsersUsernamePolicies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }

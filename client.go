@@ -45,13 +45,13 @@ type Client struct {
 
 	// API Services
 
-	AuthApi *AuthApiService
+	Auth *AuthService
 
-	IdentityApi *IdentityApiService
+	Identity *IdentityService
 
-	SecretsApi *SecretsApiService
+	Secrets *SecretsService
 
-	SystemApi *SystemApiService
+	System *SystemService
 }
 
 type service struct {
@@ -70,10 +70,10 @@ func NewClient(cfg *Configuration) *Client {
 	c.common.client = c
 
 	// API Services
-	c.AuthApi = (*AuthApiService)(&c.common)
-	c.IdentityApi = (*IdentityApiService)(&c.common)
-	c.SecretsApi = (*SecretsApiService)(&c.common)
-	c.SystemApi = (*SystemApiService)(&c.common)
+	c.Auth = (*AuthService)(&c.common)
+	c.Identity = (*IdentityService)(&c.common)
+	c.Secrets = (*SecretsService)(&c.common)
+	c.System = (*SystemService)(&c.common)
 
 	return c
 }

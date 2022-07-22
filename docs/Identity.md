@@ -1,114 +1,114 @@
-# \IdentityApi
+# \Identity
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteIdentityAliasIdId**](IdentityApi.md#DeleteIdentityAliasIdId) | **Delete** /identity/alias/id/{id} | Update, read or delete an alias ID.
-[**DeleteIdentityEntityAliasIdId**](IdentityApi.md#DeleteIdentityEntityAliasIdId) | **Delete** /identity/entity-alias/id/{id} | Update, read or delete an alias ID.
-[**DeleteIdentityEntityIdId**](IdentityApi.md#DeleteIdentityEntityIdId) | **Delete** /identity/entity/id/{id} | Update, read or delete an entity using entity ID
-[**DeleteIdentityEntityNameName**](IdentityApi.md#DeleteIdentityEntityNameName) | **Delete** /identity/entity/name/{name} | Update, read or delete an entity using entity name
-[**DeleteIdentityGroupAliasIdId**](IdentityApi.md#DeleteIdentityGroupAliasIdId) | **Delete** /identity/group-alias/id/{id} | 
-[**DeleteIdentityGroupIdId**](IdentityApi.md#DeleteIdentityGroupIdId) | **Delete** /identity/group/id/{id} | Update or delete an existing group using its ID.
-[**DeleteIdentityGroupNameName**](IdentityApi.md#DeleteIdentityGroupNameName) | **Delete** /identity/group/name/{name} | 
-[**DeleteIdentityMfaLoginEnforcementName**](IdentityApi.md#DeleteIdentityMfaLoginEnforcementName) | **Delete** /identity/mfa/login-enforcement/{name} | Delete a login enforcement
-[**DeleteIdentityMfaMethodDuoMethodId**](IdentityApi.md#DeleteIdentityMfaMethodDuoMethodId) | **Delete** /identity/mfa/method/duo/{method_id} | Delete a configuration for the given MFA method
-[**DeleteIdentityMfaMethodOktaMethodId**](IdentityApi.md#DeleteIdentityMfaMethodOktaMethodId) | **Delete** /identity/mfa/method/okta/{method_id} | Delete a configuration for the given MFA method
-[**DeleteIdentityMfaMethodPingidMethodId**](IdentityApi.md#DeleteIdentityMfaMethodPingidMethodId) | **Delete** /identity/mfa/method/pingid/{method_id} | Delete a configuration for the given MFA method
-[**DeleteIdentityMfaMethodTotpMethodId**](IdentityApi.md#DeleteIdentityMfaMethodTotpMethodId) | **Delete** /identity/mfa/method/totp/{method_id} | Delete a configuration for the given MFA method
-[**DeleteIdentityOidcAssignmentName**](IdentityApi.md#DeleteIdentityOidcAssignmentName) | **Delete** /identity/oidc/assignment/{name} | 
-[**DeleteIdentityOidcClientName**](IdentityApi.md#DeleteIdentityOidcClientName) | **Delete** /identity/oidc/client/{name} | 
-[**DeleteIdentityOidcKeyName**](IdentityApi.md#DeleteIdentityOidcKeyName) | **Delete** /identity/oidc/key/{name} | CRUD operations for OIDC keys.
-[**DeleteIdentityOidcProviderName**](IdentityApi.md#DeleteIdentityOidcProviderName) | **Delete** /identity/oidc/provider/{name} | 
-[**DeleteIdentityOidcRoleName**](IdentityApi.md#DeleteIdentityOidcRoleName) | **Delete** /identity/oidc/role/{name} | CRUD operations on OIDC Roles
-[**DeleteIdentityOidcScopeName**](IdentityApi.md#DeleteIdentityOidcScopeName) | **Delete** /identity/oidc/scope/{name} | 
-[**DeleteIdentityPersonaIdId**](IdentityApi.md#DeleteIdentityPersonaIdId) | **Delete** /identity/persona/id/{id} | Update, read or delete an alias ID.
-[**GetIdentityAliasId**](IdentityApi.md#GetIdentityAliasId) | **Get** /identity/alias/id | List all the alias IDs.
-[**GetIdentityAliasIdId**](IdentityApi.md#GetIdentityAliasIdId) | **Get** /identity/alias/id/{id} | Update, read or delete an alias ID.
-[**GetIdentityEntityAliasId**](IdentityApi.md#GetIdentityEntityAliasId) | **Get** /identity/entity-alias/id | List all the alias IDs.
-[**GetIdentityEntityAliasIdId**](IdentityApi.md#GetIdentityEntityAliasIdId) | **Get** /identity/entity-alias/id/{id} | Update, read or delete an alias ID.
-[**GetIdentityEntityId**](IdentityApi.md#GetIdentityEntityId) | **Get** /identity/entity/id | List all the entity IDs
-[**GetIdentityEntityIdId**](IdentityApi.md#GetIdentityEntityIdId) | **Get** /identity/entity/id/{id} | Update, read or delete an entity using entity ID
-[**GetIdentityEntityName**](IdentityApi.md#GetIdentityEntityName) | **Get** /identity/entity/name | List all the entity names
-[**GetIdentityEntityNameName**](IdentityApi.md#GetIdentityEntityNameName) | **Get** /identity/entity/name/{name} | Update, read or delete an entity using entity name
-[**GetIdentityGroupAliasId**](IdentityApi.md#GetIdentityGroupAliasId) | **Get** /identity/group-alias/id | List all the group alias IDs.
-[**GetIdentityGroupAliasIdId**](IdentityApi.md#GetIdentityGroupAliasIdId) | **Get** /identity/group-alias/id/{id} | 
-[**GetIdentityGroupId**](IdentityApi.md#GetIdentityGroupId) | **Get** /identity/group/id | List all the group IDs.
-[**GetIdentityGroupIdId**](IdentityApi.md#GetIdentityGroupIdId) | **Get** /identity/group/id/{id} | Update or delete an existing group using its ID.
-[**GetIdentityGroupName**](IdentityApi.md#GetIdentityGroupName) | **Get** /identity/group/name | 
-[**GetIdentityGroupNameName**](IdentityApi.md#GetIdentityGroupNameName) | **Get** /identity/group/name/{name} | 
-[**GetIdentityMfaLoginEnforcement**](IdentityApi.md#GetIdentityMfaLoginEnforcement) | **Get** /identity/mfa/login-enforcement | List login enforcements
-[**GetIdentityMfaLoginEnforcementName**](IdentityApi.md#GetIdentityMfaLoginEnforcementName) | **Get** /identity/mfa/login-enforcement/{name} | Read the current login enforcement
-[**GetIdentityMfaMethod**](IdentityApi.md#GetIdentityMfaMethod) | **Get** /identity/mfa/method | List MFA method configurations for all MFA methods
-[**GetIdentityMfaMethodDuo**](IdentityApi.md#GetIdentityMfaMethodDuo) | **Get** /identity/mfa/method/duo | List MFA method configurations for the given MFA method
-[**GetIdentityMfaMethodDuoMethodId**](IdentityApi.md#GetIdentityMfaMethodDuoMethodId) | **Get** /identity/mfa/method/duo/{method_id} | Read the current configuration for the given MFA method
-[**GetIdentityMfaMethodMethodId**](IdentityApi.md#GetIdentityMfaMethodMethodId) | **Get** /identity/mfa/method/{method_id} | Read the current configuration for the given ID regardless of the MFA method type
-[**GetIdentityMfaMethodOkta**](IdentityApi.md#GetIdentityMfaMethodOkta) | **Get** /identity/mfa/method/okta | List MFA method configurations for the given MFA method
-[**GetIdentityMfaMethodOktaMethodId**](IdentityApi.md#GetIdentityMfaMethodOktaMethodId) | **Get** /identity/mfa/method/okta/{method_id} | Read the current configuration for the given MFA method
-[**GetIdentityMfaMethodPingid**](IdentityApi.md#GetIdentityMfaMethodPingid) | **Get** /identity/mfa/method/pingid | List MFA method configurations for the given MFA method
-[**GetIdentityMfaMethodPingidMethodId**](IdentityApi.md#GetIdentityMfaMethodPingidMethodId) | **Get** /identity/mfa/method/pingid/{method_id} | Read the current configuration for the given MFA method
-[**GetIdentityMfaMethodTotp**](IdentityApi.md#GetIdentityMfaMethodTotp) | **Get** /identity/mfa/method/totp | List MFA method configurations for the given MFA method
-[**GetIdentityMfaMethodTotpMethodId**](IdentityApi.md#GetIdentityMfaMethodTotpMethodId) | **Get** /identity/mfa/method/totp/{method_id} | Read the current configuration for the given MFA method
-[**GetIdentityOidcAssignment**](IdentityApi.md#GetIdentityOidcAssignment) | **Get** /identity/oidc/assignment | 
-[**GetIdentityOidcAssignmentName**](IdentityApi.md#GetIdentityOidcAssignmentName) | **Get** /identity/oidc/assignment/{name} | 
-[**GetIdentityOidcClient**](IdentityApi.md#GetIdentityOidcClient) | **Get** /identity/oidc/client | 
-[**GetIdentityOidcClientName**](IdentityApi.md#GetIdentityOidcClientName) | **Get** /identity/oidc/client/{name} | 
-[**GetIdentityOidcConfig**](IdentityApi.md#GetIdentityOidcConfig) | **Get** /identity/oidc/config | OIDC configuration
-[**GetIdentityOidcKey**](IdentityApi.md#GetIdentityOidcKey) | **Get** /identity/oidc/key | List OIDC keys
-[**GetIdentityOidcKeyName**](IdentityApi.md#GetIdentityOidcKeyName) | **Get** /identity/oidc/key/{name} | CRUD operations for OIDC keys.
-[**GetIdentityOidcProvider**](IdentityApi.md#GetIdentityOidcProvider) | **Get** /identity/oidc/provider | 
-[**GetIdentityOidcProviderName**](IdentityApi.md#GetIdentityOidcProviderName) | **Get** /identity/oidc/provider/{name} | 
-[**GetIdentityOidcProviderNameAuthorize**](IdentityApi.md#GetIdentityOidcProviderNameAuthorize) | **Get** /identity/oidc/provider/{name}/authorize | 
-[**GetIdentityOidcProviderNameUserinfo**](IdentityApi.md#GetIdentityOidcProviderNameUserinfo) | **Get** /identity/oidc/provider/{name}/userinfo | 
-[**GetIdentityOidcProviderNameWellKnownKeys**](IdentityApi.md#GetIdentityOidcProviderNameWellKnownKeys) | **Get** /identity/oidc/provider/{name}/.well-known/keys | 
-[**GetIdentityOidcProviderNameWellKnownOpenidConfiguration**](IdentityApi.md#GetIdentityOidcProviderNameWellKnownOpenidConfiguration) | **Get** /identity/oidc/provider/{name}/.well-known/openid-configuration | 
-[**GetIdentityOidcRole**](IdentityApi.md#GetIdentityOidcRole) | **Get** /identity/oidc/role | List configured OIDC roles
-[**GetIdentityOidcRoleName**](IdentityApi.md#GetIdentityOidcRoleName) | **Get** /identity/oidc/role/{name} | CRUD operations on OIDC Roles
-[**GetIdentityOidcScope**](IdentityApi.md#GetIdentityOidcScope) | **Get** /identity/oidc/scope | 
-[**GetIdentityOidcScopeName**](IdentityApi.md#GetIdentityOidcScopeName) | **Get** /identity/oidc/scope/{name} | 
-[**GetIdentityOidcTokenName**](IdentityApi.md#GetIdentityOidcTokenName) | **Get** /identity/oidc/token/{name} | Generate an OIDC token
-[**GetIdentityOidcWellKnownKeys**](IdentityApi.md#GetIdentityOidcWellKnownKeys) | **Get** /identity/oidc/.well-known/keys | Retrieve public keys
-[**GetIdentityOidcWellKnownOpenidConfiguration**](IdentityApi.md#GetIdentityOidcWellKnownOpenidConfiguration) | **Get** /identity/oidc/.well-known/openid-configuration | Query OIDC configurations
-[**GetIdentityPersonaId**](IdentityApi.md#GetIdentityPersonaId) | **Get** /identity/persona/id | List all the alias IDs.
-[**GetIdentityPersonaIdId**](IdentityApi.md#GetIdentityPersonaIdId) | **Get** /identity/persona/id/{id} | Update, read or delete an alias ID.
-[**PostIdentityAlias**](IdentityApi.md#PostIdentityAlias) | **Post** /identity/alias | Create a new alias.
-[**PostIdentityAliasIdId**](IdentityApi.md#PostIdentityAliasIdId) | **Post** /identity/alias/id/{id} | Update, read or delete an alias ID.
-[**PostIdentityEntity**](IdentityApi.md#PostIdentityEntity) | **Post** /identity/entity | Create a new entity
-[**PostIdentityEntityAlias**](IdentityApi.md#PostIdentityEntityAlias) | **Post** /identity/entity-alias | Create a new alias.
-[**PostIdentityEntityAliasIdId**](IdentityApi.md#PostIdentityEntityAliasIdId) | **Post** /identity/entity-alias/id/{id} | Update, read or delete an alias ID.
-[**PostIdentityEntityBatchDelete**](IdentityApi.md#PostIdentityEntityBatchDelete) | **Post** /identity/entity/batch-delete | Delete all of the entities provided
-[**PostIdentityEntityIdId**](IdentityApi.md#PostIdentityEntityIdId) | **Post** /identity/entity/id/{id} | Update, read or delete an entity using entity ID
-[**PostIdentityEntityMerge**](IdentityApi.md#PostIdentityEntityMerge) | **Post** /identity/entity/merge | Merge two or more entities together
-[**PostIdentityEntityNameName**](IdentityApi.md#PostIdentityEntityNameName) | **Post** /identity/entity/name/{name} | Update, read or delete an entity using entity name
-[**PostIdentityGroup**](IdentityApi.md#PostIdentityGroup) | **Post** /identity/group | Create a new group.
-[**PostIdentityGroupAlias**](IdentityApi.md#PostIdentityGroupAlias) | **Post** /identity/group-alias | Creates a new group alias, or updates an existing one.
-[**PostIdentityGroupAliasIdId**](IdentityApi.md#PostIdentityGroupAliasIdId) | **Post** /identity/group-alias/id/{id} | 
-[**PostIdentityGroupIdId**](IdentityApi.md#PostIdentityGroupIdId) | **Post** /identity/group/id/{id} | Update or delete an existing group using its ID.
-[**PostIdentityGroupNameName**](IdentityApi.md#PostIdentityGroupNameName) | **Post** /identity/group/name/{name} | 
-[**PostIdentityLookupEntity**](IdentityApi.md#PostIdentityLookupEntity) | **Post** /identity/lookup/entity | Query entities based on various properties.
-[**PostIdentityLookupGroup**](IdentityApi.md#PostIdentityLookupGroup) | **Post** /identity/lookup/group | Query groups based on various properties.
-[**PostIdentityMfaLoginEnforcementName**](IdentityApi.md#PostIdentityMfaLoginEnforcementName) | **Post** /identity/mfa/login-enforcement/{name} | Create or update a login enforcement
-[**PostIdentityMfaMethodDuoMethodId**](IdentityApi.md#PostIdentityMfaMethodDuoMethodId) | **Post** /identity/mfa/method/duo/{method_id} | Update or create a configuration for the given MFA method
-[**PostIdentityMfaMethodOktaMethodId**](IdentityApi.md#PostIdentityMfaMethodOktaMethodId) | **Post** /identity/mfa/method/okta/{method_id} | Update or create a configuration for the given MFA method
-[**PostIdentityMfaMethodPingidMethodId**](IdentityApi.md#PostIdentityMfaMethodPingidMethodId) | **Post** /identity/mfa/method/pingid/{method_id} | Update or create a configuration for the given MFA method
-[**PostIdentityMfaMethodTotpAdminDestroy**](IdentityApi.md#PostIdentityMfaMethodTotpAdminDestroy) | **Post** /identity/mfa/method/totp/admin-destroy | Destroys a TOTP secret for the given MFA method ID on the given entity
-[**PostIdentityMfaMethodTotpAdminGenerate**](IdentityApi.md#PostIdentityMfaMethodTotpAdminGenerate) | **Post** /identity/mfa/method/totp/admin-generate | Update or create TOTP secret for the given method ID on the given entity.
-[**PostIdentityMfaMethodTotpGenerate**](IdentityApi.md#PostIdentityMfaMethodTotpGenerate) | **Post** /identity/mfa/method/totp/generate | Update or create TOTP secret for the given method ID on the given entity.
-[**PostIdentityMfaMethodTotpMethodId**](IdentityApi.md#PostIdentityMfaMethodTotpMethodId) | **Post** /identity/mfa/method/totp/{method_id} | Update or create a configuration for the given MFA method
-[**PostIdentityOidcAssignmentName**](IdentityApi.md#PostIdentityOidcAssignmentName) | **Post** /identity/oidc/assignment/{name} | 
-[**PostIdentityOidcClientName**](IdentityApi.md#PostIdentityOidcClientName) | **Post** /identity/oidc/client/{name} | 
-[**PostIdentityOidcConfig**](IdentityApi.md#PostIdentityOidcConfig) | **Post** /identity/oidc/config | OIDC configuration
-[**PostIdentityOidcIntrospect**](IdentityApi.md#PostIdentityOidcIntrospect) | **Post** /identity/oidc/introspect | Verify the authenticity of an OIDC token
-[**PostIdentityOidcKeyName**](IdentityApi.md#PostIdentityOidcKeyName) | **Post** /identity/oidc/key/{name} | CRUD operations for OIDC keys.
-[**PostIdentityOidcKeyNameRotate**](IdentityApi.md#PostIdentityOidcKeyNameRotate) | **Post** /identity/oidc/key/{name}/rotate | Rotate a named OIDC key.
-[**PostIdentityOidcProviderName**](IdentityApi.md#PostIdentityOidcProviderName) | **Post** /identity/oidc/provider/{name} | 
-[**PostIdentityOidcProviderNameAuthorize**](IdentityApi.md#PostIdentityOidcProviderNameAuthorize) | **Post** /identity/oidc/provider/{name}/authorize | 
-[**PostIdentityOidcProviderNameToken**](IdentityApi.md#PostIdentityOidcProviderNameToken) | **Post** /identity/oidc/provider/{name}/token | 
-[**PostIdentityOidcProviderNameUserinfo**](IdentityApi.md#PostIdentityOidcProviderNameUserinfo) | **Post** /identity/oidc/provider/{name}/userinfo | 
-[**PostIdentityOidcRoleName**](IdentityApi.md#PostIdentityOidcRoleName) | **Post** /identity/oidc/role/{name} | CRUD operations on OIDC Roles
-[**PostIdentityOidcScopeName**](IdentityApi.md#PostIdentityOidcScopeName) | **Post** /identity/oidc/scope/{name} | 
-[**PostIdentityPersona**](IdentityApi.md#PostIdentityPersona) | **Post** /identity/persona | Create a new alias.
-[**PostIdentityPersonaIdId**](IdentityApi.md#PostIdentityPersonaIdId) | **Post** /identity/persona/id/{id} | Update, read or delete an alias ID.
+[**DeleteIdentityAliasIdId**](Identity.md#DeleteIdentityAliasIdId) | **Delete** /identity/alias/id/{id} | Update, read or delete an alias ID.
+[**DeleteIdentityEntityAliasIdId**](Identity.md#DeleteIdentityEntityAliasIdId) | **Delete** /identity/entity-alias/id/{id} | Update, read or delete an alias ID.
+[**DeleteIdentityEntityIdId**](Identity.md#DeleteIdentityEntityIdId) | **Delete** /identity/entity/id/{id} | Update, read or delete an entity using entity ID
+[**DeleteIdentityEntityNameName**](Identity.md#DeleteIdentityEntityNameName) | **Delete** /identity/entity/name/{name} | Update, read or delete an entity using entity name
+[**DeleteIdentityGroupAliasIdId**](Identity.md#DeleteIdentityGroupAliasIdId) | **Delete** /identity/group-alias/id/{id} | 
+[**DeleteIdentityGroupIdId**](Identity.md#DeleteIdentityGroupIdId) | **Delete** /identity/group/id/{id} | Update or delete an existing group using its ID.
+[**DeleteIdentityGroupNameName**](Identity.md#DeleteIdentityGroupNameName) | **Delete** /identity/group/name/{name} | 
+[**DeleteIdentityMfaLoginEnforcementName**](Identity.md#DeleteIdentityMfaLoginEnforcementName) | **Delete** /identity/mfa/login-enforcement/{name} | Delete a login enforcement
+[**DeleteIdentityMfaMethodDuoMethodId**](Identity.md#DeleteIdentityMfaMethodDuoMethodId) | **Delete** /identity/mfa/method/duo/{method_id} | Delete a configuration for the given MFA method
+[**DeleteIdentityMfaMethodOktaMethodId**](Identity.md#DeleteIdentityMfaMethodOktaMethodId) | **Delete** /identity/mfa/method/okta/{method_id} | Delete a configuration for the given MFA method
+[**DeleteIdentityMfaMethodPingidMethodId**](Identity.md#DeleteIdentityMfaMethodPingidMethodId) | **Delete** /identity/mfa/method/pingid/{method_id} | Delete a configuration for the given MFA method
+[**DeleteIdentityMfaMethodTotpMethodId**](Identity.md#DeleteIdentityMfaMethodTotpMethodId) | **Delete** /identity/mfa/method/totp/{method_id} | Delete a configuration for the given MFA method
+[**DeleteIdentityOidcAssignmentName**](Identity.md#DeleteIdentityOidcAssignmentName) | **Delete** /identity/oidc/assignment/{name} | 
+[**DeleteIdentityOidcClientName**](Identity.md#DeleteIdentityOidcClientName) | **Delete** /identity/oidc/client/{name} | 
+[**DeleteIdentityOidcKeyName**](Identity.md#DeleteIdentityOidcKeyName) | **Delete** /identity/oidc/key/{name} | CRUD operations for OIDC keys.
+[**DeleteIdentityOidcProviderName**](Identity.md#DeleteIdentityOidcProviderName) | **Delete** /identity/oidc/provider/{name} | 
+[**DeleteIdentityOidcRoleName**](Identity.md#DeleteIdentityOidcRoleName) | **Delete** /identity/oidc/role/{name} | CRUD operations on OIDC Roles
+[**DeleteIdentityOidcScopeName**](Identity.md#DeleteIdentityOidcScopeName) | **Delete** /identity/oidc/scope/{name} | 
+[**DeleteIdentityPersonaIdId**](Identity.md#DeleteIdentityPersonaIdId) | **Delete** /identity/persona/id/{id} | Update, read or delete an alias ID.
+[**GetIdentityAliasId**](Identity.md#GetIdentityAliasId) | **Get** /identity/alias/id | List all the alias IDs.
+[**GetIdentityAliasIdId**](Identity.md#GetIdentityAliasIdId) | **Get** /identity/alias/id/{id} | Update, read or delete an alias ID.
+[**GetIdentityEntityAliasId**](Identity.md#GetIdentityEntityAliasId) | **Get** /identity/entity-alias/id | List all the alias IDs.
+[**GetIdentityEntityAliasIdId**](Identity.md#GetIdentityEntityAliasIdId) | **Get** /identity/entity-alias/id/{id} | Update, read or delete an alias ID.
+[**GetIdentityEntityId**](Identity.md#GetIdentityEntityId) | **Get** /identity/entity/id | List all the entity IDs
+[**GetIdentityEntityIdId**](Identity.md#GetIdentityEntityIdId) | **Get** /identity/entity/id/{id} | Update, read or delete an entity using entity ID
+[**GetIdentityEntityName**](Identity.md#GetIdentityEntityName) | **Get** /identity/entity/name | List all the entity names
+[**GetIdentityEntityNameName**](Identity.md#GetIdentityEntityNameName) | **Get** /identity/entity/name/{name} | Update, read or delete an entity using entity name
+[**GetIdentityGroupAliasId**](Identity.md#GetIdentityGroupAliasId) | **Get** /identity/group-alias/id | List all the group alias IDs.
+[**GetIdentityGroupAliasIdId**](Identity.md#GetIdentityGroupAliasIdId) | **Get** /identity/group-alias/id/{id} | 
+[**GetIdentityGroupId**](Identity.md#GetIdentityGroupId) | **Get** /identity/group/id | List all the group IDs.
+[**GetIdentityGroupIdId**](Identity.md#GetIdentityGroupIdId) | **Get** /identity/group/id/{id} | Update or delete an existing group using its ID.
+[**GetIdentityGroupName**](Identity.md#GetIdentityGroupName) | **Get** /identity/group/name | 
+[**GetIdentityGroupNameName**](Identity.md#GetIdentityGroupNameName) | **Get** /identity/group/name/{name} | 
+[**GetIdentityMfaLoginEnforcement**](Identity.md#GetIdentityMfaLoginEnforcement) | **Get** /identity/mfa/login-enforcement | List login enforcements
+[**GetIdentityMfaLoginEnforcementName**](Identity.md#GetIdentityMfaLoginEnforcementName) | **Get** /identity/mfa/login-enforcement/{name} | Read the current login enforcement
+[**GetIdentityMfaMethod**](Identity.md#GetIdentityMfaMethod) | **Get** /identity/mfa/method | List MFA method configurations for all MFA methods
+[**GetIdentityMfaMethodDuo**](Identity.md#GetIdentityMfaMethodDuo) | **Get** /identity/mfa/method/duo | List MFA method configurations for the given MFA method
+[**GetIdentityMfaMethodDuoMethodId**](Identity.md#GetIdentityMfaMethodDuoMethodId) | **Get** /identity/mfa/method/duo/{method_id} | Read the current configuration for the given MFA method
+[**GetIdentityMfaMethodMethodId**](Identity.md#GetIdentityMfaMethodMethodId) | **Get** /identity/mfa/method/{method_id} | Read the current configuration for the given ID regardless of the MFA method type
+[**GetIdentityMfaMethodOkta**](Identity.md#GetIdentityMfaMethodOkta) | **Get** /identity/mfa/method/okta | List MFA method configurations for the given MFA method
+[**GetIdentityMfaMethodOktaMethodId**](Identity.md#GetIdentityMfaMethodOktaMethodId) | **Get** /identity/mfa/method/okta/{method_id} | Read the current configuration for the given MFA method
+[**GetIdentityMfaMethodPingid**](Identity.md#GetIdentityMfaMethodPingid) | **Get** /identity/mfa/method/pingid | List MFA method configurations for the given MFA method
+[**GetIdentityMfaMethodPingidMethodId**](Identity.md#GetIdentityMfaMethodPingidMethodId) | **Get** /identity/mfa/method/pingid/{method_id} | Read the current configuration for the given MFA method
+[**GetIdentityMfaMethodTotp**](Identity.md#GetIdentityMfaMethodTotp) | **Get** /identity/mfa/method/totp | List MFA method configurations for the given MFA method
+[**GetIdentityMfaMethodTotpMethodId**](Identity.md#GetIdentityMfaMethodTotpMethodId) | **Get** /identity/mfa/method/totp/{method_id} | Read the current configuration for the given MFA method
+[**GetIdentityOidcAssignment**](Identity.md#GetIdentityOidcAssignment) | **Get** /identity/oidc/assignment | 
+[**GetIdentityOidcAssignmentName**](Identity.md#GetIdentityOidcAssignmentName) | **Get** /identity/oidc/assignment/{name} | 
+[**GetIdentityOidcClient**](Identity.md#GetIdentityOidcClient) | **Get** /identity/oidc/client | 
+[**GetIdentityOidcClientName**](Identity.md#GetIdentityOidcClientName) | **Get** /identity/oidc/client/{name} | 
+[**GetIdentityOidcConfig**](Identity.md#GetIdentityOidcConfig) | **Get** /identity/oidc/config | OIDC configuration
+[**GetIdentityOidcKey**](Identity.md#GetIdentityOidcKey) | **Get** /identity/oidc/key | List OIDC keys
+[**GetIdentityOidcKeyName**](Identity.md#GetIdentityOidcKeyName) | **Get** /identity/oidc/key/{name} | CRUD operations for OIDC keys.
+[**GetIdentityOidcProvider**](Identity.md#GetIdentityOidcProvider) | **Get** /identity/oidc/provider | 
+[**GetIdentityOidcProviderName**](Identity.md#GetIdentityOidcProviderName) | **Get** /identity/oidc/provider/{name} | 
+[**GetIdentityOidcProviderNameAuthorize**](Identity.md#GetIdentityOidcProviderNameAuthorize) | **Get** /identity/oidc/provider/{name}/authorize | 
+[**GetIdentityOidcProviderNameUserinfo**](Identity.md#GetIdentityOidcProviderNameUserinfo) | **Get** /identity/oidc/provider/{name}/userinfo | 
+[**GetIdentityOidcProviderNameWellKnownKeys**](Identity.md#GetIdentityOidcProviderNameWellKnownKeys) | **Get** /identity/oidc/provider/{name}/.well-known/keys | 
+[**GetIdentityOidcProviderNameWellKnownOpenidConfiguration**](Identity.md#GetIdentityOidcProviderNameWellKnownOpenidConfiguration) | **Get** /identity/oidc/provider/{name}/.well-known/openid-configuration | 
+[**GetIdentityOidcRole**](Identity.md#GetIdentityOidcRole) | **Get** /identity/oidc/role | List configured OIDC roles
+[**GetIdentityOidcRoleName**](Identity.md#GetIdentityOidcRoleName) | **Get** /identity/oidc/role/{name} | CRUD operations on OIDC Roles
+[**GetIdentityOidcScope**](Identity.md#GetIdentityOidcScope) | **Get** /identity/oidc/scope | 
+[**GetIdentityOidcScopeName**](Identity.md#GetIdentityOidcScopeName) | **Get** /identity/oidc/scope/{name} | 
+[**GetIdentityOidcTokenName**](Identity.md#GetIdentityOidcTokenName) | **Get** /identity/oidc/token/{name} | Generate an OIDC token
+[**GetIdentityOidcWellKnownKeys**](Identity.md#GetIdentityOidcWellKnownKeys) | **Get** /identity/oidc/.well-known/keys | Retrieve public keys
+[**GetIdentityOidcWellKnownOpenidConfiguration**](Identity.md#GetIdentityOidcWellKnownOpenidConfiguration) | **Get** /identity/oidc/.well-known/openid-configuration | Query OIDC configurations
+[**GetIdentityPersonaId**](Identity.md#GetIdentityPersonaId) | **Get** /identity/persona/id | List all the alias IDs.
+[**GetIdentityPersonaIdId**](Identity.md#GetIdentityPersonaIdId) | **Get** /identity/persona/id/{id} | Update, read or delete an alias ID.
+[**PostIdentityAlias**](Identity.md#PostIdentityAlias) | **Post** /identity/alias | Create a new alias.
+[**PostIdentityAliasIdId**](Identity.md#PostIdentityAliasIdId) | **Post** /identity/alias/id/{id} | Update, read or delete an alias ID.
+[**PostIdentityEntity**](Identity.md#PostIdentityEntity) | **Post** /identity/entity | Create a new entity
+[**PostIdentityEntityAlias**](Identity.md#PostIdentityEntityAlias) | **Post** /identity/entity-alias | Create a new alias.
+[**PostIdentityEntityAliasIdId**](Identity.md#PostIdentityEntityAliasIdId) | **Post** /identity/entity-alias/id/{id} | Update, read or delete an alias ID.
+[**PostIdentityEntityBatchDelete**](Identity.md#PostIdentityEntityBatchDelete) | **Post** /identity/entity/batch-delete | Delete all of the entities provided
+[**PostIdentityEntityIdId**](Identity.md#PostIdentityEntityIdId) | **Post** /identity/entity/id/{id} | Update, read or delete an entity using entity ID
+[**PostIdentityEntityMerge**](Identity.md#PostIdentityEntityMerge) | **Post** /identity/entity/merge | Merge two or more entities together
+[**PostIdentityEntityNameName**](Identity.md#PostIdentityEntityNameName) | **Post** /identity/entity/name/{name} | Update, read or delete an entity using entity name
+[**PostIdentityGroup**](Identity.md#PostIdentityGroup) | **Post** /identity/group | Create a new group.
+[**PostIdentityGroupAlias**](Identity.md#PostIdentityGroupAlias) | **Post** /identity/group-alias | Creates a new group alias, or updates an existing one.
+[**PostIdentityGroupAliasIdId**](Identity.md#PostIdentityGroupAliasIdId) | **Post** /identity/group-alias/id/{id} | 
+[**PostIdentityGroupIdId**](Identity.md#PostIdentityGroupIdId) | **Post** /identity/group/id/{id} | Update or delete an existing group using its ID.
+[**PostIdentityGroupNameName**](Identity.md#PostIdentityGroupNameName) | **Post** /identity/group/name/{name} | 
+[**PostIdentityLookupEntity**](Identity.md#PostIdentityLookupEntity) | **Post** /identity/lookup/entity | Query entities based on various properties.
+[**PostIdentityLookupGroup**](Identity.md#PostIdentityLookupGroup) | **Post** /identity/lookup/group | Query groups based on various properties.
+[**PostIdentityMfaLoginEnforcementName**](Identity.md#PostIdentityMfaLoginEnforcementName) | **Post** /identity/mfa/login-enforcement/{name} | Create or update a login enforcement
+[**PostIdentityMfaMethodDuoMethodId**](Identity.md#PostIdentityMfaMethodDuoMethodId) | **Post** /identity/mfa/method/duo/{method_id} | Update or create a configuration for the given MFA method
+[**PostIdentityMfaMethodOktaMethodId**](Identity.md#PostIdentityMfaMethodOktaMethodId) | **Post** /identity/mfa/method/okta/{method_id} | Update or create a configuration for the given MFA method
+[**PostIdentityMfaMethodPingidMethodId**](Identity.md#PostIdentityMfaMethodPingidMethodId) | **Post** /identity/mfa/method/pingid/{method_id} | Update or create a configuration for the given MFA method
+[**PostIdentityMfaMethodTotpAdminDestroy**](Identity.md#PostIdentityMfaMethodTotpAdminDestroy) | **Post** /identity/mfa/method/totp/admin-destroy | Destroys a TOTP secret for the given MFA method ID on the given entity
+[**PostIdentityMfaMethodTotpAdminGenerate**](Identity.md#PostIdentityMfaMethodTotpAdminGenerate) | **Post** /identity/mfa/method/totp/admin-generate | Update or create TOTP secret for the given method ID on the given entity.
+[**PostIdentityMfaMethodTotpGenerate**](Identity.md#PostIdentityMfaMethodTotpGenerate) | **Post** /identity/mfa/method/totp/generate | Update or create TOTP secret for the given method ID on the given entity.
+[**PostIdentityMfaMethodTotpMethodId**](Identity.md#PostIdentityMfaMethodTotpMethodId) | **Post** /identity/mfa/method/totp/{method_id} | Update or create a configuration for the given MFA method
+[**PostIdentityOidcAssignmentName**](Identity.md#PostIdentityOidcAssignmentName) | **Post** /identity/oidc/assignment/{name} | 
+[**PostIdentityOidcClientName**](Identity.md#PostIdentityOidcClientName) | **Post** /identity/oidc/client/{name} | 
+[**PostIdentityOidcConfig**](Identity.md#PostIdentityOidcConfig) | **Post** /identity/oidc/config | OIDC configuration
+[**PostIdentityOidcIntrospect**](Identity.md#PostIdentityOidcIntrospect) | **Post** /identity/oidc/introspect | Verify the authenticity of an OIDC token
+[**PostIdentityOidcKeyName**](Identity.md#PostIdentityOidcKeyName) | **Post** /identity/oidc/key/{name} | CRUD operations for OIDC keys.
+[**PostIdentityOidcKeyNameRotate**](Identity.md#PostIdentityOidcKeyNameRotate) | **Post** /identity/oidc/key/{name}/rotate | Rotate a named OIDC key.
+[**PostIdentityOidcProviderName**](Identity.md#PostIdentityOidcProviderName) | **Post** /identity/oidc/provider/{name} | 
+[**PostIdentityOidcProviderNameAuthorize**](Identity.md#PostIdentityOidcProviderNameAuthorize) | **Post** /identity/oidc/provider/{name}/authorize | 
+[**PostIdentityOidcProviderNameToken**](Identity.md#PostIdentityOidcProviderNameToken) | **Post** /identity/oidc/provider/{name}/token | 
+[**PostIdentityOidcProviderNameUserinfo**](Identity.md#PostIdentityOidcProviderNameUserinfo) | **Post** /identity/oidc/provider/{name}/userinfo | 
+[**PostIdentityOidcRoleName**](Identity.md#PostIdentityOidcRoleName) | **Post** /identity/oidc/role/{name} | CRUD operations on OIDC Roles
+[**PostIdentityOidcScopeName**](Identity.md#PostIdentityOidcScopeName) | **Post** /identity/oidc/scope/{name} | 
+[**PostIdentityPersona**](Identity.md#PostIdentityPersona) | **Post** /identity/persona | Create a new alias.
+[**PostIdentityPersonaIdId**](Identity.md#PostIdentityPersonaIdId) | **Post** /identity/persona/id/{id} | Update, read or delete an alias ID.
 
 
 
@@ -135,9 +135,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.DeleteIdentityAliasIdId(context.Background(), id).Execute()
+    resp, r, err := apiClient.Identity.DeleteIdentityAliasIdId(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.DeleteIdentityAliasIdId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityAliasIdId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -201,9 +201,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.DeleteIdentityEntityAliasIdId(context.Background(), id).Execute()
+    resp, r, err := apiClient.Identity.DeleteIdentityEntityAliasIdId(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.DeleteIdentityEntityAliasIdId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityEntityAliasIdId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -267,9 +267,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.DeleteIdentityEntityIdId(context.Background(), id).Execute()
+    resp, r, err := apiClient.Identity.DeleteIdentityEntityIdId(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.DeleteIdentityEntityIdId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityEntityIdId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -333,9 +333,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.DeleteIdentityEntityNameName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Identity.DeleteIdentityEntityNameName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.DeleteIdentityEntityNameName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityEntityNameName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -399,9 +399,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.DeleteIdentityGroupAliasIdId(context.Background(), id).Execute()
+    resp, r, err := apiClient.Identity.DeleteIdentityGroupAliasIdId(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.DeleteIdentityGroupAliasIdId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityGroupAliasIdId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -465,9 +465,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.DeleteIdentityGroupIdId(context.Background(), id).Execute()
+    resp, r, err := apiClient.Identity.DeleteIdentityGroupIdId(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.DeleteIdentityGroupIdId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityGroupIdId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -531,9 +531,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.DeleteIdentityGroupNameName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Identity.DeleteIdentityGroupNameName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.DeleteIdentityGroupNameName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityGroupNameName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -597,9 +597,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.DeleteIdentityMfaLoginEnforcementName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Identity.DeleteIdentityMfaLoginEnforcementName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.DeleteIdentityMfaLoginEnforcementName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityMfaLoginEnforcementName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -663,9 +663,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.DeleteIdentityMfaMethodDuoMethodId(context.Background(), methodId).Execute()
+    resp, r, err := apiClient.Identity.DeleteIdentityMfaMethodDuoMethodId(context.Background(), methodId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.DeleteIdentityMfaMethodDuoMethodId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityMfaMethodDuoMethodId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -729,9 +729,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.DeleteIdentityMfaMethodOktaMethodId(context.Background(), methodId).Execute()
+    resp, r, err := apiClient.Identity.DeleteIdentityMfaMethodOktaMethodId(context.Background(), methodId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.DeleteIdentityMfaMethodOktaMethodId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityMfaMethodOktaMethodId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -795,9 +795,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.DeleteIdentityMfaMethodPingidMethodId(context.Background(), methodId).Execute()
+    resp, r, err := apiClient.Identity.DeleteIdentityMfaMethodPingidMethodId(context.Background(), methodId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.DeleteIdentityMfaMethodPingidMethodId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityMfaMethodPingidMethodId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -861,9 +861,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.DeleteIdentityMfaMethodTotpMethodId(context.Background(), methodId).Execute()
+    resp, r, err := apiClient.Identity.DeleteIdentityMfaMethodTotpMethodId(context.Background(), methodId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.DeleteIdentityMfaMethodTotpMethodId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityMfaMethodTotpMethodId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -927,9 +927,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.DeleteIdentityOidcAssignmentName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Identity.DeleteIdentityOidcAssignmentName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.DeleteIdentityOidcAssignmentName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityOidcAssignmentName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -993,9 +993,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.DeleteIdentityOidcClientName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Identity.DeleteIdentityOidcClientName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.DeleteIdentityOidcClientName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityOidcClientName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1059,9 +1059,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.DeleteIdentityOidcKeyName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Identity.DeleteIdentityOidcKeyName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.DeleteIdentityOidcKeyName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityOidcKeyName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1125,9 +1125,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.DeleteIdentityOidcProviderName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Identity.DeleteIdentityOidcProviderName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.DeleteIdentityOidcProviderName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityOidcProviderName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1191,9 +1191,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.DeleteIdentityOidcRoleName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Identity.DeleteIdentityOidcRoleName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.DeleteIdentityOidcRoleName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityOidcRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1257,9 +1257,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.DeleteIdentityOidcScopeName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Identity.DeleteIdentityOidcScopeName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.DeleteIdentityOidcScopeName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityOidcScopeName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1323,9 +1323,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.DeleteIdentityPersonaIdId(context.Background(), id).Execute()
+    resp, r, err := apiClient.Identity.DeleteIdentityPersonaIdId(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.DeleteIdentityPersonaIdId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityPersonaIdId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1389,9 +1389,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityAliasId(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityAliasId(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityAliasId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityAliasId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1451,9 +1451,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityAliasIdId(context.Background(), id).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityAliasIdId(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityAliasIdId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityAliasIdId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1517,9 +1517,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityEntityAliasId(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityEntityAliasId(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityEntityAliasId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityEntityAliasId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1579,9 +1579,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityEntityAliasIdId(context.Background(), id).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityEntityAliasIdId(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityEntityAliasIdId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityEntityAliasIdId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1645,9 +1645,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityEntityId(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityEntityId(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityEntityId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityEntityId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1707,9 +1707,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityEntityIdId(context.Background(), id).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityEntityIdId(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityEntityIdId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityEntityIdId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1773,9 +1773,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityEntityName(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityEntityName(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityEntityName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityEntityName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1835,9 +1835,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityEntityNameName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityEntityNameName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityEntityNameName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityEntityNameName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1901,9 +1901,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityGroupAliasId(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityGroupAliasId(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityGroupAliasId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityGroupAliasId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -1963,9 +1963,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityGroupAliasIdId(context.Background(), id).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityGroupAliasIdId(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityGroupAliasIdId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityGroupAliasIdId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2029,9 +2029,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityGroupId(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityGroupId(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityGroupId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityGroupId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2091,9 +2091,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityGroupIdId(context.Background(), id).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityGroupIdId(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityGroupIdId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityGroupIdId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2157,9 +2157,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityGroupName(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityGroupName(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityGroupName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityGroupName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2219,9 +2219,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityGroupNameName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityGroupNameName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityGroupNameName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityGroupNameName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2285,9 +2285,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityMfaLoginEnforcement(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityMfaLoginEnforcement(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityMfaLoginEnforcement``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaLoginEnforcement``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2347,9 +2347,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityMfaLoginEnforcementName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityMfaLoginEnforcementName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityMfaLoginEnforcementName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaLoginEnforcementName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2413,9 +2413,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityMfaMethod(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityMfaMethod(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityMfaMethod``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2475,9 +2475,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityMfaMethodDuo(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityMfaMethodDuo(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityMfaMethodDuo``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethodDuo``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2537,9 +2537,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityMfaMethodDuoMethodId(context.Background(), methodId).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityMfaMethodDuoMethodId(context.Background(), methodId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityMfaMethodDuoMethodId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethodDuoMethodId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2603,9 +2603,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityMfaMethodMethodId(context.Background(), methodId).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityMfaMethodMethodId(context.Background(), methodId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityMfaMethodMethodId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethodMethodId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2669,9 +2669,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityMfaMethodOkta(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityMfaMethodOkta(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityMfaMethodOkta``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethodOkta``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2731,9 +2731,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityMfaMethodOktaMethodId(context.Background(), methodId).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityMfaMethodOktaMethodId(context.Background(), methodId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityMfaMethodOktaMethodId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethodOktaMethodId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2797,9 +2797,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityMfaMethodPingid(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityMfaMethodPingid(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityMfaMethodPingid``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethodPingid``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2859,9 +2859,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityMfaMethodPingidMethodId(context.Background(), methodId).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityMfaMethodPingidMethodId(context.Background(), methodId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityMfaMethodPingidMethodId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethodPingidMethodId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2925,9 +2925,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityMfaMethodTotp(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityMfaMethodTotp(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityMfaMethodTotp``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethodTotp``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -2987,9 +2987,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityMfaMethodTotpMethodId(context.Background(), methodId).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityMfaMethodTotpMethodId(context.Background(), methodId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityMfaMethodTotpMethodId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethodTotpMethodId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3053,9 +3053,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityOidcAssignment(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityOidcAssignment(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityOidcAssignment``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcAssignment``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3115,9 +3115,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityOidcAssignmentName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityOidcAssignmentName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityOidcAssignmentName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcAssignmentName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3181,9 +3181,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityOidcClient(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityOidcClient(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityOidcClient``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcClient``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3243,9 +3243,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityOidcClientName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityOidcClientName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityOidcClientName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcClientName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3308,9 +3308,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityOidcConfig(context.Background()).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityOidcConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityOidcConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3366,9 +3366,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityOidcKey(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityOidcKey(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityOidcKey``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3428,9 +3428,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityOidcKeyName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityOidcKeyName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityOidcKeyName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcKeyName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3494,9 +3494,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityOidcProvider(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityOidcProvider(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityOidcProvider``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcProvider``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3556,9 +3556,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityOidcProviderName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityOidcProviderName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityOidcProviderName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcProviderName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3622,9 +3622,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityOidcProviderNameAuthorize(context.Background(), name).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityOidcProviderNameAuthorize(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityOidcProviderNameAuthorize``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcProviderNameAuthorize``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3688,9 +3688,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityOidcProviderNameUserinfo(context.Background(), name).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityOidcProviderNameUserinfo(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityOidcProviderNameUserinfo``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcProviderNameUserinfo``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3754,9 +3754,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityOidcProviderNameWellKnownKeys(context.Background(), name).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityOidcProviderNameWellKnownKeys(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityOidcProviderNameWellKnownKeys``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcProviderNameWellKnownKeys``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3820,9 +3820,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityOidcProviderNameWellKnownOpenidConfiguration(context.Background(), name).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityOidcProviderNameWellKnownOpenidConfiguration(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityOidcProviderNameWellKnownOpenidConfiguration``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcProviderNameWellKnownOpenidConfiguration``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3886,9 +3886,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityOidcRole(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityOidcRole(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityOidcRole``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -3948,9 +3948,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityOidcRoleName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityOidcRoleName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityOidcRoleName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4014,9 +4014,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityOidcScope(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityOidcScope(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityOidcScope``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcScope``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4076,9 +4076,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityOidcScopeName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityOidcScopeName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityOidcScopeName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcScopeName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4142,9 +4142,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityOidcTokenName(context.Background(), name).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityOidcTokenName(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityOidcTokenName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcTokenName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4207,9 +4207,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityOidcWellKnownKeys(context.Background()).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityOidcWellKnownKeys(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityOidcWellKnownKeys``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcWellKnownKeys``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4264,9 +4264,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityOidcWellKnownOpenidConfiguration(context.Background()).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityOidcWellKnownOpenidConfiguration(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityOidcWellKnownOpenidConfiguration``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcWellKnownOpenidConfiguration``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4322,9 +4322,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityPersonaId(context.Background()).List(list).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityPersonaId(context.Background()).List(list).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityPersonaId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityPersonaId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4384,9 +4384,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.GetIdentityPersonaIdId(context.Background(), id).Execute()
+    resp, r, err := apiClient.Identity.GetIdentityPersonaIdId(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.GetIdentityPersonaIdId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityPersonaIdId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4450,9 +4450,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityAlias(context.Background()).IdentityAliasRequest(identityAliasRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityAlias(context.Background()).IdentityAliasRequest(identityAliasRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityAlias``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityAlias``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4513,9 +4513,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityAliasIdId(context.Background(), id).IdentityAliasIdRequest(identityAliasIdRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityAliasIdId(context.Background(), id).IdentityAliasIdRequest(identityAliasIdRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityAliasIdId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityAliasIdId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4580,9 +4580,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityEntity(context.Background()).IdentityEntityRequest(identityEntityRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityEntity(context.Background()).IdentityEntityRequest(identityEntityRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityEntity``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityEntity``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4642,9 +4642,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityEntityAlias(context.Background()).IdentityEntityAliasRequest(identityEntityAliasRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityEntityAlias(context.Background()).IdentityEntityAliasRequest(identityEntityAliasRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityEntityAlias``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityEntityAlias``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4705,9 +4705,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityEntityAliasIdId(context.Background(), id).IdentityEntityAliasIdRequest(identityEntityAliasIdRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityEntityAliasIdId(context.Background(), id).IdentityEntityAliasIdRequest(identityEntityAliasIdRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityEntityAliasIdId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityEntityAliasIdId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4772,9 +4772,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityEntityBatchDelete(context.Background()).IdentityEntityBatchDeleteRequest(identityEntityBatchDeleteRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityEntityBatchDelete(context.Background()).IdentityEntityBatchDeleteRequest(identityEntityBatchDeleteRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityEntityBatchDelete``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityEntityBatchDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4835,9 +4835,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityEntityIdId(context.Background(), id).IdentityEntityIdRequest(identityEntityIdRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityEntityIdId(context.Background(), id).IdentityEntityIdRequest(identityEntityIdRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityEntityIdId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityEntityIdId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4902,9 +4902,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityEntityMerge(context.Background()).IdentityEntityMergeRequest(identityEntityMergeRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityEntityMerge(context.Background()).IdentityEntityMergeRequest(identityEntityMergeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityEntityMerge``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityEntityMerge``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -4965,9 +4965,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityEntityNameName(context.Background(), name).IdentityEntityNameRequest(identityEntityNameRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityEntityNameName(context.Background(), name).IdentityEntityNameRequest(identityEntityNameRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityEntityNameName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityEntityNameName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5032,9 +5032,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityGroup(context.Background()).IdentityGroupRequest(identityGroupRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityGroup(context.Background()).IdentityGroupRequest(identityGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityGroup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5094,9 +5094,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityGroupAlias(context.Background()).IdentityGroupAliasRequest(identityGroupAliasRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityGroupAlias(context.Background()).IdentityGroupAliasRequest(identityGroupAliasRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityGroupAlias``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityGroupAlias``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5157,9 +5157,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityGroupAliasIdId(context.Background(), id).IdentityGroupAliasIdRequest(identityGroupAliasIdRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityGroupAliasIdId(context.Background(), id).IdentityGroupAliasIdRequest(identityGroupAliasIdRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityGroupAliasIdId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityGroupAliasIdId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5225,9 +5225,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityGroupIdId(context.Background(), id).IdentityGroupIdRequest(identityGroupIdRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityGroupIdId(context.Background(), id).IdentityGroupIdRequest(identityGroupIdRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityGroupIdId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityGroupIdId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5293,9 +5293,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityGroupNameName(context.Background(), name).IdentityGroupNameRequest(identityGroupNameRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityGroupNameName(context.Background(), name).IdentityGroupNameRequest(identityGroupNameRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityGroupNameName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityGroupNameName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5360,9 +5360,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityLookupEntity(context.Background()).IdentityLookupEntityRequest(identityLookupEntityRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityLookupEntity(context.Background()).IdentityLookupEntityRequest(identityLookupEntityRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityLookupEntity``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityLookupEntity``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5422,9 +5422,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityLookupGroup(context.Background()).IdentityLookupGroupRequest(identityLookupGroupRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityLookupGroup(context.Background()).IdentityLookupGroupRequest(identityLookupGroupRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityLookupGroup``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityLookupGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5485,9 +5485,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityMfaLoginEnforcementName(context.Background(), name).IdentityMfaLoginEnforcementRequest(identityMfaLoginEnforcementRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityMfaLoginEnforcementName(context.Background(), name).IdentityMfaLoginEnforcementRequest(identityMfaLoginEnforcementRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityMfaLoginEnforcementName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityMfaLoginEnforcementName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5553,9 +5553,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityMfaMethodDuoMethodId(context.Background(), methodId).IdentityMfaMethodDuoRequest(identityMfaMethodDuoRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityMfaMethodDuoMethodId(context.Background(), methodId).IdentityMfaMethodDuoRequest(identityMfaMethodDuoRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityMfaMethodDuoMethodId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityMfaMethodDuoMethodId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5621,9 +5621,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityMfaMethodOktaMethodId(context.Background(), methodId).IdentityMfaMethodOktaRequest(identityMfaMethodOktaRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityMfaMethodOktaMethodId(context.Background(), methodId).IdentityMfaMethodOktaRequest(identityMfaMethodOktaRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityMfaMethodOktaMethodId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityMfaMethodOktaMethodId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5689,9 +5689,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityMfaMethodPingidMethodId(context.Background(), methodId).IdentityMfaMethodPingidRequest(identityMfaMethodPingidRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityMfaMethodPingidMethodId(context.Background(), methodId).IdentityMfaMethodPingidRequest(identityMfaMethodPingidRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityMfaMethodPingidMethodId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityMfaMethodPingidMethodId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5756,9 +5756,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityMfaMethodTotpAdminDestroy(context.Background()).IdentityMfaMethodTotpAdminDestroyRequest(identityMfaMethodTotpAdminDestroyRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityMfaMethodTotpAdminDestroy(context.Background()).IdentityMfaMethodTotpAdminDestroyRequest(identityMfaMethodTotpAdminDestroyRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityMfaMethodTotpAdminDestroy``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityMfaMethodTotpAdminDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5818,9 +5818,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityMfaMethodTotpAdminGenerate(context.Background()).IdentityMfaMethodTotpAdminGenerateRequest(identityMfaMethodTotpAdminGenerateRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityMfaMethodTotpAdminGenerate(context.Background()).IdentityMfaMethodTotpAdminGenerateRequest(identityMfaMethodTotpAdminGenerateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityMfaMethodTotpAdminGenerate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityMfaMethodTotpAdminGenerate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5880,9 +5880,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityMfaMethodTotpGenerate(context.Background()).IdentityMfaMethodTotpGenerateRequest(identityMfaMethodTotpGenerateRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityMfaMethodTotpGenerate(context.Background()).IdentityMfaMethodTotpGenerateRequest(identityMfaMethodTotpGenerateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityMfaMethodTotpGenerate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityMfaMethodTotpGenerate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -5943,9 +5943,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityMfaMethodTotpMethodId(context.Background(), methodId).IdentityMfaMethodTotpRequest(identityMfaMethodTotpRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityMfaMethodTotpMethodId(context.Background(), methodId).IdentityMfaMethodTotpRequest(identityMfaMethodTotpRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityMfaMethodTotpMethodId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityMfaMethodTotpMethodId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6011,9 +6011,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityOidcAssignmentName(context.Background(), name).IdentityOidcAssignmentRequest(identityOidcAssignmentRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityOidcAssignmentName(context.Background(), name).IdentityOidcAssignmentRequest(identityOidcAssignmentRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityOidcAssignmentName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcAssignmentName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6079,9 +6079,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityOidcClientName(context.Background(), name).IdentityOidcClientRequest(identityOidcClientRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityOidcClientName(context.Background(), name).IdentityOidcClientRequest(identityOidcClientRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityOidcClientName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcClientName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6146,9 +6146,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityOidcConfig(context.Background()).IdentityOidcConfigRequest(identityOidcConfigRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityOidcConfig(context.Background()).IdentityOidcConfigRequest(identityOidcConfigRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityOidcConfig``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6208,9 +6208,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityOidcIntrospect(context.Background()).IdentityOidcIntrospectRequest(identityOidcIntrospectRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityOidcIntrospect(context.Background()).IdentityOidcIntrospectRequest(identityOidcIntrospectRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityOidcIntrospect``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcIntrospect``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6271,9 +6271,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityOidcKeyName(context.Background(), name).IdentityOidcKeyRequest(identityOidcKeyRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityOidcKeyName(context.Background(), name).IdentityOidcKeyRequest(identityOidcKeyRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityOidcKeyName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcKeyName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6339,9 +6339,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityOidcKeyNameRotate(context.Background(), name).IdentityOidcKeyRotateRequest(identityOidcKeyRotateRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityOidcKeyNameRotate(context.Background(), name).IdentityOidcKeyRotateRequest(identityOidcKeyRotateRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityOidcKeyNameRotate``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcKeyNameRotate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6407,9 +6407,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityOidcProviderName(context.Background(), name).IdentityOidcProviderRequest(identityOidcProviderRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityOidcProviderName(context.Background(), name).IdentityOidcProviderRequest(identityOidcProviderRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityOidcProviderName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcProviderName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6475,9 +6475,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityOidcProviderNameAuthorize(context.Background(), name).IdentityOidcProviderAuthorizeRequest(identityOidcProviderAuthorizeRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityOidcProviderNameAuthorize(context.Background(), name).IdentityOidcProviderAuthorizeRequest(identityOidcProviderAuthorizeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityOidcProviderNameAuthorize``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcProviderNameAuthorize``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6543,9 +6543,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityOidcProviderNameToken(context.Background(), name).IdentityOidcProviderTokenRequest(identityOidcProviderTokenRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityOidcProviderNameToken(context.Background(), name).IdentityOidcProviderTokenRequest(identityOidcProviderTokenRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityOidcProviderNameToken``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcProviderNameToken``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6610,9 +6610,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityOidcProviderNameUserinfo(context.Background(), name).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityOidcProviderNameUserinfo(context.Background(), name).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityOidcProviderNameUserinfo``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcProviderNameUserinfo``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6677,9 +6677,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityOidcRoleName(context.Background(), name).IdentityOidcRoleRequest(identityOidcRoleRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityOidcRoleName(context.Background(), name).IdentityOidcRoleRequest(identityOidcRoleRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityOidcRoleName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6745,9 +6745,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityOidcScopeName(context.Background(), name).IdentityOidcScopeRequest(identityOidcScopeRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityOidcScopeName(context.Background(), name).IdentityOidcScopeRequest(identityOidcScopeRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityOidcScopeName``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcScopeName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6812,9 +6812,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityPersona(context.Background()).IdentityPersonaRequest(identityPersonaRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityPersona(context.Background()).IdentityPersonaRequest(identityPersonaRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityPersona``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityPersona``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -6875,9 +6875,9 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.IdentityApi.PostIdentityPersonaIdId(context.Background(), id).IdentityPersonaIdRequest(identityPersonaIdRequest).Execute()
+    resp, r, err := apiClient.Identity.PostIdentityPersonaIdId(context.Background(), id).IdentityPersonaIdRequest(identityPersonaIdRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `IdentityApi.PostIdentityPersonaIdId``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityPersonaIdId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }

@@ -19,12 +19,14 @@ import (
 	"strings"
 )
 
-// IdentityService Identity service
-type IdentityService service
+// Identity is a simple wrapper around the client for Identity requests
+type Identity struct {
+	client *Client
+}
 
 // DeleteIdentityAliasIdId Update, read or delete an alias ID.
 // id: ID of the alias
-func (a *IdentityService) DeleteIdentityAliasIdId(ctx context.Context, id string) (*http.Response, error) {
+func (a *Identity) DeleteIdentityAliasIdId(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -91,7 +93,7 @@ func (a *IdentityService) DeleteIdentityAliasIdId(ctx context.Context, id string
 
 // DeleteIdentityEntityAliasIdId Update, read or delete an alias ID.
 // id: ID of the alias
-func (a *IdentityService) DeleteIdentityEntityAliasIdId(ctx context.Context, id string) (*http.Response, error) {
+func (a *Identity) DeleteIdentityEntityAliasIdId(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -158,7 +160,7 @@ func (a *IdentityService) DeleteIdentityEntityAliasIdId(ctx context.Context, id 
 
 // DeleteIdentityEntityIdId Update, read or delete an entity using entity ID
 // id: ID of the entity. If set, updates the corresponding existing entity.
-func (a *IdentityService) DeleteIdentityEntityIdId(ctx context.Context, id string) (*http.Response, error) {
+func (a *Identity) DeleteIdentityEntityIdId(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -225,7 +227,7 @@ func (a *IdentityService) DeleteIdentityEntityIdId(ctx context.Context, id strin
 
 // DeleteIdentityEntityNameName Update, read or delete an entity using entity name
 // name: Name of the entity
-func (a *IdentityService) DeleteIdentityEntityNameName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Identity) DeleteIdentityEntityNameName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -292,7 +294,7 @@ func (a *IdentityService) DeleteIdentityEntityNameName(ctx context.Context, name
 
 // DeleteIdentityGroupAliasIdId
 // id: ID of the group alias.
-func (a *IdentityService) DeleteIdentityGroupAliasIdId(ctx context.Context, id string) (*http.Response, error) {
+func (a *Identity) DeleteIdentityGroupAliasIdId(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -359,7 +361,7 @@ func (a *IdentityService) DeleteIdentityGroupAliasIdId(ctx context.Context, id s
 
 // DeleteIdentityGroupIdId Update or delete an existing group using its ID.
 // id: ID of the group. If set, updates the corresponding existing group.
-func (a *IdentityService) DeleteIdentityGroupIdId(ctx context.Context, id string) (*http.Response, error) {
+func (a *Identity) DeleteIdentityGroupIdId(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -426,7 +428,7 @@ func (a *IdentityService) DeleteIdentityGroupIdId(ctx context.Context, id string
 
 // DeleteIdentityGroupNameName
 // name: Name of the group.
-func (a *IdentityService) DeleteIdentityGroupNameName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Identity) DeleteIdentityGroupNameName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -493,7 +495,7 @@ func (a *IdentityService) DeleteIdentityGroupNameName(ctx context.Context, name 
 
 // DeleteIdentityMfaLoginEnforcementName Delete a login enforcement
 // name: Name for this login enforcement configuration
-func (a *IdentityService) DeleteIdentityMfaLoginEnforcementName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Identity) DeleteIdentityMfaLoginEnforcementName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -560,7 +562,7 @@ func (a *IdentityService) DeleteIdentityMfaLoginEnforcementName(ctx context.Cont
 
 // DeleteIdentityMfaMethodDuoMethodId Delete a configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
-func (a *IdentityService) DeleteIdentityMfaMethodDuoMethodId(ctx context.Context, methodId string) (*http.Response, error) {
+func (a *Identity) DeleteIdentityMfaMethodDuoMethodId(ctx context.Context, methodId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -627,7 +629,7 @@ func (a *IdentityService) DeleteIdentityMfaMethodDuoMethodId(ctx context.Context
 
 // DeleteIdentityMfaMethodOktaMethodId Delete a configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
-func (a *IdentityService) DeleteIdentityMfaMethodOktaMethodId(ctx context.Context, methodId string) (*http.Response, error) {
+func (a *Identity) DeleteIdentityMfaMethodOktaMethodId(ctx context.Context, methodId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -694,7 +696,7 @@ func (a *IdentityService) DeleteIdentityMfaMethodOktaMethodId(ctx context.Contex
 
 // DeleteIdentityMfaMethodPingidMethodId Delete a configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
-func (a *IdentityService) DeleteIdentityMfaMethodPingidMethodId(ctx context.Context, methodId string) (*http.Response, error) {
+func (a *Identity) DeleteIdentityMfaMethodPingidMethodId(ctx context.Context, methodId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -761,7 +763,7 @@ func (a *IdentityService) DeleteIdentityMfaMethodPingidMethodId(ctx context.Cont
 
 // DeleteIdentityMfaMethodTotpMethodId Delete a configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
-func (a *IdentityService) DeleteIdentityMfaMethodTotpMethodId(ctx context.Context, methodId string) (*http.Response, error) {
+func (a *Identity) DeleteIdentityMfaMethodTotpMethodId(ctx context.Context, methodId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -828,7 +830,7 @@ func (a *IdentityService) DeleteIdentityMfaMethodTotpMethodId(ctx context.Contex
 
 // DeleteIdentityOidcAssignmentName
 // name: Name of the assignment
-func (a *IdentityService) DeleteIdentityOidcAssignmentName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Identity) DeleteIdentityOidcAssignmentName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -895,7 +897,7 @@ func (a *IdentityService) DeleteIdentityOidcAssignmentName(ctx context.Context, 
 
 // DeleteIdentityOidcClientName
 // name: Name of the client.
-func (a *IdentityService) DeleteIdentityOidcClientName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Identity) DeleteIdentityOidcClientName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -962,7 +964,7 @@ func (a *IdentityService) DeleteIdentityOidcClientName(ctx context.Context, name
 
 // DeleteIdentityOidcKeyName CRUD operations for OIDC keys.
 // name: Name of the key
-func (a *IdentityService) DeleteIdentityOidcKeyName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Identity) DeleteIdentityOidcKeyName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1029,7 +1031,7 @@ func (a *IdentityService) DeleteIdentityOidcKeyName(ctx context.Context, name st
 
 // DeleteIdentityOidcProviderName
 // name: Name of the provider
-func (a *IdentityService) DeleteIdentityOidcProviderName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Identity) DeleteIdentityOidcProviderName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1096,7 +1098,7 @@ func (a *IdentityService) DeleteIdentityOidcProviderName(ctx context.Context, na
 
 // DeleteIdentityOidcRoleName CRUD operations on OIDC Roles
 // name: Name of the role
-func (a *IdentityService) DeleteIdentityOidcRoleName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Identity) DeleteIdentityOidcRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1163,7 +1165,7 @@ func (a *IdentityService) DeleteIdentityOidcRoleName(ctx context.Context, name s
 
 // DeleteIdentityOidcScopeName
 // name: Name of the scope
-func (a *IdentityService) DeleteIdentityOidcScopeName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Identity) DeleteIdentityOidcScopeName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1230,7 +1232,7 @@ func (a *IdentityService) DeleteIdentityOidcScopeName(ctx context.Context, name 
 
 // DeleteIdentityPersonaIdId Update, read or delete an alias ID.
 // id: ID of the persona
-func (a *IdentityService) DeleteIdentityPersonaIdId(ctx context.Context, id string) (*http.Response, error) {
+func (a *Identity) DeleteIdentityPersonaIdId(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1297,7 +1299,7 @@ func (a *IdentityService) DeleteIdentityPersonaIdId(ctx context.Context, id stri
 
 // GetIdentityAliasId List all the alias IDs.
 // list: Must be set to &#x60;true&#x60;
-func (a *IdentityService) GetIdentityAliasId(ctx context.Context, list string) (*http.Response, error) {
+func (a *Identity) GetIdentityAliasId(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1364,7 +1366,7 @@ func (a *IdentityService) GetIdentityAliasId(ctx context.Context, list string) (
 
 // GetIdentityAliasIdId Update, read or delete an alias ID.
 // id: ID of the alias
-func (a *IdentityService) GetIdentityAliasIdId(ctx context.Context, id string) (*http.Response, error) {
+func (a *Identity) GetIdentityAliasIdId(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1431,7 +1433,7 @@ func (a *IdentityService) GetIdentityAliasIdId(ctx context.Context, id string) (
 
 // GetIdentityEntityAliasId List all the alias IDs.
 // list: Must be set to &#x60;true&#x60;
-func (a *IdentityService) GetIdentityEntityAliasId(ctx context.Context, list string) (*http.Response, error) {
+func (a *Identity) GetIdentityEntityAliasId(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1498,7 +1500,7 @@ func (a *IdentityService) GetIdentityEntityAliasId(ctx context.Context, list str
 
 // GetIdentityEntityAliasIdId Update, read or delete an alias ID.
 // id: ID of the alias
-func (a *IdentityService) GetIdentityEntityAliasIdId(ctx context.Context, id string) (*http.Response, error) {
+func (a *Identity) GetIdentityEntityAliasIdId(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1565,7 +1567,7 @@ func (a *IdentityService) GetIdentityEntityAliasIdId(ctx context.Context, id str
 
 // GetIdentityEntityId List all the entity IDs
 // list: Must be set to &#x60;true&#x60;
-func (a *IdentityService) GetIdentityEntityId(ctx context.Context, list string) (*http.Response, error) {
+func (a *Identity) GetIdentityEntityId(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1632,7 +1634,7 @@ func (a *IdentityService) GetIdentityEntityId(ctx context.Context, list string) 
 
 // GetIdentityEntityIdId Update, read or delete an entity using entity ID
 // id: ID of the entity. If set, updates the corresponding existing entity.
-func (a *IdentityService) GetIdentityEntityIdId(ctx context.Context, id string) (*http.Response, error) {
+func (a *Identity) GetIdentityEntityIdId(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1699,7 +1701,7 @@ func (a *IdentityService) GetIdentityEntityIdId(ctx context.Context, id string) 
 
 // GetIdentityEntityName List all the entity names
 // list: Must be set to &#x60;true&#x60;
-func (a *IdentityService) GetIdentityEntityName(ctx context.Context, list string) (*http.Response, error) {
+func (a *Identity) GetIdentityEntityName(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1766,7 +1768,7 @@ func (a *IdentityService) GetIdentityEntityName(ctx context.Context, list string
 
 // GetIdentityEntityNameName Update, read or delete an entity using entity name
 // name: Name of the entity
-func (a *IdentityService) GetIdentityEntityNameName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Identity) GetIdentityEntityNameName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1833,7 +1835,7 @@ func (a *IdentityService) GetIdentityEntityNameName(ctx context.Context, name st
 
 // GetIdentityGroupAliasId List all the group alias IDs.
 // list: Must be set to &#x60;true&#x60;
-func (a *IdentityService) GetIdentityGroupAliasId(ctx context.Context, list string) (*http.Response, error) {
+func (a *Identity) GetIdentityGroupAliasId(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1900,7 +1902,7 @@ func (a *IdentityService) GetIdentityGroupAliasId(ctx context.Context, list stri
 
 // GetIdentityGroupAliasIdId
 // id: ID of the group alias.
-func (a *IdentityService) GetIdentityGroupAliasIdId(ctx context.Context, id string) (*http.Response, error) {
+func (a *Identity) GetIdentityGroupAliasIdId(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1967,7 +1969,7 @@ func (a *IdentityService) GetIdentityGroupAliasIdId(ctx context.Context, id stri
 
 // GetIdentityGroupId List all the group IDs.
 // list: Must be set to &#x60;true&#x60;
-func (a *IdentityService) GetIdentityGroupId(ctx context.Context, list string) (*http.Response, error) {
+func (a *Identity) GetIdentityGroupId(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2034,7 +2036,7 @@ func (a *IdentityService) GetIdentityGroupId(ctx context.Context, list string) (
 
 // GetIdentityGroupIdId Update or delete an existing group using its ID.
 // id: ID of the group. If set, updates the corresponding existing group.
-func (a *IdentityService) GetIdentityGroupIdId(ctx context.Context, id string) (*http.Response, error) {
+func (a *Identity) GetIdentityGroupIdId(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2101,7 +2103,7 @@ func (a *IdentityService) GetIdentityGroupIdId(ctx context.Context, id string) (
 
 // GetIdentityGroupName
 // list: Must be set to &#x60;true&#x60;
-func (a *IdentityService) GetIdentityGroupName(ctx context.Context, list string) (*http.Response, error) {
+func (a *Identity) GetIdentityGroupName(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2168,7 +2170,7 @@ func (a *IdentityService) GetIdentityGroupName(ctx context.Context, list string)
 
 // GetIdentityGroupNameName
 // name: Name of the group.
-func (a *IdentityService) GetIdentityGroupNameName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Identity) GetIdentityGroupNameName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2235,7 +2237,7 @@ func (a *IdentityService) GetIdentityGroupNameName(ctx context.Context, name str
 
 // GetIdentityMfaLoginEnforcement List login enforcements
 // list: Must be set to &#x60;true&#x60;
-func (a *IdentityService) GetIdentityMfaLoginEnforcement(ctx context.Context, list string) (*http.Response, error) {
+func (a *Identity) GetIdentityMfaLoginEnforcement(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2302,7 +2304,7 @@ func (a *IdentityService) GetIdentityMfaLoginEnforcement(ctx context.Context, li
 
 // GetIdentityMfaLoginEnforcementName Read the current login enforcement
 // name: Name for this login enforcement configuration
-func (a *IdentityService) GetIdentityMfaLoginEnforcementName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Identity) GetIdentityMfaLoginEnforcementName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2369,7 +2371,7 @@ func (a *IdentityService) GetIdentityMfaLoginEnforcementName(ctx context.Context
 
 // GetIdentityMfaMethod List MFA method configurations for all MFA methods
 // list: Must be set to &#x60;true&#x60;
-func (a *IdentityService) GetIdentityMfaMethod(ctx context.Context, list string) (*http.Response, error) {
+func (a *Identity) GetIdentityMfaMethod(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2436,7 +2438,7 @@ func (a *IdentityService) GetIdentityMfaMethod(ctx context.Context, list string)
 
 // GetIdentityMfaMethodDuo List MFA method configurations for the given MFA method
 // list: Must be set to &#x60;true&#x60;
-func (a *IdentityService) GetIdentityMfaMethodDuo(ctx context.Context, list string) (*http.Response, error) {
+func (a *Identity) GetIdentityMfaMethodDuo(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2503,7 +2505,7 @@ func (a *IdentityService) GetIdentityMfaMethodDuo(ctx context.Context, list stri
 
 // GetIdentityMfaMethodDuoMethodId Read the current configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
-func (a *IdentityService) GetIdentityMfaMethodDuoMethodId(ctx context.Context, methodId string) (*http.Response, error) {
+func (a *Identity) GetIdentityMfaMethodDuoMethodId(ctx context.Context, methodId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2570,7 +2572,7 @@ func (a *IdentityService) GetIdentityMfaMethodDuoMethodId(ctx context.Context, m
 
 // GetIdentityMfaMethodMethodId Read the current configuration for the given ID regardless of the MFA method type
 // methodId: The unique identifier for this MFA method.
-func (a *IdentityService) GetIdentityMfaMethodMethodId(ctx context.Context, methodId string) (*http.Response, error) {
+func (a *Identity) GetIdentityMfaMethodMethodId(ctx context.Context, methodId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2637,7 +2639,7 @@ func (a *IdentityService) GetIdentityMfaMethodMethodId(ctx context.Context, meth
 
 // GetIdentityMfaMethodOkta List MFA method configurations for the given MFA method
 // list: Must be set to &#x60;true&#x60;
-func (a *IdentityService) GetIdentityMfaMethodOkta(ctx context.Context, list string) (*http.Response, error) {
+func (a *Identity) GetIdentityMfaMethodOkta(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2704,7 +2706,7 @@ func (a *IdentityService) GetIdentityMfaMethodOkta(ctx context.Context, list str
 
 // GetIdentityMfaMethodOktaMethodId Read the current configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
-func (a *IdentityService) GetIdentityMfaMethodOktaMethodId(ctx context.Context, methodId string) (*http.Response, error) {
+func (a *Identity) GetIdentityMfaMethodOktaMethodId(ctx context.Context, methodId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2771,7 +2773,7 @@ func (a *IdentityService) GetIdentityMfaMethodOktaMethodId(ctx context.Context, 
 
 // GetIdentityMfaMethodPingid List MFA method configurations for the given MFA method
 // list: Must be set to &#x60;true&#x60;
-func (a *IdentityService) GetIdentityMfaMethodPingid(ctx context.Context, list string) (*http.Response, error) {
+func (a *Identity) GetIdentityMfaMethodPingid(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2838,7 +2840,7 @@ func (a *IdentityService) GetIdentityMfaMethodPingid(ctx context.Context, list s
 
 // GetIdentityMfaMethodPingidMethodId Read the current configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
-func (a *IdentityService) GetIdentityMfaMethodPingidMethodId(ctx context.Context, methodId string) (*http.Response, error) {
+func (a *Identity) GetIdentityMfaMethodPingidMethodId(ctx context.Context, methodId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2905,7 +2907,7 @@ func (a *IdentityService) GetIdentityMfaMethodPingidMethodId(ctx context.Context
 
 // GetIdentityMfaMethodTotp List MFA method configurations for the given MFA method
 // list: Must be set to &#x60;true&#x60;
-func (a *IdentityService) GetIdentityMfaMethodTotp(ctx context.Context, list string) (*http.Response, error) {
+func (a *Identity) GetIdentityMfaMethodTotp(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2972,7 +2974,7 @@ func (a *IdentityService) GetIdentityMfaMethodTotp(ctx context.Context, list str
 
 // GetIdentityMfaMethodTotpMethodId Read the current configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
-func (a *IdentityService) GetIdentityMfaMethodTotpMethodId(ctx context.Context, methodId string) (*http.Response, error) {
+func (a *Identity) GetIdentityMfaMethodTotpMethodId(ctx context.Context, methodId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3039,7 +3041,7 @@ func (a *IdentityService) GetIdentityMfaMethodTotpMethodId(ctx context.Context, 
 
 // GetIdentityOidcAssignment
 // list: Must be set to &#x60;true&#x60;
-func (a *IdentityService) GetIdentityOidcAssignment(ctx context.Context, list string) (*http.Response, error) {
+func (a *Identity) GetIdentityOidcAssignment(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3106,7 +3108,7 @@ func (a *IdentityService) GetIdentityOidcAssignment(ctx context.Context, list st
 
 // GetIdentityOidcAssignmentName
 // name: Name of the assignment
-func (a *IdentityService) GetIdentityOidcAssignmentName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Identity) GetIdentityOidcAssignmentName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3173,7 +3175,7 @@ func (a *IdentityService) GetIdentityOidcAssignmentName(ctx context.Context, nam
 
 // GetIdentityOidcClient
 // list: Must be set to &#x60;true&#x60;
-func (a *IdentityService) GetIdentityOidcClient(ctx context.Context, list string) (*http.Response, error) {
+func (a *Identity) GetIdentityOidcClient(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3240,7 +3242,7 @@ func (a *IdentityService) GetIdentityOidcClient(ctx context.Context, list string
 
 // GetIdentityOidcClientName
 // name: Name of the client.
-func (a *IdentityService) GetIdentityOidcClientName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Identity) GetIdentityOidcClientName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3306,7 +3308,7 @@ func (a *IdentityService) GetIdentityOidcClientName(ctx context.Context, name st
 }
 
 // GetIdentityOidcConfig OIDC configuration
-func (a *IdentityService) GetIdentityOidcConfig(ctx context.Context) (*http.Response, error) {
+func (a *Identity) GetIdentityOidcConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3372,7 +3374,7 @@ func (a *IdentityService) GetIdentityOidcConfig(ctx context.Context) (*http.Resp
 
 // GetIdentityOidcKey List OIDC keys
 // list: Must be set to &#x60;true&#x60;
-func (a *IdentityService) GetIdentityOidcKey(ctx context.Context, list string) (*http.Response, error) {
+func (a *Identity) GetIdentityOidcKey(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3439,7 +3441,7 @@ func (a *IdentityService) GetIdentityOidcKey(ctx context.Context, list string) (
 
 // GetIdentityOidcKeyName CRUD operations for OIDC keys.
 // name: Name of the key
-func (a *IdentityService) GetIdentityOidcKeyName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Identity) GetIdentityOidcKeyName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3506,7 +3508,7 @@ func (a *IdentityService) GetIdentityOidcKeyName(ctx context.Context, name strin
 
 // GetIdentityOidcProvider
 // list: Must be set to &#x60;true&#x60;
-func (a *IdentityService) GetIdentityOidcProvider(ctx context.Context, list string) (*http.Response, error) {
+func (a *Identity) GetIdentityOidcProvider(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3573,7 +3575,7 @@ func (a *IdentityService) GetIdentityOidcProvider(ctx context.Context, list stri
 
 // GetIdentityOidcProviderName
 // name: Name of the provider
-func (a *IdentityService) GetIdentityOidcProviderName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Identity) GetIdentityOidcProviderName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3640,7 +3642,7 @@ func (a *IdentityService) GetIdentityOidcProviderName(ctx context.Context, name 
 
 // GetIdentityOidcProviderNameAuthorize
 // name: Name of the provider
-func (a *IdentityService) GetIdentityOidcProviderNameAuthorize(ctx context.Context, name string) (*http.Response, error) {
+func (a *Identity) GetIdentityOidcProviderNameAuthorize(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3707,7 +3709,7 @@ func (a *IdentityService) GetIdentityOidcProviderNameAuthorize(ctx context.Conte
 
 // GetIdentityOidcProviderNameUserinfo
 // name: Name of the provider
-func (a *IdentityService) GetIdentityOidcProviderNameUserinfo(ctx context.Context, name string) (*http.Response, error) {
+func (a *Identity) GetIdentityOidcProviderNameUserinfo(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3774,7 +3776,7 @@ func (a *IdentityService) GetIdentityOidcProviderNameUserinfo(ctx context.Contex
 
 // GetIdentityOidcProviderNameWellKnownKeys
 // name: Name of the provider
-func (a *IdentityService) GetIdentityOidcProviderNameWellKnownKeys(ctx context.Context, name string) (*http.Response, error) {
+func (a *Identity) GetIdentityOidcProviderNameWellKnownKeys(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3841,7 +3843,7 @@ func (a *IdentityService) GetIdentityOidcProviderNameWellKnownKeys(ctx context.C
 
 // GetIdentityOidcProviderNameWellKnownOpenidConfiguration
 // name: Name of the provider
-func (a *IdentityService) GetIdentityOidcProviderNameWellKnownOpenidConfiguration(ctx context.Context, name string) (*http.Response, error) {
+func (a *Identity) GetIdentityOidcProviderNameWellKnownOpenidConfiguration(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3908,7 +3910,7 @@ func (a *IdentityService) GetIdentityOidcProviderNameWellKnownOpenidConfiguratio
 
 // GetIdentityOidcRole List configured OIDC roles
 // list: Must be set to &#x60;true&#x60;
-func (a *IdentityService) GetIdentityOidcRole(ctx context.Context, list string) (*http.Response, error) {
+func (a *Identity) GetIdentityOidcRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3975,7 +3977,7 @@ func (a *IdentityService) GetIdentityOidcRole(ctx context.Context, list string) 
 
 // GetIdentityOidcRoleName CRUD operations on OIDC Roles
 // name: Name of the role
-func (a *IdentityService) GetIdentityOidcRoleName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Identity) GetIdentityOidcRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4042,7 +4044,7 @@ func (a *IdentityService) GetIdentityOidcRoleName(ctx context.Context, name stri
 
 // GetIdentityOidcScope
 // list: Must be set to &#x60;true&#x60;
-func (a *IdentityService) GetIdentityOidcScope(ctx context.Context, list string) (*http.Response, error) {
+func (a *Identity) GetIdentityOidcScope(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4109,7 +4111,7 @@ func (a *IdentityService) GetIdentityOidcScope(ctx context.Context, list string)
 
 // GetIdentityOidcScopeName
 // name: Name of the scope
-func (a *IdentityService) GetIdentityOidcScopeName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Identity) GetIdentityOidcScopeName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4176,7 +4178,7 @@ func (a *IdentityService) GetIdentityOidcScopeName(ctx context.Context, name str
 
 // GetIdentityOidcTokenName Generate an OIDC token
 // name: Name of the role
-func (a *IdentityService) GetIdentityOidcTokenName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Identity) GetIdentityOidcTokenName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4242,7 +4244,7 @@ func (a *IdentityService) GetIdentityOidcTokenName(ctx context.Context, name str
 }
 
 // GetIdentityOidcWellKnownKeys Retrieve public keys
-func (a *IdentityService) GetIdentityOidcWellKnownKeys(ctx context.Context) (*http.Response, error) {
+func (a *Identity) GetIdentityOidcWellKnownKeys(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4307,7 +4309,7 @@ func (a *IdentityService) GetIdentityOidcWellKnownKeys(ctx context.Context) (*ht
 }
 
 // GetIdentityOidcWellKnownOpenidConfiguration Query OIDC configurations
-func (a *IdentityService) GetIdentityOidcWellKnownOpenidConfiguration(ctx context.Context) (*http.Response, error) {
+func (a *Identity) GetIdentityOidcWellKnownOpenidConfiguration(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4373,7 +4375,7 @@ func (a *IdentityService) GetIdentityOidcWellKnownOpenidConfiguration(ctx contex
 
 // GetIdentityPersonaId List all the alias IDs.
 // list: Must be set to &#x60;true&#x60;
-func (a *IdentityService) GetIdentityPersonaId(ctx context.Context, list string) (*http.Response, error) {
+func (a *Identity) GetIdentityPersonaId(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4440,7 +4442,7 @@ func (a *IdentityService) GetIdentityPersonaId(ctx context.Context, list string)
 
 // GetIdentityPersonaIdId Update, read or delete an alias ID.
 // id: ID of the persona
-func (a *IdentityService) GetIdentityPersonaIdId(ctx context.Context, id string) (*http.Response, error) {
+func (a *Identity) GetIdentityPersonaIdId(ctx context.Context, id string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4506,7 +4508,7 @@ func (a *IdentityService) GetIdentityPersonaIdId(ctx context.Context, id string)
 }
 
 // PostIdentityAlias Create a new alias.
-func (a *IdentityService) PostIdentityAlias(ctx context.Context, identityAliasRequest IdentityAliasRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityAlias(ctx context.Context, identityAliasRequest IdentityAliasRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -4574,7 +4576,7 @@ func (a *IdentityService) PostIdentityAlias(ctx context.Context, identityAliasRe
 
 // PostIdentityAliasIdId Update, read or delete an alias ID.
 // id: ID of the alias
-func (a *IdentityService) PostIdentityAliasIdId(ctx context.Context, id string, identityAliasIdRequest IdentityAliasIdRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityAliasIdId(ctx context.Context, id string, identityAliasIdRequest IdentityAliasIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -4642,7 +4644,7 @@ func (a *IdentityService) PostIdentityAliasIdId(ctx context.Context, id string, 
 }
 
 // PostIdentityEntity Create a new entity
-func (a *IdentityService) PostIdentityEntity(ctx context.Context, identityEntityRequest IdentityEntityRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityEntity(ctx context.Context, identityEntityRequest IdentityEntityRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -4709,7 +4711,7 @@ func (a *IdentityService) PostIdentityEntity(ctx context.Context, identityEntity
 }
 
 // PostIdentityEntityAlias Create a new alias.
-func (a *IdentityService) PostIdentityEntityAlias(ctx context.Context, identityEntityAliasRequest IdentityEntityAliasRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityEntityAlias(ctx context.Context, identityEntityAliasRequest IdentityEntityAliasRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -4777,7 +4779,7 @@ func (a *IdentityService) PostIdentityEntityAlias(ctx context.Context, identityE
 
 // PostIdentityEntityAliasIdId Update, read or delete an alias ID.
 // id: ID of the alias
-func (a *IdentityService) PostIdentityEntityAliasIdId(ctx context.Context, id string, identityEntityAliasIdRequest IdentityEntityAliasIdRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityEntityAliasIdId(ctx context.Context, id string, identityEntityAliasIdRequest IdentityEntityAliasIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -4845,7 +4847,7 @@ func (a *IdentityService) PostIdentityEntityAliasIdId(ctx context.Context, id st
 }
 
 // PostIdentityEntityBatchDelete Delete all of the entities provided
-func (a *IdentityService) PostIdentityEntityBatchDelete(ctx context.Context, identityEntityBatchDeleteRequest IdentityEntityBatchDeleteRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityEntityBatchDelete(ctx context.Context, identityEntityBatchDeleteRequest IdentityEntityBatchDeleteRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -4913,7 +4915,7 @@ func (a *IdentityService) PostIdentityEntityBatchDelete(ctx context.Context, ide
 
 // PostIdentityEntityIdId Update, read or delete an entity using entity ID
 // id: ID of the entity. If set, updates the corresponding existing entity.
-func (a *IdentityService) PostIdentityEntityIdId(ctx context.Context, id string, identityEntityIdRequest IdentityEntityIdRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityEntityIdId(ctx context.Context, id string, identityEntityIdRequest IdentityEntityIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -4981,7 +4983,7 @@ func (a *IdentityService) PostIdentityEntityIdId(ctx context.Context, id string,
 }
 
 // PostIdentityEntityMerge Merge two or more entities together
-func (a *IdentityService) PostIdentityEntityMerge(ctx context.Context, identityEntityMergeRequest IdentityEntityMergeRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityEntityMerge(ctx context.Context, identityEntityMergeRequest IdentityEntityMergeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -5049,7 +5051,7 @@ func (a *IdentityService) PostIdentityEntityMerge(ctx context.Context, identityE
 
 // PostIdentityEntityNameName Update, read or delete an entity using entity name
 // name: Name of the entity
-func (a *IdentityService) PostIdentityEntityNameName(ctx context.Context, name string, identityEntityNameRequest IdentityEntityNameRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityEntityNameName(ctx context.Context, name string, identityEntityNameRequest IdentityEntityNameRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -5117,7 +5119,7 @@ func (a *IdentityService) PostIdentityEntityNameName(ctx context.Context, name s
 }
 
 // PostIdentityGroup Create a new group.
-func (a *IdentityService) PostIdentityGroup(ctx context.Context, identityGroupRequest IdentityGroupRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityGroup(ctx context.Context, identityGroupRequest IdentityGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -5184,7 +5186,7 @@ func (a *IdentityService) PostIdentityGroup(ctx context.Context, identityGroupRe
 }
 
 // PostIdentityGroupAlias Creates a new group alias, or updates an existing one.
-func (a *IdentityService) PostIdentityGroupAlias(ctx context.Context, identityGroupAliasRequest IdentityGroupAliasRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityGroupAlias(ctx context.Context, identityGroupAliasRequest IdentityGroupAliasRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -5252,7 +5254,7 @@ func (a *IdentityService) PostIdentityGroupAlias(ctx context.Context, identityGr
 
 // PostIdentityGroupAliasIdId
 // id: ID of the group alias.
-func (a *IdentityService) PostIdentityGroupAliasIdId(ctx context.Context, id string, identityGroupAliasIdRequest IdentityGroupAliasIdRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityGroupAliasIdId(ctx context.Context, id string, identityGroupAliasIdRequest IdentityGroupAliasIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -5321,7 +5323,7 @@ func (a *IdentityService) PostIdentityGroupAliasIdId(ctx context.Context, id str
 
 // PostIdentityGroupIdId Update or delete an existing group using its ID.
 // id: ID of the group. If set, updates the corresponding existing group.
-func (a *IdentityService) PostIdentityGroupIdId(ctx context.Context, id string, identityGroupIdRequest IdentityGroupIdRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityGroupIdId(ctx context.Context, id string, identityGroupIdRequest IdentityGroupIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -5390,7 +5392,7 @@ func (a *IdentityService) PostIdentityGroupIdId(ctx context.Context, id string, 
 
 // PostIdentityGroupNameName
 // name: Name of the group.
-func (a *IdentityService) PostIdentityGroupNameName(ctx context.Context, name string, identityGroupNameRequest IdentityGroupNameRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityGroupNameName(ctx context.Context, name string, identityGroupNameRequest IdentityGroupNameRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -5458,7 +5460,7 @@ func (a *IdentityService) PostIdentityGroupNameName(ctx context.Context, name st
 }
 
 // PostIdentityLookupEntity Query entities based on various properties.
-func (a *IdentityService) PostIdentityLookupEntity(ctx context.Context, identityLookupEntityRequest IdentityLookupEntityRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityLookupEntity(ctx context.Context, identityLookupEntityRequest IdentityLookupEntityRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -5525,7 +5527,7 @@ func (a *IdentityService) PostIdentityLookupEntity(ctx context.Context, identity
 }
 
 // PostIdentityLookupGroup Query groups based on various properties.
-func (a *IdentityService) PostIdentityLookupGroup(ctx context.Context, identityLookupGroupRequest IdentityLookupGroupRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityLookupGroup(ctx context.Context, identityLookupGroupRequest IdentityLookupGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -5593,7 +5595,7 @@ func (a *IdentityService) PostIdentityLookupGroup(ctx context.Context, identityL
 
 // PostIdentityMfaLoginEnforcementName Create or update a login enforcement
 // name: Name for this login enforcement configuration
-func (a *IdentityService) PostIdentityMfaLoginEnforcementName(ctx context.Context, name string, identityMfaLoginEnforcementRequest IdentityMfaLoginEnforcementRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityMfaLoginEnforcementName(ctx context.Context, name string, identityMfaLoginEnforcementRequest IdentityMfaLoginEnforcementRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -5662,7 +5664,7 @@ func (a *IdentityService) PostIdentityMfaLoginEnforcementName(ctx context.Contex
 
 // PostIdentityMfaMethodDuoMethodId Update or create a configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
-func (a *IdentityService) PostIdentityMfaMethodDuoMethodId(ctx context.Context, methodId string, identityMfaMethodDuoRequest IdentityMfaMethodDuoRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityMfaMethodDuoMethodId(ctx context.Context, methodId string, identityMfaMethodDuoRequest IdentityMfaMethodDuoRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -5731,7 +5733,7 @@ func (a *IdentityService) PostIdentityMfaMethodDuoMethodId(ctx context.Context, 
 
 // PostIdentityMfaMethodOktaMethodId Update or create a configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
-func (a *IdentityService) PostIdentityMfaMethodOktaMethodId(ctx context.Context, methodId string, identityMfaMethodOktaRequest IdentityMfaMethodOktaRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityMfaMethodOktaMethodId(ctx context.Context, methodId string, identityMfaMethodOktaRequest IdentityMfaMethodOktaRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -5800,7 +5802,7 @@ func (a *IdentityService) PostIdentityMfaMethodOktaMethodId(ctx context.Context,
 
 // PostIdentityMfaMethodPingidMethodId Update or create a configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
-func (a *IdentityService) PostIdentityMfaMethodPingidMethodId(ctx context.Context, methodId string, identityMfaMethodPingidRequest IdentityMfaMethodPingidRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityMfaMethodPingidMethodId(ctx context.Context, methodId string, identityMfaMethodPingidRequest IdentityMfaMethodPingidRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -5868,7 +5870,7 @@ func (a *IdentityService) PostIdentityMfaMethodPingidMethodId(ctx context.Contex
 }
 
 // PostIdentityMfaMethodTotpAdminDestroy Destroys a TOTP secret for the given MFA method ID on the given entity
-func (a *IdentityService) PostIdentityMfaMethodTotpAdminDestroy(ctx context.Context, identityMfaMethodTotpAdminDestroyRequest IdentityMfaMethodTotpAdminDestroyRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityMfaMethodTotpAdminDestroy(ctx context.Context, identityMfaMethodTotpAdminDestroyRequest IdentityMfaMethodTotpAdminDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -5935,7 +5937,7 @@ func (a *IdentityService) PostIdentityMfaMethodTotpAdminDestroy(ctx context.Cont
 }
 
 // PostIdentityMfaMethodTotpAdminGenerate Update or create TOTP secret for the given method ID on the given entity.
-func (a *IdentityService) PostIdentityMfaMethodTotpAdminGenerate(ctx context.Context, identityMfaMethodTotpAdminGenerateRequest IdentityMfaMethodTotpAdminGenerateRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityMfaMethodTotpAdminGenerate(ctx context.Context, identityMfaMethodTotpAdminGenerateRequest IdentityMfaMethodTotpAdminGenerateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -6002,7 +6004,7 @@ func (a *IdentityService) PostIdentityMfaMethodTotpAdminGenerate(ctx context.Con
 }
 
 // PostIdentityMfaMethodTotpGenerate Update or create TOTP secret for the given method ID on the given entity.
-func (a *IdentityService) PostIdentityMfaMethodTotpGenerate(ctx context.Context, identityMfaMethodTotpGenerateRequest IdentityMfaMethodTotpGenerateRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityMfaMethodTotpGenerate(ctx context.Context, identityMfaMethodTotpGenerateRequest IdentityMfaMethodTotpGenerateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -6070,7 +6072,7 @@ func (a *IdentityService) PostIdentityMfaMethodTotpGenerate(ctx context.Context,
 
 // PostIdentityMfaMethodTotpMethodId Update or create a configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
-func (a *IdentityService) PostIdentityMfaMethodTotpMethodId(ctx context.Context, methodId string, identityMfaMethodTotpRequest IdentityMfaMethodTotpRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityMfaMethodTotpMethodId(ctx context.Context, methodId string, identityMfaMethodTotpRequest IdentityMfaMethodTotpRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -6139,7 +6141,7 @@ func (a *IdentityService) PostIdentityMfaMethodTotpMethodId(ctx context.Context,
 
 // PostIdentityOidcAssignmentName
 // name: Name of the assignment
-func (a *IdentityService) PostIdentityOidcAssignmentName(ctx context.Context, name string, identityOidcAssignmentRequest IdentityOidcAssignmentRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityOidcAssignmentName(ctx context.Context, name string, identityOidcAssignmentRequest IdentityOidcAssignmentRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -6208,7 +6210,7 @@ func (a *IdentityService) PostIdentityOidcAssignmentName(ctx context.Context, na
 
 // PostIdentityOidcClientName
 // name: Name of the client.
-func (a *IdentityService) PostIdentityOidcClientName(ctx context.Context, name string, identityOidcClientRequest IdentityOidcClientRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityOidcClientName(ctx context.Context, name string, identityOidcClientRequest IdentityOidcClientRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -6276,7 +6278,7 @@ func (a *IdentityService) PostIdentityOidcClientName(ctx context.Context, name s
 }
 
 // PostIdentityOidcConfig OIDC configuration
-func (a *IdentityService) PostIdentityOidcConfig(ctx context.Context, identityOidcConfigRequest IdentityOidcConfigRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityOidcConfig(ctx context.Context, identityOidcConfigRequest IdentityOidcConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -6343,7 +6345,7 @@ func (a *IdentityService) PostIdentityOidcConfig(ctx context.Context, identityOi
 }
 
 // PostIdentityOidcIntrospect Verify the authenticity of an OIDC token
-func (a *IdentityService) PostIdentityOidcIntrospect(ctx context.Context, identityOidcIntrospectRequest IdentityOidcIntrospectRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityOidcIntrospect(ctx context.Context, identityOidcIntrospectRequest IdentityOidcIntrospectRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -6411,7 +6413,7 @@ func (a *IdentityService) PostIdentityOidcIntrospect(ctx context.Context, identi
 
 // PostIdentityOidcKeyName CRUD operations for OIDC keys.
 // name: Name of the key
-func (a *IdentityService) PostIdentityOidcKeyName(ctx context.Context, name string, identityOidcKeyRequest IdentityOidcKeyRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityOidcKeyName(ctx context.Context, name string, identityOidcKeyRequest IdentityOidcKeyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -6480,7 +6482,7 @@ func (a *IdentityService) PostIdentityOidcKeyName(ctx context.Context, name stri
 
 // PostIdentityOidcKeyNameRotate Rotate a named OIDC key.
 // name: Name of the key
-func (a *IdentityService) PostIdentityOidcKeyNameRotate(ctx context.Context, name string, identityOidcKeyRotateRequest IdentityOidcKeyRotateRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityOidcKeyNameRotate(ctx context.Context, name string, identityOidcKeyRotateRequest IdentityOidcKeyRotateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -6549,7 +6551,7 @@ func (a *IdentityService) PostIdentityOidcKeyNameRotate(ctx context.Context, nam
 
 // PostIdentityOidcProviderName
 // name: Name of the provider
-func (a *IdentityService) PostIdentityOidcProviderName(ctx context.Context, name string, identityOidcProviderRequest IdentityOidcProviderRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityOidcProviderName(ctx context.Context, name string, identityOidcProviderRequest IdentityOidcProviderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -6618,7 +6620,7 @@ func (a *IdentityService) PostIdentityOidcProviderName(ctx context.Context, name
 
 // PostIdentityOidcProviderNameAuthorize
 // name: Name of the provider
-func (a *IdentityService) PostIdentityOidcProviderNameAuthorize(ctx context.Context, name string, identityOidcProviderAuthorizeRequest IdentityOidcProviderAuthorizeRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityOidcProviderNameAuthorize(ctx context.Context, name string, identityOidcProviderAuthorizeRequest IdentityOidcProviderAuthorizeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -6687,7 +6689,7 @@ func (a *IdentityService) PostIdentityOidcProviderNameAuthorize(ctx context.Cont
 
 // PostIdentityOidcProviderNameToken
 // name: Name of the provider
-func (a *IdentityService) PostIdentityOidcProviderNameToken(ctx context.Context, name string, identityOidcProviderTokenRequest IdentityOidcProviderTokenRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityOidcProviderNameToken(ctx context.Context, name string, identityOidcProviderTokenRequest IdentityOidcProviderTokenRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -6756,7 +6758,7 @@ func (a *IdentityService) PostIdentityOidcProviderNameToken(ctx context.Context,
 
 // PostIdentityOidcProviderNameUserinfo
 // name: Name of the provider
-func (a *IdentityService) PostIdentityOidcProviderNameUserinfo(ctx context.Context, name string) (*http.Response, error) {
+func (a *Identity) PostIdentityOidcProviderNameUserinfo(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -6823,7 +6825,7 @@ func (a *IdentityService) PostIdentityOidcProviderNameUserinfo(ctx context.Conte
 
 // PostIdentityOidcRoleName CRUD operations on OIDC Roles
 // name: Name of the role
-func (a *IdentityService) PostIdentityOidcRoleName(ctx context.Context, name string, identityOidcRoleRequest IdentityOidcRoleRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityOidcRoleName(ctx context.Context, name string, identityOidcRoleRequest IdentityOidcRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -6892,7 +6894,7 @@ func (a *IdentityService) PostIdentityOidcRoleName(ctx context.Context, name str
 
 // PostIdentityOidcScopeName
 // name: Name of the scope
-func (a *IdentityService) PostIdentityOidcScopeName(ctx context.Context, name string, identityOidcScopeRequest IdentityOidcScopeRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityOidcScopeName(ctx context.Context, name string, identityOidcScopeRequest IdentityOidcScopeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -6960,7 +6962,7 @@ func (a *IdentityService) PostIdentityOidcScopeName(ctx context.Context, name st
 }
 
 // PostIdentityPersona Create a new alias.
-func (a *IdentityService) PostIdentityPersona(ctx context.Context, identityPersonaRequest IdentityPersonaRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityPersona(ctx context.Context, identityPersonaRequest IdentityPersonaRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -7028,7 +7030,7 @@ func (a *IdentityService) PostIdentityPersona(ctx context.Context, identityPerso
 
 // PostIdentityPersonaIdId Update, read or delete an alias ID.
 // id: ID of the persona
-func (a *IdentityService) PostIdentityPersonaIdId(ctx context.Context, id string, identityPersonaIdRequest IdentityPersonaIdRequest) (*http.Response, error) {
+func (a *Identity) PostIdentityPersonaIdId(ctx context.Context, id string, identityPersonaIdRequest IdentityPersonaIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

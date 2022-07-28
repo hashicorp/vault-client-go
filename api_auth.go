@@ -19,12 +19,14 @@ import (
 	"strings"
 )
 
-// AuthService Auth service
-type AuthService service
+// Auth is a simple wrapper around the client for Auth requests
+type Auth struct {
+	client *Client
+}
 
 // DeleteAuthAlicloudRoleRole Create a role and associate policies to it.
 // role: The name of the role as it should appear in Vault.
-func (a *AuthService) DeleteAuthAlicloudRoleRole(ctx context.Context, role string) (*http.Response, error) {
+func (a *Auth) DeleteAuthAlicloudRoleRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -91,7 +93,7 @@ func (a *AuthService) DeleteAuthAlicloudRoleRole(ctx context.Context, role strin
 
 // DeleteAuthAppIdMapAppIdKey Read/write/delete a single app-id mapping
 // key: Key for the app-id mapping
-func (a *AuthService) DeleteAuthAppIdMapAppIdKey(ctx context.Context, key string) (*http.Response, error) {
+func (a *Auth) DeleteAuthAppIdMapAppIdKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -158,7 +160,7 @@ func (a *AuthService) DeleteAuthAppIdMapAppIdKey(ctx context.Context, key string
 
 // DeleteAuthAppIdMapUserIdKey Read/write/delete a single user-id mapping
 // key: Key for the user-id mapping
-func (a *AuthService) DeleteAuthAppIdMapUserIdKey(ctx context.Context, key string) (*http.Response, error) {
+func (a *Auth) DeleteAuthAppIdMapUserIdKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -225,7 +227,7 @@ func (a *AuthService) DeleteAuthAppIdMapUserIdKey(ctx context.Context, key strin
 
 // DeleteAuthApproleRoleRoleName Register an role with the backend.
 // roleName: Name of the role.
-func (a *AuthService) DeleteAuthApproleRoleRoleName(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) DeleteAuthApproleRoleRoleName(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -292,7 +294,7 @@ func (a *AuthService) DeleteAuthApproleRoleRoleName(ctx context.Context, roleNam
 
 // DeleteAuthApproleRoleRoleNameBindSecretId Impose secret_id to be presented during login using this role.
 // roleName: Name of the role.
-func (a *AuthService) DeleteAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) DeleteAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -359,7 +361,7 @@ func (a *AuthService) DeleteAuthApproleRoleRoleNameBindSecretId(ctx context.Cont
 
 // DeleteAuthApproleRoleRoleNameBoundCidrList Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
 // roleName: Name of the role.
-func (a *AuthService) DeleteAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) DeleteAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -426,7 +428,7 @@ func (a *AuthService) DeleteAuthApproleRoleRoleNameBoundCidrList(ctx context.Con
 
 // DeleteAuthApproleRoleRoleNamePeriod Updates the value of 'period' on the role
 // roleName: Name of the role.
-func (a *AuthService) DeleteAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) DeleteAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -493,7 +495,7 @@ func (a *AuthService) DeleteAuthApproleRoleRoleNamePeriod(ctx context.Context, r
 
 // DeleteAuthApproleRoleRoleNamePolicies Policies of the role.
 // roleName: Name of the role.
-func (a *AuthService) DeleteAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) DeleteAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -560,7 +562,7 @@ func (a *AuthService) DeleteAuthApproleRoleRoleNamePolicies(ctx context.Context,
 
 // DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy
 // roleName: Name of the role.
-func (a *AuthService) DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -627,7 +629,7 @@ func (a *AuthService) DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx c
 
 // DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
 // roleName: Name of the role.
-func (a *AuthService) DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -694,7 +696,7 @@ func (a *AuthService) DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx contex
 
 // DeleteAuthApproleRoleRoleNameSecretIdDestroy Invalidate an issued secret_id
 // roleName: Name of the role.
-func (a *AuthService) DeleteAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -761,7 +763,7 @@ func (a *AuthService) DeleteAuthApproleRoleRoleNameSecretIdDestroy(ctx context.C
 
 // DeleteAuthApproleRoleRoleNameSecretIdNumUses Use limit of the SecretID generated against the role.
 // roleName: Name of the role.
-func (a *AuthService) DeleteAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -828,7 +830,7 @@ func (a *AuthService) DeleteAuthApproleRoleRoleNameSecretIdNumUses(ctx context.C
 
 // DeleteAuthApproleRoleRoleNameSecretIdTtl Duration in seconds, representing the lifetime of the SecretIDs that are generated against the role using 'role/<role_name>/secret-id' or 'role/<role_name>/custom-secret-id' endpoints.
 // roleName: Name of the role.
-func (a *AuthService) DeleteAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -895,7 +897,7 @@ func (a *AuthService) DeleteAuthApproleRoleRoleNameSecretIdTtl(ctx context.Conte
 
 // DeleteAuthApproleRoleRoleNameTokenBoundCidrs Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
 // roleName: Name of the role.
-func (a *AuthService) DeleteAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) DeleteAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -962,7 +964,7 @@ func (a *AuthService) DeleteAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.C
 
 // DeleteAuthApproleRoleRoleNameTokenMaxTtl Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
 // roleName: Name of the role.
-func (a *AuthService) DeleteAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) DeleteAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1029,7 +1031,7 @@ func (a *AuthService) DeleteAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Conte
 
 // DeleteAuthApproleRoleRoleNameTokenNumUses Number of times issued tokens can be used
 // roleName: Name of the role.
-func (a *AuthService) DeleteAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) DeleteAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1096,7 +1098,7 @@ func (a *AuthService) DeleteAuthApproleRoleRoleNameTokenNumUses(ctx context.Cont
 
 // DeleteAuthApproleRoleRoleNameTokenTtl Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
 // roleName: Name of the role.
-func (a *AuthService) DeleteAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) DeleteAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1163,7 +1165,7 @@ func (a *AuthService) DeleteAuthApproleRoleRoleNameTokenTtl(ctx context.Context,
 
 // DeleteAuthAwsConfigCertificateCertName
 // certName: Name of the certificate.
-func (a *AuthService) DeleteAuthAwsConfigCertificateCertName(ctx context.Context, certName string) (*http.Response, error) {
+func (a *Auth) DeleteAuthAwsConfigCertificateCertName(ctx context.Context, certName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1229,7 +1231,7 @@ func (a *AuthService) DeleteAuthAwsConfigCertificateCertName(ctx context.Context
 }
 
 // DeleteAuthAwsConfigClient
-func (a *AuthService) DeleteAuthAwsConfigClient(ctx context.Context) (*http.Response, error) {
+func (a *Auth) DeleteAuthAwsConfigClient(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1295,7 +1297,7 @@ func (a *AuthService) DeleteAuthAwsConfigClient(ctx context.Context) (*http.Resp
 
 // DeleteAuthAwsConfigStsAccountId
 // accountId: AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-func (a *AuthService) DeleteAuthAwsConfigStsAccountId(ctx context.Context, accountId string) (*http.Response, error) {
+func (a *Auth) DeleteAuthAwsConfigStsAccountId(ctx context.Context, accountId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1361,7 +1363,7 @@ func (a *AuthService) DeleteAuthAwsConfigStsAccountId(ctx context.Context, accou
 }
 
 // DeleteAuthAwsConfigTidyIdentityAccesslist
-func (a *AuthService) DeleteAuthAwsConfigTidyIdentityAccesslist(ctx context.Context) (*http.Response, error) {
+func (a *Auth) DeleteAuthAwsConfigTidyIdentityAccesslist(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1426,7 +1428,7 @@ func (a *AuthService) DeleteAuthAwsConfigTidyIdentityAccesslist(ctx context.Cont
 }
 
 // DeleteAuthAwsConfigTidyIdentityWhitelist
-func (a *AuthService) DeleteAuthAwsConfigTidyIdentityWhitelist(ctx context.Context) (*http.Response, error) {
+func (a *Auth) DeleteAuthAwsConfigTidyIdentityWhitelist(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1491,7 +1493,7 @@ func (a *AuthService) DeleteAuthAwsConfigTidyIdentityWhitelist(ctx context.Conte
 }
 
 // DeleteAuthAwsConfigTidyRoletagBlacklist
-func (a *AuthService) DeleteAuthAwsConfigTidyRoletagBlacklist(ctx context.Context) (*http.Response, error) {
+func (a *Auth) DeleteAuthAwsConfigTidyRoletagBlacklist(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1556,7 +1558,7 @@ func (a *AuthService) DeleteAuthAwsConfigTidyRoletagBlacklist(ctx context.Contex
 }
 
 // DeleteAuthAwsConfigTidyRoletagDenylist
-func (a *AuthService) DeleteAuthAwsConfigTidyRoletagDenylist(ctx context.Context) (*http.Response, error) {
+func (a *Auth) DeleteAuthAwsConfigTidyRoletagDenylist(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1622,7 +1624,7 @@ func (a *AuthService) DeleteAuthAwsConfigTidyRoletagDenylist(ctx context.Context
 
 // DeleteAuthAwsIdentityAccesslistInstanceId
 // instanceId: EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-func (a *AuthService) DeleteAuthAwsIdentityAccesslistInstanceId(ctx context.Context, instanceId string) (*http.Response, error) {
+func (a *Auth) DeleteAuthAwsIdentityAccesslistInstanceId(ctx context.Context, instanceId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1689,7 +1691,7 @@ func (a *AuthService) DeleteAuthAwsIdentityAccesslistInstanceId(ctx context.Cont
 
 // DeleteAuthAwsIdentityWhitelistInstanceId
 // instanceId: EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-func (a *AuthService) DeleteAuthAwsIdentityWhitelistInstanceId(ctx context.Context, instanceId string) (*http.Response, error) {
+func (a *Auth) DeleteAuthAwsIdentityWhitelistInstanceId(ctx context.Context, instanceId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1756,7 +1758,7 @@ func (a *AuthService) DeleteAuthAwsIdentityWhitelistInstanceId(ctx context.Conte
 
 // DeleteAuthAwsRoleRole
 // role: Name of the role.
-func (a *AuthService) DeleteAuthAwsRoleRole(ctx context.Context, role string) (*http.Response, error) {
+func (a *Auth) DeleteAuthAwsRoleRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1823,7 +1825,7 @@ func (a *AuthService) DeleteAuthAwsRoleRole(ctx context.Context, role string) (*
 
 // DeleteAuthAwsRoletagBlacklistRoleTag
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-func (a *AuthService) DeleteAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
+func (a *Auth) DeleteAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1890,7 +1892,7 @@ func (a *AuthService) DeleteAuthAwsRoletagBlacklistRoleTag(ctx context.Context, 
 
 // DeleteAuthAwsRoletagDenylistRoleTag
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-func (a *AuthService) DeleteAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
+func (a *Auth) DeleteAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1956,7 +1958,7 @@ func (a *AuthService) DeleteAuthAwsRoletagDenylistRoleTag(ctx context.Context, r
 }
 
 // DeleteAuthAzureConfig
-func (a *AuthService) DeleteAuthAzureConfig(ctx context.Context) (*http.Response, error) {
+func (a *Auth) DeleteAuthAzureConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2022,7 +2024,7 @@ func (a *AuthService) DeleteAuthAzureConfig(ctx context.Context) (*http.Response
 
 // DeleteAuthAzureRoleName
 // name: Name of the role.
-func (a *AuthService) DeleteAuthAzureRoleName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Auth) DeleteAuthAzureRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2089,7 +2091,7 @@ func (a *AuthService) DeleteAuthAzureRoleName(ctx context.Context, name string) 
 
 // DeleteAuthCertCertsName Manage trusted certificates used for authentication.
 // name: The name of the certificate
-func (a *AuthService) DeleteAuthCertCertsName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Auth) DeleteAuthCertCertsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2156,7 +2158,7 @@ func (a *AuthService) DeleteAuthCertCertsName(ctx context.Context, name string) 
 
 // DeleteAuthCertCrlsName Manage Certificate Revocation Lists checked during authentication.
 // name: The name of the certificate
-func (a *AuthService) DeleteAuthCertCrlsName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Auth) DeleteAuthCertCrlsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2222,7 +2224,7 @@ func (a *AuthService) DeleteAuthCertCrlsName(ctx context.Context, name string) (
 }
 
 // DeleteAuthCfConfig
-func (a *AuthService) DeleteAuthCfConfig(ctx context.Context) (*http.Response, error) {
+func (a *Auth) DeleteAuthCfConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2288,7 +2290,7 @@ func (a *AuthService) DeleteAuthCfConfig(ctx context.Context) (*http.Response, e
 
 // DeleteAuthCfRolesRole
 // role: The name of the role.
-func (a *AuthService) DeleteAuthCfRolesRole(ctx context.Context, role string) (*http.Response, error) {
+func (a *Auth) DeleteAuthCfRolesRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2355,7 +2357,7 @@ func (a *AuthService) DeleteAuthCfRolesRole(ctx context.Context, role string) (*
 
 // DeleteAuthGcpRoleName Create a GCP role with associated policies and required attributes.
 // name: Name of the role.
-func (a *AuthService) DeleteAuthGcpRoleName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Auth) DeleteAuthGcpRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2422,7 +2424,7 @@ func (a *AuthService) DeleteAuthGcpRoleName(ctx context.Context, name string) (*
 
 // DeleteAuthGithubMapTeamsKey Read/write/delete a single teams mapping
 // key: Key for the teams mapping
-func (a *AuthService) DeleteAuthGithubMapTeamsKey(ctx context.Context, key string) (*http.Response, error) {
+func (a *Auth) DeleteAuthGithubMapTeamsKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2489,7 +2491,7 @@ func (a *AuthService) DeleteAuthGithubMapTeamsKey(ctx context.Context, key strin
 
 // DeleteAuthGithubMapUsersKey Read/write/delete a single users mapping
 // key: Key for the users mapping
-func (a *AuthService) DeleteAuthGithubMapUsersKey(ctx context.Context, key string) (*http.Response, error) {
+func (a *Auth) DeleteAuthGithubMapUsersKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2556,7 +2558,7 @@ func (a *AuthService) DeleteAuthGithubMapUsersKey(ctx context.Context, key strin
 
 // DeleteAuthJwtRoleName Delete an existing role.
 // name: Name of the role.
-func (a *AuthService) DeleteAuthJwtRoleName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Auth) DeleteAuthJwtRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2623,7 +2625,7 @@ func (a *AuthService) DeleteAuthJwtRoleName(ctx context.Context, name string) (*
 
 // DeleteAuthKerberosGroupsName
 // name: Name of the LDAP group.
-func (a *AuthService) DeleteAuthKerberosGroupsName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Auth) DeleteAuthKerberosGroupsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2690,7 +2692,7 @@ func (a *AuthService) DeleteAuthKerberosGroupsName(ctx context.Context, name str
 
 // DeleteAuthKubernetesRoleName Register an role with the backend.
 // name: Name of the role.
-func (a *AuthService) DeleteAuthKubernetesRoleName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Auth) DeleteAuthKubernetesRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2757,7 +2759,7 @@ func (a *AuthService) DeleteAuthKubernetesRoleName(ctx context.Context, name str
 
 // DeleteAuthLdapGroupsName Manage additional groups for users allowed to authenticate.
 // name: Name of the LDAP group.
-func (a *AuthService) DeleteAuthLdapGroupsName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Auth) DeleteAuthLdapGroupsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2824,7 +2826,7 @@ func (a *AuthService) DeleteAuthLdapGroupsName(ctx context.Context, name string)
 
 // DeleteAuthLdapUsersName Manage users allowed to authenticate.
 // name: Name of the LDAP user.
-func (a *AuthService) DeleteAuthLdapUsersName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Auth) DeleteAuthLdapUsersName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2890,7 +2892,7 @@ func (a *AuthService) DeleteAuthLdapUsersName(ctx context.Context, name string) 
 }
 
 // DeleteAuthOciConfig Manages the configuration for the Vault Auth Plugin.
-func (a *AuthService) DeleteAuthOciConfig(ctx context.Context) (*http.Response, error) {
+func (a *Auth) DeleteAuthOciConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2956,7 +2958,7 @@ func (a *AuthService) DeleteAuthOciConfig(ctx context.Context) (*http.Response, 
 
 // DeleteAuthOciRoleRole Create a role and associate policies to it.
 // role: Name of the role.
-func (a *AuthService) DeleteAuthOciRoleRole(ctx context.Context, role string) (*http.Response, error) {
+func (a *Auth) DeleteAuthOciRoleRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -3023,7 +3025,7 @@ func (a *AuthService) DeleteAuthOciRoleRole(ctx context.Context, role string) (*
 
 // DeleteAuthOidcRoleName Delete an existing role.
 // name: Name of the role.
-func (a *AuthService) DeleteAuthOidcRoleName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Auth) DeleteAuthOidcRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -3090,7 +3092,7 @@ func (a *AuthService) DeleteAuthOidcRoleName(ctx context.Context, name string) (
 
 // DeleteAuthOktaGroupsName Manage users allowed to authenticate.
 // name: Name of the Okta group.
-func (a *AuthService) DeleteAuthOktaGroupsName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Auth) DeleteAuthOktaGroupsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -3157,7 +3159,7 @@ func (a *AuthService) DeleteAuthOktaGroupsName(ctx context.Context, name string)
 
 // DeleteAuthOktaUsersName Manage additional groups for users allowed to authenticate.
 // name: Name of the user.
-func (a *AuthService) DeleteAuthOktaUsersName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Auth) DeleteAuthOktaUsersName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -3224,7 +3226,7 @@ func (a *AuthService) DeleteAuthOktaUsersName(ctx context.Context, name string) 
 
 // DeleteAuthRadiusUsersName Manage users allowed to authenticate.
 // name: Name of the RADIUS user.
-func (a *AuthService) DeleteAuthRadiusUsersName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Auth) DeleteAuthRadiusUsersName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -3291,7 +3293,7 @@ func (a *AuthService) DeleteAuthRadiusUsersName(ctx context.Context, name string
 
 // DeleteAuthTokenRolesRoleName
 // roleName: Name of the role
-func (a *AuthService) DeleteAuthTokenRolesRoleName(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) DeleteAuthTokenRolesRoleName(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -3358,7 +3360,7 @@ func (a *AuthService) DeleteAuthTokenRolesRoleName(ctx context.Context, roleName
 
 // DeleteAuthUserpassUsersUsername Manage users allowed to authenticate.
 // username: Username for this user.
-func (a *AuthService) DeleteAuthUserpassUsersUsername(ctx context.Context, username string) (*http.Response, error) {
+func (a *Auth) DeleteAuthUserpassUsersUsername(ctx context.Context, username string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -3425,7 +3427,7 @@ func (a *AuthService) DeleteAuthUserpassUsersUsername(ctx context.Context, usern
 
 // GetAuthAlicloudRole Lists all the roles that are registered with Vault.
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthAlicloudRole(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthAlicloudRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3492,7 +3494,7 @@ func (a *AuthService) GetAuthAlicloudRole(ctx context.Context, list string) (*ht
 
 // GetAuthAlicloudRoleRole Create a role and associate policies to it.
 // role: The name of the role as it should appear in Vault.
-func (a *AuthService) GetAuthAlicloudRoleRole(ctx context.Context, role string) (*http.Response, error) {
+func (a *Auth) GetAuthAlicloudRoleRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3559,7 +3561,7 @@ func (a *AuthService) GetAuthAlicloudRoleRole(ctx context.Context, role string) 
 
 // GetAuthAlicloudRoles Lists all the roles that are registered with Vault.
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthAlicloudRoles(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthAlicloudRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3626,7 +3628,7 @@ func (a *AuthService) GetAuthAlicloudRoles(ctx context.Context, list string) (*h
 
 // GetAuthAppIdMapAppId Read mappings for app-id
 // list: Return a list if &#x60;true&#x60;
-func (a *AuthService) GetAuthAppIdMapAppId(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthAppIdMapAppId(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3693,7 +3695,7 @@ func (a *AuthService) GetAuthAppIdMapAppId(ctx context.Context, list string) (*h
 
 // GetAuthAppIdMapAppIdKey Read/write/delete a single app-id mapping
 // key: Key for the app-id mapping
-func (a *AuthService) GetAuthAppIdMapAppIdKey(ctx context.Context, key string) (*http.Response, error) {
+func (a *Auth) GetAuthAppIdMapAppIdKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3760,7 +3762,7 @@ func (a *AuthService) GetAuthAppIdMapAppIdKey(ctx context.Context, key string) (
 
 // GetAuthAppIdMapUserId Read mappings for user-id
 // list: Return a list if &#x60;true&#x60;
-func (a *AuthService) GetAuthAppIdMapUserId(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthAppIdMapUserId(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3827,7 +3829,7 @@ func (a *AuthService) GetAuthAppIdMapUserId(ctx context.Context, list string) (*
 
 // GetAuthAppIdMapUserIdKey Read/write/delete a single user-id mapping
 // key: Key for the user-id mapping
-func (a *AuthService) GetAuthAppIdMapUserIdKey(ctx context.Context, key string) (*http.Response, error) {
+func (a *Auth) GetAuthAppIdMapUserIdKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3894,7 +3896,7 @@ func (a *AuthService) GetAuthAppIdMapUserIdKey(ctx context.Context, key string) 
 
 // GetAuthApproleRole Lists all the roles registered with the backend.
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthApproleRole(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthApproleRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3961,7 +3963,7 @@ func (a *AuthService) GetAuthApproleRole(ctx context.Context, list string) (*htt
 
 // GetAuthApproleRoleRoleName Register an role with the backend.
 // roleName: Name of the role.
-func (a *AuthService) GetAuthApproleRoleRoleName(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) GetAuthApproleRoleRoleName(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4028,7 +4030,7 @@ func (a *AuthService) GetAuthApproleRoleRoleName(ctx context.Context, roleName s
 
 // GetAuthApproleRoleRoleNameBindSecretId Impose secret_id to be presented during login using this role.
 // roleName: Name of the role.
-func (a *AuthService) GetAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) GetAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4095,7 +4097,7 @@ func (a *AuthService) GetAuthApproleRoleRoleNameBindSecretId(ctx context.Context
 
 // GetAuthApproleRoleRoleNameBoundCidrList Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
 // roleName: Name of the role.
-func (a *AuthService) GetAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) GetAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4162,7 +4164,7 @@ func (a *AuthService) GetAuthApproleRoleRoleNameBoundCidrList(ctx context.Contex
 
 // GetAuthApproleRoleRoleNameLocalSecretIds Enables cluster local secret IDs
 // roleName: Name of the role.
-func (a *AuthService) GetAuthApproleRoleRoleNameLocalSecretIds(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) GetAuthApproleRoleRoleNameLocalSecretIds(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4229,7 +4231,7 @@ func (a *AuthService) GetAuthApproleRoleRoleNameLocalSecretIds(ctx context.Conte
 
 // GetAuthApproleRoleRoleNamePeriod Updates the value of 'period' on the role
 // roleName: Name of the role.
-func (a *AuthService) GetAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) GetAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4296,7 +4298,7 @@ func (a *AuthService) GetAuthApproleRoleRoleNamePeriod(ctx context.Context, role
 
 // GetAuthApproleRoleRoleNamePolicies Policies of the role.
 // roleName: Name of the role.
-func (a *AuthService) GetAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) GetAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4363,7 +4365,7 @@ func (a *AuthService) GetAuthApproleRoleRoleNamePolicies(ctx context.Context, ro
 
 // GetAuthApproleRoleRoleNameRoleId Returns the 'role_id' of the role.
 // roleName: Name of the role.
-func (a *AuthService) GetAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) GetAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4431,7 +4433,7 @@ func (a *AuthService) GetAuthApproleRoleRoleNameRoleId(ctx context.Context, role
 // GetAuthApproleRoleRoleNameSecretId Generate a SecretID against this role.
 // roleName: Name of the role.
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName string, list string) (*http.Response, error) {
+func (a *Auth) GetAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName string, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4499,7 +4501,7 @@ func (a *AuthService) GetAuthApproleRoleRoleNameSecretId(ctx context.Context, ro
 
 // GetAuthApproleRoleRoleNameSecretIdBoundCidrs Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
 // roleName: Name of the role.
-func (a *AuthService) GetAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) GetAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4566,7 +4568,7 @@ func (a *AuthService) GetAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.C
 
 // GetAuthApproleRoleRoleNameSecretIdNumUses Use limit of the SecretID generated against the role.
 // roleName: Name of the role.
-func (a *AuthService) GetAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) GetAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4633,7 +4635,7 @@ func (a *AuthService) GetAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Cont
 
 // GetAuthApproleRoleRoleNameSecretIdTtl Duration in seconds, representing the lifetime of the SecretIDs that are generated against the role using 'role/<role_name>/secret-id' or 'role/<role_name>/custom-secret-id' endpoints.
 // roleName: Name of the role.
-func (a *AuthService) GetAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) GetAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4700,7 +4702,7 @@ func (a *AuthService) GetAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context,
 
 // GetAuthApproleRoleRoleNameTokenBoundCidrs Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
 // roleName: Name of the role.
-func (a *AuthService) GetAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) GetAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4767,7 +4769,7 @@ func (a *AuthService) GetAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Cont
 
 // GetAuthApproleRoleRoleNameTokenMaxTtl Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
 // roleName: Name of the role.
-func (a *AuthService) GetAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) GetAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4834,7 +4836,7 @@ func (a *AuthService) GetAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context,
 
 // GetAuthApproleRoleRoleNameTokenNumUses Number of times issued tokens can be used
 // roleName: Name of the role.
-func (a *AuthService) GetAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) GetAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4901,7 +4903,7 @@ func (a *AuthService) GetAuthApproleRoleRoleNameTokenNumUses(ctx context.Context
 
 // GetAuthApproleRoleRoleNameTokenTtl Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
 // roleName: Name of the role.
-func (a *AuthService) GetAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) GetAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4968,7 +4970,7 @@ func (a *AuthService) GetAuthApproleRoleRoleNameTokenTtl(ctx context.Context, ro
 
 // GetAuthAwsConfigCertificateCertName
 // certName: Name of the certificate.
-func (a *AuthService) GetAuthAwsConfigCertificateCertName(ctx context.Context, certName string) (*http.Response, error) {
+func (a *Auth) GetAuthAwsConfigCertificateCertName(ctx context.Context, certName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5035,7 +5037,7 @@ func (a *AuthService) GetAuthAwsConfigCertificateCertName(ctx context.Context, c
 
 // GetAuthAwsConfigCertificates
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthAwsConfigCertificates(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthAwsConfigCertificates(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5101,7 +5103,7 @@ func (a *AuthService) GetAuthAwsConfigCertificates(ctx context.Context, list str
 }
 
 // GetAuthAwsConfigClient
-func (a *AuthService) GetAuthAwsConfigClient(ctx context.Context) (*http.Response, error) {
+func (a *Auth) GetAuthAwsConfigClient(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5166,7 +5168,7 @@ func (a *AuthService) GetAuthAwsConfigClient(ctx context.Context) (*http.Respons
 }
 
 // GetAuthAwsConfigIdentity
-func (a *AuthService) GetAuthAwsConfigIdentity(ctx context.Context) (*http.Response, error) {
+func (a *Auth) GetAuthAwsConfigIdentity(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5232,7 +5234,7 @@ func (a *AuthService) GetAuthAwsConfigIdentity(ctx context.Context) (*http.Respo
 
 // GetAuthAwsConfigSts
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthAwsConfigSts(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthAwsConfigSts(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5299,7 +5301,7 @@ func (a *AuthService) GetAuthAwsConfigSts(ctx context.Context, list string) (*ht
 
 // GetAuthAwsConfigStsAccountId
 // accountId: AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-func (a *AuthService) GetAuthAwsConfigStsAccountId(ctx context.Context, accountId string) (*http.Response, error) {
+func (a *Auth) GetAuthAwsConfigStsAccountId(ctx context.Context, accountId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5365,7 +5367,7 @@ func (a *AuthService) GetAuthAwsConfigStsAccountId(ctx context.Context, accountI
 }
 
 // GetAuthAwsConfigTidyIdentityAccesslist
-func (a *AuthService) GetAuthAwsConfigTidyIdentityAccesslist(ctx context.Context) (*http.Response, error) {
+func (a *Auth) GetAuthAwsConfigTidyIdentityAccesslist(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5430,7 +5432,7 @@ func (a *AuthService) GetAuthAwsConfigTidyIdentityAccesslist(ctx context.Context
 }
 
 // GetAuthAwsConfigTidyIdentityWhitelist
-func (a *AuthService) GetAuthAwsConfigTidyIdentityWhitelist(ctx context.Context) (*http.Response, error) {
+func (a *Auth) GetAuthAwsConfigTidyIdentityWhitelist(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5495,7 +5497,7 @@ func (a *AuthService) GetAuthAwsConfigTidyIdentityWhitelist(ctx context.Context)
 }
 
 // GetAuthAwsConfigTidyRoletagBlacklist
-func (a *AuthService) GetAuthAwsConfigTidyRoletagBlacklist(ctx context.Context) (*http.Response, error) {
+func (a *Auth) GetAuthAwsConfigTidyRoletagBlacklist(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5560,7 +5562,7 @@ func (a *AuthService) GetAuthAwsConfigTidyRoletagBlacklist(ctx context.Context) 
 }
 
 // GetAuthAwsConfigTidyRoletagDenylist
-func (a *AuthService) GetAuthAwsConfigTidyRoletagDenylist(ctx context.Context) (*http.Response, error) {
+func (a *Auth) GetAuthAwsConfigTidyRoletagDenylist(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5626,7 +5628,7 @@ func (a *AuthService) GetAuthAwsConfigTidyRoletagDenylist(ctx context.Context) (
 
 // GetAuthAwsIdentityAccesslist
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthAwsIdentityAccesslist(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthAwsIdentityAccesslist(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5693,7 +5695,7 @@ func (a *AuthService) GetAuthAwsIdentityAccesslist(ctx context.Context, list str
 
 // GetAuthAwsIdentityAccesslistInstanceId
 // instanceId: EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-func (a *AuthService) GetAuthAwsIdentityAccesslistInstanceId(ctx context.Context, instanceId string) (*http.Response, error) {
+func (a *Auth) GetAuthAwsIdentityAccesslistInstanceId(ctx context.Context, instanceId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5760,7 +5762,7 @@ func (a *AuthService) GetAuthAwsIdentityAccesslistInstanceId(ctx context.Context
 
 // GetAuthAwsIdentityWhitelist
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthAwsIdentityWhitelist(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthAwsIdentityWhitelist(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5827,7 +5829,7 @@ func (a *AuthService) GetAuthAwsIdentityWhitelist(ctx context.Context, list stri
 
 // GetAuthAwsIdentityWhitelistInstanceId
 // instanceId: EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-func (a *AuthService) GetAuthAwsIdentityWhitelistInstanceId(ctx context.Context, instanceId string) (*http.Response, error) {
+func (a *Auth) GetAuthAwsIdentityWhitelistInstanceId(ctx context.Context, instanceId string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5894,7 +5896,7 @@ func (a *AuthService) GetAuthAwsIdentityWhitelistInstanceId(ctx context.Context,
 
 // GetAuthAwsRole
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthAwsRole(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthAwsRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5961,7 +5963,7 @@ func (a *AuthService) GetAuthAwsRole(ctx context.Context, list string) (*http.Re
 
 // GetAuthAwsRoleRole
 // role: Name of the role.
-func (a *AuthService) GetAuthAwsRoleRole(ctx context.Context, role string) (*http.Response, error) {
+func (a *Auth) GetAuthAwsRoleRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6028,7 +6030,7 @@ func (a *AuthService) GetAuthAwsRoleRole(ctx context.Context, role string) (*htt
 
 // GetAuthAwsRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthAwsRoles(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthAwsRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6095,7 +6097,7 @@ func (a *AuthService) GetAuthAwsRoles(ctx context.Context, list string) (*http.R
 
 // GetAuthAwsRoletagBlacklist
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthAwsRoletagBlacklist(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthAwsRoletagBlacklist(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6162,7 +6164,7 @@ func (a *AuthService) GetAuthAwsRoletagBlacklist(ctx context.Context, list strin
 
 // GetAuthAwsRoletagBlacklistRoleTag
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-func (a *AuthService) GetAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
+func (a *Auth) GetAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6229,7 +6231,7 @@ func (a *AuthService) GetAuthAwsRoletagBlacklistRoleTag(ctx context.Context, rol
 
 // GetAuthAwsRoletagDenylist
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthAwsRoletagDenylist(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthAwsRoletagDenylist(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6296,7 +6298,7 @@ func (a *AuthService) GetAuthAwsRoletagDenylist(ctx context.Context, list string
 
 // GetAuthAwsRoletagDenylistRoleTag
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-func (a *AuthService) GetAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
+func (a *Auth) GetAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6362,7 +6364,7 @@ func (a *AuthService) GetAuthAwsRoletagDenylistRoleTag(ctx context.Context, role
 }
 
 // GetAuthAzureConfig
-func (a *AuthService) GetAuthAzureConfig(ctx context.Context) (*http.Response, error) {
+func (a *Auth) GetAuthAzureConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6428,7 +6430,7 @@ func (a *AuthService) GetAuthAzureConfig(ctx context.Context) (*http.Response, e
 
 // GetAuthAzureRole
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthAzureRole(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthAzureRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6495,7 +6497,7 @@ func (a *AuthService) GetAuthAzureRole(ctx context.Context, list string) (*http.
 
 // GetAuthAzureRoleName
 // name: Name of the role.
-func (a *AuthService) GetAuthAzureRoleName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Auth) GetAuthAzureRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6561,7 +6563,7 @@ func (a *AuthService) GetAuthAzureRoleName(ctx context.Context, name string) (*h
 }
 
 // GetAuthCentrifyConfig This path allows you to configure the centrify auth provider to interact with the Centrify Identity Services Platform for authenticating users.
-func (a *AuthService) GetAuthCentrifyConfig(ctx context.Context) (*http.Response, error) {
+func (a *Auth) GetAuthCentrifyConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6627,7 +6629,7 @@ func (a *AuthService) GetAuthCentrifyConfig(ctx context.Context) (*http.Response
 
 // GetAuthCertCerts Manage trusted certificates used for authentication.
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthCertCerts(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthCertCerts(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6694,7 +6696,7 @@ func (a *AuthService) GetAuthCertCerts(ctx context.Context, list string) (*http.
 
 // GetAuthCertCertsName Manage trusted certificates used for authentication.
 // name: The name of the certificate
-func (a *AuthService) GetAuthCertCertsName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Auth) GetAuthCertCertsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6761,7 +6763,7 @@ func (a *AuthService) GetAuthCertCertsName(ctx context.Context, name string) (*h
 
 // GetAuthCertCrlsName Manage Certificate Revocation Lists checked during authentication.
 // name: The name of the certificate
-func (a *AuthService) GetAuthCertCrlsName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Auth) GetAuthCertCrlsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6827,7 +6829,7 @@ func (a *AuthService) GetAuthCertCrlsName(ctx context.Context, name string) (*ht
 }
 
 // GetAuthCfConfig
-func (a *AuthService) GetAuthCfConfig(ctx context.Context) (*http.Response, error) {
+func (a *Auth) GetAuthCfConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6893,7 +6895,7 @@ func (a *AuthService) GetAuthCfConfig(ctx context.Context) (*http.Response, erro
 
 // GetAuthCfRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthCfRoles(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthCfRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6960,7 +6962,7 @@ func (a *AuthService) GetAuthCfRoles(ctx context.Context, list string) (*http.Re
 
 // GetAuthCfRolesRole
 // role: The name of the role.
-func (a *AuthService) GetAuthCfRolesRole(ctx context.Context, role string) (*http.Response, error) {
+func (a *Auth) GetAuthCfRolesRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7026,7 +7028,7 @@ func (a *AuthService) GetAuthCfRolesRole(ctx context.Context, role string) (*htt
 }
 
 // GetAuthGcpConfig Configure credentials used to query the GCP IAM API to verify authenticating service accounts
-func (a *AuthService) GetAuthGcpConfig(ctx context.Context) (*http.Response, error) {
+func (a *Auth) GetAuthGcpConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7092,7 +7094,7 @@ func (a *AuthService) GetAuthGcpConfig(ctx context.Context) (*http.Response, err
 
 // GetAuthGcpRole Lists all the roles that are registered with Vault.
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthGcpRole(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthGcpRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7159,7 +7161,7 @@ func (a *AuthService) GetAuthGcpRole(ctx context.Context, list string) (*http.Re
 
 // GetAuthGcpRoleName Create a GCP role with associated policies and required attributes.
 // name: Name of the role.
-func (a *AuthService) GetAuthGcpRoleName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Auth) GetAuthGcpRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7226,7 +7228,7 @@ func (a *AuthService) GetAuthGcpRoleName(ctx context.Context, name string) (*htt
 
 // GetAuthGcpRoles Lists all the roles that are registered with Vault.
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthGcpRoles(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthGcpRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7292,7 +7294,7 @@ func (a *AuthService) GetAuthGcpRoles(ctx context.Context, list string) (*http.R
 }
 
 // GetAuthGithubConfig
-func (a *AuthService) GetAuthGithubConfig(ctx context.Context) (*http.Response, error) {
+func (a *Auth) GetAuthGithubConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7358,7 +7360,7 @@ func (a *AuthService) GetAuthGithubConfig(ctx context.Context) (*http.Response, 
 
 // GetAuthGithubMapTeams Read mappings for teams
 // list: Return a list if &#x60;true&#x60;
-func (a *AuthService) GetAuthGithubMapTeams(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthGithubMapTeams(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7425,7 +7427,7 @@ func (a *AuthService) GetAuthGithubMapTeams(ctx context.Context, list string) (*
 
 // GetAuthGithubMapTeamsKey Read/write/delete a single teams mapping
 // key: Key for the teams mapping
-func (a *AuthService) GetAuthGithubMapTeamsKey(ctx context.Context, key string) (*http.Response, error) {
+func (a *Auth) GetAuthGithubMapTeamsKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7492,7 +7494,7 @@ func (a *AuthService) GetAuthGithubMapTeamsKey(ctx context.Context, key string) 
 
 // GetAuthGithubMapUsers Read mappings for users
 // list: Return a list if &#x60;true&#x60;
-func (a *AuthService) GetAuthGithubMapUsers(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthGithubMapUsers(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7559,7 +7561,7 @@ func (a *AuthService) GetAuthGithubMapUsers(ctx context.Context, list string) (*
 
 // GetAuthGithubMapUsersKey Read/write/delete a single users mapping
 // key: Key for the users mapping
-func (a *AuthService) GetAuthGithubMapUsersKey(ctx context.Context, key string) (*http.Response, error) {
+func (a *Auth) GetAuthGithubMapUsersKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7625,7 +7627,7 @@ func (a *AuthService) GetAuthGithubMapUsersKey(ctx context.Context, key string) 
 }
 
 // GetAuthJwtConfig Read the current JWT authentication backend configuration.
-func (a *AuthService) GetAuthJwtConfig(ctx context.Context) (*http.Response, error) {
+func (a *Auth) GetAuthJwtConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7690,7 +7692,7 @@ func (a *AuthService) GetAuthJwtConfig(ctx context.Context) (*http.Response, err
 }
 
 // GetAuthJwtOidcCallback Callback endpoint to complete an OIDC login.
-func (a *AuthService) GetAuthJwtOidcCallback(ctx context.Context) (*http.Response, error) {
+func (a *Auth) GetAuthJwtOidcCallback(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7757,7 +7759,7 @@ func (a *AuthService) GetAuthJwtOidcCallback(ctx context.Context) (*http.Respons
 // GetAuthJwtRole Lists all the roles registered with the backend.
 // The list will contain the names of the roles.
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthJwtRole(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthJwtRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7824,7 +7826,7 @@ func (a *AuthService) GetAuthJwtRole(ctx context.Context, list string) (*http.Re
 
 // GetAuthJwtRoleName Read an existing role.
 // name: Name of the role.
-func (a *AuthService) GetAuthJwtRoleName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Auth) GetAuthJwtRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7890,7 +7892,7 @@ func (a *AuthService) GetAuthJwtRoleName(ctx context.Context, name string) (*htt
 }
 
 // GetAuthKerberosConfig
-func (a *AuthService) GetAuthKerberosConfig(ctx context.Context) (*http.Response, error) {
+func (a *Auth) GetAuthKerberosConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7955,7 +7957,7 @@ func (a *AuthService) GetAuthKerberosConfig(ctx context.Context) (*http.Response
 }
 
 // GetAuthKerberosConfigLdap
-func (a *AuthService) GetAuthKerberosConfigLdap(ctx context.Context) (*http.Response, error) {
+func (a *Auth) GetAuthKerberosConfigLdap(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8021,7 +8023,7 @@ func (a *AuthService) GetAuthKerberosConfigLdap(ctx context.Context) (*http.Resp
 
 // GetAuthKerberosGroups
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthKerberosGroups(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthKerberosGroups(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8088,7 +8090,7 @@ func (a *AuthService) GetAuthKerberosGroups(ctx context.Context, list string) (*
 
 // GetAuthKerberosGroupsName
 // name: Name of the LDAP group.
-func (a *AuthService) GetAuthKerberosGroupsName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Auth) GetAuthKerberosGroupsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8154,7 +8156,7 @@ func (a *AuthService) GetAuthKerberosGroupsName(ctx context.Context, name string
 }
 
 // GetAuthKerberosLogin
-func (a *AuthService) GetAuthKerberosLogin(ctx context.Context) (*http.Response, error) {
+func (a *Auth) GetAuthKerberosLogin(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8219,7 +8221,7 @@ func (a *AuthService) GetAuthKerberosLogin(ctx context.Context) (*http.Response,
 }
 
 // GetAuthKubernetesConfig Configures the JWT Public Key and Kubernetes API information.
-func (a *AuthService) GetAuthKubernetesConfig(ctx context.Context) (*http.Response, error) {
+func (a *Auth) GetAuthKubernetesConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8285,7 +8287,7 @@ func (a *AuthService) GetAuthKubernetesConfig(ctx context.Context) (*http.Respon
 
 // GetAuthKubernetesRole Lists all the roles registered with the backend.
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthKubernetesRole(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthKubernetesRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8352,7 +8354,7 @@ func (a *AuthService) GetAuthKubernetesRole(ctx context.Context, list string) (*
 
 // GetAuthKubernetesRoleName Register an role with the backend.
 // name: Name of the role.
-func (a *AuthService) GetAuthKubernetesRoleName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Auth) GetAuthKubernetesRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8418,7 +8420,7 @@ func (a *AuthService) GetAuthKubernetesRoleName(ctx context.Context, name string
 }
 
 // GetAuthLdapConfig Configure the LDAP server to connect to, along with its options.
-func (a *AuthService) GetAuthLdapConfig(ctx context.Context) (*http.Response, error) {
+func (a *Auth) GetAuthLdapConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8484,7 +8486,7 @@ func (a *AuthService) GetAuthLdapConfig(ctx context.Context) (*http.Response, er
 
 // GetAuthLdapGroups Manage additional groups for users allowed to authenticate.
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthLdapGroups(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthLdapGroups(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8551,7 +8553,7 @@ func (a *AuthService) GetAuthLdapGroups(ctx context.Context, list string) (*http
 
 // GetAuthLdapGroupsName Manage additional groups for users allowed to authenticate.
 // name: Name of the LDAP group.
-func (a *AuthService) GetAuthLdapGroupsName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Auth) GetAuthLdapGroupsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8618,7 +8620,7 @@ func (a *AuthService) GetAuthLdapGroupsName(ctx context.Context, name string) (*
 
 // GetAuthLdapUsers Manage users allowed to authenticate.
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthLdapUsers(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthLdapUsers(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8685,7 +8687,7 @@ func (a *AuthService) GetAuthLdapUsers(ctx context.Context, list string) (*http.
 
 // GetAuthLdapUsersName Manage users allowed to authenticate.
 // name: Name of the LDAP user.
-func (a *AuthService) GetAuthLdapUsersName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Auth) GetAuthLdapUsersName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8751,7 +8753,7 @@ func (a *AuthService) GetAuthLdapUsersName(ctx context.Context, name string) (*h
 }
 
 // GetAuthOciConfig Manages the configuration for the Vault Auth Plugin.
-func (a *AuthService) GetAuthOciConfig(ctx context.Context) (*http.Response, error) {
+func (a *Auth) GetAuthOciConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8817,7 +8819,7 @@ func (a *AuthService) GetAuthOciConfig(ctx context.Context) (*http.Response, err
 
 // GetAuthOciRole Lists all the roles that are registered with Vault.
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthOciRole(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthOciRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8884,7 +8886,7 @@ func (a *AuthService) GetAuthOciRole(ctx context.Context, list string) (*http.Re
 
 // GetAuthOciRoleRole Create a role and associate policies to it.
 // role: Name of the role.
-func (a *AuthService) GetAuthOciRoleRole(ctx context.Context, role string) (*http.Response, error) {
+func (a *Auth) GetAuthOciRoleRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8950,7 +8952,7 @@ func (a *AuthService) GetAuthOciRoleRole(ctx context.Context, role string) (*htt
 }
 
 // GetAuthOidcConfig Read the current JWT authentication backend configuration.
-func (a *AuthService) GetAuthOidcConfig(ctx context.Context) (*http.Response, error) {
+func (a *Auth) GetAuthOidcConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9015,7 +9017,7 @@ func (a *AuthService) GetAuthOidcConfig(ctx context.Context) (*http.Response, er
 }
 
 // GetAuthOidcOidcCallback Callback endpoint to complete an OIDC login.
-func (a *AuthService) GetAuthOidcOidcCallback(ctx context.Context) (*http.Response, error) {
+func (a *Auth) GetAuthOidcOidcCallback(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9082,7 +9084,7 @@ func (a *AuthService) GetAuthOidcOidcCallback(ctx context.Context) (*http.Respon
 // GetAuthOidcRole Lists all the roles registered with the backend.
 // The list will contain the names of the roles.
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthOidcRole(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthOidcRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9149,7 +9151,7 @@ func (a *AuthService) GetAuthOidcRole(ctx context.Context, list string) (*http.R
 
 // GetAuthOidcRoleName Read an existing role.
 // name: Name of the role.
-func (a *AuthService) GetAuthOidcRoleName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Auth) GetAuthOidcRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9215,7 +9217,7 @@ func (a *AuthService) GetAuthOidcRoleName(ctx context.Context, name string) (*ht
 }
 
 // GetAuthOktaConfig This endpoint allows you to configure the Okta and its configuration options.  The Okta organization are the characters at the front of the URL for Okta. Example https://ORG.okta.com
-func (a *AuthService) GetAuthOktaConfig(ctx context.Context) (*http.Response, error) {
+func (a *Auth) GetAuthOktaConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9281,7 +9283,7 @@ func (a *AuthService) GetAuthOktaConfig(ctx context.Context) (*http.Response, er
 
 // GetAuthOktaGroups Manage users allowed to authenticate.
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthOktaGroups(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthOktaGroups(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9348,7 +9350,7 @@ func (a *AuthService) GetAuthOktaGroups(ctx context.Context, list string) (*http
 
 // GetAuthOktaGroupsName Manage users allowed to authenticate.
 // name: Name of the Okta group.
-func (a *AuthService) GetAuthOktaGroupsName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Auth) GetAuthOktaGroupsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9415,7 +9417,7 @@ func (a *AuthService) GetAuthOktaGroupsName(ctx context.Context, name string) (*
 
 // GetAuthOktaUsers Manage additional groups for users allowed to authenticate.
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthOktaUsers(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthOktaUsers(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9482,7 +9484,7 @@ func (a *AuthService) GetAuthOktaUsers(ctx context.Context, list string) (*http.
 
 // GetAuthOktaUsersName Manage additional groups for users allowed to authenticate.
 // name: Name of the user.
-func (a *AuthService) GetAuthOktaUsersName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Auth) GetAuthOktaUsersName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9549,7 +9551,7 @@ func (a *AuthService) GetAuthOktaUsersName(ctx context.Context, name string) (*h
 
 // GetAuthOktaVerifyNonce
 // nonce: Nonce provided during a login request to retrieve the number verification challenge for the matching request.
-func (a *AuthService) GetAuthOktaVerifyNonce(ctx context.Context, nonce string) (*http.Response, error) {
+func (a *Auth) GetAuthOktaVerifyNonce(ctx context.Context, nonce string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9615,7 +9617,7 @@ func (a *AuthService) GetAuthOktaVerifyNonce(ctx context.Context, nonce string) 
 }
 
 // GetAuthRadiusConfig Configure the RADIUS server to connect to, along with its options.
-func (a *AuthService) GetAuthRadiusConfig(ctx context.Context) (*http.Response, error) {
+func (a *Auth) GetAuthRadiusConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9681,7 +9683,7 @@ func (a *AuthService) GetAuthRadiusConfig(ctx context.Context) (*http.Response, 
 
 // GetAuthRadiusUsers Manage users allowed to authenticate.
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthRadiusUsers(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthRadiusUsers(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9748,7 +9750,7 @@ func (a *AuthService) GetAuthRadiusUsers(ctx context.Context, list string) (*htt
 
 // GetAuthRadiusUsersName Manage users allowed to authenticate.
 // name: Name of the RADIUS user.
-func (a *AuthService) GetAuthRadiusUsersName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Auth) GetAuthRadiusUsersName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9815,7 +9817,7 @@ func (a *AuthService) GetAuthRadiusUsersName(ctx context.Context, name string) (
 
 // GetAuthTokenAccessors List token accessors, which can then be be used to iterate and discover their properties or revoke them. Because this can be used to cause a denial of service, this endpoint requires 'sudo' capability in addition to 'list'.
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthTokenAccessors(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthTokenAccessors(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9881,7 +9883,7 @@ func (a *AuthService) GetAuthTokenAccessors(ctx context.Context, list string) (*
 }
 
 // GetAuthTokenLookup This endpoint will lookup a token and its properties.
-func (a *AuthService) GetAuthTokenLookup(ctx context.Context) (*http.Response, error) {
+func (a *Auth) GetAuthTokenLookup(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9946,7 +9948,7 @@ func (a *AuthService) GetAuthTokenLookup(ctx context.Context) (*http.Response, e
 }
 
 // GetAuthTokenLookupSelf This endpoint will lookup a token and its properties.
-func (a *AuthService) GetAuthTokenLookupSelf(ctx context.Context) (*http.Response, error) {
+func (a *Auth) GetAuthTokenLookupSelf(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10012,7 +10014,7 @@ func (a *AuthService) GetAuthTokenLookupSelf(ctx context.Context) (*http.Respons
 
 // GetAuthTokenRoles This endpoint lists configured roles.
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthTokenRoles(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthTokenRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10079,7 +10081,7 @@ func (a *AuthService) GetAuthTokenRoles(ctx context.Context, list string) (*http
 
 // GetAuthTokenRolesRoleName
 // roleName: Name of the role
-func (a *AuthService) GetAuthTokenRolesRoleName(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) GetAuthTokenRolesRoleName(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10146,7 +10148,7 @@ func (a *AuthService) GetAuthTokenRolesRoleName(ctx context.Context, roleName st
 
 // GetAuthUserpassUsers Manage users allowed to authenticate.
 // list: Must be set to &#x60;true&#x60;
-func (a *AuthService) GetAuthUserpassUsers(ctx context.Context, list string) (*http.Response, error) {
+func (a *Auth) GetAuthUserpassUsers(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10213,7 +10215,7 @@ func (a *AuthService) GetAuthUserpassUsers(ctx context.Context, list string) (*h
 
 // GetAuthUserpassUsersUsername Manage users allowed to authenticate.
 // username: Username for this user.
-func (a *AuthService) GetAuthUserpassUsersUsername(ctx context.Context, username string) (*http.Response, error) {
+func (a *Auth) GetAuthUserpassUsersUsername(ctx context.Context, username string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10279,7 +10281,7 @@ func (a *AuthService) GetAuthUserpassUsersUsername(ctx context.Context, username
 }
 
 // PostAuthAlicloudLogin Authenticates an RAM entity with Vault.
-func (a *AuthService) PostAuthAlicloudLogin(ctx context.Context, alicloudLoginRequest AlicloudLoginRequest) (*http.Response, error) {
+func (a *Auth) PostAuthAlicloudLogin(ctx context.Context, alicloudLoginRequest AlicloudLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10347,7 +10349,7 @@ func (a *AuthService) PostAuthAlicloudLogin(ctx context.Context, alicloudLoginRe
 
 // PostAuthAlicloudRoleRole Create a role and associate policies to it.
 // role: The name of the role as it should appear in Vault.
-func (a *AuthService) PostAuthAlicloudRoleRole(ctx context.Context, role string, alicloudRoleRequest AlicloudRoleRequest) (*http.Response, error) {
+func (a *Auth) PostAuthAlicloudRoleRole(ctx context.Context, role string, alicloudRoleRequest AlicloudRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10415,7 +10417,7 @@ func (a *AuthService) PostAuthAlicloudRoleRole(ctx context.Context, role string,
 }
 
 // PostAuthAppIdLogin Log in with an App ID and User ID.
-func (a *AuthService) PostAuthAppIdLogin(ctx context.Context, appIdLoginRequest AppIdLoginRequest) (*http.Response, error) {
+func (a *Auth) PostAuthAppIdLogin(ctx context.Context, appIdLoginRequest AppIdLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10483,7 +10485,7 @@ func (a *AuthService) PostAuthAppIdLogin(ctx context.Context, appIdLoginRequest 
 
 // PostAuthAppIdLoginAppId Log in with an App ID and User ID.
 // appId: The unique app ID
-func (a *AuthService) PostAuthAppIdLoginAppId(ctx context.Context, appId string, appIdLoginRequest AppIdLoginRequest) (*http.Response, error) {
+func (a *Auth) PostAuthAppIdLoginAppId(ctx context.Context, appId string, appIdLoginRequest AppIdLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10552,7 +10554,7 @@ func (a *AuthService) PostAuthAppIdLoginAppId(ctx context.Context, appId string,
 
 // PostAuthAppIdMapAppIdKey Read/write/delete a single app-id mapping
 // key: Key for the app-id mapping
-func (a *AuthService) PostAuthAppIdMapAppIdKey(ctx context.Context, key string, appIdMapAppIdRequest AppIdMapAppIdRequest) (*http.Response, error) {
+func (a *Auth) PostAuthAppIdMapAppIdKey(ctx context.Context, key string, appIdMapAppIdRequest AppIdMapAppIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10621,7 +10623,7 @@ func (a *AuthService) PostAuthAppIdMapAppIdKey(ctx context.Context, key string, 
 
 // PostAuthAppIdMapUserIdKey Read/write/delete a single user-id mapping
 // key: Key for the user-id mapping
-func (a *AuthService) PostAuthAppIdMapUserIdKey(ctx context.Context, key string, appIdMapUserIdRequest AppIdMapUserIdRequest) (*http.Response, error) {
+func (a *Auth) PostAuthAppIdMapUserIdKey(ctx context.Context, key string, appIdMapUserIdRequest AppIdMapUserIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10689,7 +10691,7 @@ func (a *AuthService) PostAuthAppIdMapUserIdKey(ctx context.Context, key string,
 }
 
 // PostAuthApproleLogin
-func (a *AuthService) PostAuthApproleLogin(ctx context.Context, approleLoginRequest ApproleLoginRequest) (*http.Response, error) {
+func (a *Auth) PostAuthApproleLogin(ctx context.Context, approleLoginRequest ApproleLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10757,7 +10759,7 @@ func (a *AuthService) PostAuthApproleLogin(ctx context.Context, approleLoginRequ
 
 // PostAuthApproleRoleRoleName Register an role with the backend.
 // roleName: Name of the role.
-func (a *AuthService) PostAuthApproleRoleRoleName(ctx context.Context, roleName string, approleRoleRequest ApproleRoleRequest) (*http.Response, error) {
+func (a *Auth) PostAuthApproleRoleRoleName(ctx context.Context, roleName string, approleRoleRequest ApproleRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10826,7 +10828,7 @@ func (a *AuthService) PostAuthApproleRoleRoleName(ctx context.Context, roleName 
 
 // PostAuthApproleRoleRoleNameBindSecretId Impose secret_id to be presented during login using this role.
 // roleName: Name of the role.
-func (a *AuthService) PostAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string, approleRoleBindSecretIdRequest ApproleRoleBindSecretIdRequest) (*http.Response, error) {
+func (a *Auth) PostAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string, approleRoleBindSecretIdRequest ApproleRoleBindSecretIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10895,7 +10897,7 @@ func (a *AuthService) PostAuthApproleRoleRoleNameBindSecretId(ctx context.Contex
 
 // PostAuthApproleRoleRoleNameBoundCidrList Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
 // roleName: Name of the role.
-func (a *AuthService) PostAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string, approleRoleBoundCidrListRequest ApproleRoleBoundCidrListRequest) (*http.Response, error) {
+func (a *Auth) PostAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string, approleRoleBoundCidrListRequest ApproleRoleBoundCidrListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10964,7 +10966,7 @@ func (a *AuthService) PostAuthApproleRoleRoleNameBoundCidrList(ctx context.Conte
 
 // PostAuthApproleRoleRoleNameCustomSecretId Assign a SecretID of choice against the role.
 // roleName: Name of the role.
-func (a *AuthService) PostAuthApproleRoleRoleNameCustomSecretId(ctx context.Context, roleName string, approleRoleCustomSecretIdRequest ApproleRoleCustomSecretIdRequest) (*http.Response, error) {
+func (a *Auth) PostAuthApproleRoleRoleNameCustomSecretId(ctx context.Context, roleName string, approleRoleCustomSecretIdRequest ApproleRoleCustomSecretIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11033,7 +11035,7 @@ func (a *AuthService) PostAuthApproleRoleRoleNameCustomSecretId(ctx context.Cont
 
 // PostAuthApproleRoleRoleNamePeriod Updates the value of 'period' on the role
 // roleName: Name of the role.
-func (a *AuthService) PostAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string, approleRolePeriodRequest ApproleRolePeriodRequest) (*http.Response, error) {
+func (a *Auth) PostAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string, approleRolePeriodRequest ApproleRolePeriodRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11102,7 +11104,7 @@ func (a *AuthService) PostAuthApproleRoleRoleNamePeriod(ctx context.Context, rol
 
 // PostAuthApproleRoleRoleNamePolicies Policies of the role.
 // roleName: Name of the role.
-func (a *AuthService) PostAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string, approleRolePoliciesRequest ApproleRolePoliciesRequest) (*http.Response, error) {
+func (a *Auth) PostAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string, approleRolePoliciesRequest ApproleRolePoliciesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11171,7 +11173,7 @@ func (a *AuthService) PostAuthApproleRoleRoleNamePolicies(ctx context.Context, r
 
 // PostAuthApproleRoleRoleNameRoleId Returns the 'role_id' of the role.
 // roleName: Name of the role.
-func (a *AuthService) PostAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName string, approleRoleRoleIdRequest ApproleRoleRoleIdRequest) (*http.Response, error) {
+func (a *Auth) PostAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName string, approleRoleRoleIdRequest ApproleRoleRoleIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11240,7 +11242,7 @@ func (a *AuthService) PostAuthApproleRoleRoleNameRoleId(ctx context.Context, rol
 
 // PostAuthApproleRoleRoleNameSecretId Generate a SecretID against this role.
 // roleName: Name of the role.
-func (a *AuthService) PostAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName string, approleRoleSecretIdRequest ApproleRoleSecretIdRequest) (*http.Response, error) {
+func (a *Auth) PostAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName string, approleRoleSecretIdRequest ApproleRoleSecretIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11309,7 +11311,7 @@ func (a *AuthService) PostAuthApproleRoleRoleNameSecretId(ctx context.Context, r
 
 // PostAuthApproleRoleRoleNameSecretIdAccessorDestroy
 // roleName: Name of the role.
-func (a *AuthService) PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.Context, roleName string, approleRoleSecretIdAccessorDestroyRequest ApproleRoleSecretIdAccessorDestroyRequest) (*http.Response, error) {
+func (a *Auth) PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.Context, roleName string, approleRoleSecretIdAccessorDestroyRequest ApproleRoleSecretIdAccessorDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11378,7 +11380,7 @@ func (a *AuthService) PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx con
 
 // PostAuthApproleRoleRoleNameSecretIdAccessorLookup
 // roleName: Name of the role.
-func (a *AuthService) PostAuthApproleRoleRoleNameSecretIdAccessorLookup(ctx context.Context, roleName string, approleRoleSecretIdAccessorLookupRequest ApproleRoleSecretIdAccessorLookupRequest) (*http.Response, error) {
+func (a *Auth) PostAuthApproleRoleRoleNameSecretIdAccessorLookup(ctx context.Context, roleName string, approleRoleSecretIdAccessorLookupRequest ApproleRoleSecretIdAccessorLookupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11447,7 +11449,7 @@ func (a *AuthService) PostAuthApproleRoleRoleNameSecretIdAccessorLookup(ctx cont
 
 // PostAuthApproleRoleRoleNameSecretIdBoundCidrs Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses which can perform the login operation
 // roleName: Name of the role.
-func (a *AuthService) PostAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string, approleRoleSecretIdBoundCidrsRequest ApproleRoleSecretIdBoundCidrsRequest) (*http.Response, error) {
+func (a *Auth) PostAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string, approleRoleSecretIdBoundCidrsRequest ApproleRoleSecretIdBoundCidrsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11516,7 +11518,7 @@ func (a *AuthService) PostAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.
 
 // PostAuthApproleRoleRoleNameSecretIdDestroy Invalidate an issued secret_id
 // roleName: Name of the role.
-func (a *AuthService) PostAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context, roleName string, approleRoleSecretIdDestroyRequest ApproleRoleSecretIdDestroyRequest) (*http.Response, error) {
+func (a *Auth) PostAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context, roleName string, approleRoleSecretIdDestroyRequest ApproleRoleSecretIdDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11585,7 +11587,7 @@ func (a *AuthService) PostAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Con
 
 // PostAuthApproleRoleRoleNameSecretIdLookup Read the properties of an issued secret_id
 // roleName: Name of the role.
-func (a *AuthService) PostAuthApproleRoleRoleNameSecretIdLookup(ctx context.Context, roleName string, approleRoleSecretIdLookupRequest ApproleRoleSecretIdLookupRequest) (*http.Response, error) {
+func (a *Auth) PostAuthApproleRoleRoleNameSecretIdLookup(ctx context.Context, roleName string, approleRoleSecretIdLookupRequest ApproleRoleSecretIdLookupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11654,7 +11656,7 @@ func (a *AuthService) PostAuthApproleRoleRoleNameSecretIdLookup(ctx context.Cont
 
 // PostAuthApproleRoleRoleNameSecretIdNumUses Use limit of the SecretID generated against the role.
 // roleName: Name of the role.
-func (a *AuthService) PostAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string, approleRoleSecretIdNumUsesRequest ApproleRoleSecretIdNumUsesRequest) (*http.Response, error) {
+func (a *Auth) PostAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string, approleRoleSecretIdNumUsesRequest ApproleRoleSecretIdNumUsesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11723,7 +11725,7 @@ func (a *AuthService) PostAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Con
 
 // PostAuthApproleRoleRoleNameSecretIdTtl Duration in seconds, representing the lifetime of the SecretIDs that are generated against the role using 'role/<role_name>/secret-id' or 'role/<role_name>/custom-secret-id' endpoints.
 // roleName: Name of the role.
-func (a *AuthService) PostAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string, approleRoleSecretIdTtlRequest ApproleRoleSecretIdTtlRequest) (*http.Response, error) {
+func (a *Auth) PostAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string, approleRoleSecretIdTtlRequest ApproleRoleSecretIdTtlRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11792,7 +11794,7 @@ func (a *AuthService) PostAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context
 
 // PostAuthApproleRoleRoleNameTokenBoundCidrs Comma separated string or list of CIDR blocks. If set, specifies the blocks of IP addresses which can use the returned token.
 // roleName: Name of the role.
-func (a *AuthService) PostAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string, approleRoleTokenBoundCidrsRequest ApproleRoleTokenBoundCidrsRequest) (*http.Response, error) {
+func (a *Auth) PostAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string, approleRoleTokenBoundCidrsRequest ApproleRoleTokenBoundCidrsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11861,7 +11863,7 @@ func (a *AuthService) PostAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Con
 
 // PostAuthApproleRoleRoleNameTokenMaxTtl Duration in seconds, the maximum lifetime of the tokens issued by using the SecretIDs that were generated against this role, after which the tokens are not allowed to be renewed.
 // roleName: Name of the role.
-func (a *AuthService) PostAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string, approleRoleTokenMaxTtlRequest ApproleRoleTokenMaxTtlRequest) (*http.Response, error) {
+func (a *Auth) PostAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string, approleRoleTokenMaxTtlRequest ApproleRoleTokenMaxTtlRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11930,7 +11932,7 @@ func (a *AuthService) PostAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context
 
 // PostAuthApproleRoleRoleNameTokenNumUses Number of times issued tokens can be used
 // roleName: Name of the role.
-func (a *AuthService) PostAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string, approleRoleTokenNumUsesRequest ApproleRoleTokenNumUsesRequest) (*http.Response, error) {
+func (a *Auth) PostAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string, approleRoleTokenNumUsesRequest ApproleRoleTokenNumUsesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11999,7 +12001,7 @@ func (a *AuthService) PostAuthApproleRoleRoleNameTokenNumUses(ctx context.Contex
 
 // PostAuthApproleRoleRoleNameTokenTtl Duration in seconds, the lifetime of the token issued by using the SecretID that is generated against this role, before which the token needs to be renewed.
 // roleName: Name of the role.
-func (a *AuthService) PostAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string, approleRoleTokenTtlRequest ApproleRoleTokenTtlRequest) (*http.Response, error) {
+func (a *Auth) PostAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string, approleRoleTokenTtlRequest ApproleRoleTokenTtlRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12067,7 +12069,7 @@ func (a *AuthService) PostAuthApproleRoleRoleNameTokenTtl(ctx context.Context, r
 }
 
 // PostAuthApproleTidySecretId Trigger the clean-up of expired SecretID entries.
-func (a *AuthService) PostAuthApproleTidySecretId(ctx context.Context) (*http.Response, error) {
+func (a *Auth) PostAuthApproleTidySecretId(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12133,7 +12135,7 @@ func (a *AuthService) PostAuthApproleTidySecretId(ctx context.Context) (*http.Re
 
 // PostAuthAwsConfigCertificateCertName
 // certName: Name of the certificate.
-func (a *AuthService) PostAuthAwsConfigCertificateCertName(ctx context.Context, certName string, awsConfigCertificateRequest AwsConfigCertificateRequest) (*http.Response, error) {
+func (a *Auth) PostAuthAwsConfigCertificateCertName(ctx context.Context, certName string, awsConfigCertificateRequest AwsConfigCertificateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12201,7 +12203,7 @@ func (a *AuthService) PostAuthAwsConfigCertificateCertName(ctx context.Context, 
 }
 
 // PostAuthAwsConfigClient
-func (a *AuthService) PostAuthAwsConfigClient(ctx context.Context, awsConfigClientRequest AwsConfigClientRequest) (*http.Response, error) {
+func (a *Auth) PostAuthAwsConfigClient(ctx context.Context, awsConfigClientRequest AwsConfigClientRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12268,7 +12270,7 @@ func (a *AuthService) PostAuthAwsConfigClient(ctx context.Context, awsConfigClie
 }
 
 // PostAuthAwsConfigIdentity
-func (a *AuthService) PostAuthAwsConfigIdentity(ctx context.Context, awsConfigIdentityRequest AwsConfigIdentityRequest) (*http.Response, error) {
+func (a *Auth) PostAuthAwsConfigIdentity(ctx context.Context, awsConfigIdentityRequest AwsConfigIdentityRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12335,7 +12337,7 @@ func (a *AuthService) PostAuthAwsConfigIdentity(ctx context.Context, awsConfigId
 }
 
 // PostAuthAwsConfigRotateRoot
-func (a *AuthService) PostAuthAwsConfigRotateRoot(ctx context.Context) (*http.Response, error) {
+func (a *Auth) PostAuthAwsConfigRotateRoot(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12401,7 +12403,7 @@ func (a *AuthService) PostAuthAwsConfigRotateRoot(ctx context.Context) (*http.Re
 
 // PostAuthAwsConfigStsAccountId
 // accountId: AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-func (a *AuthService) PostAuthAwsConfigStsAccountId(ctx context.Context, accountId string, awsConfigStsRequest AwsConfigStsRequest) (*http.Response, error) {
+func (a *Auth) PostAuthAwsConfigStsAccountId(ctx context.Context, accountId string, awsConfigStsRequest AwsConfigStsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12469,7 +12471,7 @@ func (a *AuthService) PostAuthAwsConfigStsAccountId(ctx context.Context, account
 }
 
 // PostAuthAwsConfigTidyIdentityAccesslist
-func (a *AuthService) PostAuthAwsConfigTidyIdentityAccesslist(ctx context.Context, awsConfigTidyIdentityAccesslistRequest AwsConfigTidyIdentityAccesslistRequest) (*http.Response, error) {
+func (a *Auth) PostAuthAwsConfigTidyIdentityAccesslist(ctx context.Context, awsConfigTidyIdentityAccesslistRequest AwsConfigTidyIdentityAccesslistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12536,7 +12538,7 @@ func (a *AuthService) PostAuthAwsConfigTidyIdentityAccesslist(ctx context.Contex
 }
 
 // PostAuthAwsConfigTidyIdentityWhitelist
-func (a *AuthService) PostAuthAwsConfigTidyIdentityWhitelist(ctx context.Context, awsConfigTidyIdentityWhitelistRequest AwsConfigTidyIdentityWhitelistRequest) (*http.Response, error) {
+func (a *Auth) PostAuthAwsConfigTidyIdentityWhitelist(ctx context.Context, awsConfigTidyIdentityWhitelistRequest AwsConfigTidyIdentityWhitelistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12603,7 +12605,7 @@ func (a *AuthService) PostAuthAwsConfigTidyIdentityWhitelist(ctx context.Context
 }
 
 // PostAuthAwsConfigTidyRoletagBlacklist
-func (a *AuthService) PostAuthAwsConfigTidyRoletagBlacklist(ctx context.Context, awsConfigTidyRoletagBlacklistRequest AwsConfigTidyRoletagBlacklistRequest) (*http.Response, error) {
+func (a *Auth) PostAuthAwsConfigTidyRoletagBlacklist(ctx context.Context, awsConfigTidyRoletagBlacklistRequest AwsConfigTidyRoletagBlacklistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12670,7 +12672,7 @@ func (a *AuthService) PostAuthAwsConfigTidyRoletagBlacklist(ctx context.Context,
 }
 
 // PostAuthAwsConfigTidyRoletagDenylist
-func (a *AuthService) PostAuthAwsConfigTidyRoletagDenylist(ctx context.Context, awsConfigTidyRoletagDenylistRequest AwsConfigTidyRoletagDenylistRequest) (*http.Response, error) {
+func (a *Auth) PostAuthAwsConfigTidyRoletagDenylist(ctx context.Context, awsConfigTidyRoletagDenylistRequest AwsConfigTidyRoletagDenylistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12737,7 +12739,7 @@ func (a *AuthService) PostAuthAwsConfigTidyRoletagDenylist(ctx context.Context, 
 }
 
 // PostAuthAwsLogin
-func (a *AuthService) PostAuthAwsLogin(ctx context.Context, awsLoginRequest AwsLoginRequest) (*http.Response, error) {
+func (a *Auth) PostAuthAwsLogin(ctx context.Context, awsLoginRequest AwsLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12805,7 +12807,7 @@ func (a *AuthService) PostAuthAwsLogin(ctx context.Context, awsLoginRequest AwsL
 
 // PostAuthAwsRoleRole
 // role: Name of the role.
-func (a *AuthService) PostAuthAwsRoleRole(ctx context.Context, role string, awsRoleRequest AwsRoleRequest) (*http.Response, error) {
+func (a *Auth) PostAuthAwsRoleRole(ctx context.Context, role string, awsRoleRequest AwsRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12874,7 +12876,7 @@ func (a *AuthService) PostAuthAwsRoleRole(ctx context.Context, role string, awsR
 
 // PostAuthAwsRoleRoleTag
 // role: Name of the role.
-func (a *AuthService) PostAuthAwsRoleRoleTag(ctx context.Context, role string, awsRoleTagRequest AwsRoleTagRequest) (*http.Response, error) {
+func (a *Auth) PostAuthAwsRoleRoleTag(ctx context.Context, role string, awsRoleTagRequest AwsRoleTagRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12943,7 +12945,7 @@ func (a *AuthService) PostAuthAwsRoleRoleTag(ctx context.Context, role string, a
 
 // PostAuthAwsRoletagBlacklistRoleTag
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-func (a *AuthService) PostAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
+func (a *Auth) PostAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13010,7 +13012,7 @@ func (a *AuthService) PostAuthAwsRoletagBlacklistRoleTag(ctx context.Context, ro
 
 // PostAuthAwsRoletagDenylistRoleTag
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-func (a *AuthService) PostAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
+func (a *Auth) PostAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13076,7 +13078,7 @@ func (a *AuthService) PostAuthAwsRoletagDenylistRoleTag(ctx context.Context, rol
 }
 
 // PostAuthAwsTidyIdentityAccesslist
-func (a *AuthService) PostAuthAwsTidyIdentityAccesslist(ctx context.Context, awsTidyIdentityAccesslistRequest AwsTidyIdentityAccesslistRequest) (*http.Response, error) {
+func (a *Auth) PostAuthAwsTidyIdentityAccesslist(ctx context.Context, awsTidyIdentityAccesslistRequest AwsTidyIdentityAccesslistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13143,7 +13145,7 @@ func (a *AuthService) PostAuthAwsTidyIdentityAccesslist(ctx context.Context, aws
 }
 
 // PostAuthAwsTidyIdentityWhitelist
-func (a *AuthService) PostAuthAwsTidyIdentityWhitelist(ctx context.Context, awsTidyIdentityWhitelistRequest AwsTidyIdentityWhitelistRequest) (*http.Response, error) {
+func (a *Auth) PostAuthAwsTidyIdentityWhitelist(ctx context.Context, awsTidyIdentityWhitelistRequest AwsTidyIdentityWhitelistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13210,7 +13212,7 @@ func (a *AuthService) PostAuthAwsTidyIdentityWhitelist(ctx context.Context, awsT
 }
 
 // PostAuthAwsTidyRoletagBlacklist
-func (a *AuthService) PostAuthAwsTidyRoletagBlacklist(ctx context.Context, awsTidyRoletagBlacklistRequest AwsTidyRoletagBlacklistRequest) (*http.Response, error) {
+func (a *Auth) PostAuthAwsTidyRoletagBlacklist(ctx context.Context, awsTidyRoletagBlacklistRequest AwsTidyRoletagBlacklistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13277,7 +13279,7 @@ func (a *AuthService) PostAuthAwsTidyRoletagBlacklist(ctx context.Context, awsTi
 }
 
 // PostAuthAwsTidyRoletagDenylist
-func (a *AuthService) PostAuthAwsTidyRoletagDenylist(ctx context.Context, awsTidyRoletagDenylistRequest AwsTidyRoletagDenylistRequest) (*http.Response, error) {
+func (a *Auth) PostAuthAwsTidyRoletagDenylist(ctx context.Context, awsTidyRoletagDenylistRequest AwsTidyRoletagDenylistRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13344,7 +13346,7 @@ func (a *AuthService) PostAuthAwsTidyRoletagDenylist(ctx context.Context, awsTid
 }
 
 // PostAuthAzureConfig
-func (a *AuthService) PostAuthAzureConfig(ctx context.Context, azureConfigRequest AzureConfigRequest) (*http.Response, error) {
+func (a *Auth) PostAuthAzureConfig(ctx context.Context, azureConfigRequest AzureConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13411,7 +13413,7 @@ func (a *AuthService) PostAuthAzureConfig(ctx context.Context, azureConfigReques
 }
 
 // PostAuthAzureLogin
-func (a *AuthService) PostAuthAzureLogin(ctx context.Context, azureLoginRequest AzureLoginRequest) (*http.Response, error) {
+func (a *Auth) PostAuthAzureLogin(ctx context.Context, azureLoginRequest AzureLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13479,7 +13481,7 @@ func (a *AuthService) PostAuthAzureLogin(ctx context.Context, azureLoginRequest 
 
 // PostAuthAzureRoleName
 // name: Name of the role.
-func (a *AuthService) PostAuthAzureRoleName(ctx context.Context, name string, azureRoleRequest AzureRoleRequest) (*http.Response, error) {
+func (a *Auth) PostAuthAzureRoleName(ctx context.Context, name string, azureRoleRequest AzureRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13547,7 +13549,7 @@ func (a *AuthService) PostAuthAzureRoleName(ctx context.Context, name string, az
 }
 
 // PostAuthCentrifyConfig This path allows you to configure the centrify auth provider to interact with the Centrify Identity Services Platform for authenticating users.
-func (a *AuthService) PostAuthCentrifyConfig(ctx context.Context, centrifyConfigRequest CentrifyConfigRequest) (*http.Response, error) {
+func (a *Auth) PostAuthCentrifyConfig(ctx context.Context, centrifyConfigRequest CentrifyConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13614,7 +13616,7 @@ func (a *AuthService) PostAuthCentrifyConfig(ctx context.Context, centrifyConfig
 }
 
 // PostAuthCentrifyLogin Log in with a username and password.
-func (a *AuthService) PostAuthCentrifyLogin(ctx context.Context, centrifyLoginRequest CentrifyLoginRequest) (*http.Response, error) {
+func (a *Auth) PostAuthCentrifyLogin(ctx context.Context, centrifyLoginRequest CentrifyLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13682,7 +13684,7 @@ func (a *AuthService) PostAuthCentrifyLogin(ctx context.Context, centrifyLoginRe
 
 // PostAuthCertCertsName Manage trusted certificates used for authentication.
 // name: The name of the certificate
-func (a *AuthService) PostAuthCertCertsName(ctx context.Context, name string, certCertsRequest CertCertsRequest) (*http.Response, error) {
+func (a *Auth) PostAuthCertCertsName(ctx context.Context, name string, certCertsRequest CertCertsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13750,7 +13752,7 @@ func (a *AuthService) PostAuthCertCertsName(ctx context.Context, name string, ce
 }
 
 // PostAuthCertConfig
-func (a *AuthService) PostAuthCertConfig(ctx context.Context, certConfigRequest CertConfigRequest) (*http.Response, error) {
+func (a *Auth) PostAuthCertConfig(ctx context.Context, certConfigRequest CertConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13818,7 +13820,7 @@ func (a *AuthService) PostAuthCertConfig(ctx context.Context, certConfigRequest 
 
 // PostAuthCertCrlsName Manage Certificate Revocation Lists checked during authentication.
 // name: The name of the certificate
-func (a *AuthService) PostAuthCertCrlsName(ctx context.Context, name string, certCrlsRequest CertCrlsRequest) (*http.Response, error) {
+func (a *Auth) PostAuthCertCrlsName(ctx context.Context, name string, certCrlsRequest CertCrlsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13886,7 +13888,7 @@ func (a *AuthService) PostAuthCertCrlsName(ctx context.Context, name string, cer
 }
 
 // PostAuthCertLogin
-func (a *AuthService) PostAuthCertLogin(ctx context.Context, certLoginRequest CertLoginRequest) (*http.Response, error) {
+func (a *Auth) PostAuthCertLogin(ctx context.Context, certLoginRequest CertLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13953,7 +13955,7 @@ func (a *AuthService) PostAuthCertLogin(ctx context.Context, certLoginRequest Ce
 }
 
 // PostAuthCfConfig
-func (a *AuthService) PostAuthCfConfig(ctx context.Context, cfConfigRequest CfConfigRequest) (*http.Response, error) {
+func (a *Auth) PostAuthCfConfig(ctx context.Context, cfConfigRequest CfConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14020,7 +14022,7 @@ func (a *AuthService) PostAuthCfConfig(ctx context.Context, cfConfigRequest CfCo
 }
 
 // PostAuthCfLogin
-func (a *AuthService) PostAuthCfLogin(ctx context.Context, cfLoginRequest CfLoginRequest) (*http.Response, error) {
+func (a *Auth) PostAuthCfLogin(ctx context.Context, cfLoginRequest CfLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14088,7 +14090,7 @@ func (a *AuthService) PostAuthCfLogin(ctx context.Context, cfLoginRequest CfLogi
 
 // PostAuthCfRolesRole
 // role: The name of the role.
-func (a *AuthService) PostAuthCfRolesRole(ctx context.Context, role string, cfRolesRequest CfRolesRequest) (*http.Response, error) {
+func (a *Auth) PostAuthCfRolesRole(ctx context.Context, role string, cfRolesRequest CfRolesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14156,7 +14158,7 @@ func (a *AuthService) PostAuthCfRolesRole(ctx context.Context, role string, cfRo
 }
 
 // PostAuthGcpConfig Configure credentials used to query the GCP IAM API to verify authenticating service accounts
-func (a *AuthService) PostAuthGcpConfig(ctx context.Context, gcpConfigRequest GcpConfigRequest) (*http.Response, error) {
+func (a *Auth) PostAuthGcpConfig(ctx context.Context, gcpConfigRequest GcpConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14223,7 +14225,7 @@ func (a *AuthService) PostAuthGcpConfig(ctx context.Context, gcpConfigRequest Gc
 }
 
 // PostAuthGcpLogin
-func (a *AuthService) PostAuthGcpLogin(ctx context.Context, gcpLoginRequest GcpLoginRequest) (*http.Response, error) {
+func (a *Auth) PostAuthGcpLogin(ctx context.Context, gcpLoginRequest GcpLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14291,7 +14293,7 @@ func (a *AuthService) PostAuthGcpLogin(ctx context.Context, gcpLoginRequest GcpL
 
 // PostAuthGcpRoleName Create a GCP role with associated policies and required attributes.
 // name: Name of the role.
-func (a *AuthService) PostAuthGcpRoleName(ctx context.Context, name string, gcpRoleRequest GcpRoleRequest) (*http.Response, error) {
+func (a *Auth) PostAuthGcpRoleName(ctx context.Context, name string, gcpRoleRequest GcpRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14360,7 +14362,7 @@ func (a *AuthService) PostAuthGcpRoleName(ctx context.Context, name string, gcpR
 
 // PostAuthGcpRoleNameLabels Add or remove labels for an existing 'gce' role
 // name: Name of the role.
-func (a *AuthService) PostAuthGcpRoleNameLabels(ctx context.Context, name string, gcpRoleLabelsRequest GcpRoleLabelsRequest) (*http.Response, error) {
+func (a *Auth) PostAuthGcpRoleNameLabels(ctx context.Context, name string, gcpRoleLabelsRequest GcpRoleLabelsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14429,7 +14431,7 @@ func (a *AuthService) PostAuthGcpRoleNameLabels(ctx context.Context, name string
 
 // PostAuthGcpRoleNameServiceAccounts Add or remove service accounts for an existing `iam` role
 // name: Name of the role.
-func (a *AuthService) PostAuthGcpRoleNameServiceAccounts(ctx context.Context, name string, gcpRoleServiceAccountsRequest GcpRoleServiceAccountsRequest) (*http.Response, error) {
+func (a *Auth) PostAuthGcpRoleNameServiceAccounts(ctx context.Context, name string, gcpRoleServiceAccountsRequest GcpRoleServiceAccountsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14497,7 +14499,7 @@ func (a *AuthService) PostAuthGcpRoleNameServiceAccounts(ctx context.Context, na
 }
 
 // PostAuthGithubConfig
-func (a *AuthService) PostAuthGithubConfig(ctx context.Context, githubConfigRequest GithubConfigRequest) (*http.Response, error) {
+func (a *Auth) PostAuthGithubConfig(ctx context.Context, githubConfigRequest GithubConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14564,7 +14566,7 @@ func (a *AuthService) PostAuthGithubConfig(ctx context.Context, githubConfigRequ
 }
 
 // PostAuthGithubLogin
-func (a *AuthService) PostAuthGithubLogin(ctx context.Context, githubLoginRequest GithubLoginRequest) (*http.Response, error) {
+func (a *Auth) PostAuthGithubLogin(ctx context.Context, githubLoginRequest GithubLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14632,7 +14634,7 @@ func (a *AuthService) PostAuthGithubLogin(ctx context.Context, githubLoginReques
 
 // PostAuthGithubMapTeamsKey Read/write/delete a single teams mapping
 // key: Key for the teams mapping
-func (a *AuthService) PostAuthGithubMapTeamsKey(ctx context.Context, key string, githubMapTeamsRequest GithubMapTeamsRequest) (*http.Response, error) {
+func (a *Auth) PostAuthGithubMapTeamsKey(ctx context.Context, key string, githubMapTeamsRequest GithubMapTeamsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14701,7 +14703,7 @@ func (a *AuthService) PostAuthGithubMapTeamsKey(ctx context.Context, key string,
 
 // PostAuthGithubMapUsersKey Read/write/delete a single users mapping
 // key: Key for the users mapping
-func (a *AuthService) PostAuthGithubMapUsersKey(ctx context.Context, key string, githubMapUsersRequest GithubMapUsersRequest) (*http.Response, error) {
+func (a *Auth) PostAuthGithubMapUsersKey(ctx context.Context, key string, githubMapUsersRequest GithubMapUsersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14770,7 +14772,7 @@ func (a *AuthService) PostAuthGithubMapUsersKey(ctx context.Context, key string,
 
 // PostAuthJwtConfig Configure the JWT authentication backend.
 // The JWT authentication backend validates JWTs (or OIDC) using the configured credentials. If using OIDC Discovery, the URL must be provided, along with (optionally) the CA cert to use for the connection. If performing JWT validation locally, a set of public keys must be provided.
-func (a *AuthService) PostAuthJwtConfig(ctx context.Context, jwtConfigRequest JwtConfigRequest) (*http.Response, error) {
+func (a *Auth) PostAuthJwtConfig(ctx context.Context, jwtConfigRequest JwtConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14837,7 +14839,7 @@ func (a *AuthService) PostAuthJwtConfig(ctx context.Context, jwtConfigRequest Jw
 }
 
 // PostAuthJwtLogin Authenticates to Vault using a JWT (or OIDC) token.
-func (a *AuthService) PostAuthJwtLogin(ctx context.Context, jwtLoginRequest JwtLoginRequest) (*http.Response, error) {
+func (a *Auth) PostAuthJwtLogin(ctx context.Context, jwtLoginRequest JwtLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14904,7 +14906,7 @@ func (a *AuthService) PostAuthJwtLogin(ctx context.Context, jwtLoginRequest JwtL
 }
 
 // PostAuthJwtOidcAuthUrl Request an authorization URL to start an OIDC login flow.
-func (a *AuthService) PostAuthJwtOidcAuthUrl(ctx context.Context, jwtOidcAuthUrlRequest JwtOidcAuthUrlRequest) (*http.Response, error) {
+func (a *Auth) PostAuthJwtOidcAuthUrl(ctx context.Context, jwtOidcAuthUrlRequest JwtOidcAuthUrlRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14971,7 +14973,7 @@ func (a *AuthService) PostAuthJwtOidcAuthUrl(ctx context.Context, jwtOidcAuthUrl
 }
 
 // PostAuthJwtOidcCallback Callback endpoint to handle form_posts.
-func (a *AuthService) PostAuthJwtOidcCallback(ctx context.Context, jwtOidcCallbackRequest JwtOidcCallbackRequest) (*http.Response, error) {
+func (a *Auth) PostAuthJwtOidcCallback(ctx context.Context, jwtOidcCallbackRequest JwtOidcCallbackRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15040,7 +15042,7 @@ func (a *AuthService) PostAuthJwtOidcCallback(ctx context.Context, jwtOidcCallba
 // PostAuthJwtRoleName Register an role with the backend.
 // A role is required to authenticate with this backend. The role binds   JWT token information with token policies and settings.   The bindings, token polices and token settings can all be configured   using this endpoint
 // name: Name of the role.
-func (a *AuthService) PostAuthJwtRoleName(ctx context.Context, name string, jwtRoleRequest JwtRoleRequest) (*http.Response, error) {
+func (a *Auth) PostAuthJwtRoleName(ctx context.Context, name string, jwtRoleRequest JwtRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15108,7 +15110,7 @@ func (a *AuthService) PostAuthJwtRoleName(ctx context.Context, name string, jwtR
 }
 
 // PostAuthKerberosConfig
-func (a *AuthService) PostAuthKerberosConfig(ctx context.Context, kerberosConfigRequest KerberosConfigRequest) (*http.Response, error) {
+func (a *Auth) PostAuthKerberosConfig(ctx context.Context, kerberosConfigRequest KerberosConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15175,7 +15177,7 @@ func (a *AuthService) PostAuthKerberosConfig(ctx context.Context, kerberosConfig
 }
 
 // PostAuthKerberosConfigLdap
-func (a *AuthService) PostAuthKerberosConfigLdap(ctx context.Context, kerberosConfigLdapRequest KerberosConfigLdapRequest) (*http.Response, error) {
+func (a *Auth) PostAuthKerberosConfigLdap(ctx context.Context, kerberosConfigLdapRequest KerberosConfigLdapRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15243,7 +15245,7 @@ func (a *AuthService) PostAuthKerberosConfigLdap(ctx context.Context, kerberosCo
 
 // PostAuthKerberosGroupsName
 // name: Name of the LDAP group.
-func (a *AuthService) PostAuthKerberosGroupsName(ctx context.Context, name string, kerberosGroupsRequest KerberosGroupsRequest) (*http.Response, error) {
+func (a *Auth) PostAuthKerberosGroupsName(ctx context.Context, name string, kerberosGroupsRequest KerberosGroupsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15311,7 +15313,7 @@ func (a *AuthService) PostAuthKerberosGroupsName(ctx context.Context, name strin
 }
 
 // PostAuthKerberosLogin
-func (a *AuthService) PostAuthKerberosLogin(ctx context.Context, kerberosLoginRequest KerberosLoginRequest) (*http.Response, error) {
+func (a *Auth) PostAuthKerberosLogin(ctx context.Context, kerberosLoginRequest KerberosLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15378,7 +15380,7 @@ func (a *AuthService) PostAuthKerberosLogin(ctx context.Context, kerberosLoginRe
 }
 
 // PostAuthKubernetesConfig Configures the JWT Public Key and Kubernetes API information.
-func (a *AuthService) PostAuthKubernetesConfig(ctx context.Context, kubernetesConfigRequest KubernetesConfigRequest) (*http.Response, error) {
+func (a *Auth) PostAuthKubernetesConfig(ctx context.Context, kubernetesConfigRequest KubernetesConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15445,7 +15447,7 @@ func (a *AuthService) PostAuthKubernetesConfig(ctx context.Context, kubernetesCo
 }
 
 // PostAuthKubernetesLogin Authenticates Kubernetes service accounts with Vault.
-func (a *AuthService) PostAuthKubernetesLogin(ctx context.Context, kubernetesLoginRequest KubernetesLoginRequest) (*http.Response, error) {
+func (a *Auth) PostAuthKubernetesLogin(ctx context.Context, kubernetesLoginRequest KubernetesLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15513,7 +15515,7 @@ func (a *AuthService) PostAuthKubernetesLogin(ctx context.Context, kubernetesLog
 
 // PostAuthKubernetesRoleName Register an role with the backend.
 // name: Name of the role.
-func (a *AuthService) PostAuthKubernetesRoleName(ctx context.Context, name string, kubernetesRoleRequest KubernetesRoleRequest) (*http.Response, error) {
+func (a *Auth) PostAuthKubernetesRoleName(ctx context.Context, name string, kubernetesRoleRequest KubernetesRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15581,7 +15583,7 @@ func (a *AuthService) PostAuthKubernetesRoleName(ctx context.Context, name strin
 }
 
 // PostAuthLdapConfig Configure the LDAP server to connect to, along with its options.
-func (a *AuthService) PostAuthLdapConfig(ctx context.Context, ldapConfigRequest LdapConfigRequest) (*http.Response, error) {
+func (a *Auth) PostAuthLdapConfig(ctx context.Context, ldapConfigRequest LdapConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15649,7 +15651,7 @@ func (a *AuthService) PostAuthLdapConfig(ctx context.Context, ldapConfigRequest 
 
 // PostAuthLdapGroupsName Manage additional groups for users allowed to authenticate.
 // name: Name of the LDAP group.
-func (a *AuthService) PostAuthLdapGroupsName(ctx context.Context, name string, ldapGroupsRequest LdapGroupsRequest) (*http.Response, error) {
+func (a *Auth) PostAuthLdapGroupsName(ctx context.Context, name string, ldapGroupsRequest LdapGroupsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15718,7 +15720,7 @@ func (a *AuthService) PostAuthLdapGroupsName(ctx context.Context, name string, l
 
 // PostAuthLdapLoginUsername Log in with a username and password.
 // username: DN (distinguished name) to be used for login.
-func (a *AuthService) PostAuthLdapLoginUsername(ctx context.Context, username string, ldapLoginRequest LdapLoginRequest) (*http.Response, error) {
+func (a *Auth) PostAuthLdapLoginUsername(ctx context.Context, username string, ldapLoginRequest LdapLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15787,7 +15789,7 @@ func (a *AuthService) PostAuthLdapLoginUsername(ctx context.Context, username st
 
 // PostAuthLdapUsersName Manage users allowed to authenticate.
 // name: Name of the LDAP user.
-func (a *AuthService) PostAuthLdapUsersName(ctx context.Context, name string, ldapUsersRequest LdapUsersRequest) (*http.Response, error) {
+func (a *Auth) PostAuthLdapUsersName(ctx context.Context, name string, ldapUsersRequest LdapUsersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15855,7 +15857,7 @@ func (a *AuthService) PostAuthLdapUsersName(ctx context.Context, name string, ld
 }
 
 // PostAuthOciConfig Manages the configuration for the Vault Auth Plugin.
-func (a *AuthService) PostAuthOciConfig(ctx context.Context, ociConfigRequest OciConfigRequest) (*http.Response, error) {
+func (a *Auth) PostAuthOciConfig(ctx context.Context, ociConfigRequest OciConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15923,7 +15925,7 @@ func (a *AuthService) PostAuthOciConfig(ctx context.Context, ociConfigRequest Oc
 
 // PostAuthOciLoginRole Authenticates to Vault using OCI credentials
 // role: Name of the role.
-func (a *AuthService) PostAuthOciLoginRole(ctx context.Context, role string, ociLoginRequest OciLoginRequest) (*http.Response, error) {
+func (a *Auth) PostAuthOciLoginRole(ctx context.Context, role string, ociLoginRequest OciLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15992,7 +15994,7 @@ func (a *AuthService) PostAuthOciLoginRole(ctx context.Context, role string, oci
 
 // PostAuthOciRoleRole Create a role and associate policies to it.
 // role: Name of the role.
-func (a *AuthService) PostAuthOciRoleRole(ctx context.Context, role string, ociRoleRequest OciRoleRequest) (*http.Response, error) {
+func (a *Auth) PostAuthOciRoleRole(ctx context.Context, role string, ociRoleRequest OciRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16061,7 +16063,7 @@ func (a *AuthService) PostAuthOciRoleRole(ctx context.Context, role string, ociR
 
 // PostAuthOidcConfig Configure the JWT authentication backend.
 // The JWT authentication backend validates JWTs (or OIDC) using the configured credentials. If using OIDC Discovery, the URL must be provided, along with (optionally) the CA cert to use for the connection. If performing JWT validation locally, a set of public keys must be provided.
-func (a *AuthService) PostAuthOidcConfig(ctx context.Context, oidcConfigRequest OidcConfigRequest) (*http.Response, error) {
+func (a *Auth) PostAuthOidcConfig(ctx context.Context, oidcConfigRequest OidcConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16128,7 +16130,7 @@ func (a *AuthService) PostAuthOidcConfig(ctx context.Context, oidcConfigRequest 
 }
 
 // PostAuthOidcLogin Authenticates to Vault using a JWT (or OIDC) token.
-func (a *AuthService) PostAuthOidcLogin(ctx context.Context, oidcLoginRequest OidcLoginRequest) (*http.Response, error) {
+func (a *Auth) PostAuthOidcLogin(ctx context.Context, oidcLoginRequest OidcLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16195,7 +16197,7 @@ func (a *AuthService) PostAuthOidcLogin(ctx context.Context, oidcLoginRequest Oi
 }
 
 // PostAuthOidcOidcAuthUrl Request an authorization URL to start an OIDC login flow.
-func (a *AuthService) PostAuthOidcOidcAuthUrl(ctx context.Context, oidcOidcAuthUrlRequest OidcOidcAuthUrlRequest) (*http.Response, error) {
+func (a *Auth) PostAuthOidcOidcAuthUrl(ctx context.Context, oidcOidcAuthUrlRequest OidcOidcAuthUrlRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16262,7 +16264,7 @@ func (a *AuthService) PostAuthOidcOidcAuthUrl(ctx context.Context, oidcOidcAuthU
 }
 
 // PostAuthOidcOidcCallback Callback endpoint to handle form_posts.
-func (a *AuthService) PostAuthOidcOidcCallback(ctx context.Context, oidcOidcCallbackRequest OidcOidcCallbackRequest) (*http.Response, error) {
+func (a *Auth) PostAuthOidcOidcCallback(ctx context.Context, oidcOidcCallbackRequest OidcOidcCallbackRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16331,7 +16333,7 @@ func (a *AuthService) PostAuthOidcOidcCallback(ctx context.Context, oidcOidcCall
 // PostAuthOidcRoleName Register an role with the backend.
 // A role is required to authenticate with this backend. The role binds   JWT token information with token policies and settings.   The bindings, token polices and token settings can all be configured   using this endpoint
 // name: Name of the role.
-func (a *AuthService) PostAuthOidcRoleName(ctx context.Context, name string, oidcRoleRequest OidcRoleRequest) (*http.Response, error) {
+func (a *Auth) PostAuthOidcRoleName(ctx context.Context, name string, oidcRoleRequest OidcRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16399,7 +16401,7 @@ func (a *AuthService) PostAuthOidcRoleName(ctx context.Context, name string, oid
 }
 
 // PostAuthOktaConfig This endpoint allows you to configure the Okta and its configuration options.  The Okta organization are the characters at the front of the URL for Okta. Example https://ORG.okta.com
-func (a *AuthService) PostAuthOktaConfig(ctx context.Context, oktaConfigRequest OktaConfigRequest) (*http.Response, error) {
+func (a *Auth) PostAuthOktaConfig(ctx context.Context, oktaConfigRequest OktaConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16467,7 +16469,7 @@ func (a *AuthService) PostAuthOktaConfig(ctx context.Context, oktaConfigRequest 
 
 // PostAuthOktaGroupsName Manage users allowed to authenticate.
 // name: Name of the Okta group.
-func (a *AuthService) PostAuthOktaGroupsName(ctx context.Context, name string, oktaGroupsRequest OktaGroupsRequest) (*http.Response, error) {
+func (a *Auth) PostAuthOktaGroupsName(ctx context.Context, name string, oktaGroupsRequest OktaGroupsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16536,7 +16538,7 @@ func (a *AuthService) PostAuthOktaGroupsName(ctx context.Context, name string, o
 
 // PostAuthOktaLoginUsername Log in with a username and password.
 // username: Username to be used for login.
-func (a *AuthService) PostAuthOktaLoginUsername(ctx context.Context, username string, oktaLoginRequest OktaLoginRequest) (*http.Response, error) {
+func (a *Auth) PostAuthOktaLoginUsername(ctx context.Context, username string, oktaLoginRequest OktaLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16605,7 +16607,7 @@ func (a *AuthService) PostAuthOktaLoginUsername(ctx context.Context, username st
 
 // PostAuthOktaUsersName Manage additional groups for users allowed to authenticate.
 // name: Name of the user.
-func (a *AuthService) PostAuthOktaUsersName(ctx context.Context, name string, oktaUsersRequest OktaUsersRequest) (*http.Response, error) {
+func (a *Auth) PostAuthOktaUsersName(ctx context.Context, name string, oktaUsersRequest OktaUsersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16673,7 +16675,7 @@ func (a *AuthService) PostAuthOktaUsersName(ctx context.Context, name string, ok
 }
 
 // PostAuthRadiusConfig Configure the RADIUS server to connect to, along with its options.
-func (a *AuthService) PostAuthRadiusConfig(ctx context.Context, radiusConfigRequest RadiusConfigRequest) (*http.Response, error) {
+func (a *Auth) PostAuthRadiusConfig(ctx context.Context, radiusConfigRequest RadiusConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16740,7 +16742,7 @@ func (a *AuthService) PostAuthRadiusConfig(ctx context.Context, radiusConfigRequ
 }
 
 // PostAuthRadiusLogin Log in with a username and password.
-func (a *AuthService) PostAuthRadiusLogin(ctx context.Context, radiusLoginRequest RadiusLoginRequest) (*http.Response, error) {
+func (a *Auth) PostAuthRadiusLogin(ctx context.Context, radiusLoginRequest RadiusLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16808,7 +16810,7 @@ func (a *AuthService) PostAuthRadiusLogin(ctx context.Context, radiusLoginReques
 
 // PostAuthRadiusLoginUrlusername Log in with a username and password.
 // urlusername: Username to be used for login. (URL parameter)
-func (a *AuthService) PostAuthRadiusLoginUrlusername(ctx context.Context, urlusername string, radiusLoginRequest RadiusLoginRequest) (*http.Response, error) {
+func (a *Auth) PostAuthRadiusLoginUrlusername(ctx context.Context, urlusername string, radiusLoginRequest RadiusLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16877,7 +16879,7 @@ func (a *AuthService) PostAuthRadiusLoginUrlusername(ctx context.Context, urluse
 
 // PostAuthRadiusUsersName Manage users allowed to authenticate.
 // name: Name of the RADIUS user.
-func (a *AuthService) PostAuthRadiusUsersName(ctx context.Context, name string, radiusUsersRequest RadiusUsersRequest) (*http.Response, error) {
+func (a *Auth) PostAuthRadiusUsersName(ctx context.Context, name string, radiusUsersRequest RadiusUsersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16945,7 +16947,7 @@ func (a *AuthService) PostAuthRadiusUsersName(ctx context.Context, name string, 
 }
 
 // PostAuthTokenCreate The token create path is used to create new tokens.
-func (a *AuthService) PostAuthTokenCreate(ctx context.Context) (*http.Response, error) {
+func (a *Auth) PostAuthTokenCreate(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17010,7 +17012,7 @@ func (a *AuthService) PostAuthTokenCreate(ctx context.Context) (*http.Response, 
 }
 
 // PostAuthTokenCreateOrphan The token create path is used to create new orphan tokens.
-func (a *AuthService) PostAuthTokenCreateOrphan(ctx context.Context) (*http.Response, error) {
+func (a *Auth) PostAuthTokenCreateOrphan(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17076,7 +17078,7 @@ func (a *AuthService) PostAuthTokenCreateOrphan(ctx context.Context) (*http.Resp
 
 // PostAuthTokenCreateRoleName This token create path is used to create new tokens adhering to the given role.
 // roleName: Name of the role
-func (a *AuthService) PostAuthTokenCreateRoleName(ctx context.Context, roleName string) (*http.Response, error) {
+func (a *Auth) PostAuthTokenCreateRoleName(ctx context.Context, roleName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17142,7 +17144,7 @@ func (a *AuthService) PostAuthTokenCreateRoleName(ctx context.Context, roleName 
 }
 
 // PostAuthTokenLookup This endpoint will lookup a token and its properties.
-func (a *AuthService) PostAuthTokenLookup(ctx context.Context, tokenLookupRequest TokenLookupRequest) (*http.Response, error) {
+func (a *Auth) PostAuthTokenLookup(ctx context.Context, tokenLookupRequest TokenLookupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17209,7 +17211,7 @@ func (a *AuthService) PostAuthTokenLookup(ctx context.Context, tokenLookupReques
 }
 
 // PostAuthTokenLookupAccessor This endpoint will lookup a token associated with the given accessor and its properties. Response will not contain the token ID.
-func (a *AuthService) PostAuthTokenLookupAccessor(ctx context.Context, tokenLookupAccessorRequest TokenLookupAccessorRequest) (*http.Response, error) {
+func (a *Auth) PostAuthTokenLookupAccessor(ctx context.Context, tokenLookupAccessorRequest TokenLookupAccessorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17276,7 +17278,7 @@ func (a *AuthService) PostAuthTokenLookupAccessor(ctx context.Context, tokenLook
 }
 
 // PostAuthTokenLookupSelf This endpoint will lookup a token and its properties.
-func (a *AuthService) PostAuthTokenLookupSelf(ctx context.Context, tokenLookupSelfRequest TokenLookupSelfRequest) (*http.Response, error) {
+func (a *Auth) PostAuthTokenLookupSelf(ctx context.Context, tokenLookupSelfRequest TokenLookupSelfRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17343,7 +17345,7 @@ func (a *AuthService) PostAuthTokenLookupSelf(ctx context.Context, tokenLookupSe
 }
 
 // PostAuthTokenRenew This endpoint will renew the given token and prevent expiration.
-func (a *AuthService) PostAuthTokenRenew(ctx context.Context, tokenRenewRequest TokenRenewRequest) (*http.Response, error) {
+func (a *Auth) PostAuthTokenRenew(ctx context.Context, tokenRenewRequest TokenRenewRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17410,7 +17412,7 @@ func (a *AuthService) PostAuthTokenRenew(ctx context.Context, tokenRenewRequest 
 }
 
 // PostAuthTokenRenewAccessor This endpoint will renew a token associated with the given accessor and its properties. Response will not contain the token ID.
-func (a *AuthService) PostAuthTokenRenewAccessor(ctx context.Context, tokenRenewAccessorRequest TokenRenewAccessorRequest) (*http.Response, error) {
+func (a *Auth) PostAuthTokenRenewAccessor(ctx context.Context, tokenRenewAccessorRequest TokenRenewAccessorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17477,7 +17479,7 @@ func (a *AuthService) PostAuthTokenRenewAccessor(ctx context.Context, tokenRenew
 }
 
 // PostAuthTokenRenewSelf This endpoint will renew the token used to call it and prevent expiration.
-func (a *AuthService) PostAuthTokenRenewSelf(ctx context.Context, tokenRenewSelfRequest TokenRenewSelfRequest) (*http.Response, error) {
+func (a *Auth) PostAuthTokenRenewSelf(ctx context.Context, tokenRenewSelfRequest TokenRenewSelfRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17544,7 +17546,7 @@ func (a *AuthService) PostAuthTokenRenewSelf(ctx context.Context, tokenRenewSelf
 }
 
 // PostAuthTokenRevoke This endpoint will delete the given token and all of its child tokens.
-func (a *AuthService) PostAuthTokenRevoke(ctx context.Context, tokenRevokeRequest TokenRevokeRequest) (*http.Response, error) {
+func (a *Auth) PostAuthTokenRevoke(ctx context.Context, tokenRevokeRequest TokenRevokeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17611,7 +17613,7 @@ func (a *AuthService) PostAuthTokenRevoke(ctx context.Context, tokenRevokeReques
 }
 
 // PostAuthTokenRevokeAccessor This endpoint will delete the token associated with the accessor and all of its child tokens.
-func (a *AuthService) PostAuthTokenRevokeAccessor(ctx context.Context, tokenRevokeAccessorRequest TokenRevokeAccessorRequest) (*http.Response, error) {
+func (a *Auth) PostAuthTokenRevokeAccessor(ctx context.Context, tokenRevokeAccessorRequest TokenRevokeAccessorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17678,7 +17680,7 @@ func (a *AuthService) PostAuthTokenRevokeAccessor(ctx context.Context, tokenRevo
 }
 
 // PostAuthTokenRevokeOrphan This endpoint will delete the token and orphan its child tokens.
-func (a *AuthService) PostAuthTokenRevokeOrphan(ctx context.Context, tokenRevokeOrphanRequest TokenRevokeOrphanRequest) (*http.Response, error) {
+func (a *Auth) PostAuthTokenRevokeOrphan(ctx context.Context, tokenRevokeOrphanRequest TokenRevokeOrphanRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17745,7 +17747,7 @@ func (a *AuthService) PostAuthTokenRevokeOrphan(ctx context.Context, tokenRevoke
 }
 
 // PostAuthTokenRevokeSelf This endpoint will delete the token used to call it and all of its child tokens.
-func (a *AuthService) PostAuthTokenRevokeSelf(ctx context.Context) (*http.Response, error) {
+func (a *Auth) PostAuthTokenRevokeSelf(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17811,7 +17813,7 @@ func (a *AuthService) PostAuthTokenRevokeSelf(ctx context.Context) (*http.Respon
 
 // PostAuthTokenRolesRoleName
 // roleName: Name of the role
-func (a *AuthService) PostAuthTokenRolesRoleName(ctx context.Context, roleName string, tokenRolesRequest TokenRolesRequest) (*http.Response, error) {
+func (a *Auth) PostAuthTokenRolesRoleName(ctx context.Context, roleName string, tokenRolesRequest TokenRolesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17879,7 +17881,7 @@ func (a *AuthService) PostAuthTokenRolesRoleName(ctx context.Context, roleName s
 }
 
 // PostAuthTokenTidy This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
-func (a *AuthService) PostAuthTokenTidy(ctx context.Context) (*http.Response, error) {
+func (a *Auth) PostAuthTokenTidy(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17945,7 +17947,7 @@ func (a *AuthService) PostAuthTokenTidy(ctx context.Context) (*http.Response, er
 
 // PostAuthUserpassLoginUsername Log in with a username and password.
 // username: Username of the user.
-func (a *AuthService) PostAuthUserpassLoginUsername(ctx context.Context, username string, userpassLoginRequest UserpassLoginRequest) (*http.Response, error) {
+func (a *Auth) PostAuthUserpassLoginUsername(ctx context.Context, username string, userpassLoginRequest UserpassLoginRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18014,7 +18016,7 @@ func (a *AuthService) PostAuthUserpassLoginUsername(ctx context.Context, usernam
 
 // PostAuthUserpassUsersUsername Manage users allowed to authenticate.
 // username: Username for this user.
-func (a *AuthService) PostAuthUserpassUsersUsername(ctx context.Context, username string, userpassUsersRequest UserpassUsersRequest) (*http.Response, error) {
+func (a *Auth) PostAuthUserpassUsersUsername(ctx context.Context, username string, userpassUsersRequest UserpassUsersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18083,7 +18085,7 @@ func (a *AuthService) PostAuthUserpassUsersUsername(ctx context.Context, usernam
 
 // PostAuthUserpassUsersUsernamePassword Reset user's password.
 // username: Username for this user.
-func (a *AuthService) PostAuthUserpassUsersUsernamePassword(ctx context.Context, username string, userpassUsersPasswordRequest UserpassUsersPasswordRequest) (*http.Response, error) {
+func (a *Auth) PostAuthUserpassUsersUsernamePassword(ctx context.Context, username string, userpassUsersPasswordRequest UserpassUsersPasswordRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18152,7 +18154,7 @@ func (a *AuthService) PostAuthUserpassUsersUsernamePassword(ctx context.Context,
 
 // PostAuthUserpassUsersUsernamePolicies Update the policies associated with the username.
 // username: Username for this user.
-func (a *AuthService) PostAuthUserpassUsersUsernamePolicies(ctx context.Context, username string, userpassUsersPoliciesRequest UserpassUsersPoliciesRequest) (*http.Response, error) {
+func (a *Auth) PostAuthUserpassUsersUsernamePolicies(ctx context.Context, username string, userpassUsersPoliciesRequest UserpassUsersPoliciesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

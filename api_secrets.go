@@ -19,11 +19,13 @@ import (
 	"strings"
 )
 
-// SecretsService Secrets service
-type SecretsService service
+// Secrets is a simple wrapper around the client for Secrets requests
+type Secrets struct {
+	client *Client
+}
 
 // DeleteAdConfig Configure the AD server to connect to, along with password options.
-func (a *SecretsService) DeleteAdConfig(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) DeleteAdConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -89,7 +91,7 @@ func (a *SecretsService) DeleteAdConfig(ctx context.Context) (*http.Response, er
 
 // DeleteAdLibraryName Delete a library set.
 // name: Name of the set.
-func (a *SecretsService) DeleteAdLibraryName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) DeleteAdLibraryName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -156,7 +158,7 @@ func (a *SecretsService) DeleteAdLibraryName(ctx context.Context, name string) (
 
 // DeleteAdRolesName Manage roles to build links between Vault and Active Directory service accounts.
 // name: Name of the role
-func (a *SecretsService) DeleteAdRolesName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) DeleteAdRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -222,7 +224,7 @@ func (a *SecretsService) DeleteAdRolesName(ctx context.Context, name string) (*h
 }
 
 // DeleteAlicloudConfig Configure the access key and secret to use for RAM and STS calls.
-func (a *SecretsService) DeleteAlicloudConfig(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) DeleteAlicloudConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -288,7 +290,7 @@ func (a *SecretsService) DeleteAlicloudConfig(ctx context.Context) (*http.Respon
 
 // DeleteAlicloudRoleName Read, write and reference policies and roles that API keys or STS credentials can be made for.
 // name: The name of the role.
-func (a *SecretsService) DeleteAlicloudRoleName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) DeleteAlicloudRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -355,7 +357,7 @@ func (a *SecretsService) DeleteAlicloudRoleName(ctx context.Context, name string
 
 // DeleteAwsRolesName Read, write and reference IAM policies that access keys can be made for.
 // name: Name of the policy
-func (a *SecretsService) DeleteAwsRolesName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) DeleteAwsRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -421,7 +423,7 @@ func (a *SecretsService) DeleteAwsRolesName(ctx context.Context, name string) (*
 }
 
 // DeleteAzureConfig
-func (a *SecretsService) DeleteAzureConfig(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) DeleteAzureConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -487,7 +489,7 @@ func (a *SecretsService) DeleteAzureConfig(ctx context.Context) (*http.Response,
 
 // DeleteAzureRolesName Manage the Vault roles used to generate Azure credentials.
 // name: Name of the role.
-func (a *SecretsService) DeleteAzureRolesName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) DeleteAzureRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -554,7 +556,7 @@ func (a *SecretsService) DeleteAzureRolesName(ctx context.Context, name string) 
 
 // DeleteConsulRolesName
 // name: Name of the role.
-func (a *SecretsService) DeleteConsulRolesName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) DeleteConsulRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -621,7 +623,7 @@ func (a *SecretsService) DeleteConsulRolesName(ctx context.Context, name string)
 
 // DeleteCubbyholePath Deletes the secret at the specified location.
 // path: Specifies the path of the secret.
-func (a *SecretsService) DeleteCubbyholePath(ctx context.Context, path string) (*http.Response, error) {
+func (a *Secrets) DeleteCubbyholePath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -688,7 +690,7 @@ func (a *SecretsService) DeleteCubbyholePath(ctx context.Context, path string) (
 
 // DeleteGcpRolesetName
 // name: Required. Name of the role.
-func (a *SecretsService) DeleteGcpRolesetName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) DeleteGcpRolesetName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -755,7 +757,7 @@ func (a *SecretsService) DeleteGcpRolesetName(ctx context.Context, name string) 
 
 // DeleteGcpStaticAccountName
 // name: Required. Name to refer to this static account in Vault. Cannot be updated.
-func (a *SecretsService) DeleteGcpStaticAccountName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) DeleteGcpStaticAccountName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -821,7 +823,7 @@ func (a *SecretsService) DeleteGcpStaticAccountName(ctx context.Context, name st
 }
 
 // DeleteGcpkmsConfig Configure the GCP KMS secrets engine
-func (a *SecretsService) DeleteGcpkmsConfig(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) DeleteGcpkmsConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -887,7 +889,7 @@ func (a *SecretsService) DeleteGcpkmsConfig(ctx context.Context) (*http.Response
 
 // DeleteGcpkmsKeysDeregisterKey Deregister an existing key in Vault
 // key: Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
-func (a *SecretsService) DeleteGcpkmsKeysDeregisterKey(ctx context.Context, key string) (*http.Response, error) {
+func (a *Secrets) DeleteGcpkmsKeysDeregisterKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -954,7 +956,7 @@ func (a *SecretsService) DeleteGcpkmsKeysDeregisterKey(ctx context.Context, key 
 
 // DeleteGcpkmsKeysKey Interact with crypto keys in Vault and Google Cloud KMS
 // key: Name of the key in Vault.
-func (a *SecretsService) DeleteGcpkmsKeysKey(ctx context.Context, key string) (*http.Response, error) {
+func (a *Secrets) DeleteGcpkmsKeysKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1021,7 +1023,7 @@ func (a *SecretsService) DeleteGcpkmsKeysKey(ctx context.Context, key string) (*
 
 // DeleteGcpkmsKeysTrimKey Delete old crypto key versions from Google Cloud KMS
 // key: Name of the key in Vault.
-func (a *SecretsService) DeleteGcpkmsKeysTrimKey(ctx context.Context, key string) (*http.Response, error) {
+func (a *Secrets) DeleteGcpkmsKeysTrimKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1087,7 +1089,7 @@ func (a *SecretsService) DeleteGcpkmsKeysTrimKey(ctx context.Context, key string
 }
 
 // DeleteKubernetesConfig
-func (a *SecretsService) DeleteKubernetesConfig(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) DeleteKubernetesConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1153,7 +1155,7 @@ func (a *SecretsService) DeleteKubernetesConfig(ctx context.Context) (*http.Resp
 
 // DeleteKubernetesRolesName
 // name: Name of the role
-func (a *SecretsService) DeleteKubernetesRolesName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) DeleteKubernetesRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1220,7 +1222,7 @@ func (a *SecretsService) DeleteKubernetesRolesName(ctx context.Context, name str
 
 // DeleteKvPath Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
 // path: Location of the secret.
-func (a *SecretsService) DeleteKvPath(ctx context.Context, path string) (*http.Response, error) {
+func (a *Secrets) DeleteKvPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1287,7 +1289,7 @@ func (a *SecretsService) DeleteKvPath(ctx context.Context, path string) (*http.R
 
 // DeleteMongodbatlasRolesName Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
 // name: Name of the Roles
-func (a *SecretsService) DeleteMongodbatlasRolesName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) DeleteMongodbatlasRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1353,7 +1355,7 @@ func (a *SecretsService) DeleteMongodbatlasRolesName(ctx context.Context, name s
 }
 
 // DeleteNomadConfigAccess
-func (a *SecretsService) DeleteNomadConfigAccess(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) DeleteNomadConfigAccess(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1418,7 +1420,7 @@ func (a *SecretsService) DeleteNomadConfigAccess(ctx context.Context) (*http.Res
 }
 
 // DeleteNomadConfigLease Configure the lease parameters for generated tokens
-func (a *SecretsService) DeleteNomadConfigLease(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) DeleteNomadConfigLease(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1484,7 +1486,7 @@ func (a *SecretsService) DeleteNomadConfigLease(ctx context.Context) (*http.Resp
 
 // DeleteNomadRoleName
 // name: Name of the role
-func (a *SecretsService) DeleteNomadRoleName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) DeleteNomadRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1550,7 +1552,7 @@ func (a *SecretsService) DeleteNomadRoleName(ctx context.Context, name string) (
 }
 
 // DeleteOpenldapConfig
-func (a *SecretsService) DeleteOpenldapConfig(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) DeleteOpenldapConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1616,7 +1618,7 @@ func (a *SecretsService) DeleteOpenldapConfig(ctx context.Context) (*http.Respon
 
 // DeleteOpenldapRoleName
 // name: Name of the role (lowercase)
-func (a *SecretsService) DeleteOpenldapRoleName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) DeleteOpenldapRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1683,7 +1685,7 @@ func (a *SecretsService) DeleteOpenldapRoleName(ctx context.Context, name string
 
 // DeleteOpenldapStaticRoleName
 // name: Name of the role
-func (a *SecretsService) DeleteOpenldapStaticRoleName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) DeleteOpenldapStaticRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1750,7 +1752,7 @@ func (a *SecretsService) DeleteOpenldapStaticRoleName(ctx context.Context, name 
 
 // DeletePkiIssuerRefDerPem
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-func (a *SecretsService) DeletePkiIssuerRefDerPem(ctx context.Context, issuerRef string) (*http.Response, error) {
+func (a *Secrets) DeletePkiIssuerRefDerPem(ctx context.Context, issuerRef string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1816,7 +1818,7 @@ func (a *SecretsService) DeletePkiIssuerRefDerPem(ctx context.Context, issuerRef
 }
 
 // DeletePkiJson
-func (a *SecretsService) DeletePkiJson(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) DeletePkiJson(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1882,7 +1884,7 @@ func (a *SecretsService) DeletePkiJson(ctx context.Context) (*http.Response, err
 
 // DeletePkiKeyKeyRef
 // keyRef: Reference to key; either \&quot;default\&quot; for the configured default key, an identifier of a key, or the name assigned to the key.
-func (a *SecretsService) DeletePkiKeyKeyRef(ctx context.Context, keyRef string) (*http.Response, error) {
+func (a *Secrets) DeletePkiKeyKeyRef(ctx context.Context, keyRef string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -1949,7 +1951,7 @@ func (a *SecretsService) DeletePkiKeyKeyRef(ctx context.Context, keyRef string) 
 
 // DeletePkiRolesName
 // name: Name of the role
-func (a *SecretsService) DeletePkiRolesName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) DeletePkiRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2015,7 +2017,7 @@ func (a *SecretsService) DeletePkiRolesName(ctx context.Context, name string) (*
 }
 
 // DeletePkiRoot
-func (a *SecretsService) DeletePkiRoot(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) DeletePkiRoot(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2081,7 +2083,7 @@ func (a *SecretsService) DeletePkiRoot(ctx context.Context) (*http.Response, err
 
 // DeleteRabbitmqRolesName Manage the roles that can be created with this backend.
 // name: Name of the role.
-func (a *SecretsService) DeleteRabbitmqRolesName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) DeleteRabbitmqRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2148,7 +2150,7 @@ func (a *SecretsService) DeleteRabbitmqRolesName(ctx context.Context, name strin
 
 // DeleteSecretDataPath Write, Patch, Read, and Delete data in the Key-Value Store.
 // path: Location of the secret.
-func (a *SecretsService) DeleteSecretDataPath(ctx context.Context, path string) (*http.Response, error) {
+func (a *Secrets) DeleteSecretDataPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2215,7 +2217,7 @@ func (a *SecretsService) DeleteSecretDataPath(ctx context.Context, path string) 
 
 // DeleteSecretMetadataPath Configures settings for the KV store
 // path: Location of the secret.
-func (a *SecretsService) DeleteSecretMetadataPath(ctx context.Context, path string) (*http.Response, error) {
+func (a *Secrets) DeleteSecretMetadataPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2281,7 +2283,7 @@ func (a *SecretsService) DeleteSecretMetadataPath(ctx context.Context, path stri
 }
 
 // DeleteSshConfigCa Set the SSH private key used for signing certificates.
-func (a *SecretsService) DeleteSshConfigCa(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) DeleteSshConfigCa(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2346,7 +2348,7 @@ func (a *SecretsService) DeleteSshConfigCa(ctx context.Context) (*http.Response,
 }
 
 // DeleteSshConfigZeroaddress Assign zero address as default CIDR block for select roles.
-func (a *SecretsService) DeleteSshConfigZeroaddress(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) DeleteSshConfigZeroaddress(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2412,7 +2414,7 @@ func (a *SecretsService) DeleteSshConfigZeroaddress(ctx context.Context) (*http.
 
 // DeleteSshKeysKeyName Register a shared private key with Vault.
 // keyName: [Required] Name of the key
-func (a *SecretsService) DeleteSshKeysKeyName(ctx context.Context, keyName string) (*http.Response, error) {
+func (a *Secrets) DeleteSshKeysKeyName(ctx context.Context, keyName string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2479,7 +2481,7 @@ func (a *SecretsService) DeleteSshKeysKeyName(ctx context.Context, keyName strin
 
 // DeleteSshRolesRole Manage the 'roles' that can be created with this backend.
 // role: [Required for all types] Name of the role being created.
-func (a *SecretsService) DeleteSshRolesRole(ctx context.Context, role string) (*http.Response, error) {
+func (a *Secrets) DeleteSshRolesRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2545,7 +2547,7 @@ func (a *SecretsService) DeleteSshRolesRole(ctx context.Context, role string) (*
 }
 
 // DeleteTerraformConfig
-func (a *SecretsService) DeleteTerraformConfig(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) DeleteTerraformConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2611,7 +2613,7 @@ func (a *SecretsService) DeleteTerraformConfig(ctx context.Context) (*http.Respo
 
 // DeleteTerraformRoleName
 // name: Name of the role
-func (a *SecretsService) DeleteTerraformRoleName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) DeleteTerraformRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2678,7 +2680,7 @@ func (a *SecretsService) DeleteTerraformRoleName(ctx context.Context, name strin
 
 // DeleteTotpKeysName Manage the keys that can be created with this backend.
 // name: Name of the key.
-func (a *SecretsService) DeleteTotpKeysName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) DeleteTotpKeysName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2745,7 +2747,7 @@ func (a *SecretsService) DeleteTotpKeysName(ctx context.Context, name string) (*
 
 // DeleteTransitKeysName Managed named encryption keys
 // name: Name of the key
-func (a *SecretsService) DeleteTransitKeysName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) DeleteTransitKeysName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -2811,7 +2813,7 @@ func (a *SecretsService) DeleteTransitKeysName(ctx context.Context, name string)
 }
 
 // GetAdConfig Configure the AD server to connect to, along with password options.
-func (a *SecretsService) GetAdConfig(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetAdConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2877,7 +2879,7 @@ func (a *SecretsService) GetAdConfig(ctx context.Context) (*http.Response, error
 
 // GetAdCredsName
 // name: Name of the role
-func (a *SecretsService) GetAdCredsName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetAdCredsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2944,7 +2946,7 @@ func (a *SecretsService) GetAdCredsName(ctx context.Context, name string) (*http
 
 // GetAdLibrary
 // list: Must be set to &#x60;true&#x60;
-func (a *SecretsService) GetAdLibrary(ctx context.Context, list string) (*http.Response, error) {
+func (a *Secrets) GetAdLibrary(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3011,7 +3013,7 @@ func (a *SecretsService) GetAdLibrary(ctx context.Context, list string) (*http.R
 
 // GetAdLibraryName Read a library set.
 // name: Name of the set.
-func (a *SecretsService) GetAdLibraryName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetAdLibraryName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3078,7 +3080,7 @@ func (a *SecretsService) GetAdLibraryName(ctx context.Context, name string) (*ht
 
 // GetAdLibraryNameStatus Check the status of the service accounts in a library set.
 // name: Name of the set.
-func (a *SecretsService) GetAdLibraryNameStatus(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetAdLibraryNameStatus(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3145,7 +3147,7 @@ func (a *SecretsService) GetAdLibraryNameStatus(ctx context.Context, name string
 
 // GetAdRoles List the name of each role currently stored.
 // list: Must be set to &#x60;true&#x60;
-func (a *SecretsService) GetAdRoles(ctx context.Context, list string) (*http.Response, error) {
+func (a *Secrets) GetAdRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3212,7 +3214,7 @@ func (a *SecretsService) GetAdRoles(ctx context.Context, list string) (*http.Res
 
 // GetAdRolesName Manage roles to build links between Vault and Active Directory service accounts.
 // name: Name of the role
-func (a *SecretsService) GetAdRolesName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetAdRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3278,7 +3280,7 @@ func (a *SecretsService) GetAdRolesName(ctx context.Context, name string) (*http
 }
 
 // GetAdRotateRoot
-func (a *SecretsService) GetAdRotateRoot(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetAdRotateRoot(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3343,7 +3345,7 @@ func (a *SecretsService) GetAdRotateRoot(ctx context.Context) (*http.Response, e
 }
 
 // GetAlicloudConfig Configure the access key and secret to use for RAM and STS calls.
-func (a *SecretsService) GetAlicloudConfig(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetAlicloudConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3409,7 +3411,7 @@ func (a *SecretsService) GetAlicloudConfig(ctx context.Context) (*http.Response,
 
 // GetAlicloudCredsName Generate an API key or STS credential using the given role's configuration.'
 // name: The name of the role.
-func (a *SecretsService) GetAlicloudCredsName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetAlicloudCredsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3476,7 +3478,7 @@ func (a *SecretsService) GetAlicloudCredsName(ctx context.Context, name string) 
 
 // GetAlicloudRole List the existing roles in this backend.
 // list: Must be set to &#x60;true&#x60;
-func (a *SecretsService) GetAlicloudRole(ctx context.Context, list string) (*http.Response, error) {
+func (a *Secrets) GetAlicloudRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3543,7 +3545,7 @@ func (a *SecretsService) GetAlicloudRole(ctx context.Context, list string) (*htt
 
 // GetAlicloudRoleName Read, write and reference policies and roles that API keys or STS credentials can be made for.
 // name: The name of the role.
-func (a *SecretsService) GetAlicloudRoleName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetAlicloudRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3609,7 +3611,7 @@ func (a *SecretsService) GetAlicloudRoleName(ctx context.Context, name string) (
 }
 
 // GetAwsConfigLease Configure the default lease information for generated credentials.
-func (a *SecretsService) GetAwsConfigLease(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetAwsConfigLease(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3674,7 +3676,7 @@ func (a *SecretsService) GetAwsConfigLease(ctx context.Context) (*http.Response,
 }
 
 // GetAwsConfigRoot Configure the root credentials that are used to manage IAM.
-func (a *SecretsService) GetAwsConfigRoot(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetAwsConfigRoot(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3739,7 +3741,7 @@ func (a *SecretsService) GetAwsConfigRoot(ctx context.Context) (*http.Response, 
 }
 
 // GetAwsCreds Generate AWS credentials from a specific Vault role.
-func (a *SecretsService) GetAwsCreds(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetAwsCreds(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3805,7 +3807,7 @@ func (a *SecretsService) GetAwsCreds(ctx context.Context) (*http.Response, error
 
 // GetAwsRoles List the existing roles in this backend
 // list: Must be set to &#x60;true&#x60;
-func (a *SecretsService) GetAwsRoles(ctx context.Context, list string) (*http.Response, error) {
+func (a *Secrets) GetAwsRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3872,7 +3874,7 @@ func (a *SecretsService) GetAwsRoles(ctx context.Context, list string) (*http.Re
 
 // GetAwsRolesName Read, write and reference IAM policies that access keys can be made for.
 // name: Name of the policy
-func (a *SecretsService) GetAwsRolesName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetAwsRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3939,7 +3941,7 @@ func (a *SecretsService) GetAwsRolesName(ctx context.Context, name string) (*htt
 
 // GetAwsStsName Generate AWS credentials from a specific Vault role.
 // name: Name of the role
-func (a *SecretsService) GetAwsStsName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetAwsStsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4005,7 +4007,7 @@ func (a *SecretsService) GetAwsStsName(ctx context.Context, name string) (*http.
 }
 
 // GetAzureConfig
-func (a *SecretsService) GetAzureConfig(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetAzureConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4071,7 +4073,7 @@ func (a *SecretsService) GetAzureConfig(ctx context.Context) (*http.Response, er
 
 // GetAzureCredsRole
 // role: Name of the Vault role
-func (a *SecretsService) GetAzureCredsRole(ctx context.Context, role string) (*http.Response, error) {
+func (a *Secrets) GetAzureCredsRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4138,7 +4140,7 @@ func (a *SecretsService) GetAzureCredsRole(ctx context.Context, role string) (*h
 
 // GetAzureRoles List existing roles.
 // list: Must be set to &#x60;true&#x60;
-func (a *SecretsService) GetAzureRoles(ctx context.Context, list string) (*http.Response, error) {
+func (a *Secrets) GetAzureRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4205,7 +4207,7 @@ func (a *SecretsService) GetAzureRoles(ctx context.Context, list string) (*http.
 
 // GetAzureRolesName Manage the Vault roles used to generate Azure credentials.
 // name: Name of the role.
-func (a *SecretsService) GetAzureRolesName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetAzureRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4271,7 +4273,7 @@ func (a *SecretsService) GetAzureRolesName(ctx context.Context, name string) (*h
 }
 
 // GetConsulConfigAccess
-func (a *SecretsService) GetConsulConfigAccess(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetConsulConfigAccess(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4337,7 +4339,7 @@ func (a *SecretsService) GetConsulConfigAccess(ctx context.Context) (*http.Respo
 
 // GetConsulCredsRole
 // role: Name of the role.
-func (a *SecretsService) GetConsulCredsRole(ctx context.Context, role string) (*http.Response, error) {
+func (a *Secrets) GetConsulCredsRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4404,7 +4406,7 @@ func (a *SecretsService) GetConsulCredsRole(ctx context.Context, role string) (*
 
 // GetConsulRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *SecretsService) GetConsulRoles(ctx context.Context, list string) (*http.Response, error) {
+func (a *Secrets) GetConsulRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4471,7 +4473,7 @@ func (a *SecretsService) GetConsulRoles(ctx context.Context, list string) (*http
 
 // GetConsulRolesName
 // name: Name of the role.
-func (a *SecretsService) GetConsulRolesName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetConsulRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4539,7 +4541,7 @@ func (a *SecretsService) GetConsulRolesName(ctx context.Context, name string) (*
 // GetCubbyholePath Retrieve the secret at the specified location.
 // path: Specifies the path of the secret.
 // list: Return a list if &#x60;true&#x60;
-func (a *SecretsService) GetCubbyholePath(ctx context.Context, path string, list string) (*http.Response, error) {
+func (a *Secrets) GetCubbyholePath(ctx context.Context, path string, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4606,7 +4608,7 @@ func (a *SecretsService) GetCubbyholePath(ctx context.Context, path string, list
 }
 
 // GetGcpConfig
-func (a *SecretsService) GetGcpConfig(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetGcpConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4672,7 +4674,7 @@ func (a *SecretsService) GetGcpConfig(ctx context.Context) (*http.Response, erro
 
 // GetGcpKeyRoleset
 // roleset: Required. Name of the role set.
-func (a *SecretsService) GetGcpKeyRoleset(ctx context.Context, roleset string) (*http.Response, error) {
+func (a *Secrets) GetGcpKeyRoleset(ctx context.Context, roleset string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4739,7 +4741,7 @@ func (a *SecretsService) GetGcpKeyRoleset(ctx context.Context, roleset string) (
 
 // GetGcpRolesetName
 // name: Required. Name of the role.
-func (a *SecretsService) GetGcpRolesetName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetGcpRolesetName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4806,7 +4808,7 @@ func (a *SecretsService) GetGcpRolesetName(ctx context.Context, name string) (*h
 
 // GetGcpRolesetRolesetKey
 // roleset: Required. Name of the role set.
-func (a *SecretsService) GetGcpRolesetRolesetKey(ctx context.Context, roleset string) (*http.Response, error) {
+func (a *Secrets) GetGcpRolesetRolesetKey(ctx context.Context, roleset string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4873,7 +4875,7 @@ func (a *SecretsService) GetGcpRolesetRolesetKey(ctx context.Context, roleset st
 
 // GetGcpRolesetRolesetToken
 // roleset: Required. Name of the role set.
-func (a *SecretsService) GetGcpRolesetRolesetToken(ctx context.Context, roleset string) (*http.Response, error) {
+func (a *Secrets) GetGcpRolesetRolesetToken(ctx context.Context, roleset string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4940,7 +4942,7 @@ func (a *SecretsService) GetGcpRolesetRolesetToken(ctx context.Context, roleset 
 
 // GetGcpRolesets
 // list: Must be set to &#x60;true&#x60;
-func (a *SecretsService) GetGcpRolesets(ctx context.Context, list string) (*http.Response, error) {
+func (a *Secrets) GetGcpRolesets(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5007,7 +5009,7 @@ func (a *SecretsService) GetGcpRolesets(ctx context.Context, list string) (*http
 
 // GetGcpStaticAccountName
 // name: Required. Name to refer to this static account in Vault. Cannot be updated.
-func (a *SecretsService) GetGcpStaticAccountName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetGcpStaticAccountName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5074,7 +5076,7 @@ func (a *SecretsService) GetGcpStaticAccountName(ctx context.Context, name strin
 
 // GetGcpStaticAccountNameKey
 // name: Required. Name of the static account.
-func (a *SecretsService) GetGcpStaticAccountNameKey(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetGcpStaticAccountNameKey(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5141,7 +5143,7 @@ func (a *SecretsService) GetGcpStaticAccountNameKey(ctx context.Context, name st
 
 // GetGcpStaticAccountNameToken
 // name: Required. Name of the static account.
-func (a *SecretsService) GetGcpStaticAccountNameToken(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetGcpStaticAccountNameToken(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5208,7 +5210,7 @@ func (a *SecretsService) GetGcpStaticAccountNameToken(ctx context.Context, name 
 
 // GetGcpStaticAccounts
 // list: Must be set to &#x60;true&#x60;
-func (a *SecretsService) GetGcpStaticAccounts(ctx context.Context, list string) (*http.Response, error) {
+func (a *Secrets) GetGcpStaticAccounts(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5275,7 +5277,7 @@ func (a *SecretsService) GetGcpStaticAccounts(ctx context.Context, list string) 
 
 // GetGcpTokenRoleset
 // roleset: Required. Name of the role set.
-func (a *SecretsService) GetGcpTokenRoleset(ctx context.Context, roleset string) (*http.Response, error) {
+func (a *Secrets) GetGcpTokenRoleset(ctx context.Context, roleset string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5341,7 +5343,7 @@ func (a *SecretsService) GetGcpTokenRoleset(ctx context.Context, roleset string)
 }
 
 // GetGcpkmsConfig Configure the GCP KMS secrets engine
-func (a *SecretsService) GetGcpkmsConfig(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetGcpkmsConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5407,7 +5409,7 @@ func (a *SecretsService) GetGcpkmsConfig(ctx context.Context) (*http.Response, e
 
 // GetGcpkmsKeys List named keys
 // list: Must be set to &#x60;true&#x60;
-func (a *SecretsService) GetGcpkmsKeys(ctx context.Context, list string) (*http.Response, error) {
+func (a *Secrets) GetGcpkmsKeys(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5474,7 +5476,7 @@ func (a *SecretsService) GetGcpkmsKeys(ctx context.Context, list string) (*http.
 
 // GetGcpkmsKeysConfigKey Configure the key in Vault
 // key: Name of the key in Vault.
-func (a *SecretsService) GetGcpkmsKeysConfigKey(ctx context.Context, key string) (*http.Response, error) {
+func (a *Secrets) GetGcpkmsKeysConfigKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5541,7 +5543,7 @@ func (a *SecretsService) GetGcpkmsKeysConfigKey(ctx context.Context, key string)
 
 // GetGcpkmsKeysKey Interact with crypto keys in Vault and Google Cloud KMS
 // key: Name of the key in Vault.
-func (a *SecretsService) GetGcpkmsKeysKey(ctx context.Context, key string) (*http.Response, error) {
+func (a *Secrets) GetGcpkmsKeysKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5608,7 +5610,7 @@ func (a *SecretsService) GetGcpkmsKeysKey(ctx context.Context, key string) (*htt
 
 // GetGcpkmsPubkeyKey Retrieve the public key associated with the named key
 // key: Name of the key for which to get the public key. This key must already exist in Vault and Google Cloud KMS.
-func (a *SecretsService) GetGcpkmsPubkeyKey(ctx context.Context, key string) (*http.Response, error) {
+func (a *Secrets) GetGcpkmsPubkeyKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5674,7 +5676,7 @@ func (a *SecretsService) GetGcpkmsPubkeyKey(ctx context.Context, key string) (*h
 }
 
 // GetKubernetesConfig
-func (a *SecretsService) GetKubernetesConfig(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetKubernetesConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5740,7 +5742,7 @@ func (a *SecretsService) GetKubernetesConfig(ctx context.Context) (*http.Respons
 
 // GetKubernetesRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *SecretsService) GetKubernetesRoles(ctx context.Context, list string) (*http.Response, error) {
+func (a *Secrets) GetKubernetesRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5807,7 +5809,7 @@ func (a *SecretsService) GetKubernetesRoles(ctx context.Context, list string) (*
 
 // GetKubernetesRolesName
 // name: Name of the role
-func (a *SecretsService) GetKubernetesRolesName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetKubernetesRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5875,7 +5877,7 @@ func (a *SecretsService) GetKubernetesRolesName(ctx context.Context, name string
 // GetKvPath Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
 // path: Location of the secret.
 // list: Return a list if &#x60;true&#x60;
-func (a *SecretsService) GetKvPath(ctx context.Context, path string, list string) (*http.Response, error) {
+func (a *Secrets) GetKvPath(ctx context.Context, path string, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5942,7 +5944,7 @@ func (a *SecretsService) GetKvPath(ctx context.Context, path string, list string
 }
 
 // GetMongodbatlasConfig Configure the  credentials that are used to manage Database Users.
-func (a *SecretsService) GetMongodbatlasConfig(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetMongodbatlasConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6008,7 +6010,7 @@ func (a *SecretsService) GetMongodbatlasConfig(ctx context.Context) (*http.Respo
 
 // GetMongodbatlasCredsName Generate MongoDB Atlas Programmatic API from a specific Vault role.
 // name: Name of the role
-func (a *SecretsService) GetMongodbatlasCredsName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetMongodbatlasCredsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6075,7 +6077,7 @@ func (a *SecretsService) GetMongodbatlasCredsName(ctx context.Context, name stri
 
 // GetMongodbatlasRoles List the existing roles in this backend
 // list: Must be set to &#x60;true&#x60;
-func (a *SecretsService) GetMongodbatlasRoles(ctx context.Context, list string) (*http.Response, error) {
+func (a *Secrets) GetMongodbatlasRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6142,7 +6144,7 @@ func (a *SecretsService) GetMongodbatlasRoles(ctx context.Context, list string) 
 
 // GetMongodbatlasRolesName Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
 // name: Name of the Roles
-func (a *SecretsService) GetMongodbatlasRolesName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetMongodbatlasRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6208,7 +6210,7 @@ func (a *SecretsService) GetMongodbatlasRolesName(ctx context.Context, name stri
 }
 
 // GetNomadConfigAccess
-func (a *SecretsService) GetNomadConfigAccess(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetNomadConfigAccess(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6273,7 +6275,7 @@ func (a *SecretsService) GetNomadConfigAccess(ctx context.Context) (*http.Respon
 }
 
 // GetNomadConfigLease Configure the lease parameters for generated tokens
-func (a *SecretsService) GetNomadConfigLease(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetNomadConfigLease(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6339,7 +6341,7 @@ func (a *SecretsService) GetNomadConfigLease(ctx context.Context) (*http.Respons
 
 // GetNomadCredsName
 // name: Name of the role
-func (a *SecretsService) GetNomadCredsName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetNomadCredsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6406,7 +6408,7 @@ func (a *SecretsService) GetNomadCredsName(ctx context.Context, name string) (*h
 
 // GetNomadRole
 // list: Must be set to &#x60;true&#x60;
-func (a *SecretsService) GetNomadRole(ctx context.Context, list string) (*http.Response, error) {
+func (a *Secrets) GetNomadRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6473,7 +6475,7 @@ func (a *SecretsService) GetNomadRole(ctx context.Context, list string) (*http.R
 
 // GetNomadRoleName
 // name: Name of the role
-func (a *SecretsService) GetNomadRoleName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetNomadRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6539,7 +6541,7 @@ func (a *SecretsService) GetNomadRoleName(ctx context.Context, name string) (*ht
 }
 
 // GetOpenldapConfig
-func (a *SecretsService) GetOpenldapConfig(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetOpenldapConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6605,7 +6607,7 @@ func (a *SecretsService) GetOpenldapConfig(ctx context.Context) (*http.Response,
 
 // GetOpenldapCredsName
 // name: Name of the dynamic role.
-func (a *SecretsService) GetOpenldapCredsName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetOpenldapCredsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6672,7 +6674,7 @@ func (a *SecretsService) GetOpenldapCredsName(ctx context.Context, name string) 
 
 // GetOpenldapRole
 // list: Must be set to &#x60;true&#x60;
-func (a *SecretsService) GetOpenldapRole(ctx context.Context, list string) (*http.Response, error) {
+func (a *Secrets) GetOpenldapRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6739,7 +6741,7 @@ func (a *SecretsService) GetOpenldapRole(ctx context.Context, list string) (*htt
 
 // GetOpenldapRoleName
 // name: Name of the role (lowercase)
-func (a *SecretsService) GetOpenldapRoleName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetOpenldapRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6806,7 +6808,7 @@ func (a *SecretsService) GetOpenldapRoleName(ctx context.Context, name string) (
 
 // GetOpenldapStaticCredName
 // name: Name of the static role.
-func (a *SecretsService) GetOpenldapStaticCredName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetOpenldapStaticCredName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6873,7 +6875,7 @@ func (a *SecretsService) GetOpenldapStaticCredName(ctx context.Context, name str
 
 // GetOpenldapStaticRole
 // list: Must be set to &#x60;true&#x60;
-func (a *SecretsService) GetOpenldapStaticRole(ctx context.Context, list string) (*http.Response, error) {
+func (a *Secrets) GetOpenldapStaticRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6940,7 +6942,7 @@ func (a *SecretsService) GetOpenldapStaticRole(ctx context.Context, list string)
 
 // GetOpenldapStaticRoleName
 // name: Name of the role
-func (a *SecretsService) GetOpenldapStaticRoleName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetOpenldapStaticRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7006,7 +7008,7 @@ func (a *SecretsService) GetOpenldapStaticRoleName(ctx context.Context, name str
 }
 
 // GetPkiCa
-func (a *SecretsService) GetPkiCa(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetPkiCa(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7071,7 +7073,7 @@ func (a *SecretsService) GetPkiCa(ctx context.Context) (*http.Response, error) {
 }
 
 // GetPkiCaChain
-func (a *SecretsService) GetPkiCaChain(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetPkiCaChain(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7136,7 +7138,7 @@ func (a *SecretsService) GetPkiCaChain(ctx context.Context) (*http.Response, err
 }
 
 // GetPkiCaPem
-func (a *SecretsService) GetPkiCaPem(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetPkiCaPem(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7201,7 +7203,7 @@ func (a *SecretsService) GetPkiCaPem(ctx context.Context) (*http.Response, error
 }
 
 // GetPkiCertCaChain
-func (a *SecretsService) GetPkiCertCaChain(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetPkiCertCaChain(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7266,7 +7268,7 @@ func (a *SecretsService) GetPkiCertCaChain(ctx context.Context) (*http.Response,
 }
 
 // GetPkiCertCrl
-func (a *SecretsService) GetPkiCertCrl(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetPkiCertCrl(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7332,7 +7334,7 @@ func (a *SecretsService) GetPkiCertCrl(ctx context.Context) (*http.Response, err
 
 // GetPkiCertSerial
 // serial: Certificate serial number, in colon- or hyphen-separated octal
-func (a *SecretsService) GetPkiCertSerial(ctx context.Context, serial string) (*http.Response, error) {
+func (a *Secrets) GetPkiCertSerial(ctx context.Context, serial string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7399,7 +7401,7 @@ func (a *SecretsService) GetPkiCertSerial(ctx context.Context, serial string) (*
 
 // GetPkiCertSerialRaw
 // serial: Certificate serial number, in colon- or hyphen-separated octal
-func (a *SecretsService) GetPkiCertSerialRaw(ctx context.Context, serial string) (*http.Response, error) {
+func (a *Secrets) GetPkiCertSerialRaw(ctx context.Context, serial string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7466,7 +7468,7 @@ func (a *SecretsService) GetPkiCertSerialRaw(ctx context.Context, serial string)
 
 // GetPkiCertSerialRawPem
 // serial: Certificate serial number, in colon- or hyphen-separated octal
-func (a *SecretsService) GetPkiCertSerialRawPem(ctx context.Context, serial string) (*http.Response, error) {
+func (a *Secrets) GetPkiCertSerialRawPem(ctx context.Context, serial string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7533,7 +7535,7 @@ func (a *SecretsService) GetPkiCertSerialRawPem(ctx context.Context, serial stri
 
 // GetPkiCerts
 // list: Must be set to &#x60;true&#x60;
-func (a *SecretsService) GetPkiCerts(ctx context.Context, list string) (*http.Response, error) {
+func (a *Secrets) GetPkiCerts(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7599,7 +7601,7 @@ func (a *SecretsService) GetPkiCerts(ctx context.Context, list string) (*http.Re
 }
 
 // GetPkiConfigCrl
-func (a *SecretsService) GetPkiConfigCrl(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetPkiConfigCrl(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7664,7 +7666,7 @@ func (a *SecretsService) GetPkiConfigCrl(ctx context.Context) (*http.Response, e
 }
 
 // GetPkiConfigIssuers
-func (a *SecretsService) GetPkiConfigIssuers(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetPkiConfigIssuers(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7729,7 +7731,7 @@ func (a *SecretsService) GetPkiConfigIssuers(ctx context.Context) (*http.Respons
 }
 
 // GetPkiConfigKeys
-func (a *SecretsService) GetPkiConfigKeys(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetPkiConfigKeys(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7794,7 +7796,7 @@ func (a *SecretsService) GetPkiConfigKeys(ctx context.Context) (*http.Response, 
 }
 
 // GetPkiConfigUrls
-func (a *SecretsService) GetPkiConfigUrls(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetPkiConfigUrls(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7859,7 +7861,7 @@ func (a *SecretsService) GetPkiConfigUrls(ctx context.Context) (*http.Response, 
 }
 
 // GetPkiCrl
-func (a *SecretsService) GetPkiCrl(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetPkiCrl(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7924,7 +7926,7 @@ func (a *SecretsService) GetPkiCrl(ctx context.Context) (*http.Response, error) 
 }
 
 // GetPkiCrlPem
-func (a *SecretsService) GetPkiCrlPem(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetPkiCrlPem(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7989,7 +7991,7 @@ func (a *SecretsService) GetPkiCrlPem(ctx context.Context) (*http.Response, erro
 }
 
 // GetPkiCrlRotate
-func (a *SecretsService) GetPkiCrlRotate(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetPkiCrlRotate(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8054,7 +8056,7 @@ func (a *SecretsService) GetPkiCrlRotate(ctx context.Context) (*http.Response, e
 }
 
 // GetPkiDer
-func (a *SecretsService) GetPkiDer(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetPkiDer(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8120,7 +8122,7 @@ func (a *SecretsService) GetPkiDer(ctx context.Context) (*http.Response, error) 
 
 // GetPkiIssuerRefCrlPem
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-func (a *SecretsService) GetPkiIssuerRefCrlPem(ctx context.Context, issuerRef string) (*http.Response, error) {
+func (a *Secrets) GetPkiIssuerRefCrlPem(ctx context.Context, issuerRef string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8187,7 +8189,7 @@ func (a *SecretsService) GetPkiIssuerRefCrlPem(ctx context.Context, issuerRef st
 
 // GetPkiIssuerRefDerPem
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-func (a *SecretsService) GetPkiIssuerRefDerPem(ctx context.Context, issuerRef string) (*http.Response, error) {
+func (a *Secrets) GetPkiIssuerRefDerPem(ctx context.Context, issuerRef string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8254,7 +8256,7 @@ func (a *SecretsService) GetPkiIssuerRefDerPem(ctx context.Context, issuerRef st
 
 // GetPkiIssuers
 // list: Must be set to &#x60;true&#x60;
-func (a *SecretsService) GetPkiIssuers(ctx context.Context, list string) (*http.Response, error) {
+func (a *Secrets) GetPkiIssuers(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8320,7 +8322,7 @@ func (a *SecretsService) GetPkiIssuers(ctx context.Context, list string) (*http.
 }
 
 // GetPkiJson
-func (a *SecretsService) GetPkiJson(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetPkiJson(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8386,7 +8388,7 @@ func (a *SecretsService) GetPkiJson(ctx context.Context) (*http.Response, error)
 
 // GetPkiKeyKeyRef
 // keyRef: Reference to key; either \&quot;default\&quot; for the configured default key, an identifier of a key, or the name assigned to the key.
-func (a *SecretsService) GetPkiKeyKeyRef(ctx context.Context, keyRef string) (*http.Response, error) {
+func (a *Secrets) GetPkiKeyKeyRef(ctx context.Context, keyRef string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8453,7 +8455,7 @@ func (a *SecretsService) GetPkiKeyKeyRef(ctx context.Context, keyRef string) (*h
 
 // GetPkiKeys
 // list: Must be set to &#x60;true&#x60;
-func (a *SecretsService) GetPkiKeys(ctx context.Context, list string) (*http.Response, error) {
+func (a *Secrets) GetPkiKeys(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8520,7 +8522,7 @@ func (a *SecretsService) GetPkiKeys(ctx context.Context, list string) (*http.Res
 
 // GetPkiRoles
 // list: Must be set to &#x60;true&#x60;
-func (a *SecretsService) GetPkiRoles(ctx context.Context, list string) (*http.Response, error) {
+func (a *Secrets) GetPkiRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8587,7 +8589,7 @@ func (a *SecretsService) GetPkiRoles(ctx context.Context, list string) (*http.Re
 
 // GetPkiRolesName
 // name: Name of the role
-func (a *SecretsService) GetPkiRolesName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetPkiRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8653,7 +8655,7 @@ func (a *SecretsService) GetPkiRolesName(ctx context.Context, name string) (*htt
 }
 
 // GetPkiTidyStatus
-func (a *SecretsService) GetPkiTidyStatus(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetPkiTidyStatus(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8718,7 +8720,7 @@ func (a *SecretsService) GetPkiTidyStatus(ctx context.Context) (*http.Response, 
 }
 
 // GetRabbitmqConfigLease Configure the lease parameters for generated credentials
-func (a *SecretsService) GetRabbitmqConfigLease(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetRabbitmqConfigLease(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8784,7 +8786,7 @@ func (a *SecretsService) GetRabbitmqConfigLease(ctx context.Context) (*http.Resp
 
 // GetRabbitmqCredsName Request RabbitMQ credentials for a certain role.
 // name: Name of the role.
-func (a *SecretsService) GetRabbitmqCredsName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetRabbitmqCredsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8851,7 +8853,7 @@ func (a *SecretsService) GetRabbitmqCredsName(ctx context.Context, name string) 
 
 // GetRabbitmqRoles Manage the roles that can be created with this backend.
 // list: Must be set to &#x60;true&#x60;
-func (a *SecretsService) GetRabbitmqRoles(ctx context.Context, list string) (*http.Response, error) {
+func (a *Secrets) GetRabbitmqRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8918,7 +8920,7 @@ func (a *SecretsService) GetRabbitmqRoles(ctx context.Context, list string) (*ht
 
 // GetRabbitmqRolesName Manage the roles that can be created with this backend.
 // name: Name of the role.
-func (a *SecretsService) GetRabbitmqRolesName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetRabbitmqRolesName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8984,7 +8986,7 @@ func (a *SecretsService) GetRabbitmqRolesName(ctx context.Context, name string) 
 }
 
 // GetSecretConfig Read the backend level settings.
-func (a *SecretsService) GetSecretConfig(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetSecretConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9050,7 +9052,7 @@ func (a *SecretsService) GetSecretConfig(ctx context.Context) (*http.Response, e
 
 // GetSecretDataPath Write, Patch, Read, and Delete data in the Key-Value Store.
 // path: Location of the secret.
-func (a *SecretsService) GetSecretDataPath(ctx context.Context, path string) (*http.Response, error) {
+func (a *Secrets) GetSecretDataPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9118,7 +9120,7 @@ func (a *SecretsService) GetSecretDataPath(ctx context.Context, path string) (*h
 // GetSecretMetadataPath Configures settings for the KV store
 // path: Location of the secret.
 // list: Return a list if &#x60;true&#x60;
-func (a *SecretsService) GetSecretMetadataPath(ctx context.Context, path string, list string) (*http.Response, error) {
+func (a *Secrets) GetSecretMetadataPath(ctx context.Context, path string, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9186,7 +9188,7 @@ func (a *SecretsService) GetSecretMetadataPath(ctx context.Context, path string,
 
 // GetSecretSubkeysPath Read the structure of a secret entry from the Key-Value store with the values removed.
 // path: Location of the secret.
-func (a *SecretsService) GetSecretSubkeysPath(ctx context.Context, path string) (*http.Response, error) {
+func (a *Secrets) GetSecretSubkeysPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9252,7 +9254,7 @@ func (a *SecretsService) GetSecretSubkeysPath(ctx context.Context, path string) 
 }
 
 // GetSshConfigCa Set the SSH private key used for signing certificates.
-func (a *SecretsService) GetSshConfigCa(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetSshConfigCa(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9317,7 +9319,7 @@ func (a *SecretsService) GetSshConfigCa(ctx context.Context) (*http.Response, er
 }
 
 // GetSshConfigZeroaddress Assign zero address as default CIDR block for select roles.
-func (a *SecretsService) GetSshConfigZeroaddress(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetSshConfigZeroaddress(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9382,7 +9384,7 @@ func (a *SecretsService) GetSshConfigZeroaddress(ctx context.Context) (*http.Res
 }
 
 // GetSshPublicKey Retrieve the public key.
-func (a *SecretsService) GetSshPublicKey(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetSshPublicKey(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9448,7 +9450,7 @@ func (a *SecretsService) GetSshPublicKey(ctx context.Context) (*http.Response, e
 
 // GetSshRoles Manage the 'roles' that can be created with this backend.
 // list: Must be set to &#x60;true&#x60;
-func (a *SecretsService) GetSshRoles(ctx context.Context, list string) (*http.Response, error) {
+func (a *Secrets) GetSshRoles(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9515,7 +9517,7 @@ func (a *SecretsService) GetSshRoles(ctx context.Context, list string) (*http.Re
 
 // GetSshRolesRole Manage the 'roles' that can be created with this backend.
 // role: [Required for all types] Name of the role being created.
-func (a *SecretsService) GetSshRolesRole(ctx context.Context, role string) (*http.Response, error) {
+func (a *Secrets) GetSshRolesRole(ctx context.Context, role string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9581,7 +9583,7 @@ func (a *SecretsService) GetSshRolesRole(ctx context.Context, role string) (*htt
 }
 
 // GetTerraformConfig
-func (a *SecretsService) GetTerraformConfig(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetTerraformConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9647,7 +9649,7 @@ func (a *SecretsService) GetTerraformConfig(ctx context.Context) (*http.Response
 
 // GetTerraformCredsName Generate a Terraform Cloud or Enterprise API token from a specific Vault role.
 // name: Name of the role
-func (a *SecretsService) GetTerraformCredsName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetTerraformCredsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9714,7 +9716,7 @@ func (a *SecretsService) GetTerraformCredsName(ctx context.Context, name string)
 
 // GetTerraformRole
 // list: Must be set to &#x60;true&#x60;
-func (a *SecretsService) GetTerraformRole(ctx context.Context, list string) (*http.Response, error) {
+func (a *Secrets) GetTerraformRole(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9781,7 +9783,7 @@ func (a *SecretsService) GetTerraformRole(ctx context.Context, list string) (*ht
 
 // GetTerraformRoleName
 // name: Name of the role
-func (a *SecretsService) GetTerraformRoleName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetTerraformRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9848,7 +9850,7 @@ func (a *SecretsService) GetTerraformRoleName(ctx context.Context, name string) 
 
 // GetTotpCodeName Request time-based one-time use password or validate a password for a certain key .
 // name: Name of the key.
-func (a *SecretsService) GetTotpCodeName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetTotpCodeName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9915,7 +9917,7 @@ func (a *SecretsService) GetTotpCodeName(ctx context.Context, name string) (*htt
 
 // GetTotpKeys Manage the keys that can be created with this backend.
 // list: Must be set to &#x60;true&#x60;
-func (a *SecretsService) GetTotpKeys(ctx context.Context, list string) (*http.Response, error) {
+func (a *Secrets) GetTotpKeys(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9982,7 +9984,7 @@ func (a *SecretsService) GetTotpKeys(ctx context.Context, list string) (*http.Re
 
 // GetTotpKeysName Manage the keys that can be created with this backend.
 // name: Name of the key.
-func (a *SecretsService) GetTotpKeysName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetTotpKeysName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10049,7 +10051,7 @@ func (a *SecretsService) GetTotpKeysName(ctx context.Context, name string) (*htt
 
 // GetTransitBackupName Backup the named key
 // name: Name of the key
-func (a *SecretsService) GetTransitBackupName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetTransitBackupName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10115,7 +10117,7 @@ func (a *SecretsService) GetTransitBackupName(ctx context.Context, name string) 
 }
 
 // GetTransitCacheConfig Returns the size of the active cache
-func (a *SecretsService) GetTransitCacheConfig(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetTransitCacheConfig(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10182,7 +10184,7 @@ func (a *SecretsService) GetTransitCacheConfig(ctx context.Context) (*http.Respo
 // GetTransitExportTypeName Export named encryption or signing key
 // name: Name of the key
 // type_: Type of key to export (encryption-key, signing-key, hmac-key)
-func (a *SecretsService) GetTransitExportTypeName(ctx context.Context, name string, type_ string) (*http.Response, error) {
+func (a *Secrets) GetTransitExportTypeName(ctx context.Context, name string, type_ string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10252,7 +10254,7 @@ func (a *SecretsService) GetTransitExportTypeName(ctx context.Context, name stri
 // name: Name of the key
 // type_: Type of key to export (encryption-key, signing-key, hmac-key)
 // version: Version of the key
-func (a *SecretsService) GetTransitExportTypeNameVersion(ctx context.Context, name string, type_ string, version string) (*http.Response, error) {
+func (a *Secrets) GetTransitExportTypeNameVersion(ctx context.Context, name string, type_ string, version string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10321,7 +10323,7 @@ func (a *SecretsService) GetTransitExportTypeNameVersion(ctx context.Context, na
 
 // GetTransitKeys Managed named encryption keys
 // list: Must be set to &#x60;true&#x60;
-func (a *SecretsService) GetTransitKeys(ctx context.Context, list string) (*http.Response, error) {
+func (a *Secrets) GetTransitKeys(ctx context.Context, list string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10388,7 +10390,7 @@ func (a *SecretsService) GetTransitKeys(ctx context.Context, list string) (*http
 
 // GetTransitKeysName Managed named encryption keys
 // name: Name of the key
-func (a *SecretsService) GetTransitKeysName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) GetTransitKeysName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10454,7 +10456,7 @@ func (a *SecretsService) GetTransitKeysName(ctx context.Context, name string) (*
 }
 
 // GetTransitWrappingKey Returns the public key to use for wrapping imported keys
-func (a *SecretsService) GetTransitWrappingKey(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) GetTransitWrappingKey(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10519,7 +10521,7 @@ func (a *SecretsService) GetTransitWrappingKey(ctx context.Context) (*http.Respo
 }
 
 // PostAdConfig Configure the AD server to connect to, along with password options.
-func (a *SecretsService) PostAdConfig(ctx context.Context, adConfigRequest AdConfigRequest) (*http.Response, error) {
+func (a *Secrets) PostAdConfig(ctx context.Context, adConfigRequest AdConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10587,7 +10589,7 @@ func (a *SecretsService) PostAdConfig(ctx context.Context, adConfigRequest AdCon
 
 // PostAdLibraryManageNameCheckIn Check service accounts in to the library.
 // name: Name of the set.
-func (a *SecretsService) PostAdLibraryManageNameCheckIn(ctx context.Context, name string, adLibraryManageCheckInRequest AdLibraryManageCheckInRequest) (*http.Response, error) {
+func (a *Secrets) PostAdLibraryManageNameCheckIn(ctx context.Context, name string, adLibraryManageCheckInRequest AdLibraryManageCheckInRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10656,7 +10658,7 @@ func (a *SecretsService) PostAdLibraryManageNameCheckIn(ctx context.Context, nam
 
 // PostAdLibraryName Update a library set.
 // name: Name of the set.
-func (a *SecretsService) PostAdLibraryName(ctx context.Context, name string, adLibraryRequest AdLibraryRequest) (*http.Response, error) {
+func (a *Secrets) PostAdLibraryName(ctx context.Context, name string, adLibraryRequest AdLibraryRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10725,7 +10727,7 @@ func (a *SecretsService) PostAdLibraryName(ctx context.Context, name string, adL
 
 // PostAdLibraryNameCheckIn Check service accounts in to the library.
 // name: Name of the set.
-func (a *SecretsService) PostAdLibraryNameCheckIn(ctx context.Context, name string, adLibraryCheckInRequest AdLibraryCheckInRequest) (*http.Response, error) {
+func (a *Secrets) PostAdLibraryNameCheckIn(ctx context.Context, name string, adLibraryCheckInRequest AdLibraryCheckInRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10794,7 +10796,7 @@ func (a *SecretsService) PostAdLibraryNameCheckIn(ctx context.Context, name stri
 
 // PostAdLibraryNameCheckOut Check a service account out from the library.
 // name: Name of the set
-func (a *SecretsService) PostAdLibraryNameCheckOut(ctx context.Context, name string, adLibraryCheckOutRequest AdLibraryCheckOutRequest) (*http.Response, error) {
+func (a *Secrets) PostAdLibraryNameCheckOut(ctx context.Context, name string, adLibraryCheckOutRequest AdLibraryCheckOutRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10863,7 +10865,7 @@ func (a *SecretsService) PostAdLibraryNameCheckOut(ctx context.Context, name str
 
 // PostAdRolesName Manage roles to build links between Vault and Active Directory service accounts.
 // name: Name of the role
-func (a *SecretsService) PostAdRolesName(ctx context.Context, name string, adRolesRequest AdRolesRequest) (*http.Response, error) {
+func (a *Secrets) PostAdRolesName(ctx context.Context, name string, adRolesRequest AdRolesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10932,7 +10934,7 @@ func (a *SecretsService) PostAdRolesName(ctx context.Context, name string, adRol
 
 // PostAdRotateRoleName
 // name: Name of the static role
-func (a *SecretsService) PostAdRotateRoleName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) PostAdRotateRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -10998,7 +11000,7 @@ func (a *SecretsService) PostAdRotateRoleName(ctx context.Context, name string) 
 }
 
 // PostAdRotateRoot
-func (a *SecretsService) PostAdRotateRoot(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) PostAdRotateRoot(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11063,7 +11065,7 @@ func (a *SecretsService) PostAdRotateRoot(ctx context.Context) (*http.Response, 
 }
 
 // PostAlicloudConfig Configure the access key and secret to use for RAM and STS calls.
-func (a *SecretsService) PostAlicloudConfig(ctx context.Context, alicloudConfigRequest AlicloudConfigRequest) (*http.Response, error) {
+func (a *Secrets) PostAlicloudConfig(ctx context.Context, alicloudConfigRequest AlicloudConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11131,7 +11133,7 @@ func (a *SecretsService) PostAlicloudConfig(ctx context.Context, alicloudConfigR
 
 // PostAlicloudRoleName Read, write and reference policies and roles that API keys or STS credentials can be made for.
 // name: The name of the role.
-func (a *SecretsService) PostAlicloudRoleName(ctx context.Context, name string, alicloudRoleRequest AlicloudRoleRequest) (*http.Response, error) {
+func (a *Secrets) PostAlicloudRoleName(ctx context.Context, name string, alicloudRoleRequest AlicloudRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11199,7 +11201,7 @@ func (a *SecretsService) PostAlicloudRoleName(ctx context.Context, name string, 
 }
 
 // PostAwsConfigLease Configure the default lease information for generated credentials.
-func (a *SecretsService) PostAwsConfigLease(ctx context.Context, awsConfigLeaseRequest AwsConfigLeaseRequest) (*http.Response, error) {
+func (a *Secrets) PostAwsConfigLease(ctx context.Context, awsConfigLeaseRequest AwsConfigLeaseRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11266,7 +11268,7 @@ func (a *SecretsService) PostAwsConfigLease(ctx context.Context, awsConfigLeaseR
 }
 
 // PostAwsConfigRoot Configure the root credentials that are used to manage IAM.
-func (a *SecretsService) PostAwsConfigRoot(ctx context.Context, awsConfigRootRequest AwsConfigRootRequest) (*http.Response, error) {
+func (a *Secrets) PostAwsConfigRoot(ctx context.Context, awsConfigRootRequest AwsConfigRootRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11333,7 +11335,7 @@ func (a *SecretsService) PostAwsConfigRoot(ctx context.Context, awsConfigRootReq
 }
 
 // PostAwsConfigRotateRoot
-func (a *SecretsService) PostAwsConfigRotateRoot(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) PostAwsConfigRotateRoot(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11398,7 +11400,7 @@ func (a *SecretsService) PostAwsConfigRotateRoot(ctx context.Context) (*http.Res
 }
 
 // PostAwsCreds Generate AWS credentials from a specific Vault role.
-func (a *SecretsService) PostAwsCreds(ctx context.Context, awsCredsRequest AwsCredsRequest) (*http.Response, error) {
+func (a *Secrets) PostAwsCreds(ctx context.Context, awsCredsRequest AwsCredsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11466,7 +11468,7 @@ func (a *SecretsService) PostAwsCreds(ctx context.Context, awsCredsRequest AwsCr
 
 // PostAwsRolesName Read, write and reference IAM policies that access keys can be made for.
 // name: Name of the policy
-func (a *SecretsService) PostAwsRolesName(ctx context.Context, name string, awsRolesRequest AwsRolesRequest) (*http.Response, error) {
+func (a *Secrets) PostAwsRolesName(ctx context.Context, name string, awsRolesRequest AwsRolesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11535,7 +11537,7 @@ func (a *SecretsService) PostAwsRolesName(ctx context.Context, name string, awsR
 
 // PostAwsStsName Generate AWS credentials from a specific Vault role.
 // name: Name of the role
-func (a *SecretsService) PostAwsStsName(ctx context.Context, name string, awsStsRequest AwsStsRequest) (*http.Response, error) {
+func (a *Secrets) PostAwsStsName(ctx context.Context, name string, awsStsRequest AwsStsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11603,7 +11605,7 @@ func (a *SecretsService) PostAwsStsName(ctx context.Context, name string, awsSts
 }
 
 // PostAzureConfig
-func (a *SecretsService) PostAzureConfig(ctx context.Context, azureConfigRequest AzureConfigRequest) (*http.Response, error) {
+func (a *Secrets) PostAzureConfig(ctx context.Context, azureConfigRequest AzureConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11671,7 +11673,7 @@ func (a *SecretsService) PostAzureConfig(ctx context.Context, azureConfigRequest
 
 // PostAzureRolesName Manage the Vault roles used to generate Azure credentials.
 // name: Name of the role.
-func (a *SecretsService) PostAzureRolesName(ctx context.Context, name string, azureRolesRequest AzureRolesRequest) (*http.Response, error) {
+func (a *Secrets) PostAzureRolesName(ctx context.Context, name string, azureRolesRequest AzureRolesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11739,7 +11741,7 @@ func (a *SecretsService) PostAzureRolesName(ctx context.Context, name string, az
 }
 
 // PostAzureRotateRoot
-func (a *SecretsService) PostAzureRotateRoot(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) PostAzureRotateRoot(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11804,7 +11806,7 @@ func (a *SecretsService) PostAzureRotateRoot(ctx context.Context) (*http.Respons
 }
 
 // PostConsulConfigAccess
-func (a *SecretsService) PostConsulConfigAccess(ctx context.Context, consulConfigAccessRequest ConsulConfigAccessRequest) (*http.Response, error) {
+func (a *Secrets) PostConsulConfigAccess(ctx context.Context, consulConfigAccessRequest ConsulConfigAccessRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11872,7 +11874,7 @@ func (a *SecretsService) PostConsulConfigAccess(ctx context.Context, consulConfi
 
 // PostConsulRolesName
 // name: Name of the role.
-func (a *SecretsService) PostConsulRolesName(ctx context.Context, name string, consulRolesRequest ConsulRolesRequest) (*http.Response, error) {
+func (a *Secrets) PostConsulRolesName(ctx context.Context, name string, consulRolesRequest ConsulRolesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -11941,7 +11943,7 @@ func (a *SecretsService) PostConsulRolesName(ctx context.Context, name string, c
 
 // PostCubbyholePath Store a secret at the specified location.
 // path: Specifies the path of the secret.
-func (a *SecretsService) PostCubbyholePath(ctx context.Context, path string) (*http.Response, error) {
+func (a *Secrets) PostCubbyholePath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12007,7 +12009,7 @@ func (a *SecretsService) PostCubbyholePath(ctx context.Context, path string) (*h
 }
 
 // PostGcpConfig
-func (a *SecretsService) PostGcpConfig(ctx context.Context, gcpConfigRequest GcpConfigRequest) (*http.Response, error) {
+func (a *Secrets) PostGcpConfig(ctx context.Context, gcpConfigRequest GcpConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12074,7 +12076,7 @@ func (a *SecretsService) PostGcpConfig(ctx context.Context, gcpConfigRequest Gcp
 }
 
 // PostGcpConfigRotateRoot
-func (a *SecretsService) PostGcpConfigRotateRoot(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) PostGcpConfigRotateRoot(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12140,7 +12142,7 @@ func (a *SecretsService) PostGcpConfigRotateRoot(ctx context.Context) (*http.Res
 
 // PostGcpKeyRoleset
 // roleset: Required. Name of the role set.
-func (a *SecretsService) PostGcpKeyRoleset(ctx context.Context, roleset string, gcpKeyRequest GcpKeyRequest) (*http.Response, error) {
+func (a *Secrets) PostGcpKeyRoleset(ctx context.Context, roleset string, gcpKeyRequest GcpKeyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12209,7 +12211,7 @@ func (a *SecretsService) PostGcpKeyRoleset(ctx context.Context, roleset string, 
 
 // PostGcpRolesetName
 // name: Required. Name of the role.
-func (a *SecretsService) PostGcpRolesetName(ctx context.Context, name string, gcpRolesetRequest GcpRolesetRequest) (*http.Response, error) {
+func (a *Secrets) PostGcpRolesetName(ctx context.Context, name string, gcpRolesetRequest GcpRolesetRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12278,7 +12280,7 @@ func (a *SecretsService) PostGcpRolesetName(ctx context.Context, name string, gc
 
 // PostGcpRolesetNameRotate
 // name: Name of the role.
-func (a *SecretsService) PostGcpRolesetNameRotate(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) PostGcpRolesetNameRotate(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12345,7 +12347,7 @@ func (a *SecretsService) PostGcpRolesetNameRotate(ctx context.Context, name stri
 
 // PostGcpRolesetNameRotateKey
 // name: Name of the role.
-func (a *SecretsService) PostGcpRolesetNameRotateKey(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) PostGcpRolesetNameRotateKey(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12412,7 +12414,7 @@ func (a *SecretsService) PostGcpRolesetNameRotateKey(ctx context.Context, name s
 
 // PostGcpRolesetRolesetKey
 // roleset: Required. Name of the role set.
-func (a *SecretsService) PostGcpRolesetRolesetKey(ctx context.Context, roleset string, gcpRolesetKeyRequest GcpRolesetKeyRequest) (*http.Response, error) {
+func (a *Secrets) PostGcpRolesetRolesetKey(ctx context.Context, roleset string, gcpRolesetKeyRequest GcpRolesetKeyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12481,7 +12483,7 @@ func (a *SecretsService) PostGcpRolesetRolesetKey(ctx context.Context, roleset s
 
 // PostGcpRolesetRolesetToken
 // roleset: Required. Name of the role set.
-func (a *SecretsService) PostGcpRolesetRolesetToken(ctx context.Context, roleset string) (*http.Response, error) {
+func (a *Secrets) PostGcpRolesetRolesetToken(ctx context.Context, roleset string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12548,7 +12550,7 @@ func (a *SecretsService) PostGcpRolesetRolesetToken(ctx context.Context, roleset
 
 // PostGcpStaticAccountName
 // name: Required. Name to refer to this static account in Vault. Cannot be updated.
-func (a *SecretsService) PostGcpStaticAccountName(ctx context.Context, name string, gcpStaticAccountRequest GcpStaticAccountRequest) (*http.Response, error) {
+func (a *Secrets) PostGcpStaticAccountName(ctx context.Context, name string, gcpStaticAccountRequest GcpStaticAccountRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12617,7 +12619,7 @@ func (a *SecretsService) PostGcpStaticAccountName(ctx context.Context, name stri
 
 // PostGcpStaticAccountNameKey
 // name: Required. Name of the static account.
-func (a *SecretsService) PostGcpStaticAccountNameKey(ctx context.Context, name string, gcpStaticAccountKeyRequest GcpStaticAccountKeyRequest) (*http.Response, error) {
+func (a *Secrets) PostGcpStaticAccountNameKey(ctx context.Context, name string, gcpStaticAccountKeyRequest GcpStaticAccountKeyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12686,7 +12688,7 @@ func (a *SecretsService) PostGcpStaticAccountNameKey(ctx context.Context, name s
 
 // PostGcpStaticAccountNameRotateKey
 // name: Name of the account.
-func (a *SecretsService) PostGcpStaticAccountNameRotateKey(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) PostGcpStaticAccountNameRotateKey(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12753,7 +12755,7 @@ func (a *SecretsService) PostGcpStaticAccountNameRotateKey(ctx context.Context, 
 
 // PostGcpStaticAccountNameToken
 // name: Required. Name of the static account.
-func (a *SecretsService) PostGcpStaticAccountNameToken(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) PostGcpStaticAccountNameToken(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12820,7 +12822,7 @@ func (a *SecretsService) PostGcpStaticAccountNameToken(ctx context.Context, name
 
 // PostGcpTokenRoleset
 // roleset: Required. Name of the role set.
-func (a *SecretsService) PostGcpTokenRoleset(ctx context.Context, roleset string) (*http.Response, error) {
+func (a *Secrets) PostGcpTokenRoleset(ctx context.Context, roleset string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12886,7 +12888,7 @@ func (a *SecretsService) PostGcpTokenRoleset(ctx context.Context, roleset string
 }
 
 // PostGcpkmsConfig Configure the GCP KMS secrets engine
-func (a *SecretsService) PostGcpkmsConfig(ctx context.Context, gcpkmsConfigRequest GcpkmsConfigRequest) (*http.Response, error) {
+func (a *Secrets) PostGcpkmsConfig(ctx context.Context, gcpkmsConfigRequest GcpkmsConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -12954,7 +12956,7 @@ func (a *SecretsService) PostGcpkmsConfig(ctx context.Context, gcpkmsConfigReque
 
 // PostGcpkmsDecryptKey Decrypt a ciphertext value using a named key
 // key: Name of the key in Vault to use for decryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-func (a *SecretsService) PostGcpkmsDecryptKey(ctx context.Context, key string, gcpkmsDecryptRequest GcpkmsDecryptRequest) (*http.Response, error) {
+func (a *Secrets) PostGcpkmsDecryptKey(ctx context.Context, key string, gcpkmsDecryptRequest GcpkmsDecryptRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13023,7 +13025,7 @@ func (a *SecretsService) PostGcpkmsDecryptKey(ctx context.Context, key string, g
 
 // PostGcpkmsEncryptKey Encrypt a plaintext value using a named key
 // key: Name of the key in Vault to use for encryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-func (a *SecretsService) PostGcpkmsEncryptKey(ctx context.Context, key string, gcpkmsEncryptRequest GcpkmsEncryptRequest) (*http.Response, error) {
+func (a *Secrets) PostGcpkmsEncryptKey(ctx context.Context, key string, gcpkmsEncryptRequest GcpkmsEncryptRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13092,7 +13094,7 @@ func (a *SecretsService) PostGcpkmsEncryptKey(ctx context.Context, key string, g
 
 // PostGcpkmsKeysConfigKey Configure the key in Vault
 // key: Name of the key in Vault.
-func (a *SecretsService) PostGcpkmsKeysConfigKey(ctx context.Context, key string, gcpkmsKeysConfigRequest GcpkmsKeysConfigRequest) (*http.Response, error) {
+func (a *Secrets) PostGcpkmsKeysConfigKey(ctx context.Context, key string, gcpkmsKeysConfigRequest GcpkmsKeysConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13161,7 +13163,7 @@ func (a *SecretsService) PostGcpkmsKeysConfigKey(ctx context.Context, key string
 
 // PostGcpkmsKeysDeregisterKey Deregister an existing key in Vault
 // key: Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
-func (a *SecretsService) PostGcpkmsKeysDeregisterKey(ctx context.Context, key string) (*http.Response, error) {
+func (a *Secrets) PostGcpkmsKeysDeregisterKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13228,7 +13230,7 @@ func (a *SecretsService) PostGcpkmsKeysDeregisterKey(ctx context.Context, key st
 
 // PostGcpkmsKeysKey Interact with crypto keys in Vault and Google Cloud KMS
 // key: Name of the key in Vault.
-func (a *SecretsService) PostGcpkmsKeysKey(ctx context.Context, key string, gcpkmsKeysRequest GcpkmsKeysRequest) (*http.Response, error) {
+func (a *Secrets) PostGcpkmsKeysKey(ctx context.Context, key string, gcpkmsKeysRequest GcpkmsKeysRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13297,7 +13299,7 @@ func (a *SecretsService) PostGcpkmsKeysKey(ctx context.Context, key string, gcpk
 
 // PostGcpkmsKeysRegisterKey Register an existing crypto key in Google Cloud KMS
 // key: Name of the key to register in Vault. This will be the named used to refer to the underlying crypto key when encrypting or decrypting data.
-func (a *SecretsService) PostGcpkmsKeysRegisterKey(ctx context.Context, key string, gcpkmsKeysRegisterRequest GcpkmsKeysRegisterRequest) (*http.Response, error) {
+func (a *Secrets) PostGcpkmsKeysRegisterKey(ctx context.Context, key string, gcpkmsKeysRegisterRequest GcpkmsKeysRegisterRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13366,7 +13368,7 @@ func (a *SecretsService) PostGcpkmsKeysRegisterKey(ctx context.Context, key stri
 
 // PostGcpkmsKeysRotateKey Rotate a crypto key to a new primary version
 // key: Name of the key to rotate. This key must already be registered with Vault and point to a valid Google Cloud KMS crypto key.
-func (a *SecretsService) PostGcpkmsKeysRotateKey(ctx context.Context, key string) (*http.Response, error) {
+func (a *Secrets) PostGcpkmsKeysRotateKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13433,7 +13435,7 @@ func (a *SecretsService) PostGcpkmsKeysRotateKey(ctx context.Context, key string
 
 // PostGcpkmsKeysTrimKey Delete old crypto key versions from Google Cloud KMS
 // key: Name of the key in Vault.
-func (a *SecretsService) PostGcpkmsKeysTrimKey(ctx context.Context, key string) (*http.Response, error) {
+func (a *Secrets) PostGcpkmsKeysTrimKey(ctx context.Context, key string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13500,7 +13502,7 @@ func (a *SecretsService) PostGcpkmsKeysTrimKey(ctx context.Context, key string) 
 
 // PostGcpkmsReencryptKey Re-encrypt existing ciphertext data to a new version
 // key: Name of the key to use for encryption. This key must already exist in Vault and Google Cloud KMS.
-func (a *SecretsService) PostGcpkmsReencryptKey(ctx context.Context, key string, gcpkmsReencryptRequest GcpkmsReencryptRequest) (*http.Response, error) {
+func (a *Secrets) PostGcpkmsReencryptKey(ctx context.Context, key string, gcpkmsReencryptRequest GcpkmsReencryptRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13569,7 +13571,7 @@ func (a *SecretsService) PostGcpkmsReencryptKey(ctx context.Context, key string,
 
 // PostGcpkmsSignKey Signs a message or digest using a named key
 // key: Name of the key in Vault to use for signing. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-func (a *SecretsService) PostGcpkmsSignKey(ctx context.Context, key string, gcpkmsSignRequest GcpkmsSignRequest) (*http.Response, error) {
+func (a *Secrets) PostGcpkmsSignKey(ctx context.Context, key string, gcpkmsSignRequest GcpkmsSignRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13638,7 +13640,7 @@ func (a *SecretsService) PostGcpkmsSignKey(ctx context.Context, key string, gcpk
 
 // PostGcpkmsVerifyKey Verify a signature using a named key
 // key: Name of the key in Vault to use for verification. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-func (a *SecretsService) PostGcpkmsVerifyKey(ctx context.Context, key string, gcpkmsVerifyRequest GcpkmsVerifyRequest) (*http.Response, error) {
+func (a *Secrets) PostGcpkmsVerifyKey(ctx context.Context, key string, gcpkmsVerifyRequest GcpkmsVerifyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13706,7 +13708,7 @@ func (a *SecretsService) PostGcpkmsVerifyKey(ctx context.Context, key string, gc
 }
 
 // PostKubernetesConfig
-func (a *SecretsService) PostKubernetesConfig(ctx context.Context, kubernetesConfigRequest KubernetesConfigRequest) (*http.Response, error) {
+func (a *Secrets) PostKubernetesConfig(ctx context.Context, kubernetesConfigRequest KubernetesConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13774,7 +13776,7 @@ func (a *SecretsService) PostKubernetesConfig(ctx context.Context, kubernetesCon
 
 // PostKubernetesCredsName
 // name: Name of the Vault role
-func (a *SecretsService) PostKubernetesCredsName(ctx context.Context, name string, kubernetesCredsRequest KubernetesCredsRequest) (*http.Response, error) {
+func (a *Secrets) PostKubernetesCredsName(ctx context.Context, name string, kubernetesCredsRequest KubernetesCredsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13843,7 +13845,7 @@ func (a *SecretsService) PostKubernetesCredsName(ctx context.Context, name strin
 
 // PostKubernetesRolesName
 // name: Name of the role
-func (a *SecretsService) PostKubernetesRolesName(ctx context.Context, name string, kubernetesRolesRequest KubernetesRolesRequest) (*http.Response, error) {
+func (a *Secrets) PostKubernetesRolesName(ctx context.Context, name string, kubernetesRolesRequest KubernetesRolesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13912,7 +13914,7 @@ func (a *SecretsService) PostKubernetesRolesName(ctx context.Context, name strin
 
 // PostKvPath Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
 // path: Location of the secret.
-func (a *SecretsService) PostKvPath(ctx context.Context, path string) (*http.Response, error) {
+func (a *Secrets) PostKvPath(ctx context.Context, path string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -13978,7 +13980,7 @@ func (a *SecretsService) PostKvPath(ctx context.Context, path string) (*http.Res
 }
 
 // PostMongodbatlasConfig Configure the  credentials that are used to manage Database Users.
-func (a *SecretsService) PostMongodbatlasConfig(ctx context.Context, mongodbatlasConfigRequest MongodbatlasConfigRequest) (*http.Response, error) {
+func (a *Secrets) PostMongodbatlasConfig(ctx context.Context, mongodbatlasConfigRequest MongodbatlasConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14046,7 +14048,7 @@ func (a *SecretsService) PostMongodbatlasConfig(ctx context.Context, mongodbatla
 
 // PostMongodbatlasCredsName Generate MongoDB Atlas Programmatic API from a specific Vault role.
 // name: Name of the role
-func (a *SecretsService) PostMongodbatlasCredsName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) PostMongodbatlasCredsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14113,7 +14115,7 @@ func (a *SecretsService) PostMongodbatlasCredsName(ctx context.Context, name str
 
 // PostMongodbatlasRolesName Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
 // name: Name of the Roles
-func (a *SecretsService) PostMongodbatlasRolesName(ctx context.Context, name string, mongodbatlasRolesRequest MongodbatlasRolesRequest) (*http.Response, error) {
+func (a *Secrets) PostMongodbatlasRolesName(ctx context.Context, name string, mongodbatlasRolesRequest MongodbatlasRolesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14181,7 +14183,7 @@ func (a *SecretsService) PostMongodbatlasRolesName(ctx context.Context, name str
 }
 
 // PostNomadConfigAccess
-func (a *SecretsService) PostNomadConfigAccess(ctx context.Context, nomadConfigAccessRequest NomadConfigAccessRequest) (*http.Response, error) {
+func (a *Secrets) PostNomadConfigAccess(ctx context.Context, nomadConfigAccessRequest NomadConfigAccessRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14248,7 +14250,7 @@ func (a *SecretsService) PostNomadConfigAccess(ctx context.Context, nomadConfigA
 }
 
 // PostNomadConfigLease Configure the lease parameters for generated tokens
-func (a *SecretsService) PostNomadConfigLease(ctx context.Context, nomadConfigLeaseRequest NomadConfigLeaseRequest) (*http.Response, error) {
+func (a *Secrets) PostNomadConfigLease(ctx context.Context, nomadConfigLeaseRequest NomadConfigLeaseRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14316,7 +14318,7 @@ func (a *SecretsService) PostNomadConfigLease(ctx context.Context, nomadConfigLe
 
 // PostNomadRoleName
 // name: Name of the role
-func (a *SecretsService) PostNomadRoleName(ctx context.Context, name string, nomadRoleRequest NomadRoleRequest) (*http.Response, error) {
+func (a *Secrets) PostNomadRoleName(ctx context.Context, name string, nomadRoleRequest NomadRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14384,7 +14386,7 @@ func (a *SecretsService) PostNomadRoleName(ctx context.Context, name string, nom
 }
 
 // PostOpenldapConfig
-func (a *SecretsService) PostOpenldapConfig(ctx context.Context, openldapConfigRequest OpenldapConfigRequest) (*http.Response, error) {
+func (a *Secrets) PostOpenldapConfig(ctx context.Context, openldapConfigRequest OpenldapConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14452,7 +14454,7 @@ func (a *SecretsService) PostOpenldapConfig(ctx context.Context, openldapConfigR
 
 // PostOpenldapRoleName
 // name: Name of the role (lowercase)
-func (a *SecretsService) PostOpenldapRoleName(ctx context.Context, name string, openldapRoleRequest OpenldapRoleRequest) (*http.Response, error) {
+func (a *Secrets) PostOpenldapRoleName(ctx context.Context, name string, openldapRoleRequest OpenldapRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14521,7 +14523,7 @@ func (a *SecretsService) PostOpenldapRoleName(ctx context.Context, name string, 
 
 // PostOpenldapRotateRoleName
 // name: Name of the static role
-func (a *SecretsService) PostOpenldapRotateRoleName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) PostOpenldapRotateRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14587,7 +14589,7 @@ func (a *SecretsService) PostOpenldapRotateRoleName(ctx context.Context, name st
 }
 
 // PostOpenldapRotateRoot
-func (a *SecretsService) PostOpenldapRotateRoot(ctx context.Context) (*http.Response, error) {
+func (a *Secrets) PostOpenldapRotateRoot(ctx context.Context) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14653,7 +14655,7 @@ func (a *SecretsService) PostOpenldapRotateRoot(ctx context.Context) (*http.Resp
 
 // PostOpenldapStaticRoleName
 // name: Name of the role
-func (a *SecretsService) PostOpenldapStaticRoleName(ctx context.Context, name string, openldapStaticRoleRequest OpenldapStaticRoleRequest) (*http.Response, error) {
+func (a *Secrets) PostOpenldapStaticRoleName(ctx context.Context, name string, openldapStaticRoleRequest OpenldapStaticRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14721,7 +14723,7 @@ func (a *SecretsService) PostOpenldapStaticRoleName(ctx context.Context, name st
 }
 
 // PostPkiBundle
-func (a *SecretsService) PostPkiBundle(ctx context.Context, pkiBundleRequest PkiBundleRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiBundle(ctx context.Context, pkiBundleRequest PkiBundleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14788,7 +14790,7 @@ func (a *SecretsService) PostPkiBundle(ctx context.Context, pkiBundleRequest Pki
 }
 
 // PostPkiCert
-func (a *SecretsService) PostPkiCert(ctx context.Context, pkiCertRequest PkiCertRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiCert(ctx context.Context, pkiCertRequest PkiCertRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14855,7 +14857,7 @@ func (a *SecretsService) PostPkiCert(ctx context.Context, pkiCertRequest PkiCert
 }
 
 // PostPkiConfigCa
-func (a *SecretsService) PostPkiConfigCa(ctx context.Context, pkiConfigCaRequest PkiConfigCaRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiConfigCa(ctx context.Context, pkiConfigCaRequest PkiConfigCaRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14922,7 +14924,7 @@ func (a *SecretsService) PostPkiConfigCa(ctx context.Context, pkiConfigCaRequest
 }
 
 // PostPkiConfigCrl
-func (a *SecretsService) PostPkiConfigCrl(ctx context.Context, pkiConfigCrlRequest PkiConfigCrlRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiConfigCrl(ctx context.Context, pkiConfigCrlRequest PkiConfigCrlRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -14989,7 +14991,7 @@ func (a *SecretsService) PostPkiConfigCrl(ctx context.Context, pkiConfigCrlReque
 }
 
 // PostPkiConfigIssuers
-func (a *SecretsService) PostPkiConfigIssuers(ctx context.Context, pkiConfigIssuersRequest PkiConfigIssuersRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiConfigIssuers(ctx context.Context, pkiConfigIssuersRequest PkiConfigIssuersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15056,7 +15058,7 @@ func (a *SecretsService) PostPkiConfigIssuers(ctx context.Context, pkiConfigIssu
 }
 
 // PostPkiConfigKeys
-func (a *SecretsService) PostPkiConfigKeys(ctx context.Context, pkiConfigKeysRequest PkiConfigKeysRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiConfigKeys(ctx context.Context, pkiConfigKeysRequest PkiConfigKeysRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15123,7 +15125,7 @@ func (a *SecretsService) PostPkiConfigKeys(ctx context.Context, pkiConfigKeysReq
 }
 
 // PostPkiConfigUrls
-func (a *SecretsService) PostPkiConfigUrls(ctx context.Context, pkiConfigUrlsRequest PkiConfigUrlsRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiConfigUrls(ctx context.Context, pkiConfigUrlsRequest PkiConfigUrlsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15190,7 +15192,7 @@ func (a *SecretsService) PostPkiConfigUrls(ctx context.Context, pkiConfigUrlsReq
 }
 
 // PostPkiIntermediateCrossSign
-func (a *SecretsService) PostPkiIntermediateCrossSign(ctx context.Context, pkiIntermediateCrossSignRequest PkiIntermediateCrossSignRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiIntermediateCrossSign(ctx context.Context, pkiIntermediateCrossSignRequest PkiIntermediateCrossSignRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15258,7 +15260,7 @@ func (a *SecretsService) PostPkiIntermediateCrossSign(ctx context.Context, pkiIn
 
 // PostPkiIntermediateGenerateExported
 // exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
-func (a *SecretsService) PostPkiIntermediateGenerateExported(ctx context.Context, exported string, pkiIntermediateGenerateRequest PkiIntermediateGenerateRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiIntermediateGenerateExported(ctx context.Context, exported string, pkiIntermediateGenerateRequest PkiIntermediateGenerateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15326,7 +15328,7 @@ func (a *SecretsService) PostPkiIntermediateGenerateExported(ctx context.Context
 }
 
 // PostPkiIntermediateSetSigned
-func (a *SecretsService) PostPkiIntermediateSetSigned(ctx context.Context, pkiIntermediateSetSignedRequest PkiIntermediateSetSignedRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiIntermediateSetSigned(ctx context.Context, pkiIntermediateSetSignedRequest PkiIntermediateSetSignedRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15393,7 +15395,7 @@ func (a *SecretsService) PostPkiIntermediateSetSigned(ctx context.Context, pkiIn
 }
 
 // PostPkiInternalExported
-func (a *SecretsService) PostPkiInternalExported(ctx context.Context, pkiInternalExportedRequest PkiInternalExportedRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiInternalExported(ctx context.Context, pkiInternalExportedRequest PkiInternalExportedRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15461,7 +15463,7 @@ func (a *SecretsService) PostPkiInternalExported(ctx context.Context, pkiInterna
 
 // PostPkiIssueRole
 // role: The desired role with configuration for this request
-func (a *SecretsService) PostPkiIssueRole(ctx context.Context, role string, pkiIssueRequest PkiIssueRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiIssueRole(ctx context.Context, role string, pkiIssueRequest PkiIssueRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15531,7 +15533,7 @@ func (a *SecretsService) PostPkiIssueRole(ctx context.Context, role string, pkiI
 // PostPkiIssuerIssuerRefIssueRole
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
 // role: The desired role with configuration for this request
-func (a *SecretsService) PostPkiIssuerIssuerRefIssueRole(ctx context.Context, issuerRef string, role string, pkiIssuerIssueRequest PkiIssuerIssueRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiIssuerIssuerRefIssueRole(ctx context.Context, issuerRef string, role string, pkiIssuerIssueRequest PkiIssuerIssueRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15601,7 +15603,7 @@ func (a *SecretsService) PostPkiIssuerIssuerRefIssueRole(ctx context.Context, is
 
 // PostPkiIssuerIssuerRefSignIntermediate
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-func (a *SecretsService) PostPkiIssuerIssuerRefSignIntermediate(ctx context.Context, issuerRef string, pkiIssuerSignIntermediateRequest PkiIssuerSignIntermediateRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiIssuerIssuerRefSignIntermediate(ctx context.Context, issuerRef string, pkiIssuerSignIntermediateRequest PkiIssuerSignIntermediateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15671,7 +15673,7 @@ func (a *SecretsService) PostPkiIssuerIssuerRefSignIntermediate(ctx context.Cont
 // PostPkiIssuerIssuerRefSignRole
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
 // role: The desired role with configuration for this request
-func (a *SecretsService) PostPkiIssuerIssuerRefSignRole(ctx context.Context, issuerRef string, role string, pkiIssuerSignRequest PkiIssuerSignRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiIssuerIssuerRefSignRole(ctx context.Context, issuerRef string, role string, pkiIssuerSignRequest PkiIssuerSignRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15741,7 +15743,7 @@ func (a *SecretsService) PostPkiIssuerIssuerRefSignRole(ctx context.Context, iss
 
 // PostPkiIssuerIssuerRefSignSelfIssued
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-func (a *SecretsService) PostPkiIssuerIssuerRefSignSelfIssued(ctx context.Context, issuerRef string, pkiIssuerSignSelfIssuedRequest PkiIssuerSignSelfIssuedRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiIssuerIssuerRefSignSelfIssued(ctx context.Context, issuerRef string, pkiIssuerSignSelfIssuedRequest PkiIssuerSignSelfIssuedRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15810,7 +15812,7 @@ func (a *SecretsService) PostPkiIssuerIssuerRefSignSelfIssued(ctx context.Contex
 
 // PostPkiIssuerIssuerRefSignVerbatim
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-func (a *SecretsService) PostPkiIssuerIssuerRefSignVerbatim(ctx context.Context, issuerRef string, pkiIssuerSignVerbatimRequest PkiIssuerSignVerbatimRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiIssuerIssuerRefSignVerbatim(ctx context.Context, issuerRef string, pkiIssuerSignVerbatimRequest PkiIssuerSignVerbatimRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15880,7 +15882,7 @@ func (a *SecretsService) PostPkiIssuerIssuerRefSignVerbatim(ctx context.Context,
 // PostPkiIssuerIssuerRefSignVerbatimRole
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
 // role: The desired role with configuration for this request
-func (a *SecretsService) PostPkiIssuerIssuerRefSignVerbatimRole(ctx context.Context, issuerRef string, role string, pkiIssuerSignVerbatimRequest PkiIssuerSignVerbatimRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiIssuerIssuerRefSignVerbatimRole(ctx context.Context, issuerRef string, role string, pkiIssuerSignVerbatimRequest PkiIssuerSignVerbatimRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -15950,7 +15952,7 @@ func (a *SecretsService) PostPkiIssuerIssuerRefSignVerbatimRole(ctx context.Cont
 
 // PostPkiIssuerRefDerPem
 // issuerRef: Reference to a existing issuer; either \&quot;default\&quot; for the configured default issuer, an identifier or the name assigned to the issuer.
-func (a *SecretsService) PostPkiIssuerRefDerPem(ctx context.Context, issuerRef string, pkiDerPemRequest PkiDerPemRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiIssuerRefDerPem(ctx context.Context, issuerRef string, pkiDerPemRequest PkiDerPemRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16019,7 +16021,7 @@ func (a *SecretsService) PostPkiIssuerRefDerPem(ctx context.Context, issuerRef s
 
 // PostPkiIssuersGenerateIntermediateExported
 // exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
-func (a *SecretsService) PostPkiIssuersGenerateIntermediateExported(ctx context.Context, exported string, pkiIssuersGenerateIntermediateRequest PkiIssuersGenerateIntermediateRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiIssuersGenerateIntermediateExported(ctx context.Context, exported string, pkiIssuersGenerateIntermediateRequest PkiIssuersGenerateIntermediateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16088,7 +16090,7 @@ func (a *SecretsService) PostPkiIssuersGenerateIntermediateExported(ctx context.
 
 // PostPkiIssuersGenerateRootExported
 // exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
-func (a *SecretsService) PostPkiIssuersGenerateRootExported(ctx context.Context, exported string, pkiIssuersGenerateRootRequest PkiIssuersGenerateRootRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiIssuersGenerateRootExported(ctx context.Context, exported string, pkiIssuersGenerateRootRequest PkiIssuersGenerateRootRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16156,7 +16158,7 @@ func (a *SecretsService) PostPkiIssuersGenerateRootExported(ctx context.Context,
 }
 
 // PostPkiJson
-func (a *SecretsService) PostPkiJson(ctx context.Context, pkiJsonRequest PkiJsonRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiJson(ctx context.Context, pkiJsonRequest PkiJsonRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16224,7 +16226,7 @@ func (a *SecretsService) PostPkiJson(ctx context.Context, pkiJsonRequest PkiJson
 
 // PostPkiKeyKeyRef
 // keyRef: Reference to key; either \&quot;default\&quot; for the configured default key, an identifier of a key, or the name assigned to the key.
-func (a *SecretsService) PostPkiKeyKeyRef(ctx context.Context, keyRef string, pkiKeyRequest PkiKeyRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiKeyKeyRef(ctx context.Context, keyRef string, pkiKeyRequest PkiKeyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16292,7 +16294,7 @@ func (a *SecretsService) PostPkiKeyKeyRef(ctx context.Context, keyRef string, pk
 }
 
 // PostPkiKeysImport
-func (a *SecretsService) PostPkiKeysImport(ctx context.Context, pkiKeysImportRequest PkiKeysImportRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiKeysImport(ctx context.Context, pkiKeysImportRequest PkiKeysImportRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16359,7 +16361,7 @@ func (a *SecretsService) PostPkiKeysImport(ctx context.Context, pkiKeysImportReq
 }
 
 // PostPkiKms
-func (a *SecretsService) PostPkiKms(ctx context.Context, pkiKmsRequest PkiKmsRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiKms(ctx context.Context, pkiKmsRequest PkiKmsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16426,7 +16428,7 @@ func (a *SecretsService) PostPkiKms(ctx context.Context, pkiKmsRequest PkiKmsReq
 }
 
 // PostPkiRevoke
-func (a *SecretsService) PostPkiRevoke(ctx context.Context, pkiRevokeRequest PkiRevokeRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiRevoke(ctx context.Context, pkiRevokeRequest PkiRevokeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16494,7 +16496,7 @@ func (a *SecretsService) PostPkiRevoke(ctx context.Context, pkiRevokeRequest Pki
 
 // PostPkiRolesName
 // name: Name of the role
-func (a *SecretsService) PostPkiRolesName(ctx context.Context, name string, pkiRolesRequest PkiRolesRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiRolesName(ctx context.Context, name string, pkiRolesRequest PkiRolesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16563,7 +16565,7 @@ func (a *SecretsService) PostPkiRolesName(ctx context.Context, name string, pkiR
 
 // PostPkiRootGenerateExported
 // exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
-func (a *SecretsService) PostPkiRootGenerateExported(ctx context.Context, exported string, pkiRootGenerateRequest PkiRootGenerateRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiRootGenerateExported(ctx context.Context, exported string, pkiRootGenerateRequest PkiRootGenerateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16631,7 +16633,7 @@ func (a *SecretsService) PostPkiRootGenerateExported(ctx context.Context, export
 }
 
 // PostPkiRootReplace
-func (a *SecretsService) PostPkiRootReplace(ctx context.Context, pkiRootReplaceRequest PkiRootReplaceRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiRootReplace(ctx context.Context, pkiRootReplaceRequest PkiRootReplaceRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16699,7 +16701,7 @@ func (a *SecretsService) PostPkiRootReplace(ctx context.Context, pkiRootReplaceR
 
 // PostPkiRootRotateExported
 // exported: Must be \&quot;internal\&quot;, \&quot;exported\&quot; or \&quot;kms\&quot;. If set to \&quot;exported\&quot;, the generated private key will be returned. This is your *only* chance to retrieve the private key!
-func (a *SecretsService) PostPkiRootRotateExported(ctx context.Context, exported string, pkiRootRotateRequest PkiRootRotateRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiRootRotateExported(ctx context.Context, exported string, pkiRootRotateRequest PkiRootRotateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16767,7 +16769,7 @@ func (a *SecretsService) PostPkiRootRotateExported(ctx context.Context, exported
 }
 
 // PostPkiRootSignIntermediate
-func (a *SecretsService) PostPkiRootSignIntermediate(ctx context.Context, pkiRootSignIntermediateRequest PkiRootSignIntermediateRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiRootSignIntermediate(ctx context.Context, pkiRootSignIntermediateRequest PkiRootSignIntermediateRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16834,7 +16836,7 @@ func (a *SecretsService) PostPkiRootSignIntermediate(ctx context.Context, pkiRoo
 }
 
 // PostPkiRootSignSelfIssued
-func (a *SecretsService) PostPkiRootSignSelfIssued(ctx context.Context, pkiRootSignSelfIssuedRequest PkiRootSignSelfIssuedRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiRootSignSelfIssued(ctx context.Context, pkiRootSignSelfIssuedRequest PkiRootSignSelfIssuedRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16902,7 +16904,7 @@ func (a *SecretsService) PostPkiRootSignSelfIssued(ctx context.Context, pkiRootS
 
 // PostPkiSignRole
 // role: The desired role with configuration for this request
-func (a *SecretsService) PostPkiSignRole(ctx context.Context, role string, pkiSignRequest PkiSignRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiSignRole(ctx context.Context, role string, pkiSignRequest PkiSignRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -16970,7 +16972,7 @@ func (a *SecretsService) PostPkiSignRole(ctx context.Context, role string, pkiSi
 }
 
 // PostPkiSignVerbatim
-func (a *SecretsService) PostPkiSignVerbatim(ctx context.Context, pkiSignVerbatimRequest PkiSignVerbatimRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiSignVerbatim(ctx context.Context, pkiSignVerbatimRequest PkiSignVerbatimRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17038,7 +17040,7 @@ func (a *SecretsService) PostPkiSignVerbatim(ctx context.Context, pkiSignVerbati
 
 // PostPkiSignVerbatimRole
 // role: The desired role with configuration for this request
-func (a *SecretsService) PostPkiSignVerbatimRole(ctx context.Context, role string, pkiSignVerbatimRequest PkiSignVerbatimRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiSignVerbatimRole(ctx context.Context, role string, pkiSignVerbatimRequest PkiSignVerbatimRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17106,7 +17108,7 @@ func (a *SecretsService) PostPkiSignVerbatimRole(ctx context.Context, role strin
 }
 
 // PostPkiTidy
-func (a *SecretsService) PostPkiTidy(ctx context.Context, pkiTidyRequest PkiTidyRequest) (*http.Response, error) {
+func (a *Secrets) PostPkiTidy(ctx context.Context, pkiTidyRequest PkiTidyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17173,7 +17175,7 @@ func (a *SecretsService) PostPkiTidy(ctx context.Context, pkiTidyRequest PkiTidy
 }
 
 // PostRabbitmqConfigConnection Configure the connection URI, username, and password to talk to RabbitMQ management HTTP API.
-func (a *SecretsService) PostRabbitmqConfigConnection(ctx context.Context, rabbitmqConfigConnectionRequest RabbitmqConfigConnectionRequest) (*http.Response, error) {
+func (a *Secrets) PostRabbitmqConfigConnection(ctx context.Context, rabbitmqConfigConnectionRequest RabbitmqConfigConnectionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17240,7 +17242,7 @@ func (a *SecretsService) PostRabbitmqConfigConnection(ctx context.Context, rabbi
 }
 
 // PostRabbitmqConfigLease Configure the lease parameters for generated credentials
-func (a *SecretsService) PostRabbitmqConfigLease(ctx context.Context, rabbitmqConfigLeaseRequest RabbitmqConfigLeaseRequest) (*http.Response, error) {
+func (a *Secrets) PostRabbitmqConfigLease(ctx context.Context, rabbitmqConfigLeaseRequest RabbitmqConfigLeaseRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17308,7 +17310,7 @@ func (a *SecretsService) PostRabbitmqConfigLease(ctx context.Context, rabbitmqCo
 
 // PostRabbitmqRolesName Manage the roles that can be created with this backend.
 // name: Name of the role.
-func (a *SecretsService) PostRabbitmqRolesName(ctx context.Context, name string, rabbitmqRolesRequest RabbitmqRolesRequest) (*http.Response, error) {
+func (a *Secrets) PostRabbitmqRolesName(ctx context.Context, name string, rabbitmqRolesRequest RabbitmqRolesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17376,7 +17378,7 @@ func (a *SecretsService) PostRabbitmqRolesName(ctx context.Context, name string,
 }
 
 // PostSecretConfig Configure backend level settings that are applied to every key in the key-value store.
-func (a *SecretsService) PostSecretConfig(ctx context.Context, kvConfigRequest KvConfigRequest) (*http.Response, error) {
+func (a *Secrets) PostSecretConfig(ctx context.Context, kvConfigRequest KvConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17444,7 +17446,7 @@ func (a *SecretsService) PostSecretConfig(ctx context.Context, kvConfigRequest K
 
 // PostSecretDataPath Write, Patch, Read, and Delete data in the Key-Value Store.
 // path: Location of the secret.
-func (a *SecretsService) PostSecretDataPath(ctx context.Context, path string, kvDataRequest KvDataRequest) (*http.Response, error) {
+func (a *Secrets) PostSecretDataPath(ctx context.Context, path string, kvDataRequest KvDataRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17513,7 +17515,7 @@ func (a *SecretsService) PostSecretDataPath(ctx context.Context, path string, kv
 
 // PostSecretDeletePath Marks one or more versions as deleted in the KV store.
 // path: Location of the secret.
-func (a *SecretsService) PostSecretDeletePath(ctx context.Context, path string, kvDeleteRequest KvDeleteRequest) (*http.Response, error) {
+func (a *Secrets) PostSecretDeletePath(ctx context.Context, path string, kvDeleteRequest KvDeleteRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17582,7 +17584,7 @@ func (a *SecretsService) PostSecretDeletePath(ctx context.Context, path string, 
 
 // PostSecretDestroyPath Permanently removes one or more versions in the KV store
 // path: Location of the secret.
-func (a *SecretsService) PostSecretDestroyPath(ctx context.Context, path string, kvDestroyRequest KvDestroyRequest) (*http.Response, error) {
+func (a *Secrets) PostSecretDestroyPath(ctx context.Context, path string, kvDestroyRequest KvDestroyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17651,7 +17653,7 @@ func (a *SecretsService) PostSecretDestroyPath(ctx context.Context, path string,
 
 // PostSecretMetadataPath Configures settings for the KV store
 // path: Location of the secret.
-func (a *SecretsService) PostSecretMetadataPath(ctx context.Context, path string, kvMetadataRequest KvMetadataRequest) (*http.Response, error) {
+func (a *Secrets) PostSecretMetadataPath(ctx context.Context, path string, kvMetadataRequest KvMetadataRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17720,7 +17722,7 @@ func (a *SecretsService) PostSecretMetadataPath(ctx context.Context, path string
 
 // PostSecretUndeletePath Undeletes one or more versions from the KV store.
 // path: Location of the secret.
-func (a *SecretsService) PostSecretUndeletePath(ctx context.Context, path string, kvUndeleteRequest KvUndeleteRequest) (*http.Response, error) {
+func (a *Secrets) PostSecretUndeletePath(ctx context.Context, path string, kvUndeleteRequest KvUndeleteRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17788,7 +17790,7 @@ func (a *SecretsService) PostSecretUndeletePath(ctx context.Context, path string
 }
 
 // PostSshConfigCa Set the SSH private key used for signing certificates.
-func (a *SecretsService) PostSshConfigCa(ctx context.Context, sshConfigCaRequest SshConfigCaRequest) (*http.Response, error) {
+func (a *Secrets) PostSshConfigCa(ctx context.Context, sshConfigCaRequest SshConfigCaRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17855,7 +17857,7 @@ func (a *SecretsService) PostSshConfigCa(ctx context.Context, sshConfigCaRequest
 }
 
 // PostSshConfigZeroaddress Assign zero address as default CIDR block for select roles.
-func (a *SecretsService) PostSshConfigZeroaddress(ctx context.Context, sshConfigZeroaddressRequest SshConfigZeroaddressRequest) (*http.Response, error) {
+func (a *Secrets) PostSshConfigZeroaddress(ctx context.Context, sshConfigZeroaddressRequest SshConfigZeroaddressRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17923,7 +17925,7 @@ func (a *SecretsService) PostSshConfigZeroaddress(ctx context.Context, sshConfig
 
 // PostSshCredsRole Creates a credential for establishing SSH connection with the remote host.
 // role: [Required] Name of the role
-func (a *SecretsService) PostSshCredsRole(ctx context.Context, role string, sshCredsRequest SshCredsRequest) (*http.Response, error) {
+func (a *Secrets) PostSshCredsRole(ctx context.Context, role string, sshCredsRequest SshCredsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -17992,7 +17994,7 @@ func (a *SecretsService) PostSshCredsRole(ctx context.Context, role string, sshC
 
 // PostSshKeysKeyName Register a shared private key with Vault.
 // keyName: [Required] Name of the key
-func (a *SecretsService) PostSshKeysKeyName(ctx context.Context, keyName string, sshKeysRequest SshKeysRequest) (*http.Response, error) {
+func (a *Secrets) PostSshKeysKeyName(ctx context.Context, keyName string, sshKeysRequest SshKeysRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18060,7 +18062,7 @@ func (a *SecretsService) PostSshKeysKeyName(ctx context.Context, keyName string,
 }
 
 // PostSshLookup List all the roles associated with the given IP address.
-func (a *SecretsService) PostSshLookup(ctx context.Context, sshLookupRequest SshLookupRequest) (*http.Response, error) {
+func (a *Secrets) PostSshLookup(ctx context.Context, sshLookupRequest SshLookupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18128,7 +18130,7 @@ func (a *SecretsService) PostSshLookup(ctx context.Context, sshLookupRequest Ssh
 
 // PostSshRolesRole Manage the 'roles' that can be created with this backend.
 // role: [Required for all types] Name of the role being created.
-func (a *SecretsService) PostSshRolesRole(ctx context.Context, role string, sshRolesRequest SshRolesRequest) (*http.Response, error) {
+func (a *Secrets) PostSshRolesRole(ctx context.Context, role string, sshRolesRequest SshRolesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18197,7 +18199,7 @@ func (a *SecretsService) PostSshRolesRole(ctx context.Context, role string, sshR
 
 // PostSshSignRole Request signing an SSH key using a certain role with the provided details.
 // role: The desired role with configuration for this request.
-func (a *SecretsService) PostSshSignRole(ctx context.Context, role string, sshSignRequest SshSignRequest) (*http.Response, error) {
+func (a *Secrets) PostSshSignRole(ctx context.Context, role string, sshSignRequest SshSignRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18265,7 +18267,7 @@ func (a *SecretsService) PostSshSignRole(ctx context.Context, role string, sshSi
 }
 
 // PostSshVerify Validate the OTP provided by Vault SSH Agent.
-func (a *SecretsService) PostSshVerify(ctx context.Context, sshVerifyRequest SshVerifyRequest) (*http.Response, error) {
+func (a *Secrets) PostSshVerify(ctx context.Context, sshVerifyRequest SshVerifyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18332,7 +18334,7 @@ func (a *SecretsService) PostSshVerify(ctx context.Context, sshVerifyRequest Ssh
 }
 
 // PostTerraformConfig
-func (a *SecretsService) PostTerraformConfig(ctx context.Context, terraformConfigRequest TerraformConfigRequest) (*http.Response, error) {
+func (a *Secrets) PostTerraformConfig(ctx context.Context, terraformConfigRequest TerraformConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18400,7 +18402,7 @@ func (a *SecretsService) PostTerraformConfig(ctx context.Context, terraformConfi
 
 // PostTerraformCredsName Generate a Terraform Cloud or Enterprise API token from a specific Vault role.
 // name: Name of the role
-func (a *SecretsService) PostTerraformCredsName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) PostTerraformCredsName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18467,7 +18469,7 @@ func (a *SecretsService) PostTerraformCredsName(ctx context.Context, name string
 
 // PostTerraformRoleName
 // name: Name of the role
-func (a *SecretsService) PostTerraformRoleName(ctx context.Context, name string, terraformRoleRequest TerraformRoleRequest) (*http.Response, error) {
+func (a *Secrets) PostTerraformRoleName(ctx context.Context, name string, terraformRoleRequest TerraformRoleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18536,7 +18538,7 @@ func (a *SecretsService) PostTerraformRoleName(ctx context.Context, name string,
 
 // PostTerraformRotateRoleName
 // name: Name of the team or organization role
-func (a *SecretsService) PostTerraformRotateRoleName(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) PostTerraformRotateRoleName(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18603,7 +18605,7 @@ func (a *SecretsService) PostTerraformRotateRoleName(ctx context.Context, name s
 
 // PostTotpCodeName Request time-based one-time use password or validate a password for a certain key .
 // name: Name of the key.
-func (a *SecretsService) PostTotpCodeName(ctx context.Context, name string, totpCodeRequest TotpCodeRequest) (*http.Response, error) {
+func (a *Secrets) PostTotpCodeName(ctx context.Context, name string, totpCodeRequest TotpCodeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18672,7 +18674,7 @@ func (a *SecretsService) PostTotpCodeName(ctx context.Context, name string, totp
 
 // PostTotpKeysName Manage the keys that can be created with this backend.
 // name: Name of the key.
-func (a *SecretsService) PostTotpKeysName(ctx context.Context, name string, totpKeysRequest TotpKeysRequest) (*http.Response, error) {
+func (a *Secrets) PostTotpKeysName(ctx context.Context, name string, totpKeysRequest TotpKeysRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18740,7 +18742,7 @@ func (a *SecretsService) PostTotpKeysName(ctx context.Context, name string, totp
 }
 
 // PostTransitCacheConfig Configures a new cache of the specified size
-func (a *SecretsService) PostTransitCacheConfig(ctx context.Context, transitCacheConfigRequest TransitCacheConfigRequest) (*http.Response, error) {
+func (a *Secrets) PostTransitCacheConfig(ctx context.Context, transitCacheConfigRequest TransitCacheConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18809,7 +18811,7 @@ func (a *SecretsService) PostTransitCacheConfig(ctx context.Context, transitCach
 // PostTransitDatakeyPlaintextName Generate a data key
 // name: The backend key used for encrypting the data key
 // plaintext: \&quot;plaintext\&quot; will return the key in both plaintext and ciphertext; \&quot;wrapped\&quot; will return the ciphertext only.
-func (a *SecretsService) PostTransitDatakeyPlaintextName(ctx context.Context, name string, plaintext string, transitDatakeyRequest TransitDatakeyRequest) (*http.Response, error) {
+func (a *Secrets) PostTransitDatakeyPlaintextName(ctx context.Context, name string, plaintext string, transitDatakeyRequest TransitDatakeyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18879,7 +18881,7 @@ func (a *SecretsService) PostTransitDatakeyPlaintextName(ctx context.Context, na
 
 // PostTransitDecryptName Decrypt a ciphertext value using a named key
 // name: Name of the policy
-func (a *SecretsService) PostTransitDecryptName(ctx context.Context, name string, transitDecryptRequest TransitDecryptRequest) (*http.Response, error) {
+func (a *Secrets) PostTransitDecryptName(ctx context.Context, name string, transitDecryptRequest TransitDecryptRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -18948,7 +18950,7 @@ func (a *SecretsService) PostTransitDecryptName(ctx context.Context, name string
 
 // PostTransitEncryptName Encrypt a plaintext value or a batch of plaintext blocks using a named key
 // name: Name of the policy
-func (a *SecretsService) PostTransitEncryptName(ctx context.Context, name string, transitEncryptRequest TransitEncryptRequest) (*http.Response, error) {
+func (a *Secrets) PostTransitEncryptName(ctx context.Context, name string, transitEncryptRequest TransitEncryptRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -19016,7 +19018,7 @@ func (a *SecretsService) PostTransitEncryptName(ctx context.Context, name string
 }
 
 // PostTransitHash Generate a hash sum for input data
-func (a *SecretsService) PostTransitHash(ctx context.Context, transitHashRequest TransitHashRequest) (*http.Response, error) {
+func (a *Secrets) PostTransitHash(ctx context.Context, transitHashRequest TransitHashRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -19084,7 +19086,7 @@ func (a *SecretsService) PostTransitHash(ctx context.Context, transitHashRequest
 
 // PostTransitHashUrlalgorithm Generate a hash sum for input data
 // urlalgorithm: Algorithm to use (POST URL parameter)
-func (a *SecretsService) PostTransitHashUrlalgorithm(ctx context.Context, urlalgorithm string, transitHashRequest TransitHashRequest) (*http.Response, error) {
+func (a *Secrets) PostTransitHashUrlalgorithm(ctx context.Context, urlalgorithm string, transitHashRequest TransitHashRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -19153,7 +19155,7 @@ func (a *SecretsService) PostTransitHashUrlalgorithm(ctx context.Context, urlalg
 
 // PostTransitHmacName Generate an HMAC for input data using the named key
 // name: The key to use for the HMAC function
-func (a *SecretsService) PostTransitHmacName(ctx context.Context, name string, transitHmacRequest TransitHmacRequest) (*http.Response, error) {
+func (a *Secrets) PostTransitHmacName(ctx context.Context, name string, transitHmacRequest TransitHmacRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -19223,7 +19225,7 @@ func (a *SecretsService) PostTransitHmacName(ctx context.Context, name string, t
 // PostTransitHmacNameUrlalgorithm Generate an HMAC for input data using the named key
 // name: The key to use for the HMAC function
 // urlalgorithm: Algorithm to use (POST URL parameter)
-func (a *SecretsService) PostTransitHmacNameUrlalgorithm(ctx context.Context, name string, urlalgorithm string, transitHmacRequest TransitHmacRequest) (*http.Response, error) {
+func (a *Secrets) PostTransitHmacNameUrlalgorithm(ctx context.Context, name string, urlalgorithm string, transitHmacRequest TransitHmacRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -19293,7 +19295,7 @@ func (a *SecretsService) PostTransitHmacNameUrlalgorithm(ctx context.Context, na
 
 // PostTransitKeysName Managed named encryption keys
 // name: Name of the key
-func (a *SecretsService) PostTransitKeysName(ctx context.Context, name string, transitKeysRequest TransitKeysRequest) (*http.Response, error) {
+func (a *Secrets) PostTransitKeysName(ctx context.Context, name string, transitKeysRequest TransitKeysRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -19362,7 +19364,7 @@ func (a *SecretsService) PostTransitKeysName(ctx context.Context, name string, t
 
 // PostTransitKeysNameConfig Configure a named encryption key
 // name: Name of the key
-func (a *SecretsService) PostTransitKeysNameConfig(ctx context.Context, name string, transitKeysConfigRequest TransitKeysConfigRequest) (*http.Response, error) {
+func (a *Secrets) PostTransitKeysNameConfig(ctx context.Context, name string, transitKeysConfigRequest TransitKeysConfigRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -19431,7 +19433,7 @@ func (a *SecretsService) PostTransitKeysNameConfig(ctx context.Context, name str
 
 // PostTransitKeysNameImport Imports an externally-generated key into a new transit key
 // name: The name of the key
-func (a *SecretsService) PostTransitKeysNameImport(ctx context.Context, name string, transitKeysImportRequest TransitKeysImportRequest) (*http.Response, error) {
+func (a *Secrets) PostTransitKeysNameImport(ctx context.Context, name string, transitKeysImportRequest TransitKeysImportRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -19500,7 +19502,7 @@ func (a *SecretsService) PostTransitKeysNameImport(ctx context.Context, name str
 
 // PostTransitKeysNameImportVersion Imports an externally-generated key into an existing imported key
 // name: The name of the key
-func (a *SecretsService) PostTransitKeysNameImportVersion(ctx context.Context, name string, transitKeysImportVersionRequest TransitKeysImportVersionRequest) (*http.Response, error) {
+func (a *Secrets) PostTransitKeysNameImportVersion(ctx context.Context, name string, transitKeysImportVersionRequest TransitKeysImportVersionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -19569,7 +19571,7 @@ func (a *SecretsService) PostTransitKeysNameImportVersion(ctx context.Context, n
 
 // PostTransitKeysNameRotate Rotate named encryption key
 // name: Name of the key
-func (a *SecretsService) PostTransitKeysNameRotate(ctx context.Context, name string) (*http.Response, error) {
+func (a *Secrets) PostTransitKeysNameRotate(ctx context.Context, name string) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -19636,7 +19638,7 @@ func (a *SecretsService) PostTransitKeysNameRotate(ctx context.Context, name str
 
 // PostTransitKeysNameTrim Trim key versions of a named key
 // name: Name of the key
-func (a *SecretsService) PostTransitKeysNameTrim(ctx context.Context, name string, transitKeysTrimRequest TransitKeysTrimRequest) (*http.Response, error) {
+func (a *Secrets) PostTransitKeysNameTrim(ctx context.Context, name string, transitKeysTrimRequest TransitKeysTrimRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -19704,7 +19706,7 @@ func (a *SecretsService) PostTransitKeysNameTrim(ctx context.Context, name strin
 }
 
 // PostTransitRandom Generate random bytes
-func (a *SecretsService) PostTransitRandom(ctx context.Context, transitRandomRequest TransitRandomRequest) (*http.Response, error) {
+func (a *Secrets) PostTransitRandom(ctx context.Context, transitRandomRequest TransitRandomRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -19772,7 +19774,7 @@ func (a *SecretsService) PostTransitRandom(ctx context.Context, transitRandomReq
 
 // PostTransitRandomSource Generate random bytes
 // source: Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;.
-func (a *SecretsService) PostTransitRandomSource(ctx context.Context, source string, transitRandomRequest TransitRandomRequest) (*http.Response, error) {
+func (a *Secrets) PostTransitRandomSource(ctx context.Context, source string, transitRandomRequest TransitRandomRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -19842,7 +19844,7 @@ func (a *SecretsService) PostTransitRandomSource(ctx context.Context, source str
 // PostTransitRandomSourceUrlbytes Generate random bytes
 // source: Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;.
 // urlbytes: The number of bytes to generate (POST URL parameter)
-func (a *SecretsService) PostTransitRandomSourceUrlbytes(ctx context.Context, source string, urlbytes string, transitRandomRequest TransitRandomRequest) (*http.Response, error) {
+func (a *Secrets) PostTransitRandomSourceUrlbytes(ctx context.Context, source string, urlbytes string, transitRandomRequest TransitRandomRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -19912,7 +19914,7 @@ func (a *SecretsService) PostTransitRandomSourceUrlbytes(ctx context.Context, so
 
 // PostTransitRandomUrlbytes Generate random bytes
 // urlbytes: The number of bytes to generate (POST URL parameter)
-func (a *SecretsService) PostTransitRandomUrlbytes(ctx context.Context, urlbytes string, transitRandomRequest TransitRandomRequest) (*http.Response, error) {
+func (a *Secrets) PostTransitRandomUrlbytes(ctx context.Context, urlbytes string, transitRandomRequest TransitRandomRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -19980,7 +19982,7 @@ func (a *SecretsService) PostTransitRandomUrlbytes(ctx context.Context, urlbytes
 }
 
 // PostTransitRestore Restore the named key
-func (a *SecretsService) PostTransitRestore(ctx context.Context, transitRestoreRequest TransitRestoreRequest) (*http.Response, error) {
+func (a *Secrets) PostTransitRestore(ctx context.Context, transitRestoreRequest TransitRestoreRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -20048,7 +20050,7 @@ func (a *SecretsService) PostTransitRestore(ctx context.Context, transitRestoreR
 
 // PostTransitRestoreName Restore the named key
 // name: If set, this will be the name of the restored key.
-func (a *SecretsService) PostTransitRestoreName(ctx context.Context, name string, transitRestoreRequest TransitRestoreRequest) (*http.Response, error) {
+func (a *Secrets) PostTransitRestoreName(ctx context.Context, name string, transitRestoreRequest TransitRestoreRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -20117,7 +20119,7 @@ func (a *SecretsService) PostTransitRestoreName(ctx context.Context, name string
 
 // PostTransitRewrapName Rewrap ciphertext
 // name: Name of the key
-func (a *SecretsService) PostTransitRewrapName(ctx context.Context, name string, transitRewrapRequest TransitRewrapRequest) (*http.Response, error) {
+func (a *Secrets) PostTransitRewrapName(ctx context.Context, name string, transitRewrapRequest TransitRewrapRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -20186,7 +20188,7 @@ func (a *SecretsService) PostTransitRewrapName(ctx context.Context, name string,
 
 // PostTransitSignName Generate a signature for input data using the named key
 // name: The key to use
-func (a *SecretsService) PostTransitSignName(ctx context.Context, name string, transitSignRequest TransitSignRequest) (*http.Response, error) {
+func (a *Secrets) PostTransitSignName(ctx context.Context, name string, transitSignRequest TransitSignRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -20256,7 +20258,7 @@ func (a *SecretsService) PostTransitSignName(ctx context.Context, name string, t
 // PostTransitSignNameUrlalgorithm Generate a signature for input data using the named key
 // name: The key to use
 // urlalgorithm: Hash algorithm to use (POST URL parameter)
-func (a *SecretsService) PostTransitSignNameUrlalgorithm(ctx context.Context, name string, urlalgorithm string, transitSignRequest TransitSignRequest) (*http.Response, error) {
+func (a *Secrets) PostTransitSignNameUrlalgorithm(ctx context.Context, name string, urlalgorithm string, transitSignRequest TransitSignRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -20326,7 +20328,7 @@ func (a *SecretsService) PostTransitSignNameUrlalgorithm(ctx context.Context, na
 
 // PostTransitVerifyName Verify a signature or HMAC for input data created using the named key
 // name: The key to use
-func (a *SecretsService) PostTransitVerifyName(ctx context.Context, name string, transitVerifyRequest TransitVerifyRequest) (*http.Response, error) {
+func (a *Secrets) PostTransitVerifyName(ctx context.Context, name string, transitVerifyRequest TransitVerifyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}
@@ -20396,7 +20398,7 @@ func (a *SecretsService) PostTransitVerifyName(ctx context.Context, name string,
 // PostTransitVerifyNameUrlalgorithm Verify a signature or HMAC for input data created using the named key
 // name: The key to use
 // urlalgorithm: Hash algorithm to use (POST URL parameter)
-func (a *SecretsService) PostTransitVerifyNameUrlalgorithm(ctx context.Context, name string, urlalgorithm string, transitVerifyRequest TransitVerifyRequest) (*http.Response, error) {
+func (a *Secrets) PostTransitVerifyNameUrlalgorithm(ctx context.Context, name string, urlalgorithm string, transitVerifyRequest TransitVerifyRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

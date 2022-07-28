@@ -40,22 +40,13 @@ var (
 // Client manages communication with the HashiCorp Vault API v1.12.0
 // In most cases there should be only one, shared, Client.
 type Client struct {
-	cfg    *Configuration
-	common service // Reuse a single struct instead of allocating one for each service on the heap.
+	cfg *Configuration
 
-	// API Services
-
-	Auth *AuthService
-
-	Identity *IdentityService
-
-	Secrets *SecretsService
-
-	System *SystemService
-}
-
-type service struct {
-	client *Client
+	// API wrappers
+	Auth     Auth
+	Identity Identity
+	Secrets  Secrets
+	System   System
 }
 
 // NewClient creates a new API client. Requires a userAgent string describing your application.
@@ -66,14 +57,20 @@ func NewClient(cfg *Configuration) *Client {
 	}
 
 	c := &Client{}
-	c.cfg = cfg
-	c.common.client = c
 
-	// API Services
-	c.Auth = (*AuthService)(&c.common)
-	c.Identity = (*IdentityService)(&c.common)
-	c.Secrets = (*SecretsService)(&c.common)
-	c.System = (*SystemService)(&c.common)
+	// API wrappers
+	c.Auth = Auth{
+		client: c,
+	}
+	c.Identity = Identity{
+		client: c,
+	}
+	c.Secrets = Secrets{
+		client: c,
+	}
+	c.System = System{
+		client: c,
+	}
 
 	return c
 }

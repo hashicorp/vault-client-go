@@ -23,7 +23,7 @@ import (
 // Configuration is used to configure the creation of the client
 type Configuration struct {
 	// Address specifies the Vault server URL in the form of scheme://host:port
-	// Default: https://127.0.0.1:8200
+	// Default: http://127.0.0.1:8200
 	Address string
 
 	// HTTPClient is the HTTP client to use for all API requests.
@@ -55,7 +55,7 @@ func DefaultConfiguration() (*Configuration, error) {
 	}
 
 	return &Configuration{
-		Address:    "https://127.0.0.1:8200",
+		Address:    "http://127.0.0.1:8200",
 		HTTPClient: client,
 		Timeout:    60 * time.Second,
 	}, nil

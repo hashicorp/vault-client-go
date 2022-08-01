@@ -58,11 +58,6 @@ func (a *Identity) DeleteIdentityAliasIdId(ctx context.Context, id string) (*htt
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -124,11 +119,6 @@ func (a *Identity) DeleteIdentityEntityAliasIdId(ctx context.Context, id string)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -192,11 +182,6 @@ func (a *Identity) DeleteIdentityEntityIdId(ctx context.Context, id string) (*ht
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -258,11 +243,6 @@ func (a *Identity) DeleteIdentityEntityNameName(ctx context.Context, name string
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -326,11 +306,6 @@ func (a *Identity) DeleteIdentityGroupAliasIdId(ctx context.Context, id string) 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -392,11 +367,6 @@ func (a *Identity) DeleteIdentityGroupIdId(ctx context.Context, id string) (*htt
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -460,11 +430,6 @@ func (a *Identity) DeleteIdentityGroupNameName(ctx context.Context, name string)
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -526,11 +491,6 @@ func (a *Identity) DeleteIdentityMfaLoginEnforcementName(ctx context.Context, na
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -594,11 +554,6 @@ func (a *Identity) DeleteIdentityMfaMethodDuoMethodId(ctx context.Context, metho
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -660,11 +615,6 @@ func (a *Identity) DeleteIdentityMfaMethodOktaMethodId(ctx context.Context, meth
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -728,11 +678,6 @@ func (a *Identity) DeleteIdentityMfaMethodPingidMethodId(ctx context.Context, me
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -794,11 +739,6 @@ func (a *Identity) DeleteIdentityMfaMethodTotpMethodId(ctx context.Context, meth
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -862,11 +802,6 @@ func (a *Identity) DeleteIdentityOidcAssignmentName(ctx context.Context, name st
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -928,11 +863,6 @@ func (a *Identity) DeleteIdentityOidcClientName(ctx context.Context, name string
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -996,11 +926,6 @@ func (a *Identity) DeleteIdentityOidcKeyName(ctx context.Context, name string) (
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1062,11 +987,6 @@ func (a *Identity) DeleteIdentityOidcProviderName(ctx context.Context, name stri
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -1130,11 +1050,6 @@ func (a *Identity) DeleteIdentityOidcRoleName(ctx context.Context, name string) 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1196,11 +1111,6 @@ func (a *Identity) DeleteIdentityOidcScopeName(ctx context.Context, name string)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -1264,11 +1174,6 @@ func (a *Identity) DeleteIdentityPersonaIdId(ctx context.Context, id string) (*h
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1330,11 +1235,6 @@ func (a *Identity) GetIdentityAliasId(ctx context.Context, list string) (*http.R
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -1398,11 +1298,6 @@ func (a *Identity) GetIdentityAliasIdId(ctx context.Context, id string) (*http.R
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1464,11 +1359,6 @@ func (a *Identity) GetIdentityEntityAliasId(ctx context.Context, list string) (*
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -1532,11 +1422,6 @@ func (a *Identity) GetIdentityEntityAliasIdId(ctx context.Context, id string) (*
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1598,11 +1483,6 @@ func (a *Identity) GetIdentityEntityId(ctx context.Context, list string) (*http.
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -1666,11 +1546,6 @@ func (a *Identity) GetIdentityEntityIdId(ctx context.Context, id string) (*http.
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1732,11 +1607,6 @@ func (a *Identity) GetIdentityEntityName(ctx context.Context, list string) (*htt
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -1800,11 +1670,6 @@ func (a *Identity) GetIdentityEntityNameName(ctx context.Context, name string) (
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -1866,11 +1731,6 @@ func (a *Identity) GetIdentityGroupAliasId(ctx context.Context, list string) (*h
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -1934,11 +1794,6 @@ func (a *Identity) GetIdentityGroupAliasIdId(ctx context.Context, id string) (*h
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2000,11 +1855,6 @@ func (a *Identity) GetIdentityGroupId(ctx context.Context, list string) (*http.R
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -2068,11 +1918,6 @@ func (a *Identity) GetIdentityGroupIdId(ctx context.Context, id string) (*http.R
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2134,11 +1979,6 @@ func (a *Identity) GetIdentityGroupName(ctx context.Context, list string) (*http
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -2202,11 +2042,6 @@ func (a *Identity) GetIdentityGroupNameName(ctx context.Context, name string) (*
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2268,11 +2103,6 @@ func (a *Identity) GetIdentityMfaLoginEnforcement(ctx context.Context, list stri
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -2336,11 +2166,6 @@ func (a *Identity) GetIdentityMfaLoginEnforcementName(ctx context.Context, name 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2402,11 +2227,6 @@ func (a *Identity) GetIdentityMfaMethod(ctx context.Context, list string) (*http
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -2470,11 +2290,6 @@ func (a *Identity) GetIdentityMfaMethodDuo(ctx context.Context, list string) (*h
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2536,11 +2351,6 @@ func (a *Identity) GetIdentityMfaMethodDuoMethodId(ctx context.Context, methodId
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -2604,11 +2414,6 @@ func (a *Identity) GetIdentityMfaMethodMethodId(ctx context.Context, methodId st
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2670,11 +2475,6 @@ func (a *Identity) GetIdentityMfaMethodOkta(ctx context.Context, list string) (*
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -2738,11 +2538,6 @@ func (a *Identity) GetIdentityMfaMethodOktaMethodId(ctx context.Context, methodI
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2804,11 +2599,6 @@ func (a *Identity) GetIdentityMfaMethodPingid(ctx context.Context, list string) 
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -2872,11 +2662,6 @@ func (a *Identity) GetIdentityMfaMethodPingidMethodId(ctx context.Context, metho
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -2938,11 +2723,6 @@ func (a *Identity) GetIdentityMfaMethodTotp(ctx context.Context, list string) (*
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -3006,11 +2786,6 @@ func (a *Identity) GetIdentityMfaMethodTotpMethodId(ctx context.Context, methodI
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3072,11 +2847,6 @@ func (a *Identity) GetIdentityOidcAssignment(ctx context.Context, list string) (
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -3140,11 +2910,6 @@ func (a *Identity) GetIdentityOidcAssignmentName(ctx context.Context, name strin
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3206,11 +2971,6 @@ func (a *Identity) GetIdentityOidcClient(ctx context.Context, list string) (*htt
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -3274,11 +3034,6 @@ func (a *Identity) GetIdentityOidcClientName(ctx context.Context, name string) (
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3338,11 +3093,6 @@ func (a *Identity) GetIdentityOidcConfig(ctx context.Context) (*http.Response, e
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -3406,11 +3156,6 @@ func (a *Identity) GetIdentityOidcKey(ctx context.Context, list string) (*http.R
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3472,11 +3217,6 @@ func (a *Identity) GetIdentityOidcKeyName(ctx context.Context, name string) (*ht
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -3540,11 +3280,6 @@ func (a *Identity) GetIdentityOidcProvider(ctx context.Context, list string) (*h
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3606,11 +3341,6 @@ func (a *Identity) GetIdentityOidcProviderName(ctx context.Context, name string)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -3674,11 +3404,6 @@ func (a *Identity) GetIdentityOidcProviderNameAuthorize(ctx context.Context, nam
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3740,11 +3465,6 @@ func (a *Identity) GetIdentityOidcProviderNameUserinfo(ctx context.Context, name
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -3808,11 +3528,6 @@ func (a *Identity) GetIdentityOidcProviderNameWellKnownKeys(ctx context.Context,
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -3874,11 +3589,6 @@ func (a *Identity) GetIdentityOidcProviderNameWellKnownOpenidConfiguration(ctx c
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -3942,11 +3652,6 @@ func (a *Identity) GetIdentityOidcRole(ctx context.Context, list string) (*http.
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -4008,11 +3713,6 @@ func (a *Identity) GetIdentityOidcRoleName(ctx context.Context, name string) (*h
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -4076,11 +3776,6 @@ func (a *Identity) GetIdentityOidcScope(ctx context.Context, list string) (*http
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -4142,11 +3837,6 @@ func (a *Identity) GetIdentityOidcScopeName(ctx context.Context, name string) (*
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -4210,11 +3900,6 @@ func (a *Identity) GetIdentityOidcTokenName(ctx context.Context, name string) (*
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -4275,11 +3960,6 @@ func (a *Identity) GetIdentityOidcWellKnownKeys(ctx context.Context) (*http.Resp
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -4339,11 +4019,6 @@ func (a *Identity) GetIdentityOidcWellKnownOpenidConfiguration(ctx context.Conte
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -4407,11 +4082,6 @@ func (a *Identity) GetIdentityPersonaId(ctx context.Context, list string) (*http
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -4474,11 +4144,6 @@ func (a *Identity) GetIdentityPersonaIdId(ctx context.Context, id string) (*http
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -4538,11 +4203,6 @@ func (a *Identity) PostIdentityAlias(ctx context.Context, identityAliasRequest I
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	// body params
 	localVarPostBody = identityAliasRequest
@@ -4608,11 +4268,6 @@ func (a *Identity) PostIdentityAliasIdId(ctx context.Context, id string, identit
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	// body params
 	localVarPostBody = identityAliasIdRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -4675,11 +4330,6 @@ func (a *Identity) PostIdentityEntity(ctx context.Context, identityEntityRequest
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	// body params
 	localVarPostBody = identityEntityRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -4741,11 +4391,6 @@ func (a *Identity) PostIdentityEntityAlias(ctx context.Context, identityEntityAl
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	// body params
 	localVarPostBody = identityEntityAliasRequest
@@ -4811,11 +4456,6 @@ func (a *Identity) PostIdentityEntityAliasIdId(ctx context.Context, id string, i
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	// body params
 	localVarPostBody = identityEntityAliasIdRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -4877,11 +4517,6 @@ func (a *Identity) PostIdentityEntityBatchDelete(ctx context.Context, identityEn
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	// body params
 	localVarPostBody = identityEntityBatchDeleteRequest
@@ -4947,11 +4582,6 @@ func (a *Identity) PostIdentityEntityIdId(ctx context.Context, id string, identi
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	// body params
 	localVarPostBody = identityEntityIdRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -5013,11 +4643,6 @@ func (a *Identity) PostIdentityEntityMerge(ctx context.Context, identityEntityMe
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	// body params
 	localVarPostBody = identityEntityMergeRequest
@@ -5083,11 +4708,6 @@ func (a *Identity) PostIdentityEntityNameName(ctx context.Context, name string, 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	// body params
 	localVarPostBody = identityEntityNameRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -5150,11 +4770,6 @@ func (a *Identity) PostIdentityGroup(ctx context.Context, identityGroupRequest I
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	// body params
 	localVarPostBody = identityGroupRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -5216,11 +4831,6 @@ func (a *Identity) PostIdentityGroupAlias(ctx context.Context, identityGroupAlia
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	// body params
 	localVarPostBody = identityGroupAliasRequest
@@ -5286,11 +4896,6 @@ func (a *Identity) PostIdentityGroupAliasIdId(ctx context.Context, id string, id
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	// body params
 	localVarPostBody = identityGroupAliasIdRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -5354,11 +4959,6 @@ func (a *Identity) PostIdentityGroupIdId(ctx context.Context, id string, identit
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	// body params
 	localVarPostBody = identityGroupIdRequest
@@ -5424,11 +5024,6 @@ func (a *Identity) PostIdentityGroupNameName(ctx context.Context, name string, i
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	// body params
 	localVarPostBody = identityGroupNameRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -5491,11 +5086,6 @@ func (a *Identity) PostIdentityLookupEntity(ctx context.Context, identityLookupE
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	// body params
 	localVarPostBody = identityLookupEntityRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -5557,11 +5147,6 @@ func (a *Identity) PostIdentityLookupGroup(ctx context.Context, identityLookupGr
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	// body params
 	localVarPostBody = identityLookupGroupRequest
@@ -5627,11 +5212,6 @@ func (a *Identity) PostIdentityMfaLoginEnforcementName(ctx context.Context, name
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	// body params
 	localVarPostBody = identityMfaLoginEnforcementRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -5695,11 +5275,6 @@ func (a *Identity) PostIdentityMfaMethodDuoMethodId(ctx context.Context, methodI
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	// body params
 	localVarPostBody = identityMfaMethodDuoRequest
@@ -5765,11 +5340,6 @@ func (a *Identity) PostIdentityMfaMethodOktaMethodId(ctx context.Context, method
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	// body params
 	localVarPostBody = identityMfaMethodOktaRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -5834,11 +5404,6 @@ func (a *Identity) PostIdentityMfaMethodPingidMethodId(ctx context.Context, meth
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	// body params
 	localVarPostBody = identityMfaMethodPingidRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -5900,11 +5465,6 @@ func (a *Identity) PostIdentityMfaMethodTotpAdminDestroy(ctx context.Context, id
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	// body params
 	localVarPostBody = identityMfaMethodTotpAdminDestroyRequest
@@ -5968,11 +5528,6 @@ func (a *Identity) PostIdentityMfaMethodTotpAdminGenerate(ctx context.Context, i
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	// body params
 	localVarPostBody = identityMfaMethodTotpAdminGenerateRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -6034,11 +5589,6 @@ func (a *Identity) PostIdentityMfaMethodTotpGenerate(ctx context.Context, identi
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	// body params
 	localVarPostBody = identityMfaMethodTotpGenerateRequest
@@ -6104,11 +5654,6 @@ func (a *Identity) PostIdentityMfaMethodTotpMethodId(ctx context.Context, method
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	// body params
 	localVarPostBody = identityMfaMethodTotpRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -6172,11 +5717,6 @@ func (a *Identity) PostIdentityOidcAssignmentName(ctx context.Context, name stri
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	// body params
 	localVarPostBody = identityOidcAssignmentRequest
@@ -6242,11 +5782,6 @@ func (a *Identity) PostIdentityOidcClientName(ctx context.Context, name string, 
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	// body params
 	localVarPostBody = identityOidcClientRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -6309,11 +5844,6 @@ func (a *Identity) PostIdentityOidcConfig(ctx context.Context, identityOidcConfi
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	// body params
 	localVarPostBody = identityOidcConfigRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -6375,11 +5905,6 @@ func (a *Identity) PostIdentityOidcIntrospect(ctx context.Context, identityOidcI
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	// body params
 	localVarPostBody = identityOidcIntrospectRequest
@@ -6445,11 +5970,6 @@ func (a *Identity) PostIdentityOidcKeyName(ctx context.Context, name string, ide
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	// body params
 	localVarPostBody = identityOidcKeyRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -6513,11 +6033,6 @@ func (a *Identity) PostIdentityOidcKeyNameRotate(ctx context.Context, name strin
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	// body params
 	localVarPostBody = identityOidcKeyRotateRequest
@@ -6583,11 +6098,6 @@ func (a *Identity) PostIdentityOidcProviderName(ctx context.Context, name string
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	// body params
 	localVarPostBody = identityOidcProviderRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -6651,11 +6161,6 @@ func (a *Identity) PostIdentityOidcProviderNameAuthorize(ctx context.Context, na
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	// body params
 	localVarPostBody = identityOidcProviderAuthorizeRequest
@@ -6721,11 +6226,6 @@ func (a *Identity) PostIdentityOidcProviderNameToken(ctx context.Context, name s
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	// body params
 	localVarPostBody = identityOidcProviderTokenRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -6790,11 +6290,6 @@ func (a *Identity) PostIdentityOidcProviderNameUserinfo(ctx context.Context, nam
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -6856,11 +6351,6 @@ func (a *Identity) PostIdentityOidcRoleName(ctx context.Context, name string, id
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	// body params
 	localVarPostBody = identityOidcRoleRequest
@@ -6926,11 +6416,6 @@ func (a *Identity) PostIdentityOidcScopeName(ctx context.Context, name string, i
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
 	// body params
 	localVarPostBody = identityOidcScopeRequest
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
@@ -6992,11 +6477,6 @@ func (a *Identity) PostIdentityPersona(ctx context.Context, identityPersonaReque
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	// body params
 	localVarPostBody = identityPersonaRequest
@@ -7061,11 +6541,6 @@ func (a *Identity) PostIdentityPersonaIdId(ctx context.Context, id string, ident
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
 
 	// body params
 	localVarPostBody = identityPersonaIdRequest

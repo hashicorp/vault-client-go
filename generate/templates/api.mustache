@@ -136,80 +136,10 @@ func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}, {{par
 	localVarHeaderParams["{{baseName}}"] = parameterToString({{paramName}}, "{{collectionFormat}}")
 {{/headerParams}}
 
-	// TODO: remove this hack!
-	localVarHeaderParams["X-Vault-Token"] = "dev-only-token"
-	localVarHeaderParams["X-Vault-Request"] = "true"
-	// TODO: remove this hack!
-
-{{#formParams}}
-{{#isFile}}
-	var {{paramName}}LocalVarFormFileName string
-	var {{paramName}}LocalVarFileName     string
-	var {{paramName}}LocalVarFileBytes    []byte
-
-	{{paramName}}LocalVarFormFileName = "{{baseName}}"
-
-{{#required}}
-	{{paramName}}LocalVarFile := *{{paramName}}
-{{/required}}
-{{^required}}
-	var {{paramName}}LocalVarFile {{dataType}}
-	if {{paramName}} != nil {
-		{{paramName}}LocalVarFile = *{{paramName}}
-	}
-{{/required}}
-	if {{paramName}}LocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll({{paramName}}LocalVarFile)
-		{{paramName}}LocalVarFileBytes = fbs
-		{{paramName}}LocalVarFileName = {{paramName}}LocalVarFile.Name()
-		{{paramName}}LocalVarFile.Close()
-	}
-	formFiles = append(formFiles, formFile{fileBytes: {{paramName}}LocalVarFileBytes, fileName: {{paramName}}LocalVarFileName, formFileName: {{paramName}}LocalVarFormFileName})
-{{/isFile}}
-{{^isFile}}
-	localVarFormParams.Add("{{baseName}}", parameterToString({{paramName}}, "{{collectionFormat}}"))
-{{/isFile}}
-{{/formParams}}
 {{#bodyParams}}
 	// body params
 	localVarPostBody = {{paramName}}
 {{/bodyParams}}
-{{#authMethods}}
-{{#isApiKey}}
-{{^isKeyInCookie}}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			{{#vendorExtensions.x-auth-id-alias}}
-			if apiKey, ok := auth["{{.}}"]; ok {
-				var key string
-				if prefix, ok := auth["{{name}}"]; ok && prefix.Prefix != "" {
-					key = prefix.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-			{{/vendorExtensions.x-auth-id-alias}}
-			{{^vendorExtensions.x-auth-id-alias}}
-			if apiKey, ok := auth["{{name}}"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-			{{/vendorExtensions.x-auth-id-alias}}
-				{{#isKeyInHeader}}
-				localVarHeaderParams["{{keyParamName}}"] = key
-				{{/isKeyInHeader}}
-				{{#isKeyInQuery}}
-				localVarQueryParams.Add("{{keyParamName}}", key)
-				{{/isKeyInQuery}}
-			}
-		}
-	}
-{{/isKeyInCookie}}
-{{/isApiKey}}
-{{/authMethods}}
 	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, err

@@ -31,21 +31,21 @@ type {{classname}} struct {
 {{/description}}
 {{/allParams}}
 func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}, {{paramName}} {{{dataType}}}{{/pathParams}}{{#allParams}}{{^isPathParam}}, {{paramName}} {{{dataType}}}{{/isPathParam}}{{/allParams}}) ({{#returnType}}{{^isArray}}{{^returnTypeIsPrimitive}}*{{/returnTypeIsPrimitive}}{{/isArray}}{{{.}}}, {{/returnType}}*http.Response, error) {
-	path := "/v1{{{path}}}"{{#pathParams}}
-	path = strings.Replace(path, "{"+"{{baseName}}"+"}", url.PathEscape(parameterToString({{paramName}}, "{{collectionFormat}}")), -1){{/pathParams}}
+	localVarPath := "/v1{{{path}}}"{{#pathParams}}
+	localVarPath = strings.Replace(path, "{"+"{{baseName}}"+"}", url.PathEscape(parameterToString({{paramName}}, "{{collectionFormat}}")), -1){{/pathParams}}
 
 	{{#queryParams}}
 	// localVarQueryParams.Add("{{baseName}}", parameterToString({{paramName}}, "{{collectionFormat}}"))
 	{{/queryParams}}
 
 {{#bodyParams}}
-	req, err := a.client.prepareRequestWithMarshaler(ctx, http.Method{{httpMethod}}, path, {{paramName}})
+	req, err := a.client.prepareRequestWithMarshaler(ctx, http.Method{{httpMethod}}, localVarPath, {{paramName}})
 	if err != nil {
 		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, err
 	}
 {{/bodyParams}}
 {{^bodyParams}}
-	req, err := a.client.prepareRequest(ctx, http.Method{{httpMethod}}, path, nil)
+	req, err := a.client.prepareRequest(ctx, http.Method{{httpMethod}}, localVarPath, nil)
 	if err != nil {
 		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, err
 	}

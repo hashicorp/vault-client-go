@@ -39,13 +39,13 @@ func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}, {{par
 	{{/queryParams}}
 
 {{#bodyParams}}
-	req, err := a.client.prepareRequestWithMarshaler(ctx, http.Method{{httpMethod}}, localVarPath, {{paramName}})
+	req, err := a.client.NewRequest(ctx, http.Method{{httpMethod}}, localVarPath, {{paramName}})
 	if err != nil {
 		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, err
 	}
 {{/bodyParams}}
 {{^bodyParams}}
-	req, err := a.client.prepareRequest(ctx, http.Method{{httpMethod}}, localVarPath, nil)
+	req, err := a.client.NewBasicRequest(ctx, http.Method{{httpMethod}}, localVarPath, nil)
 	if err != nil {
 		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, err
 	}

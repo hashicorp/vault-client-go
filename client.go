@@ -21,6 +21,7 @@ import (
 	"io/ioutil"
 	"mime/multipart"
 	"net/http"
+	"net/url"
 	"os"
 	"path/filepath"
 	"reflect"
@@ -41,6 +42,8 @@ var (
 type Client struct {
 	configuration Configuration
 
+	address *url.URL
+
 	// API wrappers
 	Auth     Auth
 	Identity Identity
@@ -50,10 +53,17 @@ type Client struct {
 
 // NewClient creates a new API client. Requires a userAgent string describing your application.
 // optionally a custom http.Client to allow for advanced features such as caching.
-func NewClient(configuration Configuration) *Client {
+func NewClient(configuration Configuration) (*Client, error) {
 	c := &Client{
 		configuration: configuration,
 	}
+
+	a, err := url.Parse(configuration.Address)
+	if err != nil {
+		return nil, err
+	}
+
+	c.address = a
 
 	// API wrappers
 	c.Auth = Auth{
@@ -69,7 +79,7 @@ func NewClient(configuration Configuration) *Client {
 		client: c,
 	}
 
-	return c
+	return c, nil
 }
 
 func atoi(in string) (int, error) {
@@ -180,12 +190,13 @@ func (c *Client) prepareRequestWithMarshaler(ctx context.Context, method, path s
 
 // prepareRequest returns a new request with vault-specific headers
 func (c *Client) prepareRequest(ctx context.Context, method, path string, body io.Reader) (*http.Request, error) {
-	// a simple helper to combine url parts
-	url := func(base, path string) string {
-		return fmt.Sprintf("%s/%s", strings.TrimRight(base, "/"), strings.TrimLeft(path, "/"))
+	// this will concatenate the base address with the given path
+	url, err := c.address.Parse(path)
+	if err != nil {
+		return nil, err
 	}
 
-	return http.NewRequestWithContext(ctx, method, url(c.configuration.Address, path), body)
+	return http.NewRequestWithContext(ctx, method, url.String(), body)
 }
 
 func (c *Client) decode(v interface{}, b []byte, contentType string) (err error) {

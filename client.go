@@ -177,19 +177,19 @@ func (c *Client) callAPI(request *http.Request) (*http.Response, error) {
 	return resp, err
 }
 
-// prepareRequestWithMarshaler expects a json.Marshaler request body and returns a new request with vault-specific headers
-func (c *Client) prepareRequestWithMarshaler(ctx context.Context, method, path string, body json.Marshaler) (*http.Request, error) {
+// NewRequest expects json.Marshaler encoded request body and returns a new request with vault-specific headers
+func (c *Client) NewRequest(ctx context.Context, method, path string, body json.Marshaler) (*http.Request, error) {
 	buf := bytes.Buffer{}
 
 	if err := json.NewEncoder(&buf).Encode(body); err != nil {
 		return nil, fmt.Errorf("could not encode request body: %w", err)
 	}
 
-	return c.prepareRequest(ctx, method, path, &buf)
+	return c.NewBasicRequest(ctx, method, path, &buf)
 }
 
-// prepareRequest returns a new request with vault-specific headers
-func (c *Client) prepareRequest(ctx context.Context, method, path string, body io.Reader) (*http.Request, error) {
+// NewBasicRequest returns a new request with vault-specific headers
+func (c *Client) NewBasicRequest(ctx context.Context, method, path string, body io.Reader) (*http.Request, error) {
 	// this will concatenate the base address with the given path
 	url, err := c.address.Parse(path)
 	if err != nil {

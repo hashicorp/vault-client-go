@@ -38,36 +38,8 @@ func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}, {{par
 	// localVarQueryParams.Add("{{baseName}}", parameterToString({{paramName}}, "{{collectionFormat}}"))
 	{{/queryParams}}
 
-<<<<<<< HEAD
 {{#bodyParams}}
 	req, err := a.client.prepareRequestWithMarshaler(ctx, http.Method{{httpMethod}}, localVarPath, {{paramName}})
-=======
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-{{=<% %>=}}
-	localVarHTTPHeaderAccepts := []string{<%#produces%>"<%&mediaType%>"<%^-last%>, <%/-last%><%/produces%>}
-<%={{ }}=%>
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-{{#headerParams}}
-	localVarHeaderParams["{{baseName}}"] = parameterToString({{paramName}}, "{{collectionFormat}}")
-{{/headerParams}}
-
-{{#bodyParams}}
-	// body params
-	localVarPostBody = {{paramName}}
-{{/bodyParams}}
-	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
->>>>>>> main
 	if err != nil {
 		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, err
 	}

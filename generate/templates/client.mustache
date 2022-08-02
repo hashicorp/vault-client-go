@@ -165,16 +165,16 @@ func (c *Client) prepareRequestWithMarshaler(ctx context.Context, method, path s
 	buf := bytes.Buffer{}
 
 	if err := json.NewEncoder(&buf).Encode(body); err != nil {
-		return fmt.Errorf("could not encode request body: %w", err)
+		return nil, fmt.Errorf("could not encode request body: %w", err)
 	}
 
-	return prepareRequest(ctx, method, path, &buf)
+	return c.prepareRequest(ctx, method, path, &buf)
 }
 
 // prepareRequest returns a new request with vault-specific headers
 func (c *Client) prepareRequest(ctx context.Context, method, path string, body io.Reader) (*http.Request, error) {
 	// a simple helper to combine url parts
-	url := func(base, path string) (string, error) {
+	url := func(base, path string) string {
 		return fmt.Sprintf("%s/%s", strings.TrimRight(base, "/"), strings.TrimLeft(path, "/"))
 	}
 

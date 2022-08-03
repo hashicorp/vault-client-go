@@ -34,10 +34,6 @@ func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}, {{par
 	localVarPath := "/v1{{{path}}}"{{#pathParams}}
 	localVarPath = strings.Replace(localVarPath, "{"+"{{baseName}}"+"}", url.PathEscape(parameterToString({{paramName}}, "{{collectionFormat}}")), -1){{/pathParams}}
 
-	{{#queryParams}}
-	// localVarQueryParams.Add("{{baseName}}", parameterToString({{paramName}}, "{{collectionFormat}}"))
-	{{/queryParams}}
-
 {{#bodyParams}}
 	req, err := a.client.NewRequest(ctx, http.Method{{httpMethod}}, localVarPath, {{paramName}})
 	if err != nil {

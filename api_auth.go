@@ -1747,8 +1747,6 @@ func (a *Auth) DeleteAuthUserpassUsersUsername(ctx context.Context, username str
 func (a *Auth) GetAuthAlicloudRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/alicloud/role"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -1816,8 +1814,6 @@ func (a *Auth) GetAuthAlicloudRoleRole(ctx context.Context, role string) (*http.
 func (a *Auth) GetAuthAlicloudRoles(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/alicloud/roles"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -1850,8 +1846,6 @@ func (a *Auth) GetAuthAlicloudRoles(ctx context.Context, list string) (*http.Res
 // list: Return a list if &#x60;true&#x60;
 func (a *Auth) GetAuthAppIdMapAppId(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/app-id/map/app-id"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1920,8 +1914,6 @@ func (a *Auth) GetAuthAppIdMapAppIdKey(ctx context.Context, key string) (*http.R
 func (a *Auth) GetAuthAppIdMapUserId(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/app-id/map/user-id"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -1988,8 +1980,6 @@ func (a *Auth) GetAuthAppIdMapUserIdKey(ctx context.Context, key string) (*http.
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthApproleRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -2263,8 +2253,6 @@ func (a *Auth) GetAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName st
 func (a *Auth) GetAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName string, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/secret-id"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -2571,8 +2559,6 @@ func (a *Auth) GetAuthAwsConfigCertificateCertName(ctx context.Context, certName
 func (a *Auth) GetAuthAwsConfigCertificates(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/config/certificates"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -2669,8 +2655,6 @@ func (a *Auth) GetAuthAwsConfigIdentity(ctx context.Context) (*http.Response, er
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthAwsConfigSts(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/config/sts"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -2867,8 +2851,6 @@ func (a *Auth) GetAuthAwsConfigTidyRoletagDenylist(ctx context.Context) (*http.R
 func (a *Auth) GetAuthAwsIdentityAccesslist(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/identity-accesslist"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -2935,8 +2917,6 @@ func (a *Auth) GetAuthAwsIdentityAccesslistInstanceId(ctx context.Context, insta
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthAwsIdentityWhitelist(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/identity-whitelist"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -3005,8 +2985,6 @@ func (a *Auth) GetAuthAwsIdentityWhitelistInstanceId(ctx context.Context, instan
 func (a *Auth) GetAuthAwsRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/role"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -3074,8 +3052,6 @@ func (a *Auth) GetAuthAwsRoleRole(ctx context.Context, role string) (*http.Respo
 func (a *Auth) GetAuthAwsRoles(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/roles"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -3108,8 +3084,6 @@ func (a *Auth) GetAuthAwsRoles(ctx context.Context, list string) (*http.Response
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthAwsRoletagBlacklist(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/roletag-blacklist"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -3177,8 +3151,6 @@ func (a *Auth) GetAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag st
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthAwsRoletagDenylist(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/roletag-denylist"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -3279,8 +3251,6 @@ func (a *Auth) GetAuthAzureConfig(ctx context.Context) (*http.Response, error) {
 func (a *Auth) GetAuthAzureRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/azure/role"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -3379,8 +3349,6 @@ func (a *Auth) GetAuthCentrifyConfig(ctx context.Context) (*http.Response, error
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthCertCerts(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/cert/certs"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -3515,8 +3483,6 @@ func (a *Auth) GetAuthCfConfig(ctx context.Context) (*http.Response, error) {
 func (a *Auth) GetAuthCfRoles(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/cf/roles"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -3616,8 +3582,6 @@ func (a *Auth) GetAuthGcpConfig(ctx context.Context) (*http.Response, error) {
 func (a *Auth) GetAuthGcpRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/gcp/role"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -3685,8 +3649,6 @@ func (a *Auth) GetAuthGcpRoleName(ctx context.Context, name string) (*http.Respo
 func (a *Auth) GetAuthGcpRoles(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/gcp/roles"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -3751,8 +3713,6 @@ func (a *Auth) GetAuthGithubConfig(ctx context.Context) (*http.Response, error) 
 // list: Return a list if &#x60;true&#x60;
 func (a *Auth) GetAuthGithubMapTeams(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/github/map/teams"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -3820,8 +3780,6 @@ func (a *Auth) GetAuthGithubMapTeamsKey(ctx context.Context, key string) (*http.
 // list: Return a list if &#x60;true&#x60;
 func (a *Auth) GetAuthGithubMapUsers(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/github/map/users"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -3955,8 +3913,6 @@ func (a *Auth) GetAuthJwtOidcCallback(ctx context.Context) (*http.Response, erro
 func (a *Auth) GetAuthJwtRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/jwt/role"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -4087,8 +4043,6 @@ func (a *Auth) GetAuthKerberosConfigLdap(ctx context.Context) (*http.Response, e
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthKerberosGroups(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/kerberos/groups"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -4221,8 +4175,6 @@ func (a *Auth) GetAuthKubernetesConfig(ctx context.Context) (*http.Response, err
 func (a *Auth) GetAuthKubernetesRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/kubernetes/role"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -4322,8 +4274,6 @@ func (a *Auth) GetAuthLdapConfig(ctx context.Context) (*http.Response, error) {
 func (a *Auth) GetAuthLdapGroups(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/ldap/groups"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -4390,8 +4340,6 @@ func (a *Auth) GetAuthLdapGroupsName(ctx context.Context, name string) (*http.Re
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthLdapUsers(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/ldap/users"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -4491,8 +4439,6 @@ func (a *Auth) GetAuthOciConfig(ctx context.Context) (*http.Response, error) {
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthOciRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/oci/role"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -4626,8 +4572,6 @@ func (a *Auth) GetAuthOidcOidcCallback(ctx context.Context) (*http.Response, err
 func (a *Auth) GetAuthOidcRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/oidc/role"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -4727,8 +4671,6 @@ func (a *Auth) GetAuthOktaConfig(ctx context.Context) (*http.Response, error) {
 func (a *Auth) GetAuthOktaGroups(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/okta/groups"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -4795,8 +4737,6 @@ func (a *Auth) GetAuthOktaGroupsName(ctx context.Context, name string) (*http.Re
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthOktaUsers(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/okta/users"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -4931,8 +4871,6 @@ func (a *Auth) GetAuthRadiusConfig(ctx context.Context) (*http.Response, error) 
 func (a *Auth) GetAuthRadiusUsers(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/radius/users"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -4999,8 +4937,6 @@ func (a *Auth) GetAuthRadiusUsersName(ctx context.Context, name string) (*http.R
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthTokenAccessors(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/token/accessors/"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -5099,8 +5035,6 @@ func (a *Auth) GetAuthTokenLookupSelf(ctx context.Context) (*http.Response, erro
 func (a *Auth) GetAuthTokenRoles(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/token/roles"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -5167,8 +5101,6 @@ func (a *Auth) GetAuthTokenRolesRoleName(ctx context.Context, roleName string) (
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthUserpassUsers(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/userpass/users"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {

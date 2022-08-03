@@ -1497,8 +1497,6 @@ func (a *Secrets) GetAdCredsName(ctx context.Context, name string) (*http.Respon
 func (a *Secrets) GetAdLibrary(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/ad/library"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -1599,8 +1597,6 @@ func (a *Secrets) GetAdLibraryNameStatus(ctx context.Context, name string) (*htt
 // list: Must be set to &#x60;true&#x60;
 func (a *Secrets) GetAdRoles(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/ad/roles"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1767,8 +1763,6 @@ func (a *Secrets) GetAlicloudCredsName(ctx context.Context, name string) (*http.
 func (a *Secrets) GetAlicloudRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/alicloud/role"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -1931,8 +1925,6 @@ func (a *Secrets) GetAwsCreds(ctx context.Context) (*http.Response, error) {
 // list: Must be set to &#x60;true&#x60;
 func (a *Secrets) GetAwsRoles(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/aws/roles"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -2101,8 +2093,6 @@ func (a *Secrets) GetAzureCredsRole(ctx context.Context, role string) (*http.Res
 func (a *Secrets) GetAzureRoles(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/azure/roles"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -2236,8 +2226,6 @@ func (a *Secrets) GetConsulCredsRole(ctx context.Context, role string) (*http.Re
 func (a *Secrets) GetConsulRoles(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/consul/roles"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -2306,8 +2294,6 @@ func (a *Secrets) GetConsulRolesName(ctx context.Context, name string) (*http.Re
 func (a *Secrets) GetCubbyholePath(ctx context.Context, path string, list string) (*http.Response, error) {
 	localVarPath := "/v1/cubbyhole/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -2510,8 +2496,6 @@ func (a *Secrets) GetGcpRolesetRolesetToken(ctx context.Context, roleset string)
 func (a *Secrets) GetGcpRolesets(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/gcp/rolesets"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -2647,8 +2631,6 @@ func (a *Secrets) GetGcpStaticAccountNameToken(ctx context.Context, name string)
 func (a *Secrets) GetGcpStaticAccounts(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/gcp/static-accounts"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -2747,8 +2729,6 @@ func (a *Secrets) GetGcpkmsConfig(ctx context.Context) (*http.Response, error) {
 // list: Must be set to &#x60;true&#x60;
 func (a *Secrets) GetGcpkmsKeys(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/gcpkms/keys"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -2917,8 +2897,6 @@ func (a *Secrets) GetKubernetesConfig(ctx context.Context) (*http.Response, erro
 func (a *Secrets) GetKubernetesRoles(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/kubernetes/roles"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -2987,8 +2965,6 @@ func (a *Secrets) GetKubernetesRolesName(ctx context.Context, name string) (*htt
 func (a *Secrets) GetKvPath(ctx context.Context, path string, list string) (*http.Response, error) {
 	localVarPath := "/v1/kv/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -3088,8 +3064,6 @@ func (a *Secrets) GetMongodbatlasCredsName(ctx context.Context, name string) (*h
 // list: Must be set to &#x60;true&#x60;
 func (a *Secrets) GetMongodbatlasRoles(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/mongodbatlas/roles"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -3256,8 +3230,6 @@ func (a *Secrets) GetNomadCredsName(ctx context.Context, name string) (*http.Res
 func (a *Secrets) GetNomadRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/nomad/role"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -3391,8 +3363,6 @@ func (a *Secrets) GetOpenldapCredsName(ctx context.Context, name string) (*http.
 func (a *Secrets) GetOpenldapRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/openldap/role"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -3493,8 +3463,6 @@ func (a *Secrets) GetOpenldapStaticCredName(ctx context.Context, name string) (*
 // list: Must be set to &#x60;true&#x60;
 func (a *Secrets) GetOpenldapStaticRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/openldap/static-role"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -3824,8 +3792,6 @@ func (a *Secrets) GetPkiCertSerialRawPem(ctx context.Context, serial string) (*h
 // list: Must be set to &#x60;true&#x60;
 func (a *Secrets) GetPkiCerts(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/pki/certs"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -4184,8 +4150,6 @@ func (a *Secrets) GetPkiIssuerRefDerPem(ctx context.Context, issuerRef string) (
 func (a *Secrets) GetPkiIssuers(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/pki/issuers"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -4285,8 +4249,6 @@ func (a *Secrets) GetPkiKeyKeyRef(ctx context.Context, keyRef string) (*http.Res
 func (a *Secrets) GetPkiKeys(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/pki/keys"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -4319,8 +4281,6 @@ func (a *Secrets) GetPkiKeys(ctx context.Context, list string) (*http.Response, 
 // list: Must be set to &#x60;true&#x60;
 func (a *Secrets) GetPkiRoles(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/pki/roles"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -4487,8 +4447,6 @@ func (a *Secrets) GetRabbitmqCredsName(ctx context.Context, name string) (*http.
 func (a *Secrets) GetRabbitmqRoles(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/rabbitmq/roles"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -4623,8 +4581,6 @@ func (a *Secrets) GetSecretDataPath(ctx context.Context, path string) (*http.Res
 func (a *Secrets) GetSecretMetadataPath(ctx context.Context, path string, list string) (*http.Response, error) {
 	localVarPath := "/v1/secret/metadata/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -4789,8 +4745,6 @@ func (a *Secrets) GetSshPublicKey(ctx context.Context) (*http.Response, error) {
 func (a *Secrets) GetSshRoles(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/ssh/roles"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -4924,8 +4878,6 @@ func (a *Secrets) GetTerraformCredsName(ctx context.Context, name string) (*http
 func (a *Secrets) GetTerraformRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/terraform/role"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -5026,8 +4978,6 @@ func (a *Secrets) GetTotpCodeName(ctx context.Context, name string) (*http.Respo
 // list: Must be set to &#x60;true&#x60;
 func (a *Secrets) GetTotpKeys(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/totp/keys"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -5235,8 +5185,6 @@ func (a *Secrets) GetTransitExportTypeNameVersion(ctx context.Context, name stri
 // list: Must be set to &#x60;true&#x60;
 func (a *Secrets) GetTransitKeys(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/transit/keys"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {

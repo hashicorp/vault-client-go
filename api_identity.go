@@ -675,8 +675,6 @@ func (a *Identity) DeleteIdentityPersonaIdId(ctx context.Context, id string) (*h
 func (a *Identity) GetIdentityAliasId(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/alias/id"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -743,8 +741,6 @@ func (a *Identity) GetIdentityAliasIdId(ctx context.Context, id string) (*http.R
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityEntityAliasId(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/entity-alias/id"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -813,8 +809,6 @@ func (a *Identity) GetIdentityEntityAliasIdId(ctx context.Context, id string) (*
 func (a *Identity) GetIdentityEntityId(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/entity/id"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -881,8 +875,6 @@ func (a *Identity) GetIdentityEntityIdId(ctx context.Context, id string) (*http.
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityEntityName(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/entity/name"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -951,8 +943,6 @@ func (a *Identity) GetIdentityEntityNameName(ctx context.Context, name string) (
 func (a *Identity) GetIdentityGroupAliasId(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/group-alias/id"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -1019,8 +1009,6 @@ func (a *Identity) GetIdentityGroupAliasIdId(ctx context.Context, id string) (*h
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityGroupId(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/group/id"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1089,8 +1077,6 @@ func (a *Identity) GetIdentityGroupIdId(ctx context.Context, id string) (*http.R
 func (a *Identity) GetIdentityGroupName(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/group/name"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -1157,8 +1143,6 @@ func (a *Identity) GetIdentityGroupNameName(ctx context.Context, name string) (*
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityMfaLoginEnforcement(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/mfa/login-enforcement"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1227,8 +1211,6 @@ func (a *Identity) GetIdentityMfaLoginEnforcementName(ctx context.Context, name 
 func (a *Identity) GetIdentityMfaMethod(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/mfa/method"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -1261,8 +1243,6 @@ func (a *Identity) GetIdentityMfaMethod(ctx context.Context, list string) (*http
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityMfaMethodDuo(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/mfa/method/duo"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1365,8 +1345,6 @@ func (a *Identity) GetIdentityMfaMethodMethodId(ctx context.Context, methodId st
 func (a *Identity) GetIdentityMfaMethodOkta(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/mfa/method/okta"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -1433,8 +1411,6 @@ func (a *Identity) GetIdentityMfaMethodOktaMethodId(ctx context.Context, methodI
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityMfaMethodPingid(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/mfa/method/pingid"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1503,8 +1479,6 @@ func (a *Identity) GetIdentityMfaMethodPingidMethodId(ctx context.Context, metho
 func (a *Identity) GetIdentityMfaMethodTotp(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/mfa/method/totp"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -1572,8 +1546,6 @@ func (a *Identity) GetIdentityMfaMethodTotpMethodId(ctx context.Context, methodI
 func (a *Identity) GetIdentityOidcAssignment(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/oidc/assignment"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -1640,8 +1612,6 @@ func (a *Identity) GetIdentityOidcAssignmentName(ctx context.Context, name strin
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityOidcClient(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/oidc/client"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1742,8 +1712,6 @@ func (a *Identity) GetIdentityOidcConfig(ctx context.Context) (*http.Response, e
 func (a *Identity) GetIdentityOidcKey(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/oidc/key"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -1810,8 +1778,6 @@ func (a *Identity) GetIdentityOidcKeyName(ctx context.Context, name string) (*ht
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityOidcProvider(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/oidc/provider"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -2016,8 +1982,6 @@ func (a *Identity) GetIdentityOidcProviderNameWellKnownOpenidConfiguration(ctx c
 func (a *Identity) GetIdentityOidcRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/oidc/role"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -2084,8 +2048,6 @@ func (a *Identity) GetIdentityOidcRoleName(ctx context.Context, name string) (*h
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityOidcScope(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/oidc/scope"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -2251,8 +2213,6 @@ func (a *Identity) GetIdentityOidcWellKnownOpenidConfiguration(ctx context.Conte
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityPersonaId(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/persona/id"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {

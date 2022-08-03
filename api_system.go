@@ -958,8 +958,6 @@ func (a *System) GetSysConfigStateSanitized(ctx context.Context) (*http.Response
 func (a *System) GetSysConfigUiHeaders(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/sys/config/ui/headers/"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -1799,8 +1797,6 @@ func (a *System) GetSysLeasesCount(ctx context.Context) (*http.Response, error) 
 func (a *System) GetSysLeasesLookup(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/sys/leases/lookup/"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -1836,8 +1832,6 @@ func (a *System) GetSysLeasesLookupPrefix(ctx context.Context, prefix string, li
 	localVarPath := "/v1/sys/leases/lookup/{prefix}"
 	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(prefix, "")), -1)
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -1870,8 +1864,6 @@ func (a *System) GetSysLeasesLookupPrefix(ctx context.Context, prefix string, li
 // format: Format to export metrics into. Currently accepts only \&quot;prometheus\&quot;.
 func (a *System) GetSysMetrics(ctx context.Context, format string) (*http.Response, error) {
 	localVarPath := "/v1/sys/metrics"
-
-	// localVarQueryParams.Add("format", parameterToString(format, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1906,9 +1898,6 @@ func (a *System) GetSysMetrics(ctx context.Context, format string) (*http.Respon
 // logLevel: Log level to view system logs at. Currently supported values are \&quot;trace\&quot;, \&quot;debug\&quot;, \&quot;info\&quot;, \&quot;warn\&quot;, \&quot;error\&quot;.
 func (a *System) GetSysMonitor(ctx context.Context, logFormat string, logLevel string) (*http.Response, error) {
 	localVarPath := "/v1/sys/monitor"
-
-	// localVarQueryParams.Add("log_format", parameterToString(logFormat, ""))
-	// localVarQueryParams.Add("log_level", parameterToString(logLevel, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -2111,8 +2100,6 @@ func (a *System) GetSysPluginsCatalogType(ctx context.Context, type_ string, lis
 	localVarPath := "/v1/sys/plugins/catalog/{type}"
 	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(type_, "")), -1)
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -2182,8 +2169,6 @@ func (a *System) GetSysPluginsCatalogTypeName(ctx context.Context, name string, 
 func (a *System) GetSysPoliciesAcl(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/sys/policies/acl"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -2250,8 +2235,6 @@ func (a *System) GetSysPoliciesAclName(ctx context.Context, name string) (*http.
 // list: Must be set to &#x60;true&#x60;
 func (a *System) GetSysPoliciesPassword(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/sys/policies/password"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -2353,8 +2336,6 @@ func (a *System) GetSysPoliciesPasswordNameGenerate(ctx context.Context, name st
 // list: Return a list if &#x60;true&#x60;
 func (a *System) GetSysPolicy(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/sys/policy"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -2818,8 +2799,6 @@ func (a *System) GetSysQuotasConfig(ctx context.Context) (*http.Response, error)
 func (a *System) GetSysQuotasRateLimit(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/sys/quotas/rate-limit"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -2887,8 +2866,6 @@ func (a *System) GetSysQuotasRateLimitName(ctx context.Context, name string) (*h
 func (a *System) GetSysRaw(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/sys/raw"
 
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
-
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
@@ -2922,8 +2899,6 @@ func (a *System) GetSysRaw(ctx context.Context, list string) (*http.Response, er
 func (a *System) GetSysRawPath(ctx context.Context, path string, list string) (*http.Response, error) {
 	localVarPath := "/v1/sys/raw/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -3215,8 +3190,6 @@ func (a *System) GetSysSealStatus(ctx context.Context) (*http.Response, error) {
 // list: Must be set to &#x60;true&#x60;
 func (a *System) GetSysVersionHistory(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/sys/version-history/"
-
-	// localVarQueryParams.Add("list", parameterToString(list, ""))
 
 	req, err := a.client.NewBasicRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {

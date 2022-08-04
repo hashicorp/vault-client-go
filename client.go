@@ -41,12 +41,11 @@ type Client struct {
 	parsedBaseAddress *url.URL
 
 	// API wrappers
-	Auth Auth
+	Auth     Auth
 	Identity Identity
-	Secrets Secrets
-	System System
+	Secrets  Secrets
+	System   System
 }
-
 
 // NewClient creates a new API client. Requires a userAgent string describing your application.
 // optionally a custom http.Client to allow for advanced features such as caching.
@@ -63,16 +62,16 @@ func NewClient(configuration Configuration) (*Client, error) {
 	c.parsedBaseAddress = a
 
 	// API wrappers
-	c.Auth = Auth {
+	c.Auth = Auth{
 		client: c,
 	}
-	c.Identity = Identity {
+	c.Identity = Identity{
 		client: c,
 	}
-	c.Secrets = Secrets {
+	c.Secrets = Secrets{
 		client: c,
 	}
-	c.System = System {
+	c.System = System{
 		client: c,
 	}
 
@@ -128,7 +127,7 @@ func (c *Client) NewStructuredRequest(ctx context.Context, method, path string, 
 		return c.NewRequestWithContext(ctx, method, path, nil)
 	}
 
-	var buf := bytes.Buffer{}
+	buf := bytes.Buffer{}
 
 	if err := json.NewEncoder(&buf).Encode(body); err != nil {
 		return nil, fmt.Errorf("could not encode request body: %w", err)

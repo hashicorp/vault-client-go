@@ -29,7 +29,7 @@ var (
 type Client struct {
 	configuration Configuration
 
-	address *url.URL
+	parsedBaseAddress *url.URL
 
 	// API wrappers
 {{#apiInfo}}
@@ -49,12 +49,12 @@ func NewClient(configuration Configuration) (*Client, error) {
 		configuration: configuration,
 	}
 
-	a, err := url.Parse(configuration.Address)
+	a, err := url.Parse(configuration.BaseAddress)
 	if err != nil {
 		return nil, err
 	}
 
-	c.address = a
+	c.parsedBaseAddress = a
 
 {{#apiInfo}}
 	// API wrappers
@@ -113,21 +113,25 @@ func (c *Client) callAPI(request *http.Request) (*http.Response, error) {
 	return resp, err
 }
 
-// NewRequest expects json.Marshaler encoded request body and returns a new request with vault-specific headers
-func (c *Client) NewRequest(ctx context.Context, method, path string, body json.Marshaler) (*http.Request, error) {
+// NewStructuredRequest expects json.Marshaler encoded request body and returns a new request with vault-specific headers
+func (c *Client) NewStructuredRequest(ctx context.Context, method, path string, body json.Marshaler) (*http.Request, error) {
+	if body == nil {
+		return c.NewRequestWithContext(ctx, method, path, nil)
+	}
+
 	buf := bytes.Buffer{}
 
 	if err := json.NewEncoder(&buf).Encode(body); err != nil {
 		return nil, fmt.Errorf("could not encode request body: %w", err)
 	}
 
-	return c.NewBasicRequest(ctx, method, path, &buf)
+	return c.NewRequestWithContext(ctx, method, path, &buf)
 }
 
-// NewBasicRequest returns a new request with vault-specific headers
-func (c *Client) NewBasicRequest (ctx context.Context, method, path string, body io.Reader) (*http.Request, error) {
-	// this will concatenate the base address with the given path
-	url, err := c.address.Parse(path)
+// NewRequestWithContext returns a new request with vault-specific headers
+func (c *Client) NewRequestWithContext(ctx context.Context, method, path string, body io.Reader) (*http.Request, error) {
+	// concatenate the base address with the given path
+	url, err := c.parsedBaseAddress.Parse(path)
 	if err != nil {
 		return nil, err
 	}

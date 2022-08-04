@@ -66,13 +66,13 @@ type RetryOptions struct {
 	// Default: retryablehttp.LinearJitterBackoff
 	Backoff retryablehttp.Backoff
 
-	// Logger is a custom retryablehttp.Logger or retryablehttp.LeveledLogger.
-	// Default: nil
-	Logger interface{}
-
 	// ErrorHandler specifies the custom error handler to use if any.
 	// Default: retryablehttp.PassthroughErrorHandler
 	ErrorHandler retryablehttp.ErrorHandler
+
+	// Logger is a custom retryablehttp.Logger or retryablehttp.LeveledLogger.
+	// Default: nil
+	Logger interface{}
 }
 
 // DefaultConfiguration returns the default configuration for the client. It is
@@ -99,8 +99,8 @@ func DefaultConfiguration() (*Configuration, error) {
 			RetryMax:  	  2,
 			CheckRetry:   DefaultRetryPolicy,
 			Backoff: 	  retryablehttp.LinearJitterBackoff,
-			Logger:       nil,
 			ErrorHandler: retryablehttp.PassthroughErrorHandler,
+			Logger:       nil,
 		},
 	}, nil
 }

@@ -11,18 +11,21 @@ API version: 1.12.0
 package vault
 
 import (
+	"context"
 	"crypto/tls"
 	"net/http"
 	"time"
 
 	"github.com/hashicorp/go-cleanhttp"
+	"github.com/hashicorp/go-retryablehttp"
 
 	"golang.org/x/net/http2"
 )
 
 // Configuration is used to configure the creation of the client
 type Configuration struct {
-	// Address specifies the Vault server URL in the form of scheme://host:port
+	// Address specifies the Vault server base address in the form of
+	// scheme://host:port
 	// Default: http://127.0.0.1:8200
 	Address string
 
@@ -33,14 +36,47 @@ type Configuration struct {
 	// rather than starting with an empty client or http.DefaultClient.
 	HTTPClient *http.Client
 
-	// Timeout is the global request timeout. Specifying this value is the
-	// equivalent of using context.WithTimeout(timeout) for every API request.
-	// Default: 60 seconds
-	Timeout time.Duration
+	// RetryOptions are a set of options used to configure the internal
+	// go-retryablehttp client.
+	RetryOptions RetryOptions
+}
+
+type RetryOptions struct {
+	// RetryWaitMin controls the minimum time to wait before retrying when
+	// a 5xx or 412 error occurs.
+	// Default: 1000 milliseconds
+	RetryWaitMin time.Duration
+
+	// MaxRetryWait controls the maximum time to wait before retrying when
+	// a 5xx or 412 error occurs.
+	// Default: 1500 milliseconds
+	RetryWaitMax time.Duration
+
+	// RetryMax controls the maximum number of times to retry when a 5xx or 412
+	// error occurs. Set to 0 to disable retrying.
+	// Default: 2 (for a total of three tries)
+	RetryMax int
+
+	// CheckRetry specifies a policy for handling retries. It is called after
+	// each request with the response and error values returned by the http.Client.
+	// Default: retryablehttp.DefaultRetryPolicy + retry on 412 responses
+	CheckRetry retryablehttp.CheckRetry
+
+	// Backoff specifies a policy for how long to wait between retries.
+	// Default: retryablehttp.LinearJitterBackoff
+	Backoff retryablehttp.Backoff
+
+	// ErrorHandler specifies the custom error handler to use if any.
+	// Default: retryablehttp.PassthroughErrorHandler
+	ErrorHandler retryablehttp.ErrorHandler
+
+	// Logger is a custom retryablehttp.Logger or retryablehttp.LeveledLogger.
+	// Default: nil
+	Logger interface{}
 }
 
 // DefaultConfiguration returns the default configuration for the client. It is
-// safe to modify the return value of this function.
+// recommended to start with this configuration and modify it as needed.
 func DefaultConfiguration() (*Configuration, error) {
 	client := cleanhttp.DefaultPooledClient()
 
@@ -57,6 +93,30 @@ func DefaultConfiguration() (*Configuration, error) {
 	return &Configuration{
 		Address:    "http://127.0.0.1:8200",
 		HTTPClient: client,
-		Timeout:    60 * time.Second,
+		RetryOptions: RetryOptions{
+			RetryWaitMin: time.Millisecond * 1000,
+			RetryWaitMax: time.Millisecond * 1500,
+			RetryMax:     2,
+			CheckRetry:   DefaultRetryPolicy,
+			Backoff:      retryablehttp.LinearJitterBackoff,
+			ErrorHandler: retryablehttp.PassthroughErrorHandler,
+			Logger:       nil,
+		},
 	}, nil
+}
+
+// DefaultRetryPolicy provides a default callback for RetryOptions.CheckRetry.
+// In addition to retryablehttp.DefaultRetryPolicy, it retries on 412 responses,
+// which are returned by Vault when a X-Vault-Index header isn't satisfied.
+func DefaultRetryPolicy(ctx context.Context, resp *http.Response, err error) (bool, error) {
+	retry, err := retryablehttp.DefaultRetryPolicy(ctx, resp, err)
+	if err != nil || retry {
+		return retry, err
+	}
+
+	if resp != nil && resp.StatusCode == http.StatusPreconditionFailed /* 412 */ {
+		return true, nil
+	}
+
+	return false, nil
 }

@@ -31,7 +31,9 @@ var (
 // Client manages communication with the {{appName}} v{{version}}
 // In most cases there should be only one, shared, Client.
 type Client struct {
-	cfg *Configuration
+	configuration Configuration
+
+	address *url.URL
 
 	// API wrappers
 {{#apiInfo}}
@@ -46,12 +48,17 @@ type Client struct {
 
 // NewClient creates a new API client. Requires a userAgent string describing your application.
 // optionally a custom http.Client to allow for advanced features such as caching.
-func NewClient(cfg *Configuration) *Client {
-	if cfg.HTTPClient == nil {
-		cfg.HTTPClient = http.DefaultClient
+func NewClient(configuration Configuration) (*Client, error) {
+	c := &Client{
+		configuration: configuration,
 	}
 
-	c := &Client{}
+	a, err := url.Parse(configuration.Address)
+	if err != nil {
+		return nil, err
+	}
+
+	c.address = a
 
 {{#apiInfo}}
 	// API wrappers
@@ -64,7 +71,7 @@ func NewClient(cfg *Configuration) *Client {
 {{/apis}}
 {{/apiInfo}}
 
-	return c
+	return c, nil
 }
 
 func atoi(in string) (int, error) {
@@ -154,7 +161,7 @@ func parameterToJson(obj interface{}) (string, error) {
 
 // callAPI do the request.
 func (c *Client) callAPI(request *http.Request) (*http.Response, error) {
-	resp, err := c.cfg.HTTPClient.Do(request)
+	resp, err := c.configuration.HTTPClient.Do(request)
 	if err != nil {
 		return resp, err
 	}
@@ -162,140 +169,26 @@ func (c *Client) callAPI(request *http.Request) (*http.Response, error) {
 	return resp, err
 }
 
-// Allow modification of underlying config for alternate implementations and testing
-// Caution: modifying the configuration while live can cause data races and potentially unwanted behavior
-func (c *Client) GetConfig() *Configuration {
-	return c.cfg
+// NewRequest expects json.Marshaler encoded request body and returns a new request with vault-specific headers
+func (c *Client) NewRequest(ctx context.Context, method, path string, body json.Marshaler) (*http.Request, error) {
+	buf := bytes.Buffer{}
+
+	if err := json.NewEncoder(&buf).Encode(body); err != nil {
+		return nil, fmt.Errorf("could not encode request body: %w", err)
+	}
+
+	return c.NewBasicRequest(ctx, method, path, &buf)
 }
 
-type formFile struct {
-		fileBytes []byte
-		fileName string
-		formFileName string
-}
-
-// prepareRequest build the request
-func (c *Client) prepareRequest(
-	ctx context.Context,
-	path string, method string,
-	postBody interface{},
-	headerParams map[string]string,
-	queryParams url.Values,
-	formParams url.Values,
-	formFiles []formFile) (localVarRequest *http.Request, err error) {
-
-	var body *bytes.Buffer
-
-	// Detect postBody type and post.
-	if postBody != nil {
-		contentType := headerParams["Content-Type"]
-		if contentType == "" {
-			contentType = detectContentType(postBody)
-			headerParams["Content-Type"] = contentType
-		}
-
-		body, err = setBody(postBody, contentType)
-		if err != nil {
-			return nil, err
-		}
-	}
-
-	// add form parameters and file if available.
-	if strings.HasPrefix(headerParams["Content-Type"], "multipart/form-data") && len(formParams) > 0 || (len(formFiles) > 0) {
-		if body != nil {
-			return nil, errors.New("Cannot specify postBody and multipart form at the same time.")
-		}
-		body = &bytes.Buffer{}
-		w := multipart.NewWriter(body)
-
-		for k, v := range formParams {
-			for _, iv := range v {
-				if strings.HasPrefix(k, "@") { // file
-					err = addFile(w, k[1:], iv)
-					if err != nil {
-						return nil, err
-					}
-				} else { // form value
-					w.WriteField(k, iv)
-				}
-			}
-		}
-		for _, formFile := range formFiles {
-			if len(formFile.fileBytes) > 0 && formFile.fileName != "" {
-				w.Boundary()
-				part, err := w.CreateFormFile(formFile.formFileName, filepath.Base(formFile.fileName))
-				if err != nil {
-						return nil, err
-				}
-				_, err = part.Write(formFile.fileBytes)
-				if err != nil {
-						return nil, err
-				}
-			}
-		}
-
-		// Set the Boundary in the Content-Type
-		headerParams["Content-Type"] = w.FormDataContentType()
-
-		// Set Content-Length
-		headerParams["Content-Length"] = fmt.Sprintf("%d", body.Len())
-		w.Close()
-	}
-
-	if strings.HasPrefix(headerParams["Content-Type"], "application/x-www-form-urlencoded") && len(formParams) > 0 {
-		if body != nil {
-			return nil, errors.New("Cannot specify postBody and x-www-form-urlencoded form at the same time.")
-		}
-		body = &bytes.Buffer{}
-		body.WriteString(formParams.Encode())
-		// Set Content-Length
-		headerParams["Content-Length"] = fmt.Sprintf("%d", body.Len())
-	}
-
-	// Setup path and query parameters
-	url, err := url.Parse(path)
+// NewBasicRequest returns a new request with vault-specific headers
+func (c *Client) NewBasicRequest (ctx context.Context, method, path string, body io.Reader) (*http.Request, error) {
+	// this will concatenate the base address with the given path
+	url, err := c.address.Parse(path)
 	if err != nil {
 		return nil, err
 	}
 
-	// Adding Query Param
-	query := url.Query()
-	for k, v := range queryParams {
-		for _, iv := range v {
-			query.Add(k, iv)
-		}
-	}
-
-	// Encode the parameters.
-	url.RawQuery = query.Encode()
-
-	// Generate a new request
-	if body != nil {
-		localVarRequest, err = http.NewRequest(method, url.String(), body)
-	} else {
-		localVarRequest, err = http.NewRequest(method, url.String(), nil)
-	}
-	if err != nil {
-		return nil, err
-	}
-
-	// add header parameters, if any
-	if len(headerParams) > 0 {
-		headers := http.Header{}
-		for h, v := range headerParams {
-			headers[h] = []string{v}
-		}
-		localVarRequest.Header = headers
-	}
-
-	// Add the user agent to the request.
-	// localVarRequest.Header.Add("User-Agent", c.cfg.UserAgent)
-
-	if ctx != nil {
-		localVarRequest = localVarRequest.WithContext(ctx)
-	}
-
-	return localVarRequest, nil
+	return http.NewRequestWithContext(ctx, method, url.String(), body)
 }
 
 func (c *Client) decode(v interface{}, b []byte, contentType string) (err error) {

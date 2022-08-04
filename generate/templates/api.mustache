@@ -31,119 +31,21 @@ type {{classname}} struct {
 {{/description}}
 {{/allParams}}
 func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}, {{paramName}} {{{dataType}}}{{/pathParams}}{{#allParams}}{{^isPathParam}}, {{paramName}} {{{dataType}}}{{/isPathParam}}{{/allParams}}) ({{#returnType}}{{^isArray}}{{^returnTypeIsPrimitive}}*{{/returnTypeIsPrimitive}}{{/isArray}}{{{.}}}, {{/returnType}}*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.Method{{httpMethod}}
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		{{#returnType}}
-		localVarReturnValue  {{^isArray}}{{^returnTypeIsPrimitive}}*{{/returnTypeIsPrimitive}}{{/isArray}}{{{.}}}
-		{{/returnType}}
-	)
-
-	localVarPath := a.client.cfg.Address + "/v1{{{path}}}"{{#pathParams}}
+	localVarPath := "/v1{{{path}}}"{{#pathParams}}
 	localVarPath = strings.Replace(localVarPath, "{"+"{{baseName}}"+"}", url.PathEscape(parameterToString({{paramName}}, "{{collectionFormat}}")), -1){{/pathParams}}
 
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-	{{#allParams}}
-	{{#required}}
-	{{#minItems}}
-	if len({{^isPathParam}}*{{/isPathParam}}{{paramName}}) < {{minItems}} {
-		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, reportError("{{paramName}} must have at least {{minItems}} elements")
-	}
-	{{/minItems}}
-	{{#maxItems}}
-	if len({{^isPathParam}}*{{/isPathParam}}{{paramName}}) > {{maxItems}} {
-		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, reportError("{{paramName}} must have less than {{maxItems}} elements")
-	}
-	{{/maxItems}}
-	{{#minLength}}
-	if strlen({{^isPathParam}}*{{/isPathParam}}{{paramName}}) < {{minLength}} {
-		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, reportError("{{paramName}} must have at least {{minLength}} elements")
-	}
-	{{/minLength}}
-	{{#maxLength}}
-	if strlen({{^isPathParam}}*{{/isPathParam}}{{paramName}}) > {{maxLength}} {
-		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, reportError("{{paramName}} must have less than {{maxLength}} elements")
-	}
-	{{/maxLength}}
-	{{#minimum}}
-	{{#isString}}
-	{{paramName}}Txt, err := atoi({{^isPathParam}}*{{/isPathParam}}{{paramName}})
-	if {{paramName}}Txt < {{minimum}} {
-	{{/isString}}
-	{{^isString}}
-	if {{^isPathParam}}*{{/isPathParam}}{{paramName}} < {{minimum}} {
-	{{/isString}}
-		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, reportError("{{paramName}} must be greater than {{minimum}}")
-	}
-	{{/minimum}}
-	{{#maximum}}
-	{{#isString}}
-	{{paramName}}Txt, err := atoi({{^isPathParam}}*{{/isPathParam}}{{paramName}})
-	if {{paramName}}Txt > {{maximum}} {
-	{{/isString}}
-	{{^isString}}
-	if {{^isPathParam}}*{{/isPathParam}}{{paramName}} > {{maximum}} {
-	{{/isString}}
-		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, reportError("{{paramName}} must be less than {{maximum}}")
-	}
-	{{/maximum}}
-	{{/required}}
-	{{/allParams}}
-
-	{{#queryParams}}
-	{{#isCollectionFormatMulti}}
-	{
-		t := *{{paramName}}
-		if reflect.TypeOf(t).Kind() == reflect.Slice {
-			s := reflect.ValueOf(t)
-			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("{{baseName}}", parameterToString(s.Index(i), "{{collectionFormat}}"))
-			}
-		} else {
-			localVarQueryParams.Add("{{baseName}}", parameterToString(t, "{{collectionFormat}}"))
-		}
-	}
-	{{/isCollectionFormatMulti}}
-	{{^isCollectionFormatMulti}}
-	localVarQueryParams.Add("{{baseName}}", parameterToString({{paramName}}, "{{collectionFormat}}"))
-	{{/isCollectionFormatMulti}}
-	{{/queryParams}}
-	// to determine the Content-Type header
-{{=<% %>=}}
-	localVarHTTPContentTypes := []string{<%#consumes%>"<%&mediaType%>"<%^-last%>, <%/-last%><%/consumes%>}
-<%={{ }}=%>
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-{{=<% %>=}}
-	localVarHTTPHeaderAccepts := []string{<%#produces%>"<%&mediaType%>"<%^-last%>, <%/-last%><%/produces%>}
-<%={{ }}=%>
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-{{#headerParams}}
-	localVarHeaderParams["{{baseName}}"] = parameterToString({{paramName}}, "{{collectionFormat}}")
-{{/headerParams}}
-
 {{#bodyParams}}
-	// body params
-	localVarPostBody = {{paramName}}
-{{/bodyParams}}
-	req, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	req, err := a.client.NewRequest(ctx, http.Method{{httpMethod}}, localVarPath, {{paramName}})
 	if err != nil {
 		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, err
 	}
+{{/bodyParams}}
+{{^bodyParams}}
+	req, err := a.client.NewBasicRequest(ctx, http.Method{{httpMethod}}, localVarPath, nil)
+	if err != nil {
+		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, err
+	}
+{{/bodyParams}}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {

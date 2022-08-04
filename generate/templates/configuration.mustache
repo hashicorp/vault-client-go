@@ -87,9 +87,9 @@ func DefaultConfiguration() (*Configuration, error) {
 		RetryOptions: RetryOptions{
 			RetryWaitMin: time.Millisecond * 1000,
 			RetryWaitMax: time.Millisecond * 1500,
-			RetryMax:  	  2,
+			RetryMax:     2,
 			CheckRetry:   DefaultRetryPolicy,
-			Backoff: 	  retryablehttp.LinearJitterBackoff,
+			Backoff:      retryablehttp.LinearJitterBackoff,
 			ErrorHandler: retryablehttp.PassthroughErrorHandler,
 			Logger:       nil,
 		},

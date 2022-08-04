@@ -119,7 +119,7 @@ func (c *Client) NewStructuredRequest(ctx context.Context, method, path string, 
 		return c.NewRequestWithContext(ctx, method, path, nil)
 	}
 
-	var buf := bytes.Buffer{}
+	buf := bytes.Buffer{}
 
 	if err := json.NewEncoder(&buf).Encode(body); err != nil {
 		return nil, fmt.Errorf("could not encode request body: %w", err)

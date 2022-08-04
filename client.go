@@ -41,11 +41,12 @@ type Client struct {
 	parsedBaseAddress *url.URL
 
 	// API wrappers
-	Auth     Auth
+	Auth Auth
 	Identity Identity
-	Secrets  Secrets
-	System   System
+	Secrets Secrets
+	System System
 }
+
 
 // NewClient creates a new API client. Requires a userAgent string describing your application.
 // optionally a custom http.Client to allow for advanced features such as caching.
@@ -62,16 +63,16 @@ func NewClient(configuration Configuration) (*Client, error) {
 	c.parsedBaseAddress = a
 
 	// API wrappers
-	c.Auth = Auth{
+	c.Auth = Auth {
 		client: c,
 	}
-	c.Identity = Identity{
+	c.Identity = Identity {
 		client: c,
 	}
-	c.Secrets = Secrets{
+	c.Secrets = Secrets {
 		client: c,
 	}
-	c.System = System{
+	c.System = System {
 		client: c,
 	}
 
@@ -121,19 +122,23 @@ func (c *Client) callAPI(request *http.Request) (*http.Response, error) {
 	return resp, err
 }
 
-// NewRequest expects json.Marshaler encoded request body and returns a new request with vault-specific headers
-func (c *Client) NewRequest(ctx context.Context, method, path string, body json.Marshaler) (*http.Request, error) {
-	buf := bytes.Buffer{}
+// NewStructuredRequest expects json.Marshaler encoded request body and returns a new request with vault-specific headers
+func (c *Client) NewStructuredRequest(ctx context.Context, method, path string, body json.Marshaler) (*http.Request, error) {
+	if body == nil {
+		return c.NewRequestWithContext(ctx, method, path, nil)
+	}
+
+	var buf := bytes.Buffer{}
 
 	if err := json.NewEncoder(&buf).Encode(body); err != nil {
 		return nil, fmt.Errorf("could not encode request body: %w", err)
 	}
 
-	return c.NewBasicRequest(ctx, method, path, &buf)
+	return c.NewRequestWithContext(ctx, method, path, &buf)
 }
 
-// NewBasicRequest returns a new request with vault-specific headers
-func (c *Client) NewBasicRequest(ctx context.Context, method, path string, body io.Reader) (*http.Request, error) {
+// NewRequestWithContext returns a new request with vault-specific headers
+func (c *Client) NewRequestWithContext(ctx context.Context, method, path string, body io.Reader) (*http.Request, error) {
 	// concatenate the base address with the given path
 	url, err := c.parsedBaseAddress.Parse(path)
 	if err != nil {

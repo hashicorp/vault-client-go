@@ -2,11 +2,13 @@
 package {{packageName}}
 
 import (
+	"context"
 	"crypto/tls"
 	"net/http"
 	"time"
 
 	"github.com/hashicorp/go-cleanhttp"
+	"github.com/hashicorp/go-retryablehttp"
 
 	"golang.org/x/net/http2"
 )

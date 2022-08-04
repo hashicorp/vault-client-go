@@ -38,7 +38,7 @@ var (
 type Client struct {
 	configuration Configuration
 
-	address *url.URL
+	parsedBaseAddress *url.URL
 
 	// API wrappers
 	Auth     Auth
@@ -54,12 +54,12 @@ func NewClient(configuration Configuration) (*Client, error) {
 		configuration: configuration,
 	}
 
-	a, err := url.Parse(configuration.Address)
+	a, err := url.Parse(configuration.BaseAddress)
 	if err != nil {
 		return nil, err
 	}
 
-	c.address = a
+	c.parsedBaseAddress = a
 
 	// API wrappers
 	c.Auth = Auth{
@@ -112,8 +112,8 @@ func parameterToJson(obj interface{}) (string, error) {
 }
 
 // callAPI do the request.
-func (c *Client) callAPI(request *http.Request) (*http.Response, error) {
-	resp, err := c.configuration.HTTPClient.Do(request)
+func (c *Client) Do(req *http.Request, retry bool) (*http.Response, error) {
+	resp, err := c.configuration.HTTPClient.Do(req)
 	if err != nil {
 		return resp, err
 	}
@@ -134,8 +134,8 @@ func (c *Client) NewRequest(ctx context.Context, method, path string, body json.
 
 // NewBasicRequest returns a new request with vault-specific headers
 func (c *Client) NewBasicRequest(ctx context.Context, method, path string, body io.Reader) (*http.Request, error) {
-	// this will concatenate the base address with the given path
-	url, err := c.address.Parse(path)
+	// concatenate the base address with the given path
+	url, err := c.parsedBaseAddress.Parse(path)
 	if err != nil {
 		return nil, err
 	}

@@ -112,8 +112,8 @@ func parameterToJson(obj interface{}) (string, error) {
 }
 
 // callAPI do the request.
-func (c *Client) Do(req *http.Request, retry bool) (*http.Response, error) {
-	resp, err := c.configuration.HTTPClient.Do(req)
+func (c *Client) callAPI(request *http.Request) (*http.Response, error) {
+	resp, err := c.configuration.HTTPClient.Do(request)
 	if err != nil {
 		return resp, err
 	}

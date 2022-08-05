@@ -52,10 +52,10 @@ func NewClient(configuration Configuration) (*Client, error) {
 	c := Client{
 		configuration: configuration,
 
-		// configured or default client
+		// configured or default HTTP client
 		client: configuration.HTTPClient,
 
-		// retryablehttp wrapper
+		// retryablehttp wrapper around the HTTP client
 		clientWithRetries: &retryablehttp.Client{
 			HTTPClient:   configuration.HTTPClient,
 			Logger:       configuration.RetryOptions.Logger,

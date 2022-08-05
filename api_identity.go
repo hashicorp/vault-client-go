@@ -30,12 +30,12 @@ func (a *Identity) DeleteIdentityAliasIdId(ctx context.Context, id string) (*htt
 	localVarPath := "/v1/identity/alias/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -64,12 +64,12 @@ func (a *Identity) DeleteIdentityEntityAliasIdId(ctx context.Context, id string)
 	localVarPath := "/v1/identity/entity-alias/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -98,12 +98,12 @@ func (a *Identity) DeleteIdentityEntityIdId(ctx context.Context, id string) (*ht
 	localVarPath := "/v1/identity/entity/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -132,12 +132,12 @@ func (a *Identity) DeleteIdentityEntityNameName(ctx context.Context, name string
 	localVarPath := "/v1/identity/entity/name/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -166,12 +166,12 @@ func (a *Identity) DeleteIdentityGroupAliasIdId(ctx context.Context, id string) 
 	localVarPath := "/v1/identity/group-alias/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -200,12 +200,12 @@ func (a *Identity) DeleteIdentityGroupIdId(ctx context.Context, id string) (*htt
 	localVarPath := "/v1/identity/group/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -234,12 +234,12 @@ func (a *Identity) DeleteIdentityGroupNameName(ctx context.Context, name string)
 	localVarPath := "/v1/identity/group/name/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -268,12 +268,12 @@ func (a *Identity) DeleteIdentityMfaLoginEnforcementName(ctx context.Context, na
 	localVarPath := "/v1/identity/mfa/login-enforcement/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -302,12 +302,12 @@ func (a *Identity) DeleteIdentityMfaMethodDuoMethodId(ctx context.Context, metho
 	localVarPath := "/v1/identity/mfa/method/duo/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -336,12 +336,12 @@ func (a *Identity) DeleteIdentityMfaMethodOktaMethodId(ctx context.Context, meth
 	localVarPath := "/v1/identity/mfa/method/okta/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -370,12 +370,12 @@ func (a *Identity) DeleteIdentityMfaMethodPingidMethodId(ctx context.Context, me
 	localVarPath := "/v1/identity/mfa/method/pingid/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -404,12 +404,12 @@ func (a *Identity) DeleteIdentityMfaMethodTotpMethodId(ctx context.Context, meth
 	localVarPath := "/v1/identity/mfa/method/totp/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -438,12 +438,12 @@ func (a *Identity) DeleteIdentityOidcAssignmentName(ctx context.Context, name st
 	localVarPath := "/v1/identity/oidc/assignment/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -472,12 +472,12 @@ func (a *Identity) DeleteIdentityOidcClientName(ctx context.Context, name string
 	localVarPath := "/v1/identity/oidc/client/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -506,12 +506,12 @@ func (a *Identity) DeleteIdentityOidcKeyName(ctx context.Context, name string) (
 	localVarPath := "/v1/identity/oidc/key/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -540,12 +540,12 @@ func (a *Identity) DeleteIdentityOidcProviderName(ctx context.Context, name stri
 	localVarPath := "/v1/identity/oidc/provider/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -574,12 +574,12 @@ func (a *Identity) DeleteIdentityOidcRoleName(ctx context.Context, name string) 
 	localVarPath := "/v1/identity/oidc/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -608,12 +608,12 @@ func (a *Identity) DeleteIdentityOidcScopeName(ctx context.Context, name string)
 	localVarPath := "/v1/identity/oidc/scope/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -642,12 +642,12 @@ func (a *Identity) DeleteIdentityPersonaIdId(ctx context.Context, id string) (*h
 	localVarPath := "/v1/identity/persona/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -675,12 +675,12 @@ func (a *Identity) DeleteIdentityPersonaIdId(ctx context.Context, id string) (*h
 func (a *Identity) GetIdentityAliasId(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/alias/id"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -709,12 +709,12 @@ func (a *Identity) GetIdentityAliasIdId(ctx context.Context, id string) (*http.R
 	localVarPath := "/v1/identity/alias/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -742,12 +742,12 @@ func (a *Identity) GetIdentityAliasIdId(ctx context.Context, id string) (*http.R
 func (a *Identity) GetIdentityEntityAliasId(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/entity-alias/id"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -776,12 +776,12 @@ func (a *Identity) GetIdentityEntityAliasIdId(ctx context.Context, id string) (*
 	localVarPath := "/v1/identity/entity-alias/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -809,12 +809,12 @@ func (a *Identity) GetIdentityEntityAliasIdId(ctx context.Context, id string) (*
 func (a *Identity) GetIdentityEntityId(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/entity/id"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -843,12 +843,12 @@ func (a *Identity) GetIdentityEntityIdId(ctx context.Context, id string) (*http.
 	localVarPath := "/v1/identity/entity/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -876,12 +876,12 @@ func (a *Identity) GetIdentityEntityIdId(ctx context.Context, id string) (*http.
 func (a *Identity) GetIdentityEntityName(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/entity/name"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -910,12 +910,12 @@ func (a *Identity) GetIdentityEntityNameName(ctx context.Context, name string) (
 	localVarPath := "/v1/identity/entity/name/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -943,12 +943,12 @@ func (a *Identity) GetIdentityEntityNameName(ctx context.Context, name string) (
 func (a *Identity) GetIdentityGroupAliasId(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/group-alias/id"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -977,12 +977,12 @@ func (a *Identity) GetIdentityGroupAliasIdId(ctx context.Context, id string) (*h
 	localVarPath := "/v1/identity/group-alias/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1010,12 +1010,12 @@ func (a *Identity) GetIdentityGroupAliasIdId(ctx context.Context, id string) (*h
 func (a *Identity) GetIdentityGroupId(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/group/id"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1044,12 +1044,12 @@ func (a *Identity) GetIdentityGroupIdId(ctx context.Context, id string) (*http.R
 	localVarPath := "/v1/identity/group/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1077,12 +1077,12 @@ func (a *Identity) GetIdentityGroupIdId(ctx context.Context, id string) (*http.R
 func (a *Identity) GetIdentityGroupName(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/group/name"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1111,12 +1111,12 @@ func (a *Identity) GetIdentityGroupNameName(ctx context.Context, name string) (*
 	localVarPath := "/v1/identity/group/name/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1144,12 +1144,12 @@ func (a *Identity) GetIdentityGroupNameName(ctx context.Context, name string) (*
 func (a *Identity) GetIdentityMfaLoginEnforcement(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/mfa/login-enforcement"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1178,12 +1178,12 @@ func (a *Identity) GetIdentityMfaLoginEnforcementName(ctx context.Context, name 
 	localVarPath := "/v1/identity/mfa/login-enforcement/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1211,12 +1211,12 @@ func (a *Identity) GetIdentityMfaLoginEnforcementName(ctx context.Context, name 
 func (a *Identity) GetIdentityMfaMethod(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/mfa/method"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1244,12 +1244,12 @@ func (a *Identity) GetIdentityMfaMethod(ctx context.Context, list string) (*http
 func (a *Identity) GetIdentityMfaMethodDuo(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/mfa/method/duo"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1278,12 +1278,12 @@ func (a *Identity) GetIdentityMfaMethodDuoMethodId(ctx context.Context, methodId
 	localVarPath := "/v1/identity/mfa/method/duo/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1312,12 +1312,12 @@ func (a *Identity) GetIdentityMfaMethodMethodId(ctx context.Context, methodId st
 	localVarPath := "/v1/identity/mfa/method/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1345,12 +1345,12 @@ func (a *Identity) GetIdentityMfaMethodMethodId(ctx context.Context, methodId st
 func (a *Identity) GetIdentityMfaMethodOkta(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/mfa/method/okta"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1379,12 +1379,12 @@ func (a *Identity) GetIdentityMfaMethodOktaMethodId(ctx context.Context, methodI
 	localVarPath := "/v1/identity/mfa/method/okta/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1412,12 +1412,12 @@ func (a *Identity) GetIdentityMfaMethodOktaMethodId(ctx context.Context, methodI
 func (a *Identity) GetIdentityMfaMethodPingid(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/mfa/method/pingid"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1446,12 +1446,12 @@ func (a *Identity) GetIdentityMfaMethodPingidMethodId(ctx context.Context, metho
 	localVarPath := "/v1/identity/mfa/method/pingid/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1479,12 +1479,12 @@ func (a *Identity) GetIdentityMfaMethodPingidMethodId(ctx context.Context, metho
 func (a *Identity) GetIdentityMfaMethodTotp(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/mfa/method/totp"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1513,12 +1513,12 @@ func (a *Identity) GetIdentityMfaMethodTotpMethodId(ctx context.Context, methodI
 	localVarPath := "/v1/identity/mfa/method/totp/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1546,12 +1546,12 @@ func (a *Identity) GetIdentityMfaMethodTotpMethodId(ctx context.Context, methodI
 func (a *Identity) GetIdentityOidcAssignment(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/oidc/assignment"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1580,12 +1580,12 @@ func (a *Identity) GetIdentityOidcAssignmentName(ctx context.Context, name strin
 	localVarPath := "/v1/identity/oidc/assignment/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1613,12 +1613,12 @@ func (a *Identity) GetIdentityOidcAssignmentName(ctx context.Context, name strin
 func (a *Identity) GetIdentityOidcClient(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/oidc/client"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1647,12 +1647,12 @@ func (a *Identity) GetIdentityOidcClientName(ctx context.Context, name string) (
 	localVarPath := "/v1/identity/oidc/client/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1679,12 +1679,12 @@ func (a *Identity) GetIdentityOidcClientName(ctx context.Context, name string) (
 func (a *Identity) GetIdentityOidcConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/identity/oidc/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1712,12 +1712,12 @@ func (a *Identity) GetIdentityOidcConfig(ctx context.Context) (*http.Response, e
 func (a *Identity) GetIdentityOidcKey(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/oidc/key"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1746,12 +1746,12 @@ func (a *Identity) GetIdentityOidcKeyName(ctx context.Context, name string) (*ht
 	localVarPath := "/v1/identity/oidc/key/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1779,12 +1779,12 @@ func (a *Identity) GetIdentityOidcKeyName(ctx context.Context, name string) (*ht
 func (a *Identity) GetIdentityOidcProvider(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/oidc/provider"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1813,12 +1813,12 @@ func (a *Identity) GetIdentityOidcProviderName(ctx context.Context, name string)
 	localVarPath := "/v1/identity/oidc/provider/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1847,12 +1847,12 @@ func (a *Identity) GetIdentityOidcProviderNameAuthorize(ctx context.Context, nam
 	localVarPath := "/v1/identity/oidc/provider/{name}/authorize"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1881,12 +1881,12 @@ func (a *Identity) GetIdentityOidcProviderNameUserinfo(ctx context.Context, name
 	localVarPath := "/v1/identity/oidc/provider/{name}/userinfo"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1915,12 +1915,12 @@ func (a *Identity) GetIdentityOidcProviderNameWellKnownKeys(ctx context.Context,
 	localVarPath := "/v1/identity/oidc/provider/{name}/.well-known/keys"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1949,12 +1949,12 @@ func (a *Identity) GetIdentityOidcProviderNameWellKnownOpenidConfiguration(ctx c
 	localVarPath := "/v1/identity/oidc/provider/{name}/.well-known/openid-configuration"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1982,12 +1982,12 @@ func (a *Identity) GetIdentityOidcProviderNameWellKnownOpenidConfiguration(ctx c
 func (a *Identity) GetIdentityOidcRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/oidc/role"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2016,12 +2016,12 @@ func (a *Identity) GetIdentityOidcRoleName(ctx context.Context, name string) (*h
 	localVarPath := "/v1/identity/oidc/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2049,12 +2049,12 @@ func (a *Identity) GetIdentityOidcRoleName(ctx context.Context, name string) (*h
 func (a *Identity) GetIdentityOidcScope(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/oidc/scope"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2083,12 +2083,12 @@ func (a *Identity) GetIdentityOidcScopeName(ctx context.Context, name string) (*
 	localVarPath := "/v1/identity/oidc/scope/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2117,12 +2117,12 @@ func (a *Identity) GetIdentityOidcTokenName(ctx context.Context, name string) (*
 	localVarPath := "/v1/identity/oidc/token/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2149,12 +2149,12 @@ func (a *Identity) GetIdentityOidcTokenName(ctx context.Context, name string) (*
 func (a *Identity) GetIdentityOidcWellKnownKeys(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/identity/oidc/.well-known/keys"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2181,12 +2181,12 @@ func (a *Identity) GetIdentityOidcWellKnownKeys(ctx context.Context) (*http.Resp
 func (a *Identity) GetIdentityOidcWellKnownOpenidConfiguration(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/identity/oidc/.well-known/openid-configuration"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2214,12 +2214,12 @@ func (a *Identity) GetIdentityOidcWellKnownOpenidConfiguration(ctx context.Conte
 func (a *Identity) GetIdentityPersonaId(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/identity/persona/id"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2248,12 +2248,12 @@ func (a *Identity) GetIdentityPersonaIdId(ctx context.Context, id string) (*http
 	localVarPath := "/v1/identity/persona/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2280,12 +2280,12 @@ func (a *Identity) GetIdentityPersonaIdId(ctx context.Context, id string) (*http
 func (a *Identity) PostIdentityAlias(ctx context.Context, identityAliasRequest IdentityAliasRequest) (*http.Response, error) {
 	localVarPath := "/v1/identity/alias"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityAliasRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityAliasRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2314,12 +2314,12 @@ func (a *Identity) PostIdentityAliasIdId(ctx context.Context, id string, identit
 	localVarPath := "/v1/identity/alias/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityAliasIdRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityAliasIdRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2346,12 +2346,12 @@ func (a *Identity) PostIdentityAliasIdId(ctx context.Context, id string, identit
 func (a *Identity) PostIdentityEntity(ctx context.Context, identityEntityRequest IdentityEntityRequest) (*http.Response, error) {
 	localVarPath := "/v1/identity/entity"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityEntityRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityEntityRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2378,12 +2378,12 @@ func (a *Identity) PostIdentityEntity(ctx context.Context, identityEntityRequest
 func (a *Identity) PostIdentityEntityAlias(ctx context.Context, identityEntityAliasRequest IdentityEntityAliasRequest) (*http.Response, error) {
 	localVarPath := "/v1/identity/entity-alias"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityEntityAliasRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityEntityAliasRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2412,12 +2412,12 @@ func (a *Identity) PostIdentityEntityAliasIdId(ctx context.Context, id string, i
 	localVarPath := "/v1/identity/entity-alias/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityEntityAliasIdRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityEntityAliasIdRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2444,12 +2444,12 @@ func (a *Identity) PostIdentityEntityAliasIdId(ctx context.Context, id string, i
 func (a *Identity) PostIdentityEntityBatchDelete(ctx context.Context, identityEntityBatchDeleteRequest IdentityEntityBatchDeleteRequest) (*http.Response, error) {
 	localVarPath := "/v1/identity/entity/batch-delete"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityEntityBatchDeleteRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityEntityBatchDeleteRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2478,12 +2478,12 @@ func (a *Identity) PostIdentityEntityIdId(ctx context.Context, id string, identi
 	localVarPath := "/v1/identity/entity/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityEntityIdRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityEntityIdRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2510,12 +2510,12 @@ func (a *Identity) PostIdentityEntityIdId(ctx context.Context, id string, identi
 func (a *Identity) PostIdentityEntityMerge(ctx context.Context, identityEntityMergeRequest IdentityEntityMergeRequest) (*http.Response, error) {
 	localVarPath := "/v1/identity/entity/merge"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityEntityMergeRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityEntityMergeRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2544,12 +2544,12 @@ func (a *Identity) PostIdentityEntityNameName(ctx context.Context, name string, 
 	localVarPath := "/v1/identity/entity/name/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityEntityNameRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityEntityNameRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2576,12 +2576,12 @@ func (a *Identity) PostIdentityEntityNameName(ctx context.Context, name string, 
 func (a *Identity) PostIdentityGroup(ctx context.Context, identityGroupRequest IdentityGroupRequest) (*http.Response, error) {
 	localVarPath := "/v1/identity/group"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityGroupRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityGroupRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2608,12 +2608,12 @@ func (a *Identity) PostIdentityGroup(ctx context.Context, identityGroupRequest I
 func (a *Identity) PostIdentityGroupAlias(ctx context.Context, identityGroupAliasRequest IdentityGroupAliasRequest) (*http.Response, error) {
 	localVarPath := "/v1/identity/group-alias"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityGroupAliasRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityGroupAliasRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2642,12 +2642,12 @@ func (a *Identity) PostIdentityGroupAliasIdId(ctx context.Context, id string, id
 	localVarPath := "/v1/identity/group-alias/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityGroupAliasIdRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityGroupAliasIdRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2676,12 +2676,12 @@ func (a *Identity) PostIdentityGroupIdId(ctx context.Context, id string, identit
 	localVarPath := "/v1/identity/group/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityGroupIdRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityGroupIdRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2710,12 +2710,12 @@ func (a *Identity) PostIdentityGroupNameName(ctx context.Context, name string, i
 	localVarPath := "/v1/identity/group/name/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityGroupNameRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityGroupNameRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2742,12 +2742,12 @@ func (a *Identity) PostIdentityGroupNameName(ctx context.Context, name string, i
 func (a *Identity) PostIdentityLookupEntity(ctx context.Context, identityLookupEntityRequest IdentityLookupEntityRequest) (*http.Response, error) {
 	localVarPath := "/v1/identity/lookup/entity"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityLookupEntityRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityLookupEntityRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2774,12 +2774,12 @@ func (a *Identity) PostIdentityLookupEntity(ctx context.Context, identityLookupE
 func (a *Identity) PostIdentityLookupGroup(ctx context.Context, identityLookupGroupRequest IdentityLookupGroupRequest) (*http.Response, error) {
 	localVarPath := "/v1/identity/lookup/group"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityLookupGroupRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityLookupGroupRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2808,12 +2808,12 @@ func (a *Identity) PostIdentityMfaLoginEnforcementName(ctx context.Context, name
 	localVarPath := "/v1/identity/mfa/login-enforcement/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityMfaLoginEnforcementRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityMfaLoginEnforcementRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2842,12 +2842,12 @@ func (a *Identity) PostIdentityMfaMethodDuoMethodId(ctx context.Context, methodI
 	localVarPath := "/v1/identity/mfa/method/duo/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityMfaMethodDuoRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityMfaMethodDuoRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2876,12 +2876,12 @@ func (a *Identity) PostIdentityMfaMethodOktaMethodId(ctx context.Context, method
 	localVarPath := "/v1/identity/mfa/method/okta/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityMfaMethodOktaRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityMfaMethodOktaRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2910,12 +2910,12 @@ func (a *Identity) PostIdentityMfaMethodPingidMethodId(ctx context.Context, meth
 	localVarPath := "/v1/identity/mfa/method/pingid/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityMfaMethodPingidRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityMfaMethodPingidRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2942,12 +2942,12 @@ func (a *Identity) PostIdentityMfaMethodPingidMethodId(ctx context.Context, meth
 func (a *Identity) PostIdentityMfaMethodTotpAdminDestroy(ctx context.Context, identityMfaMethodTotpAdminDestroyRequest IdentityMfaMethodTotpAdminDestroyRequest) (*http.Response, error) {
 	localVarPath := "/v1/identity/mfa/method/totp/admin-destroy"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityMfaMethodTotpAdminDestroyRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityMfaMethodTotpAdminDestroyRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2974,12 +2974,12 @@ func (a *Identity) PostIdentityMfaMethodTotpAdminDestroy(ctx context.Context, id
 func (a *Identity) PostIdentityMfaMethodTotpAdminGenerate(ctx context.Context, identityMfaMethodTotpAdminGenerateRequest IdentityMfaMethodTotpAdminGenerateRequest) (*http.Response, error) {
 	localVarPath := "/v1/identity/mfa/method/totp/admin-generate"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityMfaMethodTotpAdminGenerateRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityMfaMethodTotpAdminGenerateRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3006,12 +3006,12 @@ func (a *Identity) PostIdentityMfaMethodTotpAdminGenerate(ctx context.Context, i
 func (a *Identity) PostIdentityMfaMethodTotpGenerate(ctx context.Context, identityMfaMethodTotpGenerateRequest IdentityMfaMethodTotpGenerateRequest) (*http.Response, error) {
 	localVarPath := "/v1/identity/mfa/method/totp/generate"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityMfaMethodTotpGenerateRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityMfaMethodTotpGenerateRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3040,12 +3040,12 @@ func (a *Identity) PostIdentityMfaMethodTotpMethodId(ctx context.Context, method
 	localVarPath := "/v1/identity/mfa/method/totp/{method_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(parameterToString(methodId, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityMfaMethodTotpRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityMfaMethodTotpRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3074,12 +3074,12 @@ func (a *Identity) PostIdentityOidcAssignmentName(ctx context.Context, name stri
 	localVarPath := "/v1/identity/oidc/assignment/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityOidcAssignmentRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityOidcAssignmentRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3108,12 +3108,12 @@ func (a *Identity) PostIdentityOidcClientName(ctx context.Context, name string, 
 	localVarPath := "/v1/identity/oidc/client/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityOidcClientRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityOidcClientRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3140,12 +3140,12 @@ func (a *Identity) PostIdentityOidcClientName(ctx context.Context, name string, 
 func (a *Identity) PostIdentityOidcConfig(ctx context.Context, identityOidcConfigRequest IdentityOidcConfigRequest) (*http.Response, error) {
 	localVarPath := "/v1/identity/oidc/config"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityOidcConfigRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityOidcConfigRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3172,12 +3172,12 @@ func (a *Identity) PostIdentityOidcConfig(ctx context.Context, identityOidcConfi
 func (a *Identity) PostIdentityOidcIntrospect(ctx context.Context, identityOidcIntrospectRequest IdentityOidcIntrospectRequest) (*http.Response, error) {
 	localVarPath := "/v1/identity/oidc/introspect"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityOidcIntrospectRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityOidcIntrospectRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3206,12 +3206,12 @@ func (a *Identity) PostIdentityOidcKeyName(ctx context.Context, name string, ide
 	localVarPath := "/v1/identity/oidc/key/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityOidcKeyRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityOidcKeyRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3240,12 +3240,12 @@ func (a *Identity) PostIdentityOidcKeyNameRotate(ctx context.Context, name strin
 	localVarPath := "/v1/identity/oidc/key/{name}/rotate"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityOidcKeyRotateRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityOidcKeyRotateRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3274,12 +3274,12 @@ func (a *Identity) PostIdentityOidcProviderName(ctx context.Context, name string
 	localVarPath := "/v1/identity/oidc/provider/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityOidcProviderRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityOidcProviderRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3308,12 +3308,12 @@ func (a *Identity) PostIdentityOidcProviderNameAuthorize(ctx context.Context, na
 	localVarPath := "/v1/identity/oidc/provider/{name}/authorize"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityOidcProviderAuthorizeRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityOidcProviderAuthorizeRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3342,12 +3342,12 @@ func (a *Identity) PostIdentityOidcProviderNameToken(ctx context.Context, name s
 	localVarPath := "/v1/identity/oidc/provider/{name}/token"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityOidcProviderTokenRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityOidcProviderTokenRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3376,12 +3376,12 @@ func (a *Identity) PostIdentityOidcProviderNameUserinfo(ctx context.Context, nam
 	localVarPath := "/v1/identity/oidc/provider/{name}/userinfo"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3410,12 +3410,12 @@ func (a *Identity) PostIdentityOidcRoleName(ctx context.Context, name string, id
 	localVarPath := "/v1/identity/oidc/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityOidcRoleRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityOidcRoleRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3444,12 +3444,12 @@ func (a *Identity) PostIdentityOidcScopeName(ctx context.Context, name string, i
 	localVarPath := "/v1/identity/oidc/scope/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityOidcScopeRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityOidcScopeRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3476,12 +3476,12 @@ func (a *Identity) PostIdentityOidcScopeName(ctx context.Context, name string, i
 func (a *Identity) PostIdentityPersona(ctx context.Context, identityPersonaRequest IdentityPersonaRequest) (*http.Response, error) {
 	localVarPath := "/v1/identity/persona"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityPersonaRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityPersonaRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3510,12 +3510,12 @@ func (a *Identity) PostIdentityPersonaIdId(ctx context.Context, id string, ident
 	localVarPath := "/v1/identity/persona/id/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(id, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, identityPersonaIdRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityPersonaIdRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}

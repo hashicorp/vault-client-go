@@ -30,12 +30,12 @@ func (a *System) DeleteSysAuditPath(ctx context.Context, path string) (*http.Res
 	localVarPath := "/v1/sys/audit/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -64,12 +64,12 @@ func (a *System) DeleteSysAuthPath(ctx context.Context, path string) (*http.Resp
 	localVarPath := "/v1/sys/auth/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -97,12 +97,12 @@ func (a *System) DeleteSysConfigAuditingRequestHeadersHeader(ctx context.Context
 	localVarPath := "/v1/sys/config/auditing/request-headers/{header}"
 	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -129,12 +129,12 @@ func (a *System) DeleteSysConfigAuditingRequestHeadersHeader(ctx context.Context
 func (a *System) DeleteSysConfigCors(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/config/cors"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -163,12 +163,12 @@ func (a *System) DeleteSysConfigUiHeadersHeader(ctx context.Context, header stri
 	localVarPath := "/v1/sys/config/ui/headers/{header}"
 	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -195,12 +195,12 @@ func (a *System) DeleteSysConfigUiHeadersHeader(ctx context.Context, header stri
 func (a *System) DeleteSysGenerateRoot(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/generate-root"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -227,12 +227,12 @@ func (a *System) DeleteSysGenerateRoot(ctx context.Context) (*http.Response, err
 func (a *System) DeleteSysGenerateRootAttempt(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/generate-root/attempt"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -261,12 +261,12 @@ func (a *System) DeleteSysMountsPath(ctx context.Context, path string) (*http.Re
 	localVarPath := "/v1/sys/mounts/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -295,12 +295,12 @@ func (a *System) DeleteSysPluginsCatalogName(ctx context.Context, name string) (
 	localVarPath := "/v1/sys/plugins/catalog/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -331,12 +331,12 @@ func (a *System) DeleteSysPluginsCatalogTypeName(ctx context.Context, name strin
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(type_, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -365,12 +365,12 @@ func (a *System) DeleteSysPoliciesAclName(ctx context.Context, name string) (*ht
 	localVarPath := "/v1/sys/policies/acl/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -399,12 +399,12 @@ func (a *System) DeleteSysPoliciesPasswordName(ctx context.Context, name string)
 	localVarPath := "/v1/sys/policies/password/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -433,12 +433,12 @@ func (a *System) DeleteSysPolicyName(ctx context.Context, name string) (*http.Re
 	localVarPath := "/v1/sys/policy/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -467,12 +467,12 @@ func (a *System) DeleteSysQuotasRateLimitName(ctx context.Context, name string) 
 	localVarPath := "/v1/sys/quotas/rate-limit/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -499,12 +499,12 @@ func (a *System) DeleteSysQuotasRateLimitName(ctx context.Context, name string) 
 func (a *System) DeleteSysRaw(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/raw"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -532,12 +532,12 @@ func (a *System) DeleteSysRawPath(ctx context.Context, path string) (*http.Respo
 	localVarPath := "/v1/sys/raw/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -564,12 +564,12 @@ func (a *System) DeleteSysRawPath(ctx context.Context, path string) (*http.Respo
 func (a *System) DeleteSysRekeyBackup(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/rekey/backup"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -597,12 +597,12 @@ func (a *System) DeleteSysRekeyBackup(ctx context.Context) (*http.Response, erro
 func (a *System) DeleteSysRekeyInit(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/rekey/init"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -629,12 +629,12 @@ func (a *System) DeleteSysRekeyInit(ctx context.Context) (*http.Response, error)
 func (a *System) DeleteSysRekeyRecoveryKeyBackup(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/rekey/recovery-key-backup"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -662,12 +662,12 @@ func (a *System) DeleteSysRekeyRecoveryKeyBackup(ctx context.Context) (*http.Res
 func (a *System) DeleteSysRekeyVerify(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/rekey/verify"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -694,12 +694,12 @@ func (a *System) DeleteSysRekeyVerify(ctx context.Context) (*http.Response, erro
 func (a *System) GetSysAudit(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/audit"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -726,12 +726,12 @@ func (a *System) GetSysAudit(ctx context.Context) (*http.Response, error) {
 func (a *System) GetSysAuth(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/auth"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -760,12 +760,12 @@ func (a *System) GetSysAuthPath(ctx context.Context, path string) (*http.Respons
 	localVarPath := "/v1/sys/auth/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -795,12 +795,12 @@ func (a *System) GetSysAuthPathTune(ctx context.Context, path string) (*http.Res
 	localVarPath := "/v1/sys/auth/{path}/tune"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -827,12 +827,12 @@ func (a *System) GetSysAuthPathTune(ctx context.Context, path string) (*http.Res
 func (a *System) GetSysConfigAuditingRequestHeaders(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/config/auditing/request-headers"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -860,12 +860,12 @@ func (a *System) GetSysConfigAuditingRequestHeadersHeader(ctx context.Context, h
 	localVarPath := "/v1/sys/config/auditing/request-headers/{header}"
 	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -892,12 +892,12 @@ func (a *System) GetSysConfigAuditingRequestHeadersHeader(ctx context.Context, h
 func (a *System) GetSysConfigCors(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/config/cors"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -925,12 +925,12 @@ func (a *System) GetSysConfigCors(ctx context.Context) (*http.Response, error) {
 func (a *System) GetSysConfigStateSanitized(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/config/state/sanitized"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -958,12 +958,12 @@ func (a *System) GetSysConfigStateSanitized(ctx context.Context) (*http.Response
 func (a *System) GetSysConfigUiHeaders(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/sys/config/ui/headers/"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -992,12 +992,12 @@ func (a *System) GetSysConfigUiHeadersHeader(ctx context.Context, header string)
 	localVarPath := "/v1/sys/config/ui/headers/{header}"
 	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1024,12 +1024,12 @@ func (a *System) GetSysConfigUiHeadersHeader(ctx context.Context, header string)
 func (a *System) GetSysGenerateRoot(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/generate-root"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1056,12 +1056,12 @@ func (a *System) GetSysGenerateRoot(ctx context.Context) (*http.Response, error)
 func (a *System) GetSysGenerateRootAttempt(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/generate-root/attempt"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1088,12 +1088,12 @@ func (a *System) GetSysGenerateRootAttempt(ctx context.Context) (*http.Response,
 func (a *System) GetSysHaStatus(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/ha-status"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1120,12 +1120,12 @@ func (a *System) GetSysHaStatus(ctx context.Context) (*http.Response, error) {
 func (a *System) GetSysHealth(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/health"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1153,12 +1153,12 @@ func (a *System) GetSysHealth(ctx context.Context) (*http.Response, error) {
 func (a *System) GetSysHostInfo(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/host-info"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1186,12 +1186,12 @@ func (a *System) GetSysHostInfo(ctx context.Context) (*http.Response, error) {
 func (a *System) GetSysInFlightReq(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/in-flight-req"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1218,12 +1218,12 @@ func (a *System) GetSysInFlightReq(ctx context.Context) (*http.Response, error) 
 func (a *System) GetSysInit(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/init"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1250,12 +1250,12 @@ func (a *System) GetSysInit(ctx context.Context) (*http.Response, error) {
 func (a *System) GetSysInternalCountersActivity(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/internal/counters/activity"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1282,12 +1282,12 @@ func (a *System) GetSysInternalCountersActivity(ctx context.Context) (*http.Resp
 func (a *System) GetSysInternalCountersActivityExport(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/internal/counters/activity/export"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1314,12 +1314,12 @@ func (a *System) GetSysInternalCountersActivityExport(ctx context.Context) (*htt
 func (a *System) GetSysInternalCountersActivityMonthly(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/internal/counters/activity/monthly"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1346,12 +1346,12 @@ func (a *System) GetSysInternalCountersActivityMonthly(ctx context.Context) (*ht
 func (a *System) GetSysInternalCountersConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/internal/counters/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1378,12 +1378,12 @@ func (a *System) GetSysInternalCountersConfig(ctx context.Context) (*http.Respon
 func (a *System) GetSysInternalCountersEntities(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/internal/counters/entities"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1410,12 +1410,12 @@ func (a *System) GetSysInternalCountersEntities(ctx context.Context) (*http.Resp
 func (a *System) GetSysInternalCountersRequests(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/internal/counters/requests"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1442,12 +1442,12 @@ func (a *System) GetSysInternalCountersRequests(ctx context.Context) (*http.Resp
 func (a *System) GetSysInternalCountersTokens(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/internal/counters/tokens"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1474,12 +1474,12 @@ func (a *System) GetSysInternalCountersTokens(ctx context.Context) (*http.Respon
 func (a *System) GetSysInternalSpecsOpenapi(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/internal/specs/openapi"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1506,12 +1506,12 @@ func (a *System) GetSysInternalSpecsOpenapi(ctx context.Context) (*http.Response
 func (a *System) GetSysInternalUiFeatureFlags(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/internal/ui/feature-flags"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1538,12 +1538,12 @@ func (a *System) GetSysInternalUiFeatureFlags(ctx context.Context) (*http.Respon
 func (a *System) GetSysInternalUiMounts(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/internal/ui/mounts"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1572,12 +1572,12 @@ func (a *System) GetSysInternalUiMountsPath(ctx context.Context, path string) (*
 	localVarPath := "/v1/sys/internal/ui/mounts/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1604,12 +1604,12 @@ func (a *System) GetSysInternalUiMountsPath(ctx context.Context, path string) (*
 func (a *System) GetSysInternalUiNamespaces(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/internal/ui/namespaces"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1636,12 +1636,12 @@ func (a *System) GetSysInternalUiNamespaces(ctx context.Context) (*http.Response
 func (a *System) GetSysInternalUiResultantAcl(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/internal/ui/resultant-acl"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1668,12 +1668,12 @@ func (a *System) GetSysInternalUiResultantAcl(ctx context.Context) (*http.Respon
 func (a *System) GetSysKeyStatus(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/key-status"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1700,12 +1700,12 @@ func (a *System) GetSysKeyStatus(ctx context.Context) (*http.Response, error) {
 func (a *System) GetSysLeader(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/leader"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1732,12 +1732,12 @@ func (a *System) GetSysLeader(ctx context.Context) (*http.Response, error) {
 func (a *System) GetSysLeases(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/leases"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1764,12 +1764,12 @@ func (a *System) GetSysLeases(ctx context.Context) (*http.Response, error) {
 func (a *System) GetSysLeasesCount(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/leases/count"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1797,12 +1797,12 @@ func (a *System) GetSysLeasesCount(ctx context.Context) (*http.Response, error) 
 func (a *System) GetSysLeasesLookup(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/sys/leases/lookup/"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1832,12 +1832,12 @@ func (a *System) GetSysLeasesLookupPrefix(ctx context.Context, prefix string, li
 	localVarPath := "/v1/sys/leases/lookup/{prefix}"
 	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(prefix, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1865,12 +1865,12 @@ func (a *System) GetSysLeasesLookupPrefix(ctx context.Context, prefix string, li
 func (a *System) GetSysMetrics(ctx context.Context, format string) (*http.Response, error) {
 	localVarPath := "/v1/sys/metrics"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1899,12 +1899,12 @@ func (a *System) GetSysMetrics(ctx context.Context, format string) (*http.Respon
 func (a *System) GetSysMonitor(ctx context.Context, logFormat string, logLevel string) (*http.Response, error) {
 	localVarPath := "/v1/sys/monitor"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1931,12 +1931,12 @@ func (a *System) GetSysMonitor(ctx context.Context, logFormat string, logLevel s
 func (a *System) GetSysMounts(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/mounts"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1965,12 +1965,12 @@ func (a *System) GetSysMountsPath(ctx context.Context, path string) (*http.Respo
 	localVarPath := "/v1/sys/mounts/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1999,12 +1999,12 @@ func (a *System) GetSysMountsPathTune(ctx context.Context, path string) (*http.R
 	localVarPath := "/v1/sys/mounts/{path}/tune"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2031,12 +2031,12 @@ func (a *System) GetSysMountsPathTune(ctx context.Context, path string) (*http.R
 func (a *System) GetSysPluginsCatalog(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/plugins/catalog"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2065,12 +2065,12 @@ func (a *System) GetSysPluginsCatalogName(ctx context.Context, name string) (*ht
 	localVarPath := "/v1/sys/plugins/catalog/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2100,12 +2100,12 @@ func (a *System) GetSysPluginsCatalogType(ctx context.Context, type_ string, lis
 	localVarPath := "/v1/sys/plugins/catalog/{type}"
 	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(type_, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2136,12 +2136,12 @@ func (a *System) GetSysPluginsCatalogTypeName(ctx context.Context, name string, 
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(type_, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2169,12 +2169,12 @@ func (a *System) GetSysPluginsCatalogTypeName(ctx context.Context, name string, 
 func (a *System) GetSysPoliciesAcl(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/sys/policies/acl"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2203,12 +2203,12 @@ func (a *System) GetSysPoliciesAclName(ctx context.Context, name string) (*http.
 	localVarPath := "/v1/sys/policies/acl/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2236,12 +2236,12 @@ func (a *System) GetSysPoliciesAclName(ctx context.Context, name string) (*http.
 func (a *System) GetSysPoliciesPassword(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/sys/policies/password"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2270,12 +2270,12 @@ func (a *System) GetSysPoliciesPasswordName(ctx context.Context, name string) (*
 	localVarPath := "/v1/sys/policies/password/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2304,12 +2304,12 @@ func (a *System) GetSysPoliciesPasswordNameGenerate(ctx context.Context, name st
 	localVarPath := "/v1/sys/policies/password/{name}/generate"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2337,12 +2337,12 @@ func (a *System) GetSysPoliciesPasswordNameGenerate(ctx context.Context, name st
 func (a *System) GetSysPolicy(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/sys/policy"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2371,12 +2371,12 @@ func (a *System) GetSysPolicyName(ctx context.Context, name string) (*http.Respo
 	localVarPath := "/v1/sys/policy/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2404,12 +2404,12 @@ func (a *System) GetSysPolicyName(ctx context.Context, name string) (*http.Respo
 func (a *System) GetSysPprof(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/pprof/"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2437,12 +2437,12 @@ func (a *System) GetSysPprof(ctx context.Context) (*http.Response, error) {
 func (a *System) GetSysPprofAllocs(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/pprof/allocs"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2470,12 +2470,12 @@ func (a *System) GetSysPprofAllocs(ctx context.Context) (*http.Response, error) 
 func (a *System) GetSysPprofBlock(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/pprof/block"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2503,12 +2503,12 @@ func (a *System) GetSysPprofBlock(ctx context.Context) (*http.Response, error) {
 func (a *System) GetSysPprofCmdline(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/pprof/cmdline"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2536,12 +2536,12 @@ func (a *System) GetSysPprofCmdline(ctx context.Context) (*http.Response, error)
 func (a *System) GetSysPprofGoroutine(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/pprof/goroutine"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2569,12 +2569,12 @@ func (a *System) GetSysPprofGoroutine(ctx context.Context) (*http.Response, erro
 func (a *System) GetSysPprofHeap(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/pprof/heap"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2602,12 +2602,12 @@ func (a *System) GetSysPprofHeap(ctx context.Context) (*http.Response, error) {
 func (a *System) GetSysPprofMutex(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/pprof/mutex"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2635,12 +2635,12 @@ func (a *System) GetSysPprofMutex(ctx context.Context) (*http.Response, error) {
 func (a *System) GetSysPprofProfile(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/pprof/profile"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2668,12 +2668,12 @@ func (a *System) GetSysPprofProfile(ctx context.Context) (*http.Response, error)
 func (a *System) GetSysPprofSymbol(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/pprof/symbol"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2701,12 +2701,12 @@ func (a *System) GetSysPprofSymbol(ctx context.Context) (*http.Response, error) 
 func (a *System) GetSysPprofThreadcreate(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/pprof/threadcreate"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2734,12 +2734,12 @@ func (a *System) GetSysPprofThreadcreate(ctx context.Context) (*http.Response, e
 func (a *System) GetSysPprofTrace(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/pprof/trace"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2766,12 +2766,12 @@ func (a *System) GetSysPprofTrace(ctx context.Context) (*http.Response, error) {
 func (a *System) GetSysQuotasConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/quotas/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2799,12 +2799,12 @@ func (a *System) GetSysQuotasConfig(ctx context.Context) (*http.Response, error)
 func (a *System) GetSysQuotasRateLimit(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/sys/quotas/rate-limit"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2833,12 +2833,12 @@ func (a *System) GetSysQuotasRateLimitName(ctx context.Context, name string) (*h
 	localVarPath := "/v1/sys/quotas/rate-limit/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2866,12 +2866,12 @@ func (a *System) GetSysQuotasRateLimitName(ctx context.Context, name string) (*h
 func (a *System) GetSysRaw(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/sys/raw"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2900,12 +2900,12 @@ func (a *System) GetSysRawPath(ctx context.Context, path string, list string) (*
 	localVarPath := "/v1/sys/raw/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2932,12 +2932,12 @@ func (a *System) GetSysRawPath(ctx context.Context, path string, list string) (*
 func (a *System) GetSysRekeyBackup(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/rekey/backup"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2964,12 +2964,12 @@ func (a *System) GetSysRekeyBackup(ctx context.Context) (*http.Response, error) 
 func (a *System) GetSysRekeyInit(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/rekey/init"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2996,12 +2996,12 @@ func (a *System) GetSysRekeyInit(ctx context.Context) (*http.Response, error) {
 func (a *System) GetSysRekeyRecoveryKeyBackup(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/rekey/recovery-key-backup"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3028,12 +3028,12 @@ func (a *System) GetSysRekeyRecoveryKeyBackup(ctx context.Context) (*http.Respon
 func (a *System) GetSysRekeyVerify(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/rekey/verify"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3062,12 +3062,12 @@ func (a *System) GetSysRemountStatusMigrationId(ctx context.Context, migrationId
 	localVarPath := "/v1/sys/remount/status/{migration_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"migration_id"+"}", url.PathEscape(parameterToString(migrationId, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3094,12 +3094,12 @@ func (a *System) GetSysRemountStatusMigrationId(ctx context.Context, migrationId
 func (a *System) GetSysReplicationStatus(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/replication/status"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3126,12 +3126,12 @@ func (a *System) GetSysReplicationStatus(ctx context.Context) (*http.Response, e
 func (a *System) GetSysRotateConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/rotate/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3158,12 +3158,12 @@ func (a *System) GetSysRotateConfig(ctx context.Context) (*http.Response, error)
 func (a *System) GetSysSealStatus(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/seal-status"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3191,12 +3191,12 @@ func (a *System) GetSysSealStatus(ctx context.Context) (*http.Response, error) {
 func (a *System) GetSysVersionHistory(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/sys/version-history/"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3223,12 +3223,12 @@ func (a *System) GetSysVersionHistory(ctx context.Context, list string) (*http.R
 func (a *System) GetSysWrappingLookup(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/wrapping/lookup"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3257,12 +3257,12 @@ func (a *System) PostSysAuditHashPath(ctx context.Context, path string, systemAu
 	localVarPath := "/v1/sys/audit-hash/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemAuditHashRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemAuditHashRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3291,12 +3291,12 @@ func (a *System) PostSysAuditPath(ctx context.Context, path string, systemAuditR
 	localVarPath := "/v1/sys/audit/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemAuditRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemAuditRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3326,12 +3326,12 @@ func (a *System) PostSysAuthPath(ctx context.Context, path string, systemAuthReq
 	localVarPath := "/v1/sys/auth/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemAuthRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemAuthRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3361,12 +3361,12 @@ func (a *System) PostSysAuthPathTune(ctx context.Context, path string, systemAut
 	localVarPath := "/v1/sys/auth/{path}/tune"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemAuthTuneRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemAuthTuneRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3393,12 +3393,12 @@ func (a *System) PostSysAuthPathTune(ctx context.Context, path string, systemAut
 func (a *System) PostSysCapabilities(ctx context.Context, systemCapabilitiesRequest SystemCapabilitiesRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/capabilities"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemCapabilitiesRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemCapabilitiesRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3425,12 +3425,12 @@ func (a *System) PostSysCapabilities(ctx context.Context, systemCapabilitiesRequ
 func (a *System) PostSysCapabilitiesAccessor(ctx context.Context, systemCapabilitiesAccessorRequest SystemCapabilitiesAccessorRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/capabilities-accessor"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemCapabilitiesAccessorRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemCapabilitiesAccessorRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3457,12 +3457,12 @@ func (a *System) PostSysCapabilitiesAccessor(ctx context.Context, systemCapabili
 func (a *System) PostSysCapabilitiesSelf(ctx context.Context, systemCapabilitiesSelfRequest SystemCapabilitiesSelfRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/capabilities-self"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemCapabilitiesSelfRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemCapabilitiesSelfRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3490,12 +3490,12 @@ func (a *System) PostSysConfigAuditingRequestHeadersHeader(ctx context.Context, 
 	localVarPath := "/v1/sys/config/auditing/request-headers/{header}"
 	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemConfigAuditingRequestHeadersRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemConfigAuditingRequestHeadersRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3522,12 +3522,12 @@ func (a *System) PostSysConfigAuditingRequestHeadersHeader(ctx context.Context, 
 func (a *System) PostSysConfigCors(ctx context.Context, systemConfigCorsRequest SystemConfigCorsRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/config/cors"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemConfigCorsRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemConfigCorsRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3555,12 +3555,12 @@ func (a *System) PostSysConfigReloadSubsystem(ctx context.Context, subsystem str
 	localVarPath := "/v1/sys/config/reload/{subsystem}"
 	localVarPath = strings.Replace(localVarPath, "{"+"subsystem"+"}", url.PathEscape(parameterToString(subsystem, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3589,12 +3589,12 @@ func (a *System) PostSysConfigUiHeadersHeader(ctx context.Context, header string
 	localVarPath := "/v1/sys/config/ui/headers/{header}"
 	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemConfigUiHeadersRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemConfigUiHeadersRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3622,12 +3622,12 @@ func (a *System) PostSysConfigUiHeadersHeader(ctx context.Context, header string
 func (a *System) PostSysGenerateRoot(ctx context.Context, systemGenerateRootRequest SystemGenerateRootRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/generate-root"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemGenerateRootRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemGenerateRootRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3655,12 +3655,12 @@ func (a *System) PostSysGenerateRoot(ctx context.Context, systemGenerateRootRequ
 func (a *System) PostSysGenerateRootAttempt(ctx context.Context, systemGenerateRootAttemptRequest SystemGenerateRootAttemptRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/generate-root/attempt"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemGenerateRootAttemptRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemGenerateRootAttemptRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3688,12 +3688,12 @@ func (a *System) PostSysGenerateRootAttempt(ctx context.Context, systemGenerateR
 func (a *System) PostSysGenerateRootUpdate(ctx context.Context, systemGenerateRootUpdateRequest SystemGenerateRootUpdateRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/generate-root/update"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemGenerateRootUpdateRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemGenerateRootUpdateRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3721,12 +3721,12 @@ func (a *System) PostSysGenerateRootUpdate(ctx context.Context, systemGenerateRo
 func (a *System) PostSysInit(ctx context.Context, systemInitRequest SystemInitRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/init"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemInitRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemInitRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3753,12 +3753,12 @@ func (a *System) PostSysInit(ctx context.Context, systemInitRequest SystemInitRe
 func (a *System) PostSysInternalCountersConfig(ctx context.Context, systemInternalCountersConfigRequest SystemInternalCountersConfigRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/internal/counters/config"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemInternalCountersConfigRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemInternalCountersConfigRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3785,12 +3785,12 @@ func (a *System) PostSysInternalCountersConfig(ctx context.Context, systemIntern
 func (a *System) PostSysLeasesLookup(ctx context.Context, systemLeasesLookupRequest SystemLeasesLookupRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/leases/lookup"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemLeasesLookupRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemLeasesLookupRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3817,12 +3817,12 @@ func (a *System) PostSysLeasesLookup(ctx context.Context, systemLeasesLookupRequ
 func (a *System) PostSysLeasesRenew(ctx context.Context, systemLeasesRenewRequest SystemLeasesRenewRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/leases/renew"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemLeasesRenewRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemLeasesRenewRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3851,12 +3851,12 @@ func (a *System) PostSysLeasesRenewUrlLeaseId(ctx context.Context, urlLeaseId st
 	localVarPath := "/v1/sys/leases/renew/{url_lease_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"url_lease_id"+"}", url.PathEscape(parameterToString(urlLeaseId, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemLeasesRenewLeaseRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemLeasesRenewLeaseRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3883,12 +3883,12 @@ func (a *System) PostSysLeasesRenewUrlLeaseId(ctx context.Context, urlLeaseId st
 func (a *System) PostSysLeasesRevoke(ctx context.Context, systemLeasesRevokeRequest SystemLeasesRevokeRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/leases/revoke"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemLeasesRevokeRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemLeasesRevokeRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3918,12 +3918,12 @@ func (a *System) PostSysLeasesRevokeForcePrefix(ctx context.Context, prefix stri
 	localVarPath := "/v1/sys/leases/revoke-force/{prefix}"
 	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(prefix, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3952,12 +3952,12 @@ func (a *System) PostSysLeasesRevokePrefixPrefix(ctx context.Context, prefix str
 	localVarPath := "/v1/sys/leases/revoke-prefix/{prefix}"
 	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(prefix, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemLeasesRevokePrefixRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemLeasesRevokePrefixRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3986,12 +3986,12 @@ func (a *System) PostSysLeasesRevokeUrlLeaseId(ctx context.Context, urlLeaseId s
 	localVarPath := "/v1/sys/leases/revoke/{url_lease_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"url_lease_id"+"}", url.PathEscape(parameterToString(urlLeaseId, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemLeasesRevokeLeaseRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemLeasesRevokeLeaseRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4018,12 +4018,12 @@ func (a *System) PostSysLeasesRevokeUrlLeaseId(ctx context.Context, urlLeaseId s
 func (a *System) PostSysLeasesTidy(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/leases/tidy"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4050,12 +4050,12 @@ func (a *System) PostSysLeasesTidy(ctx context.Context) (*http.Response, error) 
 func (a *System) PostSysMfaValidate(ctx context.Context, systemMfaValidateRequest SystemMfaValidateRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/mfa/validate"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemMfaValidateRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemMfaValidateRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4084,12 +4084,12 @@ func (a *System) PostSysMountsPath(ctx context.Context, path string, systemMount
 	localVarPath := "/v1/sys/mounts/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemMountsRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemMountsRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4118,12 +4118,12 @@ func (a *System) PostSysMountsPathTune(ctx context.Context, path string, systemM
 	localVarPath := "/v1/sys/mounts/{path}/tune"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemMountsTuneRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemMountsTuneRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4152,12 +4152,12 @@ func (a *System) PostSysPluginsCatalogName(ctx context.Context, name string, sys
 	localVarPath := "/v1/sys/plugins/catalog/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemPluginsCatalogRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemPluginsCatalogRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4188,12 +4188,12 @@ func (a *System) PostSysPluginsCatalogTypeName(ctx context.Context, name string,
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(type_, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemPluginsCatalogRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemPluginsCatalogRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4221,12 +4221,12 @@ func (a *System) PostSysPluginsCatalogTypeName(ctx context.Context, name string,
 func (a *System) PostSysPluginsReloadBackend(ctx context.Context, systemPluginsReloadBackendRequest SystemPluginsReloadBackendRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/plugins/reload/backend"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemPluginsReloadBackendRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemPluginsReloadBackendRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4255,12 +4255,12 @@ func (a *System) PostSysPoliciesAclName(ctx context.Context, name string, system
 	localVarPath := "/v1/sys/policies/acl/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemPoliciesAclRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemPoliciesAclRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4289,12 +4289,12 @@ func (a *System) PostSysPoliciesPasswordName(ctx context.Context, name string, s
 	localVarPath := "/v1/sys/policies/password/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemPoliciesPasswordRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemPoliciesPasswordRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4323,12 +4323,12 @@ func (a *System) PostSysPolicyName(ctx context.Context, name string, systemPolic
 	localVarPath := "/v1/sys/policy/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemPolicyRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemPolicyRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4355,12 +4355,12 @@ func (a *System) PostSysPolicyName(ctx context.Context, name string, systemPolic
 func (a *System) PostSysQuotasConfig(ctx context.Context, systemQuotasConfigRequest SystemQuotasConfigRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/quotas/config"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemQuotasConfigRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemQuotasConfigRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4389,12 +4389,12 @@ func (a *System) PostSysQuotasRateLimitName(ctx context.Context, name string, sy
 	localVarPath := "/v1/sys/quotas/rate-limit/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemQuotasRateLimitRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemQuotasRateLimitRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4421,12 +4421,12 @@ func (a *System) PostSysQuotasRateLimitName(ctx context.Context, name string, sy
 func (a *System) PostSysRaw(ctx context.Context, systemRawRequest SystemRawRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/raw"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemRawRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemRawRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4454,12 +4454,12 @@ func (a *System) PostSysRawPath(ctx context.Context, path string, systemRawReque
 	localVarPath := "/v1/sys/raw/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemRawRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemRawRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4487,12 +4487,12 @@ func (a *System) PostSysRawPath(ctx context.Context, path string, systemRawReque
 func (a *System) PostSysRekeyInit(ctx context.Context, systemRekeyInitRequest SystemRekeyInitRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/rekey/init"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemRekeyInitRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemRekeyInitRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4519,12 +4519,12 @@ func (a *System) PostSysRekeyInit(ctx context.Context, systemRekeyInitRequest Sy
 func (a *System) PostSysRekeyUpdate(ctx context.Context, systemRekeyUpdateRequest SystemRekeyUpdateRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/rekey/update"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemRekeyUpdateRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemRekeyUpdateRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4551,12 +4551,12 @@ func (a *System) PostSysRekeyUpdate(ctx context.Context, systemRekeyUpdateReques
 func (a *System) PostSysRekeyVerify(ctx context.Context, systemRekeyVerifyRequest SystemRekeyVerifyRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/rekey/verify"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemRekeyVerifyRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemRekeyVerifyRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4583,12 +4583,12 @@ func (a *System) PostSysRekeyVerify(ctx context.Context, systemRekeyVerifyReques
 func (a *System) PostSysRemount(ctx context.Context, systemRemountRequest SystemRemountRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/remount"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemRemountRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemRemountRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4615,12 +4615,12 @@ func (a *System) PostSysRemount(ctx context.Context, systemRemountRequest System
 func (a *System) PostSysRenew(ctx context.Context, systemRenewRequest SystemRenewRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/renew"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemRenewRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemRenewRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4649,12 +4649,12 @@ func (a *System) PostSysRenewUrlLeaseId(ctx context.Context, urlLeaseId string, 
 	localVarPath := "/v1/sys/renew/{url_lease_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"url_lease_id"+"}", url.PathEscape(parameterToString(urlLeaseId, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemRenewLeaseRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemRenewLeaseRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4681,12 +4681,12 @@ func (a *System) PostSysRenewUrlLeaseId(ctx context.Context, urlLeaseId string, 
 func (a *System) PostSysRevoke(ctx context.Context, systemRevokeRequest SystemRevokeRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/revoke"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemRevokeRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemRevokeRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4716,12 +4716,12 @@ func (a *System) PostSysRevokeForcePrefix(ctx context.Context, prefix string) (*
 	localVarPath := "/v1/sys/revoke-force/{prefix}"
 	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(prefix, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4750,12 +4750,12 @@ func (a *System) PostSysRevokePrefixPrefix(ctx context.Context, prefix string, s
 	localVarPath := "/v1/sys/revoke-prefix/{prefix}"
 	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(prefix, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemRevokePrefixRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemRevokePrefixRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4784,12 +4784,12 @@ func (a *System) PostSysRevokeUrlLeaseId(ctx context.Context, urlLeaseId string,
 	localVarPath := "/v1/sys/revoke/{url_lease_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"url_lease_id"+"}", url.PathEscape(parameterToString(urlLeaseId, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemRevokeLeaseRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemRevokeLeaseRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4816,12 +4816,12 @@ func (a *System) PostSysRevokeUrlLeaseId(ctx context.Context, urlLeaseId string,
 func (a *System) PostSysRotate(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/rotate"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4848,12 +4848,12 @@ func (a *System) PostSysRotate(ctx context.Context) (*http.Response, error) {
 func (a *System) PostSysRotateConfig(ctx context.Context, systemRotateConfigRequest SystemRotateConfigRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/rotate/config"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemRotateConfigRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemRotateConfigRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4880,12 +4880,12 @@ func (a *System) PostSysRotateConfig(ctx context.Context, systemRotateConfigRequ
 func (a *System) PostSysSeal(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/seal"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4913,12 +4913,12 @@ func (a *System) PostSysSeal(ctx context.Context) (*http.Response, error) {
 func (a *System) PostSysStepDown(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/step-down"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4945,12 +4945,12 @@ func (a *System) PostSysStepDown(ctx context.Context) (*http.Response, error) {
 func (a *System) PostSysToolsHash(ctx context.Context, systemToolsHashRequest SystemToolsHashRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/tools/hash"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemToolsHashRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemToolsHashRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4979,12 +4979,12 @@ func (a *System) PostSysToolsHashUrlalgorithm(ctx context.Context, urlalgorithm 
 	localVarPath := "/v1/sys/tools/hash/{urlalgorithm}"
 	localVarPath = strings.Replace(localVarPath, "{"+"urlalgorithm"+"}", url.PathEscape(parameterToString(urlalgorithm, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemToolsHashRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemToolsHashRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5011,12 +5011,12 @@ func (a *System) PostSysToolsHashUrlalgorithm(ctx context.Context, urlalgorithm 
 func (a *System) PostSysToolsRandom(ctx context.Context, systemToolsRandomRequest SystemToolsRandomRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/tools/random"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemToolsRandomRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemToolsRandomRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5045,12 +5045,12 @@ func (a *System) PostSysToolsRandomSource(ctx context.Context, source string, sy
 	localVarPath := "/v1/sys/tools/random/{source}"
 	localVarPath = strings.Replace(localVarPath, "{"+"source"+"}", url.PathEscape(parameterToString(source, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemToolsRandomRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemToolsRandomRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5081,12 +5081,12 @@ func (a *System) PostSysToolsRandomSourceUrlbytes(ctx context.Context, source st
 	localVarPath = strings.Replace(localVarPath, "{"+"source"+"}", url.PathEscape(parameterToString(source, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"urlbytes"+"}", url.PathEscape(parameterToString(urlbytes, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemToolsRandomRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemToolsRandomRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5115,12 +5115,12 @@ func (a *System) PostSysToolsRandomUrlbytes(ctx context.Context, urlbytes string
 	localVarPath := "/v1/sys/tools/random/{urlbytes}"
 	localVarPath = strings.Replace(localVarPath, "{"+"urlbytes"+"}", url.PathEscape(parameterToString(urlbytes, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemToolsRandomRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemToolsRandomRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5147,12 +5147,12 @@ func (a *System) PostSysToolsRandomUrlbytes(ctx context.Context, urlbytes string
 func (a *System) PostSysUnseal(ctx context.Context, systemUnsealRequest SystemUnsealRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/unseal"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemUnsealRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemUnsealRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5179,12 +5179,12 @@ func (a *System) PostSysUnseal(ctx context.Context, systemUnsealRequest SystemUn
 func (a *System) PostSysWrappingLookup(ctx context.Context, systemWrappingLookupRequest SystemWrappingLookupRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/wrapping/lookup"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemWrappingLookupRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemWrappingLookupRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5211,12 +5211,12 @@ func (a *System) PostSysWrappingLookup(ctx context.Context, systemWrappingLookup
 func (a *System) PostSysWrappingRewrap(ctx context.Context, systemWrappingRewrapRequest SystemWrappingRewrapRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/wrapping/rewrap"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemWrappingRewrapRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemWrappingRewrapRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5243,12 +5243,12 @@ func (a *System) PostSysWrappingRewrap(ctx context.Context, systemWrappingRewrap
 func (a *System) PostSysWrappingUnwrap(ctx context.Context, systemWrappingUnwrapRequest SystemWrappingUnwrapRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/wrapping/unwrap"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, systemWrappingUnwrapRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemWrappingUnwrapRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5275,12 +5275,12 @@ func (a *System) PostSysWrappingUnwrap(ctx context.Context, systemWrappingUnwrap
 func (a *System) PostSysWrappingWrap(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/sys/wrapping/wrap"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}

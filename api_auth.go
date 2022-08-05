@@ -30,12 +30,12 @@ func (a *Auth) DeleteAuthAlicloudRoleRole(ctx context.Context, role string) (*ht
 	localVarPath := "/v1/auth/alicloud/role/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -64,12 +64,12 @@ func (a *Auth) DeleteAuthAppIdMapAppIdKey(ctx context.Context, key string) (*htt
 	localVarPath := "/v1/auth/app-id/map/app-id/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -98,12 +98,12 @@ func (a *Auth) DeleteAuthAppIdMapUserIdKey(ctx context.Context, key string) (*ht
 	localVarPath := "/v1/auth/app-id/map/user-id/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -132,12 +132,12 @@ func (a *Auth) DeleteAuthApproleRoleRoleName(ctx context.Context, roleName strin
 	localVarPath := "/v1/auth/approle/role/{role_name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -166,12 +166,12 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameBindSecretId(ctx context.Context, ro
 	localVarPath := "/v1/auth/approle/role/{role_name}/bind-secret-id"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -200,12 +200,12 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, r
 	localVarPath := "/v1/auth/approle/role/{role_name}/bound-cidr-list"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -234,12 +234,12 @@ func (a *Auth) DeleteAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName
 	localVarPath := "/v1/auth/approle/role/{role_name}/period"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -268,12 +268,12 @@ func (a *Auth) DeleteAuthApproleRoleRoleNamePolicies(ctx context.Context, roleNa
 	localVarPath := "/v1/auth/approle/role/{role_name}/policies"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -302,12 +302,12 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.
 	localVarPath := "/v1/auth/approle/role/{role_name}/secret-id-accessor/destroy"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -336,12 +336,12 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Conte
 	localVarPath := "/v1/auth/approle/role/{role_name}/secret-id-bound-cidrs"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -370,12 +370,12 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context,
 	localVarPath := "/v1/auth/approle/role/{role_name}/secret-id/destroy"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -404,12 +404,12 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context,
 	localVarPath := "/v1/auth/approle/role/{role_name}/secret-id-num-uses"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -438,12 +438,12 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, rol
 	localVarPath := "/v1/auth/approle/role/{role_name}/secret-id-ttl"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -472,12 +472,12 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context,
 	localVarPath := "/v1/auth/approle/role/{role_name}/token-bound-cidrs"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -506,12 +506,12 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, rol
 	localVarPath := "/v1/auth/approle/role/{role_name}/token-max-ttl"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -540,12 +540,12 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, ro
 	localVarPath := "/v1/auth/approle/role/{role_name}/token-num-uses"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -574,12 +574,12 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleNa
 	localVarPath := "/v1/auth/approle/role/{role_name}/token-ttl"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -608,12 +608,12 @@ func (a *Auth) DeleteAuthAwsConfigCertificateCertName(ctx context.Context, certN
 	localVarPath := "/v1/auth/aws/config/certificate/{cert_name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"cert_name"+"}", url.PathEscape(parameterToString(certName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -640,12 +640,12 @@ func (a *Auth) DeleteAuthAwsConfigCertificateCertName(ctx context.Context, certN
 func (a *Auth) DeleteAuthAwsConfigClient(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/config/client"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -674,12 +674,12 @@ func (a *Auth) DeleteAuthAwsConfigStsAccountId(ctx context.Context, accountId st
 	localVarPath := "/v1/auth/aws/config/sts/{account_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", url.PathEscape(parameterToString(accountId, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -706,12 +706,12 @@ func (a *Auth) DeleteAuthAwsConfigStsAccountId(ctx context.Context, accountId st
 func (a *Auth) DeleteAuthAwsConfigTidyIdentityAccesslist(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/config/tidy/identity-accesslist"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -738,12 +738,12 @@ func (a *Auth) DeleteAuthAwsConfigTidyIdentityAccesslist(ctx context.Context) (*
 func (a *Auth) DeleteAuthAwsConfigTidyIdentityWhitelist(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/config/tidy/identity-whitelist"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -770,12 +770,12 @@ func (a *Auth) DeleteAuthAwsConfigTidyIdentityWhitelist(ctx context.Context) (*h
 func (a *Auth) DeleteAuthAwsConfigTidyRoletagBlacklist(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/config/tidy/roletag-blacklist"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -802,12 +802,12 @@ func (a *Auth) DeleteAuthAwsConfigTidyRoletagBlacklist(ctx context.Context) (*ht
 func (a *Auth) DeleteAuthAwsConfigTidyRoletagDenylist(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/config/tidy/roletag-denylist"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -836,12 +836,12 @@ func (a *Auth) DeleteAuthAwsIdentityAccesslistInstanceId(ctx context.Context, in
 	localVarPath := "/v1/auth/aws/identity-accesslist/{instance_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"instance_id"+"}", url.PathEscape(parameterToString(instanceId, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -870,12 +870,12 @@ func (a *Auth) DeleteAuthAwsIdentityWhitelistInstanceId(ctx context.Context, ins
 	localVarPath := "/v1/auth/aws/identity-whitelist/{instance_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"instance_id"+"}", url.PathEscape(parameterToString(instanceId, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -904,12 +904,12 @@ func (a *Auth) DeleteAuthAwsRoleRole(ctx context.Context, role string) (*http.Re
 	localVarPath := "/v1/auth/aws/role/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -938,12 +938,12 @@ func (a *Auth) DeleteAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag
 	localVarPath := "/v1/auth/aws/roletag-blacklist/{role_tag}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(roleTag, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -972,12 +972,12 @@ func (a *Auth) DeleteAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag 
 	localVarPath := "/v1/auth/aws/roletag-denylist/{role_tag}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(roleTag, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1004,12 +1004,12 @@ func (a *Auth) DeleteAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag 
 func (a *Auth) DeleteAuthAzureConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/azure/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1038,12 +1038,12 @@ func (a *Auth) DeleteAuthAzureRoleName(ctx context.Context, name string) (*http.
 	localVarPath := "/v1/auth/azure/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1072,12 +1072,12 @@ func (a *Auth) DeleteAuthCertCertsName(ctx context.Context, name string) (*http.
 	localVarPath := "/v1/auth/cert/certs/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1106,12 +1106,12 @@ func (a *Auth) DeleteAuthCertCrlsName(ctx context.Context, name string) (*http.R
 	localVarPath := "/v1/auth/cert/crls/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1138,12 +1138,12 @@ func (a *Auth) DeleteAuthCertCrlsName(ctx context.Context, name string) (*http.R
 func (a *Auth) DeleteAuthCfConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/cf/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1172,12 +1172,12 @@ func (a *Auth) DeleteAuthCfRolesRole(ctx context.Context, role string) (*http.Re
 	localVarPath := "/v1/auth/cf/roles/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1206,12 +1206,12 @@ func (a *Auth) DeleteAuthGcpRoleName(ctx context.Context, name string) (*http.Re
 	localVarPath := "/v1/auth/gcp/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1240,12 +1240,12 @@ func (a *Auth) DeleteAuthGithubMapTeamsKey(ctx context.Context, key string) (*ht
 	localVarPath := "/v1/auth/github/map/teams/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1274,12 +1274,12 @@ func (a *Auth) DeleteAuthGithubMapUsersKey(ctx context.Context, key string) (*ht
 	localVarPath := "/v1/auth/github/map/users/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1308,12 +1308,12 @@ func (a *Auth) DeleteAuthJwtRoleName(ctx context.Context, name string) (*http.Re
 	localVarPath := "/v1/auth/jwt/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1342,12 +1342,12 @@ func (a *Auth) DeleteAuthKerberosGroupsName(ctx context.Context, name string) (*
 	localVarPath := "/v1/auth/kerberos/groups/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1376,12 +1376,12 @@ func (a *Auth) DeleteAuthKubernetesRoleName(ctx context.Context, name string) (*
 	localVarPath := "/v1/auth/kubernetes/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1410,12 +1410,12 @@ func (a *Auth) DeleteAuthLdapGroupsName(ctx context.Context, name string) (*http
 	localVarPath := "/v1/auth/ldap/groups/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1444,12 +1444,12 @@ func (a *Auth) DeleteAuthLdapUsersName(ctx context.Context, name string) (*http.
 	localVarPath := "/v1/auth/ldap/users/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1476,12 +1476,12 @@ func (a *Auth) DeleteAuthLdapUsersName(ctx context.Context, name string) (*http.
 func (a *Auth) DeleteAuthOciConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/oci/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1510,12 +1510,12 @@ func (a *Auth) DeleteAuthOciRoleRole(ctx context.Context, role string) (*http.Re
 	localVarPath := "/v1/auth/oci/role/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1544,12 +1544,12 @@ func (a *Auth) DeleteAuthOidcRoleName(ctx context.Context, name string) (*http.R
 	localVarPath := "/v1/auth/oidc/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1578,12 +1578,12 @@ func (a *Auth) DeleteAuthOktaGroupsName(ctx context.Context, name string) (*http
 	localVarPath := "/v1/auth/okta/groups/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1612,12 +1612,12 @@ func (a *Auth) DeleteAuthOktaUsersName(ctx context.Context, name string) (*http.
 	localVarPath := "/v1/auth/okta/users/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1646,12 +1646,12 @@ func (a *Auth) DeleteAuthRadiusUsersName(ctx context.Context, name string) (*htt
 	localVarPath := "/v1/auth/radius/users/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1680,12 +1680,12 @@ func (a *Auth) DeleteAuthTokenRolesRoleName(ctx context.Context, roleName string
 	localVarPath := "/v1/auth/token/roles/{role_name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1714,12 +1714,12 @@ func (a *Auth) DeleteAuthUserpassUsersUsername(ctx context.Context, username str
 	localVarPath := "/v1/auth/userpass/users/{username}"
 	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(username, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1747,12 +1747,12 @@ func (a *Auth) DeleteAuthUserpassUsersUsername(ctx context.Context, username str
 func (a *Auth) GetAuthAlicloudRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/alicloud/role"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1781,12 +1781,12 @@ func (a *Auth) GetAuthAlicloudRoleRole(ctx context.Context, role string) (*http.
 	localVarPath := "/v1/auth/alicloud/role/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1814,12 +1814,12 @@ func (a *Auth) GetAuthAlicloudRoleRole(ctx context.Context, role string) (*http.
 func (a *Auth) GetAuthAlicloudRoles(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/alicloud/roles"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1847,12 +1847,12 @@ func (a *Auth) GetAuthAlicloudRoles(ctx context.Context, list string) (*http.Res
 func (a *Auth) GetAuthAppIdMapAppId(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/app-id/map/app-id"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1881,12 +1881,12 @@ func (a *Auth) GetAuthAppIdMapAppIdKey(ctx context.Context, key string) (*http.R
 	localVarPath := "/v1/auth/app-id/map/app-id/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1914,12 +1914,12 @@ func (a *Auth) GetAuthAppIdMapAppIdKey(ctx context.Context, key string) (*http.R
 func (a *Auth) GetAuthAppIdMapUserId(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/app-id/map/user-id"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1948,12 +1948,12 @@ func (a *Auth) GetAuthAppIdMapUserIdKey(ctx context.Context, key string) (*http.
 	localVarPath := "/v1/auth/app-id/map/user-id/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1981,12 +1981,12 @@ func (a *Auth) GetAuthAppIdMapUserIdKey(ctx context.Context, key string) (*http.
 func (a *Auth) GetAuthApproleRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2015,12 +2015,12 @@ func (a *Auth) GetAuthApproleRoleRoleName(ctx context.Context, roleName string) 
 	localVarPath := "/v1/auth/approle/role/{role_name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2049,12 +2049,12 @@ func (a *Auth) GetAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleN
 	localVarPath := "/v1/auth/approle/role/{role_name}/bind-secret-id"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2083,12 +2083,12 @@ func (a *Auth) GetAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, role
 	localVarPath := "/v1/auth/approle/role/{role_name}/bound-cidr-list"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2117,12 +2117,12 @@ func (a *Auth) GetAuthApproleRoleRoleNameLocalSecretIds(ctx context.Context, rol
 	localVarPath := "/v1/auth/approle/role/{role_name}/local-secret-ids"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2151,12 +2151,12 @@ func (a *Auth) GetAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName st
 	localVarPath := "/v1/auth/approle/role/{role_name}/period"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2185,12 +2185,12 @@ func (a *Auth) GetAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName 
 	localVarPath := "/v1/auth/approle/role/{role_name}/policies"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2219,12 +2219,12 @@ func (a *Auth) GetAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName st
 	localVarPath := "/v1/auth/approle/role/{role_name}/role-id"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2254,12 +2254,12 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName 
 	localVarPath := "/v1/auth/approle/role/{role_name}/secret-id"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2288,12 +2288,12 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context,
 	localVarPath := "/v1/auth/approle/role/{role_name}/secret-id-bound-cidrs"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2322,12 +2322,12 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, ro
 	localVarPath := "/v1/auth/approle/role/{role_name}/secret-id-num-uses"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2356,12 +2356,12 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleNa
 	localVarPath := "/v1/auth/approle/role/{role_name}/secret-id-ttl"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2390,12 +2390,12 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, ro
 	localVarPath := "/v1/auth/approle/role/{role_name}/token-bound-cidrs"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2424,12 +2424,12 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleNa
 	localVarPath := "/v1/auth/approle/role/{role_name}/token-max-ttl"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2458,12 +2458,12 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleN
 	localVarPath := "/v1/auth/approle/role/{role_name}/token-num-uses"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2492,12 +2492,12 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName 
 	localVarPath := "/v1/auth/approle/role/{role_name}/token-ttl"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2526,12 +2526,12 @@ func (a *Auth) GetAuthAwsConfigCertificateCertName(ctx context.Context, certName
 	localVarPath := "/v1/auth/aws/config/certificate/{cert_name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"cert_name"+"}", url.PathEscape(parameterToString(certName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2559,12 +2559,12 @@ func (a *Auth) GetAuthAwsConfigCertificateCertName(ctx context.Context, certName
 func (a *Auth) GetAuthAwsConfigCertificates(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/config/certificates"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2591,12 +2591,12 @@ func (a *Auth) GetAuthAwsConfigCertificates(ctx context.Context, list string) (*
 func (a *Auth) GetAuthAwsConfigClient(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/config/client"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2623,12 +2623,12 @@ func (a *Auth) GetAuthAwsConfigClient(ctx context.Context) (*http.Response, erro
 func (a *Auth) GetAuthAwsConfigIdentity(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/config/identity"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2656,12 +2656,12 @@ func (a *Auth) GetAuthAwsConfigIdentity(ctx context.Context) (*http.Response, er
 func (a *Auth) GetAuthAwsConfigSts(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/config/sts"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2690,12 +2690,12 @@ func (a *Auth) GetAuthAwsConfigStsAccountId(ctx context.Context, accountId strin
 	localVarPath := "/v1/auth/aws/config/sts/{account_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", url.PathEscape(parameterToString(accountId, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2722,12 +2722,12 @@ func (a *Auth) GetAuthAwsConfigStsAccountId(ctx context.Context, accountId strin
 func (a *Auth) GetAuthAwsConfigTidyIdentityAccesslist(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/config/tidy/identity-accesslist"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2754,12 +2754,12 @@ func (a *Auth) GetAuthAwsConfigTidyIdentityAccesslist(ctx context.Context) (*htt
 func (a *Auth) GetAuthAwsConfigTidyIdentityWhitelist(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/config/tidy/identity-whitelist"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2786,12 +2786,12 @@ func (a *Auth) GetAuthAwsConfigTidyIdentityWhitelist(ctx context.Context) (*http
 func (a *Auth) GetAuthAwsConfigTidyRoletagBlacklist(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/config/tidy/roletag-blacklist"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2818,12 +2818,12 @@ func (a *Auth) GetAuthAwsConfigTidyRoletagBlacklist(ctx context.Context) (*http.
 func (a *Auth) GetAuthAwsConfigTidyRoletagDenylist(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/config/tidy/roletag-denylist"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2851,12 +2851,12 @@ func (a *Auth) GetAuthAwsConfigTidyRoletagDenylist(ctx context.Context) (*http.R
 func (a *Auth) GetAuthAwsIdentityAccesslist(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/identity-accesslist"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2885,12 +2885,12 @@ func (a *Auth) GetAuthAwsIdentityAccesslistInstanceId(ctx context.Context, insta
 	localVarPath := "/v1/auth/aws/identity-accesslist/{instance_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"instance_id"+"}", url.PathEscape(parameterToString(instanceId, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2918,12 +2918,12 @@ func (a *Auth) GetAuthAwsIdentityAccesslistInstanceId(ctx context.Context, insta
 func (a *Auth) GetAuthAwsIdentityWhitelist(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/identity-whitelist"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2952,12 +2952,12 @@ func (a *Auth) GetAuthAwsIdentityWhitelistInstanceId(ctx context.Context, instan
 	localVarPath := "/v1/auth/aws/identity-whitelist/{instance_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"instance_id"+"}", url.PathEscape(parameterToString(instanceId, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2985,12 +2985,12 @@ func (a *Auth) GetAuthAwsIdentityWhitelistInstanceId(ctx context.Context, instan
 func (a *Auth) GetAuthAwsRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/role"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3019,12 +3019,12 @@ func (a *Auth) GetAuthAwsRoleRole(ctx context.Context, role string) (*http.Respo
 	localVarPath := "/v1/auth/aws/role/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3052,12 +3052,12 @@ func (a *Auth) GetAuthAwsRoleRole(ctx context.Context, role string) (*http.Respo
 func (a *Auth) GetAuthAwsRoles(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/roles"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3085,12 +3085,12 @@ func (a *Auth) GetAuthAwsRoles(ctx context.Context, list string) (*http.Response
 func (a *Auth) GetAuthAwsRoletagBlacklist(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/roletag-blacklist"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3119,12 +3119,12 @@ func (a *Auth) GetAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag st
 	localVarPath := "/v1/auth/aws/roletag-blacklist/{role_tag}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(roleTag, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3152,12 +3152,12 @@ func (a *Auth) GetAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag st
 func (a *Auth) GetAuthAwsRoletagDenylist(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/roletag-denylist"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3186,12 +3186,12 @@ func (a *Auth) GetAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag str
 	localVarPath := "/v1/auth/aws/roletag-denylist/{role_tag}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(roleTag, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3218,12 +3218,12 @@ func (a *Auth) GetAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag str
 func (a *Auth) GetAuthAzureConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/azure/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3251,12 +3251,12 @@ func (a *Auth) GetAuthAzureConfig(ctx context.Context) (*http.Response, error) {
 func (a *Auth) GetAuthAzureRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/azure/role"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3285,12 +3285,12 @@ func (a *Auth) GetAuthAzureRoleName(ctx context.Context, name string) (*http.Res
 	localVarPath := "/v1/auth/azure/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3317,12 +3317,12 @@ func (a *Auth) GetAuthAzureRoleName(ctx context.Context, name string) (*http.Res
 func (a *Auth) GetAuthCentrifyConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/centrify/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3350,12 +3350,12 @@ func (a *Auth) GetAuthCentrifyConfig(ctx context.Context) (*http.Response, error
 func (a *Auth) GetAuthCertCerts(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/cert/certs"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3384,12 +3384,12 @@ func (a *Auth) GetAuthCertCertsName(ctx context.Context, name string) (*http.Res
 	localVarPath := "/v1/auth/cert/certs/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3418,12 +3418,12 @@ func (a *Auth) GetAuthCertCrlsName(ctx context.Context, name string) (*http.Resp
 	localVarPath := "/v1/auth/cert/crls/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3450,12 +3450,12 @@ func (a *Auth) GetAuthCertCrlsName(ctx context.Context, name string) (*http.Resp
 func (a *Auth) GetAuthCfConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/cf/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3483,12 +3483,12 @@ func (a *Auth) GetAuthCfConfig(ctx context.Context) (*http.Response, error) {
 func (a *Auth) GetAuthCfRoles(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/cf/roles"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3517,12 +3517,12 @@ func (a *Auth) GetAuthCfRolesRole(ctx context.Context, role string) (*http.Respo
 	localVarPath := "/v1/auth/cf/roles/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3549,12 +3549,12 @@ func (a *Auth) GetAuthCfRolesRole(ctx context.Context, role string) (*http.Respo
 func (a *Auth) GetAuthGcpConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/gcp/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3582,12 +3582,12 @@ func (a *Auth) GetAuthGcpConfig(ctx context.Context) (*http.Response, error) {
 func (a *Auth) GetAuthGcpRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/gcp/role"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3616,12 +3616,12 @@ func (a *Auth) GetAuthGcpRoleName(ctx context.Context, name string) (*http.Respo
 	localVarPath := "/v1/auth/gcp/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3649,12 +3649,12 @@ func (a *Auth) GetAuthGcpRoleName(ctx context.Context, name string) (*http.Respo
 func (a *Auth) GetAuthGcpRoles(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/gcp/roles"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3681,12 +3681,12 @@ func (a *Auth) GetAuthGcpRoles(ctx context.Context, list string) (*http.Response
 func (a *Auth) GetAuthGithubConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/github/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3714,12 +3714,12 @@ func (a *Auth) GetAuthGithubConfig(ctx context.Context) (*http.Response, error) 
 func (a *Auth) GetAuthGithubMapTeams(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/github/map/teams"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3748,12 +3748,12 @@ func (a *Auth) GetAuthGithubMapTeamsKey(ctx context.Context, key string) (*http.
 	localVarPath := "/v1/auth/github/map/teams/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3781,12 +3781,12 @@ func (a *Auth) GetAuthGithubMapTeamsKey(ctx context.Context, key string) (*http.
 func (a *Auth) GetAuthGithubMapUsers(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/github/map/users"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3815,12 +3815,12 @@ func (a *Auth) GetAuthGithubMapUsersKey(ctx context.Context, key string) (*http.
 	localVarPath := "/v1/auth/github/map/users/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3847,12 +3847,12 @@ func (a *Auth) GetAuthGithubMapUsersKey(ctx context.Context, key string) (*http.
 func (a *Auth) GetAuthJwtConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/jwt/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3879,12 +3879,12 @@ func (a *Auth) GetAuthJwtConfig(ctx context.Context) (*http.Response, error) {
 func (a *Auth) GetAuthJwtOidcCallback(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/jwt/oidc/callback"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3913,12 +3913,12 @@ func (a *Auth) GetAuthJwtOidcCallback(ctx context.Context) (*http.Response, erro
 func (a *Auth) GetAuthJwtRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/jwt/role"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3947,12 +3947,12 @@ func (a *Auth) GetAuthJwtRoleName(ctx context.Context, name string) (*http.Respo
 	localVarPath := "/v1/auth/jwt/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3979,12 +3979,12 @@ func (a *Auth) GetAuthJwtRoleName(ctx context.Context, name string) (*http.Respo
 func (a *Auth) GetAuthKerberosConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/kerberos/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4011,12 +4011,12 @@ func (a *Auth) GetAuthKerberosConfig(ctx context.Context) (*http.Response, error
 func (a *Auth) GetAuthKerberosConfigLdap(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/kerberos/config/ldap"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4044,12 +4044,12 @@ func (a *Auth) GetAuthKerberosConfigLdap(ctx context.Context) (*http.Response, e
 func (a *Auth) GetAuthKerberosGroups(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/kerberos/groups"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4078,12 +4078,12 @@ func (a *Auth) GetAuthKerberosGroupsName(ctx context.Context, name string) (*htt
 	localVarPath := "/v1/auth/kerberos/groups/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4110,12 +4110,12 @@ func (a *Auth) GetAuthKerberosGroupsName(ctx context.Context, name string) (*htt
 func (a *Auth) GetAuthKerberosLogin(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/kerberos/login"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4142,12 +4142,12 @@ func (a *Auth) GetAuthKerberosLogin(ctx context.Context) (*http.Response, error)
 func (a *Auth) GetAuthKubernetesConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/kubernetes/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4175,12 +4175,12 @@ func (a *Auth) GetAuthKubernetesConfig(ctx context.Context) (*http.Response, err
 func (a *Auth) GetAuthKubernetesRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/kubernetes/role"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4209,12 +4209,12 @@ func (a *Auth) GetAuthKubernetesRoleName(ctx context.Context, name string) (*htt
 	localVarPath := "/v1/auth/kubernetes/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4241,12 +4241,12 @@ func (a *Auth) GetAuthKubernetesRoleName(ctx context.Context, name string) (*htt
 func (a *Auth) GetAuthLdapConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/ldap/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4274,12 +4274,12 @@ func (a *Auth) GetAuthLdapConfig(ctx context.Context) (*http.Response, error) {
 func (a *Auth) GetAuthLdapGroups(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/ldap/groups"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4308,12 +4308,12 @@ func (a *Auth) GetAuthLdapGroupsName(ctx context.Context, name string) (*http.Re
 	localVarPath := "/v1/auth/ldap/groups/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4341,12 +4341,12 @@ func (a *Auth) GetAuthLdapGroupsName(ctx context.Context, name string) (*http.Re
 func (a *Auth) GetAuthLdapUsers(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/ldap/users"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4375,12 +4375,12 @@ func (a *Auth) GetAuthLdapUsersName(ctx context.Context, name string) (*http.Res
 	localVarPath := "/v1/auth/ldap/users/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4407,12 +4407,12 @@ func (a *Auth) GetAuthLdapUsersName(ctx context.Context, name string) (*http.Res
 func (a *Auth) GetAuthOciConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/oci/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4440,12 +4440,12 @@ func (a *Auth) GetAuthOciConfig(ctx context.Context) (*http.Response, error) {
 func (a *Auth) GetAuthOciRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/oci/role"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4474,12 +4474,12 @@ func (a *Auth) GetAuthOciRoleRole(ctx context.Context, role string) (*http.Respo
 	localVarPath := "/v1/auth/oci/role/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4506,12 +4506,12 @@ func (a *Auth) GetAuthOciRoleRole(ctx context.Context, role string) (*http.Respo
 func (a *Auth) GetAuthOidcConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/oidc/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4538,12 +4538,12 @@ func (a *Auth) GetAuthOidcConfig(ctx context.Context) (*http.Response, error) {
 func (a *Auth) GetAuthOidcOidcCallback(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/oidc/oidc/callback"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4572,12 +4572,12 @@ func (a *Auth) GetAuthOidcOidcCallback(ctx context.Context) (*http.Response, err
 func (a *Auth) GetAuthOidcRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/oidc/role"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4606,12 +4606,12 @@ func (a *Auth) GetAuthOidcRoleName(ctx context.Context, name string) (*http.Resp
 	localVarPath := "/v1/auth/oidc/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4638,12 +4638,12 @@ func (a *Auth) GetAuthOidcRoleName(ctx context.Context, name string) (*http.Resp
 func (a *Auth) GetAuthOktaConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/okta/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4671,12 +4671,12 @@ func (a *Auth) GetAuthOktaConfig(ctx context.Context) (*http.Response, error) {
 func (a *Auth) GetAuthOktaGroups(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/okta/groups"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4705,12 +4705,12 @@ func (a *Auth) GetAuthOktaGroupsName(ctx context.Context, name string) (*http.Re
 	localVarPath := "/v1/auth/okta/groups/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4738,12 +4738,12 @@ func (a *Auth) GetAuthOktaGroupsName(ctx context.Context, name string) (*http.Re
 func (a *Auth) GetAuthOktaUsers(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/okta/users"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4772,12 +4772,12 @@ func (a *Auth) GetAuthOktaUsersName(ctx context.Context, name string) (*http.Res
 	localVarPath := "/v1/auth/okta/users/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4806,12 +4806,12 @@ func (a *Auth) GetAuthOktaVerifyNonce(ctx context.Context, nonce string) (*http.
 	localVarPath := "/v1/auth/okta/verify/{nonce}"
 	localVarPath = strings.Replace(localVarPath, "{"+"nonce"+"}", url.PathEscape(parameterToString(nonce, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4838,12 +4838,12 @@ func (a *Auth) GetAuthOktaVerifyNonce(ctx context.Context, nonce string) (*http.
 func (a *Auth) GetAuthRadiusConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/radius/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4871,12 +4871,12 @@ func (a *Auth) GetAuthRadiusConfig(ctx context.Context) (*http.Response, error) 
 func (a *Auth) GetAuthRadiusUsers(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/radius/users"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4905,12 +4905,12 @@ func (a *Auth) GetAuthRadiusUsersName(ctx context.Context, name string) (*http.R
 	localVarPath := "/v1/auth/radius/users/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4938,12 +4938,12 @@ func (a *Auth) GetAuthRadiusUsersName(ctx context.Context, name string) (*http.R
 func (a *Auth) GetAuthTokenAccessors(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/token/accessors/"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4970,12 +4970,12 @@ func (a *Auth) GetAuthTokenAccessors(ctx context.Context, list string) (*http.Re
 func (a *Auth) GetAuthTokenLookup(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/token/lookup"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5002,12 +5002,12 @@ func (a *Auth) GetAuthTokenLookup(ctx context.Context) (*http.Response, error) {
 func (a *Auth) GetAuthTokenLookupSelf(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/token/lookup-self"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5035,12 +5035,12 @@ func (a *Auth) GetAuthTokenLookupSelf(ctx context.Context) (*http.Response, erro
 func (a *Auth) GetAuthTokenRoles(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/token/roles"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5069,12 +5069,12 @@ func (a *Auth) GetAuthTokenRolesRoleName(ctx context.Context, roleName string) (
 	localVarPath := "/v1/auth/token/roles/{role_name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5102,12 +5102,12 @@ func (a *Auth) GetAuthTokenRolesRoleName(ctx context.Context, roleName string) (
 func (a *Auth) GetAuthUserpassUsers(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/userpass/users"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5136,12 +5136,12 @@ func (a *Auth) GetAuthUserpassUsersUsername(ctx context.Context, username string
 	localVarPath := "/v1/auth/userpass/users/{username}"
 	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(username, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5173,7 +5173,7 @@ func (a *Auth) PostAuthAlicloudLogin(ctx context.Context, alicloudLoginRequest A
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5207,7 +5207,7 @@ func (a *Auth) PostAuthAlicloudRoleRole(ctx context.Context, role string, aliclo
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5239,7 +5239,7 @@ func (a *Auth) PostAuthAppIdLogin(ctx context.Context, appIdLoginRequest AppIdLo
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5273,7 +5273,7 @@ func (a *Auth) PostAuthAppIdLoginAppId(ctx context.Context, appId string, appIdL
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5307,7 +5307,7 @@ func (a *Auth) PostAuthAppIdMapAppIdKey(ctx context.Context, key string, appIdMa
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5341,7 +5341,7 @@ func (a *Auth) PostAuthAppIdMapUserIdKey(ctx context.Context, key string, appIdM
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5373,7 +5373,7 @@ func (a *Auth) PostAuthApproleLogin(ctx context.Context, approleLoginRequest App
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5407,7 +5407,7 @@ func (a *Auth) PostAuthApproleRoleRoleName(ctx context.Context, roleName string,
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5441,7 +5441,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameBindSecretId(ctx context.Context, role
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5475,7 +5475,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, rol
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5509,7 +5509,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameCustomSecretId(ctx context.Context, ro
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5543,7 +5543,7 @@ func (a *Auth) PostAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName s
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5577,7 +5577,7 @@ func (a *Auth) PostAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5611,7 +5611,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName s
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5645,7 +5645,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5679,7 +5679,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.Co
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5713,7 +5713,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdAccessorLookup(ctx context.Con
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5747,7 +5747,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5781,7 +5781,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context, r
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5815,7 +5815,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdLookup(ctx context.Context, ro
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5849,7 +5849,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, r
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5883,7 +5883,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleN
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5917,7 +5917,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, r
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5951,7 +5951,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleN
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5985,7 +5985,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, role
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6019,7 +6019,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6046,12 +6046,12 @@ func (a *Auth) PostAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName
 func (a *Auth) PostAuthApproleTidySecretId(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/tidy/secret-id"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6085,7 +6085,7 @@ func (a *Auth) PostAuthAwsConfigCertificateCertName(ctx context.Context, certNam
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6117,7 +6117,7 @@ func (a *Auth) PostAuthAwsConfigClient(ctx context.Context, awsConfigClientReque
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6149,7 +6149,7 @@ func (a *Auth) PostAuthAwsConfigIdentity(ctx context.Context, awsConfigIdentityR
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6176,12 +6176,12 @@ func (a *Auth) PostAuthAwsConfigIdentity(ctx context.Context, awsConfigIdentityR
 func (a *Auth) PostAuthAwsConfigRotateRoot(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/config/rotate-root"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6215,7 +6215,7 @@ func (a *Auth) PostAuthAwsConfigStsAccountId(ctx context.Context, accountId stri
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6247,7 +6247,7 @@ func (a *Auth) PostAuthAwsConfigTidyIdentityAccesslist(ctx context.Context, awsC
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6279,7 +6279,7 @@ func (a *Auth) PostAuthAwsConfigTidyIdentityWhitelist(ctx context.Context, awsCo
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6311,7 +6311,7 @@ func (a *Auth) PostAuthAwsConfigTidyRoletagBlacklist(ctx context.Context, awsCon
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6343,7 +6343,7 @@ func (a *Auth) PostAuthAwsConfigTidyRoletagDenylist(ctx context.Context, awsConf
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6375,7 +6375,7 @@ func (a *Auth) PostAuthAwsLogin(ctx context.Context, awsLoginRequest AwsLoginReq
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6409,7 +6409,7 @@ func (a *Auth) PostAuthAwsRoleRole(ctx context.Context, role string, awsRoleRequ
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6443,7 +6443,7 @@ func (a *Auth) PostAuthAwsRoleRoleTag(ctx context.Context, role string, awsRoleT
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6472,12 +6472,12 @@ func (a *Auth) PostAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag s
 	localVarPath := "/v1/auth/aws/roletag-blacklist/{role_tag}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(roleTag, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6506,12 +6506,12 @@ func (a *Auth) PostAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag st
 	localVarPath := "/v1/auth/aws/roletag-denylist/{role_tag}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(roleTag, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6543,7 +6543,7 @@ func (a *Auth) PostAuthAwsTidyIdentityAccesslist(ctx context.Context, awsTidyIde
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6575,7 +6575,7 @@ func (a *Auth) PostAuthAwsTidyIdentityWhitelist(ctx context.Context, awsTidyIden
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6607,7 +6607,7 @@ func (a *Auth) PostAuthAwsTidyRoletagBlacklist(ctx context.Context, awsTidyRolet
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6639,7 +6639,7 @@ func (a *Auth) PostAuthAwsTidyRoletagDenylist(ctx context.Context, awsTidyRoleta
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6671,7 +6671,7 @@ func (a *Auth) PostAuthAzureConfig(ctx context.Context, azureConfigRequest Azure
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6703,7 +6703,7 @@ func (a *Auth) PostAuthAzureLogin(ctx context.Context, azureLoginRequest AzureLo
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6737,7 +6737,7 @@ func (a *Auth) PostAuthAzureRoleName(ctx context.Context, name string, azureRole
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6769,7 +6769,7 @@ func (a *Auth) PostAuthCentrifyConfig(ctx context.Context, centrifyConfigRequest
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6801,7 +6801,7 @@ func (a *Auth) PostAuthCentrifyLogin(ctx context.Context, centrifyLoginRequest C
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6835,7 +6835,7 @@ func (a *Auth) PostAuthCertCertsName(ctx context.Context, name string, certCerts
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6867,7 +6867,7 @@ func (a *Auth) PostAuthCertConfig(ctx context.Context, certConfigRequest CertCon
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6901,7 +6901,7 @@ func (a *Auth) PostAuthCertCrlsName(ctx context.Context, name string, certCrlsRe
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6933,7 +6933,7 @@ func (a *Auth) PostAuthCertLogin(ctx context.Context, certLoginRequest CertLogin
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6965,7 +6965,7 @@ func (a *Auth) PostAuthCfConfig(ctx context.Context, cfConfigRequest CfConfigReq
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6997,7 +6997,7 @@ func (a *Auth) PostAuthCfLogin(ctx context.Context, cfLoginRequest CfLoginReques
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7031,7 +7031,7 @@ func (a *Auth) PostAuthCfRolesRole(ctx context.Context, role string, cfRolesRequ
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7063,7 +7063,7 @@ func (a *Auth) PostAuthGcpConfig(ctx context.Context, gcpConfigRequest GcpConfig
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7095,7 +7095,7 @@ func (a *Auth) PostAuthGcpLogin(ctx context.Context, gcpLoginRequest GcpLoginReq
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7129,7 +7129,7 @@ func (a *Auth) PostAuthGcpRoleName(ctx context.Context, name string, gcpRoleRequ
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7163,7 +7163,7 @@ func (a *Auth) PostAuthGcpRoleNameLabels(ctx context.Context, name string, gcpRo
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7197,7 +7197,7 @@ func (a *Auth) PostAuthGcpRoleNameServiceAccounts(ctx context.Context, name stri
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7229,7 +7229,7 @@ func (a *Auth) PostAuthGithubConfig(ctx context.Context, githubConfigRequest Git
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7261,7 +7261,7 @@ func (a *Auth) PostAuthGithubLogin(ctx context.Context, githubLoginRequest Githu
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7295,7 +7295,7 @@ func (a *Auth) PostAuthGithubMapTeamsKey(ctx context.Context, key string, github
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7329,7 +7329,7 @@ func (a *Auth) PostAuthGithubMapUsersKey(ctx context.Context, key string, github
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7362,7 +7362,7 @@ func (a *Auth) PostAuthJwtConfig(ctx context.Context, jwtConfigRequest JwtConfig
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7394,7 +7394,7 @@ func (a *Auth) PostAuthJwtLogin(ctx context.Context, jwtLoginRequest JwtLoginReq
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7426,7 +7426,7 @@ func (a *Auth) PostAuthJwtOidcAuthUrl(ctx context.Context, jwtOidcAuthUrlRequest
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7458,7 +7458,7 @@ func (a *Auth) PostAuthJwtOidcCallback(ctx context.Context, jwtOidcCallbackReque
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7493,7 +7493,7 @@ func (a *Auth) PostAuthJwtRoleName(ctx context.Context, name string, jwtRoleRequ
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7525,7 +7525,7 @@ func (a *Auth) PostAuthKerberosConfig(ctx context.Context, kerberosConfigRequest
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7557,7 +7557,7 @@ func (a *Auth) PostAuthKerberosConfigLdap(ctx context.Context, kerberosConfigLda
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7591,7 +7591,7 @@ func (a *Auth) PostAuthKerberosGroupsName(ctx context.Context, name string, kerb
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7623,7 +7623,7 @@ func (a *Auth) PostAuthKerberosLogin(ctx context.Context, kerberosLoginRequest K
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7655,7 +7655,7 @@ func (a *Auth) PostAuthKubernetesConfig(ctx context.Context, kubernetesConfigReq
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7687,7 +7687,7 @@ func (a *Auth) PostAuthKubernetesLogin(ctx context.Context, kubernetesLoginReque
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7721,7 +7721,7 @@ func (a *Auth) PostAuthKubernetesRoleName(ctx context.Context, name string, kube
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7753,7 +7753,7 @@ func (a *Auth) PostAuthLdapConfig(ctx context.Context, ldapConfigRequest LdapCon
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7787,7 +7787,7 @@ func (a *Auth) PostAuthLdapGroupsName(ctx context.Context, name string, ldapGrou
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7821,7 +7821,7 @@ func (a *Auth) PostAuthLdapLoginUsername(ctx context.Context, username string, l
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7855,7 +7855,7 @@ func (a *Auth) PostAuthLdapUsersName(ctx context.Context, name string, ldapUsers
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7887,7 +7887,7 @@ func (a *Auth) PostAuthOciConfig(ctx context.Context, ociConfigRequest OciConfig
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7921,7 +7921,7 @@ func (a *Auth) PostAuthOciLoginRole(ctx context.Context, role string, ociLoginRe
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7955,7 +7955,7 @@ func (a *Auth) PostAuthOciRoleRole(ctx context.Context, role string, ociRoleRequ
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7988,7 +7988,7 @@ func (a *Auth) PostAuthOidcConfig(ctx context.Context, oidcConfigRequest OidcCon
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8020,7 +8020,7 @@ func (a *Auth) PostAuthOidcLogin(ctx context.Context, oidcLoginRequest OidcLogin
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8052,7 +8052,7 @@ func (a *Auth) PostAuthOidcOidcAuthUrl(ctx context.Context, oidcOidcAuthUrlReque
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8084,7 +8084,7 @@ func (a *Auth) PostAuthOidcOidcCallback(ctx context.Context, oidcOidcCallbackReq
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8119,7 +8119,7 @@ func (a *Auth) PostAuthOidcRoleName(ctx context.Context, name string, oidcRoleRe
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8151,7 +8151,7 @@ func (a *Auth) PostAuthOktaConfig(ctx context.Context, oktaConfigRequest OktaCon
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8185,7 +8185,7 @@ func (a *Auth) PostAuthOktaGroupsName(ctx context.Context, name string, oktaGrou
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8219,7 +8219,7 @@ func (a *Auth) PostAuthOktaLoginUsername(ctx context.Context, username string, o
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8253,7 +8253,7 @@ func (a *Auth) PostAuthOktaUsersName(ctx context.Context, name string, oktaUsers
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8285,7 +8285,7 @@ func (a *Auth) PostAuthRadiusConfig(ctx context.Context, radiusConfigRequest Rad
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8317,7 +8317,7 @@ func (a *Auth) PostAuthRadiusLogin(ctx context.Context, radiusLoginRequest Radiu
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8351,7 +8351,7 @@ func (a *Auth) PostAuthRadiusLoginUrlusername(ctx context.Context, urlusername s
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8385,7 +8385,7 @@ func (a *Auth) PostAuthRadiusUsersName(ctx context.Context, name string, radiusU
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8412,12 +8412,12 @@ func (a *Auth) PostAuthRadiusUsersName(ctx context.Context, name string, radiusU
 func (a *Auth) PostAuthTokenCreate(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/token/create"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8444,12 +8444,12 @@ func (a *Auth) PostAuthTokenCreate(ctx context.Context) (*http.Response, error) 
 func (a *Auth) PostAuthTokenCreateOrphan(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/token/create-orphan"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8478,12 +8478,12 @@ func (a *Auth) PostAuthTokenCreateRoleName(ctx context.Context, roleName string)
 	localVarPath := "/v1/auth/token/create/{role_name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8515,7 +8515,7 @@ func (a *Auth) PostAuthTokenLookup(ctx context.Context, tokenLookupRequest Token
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8547,7 +8547,7 @@ func (a *Auth) PostAuthTokenLookupAccessor(ctx context.Context, tokenLookupAcces
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8579,7 +8579,7 @@ func (a *Auth) PostAuthTokenLookupSelf(ctx context.Context, tokenLookupSelfReque
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8611,7 +8611,7 @@ func (a *Auth) PostAuthTokenRenew(ctx context.Context, tokenRenewRequest TokenRe
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8643,7 +8643,7 @@ func (a *Auth) PostAuthTokenRenewAccessor(ctx context.Context, tokenRenewAccesso
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8675,7 +8675,7 @@ func (a *Auth) PostAuthTokenRenewSelf(ctx context.Context, tokenRenewSelfRequest
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8707,7 +8707,7 @@ func (a *Auth) PostAuthTokenRevoke(ctx context.Context, tokenRevokeRequest Token
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8739,7 +8739,7 @@ func (a *Auth) PostAuthTokenRevokeAccessor(ctx context.Context, tokenRevokeAcces
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8771,7 +8771,7 @@ func (a *Auth) PostAuthTokenRevokeOrphan(ctx context.Context, tokenRevokeOrphanR
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8798,12 +8798,12 @@ func (a *Auth) PostAuthTokenRevokeOrphan(ctx context.Context, tokenRevokeOrphanR
 func (a *Auth) PostAuthTokenRevokeSelf(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/token/revoke-self"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8837,7 +8837,7 @@ func (a *Auth) PostAuthTokenRolesRoleName(ctx context.Context, roleName string, 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8864,12 +8864,12 @@ func (a *Auth) PostAuthTokenRolesRoleName(ctx context.Context, roleName string, 
 func (a *Auth) PostAuthTokenTidy(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/auth/token/tidy"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8903,7 +8903,7 @@ func (a *Auth) PostAuthUserpassLoginUsername(ctx context.Context, username strin
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8937,7 +8937,7 @@ func (a *Auth) PostAuthUserpassUsersUsername(ctx context.Context, username strin
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8971,7 +8971,7 @@ func (a *Auth) PostAuthUserpassUsersUsernamePassword(ctx context.Context, userna
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9005,7 +9005,7 @@ func (a *Auth) PostAuthUserpassUsersUsernamePolicies(ctx context.Context, userna
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}

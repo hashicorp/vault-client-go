@@ -41,7 +41,7 @@ func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}, {{par
 	}
 {{/bodyParams}}
 {{^bodyParams}}
-	req, err := a.client.NewRequestWithContext(ctx, http.Method{{httpMethod}}, localVarPath, nil)
+	req, err := a.client.NewRequest(ctx, http.Method{{httpMethod}}, localVarPath, nil)
 	if err != nil {
 		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, err
 	}

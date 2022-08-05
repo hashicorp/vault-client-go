@@ -35,27 +35,12 @@ func (a *Identity) DeleteIdentityAliasIdId(ctx context.Context, id string) (*htt
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteIdentityEntityAliasIdId Update, read or delete an alias ID.
@@ -69,27 +54,12 @@ func (a *Identity) DeleteIdentityEntityAliasIdId(ctx context.Context, id string)
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteIdentityEntityIdId Update, read or delete an entity using entity ID
@@ -103,27 +73,12 @@ func (a *Identity) DeleteIdentityEntityIdId(ctx context.Context, id string) (*ht
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteIdentityEntityNameName Update, read or delete an entity using entity name
@@ -137,27 +92,12 @@ func (a *Identity) DeleteIdentityEntityNameName(ctx context.Context, name string
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteIdentityGroupAliasIdId
@@ -171,27 +111,12 @@ func (a *Identity) DeleteIdentityGroupAliasIdId(ctx context.Context, id string) 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteIdentityGroupIdId Update or delete an existing group using its ID.
@@ -205,27 +130,12 @@ func (a *Identity) DeleteIdentityGroupIdId(ctx context.Context, id string) (*htt
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteIdentityGroupNameName
@@ -239,27 +149,12 @@ func (a *Identity) DeleteIdentityGroupNameName(ctx context.Context, name string)
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteIdentityMfaLoginEnforcementName Delete a login enforcement
@@ -273,27 +168,12 @@ func (a *Identity) DeleteIdentityMfaLoginEnforcementName(ctx context.Context, na
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteIdentityMfaMethodDuoMethodId Delete a configuration for the given MFA method
@@ -307,27 +187,12 @@ func (a *Identity) DeleteIdentityMfaMethodDuoMethodId(ctx context.Context, metho
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteIdentityMfaMethodOktaMethodId Delete a configuration for the given MFA method
@@ -341,27 +206,12 @@ func (a *Identity) DeleteIdentityMfaMethodOktaMethodId(ctx context.Context, meth
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteIdentityMfaMethodPingidMethodId Delete a configuration for the given MFA method
@@ -375,27 +225,12 @@ func (a *Identity) DeleteIdentityMfaMethodPingidMethodId(ctx context.Context, me
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteIdentityMfaMethodTotpMethodId Delete a configuration for the given MFA method
@@ -409,27 +244,12 @@ func (a *Identity) DeleteIdentityMfaMethodTotpMethodId(ctx context.Context, meth
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteIdentityOidcAssignmentName
@@ -443,27 +263,12 @@ func (a *Identity) DeleteIdentityOidcAssignmentName(ctx context.Context, name st
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteIdentityOidcClientName
@@ -477,27 +282,12 @@ func (a *Identity) DeleteIdentityOidcClientName(ctx context.Context, name string
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteIdentityOidcKeyName CRUD operations for OIDC keys.
@@ -511,27 +301,12 @@ func (a *Identity) DeleteIdentityOidcKeyName(ctx context.Context, name string) (
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteIdentityOidcProviderName
@@ -545,27 +320,12 @@ func (a *Identity) DeleteIdentityOidcProviderName(ctx context.Context, name stri
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteIdentityOidcRoleName CRUD operations on OIDC Roles
@@ -579,27 +339,12 @@ func (a *Identity) DeleteIdentityOidcRoleName(ctx context.Context, name string) 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteIdentityOidcScopeName
@@ -613,27 +358,12 @@ func (a *Identity) DeleteIdentityOidcScopeName(ctx context.Context, name string)
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteIdentityPersonaIdId Update, read or delete an alias ID.
@@ -647,27 +377,12 @@ func (a *Identity) DeleteIdentityPersonaIdId(ctx context.Context, id string) (*h
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityAliasId List all the alias IDs.
@@ -680,27 +395,12 @@ func (a *Identity) GetIdentityAliasId(ctx context.Context, list string) (*http.R
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityAliasIdId Update, read or delete an alias ID.
@@ -714,27 +414,12 @@ func (a *Identity) GetIdentityAliasIdId(ctx context.Context, id string) (*http.R
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityEntityAliasId List all the alias IDs.
@@ -747,27 +432,12 @@ func (a *Identity) GetIdentityEntityAliasId(ctx context.Context, list string) (*
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityEntityAliasIdId Update, read or delete an alias ID.
@@ -781,27 +451,12 @@ func (a *Identity) GetIdentityEntityAliasIdId(ctx context.Context, id string) (*
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityEntityId List all the entity IDs
@@ -814,27 +469,12 @@ func (a *Identity) GetIdentityEntityId(ctx context.Context, list string) (*http.
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityEntityIdId Update, read or delete an entity using entity ID
@@ -848,27 +488,12 @@ func (a *Identity) GetIdentityEntityIdId(ctx context.Context, id string) (*http.
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityEntityName List all the entity names
@@ -881,27 +506,12 @@ func (a *Identity) GetIdentityEntityName(ctx context.Context, list string) (*htt
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityEntityNameName Update, read or delete an entity using entity name
@@ -915,27 +525,12 @@ func (a *Identity) GetIdentityEntityNameName(ctx context.Context, name string) (
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityGroupAliasId List all the group alias IDs.
@@ -948,27 +543,12 @@ func (a *Identity) GetIdentityGroupAliasId(ctx context.Context, list string) (*h
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityGroupAliasIdId
@@ -982,27 +562,12 @@ func (a *Identity) GetIdentityGroupAliasIdId(ctx context.Context, id string) (*h
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityGroupId List all the group IDs.
@@ -1015,27 +580,12 @@ func (a *Identity) GetIdentityGroupId(ctx context.Context, list string) (*http.R
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityGroupIdId Update or delete an existing group using its ID.
@@ -1049,27 +599,12 @@ func (a *Identity) GetIdentityGroupIdId(ctx context.Context, id string) (*http.R
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityGroupName
@@ -1082,27 +617,12 @@ func (a *Identity) GetIdentityGroupName(ctx context.Context, list string) (*http
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityGroupNameName
@@ -1116,27 +636,12 @@ func (a *Identity) GetIdentityGroupNameName(ctx context.Context, name string) (*
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityMfaLoginEnforcement List login enforcements
@@ -1149,27 +654,12 @@ func (a *Identity) GetIdentityMfaLoginEnforcement(ctx context.Context, list stri
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityMfaLoginEnforcementName Read the current login enforcement
@@ -1183,27 +673,12 @@ func (a *Identity) GetIdentityMfaLoginEnforcementName(ctx context.Context, name 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityMfaMethod List MFA method configurations for all MFA methods
@@ -1216,27 +691,12 @@ func (a *Identity) GetIdentityMfaMethod(ctx context.Context, list string) (*http
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityMfaMethodDuo List MFA method configurations for the given MFA method
@@ -1249,27 +709,12 @@ func (a *Identity) GetIdentityMfaMethodDuo(ctx context.Context, list string) (*h
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityMfaMethodDuoMethodId Read the current configuration for the given MFA method
@@ -1283,27 +728,12 @@ func (a *Identity) GetIdentityMfaMethodDuoMethodId(ctx context.Context, methodId
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityMfaMethodMethodId Read the current configuration for the given ID regardless of the MFA method type
@@ -1317,27 +747,12 @@ func (a *Identity) GetIdentityMfaMethodMethodId(ctx context.Context, methodId st
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityMfaMethodOkta List MFA method configurations for the given MFA method
@@ -1350,27 +765,12 @@ func (a *Identity) GetIdentityMfaMethodOkta(ctx context.Context, list string) (*
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityMfaMethodOktaMethodId Read the current configuration for the given MFA method
@@ -1384,27 +784,12 @@ func (a *Identity) GetIdentityMfaMethodOktaMethodId(ctx context.Context, methodI
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityMfaMethodPingid List MFA method configurations for the given MFA method
@@ -1417,27 +802,12 @@ func (a *Identity) GetIdentityMfaMethodPingid(ctx context.Context, list string) 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityMfaMethodPingidMethodId Read the current configuration for the given MFA method
@@ -1451,27 +821,12 @@ func (a *Identity) GetIdentityMfaMethodPingidMethodId(ctx context.Context, metho
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityMfaMethodTotp List MFA method configurations for the given MFA method
@@ -1484,27 +839,12 @@ func (a *Identity) GetIdentityMfaMethodTotp(ctx context.Context, list string) (*
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityMfaMethodTotpMethodId Read the current configuration for the given MFA method
@@ -1518,27 +858,12 @@ func (a *Identity) GetIdentityMfaMethodTotpMethodId(ctx context.Context, methodI
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityOidcAssignment
@@ -1551,27 +876,12 @@ func (a *Identity) GetIdentityOidcAssignment(ctx context.Context, list string) (
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityOidcAssignmentName
@@ -1585,27 +895,12 @@ func (a *Identity) GetIdentityOidcAssignmentName(ctx context.Context, name strin
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityOidcClient
@@ -1618,27 +913,12 @@ func (a *Identity) GetIdentityOidcClient(ctx context.Context, list string) (*htt
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityOidcClientName
@@ -1652,27 +932,12 @@ func (a *Identity) GetIdentityOidcClientName(ctx context.Context, name string) (
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityOidcConfig OIDC configuration
@@ -1684,27 +949,12 @@ func (a *Identity) GetIdentityOidcConfig(ctx context.Context) (*http.Response, e
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityOidcKey List OIDC keys
@@ -1717,27 +967,12 @@ func (a *Identity) GetIdentityOidcKey(ctx context.Context, list string) (*http.R
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityOidcKeyName CRUD operations for OIDC keys.
@@ -1751,27 +986,12 @@ func (a *Identity) GetIdentityOidcKeyName(ctx context.Context, name string) (*ht
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityOidcProvider
@@ -1784,27 +1004,12 @@ func (a *Identity) GetIdentityOidcProvider(ctx context.Context, list string) (*h
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityOidcProviderName
@@ -1818,27 +1023,12 @@ func (a *Identity) GetIdentityOidcProviderName(ctx context.Context, name string)
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityOidcProviderNameAuthorize
@@ -1852,27 +1042,12 @@ func (a *Identity) GetIdentityOidcProviderNameAuthorize(ctx context.Context, nam
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityOidcProviderNameUserinfo
@@ -1886,27 +1061,12 @@ func (a *Identity) GetIdentityOidcProviderNameUserinfo(ctx context.Context, name
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityOidcProviderNameWellKnownKeys
@@ -1920,27 +1080,12 @@ func (a *Identity) GetIdentityOidcProviderNameWellKnownKeys(ctx context.Context,
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityOidcProviderNameWellKnownOpenidConfiguration
@@ -1954,27 +1099,12 @@ func (a *Identity) GetIdentityOidcProviderNameWellKnownOpenidConfiguration(ctx c
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityOidcRole List configured OIDC roles
@@ -1987,27 +1117,12 @@ func (a *Identity) GetIdentityOidcRole(ctx context.Context, list string) (*http.
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityOidcRoleName CRUD operations on OIDC Roles
@@ -2021,27 +1136,12 @@ func (a *Identity) GetIdentityOidcRoleName(ctx context.Context, name string) (*h
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityOidcScope
@@ -2054,27 +1154,12 @@ func (a *Identity) GetIdentityOidcScope(ctx context.Context, list string) (*http
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityOidcScopeName
@@ -2088,27 +1173,12 @@ func (a *Identity) GetIdentityOidcScopeName(ctx context.Context, name string) (*
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityOidcTokenName Generate an OIDC token
@@ -2122,27 +1192,12 @@ func (a *Identity) GetIdentityOidcTokenName(ctx context.Context, name string) (*
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityOidcWellKnownKeys Retrieve public keys
@@ -2154,27 +1209,12 @@ func (a *Identity) GetIdentityOidcWellKnownKeys(ctx context.Context) (*http.Resp
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityOidcWellKnownOpenidConfiguration Query OIDC configurations
@@ -2186,27 +1226,12 @@ func (a *Identity) GetIdentityOidcWellKnownOpenidConfiguration(ctx context.Conte
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityPersonaId List all the alias IDs.
@@ -2219,27 +1244,12 @@ func (a *Identity) GetIdentityPersonaId(ctx context.Context, list string) (*http
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetIdentityPersonaIdId Update, read or delete an alias ID.
@@ -2253,27 +1263,12 @@ func (a *Identity) GetIdentityPersonaIdId(ctx context.Context, id string) (*http
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityAlias Create a new alias.
@@ -2285,27 +1280,12 @@ func (a *Identity) PostIdentityAlias(ctx context.Context, identityAliasRequest I
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityAliasIdId Update, read or delete an alias ID.
@@ -2319,27 +1299,12 @@ func (a *Identity) PostIdentityAliasIdId(ctx context.Context, id string, identit
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityEntity Create a new entity
@@ -2351,27 +1316,12 @@ func (a *Identity) PostIdentityEntity(ctx context.Context, identityEntityRequest
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityEntityAlias Create a new alias.
@@ -2383,27 +1333,12 @@ func (a *Identity) PostIdentityEntityAlias(ctx context.Context, identityEntityAl
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityEntityAliasIdId Update, read or delete an alias ID.
@@ -2417,27 +1352,12 @@ func (a *Identity) PostIdentityEntityAliasIdId(ctx context.Context, id string, i
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityEntityBatchDelete Delete all of the entities provided
@@ -2449,27 +1369,12 @@ func (a *Identity) PostIdentityEntityBatchDelete(ctx context.Context, identityEn
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityEntityIdId Update, read or delete an entity using entity ID
@@ -2483,27 +1388,12 @@ func (a *Identity) PostIdentityEntityIdId(ctx context.Context, id string, identi
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityEntityMerge Merge two or more entities together
@@ -2515,27 +1405,12 @@ func (a *Identity) PostIdentityEntityMerge(ctx context.Context, identityEntityMe
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityEntityNameName Update, read or delete an entity using entity name
@@ -2549,27 +1424,12 @@ func (a *Identity) PostIdentityEntityNameName(ctx context.Context, name string, 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityGroup Create a new group.
@@ -2581,27 +1441,12 @@ func (a *Identity) PostIdentityGroup(ctx context.Context, identityGroupRequest I
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityGroupAlias Creates a new group alias, or updates an existing one.
@@ -2613,27 +1458,12 @@ func (a *Identity) PostIdentityGroupAlias(ctx context.Context, identityGroupAlia
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityGroupAliasIdId
@@ -2647,27 +1477,12 @@ func (a *Identity) PostIdentityGroupAliasIdId(ctx context.Context, id string, id
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityGroupIdId Update or delete an existing group using its ID.
@@ -2681,27 +1496,12 @@ func (a *Identity) PostIdentityGroupIdId(ctx context.Context, id string, identit
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityGroupNameName
@@ -2715,27 +1515,12 @@ func (a *Identity) PostIdentityGroupNameName(ctx context.Context, name string, i
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityLookupEntity Query entities based on various properties.
@@ -2747,27 +1532,12 @@ func (a *Identity) PostIdentityLookupEntity(ctx context.Context, identityLookupE
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityLookupGroup Query groups based on various properties.
@@ -2779,27 +1549,12 @@ func (a *Identity) PostIdentityLookupGroup(ctx context.Context, identityLookupGr
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityMfaLoginEnforcementName Create or update a login enforcement
@@ -2813,27 +1568,12 @@ func (a *Identity) PostIdentityMfaLoginEnforcementName(ctx context.Context, name
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityMfaMethodDuoMethodId Update or create a configuration for the given MFA method
@@ -2847,27 +1587,12 @@ func (a *Identity) PostIdentityMfaMethodDuoMethodId(ctx context.Context, methodI
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityMfaMethodOktaMethodId Update or create a configuration for the given MFA method
@@ -2881,27 +1606,12 @@ func (a *Identity) PostIdentityMfaMethodOktaMethodId(ctx context.Context, method
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityMfaMethodPingidMethodId Update or create a configuration for the given MFA method
@@ -2915,27 +1625,12 @@ func (a *Identity) PostIdentityMfaMethodPingidMethodId(ctx context.Context, meth
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityMfaMethodTotpAdminDestroy Destroys a TOTP secret for the given MFA method ID on the given entity
@@ -2947,27 +1642,12 @@ func (a *Identity) PostIdentityMfaMethodTotpAdminDestroy(ctx context.Context, id
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityMfaMethodTotpAdminGenerate Update or create TOTP secret for the given method ID on the given entity.
@@ -2979,27 +1659,12 @@ func (a *Identity) PostIdentityMfaMethodTotpAdminGenerate(ctx context.Context, i
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityMfaMethodTotpGenerate Update or create TOTP secret for the given method ID on the given entity.
@@ -3011,27 +1676,12 @@ func (a *Identity) PostIdentityMfaMethodTotpGenerate(ctx context.Context, identi
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityMfaMethodTotpMethodId Update or create a configuration for the given MFA method
@@ -3045,27 +1695,12 @@ func (a *Identity) PostIdentityMfaMethodTotpMethodId(ctx context.Context, method
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityOidcAssignmentName
@@ -3079,27 +1714,12 @@ func (a *Identity) PostIdentityOidcAssignmentName(ctx context.Context, name stri
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityOidcClientName
@@ -3113,27 +1733,12 @@ func (a *Identity) PostIdentityOidcClientName(ctx context.Context, name string, 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityOidcConfig OIDC configuration
@@ -3145,27 +1750,12 @@ func (a *Identity) PostIdentityOidcConfig(ctx context.Context, identityOidcConfi
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityOidcIntrospect Verify the authenticity of an OIDC token
@@ -3177,27 +1767,12 @@ func (a *Identity) PostIdentityOidcIntrospect(ctx context.Context, identityOidcI
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityOidcKeyName CRUD operations for OIDC keys.
@@ -3211,27 +1786,12 @@ func (a *Identity) PostIdentityOidcKeyName(ctx context.Context, name string, ide
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityOidcKeyNameRotate Rotate a named OIDC key.
@@ -3245,27 +1805,12 @@ func (a *Identity) PostIdentityOidcKeyNameRotate(ctx context.Context, name strin
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityOidcProviderName
@@ -3279,27 +1824,12 @@ func (a *Identity) PostIdentityOidcProviderName(ctx context.Context, name string
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityOidcProviderNameAuthorize
@@ -3313,27 +1843,12 @@ func (a *Identity) PostIdentityOidcProviderNameAuthorize(ctx context.Context, na
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityOidcProviderNameToken
@@ -3347,27 +1862,12 @@ func (a *Identity) PostIdentityOidcProviderNameToken(ctx context.Context, name s
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityOidcProviderNameUserinfo
@@ -3381,27 +1881,12 @@ func (a *Identity) PostIdentityOidcProviderNameUserinfo(ctx context.Context, nam
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityOidcRoleName CRUD operations on OIDC Roles
@@ -3415,27 +1900,12 @@ func (a *Identity) PostIdentityOidcRoleName(ctx context.Context, name string, id
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityOidcScopeName
@@ -3449,27 +1919,12 @@ func (a *Identity) PostIdentityOidcScopeName(ctx context.Context, name string, i
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityPersona Create a new alias.
@@ -3481,27 +1936,12 @@ func (a *Identity) PostIdentityPersona(ctx context.Context, identityPersonaReque
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostIdentityPersonaIdId Update, read or delete an alias ID.
@@ -3515,25 +1955,10 @@ func (a *Identity) PostIdentityPersonaIdId(ctx context.Context, id string, ident
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }

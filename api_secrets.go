@@ -33,27 +33,12 @@ func (a *Secrets) DeleteAdConfig(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteAdLibraryName Delete a library set.
@@ -67,27 +52,12 @@ func (a *Secrets) DeleteAdLibraryName(ctx context.Context, name string) (*http.R
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteAdRolesName Manage roles to build links between Vault and Active Directory service accounts.
@@ -101,27 +71,12 @@ func (a *Secrets) DeleteAdRolesName(ctx context.Context, name string) (*http.Res
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteAlicloudConfig Configure the access key and secret to use for RAM and STS calls.
@@ -133,27 +88,12 @@ func (a *Secrets) DeleteAlicloudConfig(ctx context.Context) (*http.Response, err
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteAlicloudRoleName Read, write and reference policies and roles that API keys or STS credentials can be made for.
@@ -167,27 +107,12 @@ func (a *Secrets) DeleteAlicloudRoleName(ctx context.Context, name string) (*htt
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteAwsRolesName Read, write and reference IAM policies that access keys can be made for.
@@ -201,27 +126,12 @@ func (a *Secrets) DeleteAwsRolesName(ctx context.Context, name string) (*http.Re
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteAzureConfig
@@ -233,27 +143,12 @@ func (a *Secrets) DeleteAzureConfig(ctx context.Context) (*http.Response, error)
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteAzureRolesName Manage the Vault roles used to generate Azure credentials.
@@ -267,27 +162,12 @@ func (a *Secrets) DeleteAzureRolesName(ctx context.Context, name string) (*http.
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteConsulRolesName
@@ -301,27 +181,12 @@ func (a *Secrets) DeleteConsulRolesName(ctx context.Context, name string) (*http
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteCubbyholePath Deletes the secret at the specified location.
@@ -335,27 +200,12 @@ func (a *Secrets) DeleteCubbyholePath(ctx context.Context, path string) (*http.R
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteGcpRolesetName
@@ -369,27 +219,12 @@ func (a *Secrets) DeleteGcpRolesetName(ctx context.Context, name string) (*http.
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteGcpStaticAccountName
@@ -403,27 +238,12 @@ func (a *Secrets) DeleteGcpStaticAccountName(ctx context.Context, name string) (
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteGcpkmsConfig Configure the GCP KMS secrets engine
@@ -435,27 +255,12 @@ func (a *Secrets) DeleteGcpkmsConfig(ctx context.Context) (*http.Response, error
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteGcpkmsKeysDeregisterKey Deregister an existing key in Vault
@@ -469,27 +274,12 @@ func (a *Secrets) DeleteGcpkmsKeysDeregisterKey(ctx context.Context, key string)
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteGcpkmsKeysKey Interact with crypto keys in Vault and Google Cloud KMS
@@ -503,27 +293,12 @@ func (a *Secrets) DeleteGcpkmsKeysKey(ctx context.Context, key string) (*http.Re
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteGcpkmsKeysTrimKey Delete old crypto key versions from Google Cloud KMS
@@ -537,27 +312,12 @@ func (a *Secrets) DeleteGcpkmsKeysTrimKey(ctx context.Context, key string) (*htt
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteKubernetesConfig
@@ -569,27 +329,12 @@ func (a *Secrets) DeleteKubernetesConfig(ctx context.Context) (*http.Response, e
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteKubernetesRolesName
@@ -603,27 +348,12 @@ func (a *Secrets) DeleteKubernetesRolesName(ctx context.Context, name string) (*
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteKvPath Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
@@ -637,27 +367,12 @@ func (a *Secrets) DeleteKvPath(ctx context.Context, path string) (*http.Response
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteMongodbatlasRolesName Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
@@ -671,27 +386,12 @@ func (a *Secrets) DeleteMongodbatlasRolesName(ctx context.Context, name string) 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteNomadConfigAccess
@@ -703,27 +403,12 @@ func (a *Secrets) DeleteNomadConfigAccess(ctx context.Context) (*http.Response, 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteNomadConfigLease Configure the lease parameters for generated tokens
@@ -735,27 +420,12 @@ func (a *Secrets) DeleteNomadConfigLease(ctx context.Context) (*http.Response, e
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteNomadRoleName
@@ -769,27 +439,12 @@ func (a *Secrets) DeleteNomadRoleName(ctx context.Context, name string) (*http.R
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteOpenldapConfig
@@ -801,27 +456,12 @@ func (a *Secrets) DeleteOpenldapConfig(ctx context.Context) (*http.Response, err
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteOpenldapRoleName
@@ -835,27 +475,12 @@ func (a *Secrets) DeleteOpenldapRoleName(ctx context.Context, name string) (*htt
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteOpenldapStaticRoleName
@@ -869,27 +494,12 @@ func (a *Secrets) DeleteOpenldapStaticRoleName(ctx context.Context, name string)
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeletePkiIssuerRefDerPem
@@ -903,27 +513,12 @@ func (a *Secrets) DeletePkiIssuerRefDerPem(ctx context.Context, issuerRef string
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeletePkiJson
@@ -935,27 +530,12 @@ func (a *Secrets) DeletePkiJson(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeletePkiKeyKeyRef
@@ -969,27 +549,12 @@ func (a *Secrets) DeletePkiKeyKeyRef(ctx context.Context, keyRef string) (*http.
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeletePkiRolesName
@@ -1003,27 +568,12 @@ func (a *Secrets) DeletePkiRolesName(ctx context.Context, name string) (*http.Re
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeletePkiRoot
@@ -1035,27 +585,12 @@ func (a *Secrets) DeletePkiRoot(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteRabbitmqRolesName Manage the roles that can be created with this backend.
@@ -1069,27 +604,12 @@ func (a *Secrets) DeleteRabbitmqRolesName(ctx context.Context, name string) (*ht
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteSecretDataPath Write, Patch, Read, and Delete data in the Key-Value Store.
@@ -1103,27 +623,12 @@ func (a *Secrets) DeleteSecretDataPath(ctx context.Context, path string) (*http.
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteSecretMetadataPath Configures settings for the KV store
@@ -1137,27 +642,12 @@ func (a *Secrets) DeleteSecretMetadataPath(ctx context.Context, path string) (*h
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteSshConfigCa Set the SSH private key used for signing certificates.
@@ -1169,27 +659,12 @@ func (a *Secrets) DeleteSshConfigCa(ctx context.Context) (*http.Response, error)
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteSshConfigZeroaddress Assign zero address as default CIDR block for select roles.
@@ -1201,27 +676,12 @@ func (a *Secrets) DeleteSshConfigZeroaddress(ctx context.Context) (*http.Respons
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteSshKeysKeyName Register a shared private key with Vault.
@@ -1235,27 +695,12 @@ func (a *Secrets) DeleteSshKeysKeyName(ctx context.Context, keyName string) (*ht
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteSshRolesRole Manage the 'roles' that can be created with this backend.
@@ -1269,27 +714,12 @@ func (a *Secrets) DeleteSshRolesRole(ctx context.Context, role string) (*http.Re
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteTerraformConfig
@@ -1301,27 +731,12 @@ func (a *Secrets) DeleteTerraformConfig(ctx context.Context) (*http.Response, er
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteTerraformRoleName
@@ -1335,27 +750,12 @@ func (a *Secrets) DeleteTerraformRoleName(ctx context.Context, name string) (*ht
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteTotpKeysName Manage the keys that can be created with this backend.
@@ -1369,27 +769,12 @@ func (a *Secrets) DeleteTotpKeysName(ctx context.Context, name string) (*http.Re
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteTransitKeysName Managed named encryption keys
@@ -1403,27 +788,12 @@ func (a *Secrets) DeleteTransitKeysName(ctx context.Context, name string) (*http
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetAdConfig Configure the AD server to connect to, along with password options.
@@ -1435,27 +805,12 @@ func (a *Secrets) GetAdConfig(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetAdCredsName
@@ -1469,27 +824,12 @@ func (a *Secrets) GetAdCredsName(ctx context.Context, name string) (*http.Respon
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetAdLibrary
@@ -1502,27 +842,12 @@ func (a *Secrets) GetAdLibrary(ctx context.Context, list string) (*http.Response
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetAdLibraryName Read a library set.
@@ -1536,27 +861,12 @@ func (a *Secrets) GetAdLibraryName(ctx context.Context, name string) (*http.Resp
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetAdLibraryNameStatus Check the status of the service accounts in a library set.
@@ -1570,27 +880,12 @@ func (a *Secrets) GetAdLibraryNameStatus(ctx context.Context, name string) (*htt
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetAdRoles List the name of each role currently stored.
@@ -1603,27 +898,12 @@ func (a *Secrets) GetAdRoles(ctx context.Context, list string) (*http.Response, 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetAdRolesName Manage roles to build links between Vault and Active Directory service accounts.
@@ -1637,27 +917,12 @@ func (a *Secrets) GetAdRolesName(ctx context.Context, name string) (*http.Respon
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetAdRotateRoot
@@ -1669,27 +934,12 @@ func (a *Secrets) GetAdRotateRoot(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetAlicloudConfig Configure the access key and secret to use for RAM and STS calls.
@@ -1701,27 +951,12 @@ func (a *Secrets) GetAlicloudConfig(ctx context.Context) (*http.Response, error)
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetAlicloudCredsName Generate an API key or STS credential using the given role's configuration.'
@@ -1735,27 +970,12 @@ func (a *Secrets) GetAlicloudCredsName(ctx context.Context, name string) (*http.
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetAlicloudRole List the existing roles in this backend.
@@ -1768,27 +988,12 @@ func (a *Secrets) GetAlicloudRole(ctx context.Context, list string) (*http.Respo
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetAlicloudRoleName Read, write and reference policies and roles that API keys or STS credentials can be made for.
@@ -1802,27 +1007,12 @@ func (a *Secrets) GetAlicloudRoleName(ctx context.Context, name string) (*http.R
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetAwsConfigLease Configure the default lease information for generated credentials.
@@ -1834,27 +1024,12 @@ func (a *Secrets) GetAwsConfigLease(ctx context.Context) (*http.Response, error)
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetAwsConfigRoot Configure the root credentials that are used to manage IAM.
@@ -1866,27 +1041,12 @@ func (a *Secrets) GetAwsConfigRoot(ctx context.Context) (*http.Response, error) 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetAwsCreds Generate AWS credentials from a specific Vault role.
@@ -1898,27 +1058,12 @@ func (a *Secrets) GetAwsCreds(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetAwsRoles List the existing roles in this backend
@@ -1931,27 +1076,12 @@ func (a *Secrets) GetAwsRoles(ctx context.Context, list string) (*http.Response,
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetAwsRolesName Read, write and reference IAM policies that access keys can be made for.
@@ -1965,27 +1095,12 @@ func (a *Secrets) GetAwsRolesName(ctx context.Context, name string) (*http.Respo
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetAwsStsName Generate AWS credentials from a specific Vault role.
@@ -1999,27 +1114,12 @@ func (a *Secrets) GetAwsStsName(ctx context.Context, name string) (*http.Respons
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetAzureConfig
@@ -2031,27 +1131,12 @@ func (a *Secrets) GetAzureConfig(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetAzureCredsRole
@@ -2065,27 +1150,12 @@ func (a *Secrets) GetAzureCredsRole(ctx context.Context, role string) (*http.Res
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetAzureRoles List existing roles.
@@ -2098,27 +1168,12 @@ func (a *Secrets) GetAzureRoles(ctx context.Context, list string) (*http.Respons
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetAzureRolesName Manage the Vault roles used to generate Azure credentials.
@@ -2132,27 +1187,12 @@ func (a *Secrets) GetAzureRolesName(ctx context.Context, name string) (*http.Res
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetConsulConfigAccess
@@ -2164,27 +1204,12 @@ func (a *Secrets) GetConsulConfigAccess(ctx context.Context) (*http.Response, er
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetConsulCredsRole
@@ -2198,27 +1223,12 @@ func (a *Secrets) GetConsulCredsRole(ctx context.Context, role string) (*http.Re
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetConsulRoles
@@ -2231,27 +1241,12 @@ func (a *Secrets) GetConsulRoles(ctx context.Context, list string) (*http.Respon
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetConsulRolesName
@@ -2265,27 +1260,12 @@ func (a *Secrets) GetConsulRolesName(ctx context.Context, name string) (*http.Re
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetCubbyholePath Retrieve the secret at the specified location.
@@ -2300,27 +1280,12 @@ func (a *Secrets) GetCubbyholePath(ctx context.Context, path string, list string
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetGcpConfig
@@ -2332,27 +1297,12 @@ func (a *Secrets) GetGcpConfig(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetGcpKeyRoleset
@@ -2366,27 +1316,12 @@ func (a *Secrets) GetGcpKeyRoleset(ctx context.Context, roleset string) (*http.R
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetGcpRolesetName
@@ -2400,27 +1335,12 @@ func (a *Secrets) GetGcpRolesetName(ctx context.Context, name string) (*http.Res
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetGcpRolesetRolesetKey
@@ -2434,27 +1354,12 @@ func (a *Secrets) GetGcpRolesetRolesetKey(ctx context.Context, roleset string) (
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetGcpRolesetRolesetToken
@@ -2468,27 +1373,12 @@ func (a *Secrets) GetGcpRolesetRolesetToken(ctx context.Context, roleset string)
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetGcpRolesets
@@ -2501,27 +1391,12 @@ func (a *Secrets) GetGcpRolesets(ctx context.Context, list string) (*http.Respon
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetGcpStaticAccountName
@@ -2535,27 +1410,12 @@ func (a *Secrets) GetGcpStaticAccountName(ctx context.Context, name string) (*ht
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetGcpStaticAccountNameKey
@@ -2569,27 +1429,12 @@ func (a *Secrets) GetGcpStaticAccountNameKey(ctx context.Context, name string) (
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetGcpStaticAccountNameToken
@@ -2603,27 +1448,12 @@ func (a *Secrets) GetGcpStaticAccountNameToken(ctx context.Context, name string)
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetGcpStaticAccounts
@@ -2636,27 +1466,12 @@ func (a *Secrets) GetGcpStaticAccounts(ctx context.Context, list string) (*http.
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetGcpTokenRoleset
@@ -2670,27 +1485,12 @@ func (a *Secrets) GetGcpTokenRoleset(ctx context.Context, roleset string) (*http
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetGcpkmsConfig Configure the GCP KMS secrets engine
@@ -2702,27 +1502,12 @@ func (a *Secrets) GetGcpkmsConfig(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetGcpkmsKeys List named keys
@@ -2735,27 +1520,12 @@ func (a *Secrets) GetGcpkmsKeys(ctx context.Context, list string) (*http.Respons
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetGcpkmsKeysConfigKey Configure the key in Vault
@@ -2769,27 +1539,12 @@ func (a *Secrets) GetGcpkmsKeysConfigKey(ctx context.Context, key string) (*http
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetGcpkmsKeysKey Interact with crypto keys in Vault and Google Cloud KMS
@@ -2803,27 +1558,12 @@ func (a *Secrets) GetGcpkmsKeysKey(ctx context.Context, key string) (*http.Respo
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetGcpkmsPubkeyKey Retrieve the public key associated with the named key
@@ -2837,27 +1577,12 @@ func (a *Secrets) GetGcpkmsPubkeyKey(ctx context.Context, key string) (*http.Res
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetKubernetesConfig
@@ -2869,27 +1594,12 @@ func (a *Secrets) GetKubernetesConfig(ctx context.Context) (*http.Response, erro
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetKubernetesRoles
@@ -2902,27 +1612,12 @@ func (a *Secrets) GetKubernetesRoles(ctx context.Context, list string) (*http.Re
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetKubernetesRolesName
@@ -2936,27 +1631,12 @@ func (a *Secrets) GetKubernetesRolesName(ctx context.Context, name string) (*htt
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetKvPath Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
@@ -2971,27 +1651,12 @@ func (a *Secrets) GetKvPath(ctx context.Context, path string, list string) (*htt
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetMongodbatlasConfig Configure the  credentials that are used to manage Database Users.
@@ -3003,27 +1668,12 @@ func (a *Secrets) GetMongodbatlasConfig(ctx context.Context) (*http.Response, er
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetMongodbatlasCredsName Generate MongoDB Atlas Programmatic API from a specific Vault role.
@@ -3037,27 +1687,12 @@ func (a *Secrets) GetMongodbatlasCredsName(ctx context.Context, name string) (*h
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetMongodbatlasRoles List the existing roles in this backend
@@ -3070,27 +1705,12 @@ func (a *Secrets) GetMongodbatlasRoles(ctx context.Context, list string) (*http.
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetMongodbatlasRolesName Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
@@ -3104,27 +1724,12 @@ func (a *Secrets) GetMongodbatlasRolesName(ctx context.Context, name string) (*h
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetNomadConfigAccess
@@ -3136,27 +1741,12 @@ func (a *Secrets) GetNomadConfigAccess(ctx context.Context) (*http.Response, err
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetNomadConfigLease Configure the lease parameters for generated tokens
@@ -3168,27 +1758,12 @@ func (a *Secrets) GetNomadConfigLease(ctx context.Context) (*http.Response, erro
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetNomadCredsName
@@ -3202,27 +1777,12 @@ func (a *Secrets) GetNomadCredsName(ctx context.Context, name string) (*http.Res
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetNomadRole
@@ -3235,27 +1795,12 @@ func (a *Secrets) GetNomadRole(ctx context.Context, list string) (*http.Response
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetNomadRoleName
@@ -3269,27 +1814,12 @@ func (a *Secrets) GetNomadRoleName(ctx context.Context, name string) (*http.Resp
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetOpenldapConfig
@@ -3301,27 +1831,12 @@ func (a *Secrets) GetOpenldapConfig(ctx context.Context) (*http.Response, error)
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetOpenldapCredsName
@@ -3335,27 +1850,12 @@ func (a *Secrets) GetOpenldapCredsName(ctx context.Context, name string) (*http.
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetOpenldapRole
@@ -3368,27 +1868,12 @@ func (a *Secrets) GetOpenldapRole(ctx context.Context, list string) (*http.Respo
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetOpenldapRoleName
@@ -3402,27 +1887,12 @@ func (a *Secrets) GetOpenldapRoleName(ctx context.Context, name string) (*http.R
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetOpenldapStaticCredName
@@ -3436,27 +1906,12 @@ func (a *Secrets) GetOpenldapStaticCredName(ctx context.Context, name string) (*
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetOpenldapStaticRole
@@ -3469,27 +1924,12 @@ func (a *Secrets) GetOpenldapStaticRole(ctx context.Context, list string) (*http
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetOpenldapStaticRoleName
@@ -3503,27 +1943,12 @@ func (a *Secrets) GetOpenldapStaticRoleName(ctx context.Context, name string) (*
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetPkiCa
@@ -3535,27 +1960,12 @@ func (a *Secrets) GetPkiCa(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetPkiCaChain
@@ -3567,27 +1977,12 @@ func (a *Secrets) GetPkiCaChain(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetPkiCaPem
@@ -3599,27 +1994,12 @@ func (a *Secrets) GetPkiCaPem(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetPkiCertCaChain
@@ -3631,27 +2011,12 @@ func (a *Secrets) GetPkiCertCaChain(ctx context.Context) (*http.Response, error)
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetPkiCertCrl
@@ -3663,27 +2028,12 @@ func (a *Secrets) GetPkiCertCrl(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetPkiCertSerial
@@ -3697,27 +2047,12 @@ func (a *Secrets) GetPkiCertSerial(ctx context.Context, serial string) (*http.Re
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetPkiCertSerialRaw
@@ -3731,27 +2066,12 @@ func (a *Secrets) GetPkiCertSerialRaw(ctx context.Context, serial string) (*http
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetPkiCertSerialRawPem
@@ -3765,27 +2085,12 @@ func (a *Secrets) GetPkiCertSerialRawPem(ctx context.Context, serial string) (*h
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetPkiCerts
@@ -3798,27 +2103,12 @@ func (a *Secrets) GetPkiCerts(ctx context.Context, list string) (*http.Response,
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetPkiConfigCrl
@@ -3830,27 +2120,12 @@ func (a *Secrets) GetPkiConfigCrl(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetPkiConfigIssuers
@@ -3862,27 +2137,12 @@ func (a *Secrets) GetPkiConfigIssuers(ctx context.Context) (*http.Response, erro
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetPkiConfigKeys
@@ -3894,27 +2154,12 @@ func (a *Secrets) GetPkiConfigKeys(ctx context.Context) (*http.Response, error) 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetPkiConfigUrls
@@ -3926,27 +2171,12 @@ func (a *Secrets) GetPkiConfigUrls(ctx context.Context) (*http.Response, error) 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetPkiCrl
@@ -3958,27 +2188,12 @@ func (a *Secrets) GetPkiCrl(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetPkiCrlPem
@@ -3990,27 +2205,12 @@ func (a *Secrets) GetPkiCrlPem(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetPkiCrlRotate
@@ -4022,27 +2222,12 @@ func (a *Secrets) GetPkiCrlRotate(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetPkiDer
@@ -4054,27 +2239,12 @@ func (a *Secrets) GetPkiDer(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetPkiIssuerRefCrlPem
@@ -4088,27 +2258,12 @@ func (a *Secrets) GetPkiIssuerRefCrlPem(ctx context.Context, issuerRef string) (
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetPkiIssuerRefDerPem
@@ -4122,27 +2277,12 @@ func (a *Secrets) GetPkiIssuerRefDerPem(ctx context.Context, issuerRef string) (
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetPkiIssuers
@@ -4155,27 +2295,12 @@ func (a *Secrets) GetPkiIssuers(ctx context.Context, list string) (*http.Respons
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetPkiJson
@@ -4187,27 +2312,12 @@ func (a *Secrets) GetPkiJson(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetPkiKeyKeyRef
@@ -4221,27 +2331,12 @@ func (a *Secrets) GetPkiKeyKeyRef(ctx context.Context, keyRef string) (*http.Res
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetPkiKeys
@@ -4254,27 +2349,12 @@ func (a *Secrets) GetPkiKeys(ctx context.Context, list string) (*http.Response, 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetPkiRoles
@@ -4287,27 +2367,12 @@ func (a *Secrets) GetPkiRoles(ctx context.Context, list string) (*http.Response,
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetPkiRolesName
@@ -4321,27 +2386,12 @@ func (a *Secrets) GetPkiRolesName(ctx context.Context, name string) (*http.Respo
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetPkiTidyStatus
@@ -4353,27 +2403,12 @@ func (a *Secrets) GetPkiTidyStatus(ctx context.Context) (*http.Response, error) 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetRabbitmqConfigLease Configure the lease parameters for generated credentials
@@ -4385,27 +2420,12 @@ func (a *Secrets) GetRabbitmqConfigLease(ctx context.Context) (*http.Response, e
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetRabbitmqCredsName Request RabbitMQ credentials for a certain role.
@@ -4419,27 +2439,12 @@ func (a *Secrets) GetRabbitmqCredsName(ctx context.Context, name string) (*http.
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetRabbitmqRoles Manage the roles that can be created with this backend.
@@ -4452,27 +2457,12 @@ func (a *Secrets) GetRabbitmqRoles(ctx context.Context, list string) (*http.Resp
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetRabbitmqRolesName Manage the roles that can be created with this backend.
@@ -4486,27 +2476,12 @@ func (a *Secrets) GetRabbitmqRolesName(ctx context.Context, name string) (*http.
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSecretConfig Read the backend level settings.
@@ -4518,27 +2493,12 @@ func (a *Secrets) GetSecretConfig(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSecretDataPath Write, Patch, Read, and Delete data in the Key-Value Store.
@@ -4552,27 +2512,12 @@ func (a *Secrets) GetSecretDataPath(ctx context.Context, path string) (*http.Res
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSecretMetadataPath Configures settings for the KV store
@@ -4587,27 +2532,12 @@ func (a *Secrets) GetSecretMetadataPath(ctx context.Context, path string, list s
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSecretSubkeysPath Read the structure of a secret entry from the Key-Value store with the values removed.
@@ -4621,27 +2551,12 @@ func (a *Secrets) GetSecretSubkeysPath(ctx context.Context, path string) (*http.
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSshConfigCa Set the SSH private key used for signing certificates.
@@ -4653,27 +2568,12 @@ func (a *Secrets) GetSshConfigCa(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSshConfigZeroaddress Assign zero address as default CIDR block for select roles.
@@ -4685,27 +2585,12 @@ func (a *Secrets) GetSshConfigZeroaddress(ctx context.Context) (*http.Response, 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSshPublicKey Retrieve the public key.
@@ -4717,27 +2602,12 @@ func (a *Secrets) GetSshPublicKey(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSshRoles Manage the 'roles' that can be created with this backend.
@@ -4750,27 +2620,12 @@ func (a *Secrets) GetSshRoles(ctx context.Context, list string) (*http.Response,
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSshRolesRole Manage the 'roles' that can be created with this backend.
@@ -4784,27 +2639,12 @@ func (a *Secrets) GetSshRolesRole(ctx context.Context, role string) (*http.Respo
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetTerraformConfig
@@ -4816,27 +2656,12 @@ func (a *Secrets) GetTerraformConfig(ctx context.Context) (*http.Response, error
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetTerraformCredsName Generate a Terraform Cloud or Enterprise API token from a specific Vault role.
@@ -4850,27 +2675,12 @@ func (a *Secrets) GetTerraformCredsName(ctx context.Context, name string) (*http
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetTerraformRole
@@ -4883,27 +2693,12 @@ func (a *Secrets) GetTerraformRole(ctx context.Context, list string) (*http.Resp
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetTerraformRoleName
@@ -4917,27 +2712,12 @@ func (a *Secrets) GetTerraformRoleName(ctx context.Context, name string) (*http.
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetTotpCodeName Request time-based one-time use password or validate a password for a certain key .
@@ -4951,27 +2731,12 @@ func (a *Secrets) GetTotpCodeName(ctx context.Context, name string) (*http.Respo
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetTotpKeys Manage the keys that can be created with this backend.
@@ -4984,27 +2749,12 @@ func (a *Secrets) GetTotpKeys(ctx context.Context, list string) (*http.Response,
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetTotpKeysName Manage the keys that can be created with this backend.
@@ -5018,27 +2768,12 @@ func (a *Secrets) GetTotpKeysName(ctx context.Context, name string) (*http.Respo
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetTransitBackupName Backup the named key
@@ -5052,27 +2787,12 @@ func (a *Secrets) GetTransitBackupName(ctx context.Context, name string) (*http.
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetTransitCacheConfig Returns the size of the active cache
@@ -5084,27 +2804,12 @@ func (a *Secrets) GetTransitCacheConfig(ctx context.Context) (*http.Response, er
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetTransitExportTypeName Export named encryption or signing key
@@ -5120,27 +2825,12 @@ func (a *Secrets) GetTransitExportTypeName(ctx context.Context, name string, typ
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetTransitExportTypeNameVersion Export named encryption or signing key
@@ -5158,27 +2848,12 @@ func (a *Secrets) GetTransitExportTypeNameVersion(ctx context.Context, name stri
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetTransitKeys Managed named encryption keys
@@ -5191,27 +2866,12 @@ func (a *Secrets) GetTransitKeys(ctx context.Context, list string) (*http.Respon
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetTransitKeysName Managed named encryption keys
@@ -5225,27 +2885,12 @@ func (a *Secrets) GetTransitKeysName(ctx context.Context, name string) (*http.Re
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetTransitWrappingKey Returns the public key to use for wrapping imported keys
@@ -5257,27 +2902,12 @@ func (a *Secrets) GetTransitWrappingKey(ctx context.Context) (*http.Response, er
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostAdConfig Configure the AD server to connect to, along with password options.
@@ -5289,27 +2919,12 @@ func (a *Secrets) PostAdConfig(ctx context.Context, adConfigRequest AdConfigRequ
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostAdLibraryManageNameCheckIn Check service accounts in to the library.
@@ -5323,27 +2938,12 @@ func (a *Secrets) PostAdLibraryManageNameCheckIn(ctx context.Context, name strin
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostAdLibraryName Update a library set.
@@ -5357,27 +2957,12 @@ func (a *Secrets) PostAdLibraryName(ctx context.Context, name string, adLibraryR
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostAdLibraryNameCheckIn Check service accounts in to the library.
@@ -5391,27 +2976,12 @@ func (a *Secrets) PostAdLibraryNameCheckIn(ctx context.Context, name string, adL
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostAdLibraryNameCheckOut Check a service account out from the library.
@@ -5425,27 +2995,12 @@ func (a *Secrets) PostAdLibraryNameCheckOut(ctx context.Context, name string, ad
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostAdRolesName Manage roles to build links between Vault and Active Directory service accounts.
@@ -5459,27 +3014,12 @@ func (a *Secrets) PostAdRolesName(ctx context.Context, name string, adRolesReque
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostAdRotateRoleName
@@ -5493,27 +3033,12 @@ func (a *Secrets) PostAdRotateRoleName(ctx context.Context, name string) (*http.
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostAdRotateRoot
@@ -5525,27 +3050,12 @@ func (a *Secrets) PostAdRotateRoot(ctx context.Context) (*http.Response, error) 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostAlicloudConfig Configure the access key and secret to use for RAM and STS calls.
@@ -5557,27 +3067,12 @@ func (a *Secrets) PostAlicloudConfig(ctx context.Context, alicloudConfigRequest 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostAlicloudRoleName Read, write and reference policies and roles that API keys or STS credentials can be made for.
@@ -5591,27 +3086,12 @@ func (a *Secrets) PostAlicloudRoleName(ctx context.Context, name string, aliclou
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostAwsConfigLease Configure the default lease information for generated credentials.
@@ -5623,27 +3103,12 @@ func (a *Secrets) PostAwsConfigLease(ctx context.Context, awsConfigLeaseRequest 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostAwsConfigRoot Configure the root credentials that are used to manage IAM.
@@ -5655,27 +3120,12 @@ func (a *Secrets) PostAwsConfigRoot(ctx context.Context, awsConfigRootRequest Aw
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostAwsConfigRotateRoot
@@ -5687,27 +3137,12 @@ func (a *Secrets) PostAwsConfigRotateRoot(ctx context.Context) (*http.Response, 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostAwsCreds Generate AWS credentials from a specific Vault role.
@@ -5719,27 +3154,12 @@ func (a *Secrets) PostAwsCreds(ctx context.Context, awsCredsRequest AwsCredsRequ
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostAwsRolesName Read, write and reference IAM policies that access keys can be made for.
@@ -5753,27 +3173,12 @@ func (a *Secrets) PostAwsRolesName(ctx context.Context, name string, awsRolesReq
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostAwsStsName Generate AWS credentials from a specific Vault role.
@@ -5787,27 +3192,12 @@ func (a *Secrets) PostAwsStsName(ctx context.Context, name string, awsStsRequest
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostAzureConfig
@@ -5819,27 +3209,12 @@ func (a *Secrets) PostAzureConfig(ctx context.Context, azureConfigRequest AzureC
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostAzureRolesName Manage the Vault roles used to generate Azure credentials.
@@ -5853,27 +3228,12 @@ func (a *Secrets) PostAzureRolesName(ctx context.Context, name string, azureRole
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostAzureRotateRoot
@@ -5885,27 +3245,12 @@ func (a *Secrets) PostAzureRotateRoot(ctx context.Context) (*http.Response, erro
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostConsulConfigAccess
@@ -5917,27 +3262,12 @@ func (a *Secrets) PostConsulConfigAccess(ctx context.Context, consulConfigAccess
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostConsulRolesName
@@ -5951,27 +3281,12 @@ func (a *Secrets) PostConsulRolesName(ctx context.Context, name string, consulRo
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostCubbyholePath Store a secret at the specified location.
@@ -5985,27 +3300,12 @@ func (a *Secrets) PostCubbyholePath(ctx context.Context, path string) (*http.Res
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostGcpConfig
@@ -6017,27 +3317,12 @@ func (a *Secrets) PostGcpConfig(ctx context.Context, gcpConfigRequest GcpConfigR
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostGcpConfigRotateRoot
@@ -6049,27 +3334,12 @@ func (a *Secrets) PostGcpConfigRotateRoot(ctx context.Context) (*http.Response, 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostGcpKeyRoleset
@@ -6083,27 +3353,12 @@ func (a *Secrets) PostGcpKeyRoleset(ctx context.Context, roleset string, gcpKeyR
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostGcpRolesetName
@@ -6117,27 +3372,12 @@ func (a *Secrets) PostGcpRolesetName(ctx context.Context, name string, gcpRolese
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostGcpRolesetNameRotate
@@ -6151,27 +3391,12 @@ func (a *Secrets) PostGcpRolesetNameRotate(ctx context.Context, name string) (*h
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostGcpRolesetNameRotateKey
@@ -6185,27 +3410,12 @@ func (a *Secrets) PostGcpRolesetNameRotateKey(ctx context.Context, name string) 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostGcpRolesetRolesetKey
@@ -6219,27 +3429,12 @@ func (a *Secrets) PostGcpRolesetRolesetKey(ctx context.Context, roleset string, 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostGcpRolesetRolesetToken
@@ -6253,27 +3448,12 @@ func (a *Secrets) PostGcpRolesetRolesetToken(ctx context.Context, roleset string
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostGcpStaticAccountName
@@ -6287,27 +3467,12 @@ func (a *Secrets) PostGcpStaticAccountName(ctx context.Context, name string, gcp
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostGcpStaticAccountNameKey
@@ -6321,27 +3486,12 @@ func (a *Secrets) PostGcpStaticAccountNameKey(ctx context.Context, name string, 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostGcpStaticAccountNameRotateKey
@@ -6355,27 +3505,12 @@ func (a *Secrets) PostGcpStaticAccountNameRotateKey(ctx context.Context, name st
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostGcpStaticAccountNameToken
@@ -6389,27 +3524,12 @@ func (a *Secrets) PostGcpStaticAccountNameToken(ctx context.Context, name string
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostGcpTokenRoleset
@@ -6423,27 +3543,12 @@ func (a *Secrets) PostGcpTokenRoleset(ctx context.Context, roleset string) (*htt
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostGcpkmsConfig Configure the GCP KMS secrets engine
@@ -6455,27 +3560,12 @@ func (a *Secrets) PostGcpkmsConfig(ctx context.Context, gcpkmsConfigRequest Gcpk
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostGcpkmsDecryptKey Decrypt a ciphertext value using a named key
@@ -6489,27 +3579,12 @@ func (a *Secrets) PostGcpkmsDecryptKey(ctx context.Context, key string, gcpkmsDe
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostGcpkmsEncryptKey Encrypt a plaintext value using a named key
@@ -6523,27 +3598,12 @@ func (a *Secrets) PostGcpkmsEncryptKey(ctx context.Context, key string, gcpkmsEn
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostGcpkmsKeysConfigKey Configure the key in Vault
@@ -6557,27 +3617,12 @@ func (a *Secrets) PostGcpkmsKeysConfigKey(ctx context.Context, key string, gcpkm
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostGcpkmsKeysDeregisterKey Deregister an existing key in Vault
@@ -6591,27 +3636,12 @@ func (a *Secrets) PostGcpkmsKeysDeregisterKey(ctx context.Context, key string) (
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostGcpkmsKeysKey Interact with crypto keys in Vault and Google Cloud KMS
@@ -6625,27 +3655,12 @@ func (a *Secrets) PostGcpkmsKeysKey(ctx context.Context, key string, gcpkmsKeysR
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostGcpkmsKeysRegisterKey Register an existing crypto key in Google Cloud KMS
@@ -6659,27 +3674,12 @@ func (a *Secrets) PostGcpkmsKeysRegisterKey(ctx context.Context, key string, gcp
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostGcpkmsKeysRotateKey Rotate a crypto key to a new primary version
@@ -6693,27 +3693,12 @@ func (a *Secrets) PostGcpkmsKeysRotateKey(ctx context.Context, key string) (*htt
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostGcpkmsKeysTrimKey Delete old crypto key versions from Google Cloud KMS
@@ -6727,27 +3712,12 @@ func (a *Secrets) PostGcpkmsKeysTrimKey(ctx context.Context, key string) (*http.
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostGcpkmsReencryptKey Re-encrypt existing ciphertext data to a new version
@@ -6761,27 +3731,12 @@ func (a *Secrets) PostGcpkmsReencryptKey(ctx context.Context, key string, gcpkms
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostGcpkmsSignKey Signs a message or digest using a named key
@@ -6795,27 +3750,12 @@ func (a *Secrets) PostGcpkmsSignKey(ctx context.Context, key string, gcpkmsSignR
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostGcpkmsVerifyKey Verify a signature using a named key
@@ -6829,27 +3769,12 @@ func (a *Secrets) PostGcpkmsVerifyKey(ctx context.Context, key string, gcpkmsVer
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostKubernetesConfig
@@ -6861,27 +3786,12 @@ func (a *Secrets) PostKubernetesConfig(ctx context.Context, kubernetesConfigRequ
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostKubernetesCredsName
@@ -6895,27 +3805,12 @@ func (a *Secrets) PostKubernetesCredsName(ctx context.Context, name string, kube
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostKubernetesRolesName
@@ -6929,27 +3824,12 @@ func (a *Secrets) PostKubernetesRolesName(ctx context.Context, name string, kube
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostKvPath Pass-through secret storage to the storage backend, allowing you to read/write arbitrary data into secret storage.
@@ -6963,27 +3843,12 @@ func (a *Secrets) PostKvPath(ctx context.Context, path string) (*http.Response, 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostMongodbatlasConfig Configure the  credentials that are used to manage Database Users.
@@ -6995,27 +3860,12 @@ func (a *Secrets) PostMongodbatlasConfig(ctx context.Context, mongodbatlasConfig
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostMongodbatlasCredsName Generate MongoDB Atlas Programmatic API from a specific Vault role.
@@ -7029,27 +3879,12 @@ func (a *Secrets) PostMongodbatlasCredsName(ctx context.Context, name string) (*
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostMongodbatlasRolesName Manage the roles used to generate MongoDB Atlas Programmatic API Keys.
@@ -7063,27 +3898,12 @@ func (a *Secrets) PostMongodbatlasRolesName(ctx context.Context, name string, mo
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostNomadConfigAccess
@@ -7095,27 +3915,12 @@ func (a *Secrets) PostNomadConfigAccess(ctx context.Context, nomadConfigAccessRe
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostNomadConfigLease Configure the lease parameters for generated tokens
@@ -7127,27 +3932,12 @@ func (a *Secrets) PostNomadConfigLease(ctx context.Context, nomadConfigLeaseRequ
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostNomadRoleName
@@ -7161,27 +3951,12 @@ func (a *Secrets) PostNomadRoleName(ctx context.Context, name string, nomadRoleR
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostOpenldapConfig
@@ -7193,27 +3968,12 @@ func (a *Secrets) PostOpenldapConfig(ctx context.Context, openldapConfigRequest 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostOpenldapRoleName
@@ -7227,27 +3987,12 @@ func (a *Secrets) PostOpenldapRoleName(ctx context.Context, name string, openlda
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostOpenldapRotateRoleName
@@ -7261,27 +4006,12 @@ func (a *Secrets) PostOpenldapRotateRoleName(ctx context.Context, name string) (
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostOpenldapRotateRoot
@@ -7293,27 +4023,12 @@ func (a *Secrets) PostOpenldapRotateRoot(ctx context.Context) (*http.Response, e
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostOpenldapStaticRoleName
@@ -7327,27 +4042,12 @@ func (a *Secrets) PostOpenldapStaticRoleName(ctx context.Context, name string, o
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiBundle
@@ -7359,27 +4059,12 @@ func (a *Secrets) PostPkiBundle(ctx context.Context, pkiBundleRequest PkiBundleR
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiCert
@@ -7391,27 +4076,12 @@ func (a *Secrets) PostPkiCert(ctx context.Context, pkiCertRequest PkiCertRequest
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiConfigCa
@@ -7423,27 +4093,12 @@ func (a *Secrets) PostPkiConfigCa(ctx context.Context, pkiConfigCaRequest PkiCon
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiConfigCrl
@@ -7455,27 +4110,12 @@ func (a *Secrets) PostPkiConfigCrl(ctx context.Context, pkiConfigCrlRequest PkiC
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiConfigIssuers
@@ -7487,27 +4127,12 @@ func (a *Secrets) PostPkiConfigIssuers(ctx context.Context, pkiConfigIssuersRequ
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiConfigKeys
@@ -7519,27 +4144,12 @@ func (a *Secrets) PostPkiConfigKeys(ctx context.Context, pkiConfigKeysRequest Pk
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiConfigUrls
@@ -7551,27 +4161,12 @@ func (a *Secrets) PostPkiConfigUrls(ctx context.Context, pkiConfigUrlsRequest Pk
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiIntermediateCrossSign
@@ -7583,27 +4178,12 @@ func (a *Secrets) PostPkiIntermediateCrossSign(ctx context.Context, pkiIntermedi
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiIntermediateGenerateExported
@@ -7617,27 +4197,12 @@ func (a *Secrets) PostPkiIntermediateGenerateExported(ctx context.Context, expor
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiIntermediateSetSigned
@@ -7649,27 +4214,12 @@ func (a *Secrets) PostPkiIntermediateSetSigned(ctx context.Context, pkiIntermedi
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiInternalExported
@@ -7681,27 +4231,12 @@ func (a *Secrets) PostPkiInternalExported(ctx context.Context, pkiInternalExport
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiIssueRole
@@ -7715,27 +4250,12 @@ func (a *Secrets) PostPkiIssueRole(ctx context.Context, role string, pkiIssueReq
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiIssuerIssuerRefIssueRole
@@ -7751,27 +4271,12 @@ func (a *Secrets) PostPkiIssuerIssuerRefIssueRole(ctx context.Context, issuerRef
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiIssuerIssuerRefSignIntermediate
@@ -7785,27 +4290,12 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignIntermediate(ctx context.Context, is
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiIssuerIssuerRefSignRole
@@ -7821,27 +4311,12 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignRole(ctx context.Context, issuerRef 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiIssuerIssuerRefSignSelfIssued
@@ -7855,27 +4330,12 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignSelfIssued(ctx context.Context, issu
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiIssuerIssuerRefSignVerbatim
@@ -7889,27 +4349,12 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignVerbatim(ctx context.Context, issuer
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiIssuerIssuerRefSignVerbatimRole
@@ -7925,27 +4370,12 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignVerbatimRole(ctx context.Context, is
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiIssuerRefDerPem
@@ -7959,27 +4389,12 @@ func (a *Secrets) PostPkiIssuerRefDerPem(ctx context.Context, issuerRef string, 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiIssuersGenerateIntermediateExported
@@ -7993,27 +4408,12 @@ func (a *Secrets) PostPkiIssuersGenerateIntermediateExported(ctx context.Context
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiIssuersGenerateRootExported
@@ -8027,27 +4427,12 @@ func (a *Secrets) PostPkiIssuersGenerateRootExported(ctx context.Context, export
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiJson
@@ -8059,27 +4444,12 @@ func (a *Secrets) PostPkiJson(ctx context.Context, pkiJsonRequest PkiJsonRequest
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiKeyKeyRef
@@ -8093,27 +4463,12 @@ func (a *Secrets) PostPkiKeyKeyRef(ctx context.Context, keyRef string, pkiKeyReq
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiKeysImport
@@ -8125,27 +4480,12 @@ func (a *Secrets) PostPkiKeysImport(ctx context.Context, pkiKeysImportRequest Pk
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiKms
@@ -8157,27 +4497,12 @@ func (a *Secrets) PostPkiKms(ctx context.Context, pkiKmsRequest PkiKmsRequest) (
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiRevoke
@@ -8189,27 +4514,12 @@ func (a *Secrets) PostPkiRevoke(ctx context.Context, pkiRevokeRequest PkiRevokeR
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiRolesName
@@ -8223,27 +4533,12 @@ func (a *Secrets) PostPkiRolesName(ctx context.Context, name string, pkiRolesReq
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiRootGenerateExported
@@ -8257,27 +4552,12 @@ func (a *Secrets) PostPkiRootGenerateExported(ctx context.Context, exported stri
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiRootReplace
@@ -8289,27 +4569,12 @@ func (a *Secrets) PostPkiRootReplace(ctx context.Context, pkiRootReplaceRequest 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiRootRotateExported
@@ -8323,27 +4588,12 @@ func (a *Secrets) PostPkiRootRotateExported(ctx context.Context, exported string
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiRootSignIntermediate
@@ -8355,27 +4605,12 @@ func (a *Secrets) PostPkiRootSignIntermediate(ctx context.Context, pkiRootSignIn
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiRootSignSelfIssued
@@ -8387,27 +4622,12 @@ func (a *Secrets) PostPkiRootSignSelfIssued(ctx context.Context, pkiRootSignSelf
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiSignRole
@@ -8421,27 +4641,12 @@ func (a *Secrets) PostPkiSignRole(ctx context.Context, role string, pkiSignReque
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiSignVerbatim
@@ -8453,27 +4658,12 @@ func (a *Secrets) PostPkiSignVerbatim(ctx context.Context, pkiSignVerbatimReques
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiSignVerbatimRole
@@ -8487,27 +4677,12 @@ func (a *Secrets) PostPkiSignVerbatimRole(ctx context.Context, role string, pkiS
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostPkiTidy
@@ -8519,27 +4694,12 @@ func (a *Secrets) PostPkiTidy(ctx context.Context, pkiTidyRequest PkiTidyRequest
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostRabbitmqConfigConnection Configure the connection URI, username, and password to talk to RabbitMQ management HTTP API.
@@ -8551,27 +4711,12 @@ func (a *Secrets) PostRabbitmqConfigConnection(ctx context.Context, rabbitmqConf
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostRabbitmqConfigLease Configure the lease parameters for generated credentials
@@ -8583,27 +4728,12 @@ func (a *Secrets) PostRabbitmqConfigLease(ctx context.Context, rabbitmqConfigLea
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostRabbitmqRolesName Manage the roles that can be created with this backend.
@@ -8617,27 +4747,12 @@ func (a *Secrets) PostRabbitmqRolesName(ctx context.Context, name string, rabbit
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSecretConfig Configure backend level settings that are applied to every key in the key-value store.
@@ -8649,27 +4764,12 @@ func (a *Secrets) PostSecretConfig(ctx context.Context, kvConfigRequest KvConfig
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSecretDataPath Write, Patch, Read, and Delete data in the Key-Value Store.
@@ -8683,27 +4783,12 @@ func (a *Secrets) PostSecretDataPath(ctx context.Context, path string, kvDataReq
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSecretDeletePath Marks one or more versions as deleted in the KV store.
@@ -8717,27 +4802,12 @@ func (a *Secrets) PostSecretDeletePath(ctx context.Context, path string, kvDelet
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSecretDestroyPath Permanently removes one or more versions in the KV store
@@ -8751,27 +4821,12 @@ func (a *Secrets) PostSecretDestroyPath(ctx context.Context, path string, kvDest
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSecretMetadataPath Configures settings for the KV store
@@ -8785,27 +4840,12 @@ func (a *Secrets) PostSecretMetadataPath(ctx context.Context, path string, kvMet
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSecretUndeletePath Undeletes one or more versions from the KV store.
@@ -8819,27 +4859,12 @@ func (a *Secrets) PostSecretUndeletePath(ctx context.Context, path string, kvUnd
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSshConfigCa Set the SSH private key used for signing certificates.
@@ -8851,27 +4876,12 @@ func (a *Secrets) PostSshConfigCa(ctx context.Context, sshConfigCaRequest SshCon
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSshConfigZeroaddress Assign zero address as default CIDR block for select roles.
@@ -8883,27 +4893,12 @@ func (a *Secrets) PostSshConfigZeroaddress(ctx context.Context, sshConfigZeroadd
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSshCredsRole Creates a credential for establishing SSH connection with the remote host.
@@ -8917,27 +4912,12 @@ func (a *Secrets) PostSshCredsRole(ctx context.Context, role string, sshCredsReq
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSshKeysKeyName Register a shared private key with Vault.
@@ -8951,27 +4931,12 @@ func (a *Secrets) PostSshKeysKeyName(ctx context.Context, keyName string, sshKey
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSshLookup List all the roles associated with the given IP address.
@@ -8983,27 +4948,12 @@ func (a *Secrets) PostSshLookup(ctx context.Context, sshLookupRequest SshLookupR
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSshRolesRole Manage the 'roles' that can be created with this backend.
@@ -9017,27 +4967,12 @@ func (a *Secrets) PostSshRolesRole(ctx context.Context, role string, sshRolesReq
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSshSignRole Request signing an SSH key using a certain role with the provided details.
@@ -9051,27 +4986,12 @@ func (a *Secrets) PostSshSignRole(ctx context.Context, role string, sshSignReque
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSshVerify Validate the OTP provided by Vault SSH Agent.
@@ -9083,27 +5003,12 @@ func (a *Secrets) PostSshVerify(ctx context.Context, sshVerifyRequest SshVerifyR
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTerraformConfig
@@ -9115,27 +5020,12 @@ func (a *Secrets) PostTerraformConfig(ctx context.Context, terraformConfigReques
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTerraformCredsName Generate a Terraform Cloud or Enterprise API token from a specific Vault role.
@@ -9149,27 +5039,12 @@ func (a *Secrets) PostTerraformCredsName(ctx context.Context, name string) (*htt
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTerraformRoleName
@@ -9183,27 +5058,12 @@ func (a *Secrets) PostTerraformRoleName(ctx context.Context, name string, terraf
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTerraformRotateRoleName
@@ -9217,27 +5077,12 @@ func (a *Secrets) PostTerraformRotateRoleName(ctx context.Context, name string) 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTotpCodeName Request time-based one-time use password or validate a password for a certain key .
@@ -9251,27 +5096,12 @@ func (a *Secrets) PostTotpCodeName(ctx context.Context, name string, totpCodeReq
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTotpKeysName Manage the keys that can be created with this backend.
@@ -9285,27 +5115,12 @@ func (a *Secrets) PostTotpKeysName(ctx context.Context, name string, totpKeysReq
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTransitCacheConfig Configures a new cache of the specified size
@@ -9317,27 +5132,12 @@ func (a *Secrets) PostTransitCacheConfig(ctx context.Context, transitCacheConfig
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTransitDatakeyPlaintextName Generate a data key
@@ -9353,27 +5153,12 @@ func (a *Secrets) PostTransitDatakeyPlaintextName(ctx context.Context, name stri
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTransitDecryptName Decrypt a ciphertext value using a named key
@@ -9387,27 +5172,12 @@ func (a *Secrets) PostTransitDecryptName(ctx context.Context, name string, trans
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTransitEncryptName Encrypt a plaintext value or a batch of plaintext blocks using a named key
@@ -9421,27 +5191,12 @@ func (a *Secrets) PostTransitEncryptName(ctx context.Context, name string, trans
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTransitHash Generate a hash sum for input data
@@ -9453,27 +5208,12 @@ func (a *Secrets) PostTransitHash(ctx context.Context, transitHashRequest Transi
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTransitHashUrlalgorithm Generate a hash sum for input data
@@ -9487,27 +5227,12 @@ func (a *Secrets) PostTransitHashUrlalgorithm(ctx context.Context, urlalgorithm 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTransitHmacName Generate an HMAC for input data using the named key
@@ -9521,27 +5246,12 @@ func (a *Secrets) PostTransitHmacName(ctx context.Context, name string, transitH
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTransitHmacNameUrlalgorithm Generate an HMAC for input data using the named key
@@ -9557,27 +5267,12 @@ func (a *Secrets) PostTransitHmacNameUrlalgorithm(ctx context.Context, name stri
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTransitKeysName Managed named encryption keys
@@ -9591,27 +5286,12 @@ func (a *Secrets) PostTransitKeysName(ctx context.Context, name string, transitK
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTransitKeysNameConfig Configure a named encryption key
@@ -9625,27 +5305,12 @@ func (a *Secrets) PostTransitKeysNameConfig(ctx context.Context, name string, tr
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTransitKeysNameImport Imports an externally-generated key into a new transit key
@@ -9659,27 +5324,12 @@ func (a *Secrets) PostTransitKeysNameImport(ctx context.Context, name string, tr
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTransitKeysNameImportVersion Imports an externally-generated key into an existing imported key
@@ -9693,27 +5343,12 @@ func (a *Secrets) PostTransitKeysNameImportVersion(ctx context.Context, name str
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTransitKeysNameRotate Rotate named encryption key
@@ -9727,27 +5362,12 @@ func (a *Secrets) PostTransitKeysNameRotate(ctx context.Context, name string) (*
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTransitKeysNameTrim Trim key versions of a named key
@@ -9761,27 +5381,12 @@ func (a *Secrets) PostTransitKeysNameTrim(ctx context.Context, name string, tran
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTransitRandom Generate random bytes
@@ -9793,27 +5398,12 @@ func (a *Secrets) PostTransitRandom(ctx context.Context, transitRandomRequest Tr
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTransitRandomSource Generate random bytes
@@ -9827,27 +5417,12 @@ func (a *Secrets) PostTransitRandomSource(ctx context.Context, source string, tr
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTransitRandomSourceUrlbytes Generate random bytes
@@ -9863,27 +5438,12 @@ func (a *Secrets) PostTransitRandomSourceUrlbytes(ctx context.Context, source st
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTransitRandomUrlbytes Generate random bytes
@@ -9897,27 +5457,12 @@ func (a *Secrets) PostTransitRandomUrlbytes(ctx context.Context, urlbytes string
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTransitRestore Restore the named key
@@ -9929,27 +5474,12 @@ func (a *Secrets) PostTransitRestore(ctx context.Context, transitRestoreRequest 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTransitRestoreName Restore the named key
@@ -9963,27 +5493,12 @@ func (a *Secrets) PostTransitRestoreName(ctx context.Context, name string, trans
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTransitRewrapName Rewrap ciphertext
@@ -9997,27 +5512,12 @@ func (a *Secrets) PostTransitRewrapName(ctx context.Context, name string, transi
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTransitSignName Generate a signature for input data using the named key
@@ -10031,27 +5531,12 @@ func (a *Secrets) PostTransitSignName(ctx context.Context, name string, transitS
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTransitSignNameUrlalgorithm Generate a signature for input data using the named key
@@ -10067,27 +5552,12 @@ func (a *Secrets) PostTransitSignNameUrlalgorithm(ctx context.Context, name stri
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTransitVerifyName Verify a signature or HMAC for input data created using the named key
@@ -10101,27 +5571,12 @@ func (a *Secrets) PostTransitVerifyName(ctx context.Context, name string, transi
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostTransitVerifyNameUrlalgorithm Verify a signature or HMAC for input data created using the named key
@@ -10137,25 +5592,10 @@ func (a *Secrets) PostTransitVerifyNameUrlalgorithm(ctx context.Context, name st
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }

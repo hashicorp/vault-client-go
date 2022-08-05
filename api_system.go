@@ -35,27 +35,12 @@ func (a *System) DeleteSysAuditPath(ctx context.Context, path string) (*http.Res
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteSysAuthPath Disable the auth method at the given auth path
@@ -69,27 +54,12 @@ func (a *System) DeleteSysAuthPath(ctx context.Context, path string) (*http.Resp
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteSysConfigAuditingRequestHeadersHeader Disable auditing of the given request header.
@@ -102,27 +72,12 @@ func (a *System) DeleteSysConfigAuditingRequestHeadersHeader(ctx context.Context
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteSysConfigCors Remove any CORS settings.
@@ -134,27 +89,12 @@ func (a *System) DeleteSysConfigCors(ctx context.Context) (*http.Response, error
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteSysConfigUiHeadersHeader Remove a UI header.
@@ -168,27 +108,12 @@ func (a *System) DeleteSysConfigUiHeadersHeader(ctx context.Context, header stri
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteSysGenerateRoot Cancels any in-progress root generation attempt.
@@ -200,27 +125,12 @@ func (a *System) DeleteSysGenerateRoot(ctx context.Context) (*http.Response, err
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteSysGenerateRootAttempt Cancels any in-progress root generation attempt.
@@ -232,27 +142,12 @@ func (a *System) DeleteSysGenerateRootAttempt(ctx context.Context) (*http.Respon
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteSysMountsPath Disable the mount point specified at the given path.
@@ -266,27 +161,12 @@ func (a *System) DeleteSysMountsPath(ctx context.Context, path string) (*http.Re
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteSysPluginsCatalogName Remove the plugin with the given name.
@@ -300,27 +180,12 @@ func (a *System) DeleteSysPluginsCatalogName(ctx context.Context, name string) (
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteSysPluginsCatalogTypeName Remove the plugin with the given name.
@@ -336,27 +201,12 @@ func (a *System) DeleteSysPluginsCatalogTypeName(ctx context.Context, name strin
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteSysPoliciesAclName Delete the ACL policy with the given name.
@@ -370,27 +220,12 @@ func (a *System) DeleteSysPoliciesAclName(ctx context.Context, name string) (*ht
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteSysPoliciesPasswordName Delete a password policy.
@@ -404,27 +239,12 @@ func (a *System) DeleteSysPoliciesPasswordName(ctx context.Context, name string)
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteSysPolicyName Delete the policy with the given name.
@@ -438,27 +258,12 @@ func (a *System) DeleteSysPolicyName(ctx context.Context, name string) (*http.Re
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteSysQuotasRateLimitName
@@ -472,27 +277,12 @@ func (a *System) DeleteSysQuotasRateLimitName(ctx context.Context, name string) 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteSysRaw Delete the key with given path.
@@ -504,27 +294,12 @@ func (a *System) DeleteSysRaw(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteSysRawPath Delete the key with given path.
@@ -537,27 +312,12 @@ func (a *System) DeleteSysRawPath(ctx context.Context, path string) (*http.Respo
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteSysRekeyBackup Delete the backup copy of PGP-encrypted unseal keys.
@@ -569,27 +329,12 @@ func (a *System) DeleteSysRekeyBackup(ctx context.Context) (*http.Response, erro
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteSysRekeyInit Cancels any in-progress rekey.
@@ -602,27 +347,12 @@ func (a *System) DeleteSysRekeyInit(ctx context.Context) (*http.Response, error)
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteSysRekeyRecoveryKeyBackup Allows fetching or deleting the backup of the rotated unseal keys.
@@ -634,27 +364,12 @@ func (a *System) DeleteSysRekeyRecoveryKeyBackup(ctx context.Context) (*http.Res
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // DeleteSysRekeyVerify Cancel any in-progress rekey verification operation.
@@ -667,27 +382,12 @@ func (a *System) DeleteSysRekeyVerify(ctx context.Context) (*http.Response, erro
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysAudit List the enabled audit devices.
@@ -699,27 +399,12 @@ func (a *System) GetSysAudit(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysAuth List the currently enabled credential backends.
@@ -731,27 +416,12 @@ func (a *System) GetSysAuth(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysAuthPath Read the configuration of the auth engine at the given path.
@@ -765,27 +435,12 @@ func (a *System) GetSysAuthPath(ctx context.Context, path string) (*http.Respons
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysAuthPathTune Reads the given auth path's configuration.
@@ -800,27 +455,12 @@ func (a *System) GetSysAuthPathTune(ctx context.Context, path string) (*http.Res
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysConfigAuditingRequestHeaders List the request headers that are configured to be audited.
@@ -832,27 +472,12 @@ func (a *System) GetSysConfigAuditingRequestHeaders(ctx context.Context) (*http.
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysConfigAuditingRequestHeadersHeader List the information for the given request header.
@@ -865,27 +490,12 @@ func (a *System) GetSysConfigAuditingRequestHeadersHeader(ctx context.Context, h
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysConfigCors Return the current CORS settings.
@@ -897,27 +507,12 @@ func (a *System) GetSysConfigCors(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysConfigStateSanitized Return a sanitized version of the Vault server configuration.
@@ -930,27 +525,12 @@ func (a *System) GetSysConfigStateSanitized(ctx context.Context) (*http.Response
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysConfigUiHeaders Return a list of configured UI headers.
@@ -963,27 +543,12 @@ func (a *System) GetSysConfigUiHeaders(ctx context.Context, list string) (*http.
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysConfigUiHeadersHeader Return the given UI header's configuration
@@ -997,27 +562,12 @@ func (a *System) GetSysConfigUiHeadersHeader(ctx context.Context, header string)
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysGenerateRoot Read the configuration and progress of the current root generation attempt.
@@ -1029,27 +579,12 @@ func (a *System) GetSysGenerateRoot(ctx context.Context) (*http.Response, error)
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysGenerateRootAttempt Read the configuration and progress of the current root generation attempt.
@@ -1061,27 +596,12 @@ func (a *System) GetSysGenerateRootAttempt(ctx context.Context) (*http.Response,
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysHaStatus Check the HA status of a Vault cluster
@@ -1093,27 +613,12 @@ func (a *System) GetSysHaStatus(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysHealth Returns the health status of Vault.
@@ -1125,27 +630,12 @@ func (a *System) GetSysHealth(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysHostInfo Information about the host instance that this Vault server is running on.
@@ -1158,27 +648,12 @@ func (a *System) GetSysHostInfo(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysInFlightReq reports in-flight requests
@@ -1191,27 +666,12 @@ func (a *System) GetSysInFlightReq(ctx context.Context) (*http.Response, error) 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysInit Returns the initialization status of Vault.
@@ -1223,27 +683,12 @@ func (a *System) GetSysInit(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysInternalCountersActivity Report the client count metrics, for this namespace and all child namespaces.
@@ -1255,27 +700,12 @@ func (a *System) GetSysInternalCountersActivity(ctx context.Context) (*http.Resp
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysInternalCountersActivityExport Report the client count metrics, for this namespace and all child namespaces.
@@ -1287,27 +717,12 @@ func (a *System) GetSysInternalCountersActivityExport(ctx context.Context) (*htt
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysInternalCountersActivityMonthly Report the number of clients for this month, for this namespace and all child namespaces.
@@ -1319,27 +734,12 @@ func (a *System) GetSysInternalCountersActivityMonthly(ctx context.Context) (*ht
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysInternalCountersConfig Read the client count tracking configuration.
@@ -1351,27 +751,12 @@ func (a *System) GetSysInternalCountersConfig(ctx context.Context) (*http.Respon
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysInternalCountersEntities Backwards compatibility is not guaranteed for this API
@@ -1383,27 +768,12 @@ func (a *System) GetSysInternalCountersEntities(ctx context.Context) (*http.Resp
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysInternalCountersRequests Backwards compatibility is not guaranteed for this API
@@ -1415,27 +785,12 @@ func (a *System) GetSysInternalCountersRequests(ctx context.Context) (*http.Resp
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysInternalCountersTokens Backwards compatibility is not guaranteed for this API
@@ -1447,27 +802,12 @@ func (a *System) GetSysInternalCountersTokens(ctx context.Context) (*http.Respon
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysInternalSpecsOpenapi Generate an OpenAPI 3 document of all mounted paths.
@@ -1479,27 +819,12 @@ func (a *System) GetSysInternalSpecsOpenapi(ctx context.Context) (*http.Response
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysInternalUiFeatureFlags Lists enabled feature flags.
@@ -1511,27 +836,12 @@ func (a *System) GetSysInternalUiFeatureFlags(ctx context.Context) (*http.Respon
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysInternalUiMounts Lists all enabled and visible auth and secrets mounts.
@@ -1543,27 +853,12 @@ func (a *System) GetSysInternalUiMounts(ctx context.Context) (*http.Response, er
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysInternalUiMountsPath Return information about the given mount.
@@ -1577,27 +872,12 @@ func (a *System) GetSysInternalUiMountsPath(ctx context.Context, path string) (*
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysInternalUiNamespaces Backwards compatibility is not guaranteed for this API
@@ -1609,27 +889,12 @@ func (a *System) GetSysInternalUiNamespaces(ctx context.Context) (*http.Response
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysInternalUiResultantAcl Backwards compatibility is not guaranteed for this API
@@ -1641,27 +906,12 @@ func (a *System) GetSysInternalUiResultantAcl(ctx context.Context) (*http.Respon
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysKeyStatus Provides information about the backend encryption key.
@@ -1673,27 +923,12 @@ func (a *System) GetSysKeyStatus(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysLeader Returns the high availability status and current leader instance of Vault.
@@ -1705,27 +940,12 @@ func (a *System) GetSysLeader(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysLeases List leases associated with this Vault cluster
@@ -1737,27 +957,12 @@ func (a *System) GetSysLeases(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysLeasesCount Count of leases associated with this Vault cluster
@@ -1769,27 +974,12 @@ func (a *System) GetSysLeasesCount(ctx context.Context) (*http.Response, error) 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysLeasesLookup Returns a list of lease ids.
@@ -1802,27 +992,12 @@ func (a *System) GetSysLeasesLookup(ctx context.Context, list string) (*http.Res
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysLeasesLookupPrefix Returns a list of lease ids.
@@ -1837,27 +1012,12 @@ func (a *System) GetSysLeasesLookupPrefix(ctx context.Context, prefix string, li
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysMetrics Export the metrics aggregated for telemetry purpose.
@@ -1870,27 +1030,12 @@ func (a *System) GetSysMetrics(ctx context.Context, format string) (*http.Respon
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysMonitor
@@ -1904,27 +1049,12 @@ func (a *System) GetSysMonitor(ctx context.Context, logFormat string, logLevel s
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysMounts List the currently mounted backends.
@@ -1936,27 +1066,12 @@ func (a *System) GetSysMounts(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysMountsPath Read the configuration of the secret engine at the given path.
@@ -1970,27 +1085,12 @@ func (a *System) GetSysMountsPath(ctx context.Context, path string) (*http.Respo
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysMountsPathTune Tune backend configuration parameters for this mount.
@@ -2004,27 +1104,12 @@ func (a *System) GetSysMountsPathTune(ctx context.Context, path string) (*http.R
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysPluginsCatalog Lists all the plugins known to Vault
@@ -2036,27 +1121,12 @@ func (a *System) GetSysPluginsCatalog(ctx context.Context) (*http.Response, erro
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysPluginsCatalogName Return the configuration data for the plugin with the given name.
@@ -2070,27 +1140,12 @@ func (a *System) GetSysPluginsCatalogName(ctx context.Context, name string) (*ht
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysPluginsCatalogType List the plugins in the catalog.
@@ -2105,27 +1160,12 @@ func (a *System) GetSysPluginsCatalogType(ctx context.Context, type_ string, lis
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysPluginsCatalogTypeName Return the configuration data for the plugin with the given name.
@@ -2141,27 +1181,12 @@ func (a *System) GetSysPluginsCatalogTypeName(ctx context.Context, name string, 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysPoliciesAcl List the configured access control policies.
@@ -2174,27 +1199,12 @@ func (a *System) GetSysPoliciesAcl(ctx context.Context, list string) (*http.Resp
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysPoliciesAclName Retrieve information about the named ACL policy.
@@ -2208,27 +1218,12 @@ func (a *System) GetSysPoliciesAclName(ctx context.Context, name string) (*http.
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysPoliciesPassword List the existing password policies.
@@ -2241,27 +1236,12 @@ func (a *System) GetSysPoliciesPassword(ctx context.Context, list string) (*http
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysPoliciesPasswordName Retrieve an existing password policy.
@@ -2275,27 +1255,12 @@ func (a *System) GetSysPoliciesPasswordName(ctx context.Context, name string) (*
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysPoliciesPasswordNameGenerate Generate a password from an existing password policy.
@@ -2309,27 +1274,12 @@ func (a *System) GetSysPoliciesPasswordNameGenerate(ctx context.Context, name st
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysPolicy List the configured access control policies.
@@ -2342,27 +1292,12 @@ func (a *System) GetSysPolicy(ctx context.Context, list string) (*http.Response,
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysPolicyName Retrieve the policy body for the named policy.
@@ -2376,27 +1311,12 @@ func (a *System) GetSysPolicyName(ctx context.Context, name string) (*http.Respo
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysPprof Returns an HTML page listing the available profiles.
@@ -2409,27 +1329,12 @@ func (a *System) GetSysPprof(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysPprofAllocs Returns a sampling of all past memory allocations.
@@ -2442,27 +1347,12 @@ func (a *System) GetSysPprofAllocs(ctx context.Context) (*http.Response, error) 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysPprofBlock Returns stack traces that led to blocking on synchronization primitives
@@ -2475,27 +1365,12 @@ func (a *System) GetSysPprofBlock(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysPprofCmdline Returns the running program's command line.
@@ -2508,27 +1383,12 @@ func (a *System) GetSysPprofCmdline(ctx context.Context) (*http.Response, error)
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysPprofGoroutine Returns stack traces of all current goroutines.
@@ -2541,27 +1401,12 @@ func (a *System) GetSysPprofGoroutine(ctx context.Context) (*http.Response, erro
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysPprofHeap Returns a sampling of memory allocations of live object.
@@ -2574,27 +1419,12 @@ func (a *System) GetSysPprofHeap(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysPprofMutex Returns stack traces of holders of contended mutexes
@@ -2607,27 +1437,12 @@ func (a *System) GetSysPprofMutex(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysPprofProfile Returns a pprof-formatted cpu profile payload.
@@ -2640,27 +1455,12 @@ func (a *System) GetSysPprofProfile(ctx context.Context) (*http.Response, error)
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysPprofSymbol Returns the program counters listed in the request.
@@ -2673,27 +1473,12 @@ func (a *System) GetSysPprofSymbol(ctx context.Context) (*http.Response, error) 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysPprofThreadcreate Returns stack traces that led to the creation of new OS threads
@@ -2706,27 +1491,12 @@ func (a *System) GetSysPprofThreadcreate(ctx context.Context) (*http.Response, e
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysPprofTrace Returns the execution trace in binary form.
@@ -2739,27 +1509,12 @@ func (a *System) GetSysPprofTrace(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysQuotasConfig
@@ -2771,27 +1526,12 @@ func (a *System) GetSysQuotasConfig(ctx context.Context) (*http.Response, error)
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysQuotasRateLimit
@@ -2804,27 +1544,12 @@ func (a *System) GetSysQuotasRateLimit(ctx context.Context, list string) (*http.
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysQuotasRateLimitName
@@ -2838,27 +1563,12 @@ func (a *System) GetSysQuotasRateLimitName(ctx context.Context, name string) (*h
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysRaw Read the value of the key at the given path.
@@ -2871,27 +1581,12 @@ func (a *System) GetSysRaw(ctx context.Context, list string) (*http.Response, er
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysRawPath Read the value of the key at the given path.
@@ -2905,27 +1600,12 @@ func (a *System) GetSysRawPath(ctx context.Context, path string, list string) (*
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysRekeyBackup Return the backup copy of PGP-encrypted unseal keys.
@@ -2937,27 +1617,12 @@ func (a *System) GetSysRekeyBackup(ctx context.Context) (*http.Response, error) 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysRekeyInit Reads the configuration and progress of the current rekey attempt.
@@ -2969,27 +1634,12 @@ func (a *System) GetSysRekeyInit(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysRekeyRecoveryKeyBackup Allows fetching or deleting the backup of the rotated unseal keys.
@@ -3001,27 +1651,12 @@ func (a *System) GetSysRekeyRecoveryKeyBackup(ctx context.Context) (*http.Respon
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysRekeyVerify Read the configuration and progress of the current rekey verification attempt.
@@ -3033,27 +1668,12 @@ func (a *System) GetSysRekeyVerify(ctx context.Context) (*http.Response, error) 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysRemountStatusMigrationId Check status of a mount migration
@@ -3067,27 +1687,12 @@ func (a *System) GetSysRemountStatusMigrationId(ctx context.Context, migrationId
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysReplicationStatus
@@ -3099,27 +1704,12 @@ func (a *System) GetSysReplicationStatus(ctx context.Context) (*http.Response, e
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysRotateConfig
@@ -3131,27 +1721,12 @@ func (a *System) GetSysRotateConfig(ctx context.Context) (*http.Response, error)
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysSealStatus Check the seal status of a Vault.
@@ -3163,27 +1738,12 @@ func (a *System) GetSysSealStatus(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysVersionHistory Returns map of historical version change entries
@@ -3196,27 +1756,12 @@ func (a *System) GetSysVersionHistory(ctx context.Context, list string) (*http.R
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // GetSysWrappingLookup Look up wrapping properties for the requester's token.
@@ -3228,27 +1773,12 @@ func (a *System) GetSysWrappingLookup(ctx context.Context) (*http.Response, erro
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysAuditHashPath The hash of the given string via the given audit backend
@@ -3262,27 +1792,12 @@ func (a *System) PostSysAuditHashPath(ctx context.Context, path string, systemAu
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysAuditPath Enable a new audit device at the supplied path.
@@ -3296,27 +1811,12 @@ func (a *System) PostSysAuditPath(ctx context.Context, path string, systemAuditR
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysAuthPath Enables a new auth method.
@@ -3331,27 +1831,12 @@ func (a *System) PostSysAuthPath(ctx context.Context, path string, systemAuthReq
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysAuthPathTune Tune configuration parameters for a given auth path.
@@ -3366,27 +1851,12 @@ func (a *System) PostSysAuthPathTune(ctx context.Context, path string, systemAut
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysCapabilities Fetches the capabilities of the given token on the given path.
@@ -3398,27 +1868,12 @@ func (a *System) PostSysCapabilities(ctx context.Context, systemCapabilitiesRequ
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysCapabilitiesAccessor Fetches the capabilities of the token associated with the given token, on the given path.
@@ -3430,27 +1885,12 @@ func (a *System) PostSysCapabilitiesAccessor(ctx context.Context, systemCapabili
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysCapabilitiesSelf Fetches the capabilities of the given token on the given path.
@@ -3462,27 +1902,12 @@ func (a *System) PostSysCapabilitiesSelf(ctx context.Context, systemCapabilities
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysConfigAuditingRequestHeadersHeader Enable auditing of a header.
@@ -3495,27 +1920,12 @@ func (a *System) PostSysConfigAuditingRequestHeadersHeader(ctx context.Context, 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysConfigCors Configure the CORS settings.
@@ -3527,27 +1937,12 @@ func (a *System) PostSysConfigCors(ctx context.Context, systemConfigCorsRequest 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysConfigReloadSubsystem Reload the given subsystem
@@ -3560,27 +1955,12 @@ func (a *System) PostSysConfigReloadSubsystem(ctx context.Context, subsystem str
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysConfigUiHeadersHeader Configure the values to be returned for the UI header.
@@ -3594,27 +1974,12 @@ func (a *System) PostSysConfigUiHeadersHeader(ctx context.Context, header string
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysGenerateRoot Initializes a new root generation attempt.
@@ -3627,27 +1992,12 @@ func (a *System) PostSysGenerateRoot(ctx context.Context, systemGenerateRootRequ
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysGenerateRootAttempt Initializes a new root generation attempt.
@@ -3660,27 +2010,12 @@ func (a *System) PostSysGenerateRootAttempt(ctx context.Context, systemGenerateR
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysGenerateRootUpdate Enter a single unseal key share to progress the root generation attempt.
@@ -3693,27 +2028,12 @@ func (a *System) PostSysGenerateRootUpdate(ctx context.Context, systemGenerateRo
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysInit Initialize a new Vault.
@@ -3726,27 +2046,12 @@ func (a *System) PostSysInit(ctx context.Context, systemInitRequest SystemInitRe
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysInternalCountersConfig Enable or disable collection of client count, set retention period, or set default reporting period.
@@ -3758,27 +2063,12 @@ func (a *System) PostSysInternalCountersConfig(ctx context.Context, systemIntern
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysLeasesLookup Retrieve lease metadata.
@@ -3790,27 +2080,12 @@ func (a *System) PostSysLeasesLookup(ctx context.Context, systemLeasesLookupRequ
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysLeasesRenew Renews a lease, requesting to extend the lease.
@@ -3822,27 +2097,12 @@ func (a *System) PostSysLeasesRenew(ctx context.Context, systemLeasesRenewReques
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysLeasesRenewUrlLeaseId Renews a lease, requesting to extend the lease.
@@ -3856,27 +2116,12 @@ func (a *System) PostSysLeasesRenewUrlLeaseId(ctx context.Context, urlLeaseId st
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysLeasesRevoke Revokes a lease immediately.
@@ -3888,27 +2133,12 @@ func (a *System) PostSysLeasesRevoke(ctx context.Context, systemLeasesRevokeRequ
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysLeasesRevokeForcePrefix Revokes all secrets or tokens generated under a given prefix immediately
@@ -3923,27 +2153,12 @@ func (a *System) PostSysLeasesRevokeForcePrefix(ctx context.Context, prefix stri
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysLeasesRevokePrefixPrefix Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
@@ -3957,27 +2172,12 @@ func (a *System) PostSysLeasesRevokePrefixPrefix(ctx context.Context, prefix str
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysLeasesRevokeUrlLeaseId Revokes a lease immediately.
@@ -3991,27 +2191,12 @@ func (a *System) PostSysLeasesRevokeUrlLeaseId(ctx context.Context, urlLeaseId s
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysLeasesTidy This endpoint performs cleanup tasks that can be run if certain error conditions have occurred.
@@ -4023,27 +2208,12 @@ func (a *System) PostSysLeasesTidy(ctx context.Context) (*http.Response, error) 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysMfaValidate Validates the login for the given MFA methods. Upon successful validation, it returns an auth response containing the client token
@@ -4055,27 +2225,12 @@ func (a *System) PostSysMfaValidate(ctx context.Context, systemMfaValidateReques
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysMountsPath Enable a new secrets engine at the given path.
@@ -4089,27 +2244,12 @@ func (a *System) PostSysMountsPath(ctx context.Context, path string, systemMount
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysMountsPathTune Tune backend configuration parameters for this mount.
@@ -4123,27 +2263,12 @@ func (a *System) PostSysMountsPathTune(ctx context.Context, path string, systemM
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysPluginsCatalogName Register a new plugin, or updates an existing one with the supplied name.
@@ -4157,27 +2282,12 @@ func (a *System) PostSysPluginsCatalogName(ctx context.Context, name string, sys
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysPluginsCatalogTypeName Register a new plugin, or updates an existing one with the supplied name.
@@ -4193,27 +2303,12 @@ func (a *System) PostSysPluginsCatalogTypeName(ctx context.Context, name string,
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysPluginsReloadBackend Reload mounted plugin backends.
@@ -4226,27 +2321,12 @@ func (a *System) PostSysPluginsReloadBackend(ctx context.Context, systemPluginsR
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysPoliciesAclName Add a new or update an existing ACL policy.
@@ -4260,27 +2340,12 @@ func (a *System) PostSysPoliciesAclName(ctx context.Context, name string, system
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysPoliciesPasswordName Add a new or update an existing password policy.
@@ -4294,27 +2359,12 @@ func (a *System) PostSysPoliciesPasswordName(ctx context.Context, name string, s
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysPolicyName Add a new or update an existing policy.
@@ -4328,27 +2378,12 @@ func (a *System) PostSysPolicyName(ctx context.Context, name string, systemPolic
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysQuotasConfig
@@ -4360,27 +2395,12 @@ func (a *System) PostSysQuotasConfig(ctx context.Context, systemQuotasConfigRequ
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysQuotasRateLimitName
@@ -4394,27 +2414,12 @@ func (a *System) PostSysQuotasRateLimitName(ctx context.Context, name string, sy
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysRaw Update the value of the key at the given path.
@@ -4426,27 +2431,12 @@ func (a *System) PostSysRaw(ctx context.Context, systemRawRequest SystemRawReque
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysRawPath Update the value of the key at the given path.
@@ -4459,27 +2449,12 @@ func (a *System) PostSysRawPath(ctx context.Context, path string, systemRawReque
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysRekeyInit Initializes a new rekey attempt.
@@ -4492,27 +2467,12 @@ func (a *System) PostSysRekeyInit(ctx context.Context, systemRekeyInitRequest Sy
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysRekeyUpdate Enter a single unseal key share to progress the rekey of the Vault.
@@ -4524,27 +2484,12 @@ func (a *System) PostSysRekeyUpdate(ctx context.Context, systemRekeyUpdateReques
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysRekeyVerify Enter a single new key share to progress the rekey verification operation.
@@ -4556,27 +2501,12 @@ func (a *System) PostSysRekeyVerify(ctx context.Context, systemRekeyVerifyReques
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysRemount Initiate a mount migration
@@ -4588,27 +2518,12 @@ func (a *System) PostSysRemount(ctx context.Context, systemRemountRequest System
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysRenew Renews a lease, requesting to extend the lease.
@@ -4620,27 +2535,12 @@ func (a *System) PostSysRenew(ctx context.Context, systemRenewRequest SystemRene
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysRenewUrlLeaseId Renews a lease, requesting to extend the lease.
@@ -4654,27 +2554,12 @@ func (a *System) PostSysRenewUrlLeaseId(ctx context.Context, urlLeaseId string, 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysRevoke Revokes a lease immediately.
@@ -4686,27 +2571,12 @@ func (a *System) PostSysRevoke(ctx context.Context, systemRevokeRequest SystemRe
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysRevokeForcePrefix Revokes all secrets or tokens generated under a given prefix immediately
@@ -4721,27 +2591,12 @@ func (a *System) PostSysRevokeForcePrefix(ctx context.Context, prefix string) (*
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysRevokePrefixPrefix Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path property) generated under a given prefix immediately.
@@ -4755,27 +2610,12 @@ func (a *System) PostSysRevokePrefixPrefix(ctx context.Context, prefix string, s
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysRevokeUrlLeaseId Revokes a lease immediately.
@@ -4789,27 +2629,12 @@ func (a *System) PostSysRevokeUrlLeaseId(ctx context.Context, urlLeaseId string,
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysRotate Rotates the backend encryption key used to persist data.
@@ -4821,27 +2646,12 @@ func (a *System) PostSysRotate(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysRotateConfig
@@ -4853,27 +2663,12 @@ func (a *System) PostSysRotateConfig(ctx context.Context, systemRotateConfigRequ
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysSeal Seal the Vault.
@@ -4885,27 +2680,12 @@ func (a *System) PostSysSeal(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysStepDown Cause the node to give up active status.
@@ -4918,27 +2698,12 @@ func (a *System) PostSysStepDown(ctx context.Context) (*http.Response, error) {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysToolsHash Generate a hash sum for input data
@@ -4950,27 +2715,12 @@ func (a *System) PostSysToolsHash(ctx context.Context, systemToolsHashRequest Sy
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysToolsHashUrlalgorithm Generate a hash sum for input data
@@ -4984,27 +2734,12 @@ func (a *System) PostSysToolsHashUrlalgorithm(ctx context.Context, urlalgorithm 
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysToolsRandom Generate random bytes
@@ -5016,27 +2751,12 @@ func (a *System) PostSysToolsRandom(ctx context.Context, systemToolsRandomReques
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysToolsRandomSource Generate random bytes
@@ -5050,27 +2770,12 @@ func (a *System) PostSysToolsRandomSource(ctx context.Context, source string, sy
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysToolsRandomSourceUrlbytes Generate random bytes
@@ -5086,27 +2791,12 @@ func (a *System) PostSysToolsRandomSourceUrlbytes(ctx context.Context, source st
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysToolsRandomUrlbytes Generate random bytes
@@ -5120,27 +2810,12 @@ func (a *System) PostSysToolsRandomUrlbytes(ctx context.Context, urlbytes string
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysUnseal Unseal the Vault.
@@ -5152,27 +2827,12 @@ func (a *System) PostSysUnseal(ctx context.Context, systemUnsealRequest SystemUn
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysWrappingLookup Look up wrapping properties for the given token.
@@ -5184,27 +2844,12 @@ func (a *System) PostSysWrappingLookup(ctx context.Context, systemWrappingLookup
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysWrappingRewrap Rotates a response-wrapped token.
@@ -5216,27 +2861,12 @@ func (a *System) PostSysWrappingRewrap(ctx context.Context, systemWrappingRewrap
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysWrappingUnwrap Unwraps a response-wrapped token.
@@ -5248,27 +2878,12 @@ func (a *System) PostSysWrappingUnwrap(ctx context.Context, systemWrappingUnwrap
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }
 
 // PostSysWrappingWrap Response-wraps an arbitrary JSON object.
@@ -5280,25 +2895,10 @@ func (a *System) PostSysWrappingWrap(ctx context.Context) (*http.Response, error
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return resp, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
+	return resp, nil
 }

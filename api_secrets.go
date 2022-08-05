@@ -11,9 +11,7 @@ API version: 1.12.0
 package vault
 
 import (
-	"bytes"
 	"context"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"

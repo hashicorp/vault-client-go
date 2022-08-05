@@ -47,75 +47,26 @@ func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}, {{par
 	}
 {{/bodyParams}}
 
-	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
-	if err != nil || localVarHTTPResponse == nil {
-		return {{#returnType}}localVarReturnValue, {{/returnType}}localVarHTTPResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return {{#returnType}}localVarReturnValue, {{/returnType}}localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		{{#responses}}
-		{{#dataType}}
-		{{^is1xx}}
-		{{^is2xx}}
-		{{#range}}
-		{{#is3xx}}
-		if localVarHTTPResponse.StatusCode >= 300 && localVarHTTPResponse.StatusCode < 400 {
-		{{/is3xx}}
-		{{#is4xx}}
-		if localVarHTTPResponse.StatusCode >= 400 && localVarHTTPResponse.StatusCode < 500 {
-		{{/is4xx}}
-		{{#is5xx}}
-		if localVarHTTPResponse.StatusCode >= 500
-		{{/is5xx}}
-		{{/range}}
-		{{^range}}
-		{{^wildcard}}
-		if localVarHTTPResponse.StatusCode == {{{code}}} {
-		{{/wildcard}}
-		{{/range}}
-			var v {{{dataType}}}
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return {{#returnType}}localVarReturnValue, {{/returnType}}localVarHTTPResponse, newErr
-			}
-			newErr.model = v
-			{{^-last}}
-			return {{#returnType}}localVarReturnValue, {{/returnType}}localVarHTTPResponse, newErr
-			{{/-last}}
-		{{^wildcard}}
-		}
-		{{/wildcard}}
-		{{/is2xx}}
-		{{/is1xx}}
-		{{/dataType}}
-		{{/responses}}
-		return {{#returnType}}localVarReturnValue, {{/returnType}}localVarHTTPResponse, newErr
+	resp, err := a.client.Do(ctx, req, true)
+	if err != nil || resp == nil {
+		return {{#returnType}}localVarReturnValue, {{/returnType}}resp, err
 	}
 
 	{{#returnType}}
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	localVarBody, err := ioutil.ReadAll(resp.Body)
+	resp.Body.Close()
+	resp.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return {{#returnType}}localVarReturnValue, {{/returnType}}localVarHTTPResponse, newErr
+		return {{#returnType}}localVarReturnValue, {{/returnType}}resp, err
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, resp.Header.Get("Content-Type"))
+	if err != nil {
+		return {{#returnType}}localVarReturnValue, {{/returnType}}resp, err
 	}
 
 	{{/returnType}}
-	return {{#returnType}}localVarReturnValue, {{/returnType}}localVarHTTPResponse, nil
+	return {{#returnType}}localVarReturnValue, {{/returnType}}resp, nil
 }
 {{/operation}}
 {{/operations}}

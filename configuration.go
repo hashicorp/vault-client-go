@@ -90,6 +90,16 @@ func DefaultConfiguration() (*Configuration, error) {
 		return nil, err
 	}
 
+	// Ensure redirects are not automatically followed since the client has its
+	// own redirect-handling logic.
+	client.CheckRedirect = func(req *http.Request, via []*http.Request) error {
+		// ErrUseLastResponse will ensure that http.Client.Do will not send
+		// the next redirect request. Instead, it will return the most recent
+		// response with a nil error. A non-nil error from http.Client.Do would
+		// cause redundant retries in retryablehttp.Client on every redirect.
+		return http.ErrUseLastResponse
+	}
+
 	return &Configuration{
 		BaseAddress: "http://127.0.0.1:8200",
 		HTTPClient:  client,

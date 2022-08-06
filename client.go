@@ -162,7 +162,6 @@ func (c *Client) NewRequest(method, path string, body io.Reader) (*http.Request,
 func (c *Client) Do(ctx context.Context, req *http.Request, retry bool) (*http.Response, error) {
 	var resp *http.Response
 
-	// attach the context
 	req = req.WithContext(ctx)
 
 	// allow at most one redirect
@@ -227,12 +226,10 @@ func handleRedirect(req *http.Request, resp *http.Response, redirectCount *int) 
 		return false, fmt.Errorf("could not read the redirect location: %w", err)
 	}
 
-	// ensure that a protocol downgrade does not happen
 	if req.URL.Scheme == "https" && redirectTo.Scheme != "https" {
 		return false, fmt.Errorf("redirect would cause a protocol downgrade")
 	}
 
-	// update the request url
 	req.URL = redirectTo
 
 	// restore the original request body (if any) since it had been consumed by client.Do

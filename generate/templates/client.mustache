@@ -157,14 +157,16 @@ func (c *Client) Do(ctx context.Context, req *http.Request, retry bool) (*http.R
 	// attach the context
 	req = req.WithContext(ctx)
 
-	// allow for at most one redirect
-	for redirectCount := 0; redirectCount < 1; redirectCount++ {
+	// allow at most one redirect
+	redirectCount := 0
+
+	for {
 		resp, err := c.doWithRetries(req, retry)
 		if err != nil {
 			return resp, err
 		}
 
-		redirect, err := handleRedirect(req, resp)
+		redirect, err := handleRedirect(req, resp, &redirectCount)
 		if err != nil {
 			return resp, fmt.Errorf("redirect error: %w", err)
 		}
@@ -194,7 +196,14 @@ func (c *Client) doWithRetries(req *http.Request, retry bool) (*http.Response, e
 //  returns:
 //    true & modifies the request accordingly if the redirect is needed
 //    false otherwise
-func handleRedirect(req *http.Request, resp *http.Response) (bool, error) {
+func handleRedirect(req *http.Request, resp *http.Response, redirectCount *int) (bool, error) {
+	// allow at most one redirect
+	if *redirectCount != 0 {
+		return false, nil
+	}
+
+	*redirectCount++
+
 	redirectStatuses := [...]int{
 		http.StatusMovedPermanently,  // 301
 		http.StatusFound,             // 302

@@ -160,10 +160,12 @@ func (c *Client) NewRequest(method, path string, body io.Reader) (*http.Request,
 
 // Do sends the given request to Vault, handling retries, redirects, and rate limiting
 func (c *Client) Do(ctx context.Context, req *http.Request, retry bool) (*http.Response, error) {
-	req = req.WithContext(ctx)
-
 	var resp *http.Response
 
+	// attach the context
+	req = req.WithContext(ctx)
+
+	// allow for at most one redirect
 	for redirectCount := 0; redirectCount < 1; redirectCount++ {
 		resp, err := c.doWithRetries(req, retry)
 		if err != nil {
@@ -174,7 +176,6 @@ func (c *Client) Do(ctx context.Context, req *http.Request, retry bool) (*http.R
 		if err != nil {
 			return resp, fmt.Errorf("redirect error: %w", err)
 		}
-
 		if !redirect {
 			break
 		}
@@ -214,7 +215,7 @@ func handleRedirect(req *http.Request, resp *http.Response) (bool, error) {
 
 	redirectTo, err := resp.Location()
 	if err != nil {
-		return false, fmt.Errorf("could not read redirect location: %w", err)
+		return false, fmt.Errorf("could not read the redirect location: %w", err)
 	}
 
 	// ensure that a protocol downgrade does not happen
@@ -229,7 +230,7 @@ func handleRedirect(req *http.Request, resp *http.Response) (bool, error) {
 	if req.GetBody != nil {
 		b, err := req.GetBody()
 		if err != nil {
-			return false, err
+			return false, fmt.Errorf("could not restore request body: %w", err)
 		}
 		req.Body = b
 	}

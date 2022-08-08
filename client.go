@@ -92,7 +92,6 @@ func NewClient(configuration Configuration) (*Client, error) {
 
 	c.parsedBaseAddress = a
 
-	// API wrappers
 	c.Auth = Auth{
 		client: &c,
 	}
@@ -107,20 +106,6 @@ func NewClient(configuration Configuration) (*Client, error) {
 	}
 
 	return &c, nil
-}
-
-func (c *Client) SetToken(token string) {
-	/* */ c.requestModifiersLock.Lock()
-	defer c.requestModifiersLock.Unlock()
-
-	c.requestModifiers.token = token
-}
-
-func (c *Client) Token() string {
-	/* */ c.requestModifiersLock.RLock()
-	defer c.requestModifiersLock.RUnlock()
-
-	return c.requestModifiers.token
 }
 
 // parameterToString convert interface{} parameters to string, using a delimiter if format is provided.
@@ -154,6 +139,21 @@ func parameterToJson(obj interface{}) (string, error) {
 		return "", err
 	}
 	return string(jsonBuf), err
+}
+
+// SetToken sets a token to be used with all subsequent requests
+func (c *Client) SetToken(token string) {
+	/* */ c.requestModifiersLock.Lock()
+	defer c.requestModifiersLock.Unlock()
+
+	c.requestModifiers.token = token
+}
+
+// WithToken returns a shallow copy of the client with the token set to the given value
+func (c *Client) WithToken(token string) *Client {
+	copy := c.shallowCopy()
+	copy.requestModifiers.token = token
+	return copy
 }
 
 // NewStructuredRequest expects json.Marshaler encoded request body and returns a new request with vault-specific headers
@@ -332,7 +332,6 @@ func (c *Client) shallowCopy() *Client {
 	copy.requestModifiers = c.copyRequestModifiers()
 	copy.requestModifiersLock = sync.RWMutex{}
 
-	// API wrappers
 	copy.Auth = Auth{
 		client: &copy,
 	}

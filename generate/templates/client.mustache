@@ -185,7 +185,10 @@ func (c *Client) NewRequest(method, path string, body io.Reader) (*http.Request,
 
 // Do sends the given request to Vault, handling retries, redirects, and rate limiting
 func (c *Client) Do(ctx context.Context, req *http.Request, retry bool) (*http.Response, error) {
-	var resp *http.Response
+	var(
+		resp *http.Response
+		err  error
+	)
 
 	req = req.WithContext(ctx)
 
@@ -193,7 +196,7 @@ func (c *Client) Do(ctx context.Context, req *http.Request, retry bool) (*http.R
 	redirectCount := 0
 
 	for {
-		resp, err := c.doWithRetries(req, retry)
+		resp, err = c.doWithRetries(req, retry)
 		if err != nil {
 			return resp, err
 		}

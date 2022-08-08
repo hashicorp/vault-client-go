@@ -153,6 +153,7 @@ func (c *Client) SetToken(token string) {
 func (c *Client) WithToken(token string) *Client {
 	copy := c.shallowCopy()
 	copy.requestModifiers.token = token
+
 	return copy
 }
 

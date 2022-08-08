@@ -98,6 +98,20 @@ func NewClient(configuration Configuration) (*Client, error) {
 	return &c, nil
 }
 
+func (c *Client) SetToken(token string) {
+	/* */ c.requestModifiersLock.Lock()
+	defer c.requestModifiersLock.Unlock()
+
+	c.requestModifiers.token = token
+}
+
+func (c *Client) Token() string {
+	/* */ c.requestModifiersLock.RLock()
+	defer c.requestModifiersLock.RUnlock()
+
+	return c.requestModifiers.token
+}
+
 // parameterToString convert interface{} parameters to string, using a delimiter if format is provided.
 func parameterToString(obj interface{}, collectionFormat string) string {
 	var delimiter string

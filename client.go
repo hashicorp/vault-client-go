@@ -25,6 +25,7 @@ import (
 	"reflect"
 	"regexp"
 	"strings"
+	"sync"
 	"time"
 
 	"github.com/hashicorp/go-retryablehttp"
@@ -42,13 +43,14 @@ var (
 type Client struct {
 	configuration Configuration
 
+	parsedBaseAddress *url.URL
+
 	client            *http.Client
 	clientWithRetries *retryablehttp.Client
 
-	parsedBaseAddress *url.URL
-
 	// fields that will be applied to each request
-	requestModifiers requestModifiers
+	requestModifiers     requestModifiers
+	requestModifiersLock sync.RWMutex
 
 	// API wrappers
 	Auth     Auth
@@ -107,6 +109,20 @@ func NewClient(configuration Configuration) (*Client, error) {
 	return &c, nil
 }
 
+func (c *Client) SetToken(token string) {
+	/* */ c.requestModifiersLock.Lock()
+	defer c.requestModifiersLock.Unlock()
+
+	c.requestModifiers.token = token
+}
+
+func (c *Client) Token() string {
+	/* */ c.requestModifiersLock.RLock()
+	defer c.requestModifiersLock.RUnlock()
+
+	return c.requestModifiers.token
+}
+
 // parameterToString convert interface{} parameters to string, using a delimiter if format is provided.
 func parameterToString(obj interface{}, collectionFormat string) string {
 	var delimiter string
@@ -140,13 +156,6 @@ func parameterToJson(obj interface{}) (string, error) {
 	return string(jsonBuf), err
 }
 
-// WithToken returns a shallow copy of the client with the token set to the given value
-func (c *Client) WithToken(token string) *Client {
-	copy := *c
-	copy.requestModifiers.token = token
-	return &copy
-}
-
 // NewStructuredRequest expects json.Marshaler encoded request body and returns a new request with vault-specific headers
 func (c *Client) NewStructuredRequest(method, path string, body json.Marshaler) (*http.Request, error) {
 	if body == nil {
@@ -175,7 +184,9 @@ func (c *Client) NewRequest(method, path string, body io.Reader) (*http.Request,
 		return nil, err
 	}
 
-	req.Header.Set("X-Vault-Token", c.requestModifiers.token)
+	modifiers := c.copyRequestModifiers()
+
+	req.Header.Set("X-Vault-Token", modifiers.token)
 
 	return req, nil
 }
@@ -307,4 +318,41 @@ func (c *Client) decode(v interface{}, b []byte, contentType string) (err error)
 		return nil
 	}
 	return errors.New("undefined response type")
+}
+
+// shallowCopy returns a shallow copy of the client
+func (c *Client) shallowCopy() *Client {
+	copy := Client{
+		configuration:     c.configuration,
+		parsedBaseAddress: c.parsedBaseAddress,
+		client:            c.client,
+		clientWithRetries: c.clientWithRetries,
+	}
+
+	copy.requestModifiers = c.copyRequestModifiers()
+	copy.requestModifiersLock = sync.RWMutex{}
+
+	// API wrappers
+	copy.Auth = Auth{
+		client: &copy,
+	}
+	copy.Identity = Identity{
+		client: &copy,
+	}
+	copy.Secrets = Secrets{
+		client: &copy,
+	}
+	copy.System = System{
+		client: &copy,
+	}
+
+	return &copy
+}
+
+// copyRequestModifiers returns a copy of the request modifiers behind a mutex
+func (c *Client) copyRequestModifiers() requestModifiers {
+	/* */ c.requestModifiersLock.RLock()
+	defer c.requestModifiersLock.RUnlock()
+
+	return c.requestModifiers
 }

@@ -28,12 +28,12 @@ type Secrets struct {
 func (a *Secrets) DeleteAdConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/ad/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -62,12 +62,12 @@ func (a *Secrets) DeleteAdLibraryName(ctx context.Context, name string) (*http.R
 	localVarPath := "/v1/ad/library/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -96,12 +96,12 @@ func (a *Secrets) DeleteAdRolesName(ctx context.Context, name string) (*http.Res
 	localVarPath := "/v1/ad/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -128,12 +128,12 @@ func (a *Secrets) DeleteAdRolesName(ctx context.Context, name string) (*http.Res
 func (a *Secrets) DeleteAlicloudConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/alicloud/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -162,12 +162,12 @@ func (a *Secrets) DeleteAlicloudRoleName(ctx context.Context, name string) (*htt
 	localVarPath := "/v1/alicloud/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -196,12 +196,12 @@ func (a *Secrets) DeleteAwsRolesName(ctx context.Context, name string) (*http.Re
 	localVarPath := "/v1/aws/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -228,12 +228,12 @@ func (a *Secrets) DeleteAwsRolesName(ctx context.Context, name string) (*http.Re
 func (a *Secrets) DeleteAzureConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/azure/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -262,12 +262,12 @@ func (a *Secrets) DeleteAzureRolesName(ctx context.Context, name string) (*http.
 	localVarPath := "/v1/azure/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -296,12 +296,12 @@ func (a *Secrets) DeleteConsulRolesName(ctx context.Context, name string) (*http
 	localVarPath := "/v1/consul/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -330,12 +330,12 @@ func (a *Secrets) DeleteCubbyholePath(ctx context.Context, path string) (*http.R
 	localVarPath := "/v1/cubbyhole/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -364,12 +364,12 @@ func (a *Secrets) DeleteGcpRolesetName(ctx context.Context, name string) (*http.
 	localVarPath := "/v1/gcp/roleset/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -398,12 +398,12 @@ func (a *Secrets) DeleteGcpStaticAccountName(ctx context.Context, name string) (
 	localVarPath := "/v1/gcp/static-account/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -430,12 +430,12 @@ func (a *Secrets) DeleteGcpStaticAccountName(ctx context.Context, name string) (
 func (a *Secrets) DeleteGcpkmsConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/gcpkms/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -464,12 +464,12 @@ func (a *Secrets) DeleteGcpkmsKeysDeregisterKey(ctx context.Context, key string)
 	localVarPath := "/v1/gcpkms/keys/deregister/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -498,12 +498,12 @@ func (a *Secrets) DeleteGcpkmsKeysKey(ctx context.Context, key string) (*http.Re
 	localVarPath := "/v1/gcpkms/keys/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -532,12 +532,12 @@ func (a *Secrets) DeleteGcpkmsKeysTrimKey(ctx context.Context, key string) (*htt
 	localVarPath := "/v1/gcpkms/keys/trim/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -564,12 +564,12 @@ func (a *Secrets) DeleteGcpkmsKeysTrimKey(ctx context.Context, key string) (*htt
 func (a *Secrets) DeleteKubernetesConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/kubernetes/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -598,12 +598,12 @@ func (a *Secrets) DeleteKubernetesRolesName(ctx context.Context, name string) (*
 	localVarPath := "/v1/kubernetes/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -632,12 +632,12 @@ func (a *Secrets) DeleteKvPath(ctx context.Context, path string) (*http.Response
 	localVarPath := "/v1/kv/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -666,12 +666,12 @@ func (a *Secrets) DeleteMongodbatlasRolesName(ctx context.Context, name string) 
 	localVarPath := "/v1/mongodbatlas/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -698,12 +698,12 @@ func (a *Secrets) DeleteMongodbatlasRolesName(ctx context.Context, name string) 
 func (a *Secrets) DeleteNomadConfigAccess(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/nomad/config/access"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -730,12 +730,12 @@ func (a *Secrets) DeleteNomadConfigAccess(ctx context.Context) (*http.Response, 
 func (a *Secrets) DeleteNomadConfigLease(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/nomad/config/lease"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -764,12 +764,12 @@ func (a *Secrets) DeleteNomadRoleName(ctx context.Context, name string) (*http.R
 	localVarPath := "/v1/nomad/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -796,12 +796,12 @@ func (a *Secrets) DeleteNomadRoleName(ctx context.Context, name string) (*http.R
 func (a *Secrets) DeleteOpenldapConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/openldap/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -830,12 +830,12 @@ func (a *Secrets) DeleteOpenldapRoleName(ctx context.Context, name string) (*htt
 	localVarPath := "/v1/openldap/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -864,12 +864,12 @@ func (a *Secrets) DeleteOpenldapStaticRoleName(ctx context.Context, name string)
 	localVarPath := "/v1/openldap/static-role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -898,12 +898,12 @@ func (a *Secrets) DeletePkiIssuerRefDerPem(ctx context.Context, issuerRef string
 	localVarPath := "/v1/pki/{issuer_ref}/der|/pem"
 	localVarPath = strings.Replace(localVarPath, "{"+"issuer_ref"+"}", url.PathEscape(parameterToString(issuerRef, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -930,12 +930,12 @@ func (a *Secrets) DeletePkiIssuerRefDerPem(ctx context.Context, issuerRef string
 func (a *Secrets) DeletePkiJson(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/pki//json"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -964,12 +964,12 @@ func (a *Secrets) DeletePkiKeyKeyRef(ctx context.Context, keyRef string) (*http.
 	localVarPath := "/v1/pki/key/{key_ref}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key_ref"+"}", url.PathEscape(parameterToString(keyRef, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -998,12 +998,12 @@ func (a *Secrets) DeletePkiRolesName(ctx context.Context, name string) (*http.Re
 	localVarPath := "/v1/pki/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1030,12 +1030,12 @@ func (a *Secrets) DeletePkiRolesName(ctx context.Context, name string) (*http.Re
 func (a *Secrets) DeletePkiRoot(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/pki/root"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1064,12 +1064,12 @@ func (a *Secrets) DeleteRabbitmqRolesName(ctx context.Context, name string) (*ht
 	localVarPath := "/v1/rabbitmq/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1098,12 +1098,12 @@ func (a *Secrets) DeleteSecretDataPath(ctx context.Context, path string) (*http.
 	localVarPath := "/v1/secret/data/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1132,12 +1132,12 @@ func (a *Secrets) DeleteSecretMetadataPath(ctx context.Context, path string) (*h
 	localVarPath := "/v1/secret/metadata/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1164,12 +1164,12 @@ func (a *Secrets) DeleteSecretMetadataPath(ctx context.Context, path string) (*h
 func (a *Secrets) DeleteSshConfigCa(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/ssh/config/ca"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1196,12 +1196,12 @@ func (a *Secrets) DeleteSshConfigCa(ctx context.Context) (*http.Response, error)
 func (a *Secrets) DeleteSshConfigZeroaddress(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/ssh/config/zeroaddress"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1230,12 +1230,12 @@ func (a *Secrets) DeleteSshKeysKeyName(ctx context.Context, keyName string) (*ht
 	localVarPath := "/v1/ssh/keys/{key_name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key_name"+"}", url.PathEscape(parameterToString(keyName, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1264,12 +1264,12 @@ func (a *Secrets) DeleteSshRolesRole(ctx context.Context, role string) (*http.Re
 	localVarPath := "/v1/ssh/roles/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1296,12 +1296,12 @@ func (a *Secrets) DeleteSshRolesRole(ctx context.Context, role string) (*http.Re
 func (a *Secrets) DeleteTerraformConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/terraform/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1330,12 +1330,12 @@ func (a *Secrets) DeleteTerraformRoleName(ctx context.Context, name string) (*ht
 	localVarPath := "/v1/terraform/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1364,12 +1364,12 @@ func (a *Secrets) DeleteTotpKeysName(ctx context.Context, name string) (*http.Re
 	localVarPath := "/v1/totp/keys/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1398,12 +1398,12 @@ func (a *Secrets) DeleteTransitKeysName(ctx context.Context, name string) (*http
 	localVarPath := "/v1/transit/keys/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodDelete, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1430,12 +1430,12 @@ func (a *Secrets) DeleteTransitKeysName(ctx context.Context, name string) (*http
 func (a *Secrets) GetAdConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/ad/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1464,12 +1464,12 @@ func (a *Secrets) GetAdCredsName(ctx context.Context, name string) (*http.Respon
 	localVarPath := "/v1/ad/creds/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1497,12 +1497,12 @@ func (a *Secrets) GetAdCredsName(ctx context.Context, name string) (*http.Respon
 func (a *Secrets) GetAdLibrary(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/ad/library"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1531,12 +1531,12 @@ func (a *Secrets) GetAdLibraryName(ctx context.Context, name string) (*http.Resp
 	localVarPath := "/v1/ad/library/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1565,12 +1565,12 @@ func (a *Secrets) GetAdLibraryNameStatus(ctx context.Context, name string) (*htt
 	localVarPath := "/v1/ad/library/{name}/status"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1598,12 +1598,12 @@ func (a *Secrets) GetAdLibraryNameStatus(ctx context.Context, name string) (*htt
 func (a *Secrets) GetAdRoles(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/ad/roles"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1632,12 +1632,12 @@ func (a *Secrets) GetAdRolesName(ctx context.Context, name string) (*http.Respon
 	localVarPath := "/v1/ad/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1664,12 +1664,12 @@ func (a *Secrets) GetAdRolesName(ctx context.Context, name string) (*http.Respon
 func (a *Secrets) GetAdRotateRoot(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/ad/rotate-root"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1696,12 +1696,12 @@ func (a *Secrets) GetAdRotateRoot(ctx context.Context) (*http.Response, error) {
 func (a *Secrets) GetAlicloudConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/alicloud/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1730,12 +1730,12 @@ func (a *Secrets) GetAlicloudCredsName(ctx context.Context, name string) (*http.
 	localVarPath := "/v1/alicloud/creds/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1763,12 +1763,12 @@ func (a *Secrets) GetAlicloudCredsName(ctx context.Context, name string) (*http.
 func (a *Secrets) GetAlicloudRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/alicloud/role"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1797,12 +1797,12 @@ func (a *Secrets) GetAlicloudRoleName(ctx context.Context, name string) (*http.R
 	localVarPath := "/v1/alicloud/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1829,12 +1829,12 @@ func (a *Secrets) GetAlicloudRoleName(ctx context.Context, name string) (*http.R
 func (a *Secrets) GetAwsConfigLease(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/aws/config/lease"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1861,12 +1861,12 @@ func (a *Secrets) GetAwsConfigLease(ctx context.Context) (*http.Response, error)
 func (a *Secrets) GetAwsConfigRoot(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/aws/config/root"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1893,12 +1893,12 @@ func (a *Secrets) GetAwsConfigRoot(ctx context.Context) (*http.Response, error) 
 func (a *Secrets) GetAwsCreds(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/aws/creds"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1926,12 +1926,12 @@ func (a *Secrets) GetAwsCreds(ctx context.Context) (*http.Response, error) {
 func (a *Secrets) GetAwsRoles(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/aws/roles"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1960,12 +1960,12 @@ func (a *Secrets) GetAwsRolesName(ctx context.Context, name string) (*http.Respo
 	localVarPath := "/v1/aws/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -1994,12 +1994,12 @@ func (a *Secrets) GetAwsStsName(ctx context.Context, name string) (*http.Respons
 	localVarPath := "/v1/aws/sts/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2026,12 +2026,12 @@ func (a *Secrets) GetAwsStsName(ctx context.Context, name string) (*http.Respons
 func (a *Secrets) GetAzureConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/azure/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2060,12 +2060,12 @@ func (a *Secrets) GetAzureCredsRole(ctx context.Context, role string) (*http.Res
 	localVarPath := "/v1/azure/creds/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2093,12 +2093,12 @@ func (a *Secrets) GetAzureCredsRole(ctx context.Context, role string) (*http.Res
 func (a *Secrets) GetAzureRoles(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/azure/roles"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2127,12 +2127,12 @@ func (a *Secrets) GetAzureRolesName(ctx context.Context, name string) (*http.Res
 	localVarPath := "/v1/azure/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2159,12 +2159,12 @@ func (a *Secrets) GetAzureRolesName(ctx context.Context, name string) (*http.Res
 func (a *Secrets) GetConsulConfigAccess(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/consul/config/access"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2193,12 +2193,12 @@ func (a *Secrets) GetConsulCredsRole(ctx context.Context, role string) (*http.Re
 	localVarPath := "/v1/consul/creds/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2226,12 +2226,12 @@ func (a *Secrets) GetConsulCredsRole(ctx context.Context, role string) (*http.Re
 func (a *Secrets) GetConsulRoles(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/consul/roles"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2260,12 +2260,12 @@ func (a *Secrets) GetConsulRolesName(ctx context.Context, name string) (*http.Re
 	localVarPath := "/v1/consul/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2295,12 +2295,12 @@ func (a *Secrets) GetCubbyholePath(ctx context.Context, path string, list string
 	localVarPath := "/v1/cubbyhole/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2327,12 +2327,12 @@ func (a *Secrets) GetCubbyholePath(ctx context.Context, path string, list string
 func (a *Secrets) GetGcpConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/gcp/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2361,12 +2361,12 @@ func (a *Secrets) GetGcpKeyRoleset(ctx context.Context, roleset string) (*http.R
 	localVarPath := "/v1/gcp/key/{roleset}"
 	localVarPath = strings.Replace(localVarPath, "{"+"roleset"+"}", url.PathEscape(parameterToString(roleset, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2395,12 +2395,12 @@ func (a *Secrets) GetGcpRolesetName(ctx context.Context, name string) (*http.Res
 	localVarPath := "/v1/gcp/roleset/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2429,12 +2429,12 @@ func (a *Secrets) GetGcpRolesetRolesetKey(ctx context.Context, roleset string) (
 	localVarPath := "/v1/gcp/roleset/{roleset}/key"
 	localVarPath = strings.Replace(localVarPath, "{"+"roleset"+"}", url.PathEscape(parameterToString(roleset, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2463,12 +2463,12 @@ func (a *Secrets) GetGcpRolesetRolesetToken(ctx context.Context, roleset string)
 	localVarPath := "/v1/gcp/roleset/{roleset}/token"
 	localVarPath = strings.Replace(localVarPath, "{"+"roleset"+"}", url.PathEscape(parameterToString(roleset, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2496,12 +2496,12 @@ func (a *Secrets) GetGcpRolesetRolesetToken(ctx context.Context, roleset string)
 func (a *Secrets) GetGcpRolesets(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/gcp/rolesets"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2530,12 +2530,12 @@ func (a *Secrets) GetGcpStaticAccountName(ctx context.Context, name string) (*ht
 	localVarPath := "/v1/gcp/static-account/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2564,12 +2564,12 @@ func (a *Secrets) GetGcpStaticAccountNameKey(ctx context.Context, name string) (
 	localVarPath := "/v1/gcp/static-account/{name}/key"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2598,12 +2598,12 @@ func (a *Secrets) GetGcpStaticAccountNameToken(ctx context.Context, name string)
 	localVarPath := "/v1/gcp/static-account/{name}/token"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2631,12 +2631,12 @@ func (a *Secrets) GetGcpStaticAccountNameToken(ctx context.Context, name string)
 func (a *Secrets) GetGcpStaticAccounts(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/gcp/static-accounts"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2665,12 +2665,12 @@ func (a *Secrets) GetGcpTokenRoleset(ctx context.Context, roleset string) (*http
 	localVarPath := "/v1/gcp/token/{roleset}"
 	localVarPath = strings.Replace(localVarPath, "{"+"roleset"+"}", url.PathEscape(parameterToString(roleset, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2697,12 +2697,12 @@ func (a *Secrets) GetGcpTokenRoleset(ctx context.Context, roleset string) (*http
 func (a *Secrets) GetGcpkmsConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/gcpkms/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2730,12 +2730,12 @@ func (a *Secrets) GetGcpkmsConfig(ctx context.Context) (*http.Response, error) {
 func (a *Secrets) GetGcpkmsKeys(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/gcpkms/keys"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2764,12 +2764,12 @@ func (a *Secrets) GetGcpkmsKeysConfigKey(ctx context.Context, key string) (*http
 	localVarPath := "/v1/gcpkms/keys/config/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2798,12 +2798,12 @@ func (a *Secrets) GetGcpkmsKeysKey(ctx context.Context, key string) (*http.Respo
 	localVarPath := "/v1/gcpkms/keys/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2832,12 +2832,12 @@ func (a *Secrets) GetGcpkmsPubkeyKey(ctx context.Context, key string) (*http.Res
 	localVarPath := "/v1/gcpkms/pubkey/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2864,12 +2864,12 @@ func (a *Secrets) GetGcpkmsPubkeyKey(ctx context.Context, key string) (*http.Res
 func (a *Secrets) GetKubernetesConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/kubernetes/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2897,12 +2897,12 @@ func (a *Secrets) GetKubernetesConfig(ctx context.Context) (*http.Response, erro
 func (a *Secrets) GetKubernetesRoles(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/kubernetes/roles"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2931,12 +2931,12 @@ func (a *Secrets) GetKubernetesRolesName(ctx context.Context, name string) (*htt
 	localVarPath := "/v1/kubernetes/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2966,12 +2966,12 @@ func (a *Secrets) GetKvPath(ctx context.Context, path string, list string) (*htt
 	localVarPath := "/v1/kv/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -2998,12 +2998,12 @@ func (a *Secrets) GetKvPath(ctx context.Context, path string, list string) (*htt
 func (a *Secrets) GetMongodbatlasConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/mongodbatlas/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3032,12 +3032,12 @@ func (a *Secrets) GetMongodbatlasCredsName(ctx context.Context, name string) (*h
 	localVarPath := "/v1/mongodbatlas/creds/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3065,12 +3065,12 @@ func (a *Secrets) GetMongodbatlasCredsName(ctx context.Context, name string) (*h
 func (a *Secrets) GetMongodbatlasRoles(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/mongodbatlas/roles"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3099,12 +3099,12 @@ func (a *Secrets) GetMongodbatlasRolesName(ctx context.Context, name string) (*h
 	localVarPath := "/v1/mongodbatlas/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3131,12 +3131,12 @@ func (a *Secrets) GetMongodbatlasRolesName(ctx context.Context, name string) (*h
 func (a *Secrets) GetNomadConfigAccess(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/nomad/config/access"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3163,12 +3163,12 @@ func (a *Secrets) GetNomadConfigAccess(ctx context.Context) (*http.Response, err
 func (a *Secrets) GetNomadConfigLease(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/nomad/config/lease"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3197,12 +3197,12 @@ func (a *Secrets) GetNomadCredsName(ctx context.Context, name string) (*http.Res
 	localVarPath := "/v1/nomad/creds/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3230,12 +3230,12 @@ func (a *Secrets) GetNomadCredsName(ctx context.Context, name string) (*http.Res
 func (a *Secrets) GetNomadRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/nomad/role"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3264,12 +3264,12 @@ func (a *Secrets) GetNomadRoleName(ctx context.Context, name string) (*http.Resp
 	localVarPath := "/v1/nomad/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3296,12 +3296,12 @@ func (a *Secrets) GetNomadRoleName(ctx context.Context, name string) (*http.Resp
 func (a *Secrets) GetOpenldapConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/openldap/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3330,12 +3330,12 @@ func (a *Secrets) GetOpenldapCredsName(ctx context.Context, name string) (*http.
 	localVarPath := "/v1/openldap/creds/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3363,12 +3363,12 @@ func (a *Secrets) GetOpenldapCredsName(ctx context.Context, name string) (*http.
 func (a *Secrets) GetOpenldapRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/openldap/role"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3397,12 +3397,12 @@ func (a *Secrets) GetOpenldapRoleName(ctx context.Context, name string) (*http.R
 	localVarPath := "/v1/openldap/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3431,12 +3431,12 @@ func (a *Secrets) GetOpenldapStaticCredName(ctx context.Context, name string) (*
 	localVarPath := "/v1/openldap/static-cred/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3464,12 +3464,12 @@ func (a *Secrets) GetOpenldapStaticCredName(ctx context.Context, name string) (*
 func (a *Secrets) GetOpenldapStaticRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/openldap/static-role"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3498,12 +3498,12 @@ func (a *Secrets) GetOpenldapStaticRoleName(ctx context.Context, name string) (*
 	localVarPath := "/v1/openldap/static-role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3530,12 +3530,12 @@ func (a *Secrets) GetOpenldapStaticRoleName(ctx context.Context, name string) (*
 func (a *Secrets) GetPkiCa(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/pki/ca"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3562,12 +3562,12 @@ func (a *Secrets) GetPkiCa(ctx context.Context) (*http.Response, error) {
 func (a *Secrets) GetPkiCaChain(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/pki/ca_chain"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3594,12 +3594,12 @@ func (a *Secrets) GetPkiCaChain(ctx context.Context) (*http.Response, error) {
 func (a *Secrets) GetPkiCaPem(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/pki/ca/pem"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3626,12 +3626,12 @@ func (a *Secrets) GetPkiCaPem(ctx context.Context) (*http.Response, error) {
 func (a *Secrets) GetPkiCertCaChain(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/pki/cert/ca_chain"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3658,12 +3658,12 @@ func (a *Secrets) GetPkiCertCaChain(ctx context.Context) (*http.Response, error)
 func (a *Secrets) GetPkiCertCrl(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/pki/cert/crl"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3692,12 +3692,12 @@ func (a *Secrets) GetPkiCertSerial(ctx context.Context, serial string) (*http.Re
 	localVarPath := "/v1/pki/cert/{serial}"
 	localVarPath = strings.Replace(localVarPath, "{"+"serial"+"}", url.PathEscape(parameterToString(serial, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3726,12 +3726,12 @@ func (a *Secrets) GetPkiCertSerialRaw(ctx context.Context, serial string) (*http
 	localVarPath := "/v1/pki/cert/{serial}/raw"
 	localVarPath = strings.Replace(localVarPath, "{"+"serial"+"}", url.PathEscape(parameterToString(serial, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3760,12 +3760,12 @@ func (a *Secrets) GetPkiCertSerialRawPem(ctx context.Context, serial string) (*h
 	localVarPath := "/v1/pki/cert/{serial}/raw/pem"
 	localVarPath = strings.Replace(localVarPath, "{"+"serial"+"}", url.PathEscape(parameterToString(serial, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3793,12 +3793,12 @@ func (a *Secrets) GetPkiCertSerialRawPem(ctx context.Context, serial string) (*h
 func (a *Secrets) GetPkiCerts(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/pki/certs"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3825,12 +3825,12 @@ func (a *Secrets) GetPkiCerts(ctx context.Context, list string) (*http.Response,
 func (a *Secrets) GetPkiConfigCrl(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/pki/config/crl"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3857,12 +3857,12 @@ func (a *Secrets) GetPkiConfigCrl(ctx context.Context) (*http.Response, error) {
 func (a *Secrets) GetPkiConfigIssuers(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/pki/config/issuers"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3889,12 +3889,12 @@ func (a *Secrets) GetPkiConfigIssuers(ctx context.Context) (*http.Response, erro
 func (a *Secrets) GetPkiConfigKeys(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/pki/config/keys"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3921,12 +3921,12 @@ func (a *Secrets) GetPkiConfigKeys(ctx context.Context) (*http.Response, error) 
 func (a *Secrets) GetPkiConfigUrls(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/pki/config/urls"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3953,12 +3953,12 @@ func (a *Secrets) GetPkiConfigUrls(ctx context.Context) (*http.Response, error) 
 func (a *Secrets) GetPkiCrl(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/pki/crl"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -3985,12 +3985,12 @@ func (a *Secrets) GetPkiCrl(ctx context.Context) (*http.Response, error) {
 func (a *Secrets) GetPkiCrlPem(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/pki/crl/pem"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4017,12 +4017,12 @@ func (a *Secrets) GetPkiCrlPem(ctx context.Context) (*http.Response, error) {
 func (a *Secrets) GetPkiCrlRotate(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/pki/crl/rotate"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4049,12 +4049,12 @@ func (a *Secrets) GetPkiCrlRotate(ctx context.Context) (*http.Response, error) {
 func (a *Secrets) GetPkiDer(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/pki//der"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4083,12 +4083,12 @@ func (a *Secrets) GetPkiIssuerRefCrlPem(ctx context.Context, issuerRef string) (
 	localVarPath := "/v1/pki/{issuer_ref}/crl/pem"
 	localVarPath = strings.Replace(localVarPath, "{"+"issuer_ref"+"}", url.PathEscape(parameterToString(issuerRef, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4117,12 +4117,12 @@ func (a *Secrets) GetPkiIssuerRefDerPem(ctx context.Context, issuerRef string) (
 	localVarPath := "/v1/pki/{issuer_ref}/der|/pem"
 	localVarPath = strings.Replace(localVarPath, "{"+"issuer_ref"+"}", url.PathEscape(parameterToString(issuerRef, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4150,12 +4150,12 @@ func (a *Secrets) GetPkiIssuerRefDerPem(ctx context.Context, issuerRef string) (
 func (a *Secrets) GetPkiIssuers(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/pki/issuers"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4182,12 +4182,12 @@ func (a *Secrets) GetPkiIssuers(ctx context.Context, list string) (*http.Respons
 func (a *Secrets) GetPkiJson(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/pki//json"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4216,12 +4216,12 @@ func (a *Secrets) GetPkiKeyKeyRef(ctx context.Context, keyRef string) (*http.Res
 	localVarPath := "/v1/pki/key/{key_ref}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key_ref"+"}", url.PathEscape(parameterToString(keyRef, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4249,12 +4249,12 @@ func (a *Secrets) GetPkiKeyKeyRef(ctx context.Context, keyRef string) (*http.Res
 func (a *Secrets) GetPkiKeys(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/pki/keys"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4282,12 +4282,12 @@ func (a *Secrets) GetPkiKeys(ctx context.Context, list string) (*http.Response, 
 func (a *Secrets) GetPkiRoles(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/pki/roles"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4316,12 +4316,12 @@ func (a *Secrets) GetPkiRolesName(ctx context.Context, name string) (*http.Respo
 	localVarPath := "/v1/pki/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4348,12 +4348,12 @@ func (a *Secrets) GetPkiRolesName(ctx context.Context, name string) (*http.Respo
 func (a *Secrets) GetPkiTidyStatus(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/pki/tidy-status"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4380,12 +4380,12 @@ func (a *Secrets) GetPkiTidyStatus(ctx context.Context) (*http.Response, error) 
 func (a *Secrets) GetRabbitmqConfigLease(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/rabbitmq/config/lease"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4414,12 +4414,12 @@ func (a *Secrets) GetRabbitmqCredsName(ctx context.Context, name string) (*http.
 	localVarPath := "/v1/rabbitmq/creds/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4447,12 +4447,12 @@ func (a *Secrets) GetRabbitmqCredsName(ctx context.Context, name string) (*http.
 func (a *Secrets) GetRabbitmqRoles(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/rabbitmq/roles"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4481,12 +4481,12 @@ func (a *Secrets) GetRabbitmqRolesName(ctx context.Context, name string) (*http.
 	localVarPath := "/v1/rabbitmq/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4513,12 +4513,12 @@ func (a *Secrets) GetRabbitmqRolesName(ctx context.Context, name string) (*http.
 func (a *Secrets) GetSecretConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/secret/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4547,12 +4547,12 @@ func (a *Secrets) GetSecretDataPath(ctx context.Context, path string) (*http.Res
 	localVarPath := "/v1/secret/data/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4582,12 +4582,12 @@ func (a *Secrets) GetSecretMetadataPath(ctx context.Context, path string, list s
 	localVarPath := "/v1/secret/metadata/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4616,12 +4616,12 @@ func (a *Secrets) GetSecretSubkeysPath(ctx context.Context, path string) (*http.
 	localVarPath := "/v1/secret/subkeys/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4648,12 +4648,12 @@ func (a *Secrets) GetSecretSubkeysPath(ctx context.Context, path string) (*http.
 func (a *Secrets) GetSshConfigCa(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/ssh/config/ca"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4680,12 +4680,12 @@ func (a *Secrets) GetSshConfigCa(ctx context.Context) (*http.Response, error) {
 func (a *Secrets) GetSshConfigZeroaddress(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/ssh/config/zeroaddress"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4712,12 +4712,12 @@ func (a *Secrets) GetSshConfigZeroaddress(ctx context.Context) (*http.Response, 
 func (a *Secrets) GetSshPublicKey(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/ssh/public_key"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4745,12 +4745,12 @@ func (a *Secrets) GetSshPublicKey(ctx context.Context) (*http.Response, error) {
 func (a *Secrets) GetSshRoles(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/ssh/roles"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4779,12 +4779,12 @@ func (a *Secrets) GetSshRolesRole(ctx context.Context, role string) (*http.Respo
 	localVarPath := "/v1/ssh/roles/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4811,12 +4811,12 @@ func (a *Secrets) GetSshRolesRole(ctx context.Context, role string) (*http.Respo
 func (a *Secrets) GetTerraformConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/terraform/config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4845,12 +4845,12 @@ func (a *Secrets) GetTerraformCredsName(ctx context.Context, name string) (*http
 	localVarPath := "/v1/terraform/creds/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4878,12 +4878,12 @@ func (a *Secrets) GetTerraformCredsName(ctx context.Context, name string) (*http
 func (a *Secrets) GetTerraformRole(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/terraform/role"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4912,12 +4912,12 @@ func (a *Secrets) GetTerraformRoleName(ctx context.Context, name string) (*http.
 	localVarPath := "/v1/terraform/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4946,12 +4946,12 @@ func (a *Secrets) GetTotpCodeName(ctx context.Context, name string) (*http.Respo
 	localVarPath := "/v1/totp/code/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -4979,12 +4979,12 @@ func (a *Secrets) GetTotpCodeName(ctx context.Context, name string) (*http.Respo
 func (a *Secrets) GetTotpKeys(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/totp/keys"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5013,12 +5013,12 @@ func (a *Secrets) GetTotpKeysName(ctx context.Context, name string) (*http.Respo
 	localVarPath := "/v1/totp/keys/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5047,12 +5047,12 @@ func (a *Secrets) GetTransitBackupName(ctx context.Context, name string) (*http.
 	localVarPath := "/v1/transit/backup/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5079,12 +5079,12 @@ func (a *Secrets) GetTransitBackupName(ctx context.Context, name string) (*http.
 func (a *Secrets) GetTransitCacheConfig(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/transit/cache-config"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5115,12 +5115,12 @@ func (a *Secrets) GetTransitExportTypeName(ctx context.Context, name string, typ
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(type_, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5153,12 +5153,12 @@ func (a *Secrets) GetTransitExportTypeNameVersion(ctx context.Context, name stri
 	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(type_, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"version"+"}", url.PathEscape(parameterToString(version, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5186,12 +5186,12 @@ func (a *Secrets) GetTransitExportTypeNameVersion(ctx context.Context, name stri
 func (a *Secrets) GetTransitKeys(ctx context.Context, list string) (*http.Response, error) {
 	localVarPath := "/v1/transit/keys"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5220,12 +5220,12 @@ func (a *Secrets) GetTransitKeysName(ctx context.Context, name string) (*http.Re
 	localVarPath := "/v1/transit/keys/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5252,12 +5252,12 @@ func (a *Secrets) GetTransitKeysName(ctx context.Context, name string) (*http.Re
 func (a *Secrets) GetTransitWrappingKey(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/transit/wrapping_key"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodGet, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5284,12 +5284,12 @@ func (a *Secrets) GetTransitWrappingKey(ctx context.Context) (*http.Response, er
 func (a *Secrets) PostAdConfig(ctx context.Context, adConfigRequest AdConfigRequest) (*http.Response, error) {
 	localVarPath := "/v1/ad/config"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, adConfigRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, adConfigRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5318,12 +5318,12 @@ func (a *Secrets) PostAdLibraryManageNameCheckIn(ctx context.Context, name strin
 	localVarPath := "/v1/ad/library/manage/{name}/check-in"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, adLibraryManageCheckInRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, adLibraryManageCheckInRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5352,12 +5352,12 @@ func (a *Secrets) PostAdLibraryName(ctx context.Context, name string, adLibraryR
 	localVarPath := "/v1/ad/library/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, adLibraryRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, adLibraryRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5386,12 +5386,12 @@ func (a *Secrets) PostAdLibraryNameCheckIn(ctx context.Context, name string, adL
 	localVarPath := "/v1/ad/library/{name}/check-in"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, adLibraryCheckInRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, adLibraryCheckInRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5420,12 +5420,12 @@ func (a *Secrets) PostAdLibraryNameCheckOut(ctx context.Context, name string, ad
 	localVarPath := "/v1/ad/library/{name}/check-out"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, adLibraryCheckOutRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, adLibraryCheckOutRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5454,12 +5454,12 @@ func (a *Secrets) PostAdRolesName(ctx context.Context, name string, adRolesReque
 	localVarPath := "/v1/ad/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, adRolesRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, adRolesRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5488,12 +5488,12 @@ func (a *Secrets) PostAdRotateRoleName(ctx context.Context, name string) (*http.
 	localVarPath := "/v1/ad/rotate-role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5520,12 +5520,12 @@ func (a *Secrets) PostAdRotateRoleName(ctx context.Context, name string) (*http.
 func (a *Secrets) PostAdRotateRoot(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/ad/rotate-root"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5552,12 +5552,12 @@ func (a *Secrets) PostAdRotateRoot(ctx context.Context) (*http.Response, error) 
 func (a *Secrets) PostAlicloudConfig(ctx context.Context, alicloudConfigRequest AlicloudConfigRequest) (*http.Response, error) {
 	localVarPath := "/v1/alicloud/config"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, alicloudConfigRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, alicloudConfigRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5586,12 +5586,12 @@ func (a *Secrets) PostAlicloudRoleName(ctx context.Context, name string, aliclou
 	localVarPath := "/v1/alicloud/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, alicloudRoleRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, alicloudRoleRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5618,12 +5618,12 @@ func (a *Secrets) PostAlicloudRoleName(ctx context.Context, name string, aliclou
 func (a *Secrets) PostAwsConfigLease(ctx context.Context, awsConfigLeaseRequest AwsConfigLeaseRequest) (*http.Response, error) {
 	localVarPath := "/v1/aws/config/lease"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, awsConfigLeaseRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, awsConfigLeaseRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5650,12 +5650,12 @@ func (a *Secrets) PostAwsConfigLease(ctx context.Context, awsConfigLeaseRequest 
 func (a *Secrets) PostAwsConfigRoot(ctx context.Context, awsConfigRootRequest AwsConfigRootRequest) (*http.Response, error) {
 	localVarPath := "/v1/aws/config/root"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, awsConfigRootRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, awsConfigRootRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5682,12 +5682,12 @@ func (a *Secrets) PostAwsConfigRoot(ctx context.Context, awsConfigRootRequest Aw
 func (a *Secrets) PostAwsConfigRotateRoot(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/aws/config/rotate-root"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5714,12 +5714,12 @@ func (a *Secrets) PostAwsConfigRotateRoot(ctx context.Context) (*http.Response, 
 func (a *Secrets) PostAwsCreds(ctx context.Context, awsCredsRequest AwsCredsRequest) (*http.Response, error) {
 	localVarPath := "/v1/aws/creds"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, awsCredsRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, awsCredsRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5748,12 +5748,12 @@ func (a *Secrets) PostAwsRolesName(ctx context.Context, name string, awsRolesReq
 	localVarPath := "/v1/aws/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, awsRolesRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, awsRolesRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5782,12 +5782,12 @@ func (a *Secrets) PostAwsStsName(ctx context.Context, name string, awsStsRequest
 	localVarPath := "/v1/aws/sts/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, awsStsRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, awsStsRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5814,12 +5814,12 @@ func (a *Secrets) PostAwsStsName(ctx context.Context, name string, awsStsRequest
 func (a *Secrets) PostAzureConfig(ctx context.Context, azureConfigRequest AzureConfigRequest) (*http.Response, error) {
 	localVarPath := "/v1/azure/config"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, azureConfigRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, azureConfigRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5848,12 +5848,12 @@ func (a *Secrets) PostAzureRolesName(ctx context.Context, name string, azureRole
 	localVarPath := "/v1/azure/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, azureRolesRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, azureRolesRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5880,12 +5880,12 @@ func (a *Secrets) PostAzureRolesName(ctx context.Context, name string, azureRole
 func (a *Secrets) PostAzureRotateRoot(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/azure/rotate-root"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5912,12 +5912,12 @@ func (a *Secrets) PostAzureRotateRoot(ctx context.Context) (*http.Response, erro
 func (a *Secrets) PostConsulConfigAccess(ctx context.Context, consulConfigAccessRequest ConsulConfigAccessRequest) (*http.Response, error) {
 	localVarPath := "/v1/consul/config/access"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, consulConfigAccessRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, consulConfigAccessRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5946,12 +5946,12 @@ func (a *Secrets) PostConsulRolesName(ctx context.Context, name string, consulRo
 	localVarPath := "/v1/consul/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, consulRolesRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, consulRolesRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -5980,12 +5980,12 @@ func (a *Secrets) PostCubbyholePath(ctx context.Context, path string) (*http.Res
 	localVarPath := "/v1/cubbyhole/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6012,12 +6012,12 @@ func (a *Secrets) PostCubbyholePath(ctx context.Context, path string) (*http.Res
 func (a *Secrets) PostGcpConfig(ctx context.Context, gcpConfigRequest GcpConfigRequest) (*http.Response, error) {
 	localVarPath := "/v1/gcp/config"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, gcpConfigRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, gcpConfigRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6044,12 +6044,12 @@ func (a *Secrets) PostGcpConfig(ctx context.Context, gcpConfigRequest GcpConfigR
 func (a *Secrets) PostGcpConfigRotateRoot(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/gcp/config/rotate-root"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6078,12 +6078,12 @@ func (a *Secrets) PostGcpKeyRoleset(ctx context.Context, roleset string, gcpKeyR
 	localVarPath := "/v1/gcp/key/{roleset}"
 	localVarPath = strings.Replace(localVarPath, "{"+"roleset"+"}", url.PathEscape(parameterToString(roleset, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, gcpKeyRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, gcpKeyRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6112,12 +6112,12 @@ func (a *Secrets) PostGcpRolesetName(ctx context.Context, name string, gcpRolese
 	localVarPath := "/v1/gcp/roleset/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, gcpRolesetRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, gcpRolesetRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6146,12 +6146,12 @@ func (a *Secrets) PostGcpRolesetNameRotate(ctx context.Context, name string) (*h
 	localVarPath := "/v1/gcp/roleset/{name}/rotate"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6180,12 +6180,12 @@ func (a *Secrets) PostGcpRolesetNameRotateKey(ctx context.Context, name string) 
 	localVarPath := "/v1/gcp/roleset/{name}/rotate-key"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6214,12 +6214,12 @@ func (a *Secrets) PostGcpRolesetRolesetKey(ctx context.Context, roleset string, 
 	localVarPath := "/v1/gcp/roleset/{roleset}/key"
 	localVarPath = strings.Replace(localVarPath, "{"+"roleset"+"}", url.PathEscape(parameterToString(roleset, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, gcpRolesetKeyRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, gcpRolesetKeyRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6248,12 +6248,12 @@ func (a *Secrets) PostGcpRolesetRolesetToken(ctx context.Context, roleset string
 	localVarPath := "/v1/gcp/roleset/{roleset}/token"
 	localVarPath = strings.Replace(localVarPath, "{"+"roleset"+"}", url.PathEscape(parameterToString(roleset, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6282,12 +6282,12 @@ func (a *Secrets) PostGcpStaticAccountName(ctx context.Context, name string, gcp
 	localVarPath := "/v1/gcp/static-account/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, gcpStaticAccountRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, gcpStaticAccountRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6316,12 +6316,12 @@ func (a *Secrets) PostGcpStaticAccountNameKey(ctx context.Context, name string, 
 	localVarPath := "/v1/gcp/static-account/{name}/key"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, gcpStaticAccountKeyRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, gcpStaticAccountKeyRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6350,12 +6350,12 @@ func (a *Secrets) PostGcpStaticAccountNameRotateKey(ctx context.Context, name st
 	localVarPath := "/v1/gcp/static-account/{name}/rotate-key"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6384,12 +6384,12 @@ func (a *Secrets) PostGcpStaticAccountNameToken(ctx context.Context, name string
 	localVarPath := "/v1/gcp/static-account/{name}/token"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6418,12 +6418,12 @@ func (a *Secrets) PostGcpTokenRoleset(ctx context.Context, roleset string) (*htt
 	localVarPath := "/v1/gcp/token/{roleset}"
 	localVarPath = strings.Replace(localVarPath, "{"+"roleset"+"}", url.PathEscape(parameterToString(roleset, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6450,12 +6450,12 @@ func (a *Secrets) PostGcpTokenRoleset(ctx context.Context, roleset string) (*htt
 func (a *Secrets) PostGcpkmsConfig(ctx context.Context, gcpkmsConfigRequest GcpkmsConfigRequest) (*http.Response, error) {
 	localVarPath := "/v1/gcpkms/config"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, gcpkmsConfigRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, gcpkmsConfigRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6484,12 +6484,12 @@ func (a *Secrets) PostGcpkmsDecryptKey(ctx context.Context, key string, gcpkmsDe
 	localVarPath := "/v1/gcpkms/decrypt/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, gcpkmsDecryptRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, gcpkmsDecryptRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6518,12 +6518,12 @@ func (a *Secrets) PostGcpkmsEncryptKey(ctx context.Context, key string, gcpkmsEn
 	localVarPath := "/v1/gcpkms/encrypt/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, gcpkmsEncryptRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, gcpkmsEncryptRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6552,12 +6552,12 @@ func (a *Secrets) PostGcpkmsKeysConfigKey(ctx context.Context, key string, gcpkm
 	localVarPath := "/v1/gcpkms/keys/config/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, gcpkmsKeysConfigRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, gcpkmsKeysConfigRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6586,12 +6586,12 @@ func (a *Secrets) PostGcpkmsKeysDeregisterKey(ctx context.Context, key string) (
 	localVarPath := "/v1/gcpkms/keys/deregister/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6620,12 +6620,12 @@ func (a *Secrets) PostGcpkmsKeysKey(ctx context.Context, key string, gcpkmsKeysR
 	localVarPath := "/v1/gcpkms/keys/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, gcpkmsKeysRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, gcpkmsKeysRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6654,12 +6654,12 @@ func (a *Secrets) PostGcpkmsKeysRegisterKey(ctx context.Context, key string, gcp
 	localVarPath := "/v1/gcpkms/keys/register/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, gcpkmsKeysRegisterRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, gcpkmsKeysRegisterRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6688,12 +6688,12 @@ func (a *Secrets) PostGcpkmsKeysRotateKey(ctx context.Context, key string) (*htt
 	localVarPath := "/v1/gcpkms/keys/rotate/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6722,12 +6722,12 @@ func (a *Secrets) PostGcpkmsKeysTrimKey(ctx context.Context, key string) (*http.
 	localVarPath := "/v1/gcpkms/keys/trim/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6756,12 +6756,12 @@ func (a *Secrets) PostGcpkmsReencryptKey(ctx context.Context, key string, gcpkms
 	localVarPath := "/v1/gcpkms/reencrypt/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, gcpkmsReencryptRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, gcpkmsReencryptRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6790,12 +6790,12 @@ func (a *Secrets) PostGcpkmsSignKey(ctx context.Context, key string, gcpkmsSignR
 	localVarPath := "/v1/gcpkms/sign/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, gcpkmsSignRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, gcpkmsSignRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6824,12 +6824,12 @@ func (a *Secrets) PostGcpkmsVerifyKey(ctx context.Context, key string, gcpkmsVer
 	localVarPath := "/v1/gcpkms/verify/{key}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, gcpkmsVerifyRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, gcpkmsVerifyRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6856,12 +6856,12 @@ func (a *Secrets) PostGcpkmsVerifyKey(ctx context.Context, key string, gcpkmsVer
 func (a *Secrets) PostKubernetesConfig(ctx context.Context, kubernetesConfigRequest KubernetesConfigRequest) (*http.Response, error) {
 	localVarPath := "/v1/kubernetes/config"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, kubernetesConfigRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, kubernetesConfigRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6890,12 +6890,12 @@ func (a *Secrets) PostKubernetesCredsName(ctx context.Context, name string, kube
 	localVarPath := "/v1/kubernetes/creds/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, kubernetesCredsRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, kubernetesCredsRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6924,12 +6924,12 @@ func (a *Secrets) PostKubernetesRolesName(ctx context.Context, name string, kube
 	localVarPath := "/v1/kubernetes/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, kubernetesRolesRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, kubernetesRolesRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6958,12 +6958,12 @@ func (a *Secrets) PostKvPath(ctx context.Context, path string) (*http.Response, 
 	localVarPath := "/v1/kv/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -6990,12 +6990,12 @@ func (a *Secrets) PostKvPath(ctx context.Context, path string) (*http.Response, 
 func (a *Secrets) PostMongodbatlasConfig(ctx context.Context, mongodbatlasConfigRequest MongodbatlasConfigRequest) (*http.Response, error) {
 	localVarPath := "/v1/mongodbatlas/config"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, mongodbatlasConfigRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, mongodbatlasConfigRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7024,12 +7024,12 @@ func (a *Secrets) PostMongodbatlasCredsName(ctx context.Context, name string) (*
 	localVarPath := "/v1/mongodbatlas/creds/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7058,12 +7058,12 @@ func (a *Secrets) PostMongodbatlasRolesName(ctx context.Context, name string, mo
 	localVarPath := "/v1/mongodbatlas/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, mongodbatlasRolesRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, mongodbatlasRolesRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7090,12 +7090,12 @@ func (a *Secrets) PostMongodbatlasRolesName(ctx context.Context, name string, mo
 func (a *Secrets) PostNomadConfigAccess(ctx context.Context, nomadConfigAccessRequest NomadConfigAccessRequest) (*http.Response, error) {
 	localVarPath := "/v1/nomad/config/access"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, nomadConfigAccessRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, nomadConfigAccessRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7122,12 +7122,12 @@ func (a *Secrets) PostNomadConfigAccess(ctx context.Context, nomadConfigAccessRe
 func (a *Secrets) PostNomadConfigLease(ctx context.Context, nomadConfigLeaseRequest NomadConfigLeaseRequest) (*http.Response, error) {
 	localVarPath := "/v1/nomad/config/lease"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, nomadConfigLeaseRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, nomadConfigLeaseRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7156,12 +7156,12 @@ func (a *Secrets) PostNomadRoleName(ctx context.Context, name string, nomadRoleR
 	localVarPath := "/v1/nomad/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, nomadRoleRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, nomadRoleRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7188,12 +7188,12 @@ func (a *Secrets) PostNomadRoleName(ctx context.Context, name string, nomadRoleR
 func (a *Secrets) PostOpenldapConfig(ctx context.Context, openldapConfigRequest OpenldapConfigRequest) (*http.Response, error) {
 	localVarPath := "/v1/openldap/config"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, openldapConfigRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, openldapConfigRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7222,12 +7222,12 @@ func (a *Secrets) PostOpenldapRoleName(ctx context.Context, name string, openlda
 	localVarPath := "/v1/openldap/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, openldapRoleRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, openldapRoleRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7256,12 +7256,12 @@ func (a *Secrets) PostOpenldapRotateRoleName(ctx context.Context, name string) (
 	localVarPath := "/v1/openldap/rotate-role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7288,12 +7288,12 @@ func (a *Secrets) PostOpenldapRotateRoleName(ctx context.Context, name string) (
 func (a *Secrets) PostOpenldapRotateRoot(ctx context.Context) (*http.Response, error) {
 	localVarPath := "/v1/openldap/rotate-root"
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7322,12 +7322,12 @@ func (a *Secrets) PostOpenldapStaticRoleName(ctx context.Context, name string, o
 	localVarPath := "/v1/openldap/static-role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, openldapStaticRoleRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, openldapStaticRoleRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7354,12 +7354,12 @@ func (a *Secrets) PostOpenldapStaticRoleName(ctx context.Context, name string, o
 func (a *Secrets) PostPkiBundle(ctx context.Context, pkiBundleRequest PkiBundleRequest) (*http.Response, error) {
 	localVarPath := "/v1/pki/bundle"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiBundleRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiBundleRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7386,12 +7386,12 @@ func (a *Secrets) PostPkiBundle(ctx context.Context, pkiBundleRequest PkiBundleR
 func (a *Secrets) PostPkiCert(ctx context.Context, pkiCertRequest PkiCertRequest) (*http.Response, error) {
 	localVarPath := "/v1/pki/cert"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiCertRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiCertRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7418,12 +7418,12 @@ func (a *Secrets) PostPkiCert(ctx context.Context, pkiCertRequest PkiCertRequest
 func (a *Secrets) PostPkiConfigCa(ctx context.Context, pkiConfigCaRequest PkiConfigCaRequest) (*http.Response, error) {
 	localVarPath := "/v1/pki/config/ca"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiConfigCaRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiConfigCaRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7450,12 +7450,12 @@ func (a *Secrets) PostPkiConfigCa(ctx context.Context, pkiConfigCaRequest PkiCon
 func (a *Secrets) PostPkiConfigCrl(ctx context.Context, pkiConfigCrlRequest PkiConfigCrlRequest) (*http.Response, error) {
 	localVarPath := "/v1/pki/config/crl"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiConfigCrlRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiConfigCrlRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7482,12 +7482,12 @@ func (a *Secrets) PostPkiConfigCrl(ctx context.Context, pkiConfigCrlRequest PkiC
 func (a *Secrets) PostPkiConfigIssuers(ctx context.Context, pkiConfigIssuersRequest PkiConfigIssuersRequest) (*http.Response, error) {
 	localVarPath := "/v1/pki/config/issuers"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiConfigIssuersRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiConfigIssuersRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7514,12 +7514,12 @@ func (a *Secrets) PostPkiConfigIssuers(ctx context.Context, pkiConfigIssuersRequ
 func (a *Secrets) PostPkiConfigKeys(ctx context.Context, pkiConfigKeysRequest PkiConfigKeysRequest) (*http.Response, error) {
 	localVarPath := "/v1/pki/config/keys"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiConfigKeysRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiConfigKeysRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7546,12 +7546,12 @@ func (a *Secrets) PostPkiConfigKeys(ctx context.Context, pkiConfigKeysRequest Pk
 func (a *Secrets) PostPkiConfigUrls(ctx context.Context, pkiConfigUrlsRequest PkiConfigUrlsRequest) (*http.Response, error) {
 	localVarPath := "/v1/pki/config/urls"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiConfigUrlsRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiConfigUrlsRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7578,12 +7578,12 @@ func (a *Secrets) PostPkiConfigUrls(ctx context.Context, pkiConfigUrlsRequest Pk
 func (a *Secrets) PostPkiIntermediateCrossSign(ctx context.Context, pkiIntermediateCrossSignRequest PkiIntermediateCrossSignRequest) (*http.Response, error) {
 	localVarPath := "/v1/pki/intermediate/cross-sign"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiIntermediateCrossSignRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiIntermediateCrossSignRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7612,12 +7612,12 @@ func (a *Secrets) PostPkiIntermediateGenerateExported(ctx context.Context, expor
 	localVarPath := "/v1/pki/intermediate/generate/{exported}"
 	localVarPath = strings.Replace(localVarPath, "{"+"exported"+"}", url.PathEscape(parameterToString(exported, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiIntermediateGenerateRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiIntermediateGenerateRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7644,12 +7644,12 @@ func (a *Secrets) PostPkiIntermediateGenerateExported(ctx context.Context, expor
 func (a *Secrets) PostPkiIntermediateSetSigned(ctx context.Context, pkiIntermediateSetSignedRequest PkiIntermediateSetSignedRequest) (*http.Response, error) {
 	localVarPath := "/v1/pki/intermediate/set-signed"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiIntermediateSetSignedRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiIntermediateSetSignedRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7676,12 +7676,12 @@ func (a *Secrets) PostPkiIntermediateSetSigned(ctx context.Context, pkiIntermedi
 func (a *Secrets) PostPkiInternalExported(ctx context.Context, pkiInternalExportedRequest PkiInternalExportedRequest) (*http.Response, error) {
 	localVarPath := "/v1/pki/internal|exported"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiInternalExportedRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiInternalExportedRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7710,12 +7710,12 @@ func (a *Secrets) PostPkiIssueRole(ctx context.Context, role string, pkiIssueReq
 	localVarPath := "/v1/pki/issue/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiIssueRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiIssueRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7746,12 +7746,12 @@ func (a *Secrets) PostPkiIssuerIssuerRefIssueRole(ctx context.Context, issuerRef
 	localVarPath = strings.Replace(localVarPath, "{"+"issuer_ref"+"}", url.PathEscape(parameterToString(issuerRef, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiIssuerIssueRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiIssuerIssueRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7780,12 +7780,12 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignIntermediate(ctx context.Context, is
 	localVarPath := "/v1/pki/issuer/{issuer_ref}/sign-intermediate"
 	localVarPath = strings.Replace(localVarPath, "{"+"issuer_ref"+"}", url.PathEscape(parameterToString(issuerRef, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiIssuerSignIntermediateRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiIssuerSignIntermediateRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7816,12 +7816,12 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignRole(ctx context.Context, issuerRef 
 	localVarPath = strings.Replace(localVarPath, "{"+"issuer_ref"+"}", url.PathEscape(parameterToString(issuerRef, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiIssuerSignRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiIssuerSignRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7850,12 +7850,12 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignSelfIssued(ctx context.Context, issu
 	localVarPath := "/v1/pki/issuer/{issuer_ref}/sign-self-issued"
 	localVarPath = strings.Replace(localVarPath, "{"+"issuer_ref"+"}", url.PathEscape(parameterToString(issuerRef, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiIssuerSignSelfIssuedRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiIssuerSignSelfIssuedRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7884,12 +7884,12 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignVerbatim(ctx context.Context, issuer
 	localVarPath := "/v1/pki/issuer/{issuer_ref}/sign-verbatim"
 	localVarPath = strings.Replace(localVarPath, "{"+"issuer_ref"+"}", url.PathEscape(parameterToString(issuerRef, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiIssuerSignVerbatimRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiIssuerSignVerbatimRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7920,12 +7920,12 @@ func (a *Secrets) PostPkiIssuerIssuerRefSignVerbatimRole(ctx context.Context, is
 	localVarPath = strings.Replace(localVarPath, "{"+"issuer_ref"+"}", url.PathEscape(parameterToString(issuerRef, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiIssuerSignVerbatimRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiIssuerSignVerbatimRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7954,12 +7954,12 @@ func (a *Secrets) PostPkiIssuerRefDerPem(ctx context.Context, issuerRef string, 
 	localVarPath := "/v1/pki/{issuer_ref}/der|/pem"
 	localVarPath = strings.Replace(localVarPath, "{"+"issuer_ref"+"}", url.PathEscape(parameterToString(issuerRef, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiDerPemRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiDerPemRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -7988,12 +7988,12 @@ func (a *Secrets) PostPkiIssuersGenerateIntermediateExported(ctx context.Context
 	localVarPath := "/v1/pki/issuers/generate/intermediate/{exported}"
 	localVarPath = strings.Replace(localVarPath, "{"+"exported"+"}", url.PathEscape(parameterToString(exported, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiIssuersGenerateIntermediateRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiIssuersGenerateIntermediateRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8022,12 +8022,12 @@ func (a *Secrets) PostPkiIssuersGenerateRootExported(ctx context.Context, export
 	localVarPath := "/v1/pki/issuers/generate/root/{exported}"
 	localVarPath = strings.Replace(localVarPath, "{"+"exported"+"}", url.PathEscape(parameterToString(exported, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiIssuersGenerateRootRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiIssuersGenerateRootRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8054,12 +8054,12 @@ func (a *Secrets) PostPkiIssuersGenerateRootExported(ctx context.Context, export
 func (a *Secrets) PostPkiJson(ctx context.Context, pkiJsonRequest PkiJsonRequest) (*http.Response, error) {
 	localVarPath := "/v1/pki//json"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiJsonRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiJsonRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8088,12 +8088,12 @@ func (a *Secrets) PostPkiKeyKeyRef(ctx context.Context, keyRef string, pkiKeyReq
 	localVarPath := "/v1/pki/key/{key_ref}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key_ref"+"}", url.PathEscape(parameterToString(keyRef, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiKeyRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiKeyRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8120,12 +8120,12 @@ func (a *Secrets) PostPkiKeyKeyRef(ctx context.Context, keyRef string, pkiKeyReq
 func (a *Secrets) PostPkiKeysImport(ctx context.Context, pkiKeysImportRequest PkiKeysImportRequest) (*http.Response, error) {
 	localVarPath := "/v1/pki/keys/import"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiKeysImportRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiKeysImportRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8152,12 +8152,12 @@ func (a *Secrets) PostPkiKeysImport(ctx context.Context, pkiKeysImportRequest Pk
 func (a *Secrets) PostPkiKms(ctx context.Context, pkiKmsRequest PkiKmsRequest) (*http.Response, error) {
 	localVarPath := "/v1/pki/kms"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiKmsRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiKmsRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8184,12 +8184,12 @@ func (a *Secrets) PostPkiKms(ctx context.Context, pkiKmsRequest PkiKmsRequest) (
 func (a *Secrets) PostPkiRevoke(ctx context.Context, pkiRevokeRequest PkiRevokeRequest) (*http.Response, error) {
 	localVarPath := "/v1/pki/revoke"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiRevokeRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiRevokeRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8218,12 +8218,12 @@ func (a *Secrets) PostPkiRolesName(ctx context.Context, name string, pkiRolesReq
 	localVarPath := "/v1/pki/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiRolesRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiRolesRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8252,12 +8252,12 @@ func (a *Secrets) PostPkiRootGenerateExported(ctx context.Context, exported stri
 	localVarPath := "/v1/pki/root/generate/{exported}"
 	localVarPath = strings.Replace(localVarPath, "{"+"exported"+"}", url.PathEscape(parameterToString(exported, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiRootGenerateRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiRootGenerateRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8284,12 +8284,12 @@ func (a *Secrets) PostPkiRootGenerateExported(ctx context.Context, exported stri
 func (a *Secrets) PostPkiRootReplace(ctx context.Context, pkiRootReplaceRequest PkiRootReplaceRequest) (*http.Response, error) {
 	localVarPath := "/v1/pki/root/replace"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiRootReplaceRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiRootReplaceRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8318,12 +8318,12 @@ func (a *Secrets) PostPkiRootRotateExported(ctx context.Context, exported string
 	localVarPath := "/v1/pki/root/rotate/{exported}"
 	localVarPath = strings.Replace(localVarPath, "{"+"exported"+"}", url.PathEscape(parameterToString(exported, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiRootRotateRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiRootRotateRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8350,12 +8350,12 @@ func (a *Secrets) PostPkiRootRotateExported(ctx context.Context, exported string
 func (a *Secrets) PostPkiRootSignIntermediate(ctx context.Context, pkiRootSignIntermediateRequest PkiRootSignIntermediateRequest) (*http.Response, error) {
 	localVarPath := "/v1/pki/root/sign-intermediate"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiRootSignIntermediateRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiRootSignIntermediateRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8382,12 +8382,12 @@ func (a *Secrets) PostPkiRootSignIntermediate(ctx context.Context, pkiRootSignIn
 func (a *Secrets) PostPkiRootSignSelfIssued(ctx context.Context, pkiRootSignSelfIssuedRequest PkiRootSignSelfIssuedRequest) (*http.Response, error) {
 	localVarPath := "/v1/pki/root/sign-self-issued"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiRootSignSelfIssuedRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiRootSignSelfIssuedRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8416,12 +8416,12 @@ func (a *Secrets) PostPkiSignRole(ctx context.Context, role string, pkiSignReque
 	localVarPath := "/v1/pki/sign/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiSignRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiSignRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8448,12 +8448,12 @@ func (a *Secrets) PostPkiSignRole(ctx context.Context, role string, pkiSignReque
 func (a *Secrets) PostPkiSignVerbatim(ctx context.Context, pkiSignVerbatimRequest PkiSignVerbatimRequest) (*http.Response, error) {
 	localVarPath := "/v1/pki/sign-verbatim"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiSignVerbatimRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiSignVerbatimRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8482,12 +8482,12 @@ func (a *Secrets) PostPkiSignVerbatimRole(ctx context.Context, role string, pkiS
 	localVarPath := "/v1/pki/sign-verbatim/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiSignVerbatimRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiSignVerbatimRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8514,12 +8514,12 @@ func (a *Secrets) PostPkiSignVerbatimRole(ctx context.Context, role string, pkiS
 func (a *Secrets) PostPkiTidy(ctx context.Context, pkiTidyRequest PkiTidyRequest) (*http.Response, error) {
 	localVarPath := "/v1/pki/tidy"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, pkiTidyRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, pkiTidyRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8546,12 +8546,12 @@ func (a *Secrets) PostPkiTidy(ctx context.Context, pkiTidyRequest PkiTidyRequest
 func (a *Secrets) PostRabbitmqConfigConnection(ctx context.Context, rabbitmqConfigConnectionRequest RabbitmqConfigConnectionRequest) (*http.Response, error) {
 	localVarPath := "/v1/rabbitmq/config/connection"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, rabbitmqConfigConnectionRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, rabbitmqConfigConnectionRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8578,12 +8578,12 @@ func (a *Secrets) PostRabbitmqConfigConnection(ctx context.Context, rabbitmqConf
 func (a *Secrets) PostRabbitmqConfigLease(ctx context.Context, rabbitmqConfigLeaseRequest RabbitmqConfigLeaseRequest) (*http.Response, error) {
 	localVarPath := "/v1/rabbitmq/config/lease"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, rabbitmqConfigLeaseRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, rabbitmqConfigLeaseRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8612,12 +8612,12 @@ func (a *Secrets) PostRabbitmqRolesName(ctx context.Context, name string, rabbit
 	localVarPath := "/v1/rabbitmq/roles/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, rabbitmqRolesRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, rabbitmqRolesRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8644,12 +8644,12 @@ func (a *Secrets) PostRabbitmqRolesName(ctx context.Context, name string, rabbit
 func (a *Secrets) PostSecretConfig(ctx context.Context, kvConfigRequest KvConfigRequest) (*http.Response, error) {
 	localVarPath := "/v1/secret/config"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, kvConfigRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, kvConfigRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8678,12 +8678,12 @@ func (a *Secrets) PostSecretDataPath(ctx context.Context, path string, kvDataReq
 	localVarPath := "/v1/secret/data/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, kvDataRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, kvDataRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8712,12 +8712,12 @@ func (a *Secrets) PostSecretDeletePath(ctx context.Context, path string, kvDelet
 	localVarPath := "/v1/secret/delete/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, kvDeleteRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, kvDeleteRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8746,12 +8746,12 @@ func (a *Secrets) PostSecretDestroyPath(ctx context.Context, path string, kvDest
 	localVarPath := "/v1/secret/destroy/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, kvDestroyRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, kvDestroyRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8780,12 +8780,12 @@ func (a *Secrets) PostSecretMetadataPath(ctx context.Context, path string, kvMet
 	localVarPath := "/v1/secret/metadata/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, kvMetadataRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, kvMetadataRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8814,12 +8814,12 @@ func (a *Secrets) PostSecretUndeletePath(ctx context.Context, path string, kvUnd
 	localVarPath := "/v1/secret/undelete/{path}"
 	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, kvUndeleteRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, kvUndeleteRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8846,12 +8846,12 @@ func (a *Secrets) PostSecretUndeletePath(ctx context.Context, path string, kvUnd
 func (a *Secrets) PostSshConfigCa(ctx context.Context, sshConfigCaRequest SshConfigCaRequest) (*http.Response, error) {
 	localVarPath := "/v1/ssh/config/ca"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, sshConfigCaRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, sshConfigCaRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8878,12 +8878,12 @@ func (a *Secrets) PostSshConfigCa(ctx context.Context, sshConfigCaRequest SshCon
 func (a *Secrets) PostSshConfigZeroaddress(ctx context.Context, sshConfigZeroaddressRequest SshConfigZeroaddressRequest) (*http.Response, error) {
 	localVarPath := "/v1/ssh/config/zeroaddress"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, sshConfigZeroaddressRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, sshConfigZeroaddressRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8912,12 +8912,12 @@ func (a *Secrets) PostSshCredsRole(ctx context.Context, role string, sshCredsReq
 	localVarPath := "/v1/ssh/creds/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, sshCredsRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, sshCredsRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8946,12 +8946,12 @@ func (a *Secrets) PostSshKeysKeyName(ctx context.Context, keyName string, sshKey
 	localVarPath := "/v1/ssh/keys/{key_name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"key_name"+"}", url.PathEscape(parameterToString(keyName, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, sshKeysRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, sshKeysRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -8978,12 +8978,12 @@ func (a *Secrets) PostSshKeysKeyName(ctx context.Context, keyName string, sshKey
 func (a *Secrets) PostSshLookup(ctx context.Context, sshLookupRequest SshLookupRequest) (*http.Response, error) {
 	localVarPath := "/v1/ssh/lookup"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, sshLookupRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, sshLookupRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9012,12 +9012,12 @@ func (a *Secrets) PostSshRolesRole(ctx context.Context, role string, sshRolesReq
 	localVarPath := "/v1/ssh/roles/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, sshRolesRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, sshRolesRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9046,12 +9046,12 @@ func (a *Secrets) PostSshSignRole(ctx context.Context, role string, sshSignReque
 	localVarPath := "/v1/ssh/sign/{role}"
 	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, sshSignRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, sshSignRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9078,12 +9078,12 @@ func (a *Secrets) PostSshSignRole(ctx context.Context, role string, sshSignReque
 func (a *Secrets) PostSshVerify(ctx context.Context, sshVerifyRequest SshVerifyRequest) (*http.Response, error) {
 	localVarPath := "/v1/ssh/verify"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, sshVerifyRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, sshVerifyRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9110,12 +9110,12 @@ func (a *Secrets) PostSshVerify(ctx context.Context, sshVerifyRequest SshVerifyR
 func (a *Secrets) PostTerraformConfig(ctx context.Context, terraformConfigRequest TerraformConfigRequest) (*http.Response, error) {
 	localVarPath := "/v1/terraform/config"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, terraformConfigRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, terraformConfigRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9144,12 +9144,12 @@ func (a *Secrets) PostTerraformCredsName(ctx context.Context, name string) (*htt
 	localVarPath := "/v1/terraform/creds/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9178,12 +9178,12 @@ func (a *Secrets) PostTerraformRoleName(ctx context.Context, name string, terraf
 	localVarPath := "/v1/terraform/role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, terraformRoleRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, terraformRoleRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9212,12 +9212,12 @@ func (a *Secrets) PostTerraformRotateRoleName(ctx context.Context, name string) 
 	localVarPath := "/v1/terraform/rotate-role/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9246,12 +9246,12 @@ func (a *Secrets) PostTotpCodeName(ctx context.Context, name string, totpCodeReq
 	localVarPath := "/v1/totp/code/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, totpCodeRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, totpCodeRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9280,12 +9280,12 @@ func (a *Secrets) PostTotpKeysName(ctx context.Context, name string, totpKeysReq
 	localVarPath := "/v1/totp/keys/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, totpKeysRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, totpKeysRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9312,12 +9312,12 @@ func (a *Secrets) PostTotpKeysName(ctx context.Context, name string, totpKeysReq
 func (a *Secrets) PostTransitCacheConfig(ctx context.Context, transitCacheConfigRequest TransitCacheConfigRequest) (*http.Response, error) {
 	localVarPath := "/v1/transit/cache-config"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, transitCacheConfigRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, transitCacheConfigRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9348,12 +9348,12 @@ func (a *Secrets) PostTransitDatakeyPlaintextName(ctx context.Context, name stri
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"plaintext"+"}", url.PathEscape(parameterToString(plaintext, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, transitDatakeyRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, transitDatakeyRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9382,12 +9382,12 @@ func (a *Secrets) PostTransitDecryptName(ctx context.Context, name string, trans
 	localVarPath := "/v1/transit/decrypt/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, transitDecryptRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, transitDecryptRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9416,12 +9416,12 @@ func (a *Secrets) PostTransitEncryptName(ctx context.Context, name string, trans
 	localVarPath := "/v1/transit/encrypt/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, transitEncryptRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, transitEncryptRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9448,12 +9448,12 @@ func (a *Secrets) PostTransitEncryptName(ctx context.Context, name string, trans
 func (a *Secrets) PostTransitHash(ctx context.Context, transitHashRequest TransitHashRequest) (*http.Response, error) {
 	localVarPath := "/v1/transit/hash"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, transitHashRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, transitHashRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9482,12 +9482,12 @@ func (a *Secrets) PostTransitHashUrlalgorithm(ctx context.Context, urlalgorithm 
 	localVarPath := "/v1/transit/hash/{urlalgorithm}"
 	localVarPath = strings.Replace(localVarPath, "{"+"urlalgorithm"+"}", url.PathEscape(parameterToString(urlalgorithm, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, transitHashRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, transitHashRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9516,12 +9516,12 @@ func (a *Secrets) PostTransitHmacName(ctx context.Context, name string, transitH
 	localVarPath := "/v1/transit/hmac/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, transitHmacRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, transitHmacRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9552,12 +9552,12 @@ func (a *Secrets) PostTransitHmacNameUrlalgorithm(ctx context.Context, name stri
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"urlalgorithm"+"}", url.PathEscape(parameterToString(urlalgorithm, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, transitHmacRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, transitHmacRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9586,12 +9586,12 @@ func (a *Secrets) PostTransitKeysName(ctx context.Context, name string, transitK
 	localVarPath := "/v1/transit/keys/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, transitKeysRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, transitKeysRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9620,12 +9620,12 @@ func (a *Secrets) PostTransitKeysNameConfig(ctx context.Context, name string, tr
 	localVarPath := "/v1/transit/keys/{name}/config"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, transitKeysConfigRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, transitKeysConfigRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9654,12 +9654,12 @@ func (a *Secrets) PostTransitKeysNameImport(ctx context.Context, name string, tr
 	localVarPath := "/v1/transit/keys/{name}/import"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, transitKeysImportRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, transitKeysImportRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9688,12 +9688,12 @@ func (a *Secrets) PostTransitKeysNameImportVersion(ctx context.Context, name str
 	localVarPath := "/v1/transit/keys/{name}/import_version"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, transitKeysImportVersionRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, transitKeysImportVersionRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9722,12 +9722,12 @@ func (a *Secrets) PostTransitKeysNameRotate(ctx context.Context, name string) (*
 	localVarPath := "/v1/transit/keys/{name}/rotate"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewRequestWithContext(ctx, http.MethodPost, localVarPath, nil)
+	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9756,12 +9756,12 @@ func (a *Secrets) PostTransitKeysNameTrim(ctx context.Context, name string, tran
 	localVarPath := "/v1/transit/keys/{name}/trim"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, transitKeysTrimRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, transitKeysTrimRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9788,12 +9788,12 @@ func (a *Secrets) PostTransitKeysNameTrim(ctx context.Context, name string, tran
 func (a *Secrets) PostTransitRandom(ctx context.Context, transitRandomRequest TransitRandomRequest) (*http.Response, error) {
 	localVarPath := "/v1/transit/random"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, transitRandomRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, transitRandomRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9822,12 +9822,12 @@ func (a *Secrets) PostTransitRandomSource(ctx context.Context, source string, tr
 	localVarPath := "/v1/transit/random/{source}"
 	localVarPath = strings.Replace(localVarPath, "{"+"source"+"}", url.PathEscape(parameterToString(source, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, transitRandomRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, transitRandomRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9858,12 +9858,12 @@ func (a *Secrets) PostTransitRandomSourceUrlbytes(ctx context.Context, source st
 	localVarPath = strings.Replace(localVarPath, "{"+"source"+"}", url.PathEscape(parameterToString(source, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"urlbytes"+"}", url.PathEscape(parameterToString(urlbytes, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, transitRandomRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, transitRandomRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9892,12 +9892,12 @@ func (a *Secrets) PostTransitRandomUrlbytes(ctx context.Context, urlbytes string
 	localVarPath := "/v1/transit/random/{urlbytes}"
 	localVarPath = strings.Replace(localVarPath, "{"+"urlbytes"+"}", url.PathEscape(parameterToString(urlbytes, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, transitRandomRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, transitRandomRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9924,12 +9924,12 @@ func (a *Secrets) PostTransitRandomUrlbytes(ctx context.Context, urlbytes string
 func (a *Secrets) PostTransitRestore(ctx context.Context, transitRestoreRequest TransitRestoreRequest) (*http.Response, error) {
 	localVarPath := "/v1/transit/restore"
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, transitRestoreRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, transitRestoreRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9958,12 +9958,12 @@ func (a *Secrets) PostTransitRestoreName(ctx context.Context, name string, trans
 	localVarPath := "/v1/transit/restore/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, transitRestoreRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, transitRestoreRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -9992,12 +9992,12 @@ func (a *Secrets) PostTransitRewrapName(ctx context.Context, name string, transi
 	localVarPath := "/v1/transit/rewrap/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, transitRewrapRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, transitRewrapRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -10026,12 +10026,12 @@ func (a *Secrets) PostTransitSignName(ctx context.Context, name string, transitS
 	localVarPath := "/v1/transit/sign/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, transitSignRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, transitSignRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -10062,12 +10062,12 @@ func (a *Secrets) PostTransitSignNameUrlalgorithm(ctx context.Context, name stri
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"urlalgorithm"+"}", url.PathEscape(parameterToString(urlalgorithm, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, transitSignRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, transitSignRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -10096,12 +10096,12 @@ func (a *Secrets) PostTransitVerifyName(ctx context.Context, name string, transi
 	localVarPath := "/v1/transit/verify/{name}"
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, transitVerifyRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, transitVerifyRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}
@@ -10132,12 +10132,12 @@ func (a *Secrets) PostTransitVerifyNameUrlalgorithm(ctx context.Context, name st
 	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"urlalgorithm"+"}", url.PathEscape(parameterToString(urlalgorithm, "")), -1)
 
-	req, err := a.client.NewStructuredRequest(ctx, http.MethodPost, localVarPath, transitVerifyRequest)
+	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, transitVerifyRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return localVarHTTPResponse, err
 	}

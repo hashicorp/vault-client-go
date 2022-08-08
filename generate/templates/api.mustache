@@ -35,19 +35,19 @@ func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}, {{par
 	localVarPath = strings.Replace(localVarPath, "{"+"{{baseName}}"+"}", url.PathEscape(parameterToString({{paramName}}, "{{collectionFormat}}")), -1){{/pathParams}}
 
 {{#bodyParams}}
-	req, err := a.client.NewStructuredRequest(ctx, http.Method{{httpMethod}}, localVarPath, {{paramName}})
+	req, err := a.client.NewStructuredRequest(http.Method{{httpMethod}}, localVarPath, {{paramName}})
 	if err != nil {
 		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, err
 	}
 {{/bodyParams}}
 {{^bodyParams}}
-	req, err := a.client.NewRequestWithContext(ctx, http.Method{{httpMethod}}, localVarPath, nil)
+	req, err := a.client.NewRequest(http.Method{{httpMethod}}, localVarPath, nil)
 	if err != nil {
 		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, err
 	}
 {{/bodyParams}}
 
-	localVarHTTPResponse, err := a.client.callAPI(req)
+	localVarHTTPResponse, err := a.client.Do(ctx, req, true)
 	if err != nil || localVarHTTPResponse == nil {
 		return {{#returnType}}localVarReturnValue, {{/returnType}}localVarHTTPResponse, err
 	}

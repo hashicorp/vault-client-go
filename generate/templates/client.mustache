@@ -17,6 +17,8 @@ import (
 	"regexp"
 	"strings"
 	"time"
+
+	"github.com/hashicorp/go-retryablehttp"
 )
 
 var (
@@ -28,6 +30,9 @@ var (
 // In most cases there should be only one, shared, Client.
 type Client struct {
 	configuration Configuration
+
+	client            *http.Client
+	clientWithRetries *retryablehttp.Client
 
 	parsedBaseAddress *url.URL
 
@@ -42,11 +47,25 @@ type Client struct {
 }
 
 
-// NewClient creates a new API client. Requires a userAgent string describing your application.
-// optionally a custom http.Client to allow for advanced features such as caching.
+// NewClient returns a new Vault client with a copy of the given configuration
 func NewClient(configuration Configuration) (*Client, error) {
-	c := &Client{
+	c := Client{
 		configuration: configuration,
+
+		// configured or default HTTP client
+		client: configuration.HTTPClient,
+
+		// retryablehttp wrapper around the HTTP client
+		clientWithRetries: &retryablehttp.Client{
+			HTTPClient:   configuration.HTTPClient,
+			Logger:       configuration.RetryOptions.Logger,
+			RetryWaitMin: configuration.RetryOptions.RetryWaitMin,
+			RetryWaitMax: configuration.RetryOptions.RetryWaitMax,
+			RetryMax:     configuration.RetryOptions.RetryMax,
+			CheckRetry:   configuration.RetryOptions.CheckRetry,
+			Backoff:      configuration.RetryOptions.Backoff,
+			ErrorHandler: configuration.RetryOptions.ErrorHandler,
+		},
 	}
 
 	a, err := url.Parse(configuration.BaseAddress)
@@ -61,13 +80,13 @@ func NewClient(configuration Configuration) (*Client, error) {
 {{#apis}}
 {{#operations}}
 	c.{{classname}} = {{classname}} {
-		client: c,
+		client: &c,
 	}
 {{/operations}}
 {{/apis}}
 {{/apiInfo}}
 
-	return c, nil
+	return &c, nil
 }
 
 // parameterToString convert interface{} parameters to string, using a delimiter if format is provided.
@@ -103,20 +122,10 @@ func parameterToJson(obj interface{}) (string, error) {
 	return string(jsonBuf), err
 }
 
-// callAPI do the request.
-func (c *Client) callAPI(request *http.Request) (*http.Response, error) {
-	resp, err := c.configuration.HTTPClient.Do(request)
-	if err != nil {
-		return resp, err
-	}
-
-	return resp, err
-}
-
 // NewStructuredRequest expects json.Marshaler encoded request body and returns a new request with vault-specific headers
-func (c *Client) NewStructuredRequest(ctx context.Context, method, path string, body json.Marshaler) (*http.Request, error) {
+func (c *Client) NewStructuredRequest(method, path string, body json.Marshaler) (*http.Request, error) {
 	if body == nil {
-		return c.NewRequestWithContext(ctx, method, path, nil)
+		return c.NewRequest(method, path, nil)
 	}
 
 	buf := bytes.Buffer{}
@@ -125,18 +134,48 @@ func (c *Client) NewStructuredRequest(ctx context.Context, method, path string, 
 		return nil, fmt.Errorf("could not encode request body: %w", err)
 	}
 
-	return c.NewRequestWithContext(ctx, method, path, &buf)
+	return c.NewRequest(method, path, &buf)
 }
 
-// NewRequestWithContext returns a new request with vault-specific headers
-func (c *Client) NewRequestWithContext(ctx context.Context, method, path string, body io.Reader) (*http.Request, error) {
+// NewRequest returns a new request with vault-specific headers
+func (c *Client) NewRequest(method, path string, body io.Reader) (*http.Request, error) {
 	// concatenate the base address with the given path
 	url, err := c.parsedBaseAddress.Parse(path)
 	if err != nil {
 		return nil, err
 	}
 
-	return http.NewRequestWithContext(ctx, method, url.String(), body)
+	return http.NewRequest(method, url.String(), body)
+}
+
+// Do wraps http.client.Do or retryablehttp.client.Do to send an http request
+func (c *Client) Do(ctx context.Context, req *http.Request, retry bool) (*http.Response, error) {
+	var resp *http.Response
+
+	req = req.WithContext(ctx)
+
+	if retry {
+		retryableReq, err := retryablehttp.FromRequest(req)
+		if err != nil {
+			return nil, fmt.Errorf("could not form a retryable request: %w", err)
+		}
+
+		r, err := c.clientWithRetries.Do(retryableReq)
+		if err != nil {
+			return nil, err
+		}
+
+		resp = r
+	} else {
+		r, err := c.client.Do(req)
+		if err != nil {
+			return nil, err
+		}
+
+		resp = r
+	}
+
+	return resp, nil
 }
 
 func (c *Client) decode(v interface{}, b []byte, contentType string) (err error) {

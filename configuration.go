@@ -78,6 +78,8 @@ type RetryOptions struct {
 // DefaultConfiguration returns the default configuration for the client. It is
 // recommended to start with this configuration and modify it as needed.
 func DefaultConfiguration() (Configuration, error) {
+	// cleanhttp client uses the same default values as net/http client, but
+	// does not share state with other clients (see hashicorp/go-cleanhttp)
 	client := cleanhttp.DefaultPooledClient()
 
 	transport := client.Transport.(*http.Transport)

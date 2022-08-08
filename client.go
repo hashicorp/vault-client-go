@@ -47,11 +47,19 @@ type Client struct {
 
 	parsedBaseAddress *url.URL
 
+	// fields that will be applied to each request
+	requestModifiers requestModifiers
+
 	// API wrappers
 	Auth     Auth
 	Identity Identity
 	Secrets  Secrets
 	System   System
+}
+
+// requestModifiers contains fields that will be applied to each request
+type requestModifiers struct {
+	token string
 }
 
 // NewClient returns a new Vault client with a copy of the given configuration
@@ -132,6 +140,13 @@ func parameterToJson(obj interface{}) (string, error) {
 	return string(jsonBuf), err
 }
 
+// WithToken returns a shallow copy of the client with the token set to the given value
+func (c *Client) WithToken(token string) *Client {
+	copy := *c
+	copy.requestModifiers.token = token
+	return &copy
+}
+
 // NewStructuredRequest expects json.Marshaler encoded request body and returns a new request with vault-specific headers
 func (c *Client) NewStructuredRequest(method, path string, body json.Marshaler) (*http.Request, error) {
 	if body == nil {
@@ -155,7 +170,14 @@ func (c *Client) NewRequest(method, path string, body io.Reader) (*http.Request,
 		return nil, err
 	}
 
-	return http.NewRequest(method, url.String(), body)
+	req, err := http.NewRequest(method, url.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Set("X-Vault-Token", c.requestModifiers.token)
+
+	return req, nil
 }
 
 // Do sends the given request to Vault, handling retries, redirects, and rate limiting

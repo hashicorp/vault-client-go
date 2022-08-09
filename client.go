@@ -23,11 +23,6 @@ import (
 	"github.com/hashicorp/go-retryablehttp"
 )
 
-var (
-	jsonCheck = regexp.MustCompile(`(?i:(?:application|text)/(?:vnd\.[^;]+\+)?json)`)
-	xmlCheck  = regexp.MustCompile(`(?i:(?:application|text)/xml)`)
-)
-
 // Client manages communication with the HashiCorp Vault API v1.12.0
 // In most cases there should be only one, shared, Client.
 type Client struct {

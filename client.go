@@ -48,9 +48,9 @@ type Client struct {
 	client            *http.Client
 	clientWithRetries *retryablehttp.Client
 
-	// fields that will be applied to each request
-	requestModifiers     requestModifiers
-	requestModifiersLock sync.RWMutex
+	// headers that will be added to each request
+	requestHeaders     requestHeaders
+	requestHeadersLock sync.RWMutex
 
 	// API wrappers
 	Auth     Auth
@@ -59,8 +59,8 @@ type Client struct {
 	System   System
 }
 
-// requestModifiers contains fields that will be applied to each request
-type requestModifiers struct {
+// requestHeaders contains headers that will be added to each request
+type requestHeaders struct {
 	token string
 }
 
@@ -143,16 +143,16 @@ func parameterToJson(obj interface{}) (string, error) {
 
 // SetToken sets a token to be used with all subsequent requests
 func (c *Client) SetToken(token string) {
-	/* */ c.requestModifiersLock.Lock()
-	defer c.requestModifiersLock.Unlock()
+	/* */ c.requestHeadersLock.Lock()
+	defer c.requestHeadersLock.Unlock()
 
-	c.requestModifiers.token = token
+	c.requestHeaders.token = token
 }
 
 // WithToken returns a shallow copy of the client with the token set to the given value
 func (c *Client) WithToken(token string) *Client {
 	copy := c.shallowCopy()
-	copy.requestModifiers.token = token
+	copy.requestHeaders.token = token
 
 	return copy
 }
@@ -185,9 +185,11 @@ func (c *Client) NewRequest(method, path string, body io.Reader) (*http.Request,
 		return nil, err
 	}
 
-	modifiers := c.copyRequestModifiers()
+	headers := c.copyRequestHeaders()
 
-	req.Header.Set("X-Vault-Token", modifiers.token)
+	if headers.token != "" {
+		req.Header.Set("X-Vault-Token", headers.token)
+	}
 
 	return req, nil
 }
@@ -330,8 +332,8 @@ func (c *Client) shallowCopy() *Client {
 		clientWithRetries: c.clientWithRetries,
 	}
 
-	copy.requestModifiers = c.copyRequestModifiers()
-	copy.requestModifiersLock = sync.RWMutex{}
+	copy.requestHeaders = c.copyRequestHeaders()
+	copy.requestHeadersLock = sync.RWMutex{}
 
 	copy.Auth = Auth{
 		client: &copy,
@@ -349,10 +351,10 @@ func (c *Client) shallowCopy() *Client {
 	return &copy
 }
 
-// copyRequestModifiers returns a copy of the request modifiers behind a mutex
-func (c *Client) copyRequestModifiers() requestModifiers {
-	/* */ c.requestModifiersLock.RLock()
-	defer c.requestModifiersLock.RUnlock()
+// copyRequestHeaders returns a copy of the request headers behind a mutex
+func (c *Client) copyRequestHeaders() requestHeaders {
+	/* */ c.requestHeadersLock.RLock()
+	defer c.requestHeadersLock.RUnlock()
 
-	return c.requestModifiers
+	return c.requestHeaders
 }

@@ -26,7 +26,7 @@ type Auth struct {
 // role: The name of the role as it should appear in Vault.
 func (a *Auth) DeleteAuthAlicloudRoleRole(ctx context.Context, role string) (*http.Response, error) {
 	localVarPath := "/v1/auth/alicloud/role/{role}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -45,7 +45,7 @@ func (a *Auth) DeleteAuthAlicloudRoleRole(ctx context.Context, role string) (*ht
 // key: Key for the app-id mapping
 func (a *Auth) DeleteAuthAppIdMapAppIdKey(ctx context.Context, key string) (*http.Response, error) {
 	localVarPath := "/v1/auth/app-id/map/app-id/{key}"
-	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -64,7 +64,7 @@ func (a *Auth) DeleteAuthAppIdMapAppIdKey(ctx context.Context, key string) (*htt
 // key: Key for the user-id mapping
 func (a *Auth) DeleteAuthAppIdMapUserIdKey(ctx context.Context, key string) (*http.Response, error) {
 	localVarPath := "/v1/auth/app-id/map/user-id/{key}"
-	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -83,7 +83,7 @@ func (a *Auth) DeleteAuthAppIdMapUserIdKey(ctx context.Context, key string) (*ht
 // roleName: Name of the role.
 func (a *Auth) DeleteAuthApproleRoleRoleName(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -102,7 +102,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleName(ctx context.Context, roleName strin
 // roleName: Name of the role.
 func (a *Auth) DeleteAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/bind-secret-id"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -121,7 +121,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameBindSecretId(ctx context.Context, ro
 // roleName: Name of the role.
 func (a *Auth) DeleteAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/bound-cidr-list"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -140,7 +140,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, r
 // roleName: Name of the role.
 func (a *Auth) DeleteAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/period"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -159,7 +159,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName
 // roleName: Name of the role.
 func (a *Auth) DeleteAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/policies"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -178,7 +178,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNamePolicies(ctx context.Context, roleNa
 // roleName: Name of the role.
 func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/secret-id-accessor/destroy"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -197,7 +197,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.
 // roleName: Name of the role.
 func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/secret-id-bound-cidrs"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -216,7 +216,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Conte
 // roleName: Name of the role.
 func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/secret-id/destroy"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -235,7 +235,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context,
 // roleName: Name of the role.
 func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/secret-id-num-uses"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -254,7 +254,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context,
 // roleName: Name of the role.
 func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/secret-id-ttl"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -273,7 +273,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, rol
 // roleName: Name of the role.
 func (a *Auth) DeleteAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/token-bound-cidrs"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -292,7 +292,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context,
 // roleName: Name of the role.
 func (a *Auth) DeleteAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/token-max-ttl"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -311,7 +311,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, rol
 // roleName: Name of the role.
 func (a *Auth) DeleteAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/token-num-uses"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -330,7 +330,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, ro
 // roleName: Name of the role.
 func (a *Auth) DeleteAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/token-ttl"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -349,7 +349,7 @@ func (a *Auth) DeleteAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleNa
 // certName: Name of the certificate.
 func (a *Auth) DeleteAuthAwsConfigCertificateCertName(ctx context.Context, certName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/config/certificate/{cert_name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"cert_name"+"}", url.PathEscape(parameterToString(certName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"cert_name"+"}", url.PathEscape(certName), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -385,7 +385,7 @@ func (a *Auth) DeleteAuthAwsConfigClient(ctx context.Context) (*http.Response, e
 // accountId: AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
 func (a *Auth) DeleteAuthAwsConfigStsAccountId(ctx context.Context, accountId string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/config/sts/{account_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", url.PathEscape(parameterToString(accountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", url.PathEscape(accountId), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -472,7 +472,7 @@ func (a *Auth) DeleteAuthAwsConfigTidyRoletagDenylist(ctx context.Context) (*htt
 // instanceId: EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 func (a *Auth) DeleteAuthAwsIdentityAccesslistInstanceId(ctx context.Context, instanceId string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/identity-accesslist/{instance_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"instance_id"+"}", url.PathEscape(parameterToString(instanceId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"instance_id"+"}", url.PathEscape(instanceId), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -491,7 +491,7 @@ func (a *Auth) DeleteAuthAwsIdentityAccesslistInstanceId(ctx context.Context, in
 // instanceId: EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 func (a *Auth) DeleteAuthAwsIdentityWhitelistInstanceId(ctx context.Context, instanceId string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/identity-whitelist/{instance_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"instance_id"+"}", url.PathEscape(parameterToString(instanceId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"instance_id"+"}", url.PathEscape(instanceId), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -510,7 +510,7 @@ func (a *Auth) DeleteAuthAwsIdentityWhitelistInstanceId(ctx context.Context, ins
 // role: Name of the role.
 func (a *Auth) DeleteAuthAwsRoleRole(ctx context.Context, role string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/role/{role}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -529,7 +529,7 @@ func (a *Auth) DeleteAuthAwsRoleRole(ctx context.Context, role string) (*http.Re
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 func (a *Auth) DeleteAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/roletag-blacklist/{role_tag}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(roleTag, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -548,7 +548,7 @@ func (a *Auth) DeleteAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 func (a *Auth) DeleteAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/roletag-denylist/{role_tag}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(roleTag, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -584,7 +584,7 @@ func (a *Auth) DeleteAuthAzureConfig(ctx context.Context) (*http.Response, error
 // name: Name of the role.
 func (a *Auth) DeleteAuthAzureRoleName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/auth/azure/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -603,7 +603,7 @@ func (a *Auth) DeleteAuthAzureRoleName(ctx context.Context, name string) (*http.
 // name: The name of the certificate
 func (a *Auth) DeleteAuthCertCertsName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/auth/cert/certs/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -622,7 +622,7 @@ func (a *Auth) DeleteAuthCertCertsName(ctx context.Context, name string) (*http.
 // name: The name of the certificate
 func (a *Auth) DeleteAuthCertCrlsName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/auth/cert/crls/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -658,7 +658,7 @@ func (a *Auth) DeleteAuthCfConfig(ctx context.Context) (*http.Response, error) {
 // role: The name of the role.
 func (a *Auth) DeleteAuthCfRolesRole(ctx context.Context, role string) (*http.Response, error) {
 	localVarPath := "/v1/auth/cf/roles/{role}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -677,7 +677,7 @@ func (a *Auth) DeleteAuthCfRolesRole(ctx context.Context, role string) (*http.Re
 // name: Name of the role.
 func (a *Auth) DeleteAuthGcpRoleName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/auth/gcp/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -696,7 +696,7 @@ func (a *Auth) DeleteAuthGcpRoleName(ctx context.Context, name string) (*http.Re
 // key: Key for the teams mapping
 func (a *Auth) DeleteAuthGithubMapTeamsKey(ctx context.Context, key string) (*http.Response, error) {
 	localVarPath := "/v1/auth/github/map/teams/{key}"
-	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -715,7 +715,7 @@ func (a *Auth) DeleteAuthGithubMapTeamsKey(ctx context.Context, key string) (*ht
 // key: Key for the users mapping
 func (a *Auth) DeleteAuthGithubMapUsersKey(ctx context.Context, key string) (*http.Response, error) {
 	localVarPath := "/v1/auth/github/map/users/{key}"
-	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -734,7 +734,7 @@ func (a *Auth) DeleteAuthGithubMapUsersKey(ctx context.Context, key string) (*ht
 // name: Name of the role.
 func (a *Auth) DeleteAuthJwtRoleName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/auth/jwt/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -753,7 +753,7 @@ func (a *Auth) DeleteAuthJwtRoleName(ctx context.Context, name string) (*http.Re
 // name: Name of the LDAP group.
 func (a *Auth) DeleteAuthKerberosGroupsName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/auth/kerberos/groups/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -772,7 +772,7 @@ func (a *Auth) DeleteAuthKerberosGroupsName(ctx context.Context, name string) (*
 // name: Name of the role.
 func (a *Auth) DeleteAuthKubernetesRoleName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/auth/kubernetes/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -791,7 +791,7 @@ func (a *Auth) DeleteAuthKubernetesRoleName(ctx context.Context, name string) (*
 // name: Name of the LDAP group.
 func (a *Auth) DeleteAuthLdapGroupsName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/auth/ldap/groups/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -810,7 +810,7 @@ func (a *Auth) DeleteAuthLdapGroupsName(ctx context.Context, name string) (*http
 // name: Name of the LDAP user.
 func (a *Auth) DeleteAuthLdapUsersName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/auth/ldap/users/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -846,7 +846,7 @@ func (a *Auth) DeleteAuthOciConfig(ctx context.Context) (*http.Response, error) 
 // role: Name of the role.
 func (a *Auth) DeleteAuthOciRoleRole(ctx context.Context, role string) (*http.Response, error) {
 	localVarPath := "/v1/auth/oci/role/{role}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -865,7 +865,7 @@ func (a *Auth) DeleteAuthOciRoleRole(ctx context.Context, role string) (*http.Re
 // name: Name of the role.
 func (a *Auth) DeleteAuthOidcRoleName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/auth/oidc/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -884,7 +884,7 @@ func (a *Auth) DeleteAuthOidcRoleName(ctx context.Context, name string) (*http.R
 // name: Name of the Okta group.
 func (a *Auth) DeleteAuthOktaGroupsName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/auth/okta/groups/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -903,7 +903,7 @@ func (a *Auth) DeleteAuthOktaGroupsName(ctx context.Context, name string) (*http
 // name: Name of the user.
 func (a *Auth) DeleteAuthOktaUsersName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/auth/okta/users/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -922,7 +922,7 @@ func (a *Auth) DeleteAuthOktaUsersName(ctx context.Context, name string) (*http.
 // name: Name of the RADIUS user.
 func (a *Auth) DeleteAuthRadiusUsersName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/auth/radius/users/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -941,7 +941,7 @@ func (a *Auth) DeleteAuthRadiusUsersName(ctx context.Context, name string) (*htt
 // roleName: Name of the role
 func (a *Auth) DeleteAuthTokenRolesRoleName(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/token/roles/{role_name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -960,7 +960,7 @@ func (a *Auth) DeleteAuthTokenRolesRoleName(ctx context.Context, roleName string
 // username: Username for this user.
 func (a *Auth) DeleteAuthUserpassUsersUsername(ctx context.Context, username string) (*http.Response, error) {
 	localVarPath := "/v1/auth/userpass/users/{username}"
-	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(username, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(username), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -997,7 +997,7 @@ func (a *Auth) GetAuthAlicloudRole(ctx context.Context, list string) (*http.Resp
 // role: The name of the role as it should appear in Vault.
 func (a *Auth) GetAuthAlicloudRoleRole(ctx context.Context, role string) (*http.Response, error) {
 	localVarPath := "/v1/auth/alicloud/role/{role}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1052,7 +1052,7 @@ func (a *Auth) GetAuthAppIdMapAppId(ctx context.Context, list string) (*http.Res
 // key: Key for the app-id mapping
 func (a *Auth) GetAuthAppIdMapAppIdKey(ctx context.Context, key string) (*http.Response, error) {
 	localVarPath := "/v1/auth/app-id/map/app-id/{key}"
-	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1089,7 +1089,7 @@ func (a *Auth) GetAuthAppIdMapUserId(ctx context.Context, list string) (*http.Re
 // key: Key for the user-id mapping
 func (a *Auth) GetAuthAppIdMapUserIdKey(ctx context.Context, key string) (*http.Response, error) {
 	localVarPath := "/v1/auth/app-id/map/user-id/{key}"
-	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1126,7 +1126,7 @@ func (a *Auth) GetAuthApproleRole(ctx context.Context, list string) (*http.Respo
 // roleName: Name of the role.
 func (a *Auth) GetAuthApproleRoleRoleName(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1145,7 +1145,7 @@ func (a *Auth) GetAuthApproleRoleRoleName(ctx context.Context, roleName string) 
 // roleName: Name of the role.
 func (a *Auth) GetAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/bind-secret-id"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1164,7 +1164,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleN
 // roleName: Name of the role.
 func (a *Auth) GetAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/bound-cidr-list"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1183,7 +1183,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, role
 // roleName: Name of the role.
 func (a *Auth) GetAuthApproleRoleRoleNameLocalSecretIds(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/local-secret-ids"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1202,7 +1202,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameLocalSecretIds(ctx context.Context, rol
 // roleName: Name of the role.
 func (a *Auth) GetAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/period"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1221,7 +1221,7 @@ func (a *Auth) GetAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName st
 // roleName: Name of the role.
 func (a *Auth) GetAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/policies"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1240,7 +1240,7 @@ func (a *Auth) GetAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName 
 // roleName: Name of the role.
 func (a *Auth) GetAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/role-id"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1260,7 +1260,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName st
 // list: Must be set to &#x60;true&#x60;
 func (a *Auth) GetAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName string, list string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/secret-id"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1279,7 +1279,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName 
 // roleName: Name of the role.
 func (a *Auth) GetAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/secret-id-bound-cidrs"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1298,7 +1298,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context,
 // roleName: Name of the role.
 func (a *Auth) GetAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/secret-id-num-uses"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1317,7 +1317,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, ro
 // roleName: Name of the role.
 func (a *Auth) GetAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/secret-id-ttl"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1336,7 +1336,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleNa
 // roleName: Name of the role.
 func (a *Auth) GetAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/token-bound-cidrs"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1355,7 +1355,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, ro
 // roleName: Name of the role.
 func (a *Auth) GetAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/token-max-ttl"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1374,7 +1374,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleNa
 // roleName: Name of the role.
 func (a *Auth) GetAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/token-num-uses"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1393,7 +1393,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleN
 // roleName: Name of the role.
 func (a *Auth) GetAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/token-ttl"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1412,7 +1412,7 @@ func (a *Auth) GetAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName 
 // certName: Name of the certificate.
 func (a *Auth) GetAuthAwsConfigCertificateCertName(ctx context.Context, certName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/config/certificate/{cert_name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"cert_name"+"}", url.PathEscape(parameterToString(certName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"cert_name"+"}", url.PathEscape(certName), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1501,7 +1501,7 @@ func (a *Auth) GetAuthAwsConfigSts(ctx context.Context, list string) (*http.Resp
 // accountId: AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
 func (a *Auth) GetAuthAwsConfigStsAccountId(ctx context.Context, accountId string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/config/sts/{account_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", url.PathEscape(parameterToString(accountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", url.PathEscape(accountId), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1606,7 +1606,7 @@ func (a *Auth) GetAuthAwsIdentityAccesslist(ctx context.Context, list string) (*
 // instanceId: EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 func (a *Auth) GetAuthAwsIdentityAccesslistInstanceId(ctx context.Context, instanceId string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/identity-accesslist/{instance_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"instance_id"+"}", url.PathEscape(parameterToString(instanceId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"instance_id"+"}", url.PathEscape(instanceId), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1643,7 +1643,7 @@ func (a *Auth) GetAuthAwsIdentityWhitelist(ctx context.Context, list string) (*h
 // instanceId: EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 func (a *Auth) GetAuthAwsIdentityWhitelistInstanceId(ctx context.Context, instanceId string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/identity-whitelist/{instance_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"instance_id"+"}", url.PathEscape(parameterToString(instanceId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"instance_id"+"}", url.PathEscape(instanceId), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1680,7 +1680,7 @@ func (a *Auth) GetAuthAwsRole(ctx context.Context, list string) (*http.Response,
 // role: Name of the role.
 func (a *Auth) GetAuthAwsRoleRole(ctx context.Context, role string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/role/{role}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1735,7 +1735,7 @@ func (a *Auth) GetAuthAwsRoletagBlacklist(ctx context.Context, list string) (*ht
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 func (a *Auth) GetAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/roletag-blacklist/{role_tag}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(roleTag, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1772,7 +1772,7 @@ func (a *Auth) GetAuthAwsRoletagDenylist(ctx context.Context, list string) (*htt
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 func (a *Auth) GetAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/roletag-denylist/{role_tag}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(roleTag, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1826,7 +1826,7 @@ func (a *Auth) GetAuthAzureRole(ctx context.Context, list string) (*http.Respons
 // name: Name of the role.
 func (a *Auth) GetAuthAzureRoleName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/auth/azure/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1880,7 +1880,7 @@ func (a *Auth) GetAuthCertCerts(ctx context.Context, list string) (*http.Respons
 // name: The name of the certificate
 func (a *Auth) GetAuthCertCertsName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/auth/cert/certs/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1899,7 +1899,7 @@ func (a *Auth) GetAuthCertCertsName(ctx context.Context, name string) (*http.Res
 // name: The name of the certificate
 func (a *Auth) GetAuthCertCrlsName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/auth/cert/crls/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1953,7 +1953,7 @@ func (a *Auth) GetAuthCfRoles(ctx context.Context, list string) (*http.Response,
 // role: The name of the role.
 func (a *Auth) GetAuthCfRolesRole(ctx context.Context, role string) (*http.Response, error) {
 	localVarPath := "/v1/auth/cf/roles/{role}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -2007,7 +2007,7 @@ func (a *Auth) GetAuthGcpRole(ctx context.Context, list string) (*http.Response,
 // name: Name of the role.
 func (a *Auth) GetAuthGcpRoleName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/auth/gcp/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -2079,7 +2079,7 @@ func (a *Auth) GetAuthGithubMapTeams(ctx context.Context, list string) (*http.Re
 // key: Key for the teams mapping
 func (a *Auth) GetAuthGithubMapTeamsKey(ctx context.Context, key string) (*http.Response, error) {
 	localVarPath := "/v1/auth/github/map/teams/{key}"
-	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -2116,7 +2116,7 @@ func (a *Auth) GetAuthGithubMapUsers(ctx context.Context, list string) (*http.Re
 // key: Key for the users mapping
 func (a *Auth) GetAuthGithubMapUsersKey(ctx context.Context, key string) (*http.Response, error) {
 	localVarPath := "/v1/auth/github/map/users/{key}"
-	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -2188,7 +2188,7 @@ func (a *Auth) GetAuthJwtRole(ctx context.Context, list string) (*http.Response,
 // name: Name of the role.
 func (a *Auth) GetAuthJwtRoleName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/auth/jwt/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -2259,7 +2259,7 @@ func (a *Auth) GetAuthKerberosGroups(ctx context.Context, list string) (*http.Re
 // name: Name of the LDAP group.
 func (a *Auth) GetAuthKerberosGroupsName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/auth/kerberos/groups/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -2330,7 +2330,7 @@ func (a *Auth) GetAuthKubernetesRole(ctx context.Context, list string) (*http.Re
 // name: Name of the role.
 func (a *Auth) GetAuthKubernetesRoleName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/auth/kubernetes/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -2384,7 +2384,7 @@ func (a *Auth) GetAuthLdapGroups(ctx context.Context, list string) (*http.Respon
 // name: Name of the LDAP group.
 func (a *Auth) GetAuthLdapGroupsName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/auth/ldap/groups/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -2421,7 +2421,7 @@ func (a *Auth) GetAuthLdapUsers(ctx context.Context, list string) (*http.Respons
 // name: Name of the LDAP user.
 func (a *Auth) GetAuthLdapUsersName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/auth/ldap/users/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -2475,7 +2475,7 @@ func (a *Auth) GetAuthOciRole(ctx context.Context, list string) (*http.Response,
 // role: Name of the role.
 func (a *Auth) GetAuthOciRoleRole(ctx context.Context, role string) (*http.Response, error) {
 	localVarPath := "/v1/auth/oci/role/{role}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -2547,7 +2547,7 @@ func (a *Auth) GetAuthOidcRole(ctx context.Context, list string) (*http.Response
 // name: Name of the role.
 func (a *Auth) GetAuthOidcRoleName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/auth/oidc/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -2601,7 +2601,7 @@ func (a *Auth) GetAuthOktaGroups(ctx context.Context, list string) (*http.Respon
 // name: Name of the Okta group.
 func (a *Auth) GetAuthOktaGroupsName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/auth/okta/groups/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -2638,7 +2638,7 @@ func (a *Auth) GetAuthOktaUsers(ctx context.Context, list string) (*http.Respons
 // name: Name of the user.
 func (a *Auth) GetAuthOktaUsersName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/auth/okta/users/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -2657,7 +2657,7 @@ func (a *Auth) GetAuthOktaUsersName(ctx context.Context, name string) (*http.Res
 // nonce: Nonce provided during a login request to retrieve the number verification challenge for the matching request.
 func (a *Auth) GetAuthOktaVerifyNonce(ctx context.Context, nonce string) (*http.Response, error) {
 	localVarPath := "/v1/auth/okta/verify/{nonce}"
-	localVarPath = strings.Replace(localVarPath, "{"+"nonce"+"}", url.PathEscape(parameterToString(nonce, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"nonce"+"}", url.PathEscape(nonce), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -2711,7 +2711,7 @@ func (a *Auth) GetAuthRadiusUsers(ctx context.Context, list string) (*http.Respo
 // name: Name of the RADIUS user.
 func (a *Auth) GetAuthRadiusUsersName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/auth/radius/users/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -2800,7 +2800,7 @@ func (a *Auth) GetAuthTokenRoles(ctx context.Context, list string) (*http.Respon
 // roleName: Name of the role
 func (a *Auth) GetAuthTokenRolesRoleName(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/token/roles/{role_name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -2837,7 +2837,7 @@ func (a *Auth) GetAuthUserpassUsers(ctx context.Context, list string) (*http.Res
 // username: Username for this user.
 func (a *Auth) GetAuthUserpassUsersUsername(ctx context.Context, username string) (*http.Response, error) {
 	localVarPath := "/v1/auth/userpass/users/{username}"
-	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(username, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(username), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -2873,7 +2873,7 @@ func (a *Auth) PostAuthAlicloudLogin(ctx context.Context, alicloudLoginRequest A
 // role: The name of the role as it should appear in Vault.
 func (a *Auth) PostAuthAlicloudRoleRole(ctx context.Context, role string, alicloudRoleRequest AlicloudRoleRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/alicloud/role/{role}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, alicloudRoleRequest)
 	if err != nil {
@@ -2909,7 +2909,7 @@ func (a *Auth) PostAuthAppIdLogin(ctx context.Context, appIdLoginRequest AppIdLo
 // appId: The unique app ID
 func (a *Auth) PostAuthAppIdLoginAppId(ctx context.Context, appId string, appIdLoginRequest AppIdLoginRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/app-id/login/{app_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", url.PathEscape(parameterToString(appId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"app_id"+"}", url.PathEscape(appId), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, appIdLoginRequest)
 	if err != nil {
@@ -2928,7 +2928,7 @@ func (a *Auth) PostAuthAppIdLoginAppId(ctx context.Context, appId string, appIdL
 // key: Key for the app-id mapping
 func (a *Auth) PostAuthAppIdMapAppIdKey(ctx context.Context, key string, appIdMapAppIdRequest AppIdMapAppIdRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/app-id/map/app-id/{key}"
-	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, appIdMapAppIdRequest)
 	if err != nil {
@@ -2947,7 +2947,7 @@ func (a *Auth) PostAuthAppIdMapAppIdKey(ctx context.Context, key string, appIdMa
 // key: Key for the user-id mapping
 func (a *Auth) PostAuthAppIdMapUserIdKey(ctx context.Context, key string, appIdMapUserIdRequest AppIdMapUserIdRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/app-id/map/user-id/{key}"
-	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, appIdMapUserIdRequest)
 	if err != nil {
@@ -2983,7 +2983,7 @@ func (a *Auth) PostAuthApproleLogin(ctx context.Context, approleLoginRequest App
 // roleName: Name of the role.
 func (a *Auth) PostAuthApproleRoleRoleName(ctx context.Context, roleName string, approleRoleRequest ApproleRoleRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, approleRoleRequest)
 	if err != nil {
@@ -3002,7 +3002,7 @@ func (a *Auth) PostAuthApproleRoleRoleName(ctx context.Context, roleName string,
 // roleName: Name of the role.
 func (a *Auth) PostAuthApproleRoleRoleNameBindSecretId(ctx context.Context, roleName string, approleRoleBindSecretIdRequest ApproleRoleBindSecretIdRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/bind-secret-id"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, approleRoleBindSecretIdRequest)
 	if err != nil {
@@ -3021,7 +3021,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameBindSecretId(ctx context.Context, role
 // roleName: Name of the role.
 func (a *Auth) PostAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, roleName string, approleRoleBoundCidrListRequest ApproleRoleBoundCidrListRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/bound-cidr-list"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, approleRoleBoundCidrListRequest)
 	if err != nil {
@@ -3040,7 +3040,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameBoundCidrList(ctx context.Context, rol
 // roleName: Name of the role.
 func (a *Auth) PostAuthApproleRoleRoleNameCustomSecretId(ctx context.Context, roleName string, approleRoleCustomSecretIdRequest ApproleRoleCustomSecretIdRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/custom-secret-id"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, approleRoleCustomSecretIdRequest)
 	if err != nil {
@@ -3059,7 +3059,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameCustomSecretId(ctx context.Context, ro
 // roleName: Name of the role.
 func (a *Auth) PostAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName string, approleRolePeriodRequest ApproleRolePeriodRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/period"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, approleRolePeriodRequest)
 	if err != nil {
@@ -3078,7 +3078,7 @@ func (a *Auth) PostAuthApproleRoleRoleNamePeriod(ctx context.Context, roleName s
 // roleName: Name of the role.
 func (a *Auth) PostAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName string, approleRolePoliciesRequest ApproleRolePoliciesRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/policies"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, approleRolePoliciesRequest)
 	if err != nil {
@@ -3097,7 +3097,7 @@ func (a *Auth) PostAuthApproleRoleRoleNamePolicies(ctx context.Context, roleName
 // roleName: Name of the role.
 func (a *Auth) PostAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName string, approleRoleRoleIdRequest ApproleRoleRoleIdRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/role-id"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, approleRoleRoleIdRequest)
 	if err != nil {
@@ -3116,7 +3116,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameRoleId(ctx context.Context, roleName s
 // roleName: Name of the role.
 func (a *Auth) PostAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName string, approleRoleSecretIdRequest ApproleRoleSecretIdRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/secret-id"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, approleRoleSecretIdRequest)
 	if err != nil {
@@ -3135,7 +3135,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretId(ctx context.Context, roleName
 // roleName: Name of the role.
 func (a *Auth) PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.Context, roleName string, approleRoleSecretIdAccessorDestroyRequest ApproleRoleSecretIdAccessorDestroyRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/secret-id-accessor/destroy"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, approleRoleSecretIdAccessorDestroyRequest)
 	if err != nil {
@@ -3154,7 +3154,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(ctx context.Co
 // roleName: Name of the role.
 func (a *Auth) PostAuthApproleRoleRoleNameSecretIdAccessorLookup(ctx context.Context, roleName string, approleRoleSecretIdAccessorLookupRequest ApproleRoleSecretIdAccessorLookupRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/secret-id-accessor/lookup"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, approleRoleSecretIdAccessorLookupRequest)
 	if err != nil {
@@ -3173,7 +3173,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdAccessorLookup(ctx context.Con
 // roleName: Name of the role.
 func (a *Auth) PostAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context, roleName string, approleRoleSecretIdBoundCidrsRequest ApproleRoleSecretIdBoundCidrsRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/secret-id-bound-cidrs"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, approleRoleSecretIdBoundCidrsRequest)
 	if err != nil {
@@ -3192,7 +3192,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdBoundCidrs(ctx context.Context
 // roleName: Name of the role.
 func (a *Auth) PostAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context, roleName string, approleRoleSecretIdDestroyRequest ApproleRoleSecretIdDestroyRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/secret-id/destroy"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, approleRoleSecretIdDestroyRequest)
 	if err != nil {
@@ -3211,7 +3211,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdDestroy(ctx context.Context, r
 // roleName: Name of the role.
 func (a *Auth) PostAuthApproleRoleRoleNameSecretIdLookup(ctx context.Context, roleName string, approleRoleSecretIdLookupRequest ApproleRoleSecretIdLookupRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/secret-id/lookup"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, approleRoleSecretIdLookupRequest)
 	if err != nil {
@@ -3230,7 +3230,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdLookup(ctx context.Context, ro
 // roleName: Name of the role.
 func (a *Auth) PostAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, roleName string, approleRoleSecretIdNumUsesRequest ApproleRoleSecretIdNumUsesRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/secret-id-num-uses"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, approleRoleSecretIdNumUsesRequest)
 	if err != nil {
@@ -3249,7 +3249,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdNumUses(ctx context.Context, r
 // roleName: Name of the role.
 func (a *Auth) PostAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleName string, approleRoleSecretIdTtlRequest ApproleRoleSecretIdTtlRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/secret-id-ttl"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, approleRoleSecretIdTtlRequest)
 	if err != nil {
@@ -3268,7 +3268,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameSecretIdTtl(ctx context.Context, roleN
 // roleName: Name of the role.
 func (a *Auth) PostAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, roleName string, approleRoleTokenBoundCidrsRequest ApproleRoleTokenBoundCidrsRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/token-bound-cidrs"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, approleRoleTokenBoundCidrsRequest)
 	if err != nil {
@@ -3287,7 +3287,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameTokenBoundCidrs(ctx context.Context, r
 // roleName: Name of the role.
 func (a *Auth) PostAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleName string, approleRoleTokenMaxTtlRequest ApproleRoleTokenMaxTtlRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/token-max-ttl"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, approleRoleTokenMaxTtlRequest)
 	if err != nil {
@@ -3306,7 +3306,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameTokenMaxTtl(ctx context.Context, roleN
 // roleName: Name of the role.
 func (a *Auth) PostAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, roleName string, approleRoleTokenNumUsesRequest ApproleRoleTokenNumUsesRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/token-num-uses"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, approleRoleTokenNumUsesRequest)
 	if err != nil {
@@ -3325,7 +3325,7 @@ func (a *Auth) PostAuthApproleRoleRoleNameTokenNumUses(ctx context.Context, role
 // roleName: Name of the role.
 func (a *Auth) PostAuthApproleRoleRoleNameTokenTtl(ctx context.Context, roleName string, approleRoleTokenTtlRequest ApproleRoleTokenTtlRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/approle/role/{role_name}/token-ttl"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, approleRoleTokenTtlRequest)
 	if err != nil {
@@ -3361,7 +3361,7 @@ func (a *Auth) PostAuthApproleTidySecretId(ctx context.Context) (*http.Response,
 // certName: Name of the certificate.
 func (a *Auth) PostAuthAwsConfigCertificateCertName(ctx context.Context, certName string, awsConfigCertificateRequest AwsConfigCertificateRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/config/certificate/{cert_name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"cert_name"+"}", url.PathEscape(parameterToString(certName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"cert_name"+"}", url.PathEscape(certName), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, awsConfigCertificateRequest)
 	if err != nil {
@@ -3431,7 +3431,7 @@ func (a *Auth) PostAuthAwsConfigRotateRoot(ctx context.Context) (*http.Response,
 // accountId: AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
 func (a *Auth) PostAuthAwsConfigStsAccountId(ctx context.Context, accountId string, awsConfigStsRequest AwsConfigStsRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/config/sts/{account_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", url.PathEscape(parameterToString(accountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"account_id"+"}", url.PathEscape(accountId), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, awsConfigStsRequest)
 	if err != nil {
@@ -3535,7 +3535,7 @@ func (a *Auth) PostAuthAwsLogin(ctx context.Context, awsLoginRequest AwsLoginReq
 // role: Name of the role.
 func (a *Auth) PostAuthAwsRoleRole(ctx context.Context, role string, awsRoleRequest AwsRoleRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/role/{role}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, awsRoleRequest)
 	if err != nil {
@@ -3554,7 +3554,7 @@ func (a *Auth) PostAuthAwsRoleRole(ctx context.Context, role string, awsRoleRequ
 // role: Name of the role.
 func (a *Auth) PostAuthAwsRoleRoleTag(ctx context.Context, role string, awsRoleTagRequest AwsRoleTagRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/role/{role}/tag"
-	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, awsRoleTagRequest)
 	if err != nil {
@@ -3573,7 +3573,7 @@ func (a *Auth) PostAuthAwsRoleRoleTag(ctx context.Context, role string, awsRoleT
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 func (a *Auth) PostAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/roletag-blacklist/{role_tag}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(roleTag, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
 
 	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
@@ -3592,7 +3592,7 @@ func (a *Auth) PostAuthAwsRoletagBlacklistRoleTag(ctx context.Context, roleTag s
 // roleTag: Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 func (a *Auth) PostAuthAwsRoletagDenylistRoleTag(ctx context.Context, roleTag string) (*http.Response, error) {
 	localVarPath := "/v1/auth/aws/roletag-denylist/{role_tag}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(parameterToString(roleTag, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_tag"+"}", url.PathEscape(roleTag), -1)
 
 	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
@@ -3713,7 +3713,7 @@ func (a *Auth) PostAuthAzureLogin(ctx context.Context, azureLoginRequest AzureLo
 // name: Name of the role.
 func (a *Auth) PostAuthAzureRoleName(ctx context.Context, name string, azureRoleRequest AzureRoleRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/azure/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, azureRoleRequest)
 	if err != nil {
@@ -3766,7 +3766,7 @@ func (a *Auth) PostAuthCentrifyLogin(ctx context.Context, centrifyLoginRequest C
 // name: The name of the certificate
 func (a *Auth) PostAuthCertCertsName(ctx context.Context, name string, certCertsRequest CertCertsRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/cert/certs/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, certCertsRequest)
 	if err != nil {
@@ -3802,7 +3802,7 @@ func (a *Auth) PostAuthCertConfig(ctx context.Context, certConfigRequest CertCon
 // name: The name of the certificate
 func (a *Auth) PostAuthCertCrlsName(ctx context.Context, name string, certCrlsRequest CertCrlsRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/cert/crls/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, certCrlsRequest)
 	if err != nil {
@@ -3872,7 +3872,7 @@ func (a *Auth) PostAuthCfLogin(ctx context.Context, cfLoginRequest CfLoginReques
 // role: The name of the role.
 func (a *Auth) PostAuthCfRolesRole(ctx context.Context, role string, cfRolesRequest CfRolesRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/cf/roles/{role}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, cfRolesRequest)
 	if err != nil {
@@ -3925,7 +3925,7 @@ func (a *Auth) PostAuthGcpLogin(ctx context.Context, gcpLoginRequest GcpLoginReq
 // name: Name of the role.
 func (a *Auth) PostAuthGcpRoleName(ctx context.Context, name string, gcpRoleRequest GcpRoleRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/gcp/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, gcpRoleRequest)
 	if err != nil {
@@ -3944,7 +3944,7 @@ func (a *Auth) PostAuthGcpRoleName(ctx context.Context, name string, gcpRoleRequ
 // name: Name of the role.
 func (a *Auth) PostAuthGcpRoleNameLabels(ctx context.Context, name string, gcpRoleLabelsRequest GcpRoleLabelsRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/gcp/role/{name}/labels"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, gcpRoleLabelsRequest)
 	if err != nil {
@@ -3963,7 +3963,7 @@ func (a *Auth) PostAuthGcpRoleNameLabels(ctx context.Context, name string, gcpRo
 // name: Name of the role.
 func (a *Auth) PostAuthGcpRoleNameServiceAccounts(ctx context.Context, name string, gcpRoleServiceAccountsRequest GcpRoleServiceAccountsRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/gcp/role/{name}/service-accounts"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, gcpRoleServiceAccountsRequest)
 	if err != nil {
@@ -4016,7 +4016,7 @@ func (a *Auth) PostAuthGithubLogin(ctx context.Context, githubLoginRequest Githu
 // key: Key for the teams mapping
 func (a *Auth) PostAuthGithubMapTeamsKey(ctx context.Context, key string, githubMapTeamsRequest GithubMapTeamsRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/github/map/teams/{key}"
-	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, githubMapTeamsRequest)
 	if err != nil {
@@ -4035,7 +4035,7 @@ func (a *Auth) PostAuthGithubMapTeamsKey(ctx context.Context, key string, github
 // key: Key for the users mapping
 func (a *Auth) PostAuthGithubMapUsersKey(ctx context.Context, key string, githubMapUsersRequest GithubMapUsersRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/github/map/users/{key}"
-	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(parameterToString(key, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"key"+"}", url.PathEscape(key), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, githubMapUsersRequest)
 	if err != nil {
@@ -4124,7 +4124,7 @@ func (a *Auth) PostAuthJwtOidcCallback(ctx context.Context, jwtOidcCallbackReque
 // name: Name of the role.
 func (a *Auth) PostAuthJwtRoleName(ctx context.Context, name string, jwtRoleRequest JwtRoleRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/jwt/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, jwtRoleRequest)
 	if err != nil {
@@ -4177,7 +4177,7 @@ func (a *Auth) PostAuthKerberosConfigLdap(ctx context.Context, kerberosConfigLda
 // name: Name of the LDAP group.
 func (a *Auth) PostAuthKerberosGroupsName(ctx context.Context, name string, kerberosGroupsRequest KerberosGroupsRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/kerberos/groups/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, kerberosGroupsRequest)
 	if err != nil {
@@ -4247,7 +4247,7 @@ func (a *Auth) PostAuthKubernetesLogin(ctx context.Context, kubernetesLoginReque
 // name: Name of the role.
 func (a *Auth) PostAuthKubernetesRoleName(ctx context.Context, name string, kubernetesRoleRequest KubernetesRoleRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/kubernetes/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, kubernetesRoleRequest)
 	if err != nil {
@@ -4283,7 +4283,7 @@ func (a *Auth) PostAuthLdapConfig(ctx context.Context, ldapConfigRequest LdapCon
 // name: Name of the LDAP group.
 func (a *Auth) PostAuthLdapGroupsName(ctx context.Context, name string, ldapGroupsRequest LdapGroupsRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/ldap/groups/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, ldapGroupsRequest)
 	if err != nil {
@@ -4302,7 +4302,7 @@ func (a *Auth) PostAuthLdapGroupsName(ctx context.Context, name string, ldapGrou
 // username: DN (distinguished name) to be used for login.
 func (a *Auth) PostAuthLdapLoginUsername(ctx context.Context, username string, ldapLoginRequest LdapLoginRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/ldap/login/{username}"
-	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(username, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(username), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, ldapLoginRequest)
 	if err != nil {
@@ -4321,7 +4321,7 @@ func (a *Auth) PostAuthLdapLoginUsername(ctx context.Context, username string, l
 // name: Name of the LDAP user.
 func (a *Auth) PostAuthLdapUsersName(ctx context.Context, name string, ldapUsersRequest LdapUsersRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/ldap/users/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, ldapUsersRequest)
 	if err != nil {
@@ -4357,7 +4357,7 @@ func (a *Auth) PostAuthOciConfig(ctx context.Context, ociConfigRequest OciConfig
 // role: Name of the role.
 func (a *Auth) PostAuthOciLoginRole(ctx context.Context, role string, ociLoginRequest OciLoginRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/oci/login/{role}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, ociLoginRequest)
 	if err != nil {
@@ -4376,7 +4376,7 @@ func (a *Auth) PostAuthOciLoginRole(ctx context.Context, role string, ociLoginRe
 // role: Name of the role.
 func (a *Auth) PostAuthOciRoleRole(ctx context.Context, role string, ociRoleRequest OciRoleRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/oci/role/{role}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(parameterToString(role, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role"+"}", url.PathEscape(role), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, ociRoleRequest)
 	if err != nil {
@@ -4465,7 +4465,7 @@ func (a *Auth) PostAuthOidcOidcCallback(ctx context.Context, oidcOidcCallbackReq
 // name: Name of the role.
 func (a *Auth) PostAuthOidcRoleName(ctx context.Context, name string, oidcRoleRequest OidcRoleRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/oidc/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, oidcRoleRequest)
 	if err != nil {
@@ -4501,7 +4501,7 @@ func (a *Auth) PostAuthOktaConfig(ctx context.Context, oktaConfigRequest OktaCon
 // name: Name of the Okta group.
 func (a *Auth) PostAuthOktaGroupsName(ctx context.Context, name string, oktaGroupsRequest OktaGroupsRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/okta/groups/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, oktaGroupsRequest)
 	if err != nil {
@@ -4520,7 +4520,7 @@ func (a *Auth) PostAuthOktaGroupsName(ctx context.Context, name string, oktaGrou
 // username: Username to be used for login.
 func (a *Auth) PostAuthOktaLoginUsername(ctx context.Context, username string, oktaLoginRequest OktaLoginRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/okta/login/{username}"
-	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(username, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(username), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, oktaLoginRequest)
 	if err != nil {
@@ -4539,7 +4539,7 @@ func (a *Auth) PostAuthOktaLoginUsername(ctx context.Context, username string, o
 // name: Name of the user.
 func (a *Auth) PostAuthOktaUsersName(ctx context.Context, name string, oktaUsersRequest OktaUsersRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/okta/users/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, oktaUsersRequest)
 	if err != nil {
@@ -4592,7 +4592,7 @@ func (a *Auth) PostAuthRadiusLogin(ctx context.Context, radiusLoginRequest Radiu
 // urlusername: Username to be used for login. (URL parameter)
 func (a *Auth) PostAuthRadiusLoginUrlusername(ctx context.Context, urlusername string, radiusLoginRequest RadiusLoginRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/radius/login/{urlusername}"
-	localVarPath = strings.Replace(localVarPath, "{"+"urlusername"+"}", url.PathEscape(parameterToString(urlusername, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"urlusername"+"}", url.PathEscape(urlusername), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, radiusLoginRequest)
 	if err != nil {
@@ -4611,7 +4611,7 @@ func (a *Auth) PostAuthRadiusLoginUrlusername(ctx context.Context, urlusername s
 // name: Name of the RADIUS user.
 func (a *Auth) PostAuthRadiusUsersName(ctx context.Context, name string, radiusUsersRequest RadiusUsersRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/radius/users/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, radiusUsersRequest)
 	if err != nil {
@@ -4664,7 +4664,7 @@ func (a *Auth) PostAuthTokenCreateOrphan(ctx context.Context) (*http.Response, e
 // roleName: Name of the role
 func (a *Auth) PostAuthTokenCreateRoleName(ctx context.Context, roleName string) (*http.Response, error) {
 	localVarPath := "/v1/auth/token/create/{role_name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
@@ -4853,7 +4853,7 @@ func (a *Auth) PostAuthTokenRevokeSelf(ctx context.Context) (*http.Response, err
 // roleName: Name of the role
 func (a *Auth) PostAuthTokenRolesRoleName(ctx context.Context, roleName string, tokenRolesRequest TokenRolesRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/token/roles/{role_name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(parameterToString(roleName, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"role_name"+"}", url.PathEscape(roleName), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, tokenRolesRequest)
 	if err != nil {
@@ -4889,7 +4889,7 @@ func (a *Auth) PostAuthTokenTidy(ctx context.Context) (*http.Response, error) {
 // username: Username of the user.
 func (a *Auth) PostAuthUserpassLoginUsername(ctx context.Context, username string, userpassLoginRequest UserpassLoginRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/userpass/login/{username}"
-	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(username, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(username), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, userpassLoginRequest)
 	if err != nil {
@@ -4908,7 +4908,7 @@ func (a *Auth) PostAuthUserpassLoginUsername(ctx context.Context, username strin
 // username: Username for this user.
 func (a *Auth) PostAuthUserpassUsersUsername(ctx context.Context, username string, userpassUsersRequest UserpassUsersRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/userpass/users/{username}"
-	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(username, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(username), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, userpassUsersRequest)
 	if err != nil {
@@ -4927,7 +4927,7 @@ func (a *Auth) PostAuthUserpassUsersUsername(ctx context.Context, username strin
 // username: Username for this user.
 func (a *Auth) PostAuthUserpassUsersUsernamePassword(ctx context.Context, username string, userpassUsersPasswordRequest UserpassUsersPasswordRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/userpass/users/{username}/password"
-	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(username, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(username), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, userpassUsersPasswordRequest)
 	if err != nil {
@@ -4946,7 +4946,7 @@ func (a *Auth) PostAuthUserpassUsersUsernamePassword(ctx context.Context, userna
 // username: Username for this user.
 func (a *Auth) PostAuthUserpassUsersUsernamePolicies(ctx context.Context, username string, userpassUsersPoliciesRequest UserpassUsersPoliciesRequest) (*http.Response, error) {
 	localVarPath := "/v1/auth/userpass/users/{username}/policies"
-	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(parameterToString(username, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"username"+"}", url.PathEscape(username), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, userpassUsersPoliciesRequest)
 	if err != nil {

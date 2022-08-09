@@ -14,18 +14,11 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
-	"encoding/xml"
-	"errors"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
-	"os"
-	"reflect"
 	"regexp"
-	"strings"
-	"time"
 
 	"github.com/hashicorp/go-retryablehttp"
 )
@@ -97,39 +90,6 @@ func NewClient(configuration Configuration) (*Client, error) {
 	return &c, nil
 }
 
-// parameterToString convert interface{} parameters to string, using a delimiter if format is provided.
-func parameterToString(obj interface{}, collectionFormat string) string {
-	var delimiter string
-
-	switch collectionFormat {
-	case "pipes":
-		delimiter = "|"
-	case "ssv":
-		delimiter = " "
-	case "tsv":
-		delimiter = "\t"
-	case "csv":
-		delimiter = ","
-	}
-
-	if reflect.TypeOf(obj).Kind() == reflect.Slice {
-		return strings.Trim(strings.Replace(fmt.Sprint(obj), " ", delimiter, -1), "[]")
-	} else if t, ok := obj.(time.Time); ok {
-		return t.Format(time.RFC3339)
-	}
-
-	return fmt.Sprintf("%v", obj)
-}
-
-// helper for converting interface{} parameters to json strings
-func parameterToJson(obj interface{}) (string, error) {
-	jsonBuf, err := json.Marshal(obj)
-	if err != nil {
-		return "", err
-	}
-	return string(jsonBuf), err
-}
-
 // NewStructuredRequest expects json.Marshaler encoded request body and returns a new request with vault-specific headers
 func (c *Client) NewStructuredRequest(method, path string, body json.Marshaler) (*http.Request, error) {
 	if body == nil {
@@ -184,47 +144,4 @@ func (c *Client) Do(ctx context.Context, req *http.Request, retry bool) (*http.R
 	}
 
 	return resp, nil
-}
-
-func (c *Client) decode(v interface{}, b []byte, contentType string) (err error) {
-	if len(b) == 0 {
-		return nil
-	}
-	if s, ok := v.(*string); ok {
-		*s = string(b)
-		return nil
-	}
-	if f, ok := v.(**os.File); ok {
-		*f, err = ioutil.TempFile("", "HttpClientFile")
-		if err != nil {
-			return
-		}
-		_, err = (*f).Write(b)
-		if err != nil {
-			return
-		}
-		_, err = (*f).Seek(0, io.SeekStart)
-		return
-	}
-	if xmlCheck.MatchString(contentType) {
-		if err = xml.Unmarshal(b, v); err != nil {
-			return err
-		}
-		return nil
-	}
-	if jsonCheck.MatchString(contentType) {
-		if actualObj, ok := v.(interface{ GetActualInstance() interface{} }); ok { // oneOf, anyOf schemas
-			if unmarshalObj, ok := actualObj.(interface{ UnmarshalJSON([]byte) error }); ok { // make sure it has UnmarshalJSON defined
-				if err = unmarshalObj.UnmarshalJSON(b); err != nil {
-					return err
-				}
-			} else {
-				return errors.New("Unknown type with GetActualInstance but no unmarshalObj.UnmarshalJSON defined")
-			}
-		} else if err = json.Unmarshal(b, v); err != nil { // simple model
-			return err
-		}
-		return nil
-	}
-	return errors.New("undefined response type")
 }

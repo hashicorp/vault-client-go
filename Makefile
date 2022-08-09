@@ -27,6 +27,7 @@ generate:
 
 	rename --force 's/REPLACE~ME//g' docs/*.md
 
+	sed -i'.original' -e 's/REPLACE~ME//g' README.md
 	sed -i'.original' -e 's/REPLACE~ME//g' *.go
 	sed -i'.original' -e 's/REPLACE~ME//g' docs/*.md
 

@@ -18,6 +18,8 @@ import (
 
 	"github.com/hashicorp/go-cleanhttp"
 	"github.com/hashicorp/go-retryablehttp"
+
+	"golang.org/x/time/rate"
 )
 
 // Configuration is used to configure the creation of the client
@@ -37,6 +39,12 @@ type Configuration struct {
 	// RetryOptions are a set of options used to configure the internal
 	// go-retryablehttp client.
 	RetryOptions RetryOptions
+
+	// RateLimiter controls how frequently requests are allowed to happen.
+	// If this pointer is nil, then there will be no limit set. Note that an
+	// empty struct rate.Limiter is equivalent blocking all requests.
+	// Default: nil
+	RateLimiter *rate.Limiter
 }
 
 type RetryOptions struct {

@@ -28,6 +28,8 @@ import (
 	"time"
 
 	"github.com/hashicorp/go-retryablehttp"
+
+	"golang.org/x/exp/slices"
 )
 
 var (
@@ -156,34 +158,90 @@ func (c *Client) NewRequest(method, path string, body io.Reader) (*http.Request,
 	return http.NewRequest(method, url.String(), body)
 }
 
-// Do wraps http.client.Do or retryablehttp.client.Do to send an http request
+// Do sends the given request to Vault, handling retries, redirects, and rate limiting
 func (c *Client) Do(ctx context.Context, req *http.Request, retry bool) (*http.Response, error) {
 	var resp *http.Response
 
 	req = req.WithContext(ctx)
 
-	if retry {
-		retryableReq, err := retryablehttp.FromRequest(req)
+	// allow at most one redirect
+	redirectCount := 0
+
+	for {
+		resp, err := c.doWithRetries(req, retry)
 		if err != nil {
-			return nil, fmt.Errorf("could not form a retryable request: %w", err)
+			return resp, err
 		}
 
-		r, err := c.clientWithRetries.Do(retryableReq)
+		redirect, err := handleRedirect(req, resp, &redirectCount)
 		if err != nil {
-			return nil, err
+			return resp, fmt.Errorf("redirect error: %w", err)
 		}
-
-		resp = r
-	} else {
-		r, err := c.client.Do(req)
-		if err != nil {
-			return nil, err
+		if !redirect {
+			break
 		}
-
-		resp = r
 	}
 
 	return resp, nil
+}
+
+// doWithRetries is a helper function that wraps http.client.Do / retryablehttp.client.Do
+func (c *Client) doWithRetries(req *http.Request, retry bool) (*http.Response, error) {
+	if !retry {
+		return c.client.Do(req)
+	}
+
+	retryableReq, err := retryablehttp.FromRequest(req)
+	if err != nil {
+		return nil, fmt.Errorf("could not form a retryable request: %w", err)
+	}
+
+	return c.clientWithRetries.Do(retryableReq)
+}
+
+// handleRedirect checks the given response for a redirect status
+//  returns:
+//    true & modifies the request accordingly if the redirect is needed
+//    false otherwise
+func handleRedirect(req *http.Request, resp *http.Response, redirectCount *int) (bool, error) {
+	// allow at most one redirect
+	if *redirectCount != 0 {
+		return false, nil
+	}
+
+	*redirectCount++
+
+	redirectStatuses := [...]int{
+		http.StatusMovedPermanently,  // 301
+		http.StatusFound,             // 302
+		http.StatusTemporaryRedirect, // 307
+	}
+
+	if !slices.Contains(redirectStatuses[:], resp.StatusCode) {
+		return false, nil
+	}
+
+	redirectTo, err := resp.Location()
+	if err != nil {
+		return false, fmt.Errorf("could not read the redirect location: %w", err)
+	}
+
+	if req.URL.Scheme == "https" && redirectTo.Scheme != "https" {
+		return false, fmt.Errorf("redirect would cause a protocol downgrade")
+	}
+
+	req.URL = redirectTo
+
+	// restore the original request body (if any) since it had been consumed by client.Do
+	if req.GetBody != nil {
+		b, err := req.GetBody()
+		if err != nil {
+			return false, fmt.Errorf("could not restore request body: %w", err)
+		}
+		req.Body = b
+	}
+
+	return true, nil
 }
 
 func (c *Client) decode(v interface{}, b []byte, contentType string) (err error) {

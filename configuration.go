@@ -77,7 +77,9 @@ type RetryOptions struct {
 
 // DefaultConfiguration returns the default configuration for the client. It is
 // recommended to start with this configuration and modify it as needed.
-func DefaultConfiguration() (*Configuration, error) {
+func DefaultConfiguration() (Configuration, error) {
+	// cleanhttp client uses the same default values as net/http client, but
+	// does not share state with other clients (see hashicorp/go-cleanhttp)
 	client := cleanhttp.DefaultPooledClient()
 
 	transport := client.Transport.(*http.Transport)
@@ -87,7 +89,7 @@ func DefaultConfiguration() (*Configuration, error) {
 	}
 
 	if err := http2.ConfigureTransport(transport); err != nil {
-		return nil, err
+		return Configuration{}, err
 	}
 
 	// Ensure redirects are not automatically followed since the client has its
@@ -100,7 +102,7 @@ func DefaultConfiguration() (*Configuration, error) {
 		return http.ErrUseLastResponse
 	}
 
-	return &Configuration{
+	return Configuration{
 		BaseAddress: "http://127.0.0.1:8200",
 		HTTPClient:  client,
 		RetryOptions: RetryOptions{

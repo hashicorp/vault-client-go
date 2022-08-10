@@ -68,7 +68,9 @@ type RetryOptions struct {
 
 // DefaultConfiguration returns the default configuration for the client. It is
 // recommended to start with this configuration and modify it as needed.
-func DefaultConfiguration() (*Configuration, error) {
+func DefaultConfiguration() (Configuration, error) {
+	// cleanhttp client uses the same default values as net/http client, but
+	// does not share state with other clients (see hashicorp/go-cleanhttp)
 	client := cleanhttp.DefaultPooledClient()
 
 	transport := client.Transport.(*http.Transport)
@@ -78,10 +80,20 @@ func DefaultConfiguration() (*Configuration, error) {
 	}
 
 	if err := http2.ConfigureTransport(transport); err != nil {
-		return nil, err
+		return Configuration{}, err
 	}
 
-	return &Configuration{
+	// Ensure redirects are not automatically followed since the client has its
+	// own redirect-handling logic.
+	client.CheckRedirect = func(req *http.Request, via []*http.Request) error {
+		// ErrUseLastResponse will ensure that http.Client.Do will not send
+		// the next redirect request. Instead, it will return the most recent
+		// response with a nil error. A non-nil error from http.Client.Do would
+		// cause redundant retries in retryablehttp.Client on every redirect.
+		return http.ErrUseLastResponse
+	}
+
+	return Configuration{
 		BaseAddress: "http://127.0.0.1:8200",
 		HTTPClient:  client,
 		RetryOptions: RetryOptions{

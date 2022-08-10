@@ -18,8 +18,6 @@ import (
 
 	"github.com/hashicorp/go-cleanhttp"
 	"github.com/hashicorp/go-retryablehttp"
-
-	"golang.org/x/net/http2"
 )
 
 // Configuration is used to configure the creation of the client
@@ -77,24 +75,20 @@ type RetryOptions struct {
 
 // DefaultConfiguration returns the default configuration for the client. It is
 // recommended to start with this configuration and modify it as needed.
-func DefaultConfiguration() (Configuration, error) {
-	// cleanhttp client uses the same default values as net/http client, but
-	// does not share state with other clients (see hashicorp/go-cleanhttp)
-	client := cleanhttp.DefaultPooledClient()
+func DefaultConfiguration() Configuration {
+	// Use cleanhttp, which has the same default values as net/http client, but
+	// does not share state with other clients (see: gh/hashicorp/go-cleanhttp)
+	defaultClient := cleanhttp.DefaultPooledClient()
 
-	transport := client.Transport.(*http.Transport)
-	transport.TLSHandshakeTimeout = 10 * time.Second
-	transport.TLSClientConfig = &tls.Config{
+	defaultClientTransport := defaultClient.Transport.(*http.Transport)
+	defaultClientTransport.TLSHandshakeTimeout = 10 * time.Second
+	defaultClientTransport.TLSClientConfig = &tls.Config{
 		MinVersion: tls.VersionTLS12,
-	}
-
-	if err := http2.ConfigureTransport(transport); err != nil {
-		return Configuration{}, err
 	}
 
 	// Ensure redirects are not automatically followed since the client has its
 	// own redirect-handling logic.
-	client.CheckRedirect = func(req *http.Request, via []*http.Request) error {
+	defaultClient.CheckRedirect = func(req *http.Request, via []*http.Request) error {
 		// ErrUseLastResponse will ensure that http.Client.Do will not send
 		// the next redirect request. Instead, it will return the most recent
 		// response with a nil error. A non-nil error from http.Client.Do would
@@ -104,7 +98,7 @@ func DefaultConfiguration() (Configuration, error) {
 
 	return Configuration{
 		BaseAddress: "http://127.0.0.1:8200",
-		HTTPClient:  client,
+		HTTPClient:  defaultClient,
 		RetryOptions: RetryOptions{
 			RetryWaitMin: time.Millisecond * 1000,
 			RetryWaitMax: time.Millisecond * 1500,
@@ -114,7 +108,7 @@ func DefaultConfiguration() (Configuration, error) {
 			ErrorHandler: retryablehttp.PassthroughErrorHandler,
 			Logger:       nil,
 		},
-	}, nil
+	}
 }
 
 // DefaultRetryPolicy provides a default callback for RetryOptions.CheckRetry.

@@ -30,7 +30,7 @@ import (
 type Client struct {
 	configuration Configuration
 
-	parsedBaseAddress *url.URL
+	parsedBaseAddress url.URL
 
 	client            *http.Client
 	clientWithRetries *retryablehttp.Client
@@ -77,7 +77,7 @@ func NewClient(configuration Configuration) (*Client, error) {
 		return nil, err
 	}
 
-	c.parsedBaseAddress = a
+	c.parsedBaseAddress = *a
 
 	c.Auth = Auth{
 		client: &c,
@@ -150,6 +150,11 @@ func (c *Client) NewRequest(method, path string, body io.Reader) (*http.Request,
 
 // Do sends the given request to Vault, handling retries, redirects, and rate limiting
 func (c *Client) Do(ctx context.Context, req *http.Request, retry bool) (*http.Response, error) {
+	// block on the rate limiter, if set
+	if c.configuration.RateLimiter != nil {
+		c.configuration.RateLimiter.Wait(ctx)
+	}
+
 	var (
 		resp *http.Response
 		err  error

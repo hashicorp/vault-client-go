@@ -102,7 +102,11 @@ func DefaultConfiguration() (Configuration, error) {
 		return http.ErrUseLastResponse
 	}
 
+<<<<<<< HEAD
 	return Configuration{
+=======
+	return &Configuration{
+>>>>>>> main
 		BaseAddress: "http://127.0.0.1:8200",
 		HTTPClient:  client,
 		RetryOptions: RetryOptions{

@@ -25,6 +25,7 @@ import (
 	"reflect"
 	"regexp"
 	"strings"
+	"sync"
 	"time"
 
 	"github.com/hashicorp/go-retryablehttp"
@@ -42,16 +43,25 @@ var (
 type Client struct {
 	configuration Configuration
 
+	parsedBaseAddress *url.URL
+
 	client            *http.Client
 	clientWithRetries *retryablehttp.Client
 
-	parsedBaseAddress *url.URL
+	// headers that will be added to each request
+	requestHeaders     requestHeaders
+	requestHeadersLock sync.RWMutex
 
 	// API wrappers
 	Auth     Auth
 	Identity Identity
 	Secrets  Secrets
 	System   System
+}
+
+// requestHeaders contains headers that will be added to each request
+type requestHeaders struct {
+	token string
 }
 
 // NewClient returns a new Vault client with a copy of the given configuration
@@ -82,7 +92,6 @@ func NewClient(configuration Configuration) (*Client, error) {
 
 	c.parsedBaseAddress = a
 
-	// API wrappers
 	c.Auth = Auth{
 		client: &c,
 	}
@@ -132,6 +141,22 @@ func parameterToJson(obj interface{}) (string, error) {
 	return string(jsonBuf), err
 }
 
+// SetToken sets a token to be used with all subsequent requests
+func (c *Client) SetToken(token string) {
+	/* */ c.requestHeadersLock.Lock()
+	defer c.requestHeadersLock.Unlock()
+
+	c.requestHeaders.token = token
+}
+
+// WithToken returns a shallow copy of the client with the token set to the given value
+func (c *Client) WithToken(token string) *Client {
+	copy := c.shallowCopy()
+	copy.requestHeaders.token = token
+
+	return copy
+}
+
 // NewStructuredRequest expects json.Marshaler encoded request body and returns a new request with vault-specific headers
 func (c *Client) NewStructuredRequest(method, path string, body json.Marshaler) (*http.Request, error) {
 	if body == nil {
@@ -155,7 +180,18 @@ func (c *Client) NewRequest(method, path string, body io.Reader) (*http.Request,
 		return nil, err
 	}
 
-	return http.NewRequest(method, url.String(), body)
+	req, err := http.NewRequest(method, url.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	headers := c.copyRequestHeaders()
+
+	if headers.token != "" {
+		req.Header.Set("X-Vault-Token", headers.token)
+	}
+
+	return req, nil
 }
 
 // Do sends the given request to Vault, handling retries, redirects, and rate limiting
@@ -285,4 +321,40 @@ func (c *Client) decode(v interface{}, b []byte, contentType string) (err error)
 		return nil
 	}
 	return errors.New("undefined response type")
+}
+
+// shallowCopy returns a shallow copy of the client
+func (c *Client) shallowCopy() *Client {
+	copy := Client{
+		configuration:     c.configuration,
+		parsedBaseAddress: c.parsedBaseAddress,
+		client:            c.client,
+		clientWithRetries: c.clientWithRetries,
+	}
+
+	copy.requestHeaders = c.copyRequestHeaders()
+	copy.requestHeadersLock = sync.RWMutex{}
+
+	copy.Auth = Auth{
+		client: &copy,
+	}
+	copy.Identity = Identity{
+		client: &copy,
+	}
+	copy.Secrets = Secrets{
+		client: &copy,
+	}
+	copy.System = System{
+		client: &copy,
+	}
+
+	return &copy
+}
+
+// copyRequestHeaders returns a copy of the request headers behind a mutex
+func (c *Client) copyRequestHeaders() requestHeaders {
+	/* */ c.requestHeadersLock.RLock()
+	defer c.requestHeadersLock.RUnlock()
+
+	return c.requestHeaders
 }

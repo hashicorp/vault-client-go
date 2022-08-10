@@ -26,7 +26,7 @@ type System struct {
 // path: The name of the backend. Cannot be delimited. Example: \&quot;mysql\&quot;
 func (a *System) DeleteSysAuditPath(ctx context.Context, path string) (*http.Response, error) {
 	localVarPath := "/v1/sys/audit/{path}"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -45,7 +45,7 @@ func (a *System) DeleteSysAuditPath(ctx context.Context, path string) (*http.Res
 // path: The path to mount to. Cannot be delimited. Example: \&quot;user\&quot;
 func (a *System) DeleteSysAuthPath(ctx context.Context, path string) (*http.Response, error) {
 	localVarPath := "/v1/sys/auth/{path}"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -63,7 +63,7 @@ func (a *System) DeleteSysAuthPath(ctx context.Context, path string) (*http.Resp
 // DeleteSysConfigAuditingRequestHeadersHeader Disable auditing of the given request header.
 func (a *System) DeleteSysConfigAuditingRequestHeadersHeader(ctx context.Context, header string) (*http.Response, error) {
 	localVarPath := "/v1/sys/config/auditing/request-headers/{header}"
-	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(header), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -99,7 +99,7 @@ func (a *System) DeleteSysConfigCors(ctx context.Context) (*http.Response, error
 // header: The name of the header.
 func (a *System) DeleteSysConfigUiHeadersHeader(ctx context.Context, header string) (*http.Response, error) {
 	localVarPath := "/v1/sys/config/ui/headers/{header}"
-	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(header), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -152,7 +152,7 @@ func (a *System) DeleteSysGenerateRootAttempt(ctx context.Context) (*http.Respon
 // path: The path to mount to. Example: \&quot;aws/east\&quot;
 func (a *System) DeleteSysMountsPath(ctx context.Context, path string) (*http.Response, error) {
 	localVarPath := "/v1/sys/mounts/{path}"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -171,7 +171,7 @@ func (a *System) DeleteSysMountsPath(ctx context.Context, path string) (*http.Re
 // name: The name of the plugin
 func (a *System) DeleteSysPluginsCatalogName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/sys/plugins/catalog/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -191,8 +191,8 @@ func (a *System) DeleteSysPluginsCatalogName(ctx context.Context, name string) (
 // type_: The type of the plugin, may be auth, secret, or database
 func (a *System) DeleteSysPluginsCatalogTypeName(ctx context.Context, name string, type_ string) (*http.Response, error) {
 	localVarPath := "/v1/sys/plugins/catalog/{type}/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(type_, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(type_), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -211,7 +211,7 @@ func (a *System) DeleteSysPluginsCatalogTypeName(ctx context.Context, name strin
 // name: The name of the policy. Example: \&quot;ops\&quot;
 func (a *System) DeleteSysPoliciesAclName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/sys/policies/acl/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -230,7 +230,7 @@ func (a *System) DeleteSysPoliciesAclName(ctx context.Context, name string) (*ht
 // name: The name of the password policy.
 func (a *System) DeleteSysPoliciesPasswordName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/sys/policies/password/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -249,7 +249,7 @@ func (a *System) DeleteSysPoliciesPasswordName(ctx context.Context, name string)
 // name: The name of the policy. Example: \&quot;ops\&quot;
 func (a *System) DeleteSysPolicyName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/sys/policy/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -268,7 +268,7 @@ func (a *System) DeleteSysPolicyName(ctx context.Context, name string) (*http.Re
 // name: Name of the quota rule.
 func (a *System) DeleteSysQuotasRateLimitName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/sys/quotas/rate-limit/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -303,7 +303,7 @@ func (a *System) DeleteSysRaw(ctx context.Context) (*http.Response, error) {
 // DeleteSysRawPath Delete the key with given path.
 func (a *System) DeleteSysRawPath(ctx context.Context, path string) (*http.Response, error) {
 	localVarPath := "/v1/sys/raw/{path}"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
 	if err != nil {
@@ -426,7 +426,7 @@ func (a *System) GetSysAuth(ctx context.Context) (*http.Response, error) {
 // path: The path to mount to. Cannot be delimited. Example: \&quot;user\&quot;
 func (a *System) GetSysAuthPath(ctx context.Context, path string) (*http.Response, error) {
 	localVarPath := "/v1/sys/auth/{path}"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -446,7 +446,7 @@ func (a *System) GetSysAuthPath(ctx context.Context, path string) (*http.Respons
 // path: Tune the configuration parameters for an auth path.
 func (a *System) GetSysAuthPathTune(ctx context.Context, path string) (*http.Response, error) {
 	localVarPath := "/v1/sys/auth/{path}/tune"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -481,7 +481,7 @@ func (a *System) GetSysConfigAuditingRequestHeaders(ctx context.Context) (*http.
 // GetSysConfigAuditingRequestHeadersHeader List the information for the given request header.
 func (a *System) GetSysConfigAuditingRequestHeadersHeader(ctx context.Context, header string) (*http.Response, error) {
 	localVarPath := "/v1/sys/config/auditing/request-headers/{header}"
-	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(header), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -553,7 +553,7 @@ func (a *System) GetSysConfigUiHeaders(ctx context.Context, list string) (*http.
 // header: The name of the header.
 func (a *System) GetSysConfigUiHeadersHeader(ctx context.Context, header string) (*http.Response, error) {
 	localVarPath := "/v1/sys/config/ui/headers/{header}"
-	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(header), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -863,7 +863,7 @@ func (a *System) GetSysInternalUiMounts(ctx context.Context) (*http.Response, er
 // path: The path of the mount.
 func (a *System) GetSysInternalUiMountsPath(ctx context.Context, path string) (*http.Response, error) {
 	localVarPath := "/v1/sys/internal/ui/mounts/{path}"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1003,7 +1003,7 @@ func (a *System) GetSysLeasesLookup(ctx context.Context, list string) (*http.Res
 // list: Must be set to &#x60;true&#x60;
 func (a *System) GetSysLeasesLookupPrefix(ctx context.Context, prefix string, list string) (*http.Response, error) {
 	localVarPath := "/v1/sys/leases/lookup/{prefix}"
-	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(prefix, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1076,7 +1076,7 @@ func (a *System) GetSysMounts(ctx context.Context) (*http.Response, error) {
 // path: The path to mount to. Example: \&quot;aws/east\&quot;
 func (a *System) GetSysMountsPath(ctx context.Context, path string) (*http.Response, error) {
 	localVarPath := "/v1/sys/mounts/{path}"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1095,7 +1095,7 @@ func (a *System) GetSysMountsPath(ctx context.Context, path string) (*http.Respo
 // path: The path to mount to. Example: \&quot;aws/east\&quot;
 func (a *System) GetSysMountsPathTune(ctx context.Context, path string) (*http.Response, error) {
 	localVarPath := "/v1/sys/mounts/{path}/tune"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1131,7 +1131,7 @@ func (a *System) GetSysPluginsCatalog(ctx context.Context) (*http.Response, erro
 // name: The name of the plugin
 func (a *System) GetSysPluginsCatalogName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/sys/plugins/catalog/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1151,7 +1151,7 @@ func (a *System) GetSysPluginsCatalogName(ctx context.Context, name string) (*ht
 // list: Must be set to &#x60;true&#x60;
 func (a *System) GetSysPluginsCatalogType(ctx context.Context, type_ string, list string) (*http.Response, error) {
 	localVarPath := "/v1/sys/plugins/catalog/{type}"
-	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(type_, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(type_), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1171,8 +1171,8 @@ func (a *System) GetSysPluginsCatalogType(ctx context.Context, type_ string, lis
 // type_: The type of the plugin, may be auth, secret, or database
 func (a *System) GetSysPluginsCatalogTypeName(ctx context.Context, name string, type_ string) (*http.Response, error) {
 	localVarPath := "/v1/sys/plugins/catalog/{type}/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(type_, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(type_), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1209,7 +1209,7 @@ func (a *System) GetSysPoliciesAcl(ctx context.Context, list string) (*http.Resp
 // name: The name of the policy. Example: \&quot;ops\&quot;
 func (a *System) GetSysPoliciesAclName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/sys/policies/acl/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1246,7 +1246,7 @@ func (a *System) GetSysPoliciesPassword(ctx context.Context, list string) (*http
 // name: The name of the password policy.
 func (a *System) GetSysPoliciesPasswordName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/sys/policies/password/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1265,7 +1265,7 @@ func (a *System) GetSysPoliciesPasswordName(ctx context.Context, name string) (*
 // name: The name of the password policy.
 func (a *System) GetSysPoliciesPasswordNameGenerate(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/sys/policies/password/{name}/generate"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1302,7 +1302,7 @@ func (a *System) GetSysPolicy(ctx context.Context, list string) (*http.Response,
 // name: The name of the policy. Example: \&quot;ops\&quot;
 func (a *System) GetSysPolicyName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/sys/policy/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1554,7 +1554,7 @@ func (a *System) GetSysQuotasRateLimit(ctx context.Context, list string) (*http.
 // name: Name of the quota rule.
 func (a *System) GetSysQuotasRateLimitName(ctx context.Context, name string) (*http.Response, error) {
 	localVarPath := "/v1/sys/quotas/rate-limit/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1591,7 +1591,7 @@ func (a *System) GetSysRaw(ctx context.Context, list string) (*http.Response, er
 // list: Return a list if &#x60;true&#x60;
 func (a *System) GetSysRawPath(ctx context.Context, path string, list string) (*http.Response, error) {
 	localVarPath := "/v1/sys/raw/{path}"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1678,7 +1678,7 @@ func (a *System) GetSysRekeyVerify(ctx context.Context) (*http.Response, error) 
 // migrationId: The ID of the migration operation
 func (a *System) GetSysRemountStatusMigrationId(ctx context.Context, migrationId string) (*http.Response, error) {
 	localVarPath := "/v1/sys/remount/status/{migration_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"migration_id"+"}", url.PathEscape(parameterToString(migrationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"migration_id"+"}", url.PathEscape(migrationId), -1)
 
 	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
 	if err != nil {
@@ -1783,7 +1783,7 @@ func (a *System) GetSysWrappingLookup(ctx context.Context) (*http.Response, erro
 // path: The name of the backend. Cannot be delimited. Example: \&quot;mysql\&quot;
 func (a *System) PostSysAuditHashPath(ctx context.Context, path string, systemAuditHashRequest SystemAuditHashRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/audit-hash/{path}"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemAuditHashRequest)
 	if err != nil {
@@ -1802,7 +1802,7 @@ func (a *System) PostSysAuditHashPath(ctx context.Context, path string, systemAu
 // path: The name of the backend. Cannot be delimited. Example: \&quot;mysql\&quot;
 func (a *System) PostSysAuditPath(ctx context.Context, path string, systemAuditRequest SystemAuditRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/audit/{path}"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemAuditRequest)
 	if err != nil {
@@ -1822,7 +1822,7 @@ func (a *System) PostSysAuditPath(ctx context.Context, path string, systemAuditR
 // path: The path to mount to. Cannot be delimited. Example: \&quot;user\&quot;
 func (a *System) PostSysAuthPath(ctx context.Context, path string, systemAuthRequest SystemAuthRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/auth/{path}"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemAuthRequest)
 	if err != nil {
@@ -1842,7 +1842,7 @@ func (a *System) PostSysAuthPath(ctx context.Context, path string, systemAuthReq
 // path: Tune the configuration parameters for an auth path.
 func (a *System) PostSysAuthPathTune(ctx context.Context, path string, systemAuthTuneRequest SystemAuthTuneRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/auth/{path}/tune"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemAuthTuneRequest)
 	if err != nil {
@@ -1911,7 +1911,7 @@ func (a *System) PostSysCapabilitiesSelf(ctx context.Context, systemCapabilities
 // PostSysConfigAuditingRequestHeadersHeader Enable auditing of a header.
 func (a *System) PostSysConfigAuditingRequestHeadersHeader(ctx context.Context, header string, systemConfigAuditingRequestHeadersRequest SystemConfigAuditingRequestHeadersRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/config/auditing/request-headers/{header}"
-	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(header), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemConfigAuditingRequestHeadersRequest)
 	if err != nil {
@@ -1946,7 +1946,7 @@ func (a *System) PostSysConfigCors(ctx context.Context, systemConfigCorsRequest 
 // PostSysConfigReloadSubsystem Reload the given subsystem
 func (a *System) PostSysConfigReloadSubsystem(ctx context.Context, subsystem string) (*http.Response, error) {
 	localVarPath := "/v1/sys/config/reload/{subsystem}"
-	localVarPath = strings.Replace(localVarPath, "{"+"subsystem"+"}", url.PathEscape(parameterToString(subsystem, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"subsystem"+"}", url.PathEscape(subsystem), -1)
 
 	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
@@ -1965,7 +1965,7 @@ func (a *System) PostSysConfigReloadSubsystem(ctx context.Context, subsystem str
 // header: The name of the header.
 func (a *System) PostSysConfigUiHeadersHeader(ctx context.Context, header string, systemConfigUiHeadersRequest SystemConfigUiHeadersRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/config/ui/headers/{header}"
-	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(parameterToString(header, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"header"+"}", url.PathEscape(header), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemConfigUiHeadersRequest)
 	if err != nil {
@@ -2107,7 +2107,7 @@ func (a *System) PostSysLeasesRenew(ctx context.Context, systemLeasesRenewReques
 // urlLeaseId: The lease identifier to renew. This is included with a lease.
 func (a *System) PostSysLeasesRenewUrlLeaseId(ctx context.Context, urlLeaseId string, systemLeasesRenewLeaseRequest SystemLeasesRenewLeaseRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/leases/renew/{url_lease_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"url_lease_id"+"}", url.PathEscape(parameterToString(urlLeaseId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"url_lease_id"+"}", url.PathEscape(urlLeaseId), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemLeasesRenewLeaseRequest)
 	if err != nil {
@@ -2144,7 +2144,7 @@ func (a *System) PostSysLeasesRevoke(ctx context.Context, systemLeasesRevokeRequ
 // prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
 func (a *System) PostSysLeasesRevokeForcePrefix(ctx context.Context, prefix string) (*http.Response, error) {
 	localVarPath := "/v1/sys/leases/revoke-force/{prefix}"
-	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(prefix, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
 
 	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
@@ -2163,7 +2163,7 @@ func (a *System) PostSysLeasesRevokeForcePrefix(ctx context.Context, prefix stri
 // prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
 func (a *System) PostSysLeasesRevokePrefixPrefix(ctx context.Context, prefix string, systemLeasesRevokePrefixRequest SystemLeasesRevokePrefixRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/leases/revoke-prefix/{prefix}"
-	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(prefix, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemLeasesRevokePrefixRequest)
 	if err != nil {
@@ -2182,7 +2182,7 @@ func (a *System) PostSysLeasesRevokePrefixPrefix(ctx context.Context, prefix str
 // urlLeaseId: The lease identifier to renew. This is included with a lease.
 func (a *System) PostSysLeasesRevokeUrlLeaseId(ctx context.Context, urlLeaseId string, systemLeasesRevokeLeaseRequest SystemLeasesRevokeLeaseRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/leases/revoke/{url_lease_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"url_lease_id"+"}", url.PathEscape(parameterToString(urlLeaseId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"url_lease_id"+"}", url.PathEscape(urlLeaseId), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemLeasesRevokeLeaseRequest)
 	if err != nil {
@@ -2235,7 +2235,7 @@ func (a *System) PostSysMfaValidate(ctx context.Context, systemMfaValidateReques
 // path: The path to mount to. Example: \&quot;aws/east\&quot;
 func (a *System) PostSysMountsPath(ctx context.Context, path string, systemMountsRequest SystemMountsRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/mounts/{path}"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemMountsRequest)
 	if err != nil {
@@ -2254,7 +2254,7 @@ func (a *System) PostSysMountsPath(ctx context.Context, path string, systemMount
 // path: The path to mount to. Example: \&quot;aws/east\&quot;
 func (a *System) PostSysMountsPathTune(ctx context.Context, path string, systemMountsTuneRequest SystemMountsTuneRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/mounts/{path}/tune"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemMountsTuneRequest)
 	if err != nil {
@@ -2273,7 +2273,7 @@ func (a *System) PostSysMountsPathTune(ctx context.Context, path string, systemM
 // name: The name of the plugin
 func (a *System) PostSysPluginsCatalogName(ctx context.Context, name string, systemPluginsCatalogRequest SystemPluginsCatalogRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/plugins/catalog/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemPluginsCatalogRequest)
 	if err != nil {
@@ -2293,8 +2293,8 @@ func (a *System) PostSysPluginsCatalogName(ctx context.Context, name string, sys
 // type_: The type of the plugin, may be auth, secret, or database
 func (a *System) PostSysPluginsCatalogTypeName(ctx context.Context, name string, type_ string, systemPluginsCatalogRequest SystemPluginsCatalogRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/plugins/catalog/{type}/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(type_, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(type_), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemPluginsCatalogRequest)
 	if err != nil {
@@ -2331,7 +2331,7 @@ func (a *System) PostSysPluginsReloadBackend(ctx context.Context, systemPluginsR
 // name: The name of the policy. Example: \&quot;ops\&quot;
 func (a *System) PostSysPoliciesAclName(ctx context.Context, name string, systemPoliciesAclRequest SystemPoliciesAclRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/policies/acl/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemPoliciesAclRequest)
 	if err != nil {
@@ -2350,7 +2350,7 @@ func (a *System) PostSysPoliciesAclName(ctx context.Context, name string, system
 // name: The name of the password policy.
 func (a *System) PostSysPoliciesPasswordName(ctx context.Context, name string, systemPoliciesPasswordRequest SystemPoliciesPasswordRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/policies/password/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemPoliciesPasswordRequest)
 	if err != nil {
@@ -2369,7 +2369,7 @@ func (a *System) PostSysPoliciesPasswordName(ctx context.Context, name string, s
 // name: The name of the policy. Example: \&quot;ops\&quot;
 func (a *System) PostSysPolicyName(ctx context.Context, name string, systemPolicyRequest SystemPolicyRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/policy/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemPolicyRequest)
 	if err != nil {
@@ -2405,7 +2405,7 @@ func (a *System) PostSysQuotasConfig(ctx context.Context, systemQuotasConfigRequ
 // name: Name of the quota rule.
 func (a *System) PostSysQuotasRateLimitName(ctx context.Context, name string, systemQuotasRateLimitRequest SystemQuotasRateLimitRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/quotas/rate-limit/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(parameterToString(name, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemQuotasRateLimitRequest)
 	if err != nil {
@@ -2440,7 +2440,7 @@ func (a *System) PostSysRaw(ctx context.Context, systemRawRequest SystemRawReque
 // PostSysRawPath Update the value of the key at the given path.
 func (a *System) PostSysRawPath(ctx context.Context, path string, systemRawRequest SystemRawRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/raw/{path}"
-	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(parameterToString(path, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"path"+"}", url.PathEscape(path), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemRawRequest)
 	if err != nil {
@@ -2545,7 +2545,7 @@ func (a *System) PostSysRenew(ctx context.Context, systemRenewRequest SystemRene
 // urlLeaseId: The lease identifier to renew. This is included with a lease.
 func (a *System) PostSysRenewUrlLeaseId(ctx context.Context, urlLeaseId string, systemRenewLeaseRequest SystemRenewLeaseRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/renew/{url_lease_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"url_lease_id"+"}", url.PathEscape(parameterToString(urlLeaseId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"url_lease_id"+"}", url.PathEscape(urlLeaseId), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemRenewLeaseRequest)
 	if err != nil {
@@ -2582,7 +2582,7 @@ func (a *System) PostSysRevoke(ctx context.Context, systemRevokeRequest SystemRe
 // prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
 func (a *System) PostSysRevokeForcePrefix(ctx context.Context, prefix string) (*http.Response, error) {
 	localVarPath := "/v1/sys/revoke-force/{prefix}"
-	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(prefix, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
 
 	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
 	if err != nil {
@@ -2601,7 +2601,7 @@ func (a *System) PostSysRevokeForcePrefix(ctx context.Context, prefix string) (*
 // prefix: The path to revoke keys under. Example: \&quot;prod/aws/ops\&quot;
 func (a *System) PostSysRevokePrefixPrefix(ctx context.Context, prefix string, systemRevokePrefixRequest SystemRevokePrefixRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/revoke-prefix/{prefix}"
-	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(parameterToString(prefix, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"prefix"+"}", url.PathEscape(prefix), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemRevokePrefixRequest)
 	if err != nil {
@@ -2620,7 +2620,7 @@ func (a *System) PostSysRevokePrefixPrefix(ctx context.Context, prefix string, s
 // urlLeaseId: The lease identifier to renew. This is included with a lease.
 func (a *System) PostSysRevokeUrlLeaseId(ctx context.Context, urlLeaseId string, systemRevokeLeaseRequest SystemRevokeLeaseRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/revoke/{url_lease_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"url_lease_id"+"}", url.PathEscape(parameterToString(urlLeaseId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"url_lease_id"+"}", url.PathEscape(urlLeaseId), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemRevokeLeaseRequest)
 	if err != nil {
@@ -2725,7 +2725,7 @@ func (a *System) PostSysToolsHash(ctx context.Context, systemToolsHashRequest Sy
 // urlalgorithm: Algorithm to use (POST URL parameter)
 func (a *System) PostSysToolsHashUrlalgorithm(ctx context.Context, urlalgorithm string, systemToolsHashRequest SystemToolsHashRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/tools/hash/{urlalgorithm}"
-	localVarPath = strings.Replace(localVarPath, "{"+"urlalgorithm"+"}", url.PathEscape(parameterToString(urlalgorithm, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"urlalgorithm"+"}", url.PathEscape(urlalgorithm), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemToolsHashRequest)
 	if err != nil {
@@ -2761,7 +2761,7 @@ func (a *System) PostSysToolsRandom(ctx context.Context, systemToolsRandomReques
 // source: Which system to source random data from, ether \&quot;platform\&quot;, \&quot;seal\&quot;, or \&quot;all\&quot;.
 func (a *System) PostSysToolsRandomSource(ctx context.Context, source string, systemToolsRandomRequest SystemToolsRandomRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/tools/random/{source}"
-	localVarPath = strings.Replace(localVarPath, "{"+"source"+"}", url.PathEscape(parameterToString(source, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"source"+"}", url.PathEscape(source), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemToolsRandomRequest)
 	if err != nil {
@@ -2781,8 +2781,8 @@ func (a *System) PostSysToolsRandomSource(ctx context.Context, source string, sy
 // urlbytes: The number of bytes to generate (POST URL parameter)
 func (a *System) PostSysToolsRandomSourceUrlbytes(ctx context.Context, source string, urlbytes string, systemToolsRandomRequest SystemToolsRandomRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/tools/random/{source}/{urlbytes}"
-	localVarPath = strings.Replace(localVarPath, "{"+"source"+"}", url.PathEscape(parameterToString(source, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"urlbytes"+"}", url.PathEscape(parameterToString(urlbytes, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"source"+"}", url.PathEscape(source), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"urlbytes"+"}", url.PathEscape(urlbytes), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemToolsRandomRequest)
 	if err != nil {
@@ -2801,7 +2801,7 @@ func (a *System) PostSysToolsRandomSourceUrlbytes(ctx context.Context, source st
 // urlbytes: The number of bytes to generate (POST URL parameter)
 func (a *System) PostSysToolsRandomUrlbytes(ctx context.Context, urlbytes string, systemToolsRandomRequest SystemToolsRandomRequest) (*http.Response, error) {
 	localVarPath := "/v1/sys/tools/random/{urlbytes}"
-	localVarPath = strings.Replace(localVarPath, "{"+"urlbytes"+"}", url.PathEscape(parameterToString(urlbytes, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"urlbytes"+"}", url.PathEscape(urlbytes), -1)
 
 	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, systemToolsRandomRequest)
 	if err != nil {

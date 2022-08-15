@@ -29,12 +29,12 @@ type Configuration struct {
 	// Default: http://127.0.0.1:8200
 	BaseAddress string
 
-	// HTTPClient is the HTTP client to use for all API requests.
-	// DefaultConfiguration() sets reasonable defaults for the HTTPClient and
+	// BaseClient is the HTTP client to use for all API requests.
+	// DefaultConfiguration() sets reasonable defaults for the BaseClient and
 	// its associated http.Transport. If you must modify Vault's defaults, it
 	// is suggested that you start with that client and modify it as needed
 	// rather than starting with an empty client or http.DefaultClient.
-	HTTPClient *http.Client
+	BaseClient *http.Client
 
 	// RetryOptions are a set of options used to configure the internal
 	// go-retryablehttp client.
@@ -106,7 +106,7 @@ func DefaultConfiguration() Configuration {
 
 	return Configuration{
 		BaseAddress: "http://127.0.0.1:8200",
-		HTTPClient:  defaultClient,
+		BaseClient:  defaultClient,
 		RetryOptions: RetryOptions{
 			RetryWaitMin: time.Millisecond * 1000,
 			RetryWaitMax: time.Millisecond * 1500,

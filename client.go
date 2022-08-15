@@ -57,11 +57,11 @@ func NewClient(configuration Configuration) (*Client, error) {
 		configuration: configuration,
 
 		// configured or default HTTP client
-		client: configuration.HTTPClient,
+		client: configuration.BaseClient,
 
 		// retryablehttp wrapper around the HTTP client
 		clientWithRetries: &retryablehttp.Client{
-			HTTPClient:   configuration.HTTPClient,
+			HTTPClient:   configuration.BaseClient,
 			Logger:       configuration.RetryOptions.Logger,
 			RetryWaitMin: configuration.RetryOptions.RetryWaitMin,
 			RetryWaitMax: configuration.RetryOptions.RetryWaitMax,

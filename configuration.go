@@ -135,8 +135,8 @@ func DefaultRetryPolicy(ctx context.Context, resp *http.Response, err error) (bo
 	return false, nil
 }
 
-// ApplyDefaults will set default values for the required uninitialized fields.
-func (c *Configuration) ApplyDefaults() {
+// SetDefaultsForUninitialized sets default values for uninitialized fields.
+func (c *Configuration) SetDefaultsForUninitialized() {
 	defaults := DefaultConfiguration()
 
 	if c.BaseAddress == "" {

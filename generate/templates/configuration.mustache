@@ -165,4 +165,8 @@ func (c *Configuration) ApplyDefaults() {
 	if c.RetryOptions.ErrorHandler == nil {
 		c.RetryOptions.ErrorHandler = defaults.RetryOptions.ErrorHandler
 	}
+
+	if c.RetryOptions.Logger == nil {
+		c.RetryOptions.Logger = defaults.RetryOptions.Logger
+	}
 }

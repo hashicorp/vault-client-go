@@ -134,3 +134,40 @@ func DefaultRetryPolicy(ctx context.Context, resp *http.Response, err error) (bo
 
 	return false, nil
 }
+
+// ApplyDefaults will set default values for the required uninitialized fields.
+func (c *Configuration) ApplyDefaults() {
+	defaults := DefaultConfiguration()
+
+	if c.BaseAddress == "" {
+		c.BaseAddress = defaults.BaseAddress
+	}
+
+	if c.BaseClient == nil {
+		c.BaseClient = defaults.BaseClient
+	}
+
+	if c.BaseClient.Transport == nil {
+		c.BaseClient.Transport = defaults.BaseClient.Transport
+	}
+
+	if c.RetryOptions.RetryWaitMin == 0 {
+		c.RetryOptions.RetryWaitMin = defaults.RetryOptions.RetryWaitMin
+	}
+
+	if c.RetryOptions.RetryWaitMax == 0 {
+		c.RetryOptions.RetryWaitMax = defaults.RetryOptions.RetryWaitMax
+	}
+
+	if c.RetryOptions.CheckRetry == nil {
+		c.RetryOptions.CheckRetry = defaults.RetryOptions.CheckRetry
+	}
+
+	if c.RetryOptions.Backoff == nil {
+		c.RetryOptions.Backoff = defaults.RetryOptions.Backoff
+	}
+
+	if c.RetryOptions.ErrorHandler == nil {
+		c.RetryOptions.ErrorHandler = defaults.RetryOptions.ErrorHandler
+	}
+}

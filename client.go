@@ -53,6 +53,9 @@ type requestHeaders struct {
 
 // NewClient returns a new Vault client with a copy of the given configuration
 func NewClient(configuration Configuration) (*Client, error) {
+	// Set defaults for uninitialized configuration fields
+	configuration.ApplyDefaults()
+
 	c := Client{
 		configuration: configuration,
 

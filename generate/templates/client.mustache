@@ -4,6 +4,7 @@ package {{packageName}}
 import (
 	"bytes"
 	"context"
+	"crypto/tls"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -12,6 +13,7 @@ import (
 	"sync"
 
 	"github.com/hashicorp/go-retryablehttp"
+	"github.com/hashicorp/go-rootcerts"
 
 	"golang.org/x/exp/slices"
 )
@@ -84,6 +86,60 @@ func NewClient(configuration Configuration) (*Client, error) {
 {{/apiInfo}}
 
 	return &c, nil
+}
+
+// applyTLSOptionsToClient applies TLSOptions to the given client
+func applyTLSOptionsToClient(client *http.Client, options TLSOptions) error {
+	clientTLSConfig := client.Transport.(*http.Transport).TLSClientConfig
+
+	var clientCert tls.Certificate
+	foundClientCert := false
+
+	switch {
+	case t.ClientCert != "" && t.ClientKey != "":
+		var err error
+		clientCert, err = tls.LoadX509KeyPair(t.ClientCert, t.ClientKey)
+		if err != nil {
+			return err
+		}
+		foundClientCert = true
+		c.curlClientCert = t.ClientCert
+		c.curlClientKey = t.ClientKey
+	case t.ClientCert != "" || t.ClientKey != "":
+		return fmt.Errorf("both client cert and client key must be provided")
+	}
+
+	if t.CACert != "" || len(t.CACertBytes) != 0 || t.CAPath != "" {
+		c.curlCACert = t.CACert
+		c.curlCAPath = t.CAPath
+		rootConfig := &rootcerts.Config{
+			CAFile:        t.CACert,
+			CACertificate: t.CACertBytes,
+			CAPath:        t.CAPath,
+		}
+		if err := rootcerts.ConfigureTLS(clientTLSConfig, rootConfig); err != nil {
+			return err
+		}
+	}
+
+	if t.Insecure {
+		clientTLSConfig.InsecureSkipVerify = true
+	}
+
+	if foundClientCert {
+		// We use this function to ignore the server's preferential list of
+		// CAs, otherwise any CA used for the cert auth backend must be in the
+		// server's CA pool
+		clientTLSConfig.GetClientCertificate = func(*tls.CertificateRequestInfo) (*tls.Certificate, error) {
+			return &clientCert, nil
+		}
+	}
+
+	if t.TLSServerName != "" {
+		clientTLSConfig.ServerName = t.TLSServerName
+	}
+
+	return nil
 }
 
 // SetToken sets a token to be used with all subsequent requests
@@ -264,4 +320,49 @@ func (c *Client) copyRequestHeaders() requestHeaders {
 	defer c.requestHeadersLock.RUnlock()
 
 	return c.requestHeaders
+}
+
+// applyTLSOptions applies TLSOptions to the given tls.Config object
+func applyTLSOptions(out *tls.Config, options TLSOptions) error {
+	switch {
+	case len(options.ClientCertFile) != 0 && len(options.ClientCertKey) != 0:
+		clientCert, err := tls.LoadX509KeyPair(
+			options.ClientCertFile,
+			options.ClientCertKey,
+		)
+		if err != nil {
+			return err
+		}
+
+		// We use this function to ignore the server's preferential list of
+		// CAs, otherwise any CA used for the cert auth backend must be in the
+		// server's CA pool
+		out.GetClientCertificate = func(*tls.CertificateRequestInfo) (*tls.Certificate, error) {
+			return &clientCert, nil
+		}
+	case len(options.ClientCertFile) != 0 || len(options.ClientCertKey) != 0:
+		return fmt.Errorf("both client cert and client key must be provided")
+	}
+
+	if len(options.CAFile) != 0 || len(options.CACertificate) != 0 || len(options.CAPath) != 0 {
+		rootCertConfig := &rootcerts.Config{
+			CAFile:        options.CAFile,
+			CACertificate: options.CACertificate,
+			CAPath:        options.CAPath,
+		}
+		if err := rootcerts.ConfigureTLS(out, rootCertConfig); err != nil {
+			return err
+		}
+	}
+
+	if options.InsecureSkipVerify {
+		out.InsecureSkipVerify = options.InsecureSkipVerify
+	}
+
+
+	if options.TLSServerName != "" {
+		out.ServerName = options.TLSServerName
+	}
+
+	return nil
 }

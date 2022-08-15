@@ -81,6 +81,35 @@ type RetryOptions struct {
 	Logger interface{}
 }
 
+type TLSOptions struct {
+	// CAFile is a path to a PEM-encoded CA certificate file or bundle,
+	// which the client will use to verify the Vault server SSL certificate.
+	// Default: "", takes precedence over 'CAPath' and 'CACertificate'.
+	CAFile string
+
+	// CACertificate is a PEM-encoded CA certificate or bundle,
+	// which the client will use to verify the Vault server SSL certificate.
+	// Default: nil, takes precedence over 'CAPath'.
+	CACertificate []byte
+
+	// CAPath is a path to a directory populated with PEM-encoded certificates,
+	// which the client will use to verify the Vault server SSL certificate.
+	// Default: ""
+	CAPath string
+
+	// ClientCertFile is the path to the certificate for Vault communication
+	ClientCertFile string
+
+	// ClientCertKey is the path to the private key for Vault communication
+	ClientCertKey string
+
+	// TLSServerName, if set, is used as the SNI host when connecting via TLS
+	TLSServerName string
+
+	// InsecureSkipVerify enables or disables SSL verification
+	InsecureSkipVerify bool
+}
+
 // DefaultConfiguration returns the default configuration for the client. It is
 // recommended to start with this configuration and modify it as needed.
 func DefaultConfiguration() Configuration {

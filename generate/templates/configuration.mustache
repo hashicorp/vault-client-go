@@ -50,7 +50,7 @@ type RetryOptions struct {
 	RetryWaitMax time.Duration
 
 	// RetryMax controls the maximum number of times to retry when a 5xx or 412
-	// error occurs. Set to 0 to disable retrying.
+	// error occurs. Set to -1 to disable retrying.
 	// Default: 2 (for a total of three tries)
 	RetryMax int
 
@@ -148,6 +148,10 @@ func (c *Configuration) ApplyDefaults() {
 
 	if c.RetryOptions.RetryWaitMax == 0 {
 		c.RetryOptions.RetryWaitMax = defaults.RetryOptions.RetryWaitMax
+	}
+
+	if c.RetryOptions.RetryMax == 0 {
+		c.RetryOptions.RetryMax = defaults.RetryOptions.RetryMax
 	}
 
 	if c.RetryOptions.CheckRetry == nil {

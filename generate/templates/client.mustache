@@ -88,60 +88,6 @@ func NewClient(configuration Configuration) (*Client, error) {
 	return &c, nil
 }
 
-// applyTLSOptionsToClient applies TLSOptions to the given client
-func applyTLSOptionsToClient(client *http.Client, options TLSOptions) error {
-	clientTLSConfig := client.Transport.(*http.Transport).TLSClientConfig
-
-	var clientCert tls.Certificate
-	foundClientCert := false
-
-	switch {
-	case t.ClientCert != "" && t.ClientKey != "":
-		var err error
-		clientCert, err = tls.LoadX509KeyPair(t.ClientCert, t.ClientKey)
-		if err != nil {
-			return err
-		}
-		foundClientCert = true
-		c.curlClientCert = t.ClientCert
-		c.curlClientKey = t.ClientKey
-	case t.ClientCert != "" || t.ClientKey != "":
-		return fmt.Errorf("both client cert and client key must be provided")
-	}
-
-	if t.CACert != "" || len(t.CACertBytes) != 0 || t.CAPath != "" {
-		c.curlCACert = t.CACert
-		c.curlCAPath = t.CAPath
-		rootConfig := &rootcerts.Config{
-			CAFile:        t.CACert,
-			CACertificate: t.CACertBytes,
-			CAPath:        t.CAPath,
-		}
-		if err := rootcerts.ConfigureTLS(clientTLSConfig, rootConfig); err != nil {
-			return err
-		}
-	}
-
-	if t.Insecure {
-		clientTLSConfig.InsecureSkipVerify = true
-	}
-
-	if foundClientCert {
-		// We use this function to ignore the server's preferential list of
-		// CAs, otherwise any CA used for the cert auth backend must be in the
-		// server's CA pool
-		clientTLSConfig.GetClientCertificate = func(*tls.CertificateRequestInfo) (*tls.Certificate, error) {
-			return &clientCert, nil
-		}
-	}
-
-	if t.TLSServerName != "" {
-		clientTLSConfig.ServerName = t.TLSServerName
-	}
-
-	return nil
-}
-
 // SetToken sets a token to be used with all subsequent requests
 func (c *Client) SetToken(token string) {
 	/* */ c.requestHeadersLock.Lock()

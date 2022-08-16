@@ -278,13 +278,13 @@ func (c *Client) copyRequestHeaders() requestHeaders {
 	return c.requestHeaders
 }
 
-// applyTLSOptions applies the given TLS options to the given *tls.Config object
-func applyTLSOptions(to *tls.Config, options TLSOptions) error {
-	if options.CAFile != "" || options.CAPath != "" || len(options.CACertificate) != 0 {
+// applyTLSOptions applies the given TLS from to the given *tls.Config object
+func applyTLSOptions(to *tls.Config, from TLSOptions) error {
+	if from.CAFile != "" || from.CAPath != "" || len(from.CACertificate) != 0 {
 		rootCertificateConfig := rootcerts.Config{
-			CAFile:        options.CAFile,
-			CACertificate: options.CACertificate,
-			CAPath:        options.CAPath,
+			CAFile:        from.CAFile,
+			CACertificate: from.CACertificate,
+			CAPath:        from.CAPath,
 		}
 		if err := rootcerts.ConfigureTLS(
 			to,
@@ -295,16 +295,16 @@ func applyTLSOptions(to *tls.Config, options TLSOptions) error {
 	}
 
 	switch {
-	case options.ClientCertFile != "" && options.ClientCertKey != "":
+	case from.ClientCertFile != "" && from.ClientCertKey != "":
 		clientCertificate, err := tls.LoadX509KeyPair(
-			options.ClientCertFile,
-			options.ClientCertKey,
+			from.ClientCertFile,
+			from.ClientCertKey,
 		)
 		if err != nil {
 			return fmt.Errorf(
 				"could not load client certificate from certificate file %q and key file %q: %w",
-				options.ClientCertFile,
-				options.ClientCertKey,
+				from.ClientCertFile,
+				from.ClientCertKey,
 				err,
 			)
 		}
@@ -316,19 +316,19 @@ func applyTLSOptions(to *tls.Config, options TLSOptions) error {
 			return &clientCertificate, nil
 		}
 
-	case options.ClientCertFile != "":
-		return fmt.Errorf("client certificate file %q is specified but certificate key is missing", options.ClientCertFile)
+	case from.ClientCertFile != "":
+		return fmt.Errorf("client certificate file %q is specified but certificate key is missing", from.ClientCertFile)
 
-	case options.ClientCertKey != "":
-		return fmt.Errorf("client certificate key %q is specified but certificate file is missing", options.ClientCertKey)
+	case from.ClientCertKey != "":
+		return fmt.Errorf("client certificate key %q is specified but certificate file is missing", from.ClientCertKey)
 	}
 
-	if options.InsecureSkipVerify {
-		to.InsecureSkipVerify = options.InsecureSkipVerify
+	if from.InsecureSkipVerify {
+		to.InsecureSkipVerify = from.InsecureSkipVerify
 	}
 
-	if options.ServerName != "" {
-		to.ServerName = options.ServerName
+	if from.ServerName != "" {
+		to.ServerName = from.ServerName
 	}
 
 	return nil

@@ -81,6 +81,13 @@ func NewClient(configuration Configuration) (*Client, error) {
 
 	c.parsedBaseAddress = *a
 
+	transport, ok := c.client.Transport.(*http.Transport)
+	if !ok {
+		return nil, fmt.Errorf("the configured base client lacks a valid *http.Transport")
+	}
+
+	applyTLSOptions(transport.TLSClientConfig, configuration.TLSOptions)
+
 	c.Auth = Auth{
 		client: &c,
 	}

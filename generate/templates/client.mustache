@@ -77,7 +77,7 @@ func NewClient(configuration Configuration) (*Client, error) {
 
 	transport, ok := c.client.Transport.(*http.Transport);
 	if !ok {
-		return fmt.Errorf("the configured client lacks a valid *http.Transport")
+		return nil, fmt.Errorf("the configured base client lacks a valid *http.Transport")
 	}
 
 	applyTLSOptions(transport.TLSClientConfig, configuration.TLSOptions)

@@ -309,7 +309,7 @@ func applyTLS(to *tls.Config, options TLSOptions) error {
 			CACertificate: options.CACertificate,
 			CAPath:        options.CAPath,
 		}
-		if err := rootcerts.applyTLS(to, rootCertificateConfig); err != nil {
+		if err := rootcerts.ConfigureTLS(to, rootCertificateConfig); err != nil {
 			return fmt.Errorf(
 				"could not configure root certificate with %q (file), %q (directory path), %d (certificate bytes): %w",
 				options.CAFile,

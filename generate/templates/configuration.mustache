@@ -43,8 +43,8 @@ type Configuration struct {
 }
 
 
-// TLSOptions are a set of options used to configure TLS in the internal base
-// http.Client.
+// TLSOptions are a set of options used to configure TLS in the internal
+// base http.Client.
 type TLSOptions struct {
 	// CAFile is a path to a PEM-encoded CA certificate file or bundle,
 	// which the client will use to verify the Vault server SSL certificate.
@@ -62,18 +62,26 @@ type TLSOptions struct {
 	CAPath string
 
 	// ClientCertFile is the path to the certificate for Vault communication
+	// Default: ""
 	ClientCertFile string
 
 	// ClientCertKey is the path to the private key for Vault communication
+	// Default: ""
 	ClientCertKey string
 
-	// TLSServerName, if set, is used as the SNI host when connecting via TLS
-	TLSServerName string
+	// ServerName is used to verify the hostname on the returned certificates
+	// unless InsecureSkipVerify is given.
+	// Default: ""
+	ServerName string
 
-	// InsecureSkipVerify enables or disables SSL verification
+ 	// InsecureSkipVerify controls whether the client verifies the server's
+	// certificate chain and hostname.
+	// Default: false
 	InsecureSkipVerify bool
 }
 
+// RetryOptions are a set of options used to configure the internal
+// go-retryablehttp client.
 type RetryOptions struct {
 	// RetryWaitMin controls the minimum time to wait before retrying when
 	// a 5xx or 412 error occurs.

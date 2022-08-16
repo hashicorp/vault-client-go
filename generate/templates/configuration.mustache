@@ -46,20 +46,22 @@ type Configuration struct {
 // TLSOptions are a set of options used to configure TLS in the internal
 // base http.Client.
 type TLSOptions struct {
-	// CAFile is a path to a PEM-encoded CA certificate file or bundle,
-	// which the client will use to verify the Vault server SSL certificate.
-	// Default: "", takes precedence over 'CAPath' and 'CACertificate'.
-	CAFile string
+	// VaultServerCAFile is a path to a PEM-encoded CA certificate file or
+	// bundle, which the client will use to verify the Vault server TLS
+	// certificate.
+	// Default: "", takes precedence over other VaultServer* variables.
+	VaultServerCAFile string
 
-	// CACertificate is a PEM-encoded CA certificate or bundle,
-	// which the client will use to verify the Vault server SSL certificate.
-	// Default: nil, takes precedence over 'CAPath'.
-	CACertificate []byte
+	// VaultServerCACertificate is a PEM-encoded CA certificate or bundle,
+	// which the client will use to verify the Vault server TLS certificate.
+	// Default: nil, takes precedence over VaultServerCAPath.
+	VaultServerCACertificate []byte
 
-	// CAPath is a path to a directory populated with PEM-encoded certificates,
-	// which the client will use to verify the Vault server SSL certificate.
+	// VaultServerCAPath is a path to a directory populated with PEM-encoded
+	// certificates, which the client will use to verify the Vault server TLS
+	// certificate.
 	// Default: ""
-	CAPath string
+	VaultServerCAPath string
 
 	// ClientCertFile is the path to the certificate for Vault communication
 	// Default: ""

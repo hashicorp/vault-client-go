@@ -292,11 +292,11 @@ func (c *Client) copyRequestHeaders() requestHeaders {
 
 // applyTLSOptions applies the given TLS from to the given *tls.Config object
 func applyTLSOptions(to *tls.Config, from TLSOptions) error {
-	if from.CAFile != "" || from.CAPath != "" || len(from.CACertificate) != 0 {
+	if len(from.VaultServerCACertificate) != 0 || from.VaultServerCAFile != "" || from.VaultServerCAPath != "" {
 		rootCertificateConfig := rootcerts.Config{
-			CAFile:        from.CAFile,
-			CACertificate: from.CACertificate,
-			CAPath:        from.CAPath,
+			CAFile:        from.VaultServerCAFile,
+			CACertificate: from.VaultServerCACertificate,
+			CAPath:        from.VaultServerCAPath,
 		}
 		if err := rootcerts.ConfigureTLS(
 			to,

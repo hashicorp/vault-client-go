@@ -29,12 +29,12 @@ type Configuration struct {
 	// Default: http://127.0.0.1:8200
 	BaseAddress string
 
-	// HTTPClient is the HTTP client to use for all API requests.
-	// DefaultConfiguration() sets reasonable defaults for the HTTPClient and
+	// BaseClient is the HTTP client to use for all API requests.
+	// DefaultConfiguration() sets reasonable defaults for the BaseClient and
 	// its associated http.Transport. If you must modify Vault's defaults, it
 	// is suggested that you start with that client and modify it as needed
 	// rather than starting with an empty client or http.DefaultClient.
-	HTTPClient *http.Client
+	BaseClient *http.Client
 
 	// RetryOptions are a set of options used to configure the internal
 	// go-retryablehttp client.
@@ -63,7 +63,7 @@ type RetryOptions struct {
 	RetryWaitMax time.Duration
 
 	// RetryMax controls the maximum number of times to retry when a 5xx or 412
-	// error occurs. Set to 0 to disable retrying.
+	// error occurs. Set to -1 to disable retrying.
 	// Default: 2 (for a total of three tries)
 	RetryMax int
 
@@ -139,7 +139,7 @@ func DefaultConfiguration() Configuration {
 
 	return Configuration{
 		BaseAddress: "http://127.0.0.1:8200",
-		HTTPClient:  defaultClient,
+		BaseClient:  defaultClient,
 		RetryOptions: RetryOptions{
 			RetryWaitMin: time.Millisecond * 1000,
 			RetryWaitMax: time.Millisecond * 1500,
@@ -166,4 +166,49 @@ func DefaultRetryPolicy(ctx context.Context, resp *http.Response, err error) (bo
 	}
 
 	return false, nil
+}
+
+// SetDefaultsForUninitialized sets default values for uninitialized fields.
+func (c *Configuration) SetDefaultsForUninitialized() {
+	defaults := DefaultConfiguration()
+
+	if c.BaseAddress == "" {
+		c.BaseAddress = defaults.BaseAddress
+	}
+
+	if c.BaseClient == nil {
+		c.BaseClient = defaults.BaseClient
+	}
+
+	if c.BaseClient.Transport == nil {
+		c.BaseClient.Transport = defaults.BaseClient.Transport
+	}
+
+	if c.RetryOptions.RetryWaitMin == 0 {
+		c.RetryOptions.RetryWaitMin = defaults.RetryOptions.RetryWaitMin
+	}
+
+	if c.RetryOptions.RetryWaitMax == 0 {
+		c.RetryOptions.RetryWaitMax = defaults.RetryOptions.RetryWaitMax
+	}
+
+	if c.RetryOptions.RetryMax == 0 {
+		c.RetryOptions.RetryMax = defaults.RetryOptions.RetryMax
+	}
+
+	if c.RetryOptions.CheckRetry == nil {
+		c.RetryOptions.CheckRetry = defaults.RetryOptions.CheckRetry
+	}
+
+	if c.RetryOptions.Backoff == nil {
+		c.RetryOptions.Backoff = defaults.RetryOptions.Backoff
+	}
+
+	if c.RetryOptions.ErrorHandler == nil {
+		c.RetryOptions.ErrorHandler = defaults.RetryOptions.ErrorHandler
+	}
+
+	if c.RetryOptions.Logger == nil {
+		c.RetryOptions.Logger = defaults.RetryOptions.Logger
+	}
 }

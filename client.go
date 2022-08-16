@@ -86,7 +86,7 @@ func NewClient(configuration Configuration) (*Client, error) {
 
 	if err := applyTLSOptions(
 		c.client.Transport.(*http.Transport).TLSClientConfig, // apply to
-		configuration.TLS, // apply from
+		configuration.TLSOptions,                             // apply from
 	); err != nil {
 		return nil, fmt.Errorf("tls configuration error: %w", err)
 	}

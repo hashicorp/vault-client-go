@@ -38,7 +38,7 @@ type Configuration struct {
 
 	// TLS are a set of options used to configure TLS in the internal
 	// base http.Client.
-	TLS TLSOptions
+	TLSOptions TLSOptions
 
 	// RetryOptions are a set of options used to configure the internal
 	// go-retryablehttp client.

@@ -31,9 +31,9 @@ type Configuration struct {
 	// base http.Client.
 	TLS TLSOptions
 
-	// Retry are a set of options used to configure the internal
+	// RetryOptions are a set of options used to configure the internal
 	// go-retryablehttp client.
-	Retry RetryOptions
+	RetryOptions RetryOptions
 
 	// RateLimiter controls how frequently requests are allowed to happen.
 	// If this pointer is nil, then there will be no limit set. Note that an

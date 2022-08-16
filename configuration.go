@@ -57,12 +57,12 @@ type TLSOptions struct {
 	// VaultServerCAFile is a path to a PEM-encoded CA certificate file or
 	// bundle, which the client will use to verify the Vault server TLS
 	// certificate.
-	// Default: "", takes precedence over 'CAPath' and 'CACertificate'.
+	// Default: "", takes precedence over other VaultServer* variables.
 	VaultServerCAFile string
 
 	// VaultServerCACertificate is a PEM-encoded CA certificate or bundle,
 	// which the client will use to verify the Vault server TLS certificate.
-	// Default: nil, takes precedence over 'VaultServerCAPath'.
+	// Default: nil, takes precedence over VaultServerCAPath.
 	VaultServerCACertificate []byte
 
 	// VaultServerCAPath is a path to a directory populated with PEM-encoded

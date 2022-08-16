@@ -81,7 +81,7 @@ func NewClient(configuration Configuration) (*Client, error) {
 	}
 
 	if err := applyTLSOptions(transport.TLSClientConfig, configuration.TLSOptions); err != nil {
-		return err
+		return nil, fmt.Errorf("tls configuration error: %w", err)
 	}
 
 {{#apiInfo}}

@@ -75,7 +75,7 @@ func NewClient(configuration Configuration) (*Client, error) {
 
 	c.parsedBaseAddress = *a
 
-	if err := applyTLS(
+	if err := applyTLSOptions(
 		c.client.Transport.(*http.Transport).TLSClientConfig, // apply to
 		configuration.TLSOptions,                             // apply from
 	); err != nil {
@@ -275,8 +275,8 @@ func (c *Client) copyRequestHeaders() requestHeaders {
 	return c.requestHeaders
 }
 
-// applyTLS applies the given TLS options to the given *tls.Config object
-func applyTLS(to *tls.Config, options TLSOptions) error {
+// applyTLSOptions applies the given TLS options to the given *tls.Config object
+func applyTLSOptions(to *tls.Config, options TLSOptions) error {
 	switch {
 	case len(options.ClientCertFile) != 0 && len(options.ClientCertKey) != 0:
 		clientCertificate, err := tls.LoadX509KeyPair(

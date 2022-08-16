@@ -305,8 +305,8 @@ func applyTLSOptions(to *tls.Config, options TLSOptions) error {
 		}
 
 		// Set this function to ignore the server's preferential list of CAs,
-		// otherwise any CA used for the cert auth backend must be in the
-		// server's CA pool
+		// otherwise any CA used for the certificate auth backend must be in
+		// the server's CA pool
 		to.GetClientCertificate = func(*tls.CertificateRequestInfo) (*tls.Certificate, error) {
 			return &clientCertificate, nil
 		}

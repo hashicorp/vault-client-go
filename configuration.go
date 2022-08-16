@@ -36,19 +36,50 @@ type Configuration struct {
 	// rather than starting with an empty client or http.DefaultClient.
 	BaseClient *http.Client
 
-	// RetryOptions are a set of options used to configure the internal
-	// go-retryablehttp client.
-	RetryOptions RetryOptions
-
 	// TLSOptions are a set of options used to configure TLS in the internal
 	// base http.Client.
 	TLSOptions TLSOptions
+
+	// RetryOptions are a set of options used to configure the internal
+	// go-retryablehttp client.
+	RetryOptions RetryOptions
 
 	// RateLimiter controls how frequently requests are allowed to happen.
 	// If this pointer is nil, then there will be no limit set. Note that an
 	// empty struct rate.Limiter is equivalent blocking all requests.
 	// Default: nil
 	RateLimiter *rate.Limiter
+}
+
+// TLSOptions are a set of options used to configure TLS in the internal base
+// http.Client.
+type TLSOptions struct {
+	// CAFile is a path to a PEM-encoded CA certificate file or bundle,
+	// which the client will use to verify the Vault server SSL certificate.
+	// Default: "", takes precedence over 'CAPath' and 'CACertificate'.
+	CAFile string
+
+	// CACertificate is a PEM-encoded CA certificate or bundle,
+	// which the client will use to verify the Vault server SSL certificate.
+	// Default: nil, takes precedence over 'CAPath'.
+	CACertificate []byte
+
+	// CAPath is a path to a directory populated with PEM-encoded certificates,
+	// which the client will use to verify the Vault server SSL certificate.
+	// Default: ""
+	CAPath string
+
+	// ClientCertFile is the path to the certificate for Vault communication
+	ClientCertFile string
+
+	// ClientCertKey is the path to the private key for Vault communication
+	ClientCertKey string
+
+	// TLSServerName, if set, is used as the SNI host when connecting via TLS
+	TLSServerName string
+
+	// InsecureSkipVerify enables or disables SSL verification
+	InsecureSkipVerify bool
 }
 
 type RetryOptions struct {
@@ -83,35 +114,6 @@ type RetryOptions struct {
 	// Logger is a custom retryablehttp.Logger or retryablehttp.LeveledLogger.
 	// Default: nil
 	Logger interface{}
-}
-
-type TLSOptions struct {
-	// CAFile is a path to a PEM-encoded CA certificate file or bundle,
-	// which the client will use to verify the Vault server SSL certificate.
-	// Default: "", takes precedence over 'CAPath' and 'CACertificate'.
-	CAFile string
-
-	// CACertificate is a PEM-encoded CA certificate or bundle,
-	// which the client will use to verify the Vault server SSL certificate.
-	// Default: nil, takes precedence over 'CAPath'.
-	CACertificate []byte
-
-	// CAPath is a path to a directory populated with PEM-encoded certificates,
-	// which the client will use to verify the Vault server SSL certificate.
-	// Default: ""
-	CAPath string
-
-	// ClientCertFile is the path to the certificate for Vault communication
-	ClientCertFile string
-
-	// ClientCertKey is the path to the private key for Vault communication
-	ClientCertKey string
-
-	// TLSServerName, if set, is used as the SNI host when connecting via TLS
-	TLSServerName string
-
-	// InsecureSkipVerify enables or disables SSL verification
-	InsecureSkipVerify bool
 }
 
 // DefaultConfiguration returns the default configuration for the client. It is

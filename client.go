@@ -292,55 +292,55 @@ func (c *Client) copyRequestHeaders() requestHeaders {
 
 // applyTLSOptions applies the given TLS options to the given *tls.Config object
 func applyTLSOptions(to *tls.Config, options TLSOptions) error {
+	if options.CAFile != "" || options.CAPath != "" || len(options.CACertificate) != 0 {
+		rootCertificateConfig := rootcerts.Config{
+			CAFile:        options.CAFile,
+			CACertificate: options.CACertificate,
+			CAPath:        options.CAPath,
+		}
+		if err := rootcerts.ConfigureTLS(
+			to,
+			&rootCertificateConfig,
+		); err != nil {
+			return fmt.Errorf("could not configure root certificate: %w", err)
+		}
+	}
+
 	switch {
-	case len(options.ClientCertFile) != 0 && len(options.ClientCertKey) != 0:
+	case options.ClientCertFile != "" && options.ClientCertKey != "":
 		clientCertificate, err := tls.LoadX509KeyPair(
 			options.ClientCertFile,
 			options.ClientCertKey,
 		)
 		if err != nil {
 			return fmt.Errorf(
-				"could not load client certificate from %q (cert file) and %q (key file): %w",
+				"could not load client certificate from certificate file %q and key file %q: %w",
 				options.ClientCertFile,
 				options.ClientCertKey,
 				err,
 			)
 		}
 
-		// Set this function to ignore the server's preferential list of CAs,
-		// otherwise any CA used for the certificate auth backend must be in
+		// Set this function to ignore the server's preferential list of CAs.
+		// Otherwise, any CA used for the certificate auth backend must be in
 		// the server's CA pool
 		to.GetClientCertificate = func(*tls.CertificateRequestInfo) (*tls.Certificate, error) {
 			return &clientCertificate, nil
 		}
 
-	case len(options.ClientCertFile) != 0 || len(options.ClientCertKey) != 0:
-		return fmt.Errorf("both client certificate and private key must be provided")
-	}
+	case options.ClientCertFile != "":
+		return fmt.Errorf("client certificate file %q is specified but certificate key is missing", options.ClientCertFile)
 
-	if len(options.CAFile) != 0 || len(options.CACertificate) != 0 || len(options.CAPath) != 0 {
-		rootCertificateConfig := &rootcerts.Config{
-			CAFile:        options.CAFile,
-			CACertificate: options.CACertificate,
-			CAPath:        options.CAPath,
-		}
-		if err := rootcerts.ConfigureTLS(to, rootCertificateConfig); err != nil {
-			return fmt.Errorf(
-				"could not configure root certificate with %q (file), %q (directory path), %d (certificate bytes): %w",
-				options.CAFile,
-				options.CAPath,
-				len(options.CACertificate),
-				err,
-			)
-		}
+	case options.ClientCertKey != "":
+		return fmt.Errorf("client certificate key %q is specified but certificate file is missing", options.ClientCertKey)
 	}
 
 	if options.InsecureSkipVerify {
 		to.InsecureSkipVerify = options.InsecureSkipVerify
 	}
 
-	if options.TLSServerName != "" {
-		to.ServerName = options.TLSServerName
+	if options.ServerName != "" {
+		to.ServerName = options.ServerName
 	}
 
 	return nil

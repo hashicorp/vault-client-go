@@ -75,12 +75,10 @@ func NewClient(configuration Configuration) (*Client, error) {
 
 	c.parsedBaseAddress = *a
 
-	transport, ok := c.client.Transport.(*http.Transport)
-	if !ok {
-		return nil, fmt.Errorf("the configured base client lacks a valid *http.Transport")
-	}
-
-	if err := applyTLSOptions(transport.TLSClientConfig, configuration.TLSOptions); err != nil {
+	if err := applyTLS(
+		c.client.Transport.(*http.Transport).TLSClientConfig, // apply to
+		configuration.TLSOptions,                             // apply from
+	); err != nil {
 		return nil, fmt.Errorf("tls configuration error: %w", err)
 	}
 
@@ -277,8 +275,8 @@ func (c *Client) copyRequestHeaders() requestHeaders {
 	return c.requestHeaders
 }
 
-// applyTLSOptions applies TLSOptions to the given tls.Config object
-func applyTLSOptions(out *tls.Config, options TLSOptions) error {
+// applyTLS applies the given TLS options to the given *tls.Config object
+func applyTLS(to *tls.Config, options TLSOptions) error {
 	switch {
 	case len(options.ClientCertFile) != 0 && len(options.ClientCertKey) != 0:
 		clientCertificate, err := tls.LoadX509KeyPair(
@@ -287,19 +285,20 @@ func applyTLSOptions(out *tls.Config, options TLSOptions) error {
 		)
 		if err != nil {
 			return fmt.Errorf(
-				"could not load client certificate from %q (cert) and %q (key): %w",
+				"could not load client certificate from %q (cert file) and %q (key file): %w",
 				options.ClientCertFile,
 				options.ClientCertKey,
 				err,
 			)
 		}
 
-		// We use this function to ignore the server's preferential list of
-		// CAs, otherwise any CA used for the cert auth backend must be in the
+		// Set this function to ignore the server's preferential list of CAs,
+		// otherwise any CA used for the cert auth backend must be in the
 		// server's CA pool
-		out.GetClientCertificate = func(*tls.CertificateRequestInfo) (*tls.Certificate, error) {
+		to.GetClientCertificate = func(*tls.CertificateRequestInfo) (*tls.Certificate, error) {
 			return &clientCertificate, nil
 		}
+
 	case len(options.ClientCertFile) != 0 || len(options.ClientCertKey) != 0:
 		return fmt.Errorf("both client certificate and private key must be provided")
 	}
@@ -310,7 +309,7 @@ func applyTLSOptions(out *tls.Config, options TLSOptions) error {
 			CACertificate: options.CACertificate,
 			CAPath:        options.CAPath,
 		}
-		if err := rootcerts.ConfigureTLS(out, rootCertificateConfig); err != nil {
+		if err := rootcerts.applyTLS(to, rootCertificateConfig); err != nil {
 			return fmt.Errorf(
 				"could not configure root certificate with %q (file), %q (directory path), %d (certificate bytes): %w",
 				options.CAFile,
@@ -322,11 +321,11 @@ func applyTLSOptions(out *tls.Config, options TLSOptions) error {
 	}
 
 	if options.InsecureSkipVerify {
-		out.InsecureSkipVerify = options.InsecureSkipVerify
+		to.InsecureSkipVerify = options.InsecureSkipVerify
 	}
 
 	if options.TLSServerName != "" {
-		out.ServerName = options.TLSServerName
+		to.ServerName = options.TLSServerName
 	}
 
 	return nil

@@ -67,13 +67,13 @@ func NewClient(configuration Configuration) (*Client, error) {
 		// retryablehttp wrapper around the HTTP client
 		clientWithRetries: &retryablehttp.Client{
 			HTTPClient:   configuration.BaseClient,
-			Logger:       configuration.RetryOptions.Logger,
-			RetryWaitMin: configuration.RetryOptions.RetryWaitMin,
-			RetryWaitMax: configuration.RetryOptions.RetryWaitMax,
-			RetryMax:     configuration.RetryOptions.RetryMax,
-			CheckRetry:   configuration.RetryOptions.CheckRetry,
-			Backoff:      configuration.RetryOptions.Backoff,
-			ErrorHandler: configuration.RetryOptions.ErrorHandler,
+			Logger:       configuration.Retry.Logger,
+			RetryWaitMin: configuration.Retry.RetryWaitMin,
+			RetryWaitMax: configuration.Retry.RetryWaitMax,
+			RetryMax:     configuration.Retry.RetryMax,
+			CheckRetry:   configuration.Retry.CheckRetry,
+			Backoff:      configuration.Retry.Backoff,
+			ErrorHandler: configuration.Retry.ErrorHandler,
 		},
 	}
 
@@ -86,7 +86,7 @@ func NewClient(configuration Configuration) (*Client, error) {
 
 	if err := applyTLSOptions(
 		c.client.Transport.(*http.Transport).TLSClientConfig, // apply to
-		configuration.TLSOptions,                             // apply from
+		configuration.TLS, // apply from
 	); err != nil {
 		return nil, fmt.Errorf("tls configuration error: %w", err)
 	}

@@ -86,7 +86,9 @@ func NewClient(configuration Configuration) (*Client, error) {
 		return nil, fmt.Errorf("the configured base client lacks a valid *http.Transport")
 	}
 
-	applyTLSOptions(transport.TLSClientConfig, configuration.TLSOptions)
+	if err := applyTLSOptions(transport.TLSClientConfig, configuration.TLSOptions); err != nil {
+		return nil, fmt.Errorf("tls configuration error: %w", err)
+	}
 
 	c.Auth = Auth{
 		client: &c,
@@ -291,32 +293,43 @@ func (c *Client) copyRequestHeaders() requestHeaders {
 func applyTLSOptions(out *tls.Config, options TLSOptions) error {
 	switch {
 	case len(options.ClientCertFile) != 0 && len(options.ClientCertKey) != 0:
-		clientCert, err := tls.LoadX509KeyPair(
+		clientCertificate, err := tls.LoadX509KeyPair(
 			options.ClientCertFile,
 			options.ClientCertKey,
 		)
 		if err != nil {
-			return err
+			return fmt.Errorf(
+				"could not load client certificate from %q (cert) and %q (key): %w",
+				options.ClientCertFile,
+				options.ClientCertKey,
+				err,
+			)
 		}
 
 		// We use this function to ignore the server's preferential list of
 		// CAs, otherwise any CA used for the cert auth backend must be in the
 		// server's CA pool
 		out.GetClientCertificate = func(*tls.CertificateRequestInfo) (*tls.Certificate, error) {
-			return &clientCert, nil
+			return &clientCertificate, nil
 		}
 	case len(options.ClientCertFile) != 0 || len(options.ClientCertKey) != 0:
-		return fmt.Errorf("both client cert and client key must be provided")
+		return fmt.Errorf("both client certificate and private key must be provided")
 	}
 
 	if len(options.CAFile) != 0 || len(options.CACertificate) != 0 || len(options.CAPath) != 0 {
-		rootCertConfig := &rootcerts.Config{
+		rootCertificateConfig := &rootcerts.Config{
 			CAFile:        options.CAFile,
 			CACertificate: options.CACertificate,
 			CAPath:        options.CAPath,
 		}
-		if err := rootcerts.ConfigureTLS(out, rootCertConfig); err != nil {
-			return err
+		if err := rootcerts.ConfigureTLS(out, rootCertificateConfig); err != nil {
+			return fmt.Errorf(
+				"could not configure root certificate with %q (file), %q (directory path), %d (certificate bytes): %w",
+				options.CAFile,
+				options.CAPath,
+				len(options.CACertificate),
+				err,
+			)
 		}
 	}
 

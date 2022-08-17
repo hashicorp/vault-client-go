@@ -42,8 +42,14 @@ type Client struct {
 
 // requestHeaders contains headers that will be added to each request
 type requestHeaders struct {
-	token     string
-	namespace string
+	token              string
+	namespace          string
+	userDefinedHeaders string
+
+	// This error is set in client.WithX methods and checked in client.NewRequest.
+	// Since client.WithX methods are used for method chaining, they cannot
+	// return errors.
+	validationError error
 }
 
 // NewClient returns a new Vault client with a copy of the given configuration

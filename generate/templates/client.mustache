@@ -124,6 +124,16 @@ func (c *Client) SetNamespace(namespace string) {
 	c.requestHeaders.namespace = namespace
 }
 
+// ClearNamespace clears the namespace from all subsequent requests.
+// See https://www.vaultproject.io/docs/enterprise/namespaces for more info on
+// namespaces.
+func (c *Client) ClearNamespace() {
+	/* */ c.requestHeadersLock.Lock()
+	defer c.requestHeadersLock.Unlock()
+
+	c.requestHeaders.namespace = ""
+}
+
 // WithNamespace returns a shallow copy of the client with the namespace set to
 // the given value, use "" to clear the namespace:
 //   client.WithNamespace("ns").System.Get...  // use "ns" namespace

@@ -119,7 +119,8 @@ func (c *Client) WithToken(token string) *Client {
 	return copy
 }
 
-// SetNamespace sets the namespace to be used in the with all subsequent requests
+// SetNamespace sets the namespace to be used in the with all subsequent
+// requests, set to "" to clear the namespace.
 // (see https://www.vaultproject.io/docs/enterprise/namespaces)
 func (c *Client) SetNamespace(namespace string) {
 	/* */ c.requestHeadersLock.Lock()
@@ -128,7 +129,8 @@ func (c *Client) SetNamespace(namespace string) {
 	c.requestHeaders.namespace = namespace
 }
 
-// WithNamespace returns a shallow copy of the client with the namespace set to the given value
+// WithNamespace returns a shallow copy of the client with the namespace set to
+// the given value, use "" to clear the namespace
 // (see https://www.vaultproject.io/docs/enterprise/namespaces):
 //   client.WithNamespace("ns").Do(...)  // use "ns" namespace
 //   client.Do(...) 					 // back to the previously-set namespace

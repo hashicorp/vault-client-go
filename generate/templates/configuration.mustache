@@ -27,9 +27,9 @@ type Configuration struct {
 	// rather than starting with an empty client or http.DefaultClient.
 	BaseClient *http.Client
 
-	// TLS are a set of options used to configure TLS in the internal
+	// TLSConfig is a set of TLS configurations used to set up the internal
 	// base http.Client.
-	TLSOptions TLSOptions
+	TLSConfig TLSConfig
 
 	// RetryOptions are a set of options used to configure the internal
 	// go-retryablehttp client.
@@ -43,33 +43,36 @@ type Configuration struct {
 }
 
 
-// TLSOptions are a set of options used to configure TLS in the internal
-// base http.Client.
-type TLSOptions struct {
-	// VaultServerCAFile is a path to a PEM-encoded CA certificate file or
-	// bundle, which the client will use to verify the Vault server TLS
+// TLSConfig is a set of TLS configurations used to set up the base http.Client
+type TLSConfig struct {
+	// ServerCACertificateFile is a path to a PEM-encoded CA certificate
+	// file or bundle, which the client will use to verify the Vault server TLS
 	// certificate.
-	// Default: "", takes precedence over other VaultServer* variables.
-	VaultServerCAFile string
+	// Default: "", takes precedence over other ServerCACertificate* variables.
+	ServerCACertificateFile string
 
-	// VaultServerCACertificate is a PEM-encoded CA certificate or bundle,
+	// ServerCACertificate is a PEM-encoded CA certificate or bundle,
 	// which the client will use to verify the Vault server TLS certificate.
-	// Default: nil, takes precedence over VaultServerCAPath.
-	VaultServerCACertificate []byte
+	// Default: nil, takes precedence over ServerCACertificateDir.
+	ServerCACertificate []byte
 
-	// VaultServerCAPath is a path to a directory populated with PEM-encoded
-	// certificates, which the client will use to verify the Vault server TLS
-	// certificate.
+	// ServerCACertificateDir is a path to a directory populated with
+	// PEM-encoded certificates, which the client will use to verify the Vault
+	// server TLS certificate.
 	// Default: ""
-	VaultServerCAPath string
+	ServerCACertificateDir string
 
-	// ClientCertFile is the path to the certificate for Vault communication
+	// ClientCertificateFile is the path to a client certificate (signed by a
+	// CA or self-signed), which is used to authenticate with Vault via the
+	// cert auth method (see https://www.vaultproject.io/docs/auth/cert)
 	// Default: ""
-	ClientCertFile string
+	ClientCertificateFile string
 
-	// ClientCertKey is the path to the private key for Vault communication
+	// ClientCertificateKeyFile is the path to a private key, which is used
+	// together with ClientCertificateFile to authenticate with Vault via the
+	// cert auth method (see https://www.vaultproject.io/docs/auth/cert)
 	// Default: ""
-	ClientCertKey string
+	ClientCertificateKeyFile string
 
 	// ServerName is used to verify the hostname on the returned certificates
 	// unless InsecureSkipVerify is given.

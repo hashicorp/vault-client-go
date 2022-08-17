@@ -78,9 +78,9 @@ func NewClient(configuration Configuration) (*Client, error) {
 
 	c.parsedBaseAddress = *a
 
-	if err := applyTLSOptions(
+	if err := applyTLSConfig(
 		c.client.Transport.(*http.Transport).TLSClientConfig, // apply to
-		configuration.TLSOptions,                             // apply from
+		configuration.TLSConfig,                              // apply from
 	); err != nil {
 		return nil, fmt.Errorf("tls configuration error: %w", err)
 	}
@@ -278,13 +278,13 @@ func (c *Client) copyRequestHeaders() requestHeaders {
 	return c.requestHeaders
 }
 
-// applyTLSOptions applies the given TLS from to the given *tls.Config object
-func applyTLSOptions(to *tls.Config, from TLSOptions) error {
-	if len(from.VaultServerCACertificate) != 0 || from.VaultServerCAFile != "" || from.VaultServerCAPath != "" {
+// applyTLSConfig applies the user-configured TLS config to the client's *tls.Config pointer
+func applyTLSConfig(to *tls.Config, from TLSConfig) error {
+	if len(from.ServerCACertificate) != 0 || from.ServerCACertificateFile != "" || from.ServerCACertificateDir != "" {
 		rootCertificateConfig := rootcerts.Config{
-			CAFile:        from.VaultServerCAFile,
-			CACertificate: from.VaultServerCACertificate,
-			CAPath:        from.VaultServerCAPath,
+			CAFile:        from.ServerCACertificateFile,
+			CACertificate: from.ServerCACertificate,
+			CAPath:        from.ServerCACertificateDir,
 		}
 		if err := rootcerts.ConfigureTLS(
 			to,
@@ -295,16 +295,16 @@ func applyTLSOptions(to *tls.Config, from TLSOptions) error {
 	}
 
 	switch {
-	case from.ClientCertFile != "" && from.ClientCertKey != "":
+	case from.ClientCertificateFile != "" && from.ClientCertificateKeyFile != "":
 		clientCertificate, err := tls.LoadX509KeyPair(
-			from.ClientCertFile,
-			from.ClientCertKey,
+			from.ClientCertificateFile,
+			from.ClientCertificateKeyFile,
 		)
 		if err != nil {
 			return fmt.Errorf(
 				"could not load client certificate from certificate file %q and key file %q: %w",
-				from.ClientCertFile,
-				from.ClientCertKey,
+				from.ClientCertificateFile,
+				from.ClientCertificateKeyFile,
 				err,
 			)
 		}
@@ -316,11 +316,11 @@ func applyTLSOptions(to *tls.Config, from TLSOptions) error {
 			return &clientCertificate, nil
 		}
 
-	case from.ClientCertFile != "":
-		return fmt.Errorf("client certificate file %q is specified but certificate key is missing", from.ClientCertFile)
+	case from.ClientCertificateFile != "":
+		return fmt.Errorf("client certificate file %q is specified but certificate key is missing", from.ClientCertificateFile)
 
-	case from.ClientCertKey != "":
-		return fmt.Errorf("client certificate key %q is specified but certificate file is missing", from.ClientCertKey)
+	case from.ClientCertificateKeyFile != "":
+		return fmt.Errorf("client certificate key %q is specified but certificate file is missing", from.ClientCertificateKeyFile)
 	}
 
 	if from.InsecureSkipVerify {

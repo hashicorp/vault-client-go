@@ -48,7 +48,8 @@ type Client struct {
 
 // requestHeaders contains headers that will be added to each request
 type requestHeaders struct {
-	token string
+	token     string
+	namespace string
 }
 
 // NewClient returns a new Vault client with a copy of the given configuration
@@ -98,7 +99,8 @@ func NewClient(configuration Configuration) (*Client, error) {
 	return &c, nil
 }
 
-// SetToken sets a token to be used with all subsequent requests
+// SetToken sets the token to be used with all subsequent requests
+// (see https://www.vaultproject.io/docs/concepts/tokens).
 func (c *Client) SetToken(token string) {
 	/* */ c.requestHeadersLock.Lock()
 	defer c.requestHeadersLock.Unlock()
@@ -106,10 +108,33 @@ func (c *Client) SetToken(token string) {
 	c.requestHeaders.token = token
 }
 
-// WithToken returns a shallow copy of the client with the token set to the given value
+// WithToken returns a shallow copy of the client with the token set to the
+// given value (see https://www.vaultproject.io/docs/concepts/tokens):
+//   client.WithToken("my-token").Do(...)  // use "my-token"
+//   client.Do(...) 					   // back to the previously-set token
 func (c *Client) WithToken(token string) *Client {
 	copy := c.shallowCopy()
 	copy.requestHeaders.token = token
+
+	return copy
+}
+
+// SetNamespace sets the namespace to be used in the with all subsequent requests
+// (see https://www.vaultproject.io/docs/enterprise/namespaces)
+func (c *Client) SetNamespace(namespace string) {
+	/* */ c.requestHeadersLock.Lock()
+	defer c.requestHeadersLock.Unlock()
+
+	c.requestHeaders.namespace = namespace
+}
+
+// WithNamespace returns a shallow copy of the client with the namespace set to the given value
+// (see https://www.vaultproject.io/docs/enterprise/namespaces):
+//   client.WithNamespace("ns").Do(...)  // use "ns" namespace
+//   client.Do(...) 					 // back to the previously-set namespace
+func (c *Client) WithNamespace(namespace string) *Client {
+	copy := c.shallowCopy()
+	copy.requestHeaders.namespace = namespace
 
 	return copy
 }
@@ -146,6 +171,10 @@ func (c *Client) NewRequest(method, path string, body io.Reader) (*http.Request,
 
 	if headers.token != "" {
 		req.Header.Set("X-Vault-Token", headers.token)
+	}
+
+	if headers.namespace != "" {
+		req.Header.Set("X-Vault-Namespace", headers.namespace)
 	}
 
 	return req, nil

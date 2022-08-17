@@ -100,6 +100,16 @@ func (c *Client) SetToken(token string) {
 	c.requestHeaders.token = token
 }
 
+// ClearToken clears the token for all subsequent requests.
+// See https://www.vaultproject.io/docs/concepts/tokens for more info on
+// tokens.
+func (c *Client) ClearToken() {
+	/* */ c.requestHeadersLock.Lock()
+	defer c.requestHeadersLock.Unlock()
+
+	c.requestHeaders.token = ""
+}
+
 // WithToken returns a shallow copy of the client with the token set to the
 // given value:
 //   client.WithToken("my-token").System.Get...  // use "my-token" token

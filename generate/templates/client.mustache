@@ -91,7 +91,7 @@ func NewClient(configuration Configuration) (*Client, error) {
 }
 
 // SetToken sets the token to be used with all subsequent requests.
-// See https://www.vaultproject.io/docs/concepts/tokens) for more info on
+// See https://www.vaultproject.io/docs/concepts/tokens for more info on
 // tokens.
 func (c *Client) SetToken(token string) {
 	/* */ c.requestHeadersLock.Lock()

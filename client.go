@@ -18,7 +18,9 @@ import (
 	"io"
 	"net/http"
 	"net/url"
+	"strings"
 	"sync"
+	"unicode"
 
 	"github.com/hashicorp/go-retryablehttp"
 
@@ -152,7 +154,7 @@ func (c *Client) WithToken(token string) *Client {
 // set to "" to clear the namespace.
 // See https://www.vaultproject.io/docs/enterprise/namespaces for more info on
 // namespaces.
-func (c *Client) SetNamespace(namespace string) {
+func (c *Client) SetNamespace(namespace string) error {
 	/* */ c.requestHeadersLock.Lock()
 	defer c.requestHeadersLock.Unlock()
 

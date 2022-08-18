@@ -154,6 +154,8 @@ func (c *Client) SetNamespace(namespace string) error {
 	}
 
 	c.requestHeaders.namespace = namespace
+
+	return nil
 }
 
 // ClearNamespace clears the namespace from all subsequent requests.
@@ -215,7 +217,7 @@ func (c *Client) NewRequest(method, path string, body io.Reader) (*http.Request,
 	headers := c.copyRequestHeaders()
 
 	if headers.validationError != nil {
-		return validationError
+		return headers.validationError
 	}
 
 	if headers.token != "" {

@@ -226,7 +226,7 @@ func (c *Client) NewRequest(method, path string, body io.Reader) (*http.Request,
 	headers := c.copyRequestHeaders()
 
 	if headers.validationError != nil {
-		return headers.validationError
+		return nil, headers.validationError
 	}
 
 	if headers.token != "" {

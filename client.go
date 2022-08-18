@@ -48,8 +48,14 @@ type Client struct {
 
 // requestHeaders contains headers that will be added to each request
 type requestHeaders struct {
-	token     string
-	namespace string
+	token              string
+	namespace          string
+	userDefinedHeaders string
+
+	// This error is set in client.WithX methods and checked in client.NewRequest.
+	// Since client.WithX methods are used for method chaining, they cannot
+	// return errors.
+	validationError error
 }
 
 // NewClient returns a new Vault client with a copy of the given configuration
@@ -99,8 +105,9 @@ func NewClient(configuration Configuration) (*Client, error) {
 	return &c, nil
 }
 
-// SetToken sets the token to be used with all subsequent requests
-// (see https://www.vaultproject.io/docs/concepts/tokens).
+// SetToken sets the token to be used with all subsequent requests.
+// See https://www.vaultproject.io/docs/concepts/tokens for more info on
+// tokens.
 func (c *Client) SetToken(token string) {
 	/* */ c.requestHeadersLock.Lock()
 	defer c.requestHeadersLock.Unlock()
@@ -108,10 +115,22 @@ func (c *Client) SetToken(token string) {
 	c.requestHeaders.token = token
 }
 
+// ClearToken clears the token for all subsequent requests.
+// See https://www.vaultproject.io/docs/concepts/tokens for more info on
+// tokens.
+func (c *Client) ClearToken() {
+	/* */ c.requestHeadersLock.Lock()
+	defer c.requestHeadersLock.Unlock()
+
+	c.requestHeaders.token = ""
+}
+
 // WithToken returns a shallow copy of the client with the token set to the
-// given value (see https://www.vaultproject.io/docs/concepts/tokens):
-//   client.WithToken("my-token").Do(...)  // use "my-token"
-//   client.Do(...) 					   // back to the previously-set token
+// given value:
+//   client.WithToken("my-token").System.Get...  // use "my-token" token
+//   client.System.Get...                        // use the previous token
+// See https://www.vaultproject.io/docs/concepts/tokens for more info on
+// tokens.
 func (c *Client) WithToken(token string) *Client {
 	copy := c.shallowCopy()
 	copy.requestHeaders.token = token
@@ -119,9 +138,10 @@ func (c *Client) WithToken(token string) *Client {
 	return copy
 }
 
-// SetNamespace sets the namespace to be used in the with all subsequent
-// requests, set to "" to clear the namespace.
-// (see https://www.vaultproject.io/docs/enterprise/namespaces)
+// SetNamespace sets the namespace to be used with all subsequent requests,
+// set to "" to clear the namespace.
+// See https://www.vaultproject.io/docs/enterprise/namespaces for more info on
+// namespaces.
 func (c *Client) SetNamespace(namespace string) {
 	/* */ c.requestHeadersLock.Lock()
 	defer c.requestHeadersLock.Unlock()
@@ -129,11 +149,22 @@ func (c *Client) SetNamespace(namespace string) {
 	c.requestHeaders.namespace = namespace
 }
 
+// ClearNamespace clears the namespace from all subsequent requests.
+// See https://www.vaultproject.io/docs/enterprise/namespaces for more info on
+// namespaces.
+func (c *Client) ClearNamespace() {
+	/* */ c.requestHeadersLock.Lock()
+	defer c.requestHeadersLock.Unlock()
+
+	c.requestHeaders.namespace = ""
+}
+
 // WithNamespace returns a shallow copy of the client with the namespace set to
-// the given value, use "" to clear the namespace
-// (see https://www.vaultproject.io/docs/enterprise/namespaces):
-//   client.WithNamespace("ns").Do(...)  // use "ns" namespace
-//   client.Do(...) 					 // back to the previously-set namespace
+// the given value, use "" to clear the namespace:
+//   client.WithNamespace("ns").System.Get...  // use "ns" namespace
+//   client.System.Get...                      // use the previous namespace
+// See https://www.vaultproject.io/docs/enterprise/namespaces for more info on
+// namespaces.
 func (c *Client) WithNamespace(namespace string) *Client {
 	copy := c.shallowCopy()
 	copy.requestHeaders.namespace = namespace

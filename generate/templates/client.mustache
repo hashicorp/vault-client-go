@@ -206,12 +206,12 @@ func (c *Client) NewRequest(method, path string, body io.Reader) (*http.Request,
 	// concatenate the base address with the given path
 	url, err := c.parsedBaseAddress.Parse(path)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("could not join %q with the base address: %w", path, err)
 	}
 
 	req, err := http.NewRequest(method, url.String(), body)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("could not create '%s %s' request: %w", method, url.String(), err)
 	}
 
 	headers := c.copyRequestHeaders()

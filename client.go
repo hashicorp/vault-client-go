@@ -392,5 +392,5 @@ func printable(str string) bool {
 		return !unicode.IsPrint(c)
 	})
 
-	return idx != -1
+	return idx == -1
 }

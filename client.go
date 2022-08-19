@@ -18,7 +18,9 @@ import (
 	"io"
 	"net/http"
 	"net/url"
+	"strings"
 	"sync"
+	"unicode"
 
 	"github.com/hashicorp/go-retryablehttp"
 
@@ -50,6 +52,11 @@ type Client struct {
 type requestHeaders struct {
 	token     string
 	namespace string
+
+	// This error is set in client.WithX methods and checked in client.NewRequest.
+	// Since client.WithX methods are used for method chaining, they cannot
+	// return errors.
+	validationError error
 }
 
 // NewClient returns a new Vault client with a copy of the given configuration
@@ -102,11 +109,17 @@ func NewClient(configuration Configuration) (*Client, error) {
 // SetToken sets the token to be used with all subsequent requests.
 // See https://www.vaultproject.io/docs/concepts/tokens for more info on
 // tokens.
-func (c *Client) SetToken(token string) {
+func (c *Client) SetToken(token string) error {
 	/* */ c.requestHeadersLock.Lock()
 	defer c.requestHeadersLock.Unlock()
 
+	if err := validateToken(token); err != nil {
+		return err
+	}
+
 	c.requestHeaders.token = token
+
+	return nil
 }
 
 // ClearToken clears the token for all subsequent requests.
@@ -127,7 +140,12 @@ func (c *Client) ClearToken() {
 // tokens.
 func (c *Client) WithToken(token string) *Client {
 	copy := c.shallowCopy()
-	copy.requestHeaders.token = token
+
+	if err := validateToken(token); err != nil {
+		copy.requestHeaders.validationError = err
+	} else {
+		copy.requestHeaders.token = token
+	}
 
 	return copy
 }
@@ -136,11 +154,17 @@ func (c *Client) WithToken(token string) *Client {
 // set to "" to clear the namespace.
 // See https://www.vaultproject.io/docs/enterprise/namespaces for more info on
 // namespaces.
-func (c *Client) SetNamespace(namespace string) {
+func (c *Client) SetNamespace(namespace string) error {
 	/* */ c.requestHeadersLock.Lock()
 	defer c.requestHeadersLock.Unlock()
 
+	if err := validateNamespace(namespace); err != nil {
+		return err
+	}
+
 	c.requestHeaders.namespace = namespace
+
+	return nil
 }
 
 // ClearNamespace clears the namespace from all subsequent requests.
@@ -161,7 +185,12 @@ func (c *Client) ClearNamespace() {
 // namespaces.
 func (c *Client) WithNamespace(namespace string) *Client {
 	copy := c.shallowCopy()
-	copy.requestHeaders.namespace = namespace
+
+	if err := validateNamespace(namespace); err != nil {
+		copy.requestHeaders.validationError = err
+	} else {
+		copy.requestHeaders.namespace = namespace
+	}
 
 	return copy
 }
@@ -186,15 +215,19 @@ func (c *Client) NewRequest(method, path string, body io.Reader) (*http.Request,
 	// concatenate the base address with the given path
 	url, err := c.parsedBaseAddress.Parse(path)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("could not join %q with the base address: %w", path, err)
 	}
 
 	req, err := http.NewRequest(method, url.String(), body)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("could not create '%s %s' request: %w", method, url.String(), err)
 	}
 
 	headers := c.copyRequestHeaders()
+
+	if headers.validationError != nil {
+		return nil, headers.validationError
+	}
 
 	if headers.token != "" {
 		req.Header.Set("X-Vault-Token", headers.token)
@@ -335,4 +368,29 @@ func (c *Client) copyRequestHeaders() requestHeaders {
 	defer c.requestHeadersLock.RUnlock()
 
 	return c.requestHeaders
+}
+
+func validateToken(token string) error {
+	if !printable(token) {
+		return fmt.Errorf("vault token contains non-printable characters")
+	}
+
+	return nil
+}
+
+func validateNamespace(namespace string) error {
+	if !printable(namespace) {
+		return fmt.Errorf("vault namespace %q contains non-printable characters", namespace)
+	}
+
+	return nil
+}
+
+// printable returns true if the given string has no non-printable characters
+func printable(str string) bool {
+	idx := strings.IndexFunc(str, func(c rune) bool {
+		return !unicode.IsPrint(c)
+	})
+
+	return idx == -1
 }

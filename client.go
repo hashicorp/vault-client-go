@@ -97,7 +97,7 @@ func NewClient(configuration Configuration) (*Client, error) {
 	}
 
 	if err := configuration.TLS.applyTo(transport.TLSClientConfig); err != nil {
-		return nil, fmt.Errorf("tls configuration error: %w", err)
+		return nil, err
 	}
 
 	c.Auth = Auth{

@@ -193,32 +193,32 @@ func (c *Configuration) SetDefaultsForUninitialized() {
 		c.BaseClient.Transport = defaults.BaseClient.Transport
 	}
 
-	if c.RetryConfiguration.RetryWaitMin == 0 {
-		c.RetryConfiguration.RetryWaitMin = defaults.RetryConfiguration.RetryWaitMin
+	if c.Retry.RetryWaitMin == 0 {
+		c.Retry.RetryWaitMin = defaults.Retry.RetryWaitMin
 	}
 
-	if c.RetryConfiguration.RetryWaitMax == 0 {
-		c.RetryConfiguration.RetryWaitMax = defaults.RetryConfiguration.RetryWaitMax
+	if c.Retry.RetryWaitMax == 0 {
+		c.Retry.RetryWaitMax = defaults.Retry.RetryWaitMax
 	}
 
-	if c.RetryConfiguration.RetryMax == 0 {
-		c.RetryConfiguration.RetryMax = defaults.RetryConfiguration.RetryMax
+	if c.Retry.RetryMax == 0 {
+		c.Retry.RetryMax = defaults.Retry.RetryMax
 	}
 
-	if c.RetryConfiguration.CheckRetry == nil {
-		c.RetryConfiguration.CheckRetry = defaults.RetryConfiguration.CheckRetry
+	if c.Retry.CheckRetry == nil {
+		c.Retry.CheckRetry = defaults.Retry.CheckRetry
 	}
 
-	if c.RetryConfiguration.Backoff == nil {
-		c.RetryConfiguration.Backoff = defaults.RetryConfiguration.Backoff
+	if c.Retry.Backoff == nil {
+		c.Retry.Backoff = defaults.Retry.Backoff
 	}
 
-	if c.RetryConfiguration.ErrorHandler == nil {
-		c.RetryConfiguration.ErrorHandler = defaults.RetryConfiguration.ErrorHandler
+	if c.Retry.ErrorHandler == nil {
+		c.Retry.ErrorHandler = defaults.Retry.ErrorHandler
 	}
 
-	if c.RetryConfiguration.Logger == nil {
-		c.RetryConfiguration.Logger = defaults.RetryConfiguration.Logger
+	if c.Retry.Logger == nil {
+		c.Retry.Logger = defaults.Retry.Logger
 	}
 }
 

@@ -4,7 +4,6 @@ package {{packageName}}
 import (
 	"bytes"
 	"context"
-	"crypto/tls"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -16,7 +15,6 @@ import (
 
 	"github.com/hashicorp/go-multierror"
 	"github.com/hashicorp/go-retryablehttp"
-	"github.com/hashicorp/go-rootcerts"
 
 	"golang.org/x/exp/slices"
 )
@@ -444,60 +442,4 @@ func printable(str string) bool {
 	})
 
 	return idx == -1
-}
-
-// applyTLSConfig applies the user-configured TLS config to the client's *tls.Config pointer
-func applyTLSConfig(to *tls.Config, from TLSConfig) error {
-	if len(from.ServerCACertificate) != 0 || from.ServerCACertificateFile != "" || from.ServerCACertificateDir != "" {
-		rootCertificateConfig := rootcerts.Config{
-			CAFile:        from.ServerCACertificateFile,
-			CACertificate: from.ServerCACertificate,
-			CAPath:        from.ServerCACertificateDir,
-		}
-		if err := rootcerts.ConfigureTLS(
-			to,
-			&rootCertificateConfig,
-		); err != nil {
-			return fmt.Errorf("could not configure root certificate: %w", err)
-		}
-	}
-
-	switch {
-	case from.ClientCertificateFile != "" && from.ClientCertificateKeyFile != "":
-		clientCertificate, err := tls.LoadX509KeyPair(
-			from.ClientCertificateFile,
-			from.ClientCertificateKeyFile,
-		)
-		if err != nil {
-			return fmt.Errorf(
-				"could not load client certificate from certificate file %q and key file %q: %w",
-				from.ClientCertificateFile,
-				from.ClientCertificateKeyFile,
-				err,
-			)
-		}
-
-		// Set this function to ignore the server's preferential list of CAs.
-		// Otherwise, any CA used for the certificate auth backend must be in
-		// the server's CA pool.
-		to.GetClientCertificate = func(*tls.CertificateRequestInfo) (*tls.Certificate, error) {
-			return &clientCertificate, nil
-		}
-
-	case from.ClientCertificateFile != "":
-		return fmt.Errorf("client certificate file %q is specified but certificate key is missing", from.ClientCertificateFile)
-
-	case from.ClientCertificateKeyFile != "":
-		return fmt.Errorf("client certificate key %q is specified but certificate file is missing", from.ClientCertificateKeyFile)
-	}
-
-	if from.InsecureSkipVerify {
-		to.InsecureSkipVerify = from.InsecureSkipVerify
-	}
-
-	if from.ServerName != "" {
-		to.ServerName = from.ServerName
-	}
-
-	return nil
 }

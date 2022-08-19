@@ -29,9 +29,9 @@ type Configuration struct {
 	// rather than starting with an empty client or http.DefaultClient.
 	BaseClient *http.Client
 
-	// TLSConfig is a collection of TLS settings used to configure the internal
+	// TLS is a collection of TLS settings used to configure the internal
 	// http.Client.
-	TLSConfig TLSConfig
+	TLS TLSConfiguration
 
 	// RetryOptions are a set of options used to configure the internal
 	// go-retryablehttp client.
@@ -44,9 +44,9 @@ type Configuration struct {
 	RateLimiter *rate.Limiter
 }
 
-// TLSConfig is a collection of TLS settings used to configure the internal
+// TLSConfiguration is a collection of TLS settings used to configure the internal
 // http.Client.
-type TLSConfig struct {
+type TLSConfiguration struct {
 	// ServerCACertificateFile is a path to a PEM-encoded CA certificate
 	// file or bundle, which the client will use to verify the Vault server TLS
 	// certificate.
@@ -222,9 +222,9 @@ func (c *Configuration) SetDefaultsForUninitialized() {
 	}
 }
 
-// applyTLSConfig applies the user-defined TLS config to the given client's
+// applyTo applies the user-defined TLS configuration to the given client's
 // *tls.Config pointer; it is used to configure the internal http.Client
-func applyTLSConfig(to *tls.Config, from TLSConfig) error {
+func (from *TLSConfiguration) applyTo(to *tls.Config) error {
 	if len(from.ServerCACertificate) != 0 || from.ServerCACertificateFile != "" || from.ServerCACertificateDir != "" {
 		rootCertificateConfig := rootcerts.Config{
 			CAFile:        from.ServerCACertificateFile,

@@ -36,8 +36,8 @@ type Configuration struct {
 	// rather than starting with an empty client or http.DefaultClient.
 	BaseClient *http.Client
 
-	// TLSConfig is a set of TLS configurations used to set up the internal
-	// base http.Client.
+	// TLSConfig is a collection of TLS settings used to configure the internal
+	// http.Client.
 	TLSConfig TLSConfig
 
 	// RetryOptions are a set of options used to configure the internal
@@ -51,7 +51,8 @@ type Configuration struct {
 	RateLimiter *rate.Limiter
 }
 
-// TLSConfig is a set of TLS configurations used to set up the base http.Client
+// TLSConfig is a collection of TLS settings used to configure the internal
+// http.Client.
 type TLSConfig struct {
 	// ServerCACertificateFile is a path to a PEM-encoded CA certificate
 	// file or bundle, which the client will use to verify the Vault server TLS

@@ -26,7 +26,7 @@ import (
 type Configuration struct {
 	// BaseAddress specifies the Vault server base address in the form of
 	// scheme://host:port
-	// Default: http://127.0.0.1:8200
+	// Default: https://127.0.0.1:8200
 	BaseAddress string
 
 	// BaseClient is the HTTP client to use for all API requests.
@@ -153,7 +153,7 @@ func DefaultConfiguration() Configuration {
 	}
 
 	return Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
+		BaseAddress: "https://127.0.0.1:8200",
 		BaseClient:  defaultClient,
 		RetryOptions: RetryOptions{
 			RetryWaitMin: time.Millisecond * 1000,

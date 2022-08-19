@@ -22,6 +22,7 @@ import (
 	"sync"
 	"unicode"
 
+	"github.com/hashicorp/go-multierror"
 	"github.com/hashicorp/go-retryablehttp"
 
 	"golang.org/x/exp/slices"
@@ -50,8 +51,9 @@ type Client struct {
 
 // requestHeaders contains headers that will be added to each request
 type requestHeaders struct {
-	token     string
-	namespace string
+	token         string
+	namespace     string
+	customHeaders http.Header
 
 	// This error is set in client.WithX methods and checked in client.NewRequest.
 	// Since client.WithX methods are used for method chaining, they cannot
@@ -142,7 +144,7 @@ func (c *Client) WithToken(token string) *Client {
 	copy := c.shallowCopy()
 
 	if err := validateToken(token); err != nil {
-		copy.requestHeaders.validationError = err
+		copy.requestHeaders.validationError = multierror.Append(copy.requestHeaders.validationError, err)
 	} else {
 		copy.requestHeaders.token = token
 	}
@@ -187,9 +189,48 @@ func (c *Client) WithNamespace(namespace string) *Client {
 	copy := c.shallowCopy()
 
 	if err := validateNamespace(namespace); err != nil {
-		copy.requestHeaders.validationError = err
+		copy.requestHeaders.validationError = multierror.Append(copy.requestHeaders.validationError, err)
 	} else {
 		copy.requestHeaders.namespace = namespace
+	}
+
+	return copy
+}
+
+// SetCustomHeaders sets custom headers to be used in all subsequent requests.
+// The internal prefix 'X-Vault-' is not permitted for the header keys.
+func (c *Client) SetCustomHeaders(headers http.Header) error {
+	/* */ c.requestHeadersLock.Lock()
+	defer c.requestHeadersLock.Unlock()
+
+	if err := validateCustomHeaders(headers); err != nil {
+		return err
+	}
+
+	c.requestHeaders.customHeaders = headers
+
+	return nil
+}
+
+// ClearsCustomHeaders clears all custom headers from the subsequent requests.
+func (c *Client) ClearCustomHeaders() {
+	/* */ c.requestHeadersLock.Lock()
+	defer c.requestHeadersLock.Unlock()
+
+	c.requestHeaders.customHeaders = nil
+}
+
+// WithCustomHeaders returns a shallow copy of the client with custom headers
+// set to the given value, use nil to clear out the headers:
+//   client.WithCustomHeaders(h).System.Get... // use the given custom headers
+//   client.System.Get...                      // use the previous custom headers
+func (c *Client) WithCustomHeaders(headers http.Header) *Client {
+	copy := c.shallowCopy()
+
+	if err := validateCustomHeaders(headers); err != nil {
+		copy.requestHeaders.validationError = multierror.Append(copy.requestHeaders.validationError, err)
+	} else {
+		copy.requestHeaders.customHeaders = headers
 	}
 
 	return copy
@@ -384,6 +425,19 @@ func validateNamespace(namespace string) error {
 	}
 
 	return nil
+}
+
+func validateCustomHeaders(headers http.Header) (errs error) {
+	for key := range headers {
+		if strings.HasPrefix(strings.ToLower(key), "x-vault-") {
+			errs = multierror.Append(
+				errs,
+				fmt.Errorf("custom header key %q is not allowed: 'X-Vault-' prefix is for internal use only", key),
+			)
+		}
+	}
+
+	return errs
 }
 
 // printable returns true if the given string has no non-printable characters

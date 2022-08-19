@@ -42,9 +42,9 @@ type Configuration struct {
 	// http.Client.
 	TLS TLSConfiguration
 
-	// RetryOptions are a set of options used to configure the internal
+	// Retry is a collection of settings used to configure the internal
 	// go-retryablehttp client.
-	RetryOptions RetryOptions
+	Retry RetryConfiguration
 
 	// RateLimiter controls how frequently requests are allowed to happen.
 	// If this pointer is nil, then there will be no limit set. Note that an
@@ -96,9 +96,9 @@ type TLSConfiguration struct {
 	InsecureSkipVerify bool
 }
 
-// RetryOptions are a set of options used to configure the internal
+// RetryConfiguration is a collection of settings used to configure the internal
 // go-retryablehttp client.
-type RetryOptions struct {
+type RetryConfiguration struct {
 	// RetryWaitMin controls the minimum time to wait before retrying when
 	// a 5xx or 412 error occurs.
 	// Default: 1000 milliseconds
@@ -158,7 +158,7 @@ func DefaultConfiguration() Configuration {
 	return Configuration{
 		BaseAddress: "https://127.0.0.1:8200",
 		BaseClient:  defaultClient,
-		RetryOptions: RetryOptions{
+		Retry: RetryConfiguration{
 			RetryWaitMin: time.Millisecond * 1000,
 			RetryWaitMax: time.Millisecond * 1500,
 			RetryMax:     2,
@@ -170,7 +170,7 @@ func DefaultConfiguration() Configuration {
 	}
 }
 
-// DefaultRetryPolicy provides a default callback for RetryOptions.CheckRetry.
+// DefaultRetryPolicy provides a default callback for RetryConfiguration.CheckRetry.
 // In addition to retryablehttp.DefaultRetryPolicy, it retries on 412 responses,
 // which are returned by Vault when a X-Vault-Index header isn't satisfied.
 func DefaultRetryPolicy(ctx context.Context, resp *http.Response, err error) (bool, error) {
@@ -202,32 +202,32 @@ func (c *Configuration) SetDefaultsForUninitialized() {
 		c.BaseClient.Transport = defaults.BaseClient.Transport
 	}
 
-	if c.RetryOptions.RetryWaitMin == 0 {
-		c.RetryOptions.RetryWaitMin = defaults.RetryOptions.RetryWaitMin
+	if c.Retry.RetryWaitMin == 0 {
+		c.Retry.RetryWaitMin = defaults.Retry.RetryWaitMin
 	}
 
-	if c.RetryOptions.RetryWaitMax == 0 {
-		c.RetryOptions.RetryWaitMax = defaults.RetryOptions.RetryWaitMax
+	if c.Retry.RetryWaitMax == 0 {
+		c.Retry.RetryWaitMax = defaults.Retry.RetryWaitMax
 	}
 
-	if c.RetryOptions.RetryMax == 0 {
-		c.RetryOptions.RetryMax = defaults.RetryOptions.RetryMax
+	if c.Retry.RetryMax == 0 {
+		c.Retry.RetryMax = defaults.Retry.RetryMax
 	}
 
-	if c.RetryOptions.CheckRetry == nil {
-		c.RetryOptions.CheckRetry = defaults.RetryOptions.CheckRetry
+	if c.Retry.CheckRetry == nil {
+		c.Retry.CheckRetry = defaults.Retry.CheckRetry
 	}
 
-	if c.RetryOptions.Backoff == nil {
-		c.RetryOptions.Backoff = defaults.RetryOptions.Backoff
+	if c.Retry.Backoff == nil {
+		c.Retry.Backoff = defaults.Retry.Backoff
 	}
 
-	if c.RetryOptions.ErrorHandler == nil {
-		c.RetryOptions.ErrorHandler = defaults.RetryOptions.ErrorHandler
+	if c.Retry.ErrorHandler == nil {
+		c.Retry.ErrorHandler = defaults.Retry.ErrorHandler
 	}
 
-	if c.RetryOptions.Logger == nil {
-		c.RetryOptions.Logger = defaults.RetryOptions.Logger
+	if c.Retry.Logger == nil {
+		c.Retry.Logger = defaults.Retry.Logger
 	}
 }
 

@@ -170,6 +170,36 @@ func DefaultConfiguration() Configuration {
 	}
 }
 
+func (c *Configuration) LoadEnvironment() error {
+	if err := walkConfigurationFields(c, func(v reflect.Value, tags []string) {
+		for _, tag := range tags {
+			env := os.Getenv(tag)
+			if env == "" {
+				continue
+			}
+
+			switch v.Type() {
+			}
+
+			break
+		}
+	}); err != nil {
+		return fmt.Errorf("could not walk configuration fields: %w", err)
+	}
+
+	parseRateLimit := func(v string) (rate float64, burst int, err error) {
+		_, err = fmt.Sscanf(v, "%f:%d", &rate, &burst)
+		if err != nil {
+			rate, err = strconv.ParseFloat(v, 64)
+			if err != nil {
+				err = fmt.Errorf("%v was provided but incorrectly formatted", EnvRateLimit)
+			}
+			burst = int(rate)
+		}
+		return rate, burst, err
+	}
+}
+
 // DefaultRetryPolicy provides a default callback for RetryConfiguration.CheckRetry.
 // In addition to retryablehttp.DefaultRetryPolicy, it retries on 412 responses,
 // which are returned by Vault when a X-Vault-Index header isn't satisfied.
@@ -283,6 +313,41 @@ func (from TLSConfiguration) applyTo(to *tls.Config) error {
 
 	if from.ServerName != "" {
 		to.ServerName = from.ServerName
+	}
+
+	return nil
+}
+
+// walkConfigurationFields is a helper function, which uses reflection to
+// traverse the configuration fields, determine their `env` tags and apply the
+// given function f to the modifiable fields.
+func walkConfigurationFields(structPtr any, f func(v reflect.Value, tags []string)) error {
+	// we expect a pointer to a struct to be able to modify the fields
+	if reflect.ValueOf(structPtr).Kind() != reflect.Ptr {
+		return fmt.Errorf("pointer input expected")
+	}
+
+	// struct value and type
+	structV := reflect.ValueOf(structPtr).Elem()
+	structT := reflect.TypeOf(structPtr).Elem()
+
+	for i := 0; i < structT.NumField(); i++ {
+		// field value and type
+		fieldV := structV.Field(i)
+		fieldT := structT.Field(i)
+
+		switch {
+		case !fieldV.CanSet():
+			continue // unexported fields will be skipped
+
+		case fieldV.Kind() == reflect.Struct:
+			if err := walkConfigurationFields(fieldV.Addr().Interface(), f); err != nil {
+				return err
+			}
+
+		default:
+			f(fieldV, strings.Split(fieldT.Tag.Get("env"), ","))
+		}
 	}
 
 	return nil

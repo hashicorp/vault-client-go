@@ -78,7 +78,7 @@ func NewClient(configuration Configuration) (*Client, error) {
 			Logger:       configuration.Retry.Logger,
 			RetryWaitMin: configuration.Retry.RetryWaitMin,
 			RetryWaitMax: configuration.Retry.RetryWaitMax,
-			RetryMax:     configuration.Retry.RetryMax,
+			RetryMax:     *configuration.Retry.RetryMax,
 			CheckRetry:   configuration.Retry.CheckRetry,
 			Backoff:      configuration.Retry.Backoff,
 			ErrorHandler: configuration.Retry.ErrorHandler,

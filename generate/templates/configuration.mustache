@@ -98,12 +98,12 @@ type RetryConfiguration struct {
 	// RetryWaitMin controls the minimum time to wait before retrying when
 	// a 5xx or 412 error occurs.
 	// Default: 1000 milliseconds
-	RetryWaitMin time.Duration
+	RetryWaitMin time.Duration `env:"VAULT_RETRY_WAIT_MIN"`
 
 	// MaxRetryWait controls the maximum time to wait before retrying when
 	// a 5xx or 412 error occurs.
 	// Default: 1500 milliseconds
-	RetryWaitMax time.Duration
+	RetryWaitMax time.Duration `env:"VAULT_RETRY_WAIT_MAX"`
 
 	// RetryMax controls the maximum number of times to retry when a 5xx or 412
 	// error occurs. Set to -1 to disable retrying.
@@ -187,7 +187,7 @@ func (c *Configuration) LoadEnvironment() error {
 			case "string":
 				field.SetString(env)
 
-			case "[]byte":
+			case "[]uint8":
 				field.SetBytes([]byte(env))
 
 			case "bool":
@@ -201,6 +201,13 @@ func (c *Configuration) LoadEnvironment() error {
 				v, err := strconv.Atoi(env)
 				if err != nil {
 					return fmt.Errorf("could not convert %q environment variable value to int", tag)
+				}
+				field.SetInt(int64(v))
+
+			case "time.Duration":
+				v, err := time.ParseDuration(env)
+				if err != nil {
+					return fmt.Errorf("could not convert %q environment variable value to time.Duration", tag)
 				}
 				field.SetInt(int64(v))
 

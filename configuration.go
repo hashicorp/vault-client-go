@@ -56,6 +56,14 @@ type Configuration struct {
 	// empty struct rate.Limiter is equivalent blocking all requests.
 	// Default: nil
 	RateLimiter *rate.Limiter `env:"VAULT_RATE_LIMIT"`
+
+	// InitialToken will be used as the token in client requests unless
+	// overwritten with client.SetToken or client.WithToken
+	InitialToken string `env:"VAULT_TOKEN"`
+
+	// initialNamespace will be used as the namespace in client requests unless
+	// overwritten with client.SetNamespace or client.WithNamespace
+	InitialNamespace string `env:"VAULT_NAMESPACE"`
 }
 
 // TLSConfiguration is a collection of TLS settings used to configure the internal

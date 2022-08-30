@@ -175,6 +175,11 @@ func DefaultConfiguration() Configuration {
 	}
 }
 
+// LoadEnvironment loads vault-specific environment variables and applies them
+// to the given configuration object. The environment varialbes are specified
+// in the 'env' tags defined next to each configuration field. In case of
+// multiple environment variables defined for a field, the later ones take
+// precedence.
 func (c *Configuration) LoadEnvironment() error {
 	// this function will be recursively applied to each field within the configuration object
 	assignFieldFromEnv := func(field reflect.Value, environmentTags []string) error {
@@ -224,7 +229,7 @@ func (c *Configuration) LoadEnvironment() error {
 				field.SetPointer(unsafe.Pointer(rate.NewLimiter(rate.Limit(limiterRate), limiterBurst)))
 
 			default:
-				fmt.Println("v: ", field, "type: ", field.Type().String())
+				return fmt.Errorf("environment variable parsing not implemented for %q type", field.Type().String())
 			}
 		}
 

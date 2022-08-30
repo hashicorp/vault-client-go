@@ -17,8 +17,10 @@ import (
 	"net/http"
 	"os"
 	"reflect"
+	"strconv"
 	"strings"
 	"time"
+	"unsafe"
 
 	"github.com/hashicorp/go-cleanhttp"
 	"github.com/hashicorp/go-retryablehttp"
@@ -115,7 +117,7 @@ type RetryConfiguration struct {
 	// RetryMax controls the maximum number of times to retry when a 5xx or 412
 	// error occurs. Set to -1 to disable retrying.
 	// Default: 2 (for a total of three tries)
-	RetryMax *int `env:"VAULT_MAX_RETRIES"`
+	RetryMax int `env:"VAULT_MAX_RETRIES"`
 
 	// CheckRetry specifies a policy for handling retries. It is called after
 	// each request with the response and error values returned by the http.Client.
@@ -158,15 +160,13 @@ func DefaultConfiguration() Configuration {
 		return http.ErrUseLastResponse
 	}
 
-	two := 2
-
 	return Configuration{
 		BaseAddress: "https://127.0.0.1:8200",
 		BaseClient:  defaultClient,
 		Retry: RetryConfiguration{
 			RetryWaitMin: time.Millisecond * 1000,
 			RetryWaitMax: time.Millisecond * 1500,
-			RetryMax:     &two,
+			RetryMax:     2,
 			CheckRetry:   DefaultRetryPolicy,
 			Backoff:      retryablehttp.LinearJitterBackoff,
 			ErrorHandler: retryablehttp.PassthroughErrorHandler,
@@ -176,23 +176,69 @@ func DefaultConfiguration() Configuration {
 }
 
 func (c *Configuration) LoadEnvironment() error {
-	if err := walkConfigurationFields(c, func(v reflect.Value, environmentTags []string) {
-		// for each modifiable configuration field, check the 'env' tags
+	// this function will be recursively applied to each field within the configuration object
+	assignFieldFromEnv := func(field reflect.Value, environmentTags []string) error {
+		// for each 'env' tag ...
 		for _, tag := range environmentTags {
-			if env := os.Getenv(tag); env != "" {
-				switch v.Type().String() {
-				case "string":
-					v.SetString(env)
-				default:
-					fmt.Println("v: ", v, "type: ", v.Type().String())
-				}
+			// try to fetch the environment variable
+			env := os.Getenv(tag)
+			if env == "" {
+				continue
+			}
 
-				break
+			switch field.Type().String() {
+
+			case "string":
+				field.SetString(env)
+
+			case "[]byte":
+				field.SetBytes([]byte(env))
+
+			case "bool":
+				v, err := strconv.ParseBool(env)
+				if err != nil {
+					return fmt.Errorf("could not convert %q environment variable value to bool", tag)
+				}
+				field.SetBool(v)
+
+			case "int":
+				v, err := strconv.Atoi(env)
+				if err != nil {
+					return fmt.Errorf("could not convert %q environment variable value to int", tag)
+				}
+				field.SetInt(int64(v))
+
+			case "*rate.Limiter":
+				var (
+					limiterRate  float64
+					limiterBurst int
+				)
+				_, err := fmt.Sscanf(env, "%f:%d", &limiterRate, &limiterBurst)
+				if err != nil {
+					limiterRate, err = strconv.ParseFloat(env, 64)
+					if err != nil {
+						return fmt.Errorf("%q environment variable expects either 'rate:burst' or a float 'rate'", tag)
+					}
+					limiterBurst = int(limiterRate)
+				}
+				field.SetPointer(unsafe.Pointer(rate.NewLimiter(rate.Limit(limiterRate), limiterBurst)))
+
+			default:
+				fmt.Println("v: ", field, "type: ", field.Type().String())
 			}
 		}
-	}); err != nil {
-		return fmt.Errorf("could not walk configuration fields: %w", err)
+
+		return nil
 	}
+
+	// work on a copy of the configuration object to prevent modfications on errors
+	copy := *c
+
+	if err := walkConfigurationFields(&copy, assignFieldFromEnv); err != nil {
+		return fmt.Errorf("configuration error: %w", err)
+	}
+
+	*c = copy
 
 	return nil
 }
@@ -237,7 +283,7 @@ func (c *Configuration) SetDefaultsForUninitialized() {
 		c.Retry.RetryWaitMax = defaults.Retry.RetryWaitMax
 	}
 
-	if c.Retry.RetryMax == nil {
+	if c.Retry.RetryMax == 0 {
 		c.Retry.RetryMax = defaults.Retry.RetryMax
 	}
 
@@ -318,7 +364,7 @@ func (from TLSConfiguration) applyTo(to *tls.Config) error {
 // walkConfigurationFields is a helper function, which uses reflection to
 // traverse the configuration fields, determine their `env` tags and apply the
 // given function f to the modifiable fields.
-func walkConfigurationFields(structPtr any, f func(v reflect.Value, environmentTags []string)) error {
+func walkConfigurationFields(structPtr any, f func(field reflect.Value, environmentTags []string) error) error {
 	// we expect a pointer to a struct to be able to modify the fields
 	if reflect.ValueOf(structPtr).Kind() != reflect.Ptr {
 		return fmt.Errorf("pointer input expected")
@@ -343,7 +389,9 @@ func walkConfigurationFields(structPtr any, f func(v reflect.Value, environmentT
 			}
 
 		default:
-			f(fieldV, strings.Split(fieldT.Tag.Get("env"), ","))
+			if err := f(fieldV, strings.Split(fieldT.Tag.Get("env"), ",")); err != nil {
+				return fmt.Errorf("could not configure %q: %w", fieldT.Name, err)
+			}
 		}
 	}
 

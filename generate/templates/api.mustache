@@ -33,13 +33,13 @@ func (a *{{{classname}}}) {{nickname}}(ctx context.Context{{#pathParams}}, {{par
 	requestPath = strings.Replace(requestPath, "{"+"{{baseName}}"+"}", url.PathEscape({{paramName}}), -1){{/pathParams}}
 
 {{#bodyParams}}
-	req, err := a.client.newStructuredRequest(http.Method{{httpMethod}}, requestPath, {{paramName}})
+	req, err := a.client.newStructuredRequest(ctx, http.Method{{httpMethod}}, requestPath, {{paramName}})
 	if err != nil {
 		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, err
 	}
 {{/bodyParams}}
 {{^bodyParams}}
-	req, err := a.client.newRequest(http.Method{{httpMethod}}, requestPath, nil)
+	req, err := a.client.newRequest(ctx, http.Method{{httpMethod}}, requestPath, nil)
 	if err != nil {
 		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, err
 	}

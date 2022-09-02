@@ -404,7 +404,12 @@ func (c *Client) copyRequestHeaders() requestHeaders {
 	/* */ c.requestHeadersLock.RLock()
 	defer c.requestHeadersLock.RUnlock()
 
-	return c.requestHeaders
+	return requestHeaders{
+		token:           c.requestHeaders.token,
+		namespace:       c.requestHeaders.namespace,
+		customHeaders:   c.requestHeaders.customHeaders.Clone(),
+		validationError: c.requestHeaders.validationError,
+	}
 }
 
 func validateToken(token string) error {

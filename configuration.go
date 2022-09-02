@@ -13,11 +13,13 @@ package vault
 import (
 	"context"
 	"crypto/tls"
+	"fmt"
 	"net/http"
 	"time"
 
 	"github.com/hashicorp/go-cleanhttp"
 	"github.com/hashicorp/go-retryablehttp"
+	"github.com/hashicorp/go-rootcerts"
 
 	"golang.org/x/time/rate"
 )
@@ -26,7 +28,7 @@ import (
 type Configuration struct {
 	// BaseAddress specifies the Vault server base address in the form of
 	// scheme://host:port
-	// Default: http://127.0.0.1:8200
+	// Default: https://127.0.0.1:8200
 	BaseAddress string
 
 	// BaseClient is the HTTP client to use for all API requests.
@@ -35,6 +37,10 @@ type Configuration struct {
 	// is suggested that you start with that client and modify it as needed
 	// rather than starting with an empty client or http.DefaultClient.
 	BaseClient *http.Client
+
+	// TLS is a collection of TLS settings used to configure the internal
+	// http.Client.
+	TLS TLSConfiguration
 
 	// RetryOptions are a set of options used to configure the internal
 	// go-retryablehttp client.
@@ -47,6 +53,51 @@ type Configuration struct {
 	RateLimiter *rate.Limiter
 }
 
+// TLSConfiguration is a collection of TLS settings used to configure the internal
+// http.Client.
+type TLSConfiguration struct {
+	// ServerCACertificateFile is a path to a PEM-encoded CA certificate
+	// file or bundle, which the client will use to verify the Vault server TLS
+	// certificate.
+	// Default: "", takes precedence over other ServerCACertificate* variables.
+	ServerCACertificateFile string
+
+	// ServerCACertificate is a PEM-encoded CA certificate or bundle,
+	// which the client will use to verify the Vault server TLS certificate.
+	// Default: nil, takes precedence over ServerCACertificateDir.
+	ServerCACertificate []byte
+
+	// ServerCACertificateDir is a path to a directory populated with
+	// PEM-encoded certificates, which the client will use to verify the Vault
+	// server TLS certificate.
+	// Default: ""
+	ServerCACertificateDir string
+
+	// ClientCertificateFile is the path to a client certificate (signed by a
+	// CA or self-signed), which is used to authenticate with Vault via the
+	// cert auth method (see https://www.vaultproject.io/docs/auth/cert)
+	// Default: ""
+	ClientCertificateFile string
+
+	// ClientCertificateKeyFile is the path to a private key, which is used
+	// together with ClientCertificateFile to authenticate with Vault via the
+	// cert auth method (see https://www.vaultproject.io/docs/auth/cert)
+	// Default: ""
+	ClientCertificateKeyFile string
+
+	// ServerName is used to verify the hostname on the returned certificates
+	// unless InsecureSkipVerify is given.
+	// Default: ""
+	ServerName string
+
+	// InsecureSkipVerify controls whether the client verifies the server's
+	// certificate chain and hostname.
+	// Default: false
+	InsecureSkipVerify bool
+}
+
+// RetryOptions are a set of options used to configure the internal
+// go-retryablehttp client.
 type RetryOptions struct {
 	// RetryWaitMin controls the minimum time to wait before retrying when
 	// a 5xx or 412 error occurs.
@@ -105,7 +156,7 @@ func DefaultConfiguration() Configuration {
 	}
 
 	return Configuration{
-		BaseAddress: "http://127.0.0.1:8200",
+		BaseAddress: "https://127.0.0.1:8200",
 		BaseClient:  defaultClient,
 		RetryOptions: RetryOptions{
 			RetryWaitMin: time.Millisecond * 1000,
@@ -178,4 +229,61 @@ func (c *Configuration) SetDefaultsForUninitialized() {
 	if c.RetryOptions.Logger == nil {
 		c.RetryOptions.Logger = defaults.RetryOptions.Logger
 	}
+}
+
+// applyTo applies the user-defined TLS configuration to the given client's
+// *tls.Config pointer; it is used to configure the internal http.Client
+func (from TLSConfiguration) applyTo(to *tls.Config) error {
+	if len(from.ServerCACertificate) != 0 || from.ServerCACertificateFile != "" || from.ServerCACertificateDir != "" {
+		rootCertificateConfig := rootcerts.Config{
+			CAFile:        from.ServerCACertificateFile,
+			CACertificate: from.ServerCACertificate,
+			CAPath:        from.ServerCACertificateDir,
+		}
+		if err := rootcerts.ConfigureTLS(
+			to,
+			&rootCertificateConfig,
+		); err != nil {
+			return fmt.Errorf("could not configure root certificate: %w", err)
+		}
+	}
+
+	switch {
+	case from.ClientCertificateFile != "" && from.ClientCertificateKeyFile != "":
+		clientCertificate, err := tls.LoadX509KeyPair(
+			from.ClientCertificateFile,
+			from.ClientCertificateKeyFile,
+		)
+		if err != nil {
+			return fmt.Errorf(
+				"could not load client certificate from certificate file %q and key file %q: %w",
+				from.ClientCertificateFile,
+				from.ClientCertificateKeyFile,
+				err,
+			)
+		}
+
+		// Set this function to ignore the server's preferential list of CAs.
+		// Otherwise, any CA used for the certificate auth backend must be in
+		// the server's CA pool.
+		to.GetClientCertificate = func(*tls.CertificateRequestInfo) (*tls.Certificate, error) {
+			return &clientCertificate, nil
+		}
+
+	case from.ClientCertificateFile != "":
+		return fmt.Errorf("client certificate file %q is specified but certificate key is missing", from.ClientCertificateFile)
+
+	case from.ClientCertificateKeyFile != "":
+		return fmt.Errorf("client certificate key %q is specified but certificate file is missing", from.ClientCertificateKeyFile)
+	}
+
+	if from.InsecureSkipVerify {
+		to.InsecureSkipVerify = from.InsecureSkipVerify
+	}
+
+	if from.ServerName != "" {
+		to.ServerName = from.ServerName
+	}
+
+	return nil
 }

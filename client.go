@@ -89,8 +89,16 @@ func NewClient(configuration Configuration) (*Client, error) {
 	if err != nil {
 		return nil, err
 	}
-
 	c.parsedBaseAddress = *a
+
+	transport, ok := c.client.Transport.(*http.Transport)
+	if !ok {
+		return nil, fmt.Errorf("the configured base client's transport (%T) is not of type *http.Transport", c.client.Transport)
+	}
+
+	if err := configuration.TLS.applyTo(transport.TLSClientConfig); err != nil {
+		return nil, err
+	}
 
 	c.Auth = Auth{
 		client: &c,

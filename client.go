@@ -108,6 +108,51 @@ func NewClient(configuration Configuration) (*Client, error) {
 	return &c, nil
 }
 
+// Clone creates a new Vault client with the same configuration as the original
+// client. Note that the cloned Vault client will point to the same base
+// http.Client and retryablehttp.Client objects.
+func (c *Client) Clone(cloneRequestHeaders bool) *Client {
+	copy := Client{
+		configuration:     c.configuration,
+		parsedBaseAddress: c.parsedBaseAddress,
+		client:            c.client,
+		clientWithRetries: c.clientWithRetries,
+	}
+
+	if cloneRequestHeaders {
+		copy.requestHeaders = c.cloneRequestHeaders()
+		copy.requestHeadersLock = sync.RWMutex{}
+	}
+
+	copy.Auth = Auth{
+		client: &copy,
+	}
+	copy.Identity = Identity{
+		client: &copy,
+	}
+	copy.Secrets = Secrets{
+		client: &copy,
+	}
+	copy.System = System{
+		client: &copy,
+	}
+
+	return &copy
+}
+
+// cloneRequestHeaders returns a copy of the request headers behind a mutex
+func (c *Client) cloneRequestHeaders() requestHeaders {
+	/* */ c.requestHeadersLock.RLock()
+	defer c.requestHeadersLock.RUnlock()
+
+	return requestHeaders{
+		token:           c.requestHeaders.token,
+		namespace:       c.requestHeaders.namespace,
+		customHeaders:   c.requestHeaders.customHeaders.Clone(),
+		validationError: c.requestHeaders.validationError,
+	}
+}
+
 // SetToken sets the token to be used with all subsequent requests.
 // See https://www.vaultproject.io/docs/concepts/tokens for more info on
 // tokens.
@@ -141,7 +186,7 @@ func (c *Client) ClearToken() {
 // See https://www.vaultproject.io/docs/concepts/tokens for more info on
 // tokens.
 func (c *Client) WithToken(token string) *Client {
-	copy := c.shallowCopy()
+	copy := c.Clone(true)
 
 	if err := validateToken(token); err != nil {
 		copy.requestHeaders.validationError = multierror.Append(copy.requestHeaders.validationError, err)
@@ -186,7 +231,7 @@ func (c *Client) ClearNamespace() {
 // See https://www.vaultproject.io/docs/enterprise/namespaces for more info on
 // namespaces.
 func (c *Client) WithNamespace(namespace string) *Client {
-	copy := c.shallowCopy()
+	copy := c.Clone(true)
 
 	if err := validateNamespace(namespace); err != nil {
 		copy.requestHeaders.validationError = multierror.Append(copy.requestHeaders.validationError, err)
@@ -225,7 +270,7 @@ func (c *Client) ClearCustomHeaders() {
 //   client.WithCustomHeaders(h).System.Get... // use the given custom headers
 //   client.System.Get...                      // use the previous custom headers
 func (c *Client) WithCustomHeaders(headers http.Header) *Client {
-	copy := c.shallowCopy()
+	copy := c.Clone(true)
 
 	if err := validateCustomHeaders(headers); err != nil {
 		copy.requestHeaders.validationError = multierror.Append(copy.requestHeaders.validationError, err)
@@ -264,7 +309,7 @@ func (c *Client) NewRequest(method, path string, body io.Reader) (*http.Request,
 		return nil, fmt.Errorf("could not create '%s %s' request: %w", method, url.String(), err)
 	}
 
-	headers := c.copyRequestHeaders()
+	headers := c.cloneRequestHeaders()
 
 	if headers.validationError != nil {
 		return nil, headers.validationError
@@ -373,47 +418,6 @@ func handleRedirect(req *http.Request, resp *http.Response, redirectCount *int) 
 	}
 
 	return true, nil
-}
-
-// shallowCopy returns a shallow copy of the client
-func (c *Client) shallowCopy() *Client {
-	copy := Client{
-		configuration:     c.configuration,
-		parsedBaseAddress: c.parsedBaseAddress,
-		client:            c.client,
-		clientWithRetries: c.clientWithRetries,
-	}
-
-	copy.requestHeaders = c.copyRequestHeaders()
-	copy.requestHeadersLock = sync.RWMutex{}
-
-	copy.Auth = Auth{
-		client: &copy,
-	}
-	copy.Identity = Identity{
-		client: &copy,
-	}
-	copy.Secrets = Secrets{
-		client: &copy,
-	}
-	copy.System = System{
-		client: &copy,
-	}
-
-	return &copy
-}
-
-// copyRequestHeaders returns a copy of the request headers behind a mutex
-func (c *Client) copyRequestHeaders() requestHeaders {
-	/* */ c.requestHeadersLock.RLock()
-	defer c.requestHeadersLock.RUnlock()
-
-	return requestHeaders{
-		token:           c.requestHeaders.token,
-		namespace:       c.requestHeaders.namespace,
-		customHeaders:   c.requestHeaders.customHeaders.Clone(),
-		validationError: c.requestHeaders.validationError,
-	}
 }
 
 func validateToken(token string) error {

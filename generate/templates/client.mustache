@@ -49,7 +49,7 @@ type requestHeaders struct {
 	namespace     string
 	customHeaders http.Header
 
-	// This error is set in client.WithX methods and checked in client.NewRequest.
+	// This error is set in client.WithX methods and checked in client.newRequest.
 	// Since client.WithX methods are used for method chaining, they cannot
 	// return errors.
 	validationError error
@@ -269,30 +269,26 @@ func (c *Client) WithCustomHeaders(headers http.Header) *Client {
 	return copy
 }
 
-// NewStructuredRequest expects json.Marshaler encoded request body and returns a new request with vault-specific headers
-func (c *Client) NewStructuredRequest(method, path string, body json.Marshaler) (*http.Request, error) {
-	if body == nil {
-		return c.NewRequest(method, path, nil)
-	}
-
-	buf := bytes.Buffer{}
+// newStructuredRequest expects json.Marshaler encoded request body and returns a new request with vault-specific headers
+func (c *Client) newStructuredRequest(ctx context.Context, method, path string, body json.Marshaler) (*http.Request, error) {
+	var buf bytes.Buffer
 
 	if err := json.NewEncoder(&buf).Encode(body); err != nil {
 		return nil, fmt.Errorf("could not encode request body: %w", err)
 	}
 
-	return c.NewRequest(method, path, &buf)
+	return c.newRequest(ctx, method, path, &buf)
 }
 
-// NewRequest returns a new request with vault-specific headers
-func (c *Client) NewRequest(method, path string, body io.Reader) (*http.Request, error) {
+// newRequest returns a new request with vault-specific headers
+func (c *Client) newRequest(ctx context.Context, method, path string, body io.Reader) (*http.Request, error) {
 	// concatenate the base address with the given path
 	url, err := c.parsedBaseAddress.Parse(path)
 	if err != nil {
 		return nil, fmt.Errorf("could not join %q with the base address: %w", path, err)
 	}
 
-	req, err := http.NewRequest(method, url.String(), body)
+	req, err := http.NewRequestWithContext(ctx, method, url.String(), body)
 	if err != nil {
 		return nil, fmt.Errorf("could not create '%s %s' request: %w", method, url.String(), err)
 	}
@@ -314,8 +310,8 @@ func (c *Client) NewRequest(method, path string, body io.Reader) (*http.Request,
 	return req, nil
 }
 
-// Do sends the given request to Vault, handling retries, redirects, and rate limiting
-func (c *Client) Do(ctx context.Context, req *http.Request, retry bool) (*http.Response, error) {
+// do sends the given request to Vault, handling retries, redirects, and rate limiting
+func (c *Client) do(ctx context.Context, req *http.Request, retry bool) (*http.Response, error) {
 	// block on the rate limiter, if set
 	if c.configuration.RateLimiter != nil {
 		c.configuration.RateLimiter.Wait(ctx)

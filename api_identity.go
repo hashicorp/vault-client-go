@@ -25,15 +25,15 @@ type Identity struct {
 // DeleteIdentityAliasIdId Update, read or delete an alias ID.
 // id: ID of the alias
 func (a *Identity) DeleteIdentityAliasIdId(ctx context.Context, id string) (*http.Response, error) {
-	localVarPath := "/v1/identity/alias/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(id), -1)
+	requestPath := "/v1/identity/alias/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -44,15 +44,15 @@ func (a *Identity) DeleteIdentityAliasIdId(ctx context.Context, id string) (*htt
 // DeleteIdentityEntityAliasIdId Update, read or delete an alias ID.
 // id: ID of the alias
 func (a *Identity) DeleteIdentityEntityAliasIdId(ctx context.Context, id string) (*http.Response, error) {
-	localVarPath := "/v1/identity/entity-alias/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(id), -1)
+	requestPath := "/v1/identity/entity-alias/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -63,15 +63,15 @@ func (a *Identity) DeleteIdentityEntityAliasIdId(ctx context.Context, id string)
 // DeleteIdentityEntityIdId Update, read or delete an entity using entity ID
 // id: ID of the entity. If set, updates the corresponding existing entity.
 func (a *Identity) DeleteIdentityEntityIdId(ctx context.Context, id string) (*http.Response, error) {
-	localVarPath := "/v1/identity/entity/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(id), -1)
+	requestPath := "/v1/identity/entity/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -82,15 +82,15 @@ func (a *Identity) DeleteIdentityEntityIdId(ctx context.Context, id string) (*ht
 // DeleteIdentityEntityNameName Update, read or delete an entity using entity name
 // name: Name of the entity
 func (a *Identity) DeleteIdentityEntityNameName(ctx context.Context, name string) (*http.Response, error) {
-	localVarPath := "/v1/identity/entity/name/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/entity/name/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -101,15 +101,15 @@ func (a *Identity) DeleteIdentityEntityNameName(ctx context.Context, name string
 // DeleteIdentityGroupAliasIdId
 // id: ID of the group alias.
 func (a *Identity) DeleteIdentityGroupAliasIdId(ctx context.Context, id string) (*http.Response, error) {
-	localVarPath := "/v1/identity/group-alias/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(id), -1)
+	requestPath := "/v1/identity/group-alias/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -120,15 +120,15 @@ func (a *Identity) DeleteIdentityGroupAliasIdId(ctx context.Context, id string) 
 // DeleteIdentityGroupIdId Update or delete an existing group using its ID.
 // id: ID of the group. If set, updates the corresponding existing group.
 func (a *Identity) DeleteIdentityGroupIdId(ctx context.Context, id string) (*http.Response, error) {
-	localVarPath := "/v1/identity/group/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(id), -1)
+	requestPath := "/v1/identity/group/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -139,15 +139,15 @@ func (a *Identity) DeleteIdentityGroupIdId(ctx context.Context, id string) (*htt
 // DeleteIdentityGroupNameName
 // name: Name of the group.
 func (a *Identity) DeleteIdentityGroupNameName(ctx context.Context, name string) (*http.Response, error) {
-	localVarPath := "/v1/identity/group/name/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/group/name/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -158,15 +158,15 @@ func (a *Identity) DeleteIdentityGroupNameName(ctx context.Context, name string)
 // DeleteIdentityMfaLoginEnforcementName Delete a login enforcement
 // name: Name for this login enforcement configuration
 func (a *Identity) DeleteIdentityMfaLoginEnforcementName(ctx context.Context, name string) (*http.Response, error) {
-	localVarPath := "/v1/identity/mfa/login-enforcement/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/mfa/login-enforcement/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -177,15 +177,15 @@ func (a *Identity) DeleteIdentityMfaLoginEnforcementName(ctx context.Context, na
 // DeleteIdentityMfaMethodDuoMethodId Delete a configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
 func (a *Identity) DeleteIdentityMfaMethodDuoMethodId(ctx context.Context, methodId string) (*http.Response, error) {
-	localVarPath := "/v1/identity/mfa/method/duo/{method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
+	requestPath := "/v1/identity/mfa/method/duo/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
-	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -196,15 +196,15 @@ func (a *Identity) DeleteIdentityMfaMethodDuoMethodId(ctx context.Context, metho
 // DeleteIdentityMfaMethodOktaMethodId Delete a configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
 func (a *Identity) DeleteIdentityMfaMethodOktaMethodId(ctx context.Context, methodId string) (*http.Response, error) {
-	localVarPath := "/v1/identity/mfa/method/okta/{method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
+	requestPath := "/v1/identity/mfa/method/okta/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
-	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -215,15 +215,15 @@ func (a *Identity) DeleteIdentityMfaMethodOktaMethodId(ctx context.Context, meth
 // DeleteIdentityMfaMethodPingidMethodId Delete a configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
 func (a *Identity) DeleteIdentityMfaMethodPingidMethodId(ctx context.Context, methodId string) (*http.Response, error) {
-	localVarPath := "/v1/identity/mfa/method/pingid/{method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
+	requestPath := "/v1/identity/mfa/method/pingid/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
-	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -234,15 +234,15 @@ func (a *Identity) DeleteIdentityMfaMethodPingidMethodId(ctx context.Context, me
 // DeleteIdentityMfaMethodTotpMethodId Delete a configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
 func (a *Identity) DeleteIdentityMfaMethodTotpMethodId(ctx context.Context, methodId string) (*http.Response, error) {
-	localVarPath := "/v1/identity/mfa/method/totp/{method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
+	requestPath := "/v1/identity/mfa/method/totp/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
-	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -253,15 +253,15 @@ func (a *Identity) DeleteIdentityMfaMethodTotpMethodId(ctx context.Context, meth
 // DeleteIdentityOidcAssignmentName
 // name: Name of the assignment
 func (a *Identity) DeleteIdentityOidcAssignmentName(ctx context.Context, name string) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/assignment/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/oidc/assignment/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -272,15 +272,15 @@ func (a *Identity) DeleteIdentityOidcAssignmentName(ctx context.Context, name st
 // DeleteIdentityOidcClientName
 // name: Name of the client.
 func (a *Identity) DeleteIdentityOidcClientName(ctx context.Context, name string) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/client/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/oidc/client/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -291,15 +291,15 @@ func (a *Identity) DeleteIdentityOidcClientName(ctx context.Context, name string
 // DeleteIdentityOidcKeyName CRUD operations for OIDC keys.
 // name: Name of the key
 func (a *Identity) DeleteIdentityOidcKeyName(ctx context.Context, name string) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/key/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/oidc/key/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -310,15 +310,15 @@ func (a *Identity) DeleteIdentityOidcKeyName(ctx context.Context, name string) (
 // DeleteIdentityOidcProviderName
 // name: Name of the provider
 func (a *Identity) DeleteIdentityOidcProviderName(ctx context.Context, name string) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/provider/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/oidc/provider/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -329,15 +329,15 @@ func (a *Identity) DeleteIdentityOidcProviderName(ctx context.Context, name stri
 // DeleteIdentityOidcRoleName CRUD operations on OIDC Roles
 // name: Name of the role
 func (a *Identity) DeleteIdentityOidcRoleName(ctx context.Context, name string) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/oidc/role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -348,15 +348,15 @@ func (a *Identity) DeleteIdentityOidcRoleName(ctx context.Context, name string) 
 // DeleteIdentityOidcScopeName
 // name: Name of the scope
 func (a *Identity) DeleteIdentityOidcScopeName(ctx context.Context, name string) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/scope/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/oidc/scope/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -367,15 +367,15 @@ func (a *Identity) DeleteIdentityOidcScopeName(ctx context.Context, name string)
 // DeleteIdentityPersonaIdId Update, read or delete an alias ID.
 // id: ID of the persona
 func (a *Identity) DeleteIdentityPersonaIdId(ctx context.Context, id string) (*http.Response, error) {
-	localVarPath := "/v1/identity/persona/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(id), -1)
+	requestPath := "/v1/identity/persona/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.NewRequest(http.MethodDelete, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodDelete, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -386,14 +386,14 @@ func (a *Identity) DeleteIdentityPersonaIdId(ctx context.Context, id string) (*h
 // GetIdentityAliasId List all the alias IDs.
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityAliasId(ctx context.Context, list string) (*http.Response, error) {
-	localVarPath := "/v1/identity/alias/id"
+	requestPath := "/v1/identity/alias/id"
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -404,15 +404,15 @@ func (a *Identity) GetIdentityAliasId(ctx context.Context, list string) (*http.R
 // GetIdentityAliasIdId Update, read or delete an alias ID.
 // id: ID of the alias
 func (a *Identity) GetIdentityAliasIdId(ctx context.Context, id string) (*http.Response, error) {
-	localVarPath := "/v1/identity/alias/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(id), -1)
+	requestPath := "/v1/identity/alias/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -423,14 +423,14 @@ func (a *Identity) GetIdentityAliasIdId(ctx context.Context, id string) (*http.R
 // GetIdentityEntityAliasId List all the alias IDs.
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityEntityAliasId(ctx context.Context, list string) (*http.Response, error) {
-	localVarPath := "/v1/identity/entity-alias/id"
+	requestPath := "/v1/identity/entity-alias/id"
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -441,15 +441,15 @@ func (a *Identity) GetIdentityEntityAliasId(ctx context.Context, list string) (*
 // GetIdentityEntityAliasIdId Update, read or delete an alias ID.
 // id: ID of the alias
 func (a *Identity) GetIdentityEntityAliasIdId(ctx context.Context, id string) (*http.Response, error) {
-	localVarPath := "/v1/identity/entity-alias/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(id), -1)
+	requestPath := "/v1/identity/entity-alias/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -460,14 +460,14 @@ func (a *Identity) GetIdentityEntityAliasIdId(ctx context.Context, id string) (*
 // GetIdentityEntityId List all the entity IDs
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityEntityId(ctx context.Context, list string) (*http.Response, error) {
-	localVarPath := "/v1/identity/entity/id"
+	requestPath := "/v1/identity/entity/id"
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -478,15 +478,15 @@ func (a *Identity) GetIdentityEntityId(ctx context.Context, list string) (*http.
 // GetIdentityEntityIdId Update, read or delete an entity using entity ID
 // id: ID of the entity. If set, updates the corresponding existing entity.
 func (a *Identity) GetIdentityEntityIdId(ctx context.Context, id string) (*http.Response, error) {
-	localVarPath := "/v1/identity/entity/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(id), -1)
+	requestPath := "/v1/identity/entity/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -497,14 +497,14 @@ func (a *Identity) GetIdentityEntityIdId(ctx context.Context, id string) (*http.
 // GetIdentityEntityName List all the entity names
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityEntityName(ctx context.Context, list string) (*http.Response, error) {
-	localVarPath := "/v1/identity/entity/name"
+	requestPath := "/v1/identity/entity/name"
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -515,15 +515,15 @@ func (a *Identity) GetIdentityEntityName(ctx context.Context, list string) (*htt
 // GetIdentityEntityNameName Update, read or delete an entity using entity name
 // name: Name of the entity
 func (a *Identity) GetIdentityEntityNameName(ctx context.Context, name string) (*http.Response, error) {
-	localVarPath := "/v1/identity/entity/name/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/entity/name/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -534,14 +534,14 @@ func (a *Identity) GetIdentityEntityNameName(ctx context.Context, name string) (
 // GetIdentityGroupAliasId List all the group alias IDs.
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityGroupAliasId(ctx context.Context, list string) (*http.Response, error) {
-	localVarPath := "/v1/identity/group-alias/id"
+	requestPath := "/v1/identity/group-alias/id"
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -552,15 +552,15 @@ func (a *Identity) GetIdentityGroupAliasId(ctx context.Context, list string) (*h
 // GetIdentityGroupAliasIdId
 // id: ID of the group alias.
 func (a *Identity) GetIdentityGroupAliasIdId(ctx context.Context, id string) (*http.Response, error) {
-	localVarPath := "/v1/identity/group-alias/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(id), -1)
+	requestPath := "/v1/identity/group-alias/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -571,14 +571,14 @@ func (a *Identity) GetIdentityGroupAliasIdId(ctx context.Context, id string) (*h
 // GetIdentityGroupId List all the group IDs.
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityGroupId(ctx context.Context, list string) (*http.Response, error) {
-	localVarPath := "/v1/identity/group/id"
+	requestPath := "/v1/identity/group/id"
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -589,15 +589,15 @@ func (a *Identity) GetIdentityGroupId(ctx context.Context, list string) (*http.R
 // GetIdentityGroupIdId Update or delete an existing group using its ID.
 // id: ID of the group. If set, updates the corresponding existing group.
 func (a *Identity) GetIdentityGroupIdId(ctx context.Context, id string) (*http.Response, error) {
-	localVarPath := "/v1/identity/group/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(id), -1)
+	requestPath := "/v1/identity/group/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -608,14 +608,14 @@ func (a *Identity) GetIdentityGroupIdId(ctx context.Context, id string) (*http.R
 // GetIdentityGroupName
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityGroupName(ctx context.Context, list string) (*http.Response, error) {
-	localVarPath := "/v1/identity/group/name"
+	requestPath := "/v1/identity/group/name"
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -626,15 +626,15 @@ func (a *Identity) GetIdentityGroupName(ctx context.Context, list string) (*http
 // GetIdentityGroupNameName
 // name: Name of the group.
 func (a *Identity) GetIdentityGroupNameName(ctx context.Context, name string) (*http.Response, error) {
-	localVarPath := "/v1/identity/group/name/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/group/name/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -645,14 +645,14 @@ func (a *Identity) GetIdentityGroupNameName(ctx context.Context, name string) (*
 // GetIdentityMfaLoginEnforcement List login enforcements
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityMfaLoginEnforcement(ctx context.Context, list string) (*http.Response, error) {
-	localVarPath := "/v1/identity/mfa/login-enforcement"
+	requestPath := "/v1/identity/mfa/login-enforcement"
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -663,15 +663,15 @@ func (a *Identity) GetIdentityMfaLoginEnforcement(ctx context.Context, list stri
 // GetIdentityMfaLoginEnforcementName Read the current login enforcement
 // name: Name for this login enforcement configuration
 func (a *Identity) GetIdentityMfaLoginEnforcementName(ctx context.Context, name string) (*http.Response, error) {
-	localVarPath := "/v1/identity/mfa/login-enforcement/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/mfa/login-enforcement/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -682,14 +682,14 @@ func (a *Identity) GetIdentityMfaLoginEnforcementName(ctx context.Context, name 
 // GetIdentityMfaMethod List MFA method configurations for all MFA methods
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityMfaMethod(ctx context.Context, list string) (*http.Response, error) {
-	localVarPath := "/v1/identity/mfa/method"
+	requestPath := "/v1/identity/mfa/method"
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -700,14 +700,14 @@ func (a *Identity) GetIdentityMfaMethod(ctx context.Context, list string) (*http
 // GetIdentityMfaMethodDuo List MFA method configurations for the given MFA method
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityMfaMethodDuo(ctx context.Context, list string) (*http.Response, error) {
-	localVarPath := "/v1/identity/mfa/method/duo"
+	requestPath := "/v1/identity/mfa/method/duo"
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -718,15 +718,15 @@ func (a *Identity) GetIdentityMfaMethodDuo(ctx context.Context, list string) (*h
 // GetIdentityMfaMethodDuoMethodId Read the current configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
 func (a *Identity) GetIdentityMfaMethodDuoMethodId(ctx context.Context, methodId string) (*http.Response, error) {
-	localVarPath := "/v1/identity/mfa/method/duo/{method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
+	requestPath := "/v1/identity/mfa/method/duo/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -737,15 +737,15 @@ func (a *Identity) GetIdentityMfaMethodDuoMethodId(ctx context.Context, methodId
 // GetIdentityMfaMethodMethodId Read the current configuration for the given ID regardless of the MFA method type
 // methodId: The unique identifier for this MFA method.
 func (a *Identity) GetIdentityMfaMethodMethodId(ctx context.Context, methodId string) (*http.Response, error) {
-	localVarPath := "/v1/identity/mfa/method/{method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
+	requestPath := "/v1/identity/mfa/method/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -756,14 +756,14 @@ func (a *Identity) GetIdentityMfaMethodMethodId(ctx context.Context, methodId st
 // GetIdentityMfaMethodOkta List MFA method configurations for the given MFA method
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityMfaMethodOkta(ctx context.Context, list string) (*http.Response, error) {
-	localVarPath := "/v1/identity/mfa/method/okta"
+	requestPath := "/v1/identity/mfa/method/okta"
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -774,15 +774,15 @@ func (a *Identity) GetIdentityMfaMethodOkta(ctx context.Context, list string) (*
 // GetIdentityMfaMethodOktaMethodId Read the current configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
 func (a *Identity) GetIdentityMfaMethodOktaMethodId(ctx context.Context, methodId string) (*http.Response, error) {
-	localVarPath := "/v1/identity/mfa/method/okta/{method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
+	requestPath := "/v1/identity/mfa/method/okta/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -793,14 +793,14 @@ func (a *Identity) GetIdentityMfaMethodOktaMethodId(ctx context.Context, methodI
 // GetIdentityMfaMethodPingid List MFA method configurations for the given MFA method
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityMfaMethodPingid(ctx context.Context, list string) (*http.Response, error) {
-	localVarPath := "/v1/identity/mfa/method/pingid"
+	requestPath := "/v1/identity/mfa/method/pingid"
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -811,15 +811,15 @@ func (a *Identity) GetIdentityMfaMethodPingid(ctx context.Context, list string) 
 // GetIdentityMfaMethodPingidMethodId Read the current configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
 func (a *Identity) GetIdentityMfaMethodPingidMethodId(ctx context.Context, methodId string) (*http.Response, error) {
-	localVarPath := "/v1/identity/mfa/method/pingid/{method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
+	requestPath := "/v1/identity/mfa/method/pingid/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -830,14 +830,14 @@ func (a *Identity) GetIdentityMfaMethodPingidMethodId(ctx context.Context, metho
 // GetIdentityMfaMethodTotp List MFA method configurations for the given MFA method
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityMfaMethodTotp(ctx context.Context, list string) (*http.Response, error) {
-	localVarPath := "/v1/identity/mfa/method/totp"
+	requestPath := "/v1/identity/mfa/method/totp"
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -848,15 +848,15 @@ func (a *Identity) GetIdentityMfaMethodTotp(ctx context.Context, list string) (*
 // GetIdentityMfaMethodTotpMethodId Read the current configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
 func (a *Identity) GetIdentityMfaMethodTotpMethodId(ctx context.Context, methodId string) (*http.Response, error) {
-	localVarPath := "/v1/identity/mfa/method/totp/{method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
+	requestPath := "/v1/identity/mfa/method/totp/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -867,14 +867,14 @@ func (a *Identity) GetIdentityMfaMethodTotpMethodId(ctx context.Context, methodI
 // GetIdentityOidcAssignment
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityOidcAssignment(ctx context.Context, list string) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/assignment"
+	requestPath := "/v1/identity/oidc/assignment"
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -885,15 +885,15 @@ func (a *Identity) GetIdentityOidcAssignment(ctx context.Context, list string) (
 // GetIdentityOidcAssignmentName
 // name: Name of the assignment
 func (a *Identity) GetIdentityOidcAssignmentName(ctx context.Context, name string) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/assignment/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/oidc/assignment/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -904,14 +904,14 @@ func (a *Identity) GetIdentityOidcAssignmentName(ctx context.Context, name strin
 // GetIdentityOidcClient
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityOidcClient(ctx context.Context, list string) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/client"
+	requestPath := "/v1/identity/oidc/client"
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -922,15 +922,15 @@ func (a *Identity) GetIdentityOidcClient(ctx context.Context, list string) (*htt
 // GetIdentityOidcClientName
 // name: Name of the client.
 func (a *Identity) GetIdentityOidcClientName(ctx context.Context, name string) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/client/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/oidc/client/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -940,14 +940,14 @@ func (a *Identity) GetIdentityOidcClientName(ctx context.Context, name string) (
 
 // GetIdentityOidcConfig OIDC configuration
 func (a *Identity) GetIdentityOidcConfig(ctx context.Context) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/config"
+	requestPath := "/v1/identity/oidc/config"
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -958,14 +958,14 @@ func (a *Identity) GetIdentityOidcConfig(ctx context.Context) (*http.Response, e
 // GetIdentityOidcKey List OIDC keys
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityOidcKey(ctx context.Context, list string) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/key"
+	requestPath := "/v1/identity/oidc/key"
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -976,15 +976,15 @@ func (a *Identity) GetIdentityOidcKey(ctx context.Context, list string) (*http.R
 // GetIdentityOidcKeyName CRUD operations for OIDC keys.
 // name: Name of the key
 func (a *Identity) GetIdentityOidcKeyName(ctx context.Context, name string) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/key/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/oidc/key/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -995,14 +995,14 @@ func (a *Identity) GetIdentityOidcKeyName(ctx context.Context, name string) (*ht
 // GetIdentityOidcProvider
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityOidcProvider(ctx context.Context, list string) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/provider"
+	requestPath := "/v1/identity/oidc/provider"
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1013,15 +1013,15 @@ func (a *Identity) GetIdentityOidcProvider(ctx context.Context, list string) (*h
 // GetIdentityOidcProviderName
 // name: Name of the provider
 func (a *Identity) GetIdentityOidcProviderName(ctx context.Context, name string) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/provider/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/oidc/provider/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1032,15 +1032,15 @@ func (a *Identity) GetIdentityOidcProviderName(ctx context.Context, name string)
 // GetIdentityOidcProviderNameAuthorize
 // name: Name of the provider
 func (a *Identity) GetIdentityOidcProviderNameAuthorize(ctx context.Context, name string) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/provider/{name}/authorize"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/oidc/provider/{name}/authorize"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1051,15 +1051,15 @@ func (a *Identity) GetIdentityOidcProviderNameAuthorize(ctx context.Context, nam
 // GetIdentityOidcProviderNameUserinfo
 // name: Name of the provider
 func (a *Identity) GetIdentityOidcProviderNameUserinfo(ctx context.Context, name string) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/provider/{name}/userinfo"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/oidc/provider/{name}/userinfo"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1070,15 +1070,15 @@ func (a *Identity) GetIdentityOidcProviderNameUserinfo(ctx context.Context, name
 // GetIdentityOidcProviderNameWellKnownKeys
 // name: Name of the provider
 func (a *Identity) GetIdentityOidcProviderNameWellKnownKeys(ctx context.Context, name string) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/provider/{name}/.well-known/keys"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/oidc/provider/{name}/.well-known/keys"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1089,15 +1089,15 @@ func (a *Identity) GetIdentityOidcProviderNameWellKnownKeys(ctx context.Context,
 // GetIdentityOidcProviderNameWellKnownOpenidConfiguration
 // name: Name of the provider
 func (a *Identity) GetIdentityOidcProviderNameWellKnownOpenidConfiguration(ctx context.Context, name string) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/provider/{name}/.well-known/openid-configuration"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/oidc/provider/{name}/.well-known/openid-configuration"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1108,14 +1108,14 @@ func (a *Identity) GetIdentityOidcProviderNameWellKnownOpenidConfiguration(ctx c
 // GetIdentityOidcRole List configured OIDC roles
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityOidcRole(ctx context.Context, list string) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/role"
+	requestPath := "/v1/identity/oidc/role"
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1126,15 +1126,15 @@ func (a *Identity) GetIdentityOidcRole(ctx context.Context, list string) (*http.
 // GetIdentityOidcRoleName CRUD operations on OIDC Roles
 // name: Name of the role
 func (a *Identity) GetIdentityOidcRoleName(ctx context.Context, name string) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/oidc/role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1145,14 +1145,14 @@ func (a *Identity) GetIdentityOidcRoleName(ctx context.Context, name string) (*h
 // GetIdentityOidcScope
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityOidcScope(ctx context.Context, list string) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/scope"
+	requestPath := "/v1/identity/oidc/scope"
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1163,15 +1163,15 @@ func (a *Identity) GetIdentityOidcScope(ctx context.Context, list string) (*http
 // GetIdentityOidcScopeName
 // name: Name of the scope
 func (a *Identity) GetIdentityOidcScopeName(ctx context.Context, name string) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/scope/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/oidc/scope/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1182,15 +1182,15 @@ func (a *Identity) GetIdentityOidcScopeName(ctx context.Context, name string) (*
 // GetIdentityOidcTokenName Generate an OIDC token
 // name: Name of the role
 func (a *Identity) GetIdentityOidcTokenName(ctx context.Context, name string) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/token/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/oidc/token/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1200,14 +1200,14 @@ func (a *Identity) GetIdentityOidcTokenName(ctx context.Context, name string) (*
 
 // GetIdentityOidcWellKnownKeys Retrieve public keys
 func (a *Identity) GetIdentityOidcWellKnownKeys(ctx context.Context) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/.well-known/keys"
+	requestPath := "/v1/identity/oidc/.well-known/keys"
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1217,14 +1217,14 @@ func (a *Identity) GetIdentityOidcWellKnownKeys(ctx context.Context) (*http.Resp
 
 // GetIdentityOidcWellKnownOpenidConfiguration Query OIDC configurations
 func (a *Identity) GetIdentityOidcWellKnownOpenidConfiguration(ctx context.Context) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/.well-known/openid-configuration"
+	requestPath := "/v1/identity/oidc/.well-known/openid-configuration"
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1235,14 +1235,14 @@ func (a *Identity) GetIdentityOidcWellKnownOpenidConfiguration(ctx context.Conte
 // GetIdentityPersonaId List all the alias IDs.
 // list: Must be set to &#x60;true&#x60;
 func (a *Identity) GetIdentityPersonaId(ctx context.Context, list string) (*http.Response, error) {
-	localVarPath := "/v1/identity/persona/id"
+	requestPath := "/v1/identity/persona/id"
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1253,15 +1253,15 @@ func (a *Identity) GetIdentityPersonaId(ctx context.Context, list string) (*http
 // GetIdentityPersonaIdId Update, read or delete an alias ID.
 // id: ID of the persona
 func (a *Identity) GetIdentityPersonaIdId(ctx context.Context, id string) (*http.Response, error) {
-	localVarPath := "/v1/identity/persona/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(id), -1)
+	requestPath := "/v1/identity/persona/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.NewRequest(http.MethodGet, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodGet, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1271,14 +1271,14 @@ func (a *Identity) GetIdentityPersonaIdId(ctx context.Context, id string) (*http
 
 // PostIdentityAlias Create a new alias.
 func (a *Identity) PostIdentityAlias(ctx context.Context, identityAliasRequest IdentityAliasRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/alias"
+	requestPath := "/v1/identity/alias"
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityAliasRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityAliasRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1289,15 +1289,15 @@ func (a *Identity) PostIdentityAlias(ctx context.Context, identityAliasRequest I
 // PostIdentityAliasIdId Update, read or delete an alias ID.
 // id: ID of the alias
 func (a *Identity) PostIdentityAliasIdId(ctx context.Context, id string, identityAliasIdRequest IdentityAliasIdRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/alias/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(id), -1)
+	requestPath := "/v1/identity/alias/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityAliasIdRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityAliasIdRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1307,14 +1307,14 @@ func (a *Identity) PostIdentityAliasIdId(ctx context.Context, id string, identit
 
 // PostIdentityEntity Create a new entity
 func (a *Identity) PostIdentityEntity(ctx context.Context, identityEntityRequest IdentityEntityRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/entity"
+	requestPath := "/v1/identity/entity"
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityEntityRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityEntityRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1324,14 +1324,14 @@ func (a *Identity) PostIdentityEntity(ctx context.Context, identityEntityRequest
 
 // PostIdentityEntityAlias Create a new alias.
 func (a *Identity) PostIdentityEntityAlias(ctx context.Context, identityEntityAliasRequest IdentityEntityAliasRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/entity-alias"
+	requestPath := "/v1/identity/entity-alias"
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityEntityAliasRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityEntityAliasRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1342,15 +1342,15 @@ func (a *Identity) PostIdentityEntityAlias(ctx context.Context, identityEntityAl
 // PostIdentityEntityAliasIdId Update, read or delete an alias ID.
 // id: ID of the alias
 func (a *Identity) PostIdentityEntityAliasIdId(ctx context.Context, id string, identityEntityAliasIdRequest IdentityEntityAliasIdRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/entity-alias/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(id), -1)
+	requestPath := "/v1/identity/entity-alias/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityEntityAliasIdRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityEntityAliasIdRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1360,14 +1360,14 @@ func (a *Identity) PostIdentityEntityAliasIdId(ctx context.Context, id string, i
 
 // PostIdentityEntityBatchDelete Delete all of the entities provided
 func (a *Identity) PostIdentityEntityBatchDelete(ctx context.Context, identityEntityBatchDeleteRequest IdentityEntityBatchDeleteRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/entity/batch-delete"
+	requestPath := "/v1/identity/entity/batch-delete"
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityEntityBatchDeleteRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityEntityBatchDeleteRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1378,15 +1378,15 @@ func (a *Identity) PostIdentityEntityBatchDelete(ctx context.Context, identityEn
 // PostIdentityEntityIdId Update, read or delete an entity using entity ID
 // id: ID of the entity. If set, updates the corresponding existing entity.
 func (a *Identity) PostIdentityEntityIdId(ctx context.Context, id string, identityEntityIdRequest IdentityEntityIdRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/entity/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(id), -1)
+	requestPath := "/v1/identity/entity/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityEntityIdRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityEntityIdRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1396,14 +1396,14 @@ func (a *Identity) PostIdentityEntityIdId(ctx context.Context, id string, identi
 
 // PostIdentityEntityMerge Merge two or more entities together
 func (a *Identity) PostIdentityEntityMerge(ctx context.Context, identityEntityMergeRequest IdentityEntityMergeRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/entity/merge"
+	requestPath := "/v1/identity/entity/merge"
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityEntityMergeRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityEntityMergeRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1414,15 +1414,15 @@ func (a *Identity) PostIdentityEntityMerge(ctx context.Context, identityEntityMe
 // PostIdentityEntityNameName Update, read or delete an entity using entity name
 // name: Name of the entity
 func (a *Identity) PostIdentityEntityNameName(ctx context.Context, name string, identityEntityNameRequest IdentityEntityNameRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/entity/name/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/entity/name/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityEntityNameRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityEntityNameRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1432,14 +1432,14 @@ func (a *Identity) PostIdentityEntityNameName(ctx context.Context, name string, 
 
 // PostIdentityGroup Create a new group.
 func (a *Identity) PostIdentityGroup(ctx context.Context, identityGroupRequest IdentityGroupRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/group"
+	requestPath := "/v1/identity/group"
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityGroupRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityGroupRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1449,14 +1449,14 @@ func (a *Identity) PostIdentityGroup(ctx context.Context, identityGroupRequest I
 
 // PostIdentityGroupAlias Creates a new group alias, or updates an existing one.
 func (a *Identity) PostIdentityGroupAlias(ctx context.Context, identityGroupAliasRequest IdentityGroupAliasRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/group-alias"
+	requestPath := "/v1/identity/group-alias"
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityGroupAliasRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityGroupAliasRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1467,15 +1467,15 @@ func (a *Identity) PostIdentityGroupAlias(ctx context.Context, identityGroupAlia
 // PostIdentityGroupAliasIdId
 // id: ID of the group alias.
 func (a *Identity) PostIdentityGroupAliasIdId(ctx context.Context, id string, identityGroupAliasIdRequest IdentityGroupAliasIdRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/group-alias/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(id), -1)
+	requestPath := "/v1/identity/group-alias/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityGroupAliasIdRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityGroupAliasIdRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1486,15 +1486,15 @@ func (a *Identity) PostIdentityGroupAliasIdId(ctx context.Context, id string, id
 // PostIdentityGroupIdId Update or delete an existing group using its ID.
 // id: ID of the group. If set, updates the corresponding existing group.
 func (a *Identity) PostIdentityGroupIdId(ctx context.Context, id string, identityGroupIdRequest IdentityGroupIdRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/group/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(id), -1)
+	requestPath := "/v1/identity/group/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityGroupIdRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityGroupIdRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1505,15 +1505,15 @@ func (a *Identity) PostIdentityGroupIdId(ctx context.Context, id string, identit
 // PostIdentityGroupNameName
 // name: Name of the group.
 func (a *Identity) PostIdentityGroupNameName(ctx context.Context, name string, identityGroupNameRequest IdentityGroupNameRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/group/name/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/group/name/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityGroupNameRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityGroupNameRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1523,14 +1523,14 @@ func (a *Identity) PostIdentityGroupNameName(ctx context.Context, name string, i
 
 // PostIdentityLookupEntity Query entities based on various properties.
 func (a *Identity) PostIdentityLookupEntity(ctx context.Context, identityLookupEntityRequest IdentityLookupEntityRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/lookup/entity"
+	requestPath := "/v1/identity/lookup/entity"
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityLookupEntityRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityLookupEntityRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1540,14 +1540,14 @@ func (a *Identity) PostIdentityLookupEntity(ctx context.Context, identityLookupE
 
 // PostIdentityLookupGroup Query groups based on various properties.
 func (a *Identity) PostIdentityLookupGroup(ctx context.Context, identityLookupGroupRequest IdentityLookupGroupRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/lookup/group"
+	requestPath := "/v1/identity/lookup/group"
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityLookupGroupRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityLookupGroupRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1558,15 +1558,15 @@ func (a *Identity) PostIdentityLookupGroup(ctx context.Context, identityLookupGr
 // PostIdentityMfaLoginEnforcementName Create or update a login enforcement
 // name: Name for this login enforcement configuration
 func (a *Identity) PostIdentityMfaLoginEnforcementName(ctx context.Context, name string, identityMfaLoginEnforcementRequest IdentityMfaLoginEnforcementRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/mfa/login-enforcement/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/mfa/login-enforcement/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityMfaLoginEnforcementRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityMfaLoginEnforcementRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1577,15 +1577,15 @@ func (a *Identity) PostIdentityMfaLoginEnforcementName(ctx context.Context, name
 // PostIdentityMfaMethodDuoMethodId Update or create a configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
 func (a *Identity) PostIdentityMfaMethodDuoMethodId(ctx context.Context, methodId string, identityMfaMethodDuoRequest IdentityMfaMethodDuoRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/mfa/method/duo/{method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
+	requestPath := "/v1/identity/mfa/method/duo/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityMfaMethodDuoRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityMfaMethodDuoRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1596,15 +1596,15 @@ func (a *Identity) PostIdentityMfaMethodDuoMethodId(ctx context.Context, methodI
 // PostIdentityMfaMethodOktaMethodId Update or create a configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
 func (a *Identity) PostIdentityMfaMethodOktaMethodId(ctx context.Context, methodId string, identityMfaMethodOktaRequest IdentityMfaMethodOktaRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/mfa/method/okta/{method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
+	requestPath := "/v1/identity/mfa/method/okta/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityMfaMethodOktaRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityMfaMethodOktaRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1615,15 +1615,15 @@ func (a *Identity) PostIdentityMfaMethodOktaMethodId(ctx context.Context, method
 // PostIdentityMfaMethodPingidMethodId Update or create a configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
 func (a *Identity) PostIdentityMfaMethodPingidMethodId(ctx context.Context, methodId string, identityMfaMethodPingidRequest IdentityMfaMethodPingidRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/mfa/method/pingid/{method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
+	requestPath := "/v1/identity/mfa/method/pingid/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityMfaMethodPingidRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityMfaMethodPingidRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1633,14 +1633,14 @@ func (a *Identity) PostIdentityMfaMethodPingidMethodId(ctx context.Context, meth
 
 // PostIdentityMfaMethodTotpAdminDestroy Destroys a TOTP secret for the given MFA method ID on the given entity
 func (a *Identity) PostIdentityMfaMethodTotpAdminDestroy(ctx context.Context, identityMfaMethodTotpAdminDestroyRequest IdentityMfaMethodTotpAdminDestroyRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/mfa/method/totp/admin-destroy"
+	requestPath := "/v1/identity/mfa/method/totp/admin-destroy"
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityMfaMethodTotpAdminDestroyRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityMfaMethodTotpAdminDestroyRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1650,14 +1650,14 @@ func (a *Identity) PostIdentityMfaMethodTotpAdminDestroy(ctx context.Context, id
 
 // PostIdentityMfaMethodTotpAdminGenerate Update or create TOTP secret for the given method ID on the given entity.
 func (a *Identity) PostIdentityMfaMethodTotpAdminGenerate(ctx context.Context, identityMfaMethodTotpAdminGenerateRequest IdentityMfaMethodTotpAdminGenerateRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/mfa/method/totp/admin-generate"
+	requestPath := "/v1/identity/mfa/method/totp/admin-generate"
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityMfaMethodTotpAdminGenerateRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityMfaMethodTotpAdminGenerateRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1667,14 +1667,14 @@ func (a *Identity) PostIdentityMfaMethodTotpAdminGenerate(ctx context.Context, i
 
 // PostIdentityMfaMethodTotpGenerate Update or create TOTP secret for the given method ID on the given entity.
 func (a *Identity) PostIdentityMfaMethodTotpGenerate(ctx context.Context, identityMfaMethodTotpGenerateRequest IdentityMfaMethodTotpGenerateRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/mfa/method/totp/generate"
+	requestPath := "/v1/identity/mfa/method/totp/generate"
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityMfaMethodTotpGenerateRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityMfaMethodTotpGenerateRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1685,15 +1685,15 @@ func (a *Identity) PostIdentityMfaMethodTotpGenerate(ctx context.Context, identi
 // PostIdentityMfaMethodTotpMethodId Update or create a configuration for the given MFA method
 // methodId: The unique identifier for this MFA method.
 func (a *Identity) PostIdentityMfaMethodTotpMethodId(ctx context.Context, methodId string, identityMfaMethodTotpRequest IdentityMfaMethodTotpRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/mfa/method/totp/{method_id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
+	requestPath := "/v1/identity/mfa/method/totp/{method_id}"
+	requestPath = strings.Replace(requestPath, "{"+"method_id"+"}", url.PathEscape(methodId), -1)
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityMfaMethodTotpRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityMfaMethodTotpRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1704,15 +1704,15 @@ func (a *Identity) PostIdentityMfaMethodTotpMethodId(ctx context.Context, method
 // PostIdentityOidcAssignmentName
 // name: Name of the assignment
 func (a *Identity) PostIdentityOidcAssignmentName(ctx context.Context, name string, identityOidcAssignmentRequest IdentityOidcAssignmentRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/assignment/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/oidc/assignment/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityOidcAssignmentRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityOidcAssignmentRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1723,15 +1723,15 @@ func (a *Identity) PostIdentityOidcAssignmentName(ctx context.Context, name stri
 // PostIdentityOidcClientName
 // name: Name of the client.
 func (a *Identity) PostIdentityOidcClientName(ctx context.Context, name string, identityOidcClientRequest IdentityOidcClientRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/client/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/oidc/client/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityOidcClientRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityOidcClientRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1741,14 +1741,14 @@ func (a *Identity) PostIdentityOidcClientName(ctx context.Context, name string, 
 
 // PostIdentityOidcConfig OIDC configuration
 func (a *Identity) PostIdentityOidcConfig(ctx context.Context, identityOidcConfigRequest IdentityOidcConfigRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/config"
+	requestPath := "/v1/identity/oidc/config"
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityOidcConfigRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityOidcConfigRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1758,14 +1758,14 @@ func (a *Identity) PostIdentityOidcConfig(ctx context.Context, identityOidcConfi
 
 // PostIdentityOidcIntrospect Verify the authenticity of an OIDC token
 func (a *Identity) PostIdentityOidcIntrospect(ctx context.Context, identityOidcIntrospectRequest IdentityOidcIntrospectRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/introspect"
+	requestPath := "/v1/identity/oidc/introspect"
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityOidcIntrospectRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityOidcIntrospectRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1776,15 +1776,15 @@ func (a *Identity) PostIdentityOidcIntrospect(ctx context.Context, identityOidcI
 // PostIdentityOidcKeyName CRUD operations for OIDC keys.
 // name: Name of the key
 func (a *Identity) PostIdentityOidcKeyName(ctx context.Context, name string, identityOidcKeyRequest IdentityOidcKeyRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/key/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/oidc/key/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityOidcKeyRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityOidcKeyRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1795,15 +1795,15 @@ func (a *Identity) PostIdentityOidcKeyName(ctx context.Context, name string, ide
 // PostIdentityOidcKeyNameRotate Rotate a named OIDC key.
 // name: Name of the key
 func (a *Identity) PostIdentityOidcKeyNameRotate(ctx context.Context, name string, identityOidcKeyRotateRequest IdentityOidcKeyRotateRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/key/{name}/rotate"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/oidc/key/{name}/rotate"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityOidcKeyRotateRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityOidcKeyRotateRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1814,15 +1814,15 @@ func (a *Identity) PostIdentityOidcKeyNameRotate(ctx context.Context, name strin
 // PostIdentityOidcProviderName
 // name: Name of the provider
 func (a *Identity) PostIdentityOidcProviderName(ctx context.Context, name string, identityOidcProviderRequest IdentityOidcProviderRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/provider/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/oidc/provider/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityOidcProviderRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityOidcProviderRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1833,15 +1833,15 @@ func (a *Identity) PostIdentityOidcProviderName(ctx context.Context, name string
 // PostIdentityOidcProviderNameAuthorize
 // name: Name of the provider
 func (a *Identity) PostIdentityOidcProviderNameAuthorize(ctx context.Context, name string, identityOidcProviderAuthorizeRequest IdentityOidcProviderAuthorizeRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/provider/{name}/authorize"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/oidc/provider/{name}/authorize"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityOidcProviderAuthorizeRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityOidcProviderAuthorizeRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1852,15 +1852,15 @@ func (a *Identity) PostIdentityOidcProviderNameAuthorize(ctx context.Context, na
 // PostIdentityOidcProviderNameToken
 // name: Name of the provider
 func (a *Identity) PostIdentityOidcProviderNameToken(ctx context.Context, name string, identityOidcProviderTokenRequest IdentityOidcProviderTokenRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/provider/{name}/token"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/oidc/provider/{name}/token"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityOidcProviderTokenRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityOidcProviderTokenRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1871,15 +1871,15 @@ func (a *Identity) PostIdentityOidcProviderNameToken(ctx context.Context, name s
 // PostIdentityOidcProviderNameUserinfo
 // name: Name of the provider
 func (a *Identity) PostIdentityOidcProviderNameUserinfo(ctx context.Context, name string) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/provider/{name}/userinfo"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/oidc/provider/{name}/userinfo"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewRequest(http.MethodPost, localVarPath, nil)
+	req, err := a.client.newRequest(ctx, http.MethodPost, requestPath, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1890,15 +1890,15 @@ func (a *Identity) PostIdentityOidcProviderNameUserinfo(ctx context.Context, nam
 // PostIdentityOidcRoleName CRUD operations on OIDC Roles
 // name: Name of the role
 func (a *Identity) PostIdentityOidcRoleName(ctx context.Context, name string, identityOidcRoleRequest IdentityOidcRoleRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/role/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/oidc/role/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityOidcRoleRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityOidcRoleRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1909,15 +1909,15 @@ func (a *Identity) PostIdentityOidcRoleName(ctx context.Context, name string, id
 // PostIdentityOidcScopeName
 // name: Name of the scope
 func (a *Identity) PostIdentityOidcScopeName(ctx context.Context, name string, identityOidcScopeRequest IdentityOidcScopeRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/oidc/scope/{name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"name"+"}", url.PathEscape(name), -1)
+	requestPath := "/v1/identity/oidc/scope/{name}"
+	requestPath = strings.Replace(requestPath, "{"+"name"+"}", url.PathEscape(name), -1)
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityOidcScopeRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityOidcScopeRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1927,14 +1927,14 @@ func (a *Identity) PostIdentityOidcScopeName(ctx context.Context, name string, i
 
 // PostIdentityPersona Create a new alias.
 func (a *Identity) PostIdentityPersona(ctx context.Context, identityPersonaRequest IdentityPersonaRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/persona"
+	requestPath := "/v1/identity/persona"
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityPersonaRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityPersonaRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}
@@ -1945,15 +1945,15 @@ func (a *Identity) PostIdentityPersona(ctx context.Context, identityPersonaReque
 // PostIdentityPersonaIdId Update, read or delete an alias ID.
 // id: ID of the persona
 func (a *Identity) PostIdentityPersonaIdId(ctx context.Context, id string, identityPersonaIdRequest IdentityPersonaIdRequest) (*http.Response, error) {
-	localVarPath := "/v1/identity/persona/id/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(id), -1)
+	requestPath := "/v1/identity/persona/id/{id}"
+	requestPath = strings.Replace(requestPath, "{"+"id"+"}", url.PathEscape(id), -1)
 
-	req, err := a.client.NewStructuredRequest(http.MethodPost, localVarPath, identityPersonaIdRequest)
+	req, err := a.client.newStructuredRequest(ctx, http.MethodPost, requestPath, identityPersonaIdRequest)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := a.client.Do(ctx, req, true)
+	resp, err := a.client.do(ctx, req, true)
 	if err != nil || resp == nil {
 		return resp, err
 	}

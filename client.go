@@ -111,7 +111,7 @@ func NewClient(configuration Configuration) (*Client, error) {
 // Clone creates a new Vault client with the same configuration as the original
 // client. Note that the cloned Vault client will point to the same base
 // http.Client and retryablehttp.Client objects.
-func (c *Client) Clone(cloneRequestHeaders bool) *Client {
+func (c *Client) Clone() *Client {
 	copy := Client{
 		configuration:     c.configuration,
 		parsedBaseAddress: c.parsedBaseAddress,
@@ -119,10 +119,8 @@ func (c *Client) Clone(cloneRequestHeaders bool) *Client {
 		clientWithRetries: c.clientWithRetries,
 	}
 
-	if cloneRequestHeaders {
-		copy.requestHeaders = c.cloneRequestHeaders()
-		copy.requestHeadersLock = sync.RWMutex{}
-	}
+	copy.requestHeaders = c.cloneRequestHeaders()
+	copy.requestHeadersLock = sync.RWMutex{}
 
 	copy.Auth = Auth{
 		client: &copy,
@@ -157,14 +155,13 @@ func (c *Client) cloneRequestHeaders() requestHeaders {
 // See https://www.vaultproject.io/docs/concepts/tokens for more info on
 // tokens.
 func (c *Client) SetToken(token string) error {
-	/* */ c.requestHeadersLock.Lock()
-	defer c.requestHeadersLock.Unlock()
-
 	if err := validateToken(token); err != nil {
 		return err
 	}
 
+	c.requestHeadersLock.Lock()
 	c.requestHeaders.token = token
+	c.requestHeadersLock.Unlock()
 
 	return nil
 }
@@ -173,10 +170,9 @@ func (c *Client) SetToken(token string) error {
 // See https://www.vaultproject.io/docs/concepts/tokens for more info on
 // tokens.
 func (c *Client) ClearToken() {
-	/* */ c.requestHeadersLock.Lock()
-	defer c.requestHeadersLock.Unlock()
-
+	c.requestHeadersLock.Lock()
 	c.requestHeaders.token = ""
+	c.requestHeadersLock.Unlock()
 }
 
 // WithToken returns a shallow copy of the client with the token set to the
@@ -186,7 +182,7 @@ func (c *Client) ClearToken() {
 // See https://www.vaultproject.io/docs/concepts/tokens for more info on
 // tokens.
 func (c *Client) WithToken(token string) *Client {
-	copy := c.Clone(true)
+	copy := c.Clone()
 
 	if err := validateToken(token); err != nil {
 		copy.requestHeaders.validationError = multierror.Append(copy.requestHeaders.validationError, err)
@@ -202,14 +198,13 @@ func (c *Client) WithToken(token string) *Client {
 // See https://www.vaultproject.io/docs/enterprise/namespaces for more info on
 // namespaces.
 func (c *Client) SetNamespace(namespace string) error {
-	/* */ c.requestHeadersLock.Lock()
-	defer c.requestHeadersLock.Unlock()
-
 	if err := validateNamespace(namespace); err != nil {
 		return err
 	}
 
+	c.requestHeadersLock.Lock()
 	c.requestHeaders.namespace = namespace
+	c.requestHeadersLock.Unlock()
 
 	return nil
 }
@@ -218,10 +213,9 @@ func (c *Client) SetNamespace(namespace string) error {
 // See https://www.vaultproject.io/docs/enterprise/namespaces for more info on
 // namespaces.
 func (c *Client) ClearNamespace() {
-	/* */ c.requestHeadersLock.Lock()
-	defer c.requestHeadersLock.Unlock()
-
+	c.requestHeadersLock.Lock()
 	c.requestHeaders.namespace = ""
+	c.requestHeadersLock.Unlock()
 }
 
 // WithNamespace returns a shallow copy of the client with the namespace set to
@@ -231,7 +225,7 @@ func (c *Client) ClearNamespace() {
 // See https://www.vaultproject.io/docs/enterprise/namespaces for more info on
 // namespaces.
 func (c *Client) WithNamespace(namespace string) *Client {
-	copy := c.Clone(true)
+	copy := c.Clone()
 
 	if err := validateNamespace(namespace); err != nil {
 		copy.requestHeaders.validationError = multierror.Append(copy.requestHeaders.validationError, err)
@@ -245,24 +239,22 @@ func (c *Client) WithNamespace(namespace string) *Client {
 // SetCustomHeaders sets custom headers to be used in all subsequent requests.
 // The internal prefix 'X-Vault-' is not permitted for the header keys.
 func (c *Client) SetCustomHeaders(headers http.Header) error {
-	/* */ c.requestHeadersLock.Lock()
-	defer c.requestHeadersLock.Unlock()
-
 	if err := validateCustomHeaders(headers); err != nil {
 		return err
 	}
 
+	c.requestHeadersLock.Lock()
 	c.requestHeaders.customHeaders = headers
+	c.requestHeadersLock.Unlock()
 
 	return nil
 }
 
 // ClearsCustomHeaders clears all custom headers from the subsequent requests.
 func (c *Client) ClearCustomHeaders() {
-	/* */ c.requestHeadersLock.Lock()
-	defer c.requestHeadersLock.Unlock()
-
+	c.requestHeadersLock.Lock()
 	c.requestHeaders.customHeaders = nil
+	c.requestHeadersLock.Unlock()
 }
 
 // WithCustomHeaders returns a shallow copy of the client with custom headers
@@ -270,7 +262,7 @@ func (c *Client) ClearCustomHeaders() {
 //   client.WithCustomHeaders(h).System.Get... // use the given custom headers
 //   client.System.Get...                      // use the previous custom headers
 func (c *Client) WithCustomHeaders(headers http.Header) *Client {
-	copy := c.Clone(true)
+	copy := c.Clone()
 
 	if err := validateCustomHeaders(headers); err != nil {
 		copy.requestHeaders.validationError = multierror.Append(copy.requestHeaders.validationError, err)

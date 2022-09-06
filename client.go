@@ -75,13 +75,13 @@ func NewClient(configuration Configuration) (*Client, error) {
 		// retryablehttp wrapper around the HTTP client
 		clientWithRetries: &retryablehttp.Client{
 			HTTPClient:   configuration.BaseClient,
-			Logger:       configuration.RetryOptions.Logger,
-			RetryWaitMin: configuration.RetryOptions.RetryWaitMin,
-			RetryWaitMax: configuration.RetryOptions.RetryWaitMax,
-			RetryMax:     configuration.RetryOptions.RetryMax,
-			CheckRetry:   configuration.RetryOptions.CheckRetry,
-			Backoff:      configuration.RetryOptions.Backoff,
-			ErrorHandler: configuration.RetryOptions.ErrorHandler,
+			Logger:       configuration.Retry.Logger,
+			RetryWaitMin: configuration.Retry.RetryWaitMin,
+			RetryWaitMax: configuration.Retry.RetryWaitMax,
+			RetryMax:     configuration.Retry.RetryMax,
+			CheckRetry:   configuration.Retry.CheckRetry,
+			Backoff:      configuration.Retry.Backoff,
+			ErrorHandler: configuration.Retry.ErrorHandler,
 		},
 	}
 
@@ -89,8 +89,16 @@ func NewClient(configuration Configuration) (*Client, error) {
 	if err != nil {
 		return nil, err
 	}
-
 	c.parsedBaseAddress = *a
+
+	transport, ok := c.client.Transport.(*http.Transport)
+	if !ok {
+		return nil, fmt.Errorf("the configured base client's transport (%T) is not of type *http.Transport", c.client.Transport)
+	}
+
+	if err := configuration.TLS.applyTo(transport.TLSClientConfig); err != nil {
+		return nil, err
+	}
 
 	c.Auth = Auth{
 		client: &c,

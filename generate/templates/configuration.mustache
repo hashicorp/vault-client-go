@@ -42,6 +42,23 @@ type Configuration struct {
 	// empty struct rate.Limiter is equivalent blocking all requests.
 	// Default: nil
 	RateLimiter *rate.Limiter
+
+	// EnforceReadYourWritesConsistency ensures isolated read-after-write
+	// semantics by providing discovered cluster replication states in each
+	// request.
+	//
+	// Background: when running in a cluster, Vault has an eventual consistency
+	// model. Only one node (the leader) can write to Vault's storage. Users
+	// generally expect read-after-write consistency: in other words, after
+	// writing foo=1, a subsequent read of foo should return 1.
+	//
+	// Setting this to true will enable "Conditional Forwarding" as described
+	// in https://www.vaultproject.io/docs/enterprise/consistency#mitigations
+	//
+	// Note: careful consideration should be made prior to enabling this setting
+	// since there will be a performance penalty paid upon each request.
+	// This feature requires enterprise server-side.
+	EnforceReadYourWritesConsistency bool
 }
 
 // TLSConfiguration is a collection of TLS settings used to configure the internal

@@ -209,15 +209,15 @@ func (c *Client) ClearToken() {
 // See https://www.vaultproject.io/docs/concepts/tokens for more info on
 // tokens.
 func (c *Client) WithToken(token string) *Client {
-	copy := c.Clone()
+	clone := c.Clone()
 
 	if err := validateToken(token); err != nil {
-		copy.requestModifiers.validationError = multierror.Append(copy.requestModifiers.validationError, err)
+		clone.requestModifiers.validationError = multierror.Append(clone.requestModifiers.validationError, err)
 	} else {
-		copy.requestModifiers.headers.token = token
+		clone.requestModifiers.headers.token = token
 	}
 
-	return copy
+	return clone
 }
 
 // SetNamespace sets the namespace to be used with all subsequent requests,
@@ -252,15 +252,15 @@ func (c *Client) ClearNamespace() {
 // See https://www.vaultproject.io/docs/enterprise/namespaces for more info on
 // namespaces.
 func (c *Client) WithNamespace(namespace string) *Client {
-	copy := c.Clone()
+	clone := c.Clone()
 
 	if err := validateNamespace(namespace); err != nil {
-		copy.requestModifiers.validationError = multierror.Append(copy.requestModifiers.validationError, err)
+		clone.requestModifiers.validationError = multierror.Append(clone.requestModifiers.validationError, err)
 	} else {
-		copy.requestModifiers.headers.namespace = namespace
+		clone.requestModifiers.headers.namespace = namespace
 	}
 
-	return copy
+	return clone
 }
 
 // SetCustomHeaders sets custom headers to be used in all subsequent requests.
@@ -289,15 +289,40 @@ func (c *Client) ClearCustomHeaders() {
 //   client.WithCustomHeaders(h).System.Get... // use the given custom headers
 //   client.System.Get...                      // use the previous custom headers
 func (c *Client) WithCustomHeaders(headers http.Header) *Client {
-	copy := c.Clone()
+	clone := c.Clone()
 
 	if err := validateCustomHeaders(headers); err != nil {
-		copy.requestModifiers.validationError = multierror.Append(copy.requestModifiers.validationError, err)
+		clone.requestModifiers.validationError = multierror.Append(clone.requestModifiers.validationError, err)
 	} else {
-		copy.requestModifiers.headers.customHeaders = headers.Clone()
+		clone.requestModifiers.headers.customHeaders = headers.Clone()
 	}
 
-	return copy
+	return clone
+}
+
+// SetRequestCallbacks sets callbacks which will be invoked before each request
+func (c *Client) SetRequestCallbacks(callbacks ...RequestCallback) error {
+	c.requestModifiersLock.Lock()
+	copy(c.requestModifiers.requestCallbacks, callbacks)
+	c.requestModifiersLock.Unlock()
+
+	return nil
+}
+
+// ClearRequestCallbacks clears all request callbacks
+func (c *Client) ClearRequestCallbacks() {
+	c.requestModifiersLock.Lock()
+	c.requestModifiers.requestCallbacks = nil
+	c.requestModifiersLock.Unlock()
+}
+
+// WithRequestCallbacks returns a shallow copy of the client with request
+// callbacks set to the given value, use nil to clear out the callbacks
+func (c *Client) WithRequestCallbacks(callbacks ...RequestCallback) *Client {
+	clone := c.Clone()
+	copy(clone.requestModifiers.requestCallbacks, callbacks)
+
+	return clone
 }
 
 // newStructuredRequest expects json.Marshaler encoded request body and returns a new request with vault-specific headers

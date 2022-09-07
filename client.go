@@ -203,9 +203,7 @@ func (c *Client) ClearToken() {
 }
 
 // WithToken returns a shallow copy of the client with the token set to the
-// given value:
-//   client.WithToken("my-token").System.Get...  // use "my-token" token
-//   client.System.Get...                        // use the previous token
+// given value.
 // See https://www.vaultproject.io/docs/concepts/tokens for more info on
 // tokens.
 func (c *Client) WithToken(token string) *Client {
@@ -246,9 +244,7 @@ func (c *Client) ClearNamespace() {
 }
 
 // WithNamespace returns a shallow copy of the client with the namespace set to
-// the given value, use "" to clear the namespace:
-//   client.WithNamespace("ns").System.Get...  // use "ns" namespace
-//   client.System.Get...                      // use the previous namespace
+// the given value, use "" to clear the namespace.
 // See https://www.vaultproject.io/docs/enterprise/namespaces for more info on
 // namespaces.
 func (c *Client) WithNamespace(namespace string) *Client {
@@ -285,9 +281,7 @@ func (c *Client) ClearCustomHeaders() {
 }
 
 // WithCustomHeaders returns a shallow copy of the client with custom headers
-// set to the given value, use nil to clear out the headers:
-//   client.WithCustomHeaders(h).System.Get... // use the given custom headers
-//   client.System.Get...                      // use the previous custom headers
+// set to the given value, use nil to clear out the headers.
 func (c *Client) WithCustomHeaders(headers http.Header) *Client {
 	clone := c.Clone()
 
@@ -300,7 +294,7 @@ func (c *Client) WithCustomHeaders(headers http.Header) *Client {
 	return clone
 }
 
-// SetRequestCallbacks sets callbacks which will be invoked before each request
+// SetRequestCallbacks sets callbacks which will be invoked before each request.
 func (c *Client) SetRequestCallbacks(callbacks ...RequestCallback) error {
 	c.requestModifiersLock.Lock()
 	copy(c.requestModifiers.requestCallbacks, callbacks)
@@ -309,7 +303,7 @@ func (c *Client) SetRequestCallbacks(callbacks ...RequestCallback) error {
 	return nil
 }
 
-// ClearRequestCallbacks clears all request callbacks
+// ClearRequestCallbacks clears all request callbacks.
 func (c *Client) ClearRequestCallbacks() {
 	c.requestModifiersLock.Lock()
 	c.requestModifiers.requestCallbacks = nil
@@ -317,10 +311,35 @@ func (c *Client) ClearRequestCallbacks() {
 }
 
 // WithRequestCallbacks returns a shallow copy of the client with request
-// callbacks set to the given value, use nil to clear out the callbacks
+// callbacks set to the given value, use nil to clear out the callbacks.
 func (c *Client) WithRequestCallbacks(callbacks ...RequestCallback) *Client {
 	clone := c.Clone()
 	copy(clone.requestModifiers.requestCallbacks, callbacks)
+
+	return clone
+}
+
+// SetResponseCallbacks sets callbacks which will be invoked after each response.
+func (c *Client) SetResponseCallbacks(callbacks ...ResponseCallback) error {
+	c.requestModifiersLock.Lock()
+	copy(c.requestModifiers.responseCallbacks, callbacks)
+	c.requestModifiersLock.Unlock()
+
+	return nil
+}
+
+// ClearResponseCallbacks clears all response callbacks.
+func (c *Client) ClearResponseCallbacks() {
+	c.requestModifiersLock.Lock()
+	c.requestModifiers.responseCallbacks = nil
+	c.requestModifiersLock.Unlock()
+}
+
+// WithResponseCallbacks returns a shallow copy of the client with response
+// callbacks set to the given value, use nil to clear out the callbacks.
+func (c *Client) WithResponseCallbacks(callbacks ...ResponseCallback) *Client {
+	clone := c.Clone()
+	copy(clone.requestModifiers.responseCallbacks, callbacks)
 
 	return clone
 }

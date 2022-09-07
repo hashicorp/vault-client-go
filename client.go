@@ -319,7 +319,8 @@ func (c *Client) WithRequestCallbacks(callbacks ...RequestCallback) *Client {
 	return clone
 }
 
-// SetResponseCallbacks sets callbacks which will be invoked after each response.
+// SetResponseCallbacks sets callbacks which will be invoked after each
+// successful response.
 func (c *Client) SetResponseCallbacks(callbacks ...ResponseCallback) error {
 	c.requestModifiersLock.Lock()
 	copy(c.requestModifiers.responseCallbacks, callbacks)
@@ -392,12 +393,17 @@ func (c *Client) do(ctx context.Context, req *http.Request, retry bool) (*http.R
 		c.configuration.RateLimiter.Wait(ctx)
 	}
 
+	m := c.cloneRequestModifiers()
+
+	// invoke request callbacks
+	for _, callback := range m.requestCallbacks {
+		callback(req)
+	}
+
 	var (
 		resp *http.Response
 		err  error
 	)
-
-	req = req.WithContext(ctx)
 
 	// allow at most one redirect
 	redirectCount := 0
@@ -415,6 +421,11 @@ func (c *Client) do(ctx context.Context, req *http.Request, retry bool) (*http.R
 		if !redirect {
 			break
 		}
+	}
+
+	// invoke response callbacks
+	for _, callback := range m.responseCallbacks {
+		callback(req, resp)
 	}
 
 	return resp, nil

@@ -21,7 +21,7 @@ const (
 // RecordReplicationState returns a response callback that will record the
 // replication state returned by Vault in a response header.
 //
-// https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
+// https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
 func RecordReplicationState(state *string) ResponseCallback {
 	return func(req *http.Request, resp *http.Response) {
 		*state = resp.Header.Get(HeaderIndex)
@@ -33,7 +33,7 @@ func RecordReplicationState(state *string) ResponseCallback {
 // were obtained from the previously-seen response headers captured with
 // RecordReplicationState(...).
 //
-// https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
+// https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
 func RequireReplicationStates(states ...string) RequestCallback {
 	return func(req *http.Request) {
 		for _, state := range states {
@@ -132,7 +132,7 @@ func ParseReplicationState(raw string, hmacKey []byte) (ReplicationState, error)
 // older, and 0 if neither s1 nor s2 is strictly greater. An error is returned
 // if s1 or s2 are invalid or from different clusters.
 //
-// https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
+// https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
 func compareReplicationStates(s1, s2 string) (int, error) {
 	r1, err := ParseReplicationState(s1, nil)
 	if err != nil {
@@ -168,7 +168,7 @@ type replicationStateCache []string
 // recordReplicationState merges the state from the given response into the
 // existing cached replication states.
 //
-// https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
+// https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
 func (states replicationStateCache) recordReplicationState(resp *http.Response) {
 	new := resp.Header.Get(HeaderIndex)
 	if new != "" {
@@ -180,7 +180,7 @@ func (states replicationStateCache) recordReplicationState(resp *http.Response) 
 // require of Vault. These states were obtained from the previously-seen
 // response headers captured with replicationStateCache.recordReplicationState.
 //
-// https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
+// https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
 func (states replicationStateCache) requireReplicationStates(req *http.Request) {
 	for _, state := range states {
 		req.Header.Add(HeaderIndex, state)

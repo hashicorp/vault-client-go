@@ -53,7 +53,7 @@ type Configuration struct {
 	// writing foo=1, a subsequent read of foo should return 1.
 	//
 	// Setting this to true will enable "Conditional Forwarding" as described in
-	// https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
+	// https://www.vaultproject.io/docs/enterprise/consistency#vault-1-7-mitigations
 	//
 	// Note: careful consideration should be made prior to enabling this setting
 	// since there will be a performance penalty paid upon each request.

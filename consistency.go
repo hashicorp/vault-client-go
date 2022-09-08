@@ -82,13 +82,13 @@ type ReplicationState struct {
 func ParseReplicationState(raw string, hmacKey []byte) (ReplicationState, error) {
 	d, err := base64.StdEncoding.DecodeString(raw)
 	if err != nil {
-		return ReplicationState{}, err
+		return ReplicationState{}, fmt.Errorf("could not decode replication state: %w", err)
 	}
 	decoded := string(d)
 
 	lastIndex := strings.LastIndexByte(decoded, ':')
 	if lastIndex == -1 {
-		return ReplicationState{}, fmt.Errorf("invalid full state header format")
+		return ReplicationState{}, fmt.Errorf("invalid replication state header format")
 	}
 
 	state := decoded[:lastIndex]
@@ -159,7 +159,7 @@ func compareReplicationStates(s1, s2 string) (int, error) {
 }
 
 // replicationStateCache is used to track cluster replication states
-// in order to ensure proper read-after-write semantics for a Client.
+// in order to ensure proper read-after-write semantics for a client.
 type replicationStateCache struct {
 	states     []string
 	statesLock sync.RWMutex

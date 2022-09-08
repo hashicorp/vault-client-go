@@ -1,8 +1,17 @@
 package vault
 
 import (
+	"crypto/hmac"
+	"crypto/sha256"
+	"encoding/base64"
+	"encoding/hex"
+	"fmt"
 	"net/http"
+	"strconv"
+	"strings"
 	"sync"
+
+	"github.com/hashicorp/go-secure-stdlib/strutil"
 )
 
 const (
@@ -10,69 +19,175 @@ const (
 	HeaderForward = "X-Vault-Forward"
 )
 
-// RecordConsistencyState returns a response callback that will record the
-// state returned by Vault in a response header.
+// RecordReplicationState returns a response callback that will record the
+// replication state returned by Vault in a response header.
 //
 // https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
-func RecordConsistencyState(state *string) ResponseCallback {
+func RecordReplicationState(state *string) ResponseCallback {
 	return func(req *http.Request, resp *http.Response) {
 		*state = resp.Header.Get(HeaderIndex)
 	}
 }
 
-// RequireConsistencyState returns a request callback that will add a request
-// header to specify the state we require of Vault. This state was obtained
-// from a response header seen previously and captured with
-// RecordConsistencyState.
+// RequireReplicationStates returns a request callback that will add request
+// headers to specify the replication states we require of Vault. These states
+// were obtained from the previously-seen response headers captured with
+// RecordReplicationState(...).
 //
 // https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
-func RequireConsistencyState(states ...string) RequestCallback {
+func RequireReplicationStates(states ...string) RequestCallback {
 	return func(req *http.Request) {
-		for _, s := range states {
-			req.Header.Add(HeaderIndex, s)
+		for _, state := range states {
+			req.Header.Add(HeaderIndex, state)
 		}
 	}
 }
 
-// MergeReplicationStates returns a merged array of replication states by iterating
-// through all states in `old`. An iterated state is merged to the result before `new`
-// based on the result of compareReplicationStates
+// MergeReplicationStates returns a merged array of replication states by
+// iterating through all states in the `old` slice. An iterated state is merged
+// into the result before the `new` based on the result of
+// compareReplicationStates
 func MergeReplicationStates(old []string, new string) []string {
-	panic("not impl")
+	if len(old) == 0 || len(old) > 2 {
+		return []string{new}
+	}
+
+	var ret []string
+
+	for _, o := range old {
+		c, err := compareReplicationStates(o, new)
+		if err != nil {
+			return []string{new}
+		}
+
+		switch c {
+		case 1:
+			ret = append(ret, o)
+		case -1:
+			ret = append(ret, new)
+		case 0:
+			ret = append(ret, o, new)
+		}
+	}
+
+	return strutil.RemoveDuplicates(ret, false)
 }
 
-// replicationStateStore is used to track cluster replication states
+type ReplicationState struct {
+	Cluster         string
+	LocalIndex      uint64
+	ReplicatedIndex uint64
+}
+
+func ParseReplicationState(raw string, hmacKey []byte) (ReplicationState, error) {
+	d, err := base64.StdEncoding.DecodeString(raw)
+	if err != nil {
+		return ReplicationState{}, err
+	}
+	decoded := string(d)
+
+	lastIndex := strings.LastIndexByte(decoded, ':')
+	if lastIndex == -1 {
+		return ReplicationState{}, fmt.Errorf("invalid full state header format")
+	}
+
+	state := decoded[:lastIndex]
+	stateHMACRaw := decoded[lastIndex+1:]
+	stateHMAC, err := hex.DecodeString(stateHMACRaw)
+	if err != nil {
+		return ReplicationState{}, fmt.Errorf("invalid replication state header HMAC: %s, %w", stateHMACRaw, err)
+	}
+
+	if len(hmacKey) != 0 {
+		hm := hmac.New(sha256.New, hmacKey)
+		hm.Write([]byte(state))
+		if !hmac.Equal(hm.Sum(nil), stateHMAC) {
+			return ReplicationState{}, fmt.Errorf("invalid replication state header HMAC (mismatch)")
+		}
+	}
+
+	pieces := strings.Split(state, ":")
+	if len(pieces) != 4 || pieces[0] != "v1" || pieces[1] == "" {
+		return ReplicationState{}, fmt.Errorf("invalid replication state header format")
+	}
+
+	localIndex, err := strconv.ParseUint(pieces[2], 10, 64)
+	if err != nil {
+		return ReplicationState{}, fmt.Errorf("invalid local index in replication state header: %w", err)
+	}
+
+	replicatedIndex, err := strconv.ParseUint(pieces[3], 10, 64)
+	if err != nil {
+		return ReplicationState{}, fmt.Errorf("invalid replicated index in replication state header: %w", err)
+	}
+
+	return ReplicationState{
+		Cluster:         pieces[1],
+		LocalIndex:      localIndex,
+		ReplicatedIndex: replicatedIndex,
+	}, nil
+}
+
+// compareReplicationStates returns 1 if s1 is newer or identical, -1 if s1 is
+// older, and 0 if neither s1 nor s2 is strictly greater. An error is returned
+// if s1 or s2 are invalid or from different clusters.
+func compareReplicationStates(s1, s2 string) (int, error) {
+	r1, err := ParseReplicationState(s1, nil)
+	if err != nil {
+		return 0, err
+	}
+
+	r2, err := ParseReplicationState(s2, nil)
+	if err != nil {
+		return 0, err
+	}
+
+	if r1.Cluster != r2.Cluster {
+		return 0, fmt.Errorf("can't compare replication states from different clusters")
+	}
+
+	switch {
+	case r1.LocalIndex >= r2.LocalIndex && r1.ReplicatedIndex >= r2.ReplicatedIndex:
+		return 1, nil
+	// We've already handled the case where both are equal above, so really we're
+	// asking here if one or both are lesser.
+	case r1.LocalIndex <= r2.LocalIndex && r1.ReplicatedIndex <= r2.ReplicatedIndex:
+		return -1, nil
+	}
+
+	return 0, nil
+}
+
+// replicationStateCache is used to track cluster replication states
 // in order to ensure proper read-after-write semantics for a Client.
-type replicationStateStore struct {
-	m     sync.RWMutex
-	store []string
+type replicationStateCache struct {
+	states     []string
+	statesLock sync.RWMutex
 }
 
-// recordState updates the store's replication states with the merger of all
-// states.
-func (w *replicationStateStore) recordState(resp *http.Response) {
-	w.m.Lock()
-	defer w.m.Unlock()
-	newState := resp.Header.Get(HeaderIndex)
-	if newState != "" {
-		w.store = MergeReplicationStates(w.store, newState)
+// recordReplicationState merges the state from the given response with the
+// cached replication states
+// of all states.
+func (w *replicationStateCache) recordReplicationState(resp *http.Response) {
+	/* */ w.statesLock.Lock()
+	defer w.statesLock.Unlock()
+
+	state := resp.Header.Get(HeaderIndex)
+	if state != "" {
+		w.states = MergeReplicationStates(w.states, state)
 	}
 }
 
-// requireState updates the Request with the store's current replication states.
-func (w *replicationStateStore) requireState(req *http.Request) {
-	w.m.RLock()
-	defer w.m.RUnlock()
-	for _, s := range w.store {
-		req.Header.Add(HeaderIndex, s)
-	}
-}
+// requireReplicationStates adds headers to specify the replication states we
+// require of Vault. These states were obtained from the previously-seen
+// response headers captured with replicationStateCache.recordReplicationState.
+//
+// https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
+func (w *replicationStateCache) requireReplicationStates(req *http.Request) {
+	/* */ w.statesLock.RLock()
+	defer w.statesLock.RUnlock()
 
-// states currently stored.
-func (w *replicationStateStore) states() []string {
-	w.m.RLock()
-	defer w.m.RUnlock()
-	c := make([]string, len(w.store))
-	copy(c, w.store)
-	return c
+	for _, state := range w.states {
+		req.Header.Add(HeaderIndex, state)
+	}
 }

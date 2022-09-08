@@ -51,7 +51,7 @@ func MergeReplicationStates(old []string, new string) []string {
 		return []string{new}
 	}
 
-	var ret []string
+	var merged []string
 
 	for _, o := range old {
 		c, err := compareReplicationStates(o, new)
@@ -61,15 +61,15 @@ func MergeReplicationStates(old []string, new string) []string {
 
 		switch c {
 		case 1:
-			ret = append(ret, o)
+			merged = append(merged, o)
 		case -1:
-			ret = append(ret, new)
+			merged = append(merged, new)
 		case 0:
-			ret = append(ret, o, new)
+			merged = append(merged, o, new)
 		}
 	}
 
-	return strutil.RemoveDuplicates(ret, false)
+	return strutil.RemoveDuplicates(merged, false)
 }
 
 // ReplicationState is analogous to the WALState in github.com/vault/sdk

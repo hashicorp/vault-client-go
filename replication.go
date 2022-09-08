@@ -9,7 +9,6 @@ import (
 	"net/http"
 	"strconv"
 	"strings"
-	"sync"
 
 	"github.com/hashicorp/go-secure-stdlib/strutil"
 )
@@ -73,6 +72,7 @@ func MergeReplicationStates(old []string, new string) []string {
 	return strutil.RemoveDuplicates(ret, false)
 }
 
+// ReplicationState is analogous to the WALState in github.com/vault/sdk
 type ReplicationState struct {
 	Cluster         string
 	LocalIndex      uint64
@@ -88,7 +88,7 @@ func ParseReplicationState(raw string, hmacKey []byte) (ReplicationState, error)
 
 	lastIndex := strings.LastIndexByte(decoded, ':')
 	if lastIndex == -1 {
-		return ReplicationState{}, fmt.Errorf("invalid replication state header format")
+		return ReplicationState{}, fmt.Errorf("invalid replication state header full format")
 	}
 
 	state := decoded[:lastIndex]
@@ -131,6 +131,8 @@ func ParseReplicationState(raw string, hmacKey []byte) (ReplicationState, error)
 // compareReplicationStates returns 1 if s1 is newer or identical, -1 if s1 is
 // older, and 0 if neither s1 nor s2 is strictly greater. An error is returned
 // if s1 or s2 are invalid or from different clusters.
+//
+// https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
 func compareReplicationStates(s1, s2 string) (int, error) {
 	r1, err := ParseReplicationState(s1, nil)
 	if err != nil {
@@ -158,23 +160,19 @@ func compareReplicationStates(s1, s2 string) (int, error) {
 	return 0, nil
 }
 
-// replicationStateCache is used to track cluster replication states
-// in order to ensure proper read-after-write semantics for a client.
-type replicationStateCache struct {
-	states     []string
-	statesLock sync.RWMutex
-}
+// replicationStateCache is used to track cluster replication states in order
+// to ensure proper read-after-write semantics for the client. This will have
+// at most two states due to how MergeReplicationStates works.
+type replicationStateCache []string
 
-// recordReplicationState merges the state from the given response with the
-// cached replication states
-// of all states.
-func (w *replicationStateCache) recordReplicationState(resp *http.Response) {
-	/* */ w.statesLock.Lock()
-	defer w.statesLock.Unlock()
-
-	state := resp.Header.Get(HeaderIndex)
-	if state != "" {
-		w.states = MergeReplicationStates(w.states, state)
+// recordReplicationState merges the state from the given response into the
+// existing cached replication states.
+//
+// https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
+func (states replicationStateCache) recordReplicationState(resp *http.Response) {
+	new := resp.Header.Get(HeaderIndex)
+	if new != "" {
+		states = MergeReplicationStates(states, new)
 	}
 }
 
@@ -183,11 +181,8 @@ func (w *replicationStateCache) recordReplicationState(resp *http.Response) {
 // response headers captured with replicationStateCache.recordReplicationState.
 //
 // https://www.vaultproject.io/docs/enterprise/consistency#conditional-forwarding-performance-standbys-only
-func (w *replicationStateCache) requireReplicationStates(req *http.Request) {
-	/* */ w.statesLock.RLock()
-	defer w.statesLock.RUnlock()
-
-	for _, state := range w.states {
+func (states replicationStateCache) requireReplicationStates(req *http.Request) {
+	for _, state := range states {
 		req.Header.Add(HeaderIndex, state)
 	}
 }

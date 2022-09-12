@@ -99,7 +99,9 @@ _, err := client.Secrets.PostSecretDataPath(ctx, "my-secret", vault.KvDataReques
 		"password": "abc123",
 	},
 }
-...
+if err != nil {
+	log.Fatal(err)
+}
 
 // read a secret
 resp, err := client.Secrets.GetSecretDataPath(ctx, "my-secret")

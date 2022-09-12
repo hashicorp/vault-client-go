@@ -228,9 +228,9 @@ callbacks:
 var state string
 
 // write
-_, err := client.WithResponseCallbacks(
-	vault.RecordReplicationState(&state),
-).Secrets.PostSecretDataPath(ctx, "my-secret", vault.KvDataRequest{
+_, err := client.WithResponseCallbacks(vault.RecordReplicationState(
+	&state,
+)).Secrets.PostSecretDataPath(ctx, "my-secret", vault.KvDataRequest{
 	Data: map[string]interface{}{
 		"password": "abc123",
 	},
@@ -238,9 +238,9 @@ _, err := client.WithResponseCallbacks(
 ...
 
 // read
-resp, err := client.WithRequestCallbacks(
-	vault.RequireReplicationStates(state),
-).Secrets.GetSecretDataPath(ctx, "my-secret")
+resp, err := client.WithRequestCallbacks(vault.RequireReplicationStates(
+	state,
+)).Secrets.GetSecretDataPath(ctx, "my-secret")
 ...
 ```
 

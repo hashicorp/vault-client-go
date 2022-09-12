@@ -8,13 +8,13 @@
 1. [Installation](#installation)
 1. [Getting Started](#getting-started)
 1. [Examples](#examples)
-	- [Reading and writing `kv v2` secrets](#reading-and-writing-kv-v2-secrets)
-	- [Using TLS](#using-tls)
-	- [Using TLS with client-side certificate authentication](#using-tls-with-client-side-certificate-authentication)
-	- [Using enterprise namespaces](#using-enterprise-namespaces)
-	- [Loading configuration from environment variables](#loading-configuration-from-environment-variables)
-	- [Logging with request/response callbacks](#logging-with-requestresponse-callbacks)
-	- [Enforcing read-your-writes replication semantics](#enforcing-read-your-writes-replication-semantics)
+   - [Reading and writing `kv v2` secrets](#reading-and-writing-kv-v2-secrets)
+   - [Using TLS](#using-tls)
+   - [Using TLS with client-side certificate authentication](#using-tls-with-client-side-certificate-authentication)
+   - [Using enterprise namespaces](#using-enterprise-namespaces)
+   - [Loading configuration from environment variables](#loading-configuration-from-environment-variables)
+   - [Logging with request/response callbacks](#logging-with-requestresponse-callbacks)
+   - [Enforcing read-your-writes replication semantics](#enforcing-read-your-writes-replication-semantics)
 1. [Local Development](#local-development)
 
 ## Overview
@@ -51,9 +51,9 @@ go get github.com/hashicorp/vault-client-go
 ## Getting Started
 
 Here is a simple example of using the library to get the list of currently
-enabled secrets engines (equivalent to `GET /v1/sys/mounts`). This example
-works with a Vault server started in dev mode with a hardcoded root token
-(e.g. `vault server -dev -dev-root-token-id="my-token"`):
+enabled secrets engines (equivalent to `GET /v1/sys/mounts`). This example works
+with a Vault server started in dev mode with a hardcoded root token (e.g.
+`vault server -dev -dev-root-token-id="my-token"`):
 
 ```go
 package main
@@ -85,7 +85,7 @@ func main() {
 }
 ```
 
-**Note**: the responses are currently simple `http.Response` objects that need
+_**Note**_: the responses are currently simple `http.Response` objects that need
 to be parsed and closed. Structured responses are coming soon!
 
 ## Examples
@@ -109,7 +109,7 @@ if err != nil {
 ...
 ```
 
-**Note**: we are using the generated endpoints for reading and writing `kv v2`
+_**Note**_: we are using the generated endpoints for reading and writing `kv v2`
 secrets. These methods are hardcoded to use `/secret` as the mount path. In the
 future, we plan to introduce:
 
@@ -153,7 +153,7 @@ if err != nil {
 ...
 ```
 
-**Note**: this is a temporary solution using a generated endpoint. The user
+_**Note**_: this is a temporary solution using a generated endpoint. The user
 experience will be improved with the introduction of auth wrappers.
 
 ### Using enterprise namespaces

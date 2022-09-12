@@ -130,6 +130,12 @@ client, err := vault.NewClient(configuration)
 ...
 ```
 
+You can test this with a `dev-tls` Vault server:
+
+```shell-session
+vault server -dev-tls
+```
+
 ### Using TLS with client-side certificate authentication
 
 ```go

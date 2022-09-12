@@ -15,7 +15,8 @@
    - [Loading configuration from environment variables](#loading-configuration-from-environment-variables)
    - [Logging with request/response callbacks](#logging-with-requestresponse-callbacks)
    - [Enforcing read-your-writes replication semantics](#enforcing-read-your-writes-replication-semantics)
-1. [Local Development](#local-development)
+1. [Building the Library](#building-the-library)
+1. [Documentation for API Endpoints](#documentation-for-api-endpoints)
 
 ## Overview
 
@@ -174,6 +175,9 @@ resp, err := client.System.GetSysMounts(ctx)
 if err != nil {
 	log.Fatal(err)
 }
+
+// optionally clear the namespace for future calls
+client.ClearNamespace()
 ...
 ```
 
@@ -261,7 +265,7 @@ configuration.EnforceReadYourWritesConsistency = true
 client, err := vault.NewClient(configuration)
 ```
 
-## Local Development
+## Building the Library
 
 The vast majority of the code, including the client's endpoints, requests and
 responses is generated from the `OpenAPI` [specification file][openapi-spec]
@@ -270,7 +274,7 @@ re-generation is done manually after making changes to `generate/templates/*`
 files by running the following:
 
 ```shell-session
-make regen
+make regen && go build
 ```
 
 In the future, we plan to automate (or enforce) the code generation process

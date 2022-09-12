@@ -1,20 +1,27 @@
 # Go Client for HashiCorp Vault
 
-## :warning: _stability warning: this library is under development!_ :warning:
+## :warning: _Stability Warning: Under Development!_ :warning:
 
 ## Contents
 
-- [Overview](#overview)
-- [Installation](#installation)
-- [Getting Started](#getting-started)
-- [Examples](#examples)
-- [Local Development](#local-development)
+1. [Overview](#overview)
+1. [Installation](#installation)
+1. [Getting Started](#getting-started)
+1. [Examples](#examples)
+	- [Reading and writing `kv v2` secrets](#reading-and-writing-kv-v2-secrets)
+	- [Using TLS](#using-tls)
+	- [Using TLS with client-side certificate authentication](#using-tls-with-client-side-certificate-authentication)
+	- [Using enterprise namespaces](#using-enterprise-namespaces)
+	- [Loading configuration from environment variables](#loading-configuration-from-environment-variables)
+	- [Logging with request/response callbacks](#logging-with-requestresponse-callbacks)
+	- [Enforcing read-your-writes replication semantics](#enforcing-read-your-writes-replication-semantics)
+1. [Local Development](#local-development)
 
 ## Overview
 
-A simple library to interact with [HashiCorp][hashicorp] [Vault][vault]
-[generated][openapi-generator] from `OpenAPI` [specification file][openapi-spec].
-The library currently supports the following features:
+A simple client library [generated][openapi-generator] from `OpenAPI`
+[specification file][openapi-spec] to interact with [HashiCorp][hashicorp]
+[Vault][vault]. The library currently supports the following features:
 
 - TLS
 - Automatic retries on errors (using [go-retryablehttp][go-retryablehttp])
@@ -22,13 +29,13 @@ The library currently supports the following features:
 - Client-side rate limiting
 - Vault-specific headers (`X-Vault-Token`, `X-Vault-Header`, etc.)
 - Request/Response callbacks
-- Reading configuration from environment
+- Environment variables for configuration
 - Read-your-writes semantics
 - Thread-safe operations for all of the above
 
 The following features are coming soon:
 
-- Structured responses (part of the [specification file][openapi-spec])
+- Structured responses (as part of the [specification file][openapi-spec])
 - `Logical().Read()` & `Logical().Write()` equivalents
 - Testing framework
 - CI/CD pipelines
@@ -45,7 +52,8 @@ go get github.com/hashicorp/vault-client-go
 
 Here is a simple example of using the library to get the list of currently
 enabled secrets engines (equivalent to `GET /v1/sys/mounts`). This example
-assumes a `vault server -dev -dev-root-token-id="my-token"`:
+works with a Vault server started in dev mode with a hardcoded root token
+(e.g. `vault server -dev -dev-root-token-id="my-token"`):
 
 ```go
 package main
@@ -107,7 +115,7 @@ future, we plan to introduce:
 
 1. `Read(path)` and `Write(path, ...)` methods similar to the `vault/api`
    `Logical().Read` and `Logical().Write` methods.
-2. KV wrappers for `kv v1` and `kv v2` engines, similar to the existing ones.
+1. KV wrappers for `kv v1` and `kv v2` engines, similar to the existing ones.
 
 ### Using TLS
 
@@ -141,7 +149,7 @@ if err != nil {
 	log.Fatal(err)
 }
 
-// resp will contain the token
+// 'resp' will contain an auth token
 ...
 ```
 
@@ -191,7 +199,7 @@ export VAULT_TOKEN=my-token
 go run main.go
 ```
 
-### Log requests & responses with request/response callbacks
+### Logging requests & responses with request/response callbacks
 
 ```
 client.SetRequestCallbacks(func(req *http.Request) {
@@ -205,7 +213,7 @@ client.SetResponseCallbacks(func(req *http.Request, resp *http.Response) {
 Alternatively, `WithRequestCallbacks(..)` / `WithResponseCallbacks(..)` may be
 used to inject callbacks for individual requests.
 
-### Read-your-writes replication semantics (enterprise)
+### Enforcing read-your-writes replication semantics
 
 Detailed background information of the read-after-write consistency problem
 can be found in the
@@ -213,23 +221,27 @@ can be found in the
 and [replication](https://www.vaultproject.io/docs/internals/replication)
 documentation.
 
-You can support read-your-writes semantics for individual requests through
+You can enforce read-your-writes semantics for individual requests through
 callbacks:
 
 ```go
 var state string
 
 // write
-_, err = client.WithResponseCallbacks(
+_, err := client.WithResponseCallbacks(
 	vault.RecordReplicationState(&state),
 ).Secrets.PostSecretDataPath(ctx, "my-secret", vault.KvDataRequest{
-	Data: map[string]interface{}{"a": "b"},
+	Data: map[string]interface{}{
+		"password": "abc123",
+	},
 })
+...
 
 // read
 resp, err := client.WithRequestCallbacks(
 	vault.RequireReplicationStates(state),
 ).Secrets.GetSecretDataPath(ctx, "my-secret")
+...
 ```
 
 Alternatively, enforce read-your-writes semantics for all requests:

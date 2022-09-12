@@ -99,7 +99,9 @@ _, err := client.Secrets.PostSecretDataPath(ctx, "my-secret", vault.KvDataReques
 		"password": "abc123",
 	},
 }
-...
+if err != nil {
+	log.Fatal(err)
+}
 
 // read a secret
 resp, err := client.Secrets.GetSecretDataPath(ctx, "my-secret")
@@ -1423,5 +1425,5 @@ Class | Method | HTTP request | Description
 [hashicorp]:             https://www.hashicorp.com/
 [vault]:                 https://www.vaultproject.io/
 [openapi-spec]:          openapi.json
-[openapi-generator]:	 https://openapi-generator.tech
+[openapi-generator]:	 https://openapi-generator.tech/docs/generators/go
 [go-retryablehttp]:      https://github.com/hashicorp/go-retryablehttp

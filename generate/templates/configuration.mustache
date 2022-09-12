@@ -224,7 +224,7 @@ func (c *Configuration) SetDefaultsForUninitialized() {
 
 // applyTo applies the user-defined TLS configuration to the given client's
 // *tls.Config pointer; it is used to configure the internal http.Client
-func (from TLSConfiguration) applyTo(to *tls.Config) error {
+func (from* TLSConfiguration) applyTo(to *tls.Config) error {
 	if len(from.ServerCACertificate) != 0 || from.ServerCACertificateFile != "" || from.ServerCACertificateDir != "" {
 		rootCertificateConfig := rootcerts.Config{
 			CAFile:        from.ServerCACertificateFile,

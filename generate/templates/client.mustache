@@ -166,6 +166,12 @@ func (c *Client) cloneRequestModifiers() requestModifiers {
 	return clone
 }
 
+// Configuration returns a copy of the configuration object used to initialize
+// this client
+func (c *Client) Configuration() Configuration {
+	return c.configuration
+}
+
 // SetToken sets the token to be used with all subsequent requests.
 // See https://www.vaultproject.io/docs/concepts/tokens for more info on
 // tokens.

@@ -1,6 +1,4 @@
-# \Identity
-
-All URIs are relative to *http://localhost*
+# Identity
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -140,13 +138,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    id := "id_example" // string | ID of the alias
+	id := "id_example" // string | ID of the alias
 
-    resp, err := client.Identity.DeleteIdentityAliasIdId(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityAliasIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.DeleteIdentityAliasIdId(context.Background(), id)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -213,13 +213,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    id := "id_example" // string | ID of the alias
+	id := "id_example" // string | ID of the alias
 
-    resp, err := client.Identity.DeleteIdentityEntityAliasIdId(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityEntityAliasIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.DeleteIdentityEntityAliasIdId(context.Background(), id)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -286,13 +288,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
+	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
 
-    resp, err := client.Identity.DeleteIdentityEntityIdId(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityEntityIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.DeleteIdentityEntityIdId(context.Background(), id)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -359,13 +363,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the entity
+	name := "name_example" // string | Name of the entity
 
-    resp, err := client.Identity.DeleteIdentityEntityNameName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityEntityNameName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.DeleteIdentityEntityNameName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -432,13 +438,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    id := "id_example" // string | ID of the group alias.
+	id := "id_example" // string | ID of the group alias.
 
-    resp, err := client.Identity.DeleteIdentityGroupAliasIdId(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityGroupAliasIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.DeleteIdentityGroupAliasIdId(context.Background(), id)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -505,13 +513,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
+	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
 
-    resp, err := client.Identity.DeleteIdentityGroupIdId(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityGroupIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.DeleteIdentityGroupIdId(context.Background(), id)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -578,13 +588,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the group.
+	name := "name_example" // string | Name of the group.
 
-    resp, err := client.Identity.DeleteIdentityGroupNameName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityGroupNameName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.DeleteIdentityGroupNameName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -651,13 +663,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name for this login enforcement configuration
+	name := "name_example" // string | Name for this login enforcement configuration
 
-    resp, err := client.Identity.DeleteIdentityMfaLoginEnforcementName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityMfaLoginEnforcementName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.DeleteIdentityMfaLoginEnforcementName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -724,13 +738,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 
-    resp, err := client.Identity.DeleteIdentityMfaMethodDuoMethodId(context.Background(), methodId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityMfaMethodDuoMethodId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.DeleteIdentityMfaMethodDuoMethodId(context.Background(), methodId)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -797,13 +813,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 
-    resp, err := client.Identity.DeleteIdentityMfaMethodOktaMethodId(context.Background(), methodId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityMfaMethodOktaMethodId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.DeleteIdentityMfaMethodOktaMethodId(context.Background(), methodId)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -870,13 +888,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 
-    resp, err := client.Identity.DeleteIdentityMfaMethodPingidMethodId(context.Background(), methodId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityMfaMethodPingidMethodId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.DeleteIdentityMfaMethodPingidMethodId(context.Background(), methodId)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -943,13 +963,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 
-    resp, err := client.Identity.DeleteIdentityMfaMethodTotpMethodId(context.Background(), methodId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityMfaMethodTotpMethodId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.DeleteIdentityMfaMethodTotpMethodId(context.Background(), methodId)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1016,13 +1038,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the assignment
+	name := "name_example" // string | Name of the assignment
 
-    resp, err := client.Identity.DeleteIdentityOidcAssignmentName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityOidcAssignmentName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.DeleteIdentityOidcAssignmentName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1089,13 +1113,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the client.
+	name := "name_example" // string | Name of the client.
 
-    resp, err := client.Identity.DeleteIdentityOidcClientName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityOidcClientName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.DeleteIdentityOidcClientName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1162,13 +1188,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the key
+	name := "name_example" // string | Name of the key
 
-    resp, err := client.Identity.DeleteIdentityOidcKeyName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityOidcKeyName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.DeleteIdentityOidcKeyName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1235,13 +1263,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the provider
+	name := "name_example" // string | Name of the provider
 
-    resp, err := client.Identity.DeleteIdentityOidcProviderName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityOidcProviderName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.DeleteIdentityOidcProviderName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1308,13 +1338,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
+	name := "name_example" // string | Name of the role
 
-    resp, err := client.Identity.DeleteIdentityOidcRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityOidcRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.DeleteIdentityOidcRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1381,13 +1413,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the scope
+	name := "name_example" // string | Name of the scope
 
-    resp, err := client.Identity.DeleteIdentityOidcScopeName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityOidcScopeName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.DeleteIdentityOidcScopeName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1454,13 +1488,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    id := "id_example" // string | ID of the persona
+	id := "id_example" // string | ID of the persona
 
-    resp, err := client.Identity.DeleteIdentityPersonaIdId(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.DeleteIdentityPersonaIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.DeleteIdentityPersonaIdId(context.Background(), id)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1527,13 +1563,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Identity.GetIdentityAliasId(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityAliasId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityAliasId(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1596,13 +1634,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    id := "id_example" // string | ID of the alias
+	id := "id_example" // string | ID of the alias
 
-    resp, err := client.Identity.GetIdentityAliasIdId(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityAliasIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityAliasIdId(context.Background(), id)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1669,13 +1709,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Identity.GetIdentityEntityAliasId(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityEntityAliasId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityEntityAliasId(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1738,13 +1780,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    id := "id_example" // string | ID of the alias
+	id := "id_example" // string | ID of the alias
 
-    resp, err := client.Identity.GetIdentityEntityAliasIdId(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityEntityAliasIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityEntityAliasIdId(context.Background(), id)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1811,13 +1855,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Identity.GetIdentityEntityId(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityEntityId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityEntityId(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1880,13 +1926,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
+	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
 
-    resp, err := client.Identity.GetIdentityEntityIdId(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityEntityIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityEntityIdId(context.Background(), id)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1953,13 +2001,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Identity.GetIdentityEntityName(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityEntityName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityEntityName(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2022,13 +2072,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the entity
+	name := "name_example" // string | Name of the entity
 
-    resp, err := client.Identity.GetIdentityEntityNameName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityEntityNameName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityEntityNameName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2095,13 +2147,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Identity.GetIdentityGroupAliasId(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityGroupAliasId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityGroupAliasId(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2164,13 +2218,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    id := "id_example" // string | ID of the group alias.
+	id := "id_example" // string | ID of the group alias.
 
-    resp, err := client.Identity.GetIdentityGroupAliasIdId(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityGroupAliasIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityGroupAliasIdId(context.Background(), id)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2237,13 +2293,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Identity.GetIdentityGroupId(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityGroupId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityGroupId(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2306,13 +2364,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
+	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
 
-    resp, err := client.Identity.GetIdentityGroupIdId(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityGroupIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityGroupIdId(context.Background(), id)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2379,13 +2439,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Identity.GetIdentityGroupName(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityGroupName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityGroupName(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2448,13 +2510,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the group.
+	name := "name_example" // string | Name of the group.
 
-    resp, err := client.Identity.GetIdentityGroupNameName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityGroupNameName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityGroupNameName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2521,13 +2585,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Identity.GetIdentityMfaLoginEnforcement(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaLoginEnforcement``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityMfaLoginEnforcement(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2590,13 +2656,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name for this login enforcement configuration
+	name := "name_example" // string | Name for this login enforcement configuration
 
-    resp, err := client.Identity.GetIdentityMfaLoginEnforcementName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaLoginEnforcementName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityMfaLoginEnforcementName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2663,13 +2731,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Identity.GetIdentityMfaMethod(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethod``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityMfaMethod(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2732,13 +2802,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Identity.GetIdentityMfaMethodDuo(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethodDuo``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityMfaMethodDuo(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2801,13 +2873,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 
-    resp, err := client.Identity.GetIdentityMfaMethodDuoMethodId(context.Background(), methodId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethodDuoMethodId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityMfaMethodDuoMethodId(context.Background(), methodId)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2874,13 +2948,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 
-    resp, err := client.Identity.GetIdentityMfaMethodMethodId(context.Background(), methodId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethodMethodId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityMfaMethodMethodId(context.Background(), methodId)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2947,13 +3023,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Identity.GetIdentityMfaMethodOkta(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethodOkta``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityMfaMethodOkta(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3016,13 +3094,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 
-    resp, err := client.Identity.GetIdentityMfaMethodOktaMethodId(context.Background(), methodId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethodOktaMethodId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityMfaMethodOktaMethodId(context.Background(), methodId)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3089,13 +3169,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Identity.GetIdentityMfaMethodPingid(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethodPingid``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityMfaMethodPingid(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3158,13 +3240,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 
-    resp, err := client.Identity.GetIdentityMfaMethodPingidMethodId(context.Background(), methodId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethodPingidMethodId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityMfaMethodPingidMethodId(context.Background(), methodId)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3231,13 +3315,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Identity.GetIdentityMfaMethodTotp(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethodTotp``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityMfaMethodTotp(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3300,13 +3386,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	methodId := "methodId_example" // string | The unique identifier for this MFA method.
 
-    resp, err := client.Identity.GetIdentityMfaMethodTotpMethodId(context.Background(), methodId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityMfaMethodTotpMethodId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityMfaMethodTotpMethodId(context.Background(), methodId)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3373,13 +3461,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Identity.GetIdentityOidcAssignment(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcAssignment``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityOidcAssignment(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3442,13 +3532,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the assignment
+	name := "name_example" // string | Name of the assignment
 
-    resp, err := client.Identity.GetIdentityOidcAssignmentName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcAssignmentName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityOidcAssignmentName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3515,13 +3607,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Identity.GetIdentityOidcClient(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcClient``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityOidcClient(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3584,13 +3678,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the client.
+	name := "name_example" // string | Name of the client.
 
-    resp, err := client.Identity.GetIdentityOidcClientName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcClientName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityOidcClientName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3658,11 +3754,13 @@ func main() {
 	}
 
 
-    resp, err := client.Identity.GetIdentityOidcConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityOidcConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3721,13 +3819,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Identity.GetIdentityOidcKey(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityOidcKey(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3790,13 +3890,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the key
+	name := "name_example" // string | Name of the key
 
-    resp, err := client.Identity.GetIdentityOidcKeyName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcKeyName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityOidcKeyName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3863,13 +3965,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Identity.GetIdentityOidcProvider(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcProvider``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityOidcProvider(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3932,13 +4036,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the provider
+	name := "name_example" // string | Name of the provider
 
-    resp, err := client.Identity.GetIdentityOidcProviderName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcProviderName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityOidcProviderName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4005,13 +4111,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the provider
+	name := "name_example" // string | Name of the provider
 
-    resp, err := client.Identity.GetIdentityOidcProviderNameAuthorize(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcProviderNameAuthorize``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityOidcProviderNameAuthorize(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4078,13 +4186,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the provider
+	name := "name_example" // string | Name of the provider
 
-    resp, err := client.Identity.GetIdentityOidcProviderNameUserinfo(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcProviderNameUserinfo``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityOidcProviderNameUserinfo(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4151,13 +4261,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the provider
+	name := "name_example" // string | Name of the provider
 
-    resp, err := client.Identity.GetIdentityOidcProviderNameWellKnownKeys(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcProviderNameWellKnownKeys``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityOidcProviderNameWellKnownKeys(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4224,13 +4336,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the provider
+	name := "name_example" // string | Name of the provider
 
-    resp, err := client.Identity.GetIdentityOidcProviderNameWellKnownOpenidConfiguration(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcProviderNameWellKnownOpenidConfiguration``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityOidcProviderNameWellKnownOpenidConfiguration(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4297,13 +4411,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Identity.GetIdentityOidcRole(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityOidcRole(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4366,13 +4482,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
+	name := "name_example" // string | Name of the role
 
-    resp, err := client.Identity.GetIdentityOidcRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityOidcRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4439,13 +4557,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Identity.GetIdentityOidcScope(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcScope``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityOidcScope(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4508,13 +4628,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the scope
+	name := "name_example" // string | Name of the scope
 
-    resp, err := client.Identity.GetIdentityOidcScopeName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcScopeName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityOidcScopeName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4581,13 +4703,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
+	name := "name_example" // string | Name of the role
 
-    resp, err := client.Identity.GetIdentityOidcTokenName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcTokenName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityOidcTokenName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4655,11 +4779,13 @@ func main() {
 	}
 
 
-    resp, err := client.Identity.GetIdentityOidcWellKnownKeys(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcWellKnownKeys``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityOidcWellKnownKeys(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4719,11 +4845,13 @@ func main() {
 	}
 
 
-    resp, err := client.Identity.GetIdentityOidcWellKnownOpenidConfiguration(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityOidcWellKnownOpenidConfiguration``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityOidcWellKnownOpenidConfiguration(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4782,13 +4910,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Identity.GetIdentityPersonaId(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityPersonaId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityPersonaId(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4851,13 +4981,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    id := "id_example" // string | ID of the persona
+	id := "id_example" // string | ID of the persona
 
-    resp, err := client.Identity.GetIdentityPersonaIdId(context.Background(), id).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.GetIdentityPersonaIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.GetIdentityPersonaIdId(context.Background(), id)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4924,13 +5056,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    identityAliasRequest := *openapiclient.NewIdentityAliasRequest() // IdentityAliasRequest | 
+	identityAliasRequest := *openapiclient.NewIdentityAliasRequest() // IdentityAliasRequest | 
 
-    resp, err := client.Identity.PostIdentityAlias(context.Background()).IdentityAliasRequest(identityAliasRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityAlias``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityAlias(context.Background()).IdentityAliasRequest(identityAliasRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4993,14 +5127,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    id := "id_example" // string | ID of the alias
-    identityAliasIdRequest := *openapiclient.NewIdentityAliasIdRequest() // IdentityAliasIdRequest | 
+	id := "id_example" // string | ID of the alias
+	identityAliasIdRequest := *openapiclient.NewIdentityAliasIdRequest() // IdentityAliasIdRequest | 
 
-    resp, err := client.Identity.PostIdentityAliasIdId(context.Background(), id).IdentityAliasIdRequest(identityAliasIdRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityAliasIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityAliasIdId(context.Background(), id).IdentityAliasIdRequest(identityAliasIdRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5068,13 +5204,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    identityEntityRequest := *openapiclient.NewIdentityEntityRequest() // IdentityEntityRequest | 
+	identityEntityRequest := *openapiclient.NewIdentityEntityRequest() // IdentityEntityRequest | 
 
-    resp, err := client.Identity.PostIdentityEntity(context.Background()).IdentityEntityRequest(identityEntityRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityEntity``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityEntity(context.Background()).IdentityEntityRequest(identityEntityRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5137,13 +5275,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    identityEntityAliasRequest := *openapiclient.NewIdentityEntityAliasRequest() // IdentityEntityAliasRequest | 
+	identityEntityAliasRequest := *openapiclient.NewIdentityEntityAliasRequest() // IdentityEntityAliasRequest | 
 
-    resp, err := client.Identity.PostIdentityEntityAlias(context.Background()).IdentityEntityAliasRequest(identityEntityAliasRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityEntityAlias``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityEntityAlias(context.Background()).IdentityEntityAliasRequest(identityEntityAliasRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5206,14 +5346,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    id := "id_example" // string | ID of the alias
-    identityEntityAliasIdRequest := *openapiclient.NewIdentityEntityAliasIdRequest() // IdentityEntityAliasIdRequest | 
+	id := "id_example" // string | ID of the alias
+	identityEntityAliasIdRequest := *openapiclient.NewIdentityEntityAliasIdRequest() // IdentityEntityAliasIdRequest | 
 
-    resp, err := client.Identity.PostIdentityEntityAliasIdId(context.Background(), id).IdentityEntityAliasIdRequest(identityEntityAliasIdRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityEntityAliasIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityEntityAliasIdId(context.Background(), id).IdentityEntityAliasIdRequest(identityEntityAliasIdRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5281,13 +5423,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    identityEntityBatchDeleteRequest := *openapiclient.NewIdentityEntityBatchDeleteRequest() // IdentityEntityBatchDeleteRequest | 
+	identityEntityBatchDeleteRequest := *openapiclient.NewIdentityEntityBatchDeleteRequest() // IdentityEntityBatchDeleteRequest | 
 
-    resp, err := client.Identity.PostIdentityEntityBatchDelete(context.Background()).IdentityEntityBatchDeleteRequest(identityEntityBatchDeleteRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityEntityBatchDelete``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityEntityBatchDelete(context.Background()).IdentityEntityBatchDeleteRequest(identityEntityBatchDeleteRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5350,14 +5494,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
-    identityEntityIdRequest := *openapiclient.NewIdentityEntityIdRequest() // IdentityEntityIdRequest | 
+	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
+	identityEntityIdRequest := *openapiclient.NewIdentityEntityIdRequest() // IdentityEntityIdRequest | 
 
-    resp, err := client.Identity.PostIdentityEntityIdId(context.Background(), id).IdentityEntityIdRequest(identityEntityIdRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityEntityIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityEntityIdId(context.Background(), id).IdentityEntityIdRequest(identityEntityIdRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5425,13 +5571,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    identityEntityMergeRequest := *openapiclient.NewIdentityEntityMergeRequest() // IdentityEntityMergeRequest | 
+	identityEntityMergeRequest := *openapiclient.NewIdentityEntityMergeRequest() // IdentityEntityMergeRequest | 
 
-    resp, err := client.Identity.PostIdentityEntityMerge(context.Background()).IdentityEntityMergeRequest(identityEntityMergeRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityEntityMerge``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityEntityMerge(context.Background()).IdentityEntityMergeRequest(identityEntityMergeRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5494,14 +5642,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the entity
-    identityEntityNameRequest := *openapiclient.NewIdentityEntityNameRequest() // IdentityEntityNameRequest | 
+	name := "name_example" // string | Name of the entity
+	identityEntityNameRequest := *openapiclient.NewIdentityEntityNameRequest() // IdentityEntityNameRequest | 
 
-    resp, err := client.Identity.PostIdentityEntityNameName(context.Background(), name).IdentityEntityNameRequest(identityEntityNameRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityEntityNameName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityEntityNameName(context.Background(), name).IdentityEntityNameRequest(identityEntityNameRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5569,13 +5719,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    identityGroupRequest := *openapiclient.NewIdentityGroupRequest() // IdentityGroupRequest | 
+	identityGroupRequest := *openapiclient.NewIdentityGroupRequest() // IdentityGroupRequest | 
 
-    resp, err := client.Identity.PostIdentityGroup(context.Background()).IdentityGroupRequest(identityGroupRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityGroup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityGroup(context.Background()).IdentityGroupRequest(identityGroupRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5638,13 +5790,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    identityGroupAliasRequest := *openapiclient.NewIdentityGroupAliasRequest() // IdentityGroupAliasRequest | 
+	identityGroupAliasRequest := *openapiclient.NewIdentityGroupAliasRequest() // IdentityGroupAliasRequest | 
 
-    resp, err := client.Identity.PostIdentityGroupAlias(context.Background()).IdentityGroupAliasRequest(identityGroupAliasRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityGroupAlias``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityGroupAlias(context.Background()).IdentityGroupAliasRequest(identityGroupAliasRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5707,14 +5861,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    id := "id_example" // string | ID of the group alias.
-    identityGroupAliasIdRequest := *openapiclient.NewIdentityGroupAliasIdRequest() // IdentityGroupAliasIdRequest | 
+	id := "id_example" // string | ID of the group alias.
+	identityGroupAliasIdRequest := *openapiclient.NewIdentityGroupAliasIdRequest() // IdentityGroupAliasIdRequest | 
 
-    resp, err := client.Identity.PostIdentityGroupAliasIdId(context.Background(), id).IdentityGroupAliasIdRequest(identityGroupAliasIdRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityGroupAliasIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityGroupAliasIdId(context.Background(), id).IdentityGroupAliasIdRequest(identityGroupAliasIdRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5782,14 +5938,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
-    identityGroupIdRequest := *openapiclient.NewIdentityGroupIdRequest() // IdentityGroupIdRequest | 
+	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
+	identityGroupIdRequest := *openapiclient.NewIdentityGroupIdRequest() // IdentityGroupIdRequest | 
 
-    resp, err := client.Identity.PostIdentityGroupIdId(context.Background(), id).IdentityGroupIdRequest(identityGroupIdRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityGroupIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityGroupIdId(context.Background(), id).IdentityGroupIdRequest(identityGroupIdRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5857,14 +6015,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the group.
-    identityGroupNameRequest := *openapiclient.NewIdentityGroupNameRequest() // IdentityGroupNameRequest | 
+	name := "name_example" // string | Name of the group.
+	identityGroupNameRequest := *openapiclient.NewIdentityGroupNameRequest() // IdentityGroupNameRequest | 
 
-    resp, err := client.Identity.PostIdentityGroupNameName(context.Background(), name).IdentityGroupNameRequest(identityGroupNameRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityGroupNameName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityGroupNameName(context.Background(), name).IdentityGroupNameRequest(identityGroupNameRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5932,13 +6092,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    identityLookupEntityRequest := *openapiclient.NewIdentityLookupEntityRequest() // IdentityLookupEntityRequest | 
+	identityLookupEntityRequest := *openapiclient.NewIdentityLookupEntityRequest() // IdentityLookupEntityRequest | 
 
-    resp, err := client.Identity.PostIdentityLookupEntity(context.Background()).IdentityLookupEntityRequest(identityLookupEntityRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityLookupEntity``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityLookupEntity(context.Background()).IdentityLookupEntityRequest(identityLookupEntityRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6001,13 +6163,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    identityLookupGroupRequest := *openapiclient.NewIdentityLookupGroupRequest() // IdentityLookupGroupRequest | 
+	identityLookupGroupRequest := *openapiclient.NewIdentityLookupGroupRequest() // IdentityLookupGroupRequest | 
 
-    resp, err := client.Identity.PostIdentityLookupGroup(context.Background()).IdentityLookupGroupRequest(identityLookupGroupRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityLookupGroup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityLookupGroup(context.Background()).IdentityLookupGroupRequest(identityLookupGroupRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6070,14 +6234,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name for this login enforcement configuration
-    identityMfaLoginEnforcementRequest := *openapiclient.NewIdentityMfaLoginEnforcementRequest([]string{"MfaMethodIds_example"}) // IdentityMfaLoginEnforcementRequest | 
+	name := "name_example" // string | Name for this login enforcement configuration
+	identityMfaLoginEnforcementRequest := *openapiclient.NewIdentityMfaLoginEnforcementRequest([]string{"MfaMethodIds_example"}) // IdentityMfaLoginEnforcementRequest | 
 
-    resp, err := client.Identity.PostIdentityMfaLoginEnforcementName(context.Background(), name).IdentityMfaLoginEnforcementRequest(identityMfaLoginEnforcementRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityMfaLoginEnforcementName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityMfaLoginEnforcementName(context.Background(), name).IdentityMfaLoginEnforcementRequest(identityMfaLoginEnforcementRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6145,14 +6311,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    methodId := "methodId_example" // string | The unique identifier for this MFA method.
-    identityMfaMethodDuoRequest := *openapiclient.NewIdentityMfaMethodDuoRequest() // IdentityMfaMethodDuoRequest | 
+	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	identityMfaMethodDuoRequest := *openapiclient.NewIdentityMfaMethodDuoRequest() // IdentityMfaMethodDuoRequest | 
 
-    resp, err := client.Identity.PostIdentityMfaMethodDuoMethodId(context.Background(), methodId).IdentityMfaMethodDuoRequest(identityMfaMethodDuoRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityMfaMethodDuoMethodId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityMfaMethodDuoMethodId(context.Background(), methodId).IdentityMfaMethodDuoRequest(identityMfaMethodDuoRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6220,14 +6388,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    methodId := "methodId_example" // string | The unique identifier for this MFA method.
-    identityMfaMethodOktaRequest := *openapiclient.NewIdentityMfaMethodOktaRequest() // IdentityMfaMethodOktaRequest | 
+	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	identityMfaMethodOktaRequest := *openapiclient.NewIdentityMfaMethodOktaRequest() // IdentityMfaMethodOktaRequest | 
 
-    resp, err := client.Identity.PostIdentityMfaMethodOktaMethodId(context.Background(), methodId).IdentityMfaMethodOktaRequest(identityMfaMethodOktaRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityMfaMethodOktaMethodId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityMfaMethodOktaMethodId(context.Background(), methodId).IdentityMfaMethodOktaRequest(identityMfaMethodOktaRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6295,14 +6465,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    methodId := "methodId_example" // string | The unique identifier for this MFA method.
-    identityMfaMethodPingidRequest := *openapiclient.NewIdentityMfaMethodPingidRequest() // IdentityMfaMethodPingidRequest | 
+	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	identityMfaMethodPingidRequest := *openapiclient.NewIdentityMfaMethodPingidRequest() // IdentityMfaMethodPingidRequest | 
 
-    resp, err := client.Identity.PostIdentityMfaMethodPingidMethodId(context.Background(), methodId).IdentityMfaMethodPingidRequest(identityMfaMethodPingidRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityMfaMethodPingidMethodId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityMfaMethodPingidMethodId(context.Background(), methodId).IdentityMfaMethodPingidRequest(identityMfaMethodPingidRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6370,13 +6542,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    identityMfaMethodTotpAdminDestroyRequest := *openapiclient.NewIdentityMfaMethodTotpAdminDestroyRequest("EntityId_example", "MethodId_example") // IdentityMfaMethodTotpAdminDestroyRequest | 
+	identityMfaMethodTotpAdminDestroyRequest := *openapiclient.NewIdentityMfaMethodTotpAdminDestroyRequest("EntityId_example", "MethodId_example") // IdentityMfaMethodTotpAdminDestroyRequest | 
 
-    resp, err := client.Identity.PostIdentityMfaMethodTotpAdminDestroy(context.Background()).IdentityMfaMethodTotpAdminDestroyRequest(identityMfaMethodTotpAdminDestroyRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityMfaMethodTotpAdminDestroy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityMfaMethodTotpAdminDestroy(context.Background()).IdentityMfaMethodTotpAdminDestroyRequest(identityMfaMethodTotpAdminDestroyRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6439,13 +6613,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    identityMfaMethodTotpAdminGenerateRequest := *openapiclient.NewIdentityMfaMethodTotpAdminGenerateRequest("EntityId_example", "MethodId_example") // IdentityMfaMethodTotpAdminGenerateRequest | 
+	identityMfaMethodTotpAdminGenerateRequest := *openapiclient.NewIdentityMfaMethodTotpAdminGenerateRequest("EntityId_example", "MethodId_example") // IdentityMfaMethodTotpAdminGenerateRequest | 
 
-    resp, err := client.Identity.PostIdentityMfaMethodTotpAdminGenerate(context.Background()).IdentityMfaMethodTotpAdminGenerateRequest(identityMfaMethodTotpAdminGenerateRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityMfaMethodTotpAdminGenerate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityMfaMethodTotpAdminGenerate(context.Background()).IdentityMfaMethodTotpAdminGenerateRequest(identityMfaMethodTotpAdminGenerateRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6508,13 +6684,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    identityMfaMethodTotpGenerateRequest := *openapiclient.NewIdentityMfaMethodTotpGenerateRequest("MethodId_example") // IdentityMfaMethodTotpGenerateRequest | 
+	identityMfaMethodTotpGenerateRequest := *openapiclient.NewIdentityMfaMethodTotpGenerateRequest("MethodId_example") // IdentityMfaMethodTotpGenerateRequest | 
 
-    resp, err := client.Identity.PostIdentityMfaMethodTotpGenerate(context.Background()).IdentityMfaMethodTotpGenerateRequest(identityMfaMethodTotpGenerateRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityMfaMethodTotpGenerate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityMfaMethodTotpGenerate(context.Background()).IdentityMfaMethodTotpGenerateRequest(identityMfaMethodTotpGenerateRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6577,14 +6755,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    methodId := "methodId_example" // string | The unique identifier for this MFA method.
-    identityMfaMethodTotpRequest := *openapiclient.NewIdentityMfaMethodTotpRequest() // IdentityMfaMethodTotpRequest | 
+	methodId := "methodId_example" // string | The unique identifier for this MFA method.
+	identityMfaMethodTotpRequest := *openapiclient.NewIdentityMfaMethodTotpRequest() // IdentityMfaMethodTotpRequest | 
 
-    resp, err := client.Identity.PostIdentityMfaMethodTotpMethodId(context.Background(), methodId).IdentityMfaMethodTotpRequest(identityMfaMethodTotpRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityMfaMethodTotpMethodId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityMfaMethodTotpMethodId(context.Background(), methodId).IdentityMfaMethodTotpRequest(identityMfaMethodTotpRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6652,14 +6832,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the assignment
-    identityOidcAssignmentRequest := *openapiclient.NewIdentityOidcAssignmentRequest() // IdentityOidcAssignmentRequest | 
+	name := "name_example" // string | Name of the assignment
+	identityOidcAssignmentRequest := *openapiclient.NewIdentityOidcAssignmentRequest() // IdentityOidcAssignmentRequest | 
 
-    resp, err := client.Identity.PostIdentityOidcAssignmentName(context.Background(), name).IdentityOidcAssignmentRequest(identityOidcAssignmentRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcAssignmentName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityOidcAssignmentName(context.Background(), name).IdentityOidcAssignmentRequest(identityOidcAssignmentRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6727,14 +6909,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the client.
-    identityOidcClientRequest := *openapiclient.NewIdentityOidcClientRequest() // IdentityOidcClientRequest | 
+	name := "name_example" // string | Name of the client.
+	identityOidcClientRequest := *openapiclient.NewIdentityOidcClientRequest() // IdentityOidcClientRequest | 
 
-    resp, err := client.Identity.PostIdentityOidcClientName(context.Background(), name).IdentityOidcClientRequest(identityOidcClientRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcClientName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityOidcClientName(context.Background(), name).IdentityOidcClientRequest(identityOidcClientRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6802,13 +6986,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    identityOidcConfigRequest := *openapiclient.NewIdentityOidcConfigRequest() // IdentityOidcConfigRequest | 
+	identityOidcConfigRequest := *openapiclient.NewIdentityOidcConfigRequest() // IdentityOidcConfigRequest | 
 
-    resp, err := client.Identity.PostIdentityOidcConfig(context.Background()).IdentityOidcConfigRequest(identityOidcConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityOidcConfig(context.Background()).IdentityOidcConfigRequest(identityOidcConfigRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6871,13 +7057,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    identityOidcIntrospectRequest := *openapiclient.NewIdentityOidcIntrospectRequest() // IdentityOidcIntrospectRequest | 
+	identityOidcIntrospectRequest := *openapiclient.NewIdentityOidcIntrospectRequest() // IdentityOidcIntrospectRequest | 
 
-    resp, err := client.Identity.PostIdentityOidcIntrospect(context.Background()).IdentityOidcIntrospectRequest(identityOidcIntrospectRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcIntrospect``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityOidcIntrospect(context.Background()).IdentityOidcIntrospectRequest(identityOidcIntrospectRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6940,14 +7128,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the key
-    identityOidcKeyRequest := *openapiclient.NewIdentityOidcKeyRequest() // IdentityOidcKeyRequest | 
+	name := "name_example" // string | Name of the key
+	identityOidcKeyRequest := *openapiclient.NewIdentityOidcKeyRequest() // IdentityOidcKeyRequest | 
 
-    resp, err := client.Identity.PostIdentityOidcKeyName(context.Background(), name).IdentityOidcKeyRequest(identityOidcKeyRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcKeyName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityOidcKeyName(context.Background(), name).IdentityOidcKeyRequest(identityOidcKeyRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7015,14 +7205,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the key
-    identityOidcKeyRotateRequest := *openapiclient.NewIdentityOidcKeyRotateRequest() // IdentityOidcKeyRotateRequest | 
+	name := "name_example" // string | Name of the key
+	identityOidcKeyRotateRequest := *openapiclient.NewIdentityOidcKeyRotateRequest() // IdentityOidcKeyRotateRequest | 
 
-    resp, err := client.Identity.PostIdentityOidcKeyNameRotate(context.Background(), name).IdentityOidcKeyRotateRequest(identityOidcKeyRotateRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcKeyNameRotate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityOidcKeyNameRotate(context.Background(), name).IdentityOidcKeyRotateRequest(identityOidcKeyRotateRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7090,14 +7282,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the provider
-    identityOidcProviderRequest := *openapiclient.NewIdentityOidcProviderRequest() // IdentityOidcProviderRequest | 
+	name := "name_example" // string | Name of the provider
+	identityOidcProviderRequest := *openapiclient.NewIdentityOidcProviderRequest() // IdentityOidcProviderRequest | 
 
-    resp, err := client.Identity.PostIdentityOidcProviderName(context.Background(), name).IdentityOidcProviderRequest(identityOidcProviderRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcProviderName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityOidcProviderName(context.Background(), name).IdentityOidcProviderRequest(identityOidcProviderRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7165,14 +7359,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the provider
-    identityOidcProviderAuthorizeRequest := *openapiclient.NewIdentityOidcProviderAuthorizeRequest("ClientId_example", "RedirectUri_example", "ResponseType_example", "Scope_example", "State_example") // IdentityOidcProviderAuthorizeRequest | 
+	name := "name_example" // string | Name of the provider
+	identityOidcProviderAuthorizeRequest := *openapiclient.NewIdentityOidcProviderAuthorizeRequest("ClientId_example", "RedirectUri_example", "ResponseType_example", "Scope_example", "State_example") // IdentityOidcProviderAuthorizeRequest | 
 
-    resp, err := client.Identity.PostIdentityOidcProviderNameAuthorize(context.Background(), name).IdentityOidcProviderAuthorizeRequest(identityOidcProviderAuthorizeRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcProviderNameAuthorize``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityOidcProviderNameAuthorize(context.Background(), name).IdentityOidcProviderAuthorizeRequest(identityOidcProviderAuthorizeRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7240,14 +7436,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the provider
-    identityOidcProviderTokenRequest := *openapiclient.NewIdentityOidcProviderTokenRequest("Code_example", "GrantType_example", "RedirectUri_example") // IdentityOidcProviderTokenRequest | 
+	name := "name_example" // string | Name of the provider
+	identityOidcProviderTokenRequest := *openapiclient.NewIdentityOidcProviderTokenRequest("Code_example", "GrantType_example", "RedirectUri_example") // IdentityOidcProviderTokenRequest | 
 
-    resp, err := client.Identity.PostIdentityOidcProviderNameToken(context.Background(), name).IdentityOidcProviderTokenRequest(identityOidcProviderTokenRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcProviderNameToken``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityOidcProviderNameToken(context.Background(), name).IdentityOidcProviderTokenRequest(identityOidcProviderTokenRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7315,13 +7513,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the provider
+	name := "name_example" // string | Name of the provider
 
-    resp, err := client.Identity.PostIdentityOidcProviderNameUserinfo(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcProviderNameUserinfo``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityOidcProviderNameUserinfo(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7388,14 +7588,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
-    identityOidcRoleRequest := *openapiclient.NewIdentityOidcRoleRequest("Key_example") // IdentityOidcRoleRequest | 
+	name := "name_example" // string | Name of the role
+	identityOidcRoleRequest := *openapiclient.NewIdentityOidcRoleRequest("Key_example") // IdentityOidcRoleRequest | 
 
-    resp, err := client.Identity.PostIdentityOidcRoleName(context.Background(), name).IdentityOidcRoleRequest(identityOidcRoleRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityOidcRoleName(context.Background(), name).IdentityOidcRoleRequest(identityOidcRoleRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7463,14 +7665,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the scope
-    identityOidcScopeRequest := *openapiclient.NewIdentityOidcScopeRequest() // IdentityOidcScopeRequest | 
+	name := "name_example" // string | Name of the scope
+	identityOidcScopeRequest := *openapiclient.NewIdentityOidcScopeRequest() // IdentityOidcScopeRequest | 
 
-    resp, err := client.Identity.PostIdentityOidcScopeName(context.Background(), name).IdentityOidcScopeRequest(identityOidcScopeRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityOidcScopeName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityOidcScopeName(context.Background(), name).IdentityOidcScopeRequest(identityOidcScopeRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7538,13 +7742,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    identityPersonaRequest := *openapiclient.NewIdentityPersonaRequest() // IdentityPersonaRequest | 
+	identityPersonaRequest := *openapiclient.NewIdentityPersonaRequest() // IdentityPersonaRequest | 
 
-    resp, err := client.Identity.PostIdentityPersona(context.Background()).IdentityPersonaRequest(identityPersonaRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityPersona``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityPersona(context.Background()).IdentityPersonaRequest(identityPersonaRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7607,14 +7813,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    id := "id_example" // string | ID of the persona
-    identityPersonaIdRequest := *openapiclient.NewIdentityPersonaIdRequest() // IdentityPersonaIdRequest | 
+	id := "id_example" // string | ID of the persona
+	identityPersonaIdRequest := *openapiclient.NewIdentityPersonaIdRequest() // IdentityPersonaIdRequest | 
 
-    resp, err := client.Identity.PostIdentityPersonaIdId(context.Background(), id).IdentityPersonaIdRequest(identityPersonaIdRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Identity.PostIdentityPersonaIdId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Identity.PostIdentityPersonaIdId(context.Background(), id).IdentityPersonaIdRequest(identityPersonaIdRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 

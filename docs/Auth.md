@@ -1,6 +1,4 @@
-# \Auth
-
-All URIs are relative to *http://localhost*
+# Auth
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -306,13 +304,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    role := "role_example" // string | The name of the role as it should appear in Vault.
+	role := "role_example" // string | The name of the role as it should appear in Vault.
 
-    resp, err := client.Auth.DeleteAuthAlicloudRoleRole(context.Background(), role).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAlicloudRoleRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthAlicloudRoleRole(context.Background(), role)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -379,13 +379,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Key for the app-id mapping
+	key := "key_example" // string | Key for the app-id mapping
 
-    resp, err := client.Auth.DeleteAuthAppIdMapAppIdKey(context.Background(), key).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAppIdMapAppIdKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthAppIdMapAppIdKey(context.Background(), key)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -452,13 +454,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Key for the user-id mapping
+	key := "key_example" // string | Key for the user-id mapping
 
-    resp, err := client.Auth.DeleteAuthAppIdMapUserIdKey(context.Background(), key).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAppIdMapUserIdKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthAppIdMapUserIdKey(context.Background(), key)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -525,13 +529,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role.
 
-    resp, err := client.Auth.DeleteAuthApproleRoleRoleName(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleName(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -598,13 +604,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role.
 
-    resp, err := client.Auth.DeleteAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameBindSecretId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -671,13 +679,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role.
 
-    resp, err := client.Auth.DeleteAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameBoundCidrList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -744,13 +754,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role.
 
-    resp, err := client.Auth.DeleteAuthApproleRoleRoleNamePeriod(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNamePeriod``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNamePeriod(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -817,13 +829,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role.
 
-    resp, err := client.Auth.DeleteAuthApproleRoleRoleNamePolicies(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNamePolicies``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNamePolicies(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -890,13 +904,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role.
 
-    resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -963,13 +979,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role.
 
-    resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1036,13 +1054,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role.
 
-    resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdDestroy(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameSecretIdDestroy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdDestroy(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1109,13 +1129,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role.
 
-    resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameSecretIdNumUses``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1182,13 +1204,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role.
 
-    resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameSecretIdTtl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1255,13 +1279,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role.
 
-    resp, err := client.Auth.DeleteAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameTokenBoundCidrs``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1328,13 +1354,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role.
 
-    resp, err := client.Auth.DeleteAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameTokenMaxTtl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1401,13 +1429,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role.
 
-    resp, err := client.Auth.DeleteAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameTokenNumUses``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1474,13 +1504,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role.
 
-    resp, err := client.Auth.DeleteAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameTokenTtl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1547,13 +1579,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    certName := "certName_example" // string | Name of the certificate.
+	certName := "certName_example" // string | Name of the certificate.
 
-    resp, err := client.Auth.DeleteAuthAwsConfigCertificateCertName(context.Background(), certName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsConfigCertificateCertName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthAwsConfigCertificateCertName(context.Background(), certName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1621,11 +1655,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.DeleteAuthAwsConfigClient(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsConfigClient``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthAwsConfigClient(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1684,13 +1720,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
+	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
 
-    resp, err := client.Auth.DeleteAuthAwsConfigStsAccountId(context.Background(), accountId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsConfigStsAccountId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthAwsConfigStsAccountId(context.Background(), accountId)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1758,11 +1796,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.DeleteAuthAwsConfigTidyIdentityAccesslist(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsConfigTidyIdentityAccesslist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthAwsConfigTidyIdentityAccesslist(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1822,11 +1862,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.DeleteAuthAwsConfigTidyIdentityWhitelist(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsConfigTidyIdentityWhitelist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthAwsConfigTidyIdentityWhitelist(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1886,11 +1928,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.DeleteAuthAwsConfigTidyRoletagBlacklist(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsConfigTidyRoletagBlacklist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthAwsConfigTidyRoletagBlacklist(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1950,11 +1994,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.DeleteAuthAwsConfigTidyRoletagDenylist(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsConfigTidyRoletagDenylist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthAwsConfigTidyRoletagDenylist(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2013,13 +2059,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
+	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 
-    resp, err := client.Auth.DeleteAuthAwsIdentityAccesslistInstanceId(context.Background(), instanceId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsIdentityAccesslistInstanceId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthAwsIdentityAccesslistInstanceId(context.Background(), instanceId)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2086,13 +2134,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
+	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 
-    resp, err := client.Auth.DeleteAuthAwsIdentityWhitelistInstanceId(context.Background(), instanceId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsIdentityWhitelistInstanceId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthAwsIdentityWhitelistInstanceId(context.Background(), instanceId)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2159,13 +2209,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    role := "role_example" // string | Name of the role.
+	role := "role_example" // string | Name of the role.
 
-    resp, err := client.Auth.DeleteAuthAwsRoleRole(context.Background(), role).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsRoleRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthAwsRoleRole(context.Background(), role)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2232,13 +2284,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 
-    resp, err := client.Auth.DeleteAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsRoletagBlacklistRoleTag``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2305,13 +2359,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 
-    resp, err := client.Auth.DeleteAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsRoletagDenylistRoleTag``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2379,11 +2435,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.DeleteAuthAzureConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAzureConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthAzureConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2442,13 +2500,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
+	name := "name_example" // string | Name of the role.
 
-    resp, err := client.Auth.DeleteAuthAzureRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAzureRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthAzureRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2515,13 +2575,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | The name of the certificate
+	name := "name_example" // string | The name of the certificate
 
-    resp, err := client.Auth.DeleteAuthCertCertsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthCertCertsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthCertCertsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2588,13 +2650,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | The name of the certificate
+	name := "name_example" // string | The name of the certificate
 
-    resp, err := client.Auth.DeleteAuthCertCrlsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthCertCrlsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthCertCrlsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2662,11 +2726,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.DeleteAuthCfConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthCfConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthCfConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2725,13 +2791,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    role := "role_example" // string | The name of the role.
+	role := "role_example" // string | The name of the role.
 
-    resp, err := client.Auth.DeleteAuthCfRolesRole(context.Background(), role).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthCfRolesRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthCfRolesRole(context.Background(), role)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2798,13 +2866,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
+	name := "name_example" // string | Name of the role.
 
-    resp, err := client.Auth.DeleteAuthGcpRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthGcpRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthGcpRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2871,13 +2941,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Key for the teams mapping
+	key := "key_example" // string | Key for the teams mapping
 
-    resp, err := client.Auth.DeleteAuthGithubMapTeamsKey(context.Background(), key).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthGithubMapTeamsKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthGithubMapTeamsKey(context.Background(), key)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2944,13 +3016,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Key for the users mapping
+	key := "key_example" // string | Key for the users mapping
 
-    resp, err := client.Auth.DeleteAuthGithubMapUsersKey(context.Background(), key).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthGithubMapUsersKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthGithubMapUsersKey(context.Background(), key)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3017,13 +3091,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
+	name := "name_example" // string | Name of the role.
 
-    resp, err := client.Auth.DeleteAuthJwtRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthJwtRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthJwtRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3090,13 +3166,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the LDAP group.
+	name := "name_example" // string | Name of the LDAP group.
 
-    resp, err := client.Auth.DeleteAuthKerberosGroupsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthKerberosGroupsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthKerberosGroupsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3163,13 +3241,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
+	name := "name_example" // string | Name of the role.
 
-    resp, err := client.Auth.DeleteAuthKubernetesRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthKubernetesRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthKubernetesRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3236,13 +3316,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the LDAP group.
+	name := "name_example" // string | Name of the LDAP group.
 
-    resp, err := client.Auth.DeleteAuthLdapGroupsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthLdapGroupsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthLdapGroupsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3309,13 +3391,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the LDAP user.
+	name := "name_example" // string | Name of the LDAP user.
 
-    resp, err := client.Auth.DeleteAuthLdapUsersName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthLdapUsersName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthLdapUsersName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3383,11 +3467,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.DeleteAuthOciConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthOciConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthOciConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3446,13 +3532,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    role := "role_example" // string | Name of the role.
+	role := "role_example" // string | Name of the role.
 
-    resp, err := client.Auth.DeleteAuthOciRoleRole(context.Background(), role).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthOciRoleRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthOciRoleRole(context.Background(), role)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3519,13 +3607,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
+	name := "name_example" // string | Name of the role.
 
-    resp, err := client.Auth.DeleteAuthOidcRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthOidcRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthOidcRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3592,13 +3682,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the Okta group.
+	name := "name_example" // string | Name of the Okta group.
 
-    resp, err := client.Auth.DeleteAuthOktaGroupsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthOktaGroupsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthOktaGroupsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3665,13 +3757,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the user.
+	name := "name_example" // string | Name of the user.
 
-    resp, err := client.Auth.DeleteAuthOktaUsersName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthOktaUsersName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthOktaUsersName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3738,13 +3832,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the RADIUS user.
+	name := "name_example" // string | Name of the RADIUS user.
 
-    resp, err := client.Auth.DeleteAuthRadiusUsersName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthRadiusUsersName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthRadiusUsersName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3811,13 +3907,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role
+	roleName := "roleName_example" // string | Name of the role
 
-    resp, err := client.Auth.DeleteAuthTokenRolesRoleName(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthTokenRolesRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthTokenRolesRoleName(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3884,13 +3982,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    username := "username_example" // string | Username for this user.
+	username := "username_example" // string | Username for this user.
 
-    resp, err := client.Auth.DeleteAuthUserpassUsersUsername(context.Background(), username).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthUserpassUsersUsername``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.DeleteAuthUserpassUsersUsername(context.Background(), username)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3957,13 +4057,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthAlicloudRole(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAlicloudRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAlicloudRole(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4026,13 +4128,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    role := "role_example" // string | The name of the role as it should appear in Vault.
+	role := "role_example" // string | The name of the role as it should appear in Vault.
 
-    resp, err := client.Auth.GetAuthAlicloudRoleRole(context.Background(), role).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAlicloudRoleRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAlicloudRoleRole(context.Background(), role)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4099,13 +4203,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthAlicloudRoles(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAlicloudRoles``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAlicloudRoles(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4168,13 +4274,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Return a list if `true`
+	list := "list_example" // string | Return a list if `true`
 
-    resp, err := client.Auth.GetAuthAppIdMapAppId(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAppIdMapAppId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAppIdMapAppId(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4237,13 +4345,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Key for the app-id mapping
+	key := "key_example" // string | Key for the app-id mapping
 
-    resp, err := client.Auth.GetAuthAppIdMapAppIdKey(context.Background(), key).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAppIdMapAppIdKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAppIdMapAppIdKey(context.Background(), key)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4310,13 +4420,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Return a list if `true`
+	list := "list_example" // string | Return a list if `true`
 
-    resp, err := client.Auth.GetAuthAppIdMapUserId(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAppIdMapUserId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAppIdMapUserId(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4379,13 +4491,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Key for the user-id mapping
+	key := "key_example" // string | Key for the user-id mapping
 
-    resp, err := client.Auth.GetAuthAppIdMapUserIdKey(context.Background(), key).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAppIdMapUserIdKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAppIdMapUserIdKey(context.Background(), key)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4452,13 +4566,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthApproleRole(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthApproleRole(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4521,13 +4637,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role.
 
-    resp, err := client.Auth.GetAuthApproleRoleRoleName(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthApproleRoleRoleName(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4594,13 +4712,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role.
 
-    resp, err := client.Auth.GetAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameBindSecretId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4667,13 +4787,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role.
 
-    resp, err := client.Auth.GetAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameBoundCidrList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4740,13 +4862,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role.
 
-    resp, err := client.Auth.GetAuthApproleRoleRoleNameLocalSecretIds(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameLocalSecretIds``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameLocalSecretIds(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4813,13 +4937,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role.
 
-    resp, err := client.Auth.GetAuthApproleRoleRoleNamePeriod(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNamePeriod``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthApproleRoleRoleNamePeriod(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4886,13 +5012,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role.
 
-    resp, err := client.Auth.GetAuthApproleRoleRoleNamePolicies(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNamePolicies``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthApproleRoleRoleNamePolicies(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4959,13 +5087,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role.
 
-    resp, err := client.Auth.GetAuthApproleRoleRoleNameRoleId(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameRoleId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameRoleId(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5032,14 +5162,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
-    list := "list_example" // string | Must be set to `true`
+	roleName := "roleName_example" // string | Name of the role.
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretId(context.Background(), roleName).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameSecretId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretId(context.Background(), roleName).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5107,13 +5239,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role.
 
-    resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameSecretIdBoundCidrs``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5180,13 +5314,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role.
 
-    resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameSecretIdNumUses``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5253,13 +5389,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role.
 
-    resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameSecretIdTtl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5326,13 +5464,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role.
 
-    resp, err := client.Auth.GetAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameTokenBoundCidrs``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5399,13 +5539,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role.
 
-    resp, err := client.Auth.GetAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameTokenMaxTtl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5472,13 +5614,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role.
 
-    resp, err := client.Auth.GetAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameTokenNumUses``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5545,13 +5689,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
+	roleName := "roleName_example" // string | Name of the role.
 
-    resp, err := client.Auth.GetAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameTokenTtl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5618,13 +5764,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    certName := "certName_example" // string | Name of the certificate.
+	certName := "certName_example" // string | Name of the certificate.
 
-    resp, err := client.Auth.GetAuthAwsConfigCertificateCertName(context.Background(), certName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigCertificateCertName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAwsConfigCertificateCertName(context.Background(), certName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5691,13 +5839,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthAwsConfigCertificates(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigCertificates``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAwsConfigCertificates(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5761,11 +5911,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.GetAuthAwsConfigClient(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigClient``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAwsConfigClient(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5825,11 +5977,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.GetAuthAwsConfigIdentity(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigIdentity``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAwsConfigIdentity(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5888,13 +6042,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthAwsConfigSts(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigSts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAwsConfigSts(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5957,13 +6113,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
+	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
 
-    resp, err := client.Auth.GetAuthAwsConfigStsAccountId(context.Background(), accountId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigStsAccountId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAwsConfigStsAccountId(context.Background(), accountId)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6031,11 +6189,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.GetAuthAwsConfigTidyIdentityAccesslist(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigTidyIdentityAccesslist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAwsConfigTidyIdentityAccesslist(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6095,11 +6255,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.GetAuthAwsConfigTidyIdentityWhitelist(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigTidyIdentityWhitelist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAwsConfigTidyIdentityWhitelist(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6159,11 +6321,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.GetAuthAwsConfigTidyRoletagBlacklist(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigTidyRoletagBlacklist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAwsConfigTidyRoletagBlacklist(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6223,11 +6387,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.GetAuthAwsConfigTidyRoletagDenylist(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigTidyRoletagDenylist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAwsConfigTidyRoletagDenylist(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6286,13 +6452,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthAwsIdentityAccesslist(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsIdentityAccesslist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAwsIdentityAccesslist(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6355,13 +6523,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
+	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 
-    resp, err := client.Auth.GetAuthAwsIdentityAccesslistInstanceId(context.Background(), instanceId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsIdentityAccesslistInstanceId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAwsIdentityAccesslistInstanceId(context.Background(), instanceId)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6428,13 +6598,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthAwsIdentityWhitelist(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsIdentityWhitelist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAwsIdentityWhitelist(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6497,13 +6669,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
+	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 
-    resp, err := client.Auth.GetAuthAwsIdentityWhitelistInstanceId(context.Background(), instanceId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsIdentityWhitelistInstanceId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAwsIdentityWhitelistInstanceId(context.Background(), instanceId)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6570,13 +6744,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthAwsRole(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAwsRole(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6639,13 +6815,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    role := "role_example" // string | Name of the role.
+	role := "role_example" // string | Name of the role.
 
-    resp, err := client.Auth.GetAuthAwsRoleRole(context.Background(), role).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsRoleRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAwsRoleRole(context.Background(), role)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6712,13 +6890,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthAwsRoles(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsRoles``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAwsRoles(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6781,13 +6961,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthAwsRoletagBlacklist(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsRoletagBlacklist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAwsRoletagBlacklist(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6850,13 +7032,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 
-    resp, err := client.Auth.GetAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsRoletagBlacklistRoleTag``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6923,13 +7107,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthAwsRoletagDenylist(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsRoletagDenylist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAwsRoletagDenylist(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6992,13 +7178,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 
-    resp, err := client.Auth.GetAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsRoletagDenylistRoleTag``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7066,11 +7254,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.GetAuthAzureConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAzureConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAzureConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7129,13 +7319,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthAzureRole(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAzureRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAzureRole(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7198,13 +7390,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
+	name := "name_example" // string | Name of the role.
 
-    resp, err := client.Auth.GetAuthAzureRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAzureRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthAzureRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7272,11 +7466,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.GetAuthCentrifyConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthCentrifyConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthCentrifyConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7335,13 +7531,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthCertCerts(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthCertCerts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthCertCerts(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7404,13 +7602,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | The name of the certificate
+	name := "name_example" // string | The name of the certificate
 
-    resp, err := client.Auth.GetAuthCertCertsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthCertCertsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthCertCertsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7477,13 +7677,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | The name of the certificate
+	name := "name_example" // string | The name of the certificate
 
-    resp, err := client.Auth.GetAuthCertCrlsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthCertCrlsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthCertCrlsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7551,11 +7753,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.GetAuthCfConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthCfConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthCfConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7614,13 +7818,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthCfRoles(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthCfRoles``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthCfRoles(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7683,13 +7889,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    role := "role_example" // string | The name of the role.
+	role := "role_example" // string | The name of the role.
 
-    resp, err := client.Auth.GetAuthCfRolesRole(context.Background(), role).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthCfRolesRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthCfRolesRole(context.Background(), role)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7757,11 +7965,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.GetAuthGcpConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGcpConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthGcpConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7820,13 +8030,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthGcpRole(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGcpRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthGcpRole(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7889,13 +8101,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
+	name := "name_example" // string | Name of the role.
 
-    resp, err := client.Auth.GetAuthGcpRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGcpRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthGcpRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7962,13 +8176,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthGcpRoles(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGcpRoles``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthGcpRoles(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8032,11 +8248,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.GetAuthGithubConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGithubConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthGithubConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8095,13 +8313,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Return a list if `true`
+	list := "list_example" // string | Return a list if `true`
 
-    resp, err := client.Auth.GetAuthGithubMapTeams(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGithubMapTeams``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthGithubMapTeams(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8164,13 +8384,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Key for the teams mapping
+	key := "key_example" // string | Key for the teams mapping
 
-    resp, err := client.Auth.GetAuthGithubMapTeamsKey(context.Background(), key).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGithubMapTeamsKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthGithubMapTeamsKey(context.Background(), key)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8237,13 +8459,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Return a list if `true`
+	list := "list_example" // string | Return a list if `true`
 
-    resp, err := client.Auth.GetAuthGithubMapUsers(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGithubMapUsers``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthGithubMapUsers(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8306,13 +8530,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Key for the users mapping
+	key := "key_example" // string | Key for the users mapping
 
-    resp, err := client.Auth.GetAuthGithubMapUsersKey(context.Background(), key).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGithubMapUsersKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthGithubMapUsersKey(context.Background(), key)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8380,11 +8606,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.GetAuthJwtConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthJwtConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthJwtConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8444,11 +8672,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.GetAuthJwtOidcCallback(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthJwtOidcCallback``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthJwtOidcCallback(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8509,13 +8739,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthJwtRole(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthJwtRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthJwtRole(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8578,13 +8810,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
+	name := "name_example" // string | Name of the role.
 
-    resp, err := client.Auth.GetAuthJwtRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthJwtRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthJwtRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8652,11 +8886,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.GetAuthKerberosConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKerberosConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthKerberosConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8716,11 +8952,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.GetAuthKerberosConfigLdap(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKerberosConfigLdap``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthKerberosConfigLdap(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8779,13 +9017,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthKerberosGroups(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKerberosGroups``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthKerberosGroups(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8848,13 +9088,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the LDAP group.
+	name := "name_example" // string | Name of the LDAP group.
 
-    resp, err := client.Auth.GetAuthKerberosGroupsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKerberosGroupsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthKerberosGroupsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8922,11 +9164,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.GetAuthKerberosLogin(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKerberosLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthKerberosLogin(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8986,11 +9230,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.GetAuthKubernetesConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKubernetesConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthKubernetesConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9049,13 +9295,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthKubernetesRole(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKubernetesRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthKubernetesRole(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9118,13 +9366,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
+	name := "name_example" // string | Name of the role.
 
-    resp, err := client.Auth.GetAuthKubernetesRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKubernetesRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthKubernetesRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9192,11 +9442,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.GetAuthLdapConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthLdapConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthLdapConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9255,13 +9507,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthLdapGroups(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthLdapGroups``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthLdapGroups(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9324,13 +9578,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the LDAP group.
+	name := "name_example" // string | Name of the LDAP group.
 
-    resp, err := client.Auth.GetAuthLdapGroupsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthLdapGroupsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthLdapGroupsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9397,13 +9653,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthLdapUsers(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthLdapUsers``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthLdapUsers(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9466,13 +9724,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the LDAP user.
+	name := "name_example" // string | Name of the LDAP user.
 
-    resp, err := client.Auth.GetAuthLdapUsersName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthLdapUsersName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthLdapUsersName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9540,11 +9800,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.GetAuthOciConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOciConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthOciConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9603,13 +9865,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthOciRole(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOciRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthOciRole(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9672,13 +9936,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    role := "role_example" // string | Name of the role.
+	role := "role_example" // string | Name of the role.
 
-    resp, err := client.Auth.GetAuthOciRoleRole(context.Background(), role).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOciRoleRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthOciRoleRole(context.Background(), role)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9746,11 +10012,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.GetAuthOidcConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOidcConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthOidcConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9810,11 +10078,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.GetAuthOidcOidcCallback(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOidcOidcCallback``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthOidcOidcCallback(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9875,13 +10145,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthOidcRole(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOidcRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthOidcRole(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9944,13 +10216,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
+	name := "name_example" // string | Name of the role.
 
-    resp, err := client.Auth.GetAuthOidcRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOidcRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthOidcRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10018,11 +10292,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.GetAuthOktaConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOktaConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthOktaConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10081,13 +10357,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthOktaGroups(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOktaGroups``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthOktaGroups(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10150,13 +10428,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the Okta group.
+	name := "name_example" // string | Name of the Okta group.
 
-    resp, err := client.Auth.GetAuthOktaGroupsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOktaGroupsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthOktaGroupsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10223,13 +10503,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthOktaUsers(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOktaUsers``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthOktaUsers(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10292,13 +10574,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the user.
+	name := "name_example" // string | Name of the user.
 
-    resp, err := client.Auth.GetAuthOktaUsersName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOktaUsersName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthOktaUsersName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10365,13 +10649,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    nonce := "nonce_example" // string | Nonce provided during a login request to retrieve the number verification challenge for the matching request.
+	nonce := "nonce_example" // string | Nonce provided during a login request to retrieve the number verification challenge for the matching request.
 
-    resp, err := client.Auth.GetAuthOktaVerifyNonce(context.Background(), nonce).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOktaVerifyNonce``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthOktaVerifyNonce(context.Background(), nonce)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10439,11 +10725,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.GetAuthRadiusConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthRadiusConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthRadiusConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10502,13 +10790,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthRadiusUsers(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthRadiusUsers``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthRadiusUsers(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10571,13 +10861,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the RADIUS user.
+	name := "name_example" // string | Name of the RADIUS user.
 
-    resp, err := client.Auth.GetAuthRadiusUsersName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthRadiusUsersName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthRadiusUsersName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10644,13 +10936,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthTokenAccessors(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthTokenAccessors``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthTokenAccessors(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10714,11 +11008,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.GetAuthTokenLookup(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthTokenLookup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthTokenLookup(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10778,11 +11074,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.GetAuthTokenLookupSelf(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthTokenLookupSelf``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthTokenLookupSelf(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10841,13 +11139,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthTokenRoles(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthTokenRoles``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthTokenRoles(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10910,13 +11210,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role
+	roleName := "roleName_example" // string | Name of the role
 
-    resp, err := client.Auth.GetAuthTokenRolesRoleName(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthTokenRolesRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthTokenRolesRoleName(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10983,13 +11285,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Auth.GetAuthUserpassUsers(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthUserpassUsers``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthUserpassUsers(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11052,13 +11356,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    username := "username_example" // string | Username for this user.
+	username := "username_example" // string | Username for this user.
 
-    resp, err := client.Auth.GetAuthUserpassUsersUsername(context.Background(), username).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthUserpassUsersUsername``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.GetAuthUserpassUsersUsername(context.Background(), username)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11125,13 +11431,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    alicloudLoginRequest := *openapiclient.NewAlicloudLoginRequest() // AlicloudLoginRequest | 
+	alicloudLoginRequest := *openapiclient.NewAlicloudLoginRequest() // AlicloudLoginRequest | 
 
-    resp, err := client.Auth.PostAuthAlicloudLogin(context.Background()).AlicloudLoginRequest(alicloudLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAlicloudLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthAlicloudLogin(context.Background()).AlicloudLoginRequest(alicloudLoginRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11194,14 +11502,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    role := "role_example" // string | The name of the role as it should appear in Vault.
-    alicloudRoleRequest := *openapiclient.NewAlicloudRoleRequest() // AlicloudRoleRequest | 
+	role := "role_example" // string | The name of the role as it should appear in Vault.
+	alicloudRoleRequest := *openapiclient.NewAlicloudRoleRequest() // AlicloudRoleRequest | 
 
-    resp, err := client.Auth.PostAuthAlicloudRoleRole(context.Background(), role).AlicloudRoleRequest(alicloudRoleRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAlicloudRoleRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthAlicloudRoleRole(context.Background(), role).AlicloudRoleRequest(alicloudRoleRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11269,13 +11579,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    appIdLoginRequest := *openapiclient.NewAppIdLoginRequest() // AppIdLoginRequest | 
+	appIdLoginRequest := *openapiclient.NewAppIdLoginRequest() // AppIdLoginRequest | 
 
-    resp, err := client.Auth.PostAuthAppIdLogin(context.Background()).AppIdLoginRequest(appIdLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAppIdLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthAppIdLogin(context.Background()).AppIdLoginRequest(appIdLoginRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11338,14 +11650,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    appId := "appId_example" // string | The unique app ID
-    appIdLoginRequest := *openapiclient.NewAppIdLoginRequest() // AppIdLoginRequest | 
+	appId := "appId_example" // string | The unique app ID
+	appIdLoginRequest := *openapiclient.NewAppIdLoginRequest() // AppIdLoginRequest | 
 
-    resp, err := client.Auth.PostAuthAppIdLoginAppId(context.Background(), appId).AppIdLoginRequest(appIdLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAppIdLoginAppId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthAppIdLoginAppId(context.Background(), appId).AppIdLoginRequest(appIdLoginRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11413,14 +11727,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Key for the app-id mapping
-    appIdMapAppIdRequest := *openapiclient.NewAppIdMapAppIdRequest() // AppIdMapAppIdRequest | 
+	key := "key_example" // string | Key for the app-id mapping
+	appIdMapAppIdRequest := *openapiclient.NewAppIdMapAppIdRequest() // AppIdMapAppIdRequest | 
 
-    resp, err := client.Auth.PostAuthAppIdMapAppIdKey(context.Background(), key).AppIdMapAppIdRequest(appIdMapAppIdRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAppIdMapAppIdKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthAppIdMapAppIdKey(context.Background(), key).AppIdMapAppIdRequest(appIdMapAppIdRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11488,14 +11804,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Key for the user-id mapping
-    appIdMapUserIdRequest := *openapiclient.NewAppIdMapUserIdRequest() // AppIdMapUserIdRequest | 
+	key := "key_example" // string | Key for the user-id mapping
+	appIdMapUserIdRequest := *openapiclient.NewAppIdMapUserIdRequest() // AppIdMapUserIdRequest | 
 
-    resp, err := client.Auth.PostAuthAppIdMapUserIdKey(context.Background(), key).AppIdMapUserIdRequest(appIdMapUserIdRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAppIdMapUserIdKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthAppIdMapUserIdKey(context.Background(), key).AppIdMapUserIdRequest(appIdMapUserIdRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11563,13 +11881,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    approleLoginRequest := *openapiclient.NewApproleLoginRequest() // ApproleLoginRequest | 
+	approleLoginRequest := *openapiclient.NewApproleLoginRequest() // ApproleLoginRequest | 
 
-    resp, err := client.Auth.PostAuthApproleLogin(context.Background()).ApproleLoginRequest(approleLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthApproleLogin(context.Background()).ApproleLoginRequest(approleLoginRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11632,14 +11952,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleRequest := *openapiclient.NewApproleRoleRequest() // ApproleRoleRequest | 
+	roleName := "roleName_example" // string | Name of the role.
+	approleRoleRequest := *openapiclient.NewApproleRoleRequest() // ApproleRoleRequest | 
 
-    resp, err := client.Auth.PostAuthApproleRoleRoleName(context.Background(), roleName).ApproleRoleRequest(approleRoleRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthApproleRoleRoleName(context.Background(), roleName).ApproleRoleRequest(approleRoleRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11707,14 +12029,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleBindSecretIdRequest := *openapiclient.NewApproleRoleBindSecretIdRequest() // ApproleRoleBindSecretIdRequest | 
+	roleName := "roleName_example" // string | Name of the role.
+	approleRoleBindSecretIdRequest := *openapiclient.NewApproleRoleBindSecretIdRequest() // ApproleRoleBindSecretIdRequest | 
 
-    resp, err := client.Auth.PostAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName).ApproleRoleBindSecretIdRequest(approleRoleBindSecretIdRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameBindSecretId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName).ApproleRoleBindSecretIdRequest(approleRoleBindSecretIdRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11782,14 +12106,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleBoundCidrListRequest := *openapiclient.NewApproleRoleBoundCidrListRequest() // ApproleRoleBoundCidrListRequest | 
+	roleName := "roleName_example" // string | Name of the role.
+	approleRoleBoundCidrListRequest := *openapiclient.NewApproleRoleBoundCidrListRequest() // ApproleRoleBoundCidrListRequest | 
 
-    resp, err := client.Auth.PostAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName).ApproleRoleBoundCidrListRequest(approleRoleBoundCidrListRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameBoundCidrList``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName).ApproleRoleBoundCidrListRequest(approleRoleBoundCidrListRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11857,14 +12183,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleCustomSecretIdRequest := *openapiclient.NewApproleRoleCustomSecretIdRequest() // ApproleRoleCustomSecretIdRequest | 
+	roleName := "roleName_example" // string | Name of the role.
+	approleRoleCustomSecretIdRequest := *openapiclient.NewApproleRoleCustomSecretIdRequest() // ApproleRoleCustomSecretIdRequest | 
 
-    resp, err := client.Auth.PostAuthApproleRoleRoleNameCustomSecretId(context.Background(), roleName).ApproleRoleCustomSecretIdRequest(approleRoleCustomSecretIdRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameCustomSecretId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameCustomSecretId(context.Background(), roleName).ApproleRoleCustomSecretIdRequest(approleRoleCustomSecretIdRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11932,14 +12260,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
-    approleRolePeriodRequest := *openapiclient.NewApproleRolePeriodRequest() // ApproleRolePeriodRequest | 
+	roleName := "roleName_example" // string | Name of the role.
+	approleRolePeriodRequest := *openapiclient.NewApproleRolePeriodRequest() // ApproleRolePeriodRequest | 
 
-    resp, err := client.Auth.PostAuthApproleRoleRoleNamePeriod(context.Background(), roleName).ApproleRolePeriodRequest(approleRolePeriodRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNamePeriod``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNamePeriod(context.Background(), roleName).ApproleRolePeriodRequest(approleRolePeriodRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12007,14 +12337,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
-    approleRolePoliciesRequest := *openapiclient.NewApproleRolePoliciesRequest() // ApproleRolePoliciesRequest | 
+	roleName := "roleName_example" // string | Name of the role.
+	approleRolePoliciesRequest := *openapiclient.NewApproleRolePoliciesRequest() // ApproleRolePoliciesRequest | 
 
-    resp, err := client.Auth.PostAuthApproleRoleRoleNamePolicies(context.Background(), roleName).ApproleRolePoliciesRequest(approleRolePoliciesRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNamePolicies``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNamePolicies(context.Background(), roleName).ApproleRolePoliciesRequest(approleRolePoliciesRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12082,14 +12414,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleRoleIdRequest := *openapiclient.NewApproleRoleRoleIdRequest() // ApproleRoleRoleIdRequest | 
+	roleName := "roleName_example" // string | Name of the role.
+	approleRoleRoleIdRequest := *openapiclient.NewApproleRoleRoleIdRequest() // ApproleRoleRoleIdRequest | 
 
-    resp, err := client.Auth.PostAuthApproleRoleRoleNameRoleId(context.Background(), roleName).ApproleRoleRoleIdRequest(approleRoleRoleIdRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameRoleId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameRoleId(context.Background(), roleName).ApproleRoleRoleIdRequest(approleRoleRoleIdRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12157,14 +12491,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleSecretIdRequest := *openapiclient.NewApproleRoleSecretIdRequest() // ApproleRoleSecretIdRequest | 
+	roleName := "roleName_example" // string | Name of the role.
+	approleRoleSecretIdRequest := *openapiclient.NewApproleRoleSecretIdRequest() // ApproleRoleSecretIdRequest | 
 
-    resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretId(context.Background(), roleName).ApproleRoleSecretIdRequest(approleRoleSecretIdRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretId(context.Background(), roleName).ApproleRoleSecretIdRequest(approleRoleSecretIdRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12232,14 +12568,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleSecretIdAccessorDestroyRequest := *openapiclient.NewApproleRoleSecretIdAccessorDestroyRequest() // ApproleRoleSecretIdAccessorDestroyRequest | 
+	roleName := "roleName_example" // string | Name of the role.
+	approleRoleSecretIdAccessorDestroyRequest := *openapiclient.NewApproleRoleSecretIdAccessorDestroyRequest() // ApproleRoleSecretIdAccessorDestroyRequest | 
 
-    resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(context.Background(), roleName).ApproleRoleSecretIdAccessorDestroyRequest(approleRoleSecretIdAccessorDestroyRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretIdAccessorDestroy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(context.Background(), roleName).ApproleRoleSecretIdAccessorDestroyRequest(approleRoleSecretIdAccessorDestroyRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12307,14 +12645,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleSecretIdAccessorLookupRequest := *openapiclient.NewApproleRoleSecretIdAccessorLookupRequest() // ApproleRoleSecretIdAccessorLookupRequest | 
+	roleName := "roleName_example" // string | Name of the role.
+	approleRoleSecretIdAccessorLookupRequest := *openapiclient.NewApproleRoleSecretIdAccessorLookupRequest() // ApproleRoleSecretIdAccessorLookupRequest | 
 
-    resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdAccessorLookup(context.Background(), roleName).ApproleRoleSecretIdAccessorLookupRequest(approleRoleSecretIdAccessorLookupRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretIdAccessorLookup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdAccessorLookup(context.Background(), roleName).ApproleRoleSecretIdAccessorLookupRequest(approleRoleSecretIdAccessorLookupRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12382,14 +12722,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleSecretIdBoundCidrsRequest := *openapiclient.NewApproleRoleSecretIdBoundCidrsRequest() // ApproleRoleSecretIdBoundCidrsRequest | 
+	roleName := "roleName_example" // string | Name of the role.
+	approleRoleSecretIdBoundCidrsRequest := *openapiclient.NewApproleRoleSecretIdBoundCidrsRequest() // ApproleRoleSecretIdBoundCidrsRequest | 
 
-    resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName).ApproleRoleSecretIdBoundCidrsRequest(approleRoleSecretIdBoundCidrsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretIdBoundCidrs``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName).ApproleRoleSecretIdBoundCidrsRequest(approleRoleSecretIdBoundCidrsRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12457,14 +12799,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleSecretIdDestroyRequest := *openapiclient.NewApproleRoleSecretIdDestroyRequest() // ApproleRoleSecretIdDestroyRequest | 
+	roleName := "roleName_example" // string | Name of the role.
+	approleRoleSecretIdDestroyRequest := *openapiclient.NewApproleRoleSecretIdDestroyRequest() // ApproleRoleSecretIdDestroyRequest | 
 
-    resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdDestroy(context.Background(), roleName).ApproleRoleSecretIdDestroyRequest(approleRoleSecretIdDestroyRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretIdDestroy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdDestroy(context.Background(), roleName).ApproleRoleSecretIdDestroyRequest(approleRoleSecretIdDestroyRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12532,14 +12876,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleSecretIdLookupRequest := *openapiclient.NewApproleRoleSecretIdLookupRequest() // ApproleRoleSecretIdLookupRequest | 
+	roleName := "roleName_example" // string | Name of the role.
+	approleRoleSecretIdLookupRequest := *openapiclient.NewApproleRoleSecretIdLookupRequest() // ApproleRoleSecretIdLookupRequest | 
 
-    resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdLookup(context.Background(), roleName).ApproleRoleSecretIdLookupRequest(approleRoleSecretIdLookupRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretIdLookup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdLookup(context.Background(), roleName).ApproleRoleSecretIdLookupRequest(approleRoleSecretIdLookupRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12607,14 +12953,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleSecretIdNumUsesRequest := *openapiclient.NewApproleRoleSecretIdNumUsesRequest() // ApproleRoleSecretIdNumUsesRequest | 
+	roleName := "roleName_example" // string | Name of the role.
+	approleRoleSecretIdNumUsesRequest := *openapiclient.NewApproleRoleSecretIdNumUsesRequest() // ApproleRoleSecretIdNumUsesRequest | 
 
-    resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName).ApproleRoleSecretIdNumUsesRequest(approleRoleSecretIdNumUsesRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretIdNumUses``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName).ApproleRoleSecretIdNumUsesRequest(approleRoleSecretIdNumUsesRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12682,14 +13030,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleSecretIdTtlRequest := *openapiclient.NewApproleRoleSecretIdTtlRequest() // ApproleRoleSecretIdTtlRequest | 
+	roleName := "roleName_example" // string | Name of the role.
+	approleRoleSecretIdTtlRequest := *openapiclient.NewApproleRoleSecretIdTtlRequest() // ApproleRoleSecretIdTtlRequest | 
 
-    resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName).ApproleRoleSecretIdTtlRequest(approleRoleSecretIdTtlRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretIdTtl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName).ApproleRoleSecretIdTtlRequest(approleRoleSecretIdTtlRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12757,14 +13107,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleTokenBoundCidrsRequest := *openapiclient.NewApproleRoleTokenBoundCidrsRequest() // ApproleRoleTokenBoundCidrsRequest | 
+	roleName := "roleName_example" // string | Name of the role.
+	approleRoleTokenBoundCidrsRequest := *openapiclient.NewApproleRoleTokenBoundCidrsRequest() // ApproleRoleTokenBoundCidrsRequest | 
 
-    resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName).ApproleRoleTokenBoundCidrsRequest(approleRoleTokenBoundCidrsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameTokenBoundCidrs``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName).ApproleRoleTokenBoundCidrsRequest(approleRoleTokenBoundCidrsRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12832,14 +13184,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleTokenMaxTtlRequest := *openapiclient.NewApproleRoleTokenMaxTtlRequest() // ApproleRoleTokenMaxTtlRequest | 
+	roleName := "roleName_example" // string | Name of the role.
+	approleRoleTokenMaxTtlRequest := *openapiclient.NewApproleRoleTokenMaxTtlRequest() // ApproleRoleTokenMaxTtlRequest | 
 
-    resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName).ApproleRoleTokenMaxTtlRequest(approleRoleTokenMaxTtlRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameTokenMaxTtl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName).ApproleRoleTokenMaxTtlRequest(approleRoleTokenMaxTtlRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12907,14 +13261,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleTokenNumUsesRequest := *openapiclient.NewApproleRoleTokenNumUsesRequest() // ApproleRoleTokenNumUsesRequest | 
+	roleName := "roleName_example" // string | Name of the role.
+	approleRoleTokenNumUsesRequest := *openapiclient.NewApproleRoleTokenNumUsesRequest() // ApproleRoleTokenNumUsesRequest | 
 
-    resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName).ApproleRoleTokenNumUsesRequest(approleRoleTokenNumUsesRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameTokenNumUses``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName).ApproleRoleTokenNumUsesRequest(approleRoleTokenNumUsesRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12982,14 +13338,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleTokenTtlRequest := *openapiclient.NewApproleRoleTokenTtlRequest() // ApproleRoleTokenTtlRequest | 
+	roleName := "roleName_example" // string | Name of the role.
+	approleRoleTokenTtlRequest := *openapiclient.NewApproleRoleTokenTtlRequest() // ApproleRoleTokenTtlRequest | 
 
-    resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName).ApproleRoleTokenTtlRequest(approleRoleTokenTtlRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameTokenTtl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName).ApproleRoleTokenTtlRequest(approleRoleTokenTtlRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13058,11 +13416,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.PostAuthApproleTidySecretId(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleTidySecretId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthApproleTidySecretId(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13121,14 +13481,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    certName := "certName_example" // string | Name of the certificate.
-    awsConfigCertificateRequest := *openapiclient.NewAwsConfigCertificateRequest() // AwsConfigCertificateRequest | 
+	certName := "certName_example" // string | Name of the certificate.
+	awsConfigCertificateRequest := *openapiclient.NewAwsConfigCertificateRequest() // AwsConfigCertificateRequest | 
 
-    resp, err := client.Auth.PostAuthAwsConfigCertificateCertName(context.Background(), certName).AwsConfigCertificateRequest(awsConfigCertificateRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigCertificateCertName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthAwsConfigCertificateCertName(context.Background(), certName).AwsConfigCertificateRequest(awsConfigCertificateRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13196,13 +13558,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    awsConfigClientRequest := *openapiclient.NewAwsConfigClientRequest() // AwsConfigClientRequest | 
+	awsConfigClientRequest := *openapiclient.NewAwsConfigClientRequest() // AwsConfigClientRequest | 
 
-    resp, err := client.Auth.PostAuthAwsConfigClient(context.Background()).AwsConfigClientRequest(awsConfigClientRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigClient``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthAwsConfigClient(context.Background()).AwsConfigClientRequest(awsConfigClientRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13265,13 +13629,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    awsConfigIdentityRequest := *openapiclient.NewAwsConfigIdentityRequest() // AwsConfigIdentityRequest | 
+	awsConfigIdentityRequest := *openapiclient.NewAwsConfigIdentityRequest() // AwsConfigIdentityRequest | 
 
-    resp, err := client.Auth.PostAuthAwsConfigIdentity(context.Background()).AwsConfigIdentityRequest(awsConfigIdentityRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigIdentity``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthAwsConfigIdentity(context.Background()).AwsConfigIdentityRequest(awsConfigIdentityRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13335,11 +13701,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.PostAuthAwsConfigRotateRoot(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigRotateRoot``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthAwsConfigRotateRoot(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13398,14 +13766,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-    awsConfigStsRequest := *openapiclient.NewAwsConfigStsRequest() // AwsConfigStsRequest | 
+	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
+	awsConfigStsRequest := *openapiclient.NewAwsConfigStsRequest() // AwsConfigStsRequest | 
 
-    resp, err := client.Auth.PostAuthAwsConfigStsAccountId(context.Background(), accountId).AwsConfigStsRequest(awsConfigStsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigStsAccountId``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthAwsConfigStsAccountId(context.Background(), accountId).AwsConfigStsRequest(awsConfigStsRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13473,13 +13843,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    awsConfigTidyIdentityAccesslistRequest := *openapiclient.NewAwsConfigTidyIdentityAccesslistRequest() // AwsConfigTidyIdentityAccesslistRequest | 
+	awsConfigTidyIdentityAccesslistRequest := *openapiclient.NewAwsConfigTidyIdentityAccesslistRequest() // AwsConfigTidyIdentityAccesslistRequest | 
 
-    resp, err := client.Auth.PostAuthAwsConfigTidyIdentityAccesslist(context.Background()).AwsConfigTidyIdentityAccesslistRequest(awsConfigTidyIdentityAccesslistRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigTidyIdentityAccesslist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthAwsConfigTidyIdentityAccesslist(context.Background()).AwsConfigTidyIdentityAccesslistRequest(awsConfigTidyIdentityAccesslistRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13542,13 +13914,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    awsConfigTidyIdentityWhitelistRequest := *openapiclient.NewAwsConfigTidyIdentityWhitelistRequest() // AwsConfigTidyIdentityWhitelistRequest | 
+	awsConfigTidyIdentityWhitelistRequest := *openapiclient.NewAwsConfigTidyIdentityWhitelistRequest() // AwsConfigTidyIdentityWhitelistRequest | 
 
-    resp, err := client.Auth.PostAuthAwsConfigTidyIdentityWhitelist(context.Background()).AwsConfigTidyIdentityWhitelistRequest(awsConfigTidyIdentityWhitelistRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigTidyIdentityWhitelist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthAwsConfigTidyIdentityWhitelist(context.Background()).AwsConfigTidyIdentityWhitelistRequest(awsConfigTidyIdentityWhitelistRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13611,13 +13985,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    awsConfigTidyRoletagBlacklistRequest := *openapiclient.NewAwsConfigTidyRoletagBlacklistRequest() // AwsConfigTidyRoletagBlacklistRequest | 
+	awsConfigTidyRoletagBlacklistRequest := *openapiclient.NewAwsConfigTidyRoletagBlacklistRequest() // AwsConfigTidyRoletagBlacklistRequest | 
 
-    resp, err := client.Auth.PostAuthAwsConfigTidyRoletagBlacklist(context.Background()).AwsConfigTidyRoletagBlacklistRequest(awsConfigTidyRoletagBlacklistRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigTidyRoletagBlacklist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthAwsConfigTidyRoletagBlacklist(context.Background()).AwsConfigTidyRoletagBlacklistRequest(awsConfigTidyRoletagBlacklistRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13680,13 +14056,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    awsConfigTidyRoletagDenylistRequest := *openapiclient.NewAwsConfigTidyRoletagDenylistRequest() // AwsConfigTidyRoletagDenylistRequest | 
+	awsConfigTidyRoletagDenylistRequest := *openapiclient.NewAwsConfigTidyRoletagDenylistRequest() // AwsConfigTidyRoletagDenylistRequest | 
 
-    resp, err := client.Auth.PostAuthAwsConfigTidyRoletagDenylist(context.Background()).AwsConfigTidyRoletagDenylistRequest(awsConfigTidyRoletagDenylistRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigTidyRoletagDenylist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthAwsConfigTidyRoletagDenylist(context.Background()).AwsConfigTidyRoletagDenylistRequest(awsConfigTidyRoletagDenylistRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13749,13 +14127,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    awsLoginRequest := *openapiclient.NewAwsLoginRequest() // AwsLoginRequest | 
+	awsLoginRequest := *openapiclient.NewAwsLoginRequest() // AwsLoginRequest | 
 
-    resp, err := client.Auth.PostAuthAwsLogin(context.Background()).AwsLoginRequest(awsLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthAwsLogin(context.Background()).AwsLoginRequest(awsLoginRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13818,14 +14198,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    role := "role_example" // string | Name of the role.
-    awsRoleRequest := *openapiclient.NewAwsRoleRequest() // AwsRoleRequest | 
+	role := "role_example" // string | Name of the role.
+	awsRoleRequest := *openapiclient.NewAwsRoleRequest() // AwsRoleRequest | 
 
-    resp, err := client.Auth.PostAuthAwsRoleRole(context.Background(), role).AwsRoleRequest(awsRoleRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsRoleRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthAwsRoleRole(context.Background(), role).AwsRoleRequest(awsRoleRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13893,14 +14275,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    role := "role_example" // string | Name of the role.
-    awsRoleTagRequest := *openapiclient.NewAwsRoleTagRequest() // AwsRoleTagRequest | 
+	role := "role_example" // string | Name of the role.
+	awsRoleTagRequest := *openapiclient.NewAwsRoleTagRequest() // AwsRoleTagRequest | 
 
-    resp, err := client.Auth.PostAuthAwsRoleRoleTag(context.Background(), role).AwsRoleTagRequest(awsRoleTagRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsRoleRoleTag``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthAwsRoleRoleTag(context.Background(), role).AwsRoleTagRequest(awsRoleTagRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13968,13 +14352,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 
-    resp, err := client.Auth.PostAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsRoletagBlacklistRoleTag``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14041,13 +14427,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 
-    resp, err := client.Auth.PostAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsRoletagDenylistRoleTag``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14114,13 +14502,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    awsTidyIdentityAccesslistRequest := *openapiclient.NewAwsTidyIdentityAccesslistRequest() // AwsTidyIdentityAccesslistRequest | 
+	awsTidyIdentityAccesslistRequest := *openapiclient.NewAwsTidyIdentityAccesslistRequest() // AwsTidyIdentityAccesslistRequest | 
 
-    resp, err := client.Auth.PostAuthAwsTidyIdentityAccesslist(context.Background()).AwsTidyIdentityAccesslistRequest(awsTidyIdentityAccesslistRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsTidyIdentityAccesslist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthAwsTidyIdentityAccesslist(context.Background()).AwsTidyIdentityAccesslistRequest(awsTidyIdentityAccesslistRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14183,13 +14573,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    awsTidyIdentityWhitelistRequest := *openapiclient.NewAwsTidyIdentityWhitelistRequest() // AwsTidyIdentityWhitelistRequest | 
+	awsTidyIdentityWhitelistRequest := *openapiclient.NewAwsTidyIdentityWhitelistRequest() // AwsTidyIdentityWhitelistRequest | 
 
-    resp, err := client.Auth.PostAuthAwsTidyIdentityWhitelist(context.Background()).AwsTidyIdentityWhitelistRequest(awsTidyIdentityWhitelistRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsTidyIdentityWhitelist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthAwsTidyIdentityWhitelist(context.Background()).AwsTidyIdentityWhitelistRequest(awsTidyIdentityWhitelistRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14252,13 +14644,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    awsTidyRoletagBlacklistRequest := *openapiclient.NewAwsTidyRoletagBlacklistRequest() // AwsTidyRoletagBlacklistRequest | 
+	awsTidyRoletagBlacklistRequest := *openapiclient.NewAwsTidyRoletagBlacklistRequest() // AwsTidyRoletagBlacklistRequest | 
 
-    resp, err := client.Auth.PostAuthAwsTidyRoletagBlacklist(context.Background()).AwsTidyRoletagBlacklistRequest(awsTidyRoletagBlacklistRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsTidyRoletagBlacklist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthAwsTidyRoletagBlacklist(context.Background()).AwsTidyRoletagBlacklistRequest(awsTidyRoletagBlacklistRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14321,13 +14715,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    awsTidyRoletagDenylistRequest := *openapiclient.NewAwsTidyRoletagDenylistRequest() // AwsTidyRoletagDenylistRequest | 
+	awsTidyRoletagDenylistRequest := *openapiclient.NewAwsTidyRoletagDenylistRequest() // AwsTidyRoletagDenylistRequest | 
 
-    resp, err := client.Auth.PostAuthAwsTidyRoletagDenylist(context.Background()).AwsTidyRoletagDenylistRequest(awsTidyRoletagDenylistRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsTidyRoletagDenylist``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthAwsTidyRoletagDenylist(context.Background()).AwsTidyRoletagDenylistRequest(awsTidyRoletagDenylistRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14390,13 +14786,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    azureConfigRequest := *openapiclient.NewAzureConfigRequest() // AzureConfigRequest | 
+	azureConfigRequest := *openapiclient.NewAzureConfigRequest() // AzureConfigRequest | 
 
-    resp, err := client.Auth.PostAuthAzureConfig(context.Background()).AzureConfigRequest(azureConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAzureConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthAzureConfig(context.Background()).AzureConfigRequest(azureConfigRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14459,13 +14857,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    azureLoginRequest := *openapiclient.NewAzureLoginRequest() // AzureLoginRequest | 
+	azureLoginRequest := *openapiclient.NewAzureLoginRequest() // AzureLoginRequest | 
 
-    resp, err := client.Auth.PostAuthAzureLogin(context.Background()).AzureLoginRequest(azureLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAzureLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthAzureLogin(context.Background()).AzureLoginRequest(azureLoginRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14528,14 +14928,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
-    azureRoleRequest := *openapiclient.NewAzureRoleRequest() // AzureRoleRequest | 
+	name := "name_example" // string | Name of the role.
+	azureRoleRequest := *openapiclient.NewAzureRoleRequest() // AzureRoleRequest | 
 
-    resp, err := client.Auth.PostAuthAzureRoleName(context.Background(), name).AzureRoleRequest(azureRoleRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAzureRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthAzureRoleName(context.Background(), name).AzureRoleRequest(azureRoleRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14603,13 +15005,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    centrifyConfigRequest := *openapiclient.NewCentrifyConfigRequest() // CentrifyConfigRequest | 
+	centrifyConfigRequest := *openapiclient.NewCentrifyConfigRequest() // CentrifyConfigRequest | 
 
-    resp, err := client.Auth.PostAuthCentrifyConfig(context.Background()).CentrifyConfigRequest(centrifyConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCentrifyConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthCentrifyConfig(context.Background()).CentrifyConfigRequest(centrifyConfigRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14672,13 +15076,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    centrifyLoginRequest := *openapiclient.NewCentrifyLoginRequest() // CentrifyLoginRequest | 
+	centrifyLoginRequest := *openapiclient.NewCentrifyLoginRequest() // CentrifyLoginRequest | 
 
-    resp, err := client.Auth.PostAuthCentrifyLogin(context.Background()).CentrifyLoginRequest(centrifyLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCentrifyLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthCentrifyLogin(context.Background()).CentrifyLoginRequest(centrifyLoginRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14741,14 +15147,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | The name of the certificate
-    certCertsRequest := *openapiclient.NewCertCertsRequest() // CertCertsRequest | 
+	name := "name_example" // string | The name of the certificate
+	certCertsRequest := *openapiclient.NewCertCertsRequest() // CertCertsRequest | 
 
-    resp, err := client.Auth.PostAuthCertCertsName(context.Background(), name).CertCertsRequest(certCertsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCertCertsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthCertCertsName(context.Background(), name).CertCertsRequest(certCertsRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14816,13 +15224,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    certConfigRequest := *openapiclient.NewCertConfigRequest() // CertConfigRequest | 
+	certConfigRequest := *openapiclient.NewCertConfigRequest() // CertConfigRequest | 
 
-    resp, err := client.Auth.PostAuthCertConfig(context.Background()).CertConfigRequest(certConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCertConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthCertConfig(context.Background()).CertConfigRequest(certConfigRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14885,14 +15295,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | The name of the certificate
-    certCrlsRequest := *openapiclient.NewCertCrlsRequest() // CertCrlsRequest | 
+	name := "name_example" // string | The name of the certificate
+	certCrlsRequest := *openapiclient.NewCertCrlsRequest() // CertCrlsRequest | 
 
-    resp, err := client.Auth.PostAuthCertCrlsName(context.Background(), name).CertCrlsRequest(certCrlsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCertCrlsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthCertCrlsName(context.Background(), name).CertCrlsRequest(certCrlsRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14960,13 +15372,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    certLoginRequest := *openapiclient.NewCertLoginRequest() // CertLoginRequest | 
+	certLoginRequest := *openapiclient.NewCertLoginRequest() // CertLoginRequest | 
 
-    resp, err := client.Auth.PostAuthCertLogin(context.Background()).CertLoginRequest(certLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCertLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthCertLogin(context.Background()).CertLoginRequest(certLoginRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15029,13 +15443,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    cfConfigRequest := *openapiclient.NewCfConfigRequest() // CfConfigRequest | 
+	cfConfigRequest := *openapiclient.NewCfConfigRequest() // CfConfigRequest | 
 
-    resp, err := client.Auth.PostAuthCfConfig(context.Background()).CfConfigRequest(cfConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCfConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthCfConfig(context.Background()).CfConfigRequest(cfConfigRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15098,13 +15514,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    cfLoginRequest := *openapiclient.NewCfLoginRequest("CfInstanceCert_example", "Role_example", "Signature_example", "SigningTime_example") // CfLoginRequest | 
+	cfLoginRequest := *openapiclient.NewCfLoginRequest("CfInstanceCert_example", "Role_example", "Signature_example", "SigningTime_example") // CfLoginRequest | 
 
-    resp, err := client.Auth.PostAuthCfLogin(context.Background()).CfLoginRequest(cfLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCfLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthCfLogin(context.Background()).CfLoginRequest(cfLoginRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15167,14 +15585,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    role := "role_example" // string | The name of the role.
-    cfRolesRequest := *openapiclient.NewCfRolesRequest() // CfRolesRequest | 
+	role := "role_example" // string | The name of the role.
+	cfRolesRequest := *openapiclient.NewCfRolesRequest() // CfRolesRequest | 
 
-    resp, err := client.Auth.PostAuthCfRolesRole(context.Background(), role).CfRolesRequest(cfRolesRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCfRolesRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthCfRolesRole(context.Background(), role).CfRolesRequest(cfRolesRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15242,13 +15662,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    gcpConfigRequest := *openapiclient.NewGcpConfigRequest() // GcpConfigRequest | 
+	gcpConfigRequest := *openapiclient.NewGcpConfigRequest() // GcpConfigRequest | 
 
-    resp, err := client.Auth.PostAuthGcpConfig(context.Background()).GcpConfigRequest(gcpConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGcpConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthGcpConfig(context.Background()).GcpConfigRequest(gcpConfigRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15311,13 +15733,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    gcpLoginRequest := *openapiclient.NewGcpLoginRequest() // GcpLoginRequest | 
+	gcpLoginRequest := *openapiclient.NewGcpLoginRequest() // GcpLoginRequest | 
 
-    resp, err := client.Auth.PostAuthGcpLogin(context.Background()).GcpLoginRequest(gcpLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGcpLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthGcpLogin(context.Background()).GcpLoginRequest(gcpLoginRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15380,14 +15804,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
-    gcpRoleRequest := *openapiclient.NewGcpRoleRequest() // GcpRoleRequest | 
+	name := "name_example" // string | Name of the role.
+	gcpRoleRequest := *openapiclient.NewGcpRoleRequest() // GcpRoleRequest | 
 
-    resp, err := client.Auth.PostAuthGcpRoleName(context.Background(), name).GcpRoleRequest(gcpRoleRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGcpRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthGcpRoleName(context.Background(), name).GcpRoleRequest(gcpRoleRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15455,14 +15881,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
-    gcpRoleLabelsRequest := *openapiclient.NewGcpRoleLabelsRequest() // GcpRoleLabelsRequest | 
+	name := "name_example" // string | Name of the role.
+	gcpRoleLabelsRequest := *openapiclient.NewGcpRoleLabelsRequest() // GcpRoleLabelsRequest | 
 
-    resp, err := client.Auth.PostAuthGcpRoleNameLabels(context.Background(), name).GcpRoleLabelsRequest(gcpRoleLabelsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGcpRoleNameLabels``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthGcpRoleNameLabels(context.Background(), name).GcpRoleLabelsRequest(gcpRoleLabelsRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15530,14 +15958,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
-    gcpRoleServiceAccountsRequest := *openapiclient.NewGcpRoleServiceAccountsRequest() // GcpRoleServiceAccountsRequest | 
+	name := "name_example" // string | Name of the role.
+	gcpRoleServiceAccountsRequest := *openapiclient.NewGcpRoleServiceAccountsRequest() // GcpRoleServiceAccountsRequest | 
 
-    resp, err := client.Auth.PostAuthGcpRoleNameServiceAccounts(context.Background(), name).GcpRoleServiceAccountsRequest(gcpRoleServiceAccountsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGcpRoleNameServiceAccounts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthGcpRoleNameServiceAccounts(context.Background(), name).GcpRoleServiceAccountsRequest(gcpRoleServiceAccountsRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15605,13 +16035,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    githubConfigRequest := *openapiclient.NewGithubConfigRequest("Organization_example") // GithubConfigRequest | 
+	githubConfigRequest := *openapiclient.NewGithubConfigRequest("Organization_example") // GithubConfigRequest | 
 
-    resp, err := client.Auth.PostAuthGithubConfig(context.Background()).GithubConfigRequest(githubConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGithubConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthGithubConfig(context.Background()).GithubConfigRequest(githubConfigRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15674,13 +16106,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    githubLoginRequest := *openapiclient.NewGithubLoginRequest() // GithubLoginRequest | 
+	githubLoginRequest := *openapiclient.NewGithubLoginRequest() // GithubLoginRequest | 
 
-    resp, err := client.Auth.PostAuthGithubLogin(context.Background()).GithubLoginRequest(githubLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGithubLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthGithubLogin(context.Background()).GithubLoginRequest(githubLoginRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15743,14 +16177,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Key for the teams mapping
-    githubMapTeamsRequest := *openapiclient.NewGithubMapTeamsRequest() // GithubMapTeamsRequest | 
+	key := "key_example" // string | Key for the teams mapping
+	githubMapTeamsRequest := *openapiclient.NewGithubMapTeamsRequest() // GithubMapTeamsRequest | 
 
-    resp, err := client.Auth.PostAuthGithubMapTeamsKey(context.Background(), key).GithubMapTeamsRequest(githubMapTeamsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGithubMapTeamsKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthGithubMapTeamsKey(context.Background(), key).GithubMapTeamsRequest(githubMapTeamsRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15818,14 +16254,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Key for the users mapping
-    githubMapUsersRequest := *openapiclient.NewGithubMapUsersRequest() // GithubMapUsersRequest | 
+	key := "key_example" // string | Key for the users mapping
+	githubMapUsersRequest := *openapiclient.NewGithubMapUsersRequest() // GithubMapUsersRequest | 
 
-    resp, err := client.Auth.PostAuthGithubMapUsersKey(context.Background(), key).GithubMapUsersRequest(githubMapUsersRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGithubMapUsersKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthGithubMapUsersKey(context.Background(), key).GithubMapUsersRequest(githubMapUsersRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15895,13 +16333,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    jwtConfigRequest := *openapiclient.NewJwtConfigRequest() // JwtConfigRequest | 
+	jwtConfigRequest := *openapiclient.NewJwtConfigRequest() // JwtConfigRequest | 
 
-    resp, err := client.Auth.PostAuthJwtConfig(context.Background()).JwtConfigRequest(jwtConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthJwtConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthJwtConfig(context.Background()).JwtConfigRequest(jwtConfigRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15964,13 +16404,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    jwtLoginRequest := *openapiclient.NewJwtLoginRequest() // JwtLoginRequest | 
+	jwtLoginRequest := *openapiclient.NewJwtLoginRequest() // JwtLoginRequest | 
 
-    resp, err := client.Auth.PostAuthJwtLogin(context.Background()).JwtLoginRequest(jwtLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthJwtLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthJwtLogin(context.Background()).JwtLoginRequest(jwtLoginRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16033,13 +16475,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    jwtOidcAuthUrlRequest := *openapiclient.NewJwtOidcAuthUrlRequest() // JwtOidcAuthUrlRequest | 
+	jwtOidcAuthUrlRequest := *openapiclient.NewJwtOidcAuthUrlRequest() // JwtOidcAuthUrlRequest | 
 
-    resp, err := client.Auth.PostAuthJwtOidcAuthUrl(context.Background()).JwtOidcAuthUrlRequest(jwtOidcAuthUrlRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthJwtOidcAuthUrl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthJwtOidcAuthUrl(context.Background()).JwtOidcAuthUrlRequest(jwtOidcAuthUrlRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16102,13 +16546,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    jwtOidcCallbackRequest := *openapiclient.NewJwtOidcCallbackRequest() // JwtOidcCallbackRequest | 
+	jwtOidcCallbackRequest := *openapiclient.NewJwtOidcCallbackRequest() // JwtOidcCallbackRequest | 
 
-    resp, err := client.Auth.PostAuthJwtOidcCallback(context.Background()).JwtOidcCallbackRequest(jwtOidcCallbackRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthJwtOidcCallback``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthJwtOidcCallback(context.Background()).JwtOidcCallbackRequest(jwtOidcCallbackRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16173,14 +16619,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
-    jwtRoleRequest := *openapiclient.NewJwtRoleRequest() // JwtRoleRequest | 
+	name := "name_example" // string | Name of the role.
+	jwtRoleRequest := *openapiclient.NewJwtRoleRequest() // JwtRoleRequest | 
 
-    resp, err := client.Auth.PostAuthJwtRoleName(context.Background(), name).JwtRoleRequest(jwtRoleRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthJwtRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthJwtRoleName(context.Background(), name).JwtRoleRequest(jwtRoleRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16248,13 +16696,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    kerberosConfigRequest := *openapiclient.NewKerberosConfigRequest() // KerberosConfigRequest | 
+	kerberosConfigRequest := *openapiclient.NewKerberosConfigRequest() // KerberosConfigRequest | 
 
-    resp, err := client.Auth.PostAuthKerberosConfig(context.Background()).KerberosConfigRequest(kerberosConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthKerberosConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthKerberosConfig(context.Background()).KerberosConfigRequest(kerberosConfigRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16317,13 +16767,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    kerberosConfigLdapRequest := *openapiclient.NewKerberosConfigLdapRequest() // KerberosConfigLdapRequest | 
+	kerberosConfigLdapRequest := *openapiclient.NewKerberosConfigLdapRequest() // KerberosConfigLdapRequest | 
 
-    resp, err := client.Auth.PostAuthKerberosConfigLdap(context.Background()).KerberosConfigLdapRequest(kerberosConfigLdapRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthKerberosConfigLdap``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthKerberosConfigLdap(context.Background()).KerberosConfigLdapRequest(kerberosConfigLdapRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16386,14 +16838,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the LDAP group.
-    kerberosGroupsRequest := *openapiclient.NewKerberosGroupsRequest() // KerberosGroupsRequest | 
+	name := "name_example" // string | Name of the LDAP group.
+	kerberosGroupsRequest := *openapiclient.NewKerberosGroupsRequest() // KerberosGroupsRequest | 
 
-    resp, err := client.Auth.PostAuthKerberosGroupsName(context.Background(), name).KerberosGroupsRequest(kerberosGroupsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthKerberosGroupsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthKerberosGroupsName(context.Background(), name).KerberosGroupsRequest(kerberosGroupsRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16461,13 +16915,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    kerberosLoginRequest := *openapiclient.NewKerberosLoginRequest() // KerberosLoginRequest | 
+	kerberosLoginRequest := *openapiclient.NewKerberosLoginRequest() // KerberosLoginRequest | 
 
-    resp, err := client.Auth.PostAuthKerberosLogin(context.Background()).KerberosLoginRequest(kerberosLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthKerberosLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthKerberosLogin(context.Background()).KerberosLoginRequest(kerberosLoginRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16530,13 +16986,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    kubernetesConfigRequest := *openapiclient.NewKubernetesConfigRequest() // KubernetesConfigRequest | 
+	kubernetesConfigRequest := *openapiclient.NewKubernetesConfigRequest() // KubernetesConfigRequest | 
 
-    resp, err := client.Auth.PostAuthKubernetesConfig(context.Background()).KubernetesConfigRequest(kubernetesConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthKubernetesConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthKubernetesConfig(context.Background()).KubernetesConfigRequest(kubernetesConfigRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16599,13 +17057,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    kubernetesLoginRequest := *openapiclient.NewKubernetesLoginRequest() // KubernetesLoginRequest | 
+	kubernetesLoginRequest := *openapiclient.NewKubernetesLoginRequest() // KubernetesLoginRequest | 
 
-    resp, err := client.Auth.PostAuthKubernetesLogin(context.Background()).KubernetesLoginRequest(kubernetesLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthKubernetesLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthKubernetesLogin(context.Background()).KubernetesLoginRequest(kubernetesLoginRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16668,14 +17128,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
-    kubernetesRoleRequest := *openapiclient.NewKubernetesRoleRequest() // KubernetesRoleRequest | 
+	name := "name_example" // string | Name of the role.
+	kubernetesRoleRequest := *openapiclient.NewKubernetesRoleRequest() // KubernetesRoleRequest | 
 
-    resp, err := client.Auth.PostAuthKubernetesRoleName(context.Background(), name).KubernetesRoleRequest(kubernetesRoleRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthKubernetesRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthKubernetesRoleName(context.Background(), name).KubernetesRoleRequest(kubernetesRoleRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16743,13 +17205,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    ldapConfigRequest := *openapiclient.NewLdapConfigRequest() // LdapConfigRequest | 
+	ldapConfigRequest := *openapiclient.NewLdapConfigRequest() // LdapConfigRequest | 
 
-    resp, err := client.Auth.PostAuthLdapConfig(context.Background()).LdapConfigRequest(ldapConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthLdapConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthLdapConfig(context.Background()).LdapConfigRequest(ldapConfigRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16812,14 +17276,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the LDAP group.
-    ldapGroupsRequest := *openapiclient.NewLdapGroupsRequest() // LdapGroupsRequest | 
+	name := "name_example" // string | Name of the LDAP group.
+	ldapGroupsRequest := *openapiclient.NewLdapGroupsRequest() // LdapGroupsRequest | 
 
-    resp, err := client.Auth.PostAuthLdapGroupsName(context.Background(), name).LdapGroupsRequest(ldapGroupsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthLdapGroupsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthLdapGroupsName(context.Background(), name).LdapGroupsRequest(ldapGroupsRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16887,14 +17353,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    username := "username_example" // string | DN (distinguished name) to be used for login.
-    ldapLoginRequest := *openapiclient.NewLdapLoginRequest() // LdapLoginRequest | 
+	username := "username_example" // string | DN (distinguished name) to be used for login.
+	ldapLoginRequest := *openapiclient.NewLdapLoginRequest() // LdapLoginRequest | 
 
-    resp, err := client.Auth.PostAuthLdapLoginUsername(context.Background(), username).LdapLoginRequest(ldapLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthLdapLoginUsername``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthLdapLoginUsername(context.Background(), username).LdapLoginRequest(ldapLoginRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16962,14 +17430,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the LDAP user.
-    ldapUsersRequest := *openapiclient.NewLdapUsersRequest() // LdapUsersRequest | 
+	name := "name_example" // string | Name of the LDAP user.
+	ldapUsersRequest := *openapiclient.NewLdapUsersRequest() // LdapUsersRequest | 
 
-    resp, err := client.Auth.PostAuthLdapUsersName(context.Background(), name).LdapUsersRequest(ldapUsersRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthLdapUsersName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthLdapUsersName(context.Background(), name).LdapUsersRequest(ldapUsersRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17037,13 +17507,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    ociConfigRequest := *openapiclient.NewOciConfigRequest() // OciConfigRequest | 
+	ociConfigRequest := *openapiclient.NewOciConfigRequest() // OciConfigRequest | 
 
-    resp, err := client.Auth.PostAuthOciConfig(context.Background()).OciConfigRequest(ociConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOciConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthOciConfig(context.Background()).OciConfigRequest(ociConfigRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17106,14 +17578,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    role := "role_example" // string | Name of the role.
-    ociLoginRequest := *openapiclient.NewOciLoginRequest() // OciLoginRequest | 
+	role := "role_example" // string | Name of the role.
+	ociLoginRequest := *openapiclient.NewOciLoginRequest() // OciLoginRequest | 
 
-    resp, err := client.Auth.PostAuthOciLoginRole(context.Background(), role).OciLoginRequest(ociLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOciLoginRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthOciLoginRole(context.Background(), role).OciLoginRequest(ociLoginRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17181,14 +17655,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    role := "role_example" // string | Name of the role.
-    ociRoleRequest := *openapiclient.NewOciRoleRequest() // OciRoleRequest | 
+	role := "role_example" // string | Name of the role.
+	ociRoleRequest := *openapiclient.NewOciRoleRequest() // OciRoleRequest | 
 
-    resp, err := client.Auth.PostAuthOciRoleRole(context.Background(), role).OciRoleRequest(ociRoleRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOciRoleRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthOciRoleRole(context.Background(), role).OciRoleRequest(ociRoleRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17258,13 +17734,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    oidcConfigRequest := *openapiclient.NewOidcConfigRequest() // OidcConfigRequest | 
+	oidcConfigRequest := *openapiclient.NewOidcConfigRequest() // OidcConfigRequest | 
 
-    resp, err := client.Auth.PostAuthOidcConfig(context.Background()).OidcConfigRequest(oidcConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOidcConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthOidcConfig(context.Background()).OidcConfigRequest(oidcConfigRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17327,13 +17805,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    oidcLoginRequest := *openapiclient.NewOidcLoginRequest() // OidcLoginRequest | 
+	oidcLoginRequest := *openapiclient.NewOidcLoginRequest() // OidcLoginRequest | 
 
-    resp, err := client.Auth.PostAuthOidcLogin(context.Background()).OidcLoginRequest(oidcLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOidcLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthOidcLogin(context.Background()).OidcLoginRequest(oidcLoginRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17396,13 +17876,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    oidcOidcAuthUrlRequest := *openapiclient.NewOidcOidcAuthUrlRequest() // OidcOidcAuthUrlRequest | 
+	oidcOidcAuthUrlRequest := *openapiclient.NewOidcOidcAuthUrlRequest() // OidcOidcAuthUrlRequest | 
 
-    resp, err := client.Auth.PostAuthOidcOidcAuthUrl(context.Background()).OidcOidcAuthUrlRequest(oidcOidcAuthUrlRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOidcOidcAuthUrl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthOidcOidcAuthUrl(context.Background()).OidcOidcAuthUrlRequest(oidcOidcAuthUrlRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17465,13 +17947,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    oidcOidcCallbackRequest := *openapiclient.NewOidcOidcCallbackRequest() // OidcOidcCallbackRequest | 
+	oidcOidcCallbackRequest := *openapiclient.NewOidcOidcCallbackRequest() // OidcOidcCallbackRequest | 
 
-    resp, err := client.Auth.PostAuthOidcOidcCallback(context.Background()).OidcOidcCallbackRequest(oidcOidcCallbackRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOidcOidcCallback``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthOidcOidcCallback(context.Background()).OidcOidcCallbackRequest(oidcOidcCallbackRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17536,14 +18020,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
-    oidcRoleRequest := *openapiclient.NewOidcRoleRequest() // OidcRoleRequest | 
+	name := "name_example" // string | Name of the role.
+	oidcRoleRequest := *openapiclient.NewOidcRoleRequest() // OidcRoleRequest | 
 
-    resp, err := client.Auth.PostAuthOidcRoleName(context.Background(), name).OidcRoleRequest(oidcRoleRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOidcRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthOidcRoleName(context.Background(), name).OidcRoleRequest(oidcRoleRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17611,13 +18097,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    oktaConfigRequest := *openapiclient.NewOktaConfigRequest() // OktaConfigRequest | 
+	oktaConfigRequest := *openapiclient.NewOktaConfigRequest() // OktaConfigRequest | 
 
-    resp, err := client.Auth.PostAuthOktaConfig(context.Background()).OktaConfigRequest(oktaConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOktaConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthOktaConfig(context.Background()).OktaConfigRequest(oktaConfigRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17680,14 +18168,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the Okta group.
-    oktaGroupsRequest := *openapiclient.NewOktaGroupsRequest() // OktaGroupsRequest | 
+	name := "name_example" // string | Name of the Okta group.
+	oktaGroupsRequest := *openapiclient.NewOktaGroupsRequest() // OktaGroupsRequest | 
 
-    resp, err := client.Auth.PostAuthOktaGroupsName(context.Background(), name).OktaGroupsRequest(oktaGroupsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOktaGroupsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthOktaGroupsName(context.Background(), name).OktaGroupsRequest(oktaGroupsRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17755,14 +18245,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    username := "username_example" // string | Username to be used for login.
-    oktaLoginRequest := *openapiclient.NewOktaLoginRequest() // OktaLoginRequest | 
+	username := "username_example" // string | Username to be used for login.
+	oktaLoginRequest := *openapiclient.NewOktaLoginRequest() // OktaLoginRequest | 
 
-    resp, err := client.Auth.PostAuthOktaLoginUsername(context.Background(), username).OktaLoginRequest(oktaLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOktaLoginUsername``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthOktaLoginUsername(context.Background(), username).OktaLoginRequest(oktaLoginRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17830,14 +18322,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the user.
-    oktaUsersRequest := *openapiclient.NewOktaUsersRequest() // OktaUsersRequest | 
+	name := "name_example" // string | Name of the user.
+	oktaUsersRequest := *openapiclient.NewOktaUsersRequest() // OktaUsersRequest | 
 
-    resp, err := client.Auth.PostAuthOktaUsersName(context.Background(), name).OktaUsersRequest(oktaUsersRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOktaUsersName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthOktaUsersName(context.Background(), name).OktaUsersRequest(oktaUsersRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17905,13 +18399,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    radiusConfigRequest := *openapiclient.NewRadiusConfigRequest() // RadiusConfigRequest | 
+	radiusConfigRequest := *openapiclient.NewRadiusConfigRequest() // RadiusConfigRequest | 
 
-    resp, err := client.Auth.PostAuthRadiusConfig(context.Background()).RadiusConfigRequest(radiusConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthRadiusConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthRadiusConfig(context.Background()).RadiusConfigRequest(radiusConfigRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17974,13 +18470,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    radiusLoginRequest := *openapiclient.NewRadiusLoginRequest() // RadiusLoginRequest | 
+	radiusLoginRequest := *openapiclient.NewRadiusLoginRequest() // RadiusLoginRequest | 
 
-    resp, err := client.Auth.PostAuthRadiusLogin(context.Background()).RadiusLoginRequest(radiusLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthRadiusLogin``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthRadiusLogin(context.Background()).RadiusLoginRequest(radiusLoginRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -18043,14 +18541,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    urlusername := "urlusername_example" // string | Username to be used for login. (URL parameter)
-    radiusLoginRequest := *openapiclient.NewRadiusLoginRequest() // RadiusLoginRequest | 
+	urlusername := "urlusername_example" // string | Username to be used for login. (URL parameter)
+	radiusLoginRequest := *openapiclient.NewRadiusLoginRequest() // RadiusLoginRequest | 
 
-    resp, err := client.Auth.PostAuthRadiusLoginUrlusername(context.Background(), urlusername).RadiusLoginRequest(radiusLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthRadiusLoginUrlusername``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthRadiusLoginUrlusername(context.Background(), urlusername).RadiusLoginRequest(radiusLoginRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -18118,14 +18618,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the RADIUS user.
-    radiusUsersRequest := *openapiclient.NewRadiusUsersRequest() // RadiusUsersRequest | 
+	name := "name_example" // string | Name of the RADIUS user.
+	radiusUsersRequest := *openapiclient.NewRadiusUsersRequest() // RadiusUsersRequest | 
 
-    resp, err := client.Auth.PostAuthRadiusUsersName(context.Background(), name).RadiusUsersRequest(radiusUsersRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthRadiusUsersName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthRadiusUsersName(context.Background(), name).RadiusUsersRequest(radiusUsersRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -18194,11 +18696,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.PostAuthTokenCreate(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenCreate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthTokenCreate(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -18258,11 +18762,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.PostAuthTokenCreateOrphan(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenCreateOrphan``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthTokenCreateOrphan(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -18321,13 +18827,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role
+	roleName := "roleName_example" // string | Name of the role
 
-    resp, err := client.Auth.PostAuthTokenCreateRoleName(context.Background(), roleName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenCreateRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthTokenCreateRoleName(context.Background(), roleName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -18394,13 +18902,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    tokenLookupRequest := *openapiclient.NewTokenLookupRequest() // TokenLookupRequest | 
+	tokenLookupRequest := *openapiclient.NewTokenLookupRequest() // TokenLookupRequest | 
 
-    resp, err := client.Auth.PostAuthTokenLookup(context.Background()).TokenLookupRequest(tokenLookupRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenLookup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthTokenLookup(context.Background()).TokenLookupRequest(tokenLookupRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -18463,13 +18973,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    tokenLookupAccessorRequest := *openapiclient.NewTokenLookupAccessorRequest() // TokenLookupAccessorRequest | 
+	tokenLookupAccessorRequest := *openapiclient.NewTokenLookupAccessorRequest() // TokenLookupAccessorRequest | 
 
-    resp, err := client.Auth.PostAuthTokenLookupAccessor(context.Background()).TokenLookupAccessorRequest(tokenLookupAccessorRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenLookupAccessor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthTokenLookupAccessor(context.Background()).TokenLookupAccessorRequest(tokenLookupAccessorRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -18532,13 +19044,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    tokenLookupSelfRequest := *openapiclient.NewTokenLookupSelfRequest() // TokenLookupSelfRequest | 
+	tokenLookupSelfRequest := *openapiclient.NewTokenLookupSelfRequest() // TokenLookupSelfRequest | 
 
-    resp, err := client.Auth.PostAuthTokenLookupSelf(context.Background()).TokenLookupSelfRequest(tokenLookupSelfRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenLookupSelf``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthTokenLookupSelf(context.Background()).TokenLookupSelfRequest(tokenLookupSelfRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -18601,13 +19115,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    tokenRenewRequest := *openapiclient.NewTokenRenewRequest() // TokenRenewRequest | 
+	tokenRenewRequest := *openapiclient.NewTokenRenewRequest() // TokenRenewRequest | 
 
-    resp, err := client.Auth.PostAuthTokenRenew(context.Background()).TokenRenewRequest(tokenRenewRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRenew``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthTokenRenew(context.Background()).TokenRenewRequest(tokenRenewRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -18670,13 +19186,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    tokenRenewAccessorRequest := *openapiclient.NewTokenRenewAccessorRequest() // TokenRenewAccessorRequest | 
+	tokenRenewAccessorRequest := *openapiclient.NewTokenRenewAccessorRequest() // TokenRenewAccessorRequest | 
 
-    resp, err := client.Auth.PostAuthTokenRenewAccessor(context.Background()).TokenRenewAccessorRequest(tokenRenewAccessorRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRenewAccessor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthTokenRenewAccessor(context.Background()).TokenRenewAccessorRequest(tokenRenewAccessorRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -18739,13 +19257,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    tokenRenewSelfRequest := *openapiclient.NewTokenRenewSelfRequest() // TokenRenewSelfRequest | 
+	tokenRenewSelfRequest := *openapiclient.NewTokenRenewSelfRequest() // TokenRenewSelfRequest | 
 
-    resp, err := client.Auth.PostAuthTokenRenewSelf(context.Background()).TokenRenewSelfRequest(tokenRenewSelfRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRenewSelf``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthTokenRenewSelf(context.Background()).TokenRenewSelfRequest(tokenRenewSelfRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -18808,13 +19328,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    tokenRevokeRequest := *openapiclient.NewTokenRevokeRequest() // TokenRevokeRequest | 
+	tokenRevokeRequest := *openapiclient.NewTokenRevokeRequest() // TokenRevokeRequest | 
 
-    resp, err := client.Auth.PostAuthTokenRevoke(context.Background()).TokenRevokeRequest(tokenRevokeRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRevoke``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthTokenRevoke(context.Background()).TokenRevokeRequest(tokenRevokeRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -18877,13 +19399,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    tokenRevokeAccessorRequest := *openapiclient.NewTokenRevokeAccessorRequest() // TokenRevokeAccessorRequest | 
+	tokenRevokeAccessorRequest := *openapiclient.NewTokenRevokeAccessorRequest() // TokenRevokeAccessorRequest | 
 
-    resp, err := client.Auth.PostAuthTokenRevokeAccessor(context.Background()).TokenRevokeAccessorRequest(tokenRevokeAccessorRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRevokeAccessor``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthTokenRevokeAccessor(context.Background()).TokenRevokeAccessorRequest(tokenRevokeAccessorRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -18946,13 +19470,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    tokenRevokeOrphanRequest := *openapiclient.NewTokenRevokeOrphanRequest() // TokenRevokeOrphanRequest | 
+	tokenRevokeOrphanRequest := *openapiclient.NewTokenRevokeOrphanRequest() // TokenRevokeOrphanRequest | 
 
-    resp, err := client.Auth.PostAuthTokenRevokeOrphan(context.Background()).TokenRevokeOrphanRequest(tokenRevokeOrphanRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRevokeOrphan``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthTokenRevokeOrphan(context.Background()).TokenRevokeOrphanRequest(tokenRevokeOrphanRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -19016,11 +19542,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.PostAuthTokenRevokeSelf(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRevokeSelf``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthTokenRevokeSelf(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -19079,14 +19607,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleName := "roleName_example" // string | Name of the role
-    tokenRolesRequest := *openapiclient.NewTokenRolesRequest() // TokenRolesRequest | 
+	roleName := "roleName_example" // string | Name of the role
+	tokenRolesRequest := *openapiclient.NewTokenRolesRequest() // TokenRolesRequest | 
 
-    resp, err := client.Auth.PostAuthTokenRolesRoleName(context.Background(), roleName).TokenRolesRequest(tokenRolesRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRolesRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthTokenRolesRoleName(context.Background(), roleName).TokenRolesRequest(tokenRolesRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -19155,11 +19685,13 @@ func main() {
 	}
 
 
-    resp, err := client.Auth.PostAuthTokenTidy(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenTidy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthTokenTidy(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -19218,14 +19750,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    username := "username_example" // string | Username of the user.
-    userpassLoginRequest := *openapiclient.NewUserpassLoginRequest() // UserpassLoginRequest | 
+	username := "username_example" // string | Username of the user.
+	userpassLoginRequest := *openapiclient.NewUserpassLoginRequest() // UserpassLoginRequest | 
 
-    resp, err := client.Auth.PostAuthUserpassLoginUsername(context.Background(), username).UserpassLoginRequest(userpassLoginRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthUserpassLoginUsername``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthUserpassLoginUsername(context.Background(), username).UserpassLoginRequest(userpassLoginRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -19293,14 +19827,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    username := "username_example" // string | Username for this user.
-    userpassUsersRequest := *openapiclient.NewUserpassUsersRequest() // UserpassUsersRequest | 
+	username := "username_example" // string | Username for this user.
+	userpassUsersRequest := *openapiclient.NewUserpassUsersRequest() // UserpassUsersRequest | 
 
-    resp, err := client.Auth.PostAuthUserpassUsersUsername(context.Background(), username).UserpassUsersRequest(userpassUsersRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthUserpassUsersUsername``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthUserpassUsersUsername(context.Background(), username).UserpassUsersRequest(userpassUsersRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -19368,14 +19904,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    username := "username_example" // string | Username for this user.
-    userpassUsersPasswordRequest := *openapiclient.NewUserpassUsersPasswordRequest() // UserpassUsersPasswordRequest | 
+	username := "username_example" // string | Username for this user.
+	userpassUsersPasswordRequest := *openapiclient.NewUserpassUsersPasswordRequest() // UserpassUsersPasswordRequest | 
 
-    resp, err := client.Auth.PostAuthUserpassUsersUsernamePassword(context.Background(), username).UserpassUsersPasswordRequest(userpassUsersPasswordRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthUserpassUsersUsernamePassword``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthUserpassUsersUsernamePassword(context.Background(), username).UserpassUsersPasswordRequest(userpassUsersPasswordRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -19443,14 +19981,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    username := "username_example" // string | Username for this user.
-    userpassUsersPoliciesRequest := *openapiclient.NewUserpassUsersPoliciesRequest() // UserpassUsersPoliciesRequest | 
+	username := "username_example" // string | Username for this user.
+	userpassUsersPoliciesRequest := *openapiclient.NewUserpassUsersPoliciesRequest() // UserpassUsersPoliciesRequest | 
 
-    resp, err := client.Auth.PostAuthUserpassUsersUsernamePolicies(context.Background(), username).UserpassUsersPoliciesRequest(userpassUsersPoliciesRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthUserpassUsersUsernamePolicies``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Auth.PostAuthUserpassUsersUsernamePolicies(context.Background(), username).UserpassUsersPoliciesRequest(userpassUsersPoliciesRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 

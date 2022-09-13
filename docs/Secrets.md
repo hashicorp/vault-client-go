@@ -1,6 +1,4 @@
-# \Secrets
-
-All URIs are relative to *http://localhost*
+# Secrets
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -340,11 +338,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.DeleteAdConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteAdConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteAdConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -403,13 +403,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the set.
+	name := "name_example" // string | Name of the set.
 
-    resp, err := client.Secrets.DeleteAdLibraryName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteAdLibraryName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteAdLibraryName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -476,13 +478,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
+	name := "name_example" // string | Name of the role
 
-    resp, err := client.Secrets.DeleteAdRolesName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteAdRolesName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteAdRolesName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -550,11 +554,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.DeleteAlicloudConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteAlicloudConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteAlicloudConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -613,13 +619,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | The name of the role.
+	name := "name_example" // string | The name of the role.
 
-    resp, err := client.Secrets.DeleteAlicloudRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteAlicloudRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteAlicloudRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -686,13 +694,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the policy
+	name := "name_example" // string | Name of the policy
 
-    resp, err := client.Secrets.DeleteAwsRolesName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteAwsRolesName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteAwsRolesName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -760,11 +770,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.DeleteAzureConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteAzureConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteAzureConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -823,13 +835,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
+	name := "name_example" // string | Name of the role.
 
-    resp, err := client.Secrets.DeleteAzureRolesName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteAzureRolesName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteAzureRolesName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -896,13 +910,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
+	name := "name_example" // string | Name of the role.
 
-    resp, err := client.Secrets.DeleteConsulRolesName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteConsulRolesName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteConsulRolesName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -969,13 +985,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    path := "path_example" // string | Specifies the path of the secret.
+	path := "path_example" // string | Specifies the path of the secret.
 
-    resp, err := client.Secrets.DeleteCubbyholePath(context.Background(), path).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteCubbyholePath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteCubbyholePath(context.Background(), path)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1042,13 +1060,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Required. Name of the role.
+	name := "name_example" // string | Required. Name of the role.
 
-    resp, err := client.Secrets.DeleteGcpRolesetName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteGcpRolesetName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteGcpRolesetName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1115,13 +1135,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
+	name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
 
-    resp, err := client.Secrets.DeleteGcpStaticAccountName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteGcpStaticAccountName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteGcpStaticAccountName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1189,11 +1211,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.DeleteGcpkmsConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteGcpkmsConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteGcpkmsConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1252,13 +1276,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
+	key := "key_example" // string | Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
 
-    resp, err := client.Secrets.DeleteGcpkmsKeysDeregisterKey(context.Background(), key).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteGcpkmsKeysDeregisterKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteGcpkmsKeysDeregisterKey(context.Background(), key)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1325,13 +1351,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Name of the key in Vault.
+	key := "key_example" // string | Name of the key in Vault.
 
-    resp, err := client.Secrets.DeleteGcpkmsKeysKey(context.Background(), key).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteGcpkmsKeysKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteGcpkmsKeysKey(context.Background(), key)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1398,13 +1426,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Name of the key in Vault.
+	key := "key_example" // string | Name of the key in Vault.
 
-    resp, err := client.Secrets.DeleteGcpkmsKeysTrimKey(context.Background(), key).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteGcpkmsKeysTrimKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteGcpkmsKeysTrimKey(context.Background(), key)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1472,11 +1502,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.DeleteKubernetesConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteKubernetesConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteKubernetesConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1535,13 +1567,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
+	name := "name_example" // string | Name of the role
 
-    resp, err := client.Secrets.DeleteKubernetesRolesName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteKubernetesRolesName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteKubernetesRolesName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1608,13 +1642,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    path := "path_example" // string | Location of the secret.
+	path := "path_example" // string | Location of the secret.
 
-    resp, err := client.Secrets.DeleteKvPath(context.Background(), path).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteKvPath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteKvPath(context.Background(), path)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1681,13 +1717,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the Roles
+	name := "name_example" // string | Name of the Roles
 
-    resp, err := client.Secrets.DeleteMongodbatlasRolesName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteMongodbatlasRolesName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteMongodbatlasRolesName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1755,11 +1793,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.DeleteNomadConfigAccess(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteNomadConfigAccess``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteNomadConfigAccess(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1819,11 +1859,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.DeleteNomadConfigLease(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteNomadConfigLease``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteNomadConfigLease(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1882,13 +1924,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
+	name := "name_example" // string | Name of the role
 
-    resp, err := client.Secrets.DeleteNomadRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteNomadRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteNomadRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -1956,11 +2000,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.DeleteOpenldapConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteOpenldapConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteOpenldapConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2019,13 +2065,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role (lowercase)
+	name := "name_example" // string | Name of the role (lowercase)
 
-    resp, err := client.Secrets.DeleteOpenldapRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteOpenldapRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteOpenldapRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2092,13 +2140,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
+	name := "name_example" // string | Name of the role
 
-    resp, err := client.Secrets.DeleteOpenldapStaticRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteOpenldapStaticRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteOpenldapStaticRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2165,13 +2215,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (default to "default")
+	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 
-    resp, err := client.Secrets.DeletePkiIssuerRefDerPem(context.Background(), issuerRef).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeletePkiIssuerRefDerPem``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeletePkiIssuerRefDerPem(context.Background(), issuerRef)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2239,11 +2291,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.DeletePkiJson(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeletePkiJson``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeletePkiJson(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2302,13 +2356,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (default to "default")
+	keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (defaults to "default")
 
-    resp, err := client.Secrets.DeletePkiKeyKeyRef(context.Background(), keyRef).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeletePkiKeyKeyRef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeletePkiKeyKeyRef(context.Background(), keyRef)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2375,13 +2431,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
+	name := "name_example" // string | Name of the role
 
-    resp, err := client.Secrets.DeletePkiRolesName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeletePkiRolesName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeletePkiRolesName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2449,11 +2507,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.DeletePkiRoot(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeletePkiRoot``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeletePkiRoot(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2512,13 +2572,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
+	name := "name_example" // string | Name of the role.
 
-    resp, err := client.Secrets.DeleteRabbitmqRolesName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteRabbitmqRolesName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteRabbitmqRolesName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2585,13 +2647,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    path := "path_example" // string | Location of the secret.
+	path := "path_example" // string | Location of the secret.
 
-    resp, err := client.Secrets.DeleteSecretDataPath(context.Background(), path).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteSecretDataPath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteSecretDataPath(context.Background(), path)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2658,13 +2722,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    path := "path_example" // string | Location of the secret.
+	path := "path_example" // string | Location of the secret.
 
-    resp, err := client.Secrets.DeleteSecretMetadataPath(context.Background(), path).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteSecretMetadataPath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteSecretMetadataPath(context.Background(), path)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2732,11 +2798,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.DeleteSshConfigCa(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteSshConfigCa``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteSshConfigCa(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2796,11 +2864,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.DeleteSshConfigZeroaddress(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteSshConfigZeroaddress``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteSshConfigZeroaddress(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2859,13 +2929,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    keyName := "keyName_example" // string | [Required] Name of the key
+	keyName := "keyName_example" // string | [Required] Name of the key
 
-    resp, err := client.Secrets.DeleteSshKeysKeyName(context.Background(), keyName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteSshKeysKeyName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteSshKeysKeyName(context.Background(), keyName)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -2932,13 +3004,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    role := "role_example" // string | [Required for all types] Name of the role being created.
+	role := "role_example" // string | [Required for all types] Name of the role being created.
 
-    resp, err := client.Secrets.DeleteSshRolesRole(context.Background(), role).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteSshRolesRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteSshRolesRole(context.Background(), role)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3006,11 +3080,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.DeleteTerraformConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteTerraformConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteTerraformConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3069,13 +3145,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
+	name := "name_example" // string | Name of the role
 
-    resp, err := client.Secrets.DeleteTerraformRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteTerraformRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteTerraformRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3142,13 +3220,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the key.
+	name := "name_example" // string | Name of the key.
 
-    resp, err := client.Secrets.DeleteTotpKeysName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteTotpKeysName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteTotpKeysName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3215,13 +3295,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the key
+	name := "name_example" // string | Name of the key
 
-    resp, err := client.Secrets.DeleteTransitKeysName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.DeleteTransitKeysName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.DeleteTransitKeysName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3289,11 +3371,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetAdConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetAdConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetAdConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3352,13 +3436,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
+	name := "name_example" // string | Name of the role
 
-    resp, err := client.Secrets.GetAdCredsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetAdCredsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetAdCredsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3425,13 +3511,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Secrets.GetAdLibrary(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetAdLibrary``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetAdLibrary(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3494,13 +3582,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the set.
+	name := "name_example" // string | Name of the set.
 
-    resp, err := client.Secrets.GetAdLibraryName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetAdLibraryName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetAdLibraryName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3567,13 +3657,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the set.
+	name := "name_example" // string | Name of the set.
 
-    resp, err := client.Secrets.GetAdLibraryNameStatus(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetAdLibraryNameStatus``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetAdLibraryNameStatus(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3640,13 +3732,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Secrets.GetAdRoles(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetAdRoles``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetAdRoles(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3709,13 +3803,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
+	name := "name_example" // string | Name of the role
 
-    resp, err := client.Secrets.GetAdRolesName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetAdRolesName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetAdRolesName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3783,11 +3879,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetAdRotateRoot(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetAdRotateRoot``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetAdRotateRoot(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3847,11 +3945,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetAlicloudConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetAlicloudConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetAlicloudConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3910,13 +4010,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | The name of the role.
+	name := "name_example" // string | The name of the role.
 
-    resp, err := client.Secrets.GetAlicloudCredsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetAlicloudCredsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetAlicloudCredsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -3983,13 +4085,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Secrets.GetAlicloudRole(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetAlicloudRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetAlicloudRole(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4052,13 +4156,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | The name of the role.
+	name := "name_example" // string | The name of the role.
 
-    resp, err := client.Secrets.GetAlicloudRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetAlicloudRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetAlicloudRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4126,11 +4232,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetAwsConfigLease(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetAwsConfigLease``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetAwsConfigLease(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4190,11 +4298,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetAwsConfigRoot(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetAwsConfigRoot``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetAwsConfigRoot(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4254,11 +4364,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetAwsCreds(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetAwsCreds``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetAwsCreds(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4317,13 +4429,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Secrets.GetAwsRoles(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetAwsRoles``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetAwsRoles(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4386,13 +4500,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the policy
+	name := "name_example" // string | Name of the policy
 
-    resp, err := client.Secrets.GetAwsRolesName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetAwsRolesName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetAwsRolesName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4459,13 +4575,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
+	name := "name_example" // string | Name of the role
 
-    resp, err := client.Secrets.GetAwsStsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetAwsStsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetAwsStsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4533,11 +4651,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetAzureConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetAzureConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetAzureConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4596,13 +4716,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    role := "role_example" // string | Name of the Vault role
+	role := "role_example" // string | Name of the Vault role
 
-    resp, err := client.Secrets.GetAzureCredsRole(context.Background(), role).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetAzureCredsRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetAzureCredsRole(context.Background(), role)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4669,13 +4791,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Secrets.GetAzureRoles(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetAzureRoles``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetAzureRoles(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4738,13 +4862,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
+	name := "name_example" // string | Name of the role.
 
-    resp, err := client.Secrets.GetAzureRolesName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetAzureRolesName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetAzureRolesName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4812,11 +4938,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetConsulConfigAccess(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetConsulConfigAccess``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetConsulConfigAccess(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4875,13 +5003,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    role := "role_example" // string | Name of the role.
+	role := "role_example" // string | Name of the role.
 
-    resp, err := client.Secrets.GetConsulCredsRole(context.Background(), role).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetConsulCredsRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetConsulCredsRole(context.Background(), role)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -4948,13 +5078,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Secrets.GetConsulRoles(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetConsulRoles``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetConsulRoles(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5017,13 +5149,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
+	name := "name_example" // string | Name of the role.
 
-    resp, err := client.Secrets.GetConsulRolesName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetConsulRolesName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetConsulRolesName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5090,14 +5224,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    path := "path_example" // string | Specifies the path of the secret.
-    list := "list_example" // string | Return a list if `true`
+	path := "path_example" // string | Specifies the path of the secret.
+	list := "list_example" // string | Return a list if `true`
 
-    resp, err := client.Secrets.GetCubbyholePath(context.Background(), path).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetCubbyholePath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetCubbyholePath(context.Background(), path).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5166,11 +5302,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetGcpConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetGcpConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetGcpConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5229,13 +5367,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleset := "roleset_example" // string | Required. Name of the role set.
+	roleset := "roleset_example" // string | Required. Name of the role set.
 
-    resp, err := client.Secrets.GetGcpKeyRoleset(context.Background(), roleset).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetGcpKeyRoleset``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetGcpKeyRoleset(context.Background(), roleset)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5302,13 +5442,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Required. Name of the role.
+	name := "name_example" // string | Required. Name of the role.
 
-    resp, err := client.Secrets.GetGcpRolesetName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetGcpRolesetName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetGcpRolesetName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5375,13 +5517,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleset := "roleset_example" // string | Required. Name of the role set.
+	roleset := "roleset_example" // string | Required. Name of the role set.
 
-    resp, err := client.Secrets.GetGcpRolesetRolesetKey(context.Background(), roleset).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetGcpRolesetRolesetKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetGcpRolesetRolesetKey(context.Background(), roleset)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5448,13 +5592,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleset := "roleset_example" // string | Required. Name of the role set.
+	roleset := "roleset_example" // string | Required. Name of the role set.
 
-    resp, err := client.Secrets.GetGcpRolesetRolesetToken(context.Background(), roleset).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetGcpRolesetRolesetToken``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetGcpRolesetRolesetToken(context.Background(), roleset)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5521,13 +5667,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Secrets.GetGcpRolesets(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetGcpRolesets``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetGcpRolesets(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5590,13 +5738,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
+	name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
 
-    resp, err := client.Secrets.GetGcpStaticAccountName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetGcpStaticAccountName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetGcpStaticAccountName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5663,13 +5813,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Required. Name of the static account.
+	name := "name_example" // string | Required. Name of the static account.
 
-    resp, err := client.Secrets.GetGcpStaticAccountNameKey(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetGcpStaticAccountNameKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetGcpStaticAccountNameKey(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5736,13 +5888,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Required. Name of the static account.
+	name := "name_example" // string | Required. Name of the static account.
 
-    resp, err := client.Secrets.GetGcpStaticAccountNameToken(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetGcpStaticAccountNameToken``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetGcpStaticAccountNameToken(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5809,13 +5963,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Secrets.GetGcpStaticAccounts(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetGcpStaticAccounts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetGcpStaticAccounts(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5878,13 +6034,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleset := "roleset_example" // string | Required. Name of the role set.
+	roleset := "roleset_example" // string | Required. Name of the role set.
 
-    resp, err := client.Secrets.GetGcpTokenRoleset(context.Background(), roleset).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetGcpTokenRoleset``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetGcpTokenRoleset(context.Background(), roleset)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -5952,11 +6110,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetGcpkmsConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetGcpkmsConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetGcpkmsConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6015,13 +6175,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Secrets.GetGcpkmsKeys(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetGcpkmsKeys``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetGcpkmsKeys(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6084,13 +6246,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Name of the key in Vault.
+	key := "key_example" // string | Name of the key in Vault.
 
-    resp, err := client.Secrets.GetGcpkmsKeysConfigKey(context.Background(), key).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetGcpkmsKeysConfigKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetGcpkmsKeysConfigKey(context.Background(), key)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6157,13 +6321,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Name of the key in Vault.
+	key := "key_example" // string | Name of the key in Vault.
 
-    resp, err := client.Secrets.GetGcpkmsKeysKey(context.Background(), key).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetGcpkmsKeysKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetGcpkmsKeysKey(context.Background(), key)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6230,13 +6396,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Name of the key for which to get the public key. This key must already exist in Vault and Google Cloud KMS.
+	key := "key_example" // string | Name of the key for which to get the public key. This key must already exist in Vault and Google Cloud KMS.
 
-    resp, err := client.Secrets.GetGcpkmsPubkeyKey(context.Background(), key).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetGcpkmsPubkeyKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetGcpkmsPubkeyKey(context.Background(), key)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6304,11 +6472,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetKubernetesConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetKubernetesConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetKubernetesConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6367,13 +6537,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Secrets.GetKubernetesRoles(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetKubernetesRoles``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetKubernetesRoles(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6436,13 +6608,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
+	name := "name_example" // string | Name of the role
 
-    resp, err := client.Secrets.GetKubernetesRolesName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetKubernetesRolesName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetKubernetesRolesName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6509,14 +6683,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    path := "path_example" // string | Location of the secret.
-    list := "list_example" // string | Return a list if `true`
+	path := "path_example" // string | Location of the secret.
+	list := "list_example" // string | Return a list if `true`
 
-    resp, err := client.Secrets.GetKvPath(context.Background(), path).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetKvPath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetKvPath(context.Background(), path).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6585,11 +6761,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetMongodbatlasConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetMongodbatlasConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetMongodbatlasConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6648,13 +6826,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
+	name := "name_example" // string | Name of the role
 
-    resp, err := client.Secrets.GetMongodbatlasCredsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetMongodbatlasCredsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetMongodbatlasCredsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6721,13 +6901,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Secrets.GetMongodbatlasRoles(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetMongodbatlasRoles``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetMongodbatlasRoles(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6790,13 +6972,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the Roles
+	name := "name_example" // string | Name of the Roles
 
-    resp, err := client.Secrets.GetMongodbatlasRolesName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetMongodbatlasRolesName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetMongodbatlasRolesName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6864,11 +7048,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetNomadConfigAccess(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetNomadConfigAccess``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetNomadConfigAccess(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6928,11 +7114,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetNomadConfigLease(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetNomadConfigLease``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetNomadConfigLease(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -6991,13 +7179,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
+	name := "name_example" // string | Name of the role
 
-    resp, err := client.Secrets.GetNomadCredsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetNomadCredsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetNomadCredsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7064,13 +7254,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Secrets.GetNomadRole(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetNomadRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetNomadRole(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7133,13 +7325,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
+	name := "name_example" // string | Name of the role
 
-    resp, err := client.Secrets.GetNomadRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetNomadRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetNomadRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7207,11 +7401,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetOpenldapConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetOpenldapConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetOpenldapConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7270,13 +7466,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the dynamic role.
+	name := "name_example" // string | Name of the dynamic role.
 
-    resp, err := client.Secrets.GetOpenldapCredsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetOpenldapCredsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetOpenldapCredsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7343,13 +7541,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Secrets.GetOpenldapRole(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetOpenldapRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetOpenldapRole(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7412,13 +7612,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role (lowercase)
+	name := "name_example" // string | Name of the role (lowercase)
 
-    resp, err := client.Secrets.GetOpenldapRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetOpenldapRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetOpenldapRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7485,13 +7687,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the static role.
+	name := "name_example" // string | Name of the static role.
 
-    resp, err := client.Secrets.GetOpenldapStaticCredName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetOpenldapStaticCredName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetOpenldapStaticCredName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7558,13 +7762,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Secrets.GetOpenldapStaticRole(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetOpenldapStaticRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetOpenldapStaticRole(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7627,13 +7833,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
+	name := "name_example" // string | Name of the role
 
-    resp, err := client.Secrets.GetOpenldapStaticRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetOpenldapStaticRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetOpenldapStaticRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7701,11 +7909,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetPkiCa(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetPkiCa``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetPkiCa(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7765,11 +7975,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetPkiCaChain(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetPkiCaChain``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetPkiCaChain(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7829,11 +8041,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetPkiCaPem(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetPkiCaPem``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetPkiCaPem(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7893,11 +8107,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetPkiCertCaChain(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetPkiCertCaChain``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetPkiCertCaChain(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -7957,11 +8173,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetPkiCertCrl(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetPkiCertCrl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetPkiCertCrl(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8020,13 +8238,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
+	serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
 
-    resp, err := client.Secrets.GetPkiCertSerial(context.Background(), serial).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetPkiCertSerial``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetPkiCertSerial(context.Background(), serial)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8093,13 +8313,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
+	serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
 
-    resp, err := client.Secrets.GetPkiCertSerialRaw(context.Background(), serial).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetPkiCertSerialRaw``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetPkiCertSerialRaw(context.Background(), serial)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8166,13 +8388,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
+	serial := "serial_example" // string | Certificate serial number, in colon- or hyphen-separated octal
 
-    resp, err := client.Secrets.GetPkiCertSerialRawPem(context.Background(), serial).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetPkiCertSerialRawPem``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetPkiCertSerialRawPem(context.Background(), serial)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8239,13 +8463,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Secrets.GetPkiCerts(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetPkiCerts``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetPkiCerts(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8309,11 +8535,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetPkiConfigCrl(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetPkiConfigCrl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetPkiConfigCrl(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8373,11 +8601,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetPkiConfigIssuers(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetPkiConfigIssuers``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetPkiConfigIssuers(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8437,11 +8667,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetPkiConfigKeys(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetPkiConfigKeys``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetPkiConfigKeys(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8501,11 +8733,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetPkiConfigUrls(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetPkiConfigUrls``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetPkiConfigUrls(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8565,11 +8799,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetPkiCrl(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetPkiCrl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetPkiCrl(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8629,11 +8865,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetPkiCrlPem(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetPkiCrlPem``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetPkiCrlPem(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8693,11 +8931,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetPkiCrlRotate(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetPkiCrlRotate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetPkiCrlRotate(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8757,11 +8997,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetPkiDer(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetPkiDer``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetPkiDer(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8820,13 +9062,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (default to "default")
+	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 
-    resp, err := client.Secrets.GetPkiIssuerRefCrlPem(context.Background(), issuerRef).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetPkiIssuerRefCrlPem``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetPkiIssuerRefCrlPem(context.Background(), issuerRef)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8893,13 +9137,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (default to "default")
+	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
 
-    resp, err := client.Secrets.GetPkiIssuerRefDerPem(context.Background(), issuerRef).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetPkiIssuerRefDerPem``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetPkiIssuerRefDerPem(context.Background(), issuerRef)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -8966,13 +9212,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Secrets.GetPkiIssuers(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetPkiIssuers``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetPkiIssuers(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9036,11 +9284,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetPkiJson(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetPkiJson``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetPkiJson(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9099,13 +9349,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (default to "default")
+	keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (defaults to "default")
 
-    resp, err := client.Secrets.GetPkiKeyKeyRef(context.Background(), keyRef).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetPkiKeyKeyRef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetPkiKeyKeyRef(context.Background(), keyRef)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9172,13 +9424,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Secrets.GetPkiKeys(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetPkiKeys``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetPkiKeys(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9241,13 +9495,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Secrets.GetPkiRoles(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetPkiRoles``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetPkiRoles(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9310,13 +9566,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
+	name := "name_example" // string | Name of the role
 
-    resp, err := client.Secrets.GetPkiRolesName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetPkiRolesName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetPkiRolesName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9384,11 +9642,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetPkiTidyStatus(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetPkiTidyStatus``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetPkiTidyStatus(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9448,11 +9708,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetRabbitmqConfigLease(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetRabbitmqConfigLease``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetRabbitmqConfigLease(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9511,13 +9773,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
+	name := "name_example" // string | Name of the role.
 
-    resp, err := client.Secrets.GetRabbitmqCredsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetRabbitmqCredsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetRabbitmqCredsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9584,13 +9848,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Secrets.GetRabbitmqRoles(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetRabbitmqRoles``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetRabbitmqRoles(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9653,13 +9919,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
+	name := "name_example" // string | Name of the role.
 
-    resp, err := client.Secrets.GetRabbitmqRolesName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetRabbitmqRolesName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetRabbitmqRolesName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9727,11 +9995,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetSecretConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetSecretConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetSecretConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9790,13 +10060,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    path := "path_example" // string | Location of the secret.
+	path := "path_example" // string | Location of the secret.
 
-    resp, err := client.Secrets.GetSecretDataPath(context.Background(), path).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetSecretDataPath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetSecretDataPath(context.Background(), path)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9863,14 +10135,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    path := "path_example" // string | Location of the secret.
-    list := "list_example" // string | Return a list if `true`
+	path := "path_example" // string | Location of the secret.
+	list := "list_example" // string | Return a list if `true`
 
-    resp, err := client.Secrets.GetSecretMetadataPath(context.Background(), path).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetSecretMetadataPath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetSecretMetadataPath(context.Background(), path).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -9938,13 +10212,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    path := "path_example" // string | Location of the secret.
+	path := "path_example" // string | Location of the secret.
 
-    resp, err := client.Secrets.GetSecretSubkeysPath(context.Background(), path).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetSecretSubkeysPath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetSecretSubkeysPath(context.Background(), path)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10012,11 +10288,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetSshConfigCa(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetSshConfigCa``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetSshConfigCa(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10076,11 +10354,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetSshConfigZeroaddress(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetSshConfigZeroaddress``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetSshConfigZeroaddress(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10140,11 +10420,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetSshPublicKey(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetSshPublicKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetSshPublicKey(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10203,13 +10485,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Secrets.GetSshRoles(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetSshRoles``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetSshRoles(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10272,13 +10556,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    role := "role_example" // string | [Required for all types] Name of the role being created.
+	role := "role_example" // string | [Required for all types] Name of the role being created.
 
-    resp, err := client.Secrets.GetSshRolesRole(context.Background(), role).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetSshRolesRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetSshRolesRole(context.Background(), role)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10346,11 +10632,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetTerraformConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetTerraformConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetTerraformConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10409,13 +10697,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
+	name := "name_example" // string | Name of the role
 
-    resp, err := client.Secrets.GetTerraformCredsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetTerraformCredsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetTerraformCredsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10482,13 +10772,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Secrets.GetTerraformRole(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetTerraformRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetTerraformRole(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10551,13 +10843,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
+	name := "name_example" // string | Name of the role
 
-    resp, err := client.Secrets.GetTerraformRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetTerraformRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetTerraformRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10624,13 +10918,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the key.
+	name := "name_example" // string | Name of the key.
 
-    resp, err := client.Secrets.GetTotpCodeName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetTotpCodeName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetTotpCodeName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10697,13 +10993,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Secrets.GetTotpKeys(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetTotpKeys``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetTotpKeys(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10766,13 +11064,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the key.
+	name := "name_example" // string | Name of the key.
 
-    resp, err := client.Secrets.GetTotpKeysName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetTotpKeysName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetTotpKeysName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10839,13 +11139,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the key
+	name := "name_example" // string | Name of the key
 
-    resp, err := client.Secrets.GetTransitBackupName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetTransitBackupName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetTransitBackupName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10913,11 +11215,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetTransitCacheConfig(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetTransitCacheConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetTransitCacheConfig(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -10976,14 +11280,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the key
-    type_ := "type__example" // string | Type of key to export (encryption-key, signing-key, hmac-key)
+	name := "name_example" // string | Name of the key
+	type_ := "type__example" // string | Type of key to export (encryption-key, signing-key, hmac-key)
 
-    resp, err := client.Secrets.GetTransitExportTypeName(context.Background(), name, type_).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetTransitExportTypeName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetTransitExportTypeName(context.Background(), name, type_)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11052,15 +11358,17 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the key
-    type_ := "type__example" // string | Type of key to export (encryption-key, signing-key, hmac-key)
-    version := "version_example" // string | Version of the key
+	name := "name_example" // string | Name of the key
+	type_ := "type__example" // string | Type of key to export (encryption-key, signing-key, hmac-key)
+	version := "version_example" // string | Version of the key
 
-    resp, err := client.Secrets.GetTransitExportTypeNameVersion(context.Background(), name, type_, version).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetTransitExportTypeNameVersion``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetTransitExportTypeNameVersion(context.Background(), name, type_, version)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11131,13 +11439,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    list := "list_example" // string | Must be set to `true`
+	list := "list_example" // string | Must be set to `true`
 
-    resp, err := client.Secrets.GetTransitKeys(context.Background()).List(list).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetTransitKeys``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetTransitKeys(context.Background()).List(list)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11200,13 +11510,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the key
+	name := "name_example" // string | Name of the key
 
-    resp, err := client.Secrets.GetTransitKeysName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetTransitKeysName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetTransitKeysName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11274,11 +11586,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.GetTransitWrappingKey(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.GetTransitWrappingKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.GetTransitWrappingKey(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11337,13 +11651,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    adConfigRequest := *openapiclient.NewAdConfigRequest() // AdConfigRequest | 
+	adConfigRequest := *openapiclient.NewAdConfigRequest() // AdConfigRequest | 
 
-    resp, err := client.Secrets.PostAdConfig(context.Background()).AdConfigRequest(adConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostAdConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostAdConfig(context.Background()).AdConfigRequest(adConfigRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11406,14 +11722,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the set.
-    adLibraryManageCheckInRequest := *openapiclient.NewAdLibraryManageCheckInRequest() // AdLibraryManageCheckInRequest | 
+	name := "name_example" // string | Name of the set.
+	adLibraryManageCheckInRequest := *openapiclient.NewAdLibraryManageCheckInRequest() // AdLibraryManageCheckInRequest | 
 
-    resp, err := client.Secrets.PostAdLibraryManageNameCheckIn(context.Background(), name).AdLibraryManageCheckInRequest(adLibraryManageCheckInRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostAdLibraryManageNameCheckIn``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostAdLibraryManageNameCheckIn(context.Background(), name).AdLibraryManageCheckInRequest(adLibraryManageCheckInRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11481,14 +11799,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the set.
-    adLibraryRequest := *openapiclient.NewAdLibraryRequest() // AdLibraryRequest | 
+	name := "name_example" // string | Name of the set.
+	adLibraryRequest := *openapiclient.NewAdLibraryRequest() // AdLibraryRequest | 
 
-    resp, err := client.Secrets.PostAdLibraryName(context.Background(), name).AdLibraryRequest(adLibraryRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostAdLibraryName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostAdLibraryName(context.Background(), name).AdLibraryRequest(adLibraryRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11556,14 +11876,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the set.
-    adLibraryCheckInRequest := *openapiclient.NewAdLibraryCheckInRequest() // AdLibraryCheckInRequest | 
+	name := "name_example" // string | Name of the set.
+	adLibraryCheckInRequest := *openapiclient.NewAdLibraryCheckInRequest() // AdLibraryCheckInRequest | 
 
-    resp, err := client.Secrets.PostAdLibraryNameCheckIn(context.Background(), name).AdLibraryCheckInRequest(adLibraryCheckInRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostAdLibraryNameCheckIn``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostAdLibraryNameCheckIn(context.Background(), name).AdLibraryCheckInRequest(adLibraryCheckInRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11631,14 +11953,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the set
-    adLibraryCheckOutRequest := *openapiclient.NewAdLibraryCheckOutRequest() // AdLibraryCheckOutRequest | 
+	name := "name_example" // string | Name of the set
+	adLibraryCheckOutRequest := *openapiclient.NewAdLibraryCheckOutRequest() // AdLibraryCheckOutRequest | 
 
-    resp, err := client.Secrets.PostAdLibraryNameCheckOut(context.Background(), name).AdLibraryCheckOutRequest(adLibraryCheckOutRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostAdLibraryNameCheckOut``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostAdLibraryNameCheckOut(context.Background(), name).AdLibraryCheckOutRequest(adLibraryCheckOutRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11706,14 +12030,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
-    adRolesRequest := *openapiclient.NewAdRolesRequest() // AdRolesRequest | 
+	name := "name_example" // string | Name of the role
+	adRolesRequest := *openapiclient.NewAdRolesRequest() // AdRolesRequest | 
 
-    resp, err := client.Secrets.PostAdRolesName(context.Background(), name).AdRolesRequest(adRolesRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostAdRolesName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostAdRolesName(context.Background(), name).AdRolesRequest(adRolesRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11781,13 +12107,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the static role
+	name := "name_example" // string | Name of the static role
 
-    resp, err := client.Secrets.PostAdRotateRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostAdRotateRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostAdRotateRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11855,11 +12183,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.PostAdRotateRoot(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostAdRotateRoot``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostAdRotateRoot(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11918,13 +12248,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    alicloudConfigRequest := *openapiclient.NewAlicloudConfigRequest() // AlicloudConfigRequest | 
+	alicloudConfigRequest := *openapiclient.NewAlicloudConfigRequest() // AlicloudConfigRequest | 
 
-    resp, err := client.Secrets.PostAlicloudConfig(context.Background()).AlicloudConfigRequest(alicloudConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostAlicloudConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostAlicloudConfig(context.Background()).AlicloudConfigRequest(alicloudConfigRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -11987,14 +12319,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | The name of the role.
-    alicloudRoleRequest := *openapiclient.NewAlicloudRoleRequest() // AlicloudRoleRequest | 
+	name := "name_example" // string | The name of the role.
+	alicloudRoleRequest := *openapiclient.NewAlicloudRoleRequest() // AlicloudRoleRequest | 
 
-    resp, err := client.Secrets.PostAlicloudRoleName(context.Background(), name).AlicloudRoleRequest(alicloudRoleRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostAlicloudRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostAlicloudRoleName(context.Background(), name).AlicloudRoleRequest(alicloudRoleRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12062,13 +12396,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    awsConfigLeaseRequest := *openapiclient.NewAwsConfigLeaseRequest() // AwsConfigLeaseRequest | 
+	awsConfigLeaseRequest := *openapiclient.NewAwsConfigLeaseRequest() // AwsConfigLeaseRequest | 
 
-    resp, err := client.Secrets.PostAwsConfigLease(context.Background()).AwsConfigLeaseRequest(awsConfigLeaseRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostAwsConfigLease``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostAwsConfigLease(context.Background()).AwsConfigLeaseRequest(awsConfigLeaseRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12131,13 +12467,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    awsConfigRootRequest := *openapiclient.NewAwsConfigRootRequest() // AwsConfigRootRequest | 
+	awsConfigRootRequest := *openapiclient.NewAwsConfigRootRequest() // AwsConfigRootRequest | 
 
-    resp, err := client.Secrets.PostAwsConfigRoot(context.Background()).AwsConfigRootRequest(awsConfigRootRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostAwsConfigRoot``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostAwsConfigRoot(context.Background()).AwsConfigRootRequest(awsConfigRootRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12201,11 +12539,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.PostAwsConfigRotateRoot(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostAwsConfigRotateRoot``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostAwsConfigRotateRoot(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12264,13 +12604,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    awsCredsRequest := *openapiclient.NewAwsCredsRequest() // AwsCredsRequest | 
+	awsCredsRequest := *openapiclient.NewAwsCredsRequest() // AwsCredsRequest | 
 
-    resp, err := client.Secrets.PostAwsCreds(context.Background()).AwsCredsRequest(awsCredsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostAwsCreds``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostAwsCreds(context.Background()).AwsCredsRequest(awsCredsRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12333,14 +12675,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the policy
-    awsRolesRequest := *openapiclient.NewAwsRolesRequest() // AwsRolesRequest | 
+	name := "name_example" // string | Name of the policy
+	awsRolesRequest := *openapiclient.NewAwsRolesRequest() // AwsRolesRequest | 
 
-    resp, err := client.Secrets.PostAwsRolesName(context.Background(), name).AwsRolesRequest(awsRolesRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostAwsRolesName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostAwsRolesName(context.Background(), name).AwsRolesRequest(awsRolesRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12408,14 +12752,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
-    awsStsRequest := *openapiclient.NewAwsStsRequest() // AwsStsRequest | 
+	name := "name_example" // string | Name of the role
+	awsStsRequest := *openapiclient.NewAwsStsRequest() // AwsStsRequest | 
 
-    resp, err := client.Secrets.PostAwsStsName(context.Background(), name).AwsStsRequest(awsStsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostAwsStsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostAwsStsName(context.Background(), name).AwsStsRequest(awsStsRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12483,13 +12829,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    azureConfigRequest := *openapiclient.NewAzureConfigRequest() // AzureConfigRequest | 
+	azureConfigRequest := *openapiclient.NewAzureConfigRequest() // AzureConfigRequest | 
 
-    resp, err := client.Secrets.PostAzureConfig(context.Background()).AzureConfigRequest(azureConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostAzureConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostAzureConfig(context.Background()).AzureConfigRequest(azureConfigRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12552,14 +12900,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
-    azureRolesRequest := *openapiclient.NewAzureRolesRequest() // AzureRolesRequest | 
+	name := "name_example" // string | Name of the role.
+	azureRolesRequest := *openapiclient.NewAzureRolesRequest() // AzureRolesRequest | 
 
-    resp, err := client.Secrets.PostAzureRolesName(context.Background(), name).AzureRolesRequest(azureRolesRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostAzureRolesName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostAzureRolesName(context.Background(), name).AzureRolesRequest(azureRolesRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12628,11 +12978,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.PostAzureRotateRoot(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostAzureRotateRoot``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostAzureRotateRoot(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12691,13 +13043,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    consulConfigAccessRequest := *openapiclient.NewConsulConfigAccessRequest() // ConsulConfigAccessRequest | 
+	consulConfigAccessRequest := *openapiclient.NewConsulConfigAccessRequest() // ConsulConfigAccessRequest | 
 
-    resp, err := client.Secrets.PostConsulConfigAccess(context.Background()).ConsulConfigAccessRequest(consulConfigAccessRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostConsulConfigAccess``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostConsulConfigAccess(context.Background()).ConsulConfigAccessRequest(consulConfigAccessRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12760,14 +13114,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
-    consulRolesRequest := *openapiclient.NewConsulRolesRequest() // ConsulRolesRequest | 
+	name := "name_example" // string | Name of the role.
+	consulRolesRequest := *openapiclient.NewConsulRolesRequest() // ConsulRolesRequest | 
 
-    resp, err := client.Secrets.PostConsulRolesName(context.Background(), name).ConsulRolesRequest(consulRolesRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostConsulRolesName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostConsulRolesName(context.Background(), name).ConsulRolesRequest(consulRolesRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12835,13 +13191,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    path := "path_example" // string | Specifies the path of the secret.
+	path := "path_example" // string | Specifies the path of the secret.
 
-    resp, err := client.Secrets.PostCubbyholePath(context.Background(), path).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostCubbyholePath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostCubbyholePath(context.Background(), path)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12908,13 +13266,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    gcpConfigRequest := *openapiclient.NewGcpConfigRequest() // GcpConfigRequest | 
+	gcpConfigRequest := *openapiclient.NewGcpConfigRequest() // GcpConfigRequest | 
 
-    resp, err := client.Secrets.PostGcpConfig(context.Background()).GcpConfigRequest(gcpConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostGcpConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostGcpConfig(context.Background()).GcpConfigRequest(gcpConfigRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -12978,11 +13338,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.PostGcpConfigRotateRoot(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostGcpConfigRotateRoot``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostGcpConfigRotateRoot(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13041,14 +13403,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleset := "roleset_example" // string | Required. Name of the role set.
-    gcpKeyRequest := *openapiclient.NewGcpKeyRequest() // GcpKeyRequest | 
+	roleset := "roleset_example" // string | Required. Name of the role set.
+	gcpKeyRequest := *openapiclient.NewGcpKeyRequest() // GcpKeyRequest | 
 
-    resp, err := client.Secrets.PostGcpKeyRoleset(context.Background(), roleset).GcpKeyRequest(gcpKeyRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostGcpKeyRoleset``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostGcpKeyRoleset(context.Background(), roleset).GcpKeyRequest(gcpKeyRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13116,14 +13480,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Required. Name of the role.
-    gcpRolesetRequest := *openapiclient.NewGcpRolesetRequest() // GcpRolesetRequest | 
+	name := "name_example" // string | Required. Name of the role.
+	gcpRolesetRequest := *openapiclient.NewGcpRolesetRequest() // GcpRolesetRequest | 
 
-    resp, err := client.Secrets.PostGcpRolesetName(context.Background(), name).GcpRolesetRequest(gcpRolesetRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostGcpRolesetName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostGcpRolesetName(context.Background(), name).GcpRolesetRequest(gcpRolesetRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13191,13 +13557,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
+	name := "name_example" // string | Name of the role.
 
-    resp, err := client.Secrets.PostGcpRolesetNameRotate(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostGcpRolesetNameRotate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostGcpRolesetNameRotate(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13264,13 +13632,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
+	name := "name_example" // string | Name of the role.
 
-    resp, err := client.Secrets.PostGcpRolesetNameRotateKey(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostGcpRolesetNameRotateKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostGcpRolesetNameRotateKey(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13337,14 +13707,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleset := "roleset_example" // string | Required. Name of the role set.
-    gcpRolesetKeyRequest := *openapiclient.NewGcpRolesetKeyRequest() // GcpRolesetKeyRequest | 
+	roleset := "roleset_example" // string | Required. Name of the role set.
+	gcpRolesetKeyRequest := *openapiclient.NewGcpRolesetKeyRequest() // GcpRolesetKeyRequest | 
 
-    resp, err := client.Secrets.PostGcpRolesetRolesetKey(context.Background(), roleset).GcpRolesetKeyRequest(gcpRolesetKeyRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostGcpRolesetRolesetKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostGcpRolesetRolesetKey(context.Background(), roleset).GcpRolesetKeyRequest(gcpRolesetKeyRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13412,13 +13784,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleset := "roleset_example" // string | Required. Name of the role set.
+	roleset := "roleset_example" // string | Required. Name of the role set.
 
-    resp, err := client.Secrets.PostGcpRolesetRolesetToken(context.Background(), roleset).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostGcpRolesetRolesetToken``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostGcpRolesetRolesetToken(context.Background(), roleset)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13485,14 +13859,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
-    gcpStaticAccountRequest := *openapiclient.NewGcpStaticAccountRequest() // GcpStaticAccountRequest | 
+	name := "name_example" // string | Required. Name to refer to this static account in Vault. Cannot be updated.
+	gcpStaticAccountRequest := *openapiclient.NewGcpStaticAccountRequest() // GcpStaticAccountRequest | 
 
-    resp, err := client.Secrets.PostGcpStaticAccountName(context.Background(), name).GcpStaticAccountRequest(gcpStaticAccountRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostGcpStaticAccountName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostGcpStaticAccountName(context.Background(), name).GcpStaticAccountRequest(gcpStaticAccountRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13560,14 +13936,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Required. Name of the static account.
-    gcpStaticAccountKeyRequest := *openapiclient.NewGcpStaticAccountKeyRequest() // GcpStaticAccountKeyRequest | 
+	name := "name_example" // string | Required. Name of the static account.
+	gcpStaticAccountKeyRequest := *openapiclient.NewGcpStaticAccountKeyRequest() // GcpStaticAccountKeyRequest | 
 
-    resp, err := client.Secrets.PostGcpStaticAccountNameKey(context.Background(), name).GcpStaticAccountKeyRequest(gcpStaticAccountKeyRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostGcpStaticAccountNameKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostGcpStaticAccountNameKey(context.Background(), name).GcpStaticAccountKeyRequest(gcpStaticAccountKeyRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13635,13 +14013,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the account.
+	name := "name_example" // string | Name of the account.
 
-    resp, err := client.Secrets.PostGcpStaticAccountNameRotateKey(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostGcpStaticAccountNameRotateKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostGcpStaticAccountNameRotateKey(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13708,13 +14088,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Required. Name of the static account.
+	name := "name_example" // string | Required. Name of the static account.
 
-    resp, err := client.Secrets.PostGcpStaticAccountNameToken(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostGcpStaticAccountNameToken``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostGcpStaticAccountNameToken(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13781,13 +14163,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    roleset := "roleset_example" // string | Required. Name of the role set.
+	roleset := "roleset_example" // string | Required. Name of the role set.
 
-    resp, err := client.Secrets.PostGcpTokenRoleset(context.Background(), roleset).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostGcpTokenRoleset``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostGcpTokenRoleset(context.Background(), roleset)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13854,13 +14238,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    gcpkmsConfigRequest := *openapiclient.NewGcpkmsConfigRequest() // GcpkmsConfigRequest | 
+	gcpkmsConfigRequest := *openapiclient.NewGcpkmsConfigRequest() // GcpkmsConfigRequest | 
 
-    resp, err := client.Secrets.PostGcpkmsConfig(context.Background()).GcpkmsConfigRequest(gcpkmsConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostGcpkmsConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostGcpkmsConfig(context.Background()).GcpkmsConfigRequest(gcpkmsConfigRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13923,14 +14309,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Name of the key in Vault to use for decryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-    gcpkmsDecryptRequest := *openapiclient.NewGcpkmsDecryptRequest() // GcpkmsDecryptRequest | 
+	key := "key_example" // string | Name of the key in Vault to use for decryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
+	gcpkmsDecryptRequest := *openapiclient.NewGcpkmsDecryptRequest() // GcpkmsDecryptRequest | 
 
-    resp, err := client.Secrets.PostGcpkmsDecryptKey(context.Background(), key).GcpkmsDecryptRequest(gcpkmsDecryptRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostGcpkmsDecryptKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostGcpkmsDecryptKey(context.Background(), key).GcpkmsDecryptRequest(gcpkmsDecryptRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -13998,14 +14386,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Name of the key in Vault to use for encryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-    gcpkmsEncryptRequest := *openapiclient.NewGcpkmsEncryptRequest() // GcpkmsEncryptRequest | 
+	key := "key_example" // string | Name of the key in Vault to use for encryption. This key must already exist in Vault and must map back to a Google Cloud KMS key.
+	gcpkmsEncryptRequest := *openapiclient.NewGcpkmsEncryptRequest() // GcpkmsEncryptRequest | 
 
-    resp, err := client.Secrets.PostGcpkmsEncryptKey(context.Background(), key).GcpkmsEncryptRequest(gcpkmsEncryptRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostGcpkmsEncryptKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostGcpkmsEncryptKey(context.Background(), key).GcpkmsEncryptRequest(gcpkmsEncryptRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14073,14 +14463,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Name of the key in Vault.
-    gcpkmsKeysConfigRequest := *openapiclient.NewGcpkmsKeysConfigRequest() // GcpkmsKeysConfigRequest | 
+	key := "key_example" // string | Name of the key in Vault.
+	gcpkmsKeysConfigRequest := *openapiclient.NewGcpkmsKeysConfigRequest() // GcpkmsKeysConfigRequest | 
 
-    resp, err := client.Secrets.PostGcpkmsKeysConfigKey(context.Background(), key).GcpkmsKeysConfigRequest(gcpkmsKeysConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostGcpkmsKeysConfigKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostGcpkmsKeysConfigKey(context.Background(), key).GcpkmsKeysConfigRequest(gcpkmsKeysConfigRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14148,13 +14540,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
+	key := "key_example" // string | Name of the key to deregister in Vault. If the key exists in Google Cloud KMS, it will be left untouched.
 
-    resp, err := client.Secrets.PostGcpkmsKeysDeregisterKey(context.Background(), key).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostGcpkmsKeysDeregisterKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostGcpkmsKeysDeregisterKey(context.Background(), key)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14221,14 +14615,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Name of the key in Vault.
-    gcpkmsKeysRequest := *openapiclient.NewGcpkmsKeysRequest() // GcpkmsKeysRequest | 
+	key := "key_example" // string | Name of the key in Vault.
+	gcpkmsKeysRequest := *openapiclient.NewGcpkmsKeysRequest() // GcpkmsKeysRequest | 
 
-    resp, err := client.Secrets.PostGcpkmsKeysKey(context.Background(), key).GcpkmsKeysRequest(gcpkmsKeysRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostGcpkmsKeysKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostGcpkmsKeysKey(context.Background(), key).GcpkmsKeysRequest(gcpkmsKeysRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14296,14 +14692,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Name of the key to register in Vault. This will be the named used to refer to the underlying crypto key when encrypting or decrypting data.
-    gcpkmsKeysRegisterRequest := *openapiclient.NewGcpkmsKeysRegisterRequest() // GcpkmsKeysRegisterRequest | 
+	key := "key_example" // string | Name of the key to register in Vault. This will be the named used to refer to the underlying crypto key when encrypting or decrypting data.
+	gcpkmsKeysRegisterRequest := *openapiclient.NewGcpkmsKeysRegisterRequest() // GcpkmsKeysRegisterRequest | 
 
-    resp, err := client.Secrets.PostGcpkmsKeysRegisterKey(context.Background(), key).GcpkmsKeysRegisterRequest(gcpkmsKeysRegisterRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostGcpkmsKeysRegisterKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostGcpkmsKeysRegisterKey(context.Background(), key).GcpkmsKeysRegisterRequest(gcpkmsKeysRegisterRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14371,13 +14769,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Name of the key to rotate. This key must already be registered with Vault and point to a valid Google Cloud KMS crypto key.
+	key := "key_example" // string | Name of the key to rotate. This key must already be registered with Vault and point to a valid Google Cloud KMS crypto key.
 
-    resp, err := client.Secrets.PostGcpkmsKeysRotateKey(context.Background(), key).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostGcpkmsKeysRotateKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostGcpkmsKeysRotateKey(context.Background(), key)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14444,13 +14844,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Name of the key in Vault.
+	key := "key_example" // string | Name of the key in Vault.
 
-    resp, err := client.Secrets.PostGcpkmsKeysTrimKey(context.Background(), key).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostGcpkmsKeysTrimKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostGcpkmsKeysTrimKey(context.Background(), key)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14517,14 +14919,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Name of the key to use for encryption. This key must already exist in Vault and Google Cloud KMS.
-    gcpkmsReencryptRequest := *openapiclient.NewGcpkmsReencryptRequest() // GcpkmsReencryptRequest | 
+	key := "key_example" // string | Name of the key to use for encryption. This key must already exist in Vault and Google Cloud KMS.
+	gcpkmsReencryptRequest := *openapiclient.NewGcpkmsReencryptRequest() // GcpkmsReencryptRequest | 
 
-    resp, err := client.Secrets.PostGcpkmsReencryptKey(context.Background(), key).GcpkmsReencryptRequest(gcpkmsReencryptRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostGcpkmsReencryptKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostGcpkmsReencryptKey(context.Background(), key).GcpkmsReencryptRequest(gcpkmsReencryptRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14592,14 +14996,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Name of the key in Vault to use for signing. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-    gcpkmsSignRequest := *openapiclient.NewGcpkmsSignRequest() // GcpkmsSignRequest | 
+	key := "key_example" // string | Name of the key in Vault to use for signing. This key must already exist in Vault and must map back to a Google Cloud KMS key.
+	gcpkmsSignRequest := *openapiclient.NewGcpkmsSignRequest() // GcpkmsSignRequest | 
 
-    resp, err := client.Secrets.PostGcpkmsSignKey(context.Background(), key).GcpkmsSignRequest(gcpkmsSignRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostGcpkmsSignKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostGcpkmsSignKey(context.Background(), key).GcpkmsSignRequest(gcpkmsSignRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14667,14 +15073,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    key := "key_example" // string | Name of the key in Vault to use for verification. This key must already exist in Vault and must map back to a Google Cloud KMS key.
-    gcpkmsVerifyRequest := *openapiclient.NewGcpkmsVerifyRequest() // GcpkmsVerifyRequest | 
+	key := "key_example" // string | Name of the key in Vault to use for verification. This key must already exist in Vault and must map back to a Google Cloud KMS key.
+	gcpkmsVerifyRequest := *openapiclient.NewGcpkmsVerifyRequest() // GcpkmsVerifyRequest | 
 
-    resp, err := client.Secrets.PostGcpkmsVerifyKey(context.Background(), key).GcpkmsVerifyRequest(gcpkmsVerifyRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostGcpkmsVerifyKey``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostGcpkmsVerifyKey(context.Background(), key).GcpkmsVerifyRequest(gcpkmsVerifyRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14742,13 +15150,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    kubernetesConfigRequest := *openapiclient.NewKubernetesConfigRequest() // KubernetesConfigRequest | 
+	kubernetesConfigRequest := *openapiclient.NewKubernetesConfigRequest() // KubernetesConfigRequest | 
 
-    resp, err := client.Secrets.PostKubernetesConfig(context.Background()).KubernetesConfigRequest(kubernetesConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostKubernetesConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostKubernetesConfig(context.Background()).KubernetesConfigRequest(kubernetesConfigRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14811,14 +15221,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the Vault role
-    kubernetesCredsRequest := *openapiclient.NewKubernetesCredsRequest("KubernetesNamespace_example") // KubernetesCredsRequest | 
+	name := "name_example" // string | Name of the Vault role
+	kubernetesCredsRequest := *openapiclient.NewKubernetesCredsRequest("KubernetesNamespace_example") // KubernetesCredsRequest | 
 
-    resp, err := client.Secrets.PostKubernetesCredsName(context.Background(), name).KubernetesCredsRequest(kubernetesCredsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostKubernetesCredsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostKubernetesCredsName(context.Background(), name).KubernetesCredsRequest(kubernetesCredsRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14886,14 +15298,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
-    kubernetesRolesRequest := *openapiclient.NewKubernetesRolesRequest([]string{"AllowedKubernetesNamespaces_example"}) // KubernetesRolesRequest | 
+	name := "name_example" // string | Name of the role
+	kubernetesRolesRequest := *openapiclient.NewKubernetesRolesRequest([]string{"AllowedKubernetesNamespaces_example"}) // KubernetesRolesRequest | 
 
-    resp, err := client.Secrets.PostKubernetesRolesName(context.Background(), name).KubernetesRolesRequest(kubernetesRolesRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostKubernetesRolesName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostKubernetesRolesName(context.Background(), name).KubernetesRolesRequest(kubernetesRolesRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -14961,13 +15375,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    path := "path_example" // string | Location of the secret.
+	path := "path_example" // string | Location of the secret.
 
-    resp, err := client.Secrets.PostKvPath(context.Background(), path).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostKvPath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostKvPath(context.Background(), path)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15034,13 +15450,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    mongodbatlasConfigRequest := *openapiclient.NewMongodbatlasConfigRequest("PrivateKey_example", "PublicKey_example") // MongodbatlasConfigRequest | 
+	mongodbatlasConfigRequest := *openapiclient.NewMongodbatlasConfigRequest("PrivateKey_example", "PublicKey_example") // MongodbatlasConfigRequest | 
 
-    resp, err := client.Secrets.PostMongodbatlasConfig(context.Background()).MongodbatlasConfigRequest(mongodbatlasConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostMongodbatlasConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostMongodbatlasConfig(context.Background()).MongodbatlasConfigRequest(mongodbatlasConfigRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15103,13 +15521,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
+	name := "name_example" // string | Name of the role
 
-    resp, err := client.Secrets.PostMongodbatlasCredsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostMongodbatlasCredsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostMongodbatlasCredsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15176,14 +15596,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the Roles
-    mongodbatlasRolesRequest := *openapiclient.NewMongodbatlasRolesRequest([]string{"Roles_example"}) // MongodbatlasRolesRequest | 
+	name := "name_example" // string | Name of the Roles
+	mongodbatlasRolesRequest := *openapiclient.NewMongodbatlasRolesRequest([]string{"Roles_example"}) // MongodbatlasRolesRequest | 
 
-    resp, err := client.Secrets.PostMongodbatlasRolesName(context.Background(), name).MongodbatlasRolesRequest(mongodbatlasRolesRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostMongodbatlasRolesName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostMongodbatlasRolesName(context.Background(), name).MongodbatlasRolesRequest(mongodbatlasRolesRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15251,13 +15673,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    nomadConfigAccessRequest := *openapiclient.NewNomadConfigAccessRequest() // NomadConfigAccessRequest | 
+	nomadConfigAccessRequest := *openapiclient.NewNomadConfigAccessRequest() // NomadConfigAccessRequest | 
 
-    resp, err := client.Secrets.PostNomadConfigAccess(context.Background()).NomadConfigAccessRequest(nomadConfigAccessRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostNomadConfigAccess``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostNomadConfigAccess(context.Background()).NomadConfigAccessRequest(nomadConfigAccessRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15320,13 +15744,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    nomadConfigLeaseRequest := *openapiclient.NewNomadConfigLeaseRequest() // NomadConfigLeaseRequest | 
+	nomadConfigLeaseRequest := *openapiclient.NewNomadConfigLeaseRequest() // NomadConfigLeaseRequest | 
 
-    resp, err := client.Secrets.PostNomadConfigLease(context.Background()).NomadConfigLeaseRequest(nomadConfigLeaseRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostNomadConfigLease``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostNomadConfigLease(context.Background()).NomadConfigLeaseRequest(nomadConfigLeaseRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15389,14 +15815,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
-    nomadRoleRequest := *openapiclient.NewNomadRoleRequest() // NomadRoleRequest | 
+	name := "name_example" // string | Name of the role
+	nomadRoleRequest := *openapiclient.NewNomadRoleRequest() // NomadRoleRequest | 
 
-    resp, err := client.Secrets.PostNomadRoleName(context.Background(), name).NomadRoleRequest(nomadRoleRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostNomadRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostNomadRoleName(context.Background(), name).NomadRoleRequest(nomadRoleRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15464,13 +15892,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    openldapConfigRequest := *openapiclient.NewOpenldapConfigRequest() // OpenldapConfigRequest | 
+	openldapConfigRequest := *openapiclient.NewOpenldapConfigRequest() // OpenldapConfigRequest | 
 
-    resp, err := client.Secrets.PostOpenldapConfig(context.Background()).OpenldapConfigRequest(openldapConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostOpenldapConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostOpenldapConfig(context.Background()).OpenldapConfigRequest(openldapConfigRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15533,14 +15963,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role (lowercase)
-    openldapRoleRequest := *openapiclient.NewOpenldapRoleRequest("CreationLdif_example", "DeletionLdif_example") // OpenldapRoleRequest | 
+	name := "name_example" // string | Name of the role (lowercase)
+	openldapRoleRequest := *openapiclient.NewOpenldapRoleRequest("CreationLdif_example", "DeletionLdif_example") // OpenldapRoleRequest | 
 
-    resp, err := client.Secrets.PostOpenldapRoleName(context.Background(), name).OpenldapRoleRequest(openldapRoleRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostOpenldapRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostOpenldapRoleName(context.Background(), name).OpenldapRoleRequest(openldapRoleRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15608,13 +16040,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the static role
+	name := "name_example" // string | Name of the static role
 
-    resp, err := client.Secrets.PostOpenldapRotateRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostOpenldapRotateRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostOpenldapRotateRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15682,11 +16116,13 @@ func main() {
 	}
 
 
-    resp, err := client.Secrets.PostOpenldapRotateRoot(context.Background()).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostOpenldapRotateRoot``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostOpenldapRotateRoot(context.Background())
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15745,14 +16181,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
-    openldapStaticRoleRequest := *openapiclient.NewOpenldapStaticRoleRequest() // OpenldapStaticRoleRequest | 
+	name := "name_example" // string | Name of the role
+	openldapStaticRoleRequest := *openapiclient.NewOpenldapStaticRoleRequest() // OpenldapStaticRoleRequest | 
 
-    resp, err := client.Secrets.PostOpenldapStaticRoleName(context.Background(), name).OpenldapStaticRoleRequest(openldapStaticRoleRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostOpenldapStaticRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostOpenldapStaticRoleName(context.Background(), name).OpenldapStaticRoleRequest(openldapStaticRoleRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15820,13 +16258,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    pkiBundleRequest := *openapiclient.NewPkiBundleRequest() // PkiBundleRequest | 
+	pkiBundleRequest := *openapiclient.NewPkiBundleRequest() // PkiBundleRequest | 
 
-    resp, err := client.Secrets.PostPkiBundle(context.Background()).PkiBundleRequest(pkiBundleRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiBundle``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiBundle(context.Background()).PkiBundleRequest(pkiBundleRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15889,13 +16329,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    pkiCertRequest := *openapiclient.NewPkiCertRequest() // PkiCertRequest | 
+	pkiCertRequest := *openapiclient.NewPkiCertRequest() // PkiCertRequest | 
 
-    resp, err := client.Secrets.PostPkiCert(context.Background()).PkiCertRequest(pkiCertRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiCert``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiCert(context.Background()).PkiCertRequest(pkiCertRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -15958,13 +16400,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    pkiConfigCaRequest := *openapiclient.NewPkiConfigCaRequest() // PkiConfigCaRequest | 
+	pkiConfigCaRequest := *openapiclient.NewPkiConfigCaRequest() // PkiConfigCaRequest | 
 
-    resp, err := client.Secrets.PostPkiConfigCa(context.Background()).PkiConfigCaRequest(pkiConfigCaRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiConfigCa``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiConfigCa(context.Background()).PkiConfigCaRequest(pkiConfigCaRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16027,13 +16471,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    pkiConfigCrlRequest := *openapiclient.NewPkiConfigCrlRequest() // PkiConfigCrlRequest | 
+	pkiConfigCrlRequest := *openapiclient.NewPkiConfigCrlRequest() // PkiConfigCrlRequest | 
 
-    resp, err := client.Secrets.PostPkiConfigCrl(context.Background()).PkiConfigCrlRequest(pkiConfigCrlRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiConfigCrl``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiConfigCrl(context.Background()).PkiConfigCrlRequest(pkiConfigCrlRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16096,13 +16542,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    pkiConfigIssuersRequest := *openapiclient.NewPkiConfigIssuersRequest() // PkiConfigIssuersRequest | 
+	pkiConfigIssuersRequest := *openapiclient.NewPkiConfigIssuersRequest() // PkiConfigIssuersRequest | 
 
-    resp, err := client.Secrets.PostPkiConfigIssuers(context.Background()).PkiConfigIssuersRequest(pkiConfigIssuersRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiConfigIssuers``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiConfigIssuers(context.Background()).PkiConfigIssuersRequest(pkiConfigIssuersRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16165,13 +16613,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    pkiConfigKeysRequest := *openapiclient.NewPkiConfigKeysRequest() // PkiConfigKeysRequest | 
+	pkiConfigKeysRequest := *openapiclient.NewPkiConfigKeysRequest() // PkiConfigKeysRequest | 
 
-    resp, err := client.Secrets.PostPkiConfigKeys(context.Background()).PkiConfigKeysRequest(pkiConfigKeysRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiConfigKeys``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiConfigKeys(context.Background()).PkiConfigKeysRequest(pkiConfigKeysRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16234,13 +16684,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    pkiConfigUrlsRequest := *openapiclient.NewPkiConfigUrlsRequest() // PkiConfigUrlsRequest | 
+	pkiConfigUrlsRequest := *openapiclient.NewPkiConfigUrlsRequest() // PkiConfigUrlsRequest | 
 
-    resp, err := client.Secrets.PostPkiConfigUrls(context.Background()).PkiConfigUrlsRequest(pkiConfigUrlsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiConfigUrls``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiConfigUrls(context.Background()).PkiConfigUrlsRequest(pkiConfigUrlsRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16303,13 +16755,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    pkiIntermediateCrossSignRequest := *openapiclient.NewPkiIntermediateCrossSignRequest() // PkiIntermediateCrossSignRequest | 
+	pkiIntermediateCrossSignRequest := *openapiclient.NewPkiIntermediateCrossSignRequest() // PkiIntermediateCrossSignRequest | 
 
-    resp, err := client.Secrets.PostPkiIntermediateCrossSign(context.Background()).PkiIntermediateCrossSignRequest(pkiIntermediateCrossSignRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiIntermediateCrossSign``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiIntermediateCrossSign(context.Background()).PkiIntermediateCrossSignRequest(pkiIntermediateCrossSignRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16372,14 +16826,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
-    pkiIntermediateGenerateRequest := *openapiclient.NewPkiIntermediateGenerateRequest() // PkiIntermediateGenerateRequest | 
+	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
+	pkiIntermediateGenerateRequest := *openapiclient.NewPkiIntermediateGenerateRequest() // PkiIntermediateGenerateRequest | 
 
-    resp, err := client.Secrets.PostPkiIntermediateGenerateExported(context.Background(), exported).PkiIntermediateGenerateRequest(pkiIntermediateGenerateRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiIntermediateGenerateExported``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiIntermediateGenerateExported(context.Background(), exported).PkiIntermediateGenerateRequest(pkiIntermediateGenerateRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16447,13 +16903,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    pkiIntermediateSetSignedRequest := *openapiclient.NewPkiIntermediateSetSignedRequest() // PkiIntermediateSetSignedRequest | 
+	pkiIntermediateSetSignedRequest := *openapiclient.NewPkiIntermediateSetSignedRequest() // PkiIntermediateSetSignedRequest | 
 
-    resp, err := client.Secrets.PostPkiIntermediateSetSigned(context.Background()).PkiIntermediateSetSignedRequest(pkiIntermediateSetSignedRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiIntermediateSetSigned``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiIntermediateSetSigned(context.Background()).PkiIntermediateSetSignedRequest(pkiIntermediateSetSignedRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16516,13 +16974,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    pkiInternalExportedRequest := *openapiclient.NewPkiInternalExportedRequest() // PkiInternalExportedRequest | 
+	pkiInternalExportedRequest := *openapiclient.NewPkiInternalExportedRequest() // PkiInternalExportedRequest | 
 
-    resp, err := client.Secrets.PostPkiInternalExported(context.Background()).PkiInternalExportedRequest(pkiInternalExportedRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiInternalExported``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiInternalExported(context.Background()).PkiInternalExportedRequest(pkiInternalExportedRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16585,14 +17045,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    role := "role_example" // string | The desired role with configuration for this request
-    pkiIssueRequest := *openapiclient.NewPkiIssueRequest() // PkiIssueRequest | 
+	role := "role_example" // string | The desired role with configuration for this request
+	pkiIssueRequest := *openapiclient.NewPkiIssueRequest() // PkiIssueRequest | 
 
-    resp, err := client.Secrets.PostPkiIssueRole(context.Background(), role).PkiIssueRequest(pkiIssueRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiIssueRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiIssueRole(context.Background(), role).PkiIssueRequest(pkiIssueRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16660,15 +17122,17 @@ func main() {
 		log.Fatal(err)
 	}
 
-    issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (default to "default")
-    role := "role_example" // string | The desired role with configuration for this request
-    pkiIssuerIssueRequest := *openapiclient.NewPkiIssuerIssueRequest() // PkiIssuerIssueRequest | 
+	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
+	role := "role_example" // string | The desired role with configuration for this request
+	pkiIssuerIssueRequest := *openapiclient.NewPkiIssuerIssueRequest() // PkiIssuerIssueRequest | 
 
-    resp, err := client.Secrets.PostPkiIssuerIssuerRefIssueRole(context.Background(), issuerRef, role).PkiIssuerIssueRequest(pkiIssuerIssueRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiIssuerIssuerRefIssueRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiIssuerIssuerRefIssueRole(context.Background(), issuerRef, role).PkiIssuerIssueRequest(pkiIssuerIssueRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16738,14 +17202,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (default to "default")
-    pkiIssuerSignIntermediateRequest := *openapiclient.NewPkiIssuerSignIntermediateRequest() // PkiIssuerSignIntermediateRequest | 
+	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
+	pkiIssuerSignIntermediateRequest := *openapiclient.NewPkiIssuerSignIntermediateRequest() // PkiIssuerSignIntermediateRequest | 
 
-    resp, err := client.Secrets.PostPkiIssuerIssuerRefSignIntermediate(context.Background(), issuerRef).PkiIssuerSignIntermediateRequest(pkiIssuerSignIntermediateRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiIssuerIssuerRefSignIntermediate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiIssuerIssuerRefSignIntermediate(context.Background(), issuerRef).PkiIssuerSignIntermediateRequest(pkiIssuerSignIntermediateRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16813,15 +17279,17 @@ func main() {
 		log.Fatal(err)
 	}
 
-    issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (default to "default")
-    role := "role_example" // string | The desired role with configuration for this request
-    pkiIssuerSignRequest := *openapiclient.NewPkiIssuerSignRequest() // PkiIssuerSignRequest | 
+	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
+	role := "role_example" // string | The desired role with configuration for this request
+	pkiIssuerSignRequest := *openapiclient.NewPkiIssuerSignRequest() // PkiIssuerSignRequest | 
 
-    resp, err := client.Secrets.PostPkiIssuerIssuerRefSignRole(context.Background(), issuerRef, role).PkiIssuerSignRequest(pkiIssuerSignRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiIssuerIssuerRefSignRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiIssuerIssuerRefSignRole(context.Background(), issuerRef, role).PkiIssuerSignRequest(pkiIssuerSignRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16891,14 +17359,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (default to "default")
-    pkiIssuerSignSelfIssuedRequest := *openapiclient.NewPkiIssuerSignSelfIssuedRequest() // PkiIssuerSignSelfIssuedRequest | 
+	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
+	pkiIssuerSignSelfIssuedRequest := *openapiclient.NewPkiIssuerSignSelfIssuedRequest() // PkiIssuerSignSelfIssuedRequest | 
 
-    resp, err := client.Secrets.PostPkiIssuerIssuerRefSignSelfIssued(context.Background(), issuerRef).PkiIssuerSignSelfIssuedRequest(pkiIssuerSignSelfIssuedRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiIssuerIssuerRefSignSelfIssued``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiIssuerIssuerRefSignSelfIssued(context.Background(), issuerRef).PkiIssuerSignSelfIssuedRequest(pkiIssuerSignSelfIssuedRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -16966,14 +17436,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (default to "default")
-    pkiIssuerSignVerbatimRequest := *openapiclient.NewPkiIssuerSignVerbatimRequest() // PkiIssuerSignVerbatimRequest | 
+	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
+	pkiIssuerSignVerbatimRequest := *openapiclient.NewPkiIssuerSignVerbatimRequest() // PkiIssuerSignVerbatimRequest | 
 
-    resp, err := client.Secrets.PostPkiIssuerIssuerRefSignVerbatim(context.Background(), issuerRef).PkiIssuerSignVerbatimRequest(pkiIssuerSignVerbatimRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiIssuerIssuerRefSignVerbatim``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiIssuerIssuerRefSignVerbatim(context.Background(), issuerRef).PkiIssuerSignVerbatimRequest(pkiIssuerSignVerbatimRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17041,15 +17513,17 @@ func main() {
 		log.Fatal(err)
 	}
 
-    issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (default to "default")
-    role := "role_example" // string | The desired role with configuration for this request
-    pkiIssuerSignVerbatimRequest := *openapiclient.NewPkiIssuerSignVerbatimRequest() // PkiIssuerSignVerbatimRequest | 
+	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
+	role := "role_example" // string | The desired role with configuration for this request
+	pkiIssuerSignVerbatimRequest := *openapiclient.NewPkiIssuerSignVerbatimRequest() // PkiIssuerSignVerbatimRequest | 
 
-    resp, err := client.Secrets.PostPkiIssuerIssuerRefSignVerbatimRole(context.Background(), issuerRef, role).PkiIssuerSignVerbatimRequest(pkiIssuerSignVerbatimRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiIssuerIssuerRefSignVerbatimRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiIssuerIssuerRefSignVerbatimRole(context.Background(), issuerRef, role).PkiIssuerSignVerbatimRequest(pkiIssuerSignVerbatimRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17119,14 +17593,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (default to "default")
-    pkiDerPemRequest := *openapiclient.NewPkiDerPemRequest() // PkiDerPemRequest | 
+	issuerRef := "issuerRef_example" // string | Reference to a existing issuer; either \"default\" for the configured default issuer, an identifier or the name assigned to the issuer. (defaults to "default")
+	pkiDerPemRequest := *openapiclient.NewPkiDerPemRequest() // PkiDerPemRequest | 
 
-    resp, err := client.Secrets.PostPkiIssuerRefDerPem(context.Background(), issuerRef).PkiDerPemRequest(pkiDerPemRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiIssuerRefDerPem``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiIssuerRefDerPem(context.Background(), issuerRef).PkiDerPemRequest(pkiDerPemRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17194,14 +17670,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
-    pkiIssuersGenerateIntermediateRequest := *openapiclient.NewPkiIssuersGenerateIntermediateRequest() // PkiIssuersGenerateIntermediateRequest | 
+	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
+	pkiIssuersGenerateIntermediateRequest := *openapiclient.NewPkiIssuersGenerateIntermediateRequest() // PkiIssuersGenerateIntermediateRequest | 
 
-    resp, err := client.Secrets.PostPkiIssuersGenerateIntermediateExported(context.Background(), exported).PkiIssuersGenerateIntermediateRequest(pkiIssuersGenerateIntermediateRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiIssuersGenerateIntermediateExported``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiIssuersGenerateIntermediateExported(context.Background(), exported).PkiIssuersGenerateIntermediateRequest(pkiIssuersGenerateIntermediateRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17269,14 +17747,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
-    pkiIssuersGenerateRootRequest := *openapiclient.NewPkiIssuersGenerateRootRequest() // PkiIssuersGenerateRootRequest | 
+	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
+	pkiIssuersGenerateRootRequest := *openapiclient.NewPkiIssuersGenerateRootRequest() // PkiIssuersGenerateRootRequest | 
 
-    resp, err := client.Secrets.PostPkiIssuersGenerateRootExported(context.Background(), exported).PkiIssuersGenerateRootRequest(pkiIssuersGenerateRootRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiIssuersGenerateRootExported``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiIssuersGenerateRootExported(context.Background(), exported).PkiIssuersGenerateRootRequest(pkiIssuersGenerateRootRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17344,13 +17824,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    pkiJsonRequest := *openapiclient.NewPkiJsonRequest() // PkiJsonRequest | 
+	pkiJsonRequest := *openapiclient.NewPkiJsonRequest() // PkiJsonRequest | 
 
-    resp, err := client.Secrets.PostPkiJson(context.Background()).PkiJsonRequest(pkiJsonRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiJson``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiJson(context.Background()).PkiJsonRequest(pkiJsonRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17413,14 +17895,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (default to "default")
-    pkiKeyRequest := *openapiclient.NewPkiKeyRequest() // PkiKeyRequest | 
+	keyRef := "keyRef_example" // string | Reference to key; either \"default\" for the configured default key, an identifier of a key, or the name assigned to the key. (defaults to "default")
+	pkiKeyRequest := *openapiclient.NewPkiKeyRequest() // PkiKeyRequest | 
 
-    resp, err := client.Secrets.PostPkiKeyKeyRef(context.Background(), keyRef).PkiKeyRequest(pkiKeyRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiKeyKeyRef``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiKeyKeyRef(context.Background(), keyRef).PkiKeyRequest(pkiKeyRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17488,13 +17972,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    pkiKeysImportRequest := *openapiclient.NewPkiKeysImportRequest() // PkiKeysImportRequest | 
+	pkiKeysImportRequest := *openapiclient.NewPkiKeysImportRequest() // PkiKeysImportRequest | 
 
-    resp, err := client.Secrets.PostPkiKeysImport(context.Background()).PkiKeysImportRequest(pkiKeysImportRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiKeysImport``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiKeysImport(context.Background()).PkiKeysImportRequest(pkiKeysImportRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17557,13 +18043,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    pkiKmsRequest := *openapiclient.NewPkiKmsRequest() // PkiKmsRequest | 
+	pkiKmsRequest := *openapiclient.NewPkiKmsRequest() // PkiKmsRequest | 
 
-    resp, err := client.Secrets.PostPkiKms(context.Background()).PkiKmsRequest(pkiKmsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiKms``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiKms(context.Background()).PkiKmsRequest(pkiKmsRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17626,13 +18114,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    pkiRevokeRequest := *openapiclient.NewPkiRevokeRequest() // PkiRevokeRequest | 
+	pkiRevokeRequest := *openapiclient.NewPkiRevokeRequest() // PkiRevokeRequest | 
 
-    resp, err := client.Secrets.PostPkiRevoke(context.Background()).PkiRevokeRequest(pkiRevokeRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiRevoke``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiRevoke(context.Background()).PkiRevokeRequest(pkiRevokeRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17695,14 +18185,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
-    pkiRolesRequest := *openapiclient.NewPkiRolesRequest() // PkiRolesRequest | 
+	name := "name_example" // string | Name of the role
+	pkiRolesRequest := *openapiclient.NewPkiRolesRequest() // PkiRolesRequest | 
 
-    resp, err := client.Secrets.PostPkiRolesName(context.Background(), name).PkiRolesRequest(pkiRolesRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiRolesName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiRolesName(context.Background(), name).PkiRolesRequest(pkiRolesRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17770,14 +18262,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
-    pkiRootGenerateRequest := *openapiclient.NewPkiRootGenerateRequest() // PkiRootGenerateRequest | 
+	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
+	pkiRootGenerateRequest := *openapiclient.NewPkiRootGenerateRequest() // PkiRootGenerateRequest | 
 
-    resp, err := client.Secrets.PostPkiRootGenerateExported(context.Background(), exported).PkiRootGenerateRequest(pkiRootGenerateRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiRootGenerateExported``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiRootGenerateExported(context.Background(), exported).PkiRootGenerateRequest(pkiRootGenerateRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17845,13 +18339,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    pkiRootReplaceRequest := *openapiclient.NewPkiRootReplaceRequest() // PkiRootReplaceRequest | 
+	pkiRootReplaceRequest := *openapiclient.NewPkiRootReplaceRequest() // PkiRootReplaceRequest | 
 
-    resp, err := client.Secrets.PostPkiRootReplace(context.Background()).PkiRootReplaceRequest(pkiRootReplaceRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiRootReplace``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiRootReplace(context.Background()).PkiRootReplaceRequest(pkiRootReplaceRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17914,14 +18410,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
-    pkiRootRotateRequest := *openapiclient.NewPkiRootRotateRequest() // PkiRootRotateRequest | 
+	exported := "exported_example" // string | Must be \"internal\", \"exported\" or \"kms\". If set to \"exported\", the generated private key will be returned. This is your *only* chance to retrieve the private key!
+	pkiRootRotateRequest := *openapiclient.NewPkiRootRotateRequest() // PkiRootRotateRequest | 
 
-    resp, err := client.Secrets.PostPkiRootRotateExported(context.Background(), exported).PkiRootRotateRequest(pkiRootRotateRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiRootRotateExported``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiRootRotateExported(context.Background(), exported).PkiRootRotateRequest(pkiRootRotateRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -17989,13 +18487,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    pkiRootSignIntermediateRequest := *openapiclient.NewPkiRootSignIntermediateRequest() // PkiRootSignIntermediateRequest | 
+	pkiRootSignIntermediateRequest := *openapiclient.NewPkiRootSignIntermediateRequest() // PkiRootSignIntermediateRequest | 
 
-    resp, err := client.Secrets.PostPkiRootSignIntermediate(context.Background()).PkiRootSignIntermediateRequest(pkiRootSignIntermediateRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiRootSignIntermediate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiRootSignIntermediate(context.Background()).PkiRootSignIntermediateRequest(pkiRootSignIntermediateRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -18058,13 +18558,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    pkiRootSignSelfIssuedRequest := *openapiclient.NewPkiRootSignSelfIssuedRequest() // PkiRootSignSelfIssuedRequest | 
+	pkiRootSignSelfIssuedRequest := *openapiclient.NewPkiRootSignSelfIssuedRequest() // PkiRootSignSelfIssuedRequest | 
 
-    resp, err := client.Secrets.PostPkiRootSignSelfIssued(context.Background()).PkiRootSignSelfIssuedRequest(pkiRootSignSelfIssuedRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiRootSignSelfIssued``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiRootSignSelfIssued(context.Background()).PkiRootSignSelfIssuedRequest(pkiRootSignSelfIssuedRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -18127,14 +18629,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    role := "role_example" // string | The desired role with configuration for this request
-    pkiSignRequest := *openapiclient.NewPkiSignRequest() // PkiSignRequest | 
+	role := "role_example" // string | The desired role with configuration for this request
+	pkiSignRequest := *openapiclient.NewPkiSignRequest() // PkiSignRequest | 
 
-    resp, err := client.Secrets.PostPkiSignRole(context.Background(), role).PkiSignRequest(pkiSignRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiSignRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiSignRole(context.Background(), role).PkiSignRequest(pkiSignRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -18202,13 +18706,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    pkiSignVerbatimRequest := *openapiclient.NewPkiSignVerbatimRequest() // PkiSignVerbatimRequest | 
+	pkiSignVerbatimRequest := *openapiclient.NewPkiSignVerbatimRequest() // PkiSignVerbatimRequest | 
 
-    resp, err := client.Secrets.PostPkiSignVerbatim(context.Background()).PkiSignVerbatimRequest(pkiSignVerbatimRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiSignVerbatim``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiSignVerbatim(context.Background()).PkiSignVerbatimRequest(pkiSignVerbatimRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -18271,14 +18777,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    role := "role_example" // string | The desired role with configuration for this request
-    pkiSignVerbatimRequest := *openapiclient.NewPkiSignVerbatimRequest() // PkiSignVerbatimRequest | 
+	role := "role_example" // string | The desired role with configuration for this request
+	pkiSignVerbatimRequest := *openapiclient.NewPkiSignVerbatimRequest() // PkiSignVerbatimRequest | 
 
-    resp, err := client.Secrets.PostPkiSignVerbatimRole(context.Background(), role).PkiSignVerbatimRequest(pkiSignVerbatimRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiSignVerbatimRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiSignVerbatimRole(context.Background(), role).PkiSignVerbatimRequest(pkiSignVerbatimRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -18346,13 +18854,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    pkiTidyRequest := *openapiclient.NewPkiTidyRequest() // PkiTidyRequest | 
+	pkiTidyRequest := *openapiclient.NewPkiTidyRequest() // PkiTidyRequest | 
 
-    resp, err := client.Secrets.PostPkiTidy(context.Background()).PkiTidyRequest(pkiTidyRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostPkiTidy``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostPkiTidy(context.Background()).PkiTidyRequest(pkiTidyRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -18415,13 +18925,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    rabbitmqConfigConnectionRequest := *openapiclient.NewRabbitmqConfigConnectionRequest() // RabbitmqConfigConnectionRequest | 
+	rabbitmqConfigConnectionRequest := *openapiclient.NewRabbitmqConfigConnectionRequest() // RabbitmqConfigConnectionRequest | 
 
-    resp, err := client.Secrets.PostRabbitmqConfigConnection(context.Background()).RabbitmqConfigConnectionRequest(rabbitmqConfigConnectionRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostRabbitmqConfigConnection``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostRabbitmqConfigConnection(context.Background()).RabbitmqConfigConnectionRequest(rabbitmqConfigConnectionRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -18484,13 +18996,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    rabbitmqConfigLeaseRequest := *openapiclient.NewRabbitmqConfigLeaseRequest() // RabbitmqConfigLeaseRequest | 
+	rabbitmqConfigLeaseRequest := *openapiclient.NewRabbitmqConfigLeaseRequest() // RabbitmqConfigLeaseRequest | 
 
-    resp, err := client.Secrets.PostRabbitmqConfigLease(context.Background()).RabbitmqConfigLeaseRequest(rabbitmqConfigLeaseRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostRabbitmqConfigLease``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostRabbitmqConfigLease(context.Background()).RabbitmqConfigLeaseRequest(rabbitmqConfigLeaseRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -18553,14 +19067,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role.
-    rabbitmqRolesRequest := *openapiclient.NewRabbitmqRolesRequest() // RabbitmqRolesRequest | 
+	name := "name_example" // string | Name of the role.
+	rabbitmqRolesRequest := *openapiclient.NewRabbitmqRolesRequest() // RabbitmqRolesRequest | 
 
-    resp, err := client.Secrets.PostRabbitmqRolesName(context.Background(), name).RabbitmqRolesRequest(rabbitmqRolesRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostRabbitmqRolesName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostRabbitmqRolesName(context.Background(), name).RabbitmqRolesRequest(rabbitmqRolesRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -18628,13 +19144,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    kvConfigRequest := *openapiclient.NewKvConfigRequest() // KvConfigRequest | 
+	kvConfigRequest := *openapiclient.NewKvConfigRequest() // KvConfigRequest | 
 
-    resp, err := client.Secrets.PostSecretConfig(context.Background()).KvConfigRequest(kvConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostSecretConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostSecretConfig(context.Background()).KvConfigRequest(kvConfigRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -18697,14 +19215,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    path := "path_example" // string | Location of the secret.
-    kvDataRequest := *openapiclient.NewKvDataRequest() // KvDataRequest | 
+	path := "path_example" // string | Location of the secret.
+	kvDataRequest := *openapiclient.NewKvDataRequest() // KvDataRequest | 
 
-    resp, err := client.Secrets.PostSecretDataPath(context.Background(), path).KvDataRequest(kvDataRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostSecretDataPath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostSecretDataPath(context.Background(), path).KvDataRequest(kvDataRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -18772,14 +19292,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    path := "path_example" // string | Location of the secret.
-    kvDeleteRequest := *openapiclient.NewKvDeleteRequest() // KvDeleteRequest | 
+	path := "path_example" // string | Location of the secret.
+	kvDeleteRequest := *openapiclient.NewKvDeleteRequest() // KvDeleteRequest | 
 
-    resp, err := client.Secrets.PostSecretDeletePath(context.Background(), path).KvDeleteRequest(kvDeleteRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostSecretDeletePath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostSecretDeletePath(context.Background(), path).KvDeleteRequest(kvDeleteRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -18847,14 +19369,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    path := "path_example" // string | Location of the secret.
-    kvDestroyRequest := *openapiclient.NewKvDestroyRequest() // KvDestroyRequest | 
+	path := "path_example" // string | Location of the secret.
+	kvDestroyRequest := *openapiclient.NewKvDestroyRequest() // KvDestroyRequest | 
 
-    resp, err := client.Secrets.PostSecretDestroyPath(context.Background(), path).KvDestroyRequest(kvDestroyRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostSecretDestroyPath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostSecretDestroyPath(context.Background(), path).KvDestroyRequest(kvDestroyRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -18922,14 +19446,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    path := "path_example" // string | Location of the secret.
-    kvMetadataRequest := *openapiclient.NewKvMetadataRequest() // KvMetadataRequest | 
+	path := "path_example" // string | Location of the secret.
+	kvMetadataRequest := *openapiclient.NewKvMetadataRequest() // KvMetadataRequest | 
 
-    resp, err := client.Secrets.PostSecretMetadataPath(context.Background(), path).KvMetadataRequest(kvMetadataRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostSecretMetadataPath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostSecretMetadataPath(context.Background(), path).KvMetadataRequest(kvMetadataRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -18997,14 +19523,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    path := "path_example" // string | Location of the secret.
-    kvUndeleteRequest := *openapiclient.NewKvUndeleteRequest() // KvUndeleteRequest | 
+	path := "path_example" // string | Location of the secret.
+	kvUndeleteRequest := *openapiclient.NewKvUndeleteRequest() // KvUndeleteRequest | 
 
-    resp, err := client.Secrets.PostSecretUndeletePath(context.Background(), path).KvUndeleteRequest(kvUndeleteRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostSecretUndeletePath``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostSecretUndeletePath(context.Background(), path).KvUndeleteRequest(kvUndeleteRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -19072,13 +19600,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    sshConfigCaRequest := *openapiclient.NewSshConfigCaRequest() // SshConfigCaRequest | 
+	sshConfigCaRequest := *openapiclient.NewSshConfigCaRequest() // SshConfigCaRequest | 
 
-    resp, err := client.Secrets.PostSshConfigCa(context.Background()).SshConfigCaRequest(sshConfigCaRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostSshConfigCa``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostSshConfigCa(context.Background()).SshConfigCaRequest(sshConfigCaRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -19141,13 +19671,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    sshConfigZeroaddressRequest := *openapiclient.NewSshConfigZeroaddressRequest() // SshConfigZeroaddressRequest | 
+	sshConfigZeroaddressRequest := *openapiclient.NewSshConfigZeroaddressRequest() // SshConfigZeroaddressRequest | 
 
-    resp, err := client.Secrets.PostSshConfigZeroaddress(context.Background()).SshConfigZeroaddressRequest(sshConfigZeroaddressRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostSshConfigZeroaddress``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostSshConfigZeroaddress(context.Background()).SshConfigZeroaddressRequest(sshConfigZeroaddressRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -19210,14 +19742,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    role := "role_example" // string | [Required] Name of the role
-    sshCredsRequest := *openapiclient.NewSshCredsRequest() // SshCredsRequest | 
+	role := "role_example" // string | [Required] Name of the role
+	sshCredsRequest := *openapiclient.NewSshCredsRequest() // SshCredsRequest | 
 
-    resp, err := client.Secrets.PostSshCredsRole(context.Background(), role).SshCredsRequest(sshCredsRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostSshCredsRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostSshCredsRole(context.Background(), role).SshCredsRequest(sshCredsRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -19285,14 +19819,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    keyName := "keyName_example" // string | [Required] Name of the key
-    sshKeysRequest := *openapiclient.NewSshKeysRequest() // SshKeysRequest | 
+	keyName := "keyName_example" // string | [Required] Name of the key
+	sshKeysRequest := *openapiclient.NewSshKeysRequest() // SshKeysRequest | 
 
-    resp, err := client.Secrets.PostSshKeysKeyName(context.Background(), keyName).SshKeysRequest(sshKeysRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostSshKeysKeyName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostSshKeysKeyName(context.Background(), keyName).SshKeysRequest(sshKeysRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -19360,13 +19896,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    sshLookupRequest := *openapiclient.NewSshLookupRequest() // SshLookupRequest | 
+	sshLookupRequest := *openapiclient.NewSshLookupRequest() // SshLookupRequest | 
 
-    resp, err := client.Secrets.PostSshLookup(context.Background()).SshLookupRequest(sshLookupRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostSshLookup``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostSshLookup(context.Background()).SshLookupRequest(sshLookupRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -19429,14 +19967,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    role := "role_example" // string | [Required for all types] Name of the role being created.
-    sshRolesRequest := *openapiclient.NewSshRolesRequest() // SshRolesRequest | 
+	role := "role_example" // string | [Required for all types] Name of the role being created.
+	sshRolesRequest := *openapiclient.NewSshRolesRequest() // SshRolesRequest | 
 
-    resp, err := client.Secrets.PostSshRolesRole(context.Background(), role).SshRolesRequest(sshRolesRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostSshRolesRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostSshRolesRole(context.Background(), role).SshRolesRequest(sshRolesRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -19504,14 +20044,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    role := "role_example" // string | The desired role with configuration for this request.
-    sshSignRequest := *openapiclient.NewSshSignRequest() // SshSignRequest | 
+	role := "role_example" // string | The desired role with configuration for this request.
+	sshSignRequest := *openapiclient.NewSshSignRequest() // SshSignRequest | 
 
-    resp, err := client.Secrets.PostSshSignRole(context.Background(), role).SshSignRequest(sshSignRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostSshSignRole``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostSshSignRole(context.Background(), role).SshSignRequest(sshSignRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -19579,13 +20121,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    sshVerifyRequest := *openapiclient.NewSshVerifyRequest() // SshVerifyRequest | 
+	sshVerifyRequest := *openapiclient.NewSshVerifyRequest() // SshVerifyRequest | 
 
-    resp, err := client.Secrets.PostSshVerify(context.Background()).SshVerifyRequest(sshVerifyRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostSshVerify``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostSshVerify(context.Background()).SshVerifyRequest(sshVerifyRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -19648,13 +20192,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    terraformConfigRequest := *openapiclient.NewTerraformConfigRequest("Token_example") // TerraformConfigRequest | 
+	terraformConfigRequest := *openapiclient.NewTerraformConfigRequest("Token_example") // TerraformConfigRequest | 
 
-    resp, err := client.Secrets.PostTerraformConfig(context.Background()).TerraformConfigRequest(terraformConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTerraformConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTerraformConfig(context.Background()).TerraformConfigRequest(terraformConfigRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -19717,13 +20263,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
+	name := "name_example" // string | Name of the role
 
-    resp, err := client.Secrets.PostTerraformCredsName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTerraformCredsName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTerraformCredsName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -19790,14 +20338,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the role
-    terraformRoleRequest := *openapiclient.NewTerraformRoleRequest() // TerraformRoleRequest | 
+	name := "name_example" // string | Name of the role
+	terraformRoleRequest := *openapiclient.NewTerraformRoleRequest() // TerraformRoleRequest | 
 
-    resp, err := client.Secrets.PostTerraformRoleName(context.Background(), name).TerraformRoleRequest(terraformRoleRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTerraformRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTerraformRoleName(context.Background(), name).TerraformRoleRequest(terraformRoleRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -19865,13 +20415,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the team or organization role
+	name := "name_example" // string | Name of the team or organization role
 
-    resp, err := client.Secrets.PostTerraformRotateRoleName(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTerraformRotateRoleName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTerraformRotateRoleName(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -19938,14 +20490,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the key.
-    totpCodeRequest := *openapiclient.NewTotpCodeRequest() // TotpCodeRequest | 
+	name := "name_example" // string | Name of the key.
+	totpCodeRequest := *openapiclient.NewTotpCodeRequest() // TotpCodeRequest | 
 
-    resp, err := client.Secrets.PostTotpCodeName(context.Background(), name).TotpCodeRequest(totpCodeRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTotpCodeName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTotpCodeName(context.Background(), name).TotpCodeRequest(totpCodeRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -20013,14 +20567,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the key.
-    totpKeysRequest := *openapiclient.NewTotpKeysRequest() // TotpKeysRequest | 
+	name := "name_example" // string | Name of the key.
+	totpKeysRequest := *openapiclient.NewTotpKeysRequest() // TotpKeysRequest | 
 
-    resp, err := client.Secrets.PostTotpKeysName(context.Background(), name).TotpKeysRequest(totpKeysRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTotpKeysName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTotpKeysName(context.Background(), name).TotpKeysRequest(totpKeysRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -20088,13 +20644,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    transitCacheConfigRequest := *openapiclient.NewTransitCacheConfigRequest() // TransitCacheConfigRequest | 
+	transitCacheConfigRequest := *openapiclient.NewTransitCacheConfigRequest() // TransitCacheConfigRequest | 
 
-    resp, err := client.Secrets.PostTransitCacheConfig(context.Background()).TransitCacheConfigRequest(transitCacheConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTransitCacheConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTransitCacheConfig(context.Background()).TransitCacheConfigRequest(transitCacheConfigRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -20157,15 +20715,17 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | The backend key used for encrypting the data key
-    plaintext := "plaintext_example" // string | \"plaintext\" will return the key in both plaintext and ciphertext; \"wrapped\" will return the ciphertext only.
-    transitDatakeyRequest := *openapiclient.NewTransitDatakeyRequest() // TransitDatakeyRequest | 
+	name := "name_example" // string | The backend key used for encrypting the data key
+	plaintext := "plaintext_example" // string | \"plaintext\" will return the key in both plaintext and ciphertext; \"wrapped\" will return the ciphertext only.
+	transitDatakeyRequest := *openapiclient.NewTransitDatakeyRequest() // TransitDatakeyRequest | 
 
-    resp, err := client.Secrets.PostTransitDatakeyPlaintextName(context.Background(), name, plaintext).TransitDatakeyRequest(transitDatakeyRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTransitDatakeyPlaintextName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTransitDatakeyPlaintextName(context.Background(), name, plaintext).TransitDatakeyRequest(transitDatakeyRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -20235,14 +20795,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the policy
-    transitDecryptRequest := *openapiclient.NewTransitDecryptRequest() // TransitDecryptRequest | 
+	name := "name_example" // string | Name of the policy
+	transitDecryptRequest := *openapiclient.NewTransitDecryptRequest() // TransitDecryptRequest | 
 
-    resp, err := client.Secrets.PostTransitDecryptName(context.Background(), name).TransitDecryptRequest(transitDecryptRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTransitDecryptName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTransitDecryptName(context.Background(), name).TransitDecryptRequest(transitDecryptRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -20310,14 +20872,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the policy
-    transitEncryptRequest := *openapiclient.NewTransitEncryptRequest() // TransitEncryptRequest | 
+	name := "name_example" // string | Name of the policy
+	transitEncryptRequest := *openapiclient.NewTransitEncryptRequest() // TransitEncryptRequest | 
 
-    resp, err := client.Secrets.PostTransitEncryptName(context.Background(), name).TransitEncryptRequest(transitEncryptRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTransitEncryptName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTransitEncryptName(context.Background(), name).TransitEncryptRequest(transitEncryptRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -20385,13 +20949,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    transitHashRequest := *openapiclient.NewTransitHashRequest() // TransitHashRequest | 
+	transitHashRequest := *openapiclient.NewTransitHashRequest() // TransitHashRequest | 
 
-    resp, err := client.Secrets.PostTransitHash(context.Background()).TransitHashRequest(transitHashRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTransitHash``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTransitHash(context.Background()).TransitHashRequest(transitHashRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -20454,14 +21020,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
-    transitHashRequest := *openapiclient.NewTransitHashRequest() // TransitHashRequest | 
+	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
+	transitHashRequest := *openapiclient.NewTransitHashRequest() // TransitHashRequest | 
 
-    resp, err := client.Secrets.PostTransitHashUrlalgorithm(context.Background(), urlalgorithm).TransitHashRequest(transitHashRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTransitHashUrlalgorithm``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTransitHashUrlalgorithm(context.Background(), urlalgorithm).TransitHashRequest(transitHashRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -20529,14 +21097,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | The key to use for the HMAC function
-    transitHmacRequest := *openapiclient.NewTransitHmacRequest() // TransitHmacRequest | 
+	name := "name_example" // string | The key to use for the HMAC function
+	transitHmacRequest := *openapiclient.NewTransitHmacRequest() // TransitHmacRequest | 
 
-    resp, err := client.Secrets.PostTransitHmacName(context.Background(), name).TransitHmacRequest(transitHmacRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTransitHmacName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTransitHmacName(context.Background(), name).TransitHmacRequest(transitHmacRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -20604,15 +21174,17 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | The key to use for the HMAC function
-    urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
-    transitHmacRequest := *openapiclient.NewTransitHmacRequest() // TransitHmacRequest | 
+	name := "name_example" // string | The key to use for the HMAC function
+	urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
+	transitHmacRequest := *openapiclient.NewTransitHmacRequest() // TransitHmacRequest | 
 
-    resp, err := client.Secrets.PostTransitHmacNameUrlalgorithm(context.Background(), name, urlalgorithm).TransitHmacRequest(transitHmacRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTransitHmacNameUrlalgorithm``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTransitHmacNameUrlalgorithm(context.Background(), name, urlalgorithm).TransitHmacRequest(transitHmacRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -20682,14 +21254,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the key
-    transitKeysRequest := *openapiclient.NewTransitKeysRequest() // TransitKeysRequest | 
+	name := "name_example" // string | Name of the key
+	transitKeysRequest := *openapiclient.NewTransitKeysRequest() // TransitKeysRequest | 
 
-    resp, err := client.Secrets.PostTransitKeysName(context.Background(), name).TransitKeysRequest(transitKeysRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTransitKeysName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTransitKeysName(context.Background(), name).TransitKeysRequest(transitKeysRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -20757,14 +21331,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the key
-    transitKeysConfigRequest := *openapiclient.NewTransitKeysConfigRequest() // TransitKeysConfigRequest | 
+	name := "name_example" // string | Name of the key
+	transitKeysConfigRequest := *openapiclient.NewTransitKeysConfigRequest() // TransitKeysConfigRequest | 
 
-    resp, err := client.Secrets.PostTransitKeysNameConfig(context.Background(), name).TransitKeysConfigRequest(transitKeysConfigRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTransitKeysNameConfig``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTransitKeysNameConfig(context.Background(), name).TransitKeysConfigRequest(transitKeysConfigRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -20832,14 +21408,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | The name of the key
-    transitKeysImportRequest := *openapiclient.NewTransitKeysImportRequest() // TransitKeysImportRequest | 
+	name := "name_example" // string | The name of the key
+	transitKeysImportRequest := *openapiclient.NewTransitKeysImportRequest() // TransitKeysImportRequest | 
 
-    resp, err := client.Secrets.PostTransitKeysNameImport(context.Background(), name).TransitKeysImportRequest(transitKeysImportRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTransitKeysNameImport``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTransitKeysNameImport(context.Background(), name).TransitKeysImportRequest(transitKeysImportRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -20907,14 +21485,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | The name of the key
-    transitKeysImportVersionRequest := *openapiclient.NewTransitKeysImportVersionRequest() // TransitKeysImportVersionRequest | 
+	name := "name_example" // string | The name of the key
+	transitKeysImportVersionRequest := *openapiclient.NewTransitKeysImportVersionRequest() // TransitKeysImportVersionRequest | 
 
-    resp, err := client.Secrets.PostTransitKeysNameImportVersion(context.Background(), name).TransitKeysImportVersionRequest(transitKeysImportVersionRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTransitKeysNameImportVersion``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTransitKeysNameImportVersion(context.Background(), name).TransitKeysImportVersionRequest(transitKeysImportVersionRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -20982,13 +21562,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the key
+	name := "name_example" // string | Name of the key
 
-    resp, err := client.Secrets.PostTransitKeysNameRotate(context.Background(), name).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTransitKeysNameRotate``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTransitKeysNameRotate(context.Background(), name)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -21055,14 +21637,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the key
-    transitKeysTrimRequest := *openapiclient.NewTransitKeysTrimRequest() // TransitKeysTrimRequest | 
+	name := "name_example" // string | Name of the key
+	transitKeysTrimRequest := *openapiclient.NewTransitKeysTrimRequest() // TransitKeysTrimRequest | 
 
-    resp, err := client.Secrets.PostTransitKeysNameTrim(context.Background(), name).TransitKeysTrimRequest(transitKeysTrimRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTransitKeysNameTrim``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTransitKeysNameTrim(context.Background(), name).TransitKeysTrimRequest(transitKeysTrimRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -21130,13 +21714,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    transitRandomRequest := *openapiclient.NewTransitRandomRequest() // TransitRandomRequest | 
+	transitRandomRequest := *openapiclient.NewTransitRandomRequest() // TransitRandomRequest | 
 
-    resp, err := client.Secrets.PostTransitRandom(context.Background()).TransitRandomRequest(transitRandomRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTransitRandom``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTransitRandom(context.Background()).TransitRandomRequest(transitRandomRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -21199,14 +21785,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (default to "platform")
-    transitRandomRequest := *openapiclient.NewTransitRandomRequest() // TransitRandomRequest | 
+	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
+	transitRandomRequest := *openapiclient.NewTransitRandomRequest() // TransitRandomRequest | 
 
-    resp, err := client.Secrets.PostTransitRandomSource(context.Background(), source).TransitRandomRequest(transitRandomRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTransitRandomSource``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTransitRandomSource(context.Background(), source).TransitRandomRequest(transitRandomRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -21274,15 +21862,17 @@ func main() {
 		log.Fatal(err)
 	}
 
-    source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (default to "platform")
-    urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
-    transitRandomRequest := *openapiclient.NewTransitRandomRequest() // TransitRandomRequest | 
+	source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (defaults to "platform")
+	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
+	transitRandomRequest := *openapiclient.NewTransitRandomRequest() // TransitRandomRequest | 
 
-    resp, err := client.Secrets.PostTransitRandomSourceUrlbytes(context.Background(), source, urlbytes).TransitRandomRequest(transitRandomRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTransitRandomSourceUrlbytes``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTransitRandomSourceUrlbytes(context.Background(), source, urlbytes).TransitRandomRequest(transitRandomRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -21352,14 +21942,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
-    transitRandomRequest := *openapiclient.NewTransitRandomRequest() // TransitRandomRequest | 
+	urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
+	transitRandomRequest := *openapiclient.NewTransitRandomRequest() // TransitRandomRequest | 
 
-    resp, err := client.Secrets.PostTransitRandomUrlbytes(context.Background(), urlbytes).TransitRandomRequest(transitRandomRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTransitRandomUrlbytes``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTransitRandomUrlbytes(context.Background(), urlbytes).TransitRandomRequest(transitRandomRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -21427,13 +22019,15 @@ func main() {
 		log.Fatal(err)
 	}
 
-    transitRestoreRequest := *openapiclient.NewTransitRestoreRequest() // TransitRestoreRequest | 
+	transitRestoreRequest := *openapiclient.NewTransitRestoreRequest() // TransitRestoreRequest | 
 
-    resp, err := client.Secrets.PostTransitRestore(context.Background()).TransitRestoreRequest(transitRestoreRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTransitRestore``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTransitRestore(context.Background()).TransitRestoreRequest(transitRestoreRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -21496,14 +22090,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | If set, this will be the name of the restored key.
-    transitRestoreRequest := *openapiclient.NewTransitRestoreRequest() // TransitRestoreRequest | 
+	name := "name_example" // string | If set, this will be the name of the restored key.
+	transitRestoreRequest := *openapiclient.NewTransitRestoreRequest() // TransitRestoreRequest | 
 
-    resp, err := client.Secrets.PostTransitRestoreName(context.Background(), name).TransitRestoreRequest(transitRestoreRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTransitRestoreName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTransitRestoreName(context.Background(), name).TransitRestoreRequest(transitRestoreRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -21571,14 +22167,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | Name of the key
-    transitRewrapRequest := *openapiclient.NewTransitRewrapRequest() // TransitRewrapRequest | 
+	name := "name_example" // string | Name of the key
+	transitRewrapRequest := *openapiclient.NewTransitRewrapRequest() // TransitRewrapRequest | 
 
-    resp, err := client.Secrets.PostTransitRewrapName(context.Background(), name).TransitRewrapRequest(transitRewrapRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTransitRewrapName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTransitRewrapName(context.Background(), name).TransitRewrapRequest(transitRewrapRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -21646,14 +22244,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | The key to use
-    transitSignRequest := *openapiclient.NewTransitSignRequest() // TransitSignRequest | 
+	name := "name_example" // string | The key to use
+	transitSignRequest := *openapiclient.NewTransitSignRequest() // TransitSignRequest | 
 
-    resp, err := client.Secrets.PostTransitSignName(context.Background(), name).TransitSignRequest(transitSignRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTransitSignName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTransitSignName(context.Background(), name).TransitSignRequest(transitSignRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -21721,15 +22321,17 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | The key to use
-    urlalgorithm := "urlalgorithm_example" // string | Hash algorithm to use (POST URL parameter)
-    transitSignRequest := *openapiclient.NewTransitSignRequest() // TransitSignRequest | 
+	name := "name_example" // string | The key to use
+	urlalgorithm := "urlalgorithm_example" // string | Hash algorithm to use (POST URL parameter)
+	transitSignRequest := *openapiclient.NewTransitSignRequest() // TransitSignRequest | 
 
-    resp, err := client.Secrets.PostTransitSignNameUrlalgorithm(context.Background(), name, urlalgorithm).TransitSignRequest(transitSignRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTransitSignNameUrlalgorithm``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTransitSignNameUrlalgorithm(context.Background(), name, urlalgorithm).TransitSignRequest(transitSignRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -21799,14 +22401,16 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | The key to use
-    transitVerifyRequest := *openapiclient.NewTransitVerifyRequest() // TransitVerifyRequest | 
+	name := "name_example" // string | The key to use
+	transitVerifyRequest := *openapiclient.NewTransitVerifyRequest() // TransitVerifyRequest | 
 
-    resp, err := client.Secrets.PostTransitVerifyName(context.Background(), name).TransitVerifyRequest(transitVerifyRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTransitVerifyName``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTransitVerifyName(context.Background(), name).TransitVerifyRequest(transitVerifyRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 
@@ -21874,15 +22478,17 @@ func main() {
 		log.Fatal(err)
 	}
 
-    name := "name_example" // string | The key to use
-    urlalgorithm := "urlalgorithm_example" // string | Hash algorithm to use (POST URL parameter)
-    transitVerifyRequest := *openapiclient.NewTransitVerifyRequest() // TransitVerifyRequest | 
+	name := "name_example" // string | The key to use
+	urlalgorithm := "urlalgorithm_example" // string | Hash algorithm to use (POST URL parameter)
+	transitVerifyRequest := *openapiclient.NewTransitVerifyRequest() // TransitVerifyRequest | 
 
-    resp, err := client.Secrets.PostTransitVerifyNameUrlalgorithm(context.Background(), name, urlalgorithm).TransitVerifyRequest(transitVerifyRequest).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `Secrets.PostTransitVerifyNameUrlalgorithm``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	resp, err := client.Secrets.PostTransitVerifyNameUrlalgorithm(context.Background(), name, urlalgorithm).TransitVerifyRequest(transitVerifyRequest)
+	if err != nil {
+		log.Fatal(err)
     }
+	defer resp.Body.Close()
+
+	io.Copy(os.Stdout, resp.Body)
 }
 ```
 

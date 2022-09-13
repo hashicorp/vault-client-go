@@ -303,13 +303,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	role := "role_example" // string | The name of the role as it should appear in Vault.
-
+	role :=  // string | The name of the role as it should appear in Vault.
+	
 	resp, err := client.Auth.DeleteAuthAlicloudRoleRole(context.Background(), role)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -336,15 +337,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -378,13 +370,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	key := "key_example" // string | Key for the app-id mapping
-
+	key :=  // string | Key for the app-id mapping
+	
 	resp, err := client.Auth.DeleteAuthAppIdMapAppIdKey(context.Background(), key)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -411,15 +404,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -453,13 +437,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	key := "key_example" // string | Key for the user-id mapping
-
+	key :=  // string | Key for the user-id mapping
+	
 	resp, err := client.Auth.DeleteAuthAppIdMapUserIdKey(context.Background(), key)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -486,15 +471,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -528,13 +504,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-
+	roleName :=  // string | Name of the role.
+	
 	resp, err := client.Auth.DeleteAuthApproleRoleRoleName(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -561,15 +538,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -603,13 +571,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-
+	roleName :=  // string | Name of the role.
+	
 	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -636,15 +605,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -678,13 +638,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-
+	roleName :=  // string | Name of the role.
+	
 	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -711,15 +672,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -753,13 +705,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-
+	roleName :=  // string | Name of the role.
+	
 	resp, err := client.Auth.DeleteAuthApproleRoleRoleNamePeriod(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -786,15 +739,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -828,13 +772,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-
+	roleName :=  // string | Name of the role.
+	
 	resp, err := client.Auth.DeleteAuthApproleRoleRoleNamePolicies(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -861,15 +806,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -903,13 +839,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-
+	roleName :=  // string | Name of the role.
+	
 	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -936,15 +873,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -978,13 +906,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-
+	roleName :=  // string | Name of the role.
+	
 	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -1011,15 +940,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1053,13 +973,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-
+	roleName :=  // string | Name of the role.
+	
 	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdDestroy(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -1086,15 +1007,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1128,13 +1040,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-
+	roleName :=  // string | Name of the role.
+	
 	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -1161,15 +1074,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1203,13 +1107,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-
+	roleName :=  // string | Name of the role.
+	
 	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -1236,15 +1141,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1278,13 +1174,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-
+	roleName :=  // string | Name of the role.
+	
 	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -1311,15 +1208,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1353,13 +1241,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-
+	roleName :=  // string | Name of the role.
+	
 	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -1386,15 +1275,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1428,13 +1308,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-
+	roleName :=  // string | Name of the role.
+	
 	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -1461,15 +1342,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1503,13 +1375,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-
+	roleName :=  // string | Name of the role.
+	
 	resp, err := client.Auth.DeleteAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -1536,15 +1409,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1578,13 +1442,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	certName := "certName_example" // string | Name of the certificate.
-
+	certName :=  // string | Name of the certificate.
+	
 	resp, err := client.Auth.DeleteAuthAwsConfigCertificateCertName(context.Background(), certName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -1611,15 +1476,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1653,12 +1509,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.DeleteAuthAwsConfigClient(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -1677,15 +1534,6 @@ Other parameters are passed through a pointer to a apiDeleteAuthAwsConfigClientR
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1719,13 +1567,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-
+	accountId :=  // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
+	
 	resp, err := client.Auth.DeleteAuthAwsConfigStsAccountId(context.Background(), accountId)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -1752,15 +1601,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1794,12 +1634,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.DeleteAuthAwsConfigTidyIdentityAccesslist(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -1818,15 +1659,6 @@ Other parameters are passed through a pointer to a apiDeleteAuthAwsConfigTidyIde
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1860,12 +1692,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.DeleteAuthAwsConfigTidyIdentityWhitelist(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -1884,15 +1717,6 @@ Other parameters are passed through a pointer to a apiDeleteAuthAwsConfigTidyIde
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1926,12 +1750,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.DeleteAuthAwsConfigTidyRoletagBlacklist(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -1950,15 +1775,6 @@ Other parameters are passed through a pointer to a apiDeleteAuthAwsConfigTidyRol
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1992,12 +1808,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.DeleteAuthAwsConfigTidyRoletagDenylist(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -2016,15 +1833,6 @@ Other parameters are passed through a pointer to a apiDeleteAuthAwsConfigTidyRol
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -2058,13 +1866,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-
+	instanceId :=  // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
+	
 	resp, err := client.Auth.DeleteAuthAwsIdentityAccesslistInstanceId(context.Background(), instanceId)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -2091,15 +1900,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -2133,13 +1933,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-
+	instanceId :=  // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
+	
 	resp, err := client.Auth.DeleteAuthAwsIdentityWhitelistInstanceId(context.Background(), instanceId)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -2166,15 +1967,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -2208,13 +2000,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	role := "role_example" // string | Name of the role.
-
+	role :=  // string | Name of the role.
+	
 	resp, err := client.Auth.DeleteAuthAwsRoleRole(context.Background(), role)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -2241,15 +2034,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -2283,13 +2067,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-
+	roleTag :=  // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	
 	resp, err := client.Auth.DeleteAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -2316,15 +2101,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -2358,13 +2134,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-
+	roleTag :=  // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	
 	resp, err := client.Auth.DeleteAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -2391,15 +2168,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -2433,12 +2201,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.DeleteAuthAzureConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -2457,15 +2226,6 @@ Other parameters are passed through a pointer to a apiDeleteAuthAzureConfigReque
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -2499,13 +2259,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the role.
-
+	name :=  // string | Name of the role.
+	
 	resp, err := client.Auth.DeleteAuthAzureRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -2532,15 +2293,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -2574,13 +2326,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | The name of the certificate
-
+	name :=  // string | The name of the certificate
+	
 	resp, err := client.Auth.DeleteAuthCertCertsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -2607,15 +2360,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -2649,13 +2393,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | The name of the certificate
-
+	name :=  // string | The name of the certificate
+	
 	resp, err := client.Auth.DeleteAuthCertCrlsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -2682,15 +2427,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -2724,12 +2460,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.DeleteAuthCfConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -2748,15 +2485,6 @@ Other parameters are passed through a pointer to a apiDeleteAuthCfConfigRequest 
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -2790,13 +2518,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	role := "role_example" // string | The name of the role.
-
+	role :=  // string | The name of the role.
+	
 	resp, err := client.Auth.DeleteAuthCfRolesRole(context.Background(), role)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -2823,15 +2552,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -2865,13 +2585,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the role.
-
+	name :=  // string | Name of the role.
+	
 	resp, err := client.Auth.DeleteAuthGcpRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -2898,15 +2619,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -2940,13 +2652,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	key := "key_example" // string | Key for the teams mapping
-
+	key :=  // string | Key for the teams mapping
+	
 	resp, err := client.Auth.DeleteAuthGithubMapTeamsKey(context.Background(), key)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -2973,15 +2686,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3015,13 +2719,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	key := "key_example" // string | Key for the users mapping
-
+	key :=  // string | Key for the users mapping
+	
 	resp, err := client.Auth.DeleteAuthGithubMapUsersKey(context.Background(), key)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -3048,15 +2753,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3090,13 +2786,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the role.
-
+	name :=  // string | Name of the role.
+	
 	resp, err := client.Auth.DeleteAuthJwtRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -3123,15 +2820,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3165,13 +2853,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the LDAP group.
-
+	name :=  // string | Name of the LDAP group.
+	
 	resp, err := client.Auth.DeleteAuthKerberosGroupsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -3198,15 +2887,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3240,13 +2920,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the role.
-
+	name :=  // string | Name of the role.
+	
 	resp, err := client.Auth.DeleteAuthKubernetesRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -3273,15 +2954,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3315,13 +2987,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the LDAP group.
-
+	name :=  // string | Name of the LDAP group.
+	
 	resp, err := client.Auth.DeleteAuthLdapGroupsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -3348,15 +3021,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3390,13 +3054,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the LDAP user.
-
+	name :=  // string | Name of the LDAP user.
+	
 	resp, err := client.Auth.DeleteAuthLdapUsersName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -3423,15 +3088,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3465,12 +3121,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.DeleteAuthOciConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -3489,15 +3146,6 @@ Other parameters are passed through a pointer to a apiDeleteAuthOciConfigRequest
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3531,13 +3179,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	role := "role_example" // string | Name of the role.
-
+	role :=  // string | Name of the role.
+	
 	resp, err := client.Auth.DeleteAuthOciRoleRole(context.Background(), role)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -3564,15 +3213,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3606,13 +3246,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the role.
-
+	name :=  // string | Name of the role.
+	
 	resp, err := client.Auth.DeleteAuthOidcRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -3639,15 +3280,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3681,13 +3313,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the Okta group.
-
+	name :=  // string | Name of the Okta group.
+	
 	resp, err := client.Auth.DeleteAuthOktaGroupsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -3714,15 +3347,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3756,13 +3380,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the user.
-
+	name :=  // string | Name of the user.
+	
 	resp, err := client.Auth.DeleteAuthOktaUsersName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -3789,15 +3414,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3831,13 +3447,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the RADIUS user.
-
+	name :=  // string | Name of the RADIUS user.
+	
 	resp, err := client.Auth.DeleteAuthRadiusUsersName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -3864,15 +3481,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3906,13 +3514,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role
-
+	roleName :=  // string | Name of the role
+	
 	resp, err := client.Auth.DeleteAuthTokenRolesRoleName(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -3939,15 +3548,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3981,13 +3581,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	username := "username_example" // string | Username for this user.
-
+	username :=  // string | Username for this user.
+	
 	resp, err := client.Auth.DeleteAuthUserpassUsersUsername(context.Background(), username)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -4014,15 +3615,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -4056,13 +3648,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthAlicloudRole(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthAlicloudRole(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -4085,15 +3679,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -4127,13 +3712,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	role := "role_example" // string | The name of the role as it should appear in Vault.
-
+	role :=  // string | The name of the role as it should appear in Vault.
+	
 	resp, err := client.Auth.GetAuthAlicloudRoleRole(context.Background(), role)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -4160,15 +3746,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -4202,13 +3779,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthAlicloudRoles(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthAlicloudRoles(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -4231,15 +3810,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -4273,13 +3843,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Return a list if `true`
-
-	resp, err := client.Auth.GetAuthAppIdMapAppId(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthAppIdMapAppId(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -4302,15 +3874,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -4344,13 +3907,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	key := "key_example" // string | Key for the app-id mapping
-
+	key :=  // string | Key for the app-id mapping
+	
 	resp, err := client.Auth.GetAuthAppIdMapAppIdKey(context.Background(), key)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -4377,15 +3941,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -4419,13 +3974,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Return a list if `true`
-
-	resp, err := client.Auth.GetAuthAppIdMapUserId(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthAppIdMapUserId(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -4448,15 +4005,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -4490,13 +4038,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	key := "key_example" // string | Key for the user-id mapping
-
+	key :=  // string | Key for the user-id mapping
+	
 	resp, err := client.Auth.GetAuthAppIdMapUserIdKey(context.Background(), key)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -4523,15 +4072,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -4565,13 +4105,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthApproleRole(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthApproleRole(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -4594,15 +4136,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -4636,13 +4169,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-
+	roleName :=  // string | Name of the role.
+	
 	resp, err := client.Auth.GetAuthApproleRoleRoleName(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -4669,15 +4203,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -4711,13 +4236,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-
+	roleName :=  // string | Name of the role.
+	
 	resp, err := client.Auth.GetAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -4744,15 +4270,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -4786,13 +4303,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-
+	roleName :=  // string | Name of the role.
+	
 	resp, err := client.Auth.GetAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -4819,15 +4337,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -4861,13 +4370,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-
+	roleName :=  // string | Name of the role.
+	
 	resp, err := client.Auth.GetAuthApproleRoleRoleNameLocalSecretIds(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -4894,15 +4404,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -4936,13 +4437,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-
+	roleName :=  // string | Name of the role.
+	
 	resp, err := client.Auth.GetAuthApproleRoleRoleNamePeriod(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -4969,15 +4471,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -5011,13 +4504,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-
+	roleName :=  // string | Name of the role.
+	
 	resp, err := client.Auth.GetAuthApproleRoleRoleNamePolicies(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -5044,15 +4538,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -5086,13 +4571,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-
+	roleName :=  // string | Name of the role.
+	
 	resp, err := client.Auth.GetAuthApproleRoleRoleNameRoleId(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -5119,15 +4605,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -5161,14 +4638,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretId(context.Background(), roleName).List(list)
+	roleName :=  // string | Name of the role.
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretId(context.Background(), roleName, list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -5196,15 +4675,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -5238,13 +4708,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-
+	roleName :=  // string | Name of the role.
+	
 	resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -5271,15 +4742,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -5313,13 +4775,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-
+	roleName :=  // string | Name of the role.
+	
 	resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -5346,15 +4809,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -5388,13 +4842,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-
+	roleName :=  // string | Name of the role.
+	
 	resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -5421,15 +4876,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -5463,13 +4909,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-
+	roleName :=  // string | Name of the role.
+	
 	resp, err := client.Auth.GetAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -5496,15 +4943,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -5538,13 +4976,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-
+	roleName :=  // string | Name of the role.
+	
 	resp, err := client.Auth.GetAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -5571,15 +5010,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -5613,13 +5043,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-
+	roleName :=  // string | Name of the role.
+	
 	resp, err := client.Auth.GetAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -5646,15 +5077,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -5688,13 +5110,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-
+	roleName :=  // string | Name of the role.
+	
 	resp, err := client.Auth.GetAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -5721,15 +5144,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -5763,13 +5177,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	certName := "certName_example" // string | Name of the certificate.
-
+	certName :=  // string | Name of the certificate.
+	
 	resp, err := client.Auth.GetAuthAwsConfigCertificateCertName(context.Background(), certName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -5796,15 +5211,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -5838,13 +5244,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthAwsConfigCertificates(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthAwsConfigCertificates(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -5867,15 +5275,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -5909,12 +5308,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.GetAuthAwsConfigClient(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -5933,15 +5333,6 @@ Other parameters are passed through a pointer to a apiGetAuthAwsConfigClientRequ
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -5975,12 +5366,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.GetAuthAwsConfigIdentity(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -5999,15 +5391,6 @@ Other parameters are passed through a pointer to a apiGetAuthAwsConfigIdentityRe
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -6041,13 +5424,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthAwsConfigSts(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthAwsConfigSts(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -6070,15 +5455,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -6112,13 +5488,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-
+	accountId :=  // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
+	
 	resp, err := client.Auth.GetAuthAwsConfigStsAccountId(context.Background(), accountId)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -6145,15 +5522,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -6187,12 +5555,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.GetAuthAwsConfigTidyIdentityAccesslist(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -6211,15 +5580,6 @@ Other parameters are passed through a pointer to a apiGetAuthAwsConfigTidyIdenti
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -6253,12 +5613,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.GetAuthAwsConfigTidyIdentityWhitelist(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -6277,15 +5638,6 @@ Other parameters are passed through a pointer to a apiGetAuthAwsConfigTidyIdenti
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -6319,12 +5671,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.GetAuthAwsConfigTidyRoletagBlacklist(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -6343,15 +5696,6 @@ Other parameters are passed through a pointer to a apiGetAuthAwsConfigTidyRoleta
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -6385,12 +5729,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.GetAuthAwsConfigTidyRoletagDenylist(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -6409,15 +5754,6 @@ Other parameters are passed through a pointer to a apiGetAuthAwsConfigTidyRoleta
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -6451,13 +5787,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthAwsIdentityAccesslist(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthAwsIdentityAccesslist(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -6480,15 +5818,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -6522,13 +5851,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-
+	instanceId :=  // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
+	
 	resp, err := client.Auth.GetAuthAwsIdentityAccesslistInstanceId(context.Background(), instanceId)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -6555,15 +5885,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -6597,13 +5918,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthAwsIdentityWhitelist(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthAwsIdentityWhitelist(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -6626,15 +5949,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -6668,13 +5982,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
-
+	instanceId :=  // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
+	
 	resp, err := client.Auth.GetAuthAwsIdentityWhitelistInstanceId(context.Background(), instanceId)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -6701,15 +6016,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -6743,13 +6049,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthAwsRole(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthAwsRole(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -6772,15 +6080,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -6814,13 +6113,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	role := "role_example" // string | Name of the role.
-
+	role :=  // string | Name of the role.
+	
 	resp, err := client.Auth.GetAuthAwsRoleRole(context.Background(), role)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -6847,15 +6147,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -6889,13 +6180,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthAwsRoles(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthAwsRoles(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -6918,15 +6211,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -6960,13 +6244,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthAwsRoletagBlacklist(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthAwsRoletagBlacklist(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -6989,15 +6275,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -7031,13 +6308,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-
+	roleTag :=  // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	
 	resp, err := client.Auth.GetAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -7064,15 +6342,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -7106,13 +6375,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthAwsRoletagDenylist(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthAwsRoletagDenylist(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -7135,15 +6406,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -7177,13 +6439,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-
+	roleTag :=  // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	
 	resp, err := client.Auth.GetAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -7210,15 +6473,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -7252,12 +6506,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.GetAuthAzureConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -7276,15 +6531,6 @@ Other parameters are passed through a pointer to a apiGetAuthAzureConfigRequest 
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -7318,13 +6564,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthAzureRole(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthAzureRole(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -7347,15 +6595,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -7389,13 +6628,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the role.
-
+	name :=  // string | Name of the role.
+	
 	resp, err := client.Auth.GetAuthAzureRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -7422,15 +6662,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -7464,12 +6695,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.GetAuthCentrifyConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -7488,15 +6720,6 @@ Other parameters are passed through a pointer to a apiGetAuthCentrifyConfigReque
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -7530,13 +6753,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthCertCerts(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthCertCerts(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -7559,15 +6784,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -7601,13 +6817,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | The name of the certificate
-
+	name :=  // string | The name of the certificate
+	
 	resp, err := client.Auth.GetAuthCertCertsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -7634,15 +6851,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -7676,13 +6884,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | The name of the certificate
-
+	name :=  // string | The name of the certificate
+	
 	resp, err := client.Auth.GetAuthCertCrlsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -7709,15 +6918,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -7751,12 +6951,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.GetAuthCfConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -7775,15 +6976,6 @@ Other parameters are passed through a pointer to a apiGetAuthCfConfigRequest str
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -7817,13 +7009,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthCfRoles(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthCfRoles(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -7846,15 +7040,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -7888,13 +7073,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	role := "role_example" // string | The name of the role.
-
+	role :=  // string | The name of the role.
+	
 	resp, err := client.Auth.GetAuthCfRolesRole(context.Background(), role)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -7921,15 +7107,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -7963,12 +7140,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.GetAuthGcpConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -7987,15 +7165,6 @@ Other parameters are passed through a pointer to a apiGetAuthGcpConfigRequest st
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -8029,13 +7198,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthGcpRole(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthGcpRole(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -8058,15 +7229,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -8100,13 +7262,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the role.
-
+	name :=  // string | Name of the role.
+	
 	resp, err := client.Auth.GetAuthGcpRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -8133,15 +7296,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -8175,13 +7329,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthGcpRoles(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthGcpRoles(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -8204,15 +7360,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -8246,12 +7393,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.GetAuthGithubConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -8270,15 +7418,6 @@ Other parameters are passed through a pointer to a apiGetAuthGithubConfigRequest
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -8312,13 +7451,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Return a list if `true`
-
-	resp, err := client.Auth.GetAuthGithubMapTeams(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthGithubMapTeams(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -8341,15 +7482,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -8383,13 +7515,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	key := "key_example" // string | Key for the teams mapping
-
+	key :=  // string | Key for the teams mapping
+	
 	resp, err := client.Auth.GetAuthGithubMapTeamsKey(context.Background(), key)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -8416,15 +7549,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -8458,13 +7582,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Return a list if `true`
-
-	resp, err := client.Auth.GetAuthGithubMapUsers(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthGithubMapUsers(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -8487,15 +7613,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -8529,13 +7646,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	key := "key_example" // string | Key for the users mapping
-
+	key :=  // string | Key for the users mapping
+	
 	resp, err := client.Auth.GetAuthGithubMapUsersKey(context.Background(), key)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -8562,15 +7680,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -8604,12 +7713,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.GetAuthJwtConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -8628,15 +7738,6 @@ Other parameters are passed through a pointer to a apiGetAuthJwtConfigRequest st
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -8670,12 +7771,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.GetAuthJwtOidcCallback(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -8694,15 +7796,6 @@ Other parameters are passed through a pointer to a apiGetAuthJwtOidcCallbackRequ
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -8738,13 +7831,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthJwtRole(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthJwtRole(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -8767,15 +7862,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -8809,13 +7895,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the role.
-
+	name :=  // string | Name of the role.
+	
 	resp, err := client.Auth.GetAuthJwtRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -8842,15 +7929,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -8884,12 +7962,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.GetAuthKerberosConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -8908,15 +7987,6 @@ Other parameters are passed through a pointer to a apiGetAuthKerberosConfigReque
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -8950,12 +8020,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.GetAuthKerberosConfigLdap(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -8974,15 +8045,6 @@ Other parameters are passed through a pointer to a apiGetAuthKerberosConfigLdapR
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -9016,13 +8078,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthKerberosGroups(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthKerberosGroups(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -9045,15 +8109,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -9087,13 +8142,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the LDAP group.
-
+	name :=  // string | Name of the LDAP group.
+	
 	resp, err := client.Auth.GetAuthKerberosGroupsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -9120,15 +8176,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -9162,12 +8209,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.GetAuthKerberosLogin(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -9186,15 +8234,6 @@ Other parameters are passed through a pointer to a apiGetAuthKerberosLoginReques
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -9228,12 +8267,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.GetAuthKubernetesConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -9252,15 +8292,6 @@ Other parameters are passed through a pointer to a apiGetAuthKubernetesConfigReq
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -9294,13 +8325,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthKubernetesRole(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthKubernetesRole(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -9323,15 +8356,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -9365,13 +8389,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the role.
-
+	name :=  // string | Name of the role.
+	
 	resp, err := client.Auth.GetAuthKubernetesRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -9398,15 +8423,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -9440,12 +8456,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.GetAuthLdapConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -9464,15 +8481,6 @@ Other parameters are passed through a pointer to a apiGetAuthLdapConfigRequest s
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -9506,13 +8514,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthLdapGroups(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthLdapGroups(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -9535,15 +8545,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -9577,13 +8578,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the LDAP group.
-
+	name :=  // string | Name of the LDAP group.
+	
 	resp, err := client.Auth.GetAuthLdapGroupsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -9610,15 +8612,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -9652,13 +8645,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthLdapUsers(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthLdapUsers(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -9681,15 +8676,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -9723,13 +8709,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the LDAP user.
-
+	name :=  // string | Name of the LDAP user.
+	
 	resp, err := client.Auth.GetAuthLdapUsersName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -9756,15 +8743,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -9798,12 +8776,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.GetAuthOciConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -9822,15 +8801,6 @@ Other parameters are passed through a pointer to a apiGetAuthOciConfigRequest st
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -9864,13 +8834,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthOciRole(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthOciRole(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -9893,15 +8865,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -9935,13 +8898,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	role := "role_example" // string | Name of the role.
-
+	role :=  // string | Name of the role.
+	
 	resp, err := client.Auth.GetAuthOciRoleRole(context.Background(), role)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -9968,15 +8932,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -10010,12 +8965,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.GetAuthOidcConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -10034,15 +8990,6 @@ Other parameters are passed through a pointer to a apiGetAuthOidcConfigRequest s
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -10076,12 +9023,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.GetAuthOidcOidcCallback(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -10100,15 +9048,6 @@ Other parameters are passed through a pointer to a apiGetAuthOidcOidcCallbackReq
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -10144,13 +9083,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthOidcRole(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthOidcRole(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -10173,15 +9114,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -10215,13 +9147,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the role.
-
+	name :=  // string | Name of the role.
+	
 	resp, err := client.Auth.GetAuthOidcRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -10248,15 +9181,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -10290,12 +9214,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.GetAuthOktaConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -10314,15 +9239,6 @@ Other parameters are passed through a pointer to a apiGetAuthOktaConfigRequest s
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -10356,13 +9272,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthOktaGroups(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthOktaGroups(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -10385,15 +9303,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -10427,13 +9336,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the Okta group.
-
+	name :=  // string | Name of the Okta group.
+	
 	resp, err := client.Auth.GetAuthOktaGroupsName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -10460,15 +9370,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -10502,13 +9403,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthOktaUsers(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthOktaUsers(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -10531,15 +9434,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -10573,13 +9467,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the user.
-
+	name :=  // string | Name of the user.
+	
 	resp, err := client.Auth.GetAuthOktaUsersName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -10606,15 +9501,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -10648,13 +9534,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	nonce := "nonce_example" // string | Nonce provided during a login request to retrieve the number verification challenge for the matching request.
-
+	nonce :=  // string | Nonce provided during a login request to retrieve the number verification challenge for the matching request.
+	
 	resp, err := client.Auth.GetAuthOktaVerifyNonce(context.Background(), nonce)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -10681,15 +9568,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -10723,12 +9601,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.GetAuthRadiusConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -10747,15 +9626,6 @@ Other parameters are passed through a pointer to a apiGetAuthRadiusConfigRequest
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -10789,13 +9659,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthRadiusUsers(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthRadiusUsers(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -10818,15 +9690,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -10860,13 +9723,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the RADIUS user.
-
+	name :=  // string | Name of the RADIUS user.
+	
 	resp, err := client.Auth.GetAuthRadiusUsersName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -10893,15 +9757,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -10935,13 +9790,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthTokenAccessors(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthTokenAccessors(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -10964,15 +9821,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -11006,12 +9854,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.GetAuthTokenLookup(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -11030,15 +9879,6 @@ Other parameters are passed through a pointer to a apiGetAuthTokenLookupRequest 
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -11072,12 +9912,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.GetAuthTokenLookupSelf(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -11096,15 +9937,6 @@ Other parameters are passed through a pointer to a apiGetAuthTokenLookupSelfRequ
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -11138,13 +9970,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthTokenRoles(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthTokenRoles(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -11167,15 +10001,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -11209,13 +10034,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role
-
+	roleName :=  // string | Name of the role
+	
 	resp, err := client.Auth.GetAuthTokenRolesRoleName(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -11242,15 +10068,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -11284,13 +10101,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Auth.GetAuthUserpassUsers(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Auth.GetAuthUserpassUsers(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -11313,15 +10132,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -11355,13 +10165,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	username := "username_example" // string | Username for this user.
-
+	username :=  // string | Username for this user.
+	
 	resp, err := client.Auth.GetAuthUserpassUsersUsername(context.Background(), username)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -11388,15 +10199,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -11430,13 +10232,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	alicloudLoginRequest := *openapiclient.NewAlicloudLoginRequest() // AlicloudLoginRequest | 
-
-	resp, err := client.Auth.PostAuthAlicloudLogin(context.Background()).AlicloudLoginRequest(alicloudLoginRequest)
+	
+	alicloudLoginRequest := NewAlicloudLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAlicloudLogin(context.Background(), alicloudLoginRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -11459,15 +10263,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -11501,14 +10296,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	role := "role_example" // string | The name of the role as it should appear in Vault.
-	alicloudRoleRequest := *openapiclient.NewAlicloudRoleRequest() // AlicloudRoleRequest | 
-
-	resp, err := client.Auth.PostAuthAlicloudRoleRole(context.Background(), role).AlicloudRoleRequest(alicloudRoleRequest)
+	role :=  // string | The name of the role as it should appear in Vault.
+	
+	alicloudRoleRequest := NewAlicloudRoleRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAlicloudRoleRole(context.Background(), role, alicloudRoleRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -11536,15 +10333,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -11578,13 +10366,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	appIdLoginRequest := *openapiclient.NewAppIdLoginRequest() // AppIdLoginRequest | 
-
-	resp, err := client.Auth.PostAuthAppIdLogin(context.Background()).AppIdLoginRequest(appIdLoginRequest)
+	
+	appIdLoginRequest := NewAppIdLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAppIdLogin(context.Background(), appIdLoginRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -11607,15 +10397,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -11649,14 +10430,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	appId := "appId_example" // string | The unique app ID
-	appIdLoginRequest := *openapiclient.NewAppIdLoginRequest() // AppIdLoginRequest | 
-
-	resp, err := client.Auth.PostAuthAppIdLoginAppId(context.Background(), appId).AppIdLoginRequest(appIdLoginRequest)
+	appId :=  // string | The unique app ID
+	
+	appIdLoginRequest := NewAppIdLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAppIdLoginAppId(context.Background(), appId, appIdLoginRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -11684,15 +10467,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -11726,14 +10500,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	key := "key_example" // string | Key for the app-id mapping
-	appIdMapAppIdRequest := *openapiclient.NewAppIdMapAppIdRequest() // AppIdMapAppIdRequest | 
-
-	resp, err := client.Auth.PostAuthAppIdMapAppIdKey(context.Background(), key).AppIdMapAppIdRequest(appIdMapAppIdRequest)
+	key :=  // string | Key for the app-id mapping
+	
+	appIdMapAppIdRequest := NewAppIdMapAppIdRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAppIdMapAppIdKey(context.Background(), key, appIdMapAppIdRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -11761,15 +10537,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -11803,14 +10570,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	key := "key_example" // string | Key for the user-id mapping
-	appIdMapUserIdRequest := *openapiclient.NewAppIdMapUserIdRequest() // AppIdMapUserIdRequest | 
-
-	resp, err := client.Auth.PostAuthAppIdMapUserIdKey(context.Background(), key).AppIdMapUserIdRequest(appIdMapUserIdRequest)
+	key :=  // string | Key for the user-id mapping
+	
+	appIdMapUserIdRequest := NewAppIdMapUserIdRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAppIdMapUserIdKey(context.Background(), key, appIdMapUserIdRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -11838,15 +10607,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -11880,13 +10640,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	approleLoginRequest := *openapiclient.NewApproleLoginRequest() // ApproleLoginRequest | 
-
-	resp, err := client.Auth.PostAuthApproleLogin(context.Background()).ApproleLoginRequest(approleLoginRequest)
+	
+	approleLoginRequest := NewApproleLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleLogin(context.Background(), approleLoginRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -11909,15 +10671,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -11951,14 +10704,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-	approleRoleRequest := *openapiclient.NewApproleRoleRequest() // ApproleRoleRequest | 
-
-	resp, err := client.Auth.PostAuthApproleRoleRoleName(context.Background(), roleName).ApproleRoleRequest(approleRoleRequest)
+	roleName :=  // string | Name of the role.
+	
+	approleRoleRequest := NewApproleRoleRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleName(context.Background(), roleName, approleRoleRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -11986,15 +10741,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -12028,14 +10774,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-	approleRoleBindSecretIdRequest := *openapiclient.NewApproleRoleBindSecretIdRequest() // ApproleRoleBindSecretIdRequest | 
-
-	resp, err := client.Auth.PostAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName).ApproleRoleBindSecretIdRequest(approleRoleBindSecretIdRequest)
+	roleName :=  // string | Name of the role.
+	
+	approleRoleBindSecretIdRequest := NewApproleRoleBindSecretIdRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName, approleRoleBindSecretIdRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -12063,15 +10811,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -12105,14 +10844,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-	approleRoleBoundCidrListRequest := *openapiclient.NewApproleRoleBoundCidrListRequest() // ApproleRoleBoundCidrListRequest | 
-
-	resp, err := client.Auth.PostAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName).ApproleRoleBoundCidrListRequest(approleRoleBoundCidrListRequest)
+	roleName :=  // string | Name of the role.
+	
+	approleRoleBoundCidrListRequest := NewApproleRoleBoundCidrListRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName, approleRoleBoundCidrListRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -12140,15 +10881,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -12182,14 +10914,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-	approleRoleCustomSecretIdRequest := *openapiclient.NewApproleRoleCustomSecretIdRequest() // ApproleRoleCustomSecretIdRequest | 
-
-	resp, err := client.Auth.PostAuthApproleRoleRoleNameCustomSecretId(context.Background(), roleName).ApproleRoleCustomSecretIdRequest(approleRoleCustomSecretIdRequest)
+	roleName :=  // string | Name of the role.
+	
+	approleRoleCustomSecretIdRequest := NewApproleRoleCustomSecretIdRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameCustomSecretId(context.Background(), roleName, approleRoleCustomSecretIdRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -12217,15 +10951,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -12259,14 +10984,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-	approleRolePeriodRequest := *openapiclient.NewApproleRolePeriodRequest() // ApproleRolePeriodRequest | 
-
-	resp, err := client.Auth.PostAuthApproleRoleRoleNamePeriod(context.Background(), roleName).ApproleRolePeriodRequest(approleRolePeriodRequest)
+	roleName :=  // string | Name of the role.
+	
+	approleRolePeriodRequest := NewApproleRolePeriodRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNamePeriod(context.Background(), roleName, approleRolePeriodRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -12294,15 +11021,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -12336,14 +11054,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-	approleRolePoliciesRequest := *openapiclient.NewApproleRolePoliciesRequest() // ApproleRolePoliciesRequest | 
-
-	resp, err := client.Auth.PostAuthApproleRoleRoleNamePolicies(context.Background(), roleName).ApproleRolePoliciesRequest(approleRolePoliciesRequest)
+	roleName :=  // string | Name of the role.
+	
+	approleRolePoliciesRequest := NewApproleRolePoliciesRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNamePolicies(context.Background(), roleName, approleRolePoliciesRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -12371,15 +11091,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -12413,14 +11124,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-	approleRoleRoleIdRequest := *openapiclient.NewApproleRoleRoleIdRequest() // ApproleRoleRoleIdRequest | 
-
-	resp, err := client.Auth.PostAuthApproleRoleRoleNameRoleId(context.Background(), roleName).ApproleRoleRoleIdRequest(approleRoleRoleIdRequest)
+	roleName :=  // string | Name of the role.
+	
+	approleRoleRoleIdRequest := NewApproleRoleRoleIdRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameRoleId(context.Background(), roleName, approleRoleRoleIdRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -12448,15 +11161,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -12490,14 +11194,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-	approleRoleSecretIdRequest := *openapiclient.NewApproleRoleSecretIdRequest() // ApproleRoleSecretIdRequest | 
-
-	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretId(context.Background(), roleName).ApproleRoleSecretIdRequest(approleRoleSecretIdRequest)
+	roleName :=  // string | Name of the role.
+	
+	approleRoleSecretIdRequest := NewApproleRoleSecretIdRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretId(context.Background(), roleName, approleRoleSecretIdRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -12525,15 +11231,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -12567,14 +11264,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-	approleRoleSecretIdAccessorDestroyRequest := *openapiclient.NewApproleRoleSecretIdAccessorDestroyRequest() // ApproleRoleSecretIdAccessorDestroyRequest | 
-
-	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(context.Background(), roleName).ApproleRoleSecretIdAccessorDestroyRequest(approleRoleSecretIdAccessorDestroyRequest)
+	roleName :=  // string | Name of the role.
+	
+	approleRoleSecretIdAccessorDestroyRequest := NewApproleRoleSecretIdAccessorDestroyRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(context.Background(), roleName, approleRoleSecretIdAccessorDestroyRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -12602,15 +11301,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -12644,14 +11334,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-	approleRoleSecretIdAccessorLookupRequest := *openapiclient.NewApproleRoleSecretIdAccessorLookupRequest() // ApproleRoleSecretIdAccessorLookupRequest | 
-
-	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdAccessorLookup(context.Background(), roleName).ApproleRoleSecretIdAccessorLookupRequest(approleRoleSecretIdAccessorLookupRequest)
+	roleName :=  // string | Name of the role.
+	
+	approleRoleSecretIdAccessorLookupRequest := NewApproleRoleSecretIdAccessorLookupRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdAccessorLookup(context.Background(), roleName, approleRoleSecretIdAccessorLookupRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -12679,15 +11371,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -12721,14 +11404,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-	approleRoleSecretIdBoundCidrsRequest := *openapiclient.NewApproleRoleSecretIdBoundCidrsRequest() // ApproleRoleSecretIdBoundCidrsRequest | 
-
-	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName).ApproleRoleSecretIdBoundCidrsRequest(approleRoleSecretIdBoundCidrsRequest)
+	roleName :=  // string | Name of the role.
+	
+	approleRoleSecretIdBoundCidrsRequest := NewApproleRoleSecretIdBoundCidrsRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName, approleRoleSecretIdBoundCidrsRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -12756,15 +11441,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -12798,14 +11474,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-	approleRoleSecretIdDestroyRequest := *openapiclient.NewApproleRoleSecretIdDestroyRequest() // ApproleRoleSecretIdDestroyRequest | 
-
-	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdDestroy(context.Background(), roleName).ApproleRoleSecretIdDestroyRequest(approleRoleSecretIdDestroyRequest)
+	roleName :=  // string | Name of the role.
+	
+	approleRoleSecretIdDestroyRequest := NewApproleRoleSecretIdDestroyRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdDestroy(context.Background(), roleName, approleRoleSecretIdDestroyRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -12833,15 +11511,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -12875,14 +11544,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-	approleRoleSecretIdLookupRequest := *openapiclient.NewApproleRoleSecretIdLookupRequest() // ApproleRoleSecretIdLookupRequest | 
-
-	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdLookup(context.Background(), roleName).ApproleRoleSecretIdLookupRequest(approleRoleSecretIdLookupRequest)
+	roleName :=  // string | Name of the role.
+	
+	approleRoleSecretIdLookupRequest := NewApproleRoleSecretIdLookupRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdLookup(context.Background(), roleName, approleRoleSecretIdLookupRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -12910,15 +11581,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -12952,14 +11614,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-	approleRoleSecretIdNumUsesRequest := *openapiclient.NewApproleRoleSecretIdNumUsesRequest() // ApproleRoleSecretIdNumUsesRequest | 
-
-	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName).ApproleRoleSecretIdNumUsesRequest(approleRoleSecretIdNumUsesRequest)
+	roleName :=  // string | Name of the role.
+	
+	approleRoleSecretIdNumUsesRequest := NewApproleRoleSecretIdNumUsesRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName, approleRoleSecretIdNumUsesRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -12987,15 +11651,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -13029,14 +11684,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-	approleRoleSecretIdTtlRequest := *openapiclient.NewApproleRoleSecretIdTtlRequest() // ApproleRoleSecretIdTtlRequest | 
-
-	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName).ApproleRoleSecretIdTtlRequest(approleRoleSecretIdTtlRequest)
+	roleName :=  // string | Name of the role.
+	
+	approleRoleSecretIdTtlRequest := NewApproleRoleSecretIdTtlRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName, approleRoleSecretIdTtlRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -13064,15 +11721,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -13106,14 +11754,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-	approleRoleTokenBoundCidrsRequest := *openapiclient.NewApproleRoleTokenBoundCidrsRequest() // ApproleRoleTokenBoundCidrsRequest | 
-
-	resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName).ApproleRoleTokenBoundCidrsRequest(approleRoleTokenBoundCidrsRequest)
+	roleName :=  // string | Name of the role.
+	
+	approleRoleTokenBoundCidrsRequest := NewApproleRoleTokenBoundCidrsRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName, approleRoleTokenBoundCidrsRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -13141,15 +11791,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -13183,14 +11824,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-	approleRoleTokenMaxTtlRequest := *openapiclient.NewApproleRoleTokenMaxTtlRequest() // ApproleRoleTokenMaxTtlRequest | 
-
-	resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName).ApproleRoleTokenMaxTtlRequest(approleRoleTokenMaxTtlRequest)
+	roleName :=  // string | Name of the role.
+	
+	approleRoleTokenMaxTtlRequest := NewApproleRoleTokenMaxTtlRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName, approleRoleTokenMaxTtlRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -13218,15 +11861,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -13260,14 +11894,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-	approleRoleTokenNumUsesRequest := *openapiclient.NewApproleRoleTokenNumUsesRequest() // ApproleRoleTokenNumUsesRequest | 
-
-	resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName).ApproleRoleTokenNumUsesRequest(approleRoleTokenNumUsesRequest)
+	roleName :=  // string | Name of the role.
+	
+	approleRoleTokenNumUsesRequest := NewApproleRoleTokenNumUsesRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName, approleRoleTokenNumUsesRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -13295,15 +11931,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -13337,14 +11964,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role.
-	approleRoleTokenTtlRequest := *openapiclient.NewApproleRoleTokenTtlRequest() // ApproleRoleTokenTtlRequest | 
-
-	resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName).ApproleRoleTokenTtlRequest(approleRoleTokenTtlRequest)
+	roleName :=  // string | Name of the role.
+	
+	approleRoleTokenTtlRequest := NewApproleRoleTokenTtlRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName, approleRoleTokenTtlRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -13372,15 +12001,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -13414,12 +12034,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.PostAuthApproleTidySecretId(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -13438,15 +12059,6 @@ Other parameters are passed through a pointer to a apiPostAuthApproleTidySecretI
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -13480,14 +12092,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	certName := "certName_example" // string | Name of the certificate.
-	awsConfigCertificateRequest := *openapiclient.NewAwsConfigCertificateRequest() // AwsConfigCertificateRequest | 
-
-	resp, err := client.Auth.PostAuthAwsConfigCertificateCertName(context.Background(), certName).AwsConfigCertificateRequest(awsConfigCertificateRequest)
+	certName :=  // string | Name of the certificate.
+	
+	awsConfigCertificateRequest := NewAwsConfigCertificateRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsConfigCertificateCertName(context.Background(), certName, awsConfigCertificateRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -13515,15 +12129,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -13557,13 +12162,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	awsConfigClientRequest := *openapiclient.NewAwsConfigClientRequest() // AwsConfigClientRequest | 
-
-	resp, err := client.Auth.PostAuthAwsConfigClient(context.Background()).AwsConfigClientRequest(awsConfigClientRequest)
+	
+	awsConfigClientRequest := NewAwsConfigClientRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsConfigClient(context.Background(), awsConfigClientRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -13586,15 +12193,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -13628,13 +12226,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	awsConfigIdentityRequest := *openapiclient.NewAwsConfigIdentityRequest() // AwsConfigIdentityRequest | 
-
-	resp, err := client.Auth.PostAuthAwsConfigIdentity(context.Background()).AwsConfigIdentityRequest(awsConfigIdentityRequest)
+	
+	awsConfigIdentityRequest := NewAwsConfigIdentityRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsConfigIdentity(context.Background(), awsConfigIdentityRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -13657,15 +12257,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -13699,12 +12290,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.PostAuthAwsConfigRotateRoot(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -13723,15 +12315,6 @@ Other parameters are passed through a pointer to a apiPostAuthAwsConfigRotateRoo
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -13765,14 +12348,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-	awsConfigStsRequest := *openapiclient.NewAwsConfigStsRequest() // AwsConfigStsRequest | 
-
-	resp, err := client.Auth.PostAuthAwsConfigStsAccountId(context.Background(), accountId).AwsConfigStsRequest(awsConfigStsRequest)
+	accountId :=  // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
+	
+	awsConfigStsRequest := NewAwsConfigStsRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsConfigStsAccountId(context.Background(), accountId, awsConfigStsRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -13800,15 +12385,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -13842,13 +12418,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	awsConfigTidyIdentityAccesslistRequest := *openapiclient.NewAwsConfigTidyIdentityAccesslistRequest() // AwsConfigTidyIdentityAccesslistRequest | 
-
-	resp, err := client.Auth.PostAuthAwsConfigTidyIdentityAccesslist(context.Background()).AwsConfigTidyIdentityAccesslistRequest(awsConfigTidyIdentityAccesslistRequest)
+	
+	awsConfigTidyIdentityAccesslistRequest := NewAwsConfigTidyIdentityAccesslistRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsConfigTidyIdentityAccesslist(context.Background(), awsConfigTidyIdentityAccesslistRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -13871,15 +12449,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -13913,13 +12482,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	awsConfigTidyIdentityWhitelistRequest := *openapiclient.NewAwsConfigTidyIdentityWhitelistRequest() // AwsConfigTidyIdentityWhitelistRequest | 
-
-	resp, err := client.Auth.PostAuthAwsConfigTidyIdentityWhitelist(context.Background()).AwsConfigTidyIdentityWhitelistRequest(awsConfigTidyIdentityWhitelistRequest)
+	
+	awsConfigTidyIdentityWhitelistRequest := NewAwsConfigTidyIdentityWhitelistRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsConfigTidyIdentityWhitelist(context.Background(), awsConfigTidyIdentityWhitelistRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -13942,15 +12513,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -13984,13 +12546,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	awsConfigTidyRoletagBlacklistRequest := *openapiclient.NewAwsConfigTidyRoletagBlacklistRequest() // AwsConfigTidyRoletagBlacklistRequest | 
-
-	resp, err := client.Auth.PostAuthAwsConfigTidyRoletagBlacklist(context.Background()).AwsConfigTidyRoletagBlacklistRequest(awsConfigTidyRoletagBlacklistRequest)
+	
+	awsConfigTidyRoletagBlacklistRequest := NewAwsConfigTidyRoletagBlacklistRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsConfigTidyRoletagBlacklist(context.Background(), awsConfigTidyRoletagBlacklistRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -14013,15 +12577,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -14055,13 +12610,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	awsConfigTidyRoletagDenylistRequest := *openapiclient.NewAwsConfigTidyRoletagDenylistRequest() // AwsConfigTidyRoletagDenylistRequest | 
-
-	resp, err := client.Auth.PostAuthAwsConfigTidyRoletagDenylist(context.Background()).AwsConfigTidyRoletagDenylistRequest(awsConfigTidyRoletagDenylistRequest)
+	
+	awsConfigTidyRoletagDenylistRequest := NewAwsConfigTidyRoletagDenylistRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsConfigTidyRoletagDenylist(context.Background(), awsConfigTidyRoletagDenylistRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -14084,15 +12641,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -14126,13 +12674,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	awsLoginRequest := *openapiclient.NewAwsLoginRequest() // AwsLoginRequest | 
-
-	resp, err := client.Auth.PostAuthAwsLogin(context.Background()).AwsLoginRequest(awsLoginRequest)
+	
+	awsLoginRequest := NewAwsLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsLogin(context.Background(), awsLoginRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -14155,15 +12705,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -14197,14 +12738,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	role := "role_example" // string | Name of the role.
-	awsRoleRequest := *openapiclient.NewAwsRoleRequest() // AwsRoleRequest | 
-
-	resp, err := client.Auth.PostAuthAwsRoleRole(context.Background(), role).AwsRoleRequest(awsRoleRequest)
+	role :=  // string | Name of the role.
+	
+	awsRoleRequest := NewAwsRoleRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsRoleRole(context.Background(), role, awsRoleRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -14232,15 +12775,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -14274,14 +12808,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	role := "role_example" // string | Name of the role.
-	awsRoleTagRequest := *openapiclient.NewAwsRoleTagRequest() // AwsRoleTagRequest | 
-
-	resp, err := client.Auth.PostAuthAwsRoleRoleTag(context.Background(), role).AwsRoleTagRequest(awsRoleTagRequest)
+	role :=  // string | Name of the role.
+	
+	awsRoleTagRequest := NewAwsRoleTagRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsRoleRoleTag(context.Background(), role, awsRoleTagRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -14309,15 +12845,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -14351,13 +12878,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-
+	roleTag :=  // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	
 	resp, err := client.Auth.PostAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -14384,15 +12912,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -14426,13 +12945,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
-
+	roleTag :=  // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
+	
 	resp, err := client.Auth.PostAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -14459,15 +12979,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -14501,13 +13012,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	awsTidyIdentityAccesslistRequest := *openapiclient.NewAwsTidyIdentityAccesslistRequest() // AwsTidyIdentityAccesslistRequest | 
-
-	resp, err := client.Auth.PostAuthAwsTidyIdentityAccesslist(context.Background()).AwsTidyIdentityAccesslistRequest(awsTidyIdentityAccesslistRequest)
+	
+	awsTidyIdentityAccesslistRequest := NewAwsTidyIdentityAccesslistRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsTidyIdentityAccesslist(context.Background(), awsTidyIdentityAccesslistRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -14530,15 +13043,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -14572,13 +13076,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	awsTidyIdentityWhitelistRequest := *openapiclient.NewAwsTidyIdentityWhitelistRequest() // AwsTidyIdentityWhitelistRequest | 
-
-	resp, err := client.Auth.PostAuthAwsTidyIdentityWhitelist(context.Background()).AwsTidyIdentityWhitelistRequest(awsTidyIdentityWhitelistRequest)
+	
+	awsTidyIdentityWhitelistRequest := NewAwsTidyIdentityWhitelistRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsTidyIdentityWhitelist(context.Background(), awsTidyIdentityWhitelistRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -14601,15 +13107,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -14643,13 +13140,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	awsTidyRoletagBlacklistRequest := *openapiclient.NewAwsTidyRoletagBlacklistRequest() // AwsTidyRoletagBlacklistRequest | 
-
-	resp, err := client.Auth.PostAuthAwsTidyRoletagBlacklist(context.Background()).AwsTidyRoletagBlacklistRequest(awsTidyRoletagBlacklistRequest)
+	
+	awsTidyRoletagBlacklistRequest := NewAwsTidyRoletagBlacklistRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsTidyRoletagBlacklist(context.Background(), awsTidyRoletagBlacklistRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -14672,15 +13171,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -14714,13 +13204,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	awsTidyRoletagDenylistRequest := *openapiclient.NewAwsTidyRoletagDenylistRequest() // AwsTidyRoletagDenylistRequest | 
-
-	resp, err := client.Auth.PostAuthAwsTidyRoletagDenylist(context.Background()).AwsTidyRoletagDenylistRequest(awsTidyRoletagDenylistRequest)
+	
+	awsTidyRoletagDenylistRequest := NewAwsTidyRoletagDenylistRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAwsTidyRoletagDenylist(context.Background(), awsTidyRoletagDenylistRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -14743,15 +13235,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -14785,13 +13268,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	azureConfigRequest := *openapiclient.NewAzureConfigRequest() // AzureConfigRequest | 
-
-	resp, err := client.Auth.PostAuthAzureConfig(context.Background()).AzureConfigRequest(azureConfigRequest)
+	
+	azureConfigRequest := NewAzureConfigRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAzureConfig(context.Background(), azureConfigRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -14814,15 +13299,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -14856,13 +13332,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	azureLoginRequest := *openapiclient.NewAzureLoginRequest() // AzureLoginRequest | 
-
-	resp, err := client.Auth.PostAuthAzureLogin(context.Background()).AzureLoginRequest(azureLoginRequest)
+	
+	azureLoginRequest := NewAzureLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAzureLogin(context.Background(), azureLoginRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -14885,15 +13363,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -14927,14 +13396,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the role.
-	azureRoleRequest := *openapiclient.NewAzureRoleRequest() // AzureRoleRequest | 
-
-	resp, err := client.Auth.PostAuthAzureRoleName(context.Background(), name).AzureRoleRequest(azureRoleRequest)
+	name :=  // string | Name of the role.
+	
+	azureRoleRequest := NewAzureRoleRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthAzureRoleName(context.Background(), name, azureRoleRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -14962,15 +13433,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -15004,13 +13466,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	centrifyConfigRequest := *openapiclient.NewCentrifyConfigRequest() // CentrifyConfigRequest | 
-
-	resp, err := client.Auth.PostAuthCentrifyConfig(context.Background()).CentrifyConfigRequest(centrifyConfigRequest)
+	
+	centrifyConfigRequest := NewCentrifyConfigRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthCentrifyConfig(context.Background(), centrifyConfigRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -15033,15 +13497,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -15075,13 +13530,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	centrifyLoginRequest := *openapiclient.NewCentrifyLoginRequest() // CentrifyLoginRequest | 
-
-	resp, err := client.Auth.PostAuthCentrifyLogin(context.Background()).CentrifyLoginRequest(centrifyLoginRequest)
+	
+	centrifyLoginRequest := NewCentrifyLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthCentrifyLogin(context.Background(), centrifyLoginRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -15104,15 +13561,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -15146,14 +13594,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | The name of the certificate
-	certCertsRequest := *openapiclient.NewCertCertsRequest() // CertCertsRequest | 
-
-	resp, err := client.Auth.PostAuthCertCertsName(context.Background(), name).CertCertsRequest(certCertsRequest)
+	name :=  // string | The name of the certificate
+	
+	certCertsRequest := NewCertCertsRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthCertCertsName(context.Background(), name, certCertsRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -15181,15 +13631,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -15223,13 +13664,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	certConfigRequest := *openapiclient.NewCertConfigRequest() // CertConfigRequest | 
-
-	resp, err := client.Auth.PostAuthCertConfig(context.Background()).CertConfigRequest(certConfigRequest)
+	
+	certConfigRequest := NewCertConfigRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthCertConfig(context.Background(), certConfigRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -15252,15 +13695,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -15294,14 +13728,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | The name of the certificate
-	certCrlsRequest := *openapiclient.NewCertCrlsRequest() // CertCrlsRequest | 
-
-	resp, err := client.Auth.PostAuthCertCrlsName(context.Background(), name).CertCrlsRequest(certCrlsRequest)
+	name :=  // string | The name of the certificate
+	
+	certCrlsRequest := NewCertCrlsRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthCertCrlsName(context.Background(), name, certCrlsRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -15329,15 +13765,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -15371,13 +13798,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	certLoginRequest := *openapiclient.NewCertLoginRequest() // CertLoginRequest | 
-
-	resp, err := client.Auth.PostAuthCertLogin(context.Background()).CertLoginRequest(certLoginRequest)
+	
+	certLoginRequest := NewCertLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthCertLogin(context.Background(), certLoginRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -15400,15 +13829,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -15442,13 +13862,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	cfConfigRequest := *openapiclient.NewCfConfigRequest() // CfConfigRequest | 
-
-	resp, err := client.Auth.PostAuthCfConfig(context.Background()).CfConfigRequest(cfConfigRequest)
+	
+	cfConfigRequest := NewCfConfigRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthCfConfig(context.Background(), cfConfigRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -15471,15 +13893,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -15513,13 +13926,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	cfLoginRequest := *openapiclient.NewCfLoginRequest("CfInstanceCert_example", "Role_example", "Signature_example", "SigningTime_example") // CfLoginRequest | 
-
-	resp, err := client.Auth.PostAuthCfLogin(context.Background()).CfLoginRequest(cfLoginRequest)
+	
+	cfLoginRequest := NewCfLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthCfLogin(context.Background(), cfLoginRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -15542,15 +13957,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -15584,14 +13990,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	role := "role_example" // string | The name of the role.
-	cfRolesRequest := *openapiclient.NewCfRolesRequest() // CfRolesRequest | 
-
-	resp, err := client.Auth.PostAuthCfRolesRole(context.Background(), role).CfRolesRequest(cfRolesRequest)
+	role :=  // string | The name of the role.
+	
+	cfRolesRequest := NewCfRolesRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthCfRolesRole(context.Background(), role, cfRolesRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -15619,15 +14027,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -15661,13 +14060,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	gcpConfigRequest := *openapiclient.NewGcpConfigRequest() // GcpConfigRequest | 
-
-	resp, err := client.Auth.PostAuthGcpConfig(context.Background()).GcpConfigRequest(gcpConfigRequest)
+	
+	gcpConfigRequest := NewGcpConfigRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthGcpConfig(context.Background(), gcpConfigRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -15690,15 +14091,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -15732,13 +14124,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	gcpLoginRequest := *openapiclient.NewGcpLoginRequest() // GcpLoginRequest | 
-
-	resp, err := client.Auth.PostAuthGcpLogin(context.Background()).GcpLoginRequest(gcpLoginRequest)
+	
+	gcpLoginRequest := NewGcpLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthGcpLogin(context.Background(), gcpLoginRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -15761,15 +14155,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -15803,14 +14188,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the role.
-	gcpRoleRequest := *openapiclient.NewGcpRoleRequest() // GcpRoleRequest | 
-
-	resp, err := client.Auth.PostAuthGcpRoleName(context.Background(), name).GcpRoleRequest(gcpRoleRequest)
+	name :=  // string | Name of the role.
+	
+	gcpRoleRequest := NewGcpRoleRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthGcpRoleName(context.Background(), name, gcpRoleRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -15838,15 +14225,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -15880,14 +14258,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the role.
-	gcpRoleLabelsRequest := *openapiclient.NewGcpRoleLabelsRequest() // GcpRoleLabelsRequest | 
-
-	resp, err := client.Auth.PostAuthGcpRoleNameLabels(context.Background(), name).GcpRoleLabelsRequest(gcpRoleLabelsRequest)
+	name :=  // string | Name of the role.
+	
+	gcpRoleLabelsRequest := NewGcpRoleLabelsRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthGcpRoleNameLabels(context.Background(), name, gcpRoleLabelsRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -15915,15 +14295,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -15957,14 +14328,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the role.
-	gcpRoleServiceAccountsRequest := *openapiclient.NewGcpRoleServiceAccountsRequest() // GcpRoleServiceAccountsRequest | 
-
-	resp, err := client.Auth.PostAuthGcpRoleNameServiceAccounts(context.Background(), name).GcpRoleServiceAccountsRequest(gcpRoleServiceAccountsRequest)
+	name :=  // string | Name of the role.
+	
+	gcpRoleServiceAccountsRequest := NewGcpRoleServiceAccountsRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthGcpRoleNameServiceAccounts(context.Background(), name, gcpRoleServiceAccountsRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -15992,15 +14365,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -16034,13 +14398,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	githubConfigRequest := *openapiclient.NewGithubConfigRequest("Organization_example") // GithubConfigRequest | 
-
-	resp, err := client.Auth.PostAuthGithubConfig(context.Background()).GithubConfigRequest(githubConfigRequest)
+	
+	githubConfigRequest := NewGithubConfigRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthGithubConfig(context.Background(), githubConfigRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -16063,15 +14429,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -16105,13 +14462,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	githubLoginRequest := *openapiclient.NewGithubLoginRequest() // GithubLoginRequest | 
-
-	resp, err := client.Auth.PostAuthGithubLogin(context.Background()).GithubLoginRequest(githubLoginRequest)
+	
+	githubLoginRequest := NewGithubLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthGithubLogin(context.Background(), githubLoginRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -16134,15 +14493,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -16176,14 +14526,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	key := "key_example" // string | Key for the teams mapping
-	githubMapTeamsRequest := *openapiclient.NewGithubMapTeamsRequest() // GithubMapTeamsRequest | 
-
-	resp, err := client.Auth.PostAuthGithubMapTeamsKey(context.Background(), key).GithubMapTeamsRequest(githubMapTeamsRequest)
+	key :=  // string | Key for the teams mapping
+	
+	githubMapTeamsRequest := NewGithubMapTeamsRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthGithubMapTeamsKey(context.Background(), key, githubMapTeamsRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -16211,15 +14563,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -16253,14 +14596,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	key := "key_example" // string | Key for the users mapping
-	githubMapUsersRequest := *openapiclient.NewGithubMapUsersRequest() // GithubMapUsersRequest | 
-
-	resp, err := client.Auth.PostAuthGithubMapUsersKey(context.Background(), key).GithubMapUsersRequest(githubMapUsersRequest)
+	key :=  // string | Key for the users mapping
+	
+	githubMapUsersRequest := NewGithubMapUsersRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthGithubMapUsersKey(context.Background(), key, githubMapUsersRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -16288,15 +14633,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -16332,13 +14668,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	jwtConfigRequest := *openapiclient.NewJwtConfigRequest() // JwtConfigRequest | 
-
-	resp, err := client.Auth.PostAuthJwtConfig(context.Background()).JwtConfigRequest(jwtConfigRequest)
+	
+	jwtConfigRequest := NewJwtConfigRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthJwtConfig(context.Background(), jwtConfigRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -16361,15 +14699,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -16403,13 +14732,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	jwtLoginRequest := *openapiclient.NewJwtLoginRequest() // JwtLoginRequest | 
-
-	resp, err := client.Auth.PostAuthJwtLogin(context.Background()).JwtLoginRequest(jwtLoginRequest)
+	
+	jwtLoginRequest := NewJwtLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthJwtLogin(context.Background(), jwtLoginRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -16432,15 +14763,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -16474,13 +14796,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	jwtOidcAuthUrlRequest := *openapiclient.NewJwtOidcAuthUrlRequest() // JwtOidcAuthUrlRequest | 
-
-	resp, err := client.Auth.PostAuthJwtOidcAuthUrl(context.Background()).JwtOidcAuthUrlRequest(jwtOidcAuthUrlRequest)
+	
+	jwtOidcAuthUrlRequest := NewJwtOidcAuthUrlRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthJwtOidcAuthUrl(context.Background(), jwtOidcAuthUrlRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -16503,15 +14827,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -16545,13 +14860,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	jwtOidcCallbackRequest := *openapiclient.NewJwtOidcCallbackRequest() // JwtOidcCallbackRequest | 
-
-	resp, err := client.Auth.PostAuthJwtOidcCallback(context.Background()).JwtOidcCallbackRequest(jwtOidcCallbackRequest)
+	
+	jwtOidcCallbackRequest := NewJwtOidcCallbackRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthJwtOidcCallback(context.Background(), jwtOidcCallbackRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -16574,15 +14891,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -16618,14 +14926,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the role.
-	jwtRoleRequest := *openapiclient.NewJwtRoleRequest() // JwtRoleRequest | 
-
-	resp, err := client.Auth.PostAuthJwtRoleName(context.Background(), name).JwtRoleRequest(jwtRoleRequest)
+	name :=  // string | Name of the role.
+	
+	jwtRoleRequest := NewJwtRoleRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthJwtRoleName(context.Background(), name, jwtRoleRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -16653,15 +14963,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -16695,13 +14996,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	kerberosConfigRequest := *openapiclient.NewKerberosConfigRequest() // KerberosConfigRequest | 
-
-	resp, err := client.Auth.PostAuthKerberosConfig(context.Background()).KerberosConfigRequest(kerberosConfigRequest)
+	
+	kerberosConfigRequest := NewKerberosConfigRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthKerberosConfig(context.Background(), kerberosConfigRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -16724,15 +15027,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -16766,13 +15060,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	kerberosConfigLdapRequest := *openapiclient.NewKerberosConfigLdapRequest() // KerberosConfigLdapRequest | 
-
-	resp, err := client.Auth.PostAuthKerberosConfigLdap(context.Background()).KerberosConfigLdapRequest(kerberosConfigLdapRequest)
+	
+	kerberosConfigLdapRequest := NewKerberosConfigLdapRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthKerberosConfigLdap(context.Background(), kerberosConfigLdapRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -16795,15 +15091,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -16837,14 +15124,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the LDAP group.
-	kerberosGroupsRequest := *openapiclient.NewKerberosGroupsRequest() // KerberosGroupsRequest | 
-
-	resp, err := client.Auth.PostAuthKerberosGroupsName(context.Background(), name).KerberosGroupsRequest(kerberosGroupsRequest)
+	name :=  // string | Name of the LDAP group.
+	
+	kerberosGroupsRequest := NewKerberosGroupsRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthKerberosGroupsName(context.Background(), name, kerberosGroupsRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -16872,15 +15161,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -16914,13 +15194,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	kerberosLoginRequest := *openapiclient.NewKerberosLoginRequest() // KerberosLoginRequest | 
-
-	resp, err := client.Auth.PostAuthKerberosLogin(context.Background()).KerberosLoginRequest(kerberosLoginRequest)
+	
+	kerberosLoginRequest := NewKerberosLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthKerberosLogin(context.Background(), kerberosLoginRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -16943,15 +15225,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -16985,13 +15258,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	kubernetesConfigRequest := *openapiclient.NewKubernetesConfigRequest() // KubernetesConfigRequest | 
-
-	resp, err := client.Auth.PostAuthKubernetesConfig(context.Background()).KubernetesConfigRequest(kubernetesConfigRequest)
+	
+	kubernetesConfigRequest := NewKubernetesConfigRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthKubernetesConfig(context.Background(), kubernetesConfigRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -17014,15 +15289,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -17056,13 +15322,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	kubernetesLoginRequest := *openapiclient.NewKubernetesLoginRequest() // KubernetesLoginRequest | 
-
-	resp, err := client.Auth.PostAuthKubernetesLogin(context.Background()).KubernetesLoginRequest(kubernetesLoginRequest)
+	
+	kubernetesLoginRequest := NewKubernetesLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthKubernetesLogin(context.Background(), kubernetesLoginRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -17085,15 +15353,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -17127,14 +15386,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the role.
-	kubernetesRoleRequest := *openapiclient.NewKubernetesRoleRequest() // KubernetesRoleRequest | 
-
-	resp, err := client.Auth.PostAuthKubernetesRoleName(context.Background(), name).KubernetesRoleRequest(kubernetesRoleRequest)
+	name :=  // string | Name of the role.
+	
+	kubernetesRoleRequest := NewKubernetesRoleRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthKubernetesRoleName(context.Background(), name, kubernetesRoleRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -17162,15 +15423,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -17204,13 +15456,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	ldapConfigRequest := *openapiclient.NewLdapConfigRequest() // LdapConfigRequest | 
-
-	resp, err := client.Auth.PostAuthLdapConfig(context.Background()).LdapConfigRequest(ldapConfigRequest)
+	
+	ldapConfigRequest := NewLdapConfigRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthLdapConfig(context.Background(), ldapConfigRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -17233,15 +15487,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -17275,14 +15520,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the LDAP group.
-	ldapGroupsRequest := *openapiclient.NewLdapGroupsRequest() // LdapGroupsRequest | 
-
-	resp, err := client.Auth.PostAuthLdapGroupsName(context.Background(), name).LdapGroupsRequest(ldapGroupsRequest)
+	name :=  // string | Name of the LDAP group.
+	
+	ldapGroupsRequest := NewLdapGroupsRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthLdapGroupsName(context.Background(), name, ldapGroupsRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -17310,15 +15557,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -17352,14 +15590,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	username := "username_example" // string | DN (distinguished name) to be used for login.
-	ldapLoginRequest := *openapiclient.NewLdapLoginRequest() // LdapLoginRequest | 
-
-	resp, err := client.Auth.PostAuthLdapLoginUsername(context.Background(), username).LdapLoginRequest(ldapLoginRequest)
+	username :=  // string | DN (distinguished name) to be used for login.
+	
+	ldapLoginRequest := NewLdapLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthLdapLoginUsername(context.Background(), username, ldapLoginRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -17387,15 +15627,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -17429,14 +15660,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the LDAP user.
-	ldapUsersRequest := *openapiclient.NewLdapUsersRequest() // LdapUsersRequest | 
-
-	resp, err := client.Auth.PostAuthLdapUsersName(context.Background(), name).LdapUsersRequest(ldapUsersRequest)
+	name :=  // string | Name of the LDAP user.
+	
+	ldapUsersRequest := NewLdapUsersRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthLdapUsersName(context.Background(), name, ldapUsersRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -17464,15 +15697,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -17506,13 +15730,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	ociConfigRequest := *openapiclient.NewOciConfigRequest() // OciConfigRequest | 
-
-	resp, err := client.Auth.PostAuthOciConfig(context.Background()).OciConfigRequest(ociConfigRequest)
+	
+	ociConfigRequest := NewOciConfigRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthOciConfig(context.Background(), ociConfigRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -17535,15 +15761,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -17577,14 +15794,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	role := "role_example" // string | Name of the role.
-	ociLoginRequest := *openapiclient.NewOciLoginRequest() // OciLoginRequest | 
-
-	resp, err := client.Auth.PostAuthOciLoginRole(context.Background(), role).OciLoginRequest(ociLoginRequest)
+	role :=  // string | Name of the role.
+	
+	ociLoginRequest := NewOciLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthOciLoginRole(context.Background(), role, ociLoginRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -17612,15 +15831,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -17654,14 +15864,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	role := "role_example" // string | Name of the role.
-	ociRoleRequest := *openapiclient.NewOciRoleRequest() // OciRoleRequest | 
-
-	resp, err := client.Auth.PostAuthOciRoleRole(context.Background(), role).OciRoleRequest(ociRoleRequest)
+	role :=  // string | Name of the role.
+	
+	ociRoleRequest := NewOciRoleRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthOciRoleRole(context.Background(), role, ociRoleRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -17689,15 +15901,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -17733,13 +15936,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	oidcConfigRequest := *openapiclient.NewOidcConfigRequest() // OidcConfigRequest | 
-
-	resp, err := client.Auth.PostAuthOidcConfig(context.Background()).OidcConfigRequest(oidcConfigRequest)
+	
+	oidcConfigRequest := NewOidcConfigRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthOidcConfig(context.Background(), oidcConfigRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -17762,15 +15967,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -17804,13 +16000,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	oidcLoginRequest := *openapiclient.NewOidcLoginRequest() // OidcLoginRequest | 
-
-	resp, err := client.Auth.PostAuthOidcLogin(context.Background()).OidcLoginRequest(oidcLoginRequest)
+	
+	oidcLoginRequest := NewOidcLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthOidcLogin(context.Background(), oidcLoginRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -17833,15 +16031,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -17875,13 +16064,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	oidcOidcAuthUrlRequest := *openapiclient.NewOidcOidcAuthUrlRequest() // OidcOidcAuthUrlRequest | 
-
-	resp, err := client.Auth.PostAuthOidcOidcAuthUrl(context.Background()).OidcOidcAuthUrlRequest(oidcOidcAuthUrlRequest)
+	
+	oidcOidcAuthUrlRequest := NewOidcOidcAuthUrlRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthOidcOidcAuthUrl(context.Background(), oidcOidcAuthUrlRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -17904,15 +16095,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -17946,13 +16128,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	oidcOidcCallbackRequest := *openapiclient.NewOidcOidcCallbackRequest() // OidcOidcCallbackRequest | 
-
-	resp, err := client.Auth.PostAuthOidcOidcCallback(context.Background()).OidcOidcCallbackRequest(oidcOidcCallbackRequest)
+	
+	oidcOidcCallbackRequest := NewOidcOidcCallbackRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthOidcOidcCallback(context.Background(), oidcOidcCallbackRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -17975,15 +16159,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -18019,14 +16194,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the role.
-	oidcRoleRequest := *openapiclient.NewOidcRoleRequest() // OidcRoleRequest | 
-
-	resp, err := client.Auth.PostAuthOidcRoleName(context.Background(), name).OidcRoleRequest(oidcRoleRequest)
+	name :=  // string | Name of the role.
+	
+	oidcRoleRequest := NewOidcRoleRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthOidcRoleName(context.Background(), name, oidcRoleRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -18054,15 +16231,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -18096,13 +16264,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	oktaConfigRequest := *openapiclient.NewOktaConfigRequest() // OktaConfigRequest | 
-
-	resp, err := client.Auth.PostAuthOktaConfig(context.Background()).OktaConfigRequest(oktaConfigRequest)
+	
+	oktaConfigRequest := NewOktaConfigRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthOktaConfig(context.Background(), oktaConfigRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -18125,15 +16295,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -18167,14 +16328,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the Okta group.
-	oktaGroupsRequest := *openapiclient.NewOktaGroupsRequest() // OktaGroupsRequest | 
-
-	resp, err := client.Auth.PostAuthOktaGroupsName(context.Background(), name).OktaGroupsRequest(oktaGroupsRequest)
+	name :=  // string | Name of the Okta group.
+	
+	oktaGroupsRequest := NewOktaGroupsRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthOktaGroupsName(context.Background(), name, oktaGroupsRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -18202,15 +16365,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -18244,14 +16398,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	username := "username_example" // string | Username to be used for login.
-	oktaLoginRequest := *openapiclient.NewOktaLoginRequest() // OktaLoginRequest | 
-
-	resp, err := client.Auth.PostAuthOktaLoginUsername(context.Background(), username).OktaLoginRequest(oktaLoginRequest)
+	username :=  // string | Username to be used for login.
+	
+	oktaLoginRequest := NewOktaLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthOktaLoginUsername(context.Background(), username, oktaLoginRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -18279,15 +16435,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -18321,14 +16468,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the user.
-	oktaUsersRequest := *openapiclient.NewOktaUsersRequest() // OktaUsersRequest | 
-
-	resp, err := client.Auth.PostAuthOktaUsersName(context.Background(), name).OktaUsersRequest(oktaUsersRequest)
+	name :=  // string | Name of the user.
+	
+	oktaUsersRequest := NewOktaUsersRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthOktaUsersName(context.Background(), name, oktaUsersRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -18356,15 +16505,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -18398,13 +16538,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	radiusConfigRequest := *openapiclient.NewRadiusConfigRequest() // RadiusConfigRequest | 
-
-	resp, err := client.Auth.PostAuthRadiusConfig(context.Background()).RadiusConfigRequest(radiusConfigRequest)
+	
+	radiusConfigRequest := NewRadiusConfigRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthRadiusConfig(context.Background(), radiusConfigRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -18427,15 +16569,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -18469,13 +16602,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	radiusLoginRequest := *openapiclient.NewRadiusLoginRequest() // RadiusLoginRequest | 
-
-	resp, err := client.Auth.PostAuthRadiusLogin(context.Background()).RadiusLoginRequest(radiusLoginRequest)
+	
+	radiusLoginRequest := NewRadiusLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthRadiusLogin(context.Background(), radiusLoginRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -18498,15 +16633,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -18540,14 +16666,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	urlusername := "urlusername_example" // string | Username to be used for login. (URL parameter)
-	radiusLoginRequest := *openapiclient.NewRadiusLoginRequest() // RadiusLoginRequest | 
-
-	resp, err := client.Auth.PostAuthRadiusLoginUrlusername(context.Background(), urlusername).RadiusLoginRequest(radiusLoginRequest)
+	urlusername :=  // string | Username to be used for login. (URL parameter)
+	
+	radiusLoginRequest := NewRadiusLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthRadiusLoginUrlusername(context.Background(), urlusername, radiusLoginRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -18575,15 +16703,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -18617,14 +16736,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the RADIUS user.
-	radiusUsersRequest := *openapiclient.NewRadiusUsersRequest() // RadiusUsersRequest | 
-
-	resp, err := client.Auth.PostAuthRadiusUsersName(context.Background(), name).RadiusUsersRequest(radiusUsersRequest)
+	name :=  // string | Name of the RADIUS user.
+	
+	radiusUsersRequest := NewRadiusUsersRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthRadiusUsersName(context.Background(), name, radiusUsersRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -18652,15 +16773,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -18694,12 +16806,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.PostAuthTokenCreate(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -18718,15 +16831,6 @@ Other parameters are passed through a pointer to a apiPostAuthTokenCreateRequest
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -18760,12 +16864,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.PostAuthTokenCreateOrphan(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -18784,15 +16889,6 @@ Other parameters are passed through a pointer to a apiPostAuthTokenCreateOrphanR
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -18826,13 +16922,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role
-
+	roleName :=  // string | Name of the role
+	
 	resp, err := client.Auth.PostAuthTokenCreateRoleName(context.Background(), roleName)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -18859,15 +16956,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -18901,13 +16989,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	tokenLookupRequest := *openapiclient.NewTokenLookupRequest() // TokenLookupRequest | 
-
-	resp, err := client.Auth.PostAuthTokenLookup(context.Background()).TokenLookupRequest(tokenLookupRequest)
+	
+	tokenLookupRequest := NewTokenLookupRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthTokenLookup(context.Background(), tokenLookupRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -18930,15 +17020,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -18972,13 +17053,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	tokenLookupAccessorRequest := *openapiclient.NewTokenLookupAccessorRequest() // TokenLookupAccessorRequest | 
-
-	resp, err := client.Auth.PostAuthTokenLookupAccessor(context.Background()).TokenLookupAccessorRequest(tokenLookupAccessorRequest)
+	
+	tokenLookupAccessorRequest := NewTokenLookupAccessorRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthTokenLookupAccessor(context.Background(), tokenLookupAccessorRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -19001,15 +17084,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -19043,13 +17117,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	tokenLookupSelfRequest := *openapiclient.NewTokenLookupSelfRequest() // TokenLookupSelfRequest | 
-
-	resp, err := client.Auth.PostAuthTokenLookupSelf(context.Background()).TokenLookupSelfRequest(tokenLookupSelfRequest)
+	
+	tokenLookupSelfRequest := NewTokenLookupSelfRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthTokenLookupSelf(context.Background(), tokenLookupSelfRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -19072,15 +17148,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -19114,13 +17181,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	tokenRenewRequest := *openapiclient.NewTokenRenewRequest() // TokenRenewRequest | 
-
-	resp, err := client.Auth.PostAuthTokenRenew(context.Background()).TokenRenewRequest(tokenRenewRequest)
+	
+	tokenRenewRequest := NewTokenRenewRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthTokenRenew(context.Background(), tokenRenewRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -19143,15 +17212,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -19185,13 +17245,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	tokenRenewAccessorRequest := *openapiclient.NewTokenRenewAccessorRequest() // TokenRenewAccessorRequest | 
-
-	resp, err := client.Auth.PostAuthTokenRenewAccessor(context.Background()).TokenRenewAccessorRequest(tokenRenewAccessorRequest)
+	
+	tokenRenewAccessorRequest := NewTokenRenewAccessorRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthTokenRenewAccessor(context.Background(), tokenRenewAccessorRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -19214,15 +17276,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -19256,13 +17309,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	tokenRenewSelfRequest := *openapiclient.NewTokenRenewSelfRequest() // TokenRenewSelfRequest | 
-
-	resp, err := client.Auth.PostAuthTokenRenewSelf(context.Background()).TokenRenewSelfRequest(tokenRenewSelfRequest)
+	
+	tokenRenewSelfRequest := NewTokenRenewSelfRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthTokenRenewSelf(context.Background(), tokenRenewSelfRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -19285,15 +17340,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -19327,13 +17373,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	tokenRevokeRequest := *openapiclient.NewTokenRevokeRequest() // TokenRevokeRequest | 
-
-	resp, err := client.Auth.PostAuthTokenRevoke(context.Background()).TokenRevokeRequest(tokenRevokeRequest)
+	
+	tokenRevokeRequest := NewTokenRevokeRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthTokenRevoke(context.Background(), tokenRevokeRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -19356,15 +17404,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -19398,13 +17437,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	tokenRevokeAccessorRequest := *openapiclient.NewTokenRevokeAccessorRequest() // TokenRevokeAccessorRequest | 
-
-	resp, err := client.Auth.PostAuthTokenRevokeAccessor(context.Background()).TokenRevokeAccessorRequest(tokenRevokeAccessorRequest)
+	
+	tokenRevokeAccessorRequest := NewTokenRevokeAccessorRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthTokenRevokeAccessor(context.Background(), tokenRevokeAccessorRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -19427,15 +17468,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -19469,13 +17501,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	tokenRevokeOrphanRequest := *openapiclient.NewTokenRevokeOrphanRequest() // TokenRevokeOrphanRequest | 
-
-	resp, err := client.Auth.PostAuthTokenRevokeOrphan(context.Background()).TokenRevokeOrphanRequest(tokenRevokeOrphanRequest)
+	
+	tokenRevokeOrphanRequest := NewTokenRevokeOrphanRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthTokenRevokeOrphan(context.Background(), tokenRevokeOrphanRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -19498,15 +17532,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -19540,12 +17565,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.PostAuthTokenRevokeSelf(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -19564,15 +17590,6 @@ Other parameters are passed through a pointer to a apiPostAuthTokenRevokeSelfReq
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -19606,14 +17623,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	roleName := "roleName_example" // string | Name of the role
-	tokenRolesRequest := *openapiclient.NewTokenRolesRequest() // TokenRolesRequest | 
-
-	resp, err := client.Auth.PostAuthTokenRolesRoleName(context.Background(), roleName).TokenRolesRequest(tokenRolesRequest)
+	roleName :=  // string | Name of the role
+	
+	tokenRolesRequest := NewTokenRolesRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthTokenRolesRoleName(context.Background(), roleName, tokenRolesRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -19641,15 +17660,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -19683,12 +17693,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Auth.PostAuthTokenTidy(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -19707,15 +17718,6 @@ Other parameters are passed through a pointer to a apiPostAuthTokenTidyRequest s
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -19749,14 +17751,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	username := "username_example" // string | Username of the user.
-	userpassLoginRequest := *openapiclient.NewUserpassLoginRequest() // UserpassLoginRequest | 
-
-	resp, err := client.Auth.PostAuthUserpassLoginUsername(context.Background(), username).UserpassLoginRequest(userpassLoginRequest)
+	username :=  // string | Username of the user.
+	
+	userpassLoginRequest := NewUserpassLoginRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthUserpassLoginUsername(context.Background(), username, userpassLoginRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -19784,15 +17788,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -19826,14 +17821,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	username := "username_example" // string | Username for this user.
-	userpassUsersRequest := *openapiclient.NewUserpassUsersRequest() // UserpassUsersRequest | 
-
-	resp, err := client.Auth.PostAuthUserpassUsersUsername(context.Background(), username).UserpassUsersRequest(userpassUsersRequest)
+	username :=  // string | Username for this user.
+	
+	userpassUsersRequest := NewUserpassUsersRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthUserpassUsersUsername(context.Background(), username, userpassUsersRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -19861,15 +17858,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -19903,14 +17891,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	username := "username_example" // string | Username for this user.
-	userpassUsersPasswordRequest := *openapiclient.NewUserpassUsersPasswordRequest() // UserpassUsersPasswordRequest | 
-
-	resp, err := client.Auth.PostAuthUserpassUsersUsernamePassword(context.Background(), username).UserpassUsersPasswordRequest(userpassUsersPasswordRequest)
+	username :=  // string | Username for this user.
+	
+	userpassUsersPasswordRequest := NewUserpassUsersPasswordRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthUserpassUsersUsernamePassword(context.Background(), username, userpassUsersPasswordRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -19938,15 +17928,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -19980,14 +17961,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	username := "username_example" // string | Username for this user.
-	userpassUsersPoliciesRequest := *openapiclient.NewUserpassUsersPoliciesRequest() // UserpassUsersPoliciesRequest | 
-
-	resp, err := client.Auth.PostAuthUserpassUsersUsernamePolicies(context.Background(), username).UserpassUsersPoliciesRequest(userpassUsersPoliciesRequest)
+	username :=  // string | Username for this user.
+	
+	userpassUsersPoliciesRequest := NewUserpassUsersPoliciesRequestWithDefaults()
+	
+	resp, err := client.Auth.PostAuthUserpassUsersUsernamePolicies(context.Background(), username, userpassUsersPoliciesRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -20015,15 +17998,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

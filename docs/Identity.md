@@ -137,13 +137,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	id := "id_example" // string | ID of the alias
-
+	id :=  // string | ID of the alias
+	
 	resp, err := client.Identity.DeleteIdentityAliasIdId(context.Background(), id)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -170,15 +171,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -212,13 +204,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	id := "id_example" // string | ID of the alias
-
+	id :=  // string | ID of the alias
+	
 	resp, err := client.Identity.DeleteIdentityEntityAliasIdId(context.Background(), id)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -245,15 +238,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -287,13 +271,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
-
+	id :=  // string | ID of the entity. If set, updates the corresponding existing entity.
+	
 	resp, err := client.Identity.DeleteIdentityEntityIdId(context.Background(), id)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -320,15 +305,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -362,13 +338,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the entity
-
+	name :=  // string | Name of the entity
+	
 	resp, err := client.Identity.DeleteIdentityEntityNameName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -395,15 +372,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -437,13 +405,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	id := "id_example" // string | ID of the group alias.
-
+	id :=  // string | ID of the group alias.
+	
 	resp, err := client.Identity.DeleteIdentityGroupAliasIdId(context.Background(), id)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -470,15 +439,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -512,13 +472,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
-
+	id :=  // string | ID of the group. If set, updates the corresponding existing group.
+	
 	resp, err := client.Identity.DeleteIdentityGroupIdId(context.Background(), id)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -545,15 +506,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -587,13 +539,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the group.
-
+	name :=  // string | Name of the group.
+	
 	resp, err := client.Identity.DeleteIdentityGroupNameName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -620,15 +573,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -662,13 +606,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name for this login enforcement configuration
-
+	name :=  // string | Name for this login enforcement configuration
+	
 	resp, err := client.Identity.DeleteIdentityMfaLoginEnforcementName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -695,15 +640,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -737,13 +673,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
+	methodId :=  // string | The unique identifier for this MFA method.
+	
 	resp, err := client.Identity.DeleteIdentityMfaMethodDuoMethodId(context.Background(), methodId)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -770,15 +707,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -812,13 +740,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
+	methodId :=  // string | The unique identifier for this MFA method.
+	
 	resp, err := client.Identity.DeleteIdentityMfaMethodOktaMethodId(context.Background(), methodId)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -845,15 +774,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -887,13 +807,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
+	methodId :=  // string | The unique identifier for this MFA method.
+	
 	resp, err := client.Identity.DeleteIdentityMfaMethodPingidMethodId(context.Background(), methodId)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -920,15 +841,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -962,13 +874,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
+	methodId :=  // string | The unique identifier for this MFA method.
+	
 	resp, err := client.Identity.DeleteIdentityMfaMethodTotpMethodId(context.Background(), methodId)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -995,15 +908,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1037,13 +941,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the assignment
-
+	name :=  // string | Name of the assignment
+	
 	resp, err := client.Identity.DeleteIdentityOidcAssignmentName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -1070,15 +975,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1112,13 +1008,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the client.
-
+	name :=  // string | Name of the client.
+	
 	resp, err := client.Identity.DeleteIdentityOidcClientName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -1145,15 +1042,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1187,13 +1075,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the key
-
+	name :=  // string | Name of the key
+	
 	resp, err := client.Identity.DeleteIdentityOidcKeyName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -1220,15 +1109,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1262,13 +1142,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the provider
-
+	name :=  // string | Name of the provider
+	
 	resp, err := client.Identity.DeleteIdentityOidcProviderName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -1295,15 +1176,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1337,13 +1209,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the role
-
+	name :=  // string | Name of the role
+	
 	resp, err := client.Identity.DeleteIdentityOidcRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -1370,15 +1243,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1412,13 +1276,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the scope
-
+	name :=  // string | Name of the scope
+	
 	resp, err := client.Identity.DeleteIdentityOidcScopeName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -1445,15 +1310,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1487,13 +1343,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	id := "id_example" // string | ID of the persona
-
+	id :=  // string | ID of the persona
+	
 	resp, err := client.Identity.DeleteIdentityPersonaIdId(context.Background(), id)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -1520,15 +1377,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1562,13 +1410,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Identity.GetIdentityAliasId(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityAliasId(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -1591,15 +1441,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1633,13 +1474,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	id := "id_example" // string | ID of the alias
-
+	id :=  // string | ID of the alias
+	
 	resp, err := client.Identity.GetIdentityAliasIdId(context.Background(), id)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -1666,15 +1508,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1708,13 +1541,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Identity.GetIdentityEntityAliasId(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityEntityAliasId(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -1737,15 +1572,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1779,13 +1605,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	id := "id_example" // string | ID of the alias
-
+	id :=  // string | ID of the alias
+	
 	resp, err := client.Identity.GetIdentityEntityAliasIdId(context.Background(), id)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -1812,15 +1639,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1854,13 +1672,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Identity.GetIdentityEntityId(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityEntityId(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -1883,15 +1703,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1925,13 +1736,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
-
+	id :=  // string | ID of the entity. If set, updates the corresponding existing entity.
+	
 	resp, err := client.Identity.GetIdentityEntityIdId(context.Background(), id)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -1958,15 +1770,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -2000,13 +1803,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Identity.GetIdentityEntityName(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityEntityName(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -2029,15 +1834,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -2071,13 +1867,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the entity
-
+	name :=  // string | Name of the entity
+	
 	resp, err := client.Identity.GetIdentityEntityNameName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -2104,15 +1901,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -2146,13 +1934,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Identity.GetIdentityGroupAliasId(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityGroupAliasId(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -2175,15 +1965,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -2217,13 +1998,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	id := "id_example" // string | ID of the group alias.
-
+	id :=  // string | ID of the group alias.
+	
 	resp, err := client.Identity.GetIdentityGroupAliasIdId(context.Background(), id)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -2250,15 +2032,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -2292,13 +2065,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Identity.GetIdentityGroupId(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityGroupId(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -2321,15 +2096,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -2363,13 +2129,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
-
+	id :=  // string | ID of the group. If set, updates the corresponding existing group.
+	
 	resp, err := client.Identity.GetIdentityGroupIdId(context.Background(), id)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -2396,15 +2163,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -2438,13 +2196,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Identity.GetIdentityGroupName(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityGroupName(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -2467,15 +2227,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -2509,13 +2260,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the group.
-
+	name :=  // string | Name of the group.
+	
 	resp, err := client.Identity.GetIdentityGroupNameName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -2542,15 +2294,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -2584,13 +2327,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Identity.GetIdentityMfaLoginEnforcement(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityMfaLoginEnforcement(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -2613,15 +2358,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -2655,13 +2391,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name for this login enforcement configuration
-
+	name :=  // string | Name for this login enforcement configuration
+	
 	resp, err := client.Identity.GetIdentityMfaLoginEnforcementName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -2688,15 +2425,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -2730,13 +2458,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Identity.GetIdentityMfaMethod(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityMfaMethod(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -2759,15 +2489,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -2801,13 +2522,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Identity.GetIdentityMfaMethodDuo(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityMfaMethodDuo(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -2830,15 +2553,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -2872,13 +2586,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
+	methodId :=  // string | The unique identifier for this MFA method.
+	
 	resp, err := client.Identity.GetIdentityMfaMethodDuoMethodId(context.Background(), methodId)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -2905,15 +2620,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -2947,13 +2653,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
+	methodId :=  // string | The unique identifier for this MFA method.
+	
 	resp, err := client.Identity.GetIdentityMfaMethodMethodId(context.Background(), methodId)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -2980,15 +2687,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3022,13 +2720,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Identity.GetIdentityMfaMethodOkta(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityMfaMethodOkta(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -3051,15 +2751,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3093,13 +2784,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
+	methodId :=  // string | The unique identifier for this MFA method.
+	
 	resp, err := client.Identity.GetIdentityMfaMethodOktaMethodId(context.Background(), methodId)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -3126,15 +2818,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3168,13 +2851,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Identity.GetIdentityMfaMethodPingid(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityMfaMethodPingid(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -3197,15 +2882,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3239,13 +2915,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
+	methodId :=  // string | The unique identifier for this MFA method.
+	
 	resp, err := client.Identity.GetIdentityMfaMethodPingidMethodId(context.Background(), methodId)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -3272,15 +2949,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3314,13 +2982,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Identity.GetIdentityMfaMethodTotp(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityMfaMethodTotp(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -3343,15 +3013,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3385,13 +3046,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-
+	methodId :=  // string | The unique identifier for this MFA method.
+	
 	resp, err := client.Identity.GetIdentityMfaMethodTotpMethodId(context.Background(), methodId)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -3418,15 +3080,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3460,13 +3113,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Identity.GetIdentityOidcAssignment(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityOidcAssignment(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -3489,15 +3144,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3531,13 +3177,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the assignment
-
+	name :=  // string | Name of the assignment
+	
 	resp, err := client.Identity.GetIdentityOidcAssignmentName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -3564,15 +3211,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3606,13 +3244,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Identity.GetIdentityOidcClient(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityOidcClient(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -3635,15 +3275,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3677,13 +3308,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the client.
-
+	name :=  // string | Name of the client.
+	
 	resp, err := client.Identity.GetIdentityOidcClientName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -3710,15 +3342,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3752,12 +3375,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Identity.GetIdentityOidcConfig(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -3776,15 +3400,6 @@ Other parameters are passed through a pointer to a apiGetIdentityOidcConfigReque
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3818,13 +3433,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Identity.GetIdentityOidcKey(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityOidcKey(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -3847,15 +3464,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3889,13 +3497,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the key
-
+	name :=  // string | Name of the key
+	
 	resp, err := client.Identity.GetIdentityOidcKeyName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -3922,15 +3531,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3964,13 +3564,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Identity.GetIdentityOidcProvider(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityOidcProvider(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -3993,15 +3595,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -4035,13 +3628,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the provider
-
+	name :=  // string | Name of the provider
+	
 	resp, err := client.Identity.GetIdentityOidcProviderName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -4068,15 +3662,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -4110,13 +3695,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the provider
-
+	name :=  // string | Name of the provider
+	
 	resp, err := client.Identity.GetIdentityOidcProviderNameAuthorize(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -4143,15 +3729,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -4185,13 +3762,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the provider
-
+	name :=  // string | Name of the provider
+	
 	resp, err := client.Identity.GetIdentityOidcProviderNameUserinfo(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -4218,15 +3796,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -4260,13 +3829,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the provider
-
+	name :=  // string | Name of the provider
+	
 	resp, err := client.Identity.GetIdentityOidcProviderNameWellKnownKeys(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -4293,15 +3863,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -4335,13 +3896,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the provider
-
+	name :=  // string | Name of the provider
+	
 	resp, err := client.Identity.GetIdentityOidcProviderNameWellKnownOpenidConfiguration(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -4368,15 +3930,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -4410,13 +3963,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Identity.GetIdentityOidcRole(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityOidcRole(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -4439,15 +3994,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -4481,13 +4027,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the role
-
+	name :=  // string | Name of the role
+	
 	resp, err := client.Identity.GetIdentityOidcRoleName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -4514,15 +4061,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -4556,13 +4094,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Identity.GetIdentityOidcScope(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityOidcScope(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -4585,15 +4125,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -4627,13 +4158,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the scope
-
+	name :=  // string | Name of the scope
+	
 	resp, err := client.Identity.GetIdentityOidcScopeName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -4660,15 +4192,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -4702,13 +4225,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the role
-
+	name :=  // string | Name of the role
+	
 	resp, err := client.Identity.GetIdentityOidcTokenName(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -4735,15 +4259,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -4777,12 +4292,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Identity.GetIdentityOidcWellKnownKeys(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -4801,15 +4317,6 @@ Other parameters are passed through a pointer to a apiGetIdentityOidcWellKnownKe
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -4843,12 +4350,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-
+	
 	resp, err := client.Identity.GetIdentityOidcWellKnownOpenidConfiguration(context.Background())
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -4867,15 +4375,6 @@ Other parameters are passed through a pointer to a apiGetIdentityOidcWellKnownOp
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -4909,13 +4408,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	list := "list_example" // string | Must be set to `true`
-
-	resp, err := client.Identity.GetIdentityPersonaId(context.Background()).List(list)
+	
+	list := NewstringWithDefaults()
+	
+	resp, err := client.Identity.GetIdentityPersonaId(context.Background(), list)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -4938,15 +4439,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -4980,13 +4472,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	id := "id_example" // string | ID of the persona
-
+	id :=  // string | ID of the persona
+	
 	resp, err := client.Identity.GetIdentityPersonaIdId(context.Background(), id)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -5013,15 +4506,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -5055,13 +4539,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	identityAliasRequest := *openapiclient.NewIdentityAliasRequest() // IdentityAliasRequest | 
-
-	resp, err := client.Identity.PostIdentityAlias(context.Background()).IdentityAliasRequest(identityAliasRequest)
+	
+	identityAliasRequest := NewIdentityAliasRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityAlias(context.Background(), identityAliasRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -5084,15 +4570,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -5126,14 +4603,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	id := "id_example" // string | ID of the alias
-	identityAliasIdRequest := *openapiclient.NewIdentityAliasIdRequest() // IdentityAliasIdRequest | 
-
-	resp, err := client.Identity.PostIdentityAliasIdId(context.Background(), id).IdentityAliasIdRequest(identityAliasIdRequest)
+	id :=  // string | ID of the alias
+	
+	identityAliasIdRequest := NewIdentityAliasIdRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityAliasIdId(context.Background(), id, identityAliasIdRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -5161,15 +4640,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -5203,13 +4673,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	identityEntityRequest := *openapiclient.NewIdentityEntityRequest() // IdentityEntityRequest | 
-
-	resp, err := client.Identity.PostIdentityEntity(context.Background()).IdentityEntityRequest(identityEntityRequest)
+	
+	identityEntityRequest := NewIdentityEntityRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityEntity(context.Background(), identityEntityRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -5232,15 +4704,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -5274,13 +4737,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	identityEntityAliasRequest := *openapiclient.NewIdentityEntityAliasRequest() // IdentityEntityAliasRequest | 
-
-	resp, err := client.Identity.PostIdentityEntityAlias(context.Background()).IdentityEntityAliasRequest(identityEntityAliasRequest)
+	
+	identityEntityAliasRequest := NewIdentityEntityAliasRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityEntityAlias(context.Background(), identityEntityAliasRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -5303,15 +4768,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -5345,14 +4801,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	id := "id_example" // string | ID of the alias
-	identityEntityAliasIdRequest := *openapiclient.NewIdentityEntityAliasIdRequest() // IdentityEntityAliasIdRequest | 
-
-	resp, err := client.Identity.PostIdentityEntityAliasIdId(context.Background(), id).IdentityEntityAliasIdRequest(identityEntityAliasIdRequest)
+	id :=  // string | ID of the alias
+	
+	identityEntityAliasIdRequest := NewIdentityEntityAliasIdRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityEntityAliasIdId(context.Background(), id, identityEntityAliasIdRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -5380,15 +4838,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -5422,13 +4871,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	identityEntityBatchDeleteRequest := *openapiclient.NewIdentityEntityBatchDeleteRequest() // IdentityEntityBatchDeleteRequest | 
-
-	resp, err := client.Identity.PostIdentityEntityBatchDelete(context.Background()).IdentityEntityBatchDeleteRequest(identityEntityBatchDeleteRequest)
+	
+	identityEntityBatchDeleteRequest := NewIdentityEntityBatchDeleteRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityEntityBatchDelete(context.Background(), identityEntityBatchDeleteRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -5451,15 +4902,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -5493,14 +4935,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	id := "id_example" // string | ID of the entity. If set, updates the corresponding existing entity.
-	identityEntityIdRequest := *openapiclient.NewIdentityEntityIdRequest() // IdentityEntityIdRequest | 
-
-	resp, err := client.Identity.PostIdentityEntityIdId(context.Background(), id).IdentityEntityIdRequest(identityEntityIdRequest)
+	id :=  // string | ID of the entity. If set, updates the corresponding existing entity.
+	
+	identityEntityIdRequest := NewIdentityEntityIdRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityEntityIdId(context.Background(), id, identityEntityIdRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -5528,15 +4972,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -5570,13 +5005,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	identityEntityMergeRequest := *openapiclient.NewIdentityEntityMergeRequest() // IdentityEntityMergeRequest | 
-
-	resp, err := client.Identity.PostIdentityEntityMerge(context.Background()).IdentityEntityMergeRequest(identityEntityMergeRequest)
+	
+	identityEntityMergeRequest := NewIdentityEntityMergeRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityEntityMerge(context.Background(), identityEntityMergeRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -5599,15 +5036,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -5641,14 +5069,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the entity
-	identityEntityNameRequest := *openapiclient.NewIdentityEntityNameRequest() // IdentityEntityNameRequest | 
-
-	resp, err := client.Identity.PostIdentityEntityNameName(context.Background(), name).IdentityEntityNameRequest(identityEntityNameRequest)
+	name :=  // string | Name of the entity
+	
+	identityEntityNameRequest := NewIdentityEntityNameRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityEntityNameName(context.Background(), name, identityEntityNameRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -5676,15 +5106,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -5718,13 +5139,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	identityGroupRequest := *openapiclient.NewIdentityGroupRequest() // IdentityGroupRequest | 
-
-	resp, err := client.Identity.PostIdentityGroup(context.Background()).IdentityGroupRequest(identityGroupRequest)
+	
+	identityGroupRequest := NewIdentityGroupRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityGroup(context.Background(), identityGroupRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -5747,15 +5170,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -5789,13 +5203,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	identityGroupAliasRequest := *openapiclient.NewIdentityGroupAliasRequest() // IdentityGroupAliasRequest | 
-
-	resp, err := client.Identity.PostIdentityGroupAlias(context.Background()).IdentityGroupAliasRequest(identityGroupAliasRequest)
+	
+	identityGroupAliasRequest := NewIdentityGroupAliasRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityGroupAlias(context.Background(), identityGroupAliasRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -5818,15 +5234,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -5860,14 +5267,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	id := "id_example" // string | ID of the group alias.
-	identityGroupAliasIdRequest := *openapiclient.NewIdentityGroupAliasIdRequest() // IdentityGroupAliasIdRequest | 
-
-	resp, err := client.Identity.PostIdentityGroupAliasIdId(context.Background(), id).IdentityGroupAliasIdRequest(identityGroupAliasIdRequest)
+	id :=  // string | ID of the group alias.
+	
+	identityGroupAliasIdRequest := NewIdentityGroupAliasIdRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityGroupAliasIdId(context.Background(), id, identityGroupAliasIdRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -5895,15 +5304,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -5937,14 +5337,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	id := "id_example" // string | ID of the group. If set, updates the corresponding existing group.
-	identityGroupIdRequest := *openapiclient.NewIdentityGroupIdRequest() // IdentityGroupIdRequest | 
-
-	resp, err := client.Identity.PostIdentityGroupIdId(context.Background(), id).IdentityGroupIdRequest(identityGroupIdRequest)
+	id :=  // string | ID of the group. If set, updates the corresponding existing group.
+	
+	identityGroupIdRequest := NewIdentityGroupIdRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityGroupIdId(context.Background(), id, identityGroupIdRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -5972,15 +5374,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -6014,14 +5407,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the group.
-	identityGroupNameRequest := *openapiclient.NewIdentityGroupNameRequest() // IdentityGroupNameRequest | 
-
-	resp, err := client.Identity.PostIdentityGroupNameName(context.Background(), name).IdentityGroupNameRequest(identityGroupNameRequest)
+	name :=  // string | Name of the group.
+	
+	identityGroupNameRequest := NewIdentityGroupNameRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityGroupNameName(context.Background(), name, identityGroupNameRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -6049,15 +5444,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -6091,13 +5477,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	identityLookupEntityRequest := *openapiclient.NewIdentityLookupEntityRequest() // IdentityLookupEntityRequest | 
-
-	resp, err := client.Identity.PostIdentityLookupEntity(context.Background()).IdentityLookupEntityRequest(identityLookupEntityRequest)
+	
+	identityLookupEntityRequest := NewIdentityLookupEntityRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityLookupEntity(context.Background(), identityLookupEntityRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -6120,15 +5508,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -6162,13 +5541,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	identityLookupGroupRequest := *openapiclient.NewIdentityLookupGroupRequest() // IdentityLookupGroupRequest | 
-
-	resp, err := client.Identity.PostIdentityLookupGroup(context.Background()).IdentityLookupGroupRequest(identityLookupGroupRequest)
+	
+	identityLookupGroupRequest := NewIdentityLookupGroupRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityLookupGroup(context.Background(), identityLookupGroupRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -6191,15 +5572,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -6233,14 +5605,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name for this login enforcement configuration
-	identityMfaLoginEnforcementRequest := *openapiclient.NewIdentityMfaLoginEnforcementRequest([]string{"MfaMethodIds_example"}) // IdentityMfaLoginEnforcementRequest | 
-
-	resp, err := client.Identity.PostIdentityMfaLoginEnforcementName(context.Background(), name).IdentityMfaLoginEnforcementRequest(identityMfaLoginEnforcementRequest)
+	name :=  // string | Name for this login enforcement configuration
+	
+	identityMfaLoginEnforcementRequest := NewIdentityMfaLoginEnforcementRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityMfaLoginEnforcementName(context.Background(), name, identityMfaLoginEnforcementRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -6268,15 +5642,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -6310,14 +5675,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-	identityMfaMethodDuoRequest := *openapiclient.NewIdentityMfaMethodDuoRequest() // IdentityMfaMethodDuoRequest | 
-
-	resp, err := client.Identity.PostIdentityMfaMethodDuoMethodId(context.Background(), methodId).IdentityMfaMethodDuoRequest(identityMfaMethodDuoRequest)
+	methodId :=  // string | The unique identifier for this MFA method.
+	
+	identityMfaMethodDuoRequest := NewIdentityMfaMethodDuoRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityMfaMethodDuoMethodId(context.Background(), methodId, identityMfaMethodDuoRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -6345,15 +5712,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -6387,14 +5745,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-	identityMfaMethodOktaRequest := *openapiclient.NewIdentityMfaMethodOktaRequest() // IdentityMfaMethodOktaRequest | 
-
-	resp, err := client.Identity.PostIdentityMfaMethodOktaMethodId(context.Background(), methodId).IdentityMfaMethodOktaRequest(identityMfaMethodOktaRequest)
+	methodId :=  // string | The unique identifier for this MFA method.
+	
+	identityMfaMethodOktaRequest := NewIdentityMfaMethodOktaRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityMfaMethodOktaMethodId(context.Background(), methodId, identityMfaMethodOktaRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -6422,15 +5782,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -6464,14 +5815,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-	identityMfaMethodPingidRequest := *openapiclient.NewIdentityMfaMethodPingidRequest() // IdentityMfaMethodPingidRequest | 
-
-	resp, err := client.Identity.PostIdentityMfaMethodPingidMethodId(context.Background(), methodId).IdentityMfaMethodPingidRequest(identityMfaMethodPingidRequest)
+	methodId :=  // string | The unique identifier for this MFA method.
+	
+	identityMfaMethodPingidRequest := NewIdentityMfaMethodPingidRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityMfaMethodPingidMethodId(context.Background(), methodId, identityMfaMethodPingidRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -6499,15 +5852,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -6541,13 +5885,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	identityMfaMethodTotpAdminDestroyRequest := *openapiclient.NewIdentityMfaMethodTotpAdminDestroyRequest("EntityId_example", "MethodId_example") // IdentityMfaMethodTotpAdminDestroyRequest | 
-
-	resp, err := client.Identity.PostIdentityMfaMethodTotpAdminDestroy(context.Background()).IdentityMfaMethodTotpAdminDestroyRequest(identityMfaMethodTotpAdminDestroyRequest)
+	
+	identityMfaMethodTotpAdminDestroyRequest := NewIdentityMfaMethodTotpAdminDestroyRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityMfaMethodTotpAdminDestroy(context.Background(), identityMfaMethodTotpAdminDestroyRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -6570,15 +5916,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -6612,13 +5949,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	identityMfaMethodTotpAdminGenerateRequest := *openapiclient.NewIdentityMfaMethodTotpAdminGenerateRequest("EntityId_example", "MethodId_example") // IdentityMfaMethodTotpAdminGenerateRequest | 
-
-	resp, err := client.Identity.PostIdentityMfaMethodTotpAdminGenerate(context.Background()).IdentityMfaMethodTotpAdminGenerateRequest(identityMfaMethodTotpAdminGenerateRequest)
+	
+	identityMfaMethodTotpAdminGenerateRequest := NewIdentityMfaMethodTotpAdminGenerateRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityMfaMethodTotpAdminGenerate(context.Background(), identityMfaMethodTotpAdminGenerateRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -6641,15 +5980,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -6683,13 +6013,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	identityMfaMethodTotpGenerateRequest := *openapiclient.NewIdentityMfaMethodTotpGenerateRequest("MethodId_example") // IdentityMfaMethodTotpGenerateRequest | 
-
-	resp, err := client.Identity.PostIdentityMfaMethodTotpGenerate(context.Background()).IdentityMfaMethodTotpGenerateRequest(identityMfaMethodTotpGenerateRequest)
+	
+	identityMfaMethodTotpGenerateRequest := NewIdentityMfaMethodTotpGenerateRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityMfaMethodTotpGenerate(context.Background(), identityMfaMethodTotpGenerateRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -6712,15 +6044,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -6754,14 +6077,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	methodId := "methodId_example" // string | The unique identifier for this MFA method.
-	identityMfaMethodTotpRequest := *openapiclient.NewIdentityMfaMethodTotpRequest() // IdentityMfaMethodTotpRequest | 
-
-	resp, err := client.Identity.PostIdentityMfaMethodTotpMethodId(context.Background(), methodId).IdentityMfaMethodTotpRequest(identityMfaMethodTotpRequest)
+	methodId :=  // string | The unique identifier for this MFA method.
+	
+	identityMfaMethodTotpRequest := NewIdentityMfaMethodTotpRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityMfaMethodTotpMethodId(context.Background(), methodId, identityMfaMethodTotpRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -6789,15 +6114,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -6831,14 +6147,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the assignment
-	identityOidcAssignmentRequest := *openapiclient.NewIdentityOidcAssignmentRequest() // IdentityOidcAssignmentRequest | 
-
-	resp, err := client.Identity.PostIdentityOidcAssignmentName(context.Background(), name).IdentityOidcAssignmentRequest(identityOidcAssignmentRequest)
+	name :=  // string | Name of the assignment
+	
+	identityOidcAssignmentRequest := NewIdentityOidcAssignmentRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityOidcAssignmentName(context.Background(), name, identityOidcAssignmentRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -6866,15 +6184,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -6908,14 +6217,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the client.
-	identityOidcClientRequest := *openapiclient.NewIdentityOidcClientRequest() // IdentityOidcClientRequest | 
-
-	resp, err := client.Identity.PostIdentityOidcClientName(context.Background(), name).IdentityOidcClientRequest(identityOidcClientRequest)
+	name :=  // string | Name of the client.
+	
+	identityOidcClientRequest := NewIdentityOidcClientRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityOidcClientName(context.Background(), name, identityOidcClientRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -6943,15 +6254,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -6985,13 +6287,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	identityOidcConfigRequest := *openapiclient.NewIdentityOidcConfigRequest() // IdentityOidcConfigRequest | 
-
-	resp, err := client.Identity.PostIdentityOidcConfig(context.Background()).IdentityOidcConfigRequest(identityOidcConfigRequest)
+	
+	identityOidcConfigRequest := NewIdentityOidcConfigRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityOidcConfig(context.Background(), identityOidcConfigRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -7014,15 +6318,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -7056,13 +6351,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	identityOidcIntrospectRequest := *openapiclient.NewIdentityOidcIntrospectRequest() // IdentityOidcIntrospectRequest | 
-
-	resp, err := client.Identity.PostIdentityOidcIntrospect(context.Background()).IdentityOidcIntrospectRequest(identityOidcIntrospectRequest)
+	
+	identityOidcIntrospectRequest := NewIdentityOidcIntrospectRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityOidcIntrospect(context.Background(), identityOidcIntrospectRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -7085,15 +6382,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -7127,14 +6415,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the key
-	identityOidcKeyRequest := *openapiclient.NewIdentityOidcKeyRequest() // IdentityOidcKeyRequest | 
-
-	resp, err := client.Identity.PostIdentityOidcKeyName(context.Background(), name).IdentityOidcKeyRequest(identityOidcKeyRequest)
+	name :=  // string | Name of the key
+	
+	identityOidcKeyRequest := NewIdentityOidcKeyRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityOidcKeyName(context.Background(), name, identityOidcKeyRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -7162,15 +6452,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -7204,14 +6485,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the key
-	identityOidcKeyRotateRequest := *openapiclient.NewIdentityOidcKeyRotateRequest() // IdentityOidcKeyRotateRequest | 
-
-	resp, err := client.Identity.PostIdentityOidcKeyNameRotate(context.Background(), name).IdentityOidcKeyRotateRequest(identityOidcKeyRotateRequest)
+	name :=  // string | Name of the key
+	
+	identityOidcKeyRotateRequest := NewIdentityOidcKeyRotateRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityOidcKeyNameRotate(context.Background(), name, identityOidcKeyRotateRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -7239,15 +6522,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -7281,14 +6555,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the provider
-	identityOidcProviderRequest := *openapiclient.NewIdentityOidcProviderRequest() // IdentityOidcProviderRequest | 
-
-	resp, err := client.Identity.PostIdentityOidcProviderName(context.Background(), name).IdentityOidcProviderRequest(identityOidcProviderRequest)
+	name :=  // string | Name of the provider
+	
+	identityOidcProviderRequest := NewIdentityOidcProviderRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityOidcProviderName(context.Background(), name, identityOidcProviderRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -7316,15 +6592,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -7358,14 +6625,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the provider
-	identityOidcProviderAuthorizeRequest := *openapiclient.NewIdentityOidcProviderAuthorizeRequest("ClientId_example", "RedirectUri_example", "ResponseType_example", "Scope_example", "State_example") // IdentityOidcProviderAuthorizeRequest | 
-
-	resp, err := client.Identity.PostIdentityOidcProviderNameAuthorize(context.Background(), name).IdentityOidcProviderAuthorizeRequest(identityOidcProviderAuthorizeRequest)
+	name :=  // string | Name of the provider
+	
+	identityOidcProviderAuthorizeRequest := NewIdentityOidcProviderAuthorizeRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityOidcProviderNameAuthorize(context.Background(), name, identityOidcProviderAuthorizeRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -7393,15 +6662,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -7435,14 +6695,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the provider
-	identityOidcProviderTokenRequest := *openapiclient.NewIdentityOidcProviderTokenRequest("Code_example", "GrantType_example", "RedirectUri_example") // IdentityOidcProviderTokenRequest | 
-
-	resp, err := client.Identity.PostIdentityOidcProviderNameToken(context.Background(), name).IdentityOidcProviderTokenRequest(identityOidcProviderTokenRequest)
+	name :=  // string | Name of the provider
+	
+	identityOidcProviderTokenRequest := NewIdentityOidcProviderTokenRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityOidcProviderNameToken(context.Background(), name, identityOidcProviderTokenRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -7470,15 +6732,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -7512,13 +6765,14 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the provider
-
+	name :=  // string | Name of the provider
+	
 	resp, err := client.Identity.PostIdentityOidcProviderNameUserinfo(context.Background(), name)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -7545,15 +6799,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -7587,14 +6832,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the role
-	identityOidcRoleRequest := *openapiclient.NewIdentityOidcRoleRequest("Key_example") // IdentityOidcRoleRequest | 
-
-	resp, err := client.Identity.PostIdentityOidcRoleName(context.Background(), name).IdentityOidcRoleRequest(identityOidcRoleRequest)
+	name :=  // string | Name of the role
+	
+	identityOidcRoleRequest := NewIdentityOidcRoleRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityOidcRoleName(context.Background(), name, identityOidcRoleRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -7622,15 +6869,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -7664,14 +6902,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	name := "name_example" // string | Name of the scope
-	identityOidcScopeRequest := *openapiclient.NewIdentityOidcScopeRequest() // IdentityOidcScopeRequest | 
-
-	resp, err := client.Identity.PostIdentityOidcScopeName(context.Background(), name).IdentityOidcScopeRequest(identityOidcScopeRequest)
+	name :=  // string | Name of the scope
+	
+	identityOidcScopeRequest := NewIdentityOidcScopeRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityOidcScopeName(context.Background(), name, identityOidcScopeRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -7699,15 +6939,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -7741,13 +6972,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	identityPersonaRequest := *openapiclient.NewIdentityPersonaRequest() // IdentityPersonaRequest | 
-
-	resp, err := client.Identity.PostIdentityPersona(context.Background()).IdentityPersonaRequest(identityPersonaRequest)
+	
+	identityPersonaRequest := NewIdentityPersonaRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityPersona(context.Background(), identityPersonaRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -7770,15 +7003,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -7812,14 +7036,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	client.SetToken("my-token")
 
-	id := "id_example" // string | ID of the persona
-	identityPersonaIdRequest := *openapiclient.NewIdentityPersonaIdRequest() // IdentityPersonaIdRequest | 
-
-	resp, err := client.Identity.PostIdentityPersonaIdId(context.Background(), id).IdentityPersonaIdRequest(identityPersonaIdRequest)
+	id :=  // string | ID of the persona
+	
+	identityPersonaIdRequest := NewIdentityPersonaIdRequestWithDefaults()
+	
+	resp, err := client.Identity.PostIdentityPersonaIdId(context.Background(), id, identityPersonaIdRequest)
 	if err != nil {
 		log.Fatal(err)
-    }
+	}
 	defer resp.Body.Close()
 
 	io.Copy(os.Stdout, resp.Body)
@@ -7847,15 +7073,6 @@ Name | Type | Description  | Notes
 ### Return type
 
  (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

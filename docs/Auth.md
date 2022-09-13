@@ -290,18 +290,25 @@ Create a role and associate policies to it.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     role := "role_example" // string | The name of the role as it should appear in Vault.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAlicloudRoleRole(context.Background(), role).Execute()
+    resp, err := client.Auth.DeleteAuthAlicloudRoleRole(context.Background(), role).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAlicloudRoleRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -356,18 +363,25 @@ Read/write/delete a single app-id mapping
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     key := "key_example" // string | Key for the app-id mapping
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAppIdMapAppIdKey(context.Background(), key).Execute()
+    resp, err := client.Auth.DeleteAuthAppIdMapAppIdKey(context.Background(), key).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAppIdMapAppIdKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -422,18 +436,25 @@ Read/write/delete a single user-id mapping
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     key := "key_example" // string | Key for the user-id mapping
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAppIdMapUserIdKey(context.Background(), key).Execute()
+    resp, err := client.Auth.DeleteAuthAppIdMapUserIdKey(context.Background(), key).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAppIdMapUserIdKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -488,18 +509,25 @@ Register an role with the backend.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleName(context.Background(), roleName).Execute()
+    resp, err := client.Auth.DeleteAuthApproleRoleRoleName(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -554,18 +582,25 @@ Impose secret_id to be presented during login using this role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName).Execute()
+    resp, err := client.Auth.DeleteAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameBindSecretId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -620,18 +655,25 @@ Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP 
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName).Execute()
+    resp, err := client.Auth.DeleteAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameBoundCidrList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -686,18 +728,25 @@ Updates the value of 'period' on the role
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNamePeriod(context.Background(), roleName).Execute()
+    resp, err := client.Auth.DeleteAuthApproleRoleRoleNamePeriod(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNamePeriod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -752,18 +801,25 @@ Policies of the role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNamePolicies(context.Background(), roleName).Execute()
+    resp, err := client.Auth.DeleteAuthApproleRoleRoleNamePolicies(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNamePolicies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -818,18 +874,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(context.Background(), roleName).Execute()
+    resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameSecretIdAccessorDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -884,18 +947,25 @@ Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses wh
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName).Execute()
+    resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameSecretIdBoundCidrs``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -950,18 +1020,25 @@ Invalidate an issued secret_id
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameSecretIdDestroy(context.Background(), roleName).Execute()
+    resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdDestroy(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameSecretIdDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1016,18 +1093,25 @@ Use limit of the SecretID generated against the role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName).Execute()
+    resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameSecretIdNumUses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1082,18 +1166,25 @@ Duration in seconds, representing the lifetime of the SecretIDs that are generat
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName).Execute()
+    resp, err := client.Auth.DeleteAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameSecretIdTtl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1148,18 +1239,25 @@ Comma separated string or list of CIDR blocks. If set, specifies the blocks of I
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName).Execute()
+    resp, err := client.Auth.DeleteAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameTokenBoundCidrs``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1214,18 +1312,25 @@ Duration in seconds, the maximum lifetime of the tokens issued by using the Secr
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName).Execute()
+    resp, err := client.Auth.DeleteAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameTokenMaxTtl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1280,18 +1385,25 @@ Number of times issued tokens can be used
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName).Execute()
+    resp, err := client.Auth.DeleteAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameTokenNumUses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1346,18 +1458,25 @@ Duration in seconds, the lifetime of the token issued by using the SecretID that
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName).Execute()
+    resp, err := client.Auth.DeleteAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthApproleRoleRoleNameTokenTtl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1412,18 +1531,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     certName := "certName_example" // string | Name of the certificate.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAwsConfigCertificateCertName(context.Background(), certName).Execute()
+    resp, err := client.Auth.DeleteAuthAwsConfigCertificateCertName(context.Background(), certName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsConfigCertificateCertName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1478,17 +1604,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAwsConfigClient(context.Background()).Execute()
+
+    resp, err := client.Auth.DeleteAuthAwsConfigClient(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsConfigClient``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1535,18 +1668,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAwsConfigStsAccountId(context.Background(), accountId).Execute()
+    resp, err := client.Auth.DeleteAuthAwsConfigStsAccountId(context.Background(), accountId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsConfigStsAccountId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1601,17 +1741,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAwsConfigTidyIdentityAccesslist(context.Background()).Execute()
+
+    resp, err := client.Auth.DeleteAuthAwsConfigTidyIdentityAccesslist(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsConfigTidyIdentityAccesslist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1658,17 +1805,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAwsConfigTidyIdentityWhitelist(context.Background()).Execute()
+
+    resp, err := client.Auth.DeleteAuthAwsConfigTidyIdentityWhitelist(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsConfigTidyIdentityWhitelist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1715,17 +1869,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAwsConfigTidyRoletagBlacklist(context.Background()).Execute()
+
+    resp, err := client.Auth.DeleteAuthAwsConfigTidyRoletagBlacklist(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsConfigTidyRoletagBlacklist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1772,17 +1933,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAwsConfigTidyRoletagDenylist(context.Background()).Execute()
+
+    resp, err := client.Auth.DeleteAuthAwsConfigTidyRoletagDenylist(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsConfigTidyRoletagDenylist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1829,18 +1997,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAwsIdentityAccesslistInstanceId(context.Background(), instanceId).Execute()
+    resp, err := client.Auth.DeleteAuthAwsIdentityAccesslistInstanceId(context.Background(), instanceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsIdentityAccesslistInstanceId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1895,18 +2070,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAwsIdentityWhitelistInstanceId(context.Background(), instanceId).Execute()
+    resp, err := client.Auth.DeleteAuthAwsIdentityWhitelistInstanceId(context.Background(), instanceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsIdentityWhitelistInstanceId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1961,18 +2143,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     role := "role_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAwsRoleRole(context.Background(), role).Execute()
+    resp, err := client.Auth.DeleteAuthAwsRoleRole(context.Background(), role).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsRoleRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2027,18 +2216,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag).Execute()
+    resp, err := client.Auth.DeleteAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsRoletagBlacklistRoleTag``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2093,18 +2289,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag).Execute()
+    resp, err := client.Auth.DeleteAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAwsRoletagDenylistRoleTag``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2159,17 +2362,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAzureConfig(context.Background()).Execute()
+
+    resp, err := client.Auth.DeleteAuthAzureConfig(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAzureConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2216,18 +2426,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthAzureRoleName(context.Background(), name).Execute()
+    resp, err := client.Auth.DeleteAuthAzureRoleName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthAzureRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2282,18 +2499,25 @@ Manage trusted certificates used for authentication.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | The name of the certificate
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthCertCertsName(context.Background(), name).Execute()
+    resp, err := client.Auth.DeleteAuthCertCertsName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthCertCertsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2348,18 +2572,25 @@ Manage Certificate Revocation Lists checked during authentication.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | The name of the certificate
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthCertCrlsName(context.Background(), name).Execute()
+    resp, err := client.Auth.DeleteAuthCertCrlsName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthCertCrlsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2414,17 +2645,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthCfConfig(context.Background()).Execute()
+
+    resp, err := client.Auth.DeleteAuthCfConfig(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthCfConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2471,18 +2709,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     role := "role_example" // string | The name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthCfRolesRole(context.Background(), role).Execute()
+    resp, err := client.Auth.DeleteAuthCfRolesRole(context.Background(), role).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthCfRolesRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2537,18 +2782,25 @@ Create a GCP role with associated policies and required attributes.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthGcpRoleName(context.Background(), name).Execute()
+    resp, err := client.Auth.DeleteAuthGcpRoleName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthGcpRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2603,18 +2855,25 @@ Read/write/delete a single teams mapping
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     key := "key_example" // string | Key for the teams mapping
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthGithubMapTeamsKey(context.Background(), key).Execute()
+    resp, err := client.Auth.DeleteAuthGithubMapTeamsKey(context.Background(), key).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthGithubMapTeamsKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2669,18 +2928,25 @@ Read/write/delete a single users mapping
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     key := "key_example" // string | Key for the users mapping
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthGithubMapUsersKey(context.Background(), key).Execute()
+    resp, err := client.Auth.DeleteAuthGithubMapUsersKey(context.Background(), key).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthGithubMapUsersKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2735,18 +3001,25 @@ Delete an existing role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthJwtRoleName(context.Background(), name).Execute()
+    resp, err := client.Auth.DeleteAuthJwtRoleName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthJwtRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2801,18 +3074,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | Name of the LDAP group.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthKerberosGroupsName(context.Background(), name).Execute()
+    resp, err := client.Auth.DeleteAuthKerberosGroupsName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthKerberosGroupsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2867,18 +3147,25 @@ Register an role with the backend.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthKubernetesRoleName(context.Background(), name).Execute()
+    resp, err := client.Auth.DeleteAuthKubernetesRoleName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthKubernetesRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2933,18 +3220,25 @@ Manage additional groups for users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | Name of the LDAP group.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthLdapGroupsName(context.Background(), name).Execute()
+    resp, err := client.Auth.DeleteAuthLdapGroupsName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthLdapGroupsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2999,18 +3293,25 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | Name of the LDAP user.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthLdapUsersName(context.Background(), name).Execute()
+    resp, err := client.Auth.DeleteAuthLdapUsersName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthLdapUsersName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3065,17 +3366,24 @@ Manages the configuration for the Vault Auth Plugin.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthOciConfig(context.Background()).Execute()
+
+    resp, err := client.Auth.DeleteAuthOciConfig(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthOciConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3122,18 +3430,25 @@ Create a role and associate policies to it.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     role := "role_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthOciRoleRole(context.Background(), role).Execute()
+    resp, err := client.Auth.DeleteAuthOciRoleRole(context.Background(), role).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthOciRoleRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3188,18 +3503,25 @@ Delete an existing role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthOidcRoleName(context.Background(), name).Execute()
+    resp, err := client.Auth.DeleteAuthOidcRoleName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthOidcRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3254,18 +3576,25 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | Name of the Okta group.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthOktaGroupsName(context.Background(), name).Execute()
+    resp, err := client.Auth.DeleteAuthOktaGroupsName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthOktaGroupsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3320,18 +3649,25 @@ Manage additional groups for users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | Name of the user.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthOktaUsersName(context.Background(), name).Execute()
+    resp, err := client.Auth.DeleteAuthOktaUsersName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthOktaUsersName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3386,18 +3722,25 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | Name of the RADIUS user.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthRadiusUsersName(context.Background(), name).Execute()
+    resp, err := client.Auth.DeleteAuthRadiusUsersName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthRadiusUsersName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3452,18 +3795,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthTokenRolesRoleName(context.Background(), roleName).Execute()
+    resp, err := client.Auth.DeleteAuthTokenRolesRoleName(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthTokenRolesRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3518,18 +3868,25 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     username := "username_example" // string | Username for this user.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.DeleteAuthUserpassUsersUsername(context.Background(), username).Execute()
+    resp, err := client.Auth.DeleteAuthUserpassUsersUsername(context.Background(), username).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.DeleteAuthUserpassUsersUsername``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3584,18 +3941,25 @@ Lists all the roles that are registered with Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAlicloudRole(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthAlicloudRole(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAlicloudRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3646,18 +4010,25 @@ Create a role and associate policies to it.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     role := "role_example" // string | The name of the role as it should appear in Vault.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAlicloudRoleRole(context.Background(), role).Execute()
+    resp, err := client.Auth.GetAuthAlicloudRoleRole(context.Background(), role).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAlicloudRoleRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3712,18 +4083,25 @@ Lists all the roles that are registered with Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAlicloudRoles(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthAlicloudRoles(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAlicloudRoles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3774,18 +4152,25 @@ Read mappings for app-id
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Return a list if `true` (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAppIdMapAppId(context.Background()).List(list).Execute()
+    list := "list_example" // string | Return a list if `true`
+
+    resp, err := client.Auth.GetAuthAppIdMapAppId(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAppIdMapAppId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3836,18 +4221,25 @@ Read/write/delete a single app-id mapping
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     key := "key_example" // string | Key for the app-id mapping
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAppIdMapAppIdKey(context.Background(), key).Execute()
+    resp, err := client.Auth.GetAuthAppIdMapAppIdKey(context.Background(), key).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAppIdMapAppIdKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3902,18 +4294,25 @@ Read mappings for user-id
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Return a list if `true` (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAppIdMapUserId(context.Background()).List(list).Execute()
+    list := "list_example" // string | Return a list if `true`
+
+    resp, err := client.Auth.GetAuthAppIdMapUserId(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAppIdMapUserId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3964,18 +4363,25 @@ Read/write/delete a single user-id mapping
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     key := "key_example" // string | Key for the user-id mapping
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAppIdMapUserIdKey(context.Background(), key).Execute()
+    resp, err := client.Auth.GetAuthAppIdMapUserIdKey(context.Background(), key).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAppIdMapUserIdKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4030,18 +4436,25 @@ Lists all the roles registered with the backend.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRole(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthApproleRole(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4092,18 +4505,25 @@ Register an role with the backend.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleName(context.Background(), roleName).Execute()
+    resp, err := client.Auth.GetAuthApproleRoleRoleName(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4158,18 +4578,25 @@ Impose secret_id to be presented during login using this role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName).Execute()
+    resp, err := client.Auth.GetAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameBindSecretId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4224,18 +4651,25 @@ Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP 
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName).Execute()
+    resp, err := client.Auth.GetAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameBoundCidrList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4290,18 +4724,25 @@ Enables cluster local secret IDs
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameLocalSecretIds(context.Background(), roleName).Execute()
+    resp, err := client.Auth.GetAuthApproleRoleRoleNameLocalSecretIds(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameLocalSecretIds``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4356,18 +4797,25 @@ Updates the value of 'period' on the role
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNamePeriod(context.Background(), roleName).Execute()
+    resp, err := client.Auth.GetAuthApproleRoleRoleNamePeriod(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNamePeriod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4422,18 +4870,25 @@ Policies of the role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNamePolicies(context.Background(), roleName).Execute()
+    resp, err := client.Auth.GetAuthApproleRoleRoleNamePolicies(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNamePolicies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4488,18 +4943,25 @@ Returns the 'role_id' of the role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameRoleId(context.Background(), roleName).Execute()
+    resp, err := client.Auth.GetAuthApproleRoleRoleNameRoleId(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameRoleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4554,19 +5016,26 @@ Generate a SecretID against this role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameSecretId(context.Background(), roleName).List(list).Execute()
+    resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretId(context.Background(), roleName).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameSecretId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4622,18 +5091,25 @@ Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses wh
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName).Execute()
+    resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameSecretIdBoundCidrs``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4688,18 +5164,25 @@ Use limit of the SecretID generated against the role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName).Execute()
+    resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameSecretIdNumUses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4754,18 +5237,25 @@ Duration in seconds, representing the lifetime of the SecretIDs that are generat
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName).Execute()
+    resp, err := client.Auth.GetAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameSecretIdTtl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4820,18 +5310,25 @@ Comma separated string or list of CIDR blocks. If set, specifies the blocks of I
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName).Execute()
+    resp, err := client.Auth.GetAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameTokenBoundCidrs``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4886,18 +5383,25 @@ Duration in seconds, the maximum lifetime of the tokens issued by using the Secr
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName).Execute()
+    resp, err := client.Auth.GetAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameTokenMaxTtl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4952,18 +5456,25 @@ Number of times issued tokens can be used
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName).Execute()
+    resp, err := client.Auth.GetAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameTokenNumUses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5018,18 +5529,25 @@ Duration in seconds, the lifetime of the token issued by using the SecretID that
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName).Execute()
+    resp, err := client.Auth.GetAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthApproleRoleRoleNameTokenTtl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5084,18 +5602,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     certName := "certName_example" // string | Name of the certificate.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsConfigCertificateCertName(context.Background(), certName).Execute()
+    resp, err := client.Auth.GetAuthAwsConfigCertificateCertName(context.Background(), certName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigCertificateCertName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5150,18 +5675,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsConfigCertificates(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthAwsConfigCertificates(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigCertificates``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5212,17 +5744,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsConfigClient(context.Background()).Execute()
+
+    resp, err := client.Auth.GetAuthAwsConfigClient(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigClient``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5269,17 +5808,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsConfigIdentity(context.Background()).Execute()
+
+    resp, err := client.Auth.GetAuthAwsConfigIdentity(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigIdentity``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5326,18 +5872,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsConfigSts(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthAwsConfigSts(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigSts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5388,18 +5941,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsConfigStsAccountId(context.Background(), accountId).Execute()
+    resp, err := client.Auth.GetAuthAwsConfigStsAccountId(context.Background(), accountId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigStsAccountId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5454,17 +6014,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsConfigTidyIdentityAccesslist(context.Background()).Execute()
+
+    resp, err := client.Auth.GetAuthAwsConfigTidyIdentityAccesslist(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigTidyIdentityAccesslist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5511,17 +6078,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsConfigTidyIdentityWhitelist(context.Background()).Execute()
+
+    resp, err := client.Auth.GetAuthAwsConfigTidyIdentityWhitelist(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigTidyIdentityWhitelist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5568,17 +6142,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsConfigTidyRoletagBlacklist(context.Background()).Execute()
+
+    resp, err := client.Auth.GetAuthAwsConfigTidyRoletagBlacklist(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigTidyRoletagBlacklist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5625,17 +6206,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsConfigTidyRoletagDenylist(context.Background()).Execute()
+
+    resp, err := client.Auth.GetAuthAwsConfigTidyRoletagDenylist(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsConfigTidyRoletagDenylist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5682,18 +6270,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsIdentityAccesslist(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthAwsIdentityAccesslist(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsIdentityAccesslist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5744,18 +6339,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsIdentityAccesslistInstanceId(context.Background(), instanceId).Execute()
+    resp, err := client.Auth.GetAuthAwsIdentityAccesslistInstanceId(context.Background(), instanceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsIdentityAccesslistInstanceId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5810,18 +6412,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsIdentityWhitelist(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthAwsIdentityWhitelist(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsIdentityWhitelist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5872,18 +6481,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     instanceId := "instanceId_example" // string | EC2 instance ID. A successful login operation from an EC2 instance gets cached in this accesslist, keyed off of instance ID.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsIdentityWhitelistInstanceId(context.Background(), instanceId).Execute()
+    resp, err := client.Auth.GetAuthAwsIdentityWhitelistInstanceId(context.Background(), instanceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsIdentityWhitelistInstanceId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5938,18 +6554,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsRole(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthAwsRole(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6000,18 +6623,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     role := "role_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsRoleRole(context.Background(), role).Execute()
+    resp, err := client.Auth.GetAuthAwsRoleRole(context.Background(), role).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsRoleRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6066,18 +6696,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsRoles(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthAwsRoles(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsRoles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6128,18 +6765,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsRoletagBlacklist(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthAwsRoletagBlacklist(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsRoletagBlacklist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6190,18 +6834,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag).Execute()
+    resp, err := client.Auth.GetAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsRoletagBlacklistRoleTag``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6256,18 +6907,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsRoletagDenylist(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthAwsRoletagDenylist(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsRoletagDenylist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6318,18 +6976,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag).Execute()
+    resp, err := client.Auth.GetAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAwsRoletagDenylistRoleTag``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6384,17 +7049,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAzureConfig(context.Background()).Execute()
+
+    resp, err := client.Auth.GetAuthAzureConfig(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAzureConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6441,18 +7113,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAzureRole(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthAzureRole(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAzureRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6503,18 +7182,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthAzureRoleName(context.Background(), name).Execute()
+    resp, err := client.Auth.GetAuthAzureRoleName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthAzureRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6569,17 +7255,24 @@ This path allows you to configure the centrify auth provider to interact with th
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthCentrifyConfig(context.Background()).Execute()
+
+    resp, err := client.Auth.GetAuthCentrifyConfig(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthCentrifyConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6626,18 +7319,25 @@ Manage trusted certificates used for authentication.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthCertCerts(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthCertCerts(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthCertCerts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6688,18 +7388,25 @@ Manage trusted certificates used for authentication.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | The name of the certificate
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthCertCertsName(context.Background(), name).Execute()
+    resp, err := client.Auth.GetAuthCertCertsName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthCertCertsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6754,18 +7461,25 @@ Manage Certificate Revocation Lists checked during authentication.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | The name of the certificate
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthCertCrlsName(context.Background(), name).Execute()
+    resp, err := client.Auth.GetAuthCertCrlsName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthCertCrlsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6820,17 +7534,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthCfConfig(context.Background()).Execute()
+
+    resp, err := client.Auth.GetAuthCfConfig(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthCfConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6877,18 +7598,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthCfRoles(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthCfRoles(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthCfRoles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6939,18 +7667,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     role := "role_example" // string | The name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthCfRolesRole(context.Background(), role).Execute()
+    resp, err := client.Auth.GetAuthCfRolesRole(context.Background(), role).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthCfRolesRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7005,17 +7740,24 @@ Configure credentials used to query the GCP IAM API to verify authenticating ser
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthGcpConfig(context.Background()).Execute()
+
+    resp, err := client.Auth.GetAuthGcpConfig(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGcpConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7062,18 +7804,25 @@ Lists all the roles that are registered with Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthGcpRole(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthGcpRole(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGcpRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7124,18 +7873,25 @@ Create a GCP role with associated policies and required attributes.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthGcpRoleName(context.Background(), name).Execute()
+    resp, err := client.Auth.GetAuthGcpRoleName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGcpRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7190,18 +7946,25 @@ Lists all the roles that are registered with Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthGcpRoles(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthGcpRoles(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGcpRoles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7252,17 +8015,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthGithubConfig(context.Background()).Execute()
+
+    resp, err := client.Auth.GetAuthGithubConfig(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGithubConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7309,18 +8079,25 @@ Read mappings for teams
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Return a list if `true` (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthGithubMapTeams(context.Background()).List(list).Execute()
+    list := "list_example" // string | Return a list if `true`
+
+    resp, err := client.Auth.GetAuthGithubMapTeams(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGithubMapTeams``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7371,18 +8148,25 @@ Read/write/delete a single teams mapping
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     key := "key_example" // string | Key for the teams mapping
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthGithubMapTeamsKey(context.Background(), key).Execute()
+    resp, err := client.Auth.GetAuthGithubMapTeamsKey(context.Background(), key).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGithubMapTeamsKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7437,18 +8221,25 @@ Read mappings for users
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Return a list if `true` (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthGithubMapUsers(context.Background()).List(list).Execute()
+    list := "list_example" // string | Return a list if `true`
+
+    resp, err := client.Auth.GetAuthGithubMapUsers(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGithubMapUsers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7499,18 +8290,25 @@ Read/write/delete a single users mapping
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     key := "key_example" // string | Key for the users mapping
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthGithubMapUsersKey(context.Background(), key).Execute()
+    resp, err := client.Auth.GetAuthGithubMapUsersKey(context.Background(), key).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthGithubMapUsersKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7565,17 +8363,24 @@ Read the current JWT authentication backend configuration.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthJwtConfig(context.Background()).Execute()
+
+    resp, err := client.Auth.GetAuthJwtConfig(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthJwtConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7622,17 +8427,24 @@ Callback endpoint to complete an OIDC login.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthJwtOidcCallback(context.Background()).Execute()
+
+    resp, err := client.Auth.GetAuthJwtOidcCallback(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthJwtOidcCallback``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7681,18 +8493,25 @@ Lists all the roles registered with the backend.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthJwtRole(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthJwtRole(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthJwtRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7743,18 +8562,25 @@ Read an existing role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthJwtRoleName(context.Background(), name).Execute()
+    resp, err := client.Auth.GetAuthJwtRoleName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthJwtRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7809,17 +8635,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthKerberosConfig(context.Background()).Execute()
+
+    resp, err := client.Auth.GetAuthKerberosConfig(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKerberosConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7866,17 +8699,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthKerberosConfigLdap(context.Background()).Execute()
+
+    resp, err := client.Auth.GetAuthKerberosConfigLdap(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKerberosConfigLdap``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7923,18 +8763,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthKerberosGroups(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthKerberosGroups(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKerberosGroups``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7985,18 +8832,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | Name of the LDAP group.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthKerberosGroupsName(context.Background(), name).Execute()
+    resp, err := client.Auth.GetAuthKerberosGroupsName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKerberosGroupsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8051,17 +8905,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthKerberosLogin(context.Background()).Execute()
+
+    resp, err := client.Auth.GetAuthKerberosLogin(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKerberosLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8108,17 +8969,24 @@ Configures the JWT Public Key and Kubernetes API information.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthKubernetesConfig(context.Background()).Execute()
+
+    resp, err := client.Auth.GetAuthKubernetesConfig(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKubernetesConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8165,18 +9033,25 @@ Lists all the roles registered with the backend.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthKubernetesRole(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthKubernetesRole(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKubernetesRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8227,18 +9102,25 @@ Register an role with the backend.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthKubernetesRoleName(context.Background(), name).Execute()
+    resp, err := client.Auth.GetAuthKubernetesRoleName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthKubernetesRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8293,17 +9175,24 @@ Configure the LDAP server to connect to, along with its options.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthLdapConfig(context.Background()).Execute()
+
+    resp, err := client.Auth.GetAuthLdapConfig(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthLdapConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8350,18 +9239,25 @@ Manage additional groups for users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthLdapGroups(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthLdapGroups(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthLdapGroups``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8412,18 +9308,25 @@ Manage additional groups for users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | Name of the LDAP group.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthLdapGroupsName(context.Background(), name).Execute()
+    resp, err := client.Auth.GetAuthLdapGroupsName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthLdapGroupsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8478,18 +9381,25 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthLdapUsers(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthLdapUsers(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthLdapUsers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8540,18 +9450,25 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | Name of the LDAP user.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthLdapUsersName(context.Background(), name).Execute()
+    resp, err := client.Auth.GetAuthLdapUsersName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthLdapUsersName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8606,17 +9523,24 @@ Manages the configuration for the Vault Auth Plugin.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthOciConfig(context.Background()).Execute()
+
+    resp, err := client.Auth.GetAuthOciConfig(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOciConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8663,18 +9587,25 @@ Lists all the roles that are registered with Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthOciRole(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthOciRole(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOciRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8725,18 +9656,25 @@ Create a role and associate policies to it.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     role := "role_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthOciRoleRole(context.Background(), role).Execute()
+    resp, err := client.Auth.GetAuthOciRoleRole(context.Background(), role).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOciRoleRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8791,17 +9729,24 @@ Read the current JWT authentication backend configuration.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthOidcConfig(context.Background()).Execute()
+
+    resp, err := client.Auth.GetAuthOidcConfig(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOidcConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8848,17 +9793,24 @@ Callback endpoint to complete an OIDC login.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthOidcOidcCallback(context.Background()).Execute()
+
+    resp, err := client.Auth.GetAuthOidcOidcCallback(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOidcOidcCallback``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8907,18 +9859,25 @@ Lists all the roles registered with the backend.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthOidcRole(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthOidcRole(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOidcRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8969,18 +9928,25 @@ Read an existing role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | Name of the role.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthOidcRoleName(context.Background(), name).Execute()
+    resp, err := client.Auth.GetAuthOidcRoleName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOidcRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9035,17 +10001,24 @@ This endpoint allows you to configure the Okta and its configuration options.  T
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthOktaConfig(context.Background()).Execute()
+
+    resp, err := client.Auth.GetAuthOktaConfig(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOktaConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9092,18 +10065,25 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthOktaGroups(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthOktaGroups(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOktaGroups``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9154,18 +10134,25 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | Name of the Okta group.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthOktaGroupsName(context.Background(), name).Execute()
+    resp, err := client.Auth.GetAuthOktaGroupsName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOktaGroupsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9220,18 +10207,25 @@ Manage additional groups for users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthOktaUsers(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthOktaUsers(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOktaUsers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9282,18 +10276,25 @@ Manage additional groups for users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | Name of the user.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthOktaUsersName(context.Background(), name).Execute()
+    resp, err := client.Auth.GetAuthOktaUsersName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOktaUsersName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9348,18 +10349,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     nonce := "nonce_example" // string | Nonce provided during a login request to retrieve the number verification challenge for the matching request.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthOktaVerifyNonce(context.Background(), nonce).Execute()
+    resp, err := client.Auth.GetAuthOktaVerifyNonce(context.Background(), nonce).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthOktaVerifyNonce``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9414,17 +10422,24 @@ Configure the RADIUS server to connect to, along with its options.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthRadiusConfig(context.Background()).Execute()
+
+    resp, err := client.Auth.GetAuthRadiusConfig(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthRadiusConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9471,18 +10486,25 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthRadiusUsers(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthRadiusUsers(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthRadiusUsers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9533,18 +10555,25 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | Name of the RADIUS user.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthRadiusUsersName(context.Background(), name).Execute()
+    resp, err := client.Auth.GetAuthRadiusUsersName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthRadiusUsersName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9599,18 +10628,25 @@ List token accessors, which can then be be used to iterate and discover their pr
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthTokenAccessors(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthTokenAccessors(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthTokenAccessors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9661,17 +10697,24 @@ This endpoint will lookup a token and its properties.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthTokenLookup(context.Background()).Execute()
+
+    resp, err := client.Auth.GetAuthTokenLookup(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthTokenLookup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9718,17 +10761,24 @@ This endpoint will lookup a token and its properties.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthTokenLookupSelf(context.Background()).Execute()
+
+    resp, err := client.Auth.GetAuthTokenLookupSelf(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthTokenLookupSelf``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9775,18 +10825,25 @@ This endpoint lists configured roles.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthTokenRoles(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthTokenRoles(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthTokenRoles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9837,18 +10894,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthTokenRolesRoleName(context.Background(), roleName).Execute()
+    resp, err := client.Auth.GetAuthTokenRolesRoleName(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthTokenRolesRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9903,18 +10967,25 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthUserpassUsers(context.Background()).List(list).Execute()
+    resp, err := client.Auth.GetAuthUserpassUsers(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthUserpassUsers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9965,18 +11036,25 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     username := "username_example" // string | Username for this user.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.GetAuthUserpassUsersUsername(context.Background(), username).Execute()
+    resp, err := client.Auth.GetAuthUserpassUsersUsername(context.Background(), username).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.GetAuthUserpassUsersUsername``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10031,18 +11109,25 @@ Authenticates an RAM entity with Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    alicloudLoginRequest := *openapiclient.NewAlicloudLoginRequest() // AlicloudLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAlicloudLogin(context.Background()).AlicloudLoginRequest(alicloudLoginRequest).Execute()
+    alicloudLoginRequest := *openapiclient.NewAlicloudLoginRequest() // AlicloudLoginRequest | 
+
+    resp, err := client.Auth.PostAuthAlicloudLogin(context.Background()).AlicloudLoginRequest(alicloudLoginRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAlicloudLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10093,19 +11178,26 @@ Create a role and associate policies to it.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    role := "role_example" // string | The name of the role as it should appear in Vault.
-    alicloudRoleRequest := *openapiclient.NewAlicloudRoleRequest() // AlicloudRoleRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAlicloudRoleRole(context.Background(), role).AlicloudRoleRequest(alicloudRoleRequest).Execute()
+    role := "role_example" // string | The name of the role as it should appear in Vault.
+    alicloudRoleRequest := *openapiclient.NewAlicloudRoleRequest() // AlicloudRoleRequest | 
+
+    resp, err := client.Auth.PostAuthAlicloudRoleRole(context.Background(), role).AlicloudRoleRequest(alicloudRoleRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAlicloudRoleRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10161,18 +11253,25 @@ Log in with an App ID and User ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    appIdLoginRequest := *openapiclient.NewAppIdLoginRequest() // AppIdLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAppIdLogin(context.Background()).AppIdLoginRequest(appIdLoginRequest).Execute()
+    appIdLoginRequest := *openapiclient.NewAppIdLoginRequest() // AppIdLoginRequest | 
+
+    resp, err := client.Auth.PostAuthAppIdLogin(context.Background()).AppIdLoginRequest(appIdLoginRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAppIdLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10223,19 +11322,26 @@ Log in with an App ID and User ID.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    appId := "appId_example" // string | The unique app ID
-    appIdLoginRequest := *openapiclient.NewAppIdLoginRequest() // AppIdLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAppIdLoginAppId(context.Background(), appId).AppIdLoginRequest(appIdLoginRequest).Execute()
+    appId := "appId_example" // string | The unique app ID
+    appIdLoginRequest := *openapiclient.NewAppIdLoginRequest() // AppIdLoginRequest | 
+
+    resp, err := client.Auth.PostAuthAppIdLoginAppId(context.Background(), appId).AppIdLoginRequest(appIdLoginRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAppIdLoginAppId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10291,19 +11397,26 @@ Read/write/delete a single app-id mapping
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    key := "key_example" // string | Key for the app-id mapping
-    appIdMapAppIdRequest := *openapiclient.NewAppIdMapAppIdRequest() // AppIdMapAppIdRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAppIdMapAppIdKey(context.Background(), key).AppIdMapAppIdRequest(appIdMapAppIdRequest).Execute()
+    key := "key_example" // string | Key for the app-id mapping
+    appIdMapAppIdRequest := *openapiclient.NewAppIdMapAppIdRequest() // AppIdMapAppIdRequest | 
+
+    resp, err := client.Auth.PostAuthAppIdMapAppIdKey(context.Background(), key).AppIdMapAppIdRequest(appIdMapAppIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAppIdMapAppIdKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10359,19 +11472,26 @@ Read/write/delete a single user-id mapping
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    key := "key_example" // string | Key for the user-id mapping
-    appIdMapUserIdRequest := *openapiclient.NewAppIdMapUserIdRequest() // AppIdMapUserIdRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAppIdMapUserIdKey(context.Background(), key).AppIdMapUserIdRequest(appIdMapUserIdRequest).Execute()
+    key := "key_example" // string | Key for the user-id mapping
+    appIdMapUserIdRequest := *openapiclient.NewAppIdMapUserIdRequest() // AppIdMapUserIdRequest | 
+
+    resp, err := client.Auth.PostAuthAppIdMapUserIdKey(context.Background(), key).AppIdMapUserIdRequest(appIdMapUserIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAppIdMapUserIdKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10427,18 +11547,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    approleLoginRequest := *openapiclient.NewApproleLoginRequest() // ApproleLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleLogin(context.Background()).ApproleLoginRequest(approleLoginRequest).Execute()
+    approleLoginRequest := *openapiclient.NewApproleLoginRequest() // ApproleLoginRequest | 
+
+    resp, err := client.Auth.PostAuthApproleLogin(context.Background()).ApproleLoginRequest(approleLoginRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10489,19 +11616,26 @@ Register an role with the backend.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleRequest := *openapiclient.NewApproleRoleRequest() // ApproleRoleRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleName(context.Background(), roleName).ApproleRoleRequest(approleRoleRequest).Execute()
+    roleName := "roleName_example" // string | Name of the role.
+    approleRoleRequest := *openapiclient.NewApproleRoleRequest() // ApproleRoleRequest | 
+
+    resp, err := client.Auth.PostAuthApproleRoleRoleName(context.Background(), roleName).ApproleRoleRequest(approleRoleRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10557,19 +11691,26 @@ Impose secret_id to be presented during login using this role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleBindSecretIdRequest := *openapiclient.NewApproleRoleBindSecretIdRequest() // ApproleRoleBindSecretIdRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName).ApproleRoleBindSecretIdRequest(approleRoleBindSecretIdRequest).Execute()
+    roleName := "roleName_example" // string | Name of the role.
+    approleRoleBindSecretIdRequest := *openapiclient.NewApproleRoleBindSecretIdRequest() // ApproleRoleBindSecretIdRequest | 
+
+    resp, err := client.Auth.PostAuthApproleRoleRoleNameBindSecretId(context.Background(), roleName).ApproleRoleBindSecretIdRequest(approleRoleBindSecretIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameBindSecretId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10625,19 +11766,26 @@ Deprecated: Comma separated list of CIDR blocks, if set, specifies blocks of IP 
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleBoundCidrListRequest := *openapiclient.NewApproleRoleBoundCidrListRequest() // ApproleRoleBoundCidrListRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName).ApproleRoleBoundCidrListRequest(approleRoleBoundCidrListRequest).Execute()
+    roleName := "roleName_example" // string | Name of the role.
+    approleRoleBoundCidrListRequest := *openapiclient.NewApproleRoleBoundCidrListRequest() // ApproleRoleBoundCidrListRequest | 
+
+    resp, err := client.Auth.PostAuthApproleRoleRoleNameBoundCidrList(context.Background(), roleName).ApproleRoleBoundCidrListRequest(approleRoleBoundCidrListRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameBoundCidrList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10693,19 +11841,26 @@ Assign a SecretID of choice against the role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleCustomSecretIdRequest := *openapiclient.NewApproleRoleCustomSecretIdRequest() // ApproleRoleCustomSecretIdRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameCustomSecretId(context.Background(), roleName).ApproleRoleCustomSecretIdRequest(approleRoleCustomSecretIdRequest).Execute()
+    roleName := "roleName_example" // string | Name of the role.
+    approleRoleCustomSecretIdRequest := *openapiclient.NewApproleRoleCustomSecretIdRequest() // ApproleRoleCustomSecretIdRequest | 
+
+    resp, err := client.Auth.PostAuthApproleRoleRoleNameCustomSecretId(context.Background(), roleName).ApproleRoleCustomSecretIdRequest(approleRoleCustomSecretIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameCustomSecretId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10761,19 +11916,26 @@ Updates the value of 'period' on the role
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRolePeriodRequest := *openapiclient.NewApproleRolePeriodRequest() // ApproleRolePeriodRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNamePeriod(context.Background(), roleName).ApproleRolePeriodRequest(approleRolePeriodRequest).Execute()
+    roleName := "roleName_example" // string | Name of the role.
+    approleRolePeriodRequest := *openapiclient.NewApproleRolePeriodRequest() // ApproleRolePeriodRequest | 
+
+    resp, err := client.Auth.PostAuthApproleRoleRoleNamePeriod(context.Background(), roleName).ApproleRolePeriodRequest(approleRolePeriodRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNamePeriod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10829,19 +11991,26 @@ Policies of the role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRolePoliciesRequest := *openapiclient.NewApproleRolePoliciesRequest() // ApproleRolePoliciesRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNamePolicies(context.Background(), roleName).ApproleRolePoliciesRequest(approleRolePoliciesRequest).Execute()
+    roleName := "roleName_example" // string | Name of the role.
+    approleRolePoliciesRequest := *openapiclient.NewApproleRolePoliciesRequest() // ApproleRolePoliciesRequest | 
+
+    resp, err := client.Auth.PostAuthApproleRoleRoleNamePolicies(context.Background(), roleName).ApproleRolePoliciesRequest(approleRolePoliciesRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNamePolicies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10897,19 +12066,26 @@ Returns the 'role_id' of the role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleRoleIdRequest := *openapiclient.NewApproleRoleRoleIdRequest() // ApproleRoleRoleIdRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameRoleId(context.Background(), roleName).ApproleRoleRoleIdRequest(approleRoleRoleIdRequest).Execute()
+    roleName := "roleName_example" // string | Name of the role.
+    approleRoleRoleIdRequest := *openapiclient.NewApproleRoleRoleIdRequest() // ApproleRoleRoleIdRequest | 
+
+    resp, err := client.Auth.PostAuthApproleRoleRoleNameRoleId(context.Background(), roleName).ApproleRoleRoleIdRequest(approleRoleRoleIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameRoleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10965,19 +12141,26 @@ Generate a SecretID against this role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleSecretIdRequest := *openapiclient.NewApproleRoleSecretIdRequest() // ApproleRoleSecretIdRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameSecretId(context.Background(), roleName).ApproleRoleSecretIdRequest(approleRoleSecretIdRequest).Execute()
+    roleName := "roleName_example" // string | Name of the role.
+    approleRoleSecretIdRequest := *openapiclient.NewApproleRoleSecretIdRequest() // ApproleRoleSecretIdRequest | 
+
+    resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretId(context.Background(), roleName).ApproleRoleSecretIdRequest(approleRoleSecretIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11033,19 +12216,26 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleSecretIdAccessorDestroyRequest := *openapiclient.NewApproleRoleSecretIdAccessorDestroyRequest() // ApproleRoleSecretIdAccessorDestroyRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(context.Background(), roleName).ApproleRoleSecretIdAccessorDestroyRequest(approleRoleSecretIdAccessorDestroyRequest).Execute()
+    roleName := "roleName_example" // string | Name of the role.
+    approleRoleSecretIdAccessorDestroyRequest := *openapiclient.NewApproleRoleSecretIdAccessorDestroyRequest() // ApproleRoleSecretIdAccessorDestroyRequest | 
+
+    resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdAccessorDestroy(context.Background(), roleName).ApproleRoleSecretIdAccessorDestroyRequest(approleRoleSecretIdAccessorDestroyRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretIdAccessorDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11101,19 +12291,26 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleSecretIdAccessorLookupRequest := *openapiclient.NewApproleRoleSecretIdAccessorLookupRequest() // ApproleRoleSecretIdAccessorLookupRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameSecretIdAccessorLookup(context.Background(), roleName).ApproleRoleSecretIdAccessorLookupRequest(approleRoleSecretIdAccessorLookupRequest).Execute()
+    roleName := "roleName_example" // string | Name of the role.
+    approleRoleSecretIdAccessorLookupRequest := *openapiclient.NewApproleRoleSecretIdAccessorLookupRequest() // ApproleRoleSecretIdAccessorLookupRequest | 
+
+    resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdAccessorLookup(context.Background(), roleName).ApproleRoleSecretIdAccessorLookupRequest(approleRoleSecretIdAccessorLookupRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretIdAccessorLookup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11169,19 +12366,26 @@ Comma separated list of CIDR blocks, if set, specifies blocks of IP addresses wh
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleSecretIdBoundCidrsRequest := *openapiclient.NewApproleRoleSecretIdBoundCidrsRequest() // ApproleRoleSecretIdBoundCidrsRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName).ApproleRoleSecretIdBoundCidrsRequest(approleRoleSecretIdBoundCidrsRequest).Execute()
+    roleName := "roleName_example" // string | Name of the role.
+    approleRoleSecretIdBoundCidrsRequest := *openapiclient.NewApproleRoleSecretIdBoundCidrsRequest() // ApproleRoleSecretIdBoundCidrsRequest | 
+
+    resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdBoundCidrs(context.Background(), roleName).ApproleRoleSecretIdBoundCidrsRequest(approleRoleSecretIdBoundCidrsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretIdBoundCidrs``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11237,19 +12441,26 @@ Invalidate an issued secret_id
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleSecretIdDestroyRequest := *openapiclient.NewApproleRoleSecretIdDestroyRequest() // ApproleRoleSecretIdDestroyRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameSecretIdDestroy(context.Background(), roleName).ApproleRoleSecretIdDestroyRequest(approleRoleSecretIdDestroyRequest).Execute()
+    roleName := "roleName_example" // string | Name of the role.
+    approleRoleSecretIdDestroyRequest := *openapiclient.NewApproleRoleSecretIdDestroyRequest() // ApproleRoleSecretIdDestroyRequest | 
+
+    resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdDestroy(context.Background(), roleName).ApproleRoleSecretIdDestroyRequest(approleRoleSecretIdDestroyRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretIdDestroy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11305,19 +12516,26 @@ Read the properties of an issued secret_id
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleSecretIdLookupRequest := *openapiclient.NewApproleRoleSecretIdLookupRequest() // ApproleRoleSecretIdLookupRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameSecretIdLookup(context.Background(), roleName).ApproleRoleSecretIdLookupRequest(approleRoleSecretIdLookupRequest).Execute()
+    roleName := "roleName_example" // string | Name of the role.
+    approleRoleSecretIdLookupRequest := *openapiclient.NewApproleRoleSecretIdLookupRequest() // ApproleRoleSecretIdLookupRequest | 
+
+    resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdLookup(context.Background(), roleName).ApproleRoleSecretIdLookupRequest(approleRoleSecretIdLookupRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretIdLookup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11373,19 +12591,26 @@ Use limit of the SecretID generated against the role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleSecretIdNumUsesRequest := *openapiclient.NewApproleRoleSecretIdNumUsesRequest() // ApproleRoleSecretIdNumUsesRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName).ApproleRoleSecretIdNumUsesRequest(approleRoleSecretIdNumUsesRequest).Execute()
+    roleName := "roleName_example" // string | Name of the role.
+    approleRoleSecretIdNumUsesRequest := *openapiclient.NewApproleRoleSecretIdNumUsesRequest() // ApproleRoleSecretIdNumUsesRequest | 
+
+    resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdNumUses(context.Background(), roleName).ApproleRoleSecretIdNumUsesRequest(approleRoleSecretIdNumUsesRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretIdNumUses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11441,19 +12666,26 @@ Duration in seconds, representing the lifetime of the SecretIDs that are generat
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleSecretIdTtlRequest := *openapiclient.NewApproleRoleSecretIdTtlRequest() // ApproleRoleSecretIdTtlRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName).ApproleRoleSecretIdTtlRequest(approleRoleSecretIdTtlRequest).Execute()
+    roleName := "roleName_example" // string | Name of the role.
+    approleRoleSecretIdTtlRequest := *openapiclient.NewApproleRoleSecretIdTtlRequest() // ApproleRoleSecretIdTtlRequest | 
+
+    resp, err := client.Auth.PostAuthApproleRoleRoleNameSecretIdTtl(context.Background(), roleName).ApproleRoleSecretIdTtlRequest(approleRoleSecretIdTtlRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameSecretIdTtl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11509,19 +12741,26 @@ Comma separated string or list of CIDR blocks. If set, specifies the blocks of I
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleTokenBoundCidrsRequest := *openapiclient.NewApproleRoleTokenBoundCidrsRequest() // ApproleRoleTokenBoundCidrsRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName).ApproleRoleTokenBoundCidrsRequest(approleRoleTokenBoundCidrsRequest).Execute()
+    roleName := "roleName_example" // string | Name of the role.
+    approleRoleTokenBoundCidrsRequest := *openapiclient.NewApproleRoleTokenBoundCidrsRequest() // ApproleRoleTokenBoundCidrsRequest | 
+
+    resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenBoundCidrs(context.Background(), roleName).ApproleRoleTokenBoundCidrsRequest(approleRoleTokenBoundCidrsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameTokenBoundCidrs``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11577,19 +12816,26 @@ Duration in seconds, the maximum lifetime of the tokens issued by using the Secr
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleTokenMaxTtlRequest := *openapiclient.NewApproleRoleTokenMaxTtlRequest() // ApproleRoleTokenMaxTtlRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName).ApproleRoleTokenMaxTtlRequest(approleRoleTokenMaxTtlRequest).Execute()
+    roleName := "roleName_example" // string | Name of the role.
+    approleRoleTokenMaxTtlRequest := *openapiclient.NewApproleRoleTokenMaxTtlRequest() // ApproleRoleTokenMaxTtlRequest | 
+
+    resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenMaxTtl(context.Background(), roleName).ApproleRoleTokenMaxTtlRequest(approleRoleTokenMaxTtlRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameTokenMaxTtl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11645,19 +12891,26 @@ Number of times issued tokens can be used
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleTokenNumUsesRequest := *openapiclient.NewApproleRoleTokenNumUsesRequest() // ApproleRoleTokenNumUsesRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName).ApproleRoleTokenNumUsesRequest(approleRoleTokenNumUsesRequest).Execute()
+    roleName := "roleName_example" // string | Name of the role.
+    approleRoleTokenNumUsesRequest := *openapiclient.NewApproleRoleTokenNumUsesRequest() // ApproleRoleTokenNumUsesRequest | 
+
+    resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenNumUses(context.Background(), roleName).ApproleRoleTokenNumUsesRequest(approleRoleTokenNumUsesRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameTokenNumUses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11713,19 +12966,26 @@ Duration in seconds, the lifetime of the token issued by using the SecretID that
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role.
-    approleRoleTokenTtlRequest := *openapiclient.NewApproleRoleTokenTtlRequest() // ApproleRoleTokenTtlRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName).ApproleRoleTokenTtlRequest(approleRoleTokenTtlRequest).Execute()
+    roleName := "roleName_example" // string | Name of the role.
+    approleRoleTokenTtlRequest := *openapiclient.NewApproleRoleTokenTtlRequest() // ApproleRoleTokenTtlRequest | 
+
+    resp, err := client.Auth.PostAuthApproleRoleRoleNameTokenTtl(context.Background(), roleName).ApproleRoleTokenTtlRequest(approleRoleTokenTtlRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleRoleRoleNameTokenTtl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11781,17 +13041,24 @@ Trigger the clean-up of expired SecretID entries.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthApproleTidySecretId(context.Background()).Execute()
+
+    resp, err := client.Auth.PostAuthApproleTidySecretId(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthApproleTidySecretId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11838,19 +13105,26 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    certName := "certName_example" // string | Name of the certificate.
-    awsConfigCertificateRequest := *openapiclient.NewAwsConfigCertificateRequest() // AwsConfigCertificateRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsConfigCertificateCertName(context.Background(), certName).AwsConfigCertificateRequest(awsConfigCertificateRequest).Execute()
+    certName := "certName_example" // string | Name of the certificate.
+    awsConfigCertificateRequest := *openapiclient.NewAwsConfigCertificateRequest() // AwsConfigCertificateRequest | 
+
+    resp, err := client.Auth.PostAuthAwsConfigCertificateCertName(context.Background(), certName).AwsConfigCertificateRequest(awsConfigCertificateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigCertificateCertName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11906,18 +13180,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    awsConfigClientRequest := *openapiclient.NewAwsConfigClientRequest() // AwsConfigClientRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsConfigClient(context.Background()).AwsConfigClientRequest(awsConfigClientRequest).Execute()
+    awsConfigClientRequest := *openapiclient.NewAwsConfigClientRequest() // AwsConfigClientRequest | 
+
+    resp, err := client.Auth.PostAuthAwsConfigClient(context.Background()).AwsConfigClientRequest(awsConfigClientRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigClient``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11968,18 +13249,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    awsConfigIdentityRequest := *openapiclient.NewAwsConfigIdentityRequest() // AwsConfigIdentityRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsConfigIdentity(context.Background()).AwsConfigIdentityRequest(awsConfigIdentityRequest).Execute()
+    awsConfigIdentityRequest := *openapiclient.NewAwsConfigIdentityRequest() // AwsConfigIdentityRequest | 
+
+    resp, err := client.Auth.PostAuthAwsConfigIdentity(context.Background()).AwsConfigIdentityRequest(awsConfigIdentityRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigIdentity``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12030,17 +13318,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsConfigRotateRoot(context.Background()).Execute()
+
+    resp, err := client.Auth.PostAuthAwsConfigRotateRoot(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigRotateRoot``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12087,19 +13382,26 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
-    awsConfigStsRequest := *openapiclient.NewAwsConfigStsRequest() // AwsConfigStsRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsConfigStsAccountId(context.Background(), accountId).AwsConfigStsRequest(awsConfigStsRequest).Execute()
+    accountId := "accountId_example" // string | AWS account ID to be associated with STS role. If set, Vault will use assumed credentials to verify any login attempts from EC2 instances in this account.
+    awsConfigStsRequest := *openapiclient.NewAwsConfigStsRequest() // AwsConfigStsRequest | 
+
+    resp, err := client.Auth.PostAuthAwsConfigStsAccountId(context.Background(), accountId).AwsConfigStsRequest(awsConfigStsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigStsAccountId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12155,18 +13457,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    awsConfigTidyIdentityAccesslistRequest := *openapiclient.NewAwsConfigTidyIdentityAccesslistRequest() // AwsConfigTidyIdentityAccesslistRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsConfigTidyIdentityAccesslist(context.Background()).AwsConfigTidyIdentityAccesslistRequest(awsConfigTidyIdentityAccesslistRequest).Execute()
+    awsConfigTidyIdentityAccesslistRequest := *openapiclient.NewAwsConfigTidyIdentityAccesslistRequest() // AwsConfigTidyIdentityAccesslistRequest | 
+
+    resp, err := client.Auth.PostAuthAwsConfigTidyIdentityAccesslist(context.Background()).AwsConfigTidyIdentityAccesslistRequest(awsConfigTidyIdentityAccesslistRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigTidyIdentityAccesslist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12217,18 +13526,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    awsConfigTidyIdentityWhitelistRequest := *openapiclient.NewAwsConfigTidyIdentityWhitelistRequest() // AwsConfigTidyIdentityWhitelistRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsConfigTidyIdentityWhitelist(context.Background()).AwsConfigTidyIdentityWhitelistRequest(awsConfigTidyIdentityWhitelistRequest).Execute()
+    awsConfigTidyIdentityWhitelistRequest := *openapiclient.NewAwsConfigTidyIdentityWhitelistRequest() // AwsConfigTidyIdentityWhitelistRequest | 
+
+    resp, err := client.Auth.PostAuthAwsConfigTidyIdentityWhitelist(context.Background()).AwsConfigTidyIdentityWhitelistRequest(awsConfigTidyIdentityWhitelistRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigTidyIdentityWhitelist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12279,18 +13595,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    awsConfigTidyRoletagBlacklistRequest := *openapiclient.NewAwsConfigTidyRoletagBlacklistRequest() // AwsConfigTidyRoletagBlacklistRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsConfigTidyRoletagBlacklist(context.Background()).AwsConfigTidyRoletagBlacklistRequest(awsConfigTidyRoletagBlacklistRequest).Execute()
+    awsConfigTidyRoletagBlacklistRequest := *openapiclient.NewAwsConfigTidyRoletagBlacklistRequest() // AwsConfigTidyRoletagBlacklistRequest | 
+
+    resp, err := client.Auth.PostAuthAwsConfigTidyRoletagBlacklist(context.Background()).AwsConfigTidyRoletagBlacklistRequest(awsConfigTidyRoletagBlacklistRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigTidyRoletagBlacklist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12341,18 +13664,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    awsConfigTidyRoletagDenylistRequest := *openapiclient.NewAwsConfigTidyRoletagDenylistRequest() // AwsConfigTidyRoletagDenylistRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsConfigTidyRoletagDenylist(context.Background()).AwsConfigTidyRoletagDenylistRequest(awsConfigTidyRoletagDenylistRequest).Execute()
+    awsConfigTidyRoletagDenylistRequest := *openapiclient.NewAwsConfigTidyRoletagDenylistRequest() // AwsConfigTidyRoletagDenylistRequest | 
+
+    resp, err := client.Auth.PostAuthAwsConfigTidyRoletagDenylist(context.Background()).AwsConfigTidyRoletagDenylistRequest(awsConfigTidyRoletagDenylistRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsConfigTidyRoletagDenylist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12403,18 +13733,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    awsLoginRequest := *openapiclient.NewAwsLoginRequest() // AwsLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsLogin(context.Background()).AwsLoginRequest(awsLoginRequest).Execute()
+    awsLoginRequest := *openapiclient.NewAwsLoginRequest() // AwsLoginRequest | 
+
+    resp, err := client.Auth.PostAuthAwsLogin(context.Background()).AwsLoginRequest(awsLoginRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12465,19 +13802,26 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    role := "role_example" // string | Name of the role.
-    awsRoleRequest := *openapiclient.NewAwsRoleRequest() // AwsRoleRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsRoleRole(context.Background(), role).AwsRoleRequest(awsRoleRequest).Execute()
+    role := "role_example" // string | Name of the role.
+    awsRoleRequest := *openapiclient.NewAwsRoleRequest() // AwsRoleRequest | 
+
+    resp, err := client.Auth.PostAuthAwsRoleRole(context.Background(), role).AwsRoleRequest(awsRoleRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsRoleRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12533,19 +13877,26 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    role := "role_example" // string | Name of the role.
-    awsRoleTagRequest := *openapiclient.NewAwsRoleTagRequest() // AwsRoleTagRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsRoleRoleTag(context.Background(), role).AwsRoleTagRequest(awsRoleTagRequest).Execute()
+    role := "role_example" // string | Name of the role.
+    awsRoleTagRequest := *openapiclient.NewAwsRoleTagRequest() // AwsRoleTagRequest | 
+
+    resp, err := client.Auth.PostAuthAwsRoleRoleTag(context.Background(), role).AwsRoleTagRequest(awsRoleTagRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsRoleRoleTag``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12601,18 +13952,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag).Execute()
+    resp, err := client.Auth.PostAuthAwsRoletagBlacklistRoleTag(context.Background(), roleTag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsRoletagBlacklistRoleTag``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12667,18 +14025,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleTag := "roleTag_example" // string | Role tag to be deny listed. The tag can be supplied as-is. In order to avoid any encoding problems, it can be base64 encoded.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag).Execute()
+    resp, err := client.Auth.PostAuthAwsRoletagDenylistRoleTag(context.Background(), roleTag).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsRoletagDenylistRoleTag``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12733,18 +14098,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    awsTidyIdentityAccesslistRequest := *openapiclient.NewAwsTidyIdentityAccesslistRequest() // AwsTidyIdentityAccesslistRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsTidyIdentityAccesslist(context.Background()).AwsTidyIdentityAccesslistRequest(awsTidyIdentityAccesslistRequest).Execute()
+    awsTidyIdentityAccesslistRequest := *openapiclient.NewAwsTidyIdentityAccesslistRequest() // AwsTidyIdentityAccesslistRequest | 
+
+    resp, err := client.Auth.PostAuthAwsTidyIdentityAccesslist(context.Background()).AwsTidyIdentityAccesslistRequest(awsTidyIdentityAccesslistRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsTidyIdentityAccesslist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12795,18 +14167,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    awsTidyIdentityWhitelistRequest := *openapiclient.NewAwsTidyIdentityWhitelistRequest() // AwsTidyIdentityWhitelistRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsTidyIdentityWhitelist(context.Background()).AwsTidyIdentityWhitelistRequest(awsTidyIdentityWhitelistRequest).Execute()
+    awsTidyIdentityWhitelistRequest := *openapiclient.NewAwsTidyIdentityWhitelistRequest() // AwsTidyIdentityWhitelistRequest | 
+
+    resp, err := client.Auth.PostAuthAwsTidyIdentityWhitelist(context.Background()).AwsTidyIdentityWhitelistRequest(awsTidyIdentityWhitelistRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsTidyIdentityWhitelist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12857,18 +14236,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    awsTidyRoletagBlacklistRequest := *openapiclient.NewAwsTidyRoletagBlacklistRequest() // AwsTidyRoletagBlacklistRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsTidyRoletagBlacklist(context.Background()).AwsTidyRoletagBlacklistRequest(awsTidyRoletagBlacklistRequest).Execute()
+    awsTidyRoletagBlacklistRequest := *openapiclient.NewAwsTidyRoletagBlacklistRequest() // AwsTidyRoletagBlacklistRequest | 
+
+    resp, err := client.Auth.PostAuthAwsTidyRoletagBlacklist(context.Background()).AwsTidyRoletagBlacklistRequest(awsTidyRoletagBlacklistRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsTidyRoletagBlacklist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12919,18 +14305,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    awsTidyRoletagDenylistRequest := *openapiclient.NewAwsTidyRoletagDenylistRequest() // AwsTidyRoletagDenylistRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAwsTidyRoletagDenylist(context.Background()).AwsTidyRoletagDenylistRequest(awsTidyRoletagDenylistRequest).Execute()
+    awsTidyRoletagDenylistRequest := *openapiclient.NewAwsTidyRoletagDenylistRequest() // AwsTidyRoletagDenylistRequest | 
+
+    resp, err := client.Auth.PostAuthAwsTidyRoletagDenylist(context.Background()).AwsTidyRoletagDenylistRequest(awsTidyRoletagDenylistRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAwsTidyRoletagDenylist``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12981,18 +14374,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    azureConfigRequest := *openapiclient.NewAzureConfigRequest() // AzureConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAzureConfig(context.Background()).AzureConfigRequest(azureConfigRequest).Execute()
+    azureConfigRequest := *openapiclient.NewAzureConfigRequest() // AzureConfigRequest | 
+
+    resp, err := client.Auth.PostAuthAzureConfig(context.Background()).AzureConfigRequest(azureConfigRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAzureConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13043,18 +14443,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    azureLoginRequest := *openapiclient.NewAzureLoginRequest() // AzureLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAzureLogin(context.Background()).AzureLoginRequest(azureLoginRequest).Execute()
+    azureLoginRequest := *openapiclient.NewAzureLoginRequest() // AzureLoginRequest | 
+
+    resp, err := client.Auth.PostAuthAzureLogin(context.Background()).AzureLoginRequest(azureLoginRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAzureLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13105,19 +14512,26 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the role.
-    azureRoleRequest := *openapiclient.NewAzureRoleRequest() // AzureRoleRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthAzureRoleName(context.Background(), name).AzureRoleRequest(azureRoleRequest).Execute()
+    name := "name_example" // string | Name of the role.
+    azureRoleRequest := *openapiclient.NewAzureRoleRequest() // AzureRoleRequest | 
+
+    resp, err := client.Auth.PostAuthAzureRoleName(context.Background(), name).AzureRoleRequest(azureRoleRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthAzureRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13173,18 +14587,25 @@ This path allows you to configure the centrify auth provider to interact with th
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    centrifyConfigRequest := *openapiclient.NewCentrifyConfigRequest() // CentrifyConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthCentrifyConfig(context.Background()).CentrifyConfigRequest(centrifyConfigRequest).Execute()
+    centrifyConfigRequest := *openapiclient.NewCentrifyConfigRequest() // CentrifyConfigRequest | 
+
+    resp, err := client.Auth.PostAuthCentrifyConfig(context.Background()).CentrifyConfigRequest(centrifyConfigRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCentrifyConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13235,18 +14656,25 @@ Log in with a username and password.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    centrifyLoginRequest := *openapiclient.NewCentrifyLoginRequest() // CentrifyLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthCentrifyLogin(context.Background()).CentrifyLoginRequest(centrifyLoginRequest).Execute()
+    centrifyLoginRequest := *openapiclient.NewCentrifyLoginRequest() // CentrifyLoginRequest | 
+
+    resp, err := client.Auth.PostAuthCentrifyLogin(context.Background()).CentrifyLoginRequest(centrifyLoginRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCentrifyLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13297,19 +14725,26 @@ Manage trusted certificates used for authentication.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | The name of the certificate
-    certCertsRequest := *openapiclient.NewCertCertsRequest() // CertCertsRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthCertCertsName(context.Background(), name).CertCertsRequest(certCertsRequest).Execute()
+    name := "name_example" // string | The name of the certificate
+    certCertsRequest := *openapiclient.NewCertCertsRequest() // CertCertsRequest | 
+
+    resp, err := client.Auth.PostAuthCertCertsName(context.Background(), name).CertCertsRequest(certCertsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCertCertsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13365,18 +14800,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    certConfigRequest := *openapiclient.NewCertConfigRequest() // CertConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthCertConfig(context.Background()).CertConfigRequest(certConfigRequest).Execute()
+    certConfigRequest := *openapiclient.NewCertConfigRequest() // CertConfigRequest | 
+
+    resp, err := client.Auth.PostAuthCertConfig(context.Background()).CertConfigRequest(certConfigRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCertConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13427,19 +14869,26 @@ Manage Certificate Revocation Lists checked during authentication.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | The name of the certificate
-    certCrlsRequest := *openapiclient.NewCertCrlsRequest() // CertCrlsRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthCertCrlsName(context.Background(), name).CertCrlsRequest(certCrlsRequest).Execute()
+    name := "name_example" // string | The name of the certificate
+    certCrlsRequest := *openapiclient.NewCertCrlsRequest() // CertCrlsRequest | 
+
+    resp, err := client.Auth.PostAuthCertCrlsName(context.Background(), name).CertCrlsRequest(certCrlsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCertCrlsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13495,18 +14944,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    certLoginRequest := *openapiclient.NewCertLoginRequest() // CertLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthCertLogin(context.Background()).CertLoginRequest(certLoginRequest).Execute()
+    certLoginRequest := *openapiclient.NewCertLoginRequest() // CertLoginRequest | 
+
+    resp, err := client.Auth.PostAuthCertLogin(context.Background()).CertLoginRequest(certLoginRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCertLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13557,18 +15013,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    cfConfigRequest := *openapiclient.NewCfConfigRequest() // CfConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthCfConfig(context.Background()).CfConfigRequest(cfConfigRequest).Execute()
+    cfConfigRequest := *openapiclient.NewCfConfigRequest() // CfConfigRequest | 
+
+    resp, err := client.Auth.PostAuthCfConfig(context.Background()).CfConfigRequest(cfConfigRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCfConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13619,18 +15082,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    cfLoginRequest := *openapiclient.NewCfLoginRequest("CfInstanceCert_example", "Role_example", "Signature_example", "SigningTime_example") // CfLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthCfLogin(context.Background()).CfLoginRequest(cfLoginRequest).Execute()
+    cfLoginRequest := *openapiclient.NewCfLoginRequest("CfInstanceCert_example", "Role_example", "Signature_example", "SigningTime_example") // CfLoginRequest | 
+
+    resp, err := client.Auth.PostAuthCfLogin(context.Background()).CfLoginRequest(cfLoginRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCfLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13681,19 +15151,26 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    role := "role_example" // string | The name of the role.
-    cfRolesRequest := *openapiclient.NewCfRolesRequest() // CfRolesRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthCfRolesRole(context.Background(), role).CfRolesRequest(cfRolesRequest).Execute()
+    role := "role_example" // string | The name of the role.
+    cfRolesRequest := *openapiclient.NewCfRolesRequest() // CfRolesRequest | 
+
+    resp, err := client.Auth.PostAuthCfRolesRole(context.Background(), role).CfRolesRequest(cfRolesRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthCfRolesRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13749,18 +15226,25 @@ Configure credentials used to query the GCP IAM API to verify authenticating ser
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    gcpConfigRequest := *openapiclient.NewGcpConfigRequest() // GcpConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthGcpConfig(context.Background()).GcpConfigRequest(gcpConfigRequest).Execute()
+    gcpConfigRequest := *openapiclient.NewGcpConfigRequest() // GcpConfigRequest | 
+
+    resp, err := client.Auth.PostAuthGcpConfig(context.Background()).GcpConfigRequest(gcpConfigRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGcpConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13811,18 +15295,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    gcpLoginRequest := *openapiclient.NewGcpLoginRequest() // GcpLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthGcpLogin(context.Background()).GcpLoginRequest(gcpLoginRequest).Execute()
+    gcpLoginRequest := *openapiclient.NewGcpLoginRequest() // GcpLoginRequest | 
+
+    resp, err := client.Auth.PostAuthGcpLogin(context.Background()).GcpLoginRequest(gcpLoginRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGcpLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13873,19 +15364,26 @@ Create a GCP role with associated policies and required attributes.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the role.
-    gcpRoleRequest := *openapiclient.NewGcpRoleRequest() // GcpRoleRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthGcpRoleName(context.Background(), name).GcpRoleRequest(gcpRoleRequest).Execute()
+    name := "name_example" // string | Name of the role.
+    gcpRoleRequest := *openapiclient.NewGcpRoleRequest() // GcpRoleRequest | 
+
+    resp, err := client.Auth.PostAuthGcpRoleName(context.Background(), name).GcpRoleRequest(gcpRoleRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGcpRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13941,19 +15439,26 @@ Add or remove labels for an existing 'gce' role
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the role.
-    gcpRoleLabelsRequest := *openapiclient.NewGcpRoleLabelsRequest() // GcpRoleLabelsRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthGcpRoleNameLabels(context.Background(), name).GcpRoleLabelsRequest(gcpRoleLabelsRequest).Execute()
+    name := "name_example" // string | Name of the role.
+    gcpRoleLabelsRequest := *openapiclient.NewGcpRoleLabelsRequest() // GcpRoleLabelsRequest | 
+
+    resp, err := client.Auth.PostAuthGcpRoleNameLabels(context.Background(), name).GcpRoleLabelsRequest(gcpRoleLabelsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGcpRoleNameLabels``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -14009,19 +15514,26 @@ Add or remove service accounts for an existing `iam` role
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the role.
-    gcpRoleServiceAccountsRequest := *openapiclient.NewGcpRoleServiceAccountsRequest() // GcpRoleServiceAccountsRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthGcpRoleNameServiceAccounts(context.Background(), name).GcpRoleServiceAccountsRequest(gcpRoleServiceAccountsRequest).Execute()
+    name := "name_example" // string | Name of the role.
+    gcpRoleServiceAccountsRequest := *openapiclient.NewGcpRoleServiceAccountsRequest() // GcpRoleServiceAccountsRequest | 
+
+    resp, err := client.Auth.PostAuthGcpRoleNameServiceAccounts(context.Background(), name).GcpRoleServiceAccountsRequest(gcpRoleServiceAccountsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGcpRoleNameServiceAccounts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -14077,18 +15589,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    githubConfigRequest := *openapiclient.NewGithubConfigRequest("Organization_example") // GithubConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthGithubConfig(context.Background()).GithubConfigRequest(githubConfigRequest).Execute()
+    githubConfigRequest := *openapiclient.NewGithubConfigRequest("Organization_example") // GithubConfigRequest | 
+
+    resp, err := client.Auth.PostAuthGithubConfig(context.Background()).GithubConfigRequest(githubConfigRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGithubConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -14139,18 +15658,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    githubLoginRequest := *openapiclient.NewGithubLoginRequest() // GithubLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthGithubLogin(context.Background()).GithubLoginRequest(githubLoginRequest).Execute()
+    githubLoginRequest := *openapiclient.NewGithubLoginRequest() // GithubLoginRequest | 
+
+    resp, err := client.Auth.PostAuthGithubLogin(context.Background()).GithubLoginRequest(githubLoginRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGithubLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -14201,19 +15727,26 @@ Read/write/delete a single teams mapping
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    key := "key_example" // string | Key for the teams mapping
-    githubMapTeamsRequest := *openapiclient.NewGithubMapTeamsRequest() // GithubMapTeamsRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthGithubMapTeamsKey(context.Background(), key).GithubMapTeamsRequest(githubMapTeamsRequest).Execute()
+    key := "key_example" // string | Key for the teams mapping
+    githubMapTeamsRequest := *openapiclient.NewGithubMapTeamsRequest() // GithubMapTeamsRequest | 
+
+    resp, err := client.Auth.PostAuthGithubMapTeamsKey(context.Background(), key).GithubMapTeamsRequest(githubMapTeamsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGithubMapTeamsKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -14269,19 +15802,26 @@ Read/write/delete a single users mapping
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    key := "key_example" // string | Key for the users mapping
-    githubMapUsersRequest := *openapiclient.NewGithubMapUsersRequest() // GithubMapUsersRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthGithubMapUsersKey(context.Background(), key).GithubMapUsersRequest(githubMapUsersRequest).Execute()
+    key := "key_example" // string | Key for the users mapping
+    githubMapUsersRequest := *openapiclient.NewGithubMapUsersRequest() // GithubMapUsersRequest | 
+
+    resp, err := client.Auth.PostAuthGithubMapUsersKey(context.Background(), key).GithubMapUsersRequest(githubMapUsersRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthGithubMapUsersKey``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -14339,18 +15879,25 @@ Configure the JWT authentication backend.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    jwtConfigRequest := *openapiclient.NewJwtConfigRequest() // JwtConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthJwtConfig(context.Background()).JwtConfigRequest(jwtConfigRequest).Execute()
+    jwtConfigRequest := *openapiclient.NewJwtConfigRequest() // JwtConfigRequest | 
+
+    resp, err := client.Auth.PostAuthJwtConfig(context.Background()).JwtConfigRequest(jwtConfigRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthJwtConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -14401,18 +15948,25 @@ Authenticates to Vault using a JWT (or OIDC) token.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    jwtLoginRequest := *openapiclient.NewJwtLoginRequest() // JwtLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthJwtLogin(context.Background()).JwtLoginRequest(jwtLoginRequest).Execute()
+    jwtLoginRequest := *openapiclient.NewJwtLoginRequest() // JwtLoginRequest | 
+
+    resp, err := client.Auth.PostAuthJwtLogin(context.Background()).JwtLoginRequest(jwtLoginRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthJwtLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -14463,18 +16017,25 @@ Request an authorization URL to start an OIDC login flow.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    jwtOidcAuthUrlRequest := *openapiclient.NewJwtOidcAuthUrlRequest() // JwtOidcAuthUrlRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthJwtOidcAuthUrl(context.Background()).JwtOidcAuthUrlRequest(jwtOidcAuthUrlRequest).Execute()
+    jwtOidcAuthUrlRequest := *openapiclient.NewJwtOidcAuthUrlRequest() // JwtOidcAuthUrlRequest | 
+
+    resp, err := client.Auth.PostAuthJwtOidcAuthUrl(context.Background()).JwtOidcAuthUrlRequest(jwtOidcAuthUrlRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthJwtOidcAuthUrl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -14525,18 +16086,25 @@ Callback endpoint to handle form_posts.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    jwtOidcCallbackRequest := *openapiclient.NewJwtOidcCallbackRequest() // JwtOidcCallbackRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthJwtOidcCallback(context.Background()).JwtOidcCallbackRequest(jwtOidcCallbackRequest).Execute()
+    jwtOidcCallbackRequest := *openapiclient.NewJwtOidcCallbackRequest() // JwtOidcCallbackRequest | 
+
+    resp, err := client.Auth.PostAuthJwtOidcCallback(context.Background()).JwtOidcCallbackRequest(jwtOidcCallbackRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthJwtOidcCallback``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -14589,19 +16157,26 @@ Register an role with the backend.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the role.
-    jwtRoleRequest := *openapiclient.NewJwtRoleRequest() // JwtRoleRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthJwtRoleName(context.Background(), name).JwtRoleRequest(jwtRoleRequest).Execute()
+    name := "name_example" // string | Name of the role.
+    jwtRoleRequest := *openapiclient.NewJwtRoleRequest() // JwtRoleRequest | 
+
+    resp, err := client.Auth.PostAuthJwtRoleName(context.Background(), name).JwtRoleRequest(jwtRoleRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthJwtRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -14657,18 +16232,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    kerberosConfigRequest := *openapiclient.NewKerberosConfigRequest() // KerberosConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthKerberosConfig(context.Background()).KerberosConfigRequest(kerberosConfigRequest).Execute()
+    kerberosConfigRequest := *openapiclient.NewKerberosConfigRequest() // KerberosConfigRequest | 
+
+    resp, err := client.Auth.PostAuthKerberosConfig(context.Background()).KerberosConfigRequest(kerberosConfigRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthKerberosConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -14719,18 +16301,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    kerberosConfigLdapRequest := *openapiclient.NewKerberosConfigLdapRequest() // KerberosConfigLdapRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthKerberosConfigLdap(context.Background()).KerberosConfigLdapRequest(kerberosConfigLdapRequest).Execute()
+    kerberosConfigLdapRequest := *openapiclient.NewKerberosConfigLdapRequest() // KerberosConfigLdapRequest | 
+
+    resp, err := client.Auth.PostAuthKerberosConfigLdap(context.Background()).KerberosConfigLdapRequest(kerberosConfigLdapRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthKerberosConfigLdap``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -14781,19 +16370,26 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the LDAP group.
-    kerberosGroupsRequest := *openapiclient.NewKerberosGroupsRequest() // KerberosGroupsRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthKerberosGroupsName(context.Background(), name).KerberosGroupsRequest(kerberosGroupsRequest).Execute()
+    name := "name_example" // string | Name of the LDAP group.
+    kerberosGroupsRequest := *openapiclient.NewKerberosGroupsRequest() // KerberosGroupsRequest | 
+
+    resp, err := client.Auth.PostAuthKerberosGroupsName(context.Background(), name).KerberosGroupsRequest(kerberosGroupsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthKerberosGroupsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -14849,18 +16445,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    kerberosLoginRequest := *openapiclient.NewKerberosLoginRequest() // KerberosLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthKerberosLogin(context.Background()).KerberosLoginRequest(kerberosLoginRequest).Execute()
+    kerberosLoginRequest := *openapiclient.NewKerberosLoginRequest() // KerberosLoginRequest | 
+
+    resp, err := client.Auth.PostAuthKerberosLogin(context.Background()).KerberosLoginRequest(kerberosLoginRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthKerberosLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -14911,18 +16514,25 @@ Configures the JWT Public Key and Kubernetes API information.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    kubernetesConfigRequest := *openapiclient.NewKubernetesConfigRequest() // KubernetesConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthKubernetesConfig(context.Background()).KubernetesConfigRequest(kubernetesConfigRequest).Execute()
+    kubernetesConfigRequest := *openapiclient.NewKubernetesConfigRequest() // KubernetesConfigRequest | 
+
+    resp, err := client.Auth.PostAuthKubernetesConfig(context.Background()).KubernetesConfigRequest(kubernetesConfigRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthKubernetesConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -14973,18 +16583,25 @@ Authenticates Kubernetes service accounts with Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    kubernetesLoginRequest := *openapiclient.NewKubernetesLoginRequest() // KubernetesLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthKubernetesLogin(context.Background()).KubernetesLoginRequest(kubernetesLoginRequest).Execute()
+    kubernetesLoginRequest := *openapiclient.NewKubernetesLoginRequest() // KubernetesLoginRequest | 
+
+    resp, err := client.Auth.PostAuthKubernetesLogin(context.Background()).KubernetesLoginRequest(kubernetesLoginRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthKubernetesLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -15035,19 +16652,26 @@ Register an role with the backend.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the role.
-    kubernetesRoleRequest := *openapiclient.NewKubernetesRoleRequest() // KubernetesRoleRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthKubernetesRoleName(context.Background(), name).KubernetesRoleRequest(kubernetesRoleRequest).Execute()
+    name := "name_example" // string | Name of the role.
+    kubernetesRoleRequest := *openapiclient.NewKubernetesRoleRequest() // KubernetesRoleRequest | 
+
+    resp, err := client.Auth.PostAuthKubernetesRoleName(context.Background(), name).KubernetesRoleRequest(kubernetesRoleRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthKubernetesRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -15103,18 +16727,25 @@ Configure the LDAP server to connect to, along with its options.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    ldapConfigRequest := *openapiclient.NewLdapConfigRequest() // LdapConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthLdapConfig(context.Background()).LdapConfigRequest(ldapConfigRequest).Execute()
+    ldapConfigRequest := *openapiclient.NewLdapConfigRequest() // LdapConfigRequest | 
+
+    resp, err := client.Auth.PostAuthLdapConfig(context.Background()).LdapConfigRequest(ldapConfigRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthLdapConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -15165,19 +16796,26 @@ Manage additional groups for users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the LDAP group.
-    ldapGroupsRequest := *openapiclient.NewLdapGroupsRequest() // LdapGroupsRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthLdapGroupsName(context.Background(), name).LdapGroupsRequest(ldapGroupsRequest).Execute()
+    name := "name_example" // string | Name of the LDAP group.
+    ldapGroupsRequest := *openapiclient.NewLdapGroupsRequest() // LdapGroupsRequest | 
+
+    resp, err := client.Auth.PostAuthLdapGroupsName(context.Background(), name).LdapGroupsRequest(ldapGroupsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthLdapGroupsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -15233,19 +16871,26 @@ Log in with a username and password.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    username := "username_example" // string | DN (distinguished name) to be used for login.
-    ldapLoginRequest := *openapiclient.NewLdapLoginRequest() // LdapLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthLdapLoginUsername(context.Background(), username).LdapLoginRequest(ldapLoginRequest).Execute()
+    username := "username_example" // string | DN (distinguished name) to be used for login.
+    ldapLoginRequest := *openapiclient.NewLdapLoginRequest() // LdapLoginRequest | 
+
+    resp, err := client.Auth.PostAuthLdapLoginUsername(context.Background(), username).LdapLoginRequest(ldapLoginRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthLdapLoginUsername``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -15301,19 +16946,26 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the LDAP user.
-    ldapUsersRequest := *openapiclient.NewLdapUsersRequest() // LdapUsersRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthLdapUsersName(context.Background(), name).LdapUsersRequest(ldapUsersRequest).Execute()
+    name := "name_example" // string | Name of the LDAP user.
+    ldapUsersRequest := *openapiclient.NewLdapUsersRequest() // LdapUsersRequest | 
+
+    resp, err := client.Auth.PostAuthLdapUsersName(context.Background(), name).LdapUsersRequest(ldapUsersRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthLdapUsersName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -15369,18 +17021,25 @@ Manages the configuration for the Vault Auth Plugin.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    ociConfigRequest := *openapiclient.NewOciConfigRequest() // OciConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthOciConfig(context.Background()).OciConfigRequest(ociConfigRequest).Execute()
+    ociConfigRequest := *openapiclient.NewOciConfigRequest() // OciConfigRequest | 
+
+    resp, err := client.Auth.PostAuthOciConfig(context.Background()).OciConfigRequest(ociConfigRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOciConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -15431,19 +17090,26 @@ Authenticates to Vault using OCI credentials
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    role := "role_example" // string | Name of the role.
-    ociLoginRequest := *openapiclient.NewOciLoginRequest() // OciLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthOciLoginRole(context.Background(), role).OciLoginRequest(ociLoginRequest).Execute()
+    role := "role_example" // string | Name of the role.
+    ociLoginRequest := *openapiclient.NewOciLoginRequest() // OciLoginRequest | 
+
+    resp, err := client.Auth.PostAuthOciLoginRole(context.Background(), role).OciLoginRequest(ociLoginRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOciLoginRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -15499,19 +17165,26 @@ Create a role and associate policies to it.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    role := "role_example" // string | Name of the role.
-    ociRoleRequest := *openapiclient.NewOciRoleRequest() // OciRoleRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthOciRoleRole(context.Background(), role).OciRoleRequest(ociRoleRequest).Execute()
+    role := "role_example" // string | Name of the role.
+    ociRoleRequest := *openapiclient.NewOciRoleRequest() // OciRoleRequest | 
+
+    resp, err := client.Auth.PostAuthOciRoleRole(context.Background(), role).OciRoleRequest(ociRoleRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOciRoleRole``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -15569,18 +17242,25 @@ Configure the JWT authentication backend.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    oidcConfigRequest := *openapiclient.NewOidcConfigRequest() // OidcConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthOidcConfig(context.Background()).OidcConfigRequest(oidcConfigRequest).Execute()
+    oidcConfigRequest := *openapiclient.NewOidcConfigRequest() // OidcConfigRequest | 
+
+    resp, err := client.Auth.PostAuthOidcConfig(context.Background()).OidcConfigRequest(oidcConfigRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOidcConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -15631,18 +17311,25 @@ Authenticates to Vault using a JWT (or OIDC) token.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    oidcLoginRequest := *openapiclient.NewOidcLoginRequest() // OidcLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthOidcLogin(context.Background()).OidcLoginRequest(oidcLoginRequest).Execute()
+    oidcLoginRequest := *openapiclient.NewOidcLoginRequest() // OidcLoginRequest | 
+
+    resp, err := client.Auth.PostAuthOidcLogin(context.Background()).OidcLoginRequest(oidcLoginRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOidcLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -15693,18 +17380,25 @@ Request an authorization URL to start an OIDC login flow.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    oidcOidcAuthUrlRequest := *openapiclient.NewOidcOidcAuthUrlRequest() // OidcOidcAuthUrlRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthOidcOidcAuthUrl(context.Background()).OidcOidcAuthUrlRequest(oidcOidcAuthUrlRequest).Execute()
+    oidcOidcAuthUrlRequest := *openapiclient.NewOidcOidcAuthUrlRequest() // OidcOidcAuthUrlRequest | 
+
+    resp, err := client.Auth.PostAuthOidcOidcAuthUrl(context.Background()).OidcOidcAuthUrlRequest(oidcOidcAuthUrlRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOidcOidcAuthUrl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -15755,18 +17449,25 @@ Callback endpoint to handle form_posts.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    oidcOidcCallbackRequest := *openapiclient.NewOidcOidcCallbackRequest() // OidcOidcCallbackRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthOidcOidcCallback(context.Background()).OidcOidcCallbackRequest(oidcOidcCallbackRequest).Execute()
+    oidcOidcCallbackRequest := *openapiclient.NewOidcOidcCallbackRequest() // OidcOidcCallbackRequest | 
+
+    resp, err := client.Auth.PostAuthOidcOidcCallback(context.Background()).OidcOidcCallbackRequest(oidcOidcCallbackRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOidcOidcCallback``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -15819,19 +17520,26 @@ Register an role with the backend.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the role.
-    oidcRoleRequest := *openapiclient.NewOidcRoleRequest() // OidcRoleRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthOidcRoleName(context.Background(), name).OidcRoleRequest(oidcRoleRequest).Execute()
+    name := "name_example" // string | Name of the role.
+    oidcRoleRequest := *openapiclient.NewOidcRoleRequest() // OidcRoleRequest | 
+
+    resp, err := client.Auth.PostAuthOidcRoleName(context.Background(), name).OidcRoleRequest(oidcRoleRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOidcRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -15887,18 +17595,25 @@ This endpoint allows you to configure the Okta and its configuration options.  T
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    oktaConfigRequest := *openapiclient.NewOktaConfigRequest() // OktaConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthOktaConfig(context.Background()).OktaConfigRequest(oktaConfigRequest).Execute()
+    oktaConfigRequest := *openapiclient.NewOktaConfigRequest() // OktaConfigRequest | 
+
+    resp, err := client.Auth.PostAuthOktaConfig(context.Background()).OktaConfigRequest(oktaConfigRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOktaConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -15949,19 +17664,26 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the Okta group.
-    oktaGroupsRequest := *openapiclient.NewOktaGroupsRequest() // OktaGroupsRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthOktaGroupsName(context.Background(), name).OktaGroupsRequest(oktaGroupsRequest).Execute()
+    name := "name_example" // string | Name of the Okta group.
+    oktaGroupsRequest := *openapiclient.NewOktaGroupsRequest() // OktaGroupsRequest | 
+
+    resp, err := client.Auth.PostAuthOktaGroupsName(context.Background(), name).OktaGroupsRequest(oktaGroupsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOktaGroupsName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -16017,19 +17739,26 @@ Log in with a username and password.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    username := "username_example" // string | Username to be used for login.
-    oktaLoginRequest := *openapiclient.NewOktaLoginRequest() // OktaLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthOktaLoginUsername(context.Background(), username).OktaLoginRequest(oktaLoginRequest).Execute()
+    username := "username_example" // string | Username to be used for login.
+    oktaLoginRequest := *openapiclient.NewOktaLoginRequest() // OktaLoginRequest | 
+
+    resp, err := client.Auth.PostAuthOktaLoginUsername(context.Background(), username).OktaLoginRequest(oktaLoginRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOktaLoginUsername``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -16085,19 +17814,26 @@ Manage additional groups for users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the user.
-    oktaUsersRequest := *openapiclient.NewOktaUsersRequest() // OktaUsersRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthOktaUsersName(context.Background(), name).OktaUsersRequest(oktaUsersRequest).Execute()
+    name := "name_example" // string | Name of the user.
+    oktaUsersRequest := *openapiclient.NewOktaUsersRequest() // OktaUsersRequest | 
+
+    resp, err := client.Auth.PostAuthOktaUsersName(context.Background(), name).OktaUsersRequest(oktaUsersRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthOktaUsersName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -16153,18 +17889,25 @@ Configure the RADIUS server to connect to, along with its options.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    radiusConfigRequest := *openapiclient.NewRadiusConfigRequest() // RadiusConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthRadiusConfig(context.Background()).RadiusConfigRequest(radiusConfigRequest).Execute()
+    radiusConfigRequest := *openapiclient.NewRadiusConfigRequest() // RadiusConfigRequest | 
+
+    resp, err := client.Auth.PostAuthRadiusConfig(context.Background()).RadiusConfigRequest(radiusConfigRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthRadiusConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -16215,18 +17958,25 @@ Log in with a username and password.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    radiusLoginRequest := *openapiclient.NewRadiusLoginRequest() // RadiusLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthRadiusLogin(context.Background()).RadiusLoginRequest(radiusLoginRequest).Execute()
+    radiusLoginRequest := *openapiclient.NewRadiusLoginRequest() // RadiusLoginRequest | 
+
+    resp, err := client.Auth.PostAuthRadiusLogin(context.Background()).RadiusLoginRequest(radiusLoginRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthRadiusLogin``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -16277,19 +18027,26 @@ Log in with a username and password.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    urlusername := "urlusername_example" // string | Username to be used for login. (URL parameter)
-    radiusLoginRequest := *openapiclient.NewRadiusLoginRequest() // RadiusLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthRadiusLoginUrlusername(context.Background(), urlusername).RadiusLoginRequest(radiusLoginRequest).Execute()
+    urlusername := "urlusername_example" // string | Username to be used for login. (URL parameter)
+    radiusLoginRequest := *openapiclient.NewRadiusLoginRequest() // RadiusLoginRequest | 
+
+    resp, err := client.Auth.PostAuthRadiusLoginUrlusername(context.Background(), urlusername).RadiusLoginRequest(radiusLoginRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthRadiusLoginUrlusername``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -16345,19 +18102,26 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the RADIUS user.
-    radiusUsersRequest := *openapiclient.NewRadiusUsersRequest() // RadiusUsersRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthRadiusUsersName(context.Background(), name).RadiusUsersRequest(radiusUsersRequest).Execute()
+    name := "name_example" // string | Name of the RADIUS user.
+    radiusUsersRequest := *openapiclient.NewRadiusUsersRequest() // RadiusUsersRequest | 
+
+    resp, err := client.Auth.PostAuthRadiusUsersName(context.Background(), name).RadiusUsersRequest(radiusUsersRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthRadiusUsersName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -16413,17 +18177,24 @@ The token create path is used to create new tokens.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenCreate(context.Background()).Execute()
+
+    resp, err := client.Auth.PostAuthTokenCreate(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -16470,17 +18241,24 @@ The token create path is used to create new orphan tokens.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenCreateOrphan(context.Background()).Execute()
+
+    resp, err := client.Auth.PostAuthTokenCreateOrphan(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenCreateOrphan``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -16527,18 +18305,25 @@ This token create path is used to create new tokens adhering to the given role.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     roleName := "roleName_example" // string | Name of the role
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenCreateRoleName(context.Background(), roleName).Execute()
+    resp, err := client.Auth.PostAuthTokenCreateRoleName(context.Background(), roleName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenCreateRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -16593,18 +18378,25 @@ This endpoint will lookup a token and its properties.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    tokenLookupRequest := *openapiclient.NewTokenLookupRequest() // TokenLookupRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenLookup(context.Background()).TokenLookupRequest(tokenLookupRequest).Execute()
+    tokenLookupRequest := *openapiclient.NewTokenLookupRequest() // TokenLookupRequest | 
+
+    resp, err := client.Auth.PostAuthTokenLookup(context.Background()).TokenLookupRequest(tokenLookupRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenLookup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -16655,18 +18447,25 @@ This endpoint will lookup a token associated with the given accessor and its pro
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    tokenLookupAccessorRequest := *openapiclient.NewTokenLookupAccessorRequest() // TokenLookupAccessorRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenLookupAccessor(context.Background()).TokenLookupAccessorRequest(tokenLookupAccessorRequest).Execute()
+    tokenLookupAccessorRequest := *openapiclient.NewTokenLookupAccessorRequest() // TokenLookupAccessorRequest | 
+
+    resp, err := client.Auth.PostAuthTokenLookupAccessor(context.Background()).TokenLookupAccessorRequest(tokenLookupAccessorRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenLookupAccessor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -16717,18 +18516,25 @@ This endpoint will lookup a token and its properties.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    tokenLookupSelfRequest := *openapiclient.NewTokenLookupSelfRequest() // TokenLookupSelfRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenLookupSelf(context.Background()).TokenLookupSelfRequest(tokenLookupSelfRequest).Execute()
+    tokenLookupSelfRequest := *openapiclient.NewTokenLookupSelfRequest() // TokenLookupSelfRequest | 
+
+    resp, err := client.Auth.PostAuthTokenLookupSelf(context.Background()).TokenLookupSelfRequest(tokenLookupSelfRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenLookupSelf``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -16779,18 +18585,25 @@ This endpoint will renew the given token and prevent expiration.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    tokenRenewRequest := *openapiclient.NewTokenRenewRequest() // TokenRenewRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenRenew(context.Background()).TokenRenewRequest(tokenRenewRequest).Execute()
+    tokenRenewRequest := *openapiclient.NewTokenRenewRequest() // TokenRenewRequest | 
+
+    resp, err := client.Auth.PostAuthTokenRenew(context.Background()).TokenRenewRequest(tokenRenewRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRenew``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -16841,18 +18654,25 @@ This endpoint will renew a token associated with the given accessor and its prop
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    tokenRenewAccessorRequest := *openapiclient.NewTokenRenewAccessorRequest() // TokenRenewAccessorRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenRenewAccessor(context.Background()).TokenRenewAccessorRequest(tokenRenewAccessorRequest).Execute()
+    tokenRenewAccessorRequest := *openapiclient.NewTokenRenewAccessorRequest() // TokenRenewAccessorRequest | 
+
+    resp, err := client.Auth.PostAuthTokenRenewAccessor(context.Background()).TokenRenewAccessorRequest(tokenRenewAccessorRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRenewAccessor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -16903,18 +18723,25 @@ This endpoint will renew the token used to call it and prevent expiration.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    tokenRenewSelfRequest := *openapiclient.NewTokenRenewSelfRequest() // TokenRenewSelfRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenRenewSelf(context.Background()).TokenRenewSelfRequest(tokenRenewSelfRequest).Execute()
+    tokenRenewSelfRequest := *openapiclient.NewTokenRenewSelfRequest() // TokenRenewSelfRequest | 
+
+    resp, err := client.Auth.PostAuthTokenRenewSelf(context.Background()).TokenRenewSelfRequest(tokenRenewSelfRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRenewSelf``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -16965,18 +18792,25 @@ This endpoint will delete the given token and all of its child tokens.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    tokenRevokeRequest := *openapiclient.NewTokenRevokeRequest() // TokenRevokeRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenRevoke(context.Background()).TokenRevokeRequest(tokenRevokeRequest).Execute()
+    tokenRevokeRequest := *openapiclient.NewTokenRevokeRequest() // TokenRevokeRequest | 
+
+    resp, err := client.Auth.PostAuthTokenRevoke(context.Background()).TokenRevokeRequest(tokenRevokeRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRevoke``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -17027,18 +18861,25 @@ This endpoint will delete the token associated with the accessor and all of its 
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    tokenRevokeAccessorRequest := *openapiclient.NewTokenRevokeAccessorRequest() // TokenRevokeAccessorRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenRevokeAccessor(context.Background()).TokenRevokeAccessorRequest(tokenRevokeAccessorRequest).Execute()
+    tokenRevokeAccessorRequest := *openapiclient.NewTokenRevokeAccessorRequest() // TokenRevokeAccessorRequest | 
+
+    resp, err := client.Auth.PostAuthTokenRevokeAccessor(context.Background()).TokenRevokeAccessorRequest(tokenRevokeAccessorRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRevokeAccessor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -17089,18 +18930,25 @@ This endpoint will delete the token and orphan its child tokens.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    tokenRevokeOrphanRequest := *openapiclient.NewTokenRevokeOrphanRequest() // TokenRevokeOrphanRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenRevokeOrphan(context.Background()).TokenRevokeOrphanRequest(tokenRevokeOrphanRequest).Execute()
+    tokenRevokeOrphanRequest := *openapiclient.NewTokenRevokeOrphanRequest() // TokenRevokeOrphanRequest | 
+
+    resp, err := client.Auth.PostAuthTokenRevokeOrphan(context.Background()).TokenRevokeOrphanRequest(tokenRevokeOrphanRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRevokeOrphan``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -17151,17 +18999,24 @@ This endpoint will delete the token used to call it and all of its child tokens.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenRevokeSelf(context.Background()).Execute()
+
+    resp, err := client.Auth.PostAuthTokenRevokeSelf(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRevokeSelf``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -17208,19 +19063,26 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    roleName := "roleName_example" // string | Name of the role
-    tokenRolesRequest := *openapiclient.NewTokenRolesRequest() // TokenRolesRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenRolesRoleName(context.Background(), roleName).TokenRolesRequest(tokenRolesRequest).Execute()
+    roleName := "roleName_example" // string | Name of the role
+    tokenRolesRequest := *openapiclient.NewTokenRolesRequest() // TokenRolesRequest | 
+
+    resp, err := client.Auth.PostAuthTokenRolesRoleName(context.Background(), roleName).TokenRolesRequest(tokenRolesRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenRolesRoleName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -17276,17 +19138,24 @@ This endpoint performs cleanup tasks that can be run if certain error conditions
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthTokenTidy(context.Background()).Execute()
+
+    resp, err := client.Auth.PostAuthTokenTidy(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthTokenTidy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -17333,19 +19202,26 @@ Log in with a username and password.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    username := "username_example" // string | Username of the user.
-    userpassLoginRequest := *openapiclient.NewUserpassLoginRequest() // UserpassLoginRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthUserpassLoginUsername(context.Background(), username).UserpassLoginRequest(userpassLoginRequest).Execute()
+    username := "username_example" // string | Username of the user.
+    userpassLoginRequest := *openapiclient.NewUserpassLoginRequest() // UserpassLoginRequest | 
+
+    resp, err := client.Auth.PostAuthUserpassLoginUsername(context.Background(), username).UserpassLoginRequest(userpassLoginRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthUserpassLoginUsername``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -17401,19 +19277,26 @@ Manage users allowed to authenticate.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    username := "username_example" // string | Username for this user.
-    userpassUsersRequest := *openapiclient.NewUserpassUsersRequest() // UserpassUsersRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthUserpassUsersUsername(context.Background(), username).UserpassUsersRequest(userpassUsersRequest).Execute()
+    username := "username_example" // string | Username for this user.
+    userpassUsersRequest := *openapiclient.NewUserpassUsersRequest() // UserpassUsersRequest | 
+
+    resp, err := client.Auth.PostAuthUserpassUsersUsername(context.Background(), username).UserpassUsersRequest(userpassUsersRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthUserpassUsersUsername``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -17469,19 +19352,26 @@ Reset user's password.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    username := "username_example" // string | Username for this user.
-    userpassUsersPasswordRequest := *openapiclient.NewUserpassUsersPasswordRequest() // UserpassUsersPasswordRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthUserpassUsersUsernamePassword(context.Background(), username).UserpassUsersPasswordRequest(userpassUsersPasswordRequest).Execute()
+    username := "username_example" // string | Username for this user.
+    userpassUsersPasswordRequest := *openapiclient.NewUserpassUsersPasswordRequest() // UserpassUsersPasswordRequest | 
+
+    resp, err := client.Auth.PostAuthUserpassUsersUsernamePassword(context.Background(), username).UserpassUsersPasswordRequest(userpassUsersPasswordRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthUserpassUsersUsernamePassword``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -17537,19 +19427,26 @@ Update the policies associated with the username.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    username := "username_example" // string | Username for this user.
-    userpassUsersPoliciesRequest := *openapiclient.NewUserpassUsersPoliciesRequest() // UserpassUsersPoliciesRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.Auth.PostAuthUserpassUsersUsernamePolicies(context.Background(), username).UserpassUsersPoliciesRequest(userpassUsersPoliciesRequest).Execute()
+    username := "username_example" // string | Username for this user.
+    userpassUsersPoliciesRequest := *openapiclient.NewUserpassUsersPoliciesRequest() // UserpassUsersPoliciesRequest | 
+
+    resp, err := client.Auth.PostAuthUserpassUsersUsernamePolicies(context.Background(), username).UserpassUsersPoliciesRequest(userpassUsersPoliciesRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `Auth.PostAuthUserpassUsersUsernamePolicies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

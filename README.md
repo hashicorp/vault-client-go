@@ -70,7 +70,7 @@ import (
 
 func main() {
 	client, err := vault.NewClient(vault.Configuration{
-		BaseAddress: "http://127.0.0.1:8200"
+		BaseAddress: "http://127.0.0.1:8200",
 	})
 	if err != nil {
 		log.Fatal(err)

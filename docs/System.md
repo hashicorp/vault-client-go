@@ -179,18 +179,25 @@ Disable the audit device at the given path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysAuditPath(context.Background(), path).Execute()
+    resp, err := client.System.DeleteSysAuditPath(context.Background(), path).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysAuditPath``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -245,18 +252,25 @@ Disable the auth method at the given auth path
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysAuthPath(context.Background(), path).Execute()
+    resp, err := client.System.DeleteSysAuthPath(context.Background(), path).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysAuthPath``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -311,18 +325,25 @@ Disable auditing of the given request header.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     header := "header_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysConfigAuditingRequestHeadersHeader(context.Background(), header).Execute()
+    resp, err := client.System.DeleteSysConfigAuditingRequestHeadersHeader(context.Background(), header).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysConfigAuditingRequestHeadersHeader``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -377,17 +398,24 @@ Remove any CORS settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysConfigCors(context.Background()).Execute()
+
+    resp, err := client.System.DeleteSysConfigCors(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysConfigCors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -434,18 +462,25 @@ Remove a UI header.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     header := "header_example" // string | The name of the header.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysConfigUiHeadersHeader(context.Background(), header).Execute()
+    resp, err := client.System.DeleteSysConfigUiHeadersHeader(context.Background(), header).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysConfigUiHeadersHeader``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -500,17 +535,24 @@ Cancels any in-progress root generation attempt.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysGenerateRoot(context.Background()).Execute()
+
+    resp, err := client.System.DeleteSysGenerateRoot(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysGenerateRoot``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -557,17 +599,24 @@ Cancels any in-progress root generation attempt.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysGenerateRootAttempt(context.Background()).Execute()
+
+    resp, err := client.System.DeleteSysGenerateRootAttempt(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysGenerateRootAttempt``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -614,18 +663,25 @@ Disable the mount point specified at the given path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     path := "path_example" // string | The path to mount to. Example: \"aws/east\"
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysMountsPath(context.Background(), path).Execute()
+    resp, err := client.System.DeleteSysMountsPath(context.Background(), path).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysMountsPath``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -680,18 +736,25 @@ Remove the plugin with the given name.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | The name of the plugin
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysPluginsCatalogName(context.Background(), name).Execute()
+    resp, err := client.System.DeleteSysPluginsCatalogName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysPluginsCatalogName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -746,19 +809,26 @@ Remove the plugin with the given name.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | The name of the plugin
     type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysPluginsCatalogTypeName(context.Background(), name, type_).Execute()
+    resp, err := client.System.DeleteSysPluginsCatalogTypeName(context.Background(), name, type_).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysPluginsCatalogTypeName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -815,18 +885,25 @@ Delete the ACL policy with the given name.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | The name of the policy. Example: \"ops\"
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysPoliciesAclName(context.Background(), name).Execute()
+    resp, err := client.System.DeleteSysPoliciesAclName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysPoliciesAclName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -881,18 +958,25 @@ Delete a password policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | The name of the password policy.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysPoliciesPasswordName(context.Background(), name).Execute()
+    resp, err := client.System.DeleteSysPoliciesPasswordName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysPoliciesPasswordName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -947,18 +1031,25 @@ Delete the policy with the given name.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | The name of the policy. Example: \"ops\"
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysPolicyName(context.Background(), name).Execute()
+    resp, err := client.System.DeleteSysPolicyName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysPolicyName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1013,18 +1104,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | Name of the quota rule.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysQuotasRateLimitName(context.Background(), name).Execute()
+    resp, err := client.System.DeleteSysQuotasRateLimitName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysQuotasRateLimitName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1079,17 +1177,24 @@ Delete the key with given path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysRaw(context.Background()).Execute()
+
+    resp, err := client.System.DeleteSysRaw(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysRaw``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1136,18 +1241,25 @@ Delete the key with given path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     path := "path_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysRawPath(context.Background(), path).Execute()
+    resp, err := client.System.DeleteSysRawPath(context.Background(), path).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysRawPath``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1202,17 +1314,24 @@ Delete the backup copy of PGP-encrypted unseal keys.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysRekeyBackup(context.Background()).Execute()
+
+    resp, err := client.System.DeleteSysRekeyBackup(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysRekeyBackup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1261,17 +1380,24 @@ Cancels any in-progress rekey.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysRekeyInit(context.Background()).Execute()
+
+    resp, err := client.System.DeleteSysRekeyInit(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysRekeyInit``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1318,17 +1444,24 @@ Allows fetching or deleting the backup of the rotated unseal keys.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysRekeyRecoveryKeyBackup(context.Background()).Execute()
+
+    resp, err := client.System.DeleteSysRekeyRecoveryKeyBackup(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysRekeyRecoveryKeyBackup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1377,17 +1510,24 @@ Cancel any in-progress rekey verification operation.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.DeleteSysRekeyVerify(context.Background()).Execute()
+
+    resp, err := client.System.DeleteSysRekeyVerify(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.DeleteSysRekeyVerify``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1434,17 +1574,24 @@ List the enabled audit devices.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysAudit(context.Background()).Execute()
+
+    resp, err := client.System.GetSysAudit(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysAudit``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1491,17 +1638,24 @@ List the currently enabled credential backends.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysAuth(context.Background()).Execute()
+
+    resp, err := client.System.GetSysAuth(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysAuth``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1548,18 +1702,25 @@ Read the configuration of the auth engine at the given path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysAuthPath(context.Background(), path).Execute()
+    resp, err := client.System.GetSysAuthPath(context.Background(), path).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysAuthPath``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1616,18 +1777,25 @@ Reads the given auth path's configuration.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     path := "path_example" // string | Tune the configuration parameters for an auth path.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysAuthPathTune(context.Background(), path).Execute()
+    resp, err := client.System.GetSysAuthPathTune(context.Background(), path).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysAuthPathTune``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1682,17 +1850,24 @@ List the request headers that are configured to be audited.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysConfigAuditingRequestHeaders(context.Background()).Execute()
+
+    resp, err := client.System.GetSysConfigAuditingRequestHeaders(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysConfigAuditingRequestHeaders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1739,18 +1914,25 @@ List the information for the given request header.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     header := "header_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysConfigAuditingRequestHeadersHeader(context.Background(), header).Execute()
+    resp, err := client.System.GetSysConfigAuditingRequestHeadersHeader(context.Background(), header).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysConfigAuditingRequestHeadersHeader``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1805,17 +1987,24 @@ Return the current CORS settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysConfigCors(context.Background()).Execute()
+
+    resp, err := client.System.GetSysConfigCors(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysConfigCors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1864,17 +2053,24 @@ Return a sanitized version of the Vault server configuration.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysConfigStateSanitized(context.Background()).Execute()
+
+    resp, err := client.System.GetSysConfigStateSanitized(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysConfigStateSanitized``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1921,18 +2117,25 @@ Return a list of configured UI headers.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysConfigUiHeaders(context.Background()).List(list).Execute()
+    resp, err := client.System.GetSysConfigUiHeaders(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysConfigUiHeaders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1983,18 +2186,25 @@ Return the given UI header's configuration
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     header := "header_example" // string | The name of the header.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysConfigUiHeadersHeader(context.Background(), header).Execute()
+    resp, err := client.System.GetSysConfigUiHeadersHeader(context.Background(), header).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysConfigUiHeadersHeader``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2049,17 +2259,24 @@ Read the configuration and progress of the current root generation attempt.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysGenerateRoot(context.Background()).Execute()
+
+    resp, err := client.System.GetSysGenerateRoot(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysGenerateRoot``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2106,17 +2323,24 @@ Read the configuration and progress of the current root generation attempt.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysGenerateRootAttempt(context.Background()).Execute()
+
+    resp, err := client.System.GetSysGenerateRootAttempt(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysGenerateRootAttempt``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2163,17 +2387,24 @@ Check the HA status of a Vault cluster
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysHaStatus(context.Background()).Execute()
+
+    resp, err := client.System.GetSysHaStatus(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysHaStatus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2220,17 +2451,24 @@ Returns the health status of Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysHealth(context.Background()).Execute()
+
+    resp, err := client.System.GetSysHealth(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysHealth``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2279,17 +2517,24 @@ Information about the host instance that this Vault server is running on.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysHostInfo(context.Background()).Execute()
+
+    resp, err := client.System.GetSysHostInfo(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysHostInfo``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2338,17 +2583,24 @@ reports in-flight requests
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInFlightReq(context.Background()).Execute()
+
+    resp, err := client.System.GetSysInFlightReq(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInFlightReq``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2395,17 +2647,24 @@ Returns the initialization status of Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInit(context.Background()).Execute()
+
+    resp, err := client.System.GetSysInit(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInit``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2452,17 +2711,24 @@ Report the client count metrics, for this namespace and all child namespaces.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInternalCountersActivity(context.Background()).Execute()
+
+    resp, err := client.System.GetSysInternalCountersActivity(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInternalCountersActivity``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2509,17 +2775,24 @@ Report the client count metrics, for this namespace and all child namespaces.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInternalCountersActivityExport(context.Background()).Execute()
+
+    resp, err := client.System.GetSysInternalCountersActivityExport(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInternalCountersActivityExport``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2566,17 +2839,24 @@ Report the number of clients for this month, for this namespace and all child na
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInternalCountersActivityMonthly(context.Background()).Execute()
+
+    resp, err := client.System.GetSysInternalCountersActivityMonthly(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInternalCountersActivityMonthly``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2623,17 +2903,24 @@ Read the client count tracking configuration.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInternalCountersConfig(context.Background()).Execute()
+
+    resp, err := client.System.GetSysInternalCountersConfig(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInternalCountersConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2680,17 +2967,24 @@ Backwards compatibility is not guaranteed for this API
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInternalCountersEntities(context.Background()).Execute()
+
+    resp, err := client.System.GetSysInternalCountersEntities(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInternalCountersEntities``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2737,17 +3031,24 @@ Backwards compatibility is not guaranteed for this API
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInternalCountersRequests(context.Background()).Execute()
+
+    resp, err := client.System.GetSysInternalCountersRequests(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInternalCountersRequests``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2794,17 +3095,24 @@ Backwards compatibility is not guaranteed for this API
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInternalCountersTokens(context.Background()).Execute()
+
+    resp, err := client.System.GetSysInternalCountersTokens(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInternalCountersTokens``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2851,17 +3159,24 @@ Generate an OpenAPI 3 document of all mounted paths.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInternalSpecsOpenapi(context.Background()).Execute()
+
+    resp, err := client.System.GetSysInternalSpecsOpenapi(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInternalSpecsOpenapi``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2908,17 +3223,24 @@ Lists enabled feature flags.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInternalUiFeatureFlags(context.Background()).Execute()
+
+    resp, err := client.System.GetSysInternalUiFeatureFlags(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInternalUiFeatureFlags``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2965,17 +3287,24 @@ Lists all enabled and visible auth and secrets mounts.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInternalUiMounts(context.Background()).Execute()
+
+    resp, err := client.System.GetSysInternalUiMounts(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInternalUiMounts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3022,18 +3351,25 @@ Return information about the given mount.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     path := "path_example" // string | The path of the mount.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInternalUiMountsPath(context.Background(), path).Execute()
+    resp, err := client.System.GetSysInternalUiMountsPath(context.Background(), path).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInternalUiMountsPath``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3088,17 +3424,24 @@ Backwards compatibility is not guaranteed for this API
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInternalUiNamespaces(context.Background()).Execute()
+
+    resp, err := client.System.GetSysInternalUiNamespaces(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInternalUiNamespaces``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3145,17 +3488,24 @@ Backwards compatibility is not guaranteed for this API
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysInternalUiResultantAcl(context.Background()).Execute()
+
+    resp, err := client.System.GetSysInternalUiResultantAcl(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysInternalUiResultantAcl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3202,17 +3552,24 @@ Provides information about the backend encryption key.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysKeyStatus(context.Background()).Execute()
+
+    resp, err := client.System.GetSysKeyStatus(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysKeyStatus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3259,17 +3616,24 @@ Returns the high availability status and current leader instance of Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysLeader(context.Background()).Execute()
+
+    resp, err := client.System.GetSysLeader(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysLeader``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3316,17 +3680,24 @@ List leases associated with this Vault cluster
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysLeases(context.Background()).Execute()
+
+    resp, err := client.System.GetSysLeases(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysLeases``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3373,17 +3744,24 @@ Count of leases associated with this Vault cluster
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysLeasesCount(context.Background()).Execute()
+
+    resp, err := client.System.GetSysLeasesCount(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysLeasesCount``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3430,18 +3808,25 @@ Returns a list of lease ids.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysLeasesLookup(context.Background()).List(list).Execute()
+    resp, err := client.System.GetSysLeasesLookup(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysLeasesLookup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3492,19 +3877,26 @@ Returns a list of lease ids.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     prefix := "prefix_example" // string | The path to list leases under. Example: \"aws/creds/deploy\"
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysLeasesLookupPrefix(context.Background(), prefix).List(list).Execute()
+    resp, err := client.System.GetSysLeasesLookupPrefix(context.Background(), prefix).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysLeasesLookupPrefix``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3560,18 +3952,25 @@ Export the metrics aggregated for telemetry purpose.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    format := "format_example" // string | Format to export metrics into. Currently accepts only \"prometheus\". (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysMetrics(context.Background()).Format(format).Execute()
+    format := "format_example" // string | Format to export metrics into. Currently accepts only \"prometheus\".
+
+    resp, err := client.System.GetSysMetrics(context.Background()).Format(format).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysMetrics``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3622,19 +4021,26 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    logFormat := "logFormat_example" // string | Output format of logs. Supported values are \"standard\" and \"json\". The default is \"standard\". (optional) (default to "standard")
-    logLevel := "logLevel_example" // string | Log level to view system logs at. Currently supported values are \"trace\", \"debug\", \"info\", \"warn\", \"error\". (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysMonitor(context.Background()).LogFormat(logFormat).LogLevel(logLevel).Execute()
+    logFormat := "logFormat_example" // string | Output format of logs. Supported values are \"standard\" and \"json\". The default is \"standard\". (default to "standard")
+    logLevel := "logLevel_example" // string | Log level to view system logs at. Currently supported values are \"trace\", \"debug\", \"info\", \"warn\", \"error\".
+
+    resp, err := client.System.GetSysMonitor(context.Background()).LogFormat(logFormat).LogLevel(logLevel).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysMonitor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3686,17 +4092,24 @@ List the currently mounted backends.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysMounts(context.Background()).Execute()
+
+    resp, err := client.System.GetSysMounts(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysMounts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3743,18 +4156,25 @@ Read the configuration of the secret engine at the given path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     path := "path_example" // string | The path to mount to. Example: \"aws/east\"
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysMountsPath(context.Background(), path).Execute()
+    resp, err := client.System.GetSysMountsPath(context.Background(), path).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysMountsPath``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3809,18 +4229,25 @@ Tune backend configuration parameters for this mount.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     path := "path_example" // string | The path to mount to. Example: \"aws/east\"
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysMountsPathTune(context.Background(), path).Execute()
+    resp, err := client.System.GetSysMountsPathTune(context.Background(), path).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysMountsPathTune``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3875,17 +4302,24 @@ Lists all the plugins known to Vault
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPluginsCatalog(context.Background()).Execute()
+
+    resp, err := client.System.GetSysPluginsCatalog(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPluginsCatalog``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3932,18 +4366,25 @@ Return the configuration data for the plugin with the given name.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | The name of the plugin
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPluginsCatalogName(context.Background(), name).Execute()
+    resp, err := client.System.GetSysPluginsCatalogName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPluginsCatalogName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3998,19 +4439,26 @@ List the plugins in the catalog.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPluginsCatalogType(context.Background(), type_).List(list).Execute()
+    resp, err := client.System.GetSysPluginsCatalogType(context.Background(), type_).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPluginsCatalogType``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4066,19 +4514,26 @@ Return the configuration data for the plugin with the given name.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | The name of the plugin
     type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPluginsCatalogTypeName(context.Background(), name, type_).Execute()
+    resp, err := client.System.GetSysPluginsCatalogTypeName(context.Background(), name, type_).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPluginsCatalogTypeName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4135,18 +4590,25 @@ List the configured access control policies.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPoliciesAcl(context.Background()).List(list).Execute()
+    resp, err := client.System.GetSysPoliciesAcl(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPoliciesAcl``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4197,18 +4659,25 @@ Retrieve information about the named ACL policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | The name of the policy. Example: \"ops\"
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPoliciesAclName(context.Background(), name).Execute()
+    resp, err := client.System.GetSysPoliciesAclName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPoliciesAclName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4263,18 +4732,25 @@ List the existing password policies.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPoliciesPassword(context.Background()).List(list).Execute()
+    resp, err := client.System.GetSysPoliciesPassword(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPoliciesPassword``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4325,18 +4801,25 @@ Retrieve an existing password policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | The name of the password policy.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPoliciesPasswordName(context.Background(), name).Execute()
+    resp, err := client.System.GetSysPoliciesPasswordName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPoliciesPasswordName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4391,18 +4874,25 @@ Generate a password from an existing password policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | The name of the password policy.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPoliciesPasswordNameGenerate(context.Background(), name).Execute()
+    resp, err := client.System.GetSysPoliciesPasswordNameGenerate(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPoliciesPasswordNameGenerate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4457,18 +4947,25 @@ List the configured access control policies.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Return a list if `true` (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPolicy(context.Background()).List(list).Execute()
+    list := "list_example" // string | Return a list if `true`
+
+    resp, err := client.System.GetSysPolicy(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPolicy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4519,18 +5016,25 @@ Retrieve the policy body for the named policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | The name of the policy. Example: \"ops\"
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPolicyName(context.Background(), name).Execute()
+    resp, err := client.System.GetSysPolicyName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPolicyName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4587,17 +5091,24 @@ Returns an HTML page listing the available profiles.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPprof(context.Background()).Execute()
+
+    resp, err := client.System.GetSysPprof(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPprof``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4646,17 +5157,24 @@ Returns a sampling of all past memory allocations.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPprofAllocs(context.Background()).Execute()
+
+    resp, err := client.System.GetSysPprofAllocs(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPprofAllocs``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4705,17 +5223,24 @@ Returns stack traces that led to blocking on synchronization primitives
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPprofBlock(context.Background()).Execute()
+
+    resp, err := client.System.GetSysPprofBlock(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPprofBlock``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4764,17 +5289,24 @@ Returns the running program's command line.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPprofCmdline(context.Background()).Execute()
+
+    resp, err := client.System.GetSysPprofCmdline(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPprofCmdline``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4823,17 +5355,24 @@ Returns stack traces of all current goroutines.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPprofGoroutine(context.Background()).Execute()
+
+    resp, err := client.System.GetSysPprofGoroutine(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPprofGoroutine``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4882,17 +5421,24 @@ Returns a sampling of memory allocations of live object.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPprofHeap(context.Background()).Execute()
+
+    resp, err := client.System.GetSysPprofHeap(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPprofHeap``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4941,17 +5487,24 @@ Returns stack traces of holders of contended mutexes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPprofMutex(context.Background()).Execute()
+
+    resp, err := client.System.GetSysPprofMutex(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPprofMutex``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5000,17 +5553,24 @@ Returns a pprof-formatted cpu profile payload.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPprofProfile(context.Background()).Execute()
+
+    resp, err := client.System.GetSysPprofProfile(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPprofProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5059,17 +5619,24 @@ Returns the program counters listed in the request.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPprofSymbol(context.Background()).Execute()
+
+    resp, err := client.System.GetSysPprofSymbol(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPprofSymbol``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5118,17 +5685,24 @@ Returns stack traces that led to the creation of new OS threads
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPprofThreadcreate(context.Background()).Execute()
+
+    resp, err := client.System.GetSysPprofThreadcreate(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPprofThreadcreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5177,17 +5751,24 @@ Returns the execution trace in binary form.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysPprofTrace(context.Background()).Execute()
+
+    resp, err := client.System.GetSysPprofTrace(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysPprofTrace``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5234,17 +5815,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysQuotasConfig(context.Background()).Execute()
+
+    resp, err := client.System.GetSysQuotasConfig(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysQuotasConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5291,18 +5879,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysQuotasRateLimit(context.Background()).List(list).Execute()
+    resp, err := client.System.GetSysQuotasRateLimit(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysQuotasRateLimit``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5353,18 +5948,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | Name of the quota rule.
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysQuotasRateLimitName(context.Background(), name).Execute()
+    resp, err := client.System.GetSysQuotasRateLimitName(context.Background(), name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysQuotasRateLimitName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5419,18 +6021,25 @@ Read the value of the key at the given path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    list := "list_example" // string | Return a list if `true` (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysRaw(context.Background()).List(list).Execute()
+    list := "list_example" // string | Return a list if `true`
+
+    resp, err := client.System.GetSysRaw(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysRaw``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5481,19 +6090,26 @@ Read the value of the key at the given path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    path := "path_example" // string | 
-    list := "list_example" // string | Return a list if `true` (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysRawPath(context.Background(), path).List(list).Execute()
+    path := "path_example" // string | 
+    list := "list_example" // string | Return a list if `true`
+
+    resp, err := client.System.GetSysRawPath(context.Background(), path).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysRawPath``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5549,17 +6165,24 @@ Return the backup copy of PGP-encrypted unseal keys.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysRekeyBackup(context.Background()).Execute()
+
+    resp, err := client.System.GetSysRekeyBackup(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysRekeyBackup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5606,17 +6229,24 @@ Reads the configuration and progress of the current rekey attempt.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysRekeyInit(context.Background()).Execute()
+
+    resp, err := client.System.GetSysRekeyInit(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysRekeyInit``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5663,17 +6293,24 @@ Allows fetching or deleting the backup of the rotated unseal keys.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysRekeyRecoveryKeyBackup(context.Background()).Execute()
+
+    resp, err := client.System.GetSysRekeyRecoveryKeyBackup(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysRekeyRecoveryKeyBackup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5720,17 +6357,24 @@ Read the configuration and progress of the current rekey verification attempt.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysRekeyVerify(context.Background()).Execute()
+
+    resp, err := client.System.GetSysRekeyVerify(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysRekeyVerify``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5777,18 +6421,25 @@ Check status of a mount migration
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     migrationId := "migrationId_example" // string | The ID of the migration operation
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysRemountStatusMigrationId(context.Background(), migrationId).Execute()
+    resp, err := client.System.GetSysRemountStatusMigrationId(context.Background(), migrationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysRemountStatusMigrationId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5843,17 +6494,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysReplicationStatus(context.Background()).Execute()
+
+    resp, err := client.System.GetSysReplicationStatus(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysReplicationStatus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5900,17 +6558,24 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysRotateConfig(context.Background()).Execute()
+
+    resp, err := client.System.GetSysRotateConfig(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysRotateConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5957,17 +6622,24 @@ Check the seal status of a Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysSealStatus(context.Background()).Execute()
+
+    resp, err := client.System.GetSysSealStatus(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysSealStatus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6014,18 +6686,25 @@ Returns map of historical version change entries
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     list := "list_example" // string | Must be set to `true`
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysVersionHistory(context.Background()).List(list).Execute()
+    resp, err := client.System.GetSysVersionHistory(context.Background()).List(list).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysVersionHistory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6076,17 +6755,24 @@ Look up wrapping properties for the requester's token.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.GetSysWrappingLookup(context.Background()).Execute()
+
+    resp, err := client.System.GetSysWrappingLookup(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.GetSysWrappingLookup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6133,19 +6819,26 @@ The hash of the given string via the given audit backend
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
-    systemAuditHashRequest := *openapiclient.NewSystemAuditHashRequest() // SystemAuditHashRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysAuditHashPath(context.Background(), path).SystemAuditHashRequest(systemAuditHashRequest).Execute()
+    path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
+    systemAuditHashRequest := *openapiclient.NewSystemAuditHashRequest() // SystemAuditHashRequest | 
+
+    resp, err := client.System.PostSysAuditHashPath(context.Background(), path).SystemAuditHashRequest(systemAuditHashRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysAuditHashPath``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6201,19 +6894,26 @@ Enable a new audit device at the supplied path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
-    systemAuditRequest := *openapiclient.NewSystemAuditRequest() // SystemAuditRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysAuditPath(context.Background(), path).SystemAuditRequest(systemAuditRequest).Execute()
+    path := "path_example" // string | The name of the backend. Cannot be delimited. Example: \"mysql\"
+    systemAuditRequest := *openapiclient.NewSystemAuditRequest() // SystemAuditRequest | 
+
+    resp, err := client.System.PostSysAuditPath(context.Background(), path).SystemAuditRequest(systemAuditRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysAuditPath``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6271,19 +6971,26 @@ Enables a new auth method.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
-    systemAuthRequest := *openapiclient.NewSystemAuthRequest() // SystemAuthRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysAuthPath(context.Background(), path).SystemAuthRequest(systemAuthRequest).Execute()
+    path := "path_example" // string | The path to mount to. Cannot be delimited. Example: \"user\"
+    systemAuthRequest := *openapiclient.NewSystemAuthRequest() // SystemAuthRequest | 
+
+    resp, err := client.System.PostSysAuthPath(context.Background(), path).SystemAuthRequest(systemAuthRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysAuthPath``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6341,19 +7048,26 @@ Tune configuration parameters for a given auth path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    path := "path_example" // string | Tune the configuration parameters for an auth path.
-    systemAuthTuneRequest := *openapiclient.NewSystemAuthTuneRequest() // SystemAuthTuneRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysAuthPathTune(context.Background(), path).SystemAuthTuneRequest(systemAuthTuneRequest).Execute()
+    path := "path_example" // string | Tune the configuration parameters for an auth path.
+    systemAuthTuneRequest := *openapiclient.NewSystemAuthTuneRequest() // SystemAuthTuneRequest | 
+
+    resp, err := client.System.PostSysAuthPathTune(context.Background(), path).SystemAuthTuneRequest(systemAuthTuneRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysAuthPathTune``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6409,18 +7123,25 @@ Fetches the capabilities of the given token on the given path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemCapabilitiesRequest := *openapiclient.NewSystemCapabilitiesRequest() // SystemCapabilitiesRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysCapabilities(context.Background()).SystemCapabilitiesRequest(systemCapabilitiesRequest).Execute()
+    systemCapabilitiesRequest := *openapiclient.NewSystemCapabilitiesRequest() // SystemCapabilitiesRequest | 
+
+    resp, err := client.System.PostSysCapabilities(context.Background()).SystemCapabilitiesRequest(systemCapabilitiesRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysCapabilities``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6471,18 +7192,25 @@ Fetches the capabilities of the token associated with the given token, on the gi
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemCapabilitiesAccessorRequest := *openapiclient.NewSystemCapabilitiesAccessorRequest() // SystemCapabilitiesAccessorRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysCapabilitiesAccessor(context.Background()).SystemCapabilitiesAccessorRequest(systemCapabilitiesAccessorRequest).Execute()
+    systemCapabilitiesAccessorRequest := *openapiclient.NewSystemCapabilitiesAccessorRequest() // SystemCapabilitiesAccessorRequest | 
+
+    resp, err := client.System.PostSysCapabilitiesAccessor(context.Background()).SystemCapabilitiesAccessorRequest(systemCapabilitiesAccessorRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysCapabilitiesAccessor``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6533,18 +7261,25 @@ Fetches the capabilities of the given token on the given path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemCapabilitiesSelfRequest := *openapiclient.NewSystemCapabilitiesSelfRequest() // SystemCapabilitiesSelfRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysCapabilitiesSelf(context.Background()).SystemCapabilitiesSelfRequest(systemCapabilitiesSelfRequest).Execute()
+    systemCapabilitiesSelfRequest := *openapiclient.NewSystemCapabilitiesSelfRequest() // SystemCapabilitiesSelfRequest | 
+
+    resp, err := client.System.PostSysCapabilitiesSelf(context.Background()).SystemCapabilitiesSelfRequest(systemCapabilitiesSelfRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysCapabilitiesSelf``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6595,19 +7330,26 @@ Enable auditing of a header.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    header := "header_example" // string | 
-    systemConfigAuditingRequestHeadersRequest := *openapiclient.NewSystemConfigAuditingRequestHeadersRequest() // SystemConfigAuditingRequestHeadersRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysConfigAuditingRequestHeadersHeader(context.Background(), header).SystemConfigAuditingRequestHeadersRequest(systemConfigAuditingRequestHeadersRequest).Execute()
+    header := "header_example" // string | 
+    systemConfigAuditingRequestHeadersRequest := *openapiclient.NewSystemConfigAuditingRequestHeadersRequest() // SystemConfigAuditingRequestHeadersRequest | 
+
+    resp, err := client.System.PostSysConfigAuditingRequestHeadersHeader(context.Background(), header).SystemConfigAuditingRequestHeadersRequest(systemConfigAuditingRequestHeadersRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysConfigAuditingRequestHeadersHeader``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6663,18 +7405,25 @@ Configure the CORS settings.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemConfigCorsRequest := *openapiclient.NewSystemConfigCorsRequest() // SystemConfigCorsRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysConfigCors(context.Background()).SystemConfigCorsRequest(systemConfigCorsRequest).Execute()
+    systemConfigCorsRequest := *openapiclient.NewSystemConfigCorsRequest() // SystemConfigCorsRequest | 
+
+    resp, err := client.System.PostSysConfigCors(context.Background()).SystemConfigCorsRequest(systemConfigCorsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysConfigCors``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6725,18 +7474,25 @@ Reload the given subsystem
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     subsystem := "subsystem_example" // string | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysConfigReloadSubsystem(context.Background(), subsystem).Execute()
+    resp, err := client.System.PostSysConfigReloadSubsystem(context.Background(), subsystem).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysConfigReloadSubsystem``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6791,19 +7547,26 @@ Configure the values to be returned for the UI header.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    header := "header_example" // string | The name of the header.
-    systemConfigUiHeadersRequest := *openapiclient.NewSystemConfigUiHeadersRequest() // SystemConfigUiHeadersRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysConfigUiHeadersHeader(context.Background(), header).SystemConfigUiHeadersRequest(systemConfigUiHeadersRequest).Execute()
+    header := "header_example" // string | The name of the header.
+    systemConfigUiHeadersRequest := *openapiclient.NewSystemConfigUiHeadersRequest() // SystemConfigUiHeadersRequest | 
+
+    resp, err := client.System.PostSysConfigUiHeadersHeader(context.Background(), header).SystemConfigUiHeadersRequest(systemConfigUiHeadersRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysConfigUiHeadersHeader``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6861,18 +7624,25 @@ Initializes a new root generation attempt.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemGenerateRootRequest := *openapiclient.NewSystemGenerateRootRequest() // SystemGenerateRootRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysGenerateRoot(context.Background()).SystemGenerateRootRequest(systemGenerateRootRequest).Execute()
+    systemGenerateRootRequest := *openapiclient.NewSystemGenerateRootRequest() // SystemGenerateRootRequest | 
+
+    resp, err := client.System.PostSysGenerateRoot(context.Background()).SystemGenerateRootRequest(systemGenerateRootRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysGenerateRoot``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6925,18 +7695,25 @@ Initializes a new root generation attempt.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemGenerateRootAttemptRequest := *openapiclient.NewSystemGenerateRootAttemptRequest() // SystemGenerateRootAttemptRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysGenerateRootAttempt(context.Background()).SystemGenerateRootAttemptRequest(systemGenerateRootAttemptRequest).Execute()
+    systemGenerateRootAttemptRequest := *openapiclient.NewSystemGenerateRootAttemptRequest() // SystemGenerateRootAttemptRequest | 
+
+    resp, err := client.System.PostSysGenerateRootAttempt(context.Background()).SystemGenerateRootAttemptRequest(systemGenerateRootAttemptRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysGenerateRootAttempt``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6989,18 +7766,25 @@ Enter a single unseal key share to progress the root generation attempt.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemGenerateRootUpdateRequest := *openapiclient.NewSystemGenerateRootUpdateRequest() // SystemGenerateRootUpdateRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysGenerateRootUpdate(context.Background()).SystemGenerateRootUpdateRequest(systemGenerateRootUpdateRequest).Execute()
+    systemGenerateRootUpdateRequest := *openapiclient.NewSystemGenerateRootUpdateRequest() // SystemGenerateRootUpdateRequest | 
+
+    resp, err := client.System.PostSysGenerateRootUpdate(context.Background()).SystemGenerateRootUpdateRequest(systemGenerateRootUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysGenerateRootUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7053,18 +7837,25 @@ Initialize a new Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemInitRequest := *openapiclient.NewSystemInitRequest() // SystemInitRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysInit(context.Background()).SystemInitRequest(systemInitRequest).Execute()
+    systemInitRequest := *openapiclient.NewSystemInitRequest() // SystemInitRequest | 
+
+    resp, err := client.System.PostSysInit(context.Background()).SystemInitRequest(systemInitRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysInit``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7115,18 +7906,25 @@ Enable or disable collection of client count, set retention period, or set defau
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemInternalCountersConfigRequest := *openapiclient.NewSystemInternalCountersConfigRequest() // SystemInternalCountersConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysInternalCountersConfig(context.Background()).SystemInternalCountersConfigRequest(systemInternalCountersConfigRequest).Execute()
+    systemInternalCountersConfigRequest := *openapiclient.NewSystemInternalCountersConfigRequest() // SystemInternalCountersConfigRequest | 
+
+    resp, err := client.System.PostSysInternalCountersConfig(context.Background()).SystemInternalCountersConfigRequest(systemInternalCountersConfigRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysInternalCountersConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7177,18 +7975,25 @@ Retrieve lease metadata.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemLeasesLookupRequest := *openapiclient.NewSystemLeasesLookupRequest() // SystemLeasesLookupRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysLeasesLookup(context.Background()).SystemLeasesLookupRequest(systemLeasesLookupRequest).Execute()
+    systemLeasesLookupRequest := *openapiclient.NewSystemLeasesLookupRequest() // SystemLeasesLookupRequest | 
+
+    resp, err := client.System.PostSysLeasesLookup(context.Background()).SystemLeasesLookupRequest(systemLeasesLookupRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysLeasesLookup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7239,18 +8044,25 @@ Renews a lease, requesting to extend the lease.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemLeasesRenewRequest := *openapiclient.NewSystemLeasesRenewRequest() // SystemLeasesRenewRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysLeasesRenew(context.Background()).SystemLeasesRenewRequest(systemLeasesRenewRequest).Execute()
+    systemLeasesRenewRequest := *openapiclient.NewSystemLeasesRenewRequest() // SystemLeasesRenewRequest | 
+
+    resp, err := client.System.PostSysLeasesRenew(context.Background()).SystemLeasesRenewRequest(systemLeasesRenewRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysLeasesRenew``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7301,19 +8113,26 @@ Renews a lease, requesting to extend the lease.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
-    systemLeasesRenewLeaseRequest := *openapiclient.NewSystemLeasesRenewLeaseRequest() // SystemLeasesRenewLeaseRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysLeasesRenewUrlLeaseId(context.Background(), urlLeaseId).SystemLeasesRenewLeaseRequest(systemLeasesRenewLeaseRequest).Execute()
+    urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
+    systemLeasesRenewLeaseRequest := *openapiclient.NewSystemLeasesRenewLeaseRequest() // SystemLeasesRenewLeaseRequest | 
+
+    resp, err := client.System.PostSysLeasesRenewUrlLeaseId(context.Background(), urlLeaseId).SystemLeasesRenewLeaseRequest(systemLeasesRenewLeaseRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysLeasesRenewUrlLeaseId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7369,18 +8188,25 @@ Revokes a lease immediately.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemLeasesRevokeRequest := *openapiclient.NewSystemLeasesRevokeRequest() // SystemLeasesRevokeRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysLeasesRevoke(context.Background()).SystemLeasesRevokeRequest(systemLeasesRevokeRequest).Execute()
+    systemLeasesRevokeRequest := *openapiclient.NewSystemLeasesRevokeRequest() // SystemLeasesRevokeRequest | 
+
+    resp, err := client.System.PostSysLeasesRevoke(context.Background()).SystemLeasesRevokeRequest(systemLeasesRevokeRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysLeasesRevoke``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7433,18 +8259,25 @@ Revokes all secrets or tokens generated under a given prefix immediately
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysLeasesRevokeForcePrefix(context.Background(), prefix).Execute()
+    resp, err := client.System.PostSysLeasesRevokeForcePrefix(context.Background(), prefix).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysLeasesRevokeForcePrefix``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7499,19 +8332,26 @@ Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path prop
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
-    systemLeasesRevokePrefixRequest := *openapiclient.NewSystemLeasesRevokePrefixRequest() // SystemLeasesRevokePrefixRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysLeasesRevokePrefixPrefix(context.Background(), prefix).SystemLeasesRevokePrefixRequest(systemLeasesRevokePrefixRequest).Execute()
+    prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
+    systemLeasesRevokePrefixRequest := *openapiclient.NewSystemLeasesRevokePrefixRequest() // SystemLeasesRevokePrefixRequest | 
+
+    resp, err := client.System.PostSysLeasesRevokePrefixPrefix(context.Background(), prefix).SystemLeasesRevokePrefixRequest(systemLeasesRevokePrefixRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysLeasesRevokePrefixPrefix``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7567,19 +8407,26 @@ Revokes a lease immediately.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
-    systemLeasesRevokeLeaseRequest := *openapiclient.NewSystemLeasesRevokeLeaseRequest() // SystemLeasesRevokeLeaseRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysLeasesRevokeUrlLeaseId(context.Background(), urlLeaseId).SystemLeasesRevokeLeaseRequest(systemLeasesRevokeLeaseRequest).Execute()
+    urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
+    systemLeasesRevokeLeaseRequest := *openapiclient.NewSystemLeasesRevokeLeaseRequest() // SystemLeasesRevokeLeaseRequest | 
+
+    resp, err := client.System.PostSysLeasesRevokeUrlLeaseId(context.Background(), urlLeaseId).SystemLeasesRevokeLeaseRequest(systemLeasesRevokeLeaseRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysLeasesRevokeUrlLeaseId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7635,17 +8482,24 @@ This endpoint performs cleanup tasks that can be run if certain error conditions
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysLeasesTidy(context.Background()).Execute()
+
+    resp, err := client.System.PostSysLeasesTidy(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysLeasesTidy``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7692,18 +8546,25 @@ Validates the login for the given MFA methods. Upon successful validation, it re
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemMfaValidateRequest := *openapiclient.NewSystemMfaValidateRequest(map[string]interface{}(123), "MfaRequestId_example") // SystemMfaValidateRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysMfaValidate(context.Background()).SystemMfaValidateRequest(systemMfaValidateRequest).Execute()
+    systemMfaValidateRequest := *openapiclient.NewSystemMfaValidateRequest(map[string]interface{}(123), "MfaRequestId_example") // SystemMfaValidateRequest | 
+
+    resp, err := client.System.PostSysMfaValidate(context.Background()).SystemMfaValidateRequest(systemMfaValidateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysMfaValidate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7754,19 +8615,26 @@ Enable a new secrets engine at the given path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    path := "path_example" // string | The path to mount to. Example: \"aws/east\"
-    systemMountsRequest := *openapiclient.NewSystemMountsRequest() // SystemMountsRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysMountsPath(context.Background(), path).SystemMountsRequest(systemMountsRequest).Execute()
+    path := "path_example" // string | The path to mount to. Example: \"aws/east\"
+    systemMountsRequest := *openapiclient.NewSystemMountsRequest() // SystemMountsRequest | 
+
+    resp, err := client.System.PostSysMountsPath(context.Background(), path).SystemMountsRequest(systemMountsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysMountsPath``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7822,19 +8690,26 @@ Tune backend configuration parameters for this mount.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    path := "path_example" // string | The path to mount to. Example: \"aws/east\"
-    systemMountsTuneRequest := *openapiclient.NewSystemMountsTuneRequest() // SystemMountsTuneRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysMountsPathTune(context.Background(), path).SystemMountsTuneRequest(systemMountsTuneRequest).Execute()
+    path := "path_example" // string | The path to mount to. Example: \"aws/east\"
+    systemMountsTuneRequest := *openapiclient.NewSystemMountsTuneRequest() // SystemMountsTuneRequest | 
+
+    resp, err := client.System.PostSysMountsPathTune(context.Background(), path).SystemMountsTuneRequest(systemMountsTuneRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysMountsPathTune``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7890,19 +8765,26 @@ Register a new plugin, or updates an existing one with the supplied name.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | The name of the plugin
-    systemPluginsCatalogRequest := *openapiclient.NewSystemPluginsCatalogRequest() // SystemPluginsCatalogRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysPluginsCatalogName(context.Background(), name).SystemPluginsCatalogRequest(systemPluginsCatalogRequest).Execute()
+    name := "name_example" // string | The name of the plugin
+    systemPluginsCatalogRequest := *openapiclient.NewSystemPluginsCatalogRequest() // SystemPluginsCatalogRequest | 
+
+    resp, err := client.System.PostSysPluginsCatalogName(context.Background(), name).SystemPluginsCatalogRequest(systemPluginsCatalogRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysPluginsCatalogName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7958,20 +8840,27 @@ Register a new plugin, or updates an existing one with the supplied name.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     name := "name_example" // string | The name of the plugin
     type_ := "type__example" // string | The type of the plugin, may be auth, secret, or database
-    systemPluginsCatalogRequest := *openapiclient.NewSystemPluginsCatalogRequest() // SystemPluginsCatalogRequest |  (optional)
+    systemPluginsCatalogRequest := *openapiclient.NewSystemPluginsCatalogRequest() // SystemPluginsCatalogRequest | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysPluginsCatalogTypeName(context.Background(), name, type_).SystemPluginsCatalogRequest(systemPluginsCatalogRequest).Execute()
+    resp, err := client.System.PostSysPluginsCatalogTypeName(context.Background(), name, type_).SystemPluginsCatalogRequest(systemPluginsCatalogRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysPluginsCatalogTypeName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8031,18 +8920,25 @@ Reload mounted plugin backends.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemPluginsReloadBackendRequest := *openapiclient.NewSystemPluginsReloadBackendRequest() // SystemPluginsReloadBackendRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysPluginsReloadBackend(context.Background()).SystemPluginsReloadBackendRequest(systemPluginsReloadBackendRequest).Execute()
+    systemPluginsReloadBackendRequest := *openapiclient.NewSystemPluginsReloadBackendRequest() // SystemPluginsReloadBackendRequest | 
+
+    resp, err := client.System.PostSysPluginsReloadBackend(context.Background()).SystemPluginsReloadBackendRequest(systemPluginsReloadBackendRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysPluginsReloadBackend``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8093,19 +8989,26 @@ Add a new or update an existing ACL policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | The name of the policy. Example: \"ops\"
-    systemPoliciesAclRequest := *openapiclient.NewSystemPoliciesAclRequest() // SystemPoliciesAclRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysPoliciesAclName(context.Background(), name).SystemPoliciesAclRequest(systemPoliciesAclRequest).Execute()
+    name := "name_example" // string | The name of the policy. Example: \"ops\"
+    systemPoliciesAclRequest := *openapiclient.NewSystemPoliciesAclRequest() // SystemPoliciesAclRequest | 
+
+    resp, err := client.System.PostSysPoliciesAclName(context.Background(), name).SystemPoliciesAclRequest(systemPoliciesAclRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysPoliciesAclName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8161,19 +9064,26 @@ Add a new or update an existing password policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | The name of the password policy.
-    systemPoliciesPasswordRequest := *openapiclient.NewSystemPoliciesPasswordRequest() // SystemPoliciesPasswordRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysPoliciesPasswordName(context.Background(), name).SystemPoliciesPasswordRequest(systemPoliciesPasswordRequest).Execute()
+    name := "name_example" // string | The name of the password policy.
+    systemPoliciesPasswordRequest := *openapiclient.NewSystemPoliciesPasswordRequest() // SystemPoliciesPasswordRequest | 
+
+    resp, err := client.System.PostSysPoliciesPasswordName(context.Background(), name).SystemPoliciesPasswordRequest(systemPoliciesPasswordRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysPoliciesPasswordName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8229,19 +9139,26 @@ Add a new or update an existing policy.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | The name of the policy. Example: \"ops\"
-    systemPolicyRequest := *openapiclient.NewSystemPolicyRequest() // SystemPolicyRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysPolicyName(context.Background(), name).SystemPolicyRequest(systemPolicyRequest).Execute()
+    name := "name_example" // string | The name of the policy. Example: \"ops\"
+    systemPolicyRequest := *openapiclient.NewSystemPolicyRequest() // SystemPolicyRequest | 
+
+    resp, err := client.System.PostSysPolicyName(context.Background(), name).SystemPolicyRequest(systemPolicyRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysPolicyName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8297,18 +9214,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemQuotasConfigRequest := *openapiclient.NewSystemQuotasConfigRequest() // SystemQuotasConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysQuotasConfig(context.Background()).SystemQuotasConfigRequest(systemQuotasConfigRequest).Execute()
+    systemQuotasConfigRequest := *openapiclient.NewSystemQuotasConfigRequest() // SystemQuotasConfigRequest | 
+
+    resp, err := client.System.PostSysQuotasConfig(context.Background()).SystemQuotasConfigRequest(systemQuotasConfigRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysQuotasConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8359,19 +9283,26 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    name := "name_example" // string | Name of the quota rule.
-    systemQuotasRateLimitRequest := *openapiclient.NewSystemQuotasRateLimitRequest() // SystemQuotasRateLimitRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysQuotasRateLimitName(context.Background(), name).SystemQuotasRateLimitRequest(systemQuotasRateLimitRequest).Execute()
+    name := "name_example" // string | Name of the quota rule.
+    systemQuotasRateLimitRequest := *openapiclient.NewSystemQuotasRateLimitRequest() // SystemQuotasRateLimitRequest | 
+
+    resp, err := client.System.PostSysQuotasRateLimitName(context.Background(), name).SystemQuotasRateLimitRequest(systemQuotasRateLimitRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysQuotasRateLimitName``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8427,18 +9358,25 @@ Update the value of the key at the given path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemRawRequest := *openapiclient.NewSystemRawRequest() // SystemRawRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysRaw(context.Background()).SystemRawRequest(systemRawRequest).Execute()
+    systemRawRequest := *openapiclient.NewSystemRawRequest() // SystemRawRequest | 
+
+    resp, err := client.System.PostSysRaw(context.Background()).SystemRawRequest(systemRawRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysRaw``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8489,19 +9427,26 @@ Update the value of the key at the given path.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    path := "path_example" // string | 
-    systemRawRequest := *openapiclient.NewSystemRawRequest() // SystemRawRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysRawPath(context.Background(), path).SystemRawRequest(systemRawRequest).Execute()
+    path := "path_example" // string | 
+    systemRawRequest := *openapiclient.NewSystemRawRequest() // SystemRawRequest | 
+
+    resp, err := client.System.PostSysRawPath(context.Background(), path).SystemRawRequest(systemRawRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysRawPath``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8559,18 +9504,25 @@ Initializes a new rekey attempt.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemRekeyInitRequest := *openapiclient.NewSystemRekeyInitRequest() // SystemRekeyInitRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysRekeyInit(context.Background()).SystemRekeyInitRequest(systemRekeyInitRequest).Execute()
+    systemRekeyInitRequest := *openapiclient.NewSystemRekeyInitRequest() // SystemRekeyInitRequest | 
+
+    resp, err := client.System.PostSysRekeyInit(context.Background()).SystemRekeyInitRequest(systemRekeyInitRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysRekeyInit``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8621,18 +9573,25 @@ Enter a single unseal key share to progress the rekey of the Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemRekeyUpdateRequest := *openapiclient.NewSystemRekeyUpdateRequest() // SystemRekeyUpdateRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysRekeyUpdate(context.Background()).SystemRekeyUpdateRequest(systemRekeyUpdateRequest).Execute()
+    systemRekeyUpdateRequest := *openapiclient.NewSystemRekeyUpdateRequest() // SystemRekeyUpdateRequest | 
+
+    resp, err := client.System.PostSysRekeyUpdate(context.Background()).SystemRekeyUpdateRequest(systemRekeyUpdateRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysRekeyUpdate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8683,18 +9642,25 @@ Enter a single new key share to progress the rekey verification operation.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemRekeyVerifyRequest := *openapiclient.NewSystemRekeyVerifyRequest() // SystemRekeyVerifyRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysRekeyVerify(context.Background()).SystemRekeyVerifyRequest(systemRekeyVerifyRequest).Execute()
+    systemRekeyVerifyRequest := *openapiclient.NewSystemRekeyVerifyRequest() // SystemRekeyVerifyRequest | 
+
+    resp, err := client.System.PostSysRekeyVerify(context.Background()).SystemRekeyVerifyRequest(systemRekeyVerifyRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysRekeyVerify``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8745,18 +9711,25 @@ Initiate a mount migration
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemRemountRequest := *openapiclient.NewSystemRemountRequest() // SystemRemountRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysRemount(context.Background()).SystemRemountRequest(systemRemountRequest).Execute()
+    systemRemountRequest := *openapiclient.NewSystemRemountRequest() // SystemRemountRequest | 
+
+    resp, err := client.System.PostSysRemount(context.Background()).SystemRemountRequest(systemRemountRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysRemount``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8807,18 +9780,25 @@ Renews a lease, requesting to extend the lease.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemRenewRequest := *openapiclient.NewSystemRenewRequest() // SystemRenewRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysRenew(context.Background()).SystemRenewRequest(systemRenewRequest).Execute()
+    systemRenewRequest := *openapiclient.NewSystemRenewRequest() // SystemRenewRequest | 
+
+    resp, err := client.System.PostSysRenew(context.Background()).SystemRenewRequest(systemRenewRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysRenew``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8869,19 +9849,26 @@ Renews a lease, requesting to extend the lease.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
-    systemRenewLeaseRequest := *openapiclient.NewSystemRenewLeaseRequest() // SystemRenewLeaseRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysRenewUrlLeaseId(context.Background(), urlLeaseId).SystemRenewLeaseRequest(systemRenewLeaseRequest).Execute()
+    urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
+    systemRenewLeaseRequest := *openapiclient.NewSystemRenewLeaseRequest() // SystemRenewLeaseRequest | 
+
+    resp, err := client.System.PostSysRenewUrlLeaseId(context.Background(), urlLeaseId).SystemRenewLeaseRequest(systemRenewLeaseRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysRenewUrlLeaseId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8937,18 +9924,25 @@ Revokes a lease immediately.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemRevokeRequest := *openapiclient.NewSystemRevokeRequest() // SystemRevokeRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysRevoke(context.Background()).SystemRevokeRequest(systemRevokeRequest).Execute()
+    systemRevokeRequest := *openapiclient.NewSystemRevokeRequest() // SystemRevokeRequest | 
+
+    resp, err := client.System.PostSysRevoke(context.Background()).SystemRevokeRequest(systemRevokeRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysRevoke``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9001,18 +9995,25 @@ Revokes all secrets or tokens generated under a given prefix immediately
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysRevokeForcePrefix(context.Background(), prefix).Execute()
+    resp, err := client.System.PostSysRevokeForcePrefix(context.Background(), prefix).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysRevokeForcePrefix``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9067,19 +10068,26 @@ Revokes all secrets (via a lease ID prefix) or tokens (via the tokens' path prop
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
-    systemRevokePrefixRequest := *openapiclient.NewSystemRevokePrefixRequest() // SystemRevokePrefixRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysRevokePrefixPrefix(context.Background(), prefix).SystemRevokePrefixRequest(systemRevokePrefixRequest).Execute()
+    prefix := "prefix_example" // string | The path to revoke keys under. Example: \"prod/aws/ops\"
+    systemRevokePrefixRequest := *openapiclient.NewSystemRevokePrefixRequest() // SystemRevokePrefixRequest | 
+
+    resp, err := client.System.PostSysRevokePrefixPrefix(context.Background(), prefix).SystemRevokePrefixRequest(systemRevokePrefixRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysRevokePrefixPrefix``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9135,19 +10143,26 @@ Revokes a lease immediately.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
-    systemRevokeLeaseRequest := *openapiclient.NewSystemRevokeLeaseRequest() // SystemRevokeLeaseRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysRevokeUrlLeaseId(context.Background(), urlLeaseId).SystemRevokeLeaseRequest(systemRevokeLeaseRequest).Execute()
+    urlLeaseId := "urlLeaseId_example" // string | The lease identifier to renew. This is included with a lease.
+    systemRevokeLeaseRequest := *openapiclient.NewSystemRevokeLeaseRequest() // SystemRevokeLeaseRequest | 
+
+    resp, err := client.System.PostSysRevokeUrlLeaseId(context.Background(), urlLeaseId).SystemRevokeLeaseRequest(systemRevokeLeaseRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysRevokeUrlLeaseId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9203,17 +10218,24 @@ Rotates the backend encryption key used to persist data.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysRotate(context.Background()).Execute()
+
+    resp, err := client.System.PostSysRotate(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysRotate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9260,18 +10282,25 @@ No authorization required
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemRotateConfigRequest := *openapiclient.NewSystemRotateConfigRequest() // SystemRotateConfigRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysRotateConfig(context.Background()).SystemRotateConfigRequest(systemRotateConfigRequest).Execute()
+    systemRotateConfigRequest := *openapiclient.NewSystemRotateConfigRequest() // SystemRotateConfigRequest | 
+
+    resp, err := client.System.PostSysRotateConfig(context.Background()).SystemRotateConfigRequest(systemRotateConfigRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysRotateConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9322,17 +10351,24 @@ Seal the Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysSeal(context.Background()).Execute()
+
+    resp, err := client.System.PostSysSeal(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysSeal``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9381,17 +10417,24 @@ Cause the node to give up active status.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysStepDown(context.Background()).Execute()
+
+    resp, err := client.System.PostSysStepDown(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysStepDown``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9438,18 +10481,25 @@ Generate a hash sum for input data
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemToolsHashRequest := *openapiclient.NewSystemToolsHashRequest() // SystemToolsHashRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysToolsHash(context.Background()).SystemToolsHashRequest(systemToolsHashRequest).Execute()
+    systemToolsHashRequest := *openapiclient.NewSystemToolsHashRequest() // SystemToolsHashRequest | 
+
+    resp, err := client.System.PostSysToolsHash(context.Background()).SystemToolsHashRequest(systemToolsHashRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysToolsHash``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9500,19 +10550,26 @@ Generate a hash sum for input data
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
-    systemToolsHashRequest := *openapiclient.NewSystemToolsHashRequest() // SystemToolsHashRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysToolsHashUrlalgorithm(context.Background(), urlalgorithm).SystemToolsHashRequest(systemToolsHashRequest).Execute()
+    urlalgorithm := "urlalgorithm_example" // string | Algorithm to use (POST URL parameter)
+    systemToolsHashRequest := *openapiclient.NewSystemToolsHashRequest() // SystemToolsHashRequest | 
+
+    resp, err := client.System.PostSysToolsHashUrlalgorithm(context.Background(), urlalgorithm).SystemToolsHashRequest(systemToolsHashRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysToolsHashUrlalgorithm``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9568,18 +10625,25 @@ Generate random bytes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemToolsRandomRequest := *openapiclient.NewSystemToolsRandomRequest() // SystemToolsRandomRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysToolsRandom(context.Background()).SystemToolsRandomRequest(systemToolsRandomRequest).Execute()
+    systemToolsRandomRequest := *openapiclient.NewSystemToolsRandomRequest() // SystemToolsRandomRequest | 
+
+    resp, err := client.System.PostSysToolsRandom(context.Background()).SystemToolsRandomRequest(systemToolsRandomRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysToolsRandom``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9630,19 +10694,26 @@ Generate random bytes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (default to "platform")
-    systemToolsRandomRequest := *openapiclient.NewSystemToolsRandomRequest() // SystemToolsRandomRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysToolsRandomSource(context.Background(), source).SystemToolsRandomRequest(systemToolsRandomRequest).Execute()
+    source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (default to "platform")
+    systemToolsRandomRequest := *openapiclient.NewSystemToolsRandomRequest() // SystemToolsRandomRequest | 
+
+    resp, err := client.System.PostSysToolsRandomSource(context.Background(), source).SystemToolsRandomRequest(systemToolsRandomRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysToolsRandomSource``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9698,20 +10769,27 @@ Generate random bytes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
     source := "source_example" // string | Which system to source random data from, ether \"platform\", \"seal\", or \"all\". (default to "platform")
     urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
-    systemToolsRandomRequest := *openapiclient.NewSystemToolsRandomRequest() // SystemToolsRandomRequest |  (optional)
+    systemToolsRandomRequest := *openapiclient.NewSystemToolsRandomRequest() // SystemToolsRandomRequest | 
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysToolsRandomSourceUrlbytes(context.Background(), source, urlbytes).SystemToolsRandomRequest(systemToolsRandomRequest).Execute()
+    resp, err := client.System.PostSysToolsRandomSourceUrlbytes(context.Background(), source, urlbytes).SystemToolsRandomRequest(systemToolsRandomRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysToolsRandomSourceUrlbytes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9769,19 +10847,26 @@ Generate random bytes
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
-    systemToolsRandomRequest := *openapiclient.NewSystemToolsRandomRequest() // SystemToolsRandomRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysToolsRandomUrlbytes(context.Background(), urlbytes).SystemToolsRandomRequest(systemToolsRandomRequest).Execute()
+    urlbytes := "urlbytes_example" // string | The number of bytes to generate (POST URL parameter)
+    systemToolsRandomRequest := *openapiclient.NewSystemToolsRandomRequest() // SystemToolsRandomRequest | 
+
+    resp, err := client.System.PostSysToolsRandomUrlbytes(context.Background(), urlbytes).SystemToolsRandomRequest(systemToolsRandomRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysToolsRandomUrlbytes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9837,18 +10922,25 @@ Unseal the Vault.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemUnsealRequest := *openapiclient.NewSystemUnsealRequest() // SystemUnsealRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysUnseal(context.Background()).SystemUnsealRequest(systemUnsealRequest).Execute()
+    systemUnsealRequest := *openapiclient.NewSystemUnsealRequest() // SystemUnsealRequest | 
+
+    resp, err := client.System.PostSysUnseal(context.Background()).SystemUnsealRequest(systemUnsealRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysUnseal``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9899,18 +10991,25 @@ Look up wrapping properties for the given token.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemWrappingLookupRequest := *openapiclient.NewSystemWrappingLookupRequest() // SystemWrappingLookupRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysWrappingLookup(context.Background()).SystemWrappingLookupRequest(systemWrappingLookupRequest).Execute()
+    systemWrappingLookupRequest := *openapiclient.NewSystemWrappingLookupRequest() // SystemWrappingLookupRequest | 
+
+    resp, err := client.System.PostSysWrappingLookup(context.Background()).SystemWrappingLookupRequest(systemWrappingLookupRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysWrappingLookup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9961,18 +11060,25 @@ Rotates a response-wrapped token.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemWrappingRewrapRequest := *openapiclient.NewSystemWrappingRewrapRequest() // SystemWrappingRewrapRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysWrappingRewrap(context.Background()).SystemWrappingRewrapRequest(systemWrappingRewrapRequest).Execute()
+    systemWrappingRewrapRequest := *openapiclient.NewSystemWrappingRewrapRequest() // SystemWrappingRewrapRequest | 
+
+    resp, err := client.System.PostSysWrappingRewrap(context.Background()).SystemWrappingRewrapRequest(systemWrappingRewrapRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysWrappingRewrap``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10023,18 +11129,25 @@ Unwraps a response-wrapped token.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
-    systemWrappingUnwrapRequest := *openapiclient.NewSystemWrappingUnwrapRequest() // SystemWrappingUnwrapRequest |  (optional)
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysWrappingUnwrap(context.Background()).SystemWrappingUnwrapRequest(systemWrappingUnwrapRequest).Execute()
+    systemWrappingUnwrapRequest := *openapiclient.NewSystemWrappingUnwrapRequest() // SystemWrappingUnwrapRequest | 
+
+    resp, err := client.System.PostSysWrappingUnwrap(context.Background()).SystemWrappingUnwrapRequest(systemWrappingUnwrapRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysWrappingUnwrap``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10085,17 +11198,24 @@ Response-wraps an arbitrary JSON object.
 package main
 
 import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
+	"context"
+	"io"
+	"log"
+	"os"
+
+	"github.com/hashicorp/vault-client-go"
 )
 
 func main() {
+	client, err := vault.NewClient(vault.Configuration{
+		BaseAddress: "http://127.0.0.1:8200",
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.System.PostSysWrappingWrap(context.Background()).Execute()
+
+    resp, err := client.System.PostSysWrappingWrap(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `System.PostSysWrappingWrap``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

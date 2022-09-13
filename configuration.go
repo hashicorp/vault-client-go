@@ -15,7 +15,12 @@ import (
 	"crypto/tls"
 	"fmt"
 	"net/http"
+	"os"
+	"reflect"
+	"strconv"
+	"strings"
 	"time"
+	"unsafe"
 
 	"github.com/hashicorp/go-cleanhttp"
 	"github.com/hashicorp/go-retryablehttp"
@@ -29,7 +34,7 @@ type Configuration struct {
 	// BaseAddress specifies the Vault server base address in the form of
 	// scheme://host:port
 	// Default: https://127.0.0.1:8200
-	BaseAddress string
+	BaseAddress string `env:"VAULT_ADDR,VAULT_AGENT_ADDR"`
 
 	// BaseClient is the HTTP client to use for all API requests.
 	// DefaultConfiguration() sets reasonable defaults for the BaseClient and
@@ -50,7 +55,7 @@ type Configuration struct {
 	// If this pointer is nil, then there will be no limit set. Note that an
 	// empty struct rate.Limiter is equivalent blocking all requests.
 	// Default: nil
-	RateLimiter *rate.Limiter
+	RateLimiter *rate.Limiter `env:"VAULT_RATE_LIMIT"`
 }
 
 // TLSConfiguration is a collection of TLS settings used to configure the internal
@@ -60,40 +65,40 @@ type TLSConfiguration struct {
 	// file or bundle, which the client will use to verify the Vault server TLS
 	// certificate.
 	// Default: "", takes precedence over other ServerCACertificate* variables.
-	ServerCACertificateFile string
+	ServerCACertificateFile string `env:"VAULT_CACERT"`
 
 	// ServerCACertificate is a PEM-encoded CA certificate or bundle,
 	// which the client will use to verify the Vault server TLS certificate.
 	// Default: nil, takes precedence over ServerCACertificateDir.
-	ServerCACertificate []byte
+	ServerCACertificate []byte `env:"VAULT_CACERT_BYTES"`
 
 	// ServerCACertificateDir is a path to a directory populated with
 	// PEM-encoded certificates, which the client will use to verify the Vault
 	// server TLS certificate.
 	// Default: ""
-	ServerCACertificateDir string
+	ServerCACertificateDir string `env:"VAULT_CAPATH"`
 
 	// ClientCertificateFile is the path to a client certificate (signed by a
 	// CA or self-signed), which is used to authenticate with Vault via the
 	// cert auth method (see https://www.vaultproject.io/docs/auth/cert)
 	// Default: ""
-	ClientCertificateFile string
+	ClientCertificateFile string `env:"VAULT_CLIENT_CERT"`
 
 	// ClientCertificateKeyFile is the path to a private key, which is used
 	// together with ClientCertificateFile to authenticate with Vault via the
 	// cert auth method (see https://www.vaultproject.io/docs/auth/cert)
 	// Default: ""
-	ClientCertificateKeyFile string
+	ClientCertificateKeyFile string `env:"VAULT_CLIENT_KEY"`
 
 	// ServerName is used to verify the hostname on the returned certificates
 	// unless InsecureSkipVerify is given.
 	// Default: ""
-	ServerName string
+	ServerName string `env:"VAULT_TLS_SERVER_NAME"`
 
 	// InsecureSkipVerify controls whether the client verifies the server's
 	// certificate chain and hostname.
 	// Default: false
-	InsecureSkipVerify bool
+	InsecureSkipVerify bool `env:"VAULT_SKIP_VERIFY"`
 }
 
 // RetryConfiguration is a collection of settings used to configure the internal
@@ -102,17 +107,17 @@ type RetryConfiguration struct {
 	// RetryWaitMin controls the minimum time to wait before retrying when
 	// a 5xx or 412 error occurs.
 	// Default: 1000 milliseconds
-	RetryWaitMin time.Duration
+	RetryWaitMin time.Duration `env:"VAULT_RETRY_WAIT_MIN"`
 
 	// MaxRetryWait controls the maximum time to wait before retrying when
 	// a 5xx or 412 error occurs.
 	// Default: 1500 milliseconds
-	RetryWaitMax time.Duration
+	RetryWaitMax time.Duration `env:"VAULT_RETRY_WAIT_MAX"`
 
 	// RetryMax controls the maximum number of times to retry when a 5xx or 412
 	// error occurs. Set to -1 to disable retrying.
 	// Default: 2 (for a total of three tries)
-	RetryMax int
+	RetryMax int `env:"VAULT_MAX_RETRIES"`
 
 	// CheckRetry specifies a policy for handling retries. It is called after
 	// each request with the response and error values returned by the http.Client.
@@ -168,6 +173,86 @@ func DefaultConfiguration() Configuration {
 			Logger:       nil,
 		},
 	}
+}
+
+// LoadEnvironment loads vault-specific environment variables and applies them
+// to the given configuration object. The environment varialbes are specified
+// in the 'env' tags defined next to each configuration field. In case of
+// multiple environment variables defined for a field, the later ones take
+// precedence.
+func (c *Configuration) LoadEnvironment() error {
+	// this function will be recursively applied to each field within the configuration object
+	assignFieldFromEnv := func(field reflect.Value, environmentTags []string) error {
+		// for each 'env' tag ...
+		for _, tag := range environmentTags {
+			// try to fetch the environment variable
+			env := os.Getenv(tag)
+			if env == "" {
+				continue
+			}
+
+			switch field.Type().String() {
+
+			case "string":
+				field.SetString(env)
+
+			case "[]uint8":
+				field.SetBytes([]byte(env))
+
+			case "bool":
+				v, err := strconv.ParseBool(env)
+				if err != nil {
+					return fmt.Errorf("could not convert %q environment variable value to bool", tag)
+				}
+				field.SetBool(v)
+
+			case "int":
+				v, err := strconv.Atoi(env)
+				if err != nil {
+					return fmt.Errorf("could not convert %q environment variable value to int", tag)
+				}
+				field.SetInt(int64(v))
+
+			case "time.Duration":
+				v, err := time.ParseDuration(env)
+				if err != nil {
+					return fmt.Errorf("could not convert %q environment variable value to time.Duration", tag)
+				}
+				field.SetInt(int64(v))
+
+			case "*rate.Limiter":
+				var (
+					limiterRate  float64
+					limiterBurst int
+				)
+				_, err := fmt.Sscanf(env, "%f:%d", &limiterRate, &limiterBurst)
+				if err != nil {
+					limiterRate, err = strconv.ParseFloat(env, 64)
+					if err != nil {
+						return fmt.Errorf("%q environment variable expects either 'rate:burst' or a float 'rate'", tag)
+					}
+					limiterBurst = int(limiterRate)
+				}
+				field.SetPointer(unsafe.Pointer(rate.NewLimiter(rate.Limit(limiterRate), limiterBurst)))
+
+			default:
+				return fmt.Errorf("environment variable parsing not implemented for %q type", field.Type().String())
+			}
+		}
+
+		return nil
+	}
+
+	// work on a copy of the configuration object to prevent modfications on errors
+	copy := *c
+
+	if err := walkConfigurationFields(&copy, assignFieldFromEnv); err != nil {
+		return fmt.Errorf("configuration error: %w", err)
+	}
+
+	*c = copy
+
+	return nil
 }
 
 // DefaultRetryPolicy provides a default callback for RetryConfiguration.CheckRetry.
@@ -283,6 +368,43 @@ func (from TLSConfiguration) applyTo(to *tls.Config) error {
 
 	if from.ServerName != "" {
 		to.ServerName = from.ServerName
+	}
+
+	return nil
+}
+
+// walkConfigurationFields is a helper function, which uses reflection to
+// traverse the configuration fields, determine their `env` tags and apply the
+// given function f to the modifiable fields.
+func walkConfigurationFields(structPtr any, f func(field reflect.Value, environmentTags []string) error) error {
+	// we expect a pointer to a struct to be able to modify the fields
+	if reflect.ValueOf(structPtr).Kind() != reflect.Ptr {
+		return fmt.Errorf("pointer input expected")
+	}
+
+	// struct value and type
+	structV := reflect.ValueOf(structPtr).Elem()
+	structT := reflect.TypeOf(structPtr).Elem()
+
+	for i := 0; i < structT.NumField(); i++ {
+		// field value and type
+		fieldV := structV.Field(i)
+		fieldT := structT.Field(i)
+
+		switch {
+		case !fieldV.CanSet():
+			continue // unexported fields will be skipped
+
+		case fieldV.Kind() == reflect.Struct:
+			if err := walkConfigurationFields(fieldV.Addr().Interface(), f); err != nil {
+				return err
+			}
+
+		default:
+			if err := f(fieldV, strings.Split(fieldT.Tag.Get("env"), ",")); err != nil {
+				return fmt.Errorf("could not configure %q: %w", fieldT.Name, err)
+			}
+		}
 	}
 
 	return nil
